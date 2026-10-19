@@ -8,6 +8,8 @@ Interface d'administration de kinou.fr et données du site (`data/`).
 - Détails techniques : voir `CLAUDE.md`.
 
 ## À faire plus tard
+- Quand la beta sera fusionnée dans le site officiel : passer la constante `SITE` de `assets/js/admin.js`
+  de la beta à l'adresse officielle (kinou.fr).
 - Photo de survol de la liste des chefs op, choix des slides de l'accueil.
 - Réordonner la liste des chefs op à la main.
 - Signaler les corrections orphelines (film supprimé puis remis sur Slate).
