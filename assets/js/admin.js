@@ -159,6 +159,11 @@
   // state : fiche en cours d'édition ; slate : dernier import du bundle (ou copie enregistrée)
   // listed : le chef op figure déjà dans la liste du site (son adresse existe, elle ne change pas).
   var state = null, slate = null, isNew = false, listed = false, pending = {}, curCat = null, flash = "";
+  // dirty : modifications faites dans la page mais pas encore publiées.
+  var dirty = false;
+  function touch() { dirty = true; status("Modifications non publiées : cliquez sur « Publier » pour les mettre en ligne.", "warn"); }
+  // Toute saisie dans la fiche compte comme une modification (sauf le champ du lien de bundle).
+  view.addEventListener("input", function (e) { if (state && !e.target.classList.contains("nodirty")) touch(); });
 
   function showDP(slug) {
     bar.hidden = true;
@@ -168,7 +173,7 @@
       var entry = slug && index.dps.filter(function (d) { return d.slug === slug; })[0];
       isNew = !r[1]; listed = !!entry; pending = {};
       state = r[1] || { slug: slug || "", name: entry ? entry.name : "", hue: 0, overrides: {}, about: {} };
-      state.overrides = state.overrides || {}; state.about = state.about || {};
+      state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false;
       slate = state.clips ? { name: state.name, categories: state.categories || [], clips: state.clips } : null;
       curCat = null;
       render();
@@ -186,12 +191,12 @@
     bar.hidden = false;
     seeLink.href = SITE + "/#" + (state.slug || "");
     seeLink.hidden = isNew;
-    status(flash || (Object.keys(pending).length ? "Fichiers en attente de publication." : ""), flash ? "ok" : "");
+    if (flash) status(flash, "ok"); else if (dirty) touch(); else status("");
     flash = "";
   }
 
   function bundleSection() {
-    var input = el("input", { type: "url", placeholder: "https://shots.re/… ou https://kinou.slateapp.com/bundles/…", value: state.bundle || "" });
+    var input = el("input", { type: "url", class: "nodirty", placeholder: "https://shots.re/… ou https://kinou.slateapp.com/bundles/…", value: state.bundle || "" });
     var st = el("p", { class: "hint" });
     var imp = el("button", { class: "btn", text: state.bundle ? "Relire le bundle" : "Importer" });
     imp.addEventListener("click", function () {
@@ -203,8 +208,8 @@
         return (known ? readFile("data/dps/" + known.slug + ".json") : Promise.resolve(null)).then(function (existing) { return [d, known, existing]; });
       }).then(function (r) {
         var d = r[0], known = r[1];
-        if (r[2]) { flash = d.name + " a déjà une fiche : la voici. Utilisez « Relire le bundle » pour la mettre à jour."; location.hash = "#/dp/" + known.slug; return; }
-        slate = d; state.bundle = d.bundle;
+        if (r[2]) { dirty = false; flash = d.name + " a déjà une fiche : la voici. Utilisez « Relire le bundle » pour la mettre à jour."; location.hash = "#/dp/" + known.slug; return; }
+        slate = d; state.bundle = d.bundle; dirty = true;
         if (!state.name) state.name = d.name;
         if (known) { state.slug = known.slug; listed = true; }
         if (isNew && !state.slug) state.slug = slugify(state.name);
@@ -299,9 +304,9 @@
     }
     title.addEventListener("input", function () { setOverride(c, "title", title.value); sync(); });
     sub.addEventListener("input", function () { setOverride(c, "sub", sub.value); sync(); });
-    hide.addEventListener("click", function () { setOverride(c, "hidden", (state.overrides[c.slate] || {}).hidden ? undefined : true); sync(); });
-    home.addEventListener("click", function () { state.open = state.open === c.slate ? undefined : c.slate; render(); });
-    reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); });
+    hide.addEventListener("click", function () { setOverride(c, "hidden", (state.overrides[c.slate] || {}).hidden ? undefined : true); sync(); touch(); });
+    home.addEventListener("click", function () { state.open = state.open === c.slate ? undefined : c.slate; dirty = true; render(); });
+    reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); touch(); });
     sync();
     card.appendChild(thumb); card.appendChild(title); card.appendChild(sub);
     card.appendChild(el("div", { class: "acts" }, [hide, home, reset]));
@@ -360,8 +365,8 @@
     var name = p ? "Nouveau portrait (" + Math.round(p.size / 1024) + " Ko)" : (a.img ? "Portrait actuel : " + a.img.split("/").pop() : "");
     var z = dropZone("image/*", "Glissez une photo ici (ou cliquez)", function (f) {
       status("Compression du portrait…");
-      compress(f).then(function (r) { pending.portrait = r; z.replaceWith(portraitDrop()); status("Portrait prêt (" + Math.round(r.size / 1024) + " Ko) — à publier."); }, function (e) { status(e.message, "err"); });
-    }, function () { delete pending.portrait; delete a.img; z.replaceWith(portraitDrop()); }, name, bg);
+      compress(f).then(function (r) { pending.portrait = r; z.replaceWith(portraitDrop()); touch(); }, function (e) { status(e.message, "err"); });
+    }, function () { delete pending.portrait; delete a.img; z.replaceWith(portraitDrop()); touch(); }, name, bg);
     if (!p && a.img && !bg) loadPreview(a.img, z);
     return z;
   }
@@ -398,9 +403,9 @@
       if (f.type !== "application/pdf" && !/\.pdf$/i.test(f.name)) { status("Le CV doit être un PDF.", "err"); return; }
       if (f.size > 15 * 1024 * 1024) { status("PDF trop lourd (15 Mo maximum).", "err"); return; }
       var fr = new FileReader();
-      fr.onload = function () { pending.cv = { base64: fr.result.split(",")[1], size: f.size, name: f.name }; z.replaceWith(cvDrop()); status("CV prêt — à publier."); };
+      fr.onload = function () { pending.cv = { base64: fr.result.split(",")[1], size: f.size, name: f.name }; z.replaceWith(cvDrop()); touch(); };
       fr.readAsDataURL(f);
-    }, function () { delete pending.cv; a.cv = ""; z.replaceWith(cvDrop()); }, name);
+    }, function () { delete pending.cv; a.cv = ""; z.replaceWith(cvDrop()); touch(); }, name);
     return z;
   }
 
@@ -440,7 +445,7 @@
     if (JSON.stringify(dps) !== JSON.stringify(index.dps)) files.push({ path: "data/dps/index.json", text: json({ dps: dps }) });
     commit(files, (isNew ? "Ajout " : "Mise à jour ") + out.name.split(",")[0] + " (admin, " + user.login + ")").then(function () {
       var wasNew = isNew;
-      index.dps = dps; pending = {}; isNew = false; listed = true; state = out;
+      index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false;
       flash = "Publié. Le site sera à jour dans une minute environ.";
       if (wasNew) location.hash = "#/dp/" + out.slug; else render();
       if (out.bundle) refreshSite(out.slug).catch(function () {});
@@ -451,14 +456,21 @@
 
   // ---------- Navigation ----------
   function route() {
-    if (!token) return showLogin();
     var h = location.hash;
+    document.getElementById("back").hidden = !token || !/^#\/(dp\/|new)/.test(h);
+    if (!token) return showLogin();
     if (/^#\/dp\//.test(h)) return showDP(decodeURIComponent(h.slice(5)));
     if (h === "#/new") return showDP(null);
     showList();
   }
-  window.addEventListener("hashchange", function () { if (token) route(); });
-  window.addEventListener("beforeunload", function (e) { if (Object.keys(pending).length) { e.preventDefault(); e.returnValue = ""; } });
+  // Quitter la fiche (retour, autre page, rechargement) avec des modifications non publiées : on demande confirmation.
+  var here = location.hash;
+  window.addEventListener("hashchange", function () {
+    if (!token) return;
+    if (dirty && !window.confirm("Des modifications ne sont pas publiées. Quitter quand même (elles seront perdues) ?")) { history.replaceState(null, "", here || "#/"); return; }
+    dirty = false; here = location.hash; route();
+  });
+  window.addEventListener("beforeunload", function (e) { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
 
   var saved = store(true);
   if (saved) login(saved).then(route, function () { store(false, null); showLogin("Token expiré ou révoqué : reconnectez-vous."); });

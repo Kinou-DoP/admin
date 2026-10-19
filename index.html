@@ -12,14 +12,15 @@
 </head>
 <body>
 <header class="top">
-  <a class="logo" href="#/">kinou</a><span class="tag">admin</span>
+  <div class="brand"><a class="logo" href="#/">kinou</a><span class="tag">admin</span>
+    <a class="back" id="back" href="#/" hidden>← Retour à la liste</a></div>
   <div class="who" id="who"></div>
 </header>
 <main id="view"></main>
 <div class="bar" id="bar" hidden>
-  <p class="status" id="status"></p>
-  <a class="btn ghost" id="see" target="_blank" rel="noopener">Voir sur le site ↗</a>
   <button class="btn primary" id="publish">Publier</button>
+  <a class="btn ghost" id="see" target="_blank" rel="noopener">Voir sur le site ↗</a>
+  <p class="status" id="status"></p>
 </div>
 <script src="assets/js/admin.js"></script>
 </body>
