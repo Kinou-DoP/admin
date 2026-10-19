@@ -1,0 +1,86 @@
+{
+  "duration": 7000,
+  "slides": [
+    {
+      "dp": "Lara Perrotte Boucard",
+      "slug": "lara-perrotte-boucard-cinematographer",
+      "film": "Mylène Farmer",
+      "song": "Des Lols et des Quoi",
+      "legend": "Thierry & Didier Poiraud\nEmpreinte Digitale",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11314/68237a51-b694-11f1-a349-0215583debcb.mp4",
+      "h": 210
+    },
+    {
+      "dp": "Chris Alessi",
+      "slug": "chris-alessi",
+      "film": "Titre du film",
+      "legend": "Long métrage · 2026",
+      "video": "",
+      "h": 340
+    },
+    {
+      "dp": "Vadim Alsayed",
+      "slug": "vadim-alsayed-cinematographer",
+      "film": "Titre du film",
+      "legend": "Long métrage · 2026",
+      "video": "",
+      "h": 30
+    },
+    {
+      "dp": "Clément Arenou",
+      "slug": "clement-arenou-cinematographer",
+      "film": "Titre du film",
+      "legend": "Long métrage · 2026",
+      "video": "",
+      "h": 160
+    },
+    {
+      "dp": "Jacques Ballard, AFC",
+      "slug": "jacques-ballard-afc-cinematographer",
+      "film": "Titre du film",
+      "legend": "Long métrage · 2026",
+      "video": "",
+      "h": 260
+    },
+    {
+      "dp": "Augustin Barbaroux",
+      "slug": "augustin-barbaroux-cinematographer",
+      "film": "Titre du film",
+      "legend": "Long métrage · 2026",
+      "video": "",
+      "h": 15
+    },
+    {
+      "dp": "Pierre-Yves Bastard, AFC",
+      "slug": "pierre-yves-bastard-afc-cinematographer",
+      "film": "Titre du film",
+      "legend": "Long métrage · 2026",
+      "video": "",
+      "h": 190
+    },
+    {
+      "dp": "Dino Franco Berguglia",
+      "slug": "dino-franco-berguglia-cinematographer",
+      "film": "Titre du film",
+      "legend": "Long métrage · 2026",
+      "video": "",
+      "h": 300
+    },
+    {
+      "dp": "Pablo Berron",
+      "slug": "pablo-berron",
+      "film": "Titre du film",
+      "legend": "Long métrage · 2026",
+      "video": "",
+      "h": 60
+    },
+    {
+      "dp": "Neel Potgieter",
+      "slug": "neel-potgieter-cinematographer",
+      "film": "Peugeot Polygon Concept",
+      "legend": "Julien Kadouri\nAtemi",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10716/f15611f8-3fbf-11f1-a349-0215583debcb.mp4",
+      "h": 200
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Données lues par le site (kinou.fr et la beta) depuis une autre adresse : autoriser la lecture.
+/data/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=0, must-revalidate
+
+# CV : téléchargement direct au lieu de l'ouverture dans le navigateur.
+/data/dps/cv/*
+  Content-Disposition: attachment

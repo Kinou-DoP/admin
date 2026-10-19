@@ -1,0 +1,305 @@
+{
+  "dps": [
+    {
+      "slug": "guillaume-adrey",
+      "name": "Guillaume Adrey",
+      "img": "images/guillaume-adrey-cinematographer.jpg"
+    },
+    {
+      "slug": "chris-alessi",
+      "name": "Chris Alessi"
+    },
+    {
+      "slug": "vadim-alsayed-cinematographer",
+      "name": "Vadim Alsayed"
+    },
+    {
+      "slug": "clement-arenou-cinematographer",
+      "name": "Clément Arenou"
+    },
+    {
+      "slug": "jacques-ballard-afc-cinematographer",
+      "name": "Jacques Ballard, AFC"
+    },
+    {
+      "slug": "augustin-barbaroux-cinematographer",
+      "name": "Augustin Barbaroux"
+    },
+    {
+      "slug": "pierre-yves-bastard-afc-cinematographer",
+      "name": "Pierre-Yves Bastard, AFC"
+    },
+    {
+      "slug": "dino-franco-berguglia-cinematographer",
+      "name": "Dino Franco Berguglia"
+    },
+    {
+      "slug": "pablo-berron",
+      "name": "Pablo Berron"
+    },
+    {
+      "slug": "florian-berutti-sbc-cinematographer",
+      "name": "Florian Berutti, SBC"
+    },
+    {
+      "slug": "tom-black-cinematographer",
+      "name": "Tom Black"
+    },
+    {
+      "slug": "olivier-boonjing-sbc-cinematographer",
+      "name": "Olivier Boonjing, SBC"
+    },
+    {
+      "slug": "matias-boucard-afc-cinematographer",
+      "name": "Matias Boucard, AFC"
+    },
+    {
+      "slug": "thomas-bremond-afc",
+      "name": "Thomas Brémond, AFC"
+    },
+    {
+      "slug": "baptiste-chesnais-cinematographer",
+      "name": "Baptiste Chesnais"
+    },
+    {
+      "slug": "julie-chevailler-cinematographer",
+      "name": "Julie Chevailler"
+    },
+    {
+      "slug": "agustin-claramunt-scu-cinematographer",
+      "name": "Agustín Claramunt, SCU"
+    },
+    {
+      "slug": "maxime-cointe-afc",
+      "name": "Maxime Cointe, AFC"
+    },
+    {
+      "slug": "stanislaw-cuske-cinematographer",
+      "name": "Stanisław Cuske"
+    },
+    {
+      "slug": "guillaume-deffontaines-afc-cinematographer",
+      "name": "Guillaume Deffontaines, AFC"
+    },
+    {
+      "slug": "xavier-dolleans-afc",
+      "name": "Xavier Dolléans, AFC"
+    },
+    {
+      "slug": "veronika-donutkova-ask",
+      "name": "Veronika Donutkova, ASK"
+    },
+    {
+      "slug": "jared-fadel",
+      "name": "Jared Fadel"
+    },
+    {
+      "slug": "fabien-faure-cinematographer",
+      "name": "Fabien Faure"
+    },
+    {
+      "slug": "tristan-galand-sbc",
+      "name": "Tristan Galand, SBC"
+    },
+    {
+      "slug": "pierre-hugues-galien-afc-cinematographer",
+      "name": "Pierre-Hugues Galien, AFC"
+    },
+    {
+      "slug": "jacques-girault-cinematographer",
+      "name": "Jacques Girault"
+    },
+    {
+      "slug": "olivier-gossot-cinematographer",
+      "name": "Olivier Gossot"
+    },
+    {
+      "slug": "brecht-goyvaerts-sbc-cinematographer",
+      "name": "Brecht Goyvaerts, AFC, SBC"
+    },
+    {
+      "slug": "arnaud-guez",
+      "name": "Arnaud Guez"
+    },
+    {
+      "slug": "hovig-hagopian-cinematographer",
+      "name": "Hovig Hagopian"
+    },
+    {
+      "slug": "dan-hilltout",
+      "name": "Dan Hilltout"
+    },
+    {
+      "slug": "jenna-huskisson",
+      "name": "Jenna Huskisson"
+    },
+    {
+      "slug": "alexis-kavyrchine-cinematographer",
+      "name": "Alexis Kavyrchine"
+    },
+    {
+      "slug": "julien-lascar-cinematographer",
+      "name": "Julien Lascar"
+    },
+    {
+      "slug": "romain-le-bonniec",
+      "name": "Romain Le Bonniec"
+    },
+    {
+      "slug": "virgil-leclercq",
+      "name": "Virgil Leclercq"
+    },
+    {
+      "slug": "alexandre-leglise-cinematographer",
+      "name": "Alexandre Léglise"
+    },
+    {
+      "slug": "mahdi-lepart-afc-cinematographer",
+      "name": "Mahdi Lepart, AFC"
+    },
+    {
+      "slug": "daniel-lindholm-fsc-cinematographer",
+      "name": "Daniel Lindholm, FSC"
+    },
+    {
+      "slug": "juliette-lossky-cinematographer",
+      "name": "Juliette Lossky"
+    },
+    {
+      "slug": "benjamin-louet-cinematographer",
+      "name": "Benjamin Louet-Kammenos"
+    },
+    {
+      "slug": "yann-maritaud-cinematographer",
+      "name": "Yann Maritaud"
+    },
+    {
+      "slug": "frida-marzouk-afc",
+      "name": "Frida Marzouk, AFC"
+    },
+    {
+      "slug": "nicolas-massart-afc-cinematographer",
+      "name": "Nicolas Massart, AFC"
+    },
+    {
+      "slug": "ana-maria-miranda",
+      "name": "Ana Maria Miranda"
+    },
+    {
+      "slug": "stephan-muhlau",
+      "name": "Stephan Mühlau"
+    },
+    {
+      "slug": "david-nissen-afc",
+      "name": "David Nissen, AFC"
+    },
+    {
+      "slug": "franck-noell-cinematographer",
+      "name": "Franck Noëll"
+    },
+    {
+      "slug": "christophe-nuyens-sbc-cinematographer",
+      "name": "Christophe Nuyens, SBC"
+    },
+    {
+      "slug": "lara-perrotte-boucard-cinematographer",
+      "name": "Lara Perrotte Boucard"
+    },
+    {
+      "slug": "steeven-petitteville-afc-cinematographer",
+      "name": "Steeven Petitteville, AFC"
+    },
+    {
+      "slug": "paloma-pineda-cinematographer",
+      "name": "Paloma Pineda"
+    },
+    {
+      "slug": "andy-pml",
+      "name": "Andy PML"
+    },
+    {
+      "slug": "ekkehart-pollack-cinematographer",
+      "name": "Ekkehart Pollack"
+    },
+    {
+      "slug": "nikita-popkov",
+      "name": "Nikita Popkov"
+    },
+    {
+      "slug": "neel-potgieter-cinematographer",
+      "name": "Neel Potgieter, SASC"
+    },
+    {
+      "slug": "penelope-pourriat-afc-cinematographer",
+      "name": "Pénélope Pourriat, AFC"
+    },
+    {
+      "slug": "melodie-preel-afc-cinematographer",
+      "name": "Mélodie Preel, AFC"
+    },
+    {
+      "slug": "julien-ramirez-hernan-sbc",
+      "name": "Julien Ramirez Hernan, SBC"
+    },
+    {
+      "slug": "martin-rit-cinematographer",
+      "name": "Martin Rit"
+    },
+    {
+      "slug": "simon-roca-cinematographer",
+      "name": "Simon Roca"
+    },
+    {
+      "slug": "laurent-rodriguez-cinematographer",
+      "name": "Laurent Rodriguez"
+    },
+    {
+      "slug": "julien-roux-cinematographer",
+      "name": "Julien Roux"
+    },
+    {
+      "slug": "german-sandin-scu",
+      "name": "German Sandin, SCU"
+    },
+    {
+      "slug": "leo-schrepel-cinematographer",
+      "name": "Léo Schrepel"
+    },
+    {
+      "slug": "arnaud-stefani-cinematographer",
+      "name": "Arnaud Stefani"
+    },
+    {
+      "slug": "yoann-suberviolle-cinematographer",
+      "name": "Yoann Suberviolle"
+    },
+    {
+      "slug": "julien-teissier-cinematographer",
+      "name": "Julien Teissier"
+    },
+    {
+      "slug": "tristan-tortuyaux-cinematographer",
+      "name": "Tristan Tortuyaux"
+    },
+    {
+      "slug": "hadrien-vedel",
+      "name": "Hadrien Vedel"
+    },
+    {
+      "slug": "maeva-vo-dinh-cinematographer",
+      "name": "Maëva Vo Dinh"
+    },
+    {
+      "slug": "christos-voudouris-cinematographer",
+      "name": "Christos Voudouris"
+    },
+    {
+      "slug": "sacha-wiernik-afc-sbc-cinematographer",
+      "name": "Sacha Wiernik, AFC, SBC"
+    },
+    {
+      "slug": "ludovic-zuili-cinematographer",
+      "name": "Ludovic Zuili"
+    }
+  ]
+}

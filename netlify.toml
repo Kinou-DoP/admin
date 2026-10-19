@@ -1,0 +1,3 @@
+# Admin kinou : site statique, pas d'étape de build.
+[build]
+  publish = "."
