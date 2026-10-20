@@ -31,6 +31,11 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - Adresse (slug) : proposée depuis le nom (minuscules, sans accents), définitive après publication ;
   les chefs op déjà listés sur le site gardent leur adresse actuelle.
 
+## Branches
+- Le code de l'admin se modifie sur la branche `beta` : https://beta--kinou-admin.netlify.app (branch deploy, gratuit),
+  c'est l'admin utilisée au quotidien. `main` (https://kinou-admin.netlify.app) n'est mis à jour que rarement (≈ 15 crédits).
+- Les deux versions publient dans les mêmes données (`data/` de la branche `main`, constante `BRANCH`).
+
 ## Crédits Netlify
 - Une publication (commit qui ne touche que `data/`) **ne remet pas kinou-admin en ligne** : règle `ignore`
   du `netlify.toml`. Le site lit les données dans GitHub (`/api/data` du repo `site`, clé `GITHUB_DATA_TOKEN`).
