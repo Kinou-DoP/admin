@@ -101,6 +101,12 @@
       WARM_SITES.forEach(function (site) { new Image().src = site + "/.netlify/images?url=" + encodeURIComponent(c.img) + "&w=800&q=75&fm=webp"; });
     });
   }
+  // Galerie de stills d'un film : page Slate « work » lue par le site (/api/stills), URLs signées gardées telles quelles.
+  function importStills(link) {
+    return fetch(SITE + "/api/stills?link=" + encodeURIComponent(link.trim()), { cache: "no-store" }).then(function (r) {
+      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture des stills impossible"); return d; });
+    });
+  }
   function refreshSite(slug) {
     return fetch(SITE + "/api/refresh/" + slug, { method: "POST", headers: { Authorization: "Bearer " + token } })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "mise à jour refusée"); }); });
@@ -314,7 +320,25 @@
       chips.textContent = "";
       if (c.featured) chips.appendChild(el("span", { class: "chip", text: "Featured " + c.featuredOrder }));
       if (!c.full && !c.video) chips.appendChild(el("span", { class: "chip", text: "Sans vidéo" }));
+      if (o.stills) chips.appendChild(el("span", { class: "chip", text: "Stills " + o.stills.length }));
+      dropStills.hidden = !o.stills;
     }
+    // Lien Slate des stills (page « work ») : les images sont lues tout de suite et enregistrées avec la fiche.
+    var stillsIn = el("input", { type: "url", class: "stills nodirty", placeholder: "Lien Slate des stills", value: (state.overrides[c.slate] || {}).stillsLink || "" });
+    var stillsSt = el("p", { class: "hint" });
+    var dropStills = el("button", { text: "Retirer les stills" });
+    function loadStills() {
+      var v = stillsIn.value.trim(), o = state.overrides[c.slate] || {};
+      if (!v || (v === o.stillsLink && o.stills)) return;
+      stillsSt.textContent = "Lecture des stills…";
+      importStills(v).then(function (d) {
+        setOverride(c, "stills", d.stills); setOverride(c, "stillsLink", d.link); stillsIn.value = d.link;
+        stillsSt.textContent = d.stills.length + " images importées (" + d.title + ")."; sync(); touch();
+      }, function (e) { stillsSt.textContent = e.message; });
+    }
+    stillsIn.addEventListener("change", loadStills);
+    stillsIn.addEventListener("keydown", function (e) { if (e.key === "Enter") loadStills(); });
+    dropStills.addEventListener("click", function () { setOverride(c, "stills"); setOverride(c, "stillsLink"); stillsIn.value = ""; stillsSt.textContent = ""; sync(); touch(); });
     title.addEventListener("input", function () { setOverride(c, "title", title.value); sync(); });
     sub.addEventListener("input", function () { setOverride(c, "sub", sub.value); sync(); });
     hide.addEventListener("click", function () { setOverride(c, "hidden", (state.overrides[c.slate] || {}).hidden ? undefined : true); sync(); touch(); });
@@ -322,7 +346,8 @@
     reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); touch(); });
     sync();
     card.appendChild(thumb); card.appendChild(title); card.appendChild(sub);
-    card.appendChild(el("div", { class: "acts" }, [hide, home, reset]));
+    card.appendChild(el("div", { class: "acts" }, [hide, home, reset, dropStills]));
+    card.appendChild(stillsIn); card.appendChild(stillsSt);
     return card;
   }
 

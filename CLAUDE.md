@@ -16,6 +16,8 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - Import d'un bundle Slate : `GET <SITE>/api/bundle/<uuid | code shots.re>` (fonction du repo `site`).
 - Forcer la mise à jour du site : `POST <SITE>/api/refresh/<slug>` avec le token (vide le cache CDN du DP).
 - Corrections par film : `overrides` indexés par id Slate (suivent le film si l'ordre change sur Slate).
+- Stills d'un film : lien d'une page Slate `kinou.slateapp.com/work/<adresse>` sous le film → `GET <SITE>/api/stills?link=…`
+  → `overrides[<id>].stills` (URLs signées telles quelles) + `stillsLink`.
 - Portrait : compressé dans le navigateur (1600 px max, WebP) → `data/dps/img/<slug>.webp`.
 - CV : PDF → `data/dps/cv/CV-Prenom-Nom.pdf`, servi en téléchargement (`_headers`).
 - Adresse (slug) : proposée depuis le nom (minuscules, sans accents), définitive après publication ;

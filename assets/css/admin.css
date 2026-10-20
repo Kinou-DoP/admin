@@ -94,6 +94,8 @@ input[readonly] { color: var(--dim); }
 .film .acts { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; }
 .film .acts button { padding: 0; border: 0; background: none; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
 .film .acts button:hover, .film .acts button.on { color: var(--kinou-fg); }
+.film input.stills { margin-top: 10px; padding: 6px 0; font-family: var(--kinou-body); font-weight: 300; font-size: 12px; letter-spacing: 0; }
+.film input.stills + .hint { margin-top: 4px; font-size: 12px; }
 .empty { color: var(--dim); font-size: 15px; }
 
 /* Dépôt de fichiers */
