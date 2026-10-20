@@ -1,86 +1,265 @@
 {
   "duration": 7000,
+  "reel": "https://kinou.slateapp.com/showreel/view/6ad78dd81ace6",
+  "overrides": {},
   "slides": [
     {
-      "dp": "Lara Perrotte Boucard",
-      "slug": "lara-perrotte-boucard-cinematographer",
-      "film": "Mylène Farmer",
-      "song": "Des Lols et des Quoi",
-      "legend": "Thierry & Didier Poiraud\nEmpreinte Digitale",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11314/68237a51-b694-11f1-a349-0215583debcb.mp4",
-      "h": 210
+      "slate": 11358,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11358/f6b90e48-c9a0-11f1-a349-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/NZFb6IczqlU0rWGB7FZIIi3PFV3SlYmNHHe-JCQaeVE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZGM2NmFmZS00NTQ4/LTRhNTctOTU0NC1j/MjM2MDU4YzYzOTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MTUtYS0xMi4yMC41/Ni5wbmc?v=1&format=webp",
+      "src": {
+        "film": "Sacrifice",
+        "song": "Trailer",
+        "legend": "Romain Gavras\nIconoclast USA",
+        "dps": [
+          {
+            "name": "Matias Boucard, AFC",
+            "slug": "matias-boucard-afc-cinematographer"
+          }
+        ]
+      },
+      "film": "Sacrifice",
+      "song": "Trailer",
+      "legend": "Romain Gavras\nIconoclast USA",
+      "dps": [
+        {
+          "name": "Matias Boucard, AFC",
+          "slug": "matias-boucard-afc-cinematographer"
+        }
+      ]
     },
     {
-      "dp": "Chris Alessi",
-      "slug": "chris-alessi",
-      "film": "Titre du film",
-      "legend": "Long métrage · 2026",
-      "video": "",
-      "h": 340
+      "slate": 11226,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11226/3012e170-ac49-11f1-a349-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/zaDKmrlsAObv5lwtJjeJl_s4p54Rg4KHSyAGgVdQ9bQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjE3MTljZC1mZDRj/LTRjNzAtYTE3NC0w/YTA0YjRkMjkxNDYv/aHZ0LXN0aWxsczAw/MDkwMDAwLnBuZw?v=1&format=webp",
+      "src": {
+        "film": "High Value Target",
+        "song": "Trailer",
+        "legend": "Leslie Greif\nBig Dreams Entertainment",
+        "dps": [
+          {
+            "name": "Xavier Dolléans, AFC",
+            "slug": "xavier-dolleans-afc"
+          }
+        ]
+      },
+      "film": "High Value Target",
+      "song": "Trailer",
+      "legend": "Leslie Greif\nBig Dreams Entertainment",
+      "dps": [
+        {
+          "name": "Xavier Dolléans, AFC",
+          "slug": "xavier-dolleans-afc"
+        }
+      ]
     },
     {
-      "dp": "Vadim Alsayed",
-      "slug": "vadim-alsayed-cinematographer",
-      "film": "Titre du film",
-      "legend": "Long métrage · 2026",
-      "video": "",
-      "h": 30
+      "slate": 11186,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11186/3ee8478f-a073-11f1-a349-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/tI8z-QVLyLp_xcqfcy6nt91whQLSflBUM9ubzCzbxnQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YzY1NTA3Ny04MjQ5/LTRlOWYtOWEzNC1l/NjMzY2VjNjQyODIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDYt/MTYtYS0xNi41Ni40/MC5wbmc?v=1&format=webp",
+      "src": {
+        "film": "Notre Salut",
+        "song": "Bande Annonce • Prix du scénario, Cannes Film Festival 2026",
+        "legend": "Emmanuel Marre\nKidam, Michigan Films",
+        "dps": [
+          {
+            "name": "Olivier Boonjing, SBC",
+            "slug": "olivier-boonjing-sbc-cinematographer"
+          }
+        ]
+      },
+      "film": "Notre Salut",
+      "song": "Bande Annonce • Prix du scénario, Cannes Film Festival 2026",
+      "legend": "Emmanuel Marre\nKidam, Michigan Films",
+      "dps": [
+        {
+          "name": "Olivier Boonjing, SBC",
+          "slug": "olivier-boonjing-sbc-cinematographer"
+        }
+      ]
     },
     {
-      "dp": "Clément Arenou",
-      "slug": "clement-arenou-cinematographer",
-      "film": "Titre du film",
-      "legend": "Long métrage · 2026",
-      "video": "",
-      "h": 160
+      "slate": 11199,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11199/56cbd98b-a77d-11f1-a349-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/YrDJLUBrPaHjUYALsIZ9VoW4M6etvQoZ9oSlBJuwIJE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZGFiM2M5MC1hNTNi/LTQ1ZWQtOTA1ZS0y/NjBjNzllNjM0NzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDkt/MDMtYS0xMS40MS4w/NC5wbmc?v=1&format=webp",
+      "src": {
+        "film": "Harry Potter and the Philosophers Stone",
+        "song": "",
+        "legend": "Jon Brown, Francesca Gardiner\nBonte Film ant TV",
+        "dps": [
+          {
+            "name": "Christophe Nuyens, SBC",
+            "slug": "christophe-nuyens-sbc-cinematographer"
+          }
+        ]
+      },
+      "film": "Harry Potter and the Philosophers Stone",
+      "song": "",
+      "legend": "Jon Brown, Francesca Gardiner\nBonte Film ant TV",
+      "dps": [
+        {
+          "name": "Christophe Nuyens, SBC",
+          "slug": "christophe-nuyens-sbc-cinematographer"
+        }
+      ]
     },
     {
-      "dp": "Jacques Ballard, AFC",
-      "slug": "jacques-ballard-afc-cinematographer",
-      "film": "Titre du film",
-      "legend": "Long métrage · 2026",
-      "video": "",
-      "h": 260
+      "slate": 10717,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10717/1b3a2be9-c707-11f1-a349-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/9UEDgR9KAzeYvSlWAREPvLRQtW18_Ivcz0pNDdZDSAY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZDcwYTJkMi05ZWJh/LTQwZGQtYmVhMC1i/MmZhZWM5NDNlMWMv/c3RpbGxzLXN0b3Jt/LWpwZWctMDAwOTAw/MDMuanBn?v=1&format=webp",
+      "src": {
+        "film": "GENER8ION",
+        "song": "STORM starring Yung Lean",
+        "legend": "Romain Gavras\nIconoclast",
+        "dps": [
+          {
+            "name": "Matias Boucard, AFC",
+            "slug": "matias-boucard-afc-cinematographer"
+          },
+          {
+            "name": "Lara Perrotte Boucard",
+            "slug": "lara-perrotte-boucard-cinematographer"
+          }
+        ]
+      },
+      "film": "GENER8ION",
+      "song": "STORM starring Yung Lean",
+      "legend": "Romain Gavras\nIconoclast",
+      "dps": [
+        {
+          "name": "Matias Boucard, AFC",
+          "slug": "matias-boucard-afc-cinematographer"
+        },
+        {
+          "name": "Lara Perrotte Boucard",
+          "slug": "lara-perrotte-boucard-cinematographer"
+        }
+      ]
     },
     {
-      "dp": "Augustin Barbaroux",
-      "slug": "augustin-barbaroux-cinematographer",
-      "film": "Titre du film",
-      "legend": "Long métrage · 2026",
-      "video": "",
-      "h": 15
+      "slate": 10664,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10664/f66c3aaa-3715-11f1-a349-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/q1SwaC0Qhov1YOVoOGhdPDAum_-JnSSi4p2ZvV4UxWE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YzE3MWVlZC1hZDVm/LTRlNjctYWZkNi02/YmQwMzVjYzU1NTMv/MTc3Njc4MzM2ODM1/Mi5qcGc?v=1&format=webp",
+      "src": {
+        "film": "Parkinson",
+        "song": "",
+        "legend": "Lucie Bourdeu\nHiersoir",
+        "dps": [
+          {
+            "name": "Nikita Popkov",
+            "slug": "nikita-popkov"
+          }
+        ]
+      },
+      "film": "Parkinson",
+      "song": "",
+      "legend": "Lucie Bourdeu\nHiersoir",
+      "dps": [
+        {
+          "name": "Nikita Popkov",
+          "slug": "nikita-popkov"
+        }
+      ]
     },
     {
-      "dp": "Pierre-Yves Bastard, AFC",
-      "slug": "pierre-yves-bastard-afc-cinematographer",
-      "film": "Titre du film",
-      "legend": "Long métrage · 2026",
-      "video": "",
-      "h": 190
+      "slate": 9459,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9459/39f3c5ed-f35e-11ef-bfce-022353abf6f5.mp4",
+      "img": "https://images.slatecdn.net/F9Szs-xKjqF50uzGClOeDKAG5p5IMXs9HAIZghicYoU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDU5LTY3YmNiMGVj/OTNhYmY4LjIyNDM2/MDI2LTFiOTgyNmU5/Y2Q4OGUxZDg0ODRl/MjgyOWQyNDc2Yzk0/LmpwZw?v=1&format=webp",
+      "src": {
+        "film": "Star Wars",
+        "song": "Andor Season 2 - Trailer (Episodes 1 to 6​)",
+        "legend": "Ariel Kleiman",
+        "dps": [
+          {
+            "name": "Christophe Nuyens, SBC",
+            "slug": "christophe-nuyens-sbc-cinematographer"
+          }
+        ]
+      },
+      "film": "Star Wars",
+      "song": "Andor Season 2 - Trailer (Episodes 1 to 6​)",
+      "legend": "Ariel Kleiman",
+      "dps": [
+        {
+          "name": "Christophe Nuyens, SBC",
+          "slug": "christophe-nuyens-sbc-cinematographer"
+        }
+      ]
     },
     {
-      "dp": "Dino Franco Berguglia",
-      "slug": "dino-franco-berguglia-cinematographer",
-      "film": "Titre du film",
-      "legend": "Long métrage · 2026",
-      "video": "",
-      "h": 300
+      "slate": 10665,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10665/5990fb90-3724-11f1-a349-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/k0NKWKHJn58pKTTnhVp_67AFRZil3gxRMIRPP1M3ysA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MWI2MzA0OC1mODgz/LTQzZjktODgwYS1l/YzVmNzUzZDRmYzkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MjEtYS0xNy4zNi4w/My5wbmc?v=1&format=webp",
+      "src": {
+        "film": "Anyma X Lisa",
+        "song": "Bad Angel",
+        "legend": "Gianluigi Carella\nIncendie Films, SixTwentySix",
+        "dps": [
+          {
+            "name": "Daniel Lindholm, FSC",
+            "slug": "daniel-lindholm-fsc-cinematographer"
+          }
+        ]
+      },
+      "film": "Anyma X Lisa",
+      "song": "Bad Angel",
+      "legend": "Gianluigi Carella\nIncendie Films, SixTwentySix",
+      "dps": [
+        {
+          "name": "Daniel Lindholm, FSC",
+          "slug": "daniel-lindholm-fsc-cinematographer"
+        }
+      ]
     },
     {
-      "dp": "Pablo Berron",
-      "slug": "pablo-berron",
-      "film": "Titre du film",
-      "legend": "Long métrage · 2026",
-      "video": "",
-      "h": 60
+      "slate": 10586,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10586/bcdbecf3-2204-11f1-9ce3-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/EOZagn8hDerfJXsHmARtgegsq2uB1OG6RAIVnBIA3Nk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU4Ni02OWI5NTU4/MGFiNjBhMi45OTQ3/ODIzMi1iNzBjOWRk/OGEyYTBkZWUyMDE5/ODg5YTgwYmEzMDdj/Zi5qcGc?v=1&format=webp",
+      "src": {
+        "film": "Juste Une Illusion",
+        "song": "bande-annonce",
+        "legend": "Eric Toledano, Olivier Nakache\nQuad",
+        "dps": [
+          {
+            "name": "Augustin Barbaroux",
+            "slug": "augustin-barbaroux-cinematographer"
+          }
+        ]
+      },
+      "film": "Juste Une Illusion",
+      "song": "bande-annonce",
+      "legend": "Eric Toledano, Olivier Nakache\nQuad",
+      "dps": [
+        {
+          "name": "Augustin Barbaroux",
+          "slug": "augustin-barbaroux-cinematographer"
+        }
+      ]
     },
     {
-      "dp": "Neel Potgieter",
-      "slug": "neel-potgieter-cinematographer",
-      "film": "Peugeot Polygon Concept",
-      "legend": "Julien Kadouri\nAtemi",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10716/f15611f8-3fbf-11f1-a349-0215583debcb.mp4",
-      "h": 200
+      "slate": 10552,
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10552/8c98b33a-12fc-11f1-9ce3-0215583debcb.mp4",
+      "img": "https://images.slatecdn.net/tzxTpezfqCZEyLyvGzdhL4TJQ7mvID43Z14XBVYpikg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZDc0NTJiZC0xYzM5/LTRiMzEtYWFmYi1l/OWIxMzE5MTAyOTEv/MTc3MjEwMTEwOTYx/OC5qcGc?v=1&format=webp",
+      "src": {
+        "film": "Outsiders Club",
+        "song": "",
+        "legend": "Jules Danod-Danesi",
+        "dps": [
+          {
+            "name": "Julien Teissier",
+            "slug": "julien-teissier-cinematographer"
+          }
+        ]
+      },
+      "film": "Outsiders Club",
+      "song": "",
+      "legend": "Jules Danod-Danesi",
+      "dps": [
+        {
+          "name": "Julien Teissier",
+          "slug": "julien-teissier-cinematographer"
+        }
+      ]
     }
   ]
 }
