@@ -1,7 +1,31 @@
 {
   "duration": 7000,
   "reel": "https://kinou.slateapp.com/showreel/view/6ad78dd81ace6",
-  "overrides": {},
+  "overrides": {
+    "9459": {
+      "song": "Season 2 (Episodes 1 to 6​)",
+      "film": "Star Wars • Andor"
+    },
+    "10586": {
+      "song": ""
+    },
+    "10665": {
+      "film": "Anyma X Lisa • Bad Angel",
+      "song": ""
+    },
+    "11186": {
+      "song": "Prix du scénario, Cannes Film Festival 2026"
+    },
+    "11199": {
+      "song": "HBO max"
+    },
+    "11226": {
+      "song": "HBO max"
+    },
+    "11358": {
+      "song": "Netflix"
+    }
+  },
   "slides": [
     {
       "slate": 11358,
@@ -19,7 +43,7 @@
         ]
       },
       "film": "Sacrifice",
-      "song": "Trailer",
+      "song": "Netflix",
       "legend": "Romain Gavras\nIconoclast USA",
       "dps": [
         {
@@ -44,7 +68,7 @@
         ]
       },
       "film": "Notre Salut",
-      "song": "Bande Annonce • Prix du scénario, Cannes Film Festival 2026",
+      "song": "Prix du scénario, Cannes Film Festival 2026",
       "legend": "Emmanuel Marre\nKidam, Michigan Films",
       "dps": [
         {
@@ -69,7 +93,7 @@
         ]
       },
       "film": "High Value Target",
-      "song": "Trailer",
+      "song": "HBO max",
       "legend": "Leslie Greif\nBig Dreams Entertainment",
       "dps": [
         {
@@ -94,7 +118,7 @@
         ]
       },
       "film": "Harry Potter and the Philosophers Stone",
-      "song": "",
+      "song": "HBO max",
       "legend": "Jon Brown, Francesca Gardiner\nBonte Film ant TV",
       "dps": [
         {
@@ -176,8 +200,8 @@
           }
         ]
       },
-      "film": "Anyma X Lisa",
-      "song": "Bad Angel",
+      "film": "Anyma X Lisa • Bad Angel",
+      "song": "",
       "legend": "Gianluigi Carella\nIncendie Films, SixTwentySix",
       "dps": [
         {
@@ -202,7 +226,7 @@
         ]
       },
       "film": "Juste Une Illusion",
-      "song": "bande-annonce",
+      "song": "",
       "legend": "Eric Toledano, Olivier Nakache\nQuad",
       "dps": [
         {
@@ -251,8 +275,8 @@
           }
         ]
       },
-      "film": "Star Wars",
-      "song": "Andor Season 2 - Trailer (Episodes 1 to 6​)",
+      "film": "Star Wars • Andor",
+      "song": "Season 2 (Episodes 1 to 6​)",
       "legend": "Ariel Kleiman",
       "dps": [
         {
