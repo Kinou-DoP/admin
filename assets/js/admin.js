@@ -11,6 +11,7 @@
   var view = document.getElementById("view"), who = document.getElementById("who");
   var bar = document.getElementById("bar"), statusEl = document.getElementById("status");
   var publishBtn = document.getElementById("publish"), seeLink = document.getElementById("see");
+  var side = document.getElementById("side");
   var token = null, user = null, index = null;
 
   // ---------- Outils ----------
@@ -154,7 +155,7 @@
   // ---------- Liste des chefs op ----------
   function loadIndex() { return readFile("data/dps/index.json").then(function (d) { index = d || { dps: [] }; return index; }); }
   function showList() {
-    bar.hidden = true;
+    bar.hidden = true; editing = false;
     view.textContent = "";
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
     Promise.all([loadIndex(), gh("/repos/" + REPO + "/contents/data/dps?ref=" + BRANCH)]).then(function (r) {
@@ -181,7 +182,9 @@
   var dirty = false;
   function touch() { dirty = true; status("Modifications non publiées : cliquez sur « Publier » pour les mettre en ligne.", "warn"); }
   // Toute saisie dans la fiche compte comme une modification (sauf le champ du lien de bundle).
-  view.addEventListener("input", function (e) { if (state && !e.target.classList.contains("nodirty")) touch(); });
+  // editing : une page modifiable est ouverte (fiche, accueil, contact).
+  var editing = false, pagePublish = null;
+  view.addEventListener("input", function (e) { if (editing && !e.target.classList.contains("nodirty")) touch(); });
 
   function showDP(slug) {
     bar.hidden = true;
@@ -199,7 +202,7 @@
   }
 
   function render() {
-    view.textContent = "";
+    view.textContent = ""; editing = true; pagePublish = publish;
     view.appendChild(el("h1", { text: state.name || "Nouveau chef op" }));
     view.appendChild(el("p", { class: "lead", text: isNew ? "Nouvelle fiche — collez le lien du bundle Slate pour commencer." : (state.bundle ? "Films synchronisés avec Slate." : "Fiche sans bundle Slate : les films sont figés.") }));
     view.appendChild(bundleSection());
@@ -327,17 +330,17 @@
     var stillsIn = el("input", { type: "url", class: "stills nodirty", placeholder: "Lien Slate des stills", value: (state.overrides[c.slate] || {}).stillsLink || "" });
     var stillsSt = el("p", { class: "hint" });
     var dropStills = el("button", { text: "Retirer les stills" });
-    function loadStills() {
+    function loadStills(force) {
       var v = stillsIn.value.trim(), o = state.overrides[c.slate] || {};
-      if (!v || (v === o.stillsLink && o.stills)) return;
+      if (!v || (!force && v === o.stillsLink && o.stills)) return; // Entrée : relit toujours Slate
       stillsSt.textContent = "Lecture des stills…";
       importStills(v).then(function (d) {
         setOverride(c, "stills", d.stills); setOverride(c, "stillsLink", d.link); stillsIn.value = d.link;
         stillsSt.textContent = d.stills.length + " images importées (" + d.title + ")."; sync(); touch();
       }, function (e) { stillsSt.textContent = e.message; });
     }
-    stillsIn.addEventListener("change", loadStills);
-    stillsIn.addEventListener("keydown", function (e) { if (e.key === "Enter") loadStills(); });
+    stillsIn.addEventListener("change", function () { loadStills(false); });
+    stillsIn.addEventListener("keydown", function (e) { if (e.key === "Enter") loadStills(true); });
     dropStills.addEventListener("click", function () { setOverride(c, "stills"); setOverride(c, "stillsLink"); stillsIn.value = ""; stillsSt.textContent = ""; sync(); touch(); });
     title.addEventListener("input", function () { setOverride(c, "title", title.value); sync(); });
     sub.addEventListener("input", function () { setOverride(c, "sub", sub.value); sync(); });
@@ -491,15 +494,213 @@
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
       .then(function () { publishBtn.disabled = false; });
   }
-  publishBtn.addEventListener("click", publish);
+  publishBtn.addEventListener("click", function () { if (pagePublish) pagePublish(); });
+
+  // ---------- Accueil (data/home.json) ----------
+  // Les 10 premiers films d'une bande Slate ; les chefs op crédités sont reliés à leur page par leur nom.
+  // overrides (par id Slate) : textes et chefs op corrigés, réappliqués quand on rafraîchit la bande.
+  var home = null;
+  function importReel(link) {
+    return fetch(SITE + "/api/reel?link=" + encodeURIComponent(link.trim()), { cache: "no-store" }).then(function (r) {
+      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture de la bande impossible"); return d; });
+    });
+  }
+  function dpOf(name) {
+    var k = slugify(name), e = index.dps.filter(function (d) { return slugify(d.name) === k; })[0];
+    return e ? { name: e.name, slug: e.slug } : { name: name, slug: "" };
+  }
+  function slideOf(f) {
+    var src = { film: f.film, song: f.song, legend: f.legend, dps: f.artists.map(dpOf) };
+    var sl = { slate: f.slate, video: f.video, img: f.img, src: src };
+    var o = home.overrides[f.slate] || {};
+    ["film", "song", "legend", "dps"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    return sl;
+  }
+  function showHome() {
+    bar.hidden = true; editing = false; view.textContent = "";
+    view.appendChild(el("p", { class: "status", text: "Chargement…" }));
+    Promise.all([index ? index : loadIndex(), readFile("data/home.json")]).then(function (r) {
+      home = r[1] || { duration: 7000, slides: [] };
+      home.overrides = home.overrides || {}; dirty = false;
+      renderHome();
+    }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
+  }
+  function renderHome() {
+    view.textContent = ""; editing = true; pagePublish = publishHome;
+    view.appendChild(el("h1", { text: "Page d'accueil" }));
+    view.appendChild(el("p", { class: "lead", text: "Les 10 premiers films d'une bande Slate défilent sur l'accueil, dans l'ordre de la bande." }));
+    var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (kinou.slateapp.com/… ou shots.re/…)", value: home.reel || "" });
+    var imp = el("button", { class: "btn primary", text: home.reel ? "Rafraîchir" : "Importer" }), st = el("p", { class: "hint" });
+    function load() {
+      if (!input.value.trim()) return;
+      imp.disabled = true; st.textContent = "Lecture de la bande…";
+      importReel(input.value).then(function (d) {
+        home.reel = d.link; home.slides = d.films.map(slideOf);
+        var lost = []; home.slides.forEach(function (sl) { sl.dps.forEach(function (x) { if (!x.slug) lost.push(x.name); }); });
+        dirty = true; renderHome();
+        status(d.films.length + " films importés." + (lost.length ? " Pas de page pour : " + lost.join(", ") + " (nom sans lien)." : "") + " Publiez pour mettre l'accueil à jour.", "warn");
+      }, function (e) { imp.disabled = false; st.textContent = e.message; });
+    }
+    imp.addEventListener("click", load);
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") load(); });
+    input.addEventListener("input", function () { imp.textContent = input.value.trim() === home.reel ? "Rafraîchir" : "Importer"; });
+    view.appendChild(el("section", {}, [el("h2", { text: "Bande Slate" }),
+      el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), imp]), st,
+      el("p", { class: "hint", text: "« Rafraîchir » relit la bande (ordre, films) en gardant vos corrections." })]));
+    var sec = el("section", {}, [el("h2", { text: "Films de l'accueil" })]), grid = el("div", { class: "films" });
+    if (!home.slides.length) sec.appendChild(el("p", { class: "empty", text: "Importez une bande Slate." }));
+    else if (!home.reel) sec.appendChild(el("p", { class: "hint", text: "Accueil actuel (saisi à la main) : importez une bande Slate pour le remplacer." }));
+    home.slides.forEach(function (sl) { grid.appendChild(slideCard(sl)); });
+    sec.appendChild(grid); view.appendChild(sec);
+    bar.hidden = false; seeLink.href = SITE + "/"; seeLink.hidden = false;
+    if (dirty) touch(); else status(flash || "", flash ? "ok" : ""); flash = "";
+  }
+  function slideCard(sl) {
+    var card = el("div", { class: "film" }), thumb = el("div", { class: "thumb" });
+    if (sl.img) thumb.style.backgroundImage = 'url("' + sl.img + '")';
+    var editable = !!sl.src; // anciennes slides (saisies à la main) : lecture seule
+    function setO(k, v) {
+      var o = home.overrides[sl.slate] || {};
+      sl[k] = v;
+      if (JSON.stringify(v) === JSON.stringify(sl.src[k])) delete o[k]; else o[k] = v;
+      if (Object.keys(o).length) home.overrides[sl.slate] = o; else delete home.overrides[sl.slate];
+      reset.hidden = !home.overrides[sl.slate];
+    }
+    var film = el("input", { type: "text", value: sl.film || "", placeholder: "Titre" });
+    var song = el("input", { type: "text", class: "song", value: sl.song || "", placeholder: "Sous-titre (morceau, campagne…)" });
+    var legend = el("textarea", { rows: 2, placeholder: "Réalisateur\nProduction" }); legend.value = sl.legend || "";
+    var dps = el("div", { class: "dpsel" });
+    var reset = el("button", { text: "Rétablir" });
+    function drawDps() {
+      dps.textContent = "";
+      (sl.dps || [{ name: sl.dp, slug: sl.slug }]).forEach(function (d, k) {
+        var sel = el("select", { disabled: !editable });
+        sel.appendChild(el("option", { value: "", text: d.slug ? "— sans lien —" : d.name + " (pas de page)" }));
+        index.dps.forEach(function (e) { var o = el("option", { value: e.slug, text: e.name }); if (e.slug === d.slug) o.selected = true; sel.appendChild(o); });
+        if (!d.slug) sel.value = "";
+        sel.addEventListener("change", function () {
+          var list = sl.dps.slice(), e = index.dps.filter(function (x) { return x.slug === sel.value; })[0];
+          list[k] = e ? { name: e.name, slug: e.slug } : { name: (sl.src.dps[k] || d).name, slug: "" };
+          setO("dps", list); drawDps();
+        });
+        dps.appendChild(sel);
+      });
+    }
+    drawDps();
+    [film, song, legend].forEach(function (f) { f.disabled = !editable; });
+    film.addEventListener("input", function () { setO("film", film.value); });
+    song.addEventListener("input", function () { setO("song", song.value); });
+    legend.addEventListener("input", function () { setO("legend", legend.value); });
+    reset.hidden = !home.overrides[sl.slate];
+    reset.addEventListener("click", function () {
+      delete home.overrides[sl.slate];
+      ["film", "song", "legend", "dps"].forEach(function (k) { sl[k] = sl.src[k]; });
+      card.replaceWith(slideCard(sl)); touch();
+    });
+    card.appendChild(thumb); card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
+    if (editable) card.appendChild(el("div", { class: "acts" }, [reset]));
+    return card;
+  }
+  function publishHome() {
+    publishBtn.disabled = true; status("Publication…");
+    var out = { duration: home.duration || 7000 };
+    if (home.reel) out.reel = home.reel;
+    out.overrides = home.overrides;
+    out.slides = home.slides;
+    commit([{ path: "data/home.json", text: json(out) }], "Mise à jour de l'accueil (admin, " + user.login + ")").then(function () {
+      home = out; dirty = false; flash = "Publié. L'accueil est à jour sur le site.";
+      renderHome();
+      refreshSite("home").catch(function () {}); // vide le cache des données du site
+    }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
+      .then(function () { publishBtn.disabled = false; });
+  }
+
+  // ---------- Contact (data/site.json) : pour l'instant, le logo du site ----------
+  var conf = null;
+  function showContact() {
+    bar.hidden = true; editing = false; view.textContent = "";
+    view.appendChild(el("p", { class: "status", text: "Chargement…" }));
+    readFile("data/site.json").then(function (c) { conf = c || {}; pending = {}; dirty = false; renderContact(); })
+      .catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
+  }
+  function renderContact() {
+    view.textContent = ""; editing = true; pagePublish = publishContact;
+    view.appendChild(el("h1", { text: "Contact" }));
+    view.appendChild(el("p", { class: "lead", text: "Le contenu de la page contact viendra ici. Pour l'instant : le logo du site." }));
+    var size = el("input", { type: "text", inputmode: "numeric", value: String(conf.logoHeight || 36) });
+    size.addEventListener("input", function () { var v = parseInt(size.value, 10); if (v > 0) conf.logoHeight = v; drawPreview(); });
+    var preview = el("div", { class: "logoprev" });
+    function drawPreview() {
+      preview.textContent = "";
+      var p = pending.logo;
+      if (p) preview.appendChild(el("img", { src: p.preview, alt: "logo", style: "height:" + (conf.logoHeight || 36) + "px" }));
+      else if (conf.logo) loadImg("data/" + conf.logo, preview);
+      else preview.appendChild(el("span", { class: "logotxt", text: "kinou" }));
+    }
+    function loadImg(path, box) {
+      fetch("https://api.github.com/repos/" + REPO + "/contents/" + path + "?ref=" + BRANCH, { headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github.raw+json" } })
+        .then(function (r) { return r.ok ? r.blob() : null; })
+        .then(function (b) { if (b) box.appendChild(el("img", { src: URL.createObjectURL(b), alt: "logo", style: "height:" + (conf.logoHeight || 36) + "px" })); });
+    }
+    function drop() {
+      var p = pending.logo, name = p ? "Nouveau logo : " + p.name : (conf.logo ? "Logo actuel : " + conf.logo.split("/").pop() : "");
+      var z = dropZone("image/png,image/webp", "Glissez le logo ici : PNG blanc sur fond transparent (ou cliquez)", function (f) {
+        if (!/^image\/(png|webp)$/.test(f.type)) { status("Le logo doit être un PNG (ou WebP).", "err"); return; }
+        var fr = new FileReader();
+        fr.onload = function () { pending.logo = { name: f.name, ext: f.type === "image/webp" ? "webp" : "png", base64: fr.result.split(",")[1], preview: fr.result }; z.replaceWith(drop()); drawPreview(); touch(); };
+        fr.readAsDataURL(f);
+      }, function () { delete pending.logo; delete conf.logo; z.replaceWith(drop()); drawPreview(); touch(); }, name);
+      return z;
+    }
+    drawPreview();
+    view.appendChild(el("section", {}, [el("h2", { text: "Logo (en haut au milieu du site)" }),
+      el("div", { class: "cols" }, [
+        el("div", { class: "field" }, [el("label", { class: "label", text: "Fichier" }), drop(),
+          el("p", { class: "hint", text: "Sans logo, le site affiche « kinou » en texte. Même effet que le texte : il s'inverse sur les fonds clairs." })]),
+        el("div", { class: "field" }, [el("label", { class: "label", text: "Aperçu" }), preview,
+          el("label", { class: "label", text: "Hauteur (px, ordinateur ; 83 % sur téléphone)" }), size])
+      ])]));
+    bar.hidden = false; seeLink.href = SITE + "/"; seeLink.hidden = false;
+    if (dirty) touch(); else status(flash || "", flash ? "ok" : ""); flash = "";
+  }
+  function publishContact() {
+    publishBtn.disabled = true; status("Publication…");
+    var files = [], out = Object.assign({}, conf);
+    if (pending.logo) {
+      // Nom unique à chaque envoi : aucun ancien logo gardé en cache par les navigateurs.
+      out.logo = "brand/logo-" + Date.now().toString(36) + "." + pending.logo.ext;
+      files.push({ path: "data/" + out.logo, base64: pending.logo.base64 });
+    }
+    if (!out.logo) delete out.logoHeight;
+    files.push({ path: "data/site.json", text: json(out) });
+    commit(files, "Mise à jour du logo (admin, " + user.login + ")").then(function () {
+      conf = out; pending = {}; dirty = false; flash = "Publié. Rechargez le site pour voir le logo.";
+      renderContact();
+      refreshSite("home").catch(function () {});
+    }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
+      .then(function () { publishBtn.disabled = false; });
+  }
+
+  function showSoon(title) {
+    bar.hidden = true; editing = false; view.textContent = "";
+    view.appendChild(el("h1", { text: title }));
+    view.appendChild(el("p", { class: "lead", text: "À venir." }));
+  }
 
   // ---------- Navigation ----------
   function route() {
     var h = location.hash;
     document.getElementById("back").hidden = !token || !/^#\/(dp\/|new)/.test(h);
+    var page = /^#\/(home|spotlight|fiction|contact)$/.test(h) ? h.slice(2) : "cinematographers";
+    side.hidden = !token;
+    side.querySelectorAll("a").forEach(function (a) { a.classList.toggle("on", a.dataset.page === page); });
     if (!token) return showLogin();
     if (/^#\/dp\//.test(h)) return showDP(decodeURIComponent(h.slice(5)));
     if (h === "#/new") return showDP(null);
+    if (page === "home") return showHome();
+    if (page === "contact") return showContact();
+    if (page === "spotlight") return showSoon("Spotlight");
+    if (page === "fiction") return showSoon("Fiction");
     showList();
   }
   // Quitter la fiche (retour, autre page, rechargement) avec des modifications non publiées : on demande confirmation.

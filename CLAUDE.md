@@ -18,6 +18,12 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - Corrections par film : `overrides` indexés par id Slate (suivent le film si l'ordre change sur Slate).
 - Stills d'un film : lien d'une page Slate `kinou.slateapp.com/work/<adresse>` sous le film → `GET <SITE>/api/stills?link=…`
   → `overrides[<id>].stills` (URLs signées telles quelles) + `stillsLink`.
+- Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight et fiction (à venir), contact.
+- Home page : lien d'une bande Slate → `GET <SITE>/api/reel?link=…` (10 premiers films) → `data/home.json`
+  (`reel`, `slides` avec `dps: [{ name, slug }]` reliés par le nom, `src` = valeurs Slate, `overrides` par id Slate).
+  « Rafraîchir » relit la bande en gardant les corrections.
+- Contact : logo du site (PNG/WebP blanc sur transparent) → `data/brand/logo-<horodatage>.png` + `data/site.json`
+  (`logo`, `logoHeight`). Sans logo : texte « kinou ».
 - Portrait : compressé dans le navigateur (1600 px max, WebP) → `data/dps/img/<slug>.webp`.
 - CV : PDF → `data/dps/cv/CV-Prenom-Nom.pdf`, servi en téléchargement (`_headers`).
 - Adresse (slug) : proposée depuis le nom (minuscules, sans accents), définitive après publication ;

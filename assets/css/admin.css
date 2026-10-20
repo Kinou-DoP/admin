@@ -110,6 +110,27 @@ input[readonly] { color: var(--dim); }
 .bar { padding-right: 240px; } /* coin bas droit laissé libre pour le badge Netlify */
 .bar .status { flex: 1; }
 
+/* Navigation entre les parties du site (comme l'en-tête du site) */
+.side { position: fixed; z-index: 4; left: 32px; top: 132px; display: flex; flex-direction: column; gap: 14px; }
+.side a { font-size: 16px; text-decoration: none; opacity: .45; transition: opacity .2s; }
+.side a:hover { opacity: .8; }
+.side a.on { opacity: 1; }
+@media (min-width: 901px) { .side:not([hidden]) ~ main { padding-left: 240px; max-width: 1440px; } }
+@media (max-width: 900px) { .side { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px 20px; padding: 0 32px 8px; } }
+@media (max-width: 560px) { .side { padding: 0 24px 8px; } }
+
+/* Accueil : sous-titre et chefs op de chaque film */
+.film input.song { padding-top: 2px; font-family: var(--kinou-body); font-weight: 300; font-size: 14px; }
+.dpsel { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.dpsel select { width: 100%; padding: 6px 0; border: 0; border-bottom: 1px solid var(--faint); border-radius: 0; background: none; color: var(--kinou-fg); font: 600 12px var(--kinou-sans); letter-spacing: .06em; outline: none; }
+.dpsel select option { background: #111; }
+.film input:disabled, .film textarea:disabled, .dpsel select:disabled { opacity: .6; }
+
+/* Contact : aperçu du logo (même effet que sur le site : différence sur un fond clair/foncé) */
+.logoprev { display: flex; align-items: center; justify-content: center; min-height: 180px; margin-bottom: 26px; background: linear-gradient(90deg, #000 50%, #d9d4c3 50%); }
+.logoprev img, .logoprev .logotxt { mix-blend-mode: difference; }
+.logoprev .logotxt { color: #fff; font-family: var(--kinou-sans); font-weight: 600; font-size: 36px; letter-spacing: -0.03em; }
+
 @media (max-width: 900px) { .dps { column-count: 2; } .films { grid-template-columns: repeat(2, 1fr); } .cols { grid-template-columns: 1fr; } }
 @media (max-width: 560px) {
   .top, main { padding-left: 24px; padding-right: 24px; } .bar { padding-left: 24px; padding-right: 24px; padding-bottom: 72px; flex-wrap: wrap; }
