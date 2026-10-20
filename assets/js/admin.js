@@ -461,7 +461,7 @@
       index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false;
       flash = "Publié. Le site sera à jour dans une minute environ.";
       if (wasNew) location.hash = "#/dp/" + out.slug; else render();
-      if (out.bundle) refreshSite(out.slug).catch(function () {});
+      refreshSite(out.slug).catch(function () {}); // vide le cache du site (fiche et clips) : visible tout de suite
       warmThumbs(out.clips);
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
       .then(function () { publishBtn.disabled = false; });
