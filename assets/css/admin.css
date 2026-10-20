@@ -137,3 +137,11 @@ input[readonly] { color: var(--dim); }
   .dps { column-count: 1; } .films { grid-template-columns: 1fr; } .row { flex-direction: column; align-items: stretch; }
   .list-head { flex-direction: column; align-items: flex-start; }
 }
+
+/* Recadrage des extraits (zoom au centre) avec aperçu dans la vignette */
+.film .thumb { overflow: hidden; }
+.film .thumb video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.film .thumb .chips { z-index: 1; }
+.zoom { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.zoom .zval { flex: none; width: 118px; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.zoom input[type=range] { flex: 1; min-width: 0; accent-color: var(--kinou-fg); }

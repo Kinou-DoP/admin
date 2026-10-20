@@ -304,6 +304,32 @@
     return sec;
   }
 
+  // Recadrage d'un extrait (zoom au centre, 100 à 160 %) pour enlever les bandes noires, avec aperçu :
+  // l'extrait joue dans la vignette au survol et pendant le réglage. get() : zoom actuel ; set(z) : enregistre (1 = aucun).
+  function zoomCtl(thumb, video, get, set) {
+    var range = el("input", { type: "range", min: "100", max: "160", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
+    var lab = el("span", { class: "zval" }), v = null;
+    function apply() {
+      var z = get() || 1;
+      lab.textContent = z > 1 ? "Recadrage " + Math.round(z * 100) + " %" : "Recadrage : aucun";
+      thumb.style.backgroundSize = z > 1 ? z * 100 + "% auto" : "";
+      if (v) v.style.transform = "scale(" + z + ")";
+    }
+    function play() {
+      if (v || !video) return;
+      v = el("video", { muted: true, loop: true, playsinline: true, src: video }); v.muted = true;
+      thumb.appendChild(v); apply();
+      var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+    }
+    function stop() { if (v && document.activeElement !== range) { v.remove(); v = null; } }
+    range.addEventListener("input", function () { var z = parseInt(range.value, 10) / 100; set(z > 1 ? z : undefined); play(); apply(); touch(); });
+    range.addEventListener("blur", stop);
+    thumb.addEventListener("mouseenter", play);
+    thumb.addEventListener("mouseleave", stop);
+    apply();
+    return el("div", { class: "zoom" }, [lab, range]);
+  }
+
   function filmCard(c) {
     var card = el("div", { class: "film" });
     var thumb = el("div", { class: "thumb" });
@@ -348,7 +374,8 @@
     home.addEventListener("click", function () { state.open = state.open === c.slate ? undefined : c.slate; dirty = true; render(); });
     reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); touch(); });
     sync();
-    card.appendChild(thumb); card.appendChild(title); card.appendChild(sub);
+    var zoom = zoomCtl(thumb, c.video, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); });
+    card.appendChild(thumb); card.appendChild(zoom); card.appendChild(title); card.appendChild(sub);
     card.appendChild(el("div", { class: "acts" }, [hide, home, reset, dropStills]));
     card.appendChild(stillsIn); card.appendChild(stillsSt);
     return card;
@@ -513,7 +540,7 @@
     var src = { film: f.film, song: f.song, legend: f.legend, dps: f.artists.map(dpOf) };
     var sl = { slate: f.slate, video: f.video, img: f.img, src: src };
     var o = home.overrides[f.slate] || {};
-    ["film", "song", "legend", "dps"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    ["film", "song", "legend", "dps", "zoom"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
   }
   function showHome() {
@@ -594,10 +621,12 @@
     reset.hidden = !home.overrides[sl.slate];
     reset.addEventListener("click", function () {
       delete home.overrides[sl.slate];
-      ["film", "song", "legend", "dps"].forEach(function (k) { sl[k] = sl.src[k]; });
+      ["film", "song", "legend", "dps", "zoom"].forEach(function (k) { sl[k] = sl.src[k]; });
       card.replaceWith(slideCard(sl)); touch();
     });
-    card.appendChild(thumb); card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
+    card.appendChild(thumb);
+    if (editable) card.appendChild(zoomCtl(thumb, sl.video, function () { return sl.zoom; }, function (z) { setO("zoom", z); }));
+    card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
     if (editable) card.appendChild(el("div", { class: "acts" }, [reset]));
     return card;
   }
