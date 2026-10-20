@@ -4,8 +4,8 @@ Interface d'administration des fiches des chefs op de kinou.fr, et **source des 
 Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (déploiement auto sur push de `main`).
 
 ## Rôle
-- `data/` : données publiques lues par le site (kinou.fr **et** sa beta) à l'adresse de ce site Netlify
-  (constante `DATA_BASE` de `site/assets/js/app.js` et de `site/netlify/functions/config.mjs`).
+- `data/` : données du site (kinou.fr **et** sa beta), lues par le site directement dans ce repo GitHub
+  (fonction `/api/data` du repo `site`).
   Format des fiches : voir le CLAUDE.md du repo `site` (section « Architecture des données »).
 - `index.html` + `assets/` : l'interface d'admin. Elle lit et écrit `data/` **via l'API GitHub**
   (un commit par publication sur `main`), avec le token personnel de l'utilisateur.
@@ -20,6 +20,12 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - CV : PDF → `data/dps/cv/CV-Prenom-Nom.pdf`, servi en téléchargement (`_headers`).
 - Adresse (slug) : proposée depuis le nom (minuscules, sans accents), définitive après publication ;
   les chefs op déjà listés sur le site gardent leur adresse actuelle.
+
+## Crédits Netlify
+- Une publication (commit qui ne touche que `data/`) **ne remet pas kinou-admin en ligne** : règle `ignore`
+  du `netlify.toml`. Le site lit les données dans GitHub (`/api/data` du repo `site`, clé `GITHUB_DATA_TOKEN`).
+  La copie `kinou-admin.netlify.app/data/` n'est donc plus à jour : elle ne sert que de secours sans clé.
+- Chaque modification du code de l'admin = une mise en ligne (≈ 15 crédits) : regrouper les changements.
 
 ## Règles
 - Ne jamais commiter de token ni de secret.
