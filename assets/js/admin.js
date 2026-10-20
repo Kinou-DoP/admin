@@ -306,13 +306,14 @@
 
   // Recadrage d'un extrait (zoom au centre, 100 à 160 %) pour enlever les bandes noires, avec aperçu :
   // l'extrait joue dans la vignette au survol et pendant le réglage. get() : zoom actuel ; set(z) : enregistre (1 = aucun).
-  function zoomCtl(thumb, video, get, set) {
+  // getT / setT (optionnels) : case « aussi sur la vignette » (sinon seul l'extrait est recadré).
+  function zoomCtl(thumb, video, get, set, getT, setT) {
     var range = el("input", { type: "range", min: "100", max: "160", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
     var lab = el("span", { class: "zval" }), v = null;
     function apply() {
       var z = get() || 1;
       lab.textContent = z > 1 ? "Recadrage " + Math.round(z * 100) + " %" : "Recadrage : aucun";
-      thumb.style.backgroundSize = z > 1 ? z * 100 + "% auto" : "";
+      thumb.style.backgroundSize = z > 1 && getT && getT() ? z * 100 + "% auto" : "";
       if (v) v.style.transform = "scale(" + z + ")";
     }
     function play() {
@@ -327,7 +328,11 @@
     thumb.addEventListener("mouseenter", play);
     thumb.addEventListener("mouseleave", stop);
     apply();
-    return el("div", { class: "zoom" }, [lab, range]);
+    var box = el("div", { class: "zoom" }, [lab, range]);
+    if (!setT) return box;
+    var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = !!getT();
+    cb.addEventListener("change", function () { setT(cb.checked || undefined); apply(); touch(); });
+    return el("div", {}, [box, el("label", { class: "zthumb" }, [cb, "Aussi sur la vignette"])]);
   }
 
   function filmCard(c) {
@@ -374,7 +379,8 @@
     home.addEventListener("click", function () { state.open = state.open === c.slate ? undefined : c.slate; dirty = true; render(); });
     reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); touch(); });
     sync();
-    var zoom = zoomCtl(thumb, c.video, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); });
+    var zoom = zoomCtl(thumb, c.video, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); },
+      function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
     card.appendChild(thumb); card.appendChild(zoom); card.appendChild(title); card.appendChild(sub);
     card.appendChild(el("div", { class: "acts" }, [hide, home, reset, dropStills]));
     card.appendChild(stillsIn); card.appendChild(stillsSt);

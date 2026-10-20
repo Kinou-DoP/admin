@@ -145,3 +145,5 @@ input[readonly] { color: var(--dim); }
 .zoom { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
 .zoom .zval { flex: none; width: 118px; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 .zoom input[type=range] { flex: 1; min-width: 0; accent-color: var(--kinou-fg); }
+.zthumb { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+.zthumb input { margin: 0; accent-color: var(--kinou-fg); }
