@@ -5,14 +5,44 @@
   "bundle": "https://kinou.slateapp.com/bundles/39910847-c6ea-11f1-a349-0215583debcb",
   "open": 11314,
   "overrides": {
+    "6457": {
+      "zoom": 1.01
+    },
+    "8820": {
+      "zoom": 1.24
+    },
     "9531": {
       "title": "Louis Vuitton - FLIGHT MODE SEPT24 MASHUP"
+    },
+    "9842": {
+      "zoom": 1.2
     },
     "10065": {
       "title": "Stings - Energy Drink"
     },
+    "10141": {
+      "zoom": 1.43
+    },
+    "10142": {
+      "zoom": 1.39
+    },
+    "10143": {
+      "zoom": 1.41
+    },
+    "10179": {
+      "zoom": 1.25
+    },
     "10183": {
       "sub": "Sonia Sieff"
+    },
+    "10203": {
+      "zoom": 1.18
+    },
+    "10361": {
+      "zoom": 1.23
+    },
+    "10838": {
+      "zoom": 1.22
     },
     "11314": {
       "title": "Mylène Farmer · Des Lols et des Quoi",
