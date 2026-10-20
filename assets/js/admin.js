@@ -5,6 +5,8 @@
   // Site qui héberge les fonctions Slate (/api/bundle, /api/refresh) et où l'on vérifie le résultat.
   var SITE = "https://beta--kinou-test.netlify.app";
   var TOKEN_KEY = "kinou-admin-token";
+  // Sites dont on prépare les vignettes (service d'images Netlify) après une publication.
+  var WARM_SITES = [SITE, "https://kinou-test.netlify.app"];
 
   var view = document.getElementById("view"), who = document.getElementById("who");
   var bar = document.getElementById("bar"), statusEl = document.getElementById("status");
@@ -87,6 +89,16 @@
     if (!id) return Promise.reject(new Error("Lien non reconnu : collez un lien shots.re/… ou kinou.slateapp.com/bundles/…"));
     return fetch(SITE + "/api/bundle/" + id, { cache: "no-store" }).then(function (r) {
       return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture du bundle impossible"); return d; });
+    });
+  }
+  // Demande une fois chaque vignette allégée au site : Netlify la prépare et la garde en cache,
+  // le premier visiteur n'attend donc pas sa fabrication.
+  function warmThumbs(clips) {
+    var seen = {};
+    (clips || []).forEach(function (c) {
+      if (!c.img || seen[c.img] || !/^https:\/\/images\.slatecdn\.net\//.test(c.img)) return;
+      seen[c.img] = true;
+      WARM_SITES.forEach(function (site) { new Image().src = site + "/.netlify/images?url=" + encodeURIComponent(c.img) + "&w=800&q=75&fm=webp"; });
     });
   }
   function refreshSite(slug) {
@@ -224,6 +236,7 @@
       var ref = el("button", { class: "btn", text: "Mettre à jour le site depuis Slate" });
       ref.addEventListener("click", function () {
         ref.disabled = true; st.textContent = "Mise à jour…";
+        if (slate) warmThumbs(slate.clips);
         refreshSite(state.slug).then(function () { st.textContent = "C'est fait : le site relit Slate pour " + state.name + " dès la prochaine visite."; ref.disabled = false; },
           function (e) { st.textContent = "Mise à jour impossible : " + e.message; ref.disabled = false; });
       });
@@ -449,6 +462,7 @@
       flash = "Publié. Le site sera à jour dans une minute environ.";
       if (wasNew) location.hash = "#/dp/" + out.slug; else render();
       if (out.bundle) refreshSite(out.slug).catch(function () {});
+      warmThumbs(out.clips);
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
       .then(function () { publishBtn.disabled = false; });
   }
