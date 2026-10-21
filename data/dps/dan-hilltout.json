@@ -45,7 +45,12 @@
       "zoom": 1.34
     }
   },
-  "about": {},
+  "about": {
+    "pos": "57% 19%",
+    "website": "https://www.danhilltout.com/",
+    "instagram": "https://www.instagram.com/kinou.cinematographer.agency/",
+    "img": "img/dan-hilltout.webp"
+  },
   "categories": [
     "FEATURED",
     "COMMERCIAL",
