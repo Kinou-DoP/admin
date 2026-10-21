@@ -147,3 +147,15 @@ input[readonly] { color: var(--dim); }
 .zoom input[type=range] { flex: 1; min-width: 0; accent-color: var(--kinou-fg); }
 .zthumb { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
 .zthumb input { margin: 0; accent-color: var(--kinou-fg); }
+
+/* Point de cadrage du portrait + aperçus ordinateur / téléphone */
+.focal { margin-top: 16px; }
+.focal .frow { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+.focal .fstage { position: relative; display: inline-block; max-width: 100%; cursor: crosshair; touch-action: none; line-height: 0; }
+.focal .fstage img { display: block; max-width: 100%; max-height: 300px; user-select: none; -webkit-user-drag: none; }
+.focal .fdot { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 0 10px rgba(0,0,0,.6); pointer-events: none; }
+.focal .fprevs { display: flex; gap: 14px; align-items: flex-end; }
+.focal .fprev { background: #111 center / cover no-repeat; margin-bottom: 6px; }
+.focal .fprev.desk { width: 180px; aspect-ratio: 16 / 10; }
+.focal .fprev.phone { width: 64px; aspect-ratio: 9 / 19.5; }
+.focal .btn { margin-top: 10px; height: 32px; padding: 0 12px; }

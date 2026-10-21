@@ -413,7 +413,7 @@
         el("div", { class: "field" }, [el("label", { class: "label", text: "Site web" }), line("website", "https://…")])
       ]),
       el("div", { class: "cols" }, [
-        el("div", { class: "field" }, [el("label", { class: "label", text: "Portrait (fond de l'onglet About)" }), portraitDrop()]),
+        el("div", { class: "field" }, [el("label", { class: "label", text: "Portrait (fond de l'onglet About)" }), portraitDrop(), focalPicker()]),
         el("div", { class: "field" }, [el("label", { class: "label", text: "CV (PDF, téléchargé depuis le site)" }), cvDrop()])
       ])
     ]);
@@ -439,10 +439,56 @@
     var name = p ? "Nouveau portrait (" + Math.round(p.size / 1024) + " Ko)" : (a.img ? "Portrait actuel : " + a.img.split("/").pop() : "");
     var z = dropZone("image/*", "Glissez une photo ici (ou cliquez)", function (f) {
       status("Compression du portrait…");
-      compress(f).then(function (r) { pending.portrait = r; z.replaceWith(portraitDrop()); touch(); }, function (e) { status(e.message, "err"); });
-    }, function () { delete pending.portrait; delete a.img; z.replaceWith(portraitDrop()); touch(); }, name, bg);
+      compress(f).then(function (r) { pending.portrait = r; z.replaceWith(portraitDrop()); refreshFocal(); touch(); }, function (e) { status(e.message, "err"); });
+    }, function () { delete pending.portrait; delete a.img; z.replaceWith(portraitDrop()); refreshFocal(); touch(); }, name, bg);
     if (!p && a.img && !bg) loadPreview(a.img, z);
     return z;
+  }
+  // Point de cadrage du portrait (comme sur Squarespace) : un clic (ou un glisser) sur la photo place le point qui doit
+  // rester visible ; le site cadre la photo autour (about.pos = "X% Y%", background-position). Aperçus ordinateur et téléphone.
+  var focalEl = null, portraitURL = {};
+  function refreshFocal() { if (focalEl) focalEl.replaceWith(focalPicker()); }
+  function parsePos(pos) {
+    var m = String(pos || "center 30%").replace("center", "50%").match(/(-?[\d.]+)%\s+(-?[\d.]+)%/);
+    return m ? [parseFloat(m[1]), parseFloat(m[2])] : [50, 30];
+  }
+  function focalPicker() {
+    var a = state.about, p = pending.portrait, box = el("div", { class: "focal" });
+    focalEl = box;
+    if (!p && !a.img) return box;
+    var xy = parsePos(a.pos);
+    var stage = el("div", { class: "fstage" }), img = el("img", { alt: "" }), dot = el("i", { class: "fdot" });
+    var desk = el("div", { class: "fprev desk" }), phone = el("div", { class: "fprev phone" });
+    stage.appendChild(img); stage.appendChild(dot);
+    function show() {
+      dot.style.left = xy[0] + "%"; dot.style.top = xy[1] + "%";
+      [desk, phone].forEach(function (b) { b.style.backgroundPosition = xy[0] + "% " + xy[1] + "%"; });
+    }
+    function set(url) { img.src = url; [desk, phone].forEach(function (b) { b.style.backgroundImage = 'url("' + url + '")'; }); }
+    function place(e) {
+      var r = img.getBoundingClientRect(), pt = e.touches ? e.touches[0] : e;
+      xy = [Math.round(Math.max(0, Math.min(100, (pt.clientX - r.left) / r.width * 100))), Math.round(Math.max(0, Math.min(100, (pt.clientY - r.top) / r.height * 100)))];
+      a.pos = xy[0] + "% " + xy[1] + "%"; show(); touch();
+    }
+    var drag = false;
+    stage.addEventListener("pointerdown", function (e) { drag = true; stage.setPointerCapture(e.pointerId); place(e); });
+    stage.addEventListener("pointermove", function (e) { if (drag) place(e); });
+    stage.addEventListener("pointerup", function () { drag = false; });
+    if (p) set(p.preview);
+    else if (portraitURL[a.img]) set(portraitURL[a.img]);
+    else fetch("https://api.github.com/repos/" + REPO + "/contents/data/dps/" + a.img + "?ref=" + BRANCH, { headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github.raw+json" } })
+      .then(function (r) { return r.ok ? r.blob() : null; })
+      .then(function (b) { if (b) set(portraitURL[a.img] = URL.createObjectURL(b)); });
+    var reset = el("button", { type: "button", class: "btn ghost", text: "Recentrer" });
+    reset.addEventListener("click", function () { delete a.pos; xy = parsePos(); show(); touch(); });
+    show();
+    box.appendChild(el("p", { class: "hint", text: "Cliquez (ou glissez) sur la photo pour placer le point qui doit toujours rester visible, par exemple le visage." }));
+    box.appendChild(el("div", { class: "frow" }, [stage, el("div", { class: "fprevs" }, [
+      el("div", {}, [desk, el("span", { class: "label", text: "Ordinateur" })]),
+      el("div", {}, [phone, el("span", { class: "label", text: "Téléphone" })])
+    ])]));
+    box.appendChild(reset);
+    return box;
   }
   // Aperçu d'un portrait déjà enregistré (repo privé : lecture via l'API GitHub).
   function loadPreview(rel, z) {
