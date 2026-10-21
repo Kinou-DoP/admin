@@ -1,7 +1,7 @@
-// Admin kinou — édition des fiches des chefs op (data/dps/*.json) dans le repo GitHub kinou-agency/admin.
+// Admin kinou — édition des fiches des chefs op (data/dps/*.json) dans le repo GitHub Kinou-DoP/admin.
 // Lecture et écriture via l'API GitHub (token personnel) ; import des bundles Slate via l'API du site.
 (function () {
-  var REPO = "kinou-agency/admin", BRANCH = "main";
+  var REPO = "Kinou-DoP/admin", BRANCH = "main";
   // Site qui héberge les fonctions Slate (/api/bundle, /api/refresh) et où l'on vérifie le résultat.
   var SITE = "https://beta--kinou-test.netlify.app";
   var TOKEN_KEY = "kinou-admin-token";
@@ -144,7 +144,7 @@
       el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), go]), st,
       el("ol", {}, [
         el("li", {}, ["Sur GitHub : Settings → Developer settings → Personal access tokens → ", el("b", { text: "Fine-grained tokens" }), " → Generate new token."]),
-        el("li", { text: "Resource owner : kinou-agency. Repository access : Only select repositories → admin." }),
+        el("li", { text: "Resource owner : Kinou-DoP. Repository access : Only select repositories → admin." }),
         el("li", { text: "Permissions → Repository permissions → Contents : Read and write." }),
         el("li", { text: "Generate token, puis copiez-le ici." })
       ])

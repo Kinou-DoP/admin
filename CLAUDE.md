@@ -11,7 +11,7 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
   (un commit par publication sur `main`), avec le token personnel de l'utilisateur.
 
 ## Fonctionnement
-- Connexion : token GitHub « fine-grained » personnel (un par personne), limité au repo `kinou-agency/admin`,
+- Connexion : token GitHub « fine-grained » personnel (un par personne), limité au repo `Kinou-DoP/admin`,
   permission Contents : Read and write. Stocké dans le `localStorage` du navigateur, jamais dans le repo.
 - Import d'un bundle Slate : `GET <SITE>/api/bundle/<uuid | code shots.re>` (fonction du repo `site`).
 - Forcer la mise à jour du site : `POST <SITE>/api/refresh/<slug>` avec le token (vide le cache CDN du DP).
