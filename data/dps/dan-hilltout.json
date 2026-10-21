@@ -11,7 +11,19 @@
     },
     "9715": {
       "zoom": 1.19,
-      "title": "Glasgow University | The Future in Focus"
+      "title": "Glasgow University | The Future in Focus",
+      "stills": [
+        "https://images.slatecdn.net/j6M5AD9I8vhHrs1yCBQcQXHMbRDLwCUktZTDo29FNHc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjkxODU1/MjEtOWVjMC00ZTU5/LThiMjAtODI1MTg5/ZDU2ZGQyL2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjQuMS5q/cGc.webp",
+        "https://images.slatecdn.net/YixJoC9FMc_UHNFzzf1VNl9MTd0o3FpSnsPtPyA-6yo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2U3ZGNj/ZWMtMjM0ZC00NTli/LWE3ZjctMDNiOWFi/ZmFiODg1L2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjI4LjEu/anBn.webp",
+        "https://images.slatecdn.net/36tKTJJ2Yxj1qUQayDjlJ8GYQOKlT-gmNobkuSywZu0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDcyZTEx/ZjgtNjA2OC00NDQ4/LTkxYzYtM2I0MTcz/ZmQ0ODJmL2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjMyLjEu/anBn.webp",
+        "https://images.slatecdn.net/UbsbmNvyJHeapNJN4kVAOpdigq4g_10i_L4le_aCwRw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZmFjOTA1/NjEtMmYyOC00NGNm/LTlmN2YtODQxMDkz/ODliNTE0L2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjY1LjEu/anBn.webp",
+        "https://images.slatecdn.net/MbJ51umjRLoyEwi7Yz0aVECY_E1dJLG2mtY3G5LJpCE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzljMjZl/MzAtMTcyNS00MzZk/LThhNGItZTBkMmU3/Mzk2Y2ExL2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjY3LjEu/anBn.webp",
+        "https://images.slatecdn.net/8gyn3eRWoh1Bvw83NCmaVBKtsjY-Qm4B7xj4VvCzk6M/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjBmZGIx/YTAtMjExMC00Mjg3/LTkwOTYtNDNlNDRk/NTU2Yjk0L2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjcyLjIu/anBn.webp",
+        "https://images.slatecdn.net/VnEacvtEVIf9a97OGr_4cm13F3CgMmWRQoJ_Z4nEDic/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZmE2ODcx/NzAtNmI4Yy00NGZi/LTk4ZmEtYzZkNmI2/MTFmYzdkL2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjc1LjUu/anBn.webp",
+        "https://images.slatecdn.net/Y1kBgJGCzyRKDWYE1tVPI0tMqZI-W94_3o8XCOvmshY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vM2NmNzc0/NzUtNGYyMS00N2Q0/LWE5YTQtMGMyY2Vl/YjI2NGQ3L2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjgzLjEu/anBn.webp",
+        "https://images.slatecdn.net/nlzZvQIr6aepGsoy0VXj4llZX1KYjb_6cqLrD3LIGMA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjM5NGI5/MGEtYjIxYS00MWE0/LWJiZjgtZWU0MGE2/YTdlODQ0L2dsYXNn/b3ctdW5pdmVyc2l0/eS12MS0xLjEwNS4x/LmpwZw.webp"
+      ],
+      "stillsLink": "https://kinou.slateapp.com/work/glasgow-university-the-future-in-focus-stills"
     },
     "9716": {
       "zoom": 1.22
