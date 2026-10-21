@@ -309,12 +309,18 @@
   // getT / setT (optionnels) : case « aussi sur la vignette » (sinon seul l'extrait est recadré).
   function zoomCtl(thumb, video, get, set, getT, setT) {
     var range = el("input", { type: "range", min: "100", max: "160", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
-    var lab = el("span", { class: "zval" }), v = null;
+    var lab = el("span", { class: "zval" }), v = null, adjusting = false;
+    // Pendant le réglage : l'extrait entier, et un cadre rouge fin = la partie gardée (taille de la vignette).
+    var frame = el("i", { class: "zframe" });
     function apply() {
-      var z = get() || 1;
+      var z = get() || 1, w = 100 / z;
       lab.textContent = z > 1 ? "Recadrage " + Math.round(z * 100) + " %" : "Recadrage : aucun";
-      thumb.style.backgroundSize = z > 1 && getT && getT() ? z * 100 + "% auto" : "";
-      if (v) v.style.transform = "scale(" + z + ")";
+      thumb.style.backgroundSize = z > 1 && getT && getT() && !adjusting ? z * 100 + "% auto" : "";
+      if (v) v.style.transform = adjusting ? "none" : "scale(" + z + ")";
+      frame.style.width = frame.style.height = w + "%";
+      frame.style.left = frame.style.top = (100 - w) / 2 + "%";
+      frame.hidden = !adjusting;
+      if (adjusting && !frame.parentNode) thumb.appendChild(frame);
     }
     function play() {
       if (v || !video) return;
@@ -323,8 +329,9 @@
       var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
     }
     function stop() { if (v && document.activeElement !== range) { v.remove(); v = null; } }
-    range.addEventListener("input", function () { var z = parseInt(range.value, 10) / 100; set(z > 1 ? z : undefined); play(); apply(); touch(); });
-    range.addEventListener("blur", stop);
+    range.addEventListener("pointerdown", function () { adjusting = true; play(); apply(); });
+    range.addEventListener("input", function () { adjusting = true; var z = parseInt(range.value, 10) / 100; set(z > 1 ? z : undefined); play(); apply(); touch(); });
+    range.addEventListener("blur", function () { adjusting = false; apply(); stop(); });
     thumb.addEventListener("mouseenter", play);
     thumb.addEventListener("mouseleave", stop);
     apply();
