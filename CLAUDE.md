@@ -33,6 +33,7 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - Portrait : compressé dans le navigateur (1600 px max, WebP) → `data/dps/img/<slug>.webp`.
   Point de cadrage : clic/glisser sur la photo → `about.pos` = "X% Y%" (background-position sur le site), aperçus
   ordinateur (16:10) et téléphone (9:19,5) ; « Recentrer » = défaut "center 30%".
+  Le site affiche le portrait en noir et blanc (filtre CSS) : la photo déposée peut rester en couleur.
 - CV : PDF → `data/dps/cv/CV-Prenom-Nom.pdf`, servi en téléchargement (`_headers`).
 - Adresse (slug) : proposée depuis le nom (minuscules, sans accents), définitive après publication ;
   les chefs op déjà listés sur le site gardent leur adresse actuelle.

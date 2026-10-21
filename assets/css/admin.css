@@ -162,3 +162,5 @@ input[readonly] { color: var(--dim); }
 /* Cadre rouge du recadrage : partie de l'extrait gardée (taille de la vignette) */
 .film .thumb .zframe { position: absolute; z-index: 2; border: 1px solid #ff3b30; box-shadow: 0 0 0 9999px rgba(0,0,0,.35); pointer-events: none; }
 .film .thumb .zframe[hidden] { display: none; }
+/* Le site affiche les portraits en noir et blanc : mêmes aperçus ici */
+.focal .fstage img, .focal .fprev { filter: grayscale(1); }
