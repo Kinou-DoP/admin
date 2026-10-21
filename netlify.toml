@@ -4,4 +4,5 @@
   # Pas de mise en ligne (et donc pas de crédits Netlify consommés) quand un commit ne touche que data/ :
   # c'est le cas de chaque publication de l'admin. Le site lit ces données directement dans GitHub.
   # (Netlify : la commande renvoie 0 = pas de mise en ligne, 1 = mise en ligne.)
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)data'"
+  # Premier déploiement d'une branche (pas de déploiement précédent, ou le même commit) : on met en ligne.
+  ignore = "test -n \"$CACHED_COMMIT_REF\" && test \"$CACHED_COMMIT_REF\" != \"$COMMIT_REF\" && git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)data'"
