@@ -42,6 +42,13 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
   (adresse `kinou-agency/admin` dans son code : ne peut plus publier depuis le déplacement du dépôt).
 - Toutes les versions publient dans les mêmes données (`data/` de la branche `main`, constante `BRANCH`).
 
+## Robot GitHub (branche main)
+- `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json`, ajoute le
+  film complet (`full`) des slides qui n'en ont pas, lu sur la bande Slate (`reel`). Gratuit (Actions, dépôt public),
+  aucune mise en ligne Netlify (`.github/` et `tools/` exclus de la règle `ignore`). Lancement manuel possible :
+  onglet Actions → « Films complets de l'accueil » → Run workflow.
+- Si le robot échoue à enregistrer : Settings → Actions → General → Workflow permissions → « Read and write ».
+
 ## Crédits Netlify
 - Une publication (commit qui ne touche que `data/`) **ne remet pas kinou-admin en ligne** : règle `ignore`
   du `netlify.toml`. Le site lit les données dans GitHub (`/api/data` du repo `site`, clé `GITHUB_DATA_TOKEN`).
