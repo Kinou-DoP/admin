@@ -44,6 +44,8 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
   (adresse `kinou-agency/admin` dans son code : ne peut plus publier depuis le déplacement du dépôt).
 - Toutes les versions publient dans les mêmes données (`data/` de la branche `main`, constante `BRANCH`).
 
+À chaque modification de `admin.css` ou `admin.js`, mettre à jour le numéro `?v=` dans `index.html` (cache de GitHub Pages).
+
 ## Robot GitHub (branche main)
 - `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json`, ajoute le
   film complet (`full`) des slides qui n'en ont pas, lu sur la bande Slate (`reel`). Gratuit (Actions, dépôt public),
