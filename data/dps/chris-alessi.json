@@ -21,7 +21,14 @@
       "title": "Base x Camille Yembe"
     }
   },
-  "about": {},
+  "about": {
+    "bioEn": [
+      "Chris Alessi is a Belgian cinematographer, shaped by both Belgian and Sicilian cultures. After earning a Master’s degree in cinematography in Brussels, he moved to Montreal, Canada, where he worked on several North American productions as an assistant. In 2023, he returned to Europe and decided to focus on his work as a director of photography. Now based between Paris and Brussels, Chris works across narrative projects, including documentary work in remote environments, as well as commercial and music productions throughout Europe."
+    ],
+    "instagram": "https://www.instagram.com/alessi_chris/",
+    "website": "https://www.alessichris.com/",
+    "img": "img/chris-alessi.webp"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
