@@ -5,6 +5,9 @@
   "bundle": "https://kinou.slateapp.com/bundles/39910847-c6ea-11f1-a349-0215583debcb",
   "open": 11314,
   "overrides": {
+    "6455": {
+      "title": "Matt Pokora • Déjà Volé"
+    },
     "6457": {
       "zoom": 1.01
     },
@@ -20,24 +23,44 @@
     "7740": {
       "zoom": 1.12
     },
+    "8012": {
+      "title": "SHAY • Sans Coeur"
+    },
     "8126": {
-      "zoom": 1.23
+      "zoom": 1.23,
+      "title": "Shay • teaser"
     },
     "8127": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "title": "RSKO • Channel bag"
+    },
+    "8333": {
+      "title": "KEL-P feat KALASH • In My Feelings"
     },
     "8398": {
-      "zoom": 1.22
+      "zoom": 1.22,
+      "title": "NAZA • J'AI MAL"
     },
     "8594": {
       "zoom": 1.22
     },
     "8595": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "title": "IDK • GUNNA"
     },
     "8820": {
       "zoom": 1.2,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "ATHENA (2nd Unit DOP)"
+    },
+    "8960": {
+      "title": "VANS • ALWAYS PUSHING"
+    },
+    "8961": {
+      "title": "NIKE • CASA"
+    },
+    "8962": {
+      "title": "NIKE • PARIS"
     },
     "8975": {
       "zoom": 1.32
@@ -57,45 +80,59 @@
     "9031": {
       "zoom": 1.23
     },
+    "9530": {
+      "title": "FLIGHT MODE • ELLA"
+    },
     "9531": {
-      "title": "Louis Vuitton - FLIGHT MODE SEPT24 MASHUP"
+      "title": "Louis Vuitton • FLIGHT MODE SEPT24 MASHUP"
     },
     "9842": {
       "zoom": 1.2,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Carême • Opening Credits"
     },
     "10065": {
-      "title": "Stings - Energy Drink"
+      "title": "Stings • Energy Drink"
     },
     "10141": {
       "zoom": 1.45,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Les Sentinelles • Extrait 2 (2nd unit DOP)"
     },
     "10142": {
       "zoom": 1.44,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Les Sentinelles • Extrait 1 (2nd unit DOP)"
     },
     "10143": {
       "zoom": 1.41,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Les Sentinelles • Opening Credits"
     },
     "10179": {
       "zoom": 1.22,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Carême • S01E05 • Sequence 1 (2nd unit DOP)"
     },
     "10183": {
       "sub": "Sonia Sieff",
-      "zoom": 1.06
+      "zoom": 1.06,
+      "title": "Télérama • Marina Foïs & Isabelle Huppert"
     },
     "10203": {
       "zoom": 1.19,
       "zoomThumb": true
     },
     "10361": {
-      "zoom": 1.24
+      "zoom": 1.24,
+      "title": "Chinaman"
     },
     "10405": {
-      "zoom": 1.08
+      "zoom": 1.08,
+      "title": "Chanel x Angele • Take A Chance"
+    },
+    "10717": {
+      "title": "GENER8ION • STORM | starring Yung Lean"
     },
     "10838": {
       "zoom": 1.23
@@ -113,7 +150,7 @@
       "zoom": 1.19
     },
     "11314": {
-      "title": "Mylène Farmer · Des Lols et des Quoi",
+      "title": "Mylène Farmer • Des Lols et des Quoi",
       "sub": "Thierry & Didier Poiraud\nEmpreinte Digitale",
       "stills": [
         "https://images.slatecdn.net/1KLWEjW-OrKJkiHGDnK6c05a4lWm3MHjtCrLrmFKOv4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYmU3YWQy/ZDEtNGQxYy00Yjlh/LWE1MDMtOWE0NDUx/Nzc5YjAyL21lbGFp/bmVmYXJtZXItc3Rp/bGxzLTAwMDkwMDAw/LnBuZw.webp",
