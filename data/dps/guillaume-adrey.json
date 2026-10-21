@@ -5,20 +5,110 @@
   "bundle": "https://kinou.slateapp.com/bundles/a6eed508-cd52-11f1-a349-0215583debcb",
   "open": 11004,
   "overrides": {
+    "638": {
+      "title": "Seloger.com"
+    },
     "654": {
       "title": "Givenchy - Soin Noir"
+    },
+    "801": {
+      "zoomThumb": true
+    },
+    "825": {
+      "title": "Piaget - Possession"
+    },
+    "1250": {
+      "zoomThumb": true,
+      "zoom": 1.26
+    },
+    "1629": {
+      "title": "Leffe - Texture"
+    },
+    "1744": {
+      "title": "Lancôme - Lacquer"
+    },
+    "1800": {
+      "title": "HTC - Squeeze for brilliant"
+    },
+    "2020": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "2104": {
+      "title": "Dior - J'Adore"
+    },
+    "2238": {
+      "title": "Citroën C3"
     },
     "2334": {
       "title": "L'Oréal - Cremefleurs"
     },
+    "2341": {
+      "zoomThumb": true,
+      "zoom": 1.21
+    },
+    "2571": {
+      "title": "Lancôme - Absolu Rouge"
+    },
+    "3179": {
+      "title": "Vichy - Mineral 89"
+    },
+    "3184": {
+      "title": "Le Petit Marseillais - Cold Cream"
+    },
+    "3644": {
+      "title": "Pizza Del Arte"
+    },
+    "4252": {
+      "title": "Louboutin Nudes"
+    },
     "4857": {
       "title": "Chanel - Activation"
+    },
+    "5753": {
+      "title": "Marie"
     },
     "6336": {
       "title": "La Bresse Bleue"
     },
+    "6669": {
+      "title": "Dior - Prestige"
+    },
+    "6738": {
+      "title": "Guerlain - Shalimar Tonka"
+    },
+    "7644": {
+      "title": "Taureau Ailé"
+    },
+    "7829": {
+      "title": "Omega - Seamaster"
+    },
+    "8434": {
+      "title": "Dior - Prestige White Oleo Essence Lotion"
+    },
+    "8435": {
+      "title": "Dior - Snow Focus Serum"
+    },
+    "9812": {
+      "title": "Clarins - SPA"
+    },
+    "9862": {
+      "title": "Maille - Le Sandwich"
+    },
+    "10528": {
+      "title": "Lustucru - Gnocchi star"
+    },
+    "10898": {
+      "title": "Maggi - So good together"
+    },
+    "10932": {
+      "title": "Maison Francis Kurkdjian - Aqua Media Cologne"
+    },
     "11004": {
       "title": "Dior - Incanto"
+    },
+    "11016": {
+      "title": "Gucci - Flora"
     }
   },
   "about": {
