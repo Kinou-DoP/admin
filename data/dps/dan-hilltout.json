@@ -4,7 +4,23 @@
   "hue": 127,
   "bundle": "https://kinou.slateapp.com/bundles/71764ed0-cbd2-11f1-a349-0215583debcb",
   "open": 9723,
-  "overrides": {},
+  "overrides": {
+    "9716": {
+      "zoom": 1.23
+    },
+    "9722": {
+      "zoom": 1.15
+    },
+    "9723": {
+      "zoom": 1.07
+    },
+    "10194": {
+      "zoom": 1.22
+    },
+    "11147": {
+      "zoom": 1.37
+    }
+  },
   "about": {},
   "categories": [
     "FEATURED",
