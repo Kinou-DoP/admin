@@ -545,8 +545,9 @@
   function slideOf(f) {
     var src = { film: f.film, song: f.song, legend: f.legend, dps: f.artists.map(dpOf) };
     var sl = { slate: f.slate, video: f.video, img: f.img, src: src };
+    if (f.full) sl.full = f.full; // film complet (lecteur de l'accueil)
     var o = home.overrides[f.slate] || {};
-    ["film", "song", "legend", "dps", "zoom"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    ["film", "song", "legend", "dps", "zoom", "stills", "stillsLink"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
   }
   function showHome() {
@@ -627,13 +628,31 @@
     reset.hidden = !home.overrides[sl.slate];
     reset.addEventListener("click", function () {
       delete home.overrides[sl.slate];
-      ["film", "song", "legend", "dps", "zoom"].forEach(function (k) { sl[k] = sl.src[k]; });
+      ["film", "song", "legend", "dps", "zoom", "stills", "stillsLink"].forEach(function (k) { sl[k] = sl.src[k]; });
       card.replaceWith(slideCard(sl)); touch();
     });
     card.appendChild(thumb);
     if (editable) card.appendChild(zoomCtl(thumb, sl.video, function () { return sl.zoom; }, function (z) { setO("zoom", z); }));
     card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
     if (editable) card.appendChild(el("div", { class: "acts" }, [reset]));
+    // Stills du film, sous la vidéo dans le lecteur de l'accueil (sans stills ici : ceux de la fiche du chef op, s'il y en a).
+    if (editable) {
+      var stillsIn = el("input", { type: "url", class: "stills nodirty", placeholder: "Lien Slate des stills", value: sl.stillsLink || "" });
+      var stillsSt = el("p", { class: "hint", text: sl.stills ? sl.stills.length + " images." : "" });
+      var load = function (force) {
+        var v = stillsIn.value.trim();
+        if (!v) { if (sl.stills) { setO("stills"); setO("stillsLink"); stillsSt.textContent = "Stills retirés."; touch(); } return; }
+        if (!force && v === sl.stillsLink && sl.stills) return;
+        stillsSt.textContent = "Lecture des stills…";
+        importStills(v).then(function (d) {
+          setO("stills", d.stills); setO("stillsLink", d.link); stillsIn.value = d.link;
+          stillsSt.textContent = d.stills.length + " images importées (" + d.title + ")."; touch();
+        }, function (e) { stillsSt.textContent = e.message; });
+      };
+      stillsIn.addEventListener("change", function () { load(false); });
+      stillsIn.addEventListener("keydown", function (e) { if (e.key === "Enter") load(true); });
+      card.appendChild(stillsIn); card.appendChild(stillsSt);
+    }
     return card;
   }
   function publishHome() {

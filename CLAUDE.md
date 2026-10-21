@@ -25,6 +25,8 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - Home page : lien d'une bande Slate → `GET <SITE>/api/reel?link=…` (10 premiers films) → `data/home.json`
   (`reel`, `slides` avec `dps: [{ name, slug }]` reliés par le nom, `src` = valeurs Slate, `overrides` par id Slate).
   « Rafraîchir » relit la bande en gardant les corrections.
+  Chaque film de l'accueil peut avoir ses stills (lien Slate, comme pour les fiches → `stills` + `stillsLink`), affichés
+  sous le film dans le lecteur de l'accueil ; `full` (film complet) vient de la bande.
 - Contact : logo du site (PNG/WebP blanc sur transparent) → `data/brand/logo-<horodatage>.png` + `data/site.json`
   (`logo`, `logoHeight`). Sans logo : texte « kinou ».
 - Portrait : compressé dans le navigateur (1600 px max, WebP) → `data/dps/img/<slug>.webp`.
