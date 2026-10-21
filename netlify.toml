@@ -4,4 +4,5 @@
   # Pas de mise en ligne (et donc pas de crédits Netlify consommés) quand un commit ne touche que data/ :
   # c'est le cas de chaque publication de l'admin. Le site lit ces données directement dans GitHub.
   # (Netlify : la commande renvoie 0 = pas de mise en ligne, 1 = mise en ligne.)
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)data'"
+  # Idem pour le robot GitHub (.github/, tools/) : l'admin utilisée est sur GitHub Pages (branche beta).
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)data' ':(exclude).github' ':(exclude)tools' ':(exclude)netlify.toml'"
