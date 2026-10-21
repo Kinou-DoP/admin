@@ -57,8 +57,7 @@
           "slug": "matias-boucard-afc-cinematographer"
         }
       ],
-      "zoom": 1.36,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d31c837f-7b95-4402-aae9-5b9f70d01409-0x1080.5000.mp4"
+      "zoom": 1.36
     },
     {
       "slate": 11186,
@@ -83,8 +82,7 @@
           "name": "Olivier Boonjing, SBC",
           "slug": "olivier-boonjing-sbc-cinematographer"
         }
-      ],
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b781d048-89d7-4de4-ac84-03f33207123d-0x1080.5000.mp4"
+      ]
     },
     {
       "slate": 11226,
@@ -110,8 +108,7 @@
           "slug": "xavier-dolleans-afc"
         }
       ],
-      "zoom": 1.35,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/56165467-6a94-4077-99f9-7156089f2f1f-0x1080.5000.mp4"
+      "zoom": 1.35
     },
     {
       "slate": 11199,
@@ -137,8 +134,7 @@
           "slug": "christophe-nuyens-sbc-cinematographer"
         }
       ],
-      "zoom": 1.3,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10fcba02-1065-40ee-bb67-8b546dce7582-0x1080.5000.mp4"
+      "zoom": 1.3
     },
     {
       "slate": 10717,
@@ -171,8 +167,7 @@
           "name": "Lara Perrotte Boucard",
           "slug": "lara-perrotte-boucard-cinematographer"
         }
-      ],
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a9acff2a-0817-43e7-96c8-2bc0332709fe-0x1080.5000.mp4"
+      ]
     },
     {
       "slate": 10664,
@@ -197,8 +192,7 @@
           "name": "Nikita Popkov",
           "slug": "nikita-popkov"
         }
-      ],
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3c2c0975-2a8f-4f72-84eb-0cf011e4281a-0x1080.5000.mp4"
+      ]
     },
     {
       "slate": 10665,
@@ -224,8 +218,7 @@
           "slug": "daniel-lindholm-fsc-cinematographer"
         }
       ],
-      "zoom": 1.37,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b522da81-7746-4759-ab01-ee76fef627d9-0x1080.5000.mp4"
+      "zoom": 1.37
     },
     {
       "slate": 10586,
@@ -251,8 +244,7 @@
           "slug": "augustin-barbaroux-cinematographer"
         }
       ],
-      "zoom": 1.08,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d8c2e756-993f-43c1-a8d3-79028abd631b-0x1080.5000.mp4"
+      "zoom": 1.08
     },
     {
       "slate": 10552,
@@ -277,8 +269,7 @@
           "name": "Julien Teissier",
           "slug": "julien-teissier-cinematographer"
         }
-      ],
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0056c6b0-a0a7-4f20-b9c9-3b735fa47654-0x1080.5000.mp4"
+      ]
     },
     {
       "slate": 9459,
@@ -304,8 +295,7 @@
           "slug": "christophe-nuyens-sbc-cinematographer"
         }
       ],
-      "zoom": 1.38,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2ef0b81-0efa-4e96-bff7-d3a82c61f6a8-1280x720.2500.mp4"
+      "zoom": 1.38
     }
   ]
 }
