@@ -7,7 +7,19 @@
   "overrides": {
     "9714": {
       "zoom": 1.18,
-      "title": "Fix My Car | The Riddler"
+      "title": "Fix My Car | The Riddler",
+      "stills": [
+        "https://images.slatecdn.net/THnvLpoR8mDC1TF6DFXeE06ICNEcfwAptfsQW2BnXdM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZGUwMjA4/OWQtMTJmMy00ZmU5/LTk5YzYtMzg5Nzdh/ZWViZDBmL2ZpeC1t/eS1jYXItdjItMS44/LjEuanBn.webp",
+        "https://images.slatecdn.net/fXebgNy-6FTgfaWiZ1eAUyIyzm1FjTDPCPx0ATTVO_4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWYwZDNi/N2EtMTg2My00MDFm/LWJiOGItMTMzZDFk/MTA1MmFkL2ZpeC1t/eS1jYXItdjItMS4x/My4yLmpwZw.webp",
+        "https://images.slatecdn.net/YD_IkpOZi7YRbF2pJYUTKNdsuRmHSekXQbPU9nC_oIs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNGE5YTA3/ZTItMjI4Ni00YWFk/LWJjYjgtZDIzOTc5/OWVkM2VmL2ZpeC1t/eS1jYXItdjItMS44/LjQuanBn.webp",
+        "https://images.slatecdn.net/Xar45tTqbbnShgPDyyqZssKv7b5ZDyW4znQea4NhgnM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZThlYTJj/MGItNWIwYy00NDJk/LTliNDItNmI4YzM5/ZTdmNmMzL2ZpeC1t/eS1jYXItdjItMS4z/Mi40LmpwZw.webp",
+        "https://images.slatecdn.net/hoADlV0B2dLPfc5YewkHsBtLhRRi4rTJwElD_MWe1aU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzVmOWYx/MDgtMGFkOC00NDY2/LWJkNTktYzkwMDJl/NTI4YWExL2ZpeC1t/eS1jYXItdjItMS41/MC4xLmpwZw.webp",
+        "https://images.slatecdn.net/55C7zYsZxIxHuuiG7XBBYE-Vwuiqs6IBuwailicTW4E/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vM2M2YmIw/Y2UtNDI5Zi00ODU5/LTk0NDUtYWU4ZDRh/NzI2MjRhL2ZpeC1t/eS1jYXItdjItMS42/MC40LmpwZw.webp",
+        "https://images.slatecdn.net/VKKrYf5V4bsISnr85hg6N9G1rMDz26jegVfuXaYXX6U/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNmNmYWJl/MDktNjU0OS00Y2Vl/LTg1NmEtZGYwYzhk/N2I4NjcxL2ZpeC1t/eS1jYXItdjItMS44/My4xLmpwZw.webp",
+        "https://images.slatecdn.net/jNVXGZ-24UeLK_VMWcESEtWydOo0ZlBlcw4vIObhijk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTQ2Y2Q5/MzktZmJjYy00OWVk/LWEzNGMtOGYxZjEw/MDUyODQyL2ZpeC1t/eS1jYXItdjItMS42/OC4xLmpwZw.webp",
+        "https://images.slatecdn.net/kG_DOH9v-iuBsgsykr2RjOtXUSVFM2OhAhyJ7IduvqY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODM4ZjZj/NjUtNDljZi00NTdk/LWE3OWQtODI0M2U1/NDMyMjM4L2ZpeC1t/eS1jYXItdjItMS44/MS4xLmpwZw.webp"
+      ],
+      "stillsLink": "https://kinou.slateapp.com/work/fix-my-car-the-riddler-stills"
     },
     "9715": {
       "zoom": 1.19,
