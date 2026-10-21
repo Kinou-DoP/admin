@@ -44,6 +44,10 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - Chaque modification du code de l'admin = une mise en ligne (≈ 15 crédits) : regrouper les changements.
 
 ## Règles
+- Ce dépôt est **public** (le plan gratuit de Netlify ne déploie pas les dépôts privés d'une organisation) :
+  aucune donnée privée ici. Les données des applis internes (mails, contacts, relances, CV…) vont dans un dépôt
+  **privé séparé** de Kinou-DoP, lu par l'admin avec le token de la personne connectée ; les clés de services
+  dans les variables secrètes de Netlify. Rien de personnel écrit en dur dans le code.
 - Ne jamais commiter de token ni de secret.
 - Ne jamais modifier les URLs Slate/CloudFront (URLs d'images signées).
 - `_headers` doit garder `Access-Control-Allow-Origin: *` sur `/data/*` (le site lit ces fichiers).
