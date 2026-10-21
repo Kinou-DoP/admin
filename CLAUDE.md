@@ -13,7 +13,7 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 ## Fonctionnement
 - Connexion : token GitHub « fine-grained » personnel (un par personne), limité au repo `Kinou-DoP/admin`,
   permission Contents : Read and write. Stocké dans le `localStorage` du navigateur, jamais dans le repo.
-  Durée maximale 366 jours (règle de l'organisation) : à recréer avant expiration (rappel dans le README du site).
+  Créé sans expiration (autorisé par l'organisation Kinou-DoP).
 - Import d'un bundle Slate : `GET <SITE>/api/bundle/<uuid | code shots.re>` (fonction du repo `site`).
 - Forcer la mise à jour du site : `POST <SITE>/api/refresh/<slug>` avec le token (vide le cache CDN du DP).
 - Corrections par film : `overrides` indexés par id Slate (suivent le film si l'ordre change sur Slate).
