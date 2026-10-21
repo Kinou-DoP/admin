@@ -1,0 +1,201 @@
+{
+  "slug": "chris-alessi",
+  "name": "Chris Alessi",
+  "hue": 293,
+  "bundle": "https://kinou.slateapp.com/bundles/32e3d680-cd57-11f1-a349-0215583debcb",
+  "open": 10696,
+  "overrides": {
+    "10696": {
+      "title": "Prose Studio - A different kind of love"
+    },
+    "10699": {
+      "title": "Charlotte Vanhoubroeck"
+    },
+    "10701": {
+      "title": "Saint Sébastien Mon Amour"
+    },
+    "10702": {
+      "title": "Yomi Universe - Another sign of love"
+    },
+    "10772": {
+      "title": "Base x Camille Yembe"
+    }
+  },
+  "about": {},
+  "categories": [
+    "FEATURED",
+    "NARRATIVE",
+    "COMMERCIAL",
+    "MUSIC VIDEO"
+  ],
+  "clips": [
+    {
+      "title": "Acide",
+      "sub": "Abel Verheyden\nEffiline Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10697/2df65397-39b4-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0beaef3a-fffa-497f-9616-7dfa911f7342-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/PYxHd5fqxTcYgtJfekUt2aUI1CzeqmMUWWwI-iTxFvA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY5Ny02OWUxMTA5/ZjVkMmE5OS43ODcz/NzE3MC03ZTRjMWY4/NGY2ZjU3MThjZjI3/NDdkZDA5Njk1ZmQ5/Ny5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10697,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "SAINT SÉBASTIEN MON AMOUR - SHORT FILM",
+      "sub": "Abel Verheyden\nToast Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10701/ea443700-39b3-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/60650df8-c4ea-4e87-86b5-0875a1616eac-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/B_Acv1PHKEtCH8lkCIEGTj_ieBQCkUPLXCTNUI0A-eg/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcwMS02OWUxMTA5/ZjYxMWY3MS45NTM3/MjA3NS1jZjY2Zjg0/N2UxNzA2ZDY2OWJj/NDU1MjBjYjEzODlj/NS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10701,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Entre les Murs",
+      "sub": "Chris Alessi\nChris Alessi",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/64f9e02f-5ca6-4b22-986b-f5237f3e0c33-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/roPktroyW2-qTE6N4w3CeMfssSzpyvZwRufsztVOeLI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc3Ny02OWYzMjBk/YzQ1M2Y3MS43NzEx/MTAzNi0xOWUyOGY0/OWRhMmFlMTg3NTQ4/MjU0MjBlZjg1ODkz/YS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10777
+    },
+    {
+      "title": "The Full Story of Apashe: Genius or Ego?",
+      "sub": "Adrian Villagomez\nMimesis Studio",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10781/05902b7c-447f-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a99f939f-d16c-4368-8c5e-8c925cc9abe9-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/OdtOFlHLjFdq9ZxfGbArhtIIlQAMUJ8oe-t3cwbHR8U/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZTI2ODllNi1mY2Q1/LTQyMGYtYWI5YS04/YjY3OTc5YmY0Nzgv/YXBhc2hlLTEuMS4x/Mi5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10781
+    },
+    {
+      "title": "A different kind of love. Fashion Film for PROSE Studio",
+      "sub": "Abel Verheyden\nEffiline Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10696/42f4c5a8-39b4-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a020cf6a-e000-4d7f-b456-8884eabcebde-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/wylTr5pv4jzQEfCGJt_At64EPyq4CO236CWYityxqlE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY5Ni02OWUxMTA5/ZjVjOGZkMi43MTI4/NDg4Ny05ZWUwNWE4/OTdmNzRmMGJhYjhm/OWFjNzI4NWU4NzBi/ZC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10696,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Era",
+      "sub": "Chris Alessi\n4100",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11150/3f50cadf-81bd-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c4f7fc43-fd8b-4cf3-849c-2f655dc7a197-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/bj8sBqFFkX1jyTmynaFWf1n6R3U5hwPY9HMINsEDmyM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTE1MC02YTU5ZTg3/OGM4MTllNS42NDIx/ODI3MC00NDRlMDdk/OTY5ZWYxYTJmNjRi/OWVlYWIxNzUzMmEz/ZS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11150,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Yomi Universe - Another sign of love",
+      "sub": "Chris Alessi",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10702/b203ada7-39b3-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1f91878c-a900-434d-85aa-0fb964459e35-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/MXnea93u4BF7mqpVx79OhwbxVP7Do6XeWzlWgTCtab0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcwMi02OWUxMTA5/ZjVkODQ2NC4xMDIz/NzM1Ny1jN2IyMzhi/NGI2OTJmMTFlZmZh/Y2JhMzNhYWZlZGMz/ZS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10702,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "BASE x CAMILLE YEMBE",
+      "sub": "Louis Vielle\nUnknown collective",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10772/474f96e0-4479-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/366b78d0-dce1-4d73-95af-6d2a19f5226d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Jo0hc6KQGX8uqMjUOq9cUN1mtjjrJCia8fE_OSmZuQc/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZWQ2YWMxNC04YTQ5/LTRkYWEtOTVlYi01/MDMzNjFiMTY5YTgv/c3RpbGwtMjAyNi0w/NC0yMi0xNDM5Mjkt/MS4xLjkuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10772,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "CHARLOTTE VANHOUBROECK - MELANCHOLIE",
+      "sub": "Thibault Flament\nJugaad, Abyssal Process, Mimesis",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10699/05e03502-39b4-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c0d9e0f1-2987-4961-9806-242548adbd21-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/x6F_rIthC-qE5sxQYB59uFJwfsirFejScur6gh49A8Y/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY5OS02OWUxMTA5/ZjVkYTM2OC4xODUz/NjM5OS1lOTAwMGU5/YWI0YjNkM2ZlOWNj/YzIzNjMxMzBmNDI5/MC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10699,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "Oscar and the Wolf - Oh Boy",
+      "sub": "Noah Dechamps\nSeven Moons",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10700/5edb6848-39b4-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6485b63e-526f-4592-acd9-62228f8d3160-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/jj-jGMfMsUMUpiREmHSL1MKEZDLqaAafljl5Zs-O1F8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcwMC02OWUxMTA5/ZjVkOTkwMy4yNzY0/ODQ5My0xNDJmZmZi/ODMyOTVmYzM0YjY5/YTJkYjI1YmM4YTAz/Ni5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10700
+    },
+    {
+      "title": "Jengman - Solitude",
+      "sub": "Noah Dechamps\nSeven Moons",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10753/abcaec3b-4323-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ba097f35-511f-4f0e-9023-dfec3dfe6d22-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/ufhK-6qjg5SRkcoMnj8kmqHUjkN39ULSr2OfEBAvLGw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc1My02OWYwZTcz/NzE4OTBiNC4xMzY4/MDIyNi1hZDA1NzY1/ZjExNzA1MWM0ZmM2/YzQ3OTEzZTNhOWE3/Mi5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10753,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Zedie - La Fête",
+      "sub": "Noah Dechamps\nIndie project",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10703/a6651268-39b3-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b5e39f90-0366-4805-b358-7af9ea9177bf-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/ccuAfxat6UEcprlfICpXeQpaHsLsgfJsnbVx0jeZDFY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcwMy02OWUxMTBh/NjEzNmQ5My44MDMw/OTIyMi05YzU4OTM3/Njk3ZmFiNTg5NGUx/NDA2NGFhZjMxMzE1/Yy5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10703,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Abel Verheyden - The Claim",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10780/0bcb89a6-4478-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6da878be-6f42-4625-8750-9df0a899a42c-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/fZV8Dd5kSvNWiMa9JFqAugeFNg1Dq69H1_y1JVmjuts/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MzczOGQyOS0xMTZi/LTQyZmQtODAwNi02/OWI2YTkyZTQ3MWUv/dGhlLWNsYWltLW9m/ZmljaWFsLXZpZGVv/LXN0aWxsLTMucG5n?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10780
+    },
+    {
+      "title": "TAWSEN - CICATRICE",
+      "sub": "Bonne Came TV\nBonne Came TV",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10779/2c8a99e2-4478-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/88f5e94b-af14-420f-ab47-469ca4fb6a37-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/AjtpslVoyxbbdQi9dBaEuXouRzHfKryIcUqaifJlQS8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NmNlNzllMy1hN2Zj/LTQ1M2ItYmRmNi04/YzM3NmRmNmE1MzYv/c3RpbGxzLXJ3YW5k/YS1zZWxlY3Rpb24t/ZmluYWxlLTcuanBn?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10779
+    },
+    {
+      "title": "MAXENCE - SEULS DANS TA CHAMBRE",
+      "sub": "Charlotte & Juliette Castay\nCharlotte & Juliette Castay",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10778/57b5b707-4478-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8fecfcd5-dc15-49b9-9e3f-a4db9ffd84e0-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Y0VVtJhsCM21Xm2Z_jaALiPFCzwFOQmhq1PrjTYRIjM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZGMwMTM4My1lMDAy/LTRhNjktYmRhNi05/NzNiNzE2NzYzZDkv/c3RpbGwtMjAyNC0x/MS0xNC0xNzUyMTkt/MS41LjQwLnBuZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10778
+    },
+    {
+      "title": "Djebril Slatni - Cirque",
+      "sub": "Sarah Kurt\nSarah Kurt",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10776/a7e982ce-4478-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/29cc607c-0860-44b5-b5ae-caccfffc96d4-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/s3Kp9pCLSmWkCHaYXYnubE1co8bBVIHCMg5h1GAf4BA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc3Ni02OWYzMjBk/YzBmYTQ5Ny40MzY0/NTUwNC0yNTg5N2M4/YjliZmNiOTg5NDNl/YzcyZmNhZDQ3YTY0/Yi5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10776
+    },
+    {
+      "title": "Joudi - TKT (alternative cut)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10698/17f406d1-39b4-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2f9661f9-052f-4639-b927-df3f0d7a03f9-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/_AZRkTgeqTjEO1FmXLTFpIOLIaTrnRJhYtm-0Nhr8Xw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY5OC02OWUxMTA5/ZjYxZDQyNS40NzEx/ODg1MS0xMDVmYmVm/MTFkODAzYjQ3MWNj/YzJhM2YzMjc5YmI3/YS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10698
+    }
+  ]
+}
