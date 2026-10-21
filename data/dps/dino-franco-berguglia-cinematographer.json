@@ -4,7 +4,12 @@
   "hue": 163,
   "bundle": "https://kinou.slateapp.com/bundles/e077066c-cd64-11f1-a349-0215583debcb",
   "open": 9231,
-  "overrides": {},
+  "overrides": {
+    "5984": {
+      "zoomThumb": true,
+      "zoom": 1.57
+    }
+  },
   "about": {
     "website": "https://onid.ch/",
     "instagram": "https://www.instagram.com/dino_berguglia/",
