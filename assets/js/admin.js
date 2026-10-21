@@ -545,7 +545,9 @@
   function slideOf(f) {
     var src = { film: f.film, song: f.song, legend: f.legend, dps: f.artists.map(dpOf) };
     var sl = { slate: f.slate, video: f.video, img: f.img, src: src };
-    if (f.full) sl.full = f.full; // film complet (lecteur de l'accueil)
+    // Film complet (lecteur de l'accueil) ; s'il manque à la lecture de la bande, on garde celui déjà enregistré.
+    var prev = (home.slides || []).filter(function (x) { return x.slate === f.slate; })[0];
+    if (f.full) sl.full = f.full; else if (prev && prev.full) sl.full = prev.full;
     var o = home.overrides[f.slate] || {};
     ["film", "song", "legend", "dps", "zoom", "stills", "stillsLink"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
