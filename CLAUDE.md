@@ -36,6 +36,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   flèches ↑ ↓ pour réordonner, × pour retirer. L'ancien `stills` + `stillsLink` est converti à la première modification.
 - Projet en stills (« Sans vidéo ») : case « Extrait vidéo au survol » → lien Slate d'une vidéo qui a un extrait
   → `overrides[<id>].hover` = `{ link, title, video, img? }` ; sur le site l'extrait joue au survol, le clic montre la galerie.
+  Le recadrage (zoom / zoomPos) de ce projet se règle sur cet extrait.
 - Recadrage d'un extrait (fiches et accueil) : curseur 100–160 % sous la vignette, aperçu de l'extrait dans la vignette
   → `zoom` dans les `overrides` (absent = aucun recadrage) ; extrait seulement, la vignette aussi si `zoomThumb` (case).
   Pendant le réglage : extrait entier + cadre rouge fin = partie gardée (taille de la vignette).
