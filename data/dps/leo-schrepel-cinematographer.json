@@ -35,6 +35,15 @@
     "6432": {
       "zoom": 1.33
     },
+    "7372": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/jaeger-lecoultre-1",
+          "title": "Jaeger-LeCoultre",
+          "img": "https://images.slatecdn.net/W4OEzYshpw3eGaGgfUv_ZjAvNXdFpclDlTw8qp8LrEQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/M2Y3NTVmOS0yMmY1/LTQwYTEtYWNhYy1h/MDdhNTg1NzNmMjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MjUtYS0xMi4yNC4w/NS5wbmc?v=1&format=webp"
+        }
+      ]
+    },
     "7876": {
       "zoom": 1.34
     },
@@ -102,8 +111,7 @@
           "link": "https://kinou.slateapp.com/work/benoit-genant-bande-annonce",
           "title": "Benoit Gênant - Bande Annonce",
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9101/d7cb697d-8ba5-11ef-bfce-022353abf6f5.mp4",
-          "img": "https://images.slatecdn.net/sugxaJ-InC-oOzQc6Hi-228oeLZlNwSmzsk_M84NPdw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZTY4OWZmOS0xODRh/LTQyMWMtYjQyNS1l/MjIyYjhlYjhlYTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MjctYS0wOS4zOC4y/MS5wbmc?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ce9e654b-1fad-49ce-afd0-2ea3f7f50784-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/sugxaJ-InC-oOzQc6Hi-228oeLZlNwSmzsk_M84NPdw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZTY4OWZmOS0xODRh/LTQyMWMtYjQyNS1l/MjIyYjhlYjhlYTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MjctYS0wOS4zOC4y/MS5wbmc?v=1&format=webp"
         }
       ]
     },
