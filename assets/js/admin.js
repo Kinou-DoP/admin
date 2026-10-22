@@ -309,26 +309,34 @@
     return sec;
   }
 
-  // Recadrage d'un extrait (zoom au centre, 100 à 160 %) pour enlever les bandes noires, avec aperçu :
+  // Recadrage d'un extrait (zoom 100 à 160 %) pour enlever les bandes noires, avec aperçu :
   // l'extrait joue dans la vignette au survol et pendant le réglage. get() : zoom actuel ; set(z) : enregistre (1 = aucun).
+  // getP / setP : position du cadre, "X% Y%" (absent = centre) ; le site s'en sert comme transform-origin / background-position.
   // getT / setT (optionnels) : case « aussi sur la vignette » (sinon seul l'extrait est recadré).
   var zoomStopOther = null; // un seul extrait joue à la fois : lancer un aperçu arrête le précédent
-  function zoomCtl(thumb, video, get, set, getT, setT) {
+  function zoomCtl(thumb, video, get, set, getP, setP, getT, setT) {
     var range = el("input", { type: "range", min: "100", max: "160", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
-    var lab = el("span", { class: "zval" }), v = null, adjusting = false;
-    // Pendant le réglage : l'extrait entier, et un cadre rouge fin = la partie gardée (taille de la vignette).
+    var lab = el("span", { class: "zval" }), v = null, adjusting = false, drag = null;
+    var center = el("button", { class: "zcenter", text: "Recentrer" });
+    // Pendant le réglage : l'extrait entier, et un cadre rouge fin = la partie gardée (taille de la vignette),
+    // qu'on déplace en cliquant-glissant (ou au doigt).
     var frame = el("i", { class: "zframe" });
+    function pos() { var m = /^([\d.]+)% ([\d.]+)%$/.exec(getP() || ""); return m ? [+m[1], +m[2]] : [50, 50]; }
     function apply() {
-      var z = get() || 1, w = 100 / z;
+      var z = get() || 1, w = 100 / z, p = pos(), o = p[0] + "% " + p[1] + "%";
       lab.textContent = z > 1 ? "Recadrage " + Math.round(z * 100) + " %" : "Recadrage : aucun";
-      thumb.style.backgroundSize = z > 1 && getT && getT() && !adjusting ? z * 100 + "% auto" : "";
-      if (v) v.style.transform = adjusting ? "none" : "scale(" + z + ")";
+      var onThumb = z > 1 && getT && getT() && !adjusting;
+      thumb.style.backgroundSize = onThumb ? z * 100 + "% auto" : "";
+      thumb.style.backgroundPosition = onThumb ? o : "";
+      if (v) { v.style.transform = adjusting ? "none" : "scale(" + z + ")"; v.style.transformOrigin = o; }
       frame.style.width = frame.style.height = w + "%";
-      frame.style.left = frame.style.top = (100 - w) / 2 + "%";
+      frame.style.left = p[0] * (100 - w) / 100 + "%";
+      frame.style.top = p[1] * (100 - w) / 100 + "%";
       frame.hidden = !adjusting;
+      center.hidden = !getP();
       if (adjusting && !frame.parentNode) thumb.appendChild(frame);
     }
-    function halt() { adjusting = false; if (v) { v.remove(); v = null; } apply(); }
+    function halt() { adjusting = false; drag = null; if (v) { v.remove(); v = null; } apply(); }
     function play() {
       if (zoomStopOther && zoomStopOther !== halt) zoomStopOther();
       zoomStopOther = halt;
@@ -337,14 +345,31 @@
       thumb.appendChild(v); apply();
       var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
     }
-    function stop() { if (v && document.activeElement !== range) { v.remove(); v = null; } }
+    function stop() { if (v && !adjusting) { v.remove(); v = null; } }
     range.addEventListener("pointerdown", function () { adjusting = true; play(); apply(); });
     range.addEventListener("input", function () { adjusting = true; var z = parseInt(range.value, 10) / 100; set(z > 1 ? z : undefined); play(); apply(); touch(); });
-    range.addEventListener("blur", function () { adjusting = false; apply(); stop(); });
+    range.addEventListener("blur", function () { if (drag) return; adjusting = false; apply(); stop(); });
+    // Déplacement du cadre : le décalage en pixels devient une position de 0 à 100 % (bords compris).
+    frame.addEventListener("pointerdown", function (e) {
+      var z = get() || 1; if (z <= 1) return;
+      e.preventDefault(); frame.setPointerCapture(e.pointerId);
+      var r = thumb.getBoundingClientRect(), p = pos();
+      drag = { x: e.clientX, y: e.clientY, p: p, sx: r.width * (1 - 1 / z) / 100, sy: r.height * (1 - 1 / z) / 100 };
+    });
+    frame.addEventListener("pointermove", function (e) {
+      if (!drag) return;
+      var c = function (n) { return Math.round(Math.max(0, Math.min(100, n)) * 10) / 10; };
+      var x = c(drag.p[0] + (e.clientX - drag.x) / drag.sx), y = c(drag.p[1] + (e.clientY - drag.y) / drag.sy);
+      setP(x === 50 && y === 50 ? undefined : x + "% " + y + "%"); apply(); touch();
+    });
+    function endDrag() { if (!drag) return; drag = null; range.focus({ preventScroll: true }); } // le réglage continue
+    frame.addEventListener("pointerup", endDrag);
+    frame.addEventListener("pointercancel", endDrag);
+    center.addEventListener("click", function () { setP(undefined); apply(); touch(); });
     thumb.addEventListener("mouseenter", play);
     thumb.addEventListener("mouseleave", stop);
     apply();
-    var box = el("div", { class: "zoom" }, [lab, range]);
+    var box = el("div", { class: "zoom" }, [lab, range, center]);
     if (!setT) return box;
     var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = !!getT();
     cb.addEventListener("change", function () { setT(cb.checked || undefined); apply(); touch(); });
@@ -393,6 +418,7 @@
     reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); touch(); });
     sync();
     var zoom = zoomCtl(thumb, c.video, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); },
+      function () { return (state.overrides[c.slate] || {}).zoomPos; }, function (p) { setOverride(c, "zoomPos", p); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
     card.appendChild(thumb); card.appendChild(zoom); card.appendChild(title); card.appendChild(sub);
     card.appendChild(el("div", { class: "acts" }, [hide, reset, dropStills]));
@@ -616,7 +642,7 @@
     var prev = (home.slides || []).filter(function (x) { return x.slate === f.slate; })[0];
     if (f.full) sl.full = f.full; else if (prev && prev.full) sl.full = prev.full;
     var o = home.overrides[f.slate] || {};
-    ["film", "song", "legend", "dps", "zoom", "stills", "stillsLink"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    ["film", "song", "legend", "dps", "zoom", "zoomPos", "stills", "stillsLink"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
   }
   function showHome() {
@@ -697,11 +723,12 @@
     reset.hidden = !home.overrides[sl.slate];
     reset.addEventListener("click", function () {
       delete home.overrides[sl.slate];
-      ["film", "song", "legend", "dps", "zoom", "stills", "stillsLink"].forEach(function (k) { sl[k] = sl.src[k]; });
+      ["film", "song", "legend", "dps", "zoom", "zoomPos", "stills", "stillsLink"].forEach(function (k) { sl[k] = sl.src[k]; });
       card.replaceWith(slideCard(sl)); touch();
     });
     card.appendChild(thumb);
-    if (editable) card.appendChild(zoomCtl(thumb, sl.video, function () { return sl.zoom; }, function (z) { setO("zoom", z); }));
+    if (editable) card.appendChild(zoomCtl(thumb, sl.video, function () { return sl.zoom; }, function (z) { setO("zoom", z); },
+      function () { return sl.zoomPos; }, function (p) { setO("zoomPos", p); }));
     card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
     if (editable) card.appendChild(el("div", { class: "acts" }, [reset]));
     // Stills du film, sous la vidéo dans le lecteur de l'accueil (sans stills ici : ceux de la fiche du chef op, s'il y en a).
