@@ -1,0 +1,268 @@
+{
+  "slug": "nikita-popkov",
+  "name": "Nikita Popkov",
+  "hue": 216,
+  "bundle": "https://kinou.slateapp.com/bundles/44e44942-ce2e-11f1-a349-0215583debcb",
+  "open": 10945,
+  "overrides": {},
+  "about": {},
+  "categories": [
+    "FEATURED",
+    "COMMERCIAL",
+    "MUSIC VIDEO",
+    "ART VIDEO"
+  ],
+  "clips": [
+    {
+      "title": "Parkinson",
+      "sub": "Lucie Bourdeu\nHiersoir",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10664/f66c3aaa-3715-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3c2c0975-2a8f-4f72-84eb-0cf011e4281a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/q1SwaC0Qhov1YOVoOGhdPDAum_-JnSSi4p2ZvV4UxWE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YzE3MWVlZC1hZDVm/LTRlNjctYWZkNi02/YmQwMzVjYzU1NTMv/MTc3Njc4MzM2ODM1/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10664,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Nowness x Nike x Courir",
+      "sub": "Ghizlane Terraz, Bouchra Ouiko\nPartizan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10226/eb710e99-bfe1-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/72dd9888-c2eb-437b-a1fd-e92749d265bb-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dsbhayWD3rzH_xpGmcgvl4mAv5ncKs189y90YFMn8u8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NjFkMWM0OC03MjY0/LTQ4MDctOGE5MC0w/ZjU3YmZhYmJkZTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTEt/MTItYS0xNy4wOC40/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10226,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Dries Van Noten | Havana Gold",
+      "sub": "Jean-Marie Binet\nSAS Cadence Image",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10037/020b4249-67bb-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6cbb8ec9-26fd-4890-9fff-5f69b47236b3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gU3I1TcBXsf6OqeGlFlu0ktmoNTZFfK-kMhRNH9htJg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NmI1ZGNjMi0xMzU4/LTRhMmMtOTkxOC05/NGMzMDI5MDkwMDMv/MTc1MzI3MTMwMzIz/OS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10037,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "McDonalds DC",
+      "sub": "Nikita Popkov\nPANORAMA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9547/44a1e0a1-1476-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f4533b19-521e-437f-b4ad-ad3ea552614d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Ga5V_74mdK5PYASXysuXXNA38yP8ctMy2awyQZqF_wc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YWE0MmY4MC03MzAx/LTQ2MTgtODlkOC1h/ZTkyZWZhMGFhYzAv/bWNkb2RjLnBuZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9547,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Havana Club | Cuban Mode",
+      "sub": "Aisultan Seitov\nPartizan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9236/47363a3d-b31a-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/aa9de2ee-f0e4-4b5a-a980-3a3218b40ba6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JZhUrQHLtdrvMtdCb8WTreEZ4EBAtAgT2jH6ezQa_3s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/OTA2OWU1OC0yYzUw/LTRjMjYtOTMzMS0z/Y2I2MGZhNzkwODgv/NjFlYjY2MmMxODU4/MzVkYi5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9236
+    },
+    {
+      "title": "Rimowa | Panoramic",
+      "sub": "Adrijan Assoufi\nPique",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9240/db0b79e2-b31c-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/93a0619e-667d-4511-8f44-a30189b94993-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/L3etXBwptNECq-VnIXutHe6J0-rde6JPgoCIqE9ldiU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/M2JlMDc3Yi1kOGRi/LTRkNzYtYjNkYi00/OTg5MzgwNGMwNGEv/NDcwNDZkODZhYjMw/ZjM5MC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9240
+    },
+    {
+      "title": "DUREX",
+      "sub": "Valentin Petit\nOCURENS & UNIT9",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9245/9fe1fe2a-b31b-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b442233f-d138-46aa-848c-17ca4633d9be-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/OrRcPYDzGJTdn-iL6teQDEeuNZTHXN7xc-saB3ZvSHo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MTZjNjhmMS1iNTA4/LTQ4NmEtYmMxNS00/ZTFkNzg1YmE4YWUv/Mjk2NmYzYzVjMTQ4/NjQ4OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9245,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "III",
+      "sub": "Nikita Popkov\nPANORAMA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9246/6d509297-b31b-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/94c9552c-e124-4785-99c5-747339e8279a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Mrmvb62KWheV9Ti3FRSo8nkIGc6Xd3VKKn46CM380nk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YTkzZWE5My1jYmRk/LTQ5OWQtOTUzZC1m/MGVhYWQ3Yjg1MGIv/ZTQzNTJlNTIzZTdl/MGQ2OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9246
+    },
+    {
+      "title": "SDM - Cartier Santos",
+      "sub": "Loic Foulon\nKairos Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9391/d782e621-dca4-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ba45bcdb-f8f5-45b9-8276-c74437430eee-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/srscJ-aPLl3yme8iNT_cORJXrXcn1-tQaT94CeyDKo4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MzkxLTY3OTc3MGQ5/Mzk4ODM2LjIyMjMx/NTg4LTNhY2Y2OGRl/NGVkM2E4Y2M3MjM3/YjM1NDNiODVmMzhh/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9391,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "TDJ | Where Is My Angel",
+      "sub": "Melchior Leroux\nSarl Ms Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9863/92f7b364-45f9-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cbc90d6d-519c-4339-ab76-1aac6f40c3e9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/TIeBsh1CpTDMCWhXz82xYA-oud97CuLZCYrjYpECvfM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NGMzYTY3MS05NDM1/LTQzNDUtOWY4NS05/NTNiNDE2YzIxOGUv/MTc0OTU2MDE4ODc2/MS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9863
+    },
+    {
+      "title": "Greentea Peng - Stones Throw",
+      "sub": "Aboveground\nPANORAMA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9401/0db39bfd-0591-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1d5539fe-82bb-4588-a6c1-e728d01fda50-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/eweFbrB21GF3f6rVF3eH6lVhFyHFTcp2DwBMCXqCIAw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MGJlNDViZC0xYWE2/LTQzZTktOTgxYy1j/ZTZkNWM0N2ExYzkv/Z3BucC5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9401
+    },
+    {
+      "title": "Maslo Chernogo Tmina | Kensshi",
+      "sub": "Aisultan Seitov\nHYPE & QARA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9239/11329126-b31d-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/60cb990b-63fa-456d-bdcd-c73ee9cb75f2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0fZ11ma-9pBH-J2dMh9h1Mj8r614J8eEgEukaZ6FEb0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZWFlY2U1OC03NjI0/LTQzOTctOGYyYi01/ZDdlZTAyNzUxMTEv/ZGMyOTMzMGIwNzM1/YWI5Ni5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9239
+    },
+    {
+      "title": "Swing N",
+      "sub": "Maky Margaridis & Louis Lekien\nBleu Nuit / Beaucartel",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9242/84bd4bd6-b31c-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/43e8e7c7-ff09-4784-be63-439fb0f23784-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7CCDsbQWBrZbiCTy-2J45m5Ic4bAbzWM6KmQm7mS1do/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NzI5MTg2Ny1lOWQ3/LTRkYzgtOWEwNS0x/N2M5YzdmOWJjYjgv/N2VkOTkyNmNjMzcw/N2VhOC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9242
+    },
+    {
+      "title": "Zara Larsson, David Guetta  On My Love",
+      "sub": "Mutant & Zara Larsson\nRadiance Pictures",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9244/fa2563a5-b31b-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b6575eed-ff8c-4e7a-b23f-2b47aec8408f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KTlwldg1HNtT4DodspVNp-plyGQjXd5i3hmrqp4C0Ig/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZjczOTQxMC05NmE4/LTRkZDItOTllZS1l/NTc5YWU4NjhlNzIv/OTcyN2FlNTU5YThi/MzMwNy5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9244
+    },
+    {
+      "title": "Backdoor Market Chapter 1",
+      "sub": "Nikita Popkov",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9234/f3cfa8a9-b318-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/db4f15ad-162a-4f95-b7df-85b79a892681-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/IgdBGtvIzTYeUPMHbuiimKz_gobPTexUJmxcVjPFnTE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NzliNTc5NC02NGUy/LTRjYWUtYmYyNi0z/MzAxNmI5ZmVmNmMv/MmE4MWQ5NmFkODNj/YzcwZC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9234
+    },
+    {
+      "title": "Oscar Jerome - The Fork",
+      "sub": "Milo Blake\nSpindle",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9392/f270c4a1-dca6-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c60141e4-aa0f-4353-aa09-0192556f259b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UayZN5Aq1ML8gaSbK181q1UQ2H8udWnFkxxDCg0DG4E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MzkyLTY3OTc3MmI1/MWUyNDQ3LjA4NDY0/NTc5LWFkNmQ1NzM3/ZThjY2FhZTI4NTU2/Nzc2MzliMWRmNTVk/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9392
+    },
+    {
+      "title": "Boombox Cartel Heart of Stone (ft.Nevve)",
+      "sub": "Nikita Popkov\nPANORAMA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9235/5c455772-b319-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/87efbaa1-5479-4591-9d08-184fa96d7a93-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/LWDig6xhaEp5SlsE9qcSdfA5QTl3EvxMmRN8_b3SzQg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MmE4OGU3MS0wNjFm/LTQxMzQtYjk4OS0y/NWJhMjM1MzY4NWYv/ZWE5OTY2NDU0ZTI4/YmY0Yi5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9235
+    },
+    {
+      "title": "NOTHING IS PERMANENT EXCEPT A TATTOO I GOT LAST SATURDAY",
+      "sub": "Sasha Komarova",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10945/2e2ed43d-68cd-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0edd51fa-959a-42c4-90dd-b1ad413344f8-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/1brB8qfL4V3LkMaATW2wWZTwOMNv69x-qoLs0cpW1k0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk0NS02YTMwMTVi/YjYzMWFjNS4zNzY0/ODIxNC01NmIzYTk1/OWI0N2UzMTYwNWVm/MGYwMDcxZWE0MWI1/OC5qcGc?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 10945,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Nikita Popkov Motion Picture Gallery",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9247/7906c88a-b31a-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0f30e396-8a11-4508-b489-f3a1336e1552-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gCPv6paxEgOWXSIWffbGZaVU9kCeDkDBBjr6C5UjpfU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/N2U1NmU2Ny1jOTAw/LTQzZjctYWFiNC1h/NTM3YzI5MjdjYmYv/MTczMzQxMTE0Mjk5/MS5qcGc?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 9247
+    },
+    {
+      "title": "Jeremy Pope | God is Good",
+      "sub": "C Prinz\nJill Earth",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9238/5167fcaa-b31d-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/02c21084-99b6-4030-ba73-ddb9d2bc08f7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/qDJA6TmTtN-3PdvsQrzbNbgActEx7FK5478wTWx2xI4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YzVjNDk2Ny00Njcy/LTQzZTItOWY3Mi04/NTdjMGY1ZjY3ZjQv/MzNhM2Y2YWE3YWIz/MjIxZS5qcGc?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 9238
+    },
+    {
+      "title": "They say the world is ending on wednesday",
+      "sub": "Sasha Komarova",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10119/d58cf636-9eb2-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d33b6a29-4035-4749-b951-441d3deba109-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ttgZrrIVaysSXSX5FqGpfJiLu2b3LhdqnwKIZS3QDUQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZmZmYzBhZS1iOTA4/LTRlMGItODU3MC03/ZmQzMzE2MTE4NmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MDEtYS0xMi4zNy40/Ni5wbmc?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 10119
+    },
+    {
+      "title": "product 207",
+      "sub": "Anton Nenashev\nPANORAMA & Nenashev",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9243/32f4c26a-b31c-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d154f497-8457-4527-be8a-cdf0dcb876b2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/MJ06-MhMmkTurIeQybtwxH0OHZZba0mwanbQ8CEMQqU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZTBmMTQ2MS00NTE3/LTRjMTktODdkNC04/YjUyODY4ZWU0NTEv/NGQ0MjY0Njg5ZWJh/YWI3Yy5qcGc?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 9243
+    },
+    {
+      "title": "Soniamoskito",
+      "sub": "Nikita Popkov",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9241/bfe3d882-b31c-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d0d2c58b-c30c-4ea5-8c3c-1694157b84a8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/TJ_5LHRBrjZGFvvw_LLi9A_V6J0qo6LQi16hYJFlhsE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZDczZjU3YS0wNWVk/LTRlYWMtYjRkMy0x/NDEyMDg5NGI5MDIv/ZjY2OTVjYzYwZjQ0/Zjc4LnBuZw?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 9241
+    },
+    {
+      "title": "I’ll Die a Thousand Times and see you on a Tuesday",
+      "sub": "Sasha Komarova",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9237/f70d0e45-b319-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/57aa5a43-dc68-49dd-a221-80b3d8db1918-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2_1cSa2k3Haw4ULO_U8y215hIqXCkQt_BFvnzYnWBlk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/OTVjM2JkOS0zNmJm/LTRlODQtODExMi03/YTg2OTUzZjhjNDMv/OTIwOTZlNGVmYjU0/NGIuanBn?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 9237
+    },
+    {
+      "title": "BOLT - Ready to get Tallinn-ted Relocate with Bolt",
+      "sub": "Aleksandr Kovaljonok\nNafta Films OÜ",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10209/0b65f801-b989-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/60c0af3b-3c8f-4188-a637-331d6294c4fa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bQIYIrzeCK-dD2ZrwXFLYbr_82p6JTYIFLcjq29ooaE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDIwOS02OTBhMDlh/ODZhZWRhOC43MjAw/ODgzNC00YzQyODRk/ZTVjNTg3NTkyMDRj/M2M4YmFjNGE3YWZl/OC5qcGc?v=1&format=webp",
+      "cat": "",
+      "slate": 10209,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "ADIDAS",
+      "sub": "GLOBAL STUDIO\nPartizan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11348/4cad1658-c715-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd26d123-74c9-4529-9a31-bfb64b3e91a1-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/KnAXHWXOWumqQD-Tl1vHva4u6PAxZsJNFUsMO4CnKxA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZjYzMTlhNS1jZDc0/LTQxNzAtOGFkMS0w/M2YyNDg2MmE1N2Iv/MTc5MTkwMjk0NzIz/Ny5qcGc?v=1&format=webp",
+      "cat": "",
+      "slate": 11348,
+      "featured": true,
+      "featuredOrder": 9
+    }
+  ]
+}
