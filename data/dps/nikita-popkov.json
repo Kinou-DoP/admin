@@ -146,6 +146,15 @@
       "slate": 9240
     },
     {
+      "title": "III",
+      "sub": "Nikita Popkov\nPANORAMA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9246/6d509297-b31b-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/94c9552c-e124-4785-99c5-747339e8279a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Mrmvb62KWheV9Ti3FRSo8nkIGc6Xd3VKKn46CM380nk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YTkzZWE5My1jYmRk/LTQ5OWQtOTUzZC1m/MGVhYWQ3Yjg1MGIv/ZTQzNTJlNTIzZTdl/MGQ2OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9246
+    },
+    {
       "title": "DUREX",
       "sub": "Valentin Petit\nOCURENS & UNIT9",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9245/9fe1fe2a-b31b-11ef-bfce-022353abf6f5.mp4",
@@ -157,13 +166,15 @@
       "featuredOrder": 4
     },
     {
-      "title": "III",
-      "sub": "Nikita Popkov\nPANORAMA",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9246/6d509297-b31b-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/94c9552c-e124-4785-99c5-747339e8279a-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Mrmvb62KWheV9Ti3FRSo8nkIGc6Xd3VKKn46CM380nk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YTkzZWE5My1jYmRk/LTQ5OWQtOTUzZC1m/MGVhYWQ3Yjg1MGIv/ZTQzNTJlNTIzZTdl/MGQ2OC5wbmc?v=1&format=webp",
+      "title": "ADIDAS",
+      "sub": "GLOBAL STUDIO\nPartizan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11348/4cad1658-c715-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd26d123-74c9-4529-9a31-bfb64b3e91a1-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/KnAXHWXOWumqQD-Tl1vHva4u6PAxZsJNFUsMO4CnKxA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZjYzMTlhNS1jZDc0/LTQxNzAtOGFkMS0w/M2YyNDg2MmE1N2Iv/MTc5MTkwMjk0NzIz/Ny5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9246
+      "slate": 11348,
+      "featured": true,
+      "featuredOrder": 9
     },
     {
       "title": "SDM - Cartier Santos",
@@ -322,17 +333,6 @@
       "slate": 10209,
       "featured": true,
       "featuredOrder": 8
-    },
-    {
-      "title": "ADIDAS",
-      "sub": "GLOBAL STUDIO\nPartizan",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11348/4cad1658-c715-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd26d123-74c9-4529-9a31-bfb64b3e91a1-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/KnAXHWXOWumqQD-Tl1vHva4u6PAxZsJNFUsMO4CnKxA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZjYzMTlhNS1jZDc0/LTQxNzAtOGFkMS0w/M2YyNDg2MmE1N2Iv/MTc5MTkwMjk0NzIz/Ny5qcGc?v=1&format=webp",
-      "cat": "",
-      "slate": 11348,
-      "featured": true,
-      "featuredOrder": 9
     }
   ]
 }
