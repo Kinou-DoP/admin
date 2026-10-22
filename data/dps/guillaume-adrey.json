@@ -17,7 +17,8 @@
       "zoomThumb": true
     },
     "638": {
-      "title": "Seloger.com"
+      "title": "Seloger.com",
+      "zoom": 1.35
     },
     "654": {
       "title": "Givenchy - Soin Noir"
@@ -636,6 +637,7 @@
     {
       "title": "SE LOGER BAB",
       "sub": "Didier Borgel-Hansen\nH&O Paris",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/638/585ed445-cdf5-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545374577-62691666_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/raKkDKvNwtZ-ODUc0Aq6yicpbgTz-RLM1Wovuuz1U0E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MDA4MDEwOTY2/L3NlLWxvZ2VyLmpw/Zw?v=1&format=webp",
       "cat": "COMEDY",
