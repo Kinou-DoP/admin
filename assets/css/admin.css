@@ -155,7 +155,8 @@ input[readonly] { color: var(--dim); }
 .focal .fstage img { display: block; max-width: 100%; max-height: 300px; user-select: none; -webkit-user-drag: none; }
 .focal .fdot { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 0 10px rgba(0,0,0,.6); pointer-events: none; }
 .focal .fprevs { display: flex; gap: 14px; align-items: flex-end; }
-.focal .fprev { background: #111 center / cover no-repeat; margin-bottom: 6px; }
+.focal .fprev { position: relative; overflow: hidden; background: #111; margin-bottom: 6px; }
+.focal .fprev .fimg { position: absolute; inset: 0; background: center / cover no-repeat; }
 .focal .fprev.desk { width: 180px; aspect-ratio: 16 / 10; }
 .focal .fprev.phone { width: 64px; aspect-ratio: 9 / 19.5; }
 .focal .btn { margin-top: 10px; height: 32px; padding: 0 12px; }
@@ -163,4 +164,5 @@ input[readonly] { color: var(--dim); }
 .film .thumb .zframe { position: absolute; z-index: 2; border: 1px solid #ff3b30; box-shadow: 0 0 0 9999px rgba(0,0,0,.35); pointer-events: none; }
 .film .thumb .zframe[hidden] { display: none; }
 /* Le site affiche les portraits en noir et blanc : mêmes aperçus ici */
-.focal .fstage img, .focal .fprev { filter: grayscale(1); }
+.focal .fstage img, .focal .fprev .fimg { filter: grayscale(1); }
+.focal .fzoom { max-width: 420px; margin-top: 12px; }

@@ -465,13 +465,20 @@
     if (!p && !a.img) return box;
     var xy = parsePos(a.pos);
     var stage = el("div", { class: "fstage" }), img = el("img", { alt: "" }), dot = el("i", { class: "fdot" });
-    var desk = el("div", { class: "fprev desk" }), phone = el("div", { class: "fprev phone" });
+    // Aperçus : même rendu que le site (cadrage = background-position, zoom = agrandissement vers le point de cadrage).
+    var dImg = el("div", { class: "fimg" }), pImg = el("div", { class: "fimg" });
+    var desk = el("div", { class: "fprev desk" }, [dImg]), phone = el("div", { class: "fprev phone" }, [pImg]);
     stage.appendChild(img); stage.appendChild(dot);
+    var zr = el("input", { type: "range", min: "100", max: "250", step: "1", class: "nodirty", value: String(Math.round((a.zoom || 1) * 100)) });
+    var zl = el("span", { class: "zval" });
     function show() {
+      var z = a.zoom > 1 ? a.zoom : 1, pos = xy[0] + "% " + xy[1] + "%";
       dot.style.left = xy[0] + "%"; dot.style.top = xy[1] + "%";
-      [desk, phone].forEach(function (b) { b.style.backgroundPosition = xy[0] + "% " + xy[1] + "%"; });
+      zl.textContent = z > 1 ? "Zoom " + Math.round(z * 100) + " %" : "Zoom : aucun";
+      [dImg, pImg].forEach(function (b) { b.style.backgroundPosition = pos; b.style.transformOrigin = pos; b.style.transform = z > 1 ? "scale(" + z + ")" : ""; });
     }
-    function set(url) { img.src = url; [desk, phone].forEach(function (b) { b.style.backgroundImage = 'url("' + url + '")'; }); }
+    zr.addEventListener("input", function () { var z = parseInt(zr.value, 10) / 100; if (z > 1) a.zoom = z; else delete a.zoom; show(); touch(); });
+    function set(url) { img.src = url; [dImg, pImg].forEach(function (b) { b.style.backgroundImage = 'url("' + url + '")'; }); }
     function place(e) {
       var r = img.getBoundingClientRect(), pt = e.touches ? e.touches[0] : e;
       xy = [Math.round(Math.max(0, Math.min(100, (pt.clientX - r.left) / r.width * 100))), Math.round(Math.max(0, Math.min(100, (pt.clientY - r.top) / r.height * 100)))];
@@ -487,13 +494,14 @@
       .then(function (r) { return r.ok ? r.blob() : null; })
       .then(function (b) { if (b) set(portraitURL[a.img] = URL.createObjectURL(b)); });
     var reset = el("button", { type: "button", class: "btn ghost", text: "Recentrer" });
-    reset.addEventListener("click", function () { delete a.pos; xy = parsePos(); show(); touch(); });
+    reset.addEventListener("click", function () { delete a.pos; delete a.zoom; zr.value = "100"; xy = parsePos(); show(); touch(); });
     show();
     box.appendChild(el("p", { class: "hint", text: "Cliquez (ou glissez) sur la photo pour placer le point qui doit toujours rester visible, par exemple le visage." }));
     box.appendChild(el("div", { class: "frow" }, [stage, el("div", { class: "fprevs" }, [
       el("div", {}, [desk, el("span", { class: "label", text: "Ordinateur" })]),
       el("div", {}, [phone, el("span", { class: "label", text: "Téléphone" })])
     ])]));
+    box.appendChild(el("div", { class: "zoom fzoom" }, [zl, zr]));
     box.appendChild(reset);
     return box;
   }
