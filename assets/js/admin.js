@@ -547,6 +547,38 @@
       var xs = extrasOf(o), ns = xs.filter(function (x) { return x.stills; }).length;
       if (ns) chips.appendChild(el("span", { class: "chip", text: ns > 1 ? ns + " galeries" : "Stills" }));
       if (xs.length > ns) chips.appendChild(el("span", { class: "chip", text: "+ " + (xs.length - ns) + " vidéo" + (xs.length - ns > 1 ? "s" : "") }));
+      if (o.hover) chips.appendChild(el("span", { class: "chip", text: "Extrait au survol" }));
+    }
+    // Projet en stills (sans film) : extrait d'une autre vidéo Slate, joué seulement au survol (court métrage qu'on ne
+    // peut pas montrer en entier, sans bande-annonce) ; au clic, le site montre la galerie. → overrides[id].hover
+    var hoverBox = null;
+    if (!c.full && !c.video) {
+      var ho = (state.overrides[c.slate] || {}).hover;
+      var hcheck = el("input", { type: "checkbox" }); hcheck.checked = !!ho;
+      var hin = el("input", { type: "url", class: "stills nodirty", placeholder: "Lien Slate de la vidéo (son extrait jouera au survol)", value: ho ? ho.link || "" : "" });
+      var hst = el("p", { class: "hint", text: ho ? "Extrait : " + (ho.title || "") : "" });
+      var hrow = el("div", { class: "hrow" }, [hin, hst]); hrow.hidden = !ho;
+      hcheck.addEventListener("change", function () {
+        hrow.hidden = !hcheck.checked;
+        if (!hcheck.checked && (state.overrides[c.slate] || {}).hover) { setOverride(c, "hover"); hin.value = ""; hst.textContent = ""; sync(); touch(); }
+      });
+      var hload = function (force) {
+        var v = hin.value.trim(), cur = (state.overrides[c.slate] || {}).hover;
+        if (!v) { if (cur) { setOverride(c, "hover"); hst.textContent = ""; sync(); touch(); } return; }
+        if (!force && cur && v === cur.link) return;
+        if (hin._busy === v) return; // Entrée déclenche aussi « change »
+        hin._busy = v; hst.textContent = "Lecture du lien…";
+        importStills(v).then(function (d) {
+          hin._busy = null;
+          if (d.stills) throw new Error("C'est une page de stills : collez le lien d'une vidéo.");
+          if (!d.video) throw new Error("Cette vidéo n'a pas d'extrait sur Slate : choisissez-en une qui en a un.");
+          var h = { link: d.link, title: d.title, video: d.video }; if (d.img) h.img = d.img;
+          setOverride(c, "hover", h); hin.value = d.link; hst.textContent = "Extrait : " + d.title; sync(); touch();
+        }).catch(function (e) { hin._busy = null; hst.textContent = e.message; });
+      };
+      hin.addEventListener("change", function () { hload(false); });
+      hin.addEventListener("keydown", function (e) { if (e.key === "Enter") hload(true); });
+      hoverBox = el("div", { class: "hover" }, [el("label", { class: "hcheck" }, [hcheck, " Extrait vidéo au survol"]), hrow]);
     }
     // Sous le film dans le lecteur : stills et autres vidéos (liens Slate), enregistrés avec la fiche.
     var extras = extrasCtl(function () { return state.overrides[c.slate] || {}; }, function (list) {
@@ -564,6 +596,7 @@
     if ((bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement
     card.appendChild(title); card.appendChild(sub);
     card.appendChild(el("div", { class: "acts" }, [hide, reset]));
+    if (hoverBox) card.appendChild(hoverBox);
     card.appendChild(extras);
     return card;
   }
