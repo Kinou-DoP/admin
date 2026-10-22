@@ -5,6 +5,12 @@
   "bundle": "https://kinou.slateapp.com/bundles/35a5cf0e-c71e-11f1-a349-0215583debcb",
   "open": 10716,
   "overrides": {
+    "4740": {
+      "title": "Renault Megane"
+    },
+    "6319": {
+      "title": "Porsche - Connected Watch"
+    },
     "8326": {
       "zoom": 1.13
     },
