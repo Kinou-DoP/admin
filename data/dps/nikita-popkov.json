@@ -61,7 +61,20 @@
       "zoom": 1.33
     }
   },
-  "about": {},
+  "about": {
+    "website": "https://nikitapopkov.com/",
+    "instagram": "https://www.instagram.com/nikitapopkov/",
+    "bioEn": [
+      "Nikita Popkov, cinematographer from Riga, Latvia.",
+      "In love with Kodak motion film and experimental visual."
+    ],
+    "bio": [
+      "Nikita Popkov est un directeur de la photographie originaire de Riga, en Lettonie.",
+      "Passionné par la pellicule Kodak et l’expérimentation visuelle."
+    ],
+    "pos": "47% 47%",
+    "img": "img/nikita-popkov.webp"
+  },
   "categories": [
     "FEATURED",
     "COMMERCIAL",
