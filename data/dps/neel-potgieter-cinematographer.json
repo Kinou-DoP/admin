@@ -11,7 +11,19 @@
     }
   },
   "about": {
-    "img": "img/neel-potgieter-cinematographer.webp"
+    "img": "img/neel-potgieter-cinematographer.webp",
+    "bioEn": [
+      "Born in De Aar, South Africa, 1979.",
+      "Neel graduated from Potchefstroom University with a Honors Degree in Communication. He mastered in Audio Visual.",
+      "Apon graduation he moved to the United States where he worked for several years as a camera operator and video editor.",
+      "This was followed with a 5 year stint in London, working as a young director of photography.",
+      "Currently he is based in Paris, France,"
+    ],
+    "bio": [
+      "Né à De Aar, en Afrique du Sud, en 1979, Neel est diplômé de l’université de Potchefstroom, où il a obtenu un diplôme spécialisé en communication, avec une spécialisation en audiovisuel.",
+      "À l’issue de ses études, il s’installe aux États-Unis, où il travaille pendant plusieurs années comme cadreur et monteur vidéo. Il poursuit ensuite sa carrière à Londres pendant cinq ans, où il fait ses débuts en tant que jeune directeur de la photographie.",
+      "Il est aujourd’hui basé à Paris, en France."
+    ]
   },
   "categories": [
     "FEATURED",
