@@ -286,8 +286,9 @@
   function filmsSection() {
     var sec = el("section", {}, [el("h2", { text: "Films" })]);
     if (!slate) { sec.appendChild(el("p", { class: "empty", text: "Importez le bundle Slate pour voir les films." })); return sec; }
-    var cats = slate.categories.slice();
-    if (!curCat || cats.indexOf(curCat) < 0) curCat = cats.indexOf("FEATURED") > -1 ? "FEATURED" : cats[0];
+    // ALL (admin seulement) : tous les films de toutes les catégories, chacun une seule fois.
+    var cats = ["ALL"].concat(slate.categories);
+    if (!curCat || cats.indexOf(curCat) < 0) curCat = "ALL";
     var tabs = el("div", { class: "tabs" });
     cats.forEach(function (cat) {
       var b = el("button", { text: cat, class: cat === curCat ? "on" : "" });
@@ -295,7 +296,11 @@
       tabs.appendChild(b);
     });
     sec.appendChild(tabs);
-    var list = slate.clips.filter(function (c) { return curCat === "FEATURED" ? c.featured : c.cat === curCat; });
+    var seen = {};
+    var list = slate.clips.filter(function (c) {
+      if (curCat === "ALL") { if (seen[c.slate]) return false; seen[c.slate] = true; return true; }
+      return curCat === "FEATURED" ? c.featured : c.cat === curCat;
+    });
     if (curCat === "FEATURED") list.sort(function (a, b) { return a.featuredOrder - b.featuredOrder; });
     var grid = el("div", { class: "films" });
     list.forEach(function (c) { grid.appendChild(filmCard(c)); });
@@ -307,6 +312,7 @@
   // Recadrage d'un extrait (zoom au centre, 100 à 160 %) pour enlever les bandes noires, avec aperçu :
   // l'extrait joue dans la vignette au survol et pendant le réglage. get() : zoom actuel ; set(z) : enregistre (1 = aucun).
   // getT / setT (optionnels) : case « aussi sur la vignette » (sinon seul l'extrait est recadré).
+  var zoomStopOther = null; // un seul extrait joue à la fois : lancer un aperçu arrête le précédent
   function zoomCtl(thumb, video, get, set, getT, setT) {
     var range = el("input", { type: "range", min: "100", max: "160", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
     var lab = el("span", { class: "zval" }), v = null, adjusting = false;
@@ -322,7 +328,10 @@
       frame.hidden = !adjusting;
       if (adjusting && !frame.parentNode) thumb.appendChild(frame);
     }
+    function halt() { adjusting = false; if (v) { v.remove(); v = null; } apply(); }
     function play() {
+      if (zoomStopOther && zoomStopOther !== halt) zoomStopOther();
+      zoomStopOther = halt;
       if (v || !video) return;
       v = el("video", { muted: true, loop: true, playsinline: true, src: video }); v.muted = true;
       thumb.appendChild(v); apply();
@@ -350,13 +359,11 @@
     thumb.appendChild(chips);
     var title = el("input", { type: "text", value: val(c, "title") });
     var sub = el("textarea", { rows: 2 }); sub.value = val(c, "sub");
-    var hide = el("button", {}), home = el("button", {}), reset = el("button", { text: "Rétablir" });
+    var hide = el("button", {}), reset = el("button", { text: "Rétablir" });
     function sync() {
       var o = state.overrides[c.slate] || {};
       card.className = "film" + (o.hidden ? " hidden" : "") + (o.title !== undefined || o.sub !== undefined ? " edited" : "");
       hide.textContent = o.hidden ? "Afficher" : "Masquer";
-      home.textContent = state.open === c.slate ? "★ Clip d'accueil" : "Clip d'accueil";
-      home.className = state.open === c.slate ? "on" : "";
       reset.hidden = !(o.title !== undefined || o.sub !== undefined);
       chips.textContent = "";
       if (c.featured) chips.appendChild(el("span", { class: "chip", text: "Featured " + c.featuredOrder }));
@@ -383,13 +390,12 @@
     title.addEventListener("input", function () { setOverride(c, "title", title.value); sync(); });
     sub.addEventListener("input", function () { setOverride(c, "sub", sub.value); sync(); });
     hide.addEventListener("click", function () { setOverride(c, "hidden", (state.overrides[c.slate] || {}).hidden ? undefined : true); sync(); touch(); });
-    home.addEventListener("click", function () { state.open = state.open === c.slate ? undefined : c.slate; dirty = true; render(); });
     reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); touch(); });
     sync();
     var zoom = zoomCtl(thumb, c.video, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
     card.appendChild(thumb); card.appendChild(zoom); card.appendChild(title); card.appendChild(sub);
-    card.appendChild(el("div", { class: "acts" }, [hide, home, reset, dropStills]));
+    card.appendChild(el("div", { class: "acts" }, [hide, reset, dropStills]));
     card.appendChild(stillsIn); card.appendChild(stillsSt);
     return card;
   }

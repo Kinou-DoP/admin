@@ -17,6 +17,8 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - Import d'un bundle Slate : `GET <SITE>/api/bundle/<uuid | code shots.re>` (fonction du repo `site`).
 - Forcer la mise à jour du site : `POST <SITE>/api/refresh/<slug>` avec le token (vide le cache CDN du DP).
 - Corrections par film : `overrides` indexés par id Slate (suivent le film si l'ordre change sur Slate).
+  Onglet ALL (admin seulement, ouvert par défaut) : tous les films des catégories, chacun une fois. Pas de bouton
+  « Clip d'accueil » (l'accueil se règle par la bande Slate). Un seul aperçu d'extrait joue à la fois.
 - Stills d'un film : lien d'une page Slate `kinou.slateapp.com/work/<adresse>` sous le film → `GET <SITE>/api/stills?link=…`
   → `overrides[<id>].stills` (URLs signées telles quelles) + `stillsLink`.
 - Recadrage d'un extrait (fiches et accueil) : curseur 100–160 % sous la vignette, aperçu de l'extrait dans la vignette
