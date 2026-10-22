@@ -5,59 +5,117 @@
   "bundle": "https://kinou.slateapp.com/bundles/a6eed508-cd52-11f1-a349-0215583debcb",
   "open": 11004,
   "overrides": {
+    "257": {
+      "zoom": 1.34
+    },
+    "391": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "619": {
+      "zoom": 1.34,
+      "zoomThumb": true
+    },
     "638": {
       "title": "Seloger.com"
     },
     "654": {
       "title": "Givenchy - Soin Noir"
     },
-    "801": {
+    "701": {
+      "zoom": 1.23,
       "zoomThumb": true
     },
+    "801": {
+      "zoomThumb": true,
+      "zoom": 1.25
+    },
     "825": {
-      "title": "Piaget - Possession"
+      "title": "Piaget - Possession",
+      "zoom": 1.46
     },
     "1250": {
       "zoomThumb": true,
-      "zoom": 1.26
+      "zoom": 1.28
+    },
+    "1558": {
+      "zoom": 1.29
     },
     "1629": {
-      "title": "Leffe - Texture"
+      "title": "Leffe - Texture",
+      "zoom": 1.13
+    },
+    "1679": {
+      "zoom": 1.35
     },
     "1744": {
-      "title": "Lancôme - Lacquer"
+      "title": "Lancôme - Lacquer",
+      "zoom": 1.03
+    },
+    "1753": {
+      "zoom": 1.02
+    },
+    "1774": {
+      "zoom": 1.29
     },
     "1800": {
-      "title": "HTC - Squeeze for brilliant"
+      "title": "HTC - Squeeze for brilliant",
+      "zoom": 1.48
+    },
+    "1893": {
+      "zoom": 1.35
+    },
+    "1975": {
+      "zoom": 1.32
     },
     "2020": {
-      "zoom": 1.36,
+      "zoom": 1.37,
       "zoomThumb": true
     },
     "2104": {
-      "title": "Dior - J'Adore"
+      "title": "Dior - J'Adore",
+      "zoom": 1.01
+    },
+    "2189": {
+      "zoom": 1.51
     },
     "2238": {
-      "title": "Citroën C3"
+      "title": "Citroën C3",
+      "zoom": 1.37
     },
     "2334": {
       "title": "L'Oréal - Cremefleurs"
     },
     "2341": {
       "zoomThumb": true,
-      "zoom": 1.21
+      "zoom": 1.48
+    },
+    "2483": {
+      "zoom": 1.57
     },
     "2571": {
-      "title": "Lancôme - Absolu Rouge"
+      "title": "Lancôme - Absolu Rouge",
+      "zoom": 1.36
+    },
+    "3080": {
+      "zoom": 1.27
     },
     "3179": {
-      "title": "Vichy - Mineral 89"
+      "title": "Vichy - Mineral 89",
+      "zoom": 1.34
     },
     "3184": {
       "title": "Le Petit Marseillais - Cold Cream"
     },
+    "3587": {
+      "zoom": 1.3
+    },
     "3644": {
-      "title": "Pizza Del Arte"
+      "title": "Pizza Del Arte",
+      "zoom": 1.06
+    },
+    "3739": {
+      "zoom": 1.32
     },
     "4252": {
       "title": "Louboutin Nudes"
@@ -65,17 +123,28 @@
     "4857": {
       "title": "Chanel - Activation"
     },
+    "5262": {
+      "zoom": 1.2
+    },
     "5753": {
-      "title": "Marie"
+      "title": "Marie",
+      "zoom": 1.3
+    },
+    "5825": {
+      "zoom": 1.5
     },
     "6336": {
-      "title": "La Bresse Bleue"
+      "title": "La Bresse Bleue",
+      "zoom": 1.37
     },
     "6669": {
       "title": "Dior - Prestige"
     },
     "6738": {
       "title": "Guerlain - Shalimar Tonka"
+    },
+    "6746": {
+      "zoom": 1.28
     },
     "7644": {
       "title": "Taureau Ailé"
@@ -95,11 +164,15 @@
     "9862": {
       "title": "Maille - Le Sandwich"
     },
+    "10078": {
+      "zoom": 1.38
+    },
     "10528": {
       "title": "Lustucru - Gnocchi star"
     },
     "10898": {
-      "title": "Maggi - So good together"
+      "title": "Maggi - So good together",
+      "zoom": 1.37
     },
     "10932": {
       "title": "Maison Francis Kurkdjian - Aqua Media Cologne"
@@ -118,7 +191,8 @@
     "instagram": "https://www.instagram.com/guillaumeadrey/",
     "website": "https://www.guillaumeadrey.com/",
     "img": "img/guillaume-adrey.webp",
-    "cv": "cv/CV-Guillaume-Adrey.pdf"
+    "cv": "cv/CV-Guillaume-Adrey.pdf",
+    "pos": "76% 28%"
   },
   "categories": [
     "FEATURED",
