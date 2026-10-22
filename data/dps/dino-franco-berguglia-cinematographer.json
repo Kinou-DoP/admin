@@ -9,10 +9,14 @@
       "zoom": 1.03
     },
     "5979": {
-      "zoom": 1.09
+      "zoom": 1.42
     },
     "5982": {
       "zoom": 1.19
+    },
+    "5983": {
+      "zoom": 1.32,
+      "zoomPos": "88.9% 49.3%"
     },
     "5984": {
       "zoomThumb": true,
@@ -37,7 +41,8 @@
       "title": "Sacrilège"
     },
     "6019": {
-      "title": "Punchline"
+      "title": "Punchline",
+      "zoom": 1.42
     },
     "6020": {
       "title": "TOMATIC"
@@ -46,13 +51,18 @@
       "zoom": 1.34
     },
     "6392": {
-      "title": "Fairplay "
+      "title": "Fairplay ",
+      "zoom": 1.1
     },
     "8135": {
-      "zoom": 1.13
+      "zoom": 1.3
     },
     "8345": {
       "title": "Pauline Grandeur Nature"
+    },
+    "8737": {
+      "zoom": 1.27,
+      "zoomPos": "46.4% 0%"
     },
     "9036": {
       "zoom": 1.19
