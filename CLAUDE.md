@@ -50,8 +50,9 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
   Zoom 100–250 % → `about.zoom` (agrandissement vers le point de cadrage, `transform: scale` sur le site).
   Le site affiche le portrait en noir et blanc (filtre CSS) : la photo déposée peut rester en couleur.
 - CV : PDF → `data/dps/cv/CV-Prenom-Nom.pdf`, servi en téléchargement (`_headers`).
-- Adresse (slug) : proposée depuis le nom (minuscules, sans accents), définitive après publication ;
-  les chefs op déjà listés sur le site gardent leur adresse actuelle.
+- Adresse (slug) : proposée depuis le nom (minuscules, sans accents) ; modifiable ensuite (demande de Gus : reprendre les
+  adresses de kinou.fr). Changement d'adresse = un seul commit : nouvelle fiche, ancienne supprimée (`remove` dans `commit`),
+  `index.json` et liens de `home.json` (slides et overrides) mis à jour. Le portrait garde son fichier (`about.img`).
 
 ## Hébergement et branches
 - L'admin utilisée au quotidien est sur **GitHub Pages** : https://kinou-dop.github.io/admin/ (publie la branche `beta`,

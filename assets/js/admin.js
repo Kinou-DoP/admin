@@ -63,7 +63,7 @@
     return gh("/repos/" + REPO + "/contents/" + path + "?ref=" + BRANCH, { raw: true, allow404: true })
       .then(function (t) { return t === null ? null : JSON.parse(t); });
   }
-  // Un seul commit pour tous les fichiers : [{ path, text } | { path, base64 }]
+  // Un seul commit pour tous les fichiers : [{ path, text } | { path, base64 } | { path, remove: true }]
   function commit(files, message) {
     var base;
     return gh("/repos/" + REPO + "/git/ref/heads/" + BRANCH).then(function (ref) {
@@ -71,6 +71,7 @@
       return gh("/repos/" + REPO + "/git/commits/" + base);
     }).then(function (c) {
       return Promise.all(files.map(function (f) {
+        if (f.remove) return { path: f.path, mode: "100644", type: "blob", sha: null }; // suppression
         var body = f.base64 !== undefined ? { content: f.base64, encoding: "base64" } : { content: f.text, encoding: "utf-8" };
         return gh("/repos/" + REPO + "/git/blobs", { method: "POST", body: body }).then(function (b) { return { path: f.path, mode: "100644", type: "blob", sha: b.sha }; });
       })).then(function (tree) {
@@ -177,7 +178,7 @@
   // ---------- Fiche d'un chef op ----------
   // state : fiche en cours d'édition ; slate : dernier import du bundle (ou copie enregistrée)
   // listed : le chef op figure déjà dans la liste du site (son adresse existe, elle ne change pas).
-  var state = null, slate = null, isNew = false, listed = false, pending = {}, curCat = null, flash = "";
+  var state = null, slate = null, isNew = false, listed = false, origSlug = null, pending = {}, curCat = null, flash = "";
   // dirty : modifications faites dans la page mais pas encore publiées.
   var dirty = false;
   function touch() { dirty = true; status("Modifications non publiées : cliquez sur « Publier » pour les mettre en ligne.", "warn"); }
@@ -192,7 +193,7 @@
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
     Promise.all([index ? index : loadIndex(), slug ? readFile("data/dps/" + slug + ".json") : null]).then(function (r) {
       var entry = slug && index.dps.filter(function (d) { return d.slug === slug; })[0];
-      isNew = !r[1]; listed = !!entry; pending = {};
+      isNew = !r[1]; listed = !!entry; pending = {}; origSlug = listed || !isNew ? slug : null; // adresse actuelle
       state = r[1] || { slug: slug || "", name: entry ? entry.name : "", hue: 0, overrides: {}, about: {} };
       state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false;
       slate = state.clips ? { name: state.name, categories: state.categories || [], clips: state.clips } : null;
@@ -232,7 +233,7 @@
         if (r[2]) { dirty = false; flash = d.name + " a déjà une fiche : la voici. Utilisez « Relire le bundle » pour la mettre à jour."; location.hash = "#/dp/" + known.slug; return; }
         slate = d; state.bundle = d.bundle; dirty = true;
         if (!state.name) state.name = d.name;
-        if (known) { state.slug = known.slug; listed = true; }
+        if (known) { state.slug = origSlug = known.slug; listed = true; }
         if (isNew && !state.slug) state.slug = slugify(state.name);
         if (isNew) state.hue = hueOf(state.slug);
         if (isNew && state.open === undefined) { var f = d.clips.filter(function (c) { return c.featured; }).sort(function (a, b) { return a.featuredOrder - b.featuredOrder; })[0]; if (f) state.open = f.slate; }
@@ -257,7 +258,7 @@
 
   function identitySection() {
     var name = el("input", { type: "text", value: state.name || "", placeholder: "Prénom Nom, AFC" });
-    var slug = el("input", { type: "text", value: state.slug || "", readonly: !isNew || listed });
+    var slug = el("input", { type: "text", value: state.slug || "" });
     name.addEventListener("input", function () {
       var auto = slug.value === "" || slug.value === slugify(state.name || "");
       state.name = name.value; view.querySelector("h1").textContent = state.name || "Nouveau chef op";
@@ -270,7 +271,7 @@
       el("div", { class: "cols" }, [
         el("div", { class: "field" }, [el("label", { class: "label", text: "Nom affiché" }), name, el("p", { class: "hint", text: "Les mentions après la virgule (AFC, SBC…) s'affichent sous le nom." })]),
         el("div", { class: "field" }, [el("label", { class: "label", text: "Adresse de la page" }), el("div", { class: "prefix" }, [el("span", { text: "kinou.fr/" }), slug]),
-          el("p", { class: "hint", text: isNew && !listed ? "Proposée à partir du nom (sans accents ni majuscules). Modifiable jusqu'à la première publication." : "Définitive : elle ne peut plus changer (référencement)." })])
+          el("p", { class: "hint", text: !origSlug ? "Proposée à partir du nom (sans accents ni majuscules)." : "Modifiable : à la publication, la fiche passe à la nouvelle adresse (liste des chefs op et liens de l'accueil suivent) ; l'ancienne adresse ne marche plus." })])
       ])
     ]);
   }
@@ -670,14 +671,18 @@
     var s = state;
     if (!s.name.trim()) return status("Le nom est obligatoire.", "err");
     if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(s.slug || "")) return status("Adresse de page invalide.", "err");
+    var moved = origSlug && s.slug !== origSlug;
+    if (moved && index.dps.some(function (d) { return d.slug === s.slug; })) return status("L'adresse « " + s.slug + " » est déjà celle d'un autre chef op.", "err");
     publishBtn.disabled = true; status("Publication…");
-    (isNew ? readFile("data/dps/" + s.slug + ".json") : Promise.resolve(null)).then(function (existing) {
+    Promise.all([isNew || moved ? readFile("data/dps/" + s.slug + ".json") : null, moved ? readFile("data/home.json") : null]).then(function (r) {
+      var existing = r[0];
+      if (existing && moved) { publishBtn.disabled = false; return status("Une fiche existe déjà à l'adresse « " + s.slug + " » (" + existing.name + ").", "err"); }
       if (existing && !window.confirm("Une fiche existe déjà à l'adresse « " + s.slug + " » (" + existing.name + "). La remplacer ?")) { publishBtn.disabled = false; status(""); return; }
-      doPublish();
+      doPublish(moved ? r[1] : null);
     }, function (e) { publishBtn.disabled = false; status(e.message, "err"); });
   }
-  function doPublish() {
-    var s = state;
+  function doPublish(homeData) {
+    var s = state, from = origSlug && s.slug !== origSlug ? origSlug : null; // changement d'adresse
     var files = [], about = s.about;
     if (pending.portrait) { about.img = "img/" + s.slug + ".webp"; files.push({ path: "data/dps/img/" + s.slug + ".webp", base64: pending.portrait.base64 }); }
     if (pending.cv) {
@@ -691,9 +696,17 @@
     out.about = about;
     if (slate) { out.categories = slate.categories; out.clips = slate.clips; } // copie de secours
     files.push({ path: "data/dps/" + s.slug + ".json", text: json(out) });
-    // Liste des DPs : ajout (rangé par nom de famille) ou mise à jour du nom.
-    var dps = index.dps.slice(), i = dps.findIndex(function (d) { return d.slug === s.slug; });
-    if (i > -1) { if (dps[i].name !== out.name) { dps[i] = Object.assign({}, dps[i], { name: out.name }); } }
+    if (from && !isNew) files.push({ path: "data/dps/" + from + ".json", remove: true });
+    // Nouvelle adresse : les liens de l'accueil vers ce chef op suivent.
+    if (from && homeData) {
+      var hit = false;
+      (homeData.slides || []).forEach(function (sl) { (sl.dps || []).forEach(function (d) { if (d.slug === from) { d.slug = s.slug; hit = true; } }); if (sl.slug === from) { sl.slug = s.slug; hit = true; } });
+      Object.keys(homeData.overrides || {}).forEach(function (k) { (homeData.overrides[k].dps || []).forEach(function (d) { if (d.slug === from) { d.slug = s.slug; hit = true; } }); });
+      if (hit) files.push({ path: "data/home.json", text: json(homeData) });
+    }
+    // Liste des DPs : ajout (rangé par nom de famille) ou mise à jour du nom (et de l'adresse).
+    var dps = index.dps.slice(), i = dps.findIndex(function (d) { return d.slug === (from || s.slug); });
+    if (i > -1) { if (dps[i].name !== out.name || dps[i].slug !== s.slug) { dps[i] = Object.assign({}, dps[i], { name: out.name, slug: s.slug }); } }
     else {
       var k = surname(out.name), at = dps.findIndex(function (d) { return surname(d.name) > k; });
       dps.splice(at < 0 ? dps.length : at, 0, { slug: s.slug, name: out.name });
@@ -701,9 +714,10 @@
     if (JSON.stringify(dps) !== JSON.stringify(index.dps)) files.push({ path: "data/dps/index.json", text: json({ dps: dps }) });
     commit(files, (isNew ? "Ajout " : "Mise à jour ") + out.name.split(",")[0] + " (admin, " + user.login + ")").then(function () {
       var wasNew = isNew;
-      index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false;
-      flash = "Publié. Le site sera à jour dans une minute environ.";
-      if (wasNew) location.hash = "#/dp/" + out.slug; else render();
+      index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false; origSlug = out.slug;
+      if (homeData && home) home = null; // l'accueil sera relu (liens mis à jour)
+      flash = from ? "Publié à la nouvelle adresse kinou.fr/" + out.slug + "." : "Publié. Le site sera à jour dans une minute environ.";
+      if (wasNew || from) location.hash = "#/dp/" + out.slug; else render();
       refreshSite(out.slug).catch(function () {}); // vide le cache du site (fiche et clips) : visible tout de suite
       warmThumbs(out.clips);
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
