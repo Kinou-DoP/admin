@@ -10,7 +10,8 @@ version du 21/10** : un changement de `netlify/functions/` du repo site n'y arri
 - `importStills` : si `/api/stills` échoue (page d'une vidéo), lecture par `/api/reel` (1er film, sans `full`) ;
 - le robot GitHub (`tools/fill-home.mjs`) ajoute le `full` manquant (slides de l'accueil, vidéos `extras` des fiches et
   de l'accueil) en lisant Slate directement, après chaque publication de `data/home.json` ou `data/dps/*.json`.
-- Projets en images seulement : coller le lien de leurs stills sous le projet (`extras`).
+- Projets en images seulement : le robot lit leurs images sur le bundle Slate → `overrides[<id>].images`
+  (fiches du commit publié ; toutes au lancement manuel). L'admin ne touche pas à ce champ.
 Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `site` (« Hébergement actuel »).
 
 ## Rôle
@@ -79,7 +80,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 ## Robot GitHub (branche main)
 - `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json` ou d'une fiche
   (`data/dps/*.json`), ajoute le film complet (`full`) qui manque : slides de l'accueil (lu sur la bande Slate, `reel`)
-  et vidéos ajoutées sous un film (`extras`, lu sur leur page Slate `link`). Gratuit (Actions, dépôt public),
+  et vidéos ajoutées sous un film (`extras`, lu sur leur page Slate `link`) ; images des projets en images seulement
+  (`overrides[<id>].images`, lues sur le bundle de la fiche publiée, ou de toutes les fiches au lancement manuel). Gratuit (Actions, dépôt public),
   aucune mise en ligne Netlify (`.github/` et `tools/` exclus de la règle `ignore`). Lancement manuel possible :
   onglet Actions → « Films complets (accueil et vidéos sous un film) » → Run workflow.
 - Si le robot échoue à enregistrer : Settings → Actions → General → Workflow permissions → « Read and write ».
