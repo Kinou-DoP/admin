@@ -39,7 +39,16 @@
       "title": "Eva Fumée Blanche"
     }
   },
-  "about": {},
+  "about": {
+    "website": "https://www.lascar.work/",
+    "instagram": "https://www.instagram.com/julienlascar/",
+    "bioEn": [
+      "Julien is a French cinematographer based in Paris, he has been nominated for Best Cinematography at the Berlin Music Video Awards 2024 for Frederic de Poncharra's \"6G3 for artist Booba."
+    ],
+    "pos": "77% 34%",
+    "zoom": 1.18,
+    "img": "img/julien-lascar-cinematographer.webp"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
@@ -425,7 +434,7 @@
       "sub": "Guillaume Allantaz\nSoldats",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9332/75595579-0a2b-11f0-bfce-022353abf6f5.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0d85ea9f-530c-462b-8d5f-f1d6c38772d4-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/jFzTfYNIUHQeEJslr6ATPQRaa29xtzN_ZWpu_A-BRwg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MzMyLTY3ODRlMjhj/ZDI0MGU4LjMyNjA2/NjM4LWI5ODcyMGQy/MmI1OTc5ZTBlYzcy/NWRmZmQ3ZmJhZmNl/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/MLUJh2ectOi038uO7YDxp5Y303CyutXnKWQb30kaQEA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OGU2MDVkMy02YWNm/LTQ3ODEtYTc3Ny0w/YmMxNmZjZWE5ZjAv/MTc5MjY3OTE4MjIw/NC5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
       "slate": 9332
     },
