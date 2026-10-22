@@ -170,7 +170,10 @@
     ],
     "pos": "29% 42%",
     "img": "img/leo-schrepel-cinematographer.webp",
-    "cv": "cv/CV-Leo-Schrepel.pdf"
+    "cv": "cv/CV-Leo-Schrepel.pdf",
+    "bio": [
+      "Léo est un directeur de la photographie français installé à Paris."
+    ]
   },
   "categories": [
     "FEATURED",
