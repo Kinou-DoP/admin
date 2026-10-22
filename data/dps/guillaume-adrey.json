@@ -60,7 +60,8 @@
     },
     "1800": {
       "title": "HTC - Squeeze for brilliant",
-      "zoom": 1.48
+      "zoom": 1.49,
+      "zoomThumb": true
     },
     "1893": {
       "zoom": 1.35
@@ -77,7 +78,7 @@
       "zoom": 1.01
     },
     "2189": {
-      "zoom": 1.51
+      "zoom": 1.5
     },
     "2238": {
       "title": "Citroën C3",
