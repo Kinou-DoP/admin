@@ -387,6 +387,58 @@
     return el("div", {}, [box, el("label", { class: "zthumb" }, [cb, "Aussi sur la vignette"])]);
   }
 
+  // Fond de la liste des chefs op sur téléphone (écran en hauteur) : extrait du 1er film FEATURED, recadré en largeur.
+  // On fait glisser la bande rouge (partie visible sur un téléphone) → overrides[<id>].phoneX (0–100, absent = centre),
+  // object-position horizontale de #bgvid sur le site. Le recadrage (zoom / zoomPos) du film s'applique aussi.
+  var PHONE_A = 9 / 17, VID_A = 16 / 9; // écran de téléphone, extrait
+  function bgFilm() {
+    return slate.clips.filter(function (c) { return c.featured && c.video && !(state.overrides[c.slate] || {}).hidden; })
+      .sort(function (a, b) { return a.featuredOrder - b.featuredOrder; })[0];
+  }
+  function phoneCtl(c) {
+    var o = function () { return state.overrides[c.slate] || {}; };
+    var btn = el("button", { type: "button", class: "pbtn", text: "Cadrage téléphone (fond de la liste)" });
+    var box = el("div", { class: "pframe" }); box.hidden = true;
+    var stage = el("div", { class: "pstage" }), band = el("i", { class: "pband" }), phone = el("div", { class: "pphone" });
+    var center = el("button", { type: "button", class: "zcenter", text: "Recentrer" });
+    var v1 = null, v2 = null, drag = null;
+    function zp() { var m = /^([\d.]+)% ([\d.]+)%$/.exec(o().zoomPos || ""); return m ? [m[1] / 100, m[2] / 100] : [.5, .5]; }
+    function px() { return o().phoneX !== undefined ? o().phoneX / 100 : .5; }
+    function apply() {
+      var z = o().zoom > 1 ? o().zoom : 1, q = zp(), p = px(), a = PHONE_A;
+      var x0 = q[0] * a * (1 - 1 / z), u0 = (x0 + (VID_A - a) * p) / VID_A;
+      band.style.left = u0 * 100 + "%"; band.style.width = a / z / VID_A * 100 + "%";
+      band.style.top = q[1] * (1 - 1 / z) * 100 + "%"; band.style.height = 100 / z + "%";
+      if (v2) { v2.style.objectPosition = p * 100 + "% 50%"; v2.style.transform = "scale(" + z + ")"; v2.style.transformOrigin = q[0] * 100 + "% " + q[1] * 100 + "%"; }
+      center.hidden = o().phoneX === undefined;
+    }
+    function vid() { var v = el("video", { muted: true, loop: true, playsinline: true, autoplay: true, poster: c.img, src: c.video }); v.muted = true; return v; }
+    function close() { box.hidden = true; if (v1) { v1.remove(); v2.remove(); v1 = v2 = null; } }
+    btn.addEventListener("click", function () {
+      if (!box.hidden) { close(); return; }
+      if (zoomStopOther && zoomStopOther !== close) zoomStopOther();
+      zoomStopOther = close;
+      box.hidden = false; v1 = vid(); v2 = vid();
+      stage.insertBefore(v1, band); phone.appendChild(v2); apply();
+    });
+    band.addEventListener("pointerdown", function (e) { e.preventDefault(); band.setPointerCapture(e.pointerId); drag = { x: e.clientX, p: px(), w: stage.getBoundingClientRect().width }; });
+    band.addEventListener("pointermove", function (e) {
+      if (!drag) return;
+      var p = drag.p + (e.clientX - drag.x) / drag.w * VID_A / (VID_A - PHONE_A);
+      p = Math.round(Math.max(0, Math.min(1, p)) * 1000) / 10;
+      setOverride(c, "phoneX", p === 50 ? undefined : p); apply(); touch();
+    });
+    band.addEventListener("pointerup", function () { drag = null; });
+    band.addEventListener("pointercancel", function () { drag = null; });
+    center.addEventListener("click", function () { setOverride(c, "phoneX"); apply(); touch(); });
+    stage.appendChild(band);
+    box.appendChild(el("p", { class: "hint", text: "Faites glisser la bande rouge : c'est la partie de l'extrait visible en fond de la liste sur téléphone." }));
+    box.appendChild(el("div", { class: "prow" }, [stage, phone]));
+    box.appendChild(center);
+    apply();
+    return el("div", { class: "pctl" }, [btn, box]);
+  }
+
   function filmCard(c) {
     var card = el("div", { class: "film" });
     var thumb = el("div", { class: "thumb" });
@@ -431,7 +483,9 @@
     var zoom = zoomCtl(thumb, c.video, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomPos; }, function (p) { setOverride(c, "zoomPos", p); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
-    card.appendChild(thumb); card.appendChild(zoom); card.appendChild(title); card.appendChild(sub);
+    card.appendChild(thumb); card.appendChild(zoom);
+    if ((bgFilm() || {}).slate === c.slate) card.appendChild(phoneCtl(c)); // 1er film FEATURED seulement
+    card.appendChild(title); card.appendChild(sub);
     card.appendChild(el("div", { class: "acts" }, [hide, reset, dropStills]));
     card.appendChild(stillsIn); card.appendChild(stillsSt);
     return card;
