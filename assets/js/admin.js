@@ -115,8 +115,10 @@
     }
     return get("/api/stills?link=").catch(function (e) {
       return get("/api/reel?link=").then(function (d) {
+        // Certaines vidéos Slate n'ont pas d'extrait (seulement le film complet) : on les garde quand même,
+        // le robot GitHub ajoute leur film complet à la publication.
         var f = d.films && d.films[0];
-        if (!f || !(f.full || f.video)) throw e;
+        if (!f) throw e;
         return { link: d.link, title: f.title, full: f.full, video: f.video, img: f.img };
       }, function () { throw e; });
     });
@@ -131,7 +133,7 @@
   function extrasCtl(get, set, label) {
     var box = el("div", { class: "extras" });
     function save(list) { set(list); touch(); draw(); }
-    function kind(x) { return x.stills ? "Stills · " + x.stills.length : "Vidéo"; }
+    function kind(x) { return x.stills ? "Stills · " + x.stills.length : x.full || x.video ? "Vidéo" : "Vidéo · à publier"; }
     function row(x, i, list) {
       var input = el("input", { type: "url", class: "stills nodirty", placeholder: label, value: x ? x.link || "" : "" });
       var st = el("p", { class: "hint" });
@@ -157,6 +159,7 @@
       var del = el("button", { type: "button", class: "xbtn", title: "Retirer", text: "×", on: { click: function () { list.splice(i, 1); save(list); } } });
       up.disabled = i === 0; down.disabled = i === list.length - 1;
       var tag = el("span", { class: "xkind", text: kind(x) });
+      if (!x.stills && !x.full && !x.video) tag.title = "Pas d'extrait sur Slate : le film complet est ajouté par le robot GitHub environ 1 min après la publication.";
       if (x.img || (x.stills && x.stills[0])) tag.style.backgroundImage = 'url("' + (x.img || x.stills[0]) + '")';
       return el("div", { class: "xrow" }, [el("div", { class: "xline" }, [tag, input, up, down, del]), st]);
     }
