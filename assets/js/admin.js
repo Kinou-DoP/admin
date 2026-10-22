@@ -109,6 +109,54 @@
       return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture des stills impossible"); return d; });
     });
   }
+  // Sous un film, dans le lecteur du site : galeries de stills et autres vidéos (liens Slate « work » ou shots.re),
+  // dans l'ordre choisi ici. Une case vide en bas pour ajouter un lien de plus ; flèches pour réordonner.
+  // get() -> { extras, stills, stillsLink } (ancien format : stills seuls) ; set(liste) enregistre `extras`.
+  function extrasOf(o) {
+    if (o.extras) return o.extras.slice();
+    return o.stills ? [{ link: o.stillsLink || "", stills: o.stills }] : [];
+  }
+  function extrasCtl(get, set, label) {
+    var box = el("div", { class: "extras" });
+    function save(list) { set(list); touch(); draw(); }
+    function kind(x) { return x.stills ? "Stills · " + x.stills.length : "Vidéo"; }
+    function row(x, i, list) {
+      var input = el("input", { type: "url", class: "stills nodirty", placeholder: label, value: x ? x.link || "" : "" });
+      var st = el("p", { class: "hint" });
+      function load(force) {
+        var v = input.value.trim();
+        if (!v) { if (x) { list.splice(i, 1); save(list); } return; }
+        if (x && !force && v === x.link) return; // Entrée : relit toujours Slate
+        if (input._busy === v) return; // Entrée déclenche aussi « change »
+        input._busy = v; st.textContent = "Lecture du lien…";
+        importStills(v).then(function (d) {
+          var n = d.stills ? { link: d.link, title: d.title, stills: d.stills } : { link: d.link, title: d.title, full: d.full, video: d.video, img: d.img };
+          Object.keys(n).forEach(function (k) { if (n[k] === undefined || n[k] === "") delete n[k]; });
+          if (x) list[i] = n; else list.push(n);
+          save(list);
+        }, function (e) { input._busy = null; st.textContent = e.message; });
+      }
+      input.addEventListener("change", function () { load(false); });
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") load(true); });
+      if (!x) return el("div", { class: "xrow add" }, [el("div", { class: "xline" }, [input]), st]);
+      function move(k) { var j = i + k; if (j < 0 || j >= list.length) return; list.splice(j, 0, list.splice(i, 1)[0]); save(list); }
+      var up = el("button", { type: "button", class: "xbtn", title: "Monter", text: "↑", on: { click: function () { move(-1); } } });
+      var down = el("button", { type: "button", class: "xbtn", title: "Descendre", text: "↓", on: { click: function () { move(1); } } });
+      var del = el("button", { type: "button", class: "xbtn", title: "Retirer", text: "×", on: { click: function () { list.splice(i, 1); save(list); } } });
+      up.disabled = i === 0; down.disabled = i === list.length - 1;
+      var tag = el("span", { class: "xkind", text: kind(x) });
+      if (x.img || (x.stills && x.stills[0])) tag.style.backgroundImage = 'url("' + (x.img || x.stills[0]) + '")';
+      return el("div", { class: "xrow" }, [el("div", { class: "xline" }, [tag, input, up, down, del]), st]);
+    }
+    function draw() {
+      box.textContent = "";
+      var list = extrasOf(get());
+      list.forEach(function (x, i) { box.appendChild(row(x, i, list)); });
+      box.appendChild(row(null, list.length, list));
+    }
+    draw();
+    return box;
+  }
   function refreshSite(slug) {
     return fetch(SITE + "/api/refresh/" + slug, { method: "POST", headers: { Authorization: "Bearer " + token } })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "mise à jour refusée"); }); });
@@ -481,25 +529,14 @@
       chips.textContent = "";
       if (c.featured) chips.appendChild(el("span", { class: "chip", text: "Featured " + c.featuredOrder }));
       if (!c.full && !c.video) chips.appendChild(el("span", { class: "chip", text: "Sans vidéo" }));
-      if (o.stills) chips.appendChild(el("span", { class: "chip", text: "Stills " + o.stills.length }));
-      dropStills.hidden = !o.stills;
+      var xs = extrasOf(o), ns = xs.filter(function (x) { return x.stills; }).length;
+      if (ns) chips.appendChild(el("span", { class: "chip", text: ns > 1 ? ns + " galeries" : "Stills" }));
+      if (xs.length > ns) chips.appendChild(el("span", { class: "chip", text: "+ " + (xs.length - ns) + " vidéo" + (xs.length - ns > 1 ? "s" : "") }));
     }
-    // Lien Slate des stills (page « work ») : les images sont lues tout de suite et enregistrées avec la fiche.
-    var stillsIn = el("input", { type: "url", class: "stills nodirty", placeholder: "Lien Slate des stills", value: (state.overrides[c.slate] || {}).stillsLink || "" });
-    var stillsSt = el("p", { class: "hint" });
-    var dropStills = el("button", { text: "Retirer les stills" });
-    function loadStills(force) {
-      var v = stillsIn.value.trim(), o = state.overrides[c.slate] || {};
-      if (!v || (!force && v === o.stillsLink && o.stills)) return; // Entrée : relit toujours Slate
-      stillsSt.textContent = "Lecture des stills…";
-      importStills(v).then(function (d) {
-        setOverride(c, "stills", d.stills); setOverride(c, "stillsLink", d.link); stillsIn.value = d.link;
-        stillsSt.textContent = d.stills.length + " images importées (" + d.title + ")."; sync(); touch();
-      }, function (e) { stillsSt.textContent = e.message; });
-    }
-    stillsIn.addEventListener("change", function () { loadStills(false); });
-    stillsIn.addEventListener("keydown", function (e) { if (e.key === "Enter") loadStills(true); });
-    dropStills.addEventListener("click", function () { setOverride(c, "stills"); setOverride(c, "stillsLink"); stillsIn.value = ""; stillsSt.textContent = ""; sync(); touch(); });
+    // Sous le film dans le lecteur : stills et autres vidéos (liens Slate), enregistrés avec la fiche.
+    var extras = extrasCtl(function () { return state.overrides[c.slate] || {}; }, function (list) {
+      setOverride(c, "extras", list.length ? list : undefined); setOverride(c, "stills"); setOverride(c, "stillsLink"); sync();
+    }, "Lien Slate de stills ou d'une vidéo, à afficher sous le film");
     title.addEventListener("input", function () { setOverride(c, "title", title.value); sync(); });
     sub.addEventListener("input", function () { setOverride(c, "sub", sub.value); sync(); });
     hide.addEventListener("click", function () { setOverride(c, "hidden", (state.overrides[c.slate] || {}).hidden ? undefined : true); sync(); touch(); });
@@ -511,8 +548,8 @@
     card.appendChild(thumb); card.appendChild(zoom);
     if ((bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement
     card.appendChild(title); card.appendChild(sub);
-    card.appendChild(el("div", { class: "acts" }, [hide, reset, dropStills]));
-    card.appendChild(stillsIn); card.appendChild(stillsSt);
+    card.appendChild(el("div", { class: "acts" }, [hide, reset]));
+    card.appendChild(extras);
     return card;
   }
 
@@ -745,7 +782,7 @@
     var prev = (home.slides || []).filter(function (x) { return x.slate === f.slate; })[0];
     if (f.full) sl.full = f.full; else if (prev && prev.full) sl.full = prev.full;
     var o = home.overrides[f.slate] || {};
-    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "stills", "stillsLink"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
   }
   function showHome() {
@@ -929,7 +966,7 @@
     reset.hidden = !home.overrides[sl.slate];
     reset.addEventListener("click", function () {
       delete home.overrides[sl.slate];
-      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "stills", "stillsLink"].forEach(function (k) { sl[k] = sl.src[k]; });
+      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = sl.src[k]; });
       card.replaceWith(slideCard(sl)); touch();
     });
     card.appendChild(thumb);
@@ -958,24 +995,10 @@
     }
     card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
     if (editable) card.appendChild(el("div", { class: "acts" }, [reset]));
-    // Stills du film, sous la vidéo dans le lecteur de l'accueil (sans stills ici : ceux de la fiche du chef op, s'il y en a).
-    if (editable) {
-      var stillsIn = el("input", { type: "url", class: "stills nodirty", placeholder: "Lien Slate des stills", value: sl.stillsLink || "" });
-      var stillsSt = el("p", { class: "hint", text: sl.stills ? sl.stills.length + " images." : "" });
-      var load = function (force) {
-        var v = stillsIn.value.trim();
-        if (!v) { if (sl.stills) { setO("stills"); setO("stillsLink"); stillsSt.textContent = "Stills retirés."; touch(); } return; }
-        if (!force && v === sl.stillsLink && sl.stills) return;
-        stillsSt.textContent = "Lecture des stills…";
-        importStills(v).then(function (d) {
-          setO("stills", d.stills); setO("stillsLink", d.link); stillsIn.value = d.link;
-          stillsSt.textContent = d.stills.length + " images importées (" + d.title + ")."; touch();
-        }, function (e) { stillsSt.textContent = e.message; });
-      };
-      stillsIn.addEventListener("change", function () { load(false); });
-      stillsIn.addEventListener("keydown", function (e) { if (e.key === "Enter") load(true); });
-      card.appendChild(stillsIn); card.appendChild(stillsSt);
-    }
+    // Sous la vidéo dans le lecteur de l'accueil : stills et autres vidéos (sans rien ici : ceux de la fiche du chef op, s'il y en a).
+    if (editable) card.appendChild(extrasCtl(function () { return sl; }, function (list) {
+      setO("extras", list.length ? list : undefined); setO("stills"); setO("stillsLink");
+    }, "Lien Slate de stills ou d'une vidéo, à afficher sous le film"));
     return card;
   }
   function publishHome() {
