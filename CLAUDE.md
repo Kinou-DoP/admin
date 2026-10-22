@@ -35,9 +35,13 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
   « Rafraîchir » relit la bande en gardant les corrections.
   Chaque film de l'accueil peut avoir ses stills (lien Slate, comme pour les fiches → `stills` + `stillsLink`), affichés
   sous le film dans le lecteur de l'accueil ; `full` (film complet) vient de la bande.
-  « Extrait HD » d'un film de l'accueil : film complet + curseur du début → `start` (secondes) ; le passage de la durée
-  d'un projet est lu en boucle en aperçu ; « Revenir à l'extrait Slate » l'enlève. « Cadrage téléphone » (bande rouge,
-  comme pour le fond de la liste) → `phoneX` de la slide. Aperçus (recadrage, téléphone) = passage HD s'il existe.
+  Vidéo d'un film de l'accueil : bouton « Éditer la vidéo » (+ résumé des réglages) → éditeur en grand (plein écran noir,
+  Terminé / Échap / clic à côté), onglets « Extrait HD », « Recadrage ordinateur », « Téléphone » (une vidéo à la fois) :
+  - Extrait HD : film complet + curseur du début → `start` (secondes) ; pendant qu'on bouge le curseur la vidéo est en
+    pause sur l'image choisie, au lâcher le passage (durée d'un projet) est lu en boucle ; « Revenir à l'extrait Slate ».
+  - Recadrage : `zoom` / `zoomPos` (cadre rouge ; clic sur l'image = retour au réglage).
+  - Téléphone : bande rouge (comme pour le fond de la liste) → `phoneX` de la slide.
+  Aperçus (survol de la carte, recadrage, téléphone) = passage HD s'il existe.
 - Contact : logo du site (PNG/WebP blanc sur transparent) → `data/brand/logo-<horodatage>.png` + `data/site.json`
   (`logo`, `logoHeight`). Sans logo : texte « kinou ».
 - Portrait : compressé dans le navigateur (1600 px max, WebP) → `data/dps/img/<slug>.webp`.

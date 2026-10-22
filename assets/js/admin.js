@@ -380,8 +380,11 @@
     center.addEventListener("click", function () { setP(undefined); apply(); touch(); });
     thumb.addEventListener("mouseenter", play);
     thumb.addEventListener("mouseleave", stop);
+    // Clic sur l'image : réglage (extrait entier + cadre rouge), comme en touchant le curseur.
+    thumb.addEventListener("pointerdown", function () { if (adjusting) return; adjusting = true; play(); apply(); setTimeout(function () { range.focus({ preventScroll: true }); }); });
     apply();
     var box = el("div", { class: "zoom" }, [lab, range, center]);
+    box._show = function () { adjusting = true; play(); apply(); range.focus({ preventScroll: true }); };
     if (!setT) return box;
     var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = !!getT();
     cb.addEventListener("change", function () { setT(cb.checked || undefined); apply(); touch(); });
@@ -446,7 +449,9 @@
     box.appendChild(el("div", { class: "prow" }, [stage, phone]));
     box.appendChild(center);
     apply();
-    return el("div", { class: "pctl" }, [btn, box]);
+    var wrap = el("div", { class: "pctl" }, [btn, box]);
+    wrap._open = function () { if (box.hidden) btn.click(); };
+    return wrap;
   }
   function filmPhoneCtl(c) {
     return phoneCtl({
@@ -783,7 +788,7 @@
     var range = el("input", { type: "range", min: "0", max: "0", step: "0.1", class: "nodirty", value: String(sl.start || 0) });
     var lab = el("span", { class: "zval" });
     var back = el("button", { type: "button", class: "zcenter", text: "Revenir à l'extrait Slate" });
-    function t(x) { var m = Math.floor(x / 60), s = (x - m * 60).toFixed(1); return m + ":" + (s < 10 ? "0" : "") + s.replace(".", ","); }
+    var t = fmtT, scrub = false, want = null;
     function label() {
       lab.textContent = sl.start !== undefined ? t(sl.start) + " → " + t(sl.start + D) : "Extrait Slate";
       back.hidden = sl.start === undefined;
@@ -798,14 +803,26 @@
       v = el("video", { muted: true, playsinline: true, autoplay: true, poster: sl.img, preload: "auto", src: sl.full + "#t=" + (sl.start || 0) }); v.muted = true;
       v.addEventListener("loadedmetadata", function () { range.max = String(Math.max(0, Math.floor((v.duration - D) * 10) / 10)); range.value = String(sl.start || 0); });
       // Le passage choisi tourne en boucle, comme il sera lu sur l'accueil (le temps d'un projet).
-      v.addEventListener("timeupdate", function () { var a = sl.start || 0; if (v.currentTime >= a + D || v.currentTime < a - .5) v.currentTime = a; });
+      v.addEventListener("timeupdate", function () { if (scrub) return; var a = sl.start || 0; if (v.currentTime >= a + D || v.currentTime < a - .5) v.currentTime = a; });
+      // Une image à la fois pendant qu'on déplace le curseur : la suivante quand la précédente est affichée.
+      v.addEventListener("seeked", function () { if (want !== null && Math.abs(v.currentTime - want) > .05) v.currentTime = want; want = null; });
       stage.appendChild(v);
     });
+    // Pendant qu'on déplace le curseur : la vidéo est en pause sur l'image choisie ; au lâcher, le passage est lu.
+    function seek(a) { if (!v) return; if (v.seeking) want = a; else v.currentTime = a; }
+    function hold() { if (scrub || !v) return; scrub = true; v.pause(); }
+    function release() {
+      if (!scrub) return; scrub = false; want = null;
+      if (v) { v.currentTime = sl.start || 0; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+    }
+    range.addEventListener("pointerdown", hold);
     range.addEventListener("input", function () {
       var a = Math.round(parseFloat(range.value) * 10) / 10;
-      setO("start", a); label(); touch();
-      if (v) { v.currentTime = a; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+      hold(); setO("start", a); label(); touch(); seek(a);
     });
+    range.addEventListener("change", release);
+    range.addEventListener("pointerup", release);
+    range.addEventListener("pointercancel", release);
     back.addEventListener("click", function () { setO("start", undefined); label(); touch(); if (v) v.currentTime = 0; });
     box.appendChild(el("p", { class: "hint", text: "Choisissez le début : le passage de " + String(D).replace(".", ",") + " s qui suit est lu sur l'accueil, en qualité du film complet, sans le son." }));
     box.appendChild(stage);
@@ -813,7 +830,50 @@
     box.appendChild(back);
     label();
     wrap.appendChild(box);
+    wrap._open = function () { if (box.hidden) btn.click(); };
     return wrap;
+  }
+  function fmtT(x) { var m = Math.floor(x / 60), s = (x - m * 60).toFixed(1); return m + ":" + (s < 10 ? "0" : "") + s.replace(".", ","); }
+
+  // Éditeur en grand d'une vidéo de l'accueil (bouton « Éditer la vidéo ») : extrait HD, recadrage ordinateur, téléphone,
+  // un onglet à la fois (une seule vidéo joue). Fermeture : « Terminé », Échap ou clic hors du cadre.
+  function videoEditor(sl, setO, D, media, onClose) {
+    var big = el("div", { class: "thumb" });
+    if (sl.img) big.style.backgroundImage = 'url("' + sl.img + '")';
+    var zc = zoomCtl(big, media, function () { return sl.zoom; }, function (z) { setO("zoom", z); },
+      function () { return sl.zoomPos; }, function (p) { setO("zoomPos", p); });
+    var hd = hdCtl(sl, setO, D);
+    var ph = phoneCtl({
+      label: "Cadrage téléphone", poster: sl.img, media: media,
+      hint: "Faites glisser la bande rouge : c'est la partie de la vidéo visible sur l'accueil en téléphone.",
+      get: function (k) { return sl[k]; }, setX: function (v) { setO("phoneX", v); }
+    });
+    var panels = {
+      hd: el("div", { class: "vpanel" }, [hd]),
+      zoom: el("div", { class: "vpanel film" }, [el("p", { class: "hint", text: "Bougez le curseur, puis faites glisser le cadre rouge : c'est la partie gardée sur l'accueil (ordinateur). Cliquez à côté pour voir le résultat, sur l'image pour revenir au réglage." }), big, zc]),
+      phone: el("div", { class: "vpanel" }, [ph])
+    };
+    var names = { hd: "Extrait HD", zoom: "Recadrage ordinateur", phone: "Téléphone" }, tabs = el("div", { class: "tabs" }), btns = {};
+    function show(k) {
+      if (zoomStopOther) zoomStopOther();
+      Object.keys(panels).forEach(function (n) { panels[n].hidden = n !== k; btns[n].className = n === k ? "on" : ""; });
+      if (k === "hd") hd._open(); else if (k === "phone") ph._open(); else zc._show();
+    }
+    Object.keys(panels).forEach(function (k) { btns[k] = el("button", { type: "button", text: names[k], on: { click: function () { show(k); } } }); tabs.appendChild(btns[k]); });
+    var done = el("button", { type: "button", class: "btn primary", text: "Terminé" });
+    var box = el("div", { class: "vbox" }, [el("div", { class: "vhead" }, [el("h2", { text: sl.film || "Vidéo" }), done]), tabs,
+      panels.hd, panels.zoom, panels.phone]);
+    var ov = el("div", { class: "vedit" }, [box]);
+    function close() {
+      if (zoomStopOther) zoomStopOther(); zoomStopOther = null;
+      document.removeEventListener("keydown", key); ov.remove(); document.body.classList.remove("vedit-on"); onClose();
+    }
+    function key(e) { if (e.key === "Escape") close(); }
+    done.addEventListener("click", close);
+    ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+    document.addEventListener("keydown", key);
+    document.body.appendChild(ov); document.body.classList.add("vedit-on");
+    show(sl.full ? "hd" : "zoom");
   }
 
   function slideCard(sl) {
@@ -863,14 +923,24 @@
     var D = (home.duration || 7000) / 1000;
     function media() { return sl.full && sl.start !== undefined ? { src: sl.full, start: sl.start, end: sl.start + D } : sl.video; }
     if (editable) {
-      card.appendChild(zoomCtl(thumb, media, function () { return sl.zoom; }, function (z) { setO("zoom", z); },
-        function () { return sl.zoomPos; }, function (p) { setO("zoomPos", p); }));
-      card.appendChild(hdCtl(sl, setO, D));
-      card.appendChild(phoneCtl({
-        label: "Cadrage téléphone", poster: sl.img, media: media,
-        hint: "Faites glisser la bande rouge : c'est la partie de la vidéo visible sur l'accueil en téléphone.",
-        get: function (k) { return sl[k]; }, setX: function (v) { setO("phoneX", v); }
-      }));
+      // Aperçu au survol : ce qui sera lu sur l'accueil (passage HD ou extrait Slate, recadré).
+      var hv = null;
+      var hstop = function () { if (hv) { hv.remove(); hv = null; } };
+      thumb.addEventListener("mouseenter", function () {
+        var m = media(); if (hv || !m) return;
+        if (zoomStopOther && zoomStopOther !== hstop) zoomStopOther();
+        zoomStopOther = hstop;
+        hv = mkVid(m, sl.img);
+        if (sl.zoom > 1) { hv.style.transform = "scale(" + sl.zoom + ")"; hv.style.transformOrigin = sl.zoomPos || "50% 50%"; }
+        thumb.appendChild(hv);
+      });
+      thumb.addEventListener("mouseleave", hstop);
+      var sum = [sl.start !== undefined ? "Extrait HD " + fmtT(sl.start) + " → " + fmtT(sl.start + D) : "Extrait Slate"];
+      if (sl.zoom > 1) sum.push("recadrage " + Math.round(sl.zoom * 100) + " %");
+      if (sl.phoneX !== undefined) sum.push("cadrage téléphone");
+      var edit = el("button", { type: "button", class: "btn", text: "Éditer la vidéo" });
+      edit.addEventListener("click", function () { hstop(); videoEditor(sl, setO, D, media, function () { card.replaceWith(slideCard(sl)); }); });
+      card.appendChild(el("div", { class: "vsum" }, [edit, el("span", { class: "zval", text: sum.join(" · ") })]));
     }
     card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
     if (editable) card.appendChild(el("div", { class: "acts" }, [reset]));

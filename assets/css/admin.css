@@ -185,3 +185,18 @@ input[readonly] { color: var(--dim); }
 .pctl .pbtn:disabled { cursor: default; opacity: .5; }
 .pframe.hd .pstage { flex: none; width: 100%; margin-top: 4px; }
 .pframe.hd .pstage video { object-fit: contain; background: #000; }
+/* Éditeur en grand d'une vidéo de l'accueil */
+.vsum { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.vsum .btn { flex: none; height: 30px; padding: 0 12px; }
+.vsum .zval { color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+body.vedit-on { overflow: hidden; }
+.vedit { position: fixed; inset: 0; z-index: 1000; overflow-y: auto; background: #000; padding: 32px 24px; }
+.vedit .vbox { max-width: 1100px; margin: 0 auto; }
+.vedit .vhead { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.vedit .vhead h2 { margin: 0; }
+.vedit .vpanel[hidden] { display: none; }
+.vedit .pbtn { display: none; }
+.vedit .pframe .pphone { width: 200px; }
+.vedit .zoom input[type=range] { height: 28px; }
+@media (max-width: 700px) { .vedit { padding: 20px 12px; } .vedit .pframe .prow { flex-direction: column; } .vedit .pframe .pphone { width: 45%; } }
+.vedit .vpanel.film .thumb, .vedit .pframe.hd .pstage { max-width: min(100%, calc((100vh - 280px) * 16 / 9)); }
