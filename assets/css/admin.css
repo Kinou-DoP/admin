@@ -182,3 +182,6 @@ input[readonly] { color: var(--dim); }
 .pframe .pphone video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.6); pointer-events: none; }
 .pframe .zcenter { margin-top: 8px; padding: 0; border: 0; background: none; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
 .pframe .zcenter[hidden] { display: none; }
+.pctl .pbtn:disabled { cursor: default; opacity: .5; }
+.pframe.hd .pstage { flex: none; width: 100%; margin-top: 4px; }
+.pframe.hd .pstage video { object-fit: contain; background: #000; }

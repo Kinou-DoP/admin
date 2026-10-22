@@ -340,8 +340,9 @@
     function play() {
       if (zoomStopOther && zoomStopOther !== halt) zoomStopOther();
       zoomStopOther = halt;
-      if (v || !video) return;
-      v = el("video", { muted: true, loop: true, playsinline: true, src: video }); v.muted = true;
+      var m = typeof video === "function" ? video() : video;
+      if (v || !m) return;
+      v = mkVid(m);
       thumb.appendChild(v); apply();
       var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
     }
@@ -395,30 +396,39 @@
     return slate.clips.filter(function (c) { return c.featured && c.video && !(state.overrides[c.slate] || {}).hidden; })
       .sort(function (a, b) { return a.featuredOrder - b.featuredOrder; })[0];
   }
-  function phoneCtl(c) {
-    var o = function () { return state.overrides[c.slate] || {}; };
-    var btn = el("button", { type: "button", class: "pbtn", text: "Cadrage téléphone (fond de la liste)" });
+  // Vidéo d'aperçu : un extrait (adresse) ou un passage d'un film complet ({ src, start, end }) lu en boucle, sans le son.
+  function mkVid(m, poster) {
+    var seg = typeof m === "object" && m;
+    var v = el("video", { muted: true, loop: !seg, playsinline: true, autoplay: true, poster: poster, src: seg ? m.src + "#t=" + m.start : m });
+    v.muted = true;
+    if (seg) v.addEventListener("timeupdate", function () { if (v.currentTime >= m.end || v.currentTime < m.start - .5) v.currentTime = m.start; });
+    return v;
+  }
+  // Cadrage sur téléphone (écran en hauteur) d'un extrait affiché en plein écran : on fait glisser la bande rouge
+  // (partie visible sur un téléphone) → phoneX (0–100, absent = centre) = object-position horizontale sur le site.
+  // Le recadrage (zoom / zoomPos) s'applique aussi. o : { label, hint, poster, get(k), setX(v), media() }.
+  function phoneCtl(o) {
+    var btn = el("button", { type: "button", class: "pbtn", text: o.label });
     var box = el("div", { class: "pframe" }); box.hidden = true;
     var stage = el("div", { class: "pstage" }), band = el("i", { class: "pband" }), phone = el("div", { class: "pphone" });
     var center = el("button", { type: "button", class: "zcenter", text: "Recentrer" });
     var v1 = null, v2 = null, drag = null;
-    function zp() { var m = /^([\d.]+)% ([\d.]+)%$/.exec(o().zoomPos || ""); return m ? [m[1] / 100, m[2] / 100] : [.5, .5]; }
-    function px() { return o().phoneX !== undefined ? o().phoneX / 100 : .5; }
+    function zp() { var m = /^([\d.]+)% ([\d.]+)%$/.exec(o.get("zoomPos") || ""); return m ? [m[1] / 100, m[2] / 100] : [.5, .5]; }
+    function px() { return o.get("phoneX") !== undefined ? o.get("phoneX") / 100 : .5; }
     function apply() {
-      var z = o().zoom > 1 ? o().zoom : 1, q = zp(), p = px(), a = PHONE_A;
+      var z = o.get("zoom") > 1 ? o.get("zoom") : 1, q = zp(), p = px(), a = PHONE_A;
       var x0 = q[0] * a * (1 - 1 / z), u0 = (x0 + (VID_A - a) * p) / VID_A;
       band.style.left = u0 * 100 + "%"; band.style.width = a / z / VID_A * 100 + "%";
       band.style.top = q[1] * (1 - 1 / z) * 100 + "%"; band.style.height = 100 / z + "%";
       if (v2) { v2.style.objectPosition = p * 100 + "% 50%"; v2.style.transform = "scale(" + z + ")"; v2.style.transformOrigin = q[0] * 100 + "% " + q[1] * 100 + "%"; }
-      center.hidden = o().phoneX === undefined;
+      center.hidden = o.get("phoneX") === undefined;
     }
-    function vid() { var v = el("video", { muted: true, loop: true, playsinline: true, autoplay: true, poster: c.img, src: c.video }); v.muted = true; return v; }
     function close() { box.hidden = true; if (v1) { v1.remove(); v2.remove(); v1 = v2 = null; } }
     btn.addEventListener("click", function () {
       if (!box.hidden) { close(); return; }
       if (zoomStopOther && zoomStopOther !== close) zoomStopOther();
       zoomStopOther = close;
-      box.hidden = false; v1 = vid(); v2 = vid();
+      box.hidden = false; v1 = mkVid(o.media(), o.poster); v2 = mkVid(o.media(), o.poster);
       stage.insertBefore(v1, band); phone.appendChild(v2); apply();
     });
     band.addEventListener("pointerdown", function (e) { e.preventDefault(); band.setPointerCapture(e.pointerId); drag = { x: e.clientX, p: px(), w: stage.getBoundingClientRect().width }; });
@@ -426,17 +436,26 @@
       if (!drag) return;
       var p = drag.p + (e.clientX - drag.x) / drag.w * VID_A / (VID_A - PHONE_A);
       p = Math.round(Math.max(0, Math.min(1, p)) * 1000) / 10;
-      setOverride(c, "phoneX", p === 50 ? undefined : p); apply(); touch();
+      o.setX(p === 50 ? undefined : p); apply(); touch();
     });
     band.addEventListener("pointerup", function () { drag = null; });
     band.addEventListener("pointercancel", function () { drag = null; });
-    center.addEventListener("click", function () { setOverride(c, "phoneX"); apply(); touch(); });
+    center.addEventListener("click", function () { o.setX(undefined); apply(); touch(); });
     stage.appendChild(band);
-    box.appendChild(el("p", { class: "hint", text: "Faites glisser la bande rouge : c'est la partie de l'extrait visible en fond de la liste sur téléphone." }));
+    box.appendChild(el("p", { class: "hint", text: o.hint }));
     box.appendChild(el("div", { class: "prow" }, [stage, phone]));
     box.appendChild(center);
     apply();
     return el("div", { class: "pctl" }, [btn, box]);
+  }
+  function filmPhoneCtl(c) {
+    return phoneCtl({
+      label: "Cadrage téléphone (fond de la liste)", poster: c.img,
+      hint: "Faites glisser la bande rouge : c'est la partie de l'extrait visible en fond de la liste sur téléphone.",
+      get: function (k) { return (state.overrides[c.slate] || {})[k]; },
+      setX: function (v) { setOverride(c, "phoneX", v); },
+      media: function () { return c.video; }
+    });
   }
 
   function filmCard(c) {
@@ -484,7 +503,7 @@
       function () { return (state.overrides[c.slate] || {}).zoomPos; }, function (p) { setOverride(c, "zoomPos", p); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
     card.appendChild(thumb); card.appendChild(zoom);
-    if ((bgFilm() || {}).slate === c.slate) card.appendChild(phoneCtl(c)); // 1er film FEATURED seulement
+    if ((bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement
     card.appendChild(title); card.appendChild(sub);
     card.appendChild(el("div", { class: "acts" }, [hide, reset, dropStills]));
     card.appendChild(stillsIn); card.appendChild(stillsSt);
@@ -707,7 +726,7 @@
     var prev = (home.slides || []).filter(function (x) { return x.slate === f.slate; })[0];
     if (f.full) sl.full = f.full; else if (prev && prev.full) sl.full = prev.full;
     var o = home.overrides[f.slate] || {};
-    ["film", "song", "legend", "dps", "zoom", "zoomPos", "stills", "stillsLink"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "stills", "stillsLink"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
   }
   function showHome() {
@@ -749,6 +768,54 @@
     bar.hidden = false; seeLink.href = SITE + "/"; seeLink.hidden = false;
     if (dirty) touch(); else status(flash || "", flash ? "ok" : ""); flash = "";
   }
+  // Extrait HD de l'accueil : passage du film complet (1080p) choisi ici, à la place de l'extrait Slate (plus compressé).
+  // Durée = celle d'un projet sur l'accueil ; on choisit le début (« start », en secondes, dans les overrides de la slide).
+  function hdCtl(sl, setO, D) {
+    var btn = el("button", { type: "button", class: "pbtn", text: "Extrait HD" });
+    var wrap = el("div", { class: "pctl" }, [btn]);
+    if (!sl.full) {
+      btn.disabled = true;
+      wrap.appendChild(el("p", { class: "hint", text: "Film complet pas encore connu : publiez, il est ajouté en une minute environ, puis rechargez la page." }));
+      return wrap;
+    }
+    var box = el("div", { class: "pframe hd" }); box.hidden = true;
+    var stage = el("div", { class: "pstage" }), v = null;
+    var range = el("input", { type: "range", min: "0", max: "0", step: "0.1", class: "nodirty", value: String(sl.start || 0) });
+    var lab = el("span", { class: "zval" });
+    var back = el("button", { type: "button", class: "zcenter", text: "Revenir à l'extrait Slate" });
+    function t(x) { var m = Math.floor(x / 60), s = (x - m * 60).toFixed(1); return m + ":" + (s < 10 ? "0" : "") + s.replace(".", ","); }
+    function label() {
+      lab.textContent = sl.start !== undefined ? t(sl.start) + " → " + t(sl.start + D) : "Extrait Slate";
+      back.hidden = sl.start === undefined;
+      btn.textContent = sl.start !== undefined ? "Extrait HD : " + t(sl.start) + " → " + t(sl.start + D) : "Extrait HD";
+    }
+    function close() { box.hidden = true; if (v) { v.remove(); v = null; } }
+    btn.addEventListener("click", function () {
+      if (!box.hidden) { close(); return; }
+      if (zoomStopOther && zoomStopOther !== close) zoomStopOther();
+      zoomStopOther = close;
+      box.hidden = false;
+      v = el("video", { muted: true, playsinline: true, autoplay: true, poster: sl.img, preload: "auto", src: sl.full + "#t=" + (sl.start || 0) }); v.muted = true;
+      v.addEventListener("loadedmetadata", function () { range.max = String(Math.max(0, Math.floor((v.duration - D) * 10) / 10)); range.value = String(sl.start || 0); });
+      // Le passage choisi tourne en boucle, comme il sera lu sur l'accueil (le temps d'un projet).
+      v.addEventListener("timeupdate", function () { var a = sl.start || 0; if (v.currentTime >= a + D || v.currentTime < a - .5) v.currentTime = a; });
+      stage.appendChild(v);
+    });
+    range.addEventListener("input", function () {
+      var a = Math.round(parseFloat(range.value) * 10) / 10;
+      setO("start", a); label(); touch();
+      if (v) { v.currentTime = a; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+    });
+    back.addEventListener("click", function () { setO("start", undefined); label(); touch(); if (v) v.currentTime = 0; });
+    box.appendChild(el("p", { class: "hint", text: "Choisissez le début : le passage de " + String(D).replace(".", ",") + " s qui suit est lu sur l'accueil, en qualité du film complet, sans le son." }));
+    box.appendChild(stage);
+    box.appendChild(el("div", { class: "zoom" }, [lab, range]));
+    box.appendChild(back);
+    label();
+    wrap.appendChild(box);
+    return wrap;
+  }
+
   function slideCard(sl) {
     var card = el("div", { class: "film" }), thumb = el("div", { class: "thumb" });
     if (sl.img) thumb.style.backgroundImage = 'url("' + sl.img + '")';
@@ -788,12 +855,23 @@
     reset.hidden = !home.overrides[sl.slate];
     reset.addEventListener("click", function () {
       delete home.overrides[sl.slate];
-      ["film", "song", "legend", "dps", "zoom", "zoomPos", "stills", "stillsLink"].forEach(function (k) { sl[k] = sl.src[k]; });
+      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "stills", "stillsLink"].forEach(function (k) { sl[k] = sl.src[k]; });
       card.replaceWith(slideCard(sl)); touch();
     });
     card.appendChild(thumb);
-    if (editable) card.appendChild(zoomCtl(thumb, sl.video, function () { return sl.zoom; }, function (z) { setO("zoom", z); },
-      function () { return sl.zoomPos; }, function (p) { setO("zoomPos", p); }));
+    // Ce qui est lu sur l'accueil : le passage HD choisi (film complet, à partir de « start »), sinon l'extrait Slate.
+    var D = (home.duration || 7000) / 1000;
+    function media() { return sl.full && sl.start !== undefined ? { src: sl.full, start: sl.start, end: sl.start + D } : sl.video; }
+    if (editable) {
+      card.appendChild(zoomCtl(thumb, media, function () { return sl.zoom; }, function (z) { setO("zoom", z); },
+        function () { return sl.zoomPos; }, function (p) { setO("zoomPos", p); }));
+      card.appendChild(hdCtl(sl, setO, D));
+      card.appendChild(phoneCtl({
+        label: "Cadrage téléphone", poster: sl.img, media: media,
+        hint: "Faites glisser la bande rouge : c'est la partie de la vidéo visible sur l'accueil en téléphone.",
+        get: function (k) { return sl[k]; }, setX: function (v) { setO("phoneX", v); }
+      }));
+    }
     card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
     if (editable) card.appendChild(el("div", { class: "acts" }, [reset]));
     // Stills du film, sous la vidéo dans le lecteur de l'accueil (sans stills ici : ceux de la fiche du chef op, s'il y en a).
