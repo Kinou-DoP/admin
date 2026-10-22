@@ -104,9 +104,21 @@
     });
   }
   // Galerie de stills d'un film : page Slate « work » lue par le site (/api/stills), URLs signées gardées telles quelles.
+  // Page d'une vidéo : les fonctions Netlify sont figées (crédits épuisés) et /api/stills n'y lit que les images ;
+  // on lit alors la page comme une bande (/api/reel, 1er film) : titre, extrait et vignette. Le film complet (`full`)
+  // est ajouté juste après la publication par le robot GitHub (tools/fill-home.mjs).
   function importStills(link) {
-    return fetch(SITE + "/api/stills?link=" + encodeURIComponent(link.trim()), { cache: "no-store" }).then(function (r) {
-      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture des stills impossible"); return d; });
+    function get(api) {
+      return fetch(SITE + api + encodeURIComponent(link.trim()), { cache: "no-store" }).then(function (r) {
+        return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture du lien impossible"); return d; });
+      });
+    }
+    return get("/api/stills?link=").catch(function (e) {
+      return get("/api/reel?link=").then(function (d) {
+        var f = d.films && d.films[0];
+        if (!f || !(f.full || f.video)) throw e;
+        return { link: d.link, title: f.title, full: f.full, video: f.video, img: f.img };
+      }, function () { throw e; });
     });
   }
   // Sous un film, dans le lecteur du site : galeries de stills et autres vidéos (liens Slate « work » ou shots.re),

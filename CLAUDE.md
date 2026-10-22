@@ -3,6 +3,16 @@
 Interface d'administration des fiches des chefs op de kinou.fr, et **source des données** du site.
 Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (déploiement auto sur push de `main`).
 
+## ⚠️ Netlify bloqué (crédits épuisés depuis le 21/10/2026)
+On travaille uniquement sur GitHub (Pages + Actions). Les fonctions du site (`SITE` = https://beta--kinou-test.netlify.app :
+`/api/bundle`, `/api/stills`, `/api/reel`, `/api/refresh`, `/api/data`) répondent encore mais sont **figées dans leur
+version du 21/10** : un changement de `netlify/functions/` du repo site n'y arrive pas. Contournements :
+- `importStills` : si `/api/stills` échoue (page d'une vidéo), lecture par `/api/reel` (1er film, sans `full`) ;
+- le robot GitHub (`tools/fill-home.mjs`) ajoute le `full` manquant (slides de l'accueil, vidéos `extras` des fiches et
+  de l'accueil) en lisant Slate directement, après chaque publication de `data/home.json` ou `data/dps/*.json`.
+- Projets en images seulement : coller le lien de leurs stills sous le projet (`extras`).
+Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `site` (« Hébergement actuel »).
+
 ## Rôle
 - `data/` : données du site (kinou.fr **et** sa beta), lues par le site directement dans ce repo GitHub
   (fonction `/api/data` du repo `site`).
@@ -67,10 +77,11 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 À chaque modification de `admin.css` ou `admin.js`, mettre à jour le numéro `?v=` dans `index.html` (cache de GitHub Pages).
 
 ## Robot GitHub (branche main)
-- `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json`, ajoute le
-  film complet (`full`) des slides qui n'en ont pas, lu sur la bande Slate (`reel`). Gratuit (Actions, dépôt public),
+- `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json` ou d'une fiche
+  (`data/dps/*.json`), ajoute le film complet (`full`) qui manque : slides de l'accueil (lu sur la bande Slate, `reel`)
+  et vidéos ajoutées sous un film (`extras`, lu sur leur page Slate `link`). Gratuit (Actions, dépôt public),
   aucune mise en ligne Netlify (`.github/` et `tools/` exclus de la règle `ignore`). Lancement manuel possible :
-  onglet Actions → « Films complets de l'accueil » → Run workflow.
+  onglet Actions → « Films complets (accueil et vidéos sous un film) » → Run workflow.
 - Si le robot échoue à enregistrer : Settings → Actions → General → Workflow permissions → « Read and write ».
 
 ## Crédits Netlify
