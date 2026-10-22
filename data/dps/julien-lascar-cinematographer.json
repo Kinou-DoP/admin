@@ -5,6 +5,9 @@
   "bundle": "https://kinou.slateapp.com/bundles/fc4a0169-ce23-11f1-a349-0215583debcb",
   "open": 8253,
   "overrides": {
+    "7015": {
+      "zoom": 1.38
+    },
     "7016": {
       "title": "Reboot Now!"
     },
@@ -20,6 +23,9 @@
     "8735": {
       "title": "Hisense x Euro 2024"
     },
+    "8821": {
+      "zoom": 1.37
+    },
     "8949": {
       "title": "Mc Donald's"
     },
@@ -30,13 +36,19 @@
       "title": "Westfield"
     },
     "9178": {
-      "title": "Till The End"
+      "title": "Till The End",
+      "zoom": 1.34,
+      "zoomPos": "49.3% 89.7%"
     },
     "9332": {
       "title": "Renault Youclip"
     },
     "9504": {
       "title": "Eva Fumée Blanche"
+    },
+    "10383": {
+      "zoom": 1.22,
+      "zoomPos": "52.7% 49.9%"
     }
   },
   "about": {
