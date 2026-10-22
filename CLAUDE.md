@@ -30,7 +30,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Corrections par film : `overrides` indexés par id Slate (suivent le film si l'ordre change sur Slate).
   Onglet ALL (admin seulement, ouvert par défaut) : tous les films des catégories, chacun une fois. Pas de bouton
   « Clip d'accueil » (l'accueil se règle par la bande Slate). Un seul aperçu d'extrait joue à la fois.
-- Sous un film (fiches et accueil) : liste de liens Slate `kinou.slateapp.com/work/<adresse>` (ou shots.re), stills ou vidéo,
+- Sous un film (fiches et accueil) : liste de liens Slate `kinou.slateapp.com/work/<adresse>` (ou shots.re / slt.re, converti en
+  shots.re par `shortLink` : les fonctions du site ne connaissent que shots.re), stills ou vidéo,
   → `GET <SITE>/api/stills?link=…` → `extras` (`overrides[<id>].extras` ou slide de l'accueil) : `{ link, title, stills }` ou
   `{ link, title, full, video, img }` (URLs signées telles quelles). Une case vide en bas pour ajouter un lien de plus,
   flèches ↑ ↓ pour réordonner, × pour retirer. L'ancien `stills` + `stillsLink` est converti à la première modification.

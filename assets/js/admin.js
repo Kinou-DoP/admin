@@ -38,8 +38,10 @@
   }
   function hueOf(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360; return h; }
   // Lien de bundle : uuid Slate, ou code d'un lien court shots.re/<code> (résolu par le site).
+  // Liens courts Slate : slt.re/<code> = shots.re/<code> (les fonctions du site ne connaissent que shots.re).
+  function shortLink(s) { return String(s || "").trim().replace(/^(https?:\/\/)?(www\.)?slt\.re\//i, "https://shots.re/"); }
   function bundleId(s) {
-    s = String(s).trim();
+    s = shortLink(s);
     var u = s.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
     if (u) return u[0];
     var c = s.match(/shots\.re\/([A-Za-z0-9]+)/);
@@ -108,6 +110,7 @@
   // on lit alors la page comme une bande (/api/reel, 1er film) : titre, extrait et vignette. Le film complet (`full`)
   // est ajouté juste après la publication par le robot GitHub (tools/fill-home.mjs).
   function importStills(link) {
+    link = shortLink(link);
     function get(api) {
       return fetch(SITE + api + encodeURIComponent(link.trim()), { cache: "no-store" }).then(function (r) {
         return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture du lien impossible"); return d; });
@@ -817,6 +820,7 @@
   // overrides (par id Slate) : textes et chefs op corrigés, réappliqués quand on rafraîchit la bande.
   var home = null;
   function importReel(link) {
+    link = shortLink(link);
     return fetch(SITE + "/api/reel?link=" + encodeURIComponent(link.trim()), { cache: "no-store" }).then(function (r) {
       return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture de la bande impossible"); return d; });
     });
