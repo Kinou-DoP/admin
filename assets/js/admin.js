@@ -3,7 +3,8 @@
 (function () {
   var REPO = "Kinou-DoP/admin", BRANCH = "main";
   // Site qui héberge les fonctions Slate (/api/bundle, /api/refresh) et où l'on vérifie le résultat.
-  var SITE = "https://beta--kinou-test.netlify.app";
+  var SITE = "https://beta--kinou-test.netlify.app"; // fonctions du site (Slate, données) : Netlify, figées depuis le 21/10
+  var SITE_PAGES = "https://kinou-dop.github.io/site"; // le site lui-même (beta) : GitHub Pages ; bouton « Voir sur le site »
   var TOKEN_KEY = "kinou-admin-token";
   // Sites dont on prépare les vignettes (service d'images Netlify) après une publication.
   var WARM_SITES = [SITE, "https://kinou-test.netlify.app"];
@@ -277,7 +278,7 @@
     view.appendChild(filmsSection());
     view.appendChild(aboutSection());
     bar.hidden = false;
-    seeLink.href = SITE + "/#" + (state.slug || "");
+    seeLink.href = SITE_PAGES + "/#" + (state.slug || "");
     seeLink.hidden = isNew;
     if (flash) status(flash, "ok"); else if (dirty) touch(); else status("");
     flash = "";
@@ -875,7 +876,7 @@
     else if (!home.reel) sec.appendChild(el("p", { class: "hint", text: "Accueil actuel (saisi à la main) : importez une bande Slate pour le remplacer." }));
     home.slides.forEach(function (sl) { grid.appendChild(slideCard(sl)); });
     sec.appendChild(grid); view.appendChild(sec);
-    bar.hidden = false; seeLink.href = SITE + "/"; seeLink.hidden = false;
+    bar.hidden = false; seeLink.href = SITE_PAGES + "/"; seeLink.hidden = false;
     if (dirty) touch(); else status(flash || "", flash ? "ok" : ""); flash = "";
   }
   // Extrait HD de l'accueil : passage du film complet (1080p) choisi ici, à la place de l'extrait Slate (plus compressé).
@@ -1114,7 +1115,7 @@
         el("div", { class: "field" }, [el("label", { class: "label", text: "Aperçu" }), preview,
           el("label", { class: "label", text: "Hauteur (px, ordinateur ; 83 % sur téléphone)" }), size])
       ])]));
-    bar.hidden = false; seeLink.href = SITE + "/"; seeLink.hidden = false;
+    bar.hidden = false; seeLink.href = SITE_PAGES + "/"; seeLink.hidden = false;
     if (dirty) touch(); else status(flash || "", flash ? "ok" : ""); flash = "";
   }
   function publishContact() {

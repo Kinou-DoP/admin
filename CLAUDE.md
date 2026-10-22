@@ -75,6 +75,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - L'admin utilisée au quotidien est sur **GitHub Pages** : https://kinou-dop.github.io/admin/ (publie la branche `beta`,
   gratuit, sans crédits Netlify). Le code de l'admin se modifie donc sur `beta` ; en ligne ~1 min après un push.
 - Elle appelle les fonctions du site beta (`SITE` = https://beta--kinou-test.netlify.app : import Slate, refresh).
+  « Voir sur le site » ouvre la beta sur GitHub Pages (`SITE_PAGES` = https://kinou-dop.github.io/site).
 - `main` est publié sur Netlify (https://kinou-admin.netlify.app) : ancienne version, plus utilisée
   (adresse `kinou-agency/admin` dans son code : ne peut plus publier depuis le déplacement du dépôt).
 - Toutes les versions publient dans les mêmes données (`data/` de la branche `main`, constante `BRANCH`).
