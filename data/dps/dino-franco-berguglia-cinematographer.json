@@ -131,7 +131,9 @@
       "sub": "Joffrey Monteiro-Noël\nGood Seed",
       "img": "https://images.slatecdn.net/fqbdgFSjAn0WzSbaEKSrsp0n9DmJbqH2aEBhhT0Vjbs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MDIxNzQwMC02OTg0/LTRlMTktYTUxMi05/ZThlYTEzYTI4ZDMv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4xMC4xLnQtZ3Jh/bmRlLTc2OHg1MTIu/anBlZw?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 9553
+      "slate": 9553,
+      "featured": true,
+      "featuredOrder": 8
     },
     {
       "title": "Fairplay - Trailer",
@@ -670,17 +672,6 @@
       "img": "https://images.slatecdn.net/E9N2ebVcv_t4G8aJjvp9_hbFR6XydMs8mT1WEaVZi4E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OTg0LTYyODRmZmYz/ODAxNGM0Ljc3NTkw/MTU4LTNmMmFmMjdk/MDJlNmIyZDE4YTVm/ZjAzZGEyNDBhYTQz/LmpwZw?v=1&format=webp",
       "cat": "TEXTURES",
       "slate": 5984
-    },
-    {
-      "title": "Bête Noire",
-      "sub": "Joffrey Monteiro-Noël\nGood Seed",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10551/4c48bf3b-126d-11f1-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e115c723-6d39-47b7-ae53-13bf987491d0-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/wW2c-l-S20nSMot8PBIvYjW3cRYgprKMoCYG3WigZjU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/Mjk1YzMwYy03MzBm/LTRiMmUtOWM1OC01/ZmIxNTM4YjgwNjQv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4yLjEudC1ncmFu/ZGUtMS03Njh4NTEy/LndlYnA?v=1&format=webp",
-      "cat": "",
-      "slate": 10551,
-      "featured": true,
-      "featuredOrder": 8
     },
     {
       "title": "Burger King - Tenders Drive (only food shots)",
