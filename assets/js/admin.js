@@ -347,7 +347,18 @@
     }
     function stop() { if (v && !adjusting) { v.remove(); v = null; } }
     range.addEventListener("pointerdown", function () { adjusting = true; play(); apply(); });
-    range.addEventListener("input", function () { adjusting = true; var z = parseInt(range.value, 10) / 100; set(z > 1 ? z : undefined); play(); apply(); touch(); });
+    range.addEventListener("input", function () {
+      adjusting = true;
+      var z0 = get() || 1, z = parseInt(range.value, 10) / 100, p = pos();
+      set(z > 1 ? z : undefined);
+      // Le cadre grandit ou rétrécit autour de son centre (pas autour de sa position enregistrée).
+      if (getP() && z0 > 1 && z > 1) {
+        var w0 = 1 / z0, w = 1 / z, c = function (n) { return Math.round(Math.max(0, Math.min(100, n)) * 10) / 10; };
+        var x = c(((p[0] / 100 * (1 - w0) + w0 / 2) - w / 2) / (1 - w) * 100), y = c(((p[1] / 100 * (1 - w0) + w0 / 2) - w / 2) / (1 - w) * 100);
+        setP(x === 50 && y === 50 ? undefined : x + "% " + y + "%");
+      }
+      play(); apply(); touch();
+    });
     range.addEventListener("blur", function () { if (drag) return; adjusting = false; apply(); stop(); });
     // Déplacement du cadre : le décalage en pixels devient une position de 0 à 100 % (bords compris).
     frame.addEventListener("pointerdown", function (e) {
