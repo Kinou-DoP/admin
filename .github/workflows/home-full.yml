@@ -1,5 +1,5 @@
 # Après chaque publication de l'accueil ou d'une fiche : ajoute le film complet qui manque (slides de l'accueil,
-# vidéos ajoutées sous un film), lu sur Slate (tools/fill-home.mjs). Gratuit (dépôt public), aucune mise en ligne Netlify.
+# vidéos ajoutées sous un film, images des projets en images seulement), lu sur Slate (tools/fill-home.mjs). Gratuit (dépôt public), aucune mise en ligne Netlify.
 name: Films complets (accueil et vidéos sous un film)
 on:
   push:
@@ -14,15 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node tools/fill-home.mjs
+      # Publication : fiches modifiées par ce commit ; lancement manuel : toutes les fiches.
+      - run: CHANGED="$(git diff --name-only HEAD~1 HEAD || true)" node tools/fill-home.mjs
+        env:
+          ALL: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
       - name: Enregistrer
         run: |
           if ! git diff --quiet; then
             git config user.name "kinou-robot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -am "Films complets (lus sur Slate)"
+            git commit -am "Films complets et images des projets (lus sur Slate)"
             git pull --rebase origin main && git push
           fi

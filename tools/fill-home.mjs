@@ -1,6 +1,7 @@
 // Robot GitHub (Actions) : ajoute le film complet (`full`) qui manque, lu sur Slate :
 // - slides de data/home.json, sur la bande Slate de l'accueil (`reel`) ;
-// - vidéos ajoutées sous un film (`extras`, accueil et data/dps/*.json), sur leur page Slate (`link`).
+// - vidéos ajoutées sous un film (`extras`, accueil et data/dps/*.json), sur leur page Slate (`link`) ;
+// - images des projets en images seulement (`overrides[<id>].images`), sur le bundle Slate du chef op.
 // (Les fonctions Netlify du site sont figées faute de crédits : l'admin ne reçoit que l'extrait de ces vidéos.) Même lecture que readReel (repo site, netlify/functions/slate.mjs) :
 // playlist du lecteur (attribut data-media), stream de plus grande hauteur. Les adresses viennent de Slate, rien n'est inventé.
 import fs from "fs";
@@ -43,9 +44,35 @@ async function fillExtras(list) {
   }
   return n;
 }
-var total = 0;
+// Projets en images seulement (type « illustration » sur Slate) : leurs images, lues sur le bundle du chef op,
+// vont dans overrides[<id>].images (galerie du lecteur) ; elles suivent Slate à chaque passage du robot.
+async function fillImages(dp) {
+  var id = (String(dp.bundle || "").match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/) || [])[0];
+  if (!id) return 0;
+  var root = await page(ORIGIN + "/bundles/" + id), re = new RegExp('href="/bundles/' + id + '/(\\d+)"', "g"), m, nums = [];
+  while ((m = re.exec(root))) if (nums.indexOf(m[1]) < 0) nums.push(m[1]);
+  var found = {};
+  for (var n of nums) (playlist(await page(ORIGIN + "/bundles/" + id + "/" + n)) || []).forEach(function (x) {
+    var ims = (x.images || []).map(function (im) { return im.image_player_url; }).filter(Boolean);
+    if (ims.length && !Object.keys(x.streams || {}).length) found[x.id] = ims;
+  });
+  var k = 0;
+  dp.overrides = dp.overrides || {};
+  Object.keys(found).forEach(function (sid) {
+    var o = dp.overrides[sid] || {};
+    if (JSON.stringify(o.images) === JSON.stringify(found[sid])) return;
+    o.images = found[sid]; dp.overrides[sid] = o; k++;
+  });
+  return k;
+}
+// Fiches à relire : celles du dernier envoi (CHANGED, liste de chemins), ou toutes (lancement manuel, ALL=1).
+var changedList = (process.env.CHANGED || "").split(/\s+/).filter(Boolean);
+var total = 0, imgs = 0;
 for (var name of fs.readdirSync(DPS).filter(function (f) { return f.endsWith(".json") && f !== "index.json"; })) {
   var path = DPS + "/" + name, dp = JSON.parse(fs.readFileSync(path, "utf8")), k = 0;
+  if (process.env.ALL || changedList.indexOf(path) > -1) {
+    try { var ki = await fillImages(dp); k += ki; imgs += ki; } catch (e) { console.log("Bundle illisible pour " + name + " : " + e.message); }
+  }
   for (var id in dp.overrides || {}) k += await fillExtras(dp.overrides[id].extras);
   if (k) { fs.writeFileSync(path, JSON.stringify(dp, null, 2) + "\n"); total += k; }
 }
@@ -69,4 +96,4 @@ if (home.reel && missing.length) {
   console.log(n + " film(s) complet(s) de l'accueil ajouté(s) sur " + missing.length + " manquant(s).");
 }
 if (changed) fs.writeFileSync(FILE, JSON.stringify(home, null, 2) + "\n");
-console.log(total + " vidéo(s) sous un film complétée(s) dans les fiches." + (changed ? " Accueil modifié." : ""));
+console.log(total + " modification(s) dans les fiches, dont " + imgs + " projet(s) en images." + (changed ? " Accueil modifié." : ""));
