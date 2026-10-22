@@ -5,8 +5,9 @@
     "9459": {
       "song": "Season 2 (Episodes 1 to 6​)",
       "film": "Star Wars • Andor",
-      "zoom": 1.38,
-      "start": 8.6
+      "zoom": 1.35,
+      "start": 8.6,
+      "zoomPos": "39.4% 48.3%"
     },
     "10552": {
       "start": 65.3,
@@ -344,7 +345,8 @@
           "slug": "christophe-nuyens-sbc-cinematographer"
         }
       ],
-      "zoom": 1.38,
+      "zoom": 1.35,
+      "zoomPos": "39.4% 48.3%",
       "start": 8.6
     }
   ]
