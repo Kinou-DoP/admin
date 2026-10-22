@@ -5,31 +5,54 @@
     "9459": {
       "song": "Season 2 (Episodes 1 to 6​)",
       "film": "Star Wars • Andor",
-      "zoom": 1.38
+      "zoom": 1.38,
+      "start": 8.6
+    },
+    "10552": {
+      "start": 65.3,
+      "phoneX": 59.1
     },
     "10586": {
       "song": "",
-      "zoom": 1.08
+      "zoom": 1.08,
+      "start": 78.8,
+      "phoneX": 40
+    },
+    "10664": {
+      "start": 27.2
     },
     "10665": {
       "film": "Anyma X Lisa • Bad Angel",
       "song": "",
-      "zoom": 1.37
+      "zoom": 1.37,
+      "start": 31.9,
+      "phoneX": 53.5
+    },
+    "10717": {
+      "start": 375.9,
+      "zoom": 1.04
     },
     "11186": {
-      "song": "Prix du scénario, Cannes Film Festival 2026"
+      "song": "Prix du scénario, Cannes Film Festival 2026",
+      "start": 0
     },
     "11199": {
       "song": "HBO max",
-      "zoom": 1.3
+      "zoom": 1.29,
+      "start": 120.8,
+      "phoneX": 50.7,
+      "zoomPos": "47.5% 51%"
     },
     "11226": {
       "song": "HBO max",
-      "zoom": 1.35
+      "zoom": 1.35,
+      "start": 66.9
     },
     "11358": {
       "song": "Netflix",
-      "zoom": 1.36
+      "zoom": 1.35,
+      "start": 15.8,
+      "phoneX": 50.8
     }
   },
   "slides": [
@@ -48,6 +71,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d31c837f-7b95-4402-aae9-5b9f70d01409-0x1080.5000.mp4",
       "film": "Sacrifice",
       "song": "Netflix",
       "legend": "Romain Gavras\nIconoclast USA",
@@ -57,8 +81,9 @@
           "slug": "matias-boucard-afc-cinematographer"
         }
       ],
-      "zoom": 1.36,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d31c837f-7b95-4402-aae9-5b9f70d01409-0x1080.5000.mp4"
+      "zoom": 1.35,
+      "phoneX": 50.8,
+      "start": 15.8
     },
     {
       "slate": 11186,
@@ -75,6 +100,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b781d048-89d7-4de4-ac84-03f33207123d-0x1080.5000.mp4",
       "film": "Notre Salut",
       "song": "Prix du scénario, Cannes Film Festival 2026",
       "legend": "Emmanuel Marre\nKidam, Michigan Films",
@@ -84,7 +110,7 @@
           "slug": "olivier-boonjing-sbc-cinematographer"
         }
       ],
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b781d048-89d7-4de4-ac84-03f33207123d-0x1080.5000.mp4"
+      "start": 0
     },
     {
       "slate": 11226,
@@ -101,6 +127,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/56165467-6a94-4077-99f9-7156089f2f1f-0x1080.5000.mp4",
       "film": "High Value Target",
       "song": "HBO max",
       "legend": "Leslie Greif\nBig Dreams Entertainment",
@@ -111,7 +138,7 @@
         }
       ],
       "zoom": 1.35,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/56165467-6a94-4077-99f9-7156089f2f1f-0x1080.5000.mp4"
+      "start": 66.9
     },
     {
       "slate": 11199,
@@ -128,6 +155,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10fcba02-1065-40ee-bb67-8b546dce7582-0x1080.5000.mp4",
       "film": "Harry Potter and the Philosophers Stone",
       "song": "HBO max",
       "legend": "Jon Brown, Francesca Gardiner\nBonte Film ant TV",
@@ -137,8 +165,10 @@
           "slug": "christophe-nuyens-sbc-cinematographer"
         }
       ],
-      "zoom": 1.3,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10fcba02-1065-40ee-bb67-8b546dce7582-0x1080.5000.mp4"
+      "zoom": 1.29,
+      "zoomPos": "47.5% 51%",
+      "phoneX": 50.7,
+      "start": 120.8
     },
     {
       "slate": 10717,
@@ -159,6 +189,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a9acff2a-0817-43e7-96c8-2bc0332709fe-0x1080.5000.mp4",
       "film": "GENER8ION",
       "song": "STORM starring Yung Lean",
       "legend": "Romain Gavras\nIconoclast",
@@ -172,7 +203,8 @@
           "slug": "lara-perrotte-boucard-cinematographer"
         }
       ],
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a9acff2a-0817-43e7-96c8-2bc0332709fe-0x1080.5000.mp4"
+      "zoom": 1.04,
+      "start": 375.9
     },
     {
       "slate": 10664,
@@ -189,6 +221,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3c2c0975-2a8f-4f72-84eb-0cf011e4281a-0x1080.5000.mp4",
       "film": "Parkinson",
       "song": "",
       "legend": "Lucie Bourdeu\nHiersoir",
@@ -198,7 +231,7 @@
           "slug": "nikita-popkov"
         }
       ],
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3c2c0975-2a8f-4f72-84eb-0cf011e4281a-0x1080.5000.mp4"
+      "start": 27.2
     },
     {
       "slate": 10665,
@@ -215,6 +248,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b522da81-7746-4759-ab01-ee76fef627d9-0x1080.5000.mp4",
       "film": "Anyma X Lisa • Bad Angel",
       "song": "",
       "legend": "Gianluigi Carella\nIncendie Films, SixTwentySix",
@@ -225,11 +259,12 @@
         }
       ],
       "zoom": 1.37,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b522da81-7746-4759-ab01-ee76fef627d9-0x1080.5000.mp4"
+      "phoneX": 53.5,
+      "start": 31.9
     },
     {
       "slate": 10586,
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10586/bcdbecf3-2204-11f1-9ce3-0215583debcb.mp4",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10586/d61a1f9c-cd6b-11f1-a349-0215583debcb.mp4",
       "img": "https://images.slatecdn.net/EOZagn8hDerfJXsHmARtgegsq2uB1OG6RAIVnBIA3Nk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU4Ni02OWI5NTU4/MGFiNjBhMi45OTQ3/ODIzMi1iNzBjOWRk/OGEyYTBkZWUyMDE5/ODg5YTgwYmEzMDdj/Zi5qcGc?v=1&format=webp",
       "src": {
         "film": "Juste Une Illusion",
@@ -242,6 +277,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d8c2e756-993f-43c1-a8d3-79028abd631b-0x1080.5000.mp4",
       "film": "Juste Une Illusion",
       "song": "",
       "legend": "Eric Toledano, Olivier Nakache\nQuad",
@@ -252,7 +288,8 @@
         }
       ],
       "zoom": 1.08,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d8c2e756-993f-43c1-a8d3-79028abd631b-0x1080.5000.mp4"
+      "phoneX": 40,
+      "start": 78.8
     },
     {
       "slate": 10552,
@@ -269,6 +306,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0056c6b0-a0a7-4f20-b9c9-3b735fa47654-0x1080.5000.mp4",
       "film": "Outsiders Club",
       "song": "",
       "legend": "Jules Danod-Danesi",
@@ -278,7 +316,8 @@
           "slug": "julien-teissier-cinematographer"
         }
       ],
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0056c6b0-a0a7-4f20-b9c9-3b735fa47654-0x1080.5000.mp4"
+      "phoneX": 59.1,
+      "start": 65.3
     },
     {
       "slate": 9459,
@@ -295,6 +334,7 @@
           }
         ]
       },
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2ef0b81-0efa-4e96-bff7-d3a82c61f6a8-1280x720.2500.mp4",
       "film": "Star Wars • Andor",
       "song": "Season 2 (Episodes 1 to 6​)",
       "legend": "Ariel Kleiman",
@@ -305,7 +345,7 @@
         }
       ],
       "zoom": 1.38,
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2ef0b81-0efa-4e96-bff7-d3a82c61f6a8-1280x720.2500.mp4"
+      "start": 8.6
     }
   ]
 }
