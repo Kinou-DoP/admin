@@ -248,7 +248,58 @@
   var state = null, slate = null, isNew = false, listed = false, origSlug = null, pending = {}, curCat = null, flash = "";
   // dirty : modifications faites dans la page mais pas encore publiées.
   var dirty = false;
-  function touch() { dirty = true; status("Modifications non publiées : cliquez sur « Publier » pour les mettre en ligne.", "warn"); }
+  function touch() { dirty = true; status("Modifications non publiées : cliquez sur « Publier » pour les mettre en ligne.", "warn"); record(); }
+
+  // ---------- Annuler / Rétablir ----------
+  // Instantanés de la page ouverte (fiche, accueil ou contact), pris à chaque modification (saisie regroupée :
+  // un instantané après 0,4 s de calme). pageModel : { get() -> { data, refs }, set(instantané) } posé par chaque page ;
+  // data = l'objet enregistré (JSON), refs = objets gardés tels quels (bundle lu sur Slate, fichiers déposés).
+  var pageModel = null, hist = null, histT = 0, hids = new WeakMap(), hidN = 0;
+  var undoBtn = document.getElementById("undo"), redoBtn = document.getElementById("redo");
+  function oid(o) { if (!o || typeof o !== "object") return 0; if (!hids.has(o)) hids.set(o, ++hidN); return hids.get(o); }
+  function snapNow() {
+    var m = pageModel.get(), refs = m.refs || {}, data = JSON.stringify(m.data);
+    return { data: data, refs: Object.assign({}, refs), key: data + "|" + Object.keys(refs).sort().map(function (k) { return k + ":" + oid(refs[k]); }).join(",") };
+  }
+  function histBtns() {
+    undoBtn.disabled = !hist || hist.i === 0;
+    redoBtn.disabled = !hist || hist.i >= hist.stack.length - 1;
+  }
+  function histInit(model) { // à l'ouverture d'une page (pas à chaque réaffichage)
+    pageModel = model;
+    if (!hist) hist = { stack: [snapNow()], i: 0, d0: dirty };
+    histBtns();
+  }
+  function histReset() { hist = null; clearTimeout(histT); histT = 0; histBtns(); }
+  function histCommit() {
+    clearTimeout(histT); histT = 0;
+    if (!hist || !pageModel) return;
+    var s = snapNow();
+    if (s.key === hist.stack[hist.i].key) return;
+    hist.stack.length = hist.i + 1; hist.stack.push(s); hist.i++;
+    if (hist.stack.length > 100) { hist.stack.shift(); hist.i--; }
+    histBtns();
+  }
+  function record() { if (!hist || hist.busy) return; clearTimeout(histT); histT = setTimeout(histCommit, 400); }
+  function histGo(k) {
+    if (!hist) return;
+    if (histT) histCommit();
+    var j = hist.i + k; if (j < 0 || j >= hist.stack.length) return;
+    hist.i = j; var y = window.scrollY;
+    dirty = j > 0 || hist.d0;
+    hist.busy = true; pageModel.set(hist.stack[j]); hist.busy = false;
+    if (dirty) status("Modifications non publiées : cliquez sur « Publier » pour les mettre en ligne.", "warn"); else status("");
+    window.scrollTo(0, y); histBtns();
+  }
+  undoBtn.addEventListener("click", function () { histGo(-1); });
+  redoBtn.addEventListener("click", function () { histGo(1); });
+  // Raccourcis : ⌘Z / Ctrl+Z, ⌘⇧Z / Ctrl+Y ; dans un champ de texte, on laisse l'annulation du navigateur.
+  document.addEventListener("keydown", function (e) {
+    if (!(e.metaKey || e.ctrlKey) || !hist || bar.hidden) return;
+    var k = e.key.toLowerCase(), t = e.target, typing = t && (t.tagName === "TEXTAREA" || (t.tagName === "INPUT" && !/^(range|checkbox|button)$/.test(t.type)));
+    if (typing || (k !== "z" && k !== "y")) return;
+    e.preventDefault(); histGo(k === "y" || e.shiftKey ? 1 : -1);
+  });
   // Toute saisie dans la fiche compte comme une modification (sauf le champ du lien de bundle).
   // editing : une page modifiable est ouverte (fiche, accueil, contact).
   var editing = false, pagePublish = null;
@@ -262,7 +313,7 @@
       var entry = slug && index.dps.filter(function (d) { return d.slug === slug; })[0];
       isNew = !r[1]; listed = !!entry; pending = {}; origSlug = listed || !isNew ? slug : null; // adresse actuelle
       state = r[1] || { slug: slug || "", name: entry ? entry.name : "", hue: 0, overrides: {}, about: {} };
-      state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false;
+      state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false; histReset();
       slate = state.clips ? { name: state.name, categories: state.categories || [], clips: state.clips } : null;
       curCat = null;
       render();
@@ -271,6 +322,10 @@
 
   function render() {
     view.textContent = ""; editing = true; pagePublish = publish;
+    histInit({
+      get: function () { return { data: state, refs: Object.assign({ slate: slate }, pending) }; },
+      set: function (h) { state = JSON.parse(h.data); slate = h.refs.slate; pending = Object.assign({}, h.refs); delete pending.slate; render(); }
+    });
     view.appendChild(el("h1", { text: state.name || "Nouveau chef op" }));
     view.appendChild(el("p", { class: "lead", text: isNew ? "Nouvelle fiche — collez le lien du bundle Slate pour commencer." : (state.bundle ? "Films synchronisés avec Slate." : "Fiche sans bundle Slate : les films sont figés.") }));
     view.appendChild(bundleSection());
@@ -805,7 +860,7 @@
     if (JSON.stringify(dps) !== JSON.stringify(index.dps)) files.push({ path: "data/dps/index.json", text: json({ dps: dps }) });
     commit(files, (isNew ? "Ajout " : "Mise à jour ") + out.name.split(",")[0] + " (admin, " + user.login + ")").then(function () {
       var wasNew = isNew;
-      index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false; origSlug = out.slug;
+      index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false; origSlug = out.slug; histReset();
       if (homeData && home) home = null; // l'accueil sera relu (liens mis à jour)
       flash = from ? "Publié à la nouvelle adresse kinou.fr/" + out.slug + "." : "Publié. Le site sera à jour dans une minute environ.";
       if (wasNew || from) location.hash = "#/dp/" + out.slug; else render();
@@ -845,12 +900,13 @@
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
     Promise.all([index ? index : loadIndex(), readFile("data/home.json")]).then(function (r) {
       home = r[1] || { duration: 7000, slides: [] };
-      home.overrides = home.overrides || {}; dirty = false;
+      home.overrides = home.overrides || {}; dirty = false; histReset();
       renderHome();
     }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
   }
   function renderHome() {
     view.textContent = ""; editing = true; pagePublish = publishHome;
+    histInit({ get: function () { return { data: home }; }, set: function (h) { home = JSON.parse(h.data); renderHome(); } });
     view.appendChild(el("h1", { text: "Page d'accueil" }));
     view.appendChild(el("p", { class: "lead", text: "Les 10 premiers films d'une bande Slate défilent sur l'accueil, dans l'ordre de la bande." }));
     var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (kinou.slateapp.com/… ou shots.re/…)", value: home.reel || "" });
@@ -861,7 +917,7 @@
       importReel(input.value).then(function (d) {
         home.reel = d.link; home.slides = d.films.map(slideOf);
         var lost = []; home.slides.forEach(function (sl) { sl.dps.forEach(function (x) { if (!x.slug) lost.push(x.name); }); });
-        dirty = true; renderHome();
+        dirty = true; renderHome(); histCommit();
         status(d.films.length + " films importés." + (lost.length ? " Pas de page pour : " + lost.join(", ") + " (nom sans lien)." : "") + " Publiez pour mettre l'accueil à jour.", "warn");
       }, function (e) { imp.disabled = false; st.textContent = e.message; });
     }
@@ -1063,7 +1119,7 @@
     out.overrides = home.overrides;
     out.slides = home.slides;
     commit([{ path: "data/home.json", text: json(out) }], "Mise à jour de l'accueil (admin, " + user.login + ")").then(function () {
-      home = out; dirty = false; flash = "Publié. L'accueil est à jour sur le site.";
+      home = out; dirty = false; histReset(); flash = "Publié. L'accueil est à jour sur le site.";
       renderHome();
       refreshSite("home").catch(function () {}); // vide le cache des données du site
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
@@ -1075,11 +1131,12 @@
   function showContact() {
     bar.hidden = true; editing = false; view.textContent = "";
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
-    readFile("data/site.json").then(function (c) { conf = c || {}; pending = {}; dirty = false; renderContact(); })
+    readFile("data/site.json").then(function (c) { conf = c || {}; pending = {}; dirty = false; histReset(); renderContact(); })
       .catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
   }
   function renderContact() {
     view.textContent = ""; editing = true; pagePublish = publishContact;
+    histInit({ get: function () { return { data: conf, refs: Object.assign({}, pending) }; }, set: function (h) { conf = JSON.parse(h.data); pending = Object.assign({}, h.refs); renderContact(); } });
     view.appendChild(el("h1", { text: "Contact" }));
     view.appendChild(el("p", { class: "lead", text: "Le contenu de la page contact viendra ici. Pour l'instant : le logo du site." }));
     var size = el("input", { type: "text", inputmode: "numeric", value: String(conf.logoHeight || 36) });
@@ -1129,7 +1186,7 @@
     if (!out.logo) delete out.logoHeight;
     files.push({ path: "data/site.json", text: json(out) });
     commit(files, "Mise à jour du logo (admin, " + user.login + ")").then(function () {
-      conf = out; pending = {}; dirty = false; flash = "Publié. Rechargez le site pour voir le logo.";
+      conf = out; pending = {}; dirty = false; histReset(); flash = "Publié. Rechargez le site pour voir le logo.";
       renderContact();
       refreshSite("home").catch(function () {});
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })

@@ -124,6 +124,8 @@ input[readonly] { color: var(--dim); }
 .bar { position: fixed; z-index: 6; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 16px; padding: 18px 32px calc(env(safe-area-inset-bottom, 0px) + 18px); background: rgba(0,0,0,.92); border-top: 1px solid var(--faint); backdrop-filter: blur(8px); }
 .bar { padding-right: 240px; } /* coin bas droit laissé libre pour le badge Netlify */
 .bar .status { flex: 1; }
+.bar .hbtn { padding: 0 12px; }
+.bar .hbtn:disabled { opacity: .3; cursor: default; border-color: transparent; }
 
 /* Navigation entre les parties du site (comme l'en-tête du site) */
 .side { position: fixed; z-index: 4; left: 32px; top: 132px; display: flex; flex-direction: column; gap: 14px; }

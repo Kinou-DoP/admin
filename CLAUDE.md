@@ -46,6 +46,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Cadrage téléphone du fond de la liste (sous le 1er film FEATURED seulement, bouton « Cadrage téléphone ») : extrait entier
   + bande rouge = partie visible sur un écran de téléphone (9:17), à faire glisser, + aperçu → `overrides[<id>].phoneX`
   (0–100, absent = centre) ; « Recentrer ».
+- Annuler / Rétablir (barre du bas, ⌘Z / ⌘⇧Z ou Ctrl+Z / Ctrl+Y hors champ de texte) : instantanés de la page ouverte
+  (fiche, accueil, contact) pris à chaque modification (`touch` → `record`, saisie regroupée après 0,4 s), 100 au plus ;
+  chaque page déclare `histInit({ get, set })` ; historique remis à zéro à l'ouverture d'une page et après publication.
 - Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight et fiction (à venir), contact.
 - Home page : lien d'une bande Slate → `GET <SITE>/api/reel?link=…` (10 premiers films) → `data/home.json`
   (`reel`, `slides` avec `dps: [{ name, slug }]` reliés par le nom, `src` = valeurs Slate, `overrides` par id Slate).
