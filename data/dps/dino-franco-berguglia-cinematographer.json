@@ -60,6 +60,24 @@
       "zoom": 1.6,
       "zoomPos": "49.5% 0.5%"
     },
+    "10081": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/bete-noire-stills",
+          "title": "Bête Noire Stills",
+          "stills": [
+            "https://images.slatecdn.net/FbyOEDH6iL-B-W2i3JdsspZExvdbTmxJOtjs5NIhOMY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MDIxNzQwMC02OTg0/LTRlMTktYTUxMi05/ZThlYTEzYTI4ZDMv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4xMC4xLnQtZ3Jh/bmRlLTc2OHg1MTIu/anBlZw.webp",
+            "https://images.slatecdn.net/ZB4WIMK36AnMSF1c48u3_o6Ibx6qPCOf-tyBYP32ASU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NTI0ZjRiZS1lZDFk/LTRlMzAtYTkzMS03/ZDg4MjY3ZmI3ZjYv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4xLjEudC1ncmFu/ZGUtMS03Njh4NTEy/LmpwZWc.webp",
+            "https://images.slatecdn.net/XJbmPDF7R8ZZe7clcub4pgjvj0qec0anjmB9MPUyES4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YzhlY2UxOC00NTdj/LTQ0NWUtOGQ4Ny1i/Y2NhZTMzNDQyNzIv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4yLjEudC1ncmFu/ZGUtMS03Njh4NTEy/LmpwZWc.webp",
+            "https://images.slatecdn.net/C1FiDfg4scuAXcBAZp5LqvTa-PafToM_IsvWpHBY7og/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NDhjODlkMi04OGMw/LTQyNDUtYTBkMC00/ZWVkOWU3ZjAzYjEv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS41LjEudC1ncmFu/ZGUtNzY4eDUxMi5q/cGVn.webp",
+            "https://images.slatecdn.net/jo9IyRJ6LnZAma3oynU33RugYkjunFQGiGHwgQM7dvQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/N2ZjMjJhYy0wMDg1/LTRjMzUtYmU5MS0y/ZmQ2ODYyYmM1Y2Qv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS42LjEudC1ncmFu/ZGUtNzY4eDUxMi5q/cGVn.webp",
+            "https://images.slatecdn.net/3gECmSRDcwQc_skztaLVy84S6CU_xN8xA-Bdg1mF0iI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDBjNjg3Ny02Y2M2/LTRiMWUtYTI0Ny1k/M2Q3ZjY4ZmIyNDQv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4xMi4xLnQtZ3Jh/bmRlLTc2OHg1MTIu/anBlZw.webp",
+            "https://images.slatecdn.net/10TssGdZQktrQyu43fp7dWPBndETAHEn7xOhGiu5TaQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZTE0NTY1MS1jZGNm/LTQ0YmItYjdiMS02/MWFmMmM2MWZiNDMv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4xNi4xLnQtZ3Jh/bmRlLTc2OHg1MTIu/anBlZw.webp",
+            "https://images.slatecdn.net/jAd5iIkrQl30xJJY_ZBg9Faf449KlBr1fri6ouT1sDU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MWJlM2EyYS1iYTMx/LTQyOWYtYTk3OS0x/OWI5ODBiNTc2Yzcv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4yMS4xLnQtZ3Jh/bmRlLTc2OHg1MTIu/anBlZw.webp"
+          ]
+        }
+      ]
+    },
     "10205": {
       "zoom": 1.35
     },
