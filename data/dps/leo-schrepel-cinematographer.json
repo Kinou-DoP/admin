@@ -162,7 +162,16 @@
       "zoom": 1.16
     }
   },
-  "about": {},
+  "about": {
+    "website": "https://www.leoschrepel.com/",
+    "instagram": "https://www.instagram.com/leoschrepel/",
+    "bioEn": [
+      "Léo is a French cinematographer living in Paris."
+    ],
+    "pos": "29% 42%",
+    "img": "img/leo-schrepel-cinematographer.webp",
+    "cv": "cv/CV-Leo-Schrepel.pdf"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
