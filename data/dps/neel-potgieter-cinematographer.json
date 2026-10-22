@@ -10,7 +10,9 @@
       "zoomThumb": true
     }
   },
-  "about": {},
+  "about": {
+    "img": "img/neel-potgieter-cinematographer.webp"
+  },
   "categories": [
     "FEATURED",
     "AUTOMOTIVE",
