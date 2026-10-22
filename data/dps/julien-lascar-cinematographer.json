@@ -6,7 +6,8 @@
   "open": 8253,
   "overrides": {
     "7015": {
-      "zoom": 1.38
+      "zoom": 1.38,
+      "zoomThumb": true
     },
     "7016": {
       "title": "Reboot Now!"
@@ -24,7 +25,8 @@
       "title": "Hisense x Euro 2024"
     },
     "8821": {
-      "zoom": 1.37
+      "zoom": 1.37,
+      "zoomThumb": true
     },
     "8949": {
       "title": "Mc Donald's"
@@ -38,7 +40,8 @@
     "9178": {
       "title": "Till The End",
       "zoom": 1.34,
-      "zoomPos": "49.3% 89.7%"
+      "zoomPos": "49.3% 89.7%",
+      "zoomThumb": true
     },
     "9332": {
       "title": "Renault Youclip"
