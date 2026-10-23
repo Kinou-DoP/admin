@@ -231,14 +231,32 @@
       var ul = el("ul", { class: "dps" });
       index.dps.forEach(function (d) {
         var has = files[d.slug + ".json"];
-        ul.appendChild(el("li", {}, [el("a", { href: "#/dp/" + d.slug, class: has ? "live" : "" }, [d.name, el("small", { text: has ? "Fiche publiée" : "Pas encore de fiche" })])]));
+        var li = el("li", {}, [el("a", { href: "#/dp/" + d.slug, class: has ? "live" : "" }, [d.name, el("small", { text: has ? "Fiche publiée" : "Pas encore de fiche" })])]);
+        li._key = slugify(d.name).replace(/-/g, " ") + " " + d.slug.replace(/-/g, " ");
+        ul.appendChild(li);
+      });
+      // Recherche : filtre la liste au fil de la frappe (sans accents ni majuscules) ; Entrée ouvre le 1er résultat.
+      var find = el("input", { type: "search", class: "find", placeholder: "Rechercher un chef op…", autocomplete: "off" });
+      var none = el("p", { class: "empty", text: "Aucun chef op ne correspond." }); none.hidden = true;
+      function filter() {
+        var q = slugify(find.value).replace(/-/g, " ").trim(), n = 0;
+        [].forEach.call(ul.children, function (li) { var ok = !q || li._key.indexOf(q) > -1; li.hidden = !ok; if (ok) n++; });
+        none.hidden = n > 0;
+      }
+      find.addEventListener("input", filter);
+      find.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { find.value = ""; filter(); }
+        if (e.key !== "Enter") return;
+        var first = [].filter.call(ul.children, function (li) { return !li.hidden; })[0];
+        if (first) location.hash = first.firstChild.getAttribute("href");
       });
       view.textContent = "";
       view.appendChild(el("div", { class: "list-head" }, [
         el("div", {}, [el("h1", { text: "Chefs opérateurs" }), el("p", { class: "lead", text: index.dps.length + " sur le site · " + Object.keys(files).filter(function (f) { return /\.json$/.test(f) && f !== "index.json"; }).length + " fiches publiées" })]),
         el("a", { class: "btn primary", href: "#/new", text: "+ Ajouter un chef op" })
       ]));
-      view.appendChild(ul);
+      view.appendChild(find); view.appendChild(none); view.appendChild(ul);
+      if (window.matchMedia("(hover: hover)").matches) find.focus({ preventScroll: true });
     }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
   }
 
@@ -1198,6 +1216,58 @@
     view.appendChild(el("h1", { text: title }));
     view.appendChild(el("p", { class: "lead", text: "À venir." }));
   }
+
+  // ---------- Historique des publications ----------
+  // Petite fenêtre (lien « historique » du menu) : derniers commits de data/ sur GitHub = qui a publié quoi et quand.
+  // Sur une fiche / l'accueil / le contact : l'historique de ce fichier, avec un bouton pour tout voir.
+  var histBox = document.getElementById("hist"), histAll = false;
+  function histPath() {
+    var h = location.hash;
+    if (/^#\/dp\//.test(h)) return "data/dps/" + decodeURIComponent(h.slice(5)) + ".json";
+    if (h === "#/home") return "data/home.json";
+    if (h === "#/contact") return "data/site.json";
+    return null;
+  }
+  function histWho(c) {
+    var m = /\(admin, ([^)]+)\)\s*$/.exec(c.commit.message.split("\n")[0]);
+    if (m) return m[1];
+    if (/kinou-robot|github-actions/.test(c.commit.author.name || "")) return "robot GitHub";
+    return (c.author && c.author.login) || c.commit.author.name || "?";
+  }
+  function histWhen(d) {
+    return new Date(d).toLocaleString("fr-FR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  }
+  function histShow() {
+    var path = histAll ? null : histPath(), list = el("ol", { class: "hlist" }, [el("li", { class: "hint", text: "Chargement…" })]);
+    var mode = el("button", { type: "button", class: "hmode", text: path ? "Tout voir" : (histPath() ? "Cette page seulement" : "") });
+    mode.hidden = !histPath();
+    mode.addEventListener("click", function () { histAll = !histAll; histShow(); });
+    var close = el("button", { type: "button", class: "hclose", "aria-label": "Fermer", text: "×" });
+    close.addEventListener("click", histToggle);
+    histBox.textContent = "";
+    histBox.appendChild(el("div", { class: "hhead" }, [el("strong", { text: path ? "Historique de cette page" : "Historique des publications" }), mode, close]));
+    histBox.appendChild(list);
+    gh("/repos/" + REPO + "/commits?sha=" + BRANCH + "&per_page=40&path=" + encodeURIComponent(path || "data")).then(function (cs) {
+      list.textContent = "";
+      if (!cs.length) list.appendChild(el("li", { class: "hint", text: "Aucune publication." }));
+      cs.forEach(function (c) {
+        var msg = c.commit.message.split("\n")[0].replace(/\s*\(admin, [^)]+\)\s*$/, "");
+        list.appendChild(el("li", {}, [
+          el("div", { class: "hmeta" }, [el("span", { class: "hwho", text: histWho(c) }), el("span", { text: histWhen(c.commit.author.date) })]),
+          el("a", { href: c.html_url, target: "_blank", rel: "noopener", text: msg })
+        ]));
+      });
+    }).catch(function (e) { list.textContent = ""; list.appendChild(el("li", { class: "hint", text: e.message })); });
+  }
+  function histToggle(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    histBox.hidden = !histBox.hidden;
+    document.getElementById("histlink").classList.toggle("on", !histBox.hidden);
+    if (!histBox.hidden) { histAll = false; histShow(); }
+  }
+  document.getElementById("histlink").addEventListener("click", histToggle);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !histBox.hidden && !document.querySelector(".vedit")) histToggle(); });
+  window.addEventListener("hashchange", function () { if (!histBox.hidden) { histAll = false; histShow(); } });
 
   // ---------- Navigation ----------
   function route() {

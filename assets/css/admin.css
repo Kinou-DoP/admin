@@ -132,6 +132,26 @@ input[readonly] { color: var(--dim); }
 .side a { font-size: 16px; text-decoration: none; opacity: .45; transition: opacity .2s; }
 .side a:hover { opacity: .8; }
 .side a.on { opacity: 1; }
+.side .histlink { margin-top: 18px; font-size: 13px; }
+/* Recherche dans la liste des chefs op */
+.find { width: 100%; max-width: 420px; margin: 0 0 32px; padding: 10px 0; border: 0; border-bottom: 1px solid var(--faint); border-radius: 0; background: none; color: var(--kinou-fg); font: 300 18px var(--kinou-body); outline: none; }
+.find:focus { border-bottom-color: var(--kinou-fg); }
+.dps li[hidden] { display: none; }
+/* Historique des publications (petite fenêtre) */
+.hist { position: fixed; z-index: 7; right: 24px; top: 84px; width: min(400px, calc(100vw - 48px)); max-height: calc(100vh - 200px); display: flex; flex-direction: column; background: rgba(12,12,12,.97); border: 1px solid var(--faint); backdrop-filter: blur(8px); box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+.hist[hidden] { display: none; }
+.hhead { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--faint); }
+.hhead strong { flex: 1; font: 600 11px var(--kinou-sans); letter-spacing: .14em; text-transform: uppercase; }
+.hmode, .hclose { padding: 0; border: 0; background: none; color: var(--dim); cursor: pointer; font: 600 10px var(--kinou-sans); letter-spacing: .1em; text-transform: uppercase; }
+.hclose { font-size: 20px; line-height: 1; }
+.hmode:hover, .hclose:hover { color: var(--kinou-fg); }
+.hlist { list-style: none; margin: 0; padding: 6px 16px 12px; overflow-y: auto; }
+.hlist li { padding: 9px 0; border-bottom: 1px solid var(--soft); }
+.hlist li:last-child { border-bottom: 0; }
+.hlist .hmeta { display: flex; justify-content: space-between; gap: 12px; color: var(--dim); font-size: 11px; }
+.hlist .hwho { color: var(--kinou-fg); font-weight: 600; }
+.hlist a { display: block; margin-top: 3px; font-size: 13px; line-height: 1.4; text-decoration: none; opacity: .8; }
+.hlist a:hover { opacity: 1; text-decoration: underline; }
 @media (min-width: 901px) { .side:not([hidden]) ~ main { padding-left: 240px; max-width: 1440px; } }
 @media (max-width: 900px) { .side { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px 20px; padding: 0 32px 8px; } }
 @media (max-width: 560px) { .side { padding: 0 24px 8px; } }
