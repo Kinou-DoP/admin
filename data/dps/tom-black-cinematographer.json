@@ -236,7 +236,13 @@
       ]
     }
   },
-  "about": {},
+  "about": {
+    "instagram": "https://www.instagram.com/tomblackdp/?hl=en",
+    "website": "https://www.tomblackdp.com/",
+    "pos": "63% 54%",
+    "img": "img/tom-black-cinematographer.webp",
+    "cv": "cv/CV-Tom-Black.pdf"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
