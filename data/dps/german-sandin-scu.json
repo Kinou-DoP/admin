@@ -4,7 +4,38 @@
   "hue": 312,
   "bundle": "https://kinou.slateapp.com/bundles/bbdb15e6-cec8-11f1-a349-0215583debcb",
   "open": 10681,
-  "overrides": {},
+  "overrides": {
+    "10724": {
+      "zoom": 1.33
+    },
+    "10727": {
+      "zoom": 1.2,
+      "zoomThumb": true
+    },
+    "10733": {
+      "zoom": 1.19,
+      "zoomThumb": true
+    },
+    "10743": {
+      "zoom": 1.21,
+      "zoomThumb": true
+    },
+    "10744": {
+      "zoom": 1.31,
+      "zoomThumb": true
+    },
+    "10745": {
+      "zoom": 1.25
+    },
+    "10746": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "10748": {
+      "zoom": 1.37,
+      "zoomThumb": true
+    }
+  },
   "about": {},
   "categories": [
     "FEATURED",
