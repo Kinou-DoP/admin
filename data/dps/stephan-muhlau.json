@@ -1,0 +1,351 @@
+{
+  "slug": "stephan-muhlau",
+  "name": "Stephan Mühlau",
+  "hue": 132,
+  "bundle": "https://kinou.slateapp.com/bundles/2ae79235-cec3-11f1-a349-0215583debcb",
+  "open": 11185,
+  "overrides": {},
+  "about": {
+    "bio": [
+      "Stephan Mühlau est un directeur de la photographie spécialisé dans la publicité, la mode, le beauty et les clips musicaux. Il a signé des campagnes pour des marques telles qu’Adidas, Dior Men, H&M, AMG, Bugatti, IWC and Yamaha."
+    ],
+    "bioEn": [
+      "Stephan Mühlau is a cinematographer specializing in commercials, fashion, beauty, and music videos. He has shot campaigns for brands including Adidas, Dior Men, H&M, AMG, Bugatti, IWC and Yamaha."
+    ],
+    "instagram": "https://www.instagram.com/stephan_muehlau/",
+    "website": "https://stephanmuehlau.com/work/",
+    "pos": "61% 25%",
+    "img": "img/stephan-muhlau.webp"
+  },
+  "categories": [
+    "FEATURED",
+    "COMMERCIAL",
+    "FASHION X BEAUTY",
+    "NARRATIVE X MUSIC VIDEO"
+  ],
+  "clips": [
+    {
+      "title": "Union Berlin • Through It All",
+      "sub": "Thomas Van Kristen\nStink Germany",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11339/a6d751f7-c25e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/38400966-8a9d-4dc9-8600-f6d3305d9772-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/_m4x5elh7mCjGDFQ2ZeT0ah40Cx07WXEVI48cpsLry0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NGJiZDA2Yi1kZTli/LTQ5OTItYWQ4MS03/YjJlOTY4NTkxOWQv/MTc5MTM4NDYzMTI2/OC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11339,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Zalando x On • Indira Scott",
+      "sub": "Alvynn Diagne\nHighsnobiety",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11185/c47fc72c-a06f-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c720fc76-1c2a-454a-89b1-23b78642b2e8-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/dWThIS37JDBE9_hwdgZPfeRSuxqZes7re1KIs8-EFqk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDQ2ODI2ZC0yNGZm/LTRhNmMtYjQxMi04/NzI3YjI5ZGFmNjEv/MTc4NzY1MzYzMDM3/NC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11185,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Carl Friedrik",
+      "sub": "Jack Hare\nThe Arts Folk",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11148/a7fd73de-8122-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4118f555-5a3b-4d7f-83fc-847c09ac8332-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/tVwn5WfYmTCWDPsD4mvevI5_fc3oC1rGjpxC2JD_8Pg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OGU2ZjgzZC1mMDhk/LTRiMDItODQ5Ny1k/YWU3NzcwNmFkZTEv/MTc4NDIxMjE0NDQz/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11148,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Yamaha",
+      "sub": "Marius Knieling\nDreiviertel Takt",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10983/4a6ce1bb-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1db9d812-9485-4d2e-93a8-c077e5873d3f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/aHDTf-QGpJFzZgCJyDRTNgJjNAX_Neq4LZ5pRp1kK9U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk4My02YTMxNDQ5/OWMwOTJkNS4wODY4/Mjc0OC04NGNkNmU0/YWI5OWMzMTM3NTcz/OTM1YTIyNmI2YmJh/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10983
+    },
+    {
+      "title": "Westwing Icon",
+      "sub": "Jesse Becker\nSylwia Tobis",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10980/7f0f3b74-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/de98e638-fbc3-42d9-b012-eeadd9cf3df9-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/4x0URTtNuNkPrGKwTF0RbwUqPr4gWVWuiW5kEbhTMk4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk4MC02YTMxNDQ5/OWNhZTJmMS43NDAw/MDUzMC0xMTkwNjhj/OTc5ODM4NDkyOGQ5/OWUwMmRiZDFmYmU5/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10980,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Mc Donald´s 50 for 50",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10974/16c94c26-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d3785434-e133-436f-957b-d37dfdea7274-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/obd4hlCsJ6In-6Q1PGwq-3Igcp8LJrwqTM7tUVI-mgU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3NC02YTMxNDQ5/OWMyY2NmMC4xNDY3/NTEzMi0yMTBiYzZm/NzkwYTJmNDIxN2Vh/M2NjODUwZGQyNjkx/My5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10974
+    },
+    {
+      "title": "Elefanten Shoes Fall Winter",
+      "sub": "vladimir beck\nSodafilms",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10962/eb019e2c-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e9add213-6abe-428c-9854-233f67784e3b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/KkrDM6sH3gBy5SY8leN9jzKl1x_qXDfEEH5_JP71w9A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2Mi02YTMxNDQ4/NmE3ZDRkNi4yMjA0/MDc4MC1hNDkyOTlk/ZjMwMDQyZWZmYWU1/MmMxODY2NzYzNTc4/NC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10962
+    },
+    {
+      "title": "Yamaha Mopiano",
+      "sub": "Marius Knieling\nDreiviertel Takt",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10982/556cb946-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bbd30dab-b35c-4815-8bd8-1342d1031a26-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/wdmUKWsgN5O7Gnv9JNH8by_qhrocaX1QydQOJ0_aQv8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk4Mi02YTMxNDQ5/ZmQ5OTYwMC4xMjE3/NTM4Ni1mZTc0Y2Rj/ZGEwMDMzODQ4NDcw/YjBkZDEzM2UzMzc3/Zi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10982
+    },
+    {
+      "title": "Collistar Milano",
+      "sub": "Manu Cossu\nMovie Magic International",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10961/fb25e4ae-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5e88b47d-17d9-41aa-9efa-72382c63bc3f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/9vYSqi71MB2INn5U1Mu0nsaMqZ0AlHejwffKPL3mouo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2MS02YTMxNDQ4/NmFhOWE3MS42Mjgw/ODg3Ni00NTlmNDBh/Y2M3YzM4NmZkMzU4/NThmYTdhYWRlZDk5/Yi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10961,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Boss Equestrian",
+      "sub": "Bastian Achard",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10957/724d2810-6985-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/24b55c63-7fe8-4b19-a410-d3e62036220e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/zXjxsDkIFR10dAcTEX9T0cVRzabE7lWIR5y5u4AyCPU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1Ny02YTMxNDQ4/ZDAxYmY5MC42Mjc0/MDkzMy0wMGVjNWUw/Y2I2NWExMTNlY2Vi/MWMzOWNhNmEyMjI0/OC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10957,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "ante_tsp__v1",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10954/a0e6a57c-6985-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/01c20fe6-358e-4433-b88b-830759ce6c34-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/fVIG2YbQnRRj3uRqvm-osSQeaGlvhi4m0iD6U_m0oTo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1NC02YTMxNDQ4/NmEzMDUyNy4xODY4/NDcxNS1kZmFiMjhl/YzgwY2Q0Mjg5ZjY0/YzM5MzQwYjA4ODlk/NC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10954
+    },
+    {
+      "title": "Yamaha jnr Williams",
+      "sub": "Marius Knieling\nDreiviertel Takt",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10981/654d66b5-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5a047f87-3041-4926-a3b3-cf6e70fc7169-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/WKZrPxyj1sDezHsRoHMs543pguXmP405t5DbDoTMwGE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk4MS02YTMxNDQ5/OWM0MjAxMi40NDE5/Mjg1MC1iYzcxODdl/NGViY2YwOWVhOTkw/NGQwNmEwZDZjNjRj/ZS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10981
+    },
+    {
+      "title": "Adidas fc Union Berlin",
+      "sub": "Thoma Kristen\nSportFive",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10951/77acbecc-6986-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/21940146-b92a-4006-80ae-ea17fa3c6299-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/gOgXHD2hu4tAI_tc7_YSYt-r_F65UWFkK1nQ-_DKMpc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1MS02YTMxNDQ4/NmFlYWJiNC4zNTQ2/NDkzMS1lOGUyOWUw/OWFiMDU3ODUzMTAz/YjY2OWNiMGE3MTJj/Zi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10951
+    },
+    {
+      "title": "Adidas Predator x Jude Bellingham",
+      "sub": "Ben Schosmann\n24 Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10950/83038abc-6986-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ccb3f65c-290f-4250-8b0c-3fc64016229c-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/J123ByR33CSrnWfIEi3rv0KmDT_rvgnJevRPkm3nAeU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1MC02YTMxNDQ4/Y2VkNDczNi4wOTMz/OTk2Ny1lOGIyZWZk/ZWI0YjQ4ZmJkMmYz/ZGRhYTE0MTAyZTBj/YS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10950
+    },
+    {
+      "title": "Calvin Klein",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10978/a5df1baa-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/db8c844c-4187-44e4-9e64-2075e350c288-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/zHb5e-DfgH9_QH4yNzbSTNL2ti7ntY-6SYyasmtatFU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3OC02YTMxNDQ5/ZmVhNGE1NS41MzI1/MDA0OC00YTlhNmVj/MzdjY2Q5NDhmMjc2/ZWU2OTdiNjEzYjk2/Ny5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10978
+    },
+    {
+      "title": "Isabel Marant",
+      "sub": "Thibault Della Gaspera\nRosco",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10970/6751b823-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2a7adbdd-baf4-49a0-ac69-b7fb61f3e2f3-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/kVeYZBLnGqEqCx5rlXrK7ezZZN6qnFuGyWs9nbawngA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3MC02YTMxNDQ5/MzU5MzBkMS4yODA0/NzM2My00ZDUyNTk4/MzFhZGNiYWI5Mzc2/ZDljY2Y2YzFiODgz/Yy5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10970
+    },
+    {
+      "title": "Umbro x Lea Mestres x Verlan",
+      "sub": "Theo Vincent\nGanache Studio",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10977/b7fb2f18-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/04893d77-51c5-4acf-893b-5618cf375f4f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/uQd-KqrbfBeidgEL8c_ASy2kERLs9x_x-soMQ5KKkOw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3Ny02YTMxNDQ5/OWNmMzJjMC4zNTM1/NjAzNC03ODgyOTQw/YmY2MWQwODJmMGU4/ZjE5N2E1NmI0NzZk/NC5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10977
+    },
+    {
+      "title": "Feeld Byond The Surface",
+      "sub": "Jeanne Lula Chauveau\nHiersoir",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10963/dbb18bcf-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4f432183-2fbe-49f8-a835-8c74832af76a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/XnleHQIK3NUH8WfE1HT-sOa24OmW8gEQ4GqZJThdWfQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2My02YTMxNDQ5/MzYxOGEyNC4xOTYx/OTU4MC1iMDQxMjZi/MTUzZmFhY2Q3NWU5/ZDM0NTg4ZWQ2ZDc1/Zi5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10963
+    },
+    {
+      "title": "Tiger of Sweden",
+      "sub": "Josh Wilson",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10976/c7b2d5a3-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cb58894a-1e65-4c07-b920-3c3b56090f92-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/h4qFyXLJBCv3Gqld9iHfADOz3qBnk_hHi6vAdYUBpwE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3Ni02YTMxNDQ5/OWNiYjcxNy4xMzk2/NzI0Ny02Yzc5YjFk/MjdjZTlmZDA1YTI4/YmQwMTcxMzYwOGUx/Yy5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10976
+    },
+    {
+      "title": "Collistar Milano",
+      "sub": "Manu Cossu\nMovie Magic International",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10961/fb25e4ae-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5e88b47d-17d9-41aa-9efa-72382c63bc3f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/9vYSqi71MB2INn5U1Mu0nsaMqZ0AlHejwffKPL3mouo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2MS02YTMxNDQ4/NmFhOWE3MS42Mjgw/ODg3Ni00NTlmNDBh/Y2M3YzM4NmZkMzU4/NThmYTdhYWRlZDk5/Yi5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10961
+    },
+    {
+      "title": "My inner Health Club x Storm Westphal",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10975/f34be955-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/951a053f-8801-4899-906a-800e41ebc0c2-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/gQD-yeEIQLkux7xKAtXebmDY0ZxOfKzGhe0bRFX7TRg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3NS02YTMxNDQ5/MzYyM2QzOC4xMTc2/NDEzOS0xNGFkMTkx/ZjlkYzc3YTljMzFl/NzQ5ZmJmNDUyMWJm/MS5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10975
+    },
+    {
+      "title": "Manifesto Magazine",
+      "sub": "Edgar Berg\nEdgar Berg",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10973/28c215e1-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c1b449e9-d97b-4645-8005-a84be3f59f0f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/3vxH-Il0h5K2tuPXAXiQkMH67XyvPT6E653Rcs_cQcI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3My02YTMxNDQ5/MzY3M2U0NC45MzAw/ODY1NS1mNTQ5NzI1/YzVlYmIwNzRmOTZl/MDNkODVlNDI2Y2Rj/Ni5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10973
+    },
+    {
+      "title": "IWC Schaffhausen",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10971/58cfcbf3-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9e84b8b2-3404-453c-9825-44fcd5c26b09-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/MLfaHJEaSnMsGzZIQUJe2UCSWfn2ylQ30J6VrdE3wzs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3MS02YTMxNDQ5/OWMxZmVkNC4xOTMw/MTE1OS1iNDUzNGJk/ODZkNzI1ZGVjMWUw/NDVmOGU5MDg5Y2E4/My5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10971
+    },
+    {
+      "title": "Highsnobiety X Tiger of Sweden",
+      "sub": "Marius Knieling, Stephan Mühlau\nIndigo Janka",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10968/8f07857c-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d74ce4c7-7cc7-461f-b85d-a4dcb755b92b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/EbKcqstO4KfD7w0HD2JbvITAM_1puaCbiMgkCRy5fEs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2OC02YTMxNDQ4/ZDA1ZjRiMi40MzEz/NTczNi1mNTc0ZDIz/ODllNjc5MTg0Njc2/MDVhMWJjZmRmZTgz/My5qcGc?v=1&format=webp",
+      "cat": "FASHION X BEAUTY",
+      "slate": 10968
+    },
+    {
+      "title": "BELIEVE by Jonas Lindström",
+      "sub": "Jonas Lindström\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10955/8b04c9b1-6985-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/45597981-5c73-4008-abac-38a2337e70ec-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/q2e03Js9mcwrIyQ8HD0tm2I_kqk7ZspvyBK30fqb2aA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1NS02YTMxNDQ4/Y2U5YmFmMi41MjUz/NzE0OS0xZTE2MDVk/OWExYjAwMzMwZDRi/MDFiZTQzNjFiZTE1/MC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10955,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Filbo Riva - Modern Melancholia",
+      "sub": "vladimir beck\ncommonvision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10965/bda57d6f-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2996b6dd-5774-4414-b2d9-fb4c505bd2b0-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/iM66pvrwFro9Fq-QI4QDuseBXL1GPAT30cUxlkPACjc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2NS02YTMxNDQ5/MzY3MmE5My4yMzAx/NDc5My1iOGY1ZTI5/M2JlNTg5YzlmMTAx/NGIzMzM2NGVjY2Q3/Mi5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10965
+    },
+    {
+      "title": "Charlie",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10960/0d1fce22-6985-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/eae9e1cf-e914-4fea-aa30-b9e01dd55c17-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/7CmukyzeYS9mQalIXIAJNRhz3AunA-TPtxHODZScFhg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2MC02YTMxNDQ4/ZDAzYmRlMC4yNDA2/NTcyNi1iNzVkOTFk/NTNlYmIzNmFjOTU4/NGEzZTdmMjExNjcy/Yi5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10960
+    },
+    {
+      "title": "À l´ombre des nuages d´eau",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10949/8de3b602-6986-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8e9cfce0-6e01-4ad2-94ac-5ef33ec584e3-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/gbZyFKAWdQGrqCaUcTUA4CwldlTaDHHIYn3q_0SZXjA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk0OS02YTMxNDQ4/NmFlOGUxMy43MjQy/NTI4Ny01ZmNlMmZm/NmYyNDkxZGRiYjM0/OWQ4ZmIxNDc0OTY5/Yy5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10949
+    },
+    {
+      "title": "Filbo Riva - Lucy",
+      "sub": "vladimir beck\ncommonvision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10967/9dec7abf-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b5cb5703-f791-4b86-9582-8542b21d52e5-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/wBYRetZs4VTgcrIJO1oh65p-H6C8pmTj-8vQzM6VzWI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2Ny02YTMxNDQ5/MzViNzQzNi41MjU0/NjI4Ny0wNDFmMDQx/NDA0NTMyMDJhYzg5/YWFmYjMyYjk5ZWQ2/My5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10967
+    },
+    {
+      "title": "Waves",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10979/9119cd88-6983-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e764d6e8-c579-4e9a-a9b6-9999c8525438-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/7IAFI3kYgf6TNgp8TTQ8CZ3UR4mHO68eYbBNeC9BkDQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3OS02YTMxNDQ5/ZmQ5YTkwMS4xNTk4/MTE2NC05NzZkYmNm/MzQyOTMzYmY0OWRh/MDYwZDQ0ZWFjZDI0/NS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10979
+    },
+    {
+      "title": "Filbo Riva -I Like You",
+      "sub": "vladimir beck\ncommonvision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10966/aead5583-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8b3dbd9e-7559-4634-8907-7892767b56e1-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/C4vL6RjpACz4RwTXNWNrTSD4ffICT3MXET2y4h3XRs8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2Ni02YTMxNDQ4/ZDAxZTY3Ni42NTMw/MTkxNi02Yzg4MGQy/N2U3MjU5MWQxZjA0/ZjNlNjlhZjlkMDI1/Yy5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10966
+    },
+    {
+      "title": "Adonxs",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10952/6ba827e0-6986-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/07a2420a-9422-4f95-8662-6cd8bf7a07ee-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/tCKs55Cnc97mraCIDJwICvcWar9FYXFi5L2bNY1l6Pk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1Mi02YTMxNDQ4/ZDAzYzczMy44Njg3/MzE1MC01NTdmZWFk/MDAyNzk3OWQ1NDEy/NmNjNzM5MDllNzUz/MS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10952
+    },
+    {
+      "title": "Infight",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10969/7d890bb7-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4784627f-c212-46d8-aeff-d4fcf909d56a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Odma_as8EqU7KycqPb6qlHfWzqSgO3uswVs2BydBHWk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk2OS02YTMxNDQ5/MzYwOTg4Ni4zNDUx/OTY4NC00ODg0NzBl/ODMyODM5MjM1MGFh/NDAzYTg2OWY3ZGI0/ZC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE X MUSIC VIDEO",
+      "slate": 10969
+    },
+    {
+      "title": "KTM Orange Blood",
+      "sub": "Tobi Grimm\nNXT Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10972/3e6bf6c8-6984-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8bf45fcc-4bb9-41eb-ab37-2e7b7e3d9024-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/7N9_76phsy_6UKnGDekfs7_e6G_9CdIKxZkW8Idqgbk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk3Mi02YTMxNDQ5/OWM1OTdhMi42NDk4/ODY5OS1kMjU2Y2Y4/YTFjZDgwZTA1YzUw/Zjk2YjhmMzhkY2I1/Zi5qcGc?v=1&format=webp",
+      "cat": "",
+      "slate": 10972,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Bugatti",
+      "sub": "Ben Schosman\nAtttd",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10958/658b09e7-6985-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd74ae47-2179-4be0-8bdb-ed62963ddd9c-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/kXS3Ci0qeWHE4ec1QZdQqOHq8XR5aiVMLBz5xyOTY4g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1OC02YTMxNDQ4/NmFjMzMwOS4wOTE3/NDU5OS0wMWZhNDgw/NDI4NGY5NzFkODcx/YWJiMWU1N2Q0M2Qy/NC5qcGc?v=1&format=webp",
+      "cat": "",
+      "slate": 10958,
+      "featured": true,
+      "featuredOrder": 5
+    }
+  ]
+}
