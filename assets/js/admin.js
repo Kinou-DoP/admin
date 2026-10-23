@@ -450,13 +450,13 @@
     return sec;
   }
 
-  // Recadrage d'un extrait (zoom 100 à 160 %) pour enlever les bandes noires, avec aperçu :
+  // Recadrage d'un extrait (zoom 100 à 250 % ; 4:3 et bandes noires épaisses) pour enlever les bandes noires, avec aperçu :
   // l'extrait joue dans la vignette au survol et pendant le réglage. get() : zoom actuel ; set(z) : enregistre (1 = aucun).
   // getP / setP : position du cadre, "X% Y%" (absent = centre) ; le site s'en sert comme transform-origin / background-position.
   // getT / setT (optionnels) : case « aussi sur la vignette » (sinon seul l'extrait est recadré).
   var zoomStopOther = null; // un seul extrait joue à la fois : lancer un aperçu arrête le précédent
   function zoomCtl(thumb, video, get, set, getP, setP, getT, setT) {
-    var range = el("input", { type: "range", min: "100", max: "160", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
+    var range = el("input", { type: "range", min: "100", max: "250", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
     var lab = el("span", { class: "zval" }), v = null, adjusting = false, drag = null;
     var center = el("button", { class: "zcenter", text: "Recentrer" });
     // Pendant le réglage : l'extrait entier, et un cadre rouge fin = la partie gardée (taille de la vignette),
