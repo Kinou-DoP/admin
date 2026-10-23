@@ -384,24 +384,6 @@
       "featuredOrder": 4
     },
     {
-      "title": "BMW Sky Top",
-      "sub": "Wendy Luo\nPacific",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10956/7f486eb3-6985-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/19ef13c4-2332-4f46-b36c-867ec7d71fde-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/MC1BlSdfSIGDtO49SBFS4LG-plwW1FLxuXusB-UXGH0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1Ni02YTMxNDQ4/Y2U4MDYzOC45NDE3/Mzk0MS0wZjJkMTJi/YmM1NThlNTQ2ZTIx/N2RiODlhOTUwYmRh/Yi5qcGc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 10956
-    },
-    {
-      "title": "Bugatti x Adidas",
-      "sub": "Ben Schossman\nAtttd",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10959/19339553-6985-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9c5120ff-01a1-429b-8537-1e906bdc5a94-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/ceYgUby2psvS3SZSK7xIXxGkv6hBPJymavuCOyLeiJI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1OS02YTMxNDQ4/NmFiNzYwMS4zMjE3/MTQwMy0xYzg5MmY0/N2ExYWM5YzNjMDFl/ZTAzYWI4ZjhmY2Zk/MS5qcGc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 10959
-    },
-    {
       "title": "KTM Orange Blood",
       "sub": "Tobi Grimm\nNXT Studios",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10972/3e6bf6c8-6984-11f1-a349-0215583debcb.mp4",
@@ -413,6 +395,15 @@
       "featuredOrder": 5
     },
     {
+      "title": "Bugatti x Adidas",
+      "sub": "Ben Schossman\nAtttd",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10959/19339553-6985-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9c5120ff-01a1-429b-8537-1e906bdc5a94-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/ceYgUby2psvS3SZSK7xIXxGkv6hBPJymavuCOyLeiJI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1OS02YTMxNDQ4/NmFiNzYwMS4zMjE3/MTQwMy0xYzg5MmY0/N2ExYWM5YzNjMDFl/ZTAzYWI4ZjhmY2Zk/MS5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 10959
+    },
+    {
       "title": "AMGAMG",
       "sub": "Ole Westermann\nWe Love Artbuying",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10953/ab8def92-6985-11f1-a349-0215583debcb.mp4",
@@ -420,6 +411,15 @@
       "img": "https://images.slatecdn.net/u2PaPSo0tv31WGl6Sn0hls3nwW1ollM21H48nYPc_7w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1My02YTMxNDQ4/NmEyODQxNy41ODgx/NjU3MS1iYzM4NmEx/NDQ4YTI3ZWE3YWJk/ZmU2YjlhYjM5ODM3/Ny5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
       "slate": 10953
+    },
+    {
+      "title": "BMW Sky Top",
+      "sub": "Wendy Luo\nPacific",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10956/7f486eb3-6985-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/19ef13c4-2332-4f46-b36c-867ec7d71fde-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/MC1BlSdfSIGDtO49SBFS4LG-plwW1FLxuXusB-UXGH0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDk1Ni02YTMxNDQ4/Y2U4MDYzOC45NDE3/Mzk0MS0wZjJkMTJi/YmM1NThlNTQ2ZTIx/N2RiODlhOTUwYmRh/Yi5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 10956
     }
   ]
 }
