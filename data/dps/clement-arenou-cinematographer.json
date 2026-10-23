@@ -5,6 +5,15 @@
   "bundle": "https://kinou.slateapp.com/bundles/7c7f4d54-cece-11f1-a349-0215583debcb",
   "open": 8959,
   "overrides": {
+    "6705": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/bouygues-laurence",
+          "title": "Bouygues - Laurence",
+          "img": "https://images.slatecdn.net/1p1rWdbVuS9HU4JMiHrIBTeicjASN2GXZ4cL2SrbiGU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YWM2MTdhYi1hMGY3/LTRhY2MtOTkzYy0x/NWI0MDM0MGRlMDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDEt/MTctYS0xNy4zMy41/NC5wbmc?v=1&format=webp"
+        }
+      ]
+    },
     "6709": {
       "title": "WHOPPER OUT OF OFFICE  Burger King"
     },
