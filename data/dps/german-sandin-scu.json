@@ -1,0 +1,337 @@
+{
+  "slug": "german-sandin-scu",
+  "name": "German Sandin, SCU",
+  "hue": 312,
+  "bundle": "https://kinou.slateapp.com/bundles/bbdb15e6-cec8-11f1-a349-0215583debcb",
+  "open": 10681,
+  "overrides": {},
+  "about": {},
+  "categories": [
+    "FEATURED",
+    "NARRATIVE",
+    "COMMERCIAL",
+    "MUSIC VIDEOS"
+  ],
+  "clips": [
+    {
+      "title": "Mierda, Mama - Shortfilm",
+      "sub": "Alvaro Manof",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10685/64247cf2-3739-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d2bce664-7050-4671-b49f-1e120cc653ff-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/0Ihftf-KOZ4fhkfiol_5zuF82vPmJpNsyi0EZwKH9vo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZGNhNTYxNC02NmNj/LTRiMDktYmYwYy1m/MzljZDYzMTFhOTYv/MTc3NjA4NTQ5ODQ5/Mi5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10685,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Nativo",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10748/0d375740-430b-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ea1fb461-8931-463d-ae25-4d81a035b964-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/assgn5TwB3WdUw2G29V52y-dj4eiIkRrfsffhYb7pyQ/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc0OC02OWYwYjg1/NmFlM2IyNS4zODgx/MDczMi0zNDRhMTll/NTM2MDgyNWZhMDY3/MjI3YTMxMzIwYTc5/My5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10748
+    },
+    {
+      "title": "La Hiedra",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10747/efd1a69c-430a-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/efa9163b-11d9-48e7-a9ee-33aba7aa28bc-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Zs6rWA0pw2DkGdCdL5l8sqdy9Wht5GmzH7tzaYLWTFs/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc0Ny02OWYwYjg1/NmIxYzk0My43Njcw/NDAwNy0wMTE3Yjcz/OTZmMzI5MWFmOTlm/ZjI4YTI1YTQ4NmE1/Yy5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10747
+    },
+    {
+      "title": "Gaucho",
+      "sub": "Germán Sandin",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10746/d6f27787-430a-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/362bae1e-2579-4efd-9b20-7f69517fd4ac-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/pW7z0CLbnU_kI0IzYkPkWxz8EByB7bTQG9msePkofhY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc0Ni02OWYwYjg1/NmIzM2U0Mi45NzI4/OTIyMC1hMGFhZTM2/NmEwZjRiZGRjN2M2/YzJhMjcyMThhODA3/My5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10746
+    },
+    {
+      "title": "Matices",
+      "sub": "Micaela Tyler",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10745/bf30eb4d-430a-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e9ec5248-bde7-4445-9b42-a1767999a49e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/EqmqrD-DodjT_n5JR3cbLQOR4JcWQP3QKiNFdhKLIg0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc0NS02OWYwYjg1/NmI2YzEyMy43NjMx/NTA1OC1mN2ZlNWM1/Y2NjZTliMDczODEw/NzJhMTQyZjBiZjE2/Yy5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10745
+    },
+    {
+      "title": "Zara • Itx Corea",
+      "sub": "Óscar Fernández",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11301/a478a85d-b1d8-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1287587a-7635-4598-9df1-d5a84ef8171f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/_B8M2Zay6IPrKliDet0ox7b1tQCLS-O2G5aUVU1lULM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MWRlOTQxOC05NTIy/LTRmZTYtODA2MC03/M2UwNzIzZjI0OTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDkt/MTYtYS0xNi4xMC40/Ni5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11301,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Dua Dua - Season 25 Campaign",
+      "sub": "Matias Vara\nAdharma",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10680/747b0f86-3739-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c30cb36f-5dc3-4be4-b3bd-c89fe39ccdc3-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/fpKX7KVKGhv5IuLB2oiEdwaqJTh313S1dSGfngND_Ds/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY4MC02OWRjZTc3/NWFkOGQwNC4wODc3/MTc3NC01NThiNzRl/YTQ0OTgxOWQ2OGU4/MzE0YjZiMDY3MTBl/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10680,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Zara - Japan",
+      "sub": "Oscar Fernandez\nPhokifilms",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10681/858c6fca-3739-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4ea637fe-3f9a-4f59-b7f6-451148b73a91-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/M7i8vTkIiOKsjm6NajLKKRyb3FbSU7cDuIe-bWIsaHw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY4MS02OWRjZTc3/NTc4YjRlNS4xNjgw/MzA2OC1jNjAyYTk0/MWZmMDc1OGQwNzI1/NWJhYzFkYTJlNzNh/OC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10681,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Culmia Home",
+      "sub": "Alvaro Manof\nFrame 101",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10688/30cce655-3739-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5d3b38e0-1b13-4aea-807a-1b55e8bf975b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/5mPVokyT08h3A9i7zppQ4FybskyLJ4HmQ-CyzxiC9mY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY4OC02OWRjZTc3/YzE3NWZiMS43MjU4/OTcyOS02NzJiYTc1/MWEzZmJkMmMxMzJj/YTJiMjM1NDA2MDFl/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10688,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Amazon Flexeo",
+      "sub": "Oscar Fernandez\nPhokifilms",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10686/4d4b10d7-3739-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3753e8d7-c628-403d-9861-a906043dc33c-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/vJviinvAWLc7PHlbZcpnpCxFkCYWZ0bKGJ4eByUMkYY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY4Ni02OWRjZTc3/NWFjNTJmNi41NjIz/MjI3OS1mMGFiNWY1/YWRlYzE4NTBlODNi/MzFmOTUxMmIzOWU1/ZS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10686,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Fiat - New Pulse",
+      "sub": "Matias Barreto\nGuacho",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10724/5b256548-42ed-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2cdca1e7-388c-49ef-8f7a-7e473e53948d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Oi7oULtgx65gDhkv0eS0PNe1K5dDpY4GuHHgDxZwzf4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcyNC02OWYwODky/ZWQ0YjM0Ni40MTYy/OTk5Ny00MjRjNGFj/MDRkMTg5NzE5MTFm/MTA0NzljMjFhNTJm/Ny5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10724
+    },
+    {
+      "title": "Bullpadel x Premiere",
+      "sub": "Oscar Noriega\nMuy Bruto",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10687/40a3e8e1-3739-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/55a876f4-5970-479b-9e96-f2e67115f2b3-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/qhpH22l5YqqI0F0K-95UuVPgKC5sauuQFkHYCKCSO8w/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY4Ny02OWRjZTc3/YzE3MTE0MC4zNDAx/ODA3Ny1mZGZmNzEz/YmJmOTIyYTY2MWI2/NDFiYmIzZmM2ZmVh/Zi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10687,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Uber Eats - Villa",
+      "sub": "Germán Sandin\nRoma",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10726/80c17dcf-42ed-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/22c2ad35-7081-447e-9288-231cc9b68711-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/3YJdvH0clBcgke_uKxoimTtMY_9dzVqiEcRXZBWKCSA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcyNi02OWYwODky/ZWQ2OTY5MS45OTYy/NDc3OS0zZmE4Y2Ey/Y2ZmZGRkMzg0MzQx/ZjgzMDI2OGJiMTM2/YS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10726
+    },
+    {
+      "title": "Abanca - Go Further (2nd unit DOP)",
+      "sub": "David Vergés\nRoma",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10683/c2d5d038-3739-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2ffd8c96-d8ed-42fc-ae8d-ac3153e92db6-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/M_ohoR1fHCgIzxFAZYDBiCNYjUQhHukAHNZwU84EFZY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY4My02OWRjZTc3/NTc4NzRkNy4xMTU4/MTc0NC1hM2IwZmMz/MTVjZjNmNmQ4ZDg2/MDhkMWVhOWNhMjM3/Ni5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10683
+    },
+    {
+      "title": "Ikea - Dog house",
+      "sub": "Gonzaga Echegaray\nSmile",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10725/716f298c-42ed-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f6f145c1-c7b0-4c63-867e-e5edaa8f04cf-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/4z-p9PvzwW_aBcydw3KKWzN63QLEfuw0tHWzisSmZrk/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcyNS02OWYwODky/ZWQ0MGI3Ny4wNzY3/Njk5OC03YjI5NjMx/ZGUxNzRkODY1M2Fh/Njg3NGZhNGQ2NTky/ZC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10725
+    },
+    {
+      "title": "Miel y Miedo - Mateo",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10740/432bba9f-430d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/89bb60d3-e3e1-4d32-b282-a87d08fbac33-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/d1j7qErUjIN51aJYsy_79SbvjO7imqhhs_e9zYRY4y0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc0MC02OWYwOTFh/M2NiMDM5NS4zNDE3/NDUyMC01ZWUzODdl/YTJiYTZkYjQ5NmU3/NDE0NzdhMzlkMWY2/Ny5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10740,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Barder - Malherido",
+      "sub": "Pedro Alarcón",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10728/b4562d61-4303-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/02ea1de8-90a5-4e84-87f3-6030603bb76a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/4BPH80ihyqj3iNMcA6581e9UQQdUb99O_sKJajIrz9Q/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcyOC02OWYwOTFh/MTgxNGM0NS42OTgw/ODM0OS03ZWEzYzFl/MDg0ZGQ2ZWZlZjE0/ZGRiOTNiMTNjMWI5/Mi5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10728,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "MANU CORT - OTRO VERANO EN CASA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10742/6e40e485-430c-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/77205418-0998-404c-9591-088e4ce0638d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/uSeVcIBTi0f32u0jmQc5ObjFOmVeSxt5dENUHgkSsRk/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc0Mi02OWYwOTFh/M2FiNmEyNi4zOTE3/MTAyMC1lMjg1NzU0/NmYyZDZhZmIwYjI4/MzMzYmQ2NmYwNWJl/OC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10742
+    },
+    {
+      "title": "Ven Y Bailame • Guille Toledano",
+      "sub": "Lucía Toral, G.Hernandez",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11303/86903ace-b1d7-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/82223a98-731a-4fbc-9104-18350b243547-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/9ha6TK9me8NKcKCPGPRv1u9hbo0cE_LrJAdsnvasQXo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YWM5Y2RhNC0yOTk4/LTRjN2QtOTFhNC00/ZTVkMzQ1NTMyNTQv/MTc4OTU2NzQyMjIx/MS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 11303
+    },
+    {
+      "title": "Brindemos • Paula Koops, Funzo & Juan Magan",
+      "sub": "Lucía Toral",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11302/096e61f1-b1d8-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d8a6bb9e-6e54-4504-ae7e-925f856fb3a2-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/nNmi1W0vlr0NjMqohtFIU9iLkcl-OoSnczLkx4QkEpU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjNjOThhOC1mZjc4/LTQ2ZDYtOWM1Ni00/MTdjNjllNTgzOWQv/MTc4OTU2NzYzNjI3/NS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 11302
+    },
+    {
+      "title": "RVFV, CANO - GuapaDeCara",
+      "sub": "Oscar Fernandez",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10735/c1c20582-430d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2b4fc4b5-f1e2-40fb-8b6e-ef7e37349991-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/SBS9z8Drs8quGnglIYA1VVc7JBAVpfpONXqludLKzo8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczNS02OWYwOTFh/MTgwM2FiMS4zMjc0/NjE2My03ZjQ1MTlm/NTJhNTlkZDdkY2M2/MzZlODJjYTdhMGRl/YS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10735
+    },
+    {
+      "title": "Barder - Brujeria",
+      "sub": "Pedro Alarcón",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10733/fcee05a4-430d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0e2d0ae9-18a2-4947-9720-86aae97918a4-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/dRKPKxSidBQsCOISbkskJ2wojv5U5p8kujt_jwsyATs/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczMy02OWYwOTE5/YzEzYWM2MC41ODE4/NzM0Mi03ZTc1YTU5/ZWE4MmQwNGJmNTE1/ZWVlZTg3NDI0MzA2/MC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10733
+    },
+    {
+      "title": "Suzete - SAL Y AGUA BENDITA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10744/255f1542-430c-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e465f7b6-36dc-4eb0-be9a-92ed98018342-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/UYq9UEW-7ZJUCsvYI5csNRYeHUzJ1U2YcemevWEcnFc/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc0NC02OWYwOTE5/YzBhMjUzOS4zMDY0/MjY2Ny01OGNiZDUw/ZWM5NTlkMjRmYWRj/MTgxZmRmYWU3NTVh/NS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10744
+    },
+    {
+      "title": "RUSLANA - QUIÉN SOY",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10743/3dff6acb-430c-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a66ee86f-feb1-4090-ab02-87765a2cd6ab-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Iw0iITj4Tqa17QbfhbeUuf3CqS_AAdzB7erdoGRrIrk/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc0My02OWYwOTFh/OTg1YjIyMS4zMTU4/MzUxMy03MDFlMTE5/MTQ4YWQ0M2EzYjUw/MTg0MWU0NTA3OWMw/Ny5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10743
+    },
+    {
+      "title": "Lucho RK - AiAiAi",
+      "sub": "Oscar Fernandez",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10729/b07b5edc-430e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/62a39c25-5352-4978-93b9-0e373c72a359-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/cyC_l8Ua7aoo2lhaiz9sTPdgzhRE9-qNha2YJRTKaoY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDcyOS02OWYwOTE5/YzExNzc1NC40MDAw/MjQ5Mi1lOGM1NWYw/NTExOGI0M2Q4M2Uz/Y2QyYjc5MTYzNTcy/MS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10729
+    },
+    {
+      "title": "ODDLIQUOR, marquitos - CON LOQ1 NACE",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10741/f3cf4323-430c-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1b573c36-6a90-4854-8b54-6e138df55ea4-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/XK2SkEdTsB_wCjm-afVLx5scICGg0uWCb3PbYHqAcUA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZWUxMWM5ZS03ZjI5/LTQwNGItOTVmYy01/YWQ0YjIyMGVlYTkv/MTc3NzM4NTgyNTY2/MC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10741
+    },
+    {
+      "title": "Lucho RK - Esos Ojitos",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10739/64f77ef1-430d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cdc185b4-1664-4b03-be5f-ce070fd4edf9-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/iwAp6AW8XccJEvWa-znA9p3SqGf3_Kr4AJ3e3Jr8rcY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczOS02OWYwOTE5/YzA4MGFmOC42NjA5/MDI4Ny1jMzc1NDYz/ODQ4MDg5MjFjNzIz/ODZiZTQ4ZDk3M2Ji/OS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10739
+    },
+    {
+      "title": "Kalenn - Ando por los suelos",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10738/8cd8cd8a-430d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/21dc739b-1ce7-48bc-8bc2-4638d759dcf7-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/3qCW1BnlMiBAyvmu-gD-3bG9l3LhyPbj15T0vSVJb70/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczOC02OWYwOTE5/YzA3ZmIwNC42ODEw/MjU2My1iZGM3NWJk/NTUyZTFkNmVmMWJj/OWUyNGE5ZjY2Mjk4/Ni5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10738
+    },
+    {
+      "title": "Soge Culebra - Iorando",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10737/a7821e94-430d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3fda569a-8789-43d8-a1da-5f9bd9299c15-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/9jEHrBWpKyrUmaJ__YwEjn4dVzRZxnNdaMDSbfv5UmM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczNy02OWYwOTFh/OTg1Yzk2OC4wOTc4/NDYzMS1mNTUyM2Rm/NmVhMmQ5NjFlNjJm/M2VmZDUzODE4MDM0/Yy5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10737
+    },
+    {
+      "title": "Canalla - Hens",
+      "sub": "Pedro Alarcón",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10736/b664f825-430d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/838a667a-38e3-4e0c-98bb-1ab64ddc2824-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/dZ6fMtJgm7ZU2d0YadMsHrurfyD61mcqT_2W9MHAyQo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczNi02OWYwOTE5/YzA4ZGQxMS4xMzA2/ODQ3MS0zZjZiZDE2/Njg2MDE0NzBjYzlj/NjBjZTU1YzFkNzdl/OC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10736
+    },
+    {
+      "title": "Alvaro De Luna ft Fernando Daniel - Donde Vamos",
+      "sub": "Pedro Alarcón",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10734/e9292419-430d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c7df9af3-6db5-4d9b-a3da-2a80eb722ae8-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/D0qXSDETyjNUN9NHW1qZ-Eb3XAvasLs9OrvAVtDTIF8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczNC02OWYwOTFh/M2IwM2NmMi40NzQz/MjAyNC1jZjQyYjFh/OTZiNGM3NTljZjE3/NzA2ZDkyNjJkMDNh/Yy5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10734
+    },
+    {
+      "title": "Andry Kiddos - Oddliquor Ojitos",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10732/98b43319-430e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5c21f880-89f8-49d3-bc36-729664bcd0ba-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/yOl-vbnvEwR7cp3-vzZgaaT94ImC64kTSylDGNJtVzE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczMi02OWYwOTFh/MzljOTBiOS4yNjU4/NjA2Ny05ZmIwODNl/NzYzOTFjOTE2Njc5/OWQxNGNiMjdiNjU0/ZC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10732
+    },
+    {
+      "title": "Andry Kiddos - no puedo seguir siendo así",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10731/2fb8a772-4310-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b07a259c-1d7c-4115-9f7f-58636f46f8a6-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/cawVSuJmlpqefBB5Hg44YuqBPe_f9ApHFSF7dG0FbFI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZGRjODZlYy0wYTRh/LTQwYTgtODQzZi0x/ZGNmYzcxN2E2ODAv/MTc3NzM4NzIxNTE0/My5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10731
+    },
+    {
+      "title": "Amaneceres - Beret ft Diegote",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10730/a21bc291-430e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4a5b1e50-e0e2-4c5f-9789-cb51ef0b64ea-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/6HhrtgqK43Gd2JOqu37GBtdnRQsYzw2cPHM08Rm9WqE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDczMC02OWYwOTE5/YzA4ZWM4Ni45NDQw/MTU3OS0wODI1YzU0/MDI3MjcxNDllZDE3/Yzg0ZDgzZDFiY2M0/MS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10730
+    },
+    {
+      "title": "Barder - Me Estoy Acostando Tarde",
+      "sub": "Pedro Alarcón",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10727/c6a2c43b-430e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/66995306-82a6-4b25-b664-4cf97f940681-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/9Vh5Jc7wu23O6Rye0qJUKDag4ED4EVtOdBvaJQ4EQJY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/Zjg2YmM5Ny0zZGM4/LTRjN2UtYTBkNC1h/MDFmYmY4MTFhOWYv/MTc3NzM4NjYwOTAy/Ny5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 10727
+    }
+  ]
+}
