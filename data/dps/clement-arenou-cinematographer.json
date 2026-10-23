@@ -84,7 +84,8 @@
     "8959": {
       "title": "En Place - Saison 2",
       "zoom": 1.19,
-      "zoomPos": "4% 38.8%"
+      "zoomPos": "4% 38.8%",
+      "zoomThumb": true
     },
     "9185": {
       "extras": [
