@@ -5,7 +5,15 @@
   "bundle": "https://kinou.slateapp.com/bundles/fe994f23-ced4-11f1-a349-0215583debcb",
   "open": 10657,
   "overrides": {},
-  "about": {},
+  "about": {
+    "bioEn": [
+      "Laurent Rodriguez is french cinematographer based in Paris. He works for several clients like mcdo , Nivea , mixa , Lancôme, Peugeot, Nissan, Ford, Chevrolet, BMW, Dodge, Renault, Toyota, Honda, Citroën, Mitsubishi, Mazda, Porsche, Hyundai.",
+      "He worked with many film directors like Simon Willows, Jerome salle, Deluxe, Alex Courtès, Zak Emerson, helmi, John Israel, Bruce St Clair, Kiku ohe"
+    ],
+    "instagram": "https://www.instagram.com/laurentdop/",
+    "pos": "93% 38%",
+    "img": "img/laurent-rodriguez-cinematographer.webp"
+  },
   "categories": [
     "FEATURED",
     "BEAUTY"
