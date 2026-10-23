@@ -5,6 +5,9 @@
   "bundle": "https://kinou.slateapp.com/bundles/bbdb15e6-cec8-11f1-a349-0215583debcb",
   "open": 10681,
   "overrides": {
+    "10681": {
+      "phoneX": 55.7
+    },
     "10724": {
       "zoom": 1.33
     },
@@ -36,7 +39,19 @@
       "zoomThumb": true
     }
   },
-  "about": {},
+  "about": {
+    "pos": "36% 41%",
+    "website": "https://germansandin.com/",
+    "instagram": "https://www.instagram.com/gsandineredes/",
+    "bioEn": [
+      "Germán Sandín is a cinematographer based in Madrid and a member of the Uruguayan Society of Cinematographers (SCU). He graduated in Film Production with a specialization in Cinematography from Uruguay Campus Film in 2020. He began his career with Justo y Nico, a project that led to the FIFA Ballon d’Or awards, and has since worked across commercials, short films, music videos, and documentaries, shooting in Spain, Portugal, Japan, South Korea, and Australia."
+    ],
+    "bio": [
+      "Germán Sandín est un directeur de la photographie basé à Madrid et membre de la Sociedad de Cinematografía del Uruguay (SCU). En 2020, il est diplômé en production cinématographique, avec une spécialisation en direction de la photographie, de l’Uruguay Campus Film.",
+      "Il débute sa carrière avec le projet Justo y Nico, qui le conduit jusqu’à la cérémonie du Ballon d’Or de la FIFA. Depuis, il a travaillé sur des publicités, des courts métrages, des clips musicaux et des documentaires, avec des tournages en Espagne, au Portugal, au Japon, en Corée du Sud et en Australie."
+    ],
+    "img": "img/german-sandin-scu.webp"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
@@ -114,7 +129,7 @@
     {
       "title": "Zara - Japan",
       "sub": "Oscar Fernandez\nPhokifilms",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10681/858c6fca-3739-11f1-a349-0215583debcb.mp4",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10681/87f16280-cec9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4ea637fe-3f9a-4f59-b7f6-451148b73a91-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/M7i8vTkIiOKsjm6NajLKKRyb3FbSU7cDuIe-bWIsaHw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY4MS02OWRjZTc3/NTc4YjRlNS4xNjgw/MzA2OC1jNjAyYTk0/MWZmMDc1OGQwNzI1/NWJhYzFkYTJlNzNh/OC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
