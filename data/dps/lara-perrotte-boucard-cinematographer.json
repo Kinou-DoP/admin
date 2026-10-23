@@ -112,12 +112,34 @@
     "10143": {
       "zoom": 1.41,
       "zoomThumb": true,
-      "title": "Les Sentinelles • Opening Credits"
+      "title": "Les Sentinelles • Opening Credits",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/les-sentinelles-extrait-1-2nd-unit-dop",
+          "title": "Les Sentinelles - Extrait 1 (2nd unit DOP)",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10142/14a6047b-a523-11f0-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/n7Vb9aqpDvOxqdnw3BQEIZCy1FhEfwiX2i6j3rCp07E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE0Mi02OGU3ZDE1/NGNmOTg5NC4yMjQy/OTU3NS1mZDFkODQ4/ZDYwYjBjM2M2ZDIx/Zjk2ZDQ4MjgzMTJk/Yi5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/les-sentinelles-extrait-2-2nd-unit-dop",
+          "title": "Les Sentinelles - Extrait 2 (2nd unit DOP)",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10141/25635409-a523-11f0-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/X820vDGJkSnyOc3FMMqL5NthMKx18cIINHU3Era0oCs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE0MS02OGU3ZDE1/NGNlZDY0OS41NzQy/NzQ3Ni1mMWMwNGYw/MDZkNDVkYzNjOWU5/N2FhZmU1ZWYxOTU2/Mi5qcGc?v=1&format=webp"
+        }
+      ]
     },
     "10179": {
       "zoom": 1.22,
       "zoomThumb": true,
-      "title": "Carême • S01E05 • Sequence 1 (2nd unit DOP)"
+      "title": "Carême • S01E05 • Sequence 1 (2nd unit DOP)",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/careme-opening-credits",
+          "title": "Carême - Opening Credits",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9842/a99bcde9-3adb-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/vKE2chZZaE2jQWo2PIwjNLTdDtWkGWACtOpRSrJHars/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MjY1YjZkNC1lOTY3/LTRmOTUtOTgzYS03/YmM3NjZhNzE5ZWEv/MTc0ODMzNzU4NDEx/MC5qcGc?v=1&format=webp"
+        }
+      ]
     },
     "10183": {
       "sub": "Sonia Sieff",
