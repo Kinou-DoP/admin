@@ -5,8 +5,26 @@
   "bundle": "https://kinou.slateapp.com/bundles/7c7f4d54-cece-11f1-a349-0215583debcb",
   "open": 8959,
   "overrides": {
+    "6532": {
+      "zoom": 1.32
+    },
+    "6534": {
+      "zoom": 1.25
+    },
+    "6536": {
+      "zoom": 1.2
+    },
+    "6545": {
+      "zoom": 1.06
+    },
     "6546": {
-      "zoom": 1.12
+      "zoom": 1.11
+    },
+    "6548": {
+      "zoom": 1.34
+    },
+    "6703": {
+      "zoom": 1.36
     },
     "6705": {
       "extras": [
@@ -16,28 +34,57 @@
           "img": "https://images.slatecdn.net/1p1rWdbVuS9HU4JMiHrIBTeicjASN2GXZ4cL2SrbiGU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YWM2MTdhYi1hMGY3/LTRhY2MtOTkzYy0x/NWI0MDM0MGRlMDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDEt/MTctYS0xNy4zMy41/NC5wbmc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6c8671b2-4896-4eec-ac19-424b33bdffc2-1280x720.2500.mp4"
         }
-      ]
+      ],
+      "zoom": 1.35
+    },
+    "6707": {
+      "zoom": 1.35
+    },
+    "6708": {
+      "zoom": 1.34
     },
     "6709": {
-      "title": "WHOPPER OUT OF OFFICE  Burger King"
+      "title": "WHOPPER OUT OF OFFICE  Burger King",
+      "zoom": 1.34
+    },
+    "6710": {
+      "zoom": 1.33
     },
     "6712": {
-      "title": "Suna Grey ft Astrid"
+      "title": "Suna Grey ft Astrid",
+      "zoom": 1.36
     },
     "6713": {
-      "title": "Roméo Elvis x Le Motel • Les Hommes Ne Pleurent Pas"
+      "title": "Roméo Elvis x Le Motel • Les Hommes Ne Pleurent Pas",
+      "zoom": 1.51
     },
     "6715": {
-      "title": "Mai Lan • Blaze Up"
+      "title": "Mai Lan • Blaze Up",
+      "zoom": 1.49
     },
     "6718": {
       "title": "Bref. On a fait replay"
     },
+    "6719": {
+      "zoom": 1.31,
+      "zoomThumb": true
+    },
     "6798": {
       "title": "Carrément Craignos"
     },
+    "6981": {
+      "zoom": 1.53
+    },
+    "7404": {
+      "zoom": 1.34
+    },
+    "7747": {
+      "zoom": 1.13
+    },
     "8959": {
-      "title": "En Place - Saison 2"
+      "title": "En Place - Saison 2",
+      "zoom": 1.19,
+      "zoomPos": "4% 38.8%"
     },
     "9185": {
       "extras": [
@@ -105,7 +152,7 @@
       "title": "20 Piges, les 2 âges dor du rap français - Partie 1"
     },
     "10705": {
-      "zoom": 1.16,
+      "zoom": 1.18,
       "zoomThumb": true,
       "title": "Recalé"
     },
@@ -225,11 +272,15 @@
       "featuredOrder": 7
     },
     {
-      "title": "20 Piges, les 2 âges dor du rap français | Stills",
+      "title": "De IAM à PNL, 20 ans de Rap Français - 20 Piges, les 2 âges dor du rap français - Partie 1",
       "sub": "Lionel Hirlé\nTeam Nowhere Films",
-      "img": "https://images.slatecdn.net/7_hQV1Qjv36M5X6ThxKhVTkZFyEbIORZuUBmlMX3QcU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzU3ZDQ3/NjItZDZjYi00OWJi/LTg2NDItMzY3NzYz/ZTg3MzczL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTEwLTIzLWEt/MTIuNTAuMTkucG5n?v=1&format=webp",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9185/302e7d98-ced4-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/28b72524-a170-436c-8609-6638b801e77c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2aaLTwEtEtgboOBw8yjv-gfavOHQeinIpceZS7_74TU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/OTc2ZmUzYi0yNjgz/LTRjYmItOThkZS01/ZDJmMmVjMzRjZjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MjMtYS0xMi41MC4x/OS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 11380
+      "slate": 9185,
+      "featured": true,
+      "featuredOrder": 2
     },
     {
       "title": "Moment I Miss",
@@ -567,17 +618,6 @@
       "slate": 8959,
       "featured": true,
       "featuredOrder": 1
-    },
-    {
-      "title": "De IAM à PNL, 20 ans de Rap Français - 20 Piges, les 2 âges dor du rap français - Partie 1",
-      "sub": "Lionel Hirlé\nTeam Nowhere Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9185/302e7d98-ced4-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/28b72524-a170-436c-8609-6638b801e77c-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/2aaLTwEtEtgboOBw8yjv-gfavOHQeinIpceZS7_74TU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/OTc2ZmUzYi0yNjgz/LTRjYmItOThkZS01/ZDJmMmVjMzRjZjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MjMtYS0xMi41MC4x/OS5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 9185,
-      "featured": true,
-      "featuredOrder": 2
     },
     {
       "title": "Klingande x Bright Sparks - Messiah",
