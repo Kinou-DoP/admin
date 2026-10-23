@@ -134,6 +134,44 @@
     if (o.extras) return o.extras.slice();
     return o.stills ? [{ link: o.stillsLink || "", stills: o.stills }] : [];
   }
+  function extraOf(d) {
+    var n = d.stills ? { link: d.link, title: d.title, stills: d.stills } : { link: d.link, title: d.title, full: d.full, video: d.video, img: d.img };
+    Object.keys(n).forEach(function (k) { if (n[k] === undefined || n[k] === "") delete n[k]; });
+    return n;
+  }
+  // « Relire le bundle » / « Rafraîchir » : relit aussi sur Slate tous les liens ajoutés sous les films (stills, vidéos
+  // complémentaires, extrait au survol) de ces overrides, en gardant l'ordre ; un lien qui ne répond plus garde l'ancienne
+  // version. Le film complet déjà ajouté par le robot est gardé si la vidéo n'a pas changé. -> Promise { links, failed }
+  function relinkAll(holders) {
+    var jobs = [], failed = 0;
+    holders.forEach(function (o) {
+      if (!o) return;
+      (o.extras || []).forEach(function (x, i) {
+        if (!x.link) return;
+        jobs.push(function () { return importStills(x.link).then(function (d) {
+          var n = extraOf(d);
+          if (!n.full && x.full && n.video && n.video === x.video) n.full = x.full;
+          o.extras[i] = n;
+        }); });
+      });
+      if (!o.extras && o.stills && o.stillsLink) jobs.push(function () { return importStills(o.stillsLink).then(function (d) { if (d.stills) o.stills = d.stills; }); });
+      if (o.hover && o.hover.link) jobs.push(function () { return importStills(o.hover.link).then(function (d) {
+        if (!d.video) return;
+        var h = { link: d.link, title: d.title, video: d.video }; if (d.img) h.img = d.img; o.hover = h;
+      }); });
+    });
+    var next = 0;
+    function worker() { // 4 lectures à la fois
+      if (next >= jobs.length) return Promise.resolve();
+      var job = jobs[next++];
+      return job().catch(function () { failed++; }).then(worker);
+    }
+    return Promise.all([worker(), worker(), worker(), worker()]).then(function () { return { links: jobs.length, failed: failed }; });
+  }
+  function relinkMsg(r) {
+    if (!r.links) return "";
+    return " " + (r.links - r.failed) + " lien" + (r.links - r.failed > 1 ? "s" : "") + " sous les films relu" + (r.links - r.failed > 1 ? "s" : "") + (r.failed ? " (" + r.failed + " sans réponse, ancienne version gardée)" : "") + ".";
+  }
   function extrasCtl(get, set, label) {
     var box = el("div", { class: "extras" });
     function save(list) { set(list); touch(); draw(); }
@@ -148,8 +186,7 @@
         if (input._busy === v) return; // Entrée déclenche aussi « change »
         input._busy = v; st.textContent = "Lecture du lien…";
         importStills(v).then(function (d) {
-          var n = d.stills ? { link: d.link, title: d.title, stills: d.stills } : { link: d.link, title: d.title, full: d.full, video: d.video, img: d.img };
-          Object.keys(n).forEach(function (k) { if (n[k] === undefined || n[k] === "") delete n[k]; });
+          var n = extraOf(d);
           if (x) list[i] = n; else list.push(n);
           save(list);
         }, function (e) { input._busy = null; st.textContent = e.message; });
@@ -371,6 +408,11 @@
       }).then(function (r) {
         var d = r[0], known = r[1];
         if (r[2]) { dirty = false; flash = d.name + " a déjà une fiche : la voici. Utilisez « Relire le bundle » pour la mettre à jour."; location.hash = "#/dp/" + known.slug; return; }
+        st.textContent = "Lecture des liens ajoutés sous les films…";
+        return relinkAll(Object.keys(state.overrides).map(function (k) { return state.overrides[k]; })).then(function (rl) { r[3] = rl; return r; });
+      }).then(function (r) {
+        if (!r) return;
+        var d = r[0], known = r[1];
         slate = d; state.bundle = d.bundle; dirty = true;
         if (!state.name) state.name = d.name;
         if (known) { state.slug = origSlug = known.slug; listed = true; }
@@ -378,7 +420,7 @@
         if (isNew) state.hue = hueOf(state.slug);
         if (isNew && state.open === undefined) { var f = d.clips.filter(function (c) { return c.featured; }).sort(function (a, b) { return a.featuredOrder - b.featuredOrder; })[0]; if (f) state.open = f.slate; }
         render();
-        status((known ? "Déjà sur le site : la fiche reprend son adresse kinou.fr/" + known.slug + ". " : "") + "Bundle importé : " + d.clips.length + " films, " + d.categories.length + " onglets. Vérifiez puis publiez.", "ok");
+        status((known ? "Déjà sur le site : la fiche reprend son adresse kinou.fr/" + known.slug + ". " : "") + "Bundle importé : " + d.clips.length + " films, " + d.categories.length + " onglets." + relinkMsg(r[3]) + " Vérifiez puis publiez.", "ok");
       }, function (e) { imp.disabled = false; st.textContent = e.message; });
     });
     var kids = [el("h2", { text: "Bundle Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), imp]), st];
@@ -933,10 +975,14 @@
       if (!input.value.trim()) return;
       imp.disabled = true; st.textContent = "Lecture de la bande…";
       importReel(input.value).then(function (d) {
+        st.textContent = "Lecture des liens ajoutés sous les films…";
+        return relinkAll(Object.keys(home.overrides).map(function (k) { return home.overrides[k]; })).then(function (rl) { return [d, rl]; });
+      }).then(function (r) {
+        var d = r[0];
         home.reel = d.link; home.slides = d.films.map(slideOf);
         var lost = []; home.slides.forEach(function (sl) { sl.dps.forEach(function (x) { if (!x.slug) lost.push(x.name); }); });
         dirty = true; renderHome(); histCommit();
-        status(d.films.length + " films importés." + (lost.length ? " Pas de page pour : " + lost.join(", ") + " (nom sans lien)." : "") + " Publiez pour mettre l'accueil à jour.", "warn");
+        status(d.films.length + " films importés." + relinkMsg(r[1]) + (lost.length ? " Pas de page pour : " + lost.join(", ") + " (nom sans lien)." : "") + " Publiez pour mettre l'accueil à jour.", "warn");
       }, function (e) { imp.disabled = false; st.textContent = e.message; });
     }
     imp.addEventListener("click", load);

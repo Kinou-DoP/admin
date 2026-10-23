@@ -35,6 +35,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   → `GET <SITE>/api/stills?link=…` → `extras` (`overrides[<id>].extras` ou slide de l'accueil) : `{ link, title, stills }` ou
   `{ link, title, full, video, img }` (URLs signées telles quelles). Une case vide en bas pour ajouter un lien de plus,
   flèches ↑ ↓ pour réordonner, × pour retirer. L'ancien `stills` + `stillsLink` est converti à la première modification.
+  « Relire le bundle » (fiche) et « Rafraîchir » (accueil) relisent aussi tous ces liens (`relinkAll` : extras, ancien
+  stills, extrait au survol ; 4 à la fois ; lien sans réponse = ancienne version gardée ; `full` du robot gardé si même vidéo).
 - Projet en stills (« Sans vidéo ») : case « Extrait vidéo au survol » → lien Slate d'une vidéo qui a un extrait
   → `overrides[<id>].hover` = `{ link, title, video, img? }` ; sur le site l'extrait joue au survol, le clic montre la galerie.
   Le recadrage (zoom / zoomPos) de ce projet se règle sur cet extrait.
