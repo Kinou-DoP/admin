@@ -4,7 +4,32 @@
   "hue": 132,
   "bundle": "https://kinou.slateapp.com/bundles/2ae79235-cec3-11f1-a349-0215583debcb",
   "open": 11185,
-  "overrides": {},
+  "overrides": {
+    "10954": {
+      "title": "Ante Tsp"
+    },
+    "10955": {
+      "zoom": 1.35,
+      "zoomThumb": true
+    },
+    "10960": {
+      "zoom": 1.28,
+      "zoomThumb": true
+    },
+    "10962": {
+      "zoom": 1.37,
+      "zoomThumb": true,
+      "zoomPos": "49% 2.9%"
+    },
+    "10969": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "10975": {
+      "zoom": 1.29,
+      "zoomThumb": true
+    }
+  },
   "about": {
     "bio": [
       "Stephan Mühlau est un directeur de la photographie spécialisé dans la publicité, la mode, le beauty et les clips musicaux. Il a signé des campagnes pour des marques telles qu’Adidas, Dior Men, H&M, AMG, Bugatti, IWC and Yamaha."
