@@ -179,9 +179,9 @@ input[readonly] { color: var(--dim); }
 .film .thumb { overflow: hidden; }
 .film .thumb video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .film .thumb .chips { z-index: 1; }
-.zoom { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
-.zoom .zval { flex: none; width: 118px; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
-.zoom input[type=range] { flex: 1; min-width: 0; accent-color: var(--kinou-fg); }
+.zoom { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 12px; margin-top: 8px; }
+.zoom .zval { flex: none; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.zoom input[type=range] { order: -1; flex: 1 1 100%; width: 100%; min-width: 0; margin: 0; accent-color: var(--kinou-fg); } /* toute la largeur de la vidéo (plus précis), texte et « Recentrer » dessous */
 .zthumb { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
 .zthumb input { margin: 0; accent-color: var(--kinou-fg); }
 
