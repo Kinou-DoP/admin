@@ -5,9 +5,75 @@
   "bundle": "https://kinou.slateapp.com/bundles/7c7f4d54-cece-11f1-a349-0215583debcb",
   "open": 8959,
   "overrides": {
+    "6709": {
+      "title": "WHOPPER OUT OF OFFICE  Burger King"
+    },
+    "6712": {
+      "title": "Suna Grey ft Astrid"
+    },
+    "6713": {
+      "title": "Roméo Elvis x Le Motel • Les Hommes Ne Pleurent Pas"
+    },
+    "6715": {
+      "title": "Mai Lan • Blaze Up"
+    },
+    "6718": {
+      "title": "Bref. On a fait replay"
+    },
+    "6798": {
+      "title": "Carrément Craignos"
+    },
+    "8959": {
+      "title": "En Place - Saison 2"
+    },
+    "9185": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/comment-le-streaming-a-change-la-place-du-rap-dans-lindustrie-20-piges-partie-2",
+          "title": "Comment le streaming a changé la place du rap dans lindustrie - 20 Piges Partie 2",
+          "img": "https://images.slatecdn.net/iclGd8gzu5Oaem2APbFr6PCUbJUihglhfzcP6qnH5B0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTgzLTY3M2M3MmUw/YjEyZTg4LjU5MDY0/NzQzLTUzZWIyMmMx/NzlhNWZjMWVhMTU2/Yjg1NDNlYTM5ZGU2/LmpwZw?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/comment-youtube-et-les-reseaux-ont-revolutionne-la-promo-du-rap-20-piges-partie-3",
+          "title": "Comment YouTube et les réseaux ont révolutionné la promo du rap - 20 Piges Partie 3",
+          "img": "https://images.slatecdn.net/22eckBB23sCKRMKl0MpY1PNEkskeXXV6jBsbCWiailE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTg0LTY3M2M3MmUw/YjQwYjg1Ljg1MjU0/NjMzLTBiZjQxOTYz/YTRmMDNmZGY4MDk0/MGMzMGJjOTVhMmE3/LmpwZw?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/du-freestyle-a-la-scene-comment-le-rap-a-conquis-les-grandes-salles-20-piges-partie-4",
+          "title": "Du Freestyle à la Scène : Comment le Rap a Conquis les Grandes Salles  20 Piges - Partie 4",
+          "img": "https://images.slatecdn.net/aQycXdC1SQT6xhYjMzgq57hjsWt2Oj33Ae1ZmpuYn68/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTg2LTY3M2M3MmUw/YjU4NmQzLjM1MDMz/MTE2LWY1YTU4Y2E0/NGZmY2FlNzM1ZTRj/ZGQzZmYzMTVjY2U1/LmpwZw?v=1&format=webp"
+        }
+      ],
+      "title": "20 Piges, les 2 âges dor du rap français - Partie 1"
+    },
     "10705": {
       "zoom": 1.13,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Recalé"
+    },
+    "11195": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/surveillant-stills",
+          "title": "Surveillant ! | Stills",
+          "stills": [
+            "https://images.slatecdn.net/N8iCWIJkhLBBnF5-jqdMk-HUXpGYLcnpJrMxw93aWro/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzE1YmNh/YjItYjY3MS00ZmQz/LWEwNzktYmJhZjEz/YjNmODdmLzAxLnBu/Zw.webp",
+            "https://images.slatecdn.net/mJ4Lyu8zRLv0gXrGiaQAbpfDTlkdRyJ93fe9XnPLbz8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjMzYjkz/NDktN2Q5MS00NzNk/LTk2OTAtYTdiNDRk/NTNmMTUwLzAyLnBu/Zw.webp",
+            "https://images.slatecdn.net/Z6Lb1eXgPxW_8BXe4qBVB34uBMKcONwq8T8oeNpJiQ4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDVmOWNh/YWMtNjIxYy00OTBj/LWE2MmItZDdiZTM3/MWZhNWZlLzAzLnBu/Zw.webp",
+            "https://images.slatecdn.net/hzM7hXZxCJ6gMhrJtxBnHf4c4b8fvsLlr6s_p231xlc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjg0MDZh/MDktZWVjMC00YmQ2/LWFmOTMtMjI4NTVk/NDAwNjgzLzA0LnBu/Zw.webp",
+            "https://images.slatecdn.net/k929hTmQHqQP6iDPMvXLA6s69AMla6rSBFnr-3RbOgk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjM5Mzc3/ODgtMWE4Mi00MDI2/LWJkMTYtNGE4ZGJl/MzdhYTE1LzA1LnBu/Zw.webp",
+            "https://images.slatecdn.net/asEh1XJ2bbEGrrb93ARVc_Y-2QjPXIl7-imjRMccdFc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTBhYzNm/NTItMzIwYS00ZTM5/LWI2YTEtYmUzOTZk/N2NiYTBmLzA2LnBu/Zw.webp",
+            "https://images.slatecdn.net/fQ8LLtHnk0h8WTTBP_yjztqMRtjBGzZNZFsd9EYF7OM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODI5ZmZk/NDktYmQxZi00MDk1/LWEwYzQtZmYwNjE1/MDg4NzkxLzA3LnBu/Zw.webp",
+            "https://images.slatecdn.net/6JujXSTtXipBMnnHVWHgKunB9ySbrqTEGQFRc5zmfkQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzIzOGQy/NjAtYzY1Yi00YmI2/LWJjNDYtNWUwZTM3/ZTJhOTFhLzA4LnBu/Zw.webp",
+            "https://images.slatecdn.net/PL8R4A3G2x7x6xS4ZURjSEdvKYrdqSWE-vgLArsfdMo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzIxMDgy/NTctYmQxOS00NWEw/LWEyYzUtYjdiZWJm/ZDAyOTg4LzA5LnBu/Zw.webp",
+            "https://images.slatecdn.net/tjJEP8-0YcH3P5IcFIfSWZ-JIZrt7mCkuqM0Ya3dBEQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZWFkNGMw/ODEtZDFkMi00YzVk/LTkyZjYtZjA0ODk0/MWFmMGEyLzEwLnBu/Zw.webp",
+            "https://images.slatecdn.net/0vNgpyn7OeVLjOlaknCaO14HxCervMBbhi6Tup2HQAk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDRiOTU4/NWUtNjQ1My00ZGM1/LTlkZGUtNjdkNmZm/ZjQ5NGEyLzExLnBu/Zw.webp",
+            "https://images.slatecdn.net/Y0Rz21THwYAt0hQXlSEbwITAn0iKkk_xyRC6bzGMXfA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNmVhYmQ1/NDgtMzhhZC00MjVi/LTliMGYtY2Q0ZTk3/NTE2ODhmLzEyLnBu/Zw.webp",
+            "https://images.slatecdn.net/kVlS6cpu_Hw1Jbzl1qDn0cpMdh0Bj2yqmdt1qjepaMc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTdkYmQ4/ZTEtZmMyNi00OGYy/LThmMzctNjI3Yzk3/YzYwNmQ4LzEzLnBu/Zw.webp"
+          ]
+        }
+      ],
+      "title": "Surveillant ! • Saison 1"
     }
   },
   "about": {},
@@ -20,6 +86,17 @@
     "BEAUTY"
   ],
   "clips": [
+    {
+      "title": "Surveillant ! • Saison 1 Bande-annonce",
+      "sub": "John Wax\nNabi Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11195/3cb45c26-a6ad-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2ff5d634-7d21-41d8-a3bc-210d263e373d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/A7tnmVF3O3vvYBtLMjdb6fjn6rjEp3Gr4Kqyn9hdB1U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YmJhNjU0NS04NjI0/LTQ3MGEtYjlkMy0w/YTk5NTNlMWIxNjYv/MDMucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11195,
+      "featured": true,
+      "featuredOrder": 5
+    },
     {
       "title": "Le Flambeau - Les Aventuriers de Chupacabra",
       "sub": "Jonathan Cohen, Jérémie Galan\nMakingprod",
@@ -356,17 +433,6 @@
       "slate": 9185,
       "featured": true,
       "featuredOrder": 2
-    },
-    {
-      "title": "Surveillant ! • Saison 1 Bande-annonce",
-      "sub": "John Wax\nNabi Productions",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11195/3cb45c26-a6ad-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2ff5d634-7d21-41d8-a3bc-210d263e373d-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/A7tnmVF3O3vvYBtLMjdb6fjn6rjEp3Gr4Kqyn9hdB1U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YmJhNjU0NS04NjI0/LTQ3MGEtYjlkMy0w/YTk5NTNlMWIxNjYv/MDMucG5n?v=1&format=webp",
-      "cat": "",
-      "slate": 11195,
-      "featured": true,
-      "featuredOrder": 5
     },
     {
       "title": "Klingande x Bright Sparks - Messiah",
