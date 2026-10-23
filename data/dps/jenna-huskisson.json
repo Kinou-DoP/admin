@@ -30,7 +30,7 @@
       "cat": "NARRATIVE",
       "slate": 10801,
       "featured": true,
-      "featuredOrder": 3
+      "featuredOrder": 4
     },
     {
       "title": "Mudpuppy",
@@ -41,7 +41,7 @@
       "cat": "NARRATIVE",
       "slate": 10793,
       "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 3
     },
     {
       "title": "BEAUTIFUL PEOPLE",
@@ -60,7 +60,7 @@
       "cat": "NARRATIVE",
       "slate": 10799,
       "featured": true,
-      "featuredOrder": 6
+      "featuredOrder": 7
     },
     {
       "title": "TWO CABINS - Cinnamon Rolls",
@@ -69,9 +69,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cbd02b35-89cb-472a-86d2-d16db30e879a-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/-NvZ6DP_NvcPlQo8sWSRkbLmNYvrBcp4cH33G4o-iBI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgwMi02OWZhMjRl/Nzc2ZjhmNy41ODY4/NTYzOS1mZTNkZDBj/OGI3N2ZlODE4MTJm/ZTcwODQwNjExYmI3/ZS5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 10802,
-      "featured": true,
-      "featuredOrder": 14
+      "slate": 10802
     },
     {
       "title": "Bowl of Life",
@@ -80,9 +78,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cccc5411-ad11-48e4-9a55-c3ff561a2d3d-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/lVsI67tdiEcv9_9JHl-Jx-r-zGgPn9gFNN3THO7MTLE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc4OC02OWZhMjRl/MDgwODcwMy43NTI1/Mzc4Ny0wM2MxY2I0/ZmIxN2YxMDYwNjVh/YTFmZjg0NDk0NTg1/OS5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 10788,
-      "featured": true,
-      "featuredOrder": 10
+      "slate": 10788
     },
     {
       "title": "The Story of Mabe",
@@ -91,7 +87,20 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/436ad9c3-4ec5-4291-8777-8debf6a08136-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/GTbWTQktTyaEyiz8kw_UBqic-1Hla6vDmz6tqdQJHkg/w:800/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MTI0NzViYS0zMTIw/LTRlNDYtODQ1Mi1k/NWNkOTQ3ZDQ1M2Yv/MTc4OTU2NTg4NjUw/Mi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 11300
+      "slate": 11300,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Metamorphosis - Teaser",
+      "sub": "Cole Borgstadt\nMore Avenue",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10792/9efc776d-79f9-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6738ef99-f515-42fe-bc12-ba740d07de4f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/H0eTxs_TIRF91G9TPSsLKaVmAs7N9JpwUe1gmhMpHFU/w:800/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZmQ2MmZjZi1kNzE3/LTQ4ZTItOTc5ZC1k/ZWZiZjg1NjBmMDEv/MTc3ODA3NjQyMDgy/OS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10792,
+      "featured": true,
+      "featuredOrder": 2
     },
     {
       "title": "Lululemon",
@@ -100,7 +109,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d1a899ea-d4b2-4235-9d75-63ca64f18770-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/fZ-pHZBMBsQN-Pfm7sZZItrsef3_dFXxI1VjNHlyrLY/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDg5MC02YTE4M2Y5/MmFlMTY3Ni42MTUx/OTA2Ny0yYjM2NDUz/N2QzYWY4YjRlYThm/NGI5YjBiOTM1ZjY3/Yi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10890
+      "slate": 10890,
+      "featured": true,
+      "featuredOrder": 1
     },
     {
       "title": "Bose - Call Your Mom Back",
@@ -109,7 +120,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/72b14eea-b26a-41d4-9d3a-aa3e2db5b871-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/p4VyGaUkM15HibRY5pTQjIwwYFwMAQwREO-Harhc8rM/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDg3NC02YTE4M2Y4/NjUwZTRkOS40Njg3/OTg2Ni1lNDc5MWJh/OTczNzM4NzViMmYx/ZjIwZWYxYzdhODhl/My5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10874
+      "slate": 10874,
+      "featured": true,
+      "featuredOrder": 12
     },
     {
       "title": "Puma with Tyrese Haliburton",
@@ -127,7 +140,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/32941884-057e-4e9d-a809-6161532c2618-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/dmRQ2m7s0T129YXYgWABZiqNRVww8WwnFF2JaiqveSM/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDg4NS02YTE4M2Y5/MmFiZDVlNS41NzU5/MjE0Mi1lMTY2NWUw/NzgwNjI0YTY2OTdh/NjVjNTkyZjAxZDRm/Ny5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10885
+      "slate": 10885,
+      "featured": true,
+      "featuredOrder": 13
     },
     {
       "title": "Nex Playground",
@@ -191,9 +206,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7a19fad5-1c05-4719-9476-7343289f4169-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/ZqsdEP92S4vgfq6ka6tzFkuII4Yup2FmpoMGMlM57ZA/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgwMC02OWZhMjRl/N2ExMzk3NC4wNjMy/MjIyNC00NTU0MDdi/ZDhiNWI1MzJkZGE5/NGE2OGM2ODlhYzdk/OC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10800,
-      "featured": true,
-      "featuredOrder": 4
+      "slate": 10800
     },
     {
       "title": "Klar",
@@ -201,9 +214,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/41a3bca1-0263-4971-ad0e-647fec79d1bc-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/JP5ddOgLCGa843PjSphS_jGCiIuShRSdn9IXIYrhtaY/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc5MC02OWZhMjRl/MDcyMTBlMi43NDM5/OTI3Ni1iZWZiZTE4/ZGQ3NjQzNjNmYjM2/M2ZiMzdiY2I1ZGZh/YS5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10790,
-      "featured": true,
-      "featuredOrder": 12
+      "slate": 10790
     },
     {
       "title": "Never Lose Your Splash",
@@ -219,9 +230,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/977a3693-915d-42ca-86c2-406dd07e77ee-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/dCXSuFCEfHaxpwQTOCawaODFp4YHNNhjqRL6n0F61rY/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc4Ny02OWZhMjRk/OTEzMjU3MC44Nzcx/NDkzNS03MjQxNDg3/ZDkxMzEyMzU3YTNk/YzE1ZjgzZjFmN2Jj/Ny5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10787,
-      "featured": true,
-      "featuredOrder": 13
+      "slate": 10787
     },
     {
       "title": "Turo",
@@ -300,7 +309,7 @@
       "cat": "FASHION X BEAUTY",
       "slate": 10803,
       "featured": true,
-      "featuredOrder": 17
+      "featuredOrder": 10
     },
     {
       "title": "Lifestraw Dir Cut",
@@ -310,7 +319,7 @@
       "cat": "FASHION X BEAUTY",
       "slate": 10791,
       "featured": true,
-      "featuredOrder": 8
+      "featuredOrder": 5
     },
     {
       "title": "ARROYO",
@@ -321,7 +330,7 @@
       "cat": "FASHION X BEAUTY",
       "slate": 10786,
       "featured": true,
-      "featuredOrder": 9
+      "featuredOrder": 8
     },
     {
       "title": "Kim Kardashian for GQ",
@@ -332,7 +341,7 @@
       "cat": "FASHION X BEAUTY",
       "slate": 10789,
       "featured": true,
-      "featuredOrder": 16
+      "featuredOrder": 15
     },
     {
       "title": "Amiri",
@@ -360,7 +369,7 @@
       "cat": "FASHION X BEAUTY",
       "slate": 10797,
       "featured": true,
-      "featuredOrder": 7
+      "featuredOrder": 14
     },
     {
       "title": "Lawcinto : Runaways",
@@ -369,7 +378,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/25bec9ee-55d3-4436-99b2-aeb7e3f43d87-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/XS8f87Vf4q3ZRrn5w0-HcRy-WQFtZ86NEqPHzw9AwDE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDg4MS02YTE4M2Y4/YzQyNjg4MC4zMTcw/MTg2MC1lZGY3NzRi/ZGM3Yjk1MzA0MjJj/OWM2ZmU3ODY2YjFi/Mi5qcGc?v=1&format=webp",
       "cat": "FASHION X BEAUTY",
-      "slate": 10881
+      "slate": 10881,
+      "featured": true,
+      "featuredOrder": 11
     },
     {
       "title": "Amiri",
@@ -396,9 +407,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/eb8655a7-2e9b-4104-8b97-4535ff62dfb9-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/dt5zWZeZLGVi8e2p6Afj8icWZ6oo-ZrQ6Nwrq_7zML4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZGI2MDE5Yy01NTg2/LTQwM2EtOGQxNS0w/OGIyMmRjMjExZjkv/MTc3ODA3NjI3MTE4/NC5qcGc?v=1&format=webp",
       "cat": "FASHION X BEAUTY",
-      "slate": 10795,
-      "featured": true,
-      "featuredOrder": 15
+      "slate": 10795
     },
     {
       "title": "Chloe Gosselin x Larroude",
@@ -416,9 +425,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1e7da0e7-3616-4819-8699-c41605944d9a-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/33C-dK1ByvLPqhhEDPI2z-ffYN1n7LqblTnSV4wb0iw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc5Ni02OWZhMjRl/MDZhNWJhMi4yMDgx/OTIwMy1iMDM3ZjFl/NGQwYTEyY2YxZDhk/MzRjZGUzN2M2YmFl/My5qcGc?v=1&format=webp",
       "cat": "FASHION X BEAUTY",
-      "slate": 10796,
-      "featured": true,
-      "featuredOrder": 11
+      "slate": 10796
     },
     {
       "title": "Amiri",
@@ -438,7 +445,7 @@
       "cat": "FASHION X BEAUTY",
       "slate": 10794,
       "featured": true,
-      "featuredOrder": 5
+      "featuredOrder": 6
     },
     {
       "title": "Tommy Hilfiger - Holiday Campaign",
@@ -497,9 +504,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/90263861-4b16-4496-8598-3a1c45d6ee06-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/H8Ae-16y8652w5nLZwf1vHue9u1vfwdjMsKF6bz_lRU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc5OC02OWZhMjRl/N2EwNzQ5NS4xNzAz/NjQxOS0xMGZmYjBl/NmJhMjNhMjhlODBm/NGYwN2VlNTJiNzc1/ZC5qcGc?v=1&format=webp",
       "cat": "FASHION X BEAUTY",
-      "slate": 10798,
-      "featured": true,
-      "featuredOrder": 18
+      "slate": 10798
     },
     {
       "title": "BABY FEVER",
@@ -508,17 +513,6 @@
       "img": "https://images.slatecdn.net/_XaZ1PPbJaKgds2Fgrmc1vwS2074kb4f26dK1gLUDAM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgyOS02OWZiNmNj/MGUyM2E4Ny41MTc2/NTg3Mi01MTI3Y2Jh/ZWZjZDJhYmIxOGNj/ZWE5ZGUzMzIwN2I3/YS5qcGc?v=1&format=webp",
       "cat": "MUSIC VIDEOS",
       "slate": 10829
-    },
-    {
-      "title": "Metamorphosis - Teaser",
-      "sub": "Cole Borgstadt\nMore Avenue",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10792/9efc776d-79f9-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6738ef99-f515-42fe-bc12-ba740d07de4f-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/ejs9F6M_MMOmkIWaa16gzEZy9N20l3OsHPRCKvpb4x4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZmQ2MmZjZi1kNzE3/LTQ4ZTItOTc5ZC1k/ZWZiZjg1NjBmMDEv/MTc3ODA3NjQyMDgy/OS5qcGc?v=1&format=webp",
-      "cat": "MUSIC VIDEOS",
-      "slate": 10792,
-      "featured": true,
-      "featuredOrder": 1
     },
     {
       "title": "T. SHAN – LOST IN TRANSLATION",
