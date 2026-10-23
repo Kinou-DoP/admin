@@ -6,10 +6,15 @@
   "open": 10681,
   "overrides": {
     "10681": {
-      "phoneX": 55.7
+      "phoneX": 55.7,
+      "title": "Zara • Japan"
+    },
+    "10685": {
+      "title": "Mierda, Mama"
     },
     "10724": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "zoomThumb": true
     },
     "10727": {
       "zoom": 1.2,
