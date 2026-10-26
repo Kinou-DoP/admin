@@ -58,12 +58,49 @@ async function fillImages(dp) {
   });
   var k = 0;
   dp.overrides = dp.overrides || {};
-  Object.keys(found).forEach(function (sid) {
-    var o = dp.overrides[sid] || {};
-    if (JSON.stringify(o.images) === JSON.stringify(found[sid])) return;
-    o.images = found[sid]; dp.overrides[sid] = o; k++;
-  });
+  for (var sid of Object.keys(found)) {
+    var o = dp.overrides[sid] || {}, same = JSON.stringify(o.images) === JSON.stringify(found[sid]);
+    if (same && o.ratios && o.ratios.length === found[sid].length) continue;
+    o.images = found[sid];
+    // Proportions (largeur / hauteur) de chaque image : le site place les photos tout de suite à leur place définitive.
+    o.ratios = await ratiosOf(found[sid]);
+    dp.overrides[sid] = o; k++;
+  }
   return k;
+}
+// Dimensions d'une image (WebP, JPEG, PNG) d'après ses premiers octets (pas besoin de la télécharger en entier).
+function imageSize(b) {
+  if (b.length > 30 && b.toString("ascii", 0, 4) === "RIFF" && b.toString("ascii", 8, 12) === "WEBP") {
+    var t = b.toString("ascii", 12, 16);
+    if (t === "VP8 ") return { w: b.readUInt16LE(26) & 0x3fff, h: b.readUInt16LE(28) & 0x3fff };
+    if (t === "VP8L") return { w: 1 + (((b[22] & 0x3f) << 8) | b[21]), h: 1 + (((b[24] & 0x0f) << 10) | (b[23] << 2) | ((b[22] & 0xc0) >> 6)) };
+    if (t === "VP8X") return { w: 1 + b.readUIntLE(24, 3), h: 1 + b.readUIntLE(27, 3) };
+  }
+  if (b.length > 24 && b[0] === 0x89 && b.toString("ascii", 1, 4) === "PNG") return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+  if (b[0] === 0xff && b[1] === 0xd8) {
+    var i = 2;
+    while (i + 9 < b.length) {
+      if (b[i] !== 0xff) { i++; continue; }
+      var m = b[i + 1], len = b.readUInt16BE(i + 2);
+      if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return { w: b.readUInt16BE(i + 7), h: b.readUInt16BE(i + 5) };
+      i += 2 + len;
+    }
+  }
+  return null;
+}
+async function ratiosOf(urls) {
+  var out = new Array(urls.length).fill(null), next = 0;
+  async function worker() {
+    while (next < urls.length) {
+      var i = next++;
+      try {
+        var r = await fetch(urls[i], { headers: { Range: "bytes=0-65535" } }), sz = imageSize(Buffer.from(await r.arrayBuffer()));
+        if (sz && sz.w && sz.h) out[i] = Math.round(sz.w / sz.h * 10000) / 10000;
+      } catch (e) {}
+    }
+  }
+  await Promise.all([worker(), worker(), worker(), worker(), worker(), worker()]);
+  return out;
 }
 // Fiches à relire : celles du dernier envoi (CHANGED, liste de chemins), ou toutes (lancement manuel, ALL=1).
 var changedList = (process.env.CHANGED || "").split(/\s+/).filter(Boolean);
