@@ -1,0 +1,14 @@
+{
+  "team": [
+    { "role": "Commercials", "name": "Annelyse", "email": "annelyse@kinou.fr", "phone": "+33 6 11 70 51 13" },
+    { "role": "Music videos / Commercials", "name": "John", "email": "john@kinou.fr", "phone": "+33 7 81 47 34 84" },
+    { "role": "Narrative", "name": "Kinou", "email": "kinouk@gmail.com", "phone": "+33 6 09 69 74 57" },
+    { "role": "Narrative", "name": "Elisabeth", "email": "elisabeth@kinou.fr", "phone": "+33 6 12 61 96 50" },
+    { "role": "UK / International + Narrative", "name": "Stéphanie", "email": "stephanie@kinou.fr", "phone": "+33 6 12 95 51 48" },
+    { "role": "Assistant", "name": "Gurvan", "email": "gurvan@kinou.fr", "phone": "+33 6 88 49 51 36" }
+  ],
+  "address": ["57, bd Richard Lenoir", "75011 Paris", "France"],
+  "newsletter": "http://eepurl.com/KQ6e1",
+  "social": { "instagram": "https://www.instagram.com/kinou.cinematographer.agency/", "vimeo": "", "imdb": "", "facebook": "" },
+  "legal": ""
+}
