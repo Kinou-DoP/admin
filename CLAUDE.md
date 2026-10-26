@@ -55,7 +55,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi
   (lien vers le commit). Sur une fiche / l'accueil / le contact : ce fichier seulement, bouton « Tout voir ».
-- Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight et fiction (à venir), contact.
+- Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight, fiction (à venir), contact.
 - Home page : lien d'une bande Slate → `GET <SITE>/api/reel?link=…` (10 premiers films) → `data/home.json`
   (`reel`, `slides` avec `dps: [{ name, slug }]` reliés par le nom, `src` = valeurs Slate, `overrides` par id Slate).
   « Rafraîchir » relit la bande en gardant les corrections.
@@ -68,6 +68,12 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   - Recadrage : `zoom` / `zoomPos` (cadre rouge ; clic sur l'image = retour au réglage).
   - Téléphone : bande rouge (comme pour le fond de la liste) → `phoneX` de la slide.
   Aperçus (survol de la carte, recadrage, téléphone) = passage HD s'il existe.
+- Spotlight (lien « spotlight » du menu, `data/spotlight.json`) : lien d'une bande Slate (pour l'instant shots.re/206850) +
+  « Relire la bande » (publie le lien, puis attend que le robot GitHub ait lu toute la bande : `films`, `readAt`) ; onglets
+  (`categories`, défaut COMMERCIAL, MUSIC VIDEO, ART VIDEO ; ALL toujours en premier) ; films avec les mêmes réglages que sur
+  une fiche (`filmsSection` / `filmCard` réutilisés : `state` = spotlight, `slate` = films rangés par catégorie) → `overrides`.
+  Publication : relit le fichier en ligne et n'écrit que `reel`, `categories`, `overrides` (garde les `films` du robot).
+  Étiquette de la vignette : chef op crédité. Format et affichage : CLAUDE.md du site (« Spotlight »).
 - Contact : logo du site (PNG/WebP blanc sur transparent) → `data/brand/logo-<horodatage>.png` + `data/site.json`
   (`logo`, `logoHeight`). Sans logo : texte « kinou ».
 - Portrait : compressé dans le navigateur (1600 px max, WebP) → `data/dps/img/<slug>.webp`.
@@ -92,8 +98,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 À chaque modification de `admin.css` ou `admin.js`, mettre à jour le numéro `?v=` dans `index.html` (cache de GitHub Pages).
 
 ## Robot GitHub (branche main)
-- `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json` ou d'une fiche
-  (`data/dps/*.json`), ajoute le film complet (`full`) qui manque : slides de l'accueil (lu sur la bande Slate, `reel`)
+- `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json`, de
+  `data/spotlight.json` (lecture de toute la bande du spotlight) ou d'une fiche (`data/dps/*.json`), ajoute le film complet (`full`) qui manque : slides de l'accueil (lu sur la bande Slate, `reel`)
   et vidéos ajoutées sous un film (`extras`, lu sur leur page Slate `link`) ; images des projets en images seulement
   (`overrides[<id>].images` + leurs proportions `ratios`, lues sur le bundle de la fiche publiée — taille lue dans les 64 premiers
   Ko de chaque image —, ou de toutes les fiches au lancement manuel). Gratuit (Actions, dépôt public),

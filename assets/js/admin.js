@@ -661,7 +661,8 @@
       hide.textContent = o.hidden ? "Afficher" : "Masquer";
       reset.hidden = !(o.title !== undefined || o.sub !== undefined);
       chips.textContent = "";
-      if (c.featured) chips.appendChild(el("span", { class: "chip", text: "Featured " + c.featuredOrder }));
+      if (state === spot) { if (c.artists && c.artists.length) chips.appendChild(el("span", { class: "chip", text: c.artists.join(" & ") })); } // spotlight : chef op crédité
+      else if (c.featured) chips.appendChild(el("span", { class: "chip", text: "Featured " + c.featuredOrder }));
       if (!c.full && !c.video) chips.appendChild(el("span", { class: "chip", text: "Sans vidéo" }));
       var xs = extrasOf(o), ns = xs.filter(function (x) { return x.stills; }).length;
       if (ns) chips.appendChild(el("span", { class: "chip", text: ns > 1 ? ns + " galeries" : "Stills" }));
@@ -714,7 +715,7 @@
       function () { return (state.overrides[c.slate] || {}).zoomPos; }, function (p) { setOverride(c, "zoomPos", p); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
     card.appendChild(thumb); card.appendChild(zoom);
-    if ((bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement
+    if (state !== spot && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(title); card.appendChild(sub);
     card.appendChild(el("div", { class: "acts" }, [hide, reset]));
     if (hoverBox) card.appendChild(hoverBox);
@@ -1190,6 +1191,106 @@
       .then(function () { publishBtn.disabled = false; });
   }
 
+  // ---------- Spotlight (data/spotlight.json) ----------
+  // Une bande Slate de films de tous les chefs op. Les fonctions Netlify (figées) n'en lisent que 10 films, sans catégories :
+  // c'est le robot GitHub qui lit toute la bande (films, catégories = types de contenu Slate, film complet, photos) à chaque
+  // publication de spotlight.json. Ici : le lien de la bande, les onglets, et les mêmes réglages par film que sur une fiche
+  // (la page réutilise filmsSection / filmCard : `state` = le spotlight, `slate` = ses films rangés par catégorie).
+  var spot = null, SPOT_CATS = ["COMMERCIAL", "MUSIC VIDEO", "ART VIDEO"];
+  function showSpot() {
+    bar.hidden = true; editing = false; view.textContent = "";
+    view.appendChild(el("p", { class: "status", text: "Chargement…" }));
+    readFile("data/spotlight.json").then(function (s) {
+      spot = s || { reel: "", categories: SPOT_CATS.slice(), overrides: {}, films: [] };
+      spot.overrides = spot.overrides || {}; spot.categories = spot.categories || SPOT_CATS.slice();
+      dirty = false; histReset(); curCat = null; renderSpot();
+    }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
+  }
+  function spotSlate() {
+    var cats = spot.categories.map(function (c) { return String(c).trim().toUpperCase(); }).filter(Boolean), clips = [];
+    (spot.films || []).forEach(function (f, i) {
+      var fc = (f.cats || []).map(function (c) { return String(c).trim().toUpperCase(); });
+      var mine = cats.filter(function (c) { return fc.indexOf(c) > -1; });
+      (mine.length ? mine : [""]).forEach(function (c, k) {
+        var e = Object.assign({}, f, { cat: c }); if (!k) { e.featured = true; e.featuredOrder = i + 1; }
+        clips.push(e);
+      });
+    });
+    return { name: "Spotlight", categories: cats, clips: clips };
+  }
+  function renderSpot() {
+    view.textContent = ""; editing = true; pagePublish = publishSpot;
+    state = spot; slate = spotSlate(); isNew = false; listed = true; // filmCard et setOverride travaillent sur state.overrides
+    histInit({ get: function () { return { data: spot }; }, set: function (h) { spot = JSON.parse(h.data); renderSpot(); } });
+    view.appendChild(el("h1", { text: "Spotlight" }));
+    view.appendChild(el("p", { class: "lead", text: "Une bande Slate de films de tous les chefs op, sur la page Spotlight du site : onglet ALL (tous les films, dans l'ordre de la bande) puis un onglet par catégorie." }));
+    // Bande Slate
+    var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (shots.re/… ou kinou.slateapp.com/…)", value: spot.reel || "https://shots.re/206850" });
+    var st = el("p", { class: "hint" });
+    var info = spot.readError ? "Dernière lecture impossible : " + spot.readError
+      : spot.readAt ? (spot.films || []).length + " films, lus sur Slate le " + new Date(spot.readAt).toLocaleString("fr-FR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + "."
+      : "Pas encore lue : cliquez sur « Relire la bande ».";
+    st.textContent = info;
+    var imp = el("button", { class: "btn", text: "Relire la bande" });
+    imp.addEventListener("click", function () {
+      var v = shortLink(input.value);
+      if (!v) { st.textContent = "Collez le lien de la bande."; return; }
+      spot.reel = v; imp.disabled = true;
+      var before = spot.readAt || "";
+      st.textContent = "Publication du lien…";
+      publishSpot(true).then(function () {
+        st.textContent = "Le robot GitHub lit toute la bande sur Slate (environ 1 minute)…";
+        var t0 = Date.now();
+        (function poll() {
+          readFile("data/spotlight.json").then(function (s) {
+            if (s && s.readAt && s.readAt !== before) {
+              if (dirty) { st.textContent = "Bande relue : publiez vos changements puis rechargez la page pour la voir."; imp.disabled = false; return; }
+              spot = s; spot.overrides = spot.overrides || {}; histReset(); renderSpot();
+              status(s.readError ? "Lecture impossible : " + s.readError : (s.films || []).length + " films lus sur la bande.", s.readError ? "err" : "ok");
+              return;
+            }
+            if (Date.now() - t0 > 240000) { st.textContent = "Le robot n'a pas encore fini : rechargez la page dans quelques minutes."; imp.disabled = false; return; }
+            setTimeout(poll, 10000);
+          }).catch(function () { setTimeout(poll, 10000); });
+        })();
+      }, function (e) { st.textContent = e.message; imp.disabled = false; });
+    });
+    view.appendChild(el("section", {}, [el("h2", { text: "Bande Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), imp]), st]));
+    // Onglets
+    var catsIn = el("input", { type: "text", value: spot.categories.join(", ") });
+    catsIn.addEventListener("input", function () {
+      spot.categories = catsIn.value.split(",").map(function (c) { return c.trim().toUpperCase(); }).filter(Boolean);
+    });
+    catsIn.addEventListener("change", function () { curCat = null; slate = spotSlate(); var f = view.querySelector(".spotfilms"); if (f) f.replaceWith(spotFilms()); });
+    view.appendChild(el("section", {}, [el("h2", { text: "Onglets" }), el("label", { class: "label", text: "Catégories, dans l'ordre (ALL est toujours le premier)" }), catsIn,
+      el("p", { class: "hint", text: "Chaque film va dans les onglets dont le nom figure dans ses types de contenu sur Slate (ex. Commercial, Music Video, Art Video). Un film sans catégorie reconnue n'apparaît que dans ALL." })]));
+    view.appendChild(spotFilms());
+    bar.hidden = false;
+    seeLink.href = SITE_PAGES + "/#spotlight"; seeLink.hidden = false;
+    if (flash) status(flash, "ok"); else if (dirty) touch(); else status("");
+    flash = "";
+  }
+  function spotFilms() {
+    if (!(spot.films || []).length) return el("div", { class: "spotfilms" }, [el("section", {}, [el("h2", { text: "Films" }), el("p", { class: "empty", text: "Pas encore de films : relisez la bande." })])]);
+    return el("div", { class: "spotfilms" }, [filmsSection()]);
+  }
+  // Publication : on repart du fichier en ligne (films lus par le robot entre-temps) et on n'y écrit que le lien, les onglets
+  // et les corrections. justLink : publication lancée par « Relire la bande ».
+  function publishSpot(justLink) {
+    publishBtn.disabled = true; status("Publication…");
+    return readFile("data/spotlight.json").then(function (remote) {
+      var out = remote || {};
+      out.reel = spot.reel; out.categories = spot.categories; out.overrides = spot.overrides;
+      return commit([{ path: "data/spotlight.json", text: json(out) }], "Mise à jour du Spotlight (admin, " + user.login + ")").then(function () { return out; });
+    }).then(function (out) {
+      out.overrides = spot.overrides; spot = out; dirty = false; histReset();
+      refreshSite("spotlight").catch(function () {});
+      if (justLink !== true) { flash = "Publié. Le robot relit la bande sur Slate (environ 1 minute)."; renderSpot(); }
+      else status("Lien publié.", "ok");
+    }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); throw e; })
+      .then(function (r) { publishBtn.disabled = false; return r; }, function (e) { publishBtn.disabled = false; throw e; });
+  }
+
   // ---------- Contact (data/site.json) : pour l'instant, le logo du site ----------
   var conf = null;
   function showContact() {
@@ -1272,6 +1373,7 @@
     if (/^#\/dp\//.test(h)) return "data/dps/" + decodeURIComponent(h.slice(5)) + ".json";
     if (h === "#/home") return "data/home.json";
     if (h === "#/contact") return "data/site.json";
+    if (h === "#/spotlight") return "data/spotlight.json";
     return null;
   }
   function histWho(c) {
@@ -1327,7 +1429,7 @@
     if (h === "#/new") return showDP(null);
     if (page === "home") return showHome();
     if (page === "contact") return showContact();
-    if (page === "spotlight") return showSoon("Spotlight");
+    if (page === "spotlight") return showSpot();
     if (page === "fiction") return showSoon("Fiction");
     showList();
   }
