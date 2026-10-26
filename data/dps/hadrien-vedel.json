@@ -787,7 +787,8 @@
     "NARRATIVE",
     "ART VIDEO",
     "COMMERCIAL",
-    "MUSIC VIDEO"
+    "MUSIC VIDEO",
+    "PHOTOGRAPHY"
   ],
   "clips": [
     {
@@ -1192,6 +1193,12 @@
       "img": "https://images.slatecdn.net/ariybvKgEz7S-6pxPH-wmh7QMxgyEVR3-GXQl2MJ0SU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZWY5ZDRhOS03MjNi/LTRjYmEtYWQ0OS02/OGM1OWI5NzIyZTkv/dmMtMWNhcHR1cmUt/ZC1lY3Jhbi0yMDI2/LTA2LTMwLWEtMTUu/NDEuMTAucG5n?v=1&format=webp",
       "cat": "MUSIC VIDEO",
       "slate": 8600
+    },
+    {
+      "title": "Hadrien Vedel #Photography",
+      "img": "https://images.slatecdn.net/raiN0WQfNLL9MGawldkpIg9iLQ1X8-JMo_Ay-OVOUkU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWFmOWE5/MjYtMDY5Yi00NmVi/LWI2NDUtZmIzZjA4/ZTRlMjMyLzFhNjU0/YzViMTE5NmYyMjAu/anBn?v=1&format=webp",
+      "cat": "PHOTOGRAPHY",
+      "slate": 11429
     }
   ]
 }
