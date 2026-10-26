@@ -43,7 +43,9 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10405/af32813e-0687-11f1-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/27833f9c-424b-4e51-aa48-b51e18be3769-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/y_bIOdrkMuxmqsTNZ4gQ-6E7dCHvDOYH2JbaYADHGgg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MDNmMTBiYi1kMjVj/LTQ5YWYtYWY3My1k/YWNiYzE4NWFhMDQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTAtYS0xNC40OS4z/Ni5wbmc?v=1&format=webp",
-      "cats": [],
+      "cats": [
+        "Commercial"
+      ],
       "artists": [
         "Lara Perrotte Boucard"
       ]
@@ -140,6 +142,20 @@
       ]
     },
     {
+      "slate": 10394,
+      "title": "Vogue CS with Emma Chamberlain",
+      "sub": "Emma Panchot\nCaviar",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10394/91f5c8a7-fc4c-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4a1fd8fb-a0e6-4bf4-bf02-47cf07f9481e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3JwRToOLTIGGrsg-02CuHZ0pWAmFrcn6rEpP5fChwIg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDM5NC02OTdhMGQw/NmYzZDZmMy40Nzgy/ODA1NC0xMTJjM2Vj/OTY4MmYwYjk2NGEx/YmU3NWVmMzM2Yjkz/OS5qcGc?v=1&format=webp",
+      "cats": [
+        "Edito"
+      ],
+      "artists": [
+        "Hadrien Vedel"
+      ]
+    },
+    {
       "slate": 10355,
       "title": "Les Dunes - Al Nostre",
       "sub": "Guilhem Machenaud\nCapsus",
@@ -174,25 +190,11 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10347/7b5cec32-e026-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fb6d4292-6ec4-40c6-9edf-753b1d609b9e-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/NSO7IVLchORH_knqiswYbuWIieY32OdWl-SO7B7l2-g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/N2JhZGQxMS05YmU4/LTQwMGItYjNjZC04/N2UyMjYzODE0ZjMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MjMtYS0xOC4zOC4w/MS5wbmc?v=1&format=webp",
-      "cats": [],
-      "artists": [
-        "Matias Boucard, AFC"
-      ]
-    },
-    {
-      "slate": 10361,
-      "title": "Chinaman | Trailer",
-      "sub": "Rob Chiu\nIconoclast",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10361/967a69fa-ed57-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/418622ad-e5df-4e05-8cdb-de1f6e956882-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/HY0aTk3UKroU343HTJhNG8Tl-jtdl2bLRxpnGiYH-j8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YzQ2ZTU5Yy04OWJi/LTQ2MmEtYTE0Ny0x/ZTZmYjgyOGMwMjEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjItYS0xOC4wMy4w/Ni5wbmc?v=1&format=webp",
       "cats": [
-        "Short Film",
-        "Trailer",
-        "narrative"
+        "Commercial"
       ],
       "artists": [
-        "Lara Perrotte Boucard"
+        "Matias Boucard, AFC"
       ]
     },
     {
@@ -202,7 +204,9 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10193/adac8d37-b02e-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c7609746-cec2-47d5-93c7-531e90560024-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ChX3wzaCHkfVY0GxSqznXcW2pz05T-lxL4gj01wtIoI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OGRkZTAxMC05MmY4/LTRiM2ItOWM0OS1j/OTVmYmFjOWQ2YmUv/bW9uZXlib3guanBn?v=1&format=webp",
-      "cats": [],
+      "cats": [
+        "Commercial"
+      ],
       "artists": [
         "Dan Hilltout"
       ]
@@ -281,7 +285,7 @@
       "slate": 10215,
       "title": "ATHLETICS x ADIDAS",
       "sub": "Michal Chmielewski\nSHOOTME",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10215/dbd5660e-bb28-11f0-9ce3-0215583debcb.mp4",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10215/c4c48ad8-d177-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8b768cd4-995e-41d4-a207-5d23dfc6a3c2-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/u48yHjf7QOf7yTAMLu_-3m9SgV9LqTz2C_mQvlYYwE4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/Y2ZiNmRmNC00YmU5/LTRkMmUtODYxOC1k/YTgxOTc0OGQ2N2Mv/MTc2MjQ0NDQzODI2/MS5qcGc?v=1&format=webp",
       "cats": [
@@ -376,22 +380,6 @@
       ]
     },
     {
-      "slate": 10206,
-      "title": "Silver | Trailer",
-      "sub": "Natalia Koniarz\nTelemark",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10206/6ba9f455-b968-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/627d123b-9156-4955-94d2-bf25d543ba5d-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/wOXl7gvQUBIhsBWjLvcGX0nN-XStYrfE0yu90msiOHk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDM3OTZmYi1hMWEy/LTRkM2EtYTM5ZC00/MTM3MDE1ZjYxNDMv/c2lsdmVyLWZvdG9z/Mi5qcGc?v=1&format=webp",
-      "cats": [
-        "Documentary",
-        "Narrative",
-        "Documentary feature film"
-      ],
-      "artists": [
-        "Stanisław Cuske"
-      ]
-    },
-    {
       "slate": 10185,
       "title": "Spotify | Tunetorial",
       "sub": "Rémi Parisse\nLes Monstres",
@@ -423,7 +411,6 @@
       "slate": 10144,
       "title": "South Of Midnight x XBOX",
       "sub": "Adrian Villagomez\nAgence Consulat",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10144/f7491e19-a5b8-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/08588024-98b9-4024-b51f-276c4ef3b1dc-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/AoqQIpW3XfaUmzso7B0p3kQy2eNmYgVhdQ3l2q08v-g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NTU2MzBjOC02ODdl/LTQzMzYtYjYwYy0y/MTBlOTc2YWFiNjEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MTUtYS0xMi40Mi41/Ny5wbmc?v=1&format=webp",
       "cats": [
@@ -440,7 +427,9 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10160/29e35ff2-a8e0-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fb62d942-12d4-4b1c-80d1-30f75fed025c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/jLVsogNMnLB7Ubwb33fSOsNQieQIudGgC-fEKiQCM2A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MmM1ZjRjMS1jYzlk/LTQ5YzAtYTliMy02/MjcyZjhmZDgyZDIv/c2NyZWVuc2hvdC0y/MDI1LTEwLTA1LWF0/LTguMzIuMTAucG5n?v=1&format=webp",
-      "cats": [],
+      "cats": [
+        "Commercial"
+      ],
       "artists": [
         "Daniel Lindholm, FSC"
       ]
@@ -509,7 +498,9 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10061/d09e2dc1-87fb-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a48dccb8-ec9f-4ce2-943f-bff5346bc1e1-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/XXkAQJqM2xHEckptftk8BTC7X6nokmCbg9DWDMqs_NA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OGU1ZWViYi0wMTlm/LTQwMjEtODU5YS1k/ODNmOWE4ZGY5OTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MTEtYS0xMi4yNy4z/My5wbmc?v=1&format=webp",
-      "cats": [],
+      "cats": [
+        "Commercial"
+      ],
       "artists": [
         "Matias Boucard, AFC"
       ]
@@ -551,6 +542,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e8ab584a-ae5a-4e22-9e5b-69905bd26c7d-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/mzFKCOra1mjRw80btoJqjx9iaKMMgMVpbBzpCcfjLnw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZDliYzQyMy00ZjZk/LTQ2YzQtOThlMy1l/ZThkYmU0M2VmMDEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDct/MDctYS0yMS4xNi40/OS5wbmc?v=1&format=webp",
       "cats": [
+        "Commercial",
         "Prevention"
       ],
       "artists": [
@@ -578,7 +570,9 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9860/f807c716-41ec-11f0-bfce-022353abf6f5.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4efda346-7ab5-4a3f-a437-488e6db0f34c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/KUdh_rqY445wx-rkkGLGNAWaVOKju-7Tl-rwMHG9GZI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZWQ2ZTBlZS1iZjYw/LTQ3NGEtYmJlMC0z/NzIyM2VjOWRjOWEv/MTc0OTExNDY4Mjc2/OC5qcGc?v=1&format=webp",
-      "cats": [],
+      "cats": [
+        "Commercial"
+      ],
       "artists": [
         "Arnaud Stefani"
       ]
@@ -598,32 +592,17 @@
       ]
     },
     {
-      "slate": 11366,
-      "title": "Dries Van Noten | Havana Gold | Stills",
+      "slate": 10037,
+      "title": "Dries Van Noten | Havana Gold",
       "sub": "Jean-Marie Binet\nSAS Cadence Image",
-      "img": "https://images.slatecdn.net/KXXxQz-dE_owJDXG2TZJZaunG2-X-2AzSCgjfcYHNIg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjc0Yjg4/NzctYmJhOS00NDA4/LWJjYmYtZmYzMDVj/OWIyNjMxLzEucG5n?v=1&format=webp",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10037/020b4249-67bb-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6cbb8ec9-26fd-4890-9fff-5f69b47236b3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gU3I1TcBXsf6OqeGlFlu0ktmoNTZFfK-kMhRNH9htJg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NmI1ZGNjMi0xMzU4/LTRhMmMtOTkxOC05/NGMzMDI5MDkwMDMv/MTc1MzI3MTMwMzIz/OS5qcGc?v=1&format=webp",
       "cats": [
-        "Commercial",
-        "Short film stills"
+        "Commercial"
       ],
       "artists": [
         "Nikita Popkov"
-      ],
-      "images": [
-        "https://images.slatecdn.net/KPBCRHCbiaKorKrqYkpdV9DWNm7XlIkSydeUKDn9WtY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjc0Yjg4/NzctYmJhOS00NDA4/LWJjYmYtZmYzMDVj/OWIyNjMxLzEucG5n.webp",
-        "https://images.slatecdn.net/NLQ6sBHXUv_8YjiJWTFiNtoWWZLFPKDRdIF_xpGx2O4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWU3NTJl/YzYtZjQxMS00NDE0/LTlmM2MtNDdmOWVh/ZmI2Mjk3LzIucG5n.webp",
-        "https://images.slatecdn.net/KIuFLPfb6N7Tht0jFDMBuaPCztXGUF1ksaDXQSuADE0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODA3ZDhh/ZTEtYjZhZS00NTdk/LTg5OTMtNzk4ZDc1/YmI2OGE5LzMucG5n.webp",
-        "https://images.slatecdn.net/WCtoJt6VIOqc1KVyOV61e0N1GEKG3LpSB5PCEplVXdA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmFlYzY2/NWItZWJlMi00NjA3/LWE1NDctY2UyYzRi/NTc3YTUwLzQucG5n.webp",
-        "https://images.slatecdn.net/ZkOKClgAK3XpUwZhixqIjUZiedAVawTWZWGzed_ZmK4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWYxMTk2/NTAtMGY5Mi00NTM3/LWFmZWMtOWFhN2E1/NGQ1MmQ1LzUucG5n.webp",
-        "https://images.slatecdn.net/CZYN6rYIb5NKXclsnsXh66Gp8wzwleZlR31KnQZUAw4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWRmMzA3/OTItZGQ0NC00NGM1/LWIyNjMtODE3NGY4/NTQ4NDU1LzYucG5n.webp"
-      ],
-      "ratios": [
-        1.7756,
-        1.7778,
-        1.7778,
-        1.78,
-        1.7822,
-        1.7844
       ]
     },
     {
@@ -647,11 +626,13 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10038/a068b4a1-6873-11f0-bfce-022353abf6f5.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/adad0037-1187-439a-b86e-05e64cff4175-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/qcOt36OWaQcmq5IUF_UxV8ztXD-RpLmAJ4U7iM5ilVc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YjE3NmUzOC1jNmJl/LTQwMzEtYWIzZi03/ZmUyYmZiMjgzOGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MTEtYS0xNy4xMy4x/Mi5wbmc?v=1&format=webp",
-      "cats": [],
+      "cats": [
+        "Commercial"
+      ],
       "artists": [
         "Matias Boucard, AFC"
       ]
     }
   ],
-  "readAt": "2026-10-26T17:26:57.992Z"
+  "readAt": "2026-10-26T20:03:45.244Z"
 }
