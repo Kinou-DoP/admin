@@ -1281,6 +1281,9 @@
     return readFile("data/spotlight.json").then(function (remote) {
       var out = remote || {};
       out.reel = spot.reel; out.categories = spot.categories; out.overrides = spot.overrides;
+      // « Relire la bande » avec le même lien : sans ce changement le fichier serait identique, le commit vide
+      // et le robot GitHub (lancé seulement quand data/spotlight.json change) ne relirait pas la bande.
+      if (justLink === true) out.readAsk = new Date().toISOString();
       return commit([{ path: "data/spotlight.json", text: json(out) }], "Mise à jour du Spotlight (admin, " + user.login + ")").then(function () { return out; });
     }).then(function (out) {
       out.overrides = spot.overrides; spot = out; dirty = false; histReset();
