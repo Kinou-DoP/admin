@@ -42,7 +42,7 @@ section > h2 { margin: 0 0 22px; padding-bottom: 12px; border-bottom: 1px solid 
 
 /* Champs */
 .field { margin: 0 0 26px; }
-input[type=text], input[type=url], input[type=password], textarea {
+input[type=text], input[type=url], input[type=password], input[type=email], input[type=tel], textarea {
   width: 100%; padding: 10px 0; border: 0; border-bottom: 1px solid var(--faint); border-radius: 0; background: none;
   color: var(--kinou-fg); font-family: var(--kinou-body); font-weight: 300; font-size: 18px; line-height: 1.4; outline: none; transition: border-color .2s;
 }
@@ -237,3 +237,11 @@ body.vedit-on { overflow: hidden; }
 .vedit .zoom input[type=range] { height: 28px; }
 @media (max-width: 700px) { .vedit { padding: 20px 12px; } .vedit .pframe .prow { flex-direction: column; } .vedit .pframe .pphone { width: 45%; } }
 .vedit .vpanel.film .thumb, .vedit .pframe.hd .pstage { max-width: min(100%, calc((100vh - 280px) * 16 / 9)); }
+
+/* Contact : une ligne par personne (rôle, prénom, e-mail, téléphone, ↑ ↓ ×) */
+.team .tline { display: grid; grid-template-columns: 1.3fr 1fr 1.4fr 1.1fr auto auto auto; gap: 12px; align-items: end; margin-bottom: 10px; }
+.team .xbtn { width: 22px; height: 28px; padding: 0; border: 0; background: none; color: var(--dim); font-size: 14px; cursor: pointer; }
+.team .xbtn:hover { color: var(--kinou-fg); }
+.team .xbtn:disabled { opacity: .25; cursor: default; }
+.team .btn { margin-top: 8px; }
+@media (max-width: 700px) { .team .tline { grid-template-columns: 1fr 1fr; } }

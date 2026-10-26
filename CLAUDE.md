@@ -55,7 +55,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi
   (lien vers le commit). Sur une fiche / l'accueil / le contact : ce fichier seulement, bouton « Tout voir ».
-- Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight, fiction (à venir), contact.
+- Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight, fiction (à venir), press (à venir), contact.
 - Home page : lien d'une bande Slate → `GET <SITE>/api/reel?link=…` (10 premiers films) → `data/home.json`
   (`reel`, `slides` avec `dps: [{ name, slug }]` reliés par le nom, `src` = valeurs Slate, `overrides` par id Slate).
   « Rafraîchir » relit la bande en gardant les corrections.
@@ -75,7 +75,11 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   une fiche (`filmsSection` / `filmCard` réutilisés : `state` = spotlight, `slate` = films rangés par catégorie) → `overrides`.
   Publication : relit le fichier en ligne et n'écrit que `reel`, `categories`, `overrides` (garde les `films` du robot).
   Étiquette de la vignette : chef op crédité. Format et affichage : CLAUDE.md du site (« Spotlight »).
-- Contact : logo du site (PNG/WebP blanc sur transparent) → `data/brand/logo-<horodatage>.png` + `data/site.json`
+- Contact : page contact du site → `data/contact.json` : `team` (une ligne par personne : rôle, prénom, e-mail, téléphone ;
+  ↑ ↓ ×, « + Ajouter une personne »), `address` (lignes), `newsletter` (lien), `social` (instagram, vimeo, imdb, facebook ;
+  vide = pas affiché), `legal` (mentions légales, paragraphes séparés par une ligne vide ; vide = pas de lien). Publiée avec
+  `data/site.json` en un seul commit (« Mise à jour du contact »). Historique de la page : `data/contact.json`.
+- Contact, aussi : logo du site (PNG/WebP blanc sur transparent) → `data/brand/logo-<horodatage>.png` + `data/site.json`
   (`logo`, `logoHeight`). Sans logo : texte « kinou ».
 - Portrait : compressé dans le navigateur (1600 px max, WebP) → `data/dps/img/<slug>.webp`.
   Point de cadrage : clic/glisser sur la photo → `about.pos` = "X% Y%" (background-position sur le site), aperçus
