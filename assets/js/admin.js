@@ -1209,7 +1209,7 @@
   function spotSlate() {
     var cats = spot.categories.map(function (c) { return String(c).trim().toUpperCase(); }).filter(Boolean), clips = [];
     (spot.films || []).forEach(function (f, i) {
-      var fc = (f.cats || []).map(function (c) { return String(c).trim().toUpperCase(); });
+      var fc = (f.cats || []).map(function (c) { c = String(c).trim().toUpperCase(); return c === "ART FILM" ? "ART VIDEO" : c; }); // « Art Film » sur Slate = ART VIDEO (comme sur le site)
       var mine = cats.filter(function (c) { return fc.indexOf(c) > -1; });
       (mine.length ? mine : [""]).forEach(function (c, k) {
         var e = Object.assign({}, f, { cat: c }); if (!k) { e.featured = true; e.featuredOrder = i + 1; }

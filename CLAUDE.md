@@ -71,7 +71,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Spotlight (lien « spotlight » du menu, `data/spotlight.json`) : lien d'une bande Slate (pour l'instant shots.re/206850) +
   « Relire la bande » (publie le lien + `readAsk` = l'heure, pour que le fichier change même avec le même lien — sinon commit vide,
   robot pas lancé, attente dans le vide —, puis attend que le robot GitHub ait lu toute la bande : `films`, `readAt`) ; onglets
-  (`categories`, défaut COMMERCIAL, MUSIC VIDEO, ART VIDEO ; ALL toujours en premier) ; films avec les mêmes réglages que sur
+  (`categories`, défaut COMMERCIAL, MUSIC VIDEO, ART VIDEO — type Slate « Art Film » compté comme ART VIDEO ; ALL toujours en premier) ; films avec les mêmes réglages que sur
   une fiche (`filmsSection` / `filmCard` réutilisés : `state` = spotlight, `slate` = films rangés par catégorie) → `overrides`.
   Publication : relit le fichier en ligne et n'écrit que `reel`, `categories`, `overrides` (garde les `films` du robot).
   Étiquette de la vignette : chef op crédité. Format et affichage : CLAUDE.md du site (« Spotlight »).
