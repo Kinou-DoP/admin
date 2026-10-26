@@ -469,31 +469,6 @@
   },
   "films": [
     {
-      "slate": 11155,
-      "title": "Dries Van Noten",
-      "img": "https://images.slatecdn.net/z_SPmmceFHVd-SwKBU50EKxR9nN4onblRgJxb6CJ1_E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjJjZWRi/MzgtZTQxMC00ZjVj/LTlmY2MtYjljZWIz/NzEzZGMwL3doYXRz/YXBwLWltYWdlLTIw/MjYtMDctMjAtYXQt/MTEuNTQuNTUuanBl/Zw?v=1&format=webp",
-      "cats": [
-        "Commercial"
-      ],
-      "artists": [
-        "Ana Maria Miranda"
-      ],
-      "images": [
-        "https://images.slatecdn.net/2OlYigHk1BCfegLgxEqlyKlmXS9P9_y3L37AqSdkCls/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjJjZWRi/MzgtZTQxMC00ZjVj/LTlmY2MtYjljZWIz/NzEzZGMwL3doYXRz/YXBwLWltYWdlLTIw/MjYtMDctMjAtYXQt/MTEuNTQuNTUuanBl/Zw.webp",
-        "https://images.slatecdn.net/XJcIDsId3TYVf8ROZvxaTg-zJhP7VoOVokAkqCfOMNc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTU2YmY2/NzctMWM2OC00OGVk/LTg5ZjgtOWU2N2Y0/ODgwMjU2L3doYXRz/YXBwLWltYWdlLTIw/MjYtMDctMjAtYXQt/MTEuNTQuNTUtMy5q/cGVn.webp",
-        "https://images.slatecdn.net/oPAOnbKpQdRcthqIurZ3dg8hSd0p6pXFQmV-R-XrmOw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2VmMzc3/NmUtN2ExZi00MmEz/LWI2NzItNDliOGQ4/YjBkNmZhL3doYXRz/YXBwLWltYWdlLTIw/MjYtMDctMjAtYXQt/MTEuNTQuNTUtMS5q/cGVn.webp",
-        "https://images.slatecdn.net/Tqki7Mqd4yMGx4Lzmg9tci2GHAm_33KVdfX-E2Ra-7s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZDc5Nzgy/NDEtNWMxNC00NTlm/LTg0MWQtOTQ1MjVm/NDRhMzQ2L3doYXRz/YXBwLWltYWdlLTIw/MjYtMDctMjAtYXQt/MTEuNTQuNTUtMi5q/cGVn.webp",
-        "https://images.slatecdn.net/_ds4Fc-6tl_G38VvwdoIiisJhfZwEeheThMrKOcdnuI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTgzZjIx/NWUtYTQ3Ni00YTdi/LWJlNjktYWY5NzQ4/MTM0Y2Y0L3doYXRz/YXBwLWltYWdlLTIw/MjYtMDctMjAtYXQt/MTEuNTQuNTUtNC5q/cGVn.webp"
-      ],
-      "ratios": [
-        1.4988,
-        1.4988,
-        1.4988,
-        0.6672,
-        1.4988
-      ]
-    },
-    {
       "slate": 11227,
       "title": "All Hours Blur Cushion • Icy cooling shine control",
       "sub": "Nans NOIRON\nDowntown",
@@ -1637,6 +1612,6 @@
       ]
     }
   ],
-  "readAt": "2026-10-26T21:57:28.903Z",
+  "readAt": "2026-10-26T22:00:00.473Z",
   "readAsk": "2026-10-26T21:59:37.027Z"
 }
