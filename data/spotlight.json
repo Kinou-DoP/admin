@@ -127,6 +127,9 @@
     "10119": {
       "zoom": 1.37
     },
+    "10144": {
+      "title": "South Of Midnight"
+    },
     "10160": {
       "zoom": 2.04
     },
@@ -245,7 +248,8 @@
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6b00c51a-c601-4bed-b50a-5e12055da07d-1280x720.2500.mp4"
         }
       ],
-      "zoom": 1.05
+      "zoom": 1.05,
+      "title": "Aurelia - Absolute Beauty"
     },
     "10331": {
       "zoom": 1.14
