@@ -1,10 +1,10 @@
-# Après chaque publication de l'accueil ou d'une fiche : ajoute le film complet qui manque (slides de l'accueil,
+# Après chaque publication de l'accueil, du spotlight ou d'une fiche (spotlight : lecture de toute la bande) : ajoute le film complet qui manque (slides de l'accueil,
 # vidéos ajoutées sous un film, images des projets en images seulement), lu sur Slate (tools/fill-home.mjs). Gratuit (dépôt public), aucune mise en ligne Netlify.
 name: Films complets (accueil et vidéos sous un film)
 on:
   push:
     branches: [main]
-    paths: [data/home.json, "data/dps/*.json"]
+    paths: [data/home.json, data/spotlight.json, "data/dps/*.json"]
   workflow_dispatch:
 permissions:
   contents: write

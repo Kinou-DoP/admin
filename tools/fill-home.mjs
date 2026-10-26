@@ -134,3 +134,56 @@ if (home.reel && missing.length) {
 }
 if (changed) fs.writeFileSync(FILE, JSON.stringify(home, null, 2) + "\n");
 console.log(total + " modification(s) dans les fiches, dont " + imgs + " projet(s) en images." + (changed ? " Accueil modifié." : ""));
+
+// ---------- Spotlight (data/spotlight.json) ----------
+// Les fonctions Netlify (figées) ne lisent que 10 films d'une bande, sans catégories : le robot lit toute la bande Slate
+// (`reel`) : titre, crédits, extrait, film complet, vignette, catégories (types de contenu Slate), chefs op crédités, et pour
+// les projets en images leurs images + proportions. -> spotlight.films, readAt. Relu à chaque publication de spotlight.json.
+var SPOT = "data/spotlight.json";
+function names(m, k) { return (m[k] || []).map(function (x) { return String(x && x.value !== undefined ? x.value : x).trim(); }).filter(Boolean).join(", "); }
+async function readSpot(link, prev) {
+  var url = link;
+  var c = String(link).match(/^(?:https?:\/\/)?(?:shots|slt)\.re\/([A-Za-z0-9]{3,20})\/?$/);
+  if (c) url = (await fetch("https://shots.re/" + c[1])).url;
+  url = url.replace(/[?#].*$/, "");
+  var html = await page(url), media = playlist(html);
+  if (!media) {
+    var b = html.match(/href="(\/bundles\/[0-9a-f-]{36}\/\d+)"/);
+    if (b) { html = await page(ORIGIN + b[1]); media = playlist(html); }
+  }
+  if (!media) throw new Error("aucun film sur la bande " + link);
+  var imgs = {}; // vignette signée de la grille de chaque film (comme readReel du site)
+  html.split('data-playlist-item="').slice(1).forEach(function (chunk) {
+    var n = parseInt(chunk, 10), m = chunk.match(/<img[^>]*?\ssrc="([^"]+)"/);
+    if (!isNaN(n) && !imgs[n] && m) imgs[n] = decode(m[1]);
+  });
+  var old = {}; (prev || []).forEach(function (f) { old[f.slate] = f; });
+  var out = [];
+  for (var k = 0; k < media.length; k++) {
+    var m = media[k], f = { slate: m.id, title: String(m.title || "").trim() };
+    var sub = [names(m, "director"), names(m, "production")].filter(Boolean).join("\n"); if (sub) f.sub = sub;
+    var sn = m.snippets && m.snippets.small && m.snippets.small.file; if (sn && sn.remote_address) f.video = sn.remote_address;
+    var fu = full(m); if (fu) f.full = fu;
+    var im = imgs[k] || (m.thumbnail && m.thumbnail.image_player_url); if (im) f.img = im;
+    f.cats = (m.content_types || []).map(function (x) { return String(x && x.name || x).trim(); }).filter(Boolean);
+    f.artists = (m.artists_names || []).map(function (x) { return String(x).trim(); }).filter(Boolean);
+    var ims = (m.images || []).map(function (x) { return x.image_player_url; }).filter(Boolean);
+    if (ims.length && !Object.keys(m.streams || {}).length) {
+      f.images = ims;
+      var o = old[m.id];
+      f.ratios = o && JSON.stringify(o.images) === JSON.stringify(ims) && o.ratios && o.ratios.length === ims.length ? o.ratios : await ratiosOf(ims);
+    }
+    out.push(f);
+  }
+  return out;
+}
+if (fs.existsSync(SPOT) && (process.env.ALL || changedList.indexOf(SPOT) > -1)) {
+  var sp = JSON.parse(fs.readFileSync(SPOT, "utf8")), spOut = false;
+  if (sp.reel) {
+    try { sp.films = await readSpot(sp.reel, sp.films); delete sp.readError; console.log("Spotlight : " + sp.films.length + " films lus sur la bande."); }
+    catch (e) { sp.readError = String(e.message || e); console.log("Spotlight : " + sp.readError); }
+    sp.readAt = new Date().toISOString(); spOut = true;
+  }
+  for (var sid2 in sp.overrides || {}) if (await fillExtras(sp.overrides[sid2].extras)) spOut = true;
+  if (spOut) fs.writeFileSync(SPOT, JSON.stringify(sp, null, 2) + "\n");
+}
