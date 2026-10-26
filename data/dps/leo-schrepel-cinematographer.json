@@ -146,7 +146,56 @@
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ce9e654b-1fad-49ce-afd0-2ea3f7f50784-1280x720.2500.mp4"
         }
       ],
-      "title": "Benoît Gênant"
+      "title": "Benoît Gênant",
+      "ratios": [
+        1.791,
+        1.7888,
+        1.7888,
+        1.791,
+        1.7888,
+        1.791,
+        1.7866,
+        1.7888,
+        1.7866,
+        1.7888,
+        1.7888,
+        1.7822,
+        1.7933,
+        1.7888,
+        1.791,
+        1.791,
+        1.7866,
+        1.791,
+        1.7978,
+        1.7888,
+        1.8,
+        1.7866,
+        1.7978,
+        1.7888,
+        1.7866,
+        1.7933,
+        1.7955,
+        1.7933,
+        1.7955,
+        1.7844,
+        1.7888,
+        1.791,
+        1.7955,
+        1.7866,
+        1.7888,
+        1.7888,
+        1.7822,
+        1.8023,
+        1.7888,
+        1.7866,
+        1.78,
+        1.7955,
+        1.7888,
+        1.7888,
+        1.7933,
+        1.7866,
+        1.7844
+      ]
     },
     "8567": {
       "zoom": 1.25,
@@ -203,6 +252,9 @@
       "title": "Angele et mes Démons • Coming Soon",
       "images": [
         "https://images.slatecdn.net/KupdE10NNTWaJkiA3zLjOzBgr1xNrhwYuiLXL_VHNzg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MDQ0MzM0YS0zYjM3/LTQzZTYtODhhNy00/YWRlMzI3NWE4OTgv/c3RpbGxzLXNsYXRl/LnBuZw.webp"
+      ],
+      "ratios": [
+        1.8274
       ]
     },
     "9880": {

@@ -98,7 +98,17 @@
         "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10551/4c48bf3b-126d-11f1-9ce3-0215583debcb.mp4",
         "img": "https://images.slatecdn.net/wW2c-l-S20nSMot8PBIvYjW3cRYgprKMoCYG3WigZjU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/Mjk1YzMwYy03MzBm/LTRiMmUtOWM1OC01/ZmIxNTM4YjgwNjQv/c3RpbGwtMjAyNS0w/My0yMC0wOTAzNTgt/MS4yLjEudC1ncmFu/ZGUtMS03Njh4NTEy/LndlYnA?v=1&format=webp"
       },
-      "zoom": 1.18
+      "zoom": 1.18,
+      "ratios": [
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5
+      ]
     },
     "9866": {
       "zoom": 1.13,

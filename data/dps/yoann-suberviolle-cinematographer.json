@@ -189,7 +189,22 @@
         "https://images.slatecdn.net/ZqREypwtpQykgLaOlyaza4ZPdtMzQqiz4ti1BTFiPn0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTU5NDkx/MDU3MTY3OS9jaGFp/ci1saWJlcnRlLXN0/aWxsczEyLmpwZw.webp",
         "https://images.slatecdn.net/V0WKDijtByT6xUdTn1dz0uAfGvrbIzVjQgTW0KkVGUM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTU5NDkx/MDU3MTY4My9jaGFp/ci1saWJlcnRlLXN0/aWxsczEzLmpwZw.webp"
       ],
-      "title": "Chair Liberté"
+      "title": "Chair Liberté",
+      "ratios": [
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3607,
+        2.3585
+      ]
     },
     "4371": {
       "images": [
@@ -203,7 +218,18 @@
         "https://images.slatecdn.net/mnNIS47Xc6GjRLNdDRsDaIphPPdR18vZR8G5XVowkJI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTU5NDkx/MDc5NjU1Ny9sZXVy/LWlkZWFsLXN0aWxs/czEuanBn.webp",
         "https://images.slatecdn.net/pQJmz5XNWVuH2AproYJGeJwx2AZNkkun-hcEK-aNt88/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTU5NDkx/MDc5NjU2MC9sZXVy/LWlkZWFsLXN0aWxs/czQuanBn.webp"
       ],
-      "title": "Leur Idéal"
+      "title": "Leur Idéal",
+      "ratios": [
+        1.3333,
+        1.3333,
+        1.3333,
+        1.3333,
+        1.3333,
+        1.3333,
+        1.3333,
+        1.3333,
+        1.3333
+      ]
     },
     "4407": {
       "zoom": 1.5
@@ -498,6 +524,29 @@
         "https://images.slatecdn.net/eV1aFajlcTF8pwQMNe2_9GtdgNPv2xlN_dJLRaXwPpA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YWM2ODkxNi02M2Rj/LTQyNGItOGE4Yi03/NmNiMmRkMDc1OWUv/YXV0b3R1bmUtd2Vi/LTEuMS45My5qcGc.webp",
         "https://images.slatecdn.net/HAhnqlQmFxLGLSRQekcAKnFtpQ2rbBb76ONZOV69WfQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ODE4YzdiNy05YTk0/LTQyYjAtYWYzNS0y/MDc5NTM5NTQwZDEv/YXV0b3R1bmUtd2Vi/LTEuMS4xMDIuanBn.webp",
         "https://images.slatecdn.net/Qd8IDu9yWIe3jKizHmz5Ni8EbVgEm2WYDFIy5dTXkkE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MjYxYTIwMS0xNGMw/LTQ4YmMtOTMzYS0x/MjQ3YWIyMmJkZWUv/YXV0b3R1bmUtd2Vi/LTEuMS4xMDQuanBn.webp"
+      ],
+      "ratios": [
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509,
+        1.8509
       ]
     },
     "6461": {
@@ -593,6 +642,23 @@
         "https://images.slatecdn.net/gzNDkw8k4U8wYOFfKJZoRduJDBzUldvwjhX84c4lhEo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YWE3NmM5Mi0wYWVh/LTQxMTEtYTE2ZC0y/YTQ0YTI3Yjg5NzUv/bGEtY2FuaWN1bGUt/MS4xNC4xLmpwZw.webp",
         "https://images.slatecdn.net/-0ht2dBYHCkERi-FOQ8aZwWPEKHnbSiSLHlZm3sUxDg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MjcyZmU0ZC1mNWQ4/LTQxYjYtYTJjNS01/MjNkMmZmODQ4NzAv/bGEtY2FuaWN1bGUt/MS4xNS4xLmpwZw.webp",
         "https://images.slatecdn.net/rH9rHHcDVymOOkDqFCnsPMlmnUBYbh7bZ9-44VMg7vo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/ZjE3MDY3My1iOGZk/LTRjOGUtOGY0OC02/MWE1YWVkZDI0OTcv/bGEtY2FuaWN1bGUt/MS4xNi4xLmpwZw.webp"
+      ],
+      "ratios": [
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667,
+        1.6667
       ]
     },
     "6464": {
@@ -631,6 +697,42 @@
         "https://images.slatecdn.net/zLOnLmrCUTqLTD-y0M9wXy256iZIitgZcA3v2YgMWo0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/ZWU5ZDVlNy1iYjdi/LTQ5NzgtODlhOS02/NDZlNzk2ZGIzMDYv/ZGVmYXVsdC0xLjEu/My5qcGc.webp",
         "https://images.slatecdn.net/IyoEEVTetCGS1bQFsAJsdYjHc78dlqQ9jcfiT8ptlS8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NDg4MGZkYS0yMTg5/LTQwMTEtYjA2Ny1h/NzA5ZGFhN2Y3YzUv/ZGVmYXVsdC0xLjEu/NC5qcGc.webp",
         "https://images.slatecdn.net/JsvSM0BMQRu5ve1FhuTJ5ARImoQv3nVgf9PruYSjgZM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NzFlODJkNi0yYWEw/LTQ3MTUtOWMyMi0z/ZjY4OTUzODNlZjcv/ZGVmYXVsdC0xLjEu/NS5qcGc.webp"
+      ],
+      "ratios": [
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881,
+        2.3881
       ]
     },
     "6556": {
@@ -998,6 +1100,27 @@
         "https://images.slatecdn.net/lNLxCm2FsHjzwStwle-3TlsEIl9e8_6yjB_waxWcmRc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MWI2ZmU4ZS05Yzg3/LTQ0ZWYtYjQ5YS0w/YjRkZTk1YmFlYWQv/bHVpLTEuMS4yNC5q/cGc.webp",
         "https://images.slatecdn.net/F8i-dIl4vzmpzJ-xc9jSMKgEEGtzgFGInMSzCkJ9MO4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MTAwZGU0OS1mZDMx/LTQxMzctYTcxNi00/YTFkOTYyYzExOGEv/bHVpLTEuMS4yOC5q/cGc.webp",
         "https://images.slatecdn.net/1YCTHGE2bd70ETc60Dw5CJqxwmAUAx1f-s7OobsWwmE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZDQ4YTIyNC1kM2Rk/LTRiMzYtYmJhNS03/ZTZhNzQxZTU5ZjYv/bHVpLTEuMS4yOS5q/cGc.webp"
+      ],
+      "ratios": [
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778,
+        1.7778
       ]
     },
     "9467": {
