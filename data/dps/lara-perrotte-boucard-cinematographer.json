@@ -264,7 +264,8 @@
     "COMMERCIAL",
     "MUSIC VIDEO",
     "FASHION",
-    "COMEDY"
+    "COMEDY",
+    "PHOTOGRAPHY"
   ],
   "clips": [
     {
@@ -805,6 +806,12 @@
       "img": "https://images.slatecdn.net/ciuSWWn0YmUk8tXMINvsB-Qm3f1cIWZzV5mk43FRH_Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/YWQ5ZGNhYS1jYWQ3/LTQ0NzItOTAxNi05/NTI1YTFiODBkOWUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDkt/MTctYS0xOS4yNS4w/MC5wbmc?v=1&format=webp",
       "cat": "COMEDY",
       "slate": 11308
+    },
+    {
+      "title": "Lara Perrotte Boucard #Photography",
+      "img": "https://images.slatecdn.net/CXKw6sJ2kf0o-Unqwj4aeGM7-BnF0EZh1Uyqr9uOIdg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzM1YTE3/OWUtZDMxMS00ZDgz/LTk1YmItNWEzNzZj/ZmRmMmE3LzAxLnBu/Zw?v=1&format=webp",
+      "cat": "PHOTOGRAPHY",
+      "slate": 11428
     }
   ]
 }
