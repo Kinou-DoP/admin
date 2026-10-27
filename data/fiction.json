@@ -163,7 +163,9 @@
       "genre": "FEATURE FILM"
     },
     "11008": {
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "zoom": 1.2,
+      "zoomPos": "4.5% 40.8%"
     },
     "11020": {
       "zoom": 1.36,
