@@ -51,6 +51,13 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Annuler / Rétablir (barre du bas, ⌘Z / ⌘⇧Z ou Ctrl+Z / Ctrl+Y hors champ de texte) : instantanés de la page ouverte
   (fiche, accueil, contact) pris à chaque modification (`touch` → `record`, saisie regroupée après 0,4 s), 100 au plus ;
   chaque page déclare `histInit({ get, set })` ; historique remis à zéro à l'ouverture d'une page et après publication.
+- Avancement des fiches (suivi interne, pas sur le site) → `data/progress.json` = `{ <slug>: { step, at, by } }`, step 0 = à faire,
+  1 Importé, 2 Recadrage & noms, 3 Snippet, 4 Stills (dernière étape faite ; sans entrée : 1 si la fiche existe, sinon 0).
+  Fiche : curseur en haut à droite (`progressCtl`, crans + libellés cliquables), enregistré tout seul 0,7 s après (sans « Publier » :
+  fichier relu puis seule la ligne du chef op changée, commit « Avancement Nom : étape »). Liste : tableau de bord « jeu vidéo »
+  (`progressBoard` : grade de l'équipe + niveau + XP = somme des étapes / 4 × nombre de chefs op ; une jauge à 20 cases par étape ;
+  clic sur une jauge = n'afficher que les fiches pas encore à cette étape, combiné à la recherche) et pastilles de couleur sous
+  chaque nom (`pips`). Fichier hors des chemins du robot : aucune Action lancée.
 - Liste des chefs op : champ de recherche au-dessus (filtre au fil de la frappe, sans accents ; Entrée ouvre le 1er résultat).
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi

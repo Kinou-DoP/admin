@@ -263,13 +263,14 @@
     bar.hidden = true; editing = false;
     view.textContent = "";
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
-    Promise.all([loadIndex(), gh("/repos/" + REPO + "/contents/data/dps?ref=" + BRANCH)]).then(function (r) {
+    Promise.all([loadIndex(), gh("/repos/" + REPO + "/contents/data/dps?ref=" + BRANCH), loadProgress()]).then(function (r) {
       var files = {}; r[1].forEach(function (f) { files[f.name] = true; });
-      var ul = el("ul", { class: "dps" });
+      var ul = el("ul", { class: "dps" }), entries = [], want = 0; // want : étape choisie dans le tableau de bord (fiches pas encore à cette étape)
       index.dps.forEach(function (d) {
-        var has = files[d.slug + ".json"];
-        var li = el("li", {}, [el("a", { href: "#/dp/" + d.slug, class: has ? "live" : "" }, [d.name, el("small", { text: has ? "Fiche publiée" : "Pas encore de fiche" })])]);
-        li._key = slugify(d.name).replace(/-/g, " ") + " " + d.slug.replace(/-/g, " ");
+        var has = files[d.slug + ".json"], step = stepOf(d.slug, has);
+        var li = el("li", {}, [el("a", { href: "#/dp/" + d.slug, class: has ? "live" : "" }, [d.name, has ? pips(step) : el("small", { text: "Pas encore de fiche" })])]);
+        li._key = slugify(d.name).replace(/-/g, " ") + " " + d.slug.replace(/-/g, " "); li._step = step;
+        entries.push({ step: step });
         ul.appendChild(li);
       });
       // Recherche : filtre la liste au fil de la frappe (sans accents ni majuscules) ; Entrée ouvre le 1er résultat.
@@ -277,7 +278,7 @@
       var none = el("p", { class: "empty", text: "Aucun chef op ne correspond." }); none.hidden = true;
       function filter() {
         var q = slugify(find.value).replace(/-/g, " ").trim(), n = 0;
-        [].forEach.call(ul.children, function (li) { var ok = !q || li._key.indexOf(q) > -1; li.hidden = !ok; if (ok) n++; });
+        [].forEach.call(ul.children, function (li) { var ok = (!q || li._key.indexOf(q) > -1) && (!want || li._step < want); li.hidden = !ok; if (ok) n++; });
         none.hidden = n > 0;
       }
       find.addEventListener("input", filter);
@@ -292,9 +293,96 @@
         el("div", {}, [el("h1", { text: "Chefs opérateurs" }), el("p", { class: "lead", text: index.dps.length + " sur le site · " + Object.keys(files).filter(function (f) { return /\.json$/.test(f) && f !== "index.json"; }).length + " fiches publiées" })]),
         el("a", { class: "btn primary", href: "#/new", text: "+ Ajouter un chef op" })
       ]));
+      view.appendChild(progressBoard(entries, function (k) { want = k; filter(); }));
       view.appendChild(find); view.appendChild(none); view.appendChild(ul);
       if (window.matchMedia("(hover: hover)").matches) find.focus({ preventScroll: true });
     }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
+  }
+
+  // ---------- Avancement des fiches (data/progress.json : { <slug>: { step, at, by } }) ----------
+  // Suivi interne de l'équipe (n'apparaît pas sur le site) : curseur en haut à droite d'une fiche, tableau de bord sur la liste.
+  // step : 0 = à faire, 1..4 = dernière étape faite. Sans entrée : 1 si la fiche est publiée (bundle importé), sinon 0.
+  // Enregistré tout seul (sans « Publier ») : fichier relu juste avant, seule la ligne de ce chef op est changée.
+  var STEPS = ["Importé", "Recadrage & noms", "Snippet", "Stills"], progress = null;
+  function loadProgress() { return readFile("data/progress.json").then(function (p) { progress = p || {}; return progress; }); }
+  function stepOf(slug, has) { var p = progress && progress[slug]; return p && typeof p.step === "number" ? p.step : (has ? 1 : 0); }
+  function pips(step) {
+    var s = el("small", { class: "pips" });
+    STEPS.forEach(function (t, i) { s.appendChild(el("i", { class: i < step ? "on s" + (i + 1) : "", title: t })); });
+    s.appendChild(document.createTextNode(step ? (step === 4 ? "Terminée ★" : STEPS[step - 1]) : "À faire"));
+    return s;
+  }
+  var progT = 0, progQ = Promise.resolve();
+  function saveStep(slug, name, step, note) {
+    progress[slug] = { step: step, at: new Date().toISOString(), by: user.login };
+    var entry = progress[slug];
+    clearTimeout(progT); note.textContent = "…"; note.className = "pnote";
+    progT = setTimeout(function () {
+      progQ = progQ.then(function () {
+        return readFile("data/progress.json").then(function (remote) {
+          var out = remote || {}; out[slug] = entry;
+          return commit([{ path: "data/progress.json", text: json(out) }], "Avancement " + name + " : " + (step ? STEPS[step - 1] : "à faire") + " (admin, " + user.login + ")");
+        }).then(function () { note.textContent = "Enregistré"; note.className = "pnote ok"; },
+          function (e) { note.textContent = "Échec : " + e.message; note.className = "pnote err"; });
+      });
+    }, 700);
+  }
+  // Curseur de la fiche : À faire → Importé → Recadrage & noms → Snippet → Stills.
+  function progressCtl() {
+    var slug = state.slug, cur = stepOf(slug, true);
+    var range = el("input", { type: "range", min: "0", max: "4", step: "1", class: "nodirty", value: String(cur), "aria-label": "Avancement de la fiche" });
+    var labels = el("div", { class: "plabels" }), note = el("span", { class: "pnote" });
+    ["À faire"].concat(STEPS).forEach(function (t, i) {
+      var b = el("button", { type: "button", text: t }); b.style.setProperty("--k", i);
+      b.addEventListener("click", function () { if (+range.value === i) return; range.value = i; upd(true); });
+      labels.appendChild(b);
+    });
+    var box = el("div", { class: "progress" }, [el("div", { class: "phead" }, [el("span", { class: "label", text: "Avancement" }), note]), el("div", { class: "ptrack" }, [range]), labels]);
+    function upd(save) {
+      var v = +range.value;
+      box.style.setProperty("--p", v / 4); box.dataset.step = v;
+      [].forEach.call(labels.children, function (b, i) { b.classList.toggle("done", i > 0 && i <= v); b.classList.toggle("on", i === v); });
+      if (save) {
+        saveStep(slug, state.name || slug, v, note);
+        if (v === 4) { box.classList.remove("win"); void box.offsetWidth; box.classList.add("win"); }
+      }
+    }
+    range.addEventListener("input", function () { upd(false); });
+    range.addEventListener("change", function () { upd(true); });
+    upd(false);
+    return box;
+  }
+  // Tableau de bord de la liste, façon jeu vidéo : grade de l'équipe + XP (somme des étapes), une jauge par étape
+  // (nombre de fiches qui l'ont passée) ; clic sur une jauge = n'afficher que les fiches qui ne l'ont pas encore passée.
+  var RANKS = [[0, "Stagiaire plateau"], [.15, "2nd assistant caméra"], [.35, "1er assistant caméra"], [.6, "Cadreur·se"], [.85, "Chef·fe opérateur·rice"], [1, "Légende du cinéma"]];
+  function progressBoard(entries, onPick) {
+    var N = entries.length || 1, xp = 0, max = N * 4;
+    entries.forEach(function (e) { xp += e.step; });
+    var pct = xp / max, rank = RANKS.filter(function (r) { return pct >= r[0]; }).pop()[1], lvl = Math.min(10, Math.floor(pct * 10) + 1);
+    function bar(ratio, cls) {
+      var b = el("div", { class: "pbar " + (cls || "") }), lit = Math.round(ratio * 20);
+      for (var i = 0; i < 20; i++) { var c = el("i", { class: i < lit ? "lit" : "" }); c.style.setProperty("--i", i); b.appendChild(c); }
+      return b;
+    }
+    var board = el("section", { class: "board" });
+    board.appendChild(el("div", { class: "bxp" }, [
+      el("div", { class: "brank" }, [el("span", { class: "blvl", text: "NIV. " + lvl }), el("span", { class: "bname", text: rank + (pct >= 1 ? " ★" : "") })]),
+      bar(pct, "xp"),
+      el("div", { class: "bnum", text: xp + " / " + max + " XP · " + Math.round(pct * 100) + " %" })]));
+    var gauges = el("div", { class: "bgauges" }), picked = 0;
+    STEPS.forEach(function (t, k) {
+      var n = entries.filter(function (e) { return e.step > k; }).length;
+      var g = el("button", { type: "button", class: "bgauge s" + (k + 1) + (n === entries.length ? " full" : ""), title: "Voir les fiches pas encore à l'étape « " + t + " »" }, [
+        el("span", { class: "bt", text: t }), bar(n / N), el("span", { class: "bn", text: n + " / " + entries.length + (n === entries.length ? " ★" : "") })]);
+      g.addEventListener("click", function () {
+        picked = picked === k + 1 ? 0 : k + 1;
+        [].forEach.call(gauges.children, function (x, i) { x.classList.toggle("on", picked === i + 1); });
+        board.classList.toggle("filtering", !!picked); onPick(picked);
+      });
+      gauges.appendChild(g);
+    });
+    board.appendChild(gauges);
+    return board;
   }
 
   // ---------- Fiche d'un chef op ----------
@@ -364,7 +452,7 @@
     bar.hidden = true;
     view.textContent = "";
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
-    Promise.all([index ? index : loadIndex(), slug ? readFile("data/dps/" + slug + ".json") : null]).then(function (r) {
+    Promise.all([index ? index : loadIndex(), slug ? readFile("data/dps/" + slug + ".json") : null, loadProgress().catch(function () { progress = {}; })]).then(function (r) {
       var entry = slug && index.dps.filter(function (d) { return d.slug === slug; })[0];
       isNew = !r[1]; listed = !!entry; pending = {}; origSlug = listed || !isNew ? slug : null; // adresse actuelle
       state = r[1] || { slug: slug || "", name: entry ? entry.name : "", hue: 0, overrides: {}, about: {} };
@@ -381,7 +469,7 @@
       get: function () { return { data: state, refs: Object.assign({ slate: slate }, pending) }; },
       set: function (h) { state = JSON.parse(h.data); slate = h.refs.slate; pending = Object.assign({}, h.refs); delete pending.slate; render(); }
     });
-    view.appendChild(el("h1", { text: state.name || "Nouveau chef op" }));
+    view.appendChild(el("div", { class: "dp-head" }, [el("h1", { text: state.name || "Nouveau chef op" }), isNew ? null : progressCtl()]));
     view.appendChild(el("p", { class: "lead", text: isNew ? "Nouvelle fiche — collez le lien du bundle Slate pour commencer." : (state.bundle ? "Films synchronisés avec Slate." : "Fiche sans bundle Slate : les films sont figés.") }));
     view.appendChild(bundleSection());
     view.appendChild(identitySection());
