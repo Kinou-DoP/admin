@@ -45,8 +45,7 @@
         {
           "link": "https://kinou.slateapp.com/work/jaeger-lecoultre-1",
           "title": "Jaeger-LeCoultre",
-          "img": "https://images.slatecdn.net/W4OEzYshpw3eGaGgfUv_ZjAvNXdFpclDlTw8qp8LrEQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/M2Y3NTVmOS0yMmY1/LTQwYTEtYWNhYy1h/MDdhNTg1NzNmMjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MjUtYS0xMi4yNC4w/NS5wbmc?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0abe2914-16bd-40cc-84f0-b79fbd8fecc7-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/W4OEzYshpw3eGaGgfUv_ZjAvNXdFpclDlTw8qp8LrEQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/M2Y3NTVmOS0yMmY1/LTQwYTEtYWNhYy1h/MDdhNTg1NzNmMjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MjUtYS0xMi4yNC4w/NS5wbmc?v=1&format=webp"
         }
       ],
       "title": "Jaeger - LeCoultre",
@@ -356,7 +355,14 @@
         2.3568,
         2.3453,
         2.3684
-      ]
+      ],
+      "hover": {
+        "link": "https://kinou.slateapp.com/work/la-plus-belle-fille-du-monde",
+        "title": "La Plus Belle Fille du Monde",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10437/af37eb73-0bea-11f1-9ce3-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/2ydMsvuHPtgutI2Q5cYB12WnxMou3r-Si2KsSlgtrWA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YWZjZGY3My1mNWZk/LTRlZWItOWU3ZS0x/ZGI4NmMyZjM1NTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MDEtYS0yMS41MS4y/OC5wbmc?v=1&format=webp"
+      },
+      "title": "La Plus Belle Fille du Monde"
     },
     "11433": {
       "images": [
@@ -402,7 +408,8 @@
         1.6628,
         1.6647,
         1.6609
-      ]
+      ],
+      "title": "La philosophie de la bernique"
     },
     "11434": {
       "images": [
@@ -430,7 +437,14 @@
         1.4516,
         1.4545,
         1.4575
-      ]
+      ],
+      "title": "Roche Amère"
+    },
+    "11435": {
+      "title": "Fiction"
+    },
+    "11436": {
+      "title": "Angele & my demons"
     }
   },
   "about": {
@@ -455,11 +469,25 @@
   ],
   "clips": [
     {
-      "title": "Angele et mes Démons | Stills | Coming Soon",
+      "title": "Angele & my demons | Stills",
       "sub": "Lucas Beccaro\nOctopolis",
-      "img": "https://images.slatecdn.net/ju_UqrJwCvVOE51NEmCJCVoy8qwelBQTudAPyy63tqY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MDQ0MzM0YS0zYjM3/LTQzZTYtODhhNy00/YWRlMzI3NWE4OTgv/c3RpbGxzLXNsYXRl/LnBuZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/mt4H3TYlYTyMfO3qFfKjneF47Q0PzjwMXHAIQQDwvMQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjRjZmQ5/OGItMGEyZi00Yzg4/LWEzYTctMGVmMjg5/MWFlMDE0L3N0aWxs/cy1zbGF0ZS53ZWJw?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 9857
+      "slate": 11436
+    },
+    {
+      "title": "Fiction | Stills",
+      "sub": "Ambroise Rateau\nPunchline Cinema",
+      "img": "https://images.slatecdn.net/keoY7jj-apWAp1B3b3BtQ9ZC7tjRN1Nct3m8vSvFe5Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWE5N2Qz/ZWUtZDY4Ny00ODdm/LWFhNzItYjcwZjU5/ZmUxOTdjL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDQtMTAt/YS1jYy04MC0wMC4x/My4yNC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11435
+    },
+    {
+      "title": "Roche Amère | Stills",
+      "sub": "Alexandre Anatole-Touzet",
+      "img": "https://images.slatecdn.net/tahHlSn3SqIxzc5RFWXafckRgeIRBIWP5RlzLZAcsMY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWYzOTQx/NzAtNGRjZS00NWFk/LWExMjEtZjZhMDRk/NDhkM2RlL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDUtMDct/YS1jYy04MC0xOC4w/MC4xNC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11434
     },
     {
       "title": "La Plus Belle Fille du Monde | Stills",
@@ -467,6 +495,13 @@
       "img": "https://images.slatecdn.net/xL3eHLMIff5IPJhCKiPwRjtu5PxE2xKTTECtnbstcYc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWFlYzQ0/YzItN2IzZC00OGUx/LWFmNTYtMTFkN2Iw/MDg5NDE3L2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDItMDEt/YS1jYy04MC0yMS40/NC4zNS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
       "slate": 11431
+    },
+    {
+      "title": "La philosophie de la bernique - Stills",
+      "sub": "Zoe Chadeau\nLes Créations Androgyne",
+      "img": "https://images.slatecdn.net/gH7ELrCYljAXe14Bp8sCuFME1hPuITw3qDhA4rjMnWw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzdjMDQ0/NmEtYjczMS00OWRk/LTljOWItNjVkOTNh/NjgzYzQ4L2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDEtMTct/YS1jYy04MC0xNS4x/OC4zNS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11433
     },
     {
       "title": "Mort d'un acteur - trailer (short film)",
@@ -478,20 +513,6 @@
       "slate": 9026,
       "featured": true,
       "featuredOrder": 7
-    },
-    {
-      "title": "La philosophie de la bernique - Stills",
-      "sub": "Zoe Chadeau\nLes Créations Androgyne",
-      "img": "https://images.slatecdn.net/gH7ELrCYljAXe14Bp8sCuFME1hPuITw3qDhA4rjMnWw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzdjMDQ0/NmEtYjczMS00OWRk/LTljOWItNjVkOTNh/NjgzYzQ4L2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDEtMTct/YS1jYy04MC0xNS4x/OC4zNS5wbmc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 11433
-    },
-    {
-      "title": "Roche Amère | Stills",
-      "sub": "Alexandre Anatole-Touzet",
-      "img": "https://images.slatecdn.net/tahHlSn3SqIxzc5RFWXafckRgeIRBIWP5RlzLZAcsMY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWYzOTQx/NzAtNGRjZS00NWFk/LWExMjEtZjZhMDRk/NDhkM2RlL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDUtMDct/YS1jYy04MC0xOC4w/MC4xNC5wbmc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 11434
     },
     {
       "title": "HOME EXTRAIT (short film)",
