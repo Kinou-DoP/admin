@@ -672,11 +672,12 @@
   }
 
   // Fiction : cadrage cinémascope (2,39:1) d'un film en 16:9, réglé à part pour la vignette (thumbCrop) et pour l'extrait
-  // (snipCrop) = { z, x, y } : curseur 100–250 % pour agrandir, l'image se fait glisser dans le cadre pour la placer.
-  // Même calcul que scopeCrop du site (app.js).
-  var SCOPE = 2.39;
+  // (snipCrop) = { z, x, y }. Comme le recadrage des fiches : l'image entière, et un cadre rouge = la partie gardée (au format
+  // 2,39:1), qu'on fait glisser ; le curseur 100–250 % le rétrécit (agrandissement sur le site). Même calcul que scopeCrop (site).
+  var SCOPE = 2.39, SCOPE_H = (16 / 9) / SCOPE; // hauteur du cadre (sans agrandissement), en part de la hauteur de l'image
   function scopeCtl(c, thumb, video) {
     var mode = "thumbCrop", v = null, drag = null;
+    var frame = el("i", { class: "zframe" }); thumb.appendChild(frame);
     function stopMine() { if (v) { v.remove(); v = null; } if (mode !== "thumbCrop") { mode = "thumbCrop"; apply(); } }
     function cur(k) { var o = (state.overrides[c.slate] || {})[k || mode] || {}; return { z: o.z || 1, x: o.x === undefined ? 50 : o.x, y: o.y === undefined ? 50 : o.y }; }
     function save(o) {
@@ -695,38 +696,43 @@
       tabs.appendChild(b);
     });
     function apply() {
-      var t = cur("thumbCrop"), s = cur("snipCrop"), o = cur();
-      thumb.style.backgroundSize = t.z * 100 + "% auto"; thumb.style.backgroundPosition = t.x + "% " + t.y + "%";
+      var o = cur(), w = 1 / o.z, h = SCOPE_H / o.z;
       var m = typeof video === "function" ? video() : video;
       if (mode === "snipCrop" && m && !v) {
         if (zoomStopOther && zoomStopOther !== stopMine) zoomStopOther(); // un seul extrait joue à la fois
         zoomStopOther = stopMine;
-        v = mkVid(m); thumb.appendChild(v); var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+        v = mkVid(m); thumb.insertBefore(v, frame); var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
       }
       if (mode !== "snipCrop" && v) { v.remove(); v = null; }
-      if (v) { v.style.width = s.z * 100 + "%"; v.style.left = -s.x * (s.z - 1) + "%"; v.style.top = -s.y * (s.z * SCOPE * 9 / 16 - 1) + "%"; }
+      frame.style.width = w * 100 + "%"; frame.style.height = h * 100 + "%";
+      frame.style.left = o.x * (1 - w) + "%"; frame.style.top = o.y * (1 - h) + "%";
       [].forEach.call(tabs.children, function (b) { b.classList.toggle("on", b.dataset.m === mode); });
       range.value = String(Math.round(o.z * 100));
-      lab.textContent = (mode === "snipCrop" ? "Extrait" : "Vignette") + (o.z > 1 ? " · " + Math.round(o.z * 100) + " %" : "") + " — glissez l'image pour la placer";
+      lab.textContent = (mode === "snipCrop" ? "Extrait" : "Vignette") + " · cadre cinémascope" + (o.z > 1 ? " · " + Math.round(o.z * 100) + " %" : "");
       center.hidden = o.z === 1 && o.x === 50 && o.y === 50;
     }
-    range.addEventListener("input", function () { var o = cur(); o.z = parseInt(range.value, 10) / 100; save(o); apply(); });
-    center.addEventListener("click", function () { save({ z: 1, x: 50, y: 50 }); apply(); });
-    // Glisser l'image : le décalage en pixels devient une position de 0 à 100 % dans la partie qui dépasse du cadre.
-    thumb.addEventListener("pointerdown", function (e) {
-      e.preventDefault(); thumb.setPointerCapture(e.pointerId);
-      var r = thumb.getBoundingClientRect(), o = cur();
-      drag = { x: e.clientX, y: e.clientY, o: o, ox: r.width * (o.z - 1), oy: r.height * (o.z * SCOPE * 9 / 16 - 1) };
+    // Curseur : le cadre rétrécit ou grandit autour de son centre.
+    range.addEventListener("input", function () {
+      var o = cur(), z = parseInt(range.value, 10) / 100, w0 = 1 / o.z, h0 = SCOPE_H / o.z, w = 1 / z, h = SCOPE_H / z;
+      var cx = o.x / 100 * (1 - w0) + w0 / 2, cy = o.y / 100 * (1 - h0) + h0 / 2, cl = function (n) { return Math.max(0, Math.min(100, n)); };
+      save({ z: z, x: w < 1 ? cl((cx - w / 2) / (1 - w) * 100) : 50, y: cl((cy - h / 2) / (1 - h) * 100) }); apply();
     });
-    thumb.addEventListener("pointermove", function (e) {
+    center.addEventListener("click", function () { save({ z: 1, x: 50, y: 50 }); apply(); });
+    // Déplacement du cadre : le décalage en pixels devient une position de 0 à 100 % (bords compris).
+    frame.addEventListener("pointerdown", function (e) {
+      e.preventDefault(); frame.setPointerCapture(e.pointerId);
+      var r = thumb.getBoundingClientRect(), o = cur();
+      drag = { x: e.clientX, y: e.clientY, o: o, sx: r.width * (1 - 1 / o.z), sy: r.height * (1 - SCOPE_H / o.z) };
+    });
+    frame.addEventListener("pointermove", function (e) {
       if (!drag) return;
       var cl = function (n) { return Math.max(0, Math.min(100, n)); }, o = { z: drag.o.z, x: drag.o.x, y: drag.o.y };
-      if (drag.ox > 0) o.x = cl(drag.o.x - (e.clientX - drag.x) / drag.ox * 100);
-      if (drag.oy > 0) o.y = cl(drag.o.y - (e.clientY - drag.y) / drag.oy * 100);
+      if (drag.sx > 0) o.x = cl(drag.o.x + (e.clientX - drag.x) / drag.sx * 100);
+      if (drag.sy > 0) o.y = cl(drag.o.y + (e.clientY - drag.y) / drag.sy * 100);
       save(o); apply();
     });
     function end() { drag = null; }
-    thumb.addEventListener("pointerup", end); thumb.addEventListener("pointercancel", end);
+    frame.addEventListener("pointerup", end); frame.addEventListener("pointercancel", end);
     apply();
     return el("div", { class: "zoom scopectl" }, [tabs, lab, range, center]);
   }
