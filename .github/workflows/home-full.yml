@@ -30,4 +30,9 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -am "Films complets et images des projets (lus sur Slate)"
             git pull --rebase origin main && git push
+            # Le site garde les données 5 min en cache : on le vide pour que les images / films ajoutés se voient tout de suite
+            # (sinon la publication de l'admin, juste avant, a déjà remis en cache la version sans eux).
+            curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" https://beta--kinou-test.netlify.app/api/refresh/robot || true
           fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
