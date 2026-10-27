@@ -55,7 +55,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   1 Importé, 2 Recadrage & noms, 3 Snippet, 4 Stills (dernière étape faite ; sans entrée : 1 si la fiche existe, sinon 0).
   Fiche : curseur en haut à droite (`progressCtl`, crans + libellés cliquables), enregistré tout seul 0,7 s après (sans « Publier » :
   fichier relu puis seule la ligne du chef op changée, commit « Avancement Nom : étape »). Liste : tableau de bord « jeu vidéo »
-  (`progressBoard` : grade de l'équipe + niveau + XP = somme des étapes / 4 × nombre de chefs op ; une jauge à 20 cases par étape ;
+  (`progressBoard` : progression globale en % = somme des étapes / 4 × nombre de chefs op — plus de grade ni d'XP, Gus 27/10 ; une jauge à 20 cases par étape ;
   clic sur une jauge = n'afficher que les fiches pas encore à cette étape, combiné à la recherche) et pastilles de couleur sous
   chaque nom (`pips`). Fichier hors des chemins du robot : aucune Action lancée.
 - Liste des chefs op : champ de recherche au-dessus (filtre au fil de la frappe, sans accents ; Entrée ouvre le 1er résultat).

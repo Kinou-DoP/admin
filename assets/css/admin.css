@@ -281,9 +281,6 @@ body.vedit-on { overflow: hidden; }
 /* Tableau de bord */
 .board { margin: -12px 0 44px; padding: 22px 24px 24px; border: 1px solid var(--faint); background: linear-gradient(180deg, rgba(255,255,255,.035), transparent); }
 .bxp { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px; margin-bottom: 22px; }
-.brank { display: flex; flex-direction: column; gap: 4px; }
-.blvl { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; letter-spacing: .14em; color: var(--s3); }
-.bname { font-family: var(--kinou-sans); font-weight: 600; font-size: 20px; letter-spacing: -0.02em; }
 .bnum, .bn { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; color: var(--dim); white-space: nowrap; }
 .pbar { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; height: 14px; }
 .pbar i { background: var(--soft); box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); }
@@ -294,7 +291,7 @@ body.vedit-on { overflow: hidden; }
 .bgauge { display: grid; grid-template-columns: 1fr auto; gap: 8px 10px; align-items: center; padding: 10px 12px; border: 1px solid transparent; background: none; color: var(--kinou-fg); text-align: left; cursor: pointer; transition: border-color .2s, opacity .2s; }
 .bgauge:hover { border-color: var(--faint); }
 .bgauge .pbar { grid-column: 1 / -1; grid-row: 2; height: 10px; }
-.bgauge .bt { font-family: var(--kinou-sans); font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.bxp .bt, .bgauge .bt { font-family: var(--kinou-sans); font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
 .bgauge.s1 { --bc: var(--s1); } .bgauge.s2 { --bc: var(--s2); } .bgauge.s3 { --bc: var(--s3); } .bgauge.s4 { --bc: var(--s4); }
 .bgauge.full .bn { color: var(--bc); }
 .board.filtering .bgauge:not(.on) { opacity: .4; }

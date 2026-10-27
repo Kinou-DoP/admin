@@ -352,13 +352,12 @@
     upd(false);
     return box;
   }
-  // Tableau de bord de la liste, façon jeu vidéo : grade de l'équipe + XP (somme des étapes), une jauge par étape
-  // (nombre de fiches qui l'ont passée) ; clic sur une jauge = n'afficher que les fiches qui ne l'ont pas encore passée.
-  var RANKS = [[0, "Stagiaire plateau"], [.15, "2nd assistant caméra"], [.35, "1er assistant caméra"], [.6, "Cadreur·se"], [.85, "Chef·fe opérateur·rice"], [1, "Légende du cinéma"]];
+  // Tableau de bord de la liste, façon jeu vidéo : progression globale (somme des étapes / 4 × nombre de chefs op), une jauge
+  // par étape (nombre de fiches qui l'ont passée) ; clic sur une jauge = n'afficher que les fiches qui ne l'ont pas encore passée.
   function progressBoard(entries, onPick) {
-    var N = entries.length || 1, xp = 0, max = N * 4;
-    entries.forEach(function (e) { xp += e.step; });
-    var pct = xp / max, rank = RANKS.filter(function (r) { return pct >= r[0]; }).pop()[1], lvl = Math.min(10, Math.floor(pct * 10) + 1);
+    var N = entries.length || 1, done = 0, max = N * 4;
+    entries.forEach(function (e) { done += e.step; });
+    var pct = done / max;
     function bar(ratio, cls) {
       var b = el("div", { class: "pbar " + (cls || "") }), lit = Math.round(ratio * 20);
       for (var i = 0; i < 20; i++) { var c = el("i", { class: i < lit ? "lit" : "" }); c.style.setProperty("--i", i); b.appendChild(c); }
@@ -366,9 +365,9 @@
     }
     var board = el("section", { class: "board" });
     board.appendChild(el("div", { class: "bxp" }, [
-      el("div", { class: "brank" }, [el("span", { class: "blvl", text: "NIV. " + lvl }), el("span", { class: "bname", text: rank + (pct >= 1 ? " ★" : "") })]),
+      el("span", { class: "bt", text: "Progression globale" }),
       bar(pct, "xp"),
-      el("div", { class: "bnum", text: xp + " / " + max + " XP · " + Math.round(pct * 100) + " %" })]));
+      el("div", { class: "bnum", text: Math.round(pct * 100) + " %" + (pct >= 1 ? " ★" : "") })]));
     var gauges = el("div", { class: "bgauges" }), picked = 0;
     STEPS.forEach(function (t, k) {
       var n = entries.filter(function (e) { return e.step > k; }).length;
