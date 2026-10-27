@@ -1,6 +1,236 @@
 {
   "reel": "https://shots.re/206d64",
-  "overrides": {},
+  "overrides": {
+    "9459": {
+      "zoom": 1.34,
+      "zoomThumb": true,
+      "genre": "SERIES"
+    },
+    "9878": {
+      "zoom": 1.35,
+      "genre": "FEATURE FILM"
+    },
+    "9925": {
+      "zoom": 1.36,
+      "genre": "FEATURE FILM"
+    },
+    "9977": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.38
+    },
+    "9979": {
+      "zoom": 1.14,
+      "genre": "SERIES"
+    },
+    "9982": {
+      "zoom": 1.36,
+      "genre": "FEATURE FILM"
+    },
+    "10041": {
+      "genre": "SERIES"
+    },
+    "10075": {
+      "zoom": 1.36,
+      "genre": "SERIES"
+    },
+    "10076": {
+      "zoom": 1.05,
+      "genre": "FEATURE FILM"
+    },
+    "10083": {
+      "zoom": 1.38,
+      "genre": "FEATURE FILM"
+    },
+    "10103": {
+      "genre": "SERIES",
+      "zoom": 1.34
+    },
+    "10117": {
+      "zoom": 1.34,
+      "genre": "SERIES"
+    },
+    "10140": {
+      "zoom": 1.13,
+      "genre": "SERIES"
+    },
+    "10206": {
+      "zoom": 1.36,
+      "genre": "SHORT FILM"
+    },
+    "10296": {
+      "zoom": 1.34,
+      "genre": "FEATURE FILM"
+    },
+    "10299": {
+      "zoom": 1.35,
+      "genre": "FEATURE FILM"
+    },
+    "10303": {
+      "zoom": 1.05,
+      "genre": "FEATURE FILM"
+    },
+    "10323": {
+      "zoom": 1.37,
+      "genre": "SERIES"
+    },
+    "10361": {
+      "zoom": 1.24,
+      "genre": "SHORT FILM"
+    },
+    "10363": {
+      "zoom": 1.36,
+      "genre": "FEATURE FILM"
+    },
+    "10364": {
+      "zoom": 1.13,
+      "genre": "SERIES"
+    },
+    "10381": {
+      "zoom": 1.05,
+      "genre": "FEATURE FILM"
+    },
+    "10391": {
+      "zoom": 1.14,
+      "genre": "DOCUMENTARY"
+    },
+    "10401": {
+      "zoom": 1.2,
+      "zoomThumb": true,
+      "genre": "FEATURE FILM"
+    },
+    "10404": {
+      "zoom": 1.37,
+      "genre": "FEATURE FILM"
+    },
+    "10415": {
+      "zoom": 1.34,
+      "genre": "FEATURE FILM"
+    },
+    "10436": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.05
+    },
+    "10440": {
+      "zoom": 1.24,
+      "genre": "SERIES"
+    },
+    "10544": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.36
+    },
+    "10557": {
+      "zoom": 1.35,
+      "genre": "SERIES"
+    },
+    "10584": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.34
+    },
+    "10586": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.05
+    },
+    "10694": {
+      "zoom": 1.04,
+      "genre": "FEATURE FILM"
+    },
+    "10695": {
+      "zoom": 1.05,
+      "genre": "FEATURE FILM"
+    },
+    "10705": {
+      "genre": "SERIES",
+      "zoom": 1.14
+    },
+    "10706": {
+      "zoom": 1.36,
+      "genre": "FEATURE FILM"
+    },
+    "10708": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.37
+    },
+    "10771": {
+      "genre": "SERIES"
+    },
+    "10852": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.35
+    },
+    "10935": {
+      "zoom": 1.04,
+      "genre": "FEATURE FILM"
+    },
+    "11008": {
+      "genre": "SERIES"
+    },
+    "11020": {
+      "zoom": 1.36,
+      "genre": "FEATURE FILM"
+    },
+    "11143": {
+      "zoom": 1.09,
+      "genre": "FEATURE FILM"
+    },
+    "11149": {
+      "zoom": 1.36,
+      "genre": "FEATURE FILM"
+    },
+    "11171": {
+      "zoom": 1.36,
+      "zoomPos": "41.6% 48.3%",
+      "genre": "FEATURE FILM"
+    },
+    "11186": {
+      "genre": "FEATURE FILM"
+    },
+    "11187": {
+      "genre": "FEATURE FILM"
+    },
+    "11188": {
+      "zoom": 1.36,
+      "genre": "FEATURE FILM"
+    },
+    "11195": {
+      "zoom": 1.2,
+      "zoomPos": "24.3% 38.6%",
+      "genre": "SERIES"
+    },
+    "11199": {
+      "zoom": 1.24,
+      "zoomPos": "37% 50%",
+      "genre": "SERIES"
+    },
+    "11226": {
+      "genre": "SERIES",
+      "zoom": 1.35
+    },
+    "11253": {
+      "zoom": 1.36,
+      "genre": "FEATURE FILM"
+    },
+    "11324": {
+      "zoom": 1.37,
+      "genre": "SERIES"
+    },
+    "11340": {
+      "zoom": 1.35,
+      "zoomPos": "39.9% 49.4%",
+      "genre": "FEATURE FILM"
+    },
+    "11342": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.38
+    },
+    "11347": {
+      "genre": "FEATURE FILM",
+      "zoom": 1.35
+    },
+    "11358": {
+      "zoom": 1.35,
+      "genre": "FEATURE FILM"
+    }
+  },
   "films": [
     {
       "slate": 11188,
