@@ -1,6 +1,892 @@
 {
   "reel": "https://shots.re/206d64",
   "overrides": {},
-  "films": [],
-  "readAsk": "2026-10-27T14:20:25.315Z"
+  "films": [
+    {
+      "slate": 11188,
+      "title": "Les Filles d'Abraham • Bande Annonce",
+      "sub": "Hanaël EL YOUSFI\nCG CINEMA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11188/c11b18c1-a1fc-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ac3088f1-7f13-4b6c-9b80-e87d923d313f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/xbvtZrT17tgu-taeQ8z66YY6lJXTe0N8PNXiyhz-haw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MzU0OTE1Ny1iMzdi/LTRkMDYtODM0Yi0x/MGRlZTdlYTljZmMv/c3RpbGxzLWxmZGEt/MDAwODY0MjIucG5n?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Fabien Faure"
+      ]
+    },
+    {
+      "slate": 11199,
+      "title": "Harry Potter and the Philosophers Stone",
+      "sub": "Jon Brown, Francesca Gardiner\nBonte Film ant TV",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11199/56cbd98b-a77d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10fcba02-1065-40ee-bb67-8b546dce7582-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/YrDJLUBrPaHjUYALsIZ9VoW4M6etvQoZ9oSlBJuwIJE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZGFiM2M5MC1hNTNi/LTQ1ZWQtOTA1ZS0y/NjBjNzllNjM0NzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDkt/MDMtYS0xMS40MS4w/NC5wbmc?v=1&format=webp",
+      "cats": [
+        "Series",
+        "narrative"
+      ],
+      "artists": [
+        "Christophe Nuyens, SBC"
+      ]
+    },
+    {
+      "slate": 11342,
+      "title": "Ce qui nous mène à toi • Bande Annonce",
+      "sub": "Khalil Cherti\nKazak Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11342/bf36aff3-c3bf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d02ce03f-822b-46ad-ac36-c45076ad1316-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/MSjpEZ990PmqSd8uvD2UD6pBvzyoEUU95me13J0X_fE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MjNhM2VlMy1iOGMz/LTQyNDctODk3OS0y/MzI1YzE3MWUwODIv/Y2VxdWlub3VzbWVu/ZWF0b2ktc3RpbGxz/LTAwMDg2NDI0Lmpw/Zw?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Frida Marzouk, AFC"
+      ]
+    },
+    {
+      "slate": 11347,
+      "title": "Il Faut Bruler Maman • Bande Annonce",
+      "sub": "Albert Dupontel\nADCB Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11347/770483c5-c70d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/12c1f4ee-100e-49fe-8b3f-8fbfdc61a544-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/BBefJPeq_Y7hJaM5PcmO06gHUSerGPKu2o3C4li2-98/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/N2IxN2YwMy02Nzc1/LTQxOTUtYTdmMi1h/OTgzZWQ0ZmU3Nzgv/c3RpbGxzLTAwMDg2/NDEwLmpwZw?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Alexis Kavyrchine"
+      ]
+    },
+    {
+      "slate": 11340,
+      "title": "Un Bon Avocat • Bande-annonce",
+      "sub": "Tristan Seguela\nIconoclast Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11340/dd6be064-c3bb-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fe787812-b966-4480-ba80-8db673fabb63-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/0qKjDy2VXHFKsrrA3RiT08r0w50gr4jnsHTA6Ygycos/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ODE1MmQ4NC00YmI3/LTRhYzQtYmFlNi04/YTEzMTlkNjkwOWYv/MTEuanBn?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Augustin Barbaroux"
+      ]
+    },
+    {
+      "slate": 11187,
+      "title": "Ghost Soldier • Trailer",
+      "sub": "William Eubank\nSony Pictures",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11187/7c87f602-a163-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/956897d8-9021-4bf8-aca9-d75658870944-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/p3BqRNHf1V8QcbPJvNZAMokhnCFGZfoaey1W6jIS6es/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZWJkZTU5OS05MGFj/LTQ3OWMtYWJhMS02/MjQ3MWU5NzdmY2Qv/c3RpbGxzLWdob3N0/c29sZGllci0wMDA4/NjQzMy5wbmc?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Agustín Claramunt, SCU"
+      ]
+    },
+    {
+      "slate": 11358,
+      "title": "Sacrifice • Trailer",
+      "sub": "Romain Gavras\nIconoclast USA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11358/f6b90e48-c9a0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d31c837f-7b95-4402-aae9-5b9f70d01409-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/NZFb6IczqlU0rWGB7FZIIi3PFV3SlYmNHHe-JCQaeVE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZGM2NmFmZS00NTQ4/LTRhNTctOTU0NC1j/MjM2MDU4YzYzOTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MTUtYS0xMi4yMC41/Ni5wbmc?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Matias Boucard, AFC"
+      ]
+    },
+    {
+      "slate": 11324,
+      "title": "Treasure Island • Trailer",
+      "sub": "Jeremy Lovering, William McGregor, Paul Walker\nAmazon MGM Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11324/a89cbd6d-bbf5-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3e0883bc-3c10-4af3-870f-3495986cb001-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/yEWsu0MfwRqplePMyWWrZt-2KWJjSIu0BS5TZb6Jp3o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZTdjMDc3ZC1kZmI1/LTQ1YzQtOTBiOC02/Y2NjMmI4M2E5OGIv/c3RpbGxzLXRyZWFz/dXJlaXNsYW5kLTAw/MDkwMDQ1LmpwZw?v=1&format=webp",
+      "cats": [
+        "Series",
+        "narrative"
+      ],
+      "artists": [
+        "Xavier Dolléans, AFC"
+      ]
+    },
+    {
+      "slate": 11226,
+      "title": "High Value Target • Trailer",
+      "sub": "Leslie Greif\nBig Dreams Entertainment",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11226/3012e170-ac49-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/56165467-6a94-4077-99f9-7156089f2f1f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/zaDKmrlsAObv5lwtJjeJl_s4p54Rg4KHSyAGgVdQ9bQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjE3MTljZC1mZDRj/LTRjNzAtYTE3NC0w/YTA0YjRkMjkxNDYv/aHZ0LXN0aWxsczAw/MDkwMDAwLnBuZw?v=1&format=webp",
+      "cats": [
+        "Series",
+        "narrative"
+      ],
+      "artists": [
+        "Xavier Dolléans, AFC"
+      ]
+    },
+    {
+      "slate": 11186,
+      "title": "Notre Salut • Bande Annonce • Prix du scénario, Cannes Film Festival 2026",
+      "sub": "Emmanuel Marre\nKidam, Michigan Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11186/3ee8478f-a073-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b781d048-89d7-4de4-ac84-03f33207123d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/tI8z-QVLyLp_xcqfcy6nt91whQLSflBUM9ubzCzbxnQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YzY1NTA3Ny04MjQ5/LTRlOWYtOWEzNC1l/NjMzY2VjNjQyODIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDYt/MTYtYS0xNi41Ni40/MC5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Olivier Boonjing, SBC"
+      ]
+    },
+    {
+      "slate": 11195,
+      "title": "Surveillant ! • Saison 1 Bande-annonce",
+      "sub": "John Wax\nNabi Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11195/3cb45c26-a6ad-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2ff5d634-7d21-41d8-a3bc-210d263e373d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/A7tnmVF3O3vvYBtLMjdb6fjn6rjEp3Gr4Kqyn9hdB1U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YmJhNjU0NS04NjI0/LTQ3MGEtYjlkMy0w/YTk5NTNlMWIxNjYv/MDMucG5n?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Series"
+      ],
+      "artists": [
+        "Clément Arenou"
+      ]
+    },
+    {
+      "slate": 11143,
+      "title": "La Frappe • Bande Annonce",
+      "sub": "Julien Gaspar-Oliveri\nEasy Tiger",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11143/0b90703c-802a-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1a1f942b-8499-4066-b668-ad9319167603-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/73f8wYOEnoAB1HwG0hKT9krfVRzNH1mp8vFwDR3AFGA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/Y2QxMTBmZi04NmM2/LTQwYzItYjlhZi0x/NDMzZjNhNWQ0MTEv/bGEtZnJhcHBlLXBo/b3RvLTEtYy0yMDI2/LWVhc3ktdGlnZXIu/anBn?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Martin Rit"
+      ]
+    },
+    {
+      "slate": 10415,
+      "title": "PARADISE | Bande Annonce",
+      "sub": "Jeremy Comte\nEntract Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10415/1c099862-0801-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff7dfcdf-c815-46f5-bcda-11954efdc057-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/PRkavVT8HcBHr6D-jDjGT1z2Oc3t9m9B6vQOkXLiiRI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWRhY2MyNC1mZGYx/LTRjN2EtYWU1ZS02/NTJjZGU4YjAzYTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NC4x/OC5wbmc?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Olivier Gossot"
+      ]
+    },
+    {
+      "slate": 11253,
+      "title": "Tombé Du Ciel • Bande Annoce",
+      "sub": "Mohamed Hamidi\nKissman Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11253/35761d1a-ad19-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e4b8bcc2-c361-4b33-9c62-506146eaed7a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/R0SxrqUkvs6rBRDGWZW9Wig7OQUXEU1aiVPDGt-K1pc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NWFhZDUzNy05Y2Mx/LTRiOGEtYmNjZS0w/ZTQ1YjBkNjYyNGYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDkt/MTAtYS0xNS4xMC41/Ny5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Pierre-Hugues Galien, AFC"
+      ]
+    },
+    {
+      "slate": 11020,
+      "title": "Une Affaire Turque • Bande Annonce",
+      "sub": "Hüseyin Aydin Gürsoy\nLes Films du Clan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11020/fb994305-75f9-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d35e7126-8743-4c12-aa87-8a15c98351f8-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/mdvTBnMqc2Hx5o2QVn2RmIzkeUpzcb_4s4XY1U8afv8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/M2JlNThmNi1iODJk/LTQ0MTctYmQwZS0w/ZDU3ZjEyOWZjYjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDct/MDItYS0xMi4xNy41/Ny5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Romain Le Bonniec"
+      ]
+    },
+    {
+      "slate": 10708,
+      "title": "Cotton Queen | Trailer",
+      "sub": "Suzannah Mirghani\nArte",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10708/2744ff0f-7567-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/26a9d421-def0-4918-85a6-09aeca4e1699-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/_x9On8CzgK6GFyiDKNFKRSxmlz_q_XtJd6w9glYuF0c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YjczOTAzMy05ZDA2/LTQzMjEtOTM3MC04/ODI2MWRjYmY4ODgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDct/MDEtYS0xOC4wNy40/Ny5wbmc?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Frida Marzouk, AFC"
+      ]
+    },
+    {
+      "slate": 11008,
+      "title": "GIGN • Bande Annonce",
+      "sub": "Julien Leclercq\nLabyrinthe Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11008/8cb2c4bd-70bb-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d1eb4f26-59eb-40e7-b578-4fc3f5b5e618-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/29qDELlfOK1kGU4qNQBTbn_vjQM1nMcDPz2J9ixedi0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZTc2YjRhOC05Mjg4/LTQxMTUtYjZhYS0y/ZThmODgwMDhlOWEv/Z2lnbi5wbmc?v=1&format=webp",
+      "cats": [
+        "Series",
+        "narrative"
+      ],
+      "artists": [
+        "Pierre-Yves Bastard, AFC"
+      ]
+    },
+    {
+      "slate": 11149,
+      "title": "Where The Wind Comes From • Bande Annonce",
+      "sub": "Amel Guellaty\nHaut les Mains Productions, Atlas Vision Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11149/5647a194-8159-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/959a0297-6e50-449e-bc77-93673cc8b6b3-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/-20QyvLmpCDiM7DVCYsqkyxgTtbLeaY3SNvnx8C9Rrg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDBhODU4Ni1mMGVj/LTQyMjgtOTVkZi02/MzA4Njk5NTc0MzAv/c3RpbGxzLXd0d2Nm/LXNjb3BlLTAwMDkw/MDAyLnBuZw?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Frida Marzouk, AFC"
+      ]
+    },
+    {
+      "slate": 11171,
+      "title": "Jusqu'au bout • Bande Annonce",
+      "sub": "Ludovic Colbeau-Justin\nMOANA FILMS",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11171/45918643-869e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7fb8672c-a58b-4be2-91a5-c9f3c598f0a1-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/oJOPnLifV-xqrWnBVaz9r-eZyZf3t4K9hIHS_4ZkS8M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NGFhODlkYS0zNjAz/LTQ0OTMtYmViMC01/NmZlODE3MWMyOTgv/MDEucG5n?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Brecht Goyvaerts, SBC"
+      ]
+    },
+    {
+      "slate": 10935,
+      "title": "Les Caprices de l'Enfant Roi • Bande Annonce",
+      "sub": "Michel Leclerc\nMandarin et compagnie",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10935/6cdf49b6-6579-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9ed91ead-da4e-454d-9533-e4030e7b3d1e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/f-lqRJLN86AR2s0V9PUjG2B-XPcl1jzvSQKqaXI8MaA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZDVmNTY5MS1hZTRl/LTQyZmMtYmNjMy02/ODc1MmZiNjkwZmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDYt/MTEtYS0xMS40MC40/Mi5wbmc?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Alexis Kavyrchine"
+      ]
+    },
+    {
+      "slate": 10852,
+      "title": "Tout va Super • Teaser",
+      "sub": "Patrick Cassir\nAtelier de Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10852/8c699b8b-536e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9d6963d4-e088-45c7-91c4-a78b6a6abeda-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/BEIoI2nB2L6uucPkLvcXh5Oy-IellF5dgUjuLIOfihw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OThiOTEyYS01Zjcx/LTQ4YjQtOTk2NS02/Yjc5M2FmMzhlYTQv/Yy1hdGVsaWVyLWRl/LXByb2R1Y3Rpb24t/dGYxLWZpbG1zLXBy/b2R1Y3Rpb24tZC5h/LmMucC0yMDI1LTEt/MS0yLXNjYWxlZC5q/cGc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Julien Roux"
+      ]
+    },
+    {
+      "slate": 10695,
+      "title": "Histoires Parallèles | Bande Annonce",
+      "sub": "Asghar Farhadi\nMemento Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10695/99a51cf1-3971-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9667dd55-e936-4d80-a1a6-e61aec98b61b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/OQoOcqYEusmFTwBNzVjcZvJaaezP749r6qRCevTQeNg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MzBkMzhmOS1iZDVl/LTRkNTItOGViOS0z/ZmI0ZjdhMzlmOGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MTYtYS0xMC40OS41/NC5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Guillaume Deffontaines, AFC"
+      ]
+    },
+    {
+      "slate": 10557,
+      "title": "Enchaînés",
+      "sub": "Laure de Butler\nTetra Media Fiction",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10557/2091f4e6-1873-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/afe296c7-1cda-4ecd-873c-d5b00e4fe59b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/aG0GT6TA2G9xq7T6zZzDIoXgZLdHV3L_W-7QV7tWsJo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/YWIyYTViNi1iOTM4/LTRlYTItOTMwZC0y/M2EzNmE5MDYyMTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDMt/MDUtYS0xMC4xMS4y/OC5wbmc?v=1&format=webp",
+      "cats": [
+        "Series",
+        "narrative",
+        "Tv series"
+      ],
+      "artists": [
+        "Benjamin Louet - Kammenos"
+      ]
+    },
+    {
+      "slate": 10705,
+      "title": "Recalé - Bande-annonce",
+      "sub": "François Uzan\nItinéraire Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10705/7cf6f31f-3a52-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d6eccde5-475e-4469-b0d1-29ecca277a41-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/zuddTgf98sz6c1DNtIsoLV2JqIX3R_3ZDXVul5gm9P0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ODg2ZWNkZi0wNzI3/LTRmYzItYTFiYi0x/YzRiZjEyNDk3ZTIv/MTc3NzAyMjgzMjI3/OS5qcGc?v=1&format=webp",
+      "cats": [
+        "TV Serie",
+        "Fiction",
+        "Serie",
+        "narrative"
+      ],
+      "artists": [
+        "Clément Arenou"
+      ]
+    },
+    {
+      "slate": 10771,
+      "title": "The Lady Grace Mysteries • Trailer",
+      "sub": "Alex Jacob, Louise Ní Fhiannachta\nCottonwood Media",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10771/e0e56096-43e1-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/43f03ae1-7d65-4b5f-b40f-6434283b80f8-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/98efsCfCbTrk7C0Ips8og3Vx8bF2-IUiPabJDR7mKHM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NjlhMDAyYy0yMzcx/LTQwNGUtOGJkYy1i/MWU5YzhlM2QxNDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MjktYS0xOC4wMC4y/NC5wbmc?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Series"
+      ],
+      "artists": [
+        "Sacha Wiernik, AFC, SBC"
+      ]
+    },
+    {
+      "slate": 10694,
+      "title": "La Poupée | Bande Annonce",
+      "sub": "Sophie Beaulieu\nNovoprod",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10694/111ee089-38e8-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e100a053-30d3-4901-b59d-b5e75a3bec54-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/jq32G6A1bBjxKbqvvV3QDHBXdNY6bwtl-mWAvP_z1g0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OGUzOTZiYS1jMGRk/LTQyYmUtYTY5My1l/Mzg5ODQzMzA4ODcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MTUtYS0xOC4yNi40/MC5wbmc?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Yann Maritaud"
+      ]
+    },
+    {
+      "slate": 10706,
+      "title": "Casi Todo Bien | Trailer",
+      "sub": "Andres Salmoyraghi, Rafel López Saudibet\nAF Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10706/c542ffd7-3d8b-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/14440b07-a05f-4589-a003-06850abc14cf-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/B3ZBy6pH5fWB9riWDVJcJOjrvHl1k44xW7KhdzKVK-w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MTRiNWE4NC0xOWEz/LTQ1NjMtOTg0NC1j/ZDIyZmY1NzJmOTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MjMtYS0xNS4wMy4z/NS5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "Trailer",
+        "narrative"
+      ],
+      "artists": [
+        "Christos Voudouris"
+      ]
+    },
+    {
+      "slate": 10103,
+      "title": "Moloch Files - Trailer",
+      "sub": "lukas hanulak\nBionaut.cz",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10103/baf6955a-995e-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/581f5707-ad01-455c-8537-b8dc20d3a35c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/j94fJdev-Tj7P6yQnLHvdwcNi_UIf0ztwvfHZwSJyYw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OWVlZTA4My03Zjc1/LTQ4YjQtOGJlOC1j/MGFlZjVmMzg2NTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MTUtYS0xMS4yOC41/OS5wbmc?v=1&format=webp",
+      "cats": [
+        "Serie",
+        "narrative"
+      ],
+      "artists": [
+        "Veronika Donutkova, ASK"
+      ]
+    },
+    {
+      "slate": 10586,
+      "title": "Juste Une Illusion - bande-annonce",
+      "sub": "Eric Toledano, Olivier Nakache\nQuad",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10586/d61a1f9c-cd6b-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d8c2e756-993f-43c1-a8d3-79028abd631b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/EOZagn8hDerfJXsHmARtgegsq2uB1OG6RAIVnBIA3Nk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU4Ni02OWI5NTU4/MGFiNjBhMi45OTQ3/ODIzMi1iNzBjOWRk/OGEyYTBkZWUyMDE5/ODg5YTgwYmEzMDdj/Zi5qcGc?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Augustin Barbaroux"
+      ]
+    },
+    {
+      "slate": 10584,
+      "title": "Bagarre - Bande Annonce",
+      "sub": "Julien Royal\nChi-Fou-Mi Productions, Studio Canal France",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10584/8466869d-1eba-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d38a7550-8b04-45d6-ad49-a0eff34b602e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/fDNVSf2KlFLF7M7hYfOGAplE2h_NYAIhC20dsqZ033o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NDY2MWU0OC1mNWYx/LTRlMTUtODVjOS01/YzMyZTVhOGVlMTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MTYtYS0xNS4xMS4y/Mi5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Mahdi Lepart, AFC"
+      ]
+    },
+    {
+      "slate": 10083,
+      "title": "Ceux Qui Comptent - Bande-Annonce",
+      "sub": "Jean-Baptiste Léonetti\nLes Films du 24, France 2 Cinéma",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10083/4c2ba7ee-9232-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/be0a50b3-def7-425f-b71e-6e2bda1abde2-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/TDDcEtKszZVRuj34z0GGQxCfvQoZZOmtxfiuvgoTwNQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/Yzg2MjM2MC02MzZk/LTQ4MDEtYWVjZS0y/YTE3OTQxZTYzNDEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTctYS0xNi4xOC4x/Ni5wbmc?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "David Nissen, AFC"
+      ]
+    },
+    {
+      "slate": 10544,
+      "title": "Les Filles Du Ciel (feature film trailer)",
+      "sub": "Bérangère McNeese\nPaprika Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10544/bab9df75-1233-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a2b498c1-a27f-4596-9321-b623c131047a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/vXjeM8pf5HN-Dr9Q1RzxQU7-QCl7Mclbf7H00Ex0AhI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YzUwMWNjOC01ZjFk/LTQyYzEtYjc3Yi04/NjRiNmNhYWMxYTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MjUtYS0xMS4xOS41/Ny5wbmc?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Olivier Boonjing, SBC"
+      ]
+    },
+    {
+      "slate": 10440,
+      "title": "Lucky Luke - (Episodes 1 to 7) saison 1 Bande-annonce",
+      "sub": "Benjamin Rocher\nFédération Studios France",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10440/c76315a5-0c1e-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8d421e95-ccc3-46eb-bff1-35f405b3d67d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/_k5VtPqVsnC56ygu3F58DOk2RfQn1SbpEhoB-aMSYFE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NGU4MzkwYS0yNmZj/LTQwOTAtODU1Yy0y/ZDIyZGJmZWE4Mzgv/NDAyLTAyLWwtMS5q/cGc?v=1&format=webp",
+      "cats": [
+        "Serie",
+        "narrative"
+      ],
+      "artists": [
+        "Steeven Petitteville, AFC"
+      ]
+    },
+    {
+      "slate": 10436,
+      "title": "Police Flash 80 - Trailer",
+      "sub": "Jean-Baptiste Saurel\nNolita Cinema, Pathé Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10436/4f42586f-0827-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/182a9f88-e832-49d1-99b3-455bc35e31d8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KubWML4mzpQID1FG6EZEBRPjHrI1itiHeQIofSLUhVI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YzkzYTYzZC0xYTEx/LTRhMDMtYjA2Ny0w/MWZjMTM0NDU3YmEv/cGY4MC5wbmc?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Julien Roux"
+      ]
+    },
+    {
+      "slate": 10404,
+      "title": "NINO | Bande Annonce",
+      "sub": "Laurent Micheli\nHaut et Court",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10404/7775afcb-027a-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e422015b-c08b-4f9f-b1b7-6d722d95839d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/wGxEebEMa0VnUkWXtHiefzBpV1xtlotRiMO_Jp8PG44/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YmY1ZTU2ZS05MTM1/LTQ0MTUtODU2Ni0z/NTFlNDZhOTQxOTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MDUtYS0xMS4wNS40/MC5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Florian Berutti, SBC"
+      ]
+    },
+    {
+      "slate": 10363,
+      "title": "La Maison des Femmes | Bande Annonce",
+      "sub": "Mélisa Godet\nUne Fille Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10363/0ee4f463-f095-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c5e8f890-2ac6-4c5f-b31a-acdff57f135f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/5sZcKyjAjvTanZm5xoK30ivoKbiN6duTxmFcsVvr1SE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/ZDZiMjMzZi1kZTE5/LTRmNmYtODUzZC0z/NmZkZjNhNmRmOGYv/bG1kZi12aWduZXR0/ZS0xNi05LXZpbWVv/LnRpZg?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Feature Film"
+      ],
+      "artists": [
+        "Fabien Faure"
+      ]
+    },
+    {
+      "slate": 10391,
+      "title": "Au delà de Katmandou (Goodbye Sisters) | Trailer",
+      "sub": "Alexander Murphy\nGoodseed Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10391/7c3cee06-fb7e-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fa1e4ee5-6663-4896-97ae-a42b7cbe9ed6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/R3ApdPFPwvmdKB_gDdEYR8W7U-I3PNtLPOv7MnXVobo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NDJhZmQyNC04ZGNi/LTQ4NGItODc2Ni1h/ZGYwM2Q4ZDdiMmUv/d2hhdHNhcHAtaW1h/Z2UtMjAyNi0wMS0y/Ni1hdC0xMS4wNy4x/My05LmpwZWc?v=1&format=webp",
+      "cats": [
+        "Documentary",
+        "Documentary feature film",
+        "narrative"
+      ],
+      "artists": [
+        "Vadim Alsayed"
+      ]
+    },
+    {
+      "slate": 10296,
+      "title": "El Vestido (evil dress) | Trailer",
+      "sub": "Frank Ariza, Jacob Santana\nLa Popos Producciones",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10296/cb1a8cc8-ca19-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/014c96cd-3216-4f30-9d1a-e0a338f7a64a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/kvIFnbP_ub52dZZXDcOVOLFHVTP7C6BXjNqYpdGyhqA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/OWRmMWI4Yy01ZDRm/LTQ4MDQtYmJhZC05/ZmVlNmU4NDk4ODAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTEt/MjUtYS0xNy4xNy4z/MS5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "Trailer",
+        "Feature Film trailer"
+      ],
+      "artists": [
+        "Christos Voudouris"
+      ]
+    },
+    {
+      "slate": 10401,
+      "title": "Sainte-Marie-aux-Mines | bande annonce",
+      "sub": "Claude Schmitz\nWrong Men",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10401/fa306907-fd66-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff5f8f76-0877-4a4b-a530-7b3c9068cf67-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JQRrAAOCkmdPGPFBaydpWTSSZJ0kpPgcBRRVXJtu1xw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZGY2MzEyMS0yMmIw/LTQ4MjYtOGYyMC1j/OGRiOTM0NmYzMmYv/MTc3MDkwMjU2MTI0/My5qcGc?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Florian Berutti, SBC"
+      ]
+    },
+    {
+      "slate": 10303,
+      "title": "N121 Bus de Nuit | Trailer",
+      "sub": "Morade Aissaoui\nRipley Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10303/228a3f51-caec-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/db5e3f0c-48e0-4477-9b83-f264e26ba3e6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_bylRDJ0zP7VxjVBBc3DY50_a45HRY2Iwksrt_cXvgE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MjAxMzM0ZS1kNTU5/LTQwMGMtYjRjNi0w/NDFiMmYxMjMwZGUv/dmlnbmV0dGUtbjEy/MS5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "Trailer",
+        "narrative",
+        "Feature Film trailer"
+      ],
+      "artists": [
+        "Ludovic Zuili"
+      ]
+    },
+    {
+      "slate": 10364,
+      "title": "The Signal - 149 kHz",
+      "sub": "Karim Ouaret, Slimane-Baptiste Berhoun\nGaumont Télévision, paramount",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10364/157c1304-f556-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/de7bbabb-5674-42fc-90b8-36d847547a19-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/qsuoXQsIXYpenuMYXswcc_2o50txiF3DRo09f1uuS-c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZjM0ODlkYi01ZDM5/LTRhMjQtODM4ZC01/OTczOTYwMDAzZmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MTktYS0xNy41My4z/OC5wbmc?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Serie",
+        "narrative"
+      ],
+      "artists": [
+        "Benjamin Louet - Kammenos"
+      ]
+    },
+    {
+      "slate": 9925,
+      "title": "Promis Le Ciel - Trailer",
+      "sub": "Erige Sehiri\nManeki, Henia",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9925/71d6fc90-fade-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/35eeb075-a85a-4243-b4c2-f92bd70817b1-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jtwQa69E5z60Tdi3tc6ycLTcDOK65wjmtbMgxgigAMk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MThkMDEyZC1kNjA5/LTRiMmYtYjAzYS0x/NTdiY2FhMzJlZGMv/MS1jb3B5cmlnaHQt/Yy1tYW5la2lmaWxt/cy1oZW5pYS1wcm9k/dWN0aW9uLmpwZw?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Frida Marzouk, AFC"
+      ]
+    },
+    {
+      "slate": 9878,
+      "title": "Amour Apocalypse Bande Annonce",
+      "sub": "Anne Emond\nMetafilms",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9878/e7e87b74-cb7d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6336c8bb-8173-489d-9561-1273e2d916f0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3R3l6-sHF5ohZ-PmGoX7Sund4YMZCRGanXHCkVUPEqY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/Yzc2ODU2OC1jYjI1/LTQwZGEtYTU3NC0w/ZjRlMTMzOTMxZGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NS40/Ni5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Olivier Gossot"
+      ]
+    },
+    {
+      "slate": 10299,
+      "title": "Furcy né libre | Bande Annonce",
+      "sub": "Abd Al Malik\nJerico Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10299/08d36fca-f161-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/049af984-c004-452a-954d-aa0ea2a69d0b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KW5yWHi_pw2wkT5MKVHBGGVZCM_OsIY55lWeuQAGA6A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NDRiMDI2Zi03NWZh/LTQ3ZGUtOTUxOS1m/OGUxN2Y2MjVjMzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MTQtYS0xNi4zNi41/OC5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "Trailer",
+        "narrative",
+        "Feature Film trailer"
+      ],
+      "artists": [
+        "Guillaume Deffontaines, AFC"
+      ]
+    },
+    {
+      "slate": 10323,
+      "title": "Belphégor | Trailer",
+      "sub": "Jeremy Mainguy\nPathe Série",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10323/15941485-cfa7-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/36a9174e-948e-484f-9d62-a3b7a82f42bc-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/U1HgiWgVOo8jaXjz9fOoPq-0tL-wrYI0eC6SFzzqyxM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NjFkYjg4NS01YWQx/LTQ4OGEtYmUxMC02/MWUyYWU2NjIwMjIv/YmVscGhlZ29yLXN0/aWxscy0wMDA4NjQx/My5wbmc?v=1&format=webp",
+      "cats": [
+        "TV Serie",
+        "Serie",
+        "narrative"
+      ],
+      "artists": [
+        "Tristan Tortuyaux"
+      ]
+    },
+    {
+      "slate": 10381,
+      "title": "Des Preuves d'Amour - Feature Film Trailer",
+      "sub": "Alice Douard\nApsara Films, Les Films de June",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10381/ce1a9dcd-faa9-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6ea4e427-b955-42b8-8a87-617e73faf1fa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/VdxnZ6EDym8GhWP-HuRCKxg2v7jKN4dtJx_bG0XajyI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDM4MS02OTcyMmIx/M2RjYzYwNS4xNTk1/NjQ3Ny01MTk0N2E0/MzgwZWM1NGEwYmE5/MDMwMDZlMmRkZWY4/Ni5qcGc?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Jacques Girault"
+      ]
+    },
+    {
+      "slate": 10140,
+      "title": "Des vivants | Trailer",
+      "sub": "Jean Xavier de Lestrade\nWhat's up Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10140/670bbff1-a46b-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49a58085-d2d1-4b5f-8455-57002a9d2c7b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Vur6lCZWLlC0j0p9vUUoyTvu5EmuVudTFLejgEorBoY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/YmE0ZTJmMy01Mzhk/LTQ5MGMtYjcxNi04/YjkzOGNkMWIzNDYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MDgtYS0xOS4xNC4z/NC5wbmc?v=1&format=webp",
+      "cats": [
+        "TV Serie",
+        "Series",
+        "narrative"
+      ],
+      "artists": [
+        "Alexis Kavyrchine"
+      ]
+    },
+    {
+      "slate": 9979,
+      "title": "Culte – 2Be3 - Teaser Officiel",
+      "sub": "Yael Langmann\nP33 Studio",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9979/8b5b802d-5b1d-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f432eba6-d962-4ad9-9799-cbd46478fb66-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/esbc0RPvT-eL5KvdZtPE9bf4OcKwSgoPMtdr-2tL51I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/NWZkMmVmZC0yYTJh/LTQ1ZjItOTQ2OC02/NDU1OTBjMzEyMzEv/MmJlMy0xLjQuMzku/anBn?v=1&format=webp",
+      "cats": [
+        "TV Serie",
+        "Fiction",
+        "Series",
+        "narrative"
+      ],
+      "artists": [
+        "Yoann Suberviolle"
+      ]
+    },
+    {
+      "slate": 9977,
+      "title": "Lhomme qui rétrécit - Feature Film Trailer",
+      "sub": "Jan Kounen\nPitchipoï Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9977/fc0f7cf6-58d2-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0d372a8e-a388-41d8-916c-dee3b660be43-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/k6MTyUxvXW5uwy-nbPdQVjkQKmV2Eu9b5d9tKAUL-5o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZTM2ZDI4My00ODA5/LTQyNDEtYTgxMi1m/Zjg5NjQxMzUwNTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MjItYS0xMi41MS4y/My5wbmc?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Feature Film",
+        "narrative",
+        "Long-métrage"
+      ],
+      "artists": [
+        "Christophe Nuyens, SBC"
+      ]
+    },
+    {
+      "slate": 10076,
+      "title": "Meteors | Bande Annonce",
+      "sub": "Hubert Charuel\nDomino Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10076/3e61c89d-8d9d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8cfb0761-7a82-4f8f-ad71-c4a167396db7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JPNUhUcPEPVT_HR2C_6y1xDSLBz9KLLqkDKrZlM_Fjk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTI3ZDY4YS01YTcx/LTQ1YzQtOTBmNi00/ODc3Yjc5OTEyOWQv/bWV0ZW9ycy5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Jacques Girault"
+      ]
+    },
+    {
+      "slate": 10117,
+      "title": "Les Sentinelles - Trailer",
+      "sub": "Thierry Poiraud, Olivier Schneider, Edouard Salier\nFédération Studios France",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10117/8d52adc9-9de3-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1ec72281-3394-4781-848f-887d3c065073-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/rvAGBPUKJwSlHMV5J1Kg6qh4nzGZyPJi2hd2sfhoSyg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/Mjk0MTc3MC1hNTdj/LTRlMWEtYWJkZS1k/ZTllZjdjZTcyOGEv/c3RpbGxzLXNjb3Bl/LTAwMDg2NDMyLnBu/Zw?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "Series"
+      ],
+      "artists": [
+        "Matias Boucard, AFC"
+      ]
+    },
+    {
+      "slate": 10075,
+      "title": "Surface - Extrait",
+      "sub": "Slimane-Baptiste Berhoun\nFrance Télévision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10075/bf43a937-8d68-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9851c1d4-19c4-425e-af21-dd60bc963eb3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bYp8tkJLDEsaEKEJuObijIKON-u4n7HFI_E2I0JA1Ks/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MDc2MjEwNC1jMzA2/LTRkY2ItOTk2ZC0w/ZGQ1NDRjYmU0Yjkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xMS4yNy4x/Mi5wbmc?v=1&format=webp",
+      "cats": [
+        "Narrative",
+        "TV Serie",
+        "Serie"
+      ],
+      "artists": [
+        "Tristan Tortuyaux"
+      ]
+    },
+    {
+      "slate": 9982,
+      "title": "Les Tourmentés - Feature Film Trailer",
+      "sub": "Lucas Belvaux\nArtémis Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9982/50d1259f-5cdf-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d45c63da-d45b-41ed-98d7-0587e41a549e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/mgSSmgNoqACLJEnQhpENmJT8cv13DKPgzJLeia1U3uU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NmQ3OGI0NC1jZmYz/LTRkYzAtYmRkNi1l/NzU3NDVlZGU4YzMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MTctYS0xMi4wMy4y/NS5wbmc?v=1&format=webp",
+      "cats": [
+        "Feature Film",
+        "narrative"
+      ],
+      "artists": [
+        "Guillaume Deffontaines, AFC"
+      ]
+    },
+    {
+      "slate": 10041,
+      "title": "Young Millionnaires | Bande Annonce | Netflix",
+      "sub": "Tania Gotesman, Theo & Momo\nFive Dogs",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10041/ac3bed58-6c65-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ef3e949a-e27a-4d48-b471-0ee9deb5687b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/U7qOXTYoZjztGub4Z1PYcvj-iRBXpUlNIs6SUpZX2xs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTBiNjI5Yi0yNjI0/LTRiNDItYmM2YS1j/YTlmZTViN2MxZDUv/MzM3NDQ4MzY0Y2Ux/YWY0ZjlhYWJkOTRi/MjgwMzdhYmIuanBn?v=1&format=webp",
+      "cats": [
+        "Serie",
+        "narrative"
+      ],
+      "artists": [
+        "Julien Roux"
+      ]
+    },
+    {
+      "slate": 10361,
+      "title": "Chinaman | Trailer",
+      "sub": "Rob Chiu\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10361/967a69fa-ed57-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/418622ad-e5df-4e05-8cdb-de1f6e956882-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/HY0aTk3UKroU343HTJhNG8Tl-jtdl2bLRxpnGiYH-j8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YzQ2ZTU5Yy04OWJi/LTQ2MmEtYTE0Ny0x/ZTZmYjgyOGMwMjEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjItYS0xOC4wMy4w/Ni5wbmc?v=1&format=webp",
+      "cats": [
+        "Short Film",
+        "Trailer",
+        "narrative"
+      ],
+      "artists": [
+        "Lara Perrotte Boucard"
+      ]
+    },
+    {
+      "slate": 10206,
+      "title": "Silver | Trailer",
+      "sub": "Natalia Koniarz\nTelemark",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10206/6ba9f455-b968-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/627d123b-9156-4955-94d2-bf25d543ba5d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/wOXl7gvQUBIhsBWjLvcGX0nN-XStYrfE0yu90msiOHk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDM3OTZmYi1hMWEy/LTRkM2EtYTM5ZC00/MTM3MDE1ZjYxNDMv/c2lsdmVyLWZvdG9z/Mi5qcGc?v=1&format=webp",
+      "cats": [
+        "Documentary",
+        "Narrative",
+        "Documentary feature film"
+      ],
+      "artists": [
+        "Stanisław Cuske"
+      ]
+    },
+    {
+      "slate": 9459,
+      "title": "Star Wars - Andor Season 2 - Trailer (Episodes 1 to 6​)",
+      "sub": "Ariel Kleiman",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9459/39f3c5ed-f35e-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2ef0b81-0efa-4e96-bff7-d3a82c61f6a8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/F9Szs-xKjqF50uzGClOeDKAG5p5IMXs9HAIZghicYoU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDU5LTY3YmNiMGVj/OTNhYmY4LjIyNDM2/MDI2LTFiOTgyNmU5/Y2Q4OGUxZDg0ODRl/MjgyOWQyNDc2Yzk0/LmpwZw?v=1&format=webp",
+      "cats": [
+        "Fiction",
+        "Series",
+        "Serie",
+        "narrative"
+      ],
+      "artists": [
+        "Christophe Nuyens, SBC"
+      ]
+    }
+  ],
+  "readAsk": "2026-10-27T14:20:25.315Z",
+  "readAt": "2026-10-27T14:20:47.248Z"
 }
