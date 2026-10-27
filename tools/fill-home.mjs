@@ -177,13 +177,15 @@ async function readSpot(link, prev) {
   }
   return out;
 }
-if (fs.existsSync(SPOT) && (process.env.ALL || changedList.indexOf(SPOT) > -1)) {
-  var sp = JSON.parse(fs.readFileSync(SPOT, "utf8")), spOut = false;
+// Spotlight et fiction : même lecture de toute la bande Slate (fiction : onglets réglés à la main dans l'admin).
+for (var PAGE of [SPOT, "data/fiction.json"]) {
+  if (!fs.existsSync(PAGE) || !(process.env.ALL || changedList.indexOf(PAGE) > -1)) continue;
+  var sp = JSON.parse(fs.readFileSync(PAGE, "utf8")), spOut = false;
   if (sp.reel) {
-    try { sp.films = await readSpot(sp.reel, sp.films); delete sp.readError; console.log("Spotlight : " + sp.films.length + " films lus sur la bande."); }
-    catch (e) { sp.readError = String(e.message || e); console.log("Spotlight : " + sp.readError); }
+    try { sp.films = await readSpot(sp.reel, sp.films); delete sp.readError; console.log(PAGE + " : " + sp.films.length + " films lus sur la bande."); }
+    catch (e) { sp.readError = String(e.message || e); console.log(PAGE + " : " + sp.readError); }
     sp.readAt = new Date().toISOString(); spOut = true;
   }
   for (var sid2 in sp.overrides || {}) if (await fillExtras(sp.overrides[sid2].extras)) spOut = true;
-  if (spOut) fs.writeFileSync(SPOT, JSON.stringify(sp, null, 2) + "\n");
+  if (spOut) fs.writeFileSync(PAGE, JSON.stringify(sp, null, 2) + "\n");
 }
