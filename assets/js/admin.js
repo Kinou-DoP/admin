@@ -1310,7 +1310,7 @@
     view.textContent = ""; editing = true; pagePublish = publishContact;
     histInit({ get: function () { return { data: { conf: conf, ctc: ctc }, refs: Object.assign({}, pending) }; }, set: function (h) { var d = JSON.parse(h.data); conf = d.conf; ctc = d.ctc; pending = Object.assign({}, h.refs); renderContact(); } });
     view.appendChild(el("h1", { text: "Contact" }));
-    view.appendChild(el("p", { class: "lead", text: "La page contact du site (lien « contact » de l'en-tête), présentée comme un générique de fin : le rôle à gauche, le nom à droite. Un rôle identique à celui de la ligne du dessus n'est pas répété." }));
+    view.appendChild(el("p", { class: "lead", text: "La page contact du site (lien « contact » de l'en-tête), présentée comme un générique de fin : le rôle à gauche, le nom à droite. Le rôle est écrit sur chaque ligne." }));
     // Équipe : une ligne par personne, dans l'ordre du site.
     var team = el("div", { class: "team" });
     function drawTeam() {
