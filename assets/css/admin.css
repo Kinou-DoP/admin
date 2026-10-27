@@ -287,7 +287,7 @@ body.vedit-on { overflow: hidden; }
 .pbar i.lit { background: var(--bc, var(--kinou-fg)); box-shadow: 0 0 8px var(--bc, rgba(255,255,255,.6)); animation: plit .35s calc(var(--i) * 35ms + 150ms) both; }
 @keyframes plit { from { opacity: 0; transform: scaleY(.3); } to { opacity: 1; transform: none; } }
 .pbar.xp { height: 18px; --bc: var(--s3); }
-.bgauges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 22px; }
+.bgauges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 22px; }
 .bgauge { display: grid; grid-template-columns: 1fr auto; gap: 8px 10px; align-items: center; padding: 10px 12px; border: 1px solid transparent; background: none; color: var(--kinou-fg); text-align: left; cursor: pointer; transition: border-color .2s, opacity .2s; }
 .bgauge:hover { border-color: var(--faint); }
 .bgauge .pbar { grid-column: 1 / -1; grid-row: 2; height: 10px; }
@@ -297,3 +297,14 @@ body.vedit-on { overflow: hidden; }
 .board.filtering .bgauge:not(.on) { opacity: .4; }
 .bgauge.on { border-color: var(--bc); }
 @media (max-width: 900px) { .bgauges { grid-template-columns: 1fr 1fr; } .bxp { grid-template-columns: 1fr; gap: 10px; } }
+/* ROUND 1 / ROUND 2 : typo de jeu vidéo (Press Start 2P, Google Fonts) */
+.round { font-family: "Press Start 2P", ui-monospace, monospace; font-size: 13px; letter-spacing: .04em; line-height: 1.4; color: var(--s3); text-shadow: 2px 2px 0 rgba(255,210,122,.25); white-space: nowrap; }
+.bround2 { display: block; width: 100%; margin-top: 22px; padding: 16px 12px 12px; border: 1px solid transparent; border-top-color: var(--faint); background: none; color: var(--kinou-fg); text-align: left; cursor: pointer; transition: border-color .2s, opacity .2s; --bc: var(--s4); }
+.bround2:hover { border-color: var(--faint); }
+.bround2.on { border-color: var(--bc); }
+.board.filtering .bround2:not(.on) { opacity: .4; }
+.bround2 .round { color: var(--s4); text-shadow: 2px 2px 0 rgba(143,227,168,.25); }
+.bround2.full .bn { color: var(--s4); }
+.r2head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.bround2 .pbar { height: 16px; gap: 2px; }
+.bxp { padding: 0 12px; }

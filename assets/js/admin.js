@@ -355,32 +355,42 @@
   // Tableau de bord de la liste, façon jeu vidéo : progression globale (somme des étapes / 4 × nombre de chefs op), une jauge
   // par étape (nombre de fiches qui l'ont passée) ; clic sur une jauge = n'afficher que les fiches qui ne l'ont pas encore passée.
   function progressBoard(entries, onPick) {
-    var N = entries.length || 1, done = 0, max = N * 4;
-    entries.forEach(function (e) { done += e.step; });
-    var pct = done / max;
-    function bar(ratio, cls) {
-      var b = el("div", { class: "pbar " + (cls || "") }), lit = Math.round(ratio * 20);
-      for (var i = 0; i < 20; i++) { var c = el("i", { class: i < lit ? "lit" : "" }); c.style.setProperty("--i", i); b.appendChild(c); }
+    // ROUND 1 : importé, recadrage & noms, snippet (les stills viendront ensuite) ; ROUND 2 : stills.
+    var N = entries.length || 1, r1 = 0, r2 = 0;
+    entries.forEach(function (e) { r1 += Math.min(e.step, 3); if (e.step >= 4) r2++; });
+    var p1 = r1 / (N * 3), p2 = r2 / N, picked = 0, pickers = [];
+    function bar(ratio, cls, n) {
+      n = n || 20;
+      var b = el("div", { class: "pbar " + (cls || "") }), lit = Math.round(ratio * n);
+      b.style.gridTemplateColumns = "repeat(" + n + ", 1fr)";
+      for (var i = 0; i < n; i++) { var c = el("i", { class: i < lit ? "lit" : "" }); c.style.setProperty("--i", i); b.appendChild(c); }
       return b;
+    }
+    // Clic = n'afficher que les fiches pas encore à cette étape (k = 1..4) ; un deuxième clic remet tout.
+    function pickable(node, k) {
+      pickers.push([node, k]);
+      node.addEventListener("click", function () {
+        picked = picked === k ? 0 : k;
+        pickers.forEach(function (x) { x[0].classList.toggle("on", picked === x[1]); });
+        board.classList.toggle("filtering", !!picked); onPick(picked);
+      });
+      return node;
     }
     var board = el("section", { class: "board" });
     board.appendChild(el("div", { class: "bxp" }, [
-      el("span", { class: "bt", text: "Progression globale" }),
-      bar(pct, "xp"),
-      el("div", { class: "bnum", text: Math.round(pct * 100) + " %" + (pct >= 1 ? " ★" : "") })]));
-    var gauges = el("div", { class: "bgauges" }), picked = 0;
-    STEPS.forEach(function (t, k) {
+      el("span", { class: "round", text: "ROUND 1" }),
+      bar(p1, "xp"),
+      el("div", { class: "bnum", text: Math.round(p1 * 100) + " %" + (p1 >= 1 ? " ★" : "") })]));
+    var gauges = el("div", { class: "bgauges" });
+    STEPS.slice(0, 3).forEach(function (t, k) {
       var n = entries.filter(function (e) { return e.step > k; }).length;
-      var g = el("button", { type: "button", class: "bgauge s" + (k + 1) + (n === entries.length ? " full" : ""), title: "Voir les fiches pas encore à l'étape « " + t + " »" }, [
-        el("span", { class: "bt", text: t }), bar(n / N), el("span", { class: "bn", text: n + " / " + entries.length + (n === entries.length ? " ★" : "") })]);
-      g.addEventListener("click", function () {
-        picked = picked === k + 1 ? 0 : k + 1;
-        [].forEach.call(gauges.children, function (x, i) { x.classList.toggle("on", picked === i + 1); });
-        board.classList.toggle("filtering", !!picked); onPick(picked);
-      });
-      gauges.appendChild(g);
+      gauges.appendChild(pickable(el("button", { type: "button", class: "bgauge s" + (k + 1) + (n === entries.length ? " full" : ""), title: "Voir les fiches pas encore à l'étape « " + t + " »" }, [
+        el("span", { class: "bt", text: t }), bar(n / N), el("span", { class: "bn", text: n + " / " + entries.length + (n === entries.length ? " ★" : "") })]), k + 1));
     });
     board.appendChild(gauges);
+    board.appendChild(pickable(el("button", { type: "button", class: "bround2 s4" + (r2 === entries.length ? " full" : ""), title: "Voir les fiches sans leurs stills" }, [
+      el("div", { class: "r2head" }, [el("span", { class: "round", text: "ROUND 2 ! STILLS" }), el("span", { class: "bn", text: r2 + " / " + entries.length + (r2 === entries.length ? " ★" : "") })]),
+      bar(p2, "", 40)]), 4));
     return board;
   }
 
