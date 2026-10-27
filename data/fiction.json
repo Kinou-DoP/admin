@@ -4,11 +4,13 @@
     "9459": {
       "zoom": 1.34,
       "zoomThumb": true,
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "title": "Star Wars - Andor Season 2 - (Episodes 1 to 6​)"
     },
     "9878": {
       "zoom": 1.35,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Amour Apocalypse"
     },
     "9925": {
       "zoom": 1.36,
@@ -21,11 +23,13 @@
           "img": "https://images.slatecdn.net/QYj9knO6xlVQPv-hrB8FHA9JhrTZyzJXU7ZvYV508-s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZWJhOTFmOC05YTUx/LTRlMTYtYTQ0OC0w/MzU4ZDMxZTJkY2Mv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDItYS0xMC40MS4x/Ni5wbmc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f2dac955-4e88-4da0-98a7-ac968f902ebf-1280x720.2500.mp4"
         }
-      ]
+      ],
+      "title": "Promis Le Ciel"
     },
     "9977": {
       "genre": "FEATURE FILM",
-      "zoom": 1.38
+      "zoom": 1.38,
+      "title": "Lhomme qui rétrécit"
     },
     "9979": {
       "zoom": 1.14,
@@ -81,11 +85,13 @@
           "img": "https://images.slatecdn.net/2KooKNmVr02m93zEjY8tv14YOmlX0mxyyg1vrMG_GQg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MTM4NDc3Ni0zYTc4/LTQ0NWYtOWI0Yy03/YmIzNWE0ZmFlMjMv/MTc5MjE1OTE2OTYy/OC5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ae9c5016-bf72-40d6-9f96-4a3d8bc16e2c-0x1080.5000.mp4"
         }
-      ]
+      ],
+      "title": "Culte – 2Be3"
     },
     "9982": {
       "zoom": 1.36,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Les Tourmentés"
     },
     "10041": {
       "genre": "SERIES",
@@ -110,11 +116,13 @@
           "img": "https://images.slatecdn.net/e2SzLd-0bcRyW_QI88_x19UXF7rXIWx1gQfLSW2Uu4A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/N2YyOWRhNS04NGYx/LTQ4MGYtYmU3YS0y/YWYwZDI3N2RiNWIv/MTc1NTc2OTg4ODI1/OC5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2cbf668-b0f0-4f93-a325-d9f9e17b5a4c-1280x720.2500.mp4"
         }
-      ]
+      ],
+      "title": "Young Millionnaires"
     },
     "10075": {
       "zoom": 1.36,
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "title": "Surface"
     },
     "10076": {
       "zoom": 1.05,
@@ -127,7 +135,8 @@
           "img": "https://images.slatecdn.net/DNEvgAlva1w8ALJVhwsd2GvflI8IuE1Q6g4vIX1pW7E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YzU5Njg0Ny0yYjg4/LTQwYzQtYmIzMC1k/YzM2ODRlYzQyYjMv/bWV0ZW9ycy5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/511b2f57-d672-48d1-ab2c-252cd67ae608-1280x720.2500.mp4"
         }
-      ]
+      ],
+      "title": "Meteors"
     },
     "10083": {
       "zoom": 1.38,
@@ -135,43 +144,53 @@
     },
     "10103": {
       "genre": "SERIES",
-      "zoom": 1.34
+      "zoom": 1.34,
+      "title": "Moloch Files"
     },
     "10117": {
       "zoom": 1.34,
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "title": "Les Sentinelles"
     },
     "10140": {
       "zoom": 1.13,
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "title": "Des vivants"
     },
     "10206": {
       "zoom": 1.36,
-      "genre": "SHORT FILM"
+      "genre": "SHORT FILM",
+      "title": "Silver"
     },
     "10296": {
       "zoom": 1.34,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "El Vestido"
     },
     "10299": {
       "zoom": 1.35,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Furcy né libre"
     },
     "10303": {
       "zoom": 1.05,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "N121 Bus de Nuit"
     },
     "10323": {
       "zoom": 1.37,
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "title": "Belphégor"
     },
     "10361": {
       "zoom": 1.24,
-      "genre": "SHORT FILM"
+      "genre": "SHORT FILM",
+      "title": "Chinaman"
     },
     "10363": {
       "zoom": 1.36,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "La Maison des Femmes"
     },
     "10364": {
       "zoom": 1.13,
@@ -179,7 +198,8 @@
     },
     "10381": {
       "zoom": 1.05,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Des Preuves d'Amour"
     },
     "10391": {
       "zoom": 1.14,
@@ -212,30 +232,36 @@
             "https://images.slatecdn.net/ETvlt8XE0HFDeRJHz7sW0nr1-p5rQFo4siQTcYDwt_0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZDVjZjg0NC1mNThh/LTRmYzgtODk4Ni01/Zjg1ODA3ZTE1NjUv/d2hhdHNhcHAtaW1h/Z2UtMjAyNi0wMS0y/Ni1hdC0xMS4wNy4x/NS5qcGVn.webp"
           ]
         }
-      ]
+      ],
+      "title": "Au delà de Katmandou"
     },
     "10401": {
       "zoom": 1.2,
       "zoomThumb": true,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Sainte-Marie-aux-Mines"
     },
     "10404": {
       "zoom": 1.37,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "NINO"
     },
     "10415": {
       "zoom": 1.34,
       "genre": "FEATURE FILM",
       "status": "new",
-      "date": "2026-08-19"
+      "date": "2026-08-19",
+      "title": "PARADISE"
     },
     "10436": {
       "genre": "FEATURE FILM",
-      "zoom": 1.05
+      "zoom": 1.05,
+      "title": "Police Flash 80"
     },
     "10440": {
       "zoom": 1.24,
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "title": "Lucky Luke • Saison 1"
     },
     "10544": {
       "genre": "FEATURE FILM",
@@ -247,7 +273,8 @@
     },
     "10584": {
       "genre": "FEATURE FILM",
-      "zoom": 1.34
+      "zoom": 1.34,
+      "title": "Bagarre"
     },
     "10586": {
       "genre": "FEATURE FILM",
@@ -267,7 +294,8 @@
           "img": "https://images.slatecdn.net/NmR1CXcKh5BhmpWLDA2_uANn_431jzGgomRb5WQgwEU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU2OS02OWIxOGZl/NTIyZTIwMy40MDc4/MDQ1Ny0xMmMzOWNh/OWE0NmQ2NjU0ODk5/MjQxNGJiOTNmYmY5/OC5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd7c4f51-03de-4775-b5fd-5ea557f35537-0x1080.5000.mp4"
         }
-      ]
+      ],
+      "title": "Juste Une Illusion"
     },
     "10694": {
       "zoom": 1.04,
@@ -280,60 +308,73 @@
           "img": "https://images.slatecdn.net/OJyImWqZ1pAeSRhvwgrxsTAe2LvThwPaYEy8ZqCN9Us/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/YTNiMzQzZi0xM2Fi/LTQ3YjUtYWU5OC01/NzZiZTE4ZjgwOTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDMt/MTctYS0xOC4zNi4x/MS5wbmc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9c880132-faf5-42b6-a025-93e76235e678-1280x720.2500.mp4"
         }
-      ]
+      ],
+      "title": "La Poupée"
     },
     "10695": {
       "zoom": 1.05,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Histoires Parallèles"
     },
     "10705": {
       "genre": "SERIES",
-      "zoom": 1.14
+      "zoom": 1.14,
+      "title": "Recalé"
     },
     "10706": {
       "zoom": 1.36,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Casi Todo Bien"
     },
     "10708": {
       "genre": "FEATURE FILM",
-      "zoom": 1.37
+      "zoom": 1.37,
+      "title": "Cotton Queen"
     },
     "10771": {
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "title": "The Lady Grace Mysteries"
     },
     "10852": {
       "genre": "FEATURE FILM",
-      "zoom": 1.35
+      "zoom": 1.35,
+      "title": "Tout va Super"
     },
     "10935": {
       "zoom": 1.04,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Les Caprices de l'Enfant Roi"
     },
     "11008": {
       "genre": "SERIES",
       "zoom": 1.2,
-      "zoomPos": "4.5% 40.8%"
+      "zoomPos": "4.5% 40.8%",
+      "title": "GIGN"
     },
     "11020": {
       "zoom": 1.36,
       "genre": "FEATURE FILM",
       "status": "new",
-      "date": "2026-08-12"
+      "date": "2026-08-12",
+      "title": "Une Affaire Turque"
     },
     "11143": {
       "zoom": 1.09,
       "genre": "FEATURE FILM",
       "status": "new",
-      "date": "2026-09-02"
+      "date": "2026-09-02",
+      "title": "La Frappe"
     },
     "11149": {
       "zoom": 1.36,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Where The Wind Comes From"
     },
     "11171": {
       "zoom": 1.36,
       "zoomPos": "41.6% 48.3%",
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "title": "Jusqu'au bout"
     },
     "11186": {
       "genre": "FEATURE FILM",
@@ -354,18 +395,22 @@
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/33ec54c5-cfa4-48f2-b74b-8363f1a72ad4-0x1080.5000.mp4"
         }
       ],
-      "date": "2026-09-30"
+      "date": "2026-09-30",
+      "title": "Notre Salut",
+      "sub": "Emmanuel Marre\nKidam, Michigan Films\n• Prix du scénario, Cannes Film Festival 2026"
     },
     "11187": {
       "genre": "FEATURE FILM",
       "status": "soon",
-      "date": "2026-11-04"
+      "date": "2026-11-04",
+      "title": "Ghost Soldier"
     },
     "11188": {
       "zoom": 1.36,
       "genre": "FEATURE FILM",
       "status": "soon",
-      "date": "2026-12-30"
+      "date": "2026-12-30",
+      "title": "Les Filles d'Abraham"
     },
     "11195": {
       "zoom": 1.2,
@@ -393,7 +438,8 @@
           ]
         }
       ],
-      "date": "2026-09-16"
+      "date": "2026-09-16",
+      "title": "Surveillant ! • Saison 1"
     },
     "11199": {
       "zoom": 1.24,
@@ -406,44 +452,51 @@
       "genre": "SERIES",
       "zoom": 1.35,
       "status": "new",
-      "date": "2026-10-10"
+      "date": "2026-10-10",
+      "title": "High Value Target"
     },
     "11253": {
       "zoom": 1.36,
       "genre": "FEATURE FILM",
       "status": "new",
-      "date": "2026-08-12"
+      "date": "2026-08-12",
+      "title": "Tombé Du Ciel"
     },
     "11324": {
       "zoom": 1.37,
       "genre": "SERIES",
       "status": "new",
-      "date": "2026-10-11"
+      "date": "2026-10-11",
+      "title": "Treasure Island"
     },
     "11340": {
       "zoom": 1.35,
       "zoomPos": "39.9% 49.4%",
       "genre": "FEATURE FILM",
       "status": "soon",
-      "date": "2026-11-09"
+      "date": "2026-11-09",
+      "title": "Un Bon Avocat"
     },
     "11342": {
       "genre": "FEATURE FILM",
       "zoom": 1.38,
       "status": "soon",
-      "date": "2026-11-11"
+      "date": "2026-11-11",
+      "title": "Ce qui nous mène à toi"
     },
     "11347": {
       "genre": "FEATURE FILM",
       "zoom": 1.35,
       "status": "soon",
-      "date": "2026-11-11"
+      "date": "2026-11-11",
+      "title": "Il Faut Bruler Maman"
     },
     "11358": {
       "zoom": 1.35,
       "genre": "FEATURE FILM",
       "status": "new",
-      "date": "2026-10-16"
+      "date": "2026-10-16",
+      "title": "Sacrifice"
     }
   },
   "films": [
