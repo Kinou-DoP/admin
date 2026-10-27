@@ -303,7 +303,7 @@
   // Suivi interne de l'équipe (n'apparaît pas sur le site) : curseur en haut à droite d'une fiche, tableau de bord sur la liste.
   // step : 0 = à faire, 1..4 = dernière étape faite. Sans entrée : 1 si la fiche est publiée (bundle importé), sinon 0.
   // Enregistré tout seul (sans « Publier ») : fichier relu juste avant, seule la ligne de ce chef op est changée.
-  var STEPS = ["Importé", "Recadrage & noms", "Snippet", "Stills"], progress = null;
+  var STEPS = ["Importé", "Recadrage & infos", "Snippet", "Stills"], progress = null;
   function loadProgress() { return readFile("data/progress.json").then(function (p) { progress = p || {}; return progress; }); }
   function stepOf(slug, has) { var p = progress && progress[slug]; return p && typeof p.step === "number" ? p.step : (has ? 1 : 0); }
   function pips(step) {

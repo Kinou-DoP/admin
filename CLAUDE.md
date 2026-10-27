@@ -52,11 +52,11 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   (fiche, accueil, contact) pris à chaque modification (`touch` → `record`, saisie regroupée après 0,4 s), 100 au plus ;
   chaque page déclare `histInit({ get, set })` ; historique remis à zéro à l'ouverture d'une page et après publication.
 - Avancement des fiches (suivi interne, pas sur le site) → `data/progress.json` = `{ <slug>: { step, at, by } }`, step 0 = à faire,
-  1 Importé, 2 Recadrage & noms, 3 Snippet, 4 Stills (dernière étape faite ; sans entrée : 1 si la fiche existe, sinon 0).
+  1 Importé, 2 Recadrage & infos, 3 Snippet, 4 Stills (dernière étape faite ; sans entrée : 1 si la fiche existe, sinon 0).
   Fiche : curseur en haut à droite (`progressCtl`, crans + libellés cliquables), enregistré tout seul 0,7 s après (sans « Publier » :
   fichier relu puis seule la ligne du chef op changée, commit « Avancement Nom : étape »). Liste : tableau de bord « jeu vidéo »
   (`progressBoard` : « ROUND 1 » = progression des 3 premières étapes en % (somme des étapes plafonnées à 3 / 3 × nombre de chefs op),
-  une jauge à 20 cases par étape (Importé, Recadrage & noms, Snippet) ; dessous « ROUND 2 ! STILLS » sur toute la largeur (fiches à l'étape 4) ;
+  une jauge à 20 cases par étape (Importé, Recadrage & infos, Snippet) ; dessous « ROUND 2 ! STILLS » sur toute la largeur (fiches à l'étape 4) ;
   typo Press Start 2P (Google Fonts) ; pas de grade ni d'XP, Gus 27/10 ;
   clic sur une jauge = n'afficher que les fiches pas encore à cette étape, combiné à la recherche) et pastilles de couleur sous
   chaque nom (`pips`). Fichier hors des chemins du robot : aucune Action lancée.
