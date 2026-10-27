@@ -671,6 +671,66 @@
     return el("div", {}, [box, el("label", { class: "zthumb" }, [cb, "Aussi sur la vignette"])]);
   }
 
+  // Fiction : cadrage cinémascope (2,39:1) d'un film en 16:9, réglé à part pour la vignette (thumbCrop) et pour l'extrait
+  // (snipCrop) = { z, x, y } : curseur 100–250 % pour agrandir, l'image se fait glisser dans le cadre pour la placer.
+  // Même calcul que scopeCrop du site (app.js).
+  var SCOPE = 2.39;
+  function scopeCtl(c, thumb, video) {
+    var mode = "thumbCrop", v = null, drag = null;
+    function stopMine() { if (v) { v.remove(); v = null; } if (mode !== "thumbCrop") { mode = "thumbCrop"; apply(); } }
+    function cur(k) { var o = (state.overrides[c.slate] || {})[k || mode] || {}; return { z: o.z || 1, x: o.x === undefined ? 50 : o.x, y: o.y === undefined ? 50 : o.y }; }
+    function save(o) {
+      var r = function (n) { return Math.round(n * 10) / 10; }, out = {};
+      if (o.z > 1) out.z = Math.round(o.z * 100) / 100;
+      if (r(o.x) !== 50) out.x = r(o.x);
+      if (r(o.y) !== 50) out.y = r(o.y);
+      setOverride(c, mode, Object.keys(out).length ? out : undefined); touch();
+    }
+    var range = el("input", { type: "range", min: "100", max: "250", step: "1", class: "nodirty" });
+    var lab = el("span", { class: "zval" }), center = el("button", { class: "zcenter", type: "button", text: "Recentrer" });
+    var tabs = el("div", { class: "stabs" });
+    [["thumbCrop", "Vignette"], ["snipCrop", "Extrait"]].forEach(function (m) {
+      var b = el("button", { type: "button", text: m[1] }); b.dataset.m = m[0];
+      b.addEventListener("click", function () { mode = m[0]; apply(); });
+      tabs.appendChild(b);
+    });
+    function apply() {
+      var t = cur("thumbCrop"), s = cur("snipCrop"), o = cur();
+      thumb.style.backgroundSize = t.z * 100 + "% auto"; thumb.style.backgroundPosition = t.x + "% " + t.y + "%";
+      var m = typeof video === "function" ? video() : video;
+      if (mode === "snipCrop" && m && !v) {
+        if (zoomStopOther && zoomStopOther !== stopMine) zoomStopOther(); // un seul extrait joue à la fois
+        zoomStopOther = stopMine;
+        v = mkVid(m); thumb.appendChild(v); var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+      }
+      if (mode !== "snipCrop" && v) { v.remove(); v = null; }
+      if (v) { v.style.width = s.z * 100 + "%"; v.style.left = -s.x * (s.z - 1) + "%"; v.style.top = -s.y * (s.z * SCOPE * 9 / 16 - 1) + "%"; }
+      [].forEach.call(tabs.children, function (b) { b.classList.toggle("on", b.dataset.m === mode); });
+      range.value = String(Math.round(o.z * 100));
+      lab.textContent = (mode === "snipCrop" ? "Extrait" : "Vignette") + (o.z > 1 ? " · " + Math.round(o.z * 100) + " %" : "") + " — glissez l'image pour la placer";
+      center.hidden = o.z === 1 && o.x === 50 && o.y === 50;
+    }
+    range.addEventListener("input", function () { var o = cur(); o.z = parseInt(range.value, 10) / 100; save(o); apply(); });
+    center.addEventListener("click", function () { save({ z: 1, x: 50, y: 50 }); apply(); });
+    // Glisser l'image : le décalage en pixels devient une position de 0 à 100 % dans la partie qui dépasse du cadre.
+    thumb.addEventListener("pointerdown", function (e) {
+      e.preventDefault(); thumb.setPointerCapture(e.pointerId);
+      var r = thumb.getBoundingClientRect(), o = cur();
+      drag = { x: e.clientX, y: e.clientY, o: o, ox: r.width * (o.z - 1), oy: r.height * (o.z * SCOPE * 9 / 16 - 1) };
+    });
+    thumb.addEventListener("pointermove", function (e) {
+      if (!drag) return;
+      var cl = function (n) { return Math.max(0, Math.min(100, n)); }, o = { z: drag.o.z, x: drag.o.x, y: drag.o.y };
+      if (drag.ox > 0) o.x = cl(drag.o.x - (e.clientX - drag.x) / drag.ox * 100);
+      if (drag.oy > 0) o.y = cl(drag.o.y - (e.clientY - drag.y) / drag.oy * 100);
+      save(o); apply();
+    });
+    function end() { drag = null; }
+    thumb.addEventListener("pointerup", end); thumb.addEventListener("pointercancel", end);
+    apply();
+    return el("div", { class: "zoom scopectl" }, [tabs, lab, range, center]);
+  }
+
   // Fond de la liste des chefs op sur téléphone (écran en hauteur) : extrait du 1er film FEATURED, recadré en largeur.
   // On fait glisser la bande rouge (partie visible sur un téléphone) → overrides[<id>].phoneX (0–100, absent = centre),
   // object-position horizontale de #bgvid sur le site. Le recadrage (zoom / zoomPos) du film s'applique aussi.
@@ -754,7 +814,7 @@
     var hide = el("button", {}), reset = el("button", { text: "Rétablir" });
     function sync() {
       var o = state.overrides[c.slate] || {};
-      card.className = "film" + (o.hidden ? " hidden" : "") + (o.title !== undefined || o.sub !== undefined ? " edited" : "");
+      card.className = "film" + (state === fic ? " scope" : "") + (o.hidden ? " hidden" : "") + (o.title !== undefined || o.sub !== undefined ? " edited" : "");
       hide.textContent = o.hidden ? "Afficher" : "Masquer";
       reset.hidden = !(o.title !== undefined || o.sub !== undefined);
       chips.textContent = "";
@@ -808,7 +868,7 @@
     sync();
     // Projet en stills : le recadrage se règle sur l'extrait choisi pour le survol.
     var zvid = c.video || function () { var h = (state.overrides[c.slate] || {}).hover; return h && h.video; };
-    var zoom = zoomCtl(thumb, zvid, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); },
+    var zoom = state === fic ? scopeCtl(c, thumb, zvid) : zoomCtl(thumb, zvid, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomPos; }, function (p) { setOverride(c, "zoomPos", p); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
     card.appendChild(thumb); card.appendChild(zoom);

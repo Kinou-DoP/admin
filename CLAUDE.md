@@ -68,7 +68,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Fiction (lien « fiction » du menu, `data/fiction.json`) : comme le spotlight (lien d'une bande Slate + « Relire la bande », lue en
   entier par le robot ; mêmes réglages par film via `filmsSection` / `filmCard`, `state` = fic), plus sous le titre de chaque film
   (`ficCtl`) : statut New release / Coming soon / Past release (`status`, défaut past), genre si Past release (`genre`), date de
-  sortie (`date`), affiche (compressée en WebP → `data/fiction/<id>-<horodatage>.webp` à la publication, `poster`). Onglets de
+  sortie (`date`), affiche (compressée en WebP → `data/fiction/<id>-<horodatage>.webp` à la publication, `poster`).
+  Cadrage cinémascope (`scopeCtl`, à la place du recadrage habituel) : onglets Vignette / Extrait, curseur 100–250 %, image à faire
+  glisser dans le cadre 2,39:1 → `thumbCrop` / `snipCrop` = `{ z, x, y }` (même calcul que `scopeCrop` du site). Onglets de
   l'admin = statut. Publication : relit le fichier en ligne, n'écrit que `reel` et `overrides` (+ affiches), garde les `films`.
   Format et affichage : CLAUDE.md du site (« Fiction »).
 - Home page : lien d'une bande Slate → `GET <SITE>/api/reel?link=…` (10 premiers films) → `data/home.json`

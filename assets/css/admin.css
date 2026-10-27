@@ -314,3 +314,10 @@ body.vedit-on { overflow: hidden; }
 .ficrow select, .ficrow input[type=date] { padding: 6px 8px; border: 1px solid var(--faint); border-radius: 0; background: #000; color: var(--kinou-fg); font-family: var(--kinou-sans); font-size: 12px; color-scheme: dark; }
 .ficrow select[hidden] { display: none; }
 .drop.poster { min-height: 0; aspect-ratio: 2 / 3; padding: 6px; background-size: cover; background-position: center; font-size: 10px; text-align: center; }
+/* Fiction : cadrage cinémascope (vignette / extrait réglés à part) */
+.film.scope .thumb { aspect-ratio: 2.39 / 1; cursor: grab; touch-action: none; }
+.film.scope .thumb:active { cursor: grabbing; }
+.film.scope .thumb video { inset: auto; height: auto; aspect-ratio: 16 / 9; }
+.scopectl .stabs { order: -2; flex: 1 1 100%; display: flex; gap: 14px; margin-bottom: 4px; }
+.scopectl .stabs button { padding: 0; border: 0; background: none; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+.scopectl .stabs button.on { color: var(--kinou-fg); }
