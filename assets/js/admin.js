@@ -1025,10 +1025,41 @@
       if (wasNew || from) location.hash = "#/dp/" + out.slug; else render();
       refreshSite(out.slug).catch(function () {}); // vide le cache du site (fiche et clips) : visible tout de suite
       warmThumbs(out.clips);
+      sharePage(out).catch(function (e) {
+        status("Publié. Aperçu du lien partagé pas mis à jour : " + (/GitHub (403|404)/.test(e.message) ? "votre clé GitHub n'a pas accès au dépôt « site »." : e.message), "warn");
+      });
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
       .then(function () { publishBtn.disabled = false; });
   }
   publishBtn.addEventListener("click", function () { if (pagePublish) pagePublish(); });
+
+  // Page d'aperçu du lien partagé (WhatsApp, iMessage… : nom + photo du chef op), écrite dans le dépôt du site (branche beta) à
+  // chaque publication d'une fiche : <slug>/index.html. Même contenu que tools/share-pages.mjs du site (à garder identique).
+  // Demande une clé GitHub avec accès en écriture au dépôt Kinou-DoP/site ; sinon la fiche est publiée quand même, sans aperçu.
+  var SITE_REPO = "Kinou-DoP/site", SITE_URL = SITE_PAGES + "/", RAW_DATA = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/data/";
+  function sharePage(d) {
+    function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;"); }
+    var a = d.about || {}, img = "", slug = d.slug;
+    if (a.img) img = /^https?:/.test(a.img) ? a.img : RAW_DATA + "dps/" + a.img;
+    else if (d.clips) { var c = d.clips.filter(function (x) { return x.featured; }).sort(function (x, y) { return (x.featuredOrder || 0) - (y.featuredOrder || 0); })[0] || d.clips[0]; if (c && c.img) img = c.img; }
+    var url = SITE_URL + slug + "/";
+    var html = '<!doctype html>\n<!-- Page d\'aperçu de lien, fabriquée par tools/share-pages.mjs : ne pas modifier à la main. -->\n' +
+      '<html lang="fr"><head><meta charset="utf-8">\n<title>' + esc(d.name) + ' — kinou</title>\n' +
+      '<meta property="og:site_name" content="kinou">\n<meta property="og:type" content="website">\n' +
+      '<meta property="og:title" content="' + esc(d.name) + '">\n<meta property="og:description" content="Cinematographer · kinou">\n' +
+      '<meta property="og:url" content="' + esc(url) + '">\n' +
+      (img ? '<meta property="og:image" content="' + esc(img) + '">\n<meta name="twitter:card" content="summary_large_image">\n' : "") +
+      '<link rel="canonical" href="' + esc(url) + '">\n' +
+      '<script>location.replace("../" + location.search + "#' + slug + '");</script>\n</head><body></body></html>\n';
+    var path = "/repos/" + SITE_REPO + "/contents/" + slug + "/index.html";
+    return gh(path + "?ref=beta", { allow404: true }).then(function (cur) {
+      var b64 = btoa(unescape(encodeURIComponent(html)));
+      if (cur && cur.content && cur.content.replace(/\s/g, "") === b64) return; // déjà à jour
+      var body = { message: "Aperçu du lien : " + d.name.split(",")[0] + " (admin, " + user.login + ")", content: b64, branch: "beta" };
+      if (cur && cur.sha) body.sha = cur.sha;
+      return gh(path, { method: "PUT", body: body });
+    });
+  }
 
   // ---------- Accueil (data/home.json) ----------
   // Les 10 premiers films d'une bande Slate ; les chefs op crédités sont reliés à leur page par leur nom.

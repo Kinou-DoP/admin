@@ -22,8 +22,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   (un commit par publication sur `main`), avec le token personnel de l'utilisateur.
 
 ## Fonctionnement
-- Connexion : token GitHub « fine-grained » personnel (un par personne), limité au repo `Kinou-DoP/admin`,
-  permission Contents : Read and write. Stocké dans le `localStorage` du navigateur, jamais dans le repo.
+- Connexion : token GitHub « fine-grained » personnel (un par personne), limité aux repos `Kinou-DoP/admin` et `Kinou-DoP/site`
+  (site : pour les pages d'aperçu des liens, voir plus bas), permission Contents : Read and write. Stocké dans le `localStorage` du navigateur, jamais dans le repo.
   Créé sans expiration (autorisé par l'organisation Kinou-DoP).
 - Import d'un bundle Slate : `GET <SITE>/api/bundle/<uuid | code shots.re>` (fonction du repo `site`).
 - Forcer la mise à jour du site : `POST <SITE>/api/refresh/<slug>` avec le token (vide le cache CDN du DP).
@@ -90,6 +90,11 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   une fiche (`filmsSection` / `filmCard` réutilisés : `state` = spotlight, `slate` = films rangés par catégorie) → `overrides`.
   Publication : relit le fichier en ligne et n'écrit que `reel`, `categories`, `overrides` (garde les `films` du robot).
   Étiquette de la vignette : chef op crédité. Format et affichage : CLAUDE.md du site (« Spotlight »).
+- Aperçu des liens partagés (27/10) : à chaque publication d'une fiche, `sharePage` écrit `<slug>/index.html` (nom + photo du chef op
+  en balises Open Graph : portrait About, sinon vignette du 1er film FEATURED) dans le dépôt **Kinou-DoP/site, branche beta**
+  (API contents, seulement si le contenu change). Même contenu que `tools/share-pages.mjs` du site (à garder identique).
+  Demande une clé GitHub avec **Contents : Read and write aussi sur le dépôt site** ; sinon la fiche est publiée quand même et un
+  message dit que l'aperçu n'a pas été mis à jour. Format : CLAUDE.md du site (« Adresses des pages »).
 - Contact : page contact du site → `data/contact.json` : `team` (une ligne par personne : rôle, prénom, e-mail, téléphone ;
   ↑ ↓ ×, « + Ajouter une personne »), `address` (lignes), `newsletter` (lien) + `newsletterLabel` (texte du bouton), `social` (instagram, vimeo, imdb, facebook ;
   vide = pas affiché), `legal` (mentions légales, paragraphes séparés par une ligne vide, ligne seule courte = titre ; vide = pas de lien ;
