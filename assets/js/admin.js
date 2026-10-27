@@ -327,7 +327,7 @@
       });
     }, 700);
   }
-  // Curseur de la fiche : À faire → Importé → Recadrage & noms → Snippet → Stills.
+  // Curseur de la fiche : À faire → Importé → Recadrage & infos → Snippet → Stills.
   function progressCtl() {
     var slug = state.slug, cur = stepOf(slug, true);
     var range = el("input", { type: "range", min: "0", max: "4", step: "1", class: "nodirty", value: String(cur), "aria-label": "Avancement de la fiche" });
