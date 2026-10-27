@@ -104,7 +104,8 @@
     },
     "10415": {
       "zoom": 1.34,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "new"
     },
     "10436": {
       "genre": "FEATURE FILM",
@@ -166,11 +167,13 @@
     },
     "11020": {
       "zoom": 1.36,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "new"
     },
     "11143": {
       "zoom": 1.09,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "new"
     },
     "11149": {
       "zoom": 1.36,
@@ -182,53 +185,65 @@
       "genre": "FEATURE FILM"
     },
     "11186": {
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "new"
     },
     "11187": {
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "soon"
     },
     "11188": {
       "zoom": 1.36,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "soon"
     },
     "11195": {
       "zoom": 1.2,
       "zoomPos": "24.3% 38.6%",
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "status": "new"
     },
     "11199": {
       "zoom": 1.24,
       "zoomPos": "37% 50%",
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "status": "soon"
     },
     "11226": {
       "genre": "SERIES",
-      "zoom": 1.35
+      "zoom": 1.35,
+      "status": "new"
     },
     "11253": {
       "zoom": 1.36,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "new"
     },
     "11324": {
       "zoom": 1.37,
-      "genre": "SERIES"
+      "genre": "SERIES",
+      "status": "new"
     },
     "11340": {
       "zoom": 1.35,
       "zoomPos": "39.9% 49.4%",
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "soon"
     },
     "11342": {
       "genre": "FEATURE FILM",
-      "zoom": 1.38
+      "zoom": 1.38,
+      "status": "soon"
     },
     "11347": {
       "genre": "FEATURE FILM",
-      "zoom": 1.35
+      "zoom": 1.35,
+      "status": "soon"
     },
     "11358": {
       "zoom": 1.35,
-      "genre": "FEATURE FILM"
+      "genre": "FEATURE FILM",
+      "status": "new"
     }
   },
   "films": [
