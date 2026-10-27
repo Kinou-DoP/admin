@@ -45,8 +45,7 @@
         {
           "link": "https://kinou.slateapp.com/work/jaeger-lecoultre-1",
           "title": "Jaeger-LeCoultre",
-          "img": "https://images.slatecdn.net/W4OEzYshpw3eGaGgfUv_ZjAvNXdFpclDlTw8qp8LrEQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/M2Y3NTVmOS0yMmY1/LTQwYTEtYWNhYy1h/MDdhNTg1NzNmMjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MjUtYS0xMi4yNC4w/NS5wbmc?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0abe2914-16bd-40cc-84f0-b79fbd8fecc7-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/W4OEzYshpw3eGaGgfUv_ZjAvNXdFpclDlTw8qp8LrEQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/M2Y3NTVmOS0yMmY1/LTQwYTEtYWNhYy1h/MDdhNTg1NzNmMjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MjUtYS0xMi4yNC4w/NS5wbmc?v=1&format=webp"
         }
       ],
       "title": "Jaeger - LeCoultre",
@@ -326,6 +325,20 @@
   ],
   "clips": [
     {
+      "title": "Angele et mes Démons | Stills | Coming Soon",
+      "sub": "Lucas Beccaro\nOctopolis",
+      "img": "https://images.slatecdn.net/ju_UqrJwCvVOE51NEmCJCVoy8qwelBQTudAPyy63tqY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MDQ0MzM0YS0zYjM3/LTQzZTYtODhhNy00/YWRlMzI3NWE4OTgv/c3RpbGxzLXNsYXRl/LnBuZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9857
+    },
+    {
+      "title": "La Plus Belle Fille du Monde | Stills",
+      "sub": "Vassili Schneider\nAd Vitam Court & YSL",
+      "img": "https://images.slatecdn.net/xL3eHLMIff5IPJhCKiPwRjtu5PxE2xKTTECtnbstcYc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWFlYzQ0/YzItN2IzZC00OGUx/LWFmNTYtMTFkN2Iw/MDg5NDE3L2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDItMDEt/YS1jYy04MC0yMS40/NC4zNS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11431
+    },
+    {
       "title": "Mort d'un acteur - trailer (short film)",
       "sub": "Ambroise Rateau\nPunchline Cinema",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9026/2f24340d-798b-11ef-bfce-022353abf6f5.mp4",
@@ -337,11 +350,18 @@
       "featuredOrder": 7
     },
     {
-      "title": "Angele et mes Démons | Stills | Coming Soon",
-      "sub": "Lucas Beccaro\nOctopolis",
-      "img": "https://images.slatecdn.net/ju_UqrJwCvVOE51NEmCJCVoy8qwelBQTudAPyy63tqY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MDQ0MzM0YS0zYjM3/LTQzZTYtODhhNy00/YWRlMzI3NWE4OTgv/c3RpbGxzLXNsYXRl/LnBuZw?v=1&format=webp",
+      "title": "La philosophie de la bernique - Stills",
+      "sub": "Zoe Chadeau\nLes Créations Androgyne",
+      "img": "https://images.slatecdn.net/gH7ELrCYljAXe14Bp8sCuFME1hPuITw3qDhA4rjMnWw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzdjMDQ0/NmEtYjczMS00OWRk/LTljOWItNjVkOTNh/NjgzYzQ4L2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDEtMTct/YS1jYy04MC0xNS4x/OC4zNS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 9857
+      "slate": 11433
+    },
+    {
+      "title": "Roche Amère | Stills",
+      "sub": "Alexandre Anatole-Touzet",
+      "img": "https://images.slatecdn.net/tahHlSn3SqIxzc5RFWXafckRgeIRBIWP5RlzLZAcsMY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWYzOTQx/NzAtNGRjZS00NWFk/LWExMjEtZjZhMDRk/NDhkM2RlL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDUtMDct/YS1jYy04MC0xOC4w/MC4xNC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11434
     },
     {
       "title": "HOME EXTRAIT (short film)",
