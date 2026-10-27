@@ -410,7 +410,10 @@
       "genre": "FEATURE FILM",
       "status": "soon",
       "date": "2026-12-30",
-      "title": "Les Filles d'Abraham"
+      "title": "Les Filles d'Abraham",
+      "thumbCrop": {
+        "y": 82.7
+      }
     },
     "11195": {
       "zoom": 1.2,
@@ -446,7 +449,15 @@
       "zoomPos": "37% 50%",
       "genre": "SERIES",
       "status": "soon",
-      "date": "2026-12-25"
+      "date": "2026-12-25",
+      "thumbCrop": {
+        "y": 29.5
+      },
+      "snipCrop": {
+        "z": 1.32,
+        "x": 49.3,
+        "y": 55.5
+      }
     },
     "11226": {
       "genre": "SERIES",
@@ -482,7 +493,14 @@
       "zoom": 1.38,
       "status": "soon",
       "date": "2026-11-11",
-      "title": "Ce qui nous mène à toi"
+      "title": "Ce qui nous mène à toi",
+      "thumbCrop": {
+        "y": 71
+      },
+      "snipCrop": {
+        "z": 1.06,
+        "y": 45.8
+      }
     },
     "11347": {
       "genre": "FEATURE FILM",
