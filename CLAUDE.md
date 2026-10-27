@@ -64,7 +64,13 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi
   (lien vers le commit). Sur une fiche / l'accueil / le contact : ce fichier seulement, bouton « Tout voir ».
-- Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight, fiction (à venir), press (à venir), contact.
+- Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight, fiction, press (à venir), contact.
+- Fiction (lien « fiction » du menu, `data/fiction.json`) : comme le spotlight (lien d'une bande Slate + « Relire la bande », lue en
+  entier par le robot ; mêmes réglages par film via `filmsSection` / `filmCard`, `state` = fic), plus sous le titre de chaque film
+  (`ficCtl`) : statut New release / Coming soon / Past release (`status`, défaut past), genre si Past release (`genre`), date de
+  sortie (`date`), affiche (compressée en WebP → `data/fiction/<id>-<horodatage>.webp` à la publication, `poster`). Onglets de
+  l'admin = statut. Publication : relit le fichier en ligne, n'écrit que `reel` et `overrides` (+ affiches), garde les `films`.
+  Format et affichage : CLAUDE.md du site (« Fiction »).
 - Home page : lien d'une bande Slate → `GET <SITE>/api/reel?link=…` (10 premiers films) → `data/home.json`
   (`reel`, `slides` avec `dps: [{ name, slug }]` reliés par le nom, `src` = valeurs Slate, `overrides` par id Slate).
   « Rafraîchir » relit la bande en gardant les corrections.
@@ -114,7 +120,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 
 ## Robot GitHub (branche main)
 - `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json`, de
-  `data/spotlight.json` (lecture de toute la bande du spotlight) ou d'une fiche (`data/dps/*.json`), ajoute le film complet (`full`) qui manque : slides de l'accueil (lu sur la bande Slate, `reel`)
+  `data/spotlight.json` ou `data/fiction.json` (lecture de toute la bande du spotlight / de la fiction) ou d'une fiche (`data/dps/*.json`), ajoute le film complet (`full`) qui manque : slides de l'accueil (lu sur la bande Slate, `reel`)
   et vidéos ajoutées sous un film (`extras`, lu sur leur page Slate `link`) ; images des projets en images seulement
   (`overrides[<id>].images` + leurs proportions `ratios`, lues sur le bundle de la fiche publiée — taille lue dans les 64 premiers
   Ko de chaque image —, ou de toutes les fiches au lancement manuel). Gratuit (Actions, dépôt public),

@@ -758,7 +758,7 @@
       hide.textContent = o.hidden ? "Afficher" : "Masquer";
       reset.hidden = !(o.title !== undefined || o.sub !== undefined);
       chips.textContent = "";
-      if (state === spot) { if (c.artists && c.artists.length) chips.appendChild(el("span", { class: "chip", text: c.artists.join(" & ") })); } // spotlight : chef op crédité
+      if (state === spot || state === fic) { if (c.artists && c.artists.length) chips.appendChild(el("span", { class: "chip", text: c.artists.join(" & ") })); } // spotlight, fiction : chef op crédité
       else if (c.featured) chips.appendChild(el("span", { class: "chip", text: "Featured " + c.featuredOrder }));
       if (!c.full && !c.video) chips.appendChild(el("span", { class: "chip", text: "Sans vidéo" }));
       var xs = extrasOf(o), ns = xs.filter(function (x) { return x.stills; }).length;
@@ -812,8 +812,9 @@
       function () { return (state.overrides[c.slate] || {}).zoomPos; }, function (p) { setOverride(c, "zoomPos", p); sync(); },
       function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
     card.appendChild(thumb); card.appendChild(zoom);
-    if (state !== spot && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
+    if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(title); card.appendChild(sub);
+    if (state === fic) card.appendChild(ficCtl(c));
     card.appendChild(el("div", { class: "acts" }, [hide, reset]));
     if (hoverBox) card.appendChild(hoverBox);
     card.appendChild(extras);
@@ -1391,6 +1392,123 @@
       .then(function (r) { publishBtn.disabled = false; return r; }, function (e) { publishBtn.disabled = false; throw e; });
   }
 
+  // ---------- Fiction (data/fiction.json) ----------
+  // Comme le spotlight (bande Slate lue en entier par le robot GitHub : `films`), mais les onglets se règlent à la main, film par
+  // film (overrides[id]) : status new | soon | past (défaut past), genre (films sortis), date (AAAA-MM-JJ, carré blanc au survol
+  // dans NEW RELEASES et COMING SOON), poster (affiche déposée ici → data/fiction/<id>-<horodatage>.webp).
+  var fic = null, FIC_STATUS = [["new", "New release"], ["soon", "Coming soon"], ["past", "Past release"]];
+  var FIC_GENRES = ["FEATURE FILM", "SERIES", "DOCUMENTARY", "SHORT FILM"];
+  function showFic() {
+    bar.hidden = true; editing = false; view.textContent = "";
+    view.appendChild(el("p", { class: "status", text: "Chargement…" }));
+    readFile("data/fiction.json").then(function (s) {
+      fic = s || { reel: "", overrides: {}, films: [] }; fic.overrides = fic.overrides || {};
+      pending = {}; dirty = false; histReset(); curCat = null; renderFic();
+    }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
+  }
+  var FIC_TABS = { new: "NEW RELEASES", soon: "COMING SOON", past: "PAST RELEASES" };
+  function ficSlate() {
+    var clips = (fic.films || []).map(function (f, i) {
+      var st = (fic.overrides[f.slate] || {}).status || "past";
+      return Object.assign({}, f, { cat: FIC_TABS[st], featuredOrder: i + 1 });
+    });
+    return { name: "Fiction", categories: ["NEW RELEASES", "COMING SOON", "PAST RELEASES"], clips: clips };
+  }
+  // Réglages propres à la fiction, sous le titre d'un film : statut, genre, date de sortie, affiche.
+  function ficCtl(c) {
+    function o() { return fic.overrides[c.slate] || {}; }
+    var stSel = el("select", { class: "nodirty" }), genre = el("select", { class: "nodirty" });
+    FIC_STATUS.forEach(function (x) { var op = el("option", { value: x[0], text: x[1] }); if ((o().status || "past") === x[0]) op.selected = true; stSel.appendChild(op); });
+    [["", "Genre…"]].concat(FIC_GENRES.map(function (g) { return [g, g.charAt(0) + g.slice(1).toLowerCase()]; })).forEach(function (x) {
+      var op = el("option", { value: x[0], text: x[1] }); if ((o().genre || "") === x[0]) op.selected = true; genre.appendChild(op);
+    });
+    var date = el("input", { type: "date", class: "nodirty", value: o().date || "" });
+    function upd() { genre.hidden = stSel.value !== "past"; }
+    stSel.addEventListener("change", function () { setOverride(c, "status", stSel.value === "past" ? undefined : stSel.value); upd(); touch(); });
+    genre.addEventListener("change", function () { setOverride(c, "genre", genre.value || undefined); touch(); });
+    date.addEventListener("change", function () { setOverride(c, "date", date.value || undefined); touch(); });
+    upd();
+    function posterDrop() {
+      var p = (pending.posters || {})[c.slate], cur = o().poster;
+      var z = dropZone("image/*", "Affiche (glissez ou cliquez)", function (f) {
+        status("Compression de l'affiche…");
+        compress(f).then(function (r) { pending.posters = pending.posters || {}; pending.posters[c.slate] = r; z.replaceWith(posterDrop()); touch(); status(""); }, function (e) { status(e.message, "err"); });
+      }, function () { if (pending.posters) delete pending.posters[c.slate]; setOverride(c, "poster"); z.replaceWith(posterDrop()); touch(); },
+        p ? "Nouvelle affiche" : cur ? "Affiche" : "", p ? p.preview : null);
+      z.classList.add("poster");
+      if (!p && cur) fetch("https://api.github.com/repos/" + REPO + "/contents/data/" + cur + "?ref=" + BRANCH, { headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github.raw+json" } })
+        .then(function (r) { return r.ok ? r.blob() : null; })
+        .then(function (b) { if (b) z.style.backgroundImage = 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url("' + URL.createObjectURL(b) + '")'; });
+      return z;
+    }
+    return el("div", { class: "ficctl" }, [el("div", { class: "ficrow" }, [stSel, genre, date]), posterDrop()]);
+  }
+  function renderFic() {
+    view.textContent = ""; editing = true; pagePublish = publishFic;
+    state = fic; slate = ficSlate(); isNew = false; listed = true; // filmCard et setOverride travaillent sur state.overrides
+    histInit({ get: function () { return { data: fic, refs: Object.assign({}, pending) }; }, set: function (h) { fic = JSON.parse(h.data); pending = Object.assign({}, h.refs); renderFic(); } });
+    view.appendChild(el("h1", { text: "Fiction" }));
+    view.appendChild(el("p", { class: "lead", text: "Une bande Slate des films de fiction. Pour chaque film : son onglet (New release, Coming soon, Past release + genre), sa date de sortie (affichée au survol dans New releases et Coming soon), son affiche et ses stills." }));
+    var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (shots.re/… ou kinou.slateapp.com/…)", value: fic.reel || "" });
+    var st = el("p", { class: "hint" });
+    st.textContent = fic.readError ? "Dernière lecture impossible : " + fic.readError
+      : fic.readAt ? (fic.films || []).length + " films, lus sur Slate le " + new Date(fic.readAt).toLocaleString("fr-FR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + "."
+      : "Collez le lien de la bande puis cliquez sur « Relire la bande ».";
+    var imp = el("button", { class: "btn", text: "Relire la bande" });
+    imp.addEventListener("click", function () {
+      var v = shortLink(input.value);
+      if (!v) { st.textContent = "Collez le lien de la bande."; return; }
+      fic.reel = v; imp.disabled = true;
+      var before = fic.readAt || "";
+      st.textContent = "Publication du lien…";
+      publishFic(true).then(function () {
+        st.textContent = "Le robot GitHub lit toute la bande sur Slate (environ 1 minute)…";
+        var t0 = Date.now();
+        (function poll() {
+          readFile("data/fiction.json").then(function (s) {
+            if (s && s.readAt && s.readAt !== before) {
+              if (dirty) { st.textContent = "Bande relue : publiez vos changements puis rechargez la page pour la voir."; imp.disabled = false; return; }
+              fic = s; fic.overrides = fic.overrides || {}; histReset(); renderFic();
+              status(s.readError ? "Lecture impossible : " + s.readError : (s.films || []).length + " films lus sur la bande.", s.readError ? "err" : "ok");
+              return;
+            }
+            if (Date.now() - t0 > 240000) { st.textContent = "Le robot n'a pas encore fini : rechargez la page dans quelques minutes."; imp.disabled = false; return; }
+            setTimeout(poll, 10000);
+          }).catch(function () { setTimeout(poll, 10000); });
+        })();
+      }, function (e) { st.textContent = e.message; imp.disabled = false; });
+    });
+    view.appendChild(el("section", {}, [el("h2", { text: "Bande Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), imp]), st]));
+    view.appendChild((fic.films || []).length ? filmsSection() : el("section", {}, [el("h2", { text: "Films" }), el("p", { class: "empty", text: "Pas encore de films : relisez la bande." })]));
+    bar.hidden = false;
+    seeLink.href = SITE_PAGES + "/#fiction"; seeLink.hidden = false;
+    if (flash) status(flash, "ok"); else if (dirty) touch(); else status("");
+    flash = "";
+  }
+  // Publication : fichier en ligne relu (films du robot gardés) ; on n'y écrit que le lien et les réglages, + les affiches déposées.
+  function publishFic(justLink) {
+    publishBtn.disabled = true; status("Publication…");
+    var files = [], stamp = Date.now().toString(36);
+    for (var id in pending.posters || {}) {
+      var path = "fiction/" + id + "-" + stamp + ".webp";
+      files.push({ path: "data/" + path, base64: pending.posters[id].base64 });
+      fic.overrides[id] = Object.assign({}, fic.overrides[id], { poster: path });
+    }
+    return readFile("data/fiction.json").then(function (remote) {
+      var out = remote || {};
+      out.reel = fic.reel; out.overrides = fic.overrides;
+      if (justLink === true) out.readAsk = new Date().toISOString(); // fichier changé même avec le même lien → le robot relit la bande
+      files.push({ path: "data/fiction.json", text: json(out) });
+      return commit(files, "Mise à jour de la page fiction (admin, " + user.login + ")").then(function () { return out; });
+    }).then(function (out) {
+      out.overrides = fic.overrides; fic = out; pending = {}; dirty = false; histReset();
+      refreshSite("fiction").catch(function () {});
+      if (justLink !== true) { flash = "Publié. Le robot relit la bande sur Slate (environ 1 minute)."; renderFic(); }
+      else status("Lien publié.", "ok");
+    }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); throw e; })
+      .then(function (r) { publishBtn.disabled = false; return r; }, function (e) { publishBtn.disabled = false; throw e; });
+  }
+
   // ---------- Contact : data/contact.json (page contact du site) + data/site.json (logo du site) ----------
   var conf = null, ctc = null;
   function showContact() {
@@ -1526,6 +1644,7 @@
     if (h === "#/home") return "data/home.json";
     if (h === "#/contact") return "data/contact.json";
     if (h === "#/spotlight") return "data/spotlight.json";
+    if (h === "#/fiction") return "data/fiction.json";
     return null;
   }
   function histWho(c) {
@@ -1582,7 +1701,7 @@
     if (page === "home") return showHome();
     if (page === "contact") return showContact();
     if (page === "spotlight") return showSpot();
-    if (page === "fiction") return showSoon("Fiction");
+    if (page === "fiction") return showFic();
     if (page === "press") return showSoon("Press");
     showList();
   }

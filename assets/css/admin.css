@@ -308,3 +308,9 @@ body.vedit-on { overflow: hidden; }
 .r2head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
 .bround2 .pbar { height: 16px; gap: 2px; }
 .bxp { padding: 0 12px; }
+/* Fiction : statut, genre, date et affiche sous le titre d'un film */
+.ficctl { display: grid; grid-template-columns: 1fr 74px; gap: 10px; align-items: start; margin: 8px 0 4px; }
+.ficrow { display: flex; flex-wrap: wrap; gap: 8px; }
+.ficrow select, .ficrow input[type=date] { padding: 6px 8px; border: 1px solid var(--faint); border-radius: 0; background: #000; color: var(--kinou-fg); font-family: var(--kinou-sans); font-size: 12px; color-scheme: dark; }
+.ficrow select[hidden] { display: none; }
+.drop.poster { min-height: 0; aspect-ratio: 2 / 3; padding: 6px; background-size: cover; background-position: center; font-size: 10px; text-align: center; }
