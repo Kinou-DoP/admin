@@ -76,8 +76,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   Publication : relit le fichier en ligne et n'écrit que `reel`, `categories`, `overrides` (garde les `films` du robot).
   Étiquette de la vignette : chef op crédité. Format et affichage : CLAUDE.md du site (« Spotlight »).
 - Contact : page contact du site → `data/contact.json` : `team` (une ligne par personne : rôle, prénom, e-mail, téléphone ;
-  ↑ ↓ ×, « + Ajouter une personne »), `address` (lignes), `newsletter` (lien), `social` (instagram, vimeo, imdb, facebook ;
-  vide = pas affiché), `legal` (mentions légales, paragraphes séparés par une ligne vide ; vide = pas de lien). Publiée avec
+  ↑ ↓ ×, « + Ajouter une personne »), `address` (lignes), `newsletter` (lien) + `newsletterLabel` (texte du bouton), `social` (instagram, vimeo, imdb, facebook ;
+  vide = pas affiché), `legal` (mentions légales, paragraphes séparés par une ligne vide, ligne seule courte = titre ; vide = pas de lien ;
+  hébergeur à mettre à jour au retour sur Netlify). Publiée avec
   `data/site.json` en un seul commit (« Mise à jour du contact »). Historique de la page : `data/contact.json`.
 - Contact, aussi : logo du site (PNG/WebP blanc sur transparent) → `data/brand/logo-<horodatage>.png` + `data/site.json`
   (`logo`, `logoHeight`). Sans logo : texte « kinou ».

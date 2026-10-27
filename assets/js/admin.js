@@ -1338,6 +1338,8 @@
     addr.addEventListener("input", function () { ctc.address = addr.value.split("\n").map(function (l) { return l.trim(); }).filter(Boolean); });
     var news = el("input", { type: "url", placeholder: "http://eepurl.com/…", value: ctc.newsletter || "" });
     news.addEventListener("input", function () { ctc.newsletter = news.value.trim(); });
+    var newsL = el("input", { type: "text", placeholder: "Subscribe to the newsletter", value: ctc.newsletterLabel || "" });
+    newsL.addEventListener("input", function () { ctc.newsletterLabel = newsL.value.trim(); });
     var soc = el("div", { class: "cols" });
     [["instagram", "Instagram"], ["vimeo", "Vimeo"], ["imdb", "IMDb"], ["facebook", "Facebook"]].forEach(function (x) {
       var i = el("input", { type: "url", placeholder: "https://…", value: ctc.social[x[0]] || "" });
@@ -1347,13 +1349,14 @@
     view.appendChild(el("section", {}, [el("h2", { text: "Adresse et liens" }),
       el("div", { class: "cols" }, [
         el("div", { class: "field" }, [el("label", { class: "label", text: "Adresse (cliquable sur le site : ouvre le plan)" }), addr]),
-        el("div", { class: "field" }, [el("label", { class: "label", text: "Lien d'inscription à la newsletter" }), news])]),
+        el("div", { class: "field" }, [el("label", { class: "label", text: "Lien d'inscription à la newsletter" }), news,
+          el("label", { class: "label", text: "Texte du bouton (entre crochets sur le site)" }), newsL])]),
       el("label", { class: "label", text: "Réseaux (un lien vide n'est pas affiché)" }), soc]));
     // Mentions légales
     var legal = el("textarea", { rows: "8", placeholder: "Texte des mentions légales (une ligne vide entre deux paragraphes)" }); legal.value = ctc.legal || "";
     legal.addEventListener("input", function () { ctc.legal = legal.value; });
     view.appendChild(el("section", {}, [el("h2", { text: "Mentions légales" }), legal,
-      el("p", { class: "hint", text: "Obligatoires pour un site professionnel : nom de la société, forme juridique et capital, adresse du siège, numéro RCS (ou SIRET), numéro de TVA intracommunautaire, directeur de la publication, contact, et l'hébergeur du site (nom, adresse, téléphone). Vide = pas de lien « Mentions légales » sur le site." })]));
+      el("p", { class: "hint", text: "Obligatoires pour un site professionnel : nom de la société, forme juridique et capital, adresse du siège, numéro RCS (ou SIRET), numéro de TVA intracommunautaire, directeur de la publication, contact, et l'hébergeur du site (nom, adresse, téléphone). Une ligne seule et courte (« Éditeur », « Cookies »…) devient un titre. Vide = pas de lien « Mentions légales » sur le site." })]));
     var size = el("input", { type: "text", inputmode: "numeric", value: String(conf.logoHeight || 36) });
     size.addEventListener("input", function () { var v = parseInt(size.value, 10); if (v > 0) conf.logoHeight = v; drawPreview(); });
     var preview = el("div", { class: "logoprev" });
