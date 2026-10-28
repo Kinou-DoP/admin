@@ -138,6 +138,10 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   Ko de chaque image —, ou de toutes les fiches au lancement manuel). Gratuit (Actions, dépôt public),
   aucune mise en ligne Netlify (`.github/` et `tools/` exclus de la règle `ignore`). Lancement manuel possible :
   onglet Actions → « Films complets (accueil et vidéos sous un film) » → Run workflow.
+- Le robot ne peut pas vider le cache du site (`/api/refresh` refuse son jeton : « token GitHub refusé » dans son journal).
+  Donc l'admin, après une publication qui a des vidéos sans film complet (« Vidéo · à publier », ex. vidéo Slate sans extrait),
+  attend le commit du robot (`afterRobot`, 2 min au plus), vide le cache avec la clé de la personne connectée et reprend
+  les films complets dans la page ouverte (`fullsFrom`) : fiches, accueil, spotlight, fiction (Gus 29/10).
 - Si le robot échoue à enregistrer : Settings → Actions → General → Workflow permissions → « Read and write ».
 
 ## Crédits Netlify

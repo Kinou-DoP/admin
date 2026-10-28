@@ -103,6 +103,39 @@
   }
   function json(o) { return JSON.stringify(o, null, 2) + "\n"; }
 
+  // Robot GitHub : juste après une publication, il ajoute le film complet des vidéos ajoutées sous un film qui n'en ont pas
+  // (« Vidéo · à publier », souvent des vidéos sans extrait sur Slate). Mais il ne peut pas vider le cache du site (son jeton
+  // est refusé par /api/refresh) : le site gardait jusqu'à 5 min la version sans film, donc sans la vidéo. On attend son commit
+  // (2 min au plus), puis on vide le cache avec la clé de la personne connectée et on reprend ses films complets dans la page.
+  function needsRobot(lists) {
+    return lists.some(function (l) { return (l || []).some(function (x) { return x && !x.stills && !x.full && x.link; }); });
+  }
+  function extrasLists(overrides, slides) {
+    var l = Object.keys(overrides || {}).map(function (k) { return overrides[k].extras; });
+    (slides || []).forEach(function (sl) { l.push(sl.extras); });
+    return l;
+  }
+  // Films complets du fichier relu (src) recopiés dans la page ouverte (dst), vidéo par vidéo (même lien).
+  function fullsFrom(dst, src) {
+    var got = {};
+    extrasLists(src.overrides, src.slides).forEach(function (l) { (l || []).forEach(function (x) { if (x.full && x.link) got[x.link] = x.full; }); });
+    extrasLists(dst.overrides, dst.slides).forEach(function (l) { (l || []).forEach(function (x) { if (!x.full && !x.stills && got[x.link]) x.full = got[x.link]; }); });
+  }
+  function afterRobot(path, ref, slug, done) {
+    var sha = ref && ref.object && ref.object.sha, t0 = Date.now();
+    if (!sha) return;
+    (function poll() {
+      if (Date.now() - t0 > 150000) return;
+      setTimeout(function () {
+        gh("/repos/" + REPO + "/commits?path=" + path + "&sha=" + BRANCH + "&per_page=1").then(function (l) {
+          var c = l && l[0];
+          if (!c || c.sha === sha || !/kinou-robot|github-actions/.test(c.commit.author.name || "")) return poll();
+          return refreshSite(slug).catch(function () {}).then(function () { return readFile(path); }).then(function (d) { if (d) done(d); });
+        }).catch(poll);
+      }, 8000);
+    })();
+  }
+
   // ---------- API du site (Slate) ----------
   function importBundle(link) {
     var id = bundleId(link);
@@ -1099,11 +1132,16 @@
       dps.splice(at < 0 ? dps.length : at, 0, { slug: s.slug, name: out.name });
     }
     if (JSON.stringify(dps) !== JSON.stringify(index.dps)) files.push({ path: "data/dps/index.json", text: json({ dps: dps }) });
-    commit(files, (isNew ? "Ajout " : "Mise à jour ") + out.name.split(",")[0] + " (admin, " + user.login + ")").then(function () {
+    commit(files, (isNew ? "Ajout " : "Mise à jour ") + out.name.split(",")[0] + " (admin, " + user.login + ")").then(function (ref) {
       var wasNew = isNew;
+      if (needsRobot(extrasLists(out.overrides))) afterRobot("data/dps/" + out.slug + ".json", ref, out.slug, function (d) {
+        if (state !== out) return;
+        fullsFrom(out, d); if (!dirty) render();
+        status("Le robot a ajouté les films complets : le site est à jour.", "ok");
+      });
       index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false; origSlug = out.slug; histReset();
       if (homeData && home) home = null; // l'accueil sera relu (liens mis à jour)
-      flash = from ? "Publié à la nouvelle adresse kinou.fr/" + out.slug + "." : "Publié. Le site sera à jour dans une minute environ.";
+      flash = from ? "Publié à la nouvelle adresse kinou.fr/" + out.slug + "." : needsRobot(extrasLists(out.overrides)) ? "Publié. Le robot ajoute les films complets des vidéos (environ 1 minute)…" : "Publié. Le site sera à jour dans une minute environ.";
       if (wasNew || from) location.hash = "#/dp/" + out.slug; else render();
       refreshSite(out.slug).catch(function () {}); // vide le cache du site (fiche et clips) : visible tout de suite
       warmThumbs(out.clips);
@@ -1394,8 +1432,13 @@
     if (home.reel) out.reel = home.reel;
     out.overrides = home.overrides;
     out.slides = home.slides;
-    commit([{ path: "data/home.json", text: json(out) }], "Mise à jour de l'accueil (admin, " + user.login + ")").then(function () {
+    commit([{ path: "data/home.json", text: json(out) }], "Mise à jour de l'accueil (admin, " + user.login + ")").then(function (ref) {
       home = out; dirty = false; histReset(); flash = "Publié. L'accueil est à jour sur le site.";
+      if (needsRobot(extrasLists(out.overrides, out.slides))) afterRobot("data/home.json", ref, "home", function (d) {
+        if (home !== out) return;
+        fullsFrom(out, d); if (!dirty && pagePublish === publishHome) renderHome();
+        status("Le robot a ajouté les films complets : le site est à jour.", "ok");
+      });
       renderHome();
       refreshSite("home").catch(function () {}); // vide le cache des données du site
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
@@ -1495,9 +1538,15 @@
       // « Relire la bande » avec le même lien : sans ce changement le fichier serait identique, le commit vide
       // et le robot GitHub (lancé seulement quand data/spotlight.json change) ne relirait pas la bande.
       if (justLink === true) out.readAsk = new Date().toISOString();
-      return commit([{ path: "data/spotlight.json", text: json(out) }], "Mise à jour du Spotlight (admin, " + user.login + ")").then(function () { return out; });
+      return commit([{ path: "data/spotlight.json", text: json(out) }], "Mise à jour du Spotlight (admin, " + user.login + ")").then(function (ref) { out._ref = ref; return out; });
     }).then(function (out) {
+      var ref = out._ref; delete out._ref;
       out.overrides = spot.overrides; spot = out; dirty = false; histReset();
+      if (justLink !== true && needsRobot(extrasLists(out.overrides))) afterRobot("data/spotlight.json", ref, "spotlight", function (d) {
+        if (spot !== out) return;
+        fullsFrom(out, d); if (!dirty && pagePublish === publishSpot) renderSpot();
+        status("Le robot a ajouté les films complets : le site est à jour.", "ok");
+      });
       refreshSite("spotlight").catch(function () {});
       if (justLink !== true) { flash = "Publié. Le robot relit la bande sur Slate (environ 1 minute)."; renderSpot(); }
       else status("Lien publié.", "ok");
@@ -1629,9 +1678,15 @@
       out.reel = fic.reel; out.overrides = fic.overrides;
       if (justLink === true) out.readAsk = new Date().toISOString(); // fichier changé même avec le même lien → le robot relit la bande
       files.push({ path: "data/fiction.json", text: json(out) });
-      return commit(files, "Mise à jour de la page fiction (admin, " + user.login + ")").then(function () { return out; });
+      return commit(files, "Mise à jour de la page fiction (admin, " + user.login + ")").then(function (ref) { out._ref = ref; return out; });
     }).then(function (out) {
+      var ref = out._ref; delete out._ref;
       out.overrides = fic.overrides; fic = out; pending = {}; dirty = false; histReset();
+      if (justLink !== true && needsRobot(extrasLists(out.overrides))) afterRobot("data/fiction.json", ref, "fiction", function (d) {
+        if (fic !== out) return;
+        fullsFrom(out, d); if (!dirty && pagePublish === publishFic) renderFic();
+        status("Le robot a ajouté les films complets : le site est à jour.", "ok");
+      });
       refreshSite("fiction").catch(function () {});
       if (justLink !== true) { flash = "Publié. Le robot relit la bande sur Slate (environ 1 minute)."; renderFic(); }
       else status("Lien publié.", "ok");
