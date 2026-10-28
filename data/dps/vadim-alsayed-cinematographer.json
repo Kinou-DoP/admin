@@ -5,33 +5,123 @@
   "bundle": "https://kinou.slateapp.com/bundles/92cf2e29-d2db-11f1-a349-0215583debcb",
   "open": 10391,
   "overrides": {
+    "4997": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4999": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5002": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5003": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5004": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5025": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5026": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5027": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "6123": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "6227": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "6229": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6437": {
+      "types": [
+        "Commercial",
+        "Fashion",
+        "Poesy"
+      ]
+    },
+    "6661": {
+      "types": [
+        "Short  Film Trailer"
+      ]
+    },
+    "7330": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "7445": {
       "extras": [
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-conseil-discipline",
           "title": "Juniors - extrait - conseil discipline",
-          "img": "https://images.slatecdn.net/edrp3Yz2OSvH1-vljc5NBz2kNyQP8mklxHbjGVjtWVg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI5LTY0OTJmYTkx/YzhiNTE2LjIxMjQw/ODkzLTAwZDIxNTU0/NzEyNjUxYWQ1ZjRk/NzVkMzg0NzMyZjEz/LmpwZw?v=1&format=webp"
+          "img": "https://images.slatecdn.net/edrp3Yz2OSvH1-vljc5NBz2kNyQP8mklxHbjGVjtWVg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI5LTY0OTJmYTkx/YzhiNTE2LjIxMjQw/ODkzLTAwZDIxNTU0/NzEyNjUxYWQ1ZjRk/NzVkMzg0NzMyZjEz/LmpwZw?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7c2e962f-d5a8-465e-b4fe-08d8a31f3a92-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-fete",
           "title": "Juniors - extrait - fête",
-          "img": "https://images.slatecdn.net/u7L9TrPGpysaJHkAQyjZSJ3h0hgXYRZ-GgZEkg0eE8I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI4LTY0OTJmYTkx/ZGE4NzkwLjY4MDIy/MDM5LWIyNzViMWMz/ZjBhYTY3Y2ViM2Fk/YzhjM2VhZDc2YjBh/LmpwZw?v=1&format=webp"
+          "img": "https://images.slatecdn.net/u7L9TrPGpysaJHkAQyjZSJ3h0hgXYRZ-GgZEkg0eE8I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI4LTY0OTJmYTkx/ZGE4NzkwLjY4MDIy/MDM5LWIyNzViMWMz/ZjBhYTY3Y2ViM2Fk/YzhjM2VhZDc2YjBh/LmpwZw?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/83d6e0a6-b895-4fdb-b564-e67b6b6f15c7-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-chanson",
           "title": "Juniors - extrait - chanson",
-          "img": "https://images.slatecdn.net/njOKDm7_RQocBK4HXqG8yXZ0zy_eQVd5KTfxOgN0nQ8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI3LTY0OTJmYTkx/ZTYyM2Y5LjAyMjEx/MTM1LWUzYmE2ZTY1/OWE0ZGI4ODVlNDQ5/ZThkNjlhZGZhYjEz/LmpwZw?v=1&format=webp"
+          "img": "https://images.slatecdn.net/njOKDm7_RQocBK4HXqG8yXZ0zy_eQVd5KTfxOgN0nQ8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI3LTY0OTJmYTkx/ZTYyM2Y5LjAyMjEx/MTM1LWUzYmE2ZTY1/OWE0ZGI4ODVlNDQ5/ZThkNjlhZGZhYjEz/LmpwZw?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3fcb48d6-30a0-449a-92c7-8d84fd2c0288-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-mensonge",
           "title": "Juniors - extrait - mensonge",
-          "img": "https://images.slatecdn.net/xzydmaVru_iUYMCsSO71mk3DD_pySA8rbnO8hpEqvs4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI2LTY0OTJmYTkx/ZTVhZDg4LjI5MTU0/MjQwLTJhZDg0NWFj/Y2ZmMjYyYTk4ZGZh/YmUwN2RhY2Q5ZmMz/LmpwZw?v=1&format=webp"
+          "img": "https://images.slatecdn.net/xzydmaVru_iUYMCsSO71mk3DD_pySA8rbnO8hpEqvs4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI2LTY0OTJmYTkx/ZTVhZDg4LjI5MTU0/MjQwLTJhZDg0NWFj/Y2ZmMjYyYTk4ZGZh/YmUwN2RhY2Q5ZmMz/LmpwZw?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dbb2ad27-bca2-4894-a32d-b52a80688186-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-pattator",
           "title": "Juniors - extrait - pattator",
-          "img": "https://images.slatecdn.net/RTuLqDRViH0NgScv9nt0lKWZp7wK1lyslAMsQUrdXDg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI1LTY0OTJmYTkx/Y2QzMzQ0LjQyOTQ5/NDIyLTAzYTJmYzM1/M2FjMTgwMjYwNjhl/N2JlOTU1ZjU0Yzg4/LmpwZw?v=1&format=webp"
+          "img": "https://images.slatecdn.net/RTuLqDRViH0NgScv9nt0lKWZp7wK1lyslAMsQUrdXDg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI1LTY0OTJmYTkx/Y2QzMzQ0LjQyOTQ5/NDIyLTAzYTJmYzM1/M2FjMTgwMjYwNjhl/N2JlOTU1ZjU0Yzg4/LmpwZw?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e9f6ac3b-617d-46bc-b395-c8d535407996-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "7859": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "7970": {
+      "types": [
+        "Music Video"
       ]
     },
     "8056": {
@@ -63,8 +153,32 @@
         {
           "link": "https://kinou.slateapp.com/work/aicha-extrait-1",
           "title": "Aïcha - extrait 1",
-          "img": "https://images.slatecdn.net/NxGPcp6Z3B6IZfoiCj6fVV-i4SMoARgitfG-FRdLKbk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MTg0YTEzOS1kMzlm/LTRjOTctYTMyZC1h/OWJmNGU2ZmQ2NDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjItYS0xNS40Mi41/OC5wbmc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/NxGPcp6Z3B6IZfoiCj6fVV-i4SMoARgitfG-FRdLKbk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MTg0YTEzOS1kMzlm/LTRjOTctYTMyZC1h/OWJmNGU2ZmQ2NDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjItYS0xNS40Mi41/OC5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/89078920-6c0f-43ec-a5ff-88e74a64f083-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Short Film"
+      ]
+    },
+    "8432": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8708": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "8956": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9102": {
+      "types": [
+        "Commercial"
       ]
     },
     "9442": {
@@ -90,6 +204,9 @@
             "https://images.slatecdn.net/Q4PmvZ6m32MKXYBuvBlN7_GZ7YmvPxWsMy3UU4_hOSI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NmZlNTE1Yy1hNzQ5/LTQ1YjAtODQ5MS03/Y2NhZWM1YWQ1ODAv/ZjM1NjAyZDktNWY0/OS00MGFiLTlmYmEt/M2FlZGQ4M2U5Y2Ez/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTQ2Mi0xMDgwLWRl/dGFpbC5qcGc.webp"
           ]
         }
+      ],
+      "types": [
+        "Short Film"
       ]
     },
     "9475": {
@@ -163,6 +280,35 @@
             "https://images.slatecdn.net/yz_OR-5-3ItKwVqVTOZS1Dq0RUlL9Sfeh6cT7B40Ei4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZmMyNzUzYy1kZmVj/LTQ1MGUtYmExZC0y/YTFmYjA3OTA4ZDIv/aW1hZ2UwMDA2My5w/bmc.webp"
           ]
         }
+      ],
+      "types": [
+        "Documentary",
+        "Documentaire"
+      ]
+    },
+    "9527": {
+      "types": [
+        "Clip"
+      ]
+    },
+    "9580": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9581": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10274": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10275": {
+      "types": [
+        "Music Video"
       ]
     },
     "10391": {
@@ -194,6 +340,21 @@
             "https://images.slatecdn.net/ETvlt8XE0HFDeRJHz7sW0nr1-p5rQFo4siQTcYDwt_0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZDVjZjg0NC1mNThh/LTRmYzgtODk4Ni01/Zjg1ODA3ZTE1NjUv/d2hhdHNhcHAtaW1h/Z2UtMjAyNi0wMS0y/Ni1hdC0xMS4wNy4x/NS5qcGVn.webp"
           ]
         }
+      ],
+      "types": [
+        "Documentary",
+        "Documentary feature film",
+        "narrative"
+      ]
+    },
+    "10564": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10565": {
+      "types": [
+        "Commercial"
       ]
     }
   },
