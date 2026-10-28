@@ -4,115 +4,23 @@
   "hue": 121,
   "bundle": "https://kinou.slateapp.com/bundles/8ac53d47-d2e6-11f1-a349-0215583debcb",
   "overrides": {
-    "339": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "343": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "1645": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2021": {
-      "types": [
-        "Narrative"
-      ]
-    },
-    "2122": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2771": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2861": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "4173": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "4423": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5060": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5266": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "6434": {
-      "types": [
-        "Feature Film trailer"
-      ]
-    },
     "8227": {
-      "title": "Les Derniers Hommes",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Les Derniers Hommes"
     },
     "8590": {
-      "title": "Sei Fratelli",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Sei Fratelli"
     },
     "8983": {
-      "title": "Le Quatrième Mur",
-      "types": [
-        "Narrative",
-        "Feature Film"
-      ]
+      "title": "Le Quatrième Mur"
     },
     "9982": {
-      "title": "Les Tourmentés",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Les Tourmentés"
     },
     "10299": {
-      "title": "Furcy né libre",
-      "types": [
-        "Feature Film",
-        "Trailer",
-        "narrative",
-        "Feature Film trailer"
-      ]
+      "title": "Furcy né libre"
     },
     "10695": {
-      "title": "Histoires Parallèles",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Histoires Parallèles"
     }
   },
   "about": {
@@ -162,9 +70,9 @@
     {
       "title": "LE QUATRIEME MUR - trailer",
       "sub": "David Oelhoffen\nEliph Productions",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8983/fea2fd73-651d-11ef-bfce-022353abf6f5.mp4",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8983/c734a626-d2f7-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/06d97cc3-d46c-4056-a225-2d67c4b59913-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/AiyI3U80uWCkdJLjHRnYr79pLArbhgtsP1m66euwdsc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OThkOGQyZC03MDFi/LTRmY2QtOWVhOC0x/Zjk1NGQxMGYyNTIv/MTc5MzIwNTU1MDQ0/OS5qcGc?v=1&format=webp",
+      "img": "https://images.slatecdn.net/YmRs10Dl089CdFq0umgL_96H5WfNuX0tSRQYYfqU6Q4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ODg1N2ViOC1iMzc4/LTQwMWItYmE0Ni0y/NGMxMzkwNTYyOTIv/ODg0LWEzZjktZmls/bS5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
       "slate": 8983,
       "featured": true,
