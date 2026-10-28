@@ -27,8 +27,22 @@
       "types": [
         "Court-métrage"
       ],
-      "title": "CET AUTRE HIVER - Margo Brière Bordier",
-      "zoom": 1.14
+      "title": "CET AUTRE HIVER",
+      "zoom": 1.14,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/cet-autre-hiver-margo-briere-bordier-stills",
+          "title": "CET AUTRE HIVER - Margo Brière Bordier | Stills",
+          "stills": [
+            "https://images.slatecdn.net/M3ewAU0IjDlV8zozGYQfHtbYkrDW9i_OvaLNeNA0n58/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTY1MjBj/YmQtZGY5Yy00NzE2/LWEyMGUtNmI4MjA0/NTgzNjBlLzEucG5n.webp",
+            "https://images.slatecdn.net/ov23ilyYtGCfkstl6MC3g2C-rvbwZWQTcqpWzprKNig/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTExNDFj/MzMtM2M4Yy00Njdi/LWIyMjYtZjczNzg3/ZjUwNzllLzIucG5n.webp",
+            "https://images.slatecdn.net/Hq052bsxBgelMMN29bLFnPt57yEhANF7-mhvsKmJEOg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzRjNTc0/ZmYtMTdmZC00Yzg5/LTkxN2YtMzNiMDNl/OWIxZDQ2LzMucG5n.webp",
+            "https://images.slatecdn.net/XF_1mlYunmoAdpdju_towEB8KisDi3RLfXXm1DBmZh0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDk5OTQ4/NjEtZmVjOC00YTgz/LTk2ZWUtNDRhNGEw/N2IwN2Q0LzQucG5n.webp",
+            "https://images.slatecdn.net/BnMaFzieoKkl38AK86kkKZ_iNRybtWXdIyIl7CZ26Fk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYmIzZmRj/ZDAtZjgxNy00ODFm/LTg0OWYtOThmNDE2/M2UzOTc3LzUucG5n.webp",
+            "https://images.slatecdn.net/HlXbo-6vieckIqwewe1k5dOlSq-XVYr7oUshbVXqjzo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTYxYjVk/NDktZWFjMC00Zjlj/LWI3OGUtYmM3MTBk/OGY0ZTI0LzYucG5n.webp"
+          ]
+        }
+      ]
     },
     "5002": {
       "types": [
@@ -47,21 +61,44 @@
       ],
       "zoom": 1.33
     },
-    "5005": {
-      "types": [
-        "Documentaire"
-      ]
-    },
     "5021": {
       "types": [
         "Short  Film Trailer"
       ],
       "title": "Pipo et l'amour aveugle",
-      "zoom": 1.07
+      "zoom": 1.07,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/pipo-et-lamour-aveugle-stills",
+          "title": "Pipo et l'amour aveugle | Stills",
+          "stills": [
+            "https://images.slatecdn.net/PSwpuPo-5o2-UDWxF8j-q5KaU0UjHStHeYAVPaVHWXI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTViZTYw/ZjktYTBiMi00ZGU3/LTkwNjktNzU0OWIw/NWJmYmE0L2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi4z/OS4yOC5wbmc.webp",
+            "https://images.slatecdn.net/z4vpfrOpZw9xAdsksj3qJj8c7udJIFtnNlwP0pCeGlY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWIxOTNi/NGItYTExZi00MjQ3/LWE0NDItMmM2Nzg2/YTVhNmMxL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi4z/OS4zMS5wbmc.webp",
+            "https://images.slatecdn.net/7HY6zyxjvUEGxaE8gdGezhVg3FvgW0GJP-vVvTTwNJc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjFmN2Q0/Y2YtNDBhNy00NDNk/LTgxMDEtNjAyOTY0/NDc3NDNhL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi40/Mi4yNS5wbmc.webp",
+            "https://images.slatecdn.net/aFNuzignQLb-d5PEWLX9DwwuqXAXH5nQeiDTJbZ-0-g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWYzOTEw/MjItZjRiNS00YWJm/LThlYWItNGJkNmU0/YjY5MzkyL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi40/Mi4zMC5wbmc.webp",
+            "https://images.slatecdn.net/E9phrCXynuiQ4prYHMDpofuFTz5BbGvgLjc-YIzj7yU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDNkYzdi/ZWUtZjc5Ny00YTFj/LTkyYjctNzYwYTVh/N2UzNzVkL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi40/Mi4zNS5wbmc.webp",
+            "https://images.slatecdn.net/1EoC4gVW9UdzAmHjSXN1_4a6VxXNHqklu5yNvs1JMeY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjE0NTI3/ZmItYWVjZS00NjI2/LTlhYzAtN2M0YTg5/ZWJhYzZlL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi40/Mi4zOC5wbmc.webp"
+          ]
+        }
+      ]
     },
     "5023": {
       "types": [
         "Short  Film Trailer"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/refuge-stills",
+          "title": "Refuge | Stills",
+          "stills": [
+            "https://images.slatecdn.net/W6YidnTQxbdw8OguheX_q3WV5fAh8RiZxyo9XvVF9R4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmI3ZTE0/MzQtZTAzZC00ZGU4/LTkwZjAtZGNmNDUx/MWMyYTMxL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi41/MC4wMS5wbmc.webp",
+            "https://images.slatecdn.net/RxQY66RYIXvY-FQPsBl4YF52QnZb2yA3hsDIg0VB_R4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWM5ODI4/ZjQtODAxMC00ZGMw/LTgzZGItYjg5NTA2/OGI3YmZjL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi41/MC4wNS5wbmc.webp",
+            "https://images.slatecdn.net/nTROaOAXSH7sMmnCw9-KOg2Yxo2S0ZTV_NpwlKaODGc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMWQxMmNj/MmEtMWZjNy00MzUz/LWE3NzAtMTBmNzI2/YmVjN2NhL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi41/MC4xMC5wbmc.webp",
+            "https://images.slatecdn.net/4msy1HUxy9vGO7Z3EE7VXGOtMPrf3VxNvGvM76JpzBk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMWRmNjE3/YzEtZTg4ZC00YWE3/LTkxNzgtM2U3OWE2/ZWUxMGJmL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi41/MC4xNi5wbmc.webp",
+            "https://images.slatecdn.net/87zhAyJkuCsaNf3h4xvj7vAa8itRxO5OdUFPAP4vsyc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODIyODJm/YTItMmQ0ZS00MmMy/LTkyZTItZjUxMDMz/ZDc2Mzc3L2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi41/MC4yMS5wbmc.webp",
+            "https://images.slatecdn.net/vpXxnammcVFKqvc3Mlxd9GkfHOK6oHC6kH53pjmQZkU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2FkNDM5/ODAtZmUzNS00ZmE5/LTlmNzQtN2U3MGRl/NTE5YTllL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjYtMDMtMTct/YS1jYy04MC0xNi41/MC4yMy5wbmc.webp"
+          ]
+        }
       ]
     },
     "5025": {
@@ -87,10 +124,36 @@
       "types": [
         "Short  Film Trailer"
       ],
-      "zoom": 1.07
+      "zoom": 1.07,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/traque-stills-1",
+          "title": "Traque | stills",
+          "stills": [
+            "https://images.slatecdn.net/OFW3uJlYxY7aMA_9otRI4p1UBqtBQQ7XQMMxOXJ0Phk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vM2E0MWEx/ZjktYzY3Ni00MDc4/LWI2MTAtNGQxMWZh/MGYzNThjLzEucG5n.webp",
+            "https://images.slatecdn.net/XNIHcq-5X2GuKrsIbpDBHcs8-acsv-hfHSnqsNgFcKs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTNkMmQ3/ZTktY2IwMi00NWQ5/LTkxMjQtZjA5Njgx/ODI2NzIzLzIucG5n.webp",
+            "https://images.slatecdn.net/TFCuVIeKsg-Dz2Vv8f2DIANGfkkO0apNr4Zj3zNeqY0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTA0ZjFk/Y2MtZmY4MS00ZTEw/LTgwMzQtYzBjODU0/ZmQ5OTQwLzMucG5n.webp",
+            "https://images.slatecdn.net/qjxxZj_io8a8nT4bvrP-GGl0yB_D_ypvwT73O8O36Xc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2Y2N2U0/ZmMtMWI3MS00ODRl/LWIzMzEtZTY5NGY5/OTU4OGFiLzQucG5n.webp",
+            "https://images.slatecdn.net/XVlUnysAdRuQuy1E6OAm3xTqB1AJqorxQhwRJM3ftJ4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGQ2MmI1/OTAtYWVlYS00Mjll/LWE0YzMtYzc1OTc3/MzIyN2MyLzUucG5n.webp",
+            "https://images.slatecdn.net/qtNGk3LRxWM2k0gkT9BKLNqtcItNFpCHLTAfHPpmt8o/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZDk2NTYy/YWQtMjBjZC00OTQx/LWJhMDAtYTIzMjJj/MjlhNDczLzYucG5n.webp"
+          ]
+        }
+      ]
     },
     "5033": {
       "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/mange-stills",
+          "title": "Mange | Stills",
+          "stills": [
+            "https://images.slatecdn.net/-rzuEp26opQSOHa_4Ci9FB6D-pyBgbcQCUBsecoxIcI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzQ2OTli/MDMtNWQ2ZC00MDlk/LThjZDctZjM1ZDgx/MjFhNTAwLzEucG5n.webp",
+            "https://images.slatecdn.net/35fOU_n4bOzywg8VYqZ5z_plenO1ASoWt8UGofvYLH0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTAxMzUw/YmUtN2M0MS00ZmQw/LTgzMzctMDk3NmRi/MDE2MjdmLzIucG5n.webp",
+            "https://images.slatecdn.net/24tTs_hYtwgr6NpSuEPuVsbC2qIY9rhikD4--mNdYZw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZDc5NjVh/YWQtNWVlYi00MzQ5/LTlkZGMtMjA5MDdh/Mjg5YmFmLzMucG5n.webp",
+            "https://images.slatecdn.net/-kdAJMZd14OPvnQC44-t4MSuf0W8yUwMSJ8ZIRf9ueE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTM2ZWY5/OTgtNWY3OS00YzQw/LThjMjMtY2Q1NDM2/M2VmYTU4LzQucG5n.webp",
+            "https://images.slatecdn.net/D8Z1J0uDOWIs6f_qK0THfjmJL9GiXDPRHIgp3No8yfY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZWE1NWYw/OTEtZGU5ZS00Nzcy/LWEzZjAtZTI5Nzc1/Y2ExNzM1LzUucG5n.webp",
+            "https://images.slatecdn.net/nmd1LpqLH_yCBoOT_PbarUoz-ssIyvp4yqXK3jTHpVU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzFkNjI4/OWYtNTRhYS00ZWFi/LThjZTEtYTY4Zjcz/MDlmOGQ0LzYucG5n.webp"
+          ]
+        },
         {
           "link": "https://kinou.slateapp.com/work/mange-1",
           "title": "MANGE - 1",
@@ -251,10 +314,7 @@
       ]
     },
     "6231": {
-      "zoom": 1.08,
-      "types": [
-        "Documentary"
-      ]
+      "zoom": 1.08
     },
     "6349": {
       "types": [
@@ -262,7 +322,21 @@
         "Trailer"
       ],
       "title": "Trois Nuits Par Semaine",
-      "zoom": 1.36
+      "zoom": 1.36,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/trois-nuits-par-semaine-stills",
+          "title": "Trois Nuits Par Semaine | Stills",
+          "stills": [
+            "https://images.slatecdn.net/1JSJb2ueQoqplA1VreJc0QOuNE0KPL3REf-14A3bzIM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTMwOWZl/YTItMjYxNi00YmNm/LWJjMWMtMmJmYzVm/NGRlZmRiLzEucG5n.webp",
+            "https://images.slatecdn.net/TAymYmmHy2p9QaylEDLFZAIlXoTsFomsL9xRRLbRN_Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOGU2OWE2/NjctYjAyNy00ODUw/LWEyMzctMDAxNTQ2/ZjJlYmViLzIucG5n.webp",
+            "https://images.slatecdn.net/lSXrdzVhzB0gX5aJR5UyIHHGOGt1hxUaD1LSuVWiR9s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZDg4MmE2/M2UtMTYwMC00NGQy/LWFjM2EtNDU2Nzk3/ZThlMDdmLzMucG5n.webp",
+            "https://images.slatecdn.net/j84mxYlmPYxxgiJ45vr3Zk3qUUzxNdLP-TbMnXPQj2U/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOGEwNzBm/MmUtMTIyNy00YzYx/LTllMTMtMjA4ZWU2/YWRhN2QxLzQucG5n.webp",
+            "https://images.slatecdn.net/gRMPxUNm5U1YR0n4UxwBudH7HpByobNOk7u_c5b-WKA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2ViNThj/MGMtZjkxMy00ODA0/LWEzNjItMGU1MGY4/OGU3M2I5LzUucG5n.webp",
+            "https://images.slatecdn.net/YPtJAM8jd4Nqkihaag5biIzRrw0FwtTYhbKlhbbJs90/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjE0OGU3/MjAtOThjNi00NGMz/LTgxNmUtMTdkNTMx/MTkzZjU1LzYucG5n.webp"
+          ]
+        }
+      ]
     },
     "6437": {
       "types": [
@@ -278,7 +352,21 @@
         "Short  Film Trailer"
       ],
       "title": "TOMOE",
-      "zoom": 1.31
+      "zoom": 1.31,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/tomoe-stills",
+          "title": "Tomoe | Stills",
+          "stills": [
+            "https://images.slatecdn.net/lzvpQWWRo464eJ3eEOdXM8VlmffXahU-vbsAWzjdXsE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODkyNmUy/MjMtMDlmMy00N2Mx/LTliNTMtNzI0NDMw/ODVjMWM0LzEucG5n.webp",
+            "https://images.slatecdn.net/QwoO3s32TP-L0t9T4qdmYccqyjO1jf6ZZvTFP0gAupY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNGRmODU1/NzAtMmNmMS00ZTNk/LWJjNWItZGFlYjY2/N2Y2YTMyLzIucG5n.webp",
+            "https://images.slatecdn.net/qbbBX81u3VpKIjHavqeNZpZ-ZuYND1CqO2nn6HPhTLY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjE3NTk1/NWEtZGZkYy00NGE4/LWI5NmUtYTVhNWRi/MDJiOWM3LzMucG5n.webp",
+            "https://images.slatecdn.net/KTqugXKgdhQdwg_Gd4FF4JRXzw2ok05im4pyiFc3C5U/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOThmN2Nk/NDMtMDRmOC00Yjgx/LWEyMzktNjIzMzU5/NDZhZDQ1LzQucG5n.webp",
+            "https://images.slatecdn.net/GPOSSt4xS7mvcdGxGAiyQMDleCXb7C-VEa7jepnTVjs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzM0ZjBj/YjUtOTNkNS00MTFj/LTk2MjItM2UyZWEy/MzliNWZiLzUucG5n.webp",
+            "https://images.slatecdn.net/1GH0Y7l9x96crYn03VF5nDTkoooCXZOYyh38ysTZw5Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2Q0MTkx/YTAtOGExNC00OTQ2/LWI1ZmQtMzU1NjQ0/ZDVkOWZmLzYucG5n.webp"
+          ]
+        }
+      ]
     },
     "6903": {
       "zoom": 1.31,
@@ -308,6 +396,25 @@
     },
     "7445": {
       "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/junior-stills",
+          "title": "Junior | Stills",
+          "stills": [
+            "https://images.slatecdn.net/_A5mJ42uCAC81od0or8Y-RIfA7qWd0H8BzZx8jA3lOg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTU4ZTNk/ZTUtZjlmNC00N2U2/LTg1MjEtOGUyZTZi/ODQ5ODZiLzEucG5n.webp",
+            "https://images.slatecdn.net/6AbROZoYN7xUdZ74Nn7H1nnitSfZL-kgkf5KWdphofY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTRmYmM4/OTMtNTU2MC00NTM5/LWI0NmMtMjFiOGU4/NmZlMjI1LzIucG5n.webp",
+            "https://images.slatecdn.net/LY5RM23E0s19fFKotf0Pod7bZ1T2c_BFcQnA29fVJ_E/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYmI2ZGFl/ODUtNWM0NC00MTM5/LWEwZTMtMmE5OTc2/YzE5YzdhLzMucG5n.webp",
+            "https://images.slatecdn.net/Yrfezq_diV7_TTl2hB4hek4poNJ64QcJcc_TdT2GCw8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZmJiZWNl/MDMtM2Y5ZC00MjEw/LWIwN2QtOWE4MDUy/MDhhZGI1LzQucG5n.webp",
+            "https://images.slatecdn.net/YC5rflkRn32_BCHownWQ8YLKUBZOAHVypF2SNRvAato/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTQyNWEz/NTctMzZiMC00Y2Q5/LWFhNDgtNDJlNzJj/YmJlMGZjLzUucG5n.webp",
+            "https://images.slatecdn.net/mip1MkoJtOfnmJdWDq2OolEPQoJyETcVNMj6acNlFvM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODc5MDM2/MjMtZTc5MC00MjIy/LWJkYjMtZmNmNDcw/M2E1Y2EzLzYucG5n.webp",
+            "https://images.slatecdn.net/gFGBJ0DNWMWErHbQhcPQLYg5oGPQFGoCrC1PHPnPKko/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzljNDZm/OTUtNjUwMS00YjBm/LWI4ZWYtM2QxN2Qx/Mzk3YjcyL2p1bmlv/cnMtcGhvdG9ncmFt/bWUtMjAyMzAxMjYt/MDAyNTkzMDUtMS0x/LXNjYWxlZC5qcGc.webp",
+            "https://images.slatecdn.net/UAFs85pPSefauUX_V0NeLvIR84jFOGBAUiWK4xJKnxc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzgwMjdk/NDMtNjQ2Yy00NTUz/LWI0ZWQtMDhkNDI0/ZjU1ZTIxL2p1bmlv/cnMtcGhvdG9ncmFt/bWUtMjAyMzAxMjYt/MDA0NDQwNTEucG5n.webp",
+            "https://images.slatecdn.net/kHA67pX1eObuKlJOZbvRJdkfuW50rG8MS7X5pkHSFnc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjBiYTU1/YmMtMGNhOC00OGM0/LWIzNTUtZTVkYjQz/MzkwZjU4L2p1bmlv/cnMtcGhvdG9ncmFt/bWUtMjAyMzAxMjYt/MDA0NDc2ODYucG5n.webp",
+            "https://images.slatecdn.net/s45eFlgBrkbYkL_vJSPaR7od4vyI1VxmRFZ4AnPc_kQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2I4YWZi/YTctZGRlYi00MzNl/LWIyN2YtZDU0MzY1/MTc1NjMzL2p1bmlv/cnMtcGhvdG9ncmFt/bWUtMjAyMzA2MDUt/MDAwOTAyMjUucG5n.webp",
+            "https://images.slatecdn.net/9VZe3bkdK9AUKH9UPAFCd0kXIp0qwH-uEIyAmJC0REU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTI4Yjhj/NmQtNDIwZC00MDc2/LWI0ZmMtYTI4MjQ4/OTViOGU3L2p1bmlv/cnMtcGhvdG9ncmFt/bWUtMjAyMzA2MDUt/MDAwOTQzMzQucG5n.webp",
+            "https://images.slatecdn.net/Xxo70a9THF7GCIAEIFCJgdI2IHWgzCrsqSnmaWwZsNM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2YzM2U5/OGEtYTk3NC00NTg1/LWJkYTktZjIxMjky/NzI0MzE5L2p1bmlv/cnMtcGhvdG9ncmFt/bWUtMjAyMzA2MDUt/MDAxODY0MzIucG5n.webp",
+            "https://images.slatecdn.net/7HfFtSdBClAAqhYqyQ5S6kfMALtZR6JgzbM3SSZBXKo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzNlY2Y1/NmYtY2U4Yy00NTU0/LTg3M2EtN2NiYjYw/YmEwYzBkL2xhZGQt/cGhvdG9ncmFtbWVz/LXJlYzcwOS0yNC0z/MmstMjAyMjA5MDIt/MDAxMzY3ODctMS0y/LXNjYWxlZC5qcGVn.webp"
+          ]
+        },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-conseil-discipline",
           "title": "Juniors - extrait - conseil discipline",
@@ -736,11 +843,7 @@
       "zoomPos": "51.7% 34.5%"
     },
     "9448": {
-      "zoom": 1.16,
-      "types": [
-        "Documentary",
-        "Documentaire"
-      ]
+      "zoom": 1.16
     },
     "9475": {
       "extras": [
@@ -1082,10 +1185,6 @@
             "https://images.slatecdn.net/5tG1TsZJLCa0tK0ME-DvtNCkanc6o96HZ0TN1Gp0BuE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZTBmZjA5Ny01OThk/LTQyMjQtOWE3OC04/OTc1Njc4NWYyMWQv/d2hhdHNhcHAtaW1h/Z2UtMjAyNi0wMy0x/OS1hdC0xMi41Mi4w/MS5qcGVn.webp"
           ]
         }
-      ],
-      "types": [
-        "Documentary",
-        "Youtube"
       ]
     }
   },
