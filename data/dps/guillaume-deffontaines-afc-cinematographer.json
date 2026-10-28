@@ -4,118 +4,33 @@
   "hue": 121,
   "bundle": "https://kinou.slateapp.com/bundles/8ac53d47-d2e6-11f1-a349-0215583debcb",
   "overrides": {
-    "339": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "343": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "1645": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2021": {
-      "types": [
-        "Narrative"
-      ]
-    },
-    "2122": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2771": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2861": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "4173": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "4423": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5060": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5266": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "6434": {
-      "types": [
-        "Feature Film trailer"
-      ]
-    },
     "8227": {
-      "title": "Les Derniers Hommes",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Les Derniers Hommes"
     },
     "8590": {
-      "title": "Sei Fratelli",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Sei Fratelli"
     },
     "8983": {
-      "title": "Le Quatrième Mur",
-      "types": [
-        "Narrative",
-        "Feature Film"
-      ]
+      "title": "Le Quatrième Mur"
     },
     "9982": {
-      "title": "Les Tourmentés",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Les Tourmentés"
     },
     "10299": {
-      "title": "Furcy né libre",
-      "types": [
-        "Feature Film",
-        "Trailer",
-        "narrative",
-        "Feature Film trailer"
-      ]
+      "title": "Furcy né libre"
     },
     "10695": {
-      "title": "Histoires Parallèles",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Histoires Parallèles"
     }
   },
-  "about": {},
+  "about": {
+    "bioEn": [
+      "Guillaume Deffontaines, born in 1968, is a French cinematographer.  His passion for cinematography started when he was very young through his dad's amator and artistics films. He studied at Louis-Lumière school in 1992.\nHe began his professional career as a camera assistant for ten years with Christophe Beaucarne who introduced him to directors as Bruno Poalydes, Jean-Luc Godard and Anne-Marie Mieville. He became a photography assistant (especially on Cédric Klapisch's film \"Paris\"), and then a director of photography."
+    ],
+    "pos": "59% 58%",
+    "instagram": "https://www.instagram.com/guillaumedeffontaines/",
+    "img": "img/guillaume-deffontaines-afc-cinematographer.webp"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE"
