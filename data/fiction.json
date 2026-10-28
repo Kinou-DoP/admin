@@ -5,7 +5,10 @@
       "zoom": 1.34,
       "zoomThumb": true,
       "genre": "SERIES",
-      "title": "Star Wars - Andor Season 2 - (Episodes 1 to 6​)"
+      "title": "Star Wars - Andor Season 2 - (Episodes 1 to 6​)",
+      "platforms": [
+        "Disney +"
+      ]
     },
     "9878": {
       "zoom": 1.35,
@@ -95,7 +98,10 @@
       "title": "Culte – 2Be3",
       "thumbCrop": {
         "y": 72.6
-      }
+      },
+      "platforms": [
+        "Prime Video"
+      ]
     },
     "9982": {
       "zoom": 1.36,
@@ -132,7 +138,10 @@
       },
       "thumbCrop": {
         "y": 5.7
-      }
+      },
+      "platforms": [
+        "Netflix"
+      ]
     },
     "10075": {
       "zoom": 1.36,
@@ -143,7 +152,10 @@
       },
       "snipCrop": {
         "z": 1.06
-      }
+      },
+      "platforms": [
+        "France TV"
+      ]
     },
     "10076": {
       "zoom": 1.05,
@@ -172,7 +184,10 @@
       "title": "Moloch Files",
       "thumbCrop": {
         "y": 74.7
-      }
+      },
+      "platforms": [
+        "Canal +"
+      ]
     },
     "10117": {
       "zoom": 1.34,
@@ -180,7 +195,10 @@
       "title": "Les Sentinelles",
       "thumbCrop": {
         "y": 57.6
-      }
+      },
+      "platforms": [
+        "Canal +"
+      ]
     },
     "10140": {
       "zoom": 1.13,
@@ -191,7 +209,10 @@
       },
       "snipCrop": {
         "y": 41.7
-      }
+      },
+      "platforms": [
+        "France TV"
+      ]
     },
     "10206": {
       "zoom": 1.36,
@@ -233,7 +254,10 @@
         "z": 1.14,
         "x": 0,
         "y": 39
-      }
+      },
+      "platforms": [
+        "HBO max"
+      ]
     },
     "10361": {
       "zoom": 1.24,
@@ -264,7 +288,10 @@
       },
       "snipCrop": {
         "y": 42.4
-      }
+      },
+      "platforms": [
+        "Novo 19"
+      ]
     },
     "10381": {
       "zoom": 1.05,
@@ -370,7 +397,10 @@
       },
       "thumbCrop": {
         "y": 53.7
-      }
+      },
+      "platforms": [
+        "Disney +"
+      ]
     },
     "10544": {
       "genre": "FEATURE FILM",
@@ -387,7 +417,10 @@
       },
       "snipCrop": {
         "y": 48.1
-      }
+      },
+      "platforms": [
+        "France TV"
+      ]
     },
     "10584": {
       "genre": "FEATURE FILM",
@@ -463,7 +496,10 @@
       },
       "snipCrop": {
         "y": 58.3
-      }
+      },
+      "platforms": [
+        "Netflix"
+      ]
     },
     "10706": {
       "zoom": 1.36,
@@ -492,7 +528,11 @@
       },
       "snipCrop": {
         "y": 4.1
-      }
+      },
+      "platforms": [
+        "CBBC",
+        "BBC"
+      ]
     },
     "10852": {
       "genre": "FEATURE FILM",
@@ -523,7 +563,10 @@
       },
       "thumbCrop": {
         "y": 28.4
-      }
+      },
+      "platforms": [
+        "Netflix"
+      ]
     },
     "11020": {
       "zoom": 1.36,
@@ -568,7 +611,10 @@
       "title": "Jusqu'au bout",
       "thumbCrop": {
         "y": 13.4
-      }
+      },
+      "platforms": [
+        "Netflix"
+      ]
     },
     "11186": {
       "genre": "FEATURE FILM",
@@ -654,7 +700,10 @@
       },
       "snipCrop": {
         "y": 19.8
-      }
+      },
+      "platforms": [
+        "Disney +"
+      ]
     },
     "11199": {
       "zoom": 1.24,
@@ -669,7 +718,10 @@
         "z": 1.14,
         "x": 0,
         "y": 52.4
-      }
+      },
+      "platforms": [
+        "HBO max"
+      ]
     },
     "11226": {
       "genre": "SERIES",
@@ -679,7 +731,11 @@
       "title": "High Value Target",
       "thumbCrop": {
         "y": 24.5
-      }
+      },
+      "platforms": [
+        "HBO max",
+        "TNT"
+      ]
     },
     "11253": {
       "zoom": 1.36,
@@ -699,7 +755,10 @@
       "title": "Treasure Island",
       "thumbCrop": {
         "y": 56.4
-      }
+      },
+      "platforms": [
+        "MGM +"
+      ]
     },
     "11340": {
       "zoom": 1.35,
@@ -743,7 +802,10 @@
       "title": "Sacrifice",
       "thumbCrop": {
         "y": 15.1
-      }
+      },
+      "platforms": [
+        "Netflix"
+      ]
     }
   },
   "films": [
