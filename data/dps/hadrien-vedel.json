@@ -945,8 +945,8 @@
   "categories": [
     "FEATURED",
     "NARRATIVE",
-    "ART VIDEO",
     "COMMERCIAL",
+    "ART VIDEO",
     "MUSIC VIDEO",
     "PHOTOGRAPHY"
   ],
@@ -1047,66 +1047,6 @@
       "img": "https://images.slatecdn.net/e_WQ_j5qVROi_lsjuxOULRToUlMhei4fdcSWBeMtaco/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/Yzg4OGFmNi00YjUz/LTQ4MGUtYTBkMy1m/NjU0Y2YzYjcyNGMv/ZWJlYTUxNDM5ZGE0/ODM3NS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
       "slate": 8601
-    },
-    {
-      "title": "in a perpetual remix where is my own song  - trailer - art video",
-      "sub": "Christelle - Crystallmess - Oyiri\nOcurens",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10054/c083179b-87e2-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/da7304dd-ed30-4a35-a13b-88aab522c478-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/JIMGJeoT1NaUjayw0LoX5kUKgVxHSsgLrT2wKuY5V_c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NjcwNzQ4Yi04YmQx/LTQzODMtOTUzZC04/ZjRlNjNjMDdmYzQv/ZmluYWkyLnBuZw?v=1&format=webp",
-      "cat": "ART VIDEO",
-      "slate": 10054,
-      "featured": true,
-      "featuredOrder": 4
-    },
-    {
-      "title": "Sun never set on me - Julien Jaca - NOWNESS (court-métrage)",
-      "sub": "Douglas Guillot\nDavid & Douglas, Nowness",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8617/852a4f22-0997-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/da882b60-6d7c-4e45-b4eb-c558517f6798-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/RFjoIY73kkk-LAzfmQll2C0blII3tETbNKLy5pyl78s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZTE3NDgyNC0yY2E2/LTQ3YWYtYTZjYS1i/NjlhOTc3NTJjNWQv/ZmluYWkucG5n?v=1&format=webp",
-      "cat": "ART VIDEO",
-      "slate": 8617,
-      "featured": true,
-      "featuredOrder": 5
-    },
-    {
-      "title": "I SEE YOU - trailer - art video",
-      "sub": "Christelle - Crystallmess - Oyiri\nSnark Global",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9571/872e4605-0bba-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0df065c0-1737-47a8-981b-770c16d5af47-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/YKZzgbp3vgvCgNTL4XPX1z_klJaaeuZ8XFheC9jmB-c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZDAzZjRhOS05M2Fm/LTQzMWEtOThiNy04/MTZjN2JhMGM1Njcv/YS12Y2FwdHVyZS1k/LWVjcmFuLTIwMjQt/MDMtMTktYS0xMy4y/MS41NS5wbmc?v=1&format=webp",
-      "cat": "ART VIDEO",
-      "slate": 9571,
-      "featured": true,
-      "featuredOrder": 8
-    },
-    {
-      "title": "Jeff Mills - Crossing the threshold (teaser album)",
-      "sub": "Manuel Obadia Wills\nHiersoir",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8608/339784cf-0996-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/369a5369-d3fa-45cf-8d4d-98432cf872c9-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/tIUfp6ocHb9gxuSID4OuY2-wGWRmcD_96STVtxRaFB4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MjA2MTljNy1jYWM3/LTQyYjMtODQyZS1k/ZDc0N2MwZjg0OGIv/YS12Y2FwdHVyZS1k/LWVjcmFuLTIwMjIt/MDYtMDYtYS0xNC4w/Mi4yMi5wbmc?v=1&format=webp",
-      "cat": "ART VIDEO",
-      "slate": 8608
-    },
-    {
-      "title": "Trio mow long (art video)",
-      "sub": "Manuel Obadia Wills\nHiersoir",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8628/ea89bac1-0998-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5a03e5a9-6469-41f8-bbd5-c8ecf6d67577-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/6MqEBllkubsw9GwGQEWWflcvBQjpcd1978sddBi5lhY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MTk2NzhiNC03MDMz/LTQ1MDYtOGIwZC0x/NjEwNTFhNjYxYTMv/YS12Y2FwdHVyZS1k/LWVjcmFuLTIwMjUt/MDItMTktYS00LjAw/LjM5LXBtLnBuZw?v=1&format=webp",
-      "cat": "ART VIDEO",
-      "slate": 8628
-    },
-    {
-      "title": "Style (art video)",
-      "sub": "Nicolas Premier\nLate Night",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8624/7acd371b-0998-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4d57f565-33cf-4ae7-90c7-132debca7975-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/ns4Mx_QKlYehfJT5ONNezxfeWzJ4DU3IDbDcxfsc4-I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OWQ3NjRkNy04NDJl/LTQ0YmItYjE0OC00/OWMwYTdlNTkwMzgv/YS12Y2FwdHVyZS1k/LWVjcmFuLTIwMjIt/MDMtMDktYS0xNi40/Mi4wNy5wbmc?v=1&format=webp",
-      "cat": "ART VIDEO",
-      "slate": 8624
     },
     {
       "title": "Adidas - RC Lens",
@@ -1261,6 +1201,66 @@
       "img": "https://images.slatecdn.net/IUwfZpXwMsZREqZ2xmJKzph2DU2zlNFNEd0JxShhjHA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/Y2ZmNDFjYy03ZDBl/LTRkNmMtYTliZC04/ZmQ1MDA3OGM3ZmQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MDQtYS0xNS4yNS41/NC5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 8609
+    },
+    {
+      "title": "in a perpetual remix where is my own song  - trailer - art video",
+      "sub": "Christelle - Crystallmess - Oyiri\nOcurens",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10054/c083179b-87e2-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/da7304dd-ed30-4a35-a13b-88aab522c478-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JIMGJeoT1NaUjayw0LoX5kUKgVxHSsgLrT2wKuY5V_c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NjcwNzQ4Yi04YmQx/LTQzODMtOTUzZC04/ZjRlNjNjMDdmYzQv/ZmluYWkyLnBuZw?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 10054,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Sun never set on me - Julien Jaca - NOWNESS (court-métrage)",
+      "sub": "Douglas Guillot\nDavid & Douglas, Nowness",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8617/852a4f22-0997-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/da882b60-6d7c-4e45-b4eb-c558517f6798-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RFjoIY73kkk-LAzfmQll2C0blII3tETbNKLy5pyl78s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZTE3NDgyNC0yY2E2/LTQ3YWYtYTZjYS1i/NjlhOTc3NTJjNWQv/ZmluYWkucG5n?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 8617,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "I SEE YOU - trailer - art video",
+      "sub": "Christelle - Crystallmess - Oyiri\nSnark Global",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9571/872e4605-0bba-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0df065c0-1737-47a8-981b-770c16d5af47-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/YKZzgbp3vgvCgNTL4XPX1z_klJaaeuZ8XFheC9jmB-c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZDAzZjRhOS05M2Fm/LTQzMWEtOThiNy04/MTZjN2JhMGM1Njcv/YS12Y2FwdHVyZS1k/LWVjcmFuLTIwMjQt/MDMtMTktYS0xMy4y/MS41NS5wbmc?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 9571,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Jeff Mills - Crossing the threshold (teaser album)",
+      "sub": "Manuel Obadia Wills\nHiersoir",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8608/339784cf-0996-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/369a5369-d3fa-45cf-8d4d-98432cf872c9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tIUfp6ocHb9gxuSID4OuY2-wGWRmcD_96STVtxRaFB4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MjA2MTljNy1jYWM3/LTQyYjMtODQyZS1k/ZDc0N2MwZjg0OGIv/YS12Y2FwdHVyZS1k/LWVjcmFuLTIwMjIt/MDYtMDYtYS0xNC4w/Mi4yMi5wbmc?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 8608
+    },
+    {
+      "title": "Trio mow long (art video)",
+      "sub": "Manuel Obadia Wills\nHiersoir",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8628/ea89bac1-0998-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5a03e5a9-6469-41f8-bbd5-c8ecf6d67577-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/6MqEBllkubsw9GwGQEWWflcvBQjpcd1978sddBi5lhY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MTk2NzhiNC03MDMz/LTQ1MDYtOGIwZC0x/NjEwNTFhNjYxYTMv/YS12Y2FwdHVyZS1k/LWVjcmFuLTIwMjUt/MDItMTktYS00LjAw/LjM5LXBtLnBuZw?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 8628
+    },
+    {
+      "title": "Style (art video)",
+      "sub": "Nicolas Premier\nLate Night",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8624/7acd371b-0998-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4d57f565-33cf-4ae7-90c7-132debca7975-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ns4Mx_QKlYehfJT5ONNezxfeWzJ4DU3IDbDcxfsc4-I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OWQ3NjRkNy04NDJl/LTQ0YmItYjE0OC00/OWMwYTdlNTkwMzgv/YS12Y2FwdHVyZS1k/LWVjcmFuLTIwMjIt/MDMtMDktYS0xNi40/Mi4wNy5wbmc?v=1&format=webp",
+      "cat": "ART VIDEO",
+      "slate": 8624
     },
     {
       "title": "Godford - I you she (court-métrage pour l'EP de godford)",
