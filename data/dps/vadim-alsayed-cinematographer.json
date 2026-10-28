@@ -39,6 +39,11 @@
         "Commercial"
       ]
     },
+    "5005": {
+      "types": [
+        "Documentaire"
+      ]
+    },
     "5021": {
       "types": [
         "Short  Film Trailer"
@@ -222,6 +227,11 @@
         "Commercial"
       ]
     },
+    "6231": {
+      "types": [
+        "Documentary"
+      ]
+    },
     "6349": {
       "types": [
         "Feature Film",
@@ -321,7 +331,8 @@
         {
           "link": "https://kinou.slateapp.com/work/aicha-extrait-1",
           "title": "Aïcha - extrait 1",
-          "img": "https://images.slatecdn.net/NxGPcp6Z3B6IZfoiCj6fVV-i4SMoARgitfG-FRdLKbk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MTg0YTEzOS1kMzlm/LTRjOTctYTMyZC1h/OWJmNGU2ZmQ2NDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjItYS0xNS40Mi41/OC5wbmc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/NxGPcp6Z3B6IZfoiCj6fVV-i4SMoARgitfG-FRdLKbk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MTg0YTEzOS1kMzlm/LTRjOTctYTMyZC1h/OWJmNGU2ZmQ2NDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjItYS0xNS40Mi41/OC5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/89078920-6c0f-43ec-a5ff-88e74a64f083-1280x720.2500.mp4"
         }
       ],
       "types": [
@@ -553,6 +564,12 @@
         "Short Film"
       ]
     },
+    "9448": {
+      "types": [
+        "Documentary",
+        "Documentaire"
+      ]
+    },
     "9475": {
       "extras": [
         {
@@ -761,6 +778,10 @@
             "https://images.slatecdn.net/5tG1TsZJLCa0tK0ME-DvtNCkanc6o96HZ0TN1Gp0BuE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZTBmZjA5Ny01OThk/LTQyMjQtOWE3OC04/OTc1Njc4NWYyMWQv/d2hhdHNhcHAtaW1h/Z2UtMjAyNi0wMy0x/OS1hdC0xMi41Mi4w/MS5qcGVn.webp"
           ]
         }
+      ],
+      "types": [
+        "Documentary",
+        "Youtube"
       ]
     }
   },
