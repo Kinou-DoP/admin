@@ -12,7 +12,11 @@
     "4997": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.09
+    },
+    "4998": {
+      "zoom": 1.05
     },
     "4999": {
       "types": [
@@ -23,7 +27,8 @@
       "types": [
         "Court-métrage"
       ],
-      "title": "CET AUTRE HIVER - Margo Brière Bordier"
+      "title": "CET AUTRE HIVER - Margo Brière Bordier",
+      "zoom": 1.14
     },
     "5002": {
       "types": [
@@ -33,23 +38,21 @@
     "5003": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.35
     },
     "5004": {
       "types": [
         "Commercial"
-      ]
-    },
-    "5005": {
-      "types": [
-        "Documentaire"
-      ]
+      ],
+      "zoom": 1.33
     },
     "5021": {
       "types": [
         "Short  Film Trailer"
       ],
-      "title": "Pipo et l'amour aveugle"
+      "title": "Pipo et l'amour aveugle",
+      "zoom": 1.07
     },
     "5023": {
       "types": [
@@ -60,7 +63,9 @@
       "types": [
         "Commercial"
       ],
-      "title": "SEZANE - Contemplations"
+      "title": "SEZANE - Contemplations",
+      "zoom": 1.78,
+      "zoomPos": "50% 43.6%"
     },
     "5026": {
       "types": [
@@ -70,12 +75,14 @@
     "5027": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.33
     },
     "5029": {
       "types": [
         "Short  Film Trailer"
-      ]
+      ],
+      "zoom": 1.07
     },
     "5033": {
       "extras": [
@@ -101,7 +108,8 @@
       "types": [
         "Short  Film Trailer"
       ],
-      "title": "MANGE"
+      "title": "MANGE",
+      "zoom": 1.32
     },
     "5104": {
       "extras": [
@@ -132,7 +140,8 @@
       ],
       "types": [
         "Short  Film Trailer"
-      ]
+      ],
+      "zoom": 1.33
     },
     "6037": {
       "types": [
@@ -221,12 +230,15 @@
     "6123": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.27,
+      "zoomPos": "50.9% 50%"
     },
     "6227": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.13
     },
     "6229": {
       "types": [
@@ -234,16 +246,15 @@
       ]
     },
     "6231": {
-      "types": [
-        "Documentary"
-      ]
+      "zoom": 1.08
     },
     "6349": {
       "types": [
         "Feature Film",
         "Trailer"
       ],
-      "title": "Trois Nuits Par Semaine"
+      "title": "Trois Nuits Par Semaine",
+      "zoom": 1.36
     },
     "6437": {
       "types": [
@@ -251,13 +262,19 @@
         "Fashion",
         "Poesy"
       ],
-      "title": "Sézane"
+      "title": "Sézane",
+      "zoom": 1.8
     },
     "6661": {
       "types": [
         "Short  Film Trailer"
       ],
-      "title": "TOMOE"
+      "title": "TOMOE",
+      "zoom": 1.31
+    },
+    "6903": {
+      "zoom": 1.31,
+      "zoomPos": "52.1% 32.2%"
     },
     "7330": {
       "types": [
@@ -305,12 +322,15 @@
     "7859": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.1,
+      "zoomPos": "54% 59.1%"
     },
     "7970": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.24
     },
     "8056": {
       "extras": [
@@ -576,13 +596,12 @@
       "types": [
         "Short Film"
       ],
-      "title": "SET LAM"
+      "title": "SET LAM",
+      "zoom": 1.32,
+      "zoomPos": "51.7% 34.5%"
     },
     "9448": {
-      "types": [
-        "Documentary",
-        "Documentaire"
-      ]
+      "zoom": 1.16
     },
     "9475": {
       "extras": [
@@ -659,12 +678,15 @@
       "types": [
         "Documentary",
         "Documentaire"
-      ]
+      ],
+      "zoom": 1.14
     },
     "9527": {
       "types": [
         "Clip"
-      ]
+      ],
+      "zoom": 1.34,
+      "zoomPos": "49.7% 81.1%"
     },
     "9577": {
       "extras": [
@@ -690,7 +712,8 @@
       "types": [
         "Short Film",
         "narrative"
-      ]
+      ],
+      "zoom": 1.17
     },
     "9580": {
       "types": [
@@ -705,12 +728,14 @@
     "10274": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.24
     },
     "10275": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.13
     },
     "10391": {
       "extras": [
@@ -747,7 +772,8 @@
         "Documentary feature film",
         "narrative"
       ],
-      "title": "Au delà de Katmandou"
+      "title": "Au delà de Katmandou",
+      "zoom": 1.14
     },
     "10564": {
       "types": [
@@ -793,10 +819,6 @@
             "https://images.slatecdn.net/5tG1TsZJLCa0tK0ME-DvtNCkanc6o96HZ0TN1Gp0BuE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZTBmZjA5Ny01OThk/LTQyMjQtOWE3OC04/OTc1Njc4NWYyMWQv/d2hhdHNhcHAtaW1h/Z2UtMjAyNi0wMy0x/OS1hdC0xMi41Mi4w/MS5qcGVn.webp"
           ]
         }
-      ],
-      "types": [
-        "Documentary",
-        "Youtube"
       ]
     }
   },
