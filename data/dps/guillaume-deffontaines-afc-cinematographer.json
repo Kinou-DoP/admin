@@ -11,16 +11,6 @@
     "218": {
       "zoom": 1.01
     },
-    "339": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "343": {
-      "types": [
-        "Feature Film"
-      ]
-    },
     "685": {
       "zoom": 1.34,
       "zoomThumb": true
@@ -30,20 +20,9 @@
       "zoomPos": "50% 40.2%",
       "zoomThumb": true
     },
-    "1645": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2021": {
-      "types": [
-        "Narrative"
-      ]
-    },
-    "2122": {
-      "types": [
-        "Feature Film"
-      ]
+    "1016": {
+      "zoom": 1.11,
+      "zoomThumb": true
     },
     "2393": {
       "zoom": 1.39,
@@ -56,122 +35,32 @@
     "2699": {
       "zoom": 1.03
     },
-    "2771": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2861": {
-      "types": [
-        "Feature Film"
-      ]
-    },
     "3067": {
       "zoom": 1.36,
-      "zoomThumb": true,
-      "types": [
-        "Commercial"
-      ]
+      "zoomThumb": true
     },
     "3324": {
       "zoom": 1.15,
       "zoomThumb": true
     },
-    "4061": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "4173": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "4358": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "4423": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5060": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5266": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "6434": {
-      "types": [
-        "Feature Film trailer"
-      ]
-    },
-    "8062": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "8063": {
-      "types": [
-        "Commercial"
-      ]
-    },
     "8227": {
-      "title": "Les Derniers Hommes",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Les Derniers Hommes"
     },
     "8590": {
-      "title": "Sei Fratelli",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Sei Fratelli"
     },
     "8983": {
       "title": "Le Quatrième Mur",
-      "zoom": 1.38,
-      "types": [
-        "Narrative",
-        "Feature Film"
-      ]
+      "zoom": 1.38
     },
     "9982": {
-      "title": "Les Tourmentés",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Les Tourmentés"
     },
     "10299": {
-      "title": "Furcy né libre",
-      "types": [
-        "Feature Film",
-        "Trailer",
-        "narrative",
-        "Feature Film trailer"
-      ]
+      "title": "Furcy né libre"
     },
     "10695": {
-      "title": "Histoires Parallèles",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Histoires Parallèles"
     }
   },
   "about": {
