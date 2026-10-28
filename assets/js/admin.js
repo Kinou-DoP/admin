@@ -14,17 +14,23 @@
   var publishBtn = document.getElementById("publish"), seeLink = document.getElementById("see");
   var side = document.getElementById("side");
   var token = null, user = null, index = null;
-  // Version de l'admin : si une version plus récente est en ligne (téléphone qui garde l'ancienne en mémoire…), rechargement
-  // automatique quand rien n'est en cours d'édition ; sinon un message, et la publication est bloquée : une ancienne version
+  // Version de l'admin : si une version plus récente est en ligne (téléphone qui garde l'ancienne en mémoire…), bandeau
+  // « Nouvelle version disponible » en haut, et la publication est bloquée tant qu'on n'a pas rechargé : une ancienne version
   // effacerait les réglages qu'elle ne connaît pas (ex. `showcase` de Vadim, effacé depuis un téléphone le 30/10).
   var MY_V = (((document.currentScript && document.currentScript.src) || "").match(/[?&]v=(\d+)/) || [])[1], newer = false;
   function checkVersion() {
     return fetch(location.pathname + "?_=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.text(); }).then(function (t) {
       var m = t.match(/admin\.js\?v=(\d+)/);
       if (!m || !MY_V || m[1] === MY_V) return;
+      if (newer) return;
       newer = true;
-      if (!dirty) location.replace(location.pathname + "?v=" + m[1] + location.hash);
-      else status("Une nouvelle version de l'admin est en ligne : rechargez la page avant de publier (vos modifications non publiées seront perdues).", "err");
+      // Bandeau en haut (Gus 30/10) : « Nouvelle version disponible » + Recharger. La publication reste bloquée d'ici là.
+      var go = el("button", { type: "button", text: "Recharger" });
+      go.addEventListener("click", function () {
+        if (dirty && !window.confirm("Vos modifications non publiées seront perdues. Recharger quand même ?")) return;
+        location.replace(location.pathname + "?v=" + m[1] + location.hash);
+      });
+      document.body.appendChild(el("div", { class: "newver" }, [el("span", { text: "Nouvelle version de l'admin disponible" }), go]));
     }).catch(function () {});
   }
   checkVersion();
@@ -1204,7 +1210,12 @@
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
       .then(function () { publishBtn.disabled = false; });
   }
-  publishBtn.addEventListener("click", function () { checkVersion().then(function () { if (!newer && pagePublish) pagePublish(); }); });
+  publishBtn.addEventListener("click", function () {
+    checkVersion().then(function () {
+      if (newer) return status("Rechargez d'abord l'admin (bandeau en haut) : une ancienne version pourrait effacer des réglages.", "err");
+      if (pagePublish) pagePublish();
+    });
+  });
 
   // Page d'aperçu du lien partagé (WhatsApp, iMessage… : nom + photo du chef op), écrite dans le dépôt du site (branche beta) à
   // chaque publication d'une fiche : <slug>/index.html. Même contenu que tools/share-pages.mjs du site (à garder identique).

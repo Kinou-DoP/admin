@@ -353,3 +353,8 @@ body.vedit-on { overflow: hidden; }
 .showsw input:focus-visible + i { outline: 1px solid var(--kinou-fg); outline-offset: 2px; }
 .showsw small { flex: 1 1 100%; font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 12px; color: var(--dim); }
 .showsw small:empty { display: none; }
+
+/* Bandeau « Nouvelle version de l'admin disponible » (checkVersion) */
+.newver { position: fixed; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 14px; padding: 9px 16px calc(9px); padding-top: calc(env(safe-area-inset-top, 0px) + 9px); background: var(--kinou-fg); color: #000; font-family: var(--kinou-sans); font-weight: 600; font-size: 12px; letter-spacing: .08em; animation: newverIn .4s ease both; }
+.newver button { padding: 5px 12px; border: 1px solid #000; background: #000; color: var(--kinou-fg); font: inherit; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+@keyframes newverIn { from { transform: translateY(-100%); } }
