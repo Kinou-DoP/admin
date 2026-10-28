@@ -132,6 +132,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Toutes les versions publient dans les mêmes données (`data/` de la branche `main`, constante `BRANCH`).
 
 À chaque modification de `admin.css` ou `admin.js`, mettre à jour le numéro `?v=` dans `index.html` (cache de GitHub Pages).
+L'admin compare son `?v=` avec celui de `index.html` en ligne (`checkVersion`, au chargement, au retour sur l'onglet et avant chaque
+publication) : plus récent → rechargement automatique si rien n'est en cours, sinon message et publication bloquée (Gus 30/10 :
+une admin restée en mémoire sur un téléphone avait effacé le `showcase` de Vadim).
 
 ## Robot GitHub (branche main)
 - `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json`, de

@@ -14,6 +14,21 @@
   var publishBtn = document.getElementById("publish"), seeLink = document.getElementById("see");
   var side = document.getElementById("side");
   var token = null, user = null, index = null;
+  // Version de l'admin : si une version plus récente est en ligne (téléphone qui garde l'ancienne en mémoire…), rechargement
+  // automatique quand rien n'est en cours d'édition ; sinon un message, et la publication est bloquée : une ancienne version
+  // effacerait les réglages qu'elle ne connaît pas (ex. `showcase` de Vadim, effacé depuis un téléphone le 30/10).
+  var MY_V = (((document.currentScript && document.currentScript.src) || "").match(/[?&]v=(\d+)/) || [])[1], newer = false;
+  function checkVersion() {
+    return fetch(location.pathname + "?_=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.text(); }).then(function (t) {
+      var m = t.match(/admin\.js\?v=(\d+)/);
+      if (!m || !MY_V || m[1] === MY_V) return;
+      newer = true;
+      if (!dirty) location.replace(location.pathname + "?v=" + m[1] + location.hash);
+      else status("Une nouvelle version de l'admin est en ligne : rechargez la page avant de publier (vos modifications non publiées seront perdues).", "err");
+    }).catch(function () {});
+  }
+  checkVersion();
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) checkVersion(); });
 
   // ---------- Outils ----------
   function el(tag, attrs, kids) {
@@ -1189,7 +1204,7 @@
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
       .then(function () { publishBtn.disabled = false; });
   }
-  publishBtn.addEventListener("click", function () { if (pagePublish) pagePublish(); });
+  publishBtn.addEventListener("click", function () { checkVersion().then(function () { if (!newer && pagePublish) pagePublish(); }); });
 
   // Page d'aperçu du lien partagé (WhatsApp, iMessage… : nom + photo du chef op), écrite dans le dépôt du site (branche beta) à
   // chaque publication d'une fiche : <slug>/index.html. Même contenu que tools/share-pages.mjs du site (à garder identique).
