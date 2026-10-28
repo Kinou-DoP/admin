@@ -4,120 +4,29 @@
   "hue": 121,
   "bundle": "https://kinou.slateapp.com/bundles/8ac53d47-d2e6-11f1-a349-0215583debcb",
   "overrides": {
-    "339": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "343": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "1645": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2021": {
-      "types": [
-        "Narrative"
-      ]
-    },
-    "2122": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2771": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2861": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "4173": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "4423": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5060": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5266": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "6434": {
-      "types": [
-        "Feature Film trailer"
-      ]
-    },
     "8227": {
-      "title": "Les Derniers Hommes",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Les Derniers Hommes"
     },
     "8590": {
-      "title": "Sei Fratelli",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Sei Fratelli"
     },
     "8983": {
-      "title": "Le Quatrième Mur",
-      "types": [
-        "Narrative",
-        "Feature Film"
-      ]
+      "title": "Le Quatrième Mur"
     },
     "9982": {
-      "title": "Les Tourmentés",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Les Tourmentés"
     },
     "10299": {
-      "title": "Furcy né libre",
-      "types": [
-        "Feature Film",
-        "Trailer",
-        "narrative",
-        "Feature Film trailer"
-      ]
+      "title": "Furcy né libre"
     },
     "10695": {
-      "title": "Histoires Parallèles",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Histoires Parallèles"
     }
   },
   "about": {},
   "categories": [
-    "NARRATIVE"
+    "NARRATIVE",
+    "FEATURED"
   ],
   "clips": [
     {
@@ -127,7 +36,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9667dd55-e936-4d80-a1a6-e61aec98b61b-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/OQoOcqYEusmFTwBNzVjcZvJaaezP749r6qRCevTQeNg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MzBkMzhmOS1iZDVl/LTRkNTItOGViOS0z/ZmI0ZjdhMzlmOGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MTYtYS0xMC40OS41/NC5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 10695
+      "slate": 10695,
+      "featured": true,
+      "featuredOrder": 1
     },
     {
       "title": "Furcy né libre | Bande Annonce",
@@ -136,7 +47,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/049af984-c004-452a-954d-aa0ea2a69d0b-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/KW5yWHi_pw2wkT5MKVHBGGVZCM_OsIY55lWeuQAGA6A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NDRiMDI2Zi03NWZh/LTQ3ZGUtOTUxOS1m/OGUxN2Y2MjVjMzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MTQtYS0xNi4zNi41/OC5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 10299
+      "slate": 10299,
+      "featured": true,
+      "featuredOrder": 2
     },
     {
       "title": "Les Tourmentés - Feature Film Trailer",
@@ -154,7 +67,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/08dc5276-f4af-42b9-a663-893140fab566-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/YmRs10Dl089CdFq0umgL_96H5WfNuX0tSRQYYfqU6Q4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ODg1N2ViOC1iMzc4/LTQwMWItYmE0Ni0y/NGMxMzkwNTYyOTIv/ODg0LWEzZjktZmls/bS5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 8983
+      "slate": 8983,
+      "featured": true,
+      "featuredOrder": 3
     },
     {
       "title": "SEI FRATELLI - trailer",
@@ -171,7 +86,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c9b9254c-1868-47d6-831a-3333116d9871-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FJ_540AoZq1YwcyfaP9Jnewx4srVT1opPHoXWixNc4w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZDFjY2M5Zi0xYjVj/LTQ4Y2ItYjcyNC05/NGI2NzczNDllZDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDEt/MTYtYS0xNC4zNS40/NS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 8227
+      "slate": 8227,
+      "featured": true,
+      "featuredOrder": 4
     },
     {
       "title": "Nos Frangins - bande-annonce",
@@ -179,7 +96,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/876c8165-6c59-415c-889b-8d28eff2c555-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/8av_S22WQe35_51Vx1m4OPdmSvrRCuwGJ5Tqj8Bz2d8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZjcxZDY4Yy03NzMw/LTQ4ZjEtOTM2Yi1h/MmMxMmU4ZTgxMWQv/bm9zLWZyYW5naW5z/LXBob3RvLXNhbWly/LWd1ZXNtaS0xNDMx/NDMxLmpwZw?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 6434
+      "slate": 6434,
+      "featured": true,
+      "featuredOrder": 5
     },
     {
       "title": "L'Homme De La Cave - Feature Film Trailer",
@@ -195,7 +114,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1873eca0-23a7-4990-80c3-5b9e86c625c2-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Zt7xKupEbEIHkE0P1Hc6WCaK0fSHq3WSeosdMSOQAg0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZDM1Y2Q0My1iNmRh/LTQ3NGMtYWE3Yi1l/NDUwNjM1NjE5MWYv/NWVkZmEyYTE2NGFh/NC1kZXMtaG9tbWVz/Y3Bob3RvZ3JwaGUt/ZGF2aWQta29za2Fz/LXN5bmVjZG9jaGUt/YXJ0ZW1pcy1wcm9k/dWN0aW9ucy00ODYx/NTM2LmpwZw?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 4423
+      "slate": 4423,
+      "featured": true,
+      "featuredOrder": 6
     },
     {
       "title": "La Fine Fleur - Bande-Annonce",
@@ -227,7 +148,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545837920-bande-annonce-fre-cc-80res-ennemis-reda-kateb-et-matthias-schoenae.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/qFjOcUvPxK7ZH7v9z6yxgZTtDpXv8ahSKle7bE9_IOo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OWE5N2MzYi05MzJh/LTQ3YWUtOGUzMS01/MGI3NzdlOGIxMmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MzEtYS0xNi4yNC4z/NS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 2771
+      "slate": 2771,
+      "featured": true,
+      "featuredOrder": 8
     },
     {
       "title": "Le P'tit Quinquin | Trailer",
@@ -251,7 +174,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545437286-51301488_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/pi6ka55faawlMSpOnFq92THIPpvyEAFl6jDPRjPjuBE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyNDc0MTU4MjI0/L25vdXZlYXUtc2l0/ZS5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 2122
+      "slate": 2122,
+      "featured": true,
+      "featuredOrder": 9
     },
     {
       "title": "Ma Loute | Feature Film Trailer",
@@ -259,7 +184,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842905-28770100_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ozam5UTOVCCfOaB84iPdtK9ukMb2ISNT5Z9TfRuGfWA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyNDc1MTIzOTMz/LzEuanBn?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 2861
+      "slate": 2861,
+      "featured": true,
+      "featuredOrder": 7
     },
     {
       "title": "Camille Claudel 1915 | Feature Film Trailer",
