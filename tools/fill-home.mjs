@@ -1,7 +1,8 @@
 // Robot GitHub (Actions) : ajoute le film complet (`full`) qui manque, lu sur Slate :
 // - slides de data/home.json, sur la bande Slate de l'accueil (`reel`) ;
 // - vidéos ajoutées sous un film (`extras`, accueil et data/dps/*.json), sur leur page Slate (`link`) ;
-// - images des projets en images seulement (`overrides[<id>].images`), sur le bundle Slate du chef op.
+// - images des projets en images seulement (`overrides[<id>].images`), sur le bundle Slate du chef op ;
+// - types de contenu Slate de chaque film (`overrides[<id>].types`), sur le même bundle.
 // (Les fonctions Netlify du site sont figées faute de crédits : l'admin ne reçoit que l'extrait de ces vidéos.) Même lecture que readReel (repo site, netlify/functions/slate.mjs) :
 // playlist du lecteur (attribut data-media), stream de plus grande hauteur. Les adresses viennent de Slate, rien n'est inventé.
 import fs from "fs";
@@ -51,13 +52,22 @@ async function fillImages(dp) {
   if (!id) return 0;
   var root = await page(ORIGIN + "/bundles/" + id), re = new RegExp('href="/bundles/' + id + '/(\\d+)"', "g"), m, nums = [];
   while ((m = re.exec(root))) if (nums.indexOf(m[1]) < 0) nums.push(m[1]);
-  var found = {};
+  var found = {}, types = {};
   for (var n of nums) (playlist(await page(ORIGIN + "/bundles/" + id + "/" + n)) || []).forEach(function (x) {
     var ims = (x.images || []).map(function (im) { return im.image_player_url; }).filter(Boolean);
     if (ims.length && !Object.keys(x.streams || {}).length) found[x.id] = ims;
+    // Types de contenu Slate (Short Film, Series, Feature Film…) : affichés par le site sur les films des onglets Narrative.
+    types[x.id] = (x.content_types || []).map(function (t) { return String(t && t.name || t).trim(); }).filter(Boolean);
   });
   var k = 0;
   dp.overrides = dp.overrides || {};
+  for (var tid of Object.keys(types)) {
+    var ot = dp.overrides[tid] || {};
+    if (JSON.stringify(ot.types || []) === JSON.stringify(types[tid])) continue;
+    if (types[tid].length) ot.types = types[tid]; else delete ot.types;
+    if (Object.keys(ot).length) dp.overrides[tid] = ot; else delete dp.overrides[tid];
+    k++;
+  }
   for (var sid of Object.keys(found)) {
     var o = dp.overrides[sid] || {}, same = JSON.stringify(o.images) === JSON.stringify(found[sid]);
     if (same && o.ratios && o.ratios.length === found[sid].length) continue;
@@ -133,7 +143,7 @@ if (home.reel && missing.length) {
   console.log(n + " film(s) complet(s) de l'accueil ajouté(s) sur " + missing.length + " manquant(s).");
 }
 if (changed) fs.writeFileSync(FILE, JSON.stringify(home, null, 2) + "\n");
-console.log(total + " modification(s) dans les fiches, dont " + imgs + " projet(s) en images." + (changed ? " Accueil modifié." : ""));
+console.log(total + " modification(s) dans les fiches, dont " + imgs + " projet(s) en images ou types de contenu." + (changed ? " Accueil modifié." : ""));
 
 // ---------- Spotlight (data/spotlight.json) ----------
 // Les fonctions Netlify (figées) ne lisent que 10 films d'une bande, sans catégories : le robot lit toute la bande Slate
