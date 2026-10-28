@@ -22,7 +22,8 @@
     "5001": {
       "types": [
         "Court-métrage"
-      ]
+      ],
+      "title": "CET AUTRE HIVER - Margo Brière Bordier"
     },
     "5002": {
       "types": [
@@ -39,15 +40,11 @@
         "Commercial"
       ]
     },
-    "5005": {
-      "types": [
-        "Documentaire"
-      ]
-    },
     "5021": {
       "types": [
         "Short  Film Trailer"
-      ]
+      ],
+      "title": "Pipo et l'amour aveugle"
     },
     "5023": {
       "types": [
@@ -57,7 +54,8 @@
     "5025": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "title": "SEZANE - Contemplations"
     },
     "5026": {
       "types": [
@@ -97,7 +95,8 @@
       ],
       "types": [
         "Short  Film Trailer"
-      ]
+      ],
+      "title": "MANGE"
     },
     "5104": {
       "extras": [
@@ -169,7 +168,8 @@
         1.659,
         1.659,
         1.659
-      ]
+      ],
+      "title": "La Verrue"
     },
     "6040": {
       "types": [
@@ -210,7 +210,8 @@
         1.6,
         1.6,
         1.6
-      ]
+      ],
+      "title": "La Nuit nous réunit"
     },
     "6123": {
       "types": [
@@ -227,28 +228,26 @@
         "Commercial"
       ]
     },
-    "6231": {
-      "types": [
-        "Documentary"
-      ]
-    },
     "6349": {
       "types": [
         "Feature Film",
         "Trailer"
-      ]
+      ],
+      "title": "Trois Nuits Par Semaine"
     },
     "6437": {
       "types": [
         "Commercial",
         "Fashion",
         "Poesy"
-      ]
+      ],
+      "title": "Sézane"
     },
     "6661": {
       "types": [
         "Short  Film Trailer"
-      ]
+      ],
+      "title": "TOMOE"
     },
     "7330": {
       "types": [
@@ -290,7 +289,8 @@
       ],
       "types": [
         "Feature Film"
-      ]
+      ],
+      "title": "Juniors"
     },
     "7859": {
       "types": [
@@ -337,7 +337,8 @@
       ],
       "types": [
         "Short Film"
-      ]
+      ],
+      "title": "Aïcha"
     },
     "8216": {
       "types": [
@@ -514,7 +515,8 @@
         2.3762,
         2.3723,
         2.3762
-      ]
+      ],
+      "title": "PANDA"
     },
     "8432": {
       "types": [
@@ -524,7 +526,8 @@
     "8708": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "title": "Hummus - Aufgang"
     },
     "8956": {
       "types": [
@@ -562,13 +565,8 @@
       ],
       "types": [
         "Short Film"
-      ]
-    },
-    "9448": {
-      "types": [
-        "Documentary",
-        "Documentaire"
-      ]
+      ],
+      "title": "SET LAM"
     },
     "9475": {
       "extras": [
@@ -732,7 +730,8 @@
         "Documentary",
         "Documentary feature film",
         "narrative"
-      ]
+      ],
+      "title": "Au delà de Katmandou"
     },
     "10564": {
       "types": [
@@ -778,10 +777,6 @@
             "https://images.slatecdn.net/5tG1TsZJLCa0tK0ME-DvtNCkanc6o96HZ0TN1Gp0BuE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZTBmZjA5Ny01OThk/LTQyMjQtOWE3OC04/OTc1Njc4NWYyMWQv/d2hhdHNhcHAtaW1h/Z2UtMjAyNi0wMy0x/OS1hdC0xMi41Mi4w/MS5qcGVn.webp"
           ]
         }
-      ],
-      "types": [
-        "Documentary",
-        "Youtube"
       ]
     }
   },
