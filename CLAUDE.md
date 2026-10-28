@@ -40,6 +40,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Projet en stills (« Sans vidéo ») : case « Extrait vidéo au survol » → lien Slate d'une vidéo qui a un extrait
   → `overrides[<id>].hover` = `{ link, title, video, img? }` ; sur le site l'extrait joue au survol, le clic montre la galerie.
   Le recadrage (zoom / zoomPos) de ce projet se règle sur cet extrait.
+- Case « Aussi sur la vignette » : cocher / décocher arrête l'aperçu de l'extrait pour montrer la vignette.
 - Recadrage d'un extrait (fiches et accueil) : curseur 100–250 % sous la vignette, sur toute sa largeur (250 % pour les films en 4:3 ; « Recadrage x % » et « Recentrer » dessous), aperçu de l'extrait dans la vignette
   → `zoom` dans les `overrides` (absent = aucun recadrage) ; extrait seulement, la vignette aussi si `zoomThumb` (case).
   Pendant le réglage : extrait entier + cadre rouge fin = partie gardée (taille de la vignette).
@@ -48,6 +49,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Cadrage téléphone du fond de la liste (sous le 1er film FEATURED seulement, bouton « Cadrage téléphone ») : extrait entier
   + bande rouge = partie visible sur un écran de téléphone (9:17), à faire glisser, + aperçu → `overrides[<id>].phoneX`
   (0–100, absent = centre) ; « Recentrer ».
+- Barre du bas : Publier, ↶ ↷ (annuler / rétablir), « Link ↗ » (voir sur le site) ; message (`status`) : pas de place vide
+  sans message ; sur téléphone, une ligne au-dessus des boutons, qui défile doucement s'il est trop long (`.status.run`, Gus 29/10).
 - Annuler / Rétablir (barre du bas, ⌘Z / ⌘⇧Z ou Ctrl+Z / Ctrl+Y hors champ de texte) : instantanés de la page ouverte
   (fiche, accueil, contact) pris à chaque modification (`touch` → `record`, saisie regroupée après 0,4 s), 100 au plus ;
   chaque page déclare `histInit({ get, set })` ; historique remis à zéro à l'ouverture d'une page et après publication.
@@ -55,7 +58,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   1 Importé, 2 Recadrage & infos, 3 Snippet, 4 Stills (dernière étape faite ; sans entrée : 1 si la fiche existe, sinon 0).
   Fiche : curseur en haut à droite (`progressCtl`, crans + libellés cliquables), enregistré tout seul 0,7 s après (sans « Publier » :
   fichier relu puis seule la ligne du chef op changée, commit « Avancement Nom : étape »). Liste : tableau de bord « jeu vidéo »
-  (`progressBoard` : « ROUND 1 » = progression des 3 premières étapes en % (somme des étapes plafonnées à 3 / 3 × nombre de chefs op),
+  (`progressBoard` : « ROUND 1 ! » = progression des 3 premières étapes en % (somme des étapes plafonnées à 3 / 3 × nombre de chefs op),
   une jauge à 20 cases par étape (Importé, Recadrage & infos, Snippet) ; dessous « ROUND 2 ! STILLS » sur toute la largeur (fiches à l'étape 4) ;
   typo Press Start 2P (Google Fonts) ; pas de grade ni d'XP, Gus 27/10 ;
   clic sur une jauge = n'afficher que les fiches pas encore à cette étape, combiné à la recherche) et pastilles de couleur sous

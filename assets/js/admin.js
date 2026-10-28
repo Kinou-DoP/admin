@@ -26,7 +26,16 @@
     (kids || []).forEach(function (c) { if (c) e.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
     return e;
   }
-  function status(msg, kind) { statusEl.textContent = msg || ""; statusEl.className = "status" + (kind ? " " + kind : ""); }
+  // Message de la barre du bas. Téléphone : sur une ligne (vide = pas de ligne) ; trop long, il défile doucement (.run).
+  function status(msg, kind) {
+    statusEl.textContent = ""; statusEl.className = "status" + (kind ? " " + kind : "");
+    if (!msg) return;
+    var t = el("span", { text: msg }); statusEl.appendChild(t);
+    requestAnimationFrame(function () {
+      var over = t.scrollWidth - statusEl.clientWidth;
+      if (over > 2) { statusEl.classList.add("run"); t.style.setProperty("--over", -over + "px"); t.style.animationDuration = Math.max(4, over / 30 + 3) + "s"; }
+    });
+  }
   function store(get, val) {
     try { if (get) return localStorage.getItem(TOKEN_KEY); if (val) localStorage.setItem(TOKEN_KEY, val); else localStorage.removeItem(TOKEN_KEY); } catch (e) {}
     return null;
@@ -378,7 +387,7 @@
     }
     var board = el("section", { class: "board" });
     board.appendChild(el("div", { class: "bxp" }, [
-      el("span", { class: "round", text: "ROUND 1" }),
+      el("span", { class: "round", text: "ROUND 1 !" }),
       bar(p1, "xp"),
       el("div", { class: "bnum", text: Math.round(p1 * 100) + " %" + (p1 >= 1 ? " ★" : "") })]));
     var gauges = el("div", { class: "bgauges" });
@@ -667,7 +676,8 @@
     box._show = function () { adjusting = true; play(); apply(); range.focus({ preventScroll: true }); };
     if (!setT) return box;
     var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = !!getT();
-    cb.addEventListener("change", function () { setT(cb.checked || undefined); apply(); touch(); });
+    // Case cochée ou décochée : extrait arrêté, la vignette (recadrée ou non) se voit tout de suite.
+    cb.addEventListener("change", function () { setT(cb.checked || undefined); halt(); touch(); });
     return el("div", {}, [box, el("label", { class: "zthumb" }, [cb, "Aussi sur la vignette"])]);
   }
 
