@@ -624,6 +624,20 @@
       tabs.appendChild(b);
     });
     sec.appendChild(tabs);
+    // Fiche d'un chef op : interrupteur de l'onglet ouvert → présentation « vidéo + stills » sur le site (`showcase`) : par projet la
+    // vidéo en grand, titre et crédits à côté, les 6 premiers stills (liens de stills ajoutés sous le film) autour.
+    if (pagePublish === publish && curCat !== "ALL") {
+      var on = (state.showcase || []).indexOf(curCat) > -1;
+      var sw = el("input", { type: "checkbox", class: "nodirty" }); sw.checked = on;
+      sw.addEventListener("change", function () {
+        var l = (state.showcase || []).filter(function (c) { return c !== curCat; });
+        if (sw.checked) l.push(curCat);
+        if (l.length) state.showcase = l; else delete state.showcase;
+        touch(); sec.replaceWith(filmsSection());
+      });
+      sec.appendChild(el("label", { class: "showsw" }, [sw, el("i"), el("span", { text: "Présentation vidéo + stills" }),
+        el("small", { text: on ? "Sur le site, chaque projet de « " + curCat + " » : la vidéo en grand, ses 6 premiers stills autour (ajoutez un lien de stills sous chaque film)." : "" })]));
+    }
     var seen = {};
     var list = slate.clips.filter(function (c) {
       if (curCat === "ALL") { if (seen[c.slate]) return false; seen[c.slate] = true; return true; }
@@ -1111,6 +1125,7 @@
     }
     var out = {};
     ["slug", "name", "hue", "bundle", "open", "template"].forEach(function (k) { if (s[k] !== undefined && s[k] !== "") out[k] = s[k]; });
+    if (s.showcase && s.showcase.length) out.showcase = s.showcase;
     out.name = s.name.trim();
     out.overrides = s.overrides;
     out.about = about;

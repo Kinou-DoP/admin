@@ -42,6 +42,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   Le recadrage (zoom / zoomPos) de ce projet se règle sur cet extrait.
 - Téléphone : toucher autre chose qu'un champ de texte le quitte (sinon le clavier revenait au lâcher d'un curseur).
 - Case « Aussi sur la vignette » : cocher / décocher arrête l'aperçu de l'extrait pour montrer la vignette.
+- Fiche, onglet ouvert (sauf ALL) : interrupteur « Présentation vidéo + stills » → `showcase` de la fiche (liste des onglets) ;
+  le site affiche alors cet onglet en présentation « vidéo + 6 stills » (voir CLAUDE.md du site, `renderShow`). Les stills viennent
+  des liens de stills ajoutés sous chaque film (`extras`) ou des images d'un projet en images seulement (Gus 29/10).
 - Recadrage d'un extrait (fiches et accueil) : curseur 100–250 % sous la vignette, sur toute sa largeur (250 % pour les films en 4:3 ; « Recadrage x % » et « Recentrer » dessous), aperçu de l'extrait dans la vignette
   → `zoom` dans les `overrides` (absent = aucun recadrage) ; extrait seulement, la vignette aussi si `zoomThumb` (case).
   Pendant le réglage : extrait entier + cadre rouge fin = partie gardée (taille de la vignette).

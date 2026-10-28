@@ -130,6 +130,7 @@ input[readonly] { color: var(--dim); }
 @keyframes statusRun { to { transform: translateX(var(--over, 0)); } }
 .bar .hbtn { padding: 0 12px; }
 .bar .sm { display: none; }
+.bar .hbtn .lg { margin-left: 6px; } /* espace entre la flèche et le mot (bouton en flex : l'espace du texte disparaît) */
 .bar .hbtn:disabled { opacity: .3; cursor: default; border-color: transparent; }
 
 /* Navigation entre les parties du site (comme l'en-tête du site) */
@@ -341,3 +342,14 @@ body.vedit-on { overflow: hidden; }
 .scopectl .stabs { order: -2; flex: 1 1 100%; display: flex; gap: 14px; margin-bottom: 4px; }
 .scopectl .stabs button { padding: 0; border: 0; background: none; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
 .scopectl .stabs button.on { color: var(--kinou-fg); }
+
+/* Interrupteur « Présentation vidéo + stills » d'un onglet (fiche) */
+.showsw { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 22px; cursor: pointer; font-family: var(--kinou-sans); font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.showsw input { position: absolute; opacity: 0; pointer-events: none; }
+.showsw i { position: relative; width: 34px; height: 18px; border-radius: 9px; background: rgba(255,252,235,.18); transition: background .25s; }
+.showsw i::after { content: ""; position: absolute; left: 2px; top: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--kinou-fg); transition: transform .25s; }
+.showsw input:checked + i { background: var(--ok, #6fcf97); }
+.showsw input:checked + i::after { transform: translateX(16px); }
+.showsw input:focus-visible + i { outline: 1px solid var(--kinou-fg); outline-offset: 2px; }
+.showsw small { flex: 1 1 100%; font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 12px; color: var(--dim); }
+.showsw small:empty { display: none; }
