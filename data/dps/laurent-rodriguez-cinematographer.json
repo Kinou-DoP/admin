@@ -4,7 +4,11 @@
   "hue": 223,
   "bundle": "https://kinou.slateapp.com/bundles/fe994f23-ced4-11f1-a349-0215583debcb",
   "open": 10657,
-  "overrides": {},
+  "overrides": {
+    "8574": {
+      "zoom": 1.74
+    }
+  },
   "about": {
     "bioEn": [
       "Laurent Rodriguez is french cinematographer based in Paris. He works for several clients like mcdo , Nivea , mixa , Lancôme, Peugeot, Nissan, Ford, Chevrolet, BMW, Dodge, Renault, Toyota, Honda, Citroën, Mitsubishi, Mazda, Porsche, Hyundai.",
