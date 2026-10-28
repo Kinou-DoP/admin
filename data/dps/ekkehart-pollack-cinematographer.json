@@ -6,10 +6,65 @@
   "overrides": {},
   "about": {},
   "categories": [
+    "NARRATIVE",
     "AUTOMOTIVE",
-    "COMMERCIAL"
+    "COMMERCIAL",
+    "BEAUTY",
+    "TEXTURE"
   ],
   "clips": [
+    {
+      "title": "I.T. | Feature Film Trailer",
+      "sub": "John Moore\nVoltage",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2853/670d6c44-d2be-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842080-39563543_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_X92nQtrWZRBJdomxY7R-dvLILIUzTEOhI8Natas3xQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDU4NTk5OTE4/L2kudC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2853
+    },
+    {
+      "title": "Gamer | Feature Film Trailer",
+      "sub": "Neveldine Taylor, Brian Taylor\nLakeshore",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2757/8769d8f7-d2be-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545837094-gamer-trailer.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/PVzCuMUoiauy2O1H31ihmlhRUBKF_PdKjiWWDAGX12Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTc5NzkyOTEwNjM2/LzQyYmViYjgyYmJk/MDM4NGZkZGMyZDcx/MTFjMmFjYjAzLmpw/Zw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2757
+    },
+    {
+      "title": "Pathology | Feature Film Trailer",
+      "sub": "Marc Schoelermann\nMetro-Goldwyn-Mayer",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/974/262679f5-d2be-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545389696-pathology-5btrailer-5d.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/p5tdayn8KnLJK2gZZDs4bU_cfLkxcuutZwkwSnLtCYg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9w/YXRob2xvZ3ktdHJh/aWxlci04YmI5YTY2/MGRkOThkOWZlZDk3/N2FkM2QzZTNmM2Qw/Ny5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 974
+    },
+    {
+      "title": "Dracula | Feature Film Trailer",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545391272-dracula_20mos_20universal_hd.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/iIbbGYFPhvaMisWr0SxvIIlOPmOrUoSJbakEjducKy8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDU4NzU0Njk5/L2RyYWN1bGEuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 1005
+    },
+    {
+      "title": "Pathology | Feature Film Teaser",
+      "sub": "Marc Schölermann\nLakeshore, MGM",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3999/fb2c33bd-d2bd-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8160ee94-bc10-44c4-9f26-f3b60e4c2f6f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/m_ggeFU1hkaDpzJLcJIB-62aA88zdK75VB1SsgTqRKM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTk5LTVlMjliOWMy/NGE5MTYzLjMyMjAw/NTc4LTgwOWRhNmM0/MzVlMmIwMTBkYjcx/NmE2OTk1Nzk2OTBm/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 3999
+    },
+    {
+      "title": "Nissan - A City Under Siege",
+      "sub": "Markus Walter\nSteam Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11443/35a29ceb-d2c0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/089beba6-d9cb-4899-9b40-89646608176b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/kWqeOIhKOvoFTRIaaxAnVQnqV-mUokhRXh-do0_4Wv4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTQ0My02YWUxZDcz/NjlkZWMxOC42MTA5/OTczOC1hYTYwM2Vl/ZTM3MmJmZGZjMjFi/MzI5YzYyMzQ2MDVk/MC5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 11443
+    },
     {
       "title": "BMW X5",
       "sub": "Mario Clement\nMedia Monks",
@@ -319,6 +374,14 @@
       "slate": 2330
     },
     {
+      "title": "Wolfenstein 2",
+      "sub": "Markus Walter\nReset",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545350660-wolfenstein-2-the-new-colossus-liesel-tv_sd.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/CEvUTc9AqUMauMB_uzC9opGjdriQW_IOIHKYx_BayWE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDU5NjYwNjAw/L3dvbGZlbnN0ZWlu/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 154
+    },
+    {
       "title": "Mercedes-Benz / B Class",
       "sub": "Aleksander Bach\n---",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545401710-mercedes-b-class-aleksander-bach.1280x720.2500.mp4",
@@ -375,12 +438,147 @@
       "slate": 1038
     },
     {
-      "title": "Wolfenstein 2",
-      "sub": "Markus Walter\nReset",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545350660-wolfenstein-2-the-new-colossus-liesel-tv_sd.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/CEvUTc9AqUMauMB_uzC9opGjdriQW_IOIHKYx_BayWE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDU5NjYwNjAw/L3dvbGZlbnN0ZWlu/LmpwZw?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 154
+      "title": "L'Oréal Invincible Manifesto",
+      "sub": "Jan Wentz",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545406921-43620340_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/6SghNcWDwJUaQMK-9-0HIRAZS5c_T5EjPcsrO1mLxNo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYwMDAxOTEx/L2wtb3JlYWsuanBn?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 1466
+    },
+    {
+      "title": "Schwarzkopf Nectra",
+      "sub": "Karina Taira\nTempomedia",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/647/cd98fbbb-a1cd-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545375388-schwarzkopf-nectra.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UtNG_DpOCXCbGZEFxOlVLUBx27kpb-tRJLYoV3afk9M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/Y2h3YXJ6a29wZi1u/ZWN0cmEtZmVkNzZm/MDFjNDQ0NzE0YjE0/ZmFiNDcxMWUwMzYx/MzMuanBn?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 647
+    },
+    {
+      "title": "STRELLSON - LOADED",
+      "sub": "Anders Hallberg",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545365212-strellson_loaded_anders_hallberg.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/QtGT6Fno85mHz5t4wI_hK_HAHuW_m-dqCV7VCmWxeO4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYyMjk5MjMx/L3N0cmVsbHNvbi5q/cGc?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 512
+    },
+    {
+      "title": "Eau Jeune",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd478f2e-79cc-4d49-b4ef-94a8b0cf7706-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KeymYmoqyZcOCdUG76VTBo6JTmIxwIH8Z8r29rNHyjM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZWEzZGJkMy04NWM4/LTQyYTQtOTc3Yy01/ZWM3MzNjM2FjMTgv/MTY4MDg2NDM1MjAw/MC5qcGc?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 7064
+    },
+    {
+      "title": "SCHWARZKOPF GLISS",
+      "sub": "Jeremy Charbit\nTempomedia Hamburg",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ef91f20f-de5b-45a8-b78b-f39e1ff897a0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/y4uKGnRr31p_8ahLUmgUdwIiUst9ZgpjlYEV2_J-TTk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MzlmZmI2Zi03NTFl/LTQwMjUtYjBhMC04/M2U3OTk5MTRlMWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MDEtYS0xMS41Ni4z/NS5wbmc?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 6878
+    },
+    {
+      "title": "Gucci",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8cc1db55-2351-4a9b-9719-c30e3afddac0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/t3gbxLBJmANhawXrIbFfR3bn2XYeZ22iBO7VS-im97k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZGUyMTU5Ny04MDE0/LTQ0NDItODQ1MC1j/MzdjMTAwNzczZDIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDQt/MDctYS0xMi40Ny4z/MS5wbmc?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 7066
+    },
+    {
+      "title": "Rebelle Chic",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545387173-eaujeune.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-oRxaiBwdG_RKOKLXCVxEtIP5krG4ePKBtbY4HVmeww/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1Mzg3MTYxLzY0/NjczNjRfbGFyZ2Uu/anBn?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 868
+    },
+    {
+      "title": "Nivea Bath Care",
+      "sub": "Nick Vecchi\nSoup Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545392051-nivea_bathcare.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/9WaSFO8QdQeD44iwuKZL4emtSLVFjJFLgR7ucKLqW2Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzkyMDM2LzY0/Njg2NDlfbGFyZ2Uu/anBn?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 1056
+    },
+    {
+      "title": "Timotei",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545358506-timotei_vivid.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tQRgu_IJkKH5Eqvkoi6LVvE-lnuPgqsvV5FL9q9GDuE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzU4NDg0LzY0/Njc2MjRfbGFyZ2Uu/anBn?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 381
+    },
+    {
+      "title": "Togo / Double",
+      "sub": "Anders Hallberg\nBRW Filmland",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545358446-brw_filmland-double_sd.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/evJRR9-iNo7Gf4ZBciUS3w0pmKaMvl1BHuBg0QNS-R0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzU4NDI3LzY0/NjgyOTlfbGFyZ2Uu/anBn?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 375
+    },
+    {
+      "title": "Ushuaia / Savon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545355026-ushuaia-vreal-savon.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/upB3XsT47Q6OhcIerNkftnDqJWk9KIMUPOtupGBKeME/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzU1MDE4LzY0/NjgyOThfbGFyZ2Uu/anBn?v=1&format=webp",
+      "cat": "BEAUTY",
+      "slate": 250
+    },
+    {
+      "title": "Elineas",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7065/0d77475f-d2bd-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8deca491-946d-40d0-97e3-4da49166011d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/a42dUgACV8FqeVSF8OFnNMh5tOlEFTy5QigI9X7yXOs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MDY1LTY0MmZmNDk4/NTUwYmI0LjM3NDE3/Nzc0LTIxYzA0MzJk/NGI0YmU5NmQ4ZDg0/NzUwNjEzOTVjNzdm/LmpwZw?v=1&format=webp",
+      "cat": "TEXTURE",
+      "slate": 7065
+    },
+    {
+      "title": "Schwarzkopf Nectra",
+      "sub": "Karina Taira\nTempomedia",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/647/cd98fbbb-a1cd-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545375388-schwarzkopf-nectra.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UtNG_DpOCXCbGZEFxOlVLUBx27kpb-tRJLYoV3afk9M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/Y2h3YXJ6a29wZi1u/ZWN0cmEtZmVkNzZm/MDFjNDQ0NzE0YjE0/ZmFiNDcxMWUwMzYx/MzMuanBn?v=1&format=webp",
+      "cat": "TEXTURE",
+      "slate": 647
+    },
+    {
+      "title": "Redds Me",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/851/578d96ef-a1ce-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545386786-reddsme_dc_new.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/WrlKNLbInUoZURFhFkuwOHlOjAczciKk0l0tJPlCDpg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9y/ZWRkcy1tZS04NGFi/M2EwZjE1ZTY2M2E4/NGJjZDZjMzBiZGFi/YmIyOC5qcGc?v=1&format=webp",
+      "cat": "TEXTURE",
+      "slate": 851
+    },
+    {
+      "title": "Lipton / Icetea",
+      "sub": "Torsten Eichten",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1481/3172bf99-a1ce-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545407235-pepsi-liptonicetea.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tIwbqM4meL1lv4Di-ZZELXq60jwj6bdwHm2x8vL4r8o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/aXB0b24taWNldGVh/LTc3NzYwYTA1Yjdm/OWY2MzIxNjRmOGJh/ZjFmYmE4MGFiLmpw/Zw?v=1&format=webp",
+      "cat": "TEXTURE",
+      "slate": 1481
+    },
+    {
+      "title": "1848",
+      "sub": "Karina Taira",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2595/8a860451-a1cd-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545456392-1848_karina_taira.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/qn9FnMwyOGOpVpAC-qgIJypc166V1aQ_XcaAitdlytc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ODQ4LTFkNjI1Mjg1/ZTU0OGY4NTIzZDI0/ZmZkYjNjOTkxOTNk/LmpwZw?v=1&format=webp",
+      "cat": "TEXTURE",
+      "slate": 2595
+    },
+    {
+      "title": "Coconut",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2032/e3a994b3-a1ce-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545431253-bounty.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/OpK0ZJdC5D7Pg5rkhguHtkmSfpOkB6fDy0MngCgCHJY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/b2NvbnV0LTZjMTJh/YTMwZThjNTcyOWEw/OTU2MTE4MDQwNDk1/YzBlLmpwZw?v=1&format=webp",
+      "cat": "TEXTURE",
+      "slate": 2032
+    },
+    {
+      "title": "Ya",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7068/55352cdc-d2bd-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fc6f3c9c-ab22-448f-92b4-d82b312e8fd4-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/pO_M4Y0SMn8kuzcuABAg8kXoz0rdhFmkYf1i3yNXrnw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MDY4LTY0MmZmNTM2/YWFmOGE4LjQwNTAy/ODQ4LTNmNjY5MDI5/NTMyYmE5NGNmOWU5/MDFlM2UwNmM1Njgx/LmpwZw?v=1&format=webp",
+      "cat": "TEXTURE",
+      "slate": 7068
     }
   ]
 }
