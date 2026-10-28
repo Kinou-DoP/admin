@@ -135,7 +135,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   `data/spotlight.json` ou `data/fiction.json` (lecture de toute la bande du spotlight / de la fiction) ou d'une fiche (`data/dps/*.json`), ajoute le film complet (`full`) qui manque : slides de l'accueil (lu sur la bande Slate, `reel`)
   et vidéos ajoutées sous un film (`extras`, lu sur leur page Slate `link`) ; images des projets en images seulement
   (`overrides[<id>].images` + leurs proportions `ratios`, lues sur le bundle de la fiche publiée — taille lue dans les 64 premiers
-  Ko de chaque image —, ou de toutes les fiches au lancement manuel). Gratuit (Actions, dépôt public),
+  Ko de chaque image —, ou de toutes les fiches au lancement manuel). Aussi les types de contenu Slate de chaque film d'une fiche
+  (`overrides[<id>].types`, ex. Short Film, Series : affichés par le site sur les films Narrative ; Gus 29/10). Gratuit (Actions, dépôt public),
   aucune mise en ligne Netlify (`.github/` et `tools/` exclus de la règle `ignore`). Lancement manuel possible :
   onglet Actions → « Films complets (accueil et vidéos sous un film) » → Run workflow.
 - Le robot ne peut pas vider le cache du site (`/api/refresh` refuse son jeton : « token GitHub refusé » dans son journal).
