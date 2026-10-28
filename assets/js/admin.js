@@ -1145,9 +1145,8 @@
       if (wasNew || from) location.hash = "#/dp/" + out.slug; else render();
       refreshSite(out.slug).catch(function () {}); // vide le cache du site (fiche et clips) : visible tout de suite
       warmThumbs(out.clips);
-      sharePage(out).catch(function (e) {
-        status("Publié. Aperçu du lien partagé pas mis à jour : " + (/GitHub (403|404)/.test(e.message) ? "votre clé GitHub n'a pas accès au dépôt « site »." : e.message), "warn");
-      });
+      // Clé sans accès au dépôt du site : pas de message (Gus 29/10) ; l'aperçu est refait à la prochaine mise à jour du site.
+      sharePage(out).catch(function (e) { if (window.console) console.warn("Aperçu du lien partagé pas mis à jour : " + e.message); });
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); })
       .then(function () { publishBtn.disabled = false; });
   }

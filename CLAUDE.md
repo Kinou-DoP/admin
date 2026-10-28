@@ -100,8 +100,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Aperçu des liens partagés (27/10) : à chaque publication d'une fiche, `sharePage` écrit `<slug>/index.html` (nom + photo du chef op
   en balises Open Graph : portrait About, sinon vignette du 1er film FEATURED) dans le dépôt **Kinou-DoP/site, branche beta**
   (API contents, seulement si le contenu change). Même contenu que `tools/share-pages.mjs` du site (à garder identique).
-  Demande une clé GitHub avec **Contents : Read and write aussi sur le dépôt site** ; sinon la fiche est publiée quand même et un
-  message dit que l'aperçu n'a pas été mis à jour. Format : CLAUDE.md du site (« Adresses des pages »).
+  Demande une clé GitHub avec **Contents : Read and write aussi sur le dépôt site** ; sinon la fiche est publiée quand même, sans
+  message (Gus 29/10) : l'aperçu est refait par le workflow du site à sa prochaine mise à jour sur `beta`. Format : CLAUDE.md du site (« Adresses des pages »).
 - Contact : page contact du site → `data/contact.json` : `team` (une ligne par personne : rôle, prénom, e-mail, téléphone ;
   ↑ ↓ ×, « + Ajouter une personne »), `address` (lignes), `newsletter` (lien) + `newsletterLabel` (texte du bouton), `social` (instagram, vimeo, imdb, facebook ;
   vide = pas affiché), `legal` (mentions légales, paragraphes séparés par une ligne vide, ligne seule courte = titre ; vide = pas de lien ;
