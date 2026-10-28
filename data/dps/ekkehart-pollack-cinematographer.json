@@ -59,7 +59,17 @@
       "zoomThumb": true
     }
   },
-  "about": {},
+  "about": {
+    "bioEn": [
+      "Ekkehart Pollack is an international cinematographer, photographer and painter, known for I.T. , Gamer, Pathology and The Dead Diver in the Woods .",
+      "From big budget commercials and movies with A-listers like Pierce Brosnan, Gerard Butler, Michael C. Hall, 'Ludacris' , Amber Valletta to shoots with German stars like Maximilian Schell, Till Schweiger and Mario Adorf, Ekkehart has compiled an impressive body of work. He got given the German Camera Award for ‘THE DEAD DIVER IN THE WOODS’ and has also been nominated and awarded for many commercials and music videos.",
+      "Ekkehart Pollack studied Photography and Paintings at the University of Darmstadt Campus Mathildenhöhe and Karlsruhe. He lives in Berlin."
+    ],
+    "instagram": "https://www.instagram.com/ekkehart_pollack/",
+    "website": "https://www.epollack.com/",
+    "pos": "45% 40%",
+    "img": "img/ekkehart-pollack-cinematographer.webp"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
