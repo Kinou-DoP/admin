@@ -5,6 +5,9 @@
   "bundle": "https://kinou.slateapp.com/bundles/fe994f23-ced4-11f1-a349-0215583debcb",
   "open": 10657,
   "overrides": {
+    "3100": {
+      "title": "Qoros"
+    },
     "8574": {
       "zoom": 1.74
     }
