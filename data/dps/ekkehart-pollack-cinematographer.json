@@ -50,7 +50,9 @@
       "title": "Deka - back to the future"
     },
     "8973": {
-      "title": "McDonalds - Big Arch"
+      "title": "McDonalds - Big Arch",
+      "zoom": 1.62,
+      "zoomThumb": true
     },
     "11443": {
       "zoom": 1.36,
