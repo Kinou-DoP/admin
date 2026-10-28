@@ -4,6 +4,10 @@
   "hue": 281,
   "bundle": "https://kinou.slateapp.com/bundles/92cf2e29-d2db-11f1-a349-0215583debcb",
   "open": 10391,
+  "showcase": [
+    "NARRATIVE",
+    "DOCUMENTARY"
+  ],
   "overrides": {
     "4997": {
       "types": [
