@@ -121,6 +121,20 @@
     extrasLists(src.overrides, src.slides).forEach(function (l) { (l || []).forEach(function (x) { if (x.full && x.link) got[x.link] = x.full; }); });
     extrasLists(dst.overrides, dst.slides).forEach(function (l) { (l || []).forEach(function (x) { if (!x.full && !x.stills && got[x.link]) x.full = got[x.link]; }); });
   }
+  // Champs écrits par le robot dans les overrides d'une fiche (l'admin ne les modifie jamais) : repris du fichier en ligne (src).
+  var ROBOT_KEYS = ["images", "ratios", "types"];
+  function robotFrom(dst, src) {
+    var so = src.overrides || {};
+    dst.overrides = dst.overrides || {};
+    Object.keys(so).forEach(function (id) {
+      ROBOT_KEYS.forEach(function (k) {
+        if (so[id][k] === undefined) return;
+        var d = dst.overrides[id] || (dst.overrides[id] = {});
+        d[k] = so[id][k];
+      });
+    });
+    fullsFrom(dst, src);
+  }
   function afterRobot(path, ref, slug, done) {
     var sha = ref && ref.object && ref.object.sha, t0 = Date.now();
     if (!sha) return;
@@ -1130,7 +1144,7 @@
     out.overrides = s.overrides;
     out.about = about;
     if (slate) { out.categories = slate.categories; out.clips = slate.clips; } // copie de secours
-    files.push({ path: "data/dps/" + s.slug + ".json", text: json(out) });
+    var ficheFile = { path: "data/dps/" + s.slug + ".json", text: "" }; files.push(ficheFile); // texte écrit après la relecture du fichier en ligne
     if (from && !isNew) files.push({ path: "data/dps/" + from + ".json", remove: true });
     // Nouvelle adresse : les liens de l'accueil vers ce chef op suivent.
     if (from && homeData) {
@@ -1147,16 +1161,26 @@
       dps.splice(at < 0 ? dps.length : at, 0, { slug: s.slug, name: out.name });
     }
     if (JSON.stringify(dps) !== JSON.stringify(index.dps)) files.push({ path: "data/dps/index.json", text: json({ dps: dps }) });
-    commit(files, (isNew ? "Ajout " : "Mise à jour ") + out.name.split(",")[0] + " (admin, " + user.login + ")").then(function (ref) {
+    // Ce que le robot écrit (images, proportions, types de contenu, films complets) est repris du fichier en ligne : sinon la
+    // publication remettait l'ancienne version (ex. ordre des images d'un projet en images changé sur Slate), puis le robot la
+    // corrigeait une minute après, sans pouvoir vider le cache du site.
+    var waitRobot = needsRobot(extrasLists(out.overrides));
+    readFile("data/dps/" + (from || s.slug) + ".json").then(function (remote) {
+      if (remote) robotFrom(out, remote);
+      ficheFile.text = json(out);
+      return commit(files, (isNew ? "Ajout " : "Mise à jour ") + out.name.split(",")[0] + " (admin, " + user.login + ")");
+    }).then(function (ref) {
       var wasNew = isNew;
-      if (needsRobot(extrasLists(out.overrides))) afterRobot("data/dps/" + out.slug + ".json", ref, out.slug, function (d) {
+      // Après chaque publication : on attend le passage du robot (s'il change quelque chose), on reprend ce qu'il a écrit et on
+      // vide le cache du site.
+      afterRobot("data/dps/" + out.slug + ".json", ref, out.slug, function (d) {
         if (state !== out) return;
-        fullsFrom(out, d); if (!dirty) render();
-        status("Le robot a ajouté les films complets : le site est à jour.", "ok");
+        robotFrom(out, d); if (!dirty) render();
+        status(waitRobot ? "Le robot a ajouté les films complets : le site est à jour." : "Le robot a relu Slate : le site est à jour.", "ok");
       });
       index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false; origSlug = out.slug; histReset();
       if (homeData && home) home = null; // l'accueil sera relu (liens mis à jour)
-      flash = from ? "Publié à la nouvelle adresse kinou.fr/" + out.slug + "." : needsRobot(extrasLists(out.overrides)) ? "Publié. Le robot ajoute les films complets des vidéos (environ 1 minute)…" : "Publié. Le site sera à jour dans une minute environ.";
+      flash = from ? "Publié à la nouvelle adresse kinou.fr/" + out.slug + "." : waitRobot ? "Publié. Le robot ajoute les films complets des vidéos (environ 1 minute)…" : "Publié. Le site sera à jour dans une minute environ.";
       if (wasNew || from) location.hash = "#/dp/" + out.slug; else render();
       refreshSite(out.slug).catch(function () {}); // vide le cache du site (fiche et clips) : visible tout de suite
       warmThumbs(out.clips);

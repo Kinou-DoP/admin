@@ -146,6 +146,10 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   Donc l'admin, après une publication qui a des vidéos sans film complet (« Vidéo · à publier », ex. vidéo Slate sans extrait),
   attend le commit du robot (`afterRobot`, 2 min au plus), vide le cache avec la clé de la personne connectée et reprend
   les films complets dans la page ouverte (`fullsFrom`) : fiches, accueil, spotlight, fiction (Gus 29/10).
+- Publication d'une fiche : l'admin relit d'abord le fichier en ligne et reprend ce que le robot y a écrit (`robotFrom` : `images`,
+  `ratios`, `types`, `full` des extras) — sinon chaque publication remettait l'ancienne version (ex. ordre des images de PANDA chez
+  Vadim, changé sur Slate) et le robot la corrigeait une minute après, sans pouvoir vider le cache du site (Gus 30/10). Puis, après
+  chaque publication, `afterRobot` attend le commit du robot (s'il y en a un), le reprend et vide le cache du site.
 - Si le robot échoue à enregistrer : Settings → Actions → General → Workflow permissions → « Read and write ».
 
 ## Crédits Netlify
