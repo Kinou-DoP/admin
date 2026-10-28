@@ -9,6 +9,9 @@
       "title": "Prose Studio - A different kind of love",
       "phoneX": 41.3
     },
+    "10698": {
+      "title": "Joudi - TKT"
+    },
     "10699": {
       "title": "Charlotte Vanhoubroeck"
     },
@@ -23,7 +26,15 @@
       "zoomThumb": true
     },
     "10772": {
-      "title": "Base x Camille Yembe"
+      "title": "Base x Camille Yembe",
+      "zoom": 1.07,
+      "zoomThumb": true
+    },
+    "10777": {
+      "sub": "Chris Alessi"
+    },
+    "10779": {
+      "zoom": 1.1
     }
   },
   "about": {
