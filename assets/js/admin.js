@@ -27,6 +27,12 @@
     return e;
   }
   // Message de la barre du bas. Téléphone : sur une ligne (vide = pas de ligne) ; trop long, il défile doucement (.run).
+  // Téléphone : toucher autre chose qu'un champ de texte (curseur, vignette, bouton…) quitte le champ en cours d'édition.
+  // Sinon iOS le garde actif : au lâcher d'un curseur, le clavier revenait et la page remontait jusqu'au texte édité.
+  document.addEventListener("pointerdown", function (e) {
+    var a = document.activeElement, txt = function (n) { return n && (n.tagName === "TEXTAREA" || n.isContentEditable || (n.tagName === "INPUT" && !/^(range|checkbox|radio|button|submit|file|color)$/.test(n.type))); };
+    if (e.pointerType !== "mouse" && txt(a) && !txt(e.target)) a.blur();
+  }, true);
   function status(msg, kind) {
     statusEl.textContent = ""; statusEl.className = "status" + (kind ? " " + kind : "");
     if (!msg) return;
@@ -312,7 +318,7 @@
   // Suivi interne de l'équipe (n'apparaît pas sur le site) : curseur en haut à droite d'une fiche, tableau de bord sur la liste.
   // step : 0 = à faire, 1..4 = dernière étape faite. Sans entrée : 1 si la fiche est publiée (bundle importé), sinon 0.
   // Enregistré tout seul (sans « Publier ») : fichier relu juste avant, seule la ligne de ce chef op est changée.
-  var STEPS = ["Importé", "Recadrage & infos", "Snippet", "Stills"], progress = null;
+  var STEPS = ["Importé", "Snippet", "Recadrage & infos", "Stills"], progress = null;
   function loadProgress() { return readFile("data/progress.json").then(function (p) { progress = p || {}; return progress; }); }
   function stepOf(slug, has) { var p = progress && progress[slug]; return p && typeof p.step === "number" ? p.step : (has ? 1 : 0); }
   function pips(step) {
@@ -336,7 +342,7 @@
       });
     }, 700);
   }
-  // Curseur de la fiche : À faire → Importé → Recadrage & infos → Snippet → Stills.
+  // Curseur de la fiche : À faire → Importé → Snippet → Recadrage & infos → Stills (ordre changé le 29/10, Gus).
   function progressCtl() {
     var slug = state.slug, cur = stepOf(slug, true);
     var range = el("input", { type: "range", min: "0", max: "4", step: "1", class: "nodirty", value: String(cur), "aria-label": "Avancement de la fiche" });
