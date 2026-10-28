@@ -4,6 +4,9 @@
   "hue": 277,
   "bundle": "https://kinou.slateapp.com/bundles/c7d37584-ce27-11f1-a349-0215583debcb",
   "open": 7372,
+  "showcase": [
+    "NARRATIVE"
+  ],
   "overrides": {
     "4145": {
       "zoom": 1.09,
