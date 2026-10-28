@@ -20,9 +20,38 @@
       ]
     },
     "10804": {
-      "zoom": 1.3,
-      "zoomPos": "53% 0%",
+      "zoom": 1.31,
+      "zoomPos": "52.9% 1.2%",
       "zoomThumb": true
+    },
+    "10808": {
+      "zoom": 1.36
+    },
+    "10812": {
+      "zoom": 1.49,
+      "zoomThumb": true,
+      "zoomPos": "22.3% 47.5%"
+    },
+    "10819": {
+      "zoom": 1.01
+    },
+    "10827": {
+      "title": "Ben - All his friends"
+    },
+    "10874": {
+      "zoom": 1.02,
+      "zoomPos": "60.1% 61.5%",
+      "zoomThumb": true
+    },
+    "10875": {
+      "zoom": 1.01
+    },
+    "10878": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "10880": {
+      "zoom": 1.32
     }
   },
   "about": {
@@ -32,7 +61,10 @@
     "instagram": "https://www.instagram.com/jenna_huskisson/",
     "website": "https://www.jennahuskisson.com/",
     "pos": "36% 61%",
-    "img": "img/jenna-huskisson.webp"
+    "img": "img/jenna-huskisson.webp",
+    "bio": [
+      "Jenna Huskisson est une directrice de la photographie basée à Los Angeles. Son travail couvre les clips musicaux, la publicité et le documentaire, ainsi que la fiction."
+    ]
   },
   "categories": [
     "FEATURED",
@@ -45,6 +77,7 @@
     {
       "title": "Them x A24",
       "sub": "Luke Gilford",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10801/5e14894c-d2af-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f4bba15e-ed93-4368-81ba-2bda0bb89927-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/CQd2ogBJiK898gghW7696RRJ6jRetsRSANoU6VbmaIU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgwMS02OWZhMjRk/OTQwYzZlOS45OTEx/ODgxNC1mZTY1N2I5/MGVlNTA1ZmI0MmNi/YWM2NjNjZDQzNDcx/My5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -66,6 +99,7 @@
     {
       "title": "BEAUTIFUL PEOPLE",
       "sub": "Guillaume Rossi\nIndependent",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10833/ffe7b87e-d2af-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5f0f514f-aa6b-4a0c-9ae3-7655b6e55129-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/4aEJ2nn19mRMUUuxBCkK9DrE5y0RtGfxZoEDVpgUZsM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OTY2NGMzOC1lZmZk/LTQ3MjctODBmZS03/NmEzY2Q3ODE2ODkv/MTc3ODA4NjM1NTAy/My5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -175,6 +209,7 @@
     },
     {
       "title": "YAMAHA HOLIDAY SPOT",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10825/74345eff-d2b6-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8e78e35f-d347-4d5b-8148-1f81e81b37a0-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/g_wmPLfpJduvLS6FatPn61fs1F0jCuUl5mrvO2USB2A/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgyNS02OWZiNTAw/NjMyN2U5NC4yMjM5/MjkxNy0wMzExYTI2/ZGU4M2JmNmE3NzFi/OWE5YTJjMDYwNmM4/Yi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -182,6 +217,7 @@
     },
     {
       "title": "Wall St. Journal x Indeed",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10824/8d80c7c7-d2b6-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d514a39f-ee26-4430-9328-1e4c8f4eec90-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/nzNBBSTfLDmToLaD8fFcMnhX6cX3QC1DlzxWXymVJTQ/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgyNC02OWZiNTAw/NjM1NzQ5NC45MTE3/NjI0Ni02OWUzZjVj/YTYzODQ0ZGZmOTFk/MTRhZDMzMzFjNzIx/Yi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -315,6 +351,7 @@
     {
       "title": "TAZO  — Ice Chaï Latte",
       "sub": "Soleil Denault",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10820/bb0e5c0c-d2b6-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1a1f0f96-6b82-4be3-be7e-5ce257b70e1d-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/ff-G9eW_F-lcw8gisCuaqlYBsEAd_cD6NiX-XmGQBN4/w:800/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgyMC02OWZiNTAw/NjEyZmIyMC4yMjQy/NjIxMC05MDQ1MWVm/NzRlYjZlODUwYjdl/NDBlYzM3MjIwMDRk/Ni5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -529,6 +566,7 @@
     {
       "title": "BABY FEVER",
       "sub": "Sofia Cristina Alvarez",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10829/23041cb3-d2b7-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3aae9d61-5daa-46fd-856f-04dd74b84401-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/_XaZ1PPbJaKgds2Fgrmc1vwS2074kb4f26dK1gLUDAM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgyOS02OWZiNmNj/MGUyM2E4Ny41MTc2/NTg3Mi01MTI3Y2Jh/ZWZjZDJhYmIxOGNj/ZWE5ZGUzMzIwN2I3/YS5qcGc?v=1&format=webp",
       "cat": "MUSIC VIDEOS",
@@ -537,6 +575,7 @@
     {
       "title": "T. SHAN – LOST IN TRANSLATION",
       "sub": "Sofia Cristina Alvarez\nIndependent",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10832/87be59d3-d2b7-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7952bd07-b91c-4aa5-98c5-41009ddb67c3-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/zsCDoMEL3tsj4JSim2qOkNDOgyIe19qYrxOW-0CBKEo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgzMi02OWZiNmNj/MGUxODhhNi4yMjQ3/NDI5Ny0wM2QyNjYx/ZGM4ZGY3ODkwYmQ4/MTZmZGZmMTdjNmMx/ZC5qcGc?v=1&format=webp",
       "cat": "MUSIC VIDEOS",
@@ -553,6 +592,7 @@
     {
       "title": "Megan Larian - Dont Sleep",
       "sub": "Sofia Cristina Alvarez\nSofia Cristina Alvarez",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10828/aa444614-d2b7-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/29fc7bd0-0c45-4b45-ab88-c722ecbb5c5e-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/JrlH9Y5eil-t0C6bnzCLcRf9lL0eT1A-5J4c8iUhzKg/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgyOC02OWZiNmNj/MTBlYzYyMC44NzY1/OTAzMC03M2RiNjhh/YTNiYjNmYWVhYTQ3/YWMzNmUyN2NjMjll/NC5qcGc?v=1&format=webp",
       "cat": "MUSIC VIDEOS",
@@ -561,6 +601,7 @@
     {
       "title": "Amy Zou - Wide Wide World",
       "sub": "Amy Zou and Jason Garofolo",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10826/bff59c73-d2b7-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d6d4fe25-10bd-43e0-bca3-e48bd230f79e-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/TVw5rOdYEyvMRSgmbRQVVL8WzYUK6BHuSHgHP4CPc74/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgyNi02OWZiNmNj/MGU1ODhhOS4yMzMx/OTg5Ni1iZDUxNTYz/ZjJhZGI4MzY5YmFj/ZDNkNDI3Yzg3MTg5/MC5qcGc?v=1&format=webp",
       "cat": "MUSIC VIDEOS",
@@ -569,6 +610,7 @@
     {
       "title": "Ben  All his friends",
       "sub": "Cole Borgstadt",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10827/dc82a45a-d2b7-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c1ee4f5f-e3c3-4612-bdfa-b045e9e7d348-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/OCY8AIMg_MZIgOxgIgL3fgf5FjT_oTLEIET5CmzJs1Q/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDgyNy02OWZiNmNj/MTE1MzliOS42NTk4/OTAyMy0wYzAwNjAw/YjMzZTg2N2NiMGQ1/YjUyYWJmOGNkOGNj/ZS5qcGc?v=1&format=webp",
       "cat": "MUSIC VIDEOS",
