@@ -47,6 +47,11 @@
       ],
       "zoom": 1.33
     },
+    "5005": {
+      "types": [
+        "Documentaire"
+      ]
+    },
     "5021": {
       "types": [
         "Short  Film Trailer"
@@ -246,7 +251,10 @@
       ]
     },
     "6231": {
-      "zoom": 1.08
+      "zoom": 1.08,
+      "types": [
+        "Documentary"
+      ]
     },
     "6349": {
       "types": [
@@ -601,7 +609,11 @@
       "zoomPos": "51.7% 34.5%"
     },
     "9448": {
-      "zoom": 1.16
+      "zoom": 1.16,
+      "types": [
+        "Documentary",
+        "Documentaire"
+      ]
     },
     "9475": {
       "extras": [
@@ -819,6 +831,10 @@
             "https://images.slatecdn.net/5tG1TsZJLCa0tK0ME-DvtNCkanc6o96HZ0TN1Gp0BuE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZTBmZjA5Ny01OThk/LTQyMjQtOWE3OC04/OTc1Njc4NWYyMWQv/d2hhdHNhcHAtaW1h/Z2UtMjAyNi0wMy0x/OS1hdC0xMi41Mi4w/MS5qcGVn.webp"
           ]
         }
+      ],
+      "types": [
+        "Documentary",
+        "Youtube"
       ]
     }
   },
