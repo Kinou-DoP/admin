@@ -4,141 +4,24 @@
   "hue": 121,
   "bundle": "https://kinou.slateapp.com/bundles/8ac53d47-d2e6-11f1-a349-0215583debcb",
   "overrides": {
-    "339": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "343": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "1645": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2021": {
-      "types": [
-        "Narrative"
-      ]
-    },
-    "2122": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2771": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "2861": {
-      "types": [
-        "Feature Film"
-      ]
-    },
-    "3067": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "4061": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "4173": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "4358": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "4423": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5060": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "5266": {
-      "types": [
-        "Narrative",
-        "Fiction",
-        "Feature Film"
-      ]
-    },
-    "6434": {
-      "types": [
-        "Feature Film trailer"
-      ]
-    },
-    "8062": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "8063": {
-      "types": [
-        "Commercial"
-      ]
-    },
     "8227": {
-      "title": "Les Derniers Hommes",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Les Derniers Hommes"
     },
     "8590": {
-      "title": "Sei Fratelli",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Sei Fratelli"
     },
     "8983": {
       "title": "Le Quatrième Mur",
-      "zoom": 1.38,
-      "types": [
-        "Narrative",
-        "Feature Film"
-      ]
+      "zoom": 1.38
     },
     "9982": {
-      "title": "Les Tourmentés",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Les Tourmentés"
     },
     "10299": {
-      "title": "Furcy né libre",
-      "types": [
-        "Feature Film",
-        "Trailer",
-        "narrative",
-        "Feature Film trailer"
-      ]
+      "title": "Furcy né libre"
     },
     "10695": {
-      "title": "Histoires Parallèles",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Histoires Parallèles"
     }
   },
   "about": {
@@ -325,16 +208,18 @@
     {
       "title": "Conversations Canal +",
       "sub": "Samuel Benchetrit\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2393/dbad5722-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545448529-canal_conversations_45s_jw_bm_f_tmbk_h_offres_160211.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/kcFC5yTCPmRYzZmZagMTYJftPOGREWMuScSNigw9XTQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODMwMTIwOTg0/L2NvbnZlcnNhdGlv/bnMuanBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/JVZsCsXIxjMfskMDY7cMctSN90ujz-XY8tv8BpFctZk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/b252ZXJzYXRpb25z/LTNkNzU5YWQ2MTMw/ZTQ0ZTkwMTQ5YWRi/ZGQ4Y2RhZDBmLmpw/Zw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 2393
     },
     {
       "title": "Giorgio Armani / Acqua For Life",
       "sub": "Sadri Adhami",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2699/ff7f3073-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545835749-6466462_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Lf_5BQcSDKOob-Bhcp9WgZxx0QnJOkQGaX2s3RvKB0U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1ODM1NjkxLzY0/NjY0NjJfbGFyZ2Uu/anBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/AJ1rVzdLYniX3BzjQFzDrVZlnaCWZHapuB69gNlDTwM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9n/aW9yZ2lvLWFybWFu/aS1hY3F1YS1mb3It/bGlmZS04NjgzNjQx/ZWJkNGRmNTI0M2Jj/ODRlYjU0NTFkMjI1/Zi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 2699
     },
@@ -342,7 +227,7 @@
       "title": "Lidl - Noël",
       "sub": "Mathias Pardo\nProdigious",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8050c91d-8062-4755-9020-5a266f6366c3-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/VV5b-2w6CKnRN5lhQzQ50ogVnko9cSf2G5uXeZffCV4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYzLTY1NjQ2NDZl/MDgyODMyLjU0NTQ1/MDI5LWVhMmZjOWJj/MDMzOTI1NjRkNGVl/NTU4OWRmMTcwYzdl/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/-GT7nqI4i6cS1LDHI1eUZkk-o5SSCwMT33s431dJQ_s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYzLTY1NjQ2NDZl/MDgyMDkzLjI4NTE3/OTY1LTMxMTNlZTEw/NzdlMTlhOTJmYTQz/NDA2MmE2YzhiZTM2/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 8063
     },
@@ -350,21 +235,23 @@
       "title": "Lidl - École",
       "sub": "Mathias Pardo\nProdigious",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5801ec53-6a50-4c9b-a097-5a9227f98b3d-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/I4q8ZVll4t_eEAl-Ynpkqlwlbes4VfS8nIDIMBqBlN0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYyLTY1NjQ2NDNj/YTFhODg2LjAzOTkw/NDE5LTIzNmIyYzli/MWQzYmMwZGVhOTM2/NTI2YzEwMjJjYmJl/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/N8GiImnOKEibOm1zYDvH4MvYQTv9kBX-keiBDFbCsao/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYyLTY1NjQ2NDNj/YTE5Y2U3LjUxODQy/MTYzLTY3ZmUwOGZh/ZTFiODc3YTYzNjMw/YTYyZGFlNTYwOThh/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 8062
     },
     {
       "title": "Carrefour Google",
       "sub": "Christophe M.Saber\nProdigious France",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4358/597eef6c-d2fa-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4df067cb-dc93-4710-8011-5b53992b7abc-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Klt7j_1NW83p5qAqUgici377SHfj-k-Z0tTIBQAhzc8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MzU4LTVmMDg2YzM3/YWU3NTMzLjg3MzM0/MjA2LTlkZjY5MWJl/ODg3NzgyZDYwNjBj/ODQ1ZjRhMjFhN2Iw/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/huMzdPjEBHNihlYGGyVwTB5OfF26hRO7r_4Vt1xGZBA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MzU4LTVmMDg2YzM3/YWU1OGYwLjY4NjUw/NTE5LThjNzhmNGVh/YzI4ZWY2NzdkZmY5/ZGM3ZDVhZTFjYTE1/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 4358
     },
     {
       "title": "Fnac HP",
       "sub": "Christophe M.Saber\nProdigious France",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4061/429c6152-d2fa-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/03c7f8b8-14d2-40f2-b7ce-4d096bafdbcc-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/pQSXvgfX3iO8-UsqDUiF3HsQvLjLuQZuiME72jW0vmA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDYxLTVlMzkzYjRi/OTcwOTE2Ljg0MDM0/NjU1LTNjODUxMDAy/NzI1ODVlYmMwNjA0/ZGRkNzc2ZTMyZDdl/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -373,38 +260,43 @@
     {
       "title": "SIXT | L'Américain",
       "sub": "Mathias Pardo, Matias Pardo\nGeneral Pop",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3324/3357c12e-d2fa-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1556189267-sixt-lamericain-30s.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/IAqgTUgLOdlf2s97RU8TkDOLTwKaVV-Z6BpI9Gafi0E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/aXh0LWxhbWVyaWNh/aW4tODM3OGEzNmNh/Y2U4NDNmMjdiNDM2/NTg4MWM5YzlkY2Iu/anBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/kWnFWaIq8O8u3jOeb6lfLWHn6xxgE3n47Yg8yej3ufA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/aXh0LWxhbWVyaWNh/aW4tNTQzYWM4Mjhl/MDJhOGUyMjdhZjAy/NWY2OGNhZDk3NjMu/anBn?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 3324
     },
     {
       "title": "Ford | Fiesta",
       "sub": "Benjamin Parent\nHenry",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3067/217149d7-d2fa-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1547460693-ford-fiesta-43-mix-web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/1MXFj8soqcsU1YkVXDSyVNPHqm10ZFiB5fdrPqjrrtg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/b3JkLWZpZXN0YS1k/Nzc5MjBkM2JlZmVi/NmMyZjkwM2E3YWJh/MzI3ODRhMy5qcGc?v=1&format=webp",
+      "img": "https://images.slatecdn.net/we95X7h-ANjuzkgv8tpqv8j-fhmTo1_RBtn3uddye1M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/b3JkLWZpZXN0YS0x/YmZhMDc5YmFjZDkz/ODc2MWY1YjVlNGZh/ZDUwMzBmNC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 3067
     },
     {
       "title": "Actif",
       "sub": "Lars Blumer\nBig Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2565/eb963b66-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545455320-26735840_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/6IeuXMLfTgPxFR0W7zQB2EU8LfNm8hnV24Y1KvrZoTg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDU1MzA1LzI2/NzM1ODQwX2xhcmdl/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/30DjxtbD8BVt0fNizJ8DFzOMfuVYyUOQtybBH0XGpDg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/Y3RpZi05MzhlMDEy/Y2E3YmI2Y2Y1Yzk1/MjY0OWZjNjkxZjQ2/NS5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 2565
     },
     {
       "title": "Cerise",
       "sub": "Emma Luchini\nStink",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2160/c66e806b-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545438589-39989981_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/JUMgZSNJ11RZY_FU3d77svdleys-R2DiOpQ0ffK4RIU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDM4NDU5LzM5/OTg5OTgxX2xhcmdl/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/KJ_unBO60V65T_KjSYHSlnRFSr1JscUYO9cBbnPJUEk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ZXJpc2UtNjQzOGE1/MjMwNGI1ZTM2MGY4/MmJmODI1N2MxYjU1/ZGMuanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 2160
     },
     {
       "title": "Hello Bank | Organisé",
       "sub": "Lars Blumer\nBig Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1110/902feef4-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545394367-39990636_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ANLuLDb9WjVuYgVoo75WrzeSM41cztk54BT5uR1AhXs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODMwMDE3MDEx/L29yZ2FuaXNlLmpw/Zw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -413,14 +305,16 @@
     {
       "title": "Parking Deezer",
       "sub": "Samuel Benchetrit\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1016/7af3ea90-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545391407-39997034_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/PqHddKKtn4UR9nlfuVtsqXi2su2HPlYR5zmY0VRNgog/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODI5NzY2MzQ2/L3BhcmtpbmctZGVl/emVyLmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/SxWcdXwp2Ig3vFFhXOUTXS-EDZyjYmcfbtDApAkDfsw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9w/YXJraW5nLTljZTZk/OTMxMzdhMWEyYjJh/NzAzMTM3MjRmMjlm/ZjJjLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 1016
     },
     {
       "title": "Romantique",
       "sub": "Lars Blumer\nBig Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/747/628f1718-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545380284-26735882_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/OOuY8y-IYU0RJXKNdN3v3r9COgafb-LS1fQo0zZ6Zlg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzgwMjY5LzI2/NzM1ODgyX2xhcmdl/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -429,14 +323,16 @@
     {
       "title": "Société Générale",
       "sub": "Xavier Giannoli",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/685/4af36778-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545377002-39997568_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/nuF2CEowdoXDsDDBuLR7dXiuAm5O08k2BHYYODDxpQY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODMwMjM2Nzk0/L3NvY2lldGUtZ2Vu/ZXJhbGUuanBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/XuJH4r5cl5LP99YsPdD-rFLPdf6dse42e2rbA6GYdws/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/b2NpZXRlLWdlbmVy/YWxlLTY3OTk5NzFm/YTRhMWQ0NGQzNWVk/NWY4YjJjM2U2M2M3/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 685
     },
     {
       "title": "Vico",
       "sub": "Samuel Benchetrit\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/218/24d88d46-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545354489-39989996_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ve9t1lRvh2e_9j_oI-TXmxnP1gR_jwtkcyEcp-seb4U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy92/aWNvLTNiYjhiMjU0/MjUzZDJlM2FjZjNk/YjZhYmU2NTllODJk/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -445,6 +341,7 @@
     {
       "title": "Voiture Deezer",
       "sub": "Samuel Benchetrit\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/202/159133c9-d2f9-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545353227-39997035_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ui2xS4Mzpv6jx6H9AYUgephySWUHWlUersPe8NAjnkE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODI5Nzk2ODIy/L3ZvaXR1cmUtZGVl/emVyLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
