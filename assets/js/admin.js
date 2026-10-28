@@ -1536,11 +1536,28 @@
       var op = el("option", { value: x[0], text: x[1] }); if ((o().genre || "") === x[0]) op.selected = true; genre.appendChild(op);
     });
     var date = el("input", { type: "date", class: "nodirty", value: o().date || "" });
-    function upd() { genre.hidden = stSel.value !== "past"; }
-    stSel.addEventListener("change", function () { setOverride(c, "status", stSel.value === "past" ? undefined : stSel.value); upd(); touch(); });
+    stSel.addEventListener("change", function () { setOverride(c, "status", stSel.value === "past" ? undefined : stSel.value); touch(); });
     genre.addEventListener("change", function () { setOverride(c, "genre", genre.value || undefined); touch(); });
     date.addEventListener("change", function () { setOverride(c, "date", date.value || undefined); touch(); });
-    upd();
+    // Plateformes (Netflix, Canal+…) : un mot + Entrée = une étiquette ; × pour la retirer. Sur le site, en haut à gauche
+    // de la vignette après le genre (« FEATURE FILM · NETFLIX »), au survol / à la sélection.
+    var plats = el("div", { class: "plats" }), pin = el("input", { type: "text", class: "nodirty", placeholder: "Plateforme + Entrée" });
+    function drawPlats() {
+      plats.textContent = "";
+      (o().platforms || []).forEach(function (w, i) {
+        var x = el("button", { type: "button", text: "×", title: "Retirer" });
+        x.addEventListener("click", function () { var a = (o().platforms || []).slice(); a.splice(i, 1); setOverride(c, "platforms", a.length ? a : undefined); drawPlats(); touch(); });
+        plats.appendChild(el("span", { class: "plat" }, [w, x]));
+      });
+      plats.appendChild(pin);
+    }
+    pin.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter") return; e.preventDefault();
+      var w = pin.value.trim(); if (!w) return;
+      var a = (o().platforms || []).slice(); if (a.indexOf(w) < 0) a.push(w);
+      setOverride(c, "platforms", a); pin.value = ""; drawPlats(); touch(); pin.focus();
+    });
+    drawPlats();
     function posterDrop() {
       var p = (pending.posters || {})[c.slate], cur = o().poster;
       var z = dropZone("image/*", "Affiche (glissez ou cliquez)", function (f) {
@@ -1554,14 +1571,14 @@
         .then(function (b) { if (b) z.style.backgroundImage = 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url("' + URL.createObjectURL(b) + '")'; });
       return z;
     }
-    return el("div", { class: "ficctl" }, [el("div", { class: "ficrow" }, [stSel, genre, date]), posterDrop()]);
+    return el("div", { class: "ficctl" }, [el("div", {}, [el("div", { class: "ficrow" }, [stSel, genre, date]), plats]), posterDrop()]);
   }
   function renderFic() {
     view.textContent = ""; editing = true; pagePublish = publishFic;
     state = fic; slate = ficSlate(); isNew = false; listed = true; // filmCard et setOverride travaillent sur state.overrides
     histInit({ get: function () { return { data: fic, refs: Object.assign({}, pending) }; }, set: function (h) { fic = JSON.parse(h.data); pending = Object.assign({}, h.refs); renderFic(); } });
     view.appendChild(el("h1", { text: "Fiction" }));
-    view.appendChild(el("p", { class: "lead", text: "Une bande Slate des films de fiction. Pour chaque film : son onglet (New release, Coming soon, Past release + genre), sa date de sortie (affichée au survol dans New releases et Coming soon), son affiche et ses stills." }));
+    view.appendChild(el("p", { class: "lead", text: "Une bande Slate des films de fiction. Pour chaque film : son onglet (New release, Coming soon, Past release), son genre et ses plateformes (affichés à la sélection), , sa date de sortie (affichée au survol dans New releases et Coming soon), son affiche et ses stills." }));
     var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (shots.re/… ou kinou.slateapp.com/…)", value: fic.reel || "" });
     var st = el("p", { class: "hint" });
     st.textContent = fic.readError ? "Dernière lecture impossible : " + fic.readError

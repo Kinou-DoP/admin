@@ -50,7 +50,7 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Cadrage téléphone du fond de la liste (sous le 1er film FEATURED seulement, bouton « Cadrage téléphone ») : extrait entier
   + bande rouge = partie visible sur un écran de téléphone (9:17), à faire glisser, + aperçu → `overrides[<id>].phoneX`
   (0–100, absent = centre) ; « Recentrer ».
-- Barre du bas : Publier, ↶ ↷ (annuler / rétablir), « Link ↗ » (voir sur le site) ; message (`status`) : pas de place vide
+- Barre du bas : Publier, ↶ Annuler, ↷ Rétablir, Voir sur le site ↗ (téléphone : ↶ ↷ et « Link ↗ », `.lg` / `.sm`) ; message (`status`) : pas de place vide
   sans message ; sur téléphone, une ligne au-dessus des boutons, qui défile doucement s'il est trop long (`.status.run`, Gus 29/10).
 - Annuler / Rétablir (barre du bas, ⌘Z / ⌘⇧Z ou Ctrl+Z / Ctrl+Y hors champ de texte) : instantanés de la page ouverte
   (fiche, accueil, contact) pris à chaque modification (`touch` → `record`, saisie regroupée après 0,4 s), 100 au plus ;
@@ -71,7 +71,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight, fiction, press (à venir), contact.
 - Fiction (lien « fiction » du menu, `data/fiction.json`) : comme le spotlight (lien d'une bande Slate + « Relire la bande », lue en
   entier par le robot ; mêmes réglages par film via `filmsSection` / `filmCard`, `state` = fic), plus sous le titre de chaque film
-  (`ficCtl`) : statut New release / Coming soon / Past release (`status`, défaut past), genre si Past release (`genre`), date de
+  (`ficCtl`) : statut New release / Coming soon / Past release (`status`, défaut past), genre (`genre`, onglet du genre si Past release),
+  plateformes (`platforms`, un mot + Entrée = une étiquette, × pour retirer), date de
   sortie (`date`), affiche (compressée en WebP → `data/fiction/<id>-<horodatage>.webp` à la publication, `poster`).
   Cadrage cinémascope (`scopeCtl`, à la place du recadrage habituel) : onglets Vignette / Extrait ; image entière (16:9) et cadre
   rouge 2,39:1 toujours visible = partie gardée, à faire glisser ; curseur 100–250 % = cadre plus petit (agrandi sur le site) → `thumbCrop` / `snipCrop` = `{ z, x, y }` (même calcul que `scopeCrop` du site). Onglets de

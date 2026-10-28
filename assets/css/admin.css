@@ -128,7 +128,8 @@ input[readonly] { color: var(--dim); }
 .status span { display: inline-block; }
 .status.run span { animation: statusRun 6s ease-in-out 1s infinite alternate; }
 @keyframes statusRun { to { transform: translateX(var(--over, 0)); } }
-.bar .hbtn { padding: 0 12px; font-size: 18px; }
+.bar .hbtn { padding: 0 12px; }
+.bar .sm { display: none; }
 .bar .hbtn:disabled { opacity: .3; cursor: default; border-color: transparent; }
 
 /* Navigation entre les parties du site (comme l'en-tête du site) */
@@ -179,6 +180,7 @@ input[readonly] { color: var(--dim); }
   .bar { flex-wrap: wrap; gap: 6px 4px; padding: 10px 16px calc(env(safe-area-inset-bottom, 0px) + 10px); }
   .bar .btn { height: 34px; padding: 0 12px; font-size: 12px; }
   .bar .hbtn { padding: 0 10px; font-size: 18px; }
+  .bar .lg { display: none; } .bar .sm { display: inline; } /* téléphone : ↶ ↷ et « Link » seulement */
   .bar #see { margin-left: auto; }
   .bar .status { order: -1; flex: 1 1 100%; overflow: hidden; white-space: nowrap; font-size: 12px; }
   .dps { column-count: 1; } .films { grid-template-columns: 1fr; } .row { flex-direction: column; align-items: stretch; }
@@ -330,6 +332,10 @@ body.vedit-on { overflow: hidden; }
 .ficrow { display: flex; flex-wrap: wrap; gap: 8px; }
 .ficrow select, .ficrow input[type=date] { padding: 6px 8px; border: 1px solid var(--faint); border-radius: 0; background: #000; color: var(--kinou-fg); font-family: var(--kinou-sans); font-size: 12px; color-scheme: dark; }
 .ficrow select[hidden] { display: none; }
+.plats { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.plat { display: inline-flex; align-items: center; gap: 4px; padding: 3px 4px 3px 8px; border: 1px solid var(--faint); font-size: 12px; }
+.plat button { padding: 0 4px; border: 0; background: none; color: var(--dim); font-size: 14px; cursor: pointer; }
+.plats input { flex: 1 1 120px; min-width: 0; padding: 5px 8px; border: 1px solid var(--faint); border-radius: 0; background: #000; color: var(--kinou-fg); font-family: var(--kinou-sans); font-size: 12px; }
 .drop.poster { min-height: 0; aspect-ratio: 2 / 3; padding: 6px; background-size: cover; background-position: center; font-size: 10px; text-align: center; }
 /* Fiction : cadrage cinémascope (vignette / extrait réglés à part) */
 .scopectl .stabs { order: -2; flex: 1 1 100%; display: flex; gap: 14px; margin-bottom: 4px; }
