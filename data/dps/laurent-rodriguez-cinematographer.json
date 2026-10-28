@@ -5,11 +5,136 @@
   "bundle": "https://kinou.slateapp.com/bundles/fe994f23-ced4-11f1-a349-0215583debcb",
   "open": 10657,
   "overrides": {
+    "350": {
+      "zoom": 1.32,
+      "title": "Toyota Verso - My Dad My Hero Cowboy"
+    },
+    "899": {
+      "zoom": 1.35
+    },
+    "939": {
+      "zoom": 1.33
+    },
+    "1112": {
+      "zoom": 1.35
+    },
+    "1337": {
+      "zoom": 1.16,
+      "zoomPos": "55.2% 0%",
+      "title": "Mc Donald's - Mc Wrap Chèvre"
+    },
+    "1844": {
+      "zoom": 1.16,
+      "zoomPos": "50% 0%",
+      "title": "Herta - Pizza"
+    },
+    "2586": {
+      "zoom": 1.43
+    },
+    "2587": {
+      "zoom": 1.34
+    },
+    "2593": {
+      "zoom": 1.17,
+      "zoomPos": "40.3% 0%"
+    },
     "3100": {
-      "title": "Qoros"
+      "title": "Qoros",
+      "zoom": 1.52
+    },
+    "3140": {
+      "zoom": 1.35
+    },
+    "4050": {
+      "zoom": 1.51
+    },
+    "4292": {
+      "zoom": 1.36
+    },
+    "4971": {
+      "zoom": 1.33
+    },
+    "5444": {
+      "zoom": 1.32
+    },
+    "6030": {
+      "zoom": 1.19
+    },
+    "8349": {
+      "title": "Sephora Color"
     },
     "8574": {
       "zoom": 1.74
+    },
+    "8945": {
+      "title": "Burger King - TOAST"
+    },
+    "9092": {
+      "zoom": 1.33
+    },
+    "9194": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/cnam-1",
+          "title": "Cnam",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11092/35ef891b-7a13-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/XKW9cZ85jzU9eSL2mPHWL-0IOHCLXvf6kxxQX9_h5CE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTA5Mi02YTRkMTEw/NmM4NWZjMC4xOTE2/OTY5Mi1mM2RhMzcx/ZWU0YjQzYzVmMDIx/M2Q0MDVlYWYxY2M2/NC5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/cnam-lassurance-maladie-faites-vous-vacciner-contre-la-grippe",
+          "title": "CNAM - l’Assurance Maladie | Faites vous vacciner contre la grippe",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10192/c8dc04d7-b02b-11f0-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/0dx9TebfNVqgFIDvmI9m-fsbVq82LpIqHyA7OXuDiQ0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MDBmNGQ1ZS0yYmUx/LTQwNDEtYTM2MC1h/NDg3MTkwNmRkNmMv/MTc2MTIzNjE5OTk0/OC5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/cnam-mon-espace-sante-averse",
+          "title": "CNAM - MON ESPACE SANTE - AVERSE",
+          "img": "https://images.slatecdn.net/tSqSgFmAgGCoupzXeXhFr57hfLfeut78ZmptxedpxvY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/OTYzNTYwOS0wNzQ1/LTQyOTMtOTE2Yi02/ZjFlYTJlNDRhYmMv/MTY4NjE1MzI0MTI1/NS5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/cnam-mon-espace-sante-brouette",
+          "title": "CNAM - MON ESPACE SANTE - BROUETTE",
+          "img": "https://images.slatecdn.net/0sdSKb9CqnFMBKpH4LlXAXg918ZjiU7FY5sh6cUV7Sk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OGJkZGQ4OC01Y2Fi/LTRlMzgtOTRlNS01/YTNlMGZjM2NkOWEv/MTY4NjE1MzIxMDMw/Mi5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/cnam-mon-espace-sante-magicien",
+          "title": "CNAM - MON ESPACE SANTE - MAGICIEN",
+          "img": "https://images.slatecdn.net/9yBFNznroJrLkycQK-2N6KrKDFs3teNSEcD1m3wzm5Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OTlhYzc3Zi1kNTQ1/LTQ3MmEtYjk3My0y/N2NjMTUzMzhlODgv/MTY4NjE1MzE5MTEx/MC5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/cnam-mon-espace-sante-tatouages",
+          "title": "CNAM - MON ESPACE SANTE - TATOUAGES",
+          "img": "https://images.slatecdn.net/CPoecAWjnUjonn0SWiTOXnQ4lQms2FH_pLuDe1aDyJM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/M2NjN2U2OC0yYThj/LTQwMjgtODExNi1h/ZjdiYzc2NTUyMjcv/MTY4NjE1MzE1NjYw/OC5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/cnam-mon-espace-sante-tensiometre",
+          "title": "CNAM - MON ESPACE SANTE - TENSIOMETRE",
+          "img": "https://images.slatecdn.net/MqpPdMuBD-Icz4q2ei9vxBVEGtlK9GzK9dY41OB6U-c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YTE1ZWMyOC04N2I4/LTQ4YzAtODk3OS1k/N2FhOGFjOTg4ZmUv/MTY4NjE1MzEzMzg2/MC5qcGc?v=1&format=webp"
+        }
+      ]
+    },
+    "9560": {
+      "zoom": 1.26,
+      "zoomPos": "52.4% 30.6%"
+    },
+    "10052": {
+      "zoom": 1.33
+    },
+    "10537": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/garnier-micellar-classiceu",
+          "title": "GARNIER | Micellar Classiceu",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10536/7458fac2-1183-11f1-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/80ZWUMQJ_sizuGjPTUO48s2Ck1MKYaCP7anfOMvrGr0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/YTk4YTNhNi04Y2Q4/LTQwYWUtODRkYS1j/ZWI4Nzk0OTcwOGEv/MTc3MTk0MTUwODU3/Ny5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/garnier-micellar-waterproof",
+          "title": "GARNIER | Micellar Waterproof",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10538/b86811ac-1183-11f1-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/o92B35Y2yyY_zeFPudNMKp1irIZcle6cfxRLP8tIqbM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NGQzMTE2NS1iZjAy/LTQwZTQtOTRlNy1h/YzEyMDRiMTg2YzEv/MTc3MTkzOTI2MDEz/Ni5qcGc?v=1&format=webp"
+        }
+      ]
     }
   },
   "about": {
@@ -74,6 +199,7 @@
     {
       "title": "Peugeot 208",
       "sub": "John Israël\nCream WB-Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3575/2b53c1b6-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1562754455-peugeot-208-by-john-israel.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/GWNbGKKG5UttVgoHy3RDw1_mWrPpMkcubO6vZkRL4kw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/OWVhYTJmMC1hMTky/LTQ3NmYtYTA3Ny01/YjU4MmNjZGU3NTEv/MjA4LnBuZw?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -95,6 +221,7 @@
     {
       "title": "Porsche Taycan",
       "sub": "Deluxe\nHochkant Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8593/4028bab6-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0168a892-29d6-461b-883a-af90524da779-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/I8T484853p96aYqCAwEQVp7rsbm0G94sdwvyO68TFBQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTZkMTQ5OC1jNmQ1/LTQ5MjItOTA0YS04/YzAzMjA1Nzk3ZTYv/d2hhdHNhcHAtaW1h/Z2UtMjAyNS0wNi0x/MS1hdC0xMS4yMS40/NC0xLmpwZWc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -103,6 +230,7 @@
     {
       "title": "Audi RS e-tron GT",
       "sub": "Alberto Blanco\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7057/52698c59-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d6c836d1-687c-4982-9248-79f9d6c5c181-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/mn_iAuSY5l8FvMavNq8n_DJxHecUAufQTDOjFXZRTgI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YjIzZmRjMy0zMmY5/LTQ5ZjctYjQwZi04/Nzc2ZDhkY2I3YjEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDQt/MTEtYS0xNi41OS4z/NS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -111,6 +239,7 @@
     {
       "title": "Dodge - NFL",
       "sub": "Boki & Chelo\nOriental Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4050/606efef9-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/25484514-53c9-41b2-b77f-eff062dcb952-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/qWOL-jvg_dH8iXzgL43edS0INbOE1rfrZHE7D5zp6pE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZDNlNjgwNy1iMWI4/LTQ5MmItYmZlNC04/MjAzOTQwYjhkNTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MTMtYS0xNS4wMi4x/Mi5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -121,6 +250,7 @@
     {
       "title": "Peugeot 2008",
       "sub": "John Israël\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3630/73695308-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1562230811-laurent-p24-high-v5.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/q23o9F24Ju0IjldOxQGyb4Eu8aZbqNjZ0SPNKbmVBy4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/YTY0ODFiZi1jNGUy/LTQ5Y2UtOGEzMS1m/ZjNhOGVjYWExZDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MDMtYS0xNi4yNi4w/Ni5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -131,6 +261,7 @@
     {
       "title": "Volkswagen SUV",
       "sub": "Uygar Kutlu\nAutonomy Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6030/8743d9f7-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/58d5c64c-263e-4c4d-8547-b7c14a4e2f50-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/qaDLRI4i8HifXaPWyGYyss2w0SGDMhf6SQ_habCoOP0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MTc3YjY5YS05OTQ2/LTRlMDktYTA5Yi04/OWFiN2RlYWQzNTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDEt/MTctYS0xNi40Mi41/NS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -139,6 +270,7 @@
     {
       "title": "Michelin x Mercedes-AMG | Smash The Laptime",
       "sub": "Who?\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5248/992e229e-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/35a6ffba-a3de-43fa-908f-0a1d19787226-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/-Zyr3Oi1wCKgZnzUSygoNG3_tnECinv_WCuFMx84d84/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/Yzg5NTZkNi00ZTNm/LTRhMWMtYWUyMC05/YzkzOGYyZDRkYzgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MjAtYS0xNS4wNS41/My5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -147,6 +279,7 @@
     {
       "title": "Nissan Qashqai (except talent shots)",
       "sub": "Jonas Vahl\nPhantasm",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5162/b42b067d-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c1b72ea4-1c09-493d-8c0d-ba4af94496ef-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ZsUGvoh5DQ5P71np4L_pU3obxFMaUZwRInLB70PvwMU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/Yzg4YmZkMi0xMWM1/LTQ1MDItYjlmYy00/ZDAxMTk1ZDg0NDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MTMtYS0xNS4wNi4y/My5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -155,6 +288,7 @@
     {
       "title": "Peugeot 508 Sport Engineered",
       "sub": "Who?\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3140/c6983c1e-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1550754816-peugeot-508-sport-engineered-by-who.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/DhFQddTO5AMcDIkYG2t-bs9zS9abG-kdGMWw7-ErD00/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/Yjc5MTc2OC1kOWFj/LTQ5YjEtYTBiZS1m/ODY3NTEzYWQ3ZmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MTMtYS0xNS4zNS41/NC5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -172,6 +306,7 @@
     {
       "title": "Škoda Kodiaq",
       "sub": "Deluxe\nAmazing",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4971/d9f7d408-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b5861e89-c4dc-41aa-97f6-ca9a9d4b832f-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/dBH1m0en_KOCKahhZZOhH0z8va3XovvbrBfg8Va3Cvw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDMxZWQzMi0yNWI1/LTQxNGItYWIxYi1m/ZWM4YzIxODhhNzQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDQt/MjktYS0xMC41NC4x/MC5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -180,6 +315,7 @@
     {
       "title": "Qoros - DirCut",
       "sub": "Holo\nMoto",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3100/f406757d-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1548410197-guanzhi-dircut.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ImtxredGKm4YsmaVsxCvXImnpdRXH-KesC9kc5s6BoI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MjJhOTE2OC1mZTJm/LTRmZGItODY3My1h/NDg1NmYzMGY3ZjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MTMtYS0xNS4zOS40/NC5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -190,6 +326,7 @@
     {
       "title": "Peugeot Instinct - Sport K0",
       "sub": "Who?\nCream/WB Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/893/0ce42dee-d2c2-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545387783-40735665_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/nf_djMESXc-UPk60wHms1cGWPYSgDKsM4plHxkmzfz8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyNTU2MDc2MDA0/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTE5LWEtMTAuNDEu/MTAtMi5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -207,6 +344,7 @@
     {
       "title": "Peugeot 208 Ride",
       "sub": "John Israël\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4292/2e0b5187-d2c2-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a842d742-5f9d-4868-9b40-c6d82993a7c0-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/P_M99R4snr2o7VHJ8dopIPrToXT94aefDT4fs8LLfLc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YzI5YTc1Mi1lZjgz/LTQyNTEtYTFjYy0w/YmRlODQzNDM3Y2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDkt/MTUtYS0xMi4zNS40/NC5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -215,6 +353,7 @@
     {
       "title": "Peugeot 508",
       "sub": "Who?\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/899/47baf4c8-d2c2-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546425123-peugeot-508-who-cream-235.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/s8qAtV0FmC_gTN10Un0dhV2jzYEqSGHe7p0HEzGseU8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NDJjYmUxZC0wZjQ2/LTRkZTMtYmMzYS1l/NWQ4ZDlmNTZmMWEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MTMtYS0xNS4wOC4x/NC5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -223,6 +362,7 @@
     {
       "title": "Peugeot 308 R Hybrid",
       "sub": "Julien Rocher\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2586/527f011a-d2c2-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545456171-25304780_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/J5r0sC4RoaKUU9-_Qo8Rii70nRwjwHU-Zqfes0Pia9Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyNTU4MTM5NzIx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTE5LWEtMTEuMTUu/MDYtMi5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -231,6 +371,7 @@
     {
       "title": "Toyota GT86",
       "sub": "Deluxe\nBig Kahuna Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5444/6770ce84-d2c2-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bdb39130-3c7a-4d3c-bad0-9d9a33c92771-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/lhEeglyZ_-eqcTVP5II2EP4m1mRWxgj1_W-z47RiZSI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MGY3ZTUxYi1lYjA1/LTQ0MmEtYWVlMC0x/MjIyMzhlZWRmMmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMTAt/MDUtYS0xNi4zOC41/Mi5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -239,6 +380,7 @@
     {
       "title": "Peugeot 208",
       "sub": "Deluxe\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3120/7e2a8767-d2c2-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1549297219-peugeo-208-let-your-body-drive-stephane-camille.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ciR8PKrhc-wxg9IOc191PP9B1NMLgCC3AJlkZ06tYWU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/Nzg2OGVkZC0wNDg0/LTQyNDMtOWNkYS0w/NDZjMzljNzYzZmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MTMtYS0xNS4wMy40/OS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -256,6 +398,7 @@
     {
       "title": "Dior Dreamers - Cara Delevingne",
       "sub": "Melinda Triana\nMercenary Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5962/0316680d-d2c3-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9c0f3771-25b1-4dbf-b2d6-159f428de84b-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/b30ff21mKsMPVIMt8bpqxSzqZy4zh4qGejRJf1mUb08/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/N2IyNWU3Yy1jYWZj/LTRjYTQtOWY4ZC04/ZDkzMWZjNWJjOTMv/MTY2NjcxNTE4NjYx/MS5qcGc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -273,6 +416,7 @@
     {
       "title": "Dior",
       "sub": "Else",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5811/0ccaef01-d2c3-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e9766cc9-0951-4d55-b94a-7d23d599a669-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/5z1Na6hqfrNWNWV4YgoMKaIcS1Kt9WelIPbtRN1iMgo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YWJmYWZlZC01NDk1/LTQ1NGUtYTQ3NC0z/MWZjMjMxNTc4MWIv/MTY3NjQ2NzU0NzAz/NC5qcGc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -290,6 +434,7 @@
     {
       "title": "Paco Rabanne / Black XS",
       "sub": "Matthieu Jacobs",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1048/7d40ac5f-d2d3-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f3243e59-a277-496c-b624-889b2ae2d61c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/PUBSKZGw8gnBATy0bBQzVcTpUGQoScDSkVf3-Hecubg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/OGRkYTAxYS01NTgz/LTQ5ODAtODc5ZS05/Nzk5MWMwNzZiNDcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MTktYS0xNy41MS4x/Ni5wbmc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -307,6 +452,7 @@
     {
       "title": "Dior / Homme Running",
       "sub": "Who?",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2127/853bf151-d2d3-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545437347-dior-homme-running-who-3f.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/byW9d4Bm2Sz2yntkCkww8UbumetvA4iEldGWQGiaz34/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTcyYzU1Ny04ZmI2/LTQzZmYtYWY5Zi00/ZDcwZjRhNTFiNmMv/cmVjb2xvMy5wbmc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -315,6 +461,7 @@
     {
       "title": "Nutrilon - Dive",
       "sub": "LUZIAN SCHLATTER\nRita",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1283/96dbb5c3-d2d3-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545401900-nutrilon-dive-hd.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/nsdWt-dGG1ILbeOtycN4jqpyrz5PmotIF2d_Z4DfbNI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YTIxZTFkYy01ZjVk/LTQ2NDEtODgzYi05/OGM5NzZhMTE0MzQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDUt/MjEtYS0xNi41Ny4z/OS5wbmc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -332,6 +479,7 @@
     {
       "title": "L'Oréal - pour la Flamme",
       "sub": "Jonathan Cohen & Jeremie Galand\nLes films entre 2 et 4, Makingprod",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4605/6255ac49-d2bf-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/66ca88f0-aa28-4fb2-9ef1-58a9a00d851a-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/GrABJaqoBkxXFW_JKuPqI_4RqXaUgr1ipeJxAGZfiVY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MmEzZTc1NS02OTVk/LTQ3N2EtODJmNS0x/NjIzOTAxNGEyMTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MDgtYS0xNS4zNC4y/Ni5wbmc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -349,6 +497,7 @@
     {
       "title": "Mixa",
       "sub": "Sylvie Lancrenon\nMagali Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2494/d274d5a3-d2bf-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545453222-40968273_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Zxd1qVOejXvJix1iNDigaNYdT9vj0HNQwj6m8WlSSIU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/OTczNDI5YS0zZDY4/LTRlYWQtODc5MS00/YzllYjA1NjZkNjQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTEt/MDktYS0xMC41OC4w/NC5wbmc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -364,30 +513,13 @@
       "slate": 10537
     },
     {
-      "title": "GARNIER | Micellar Waterproof",
-      "sub": "Felix Cooper\nObvious Film",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10538/b86811ac-1183-11f1-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6d2976e8-d70a-493b-89c0-eb6891b19d95-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/o92B35Y2yyY_zeFPudNMKp1irIZcle6cfxRLP8tIqbM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NGQzMTE2NS1iZjAy/LTQwZTQtOTRlNy1h/YzEyMDRiMTg2YzEv/MTc3MTkzOTI2MDEz/Ni5qcGc?v=1&format=webp",
-      "cat": "BEAUTY",
-      "slate": 10538
-    },
-    {
       "title": "Pupa - Age Revolution, Anti-age",
       "sub": "ANTONIO PIO ROSATO\nCasta Diva Pictures",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6418/dc13d68b-d2bf-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c5d8df86-4ac8-410e-a6e4-022a95baab65-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/2yutpPQ2jww-qRUzJnB4cGWRIlu18SmMt0U55OSyD_Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YTJmYzY5Yi02MWEx/LTRkNjAtOTZjNi0z/MWU3MzNiOGEzYWEv/MTY3NjM3MzU3MjYw/Ni5qcGc?v=1&format=webp",
       "cat": "BEAUTY",
       "slate": 6418
-    },
-    {
-      "title": "GARNIER | Micellar Classiceu",
-      "sub": "Felix Cooper\nObvious Film",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10536/7458fac2-1183-11f1-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cfde08fb-beeb-4645-b2a9-c8befa5aee65-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/80ZWUMQJ_sizuGjPTUO48s2Ck1MKYaCP7anfOMvrGr0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/YTk4YTNhNi04Y2Q4/LTQwYWUtODRkYS1j/ZWI4Nzk0OTcwOGEv/MTc3MTk0MTUwODU3/Ny5qcGc?v=1&format=webp",
-      "cat": "BEAUTY",
-      "slate": 10536
     },
     {
       "title": "sephora color 2",
@@ -401,6 +533,7 @@
     {
       "title": "Dior - Midnight Poison",
       "sub": "Romina Shama",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2126/ef1f0765-d2bf-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545437329-dior_spect_romina_shama.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/oMyOyEuYDDusUvrQTOTYQeC5cnoANTnYj7gQfYzkUVw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MGYyMTViYy1jMzQz/LTQ4NGQtYWExYy1j/Nzk1MTFhNzQ5ODgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDUt/MjEtYS0xNi41NC4y/My5wbmc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -409,6 +542,7 @@
     {
       "title": "Josephine",
       "sub": "Romina Shama",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1624/ff88eb1f-d2bf-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545414406-josephine.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/MF9s_GzkQdE3xN-vstI-c2kgoLB3e8kYPs5i0Loaqd4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDE0MzkzLzY0/NjgwNzdfbGFyZ2Uu/anBn?v=1&format=webp",
       "cat": "BEAUTY",
@@ -442,17 +576,9 @@
       "slate": 9139
     },
     {
-      "title": "Cnam",
-      "sub": "Philippe Joubert\nElse-4Good-OMNICOM",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11092/35ef891b-7a13-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a77c667a-03dd-4f97-8e04-bfbd61e37c69-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/XKW9cZ85jzU9eSL2mPHWL-0IOHCLXvf6kxxQX9_h5CE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTA5Mi02YTRkMTEw/NmM4NWZjMC4xOTE2/OTY5Mi1mM2RhMzcx/ZWU0YjQzYzVmMDIx/M2Q0MDVlYWYxY2M2/NC5qcGc?v=1&format=webp",
-      "cat": "COMEDY",
-      "slate": 11092
-    },
-    {
       "title": "Peugeot - Better Sensations",
       "sub": "Romain Levy\nStandard Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/939/7d774033-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545388759-peugeot-better-sensations.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ahTP5rbRpfSuhF4ZF06rijZimKuC0wT7WqHzVnemUkI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NjI4MDYzNi1lYjc4/LTRiN2YtOWVlMi04/ZDQ4NjExYTMxMGMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDkt/MTUtYS0xNS40Mi4w/My5wbmc?v=1&format=webp",
       "cat": "COMEDY",
@@ -461,6 +587,7 @@
     {
       "title": "L'Oréal - pour la Flamme",
       "sub": "Jonathan Cohen & Jeremie Galand\nLes films entre 2 et 4, Makingprod",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4605/6255ac49-d2bf-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/66ca88f0-aa28-4fb2-9ef1-58a9a00d851a-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/GrABJaqoBkxXFW_JKuPqI_4RqXaUgr1ipeJxAGZfiVY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MmEzZTc1NS02OTVk/LTQ3N2EtODJmNS0x/NjIzOTAxNGEyMTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MDgtYS0xNS4zNC4y/Ni5wbmc?v=1&format=webp",
       "cat": "COMEDY",
@@ -478,14 +605,16 @@
     {
       "title": "Citroën C3 Aircross",
       "sub": "Helmi\nInsurrection",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3288/634770e6-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1556183974-citroen-aircross-30s.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/wmHTynL46QJV7bCtUbDXwnMSzLvo7mty5e9uZowk8BE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZjI2ZGIzZS05ZTgz/LTQ1NTMtYTRjNi1l/NGRlZjFkZTBhN2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MjktYS0xMS4zNy4x/NS5wbmc?v=1&format=webp",
+      "img": "https://images.slatecdn.net/kSl3ZYG9yuZgz8MHP6NORujx6aJW1aacSuSp0VzyHh4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZDM0MjNkNi0wOWZj/LTQ3OWYtYWVlMS01/ZmJhNmVkNjJlMjIv/MTc5MzE4NTg5ODQ2/MC5qcGc?v=1&format=webp",
       "cat": "COMEDY",
       "slate": 3288
     },
     {
       "title": "New Peugeot Expert I Mission Expert",
       "sub": "Romain Levy\nStandard Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1112/abd41a60-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545394397-56937103_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/X5KlBidY5gfe_v0jFJQbKnSEEL68ejZ_OH0U1_6rz-I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NmNlODNmYi1iZjJl/LTRlOTUtYWE0Mi0z/NGY0NDM5NjExNTgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDkt/MTYtYS0xMS4zNS40/My5wbmc?v=1&format=webp",
       "cat": "COMEDY",
@@ -494,6 +623,7 @@
     {
       "title": "Toyota Verso My Dad My Hero Cowboy",
       "sub": "Simon Willows",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/350/97c428d6-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357965-toyota_verso_mydadmyhero_30sec_cowboy_vav2_mxsignonly.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/NfLeMj42GkdovYuOvnqIEGLZXS28hH5tSEVdvaV-wwQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/Y2RlYmUwZi1jYWEz/LTRiYmYtOGM2Ny1k/NGVhNGEzMTg2YzEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDkt/MTYtYS0xMS40NS4z/MS5wbmc?v=1&format=webp",
       "cat": "COMEDY",
@@ -520,6 +650,7 @@
     {
       "title": "Mc Donald's Mc Wrap Chèvre",
       "sub": "Claire Thomas\nBlue Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1337/b91996e5-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404262-le-nouveau-mcwrap-che-3fvre-mcdonald_s.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/9GBIpc9oLnselaXYGnZylAbHrP1BmiEthZR8_EnIK-Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZGZlOGMyMC02NTFj/LTQ1NDEtYWI0Yi1k/ZjQyNjYyZjNkMTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTEt/MDgtYS0xOC4wOC41/Ny5wbmc?v=1&format=webp",
       "cat": "FOOD",
@@ -528,6 +659,7 @@
     {
       "title": "Mc Donald's - Les Petits Plaisirs | Le Petit Italien",
       "sub": "Bengt-Anton Runsten\nInsurrection",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1340/cc56faa7-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404343-59990395_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/DJRz77lsTqcdfnxNH0lH3Q4mbxnfS47yEVI2jVWILto/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/ZmM1MTkzZi01NWQz/LTQwOGUtYTM5YS1m/YTNmNjk3NDVlYzIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTEt/MDgtYS0xOC4wOS41/Ni5wbmc?v=1&format=webp",
       "cat": "FOOD",
@@ -536,6 +668,7 @@
     {
       "title": "Mc Donald's - Les Petits Plaisirs | Wrap Mozza",
       "sub": "Bengt-Anton Runsten\nInsurrection",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1341/ddbe3bf6-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404408-59990334_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/uw-YGSuOqUHHHo5RRWv9DlPwe9lqqgOn3XvnA-vgIIE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MjMwN2UxNS04ZjJk/LTQ2YjctOTUxNC0z/Zjc1YzkzYTE2MTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTEt/MDgtYS0xOC4yMC41/Mi5wbmc?v=1&format=webp",
       "cat": "FOOD",
@@ -544,6 +677,7 @@
     {
       "title": "Herta Pizza",
       "sub": "Philippe Lioret\nMagali Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1844/e77daa3b-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545423058-herta_pizza_philippe_lioret_magali_films.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/7kg-lc6HgtRm0AInV_x9jfd9blxuS7Pwn1cFft5zeYI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZGMzM2IwYi02YzBj/LTQ4NDQtODczZi1i/ZGNmZjQxMjkxMDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTEt/MDgtYS0xOC4xNi40/MC5wbmc?v=1&format=webp",
       "cat": "FOOD",
@@ -552,6 +686,7 @@
     {
       "title": "Bonduelle - Jeunes Pousses",
       "sub": "Bruce Parramore\nCode Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4291/f40490c6-d2c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e751d8d4-a95d-4510-9f6b-84de77ab4600-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/HjtqpOnwKo4qo2rdB5PFQ04AmLOP6M6ouqEBPu8UOxQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/Y2I2YTMyMi02Yjlh/LTQ3ZTktYmJkNS1k/YzE3OTA5MTNmZjAv/MTc3MzgyODA1MDg4/MS5qcGc?v=1&format=webp",
       "cat": "FOOD",
@@ -569,6 +704,7 @@
     {
       "title": "Bonduelle - Vapeur",
       "sub": "Bruce Parramore\nCode Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4290/006b1e9e-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/75b44976-bc99-43ec-a976-18bb5d4fcfec-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/oyFWD8EvwHK9kL1MWsH4e89mxxsdcao6ddCY7UcMGCc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OTkxMGY4Ni1mMDVk/LTRjOGItOGQ5NC1h/YTE3ZDJmZTNiMzQv/MTY3Nzc1NTIyNjI4/OS5qcGc?v=1&format=webp",
       "cat": "FOOD",
@@ -577,6 +713,7 @@
     {
       "title": "Roquefort - Société",
       "sub": "D-Sturbed\nBlue Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2593/152e3447-d2c1-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545456382-pub_roquefort_soci_t_2014.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/eufkZQSizmbb_cbwIMBcc1RA2Z5iKq_RGr6C6v8r0pA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NWE5ZTYzYi1iNDgz/LTRlMTAtOTJlMy1i/NGVlZjk0NWY5MzMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTEt/MDgtYS0xOC4yOS4w/Ny5wbmc?v=1&format=webp",
       "cat": "FOOD",
