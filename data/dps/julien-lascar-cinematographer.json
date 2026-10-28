@@ -5,6 +5,12 @@
   "bundle": "https://kinou.slateapp.com/bundles/fc4a0169-ce23-11f1-a349-0215583debcb",
   "open": 8253,
   "overrides": {
+    "7008": {
+      "zoom": 1.36
+    },
+    "7011": {
+      "zoom": 1.08
+    },
     "7012": {
       "zoom": 1.2,
       "zoomThumb": true
@@ -14,13 +20,36 @@
       "zoomThumb": true
     },
     "7016": {
-      "title": "Reboot Now!"
+      "title": "Reboot Now!",
+      "zoom": 1.33
+    },
+    "7025": {
+      "zoom": 1.2,
+      "zoomPos": "53.8% 50%"
+    },
+    "7027": {
+      "zoom": 1.31
     },
     "7032": {
       "title": "Roger"
     },
+    "7033": {
+      "zoom": 1.23
+    },
+    "7645": {
+      "zoom": 1.2
+    },
+    "7860": {
+      "zoom": 1.14
+    },
+    "7862": {
+      "zoom": 1.06
+    },
     "8009": {
       "title": "AMG Thrill"
+    },
+    "8229": {
+      "title": "Altered TCG  - Open The Gates !"
     },
     "8253": {
       "phoneX": 56.8
@@ -31,12 +60,19 @@
     "8735": {
       "title": "Hisense x Euro 2024"
     },
+    "8795": {
+      "zoom": 1.43
+    },
+    "8817": {
+      "zoom": 1.21
+    },
     "8821": {
       "zoom": 1.37,
       "zoomThumb": true
     },
     "8949": {
-      "title": "Mc Donald's"
+      "title": "Mc Donald's",
+      "zoom": 1.08
     },
     "8971": {
       "title": "Decathlon x Kipsta - Logic Says"
@@ -46,19 +82,24 @@
     },
     "9178": {
       "title": "Till The End",
-      "zoom": 1.34,
-      "zoomPos": "49.3% 89.7%",
+      "zoom": 1.35,
+      "zoomPos": "49.4% 88.9%",
       "zoomThumb": true
     },
     "9332": {
       "title": "Renault Youclip"
     },
     "9504": {
-      "title": "Eva Fumée Blanche"
+      "title": "Eva Fumée Blanche",
+      "zoom": 1.32,
+      "zoomPos": "50.4% 34.9%"
     },
     "10383": {
       "zoom": 1.22,
       "zoomPos": "52.7% 49.9%"
+    },
+    "10602": {
+      "zoom": 1.35
     },
     "11177": {
       "zoom": 1.12,
@@ -72,7 +113,7 @@
     "bioEn": [
       "Julien is a French cinematographer based in Paris, he has been nominated for Best Cinematography at the Berlin Music Video Awards 2024 for Frederic de Poncharra's \"6G\" for artist Booba."
     ],
-    "pos": "77% 34%",
+    "pos": "80% 32%",
     "zoom": 1.18,
     "img": "img/julien-lascar-cinematographer.webp"
   },
@@ -302,7 +343,6 @@
     {
       "title": "Amaru - Not Different",
       "sub": "Original Kids\nFrenzy Paris",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7860/9c2de2b2-34c5-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a571edc7-0de9-4731-b73e-0d171351f605-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/djdFTA_LOx8hwGkDMav0_axDpeYucKeR75S1l6_LVxc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NGNkZjNlMy00NmFi/LTRiMGYtODAzNy0w/MGUxM2NlNGE4YmQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTAt/MTYtYS0xNC4zMC4w/Mi5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -387,6 +427,7 @@
     {
       "title": "Clément Froissart - So Hard",
       "sub": "Valentin Plisson and Maxime Roux\nSister Records",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7033/7d50f752-d2ba-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0f6c2f1e-1342-49a2-96d7-5ad19f1a8d95-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/txEBY4S9i3jbeDxo9AjpXWXlIXE3HdhgKjilNUjN6o0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MmY3ZGJmNy1hNTYw/LTQxZTUtODcyOC04/NWJmYjEzNGY3NzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjctYS0xNi4yNi4w/MC5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -395,6 +436,7 @@
     {
       "title": "Booba - Grain de Sable Feat. Elia",
       "sub": "Fred De Pontcharra\nPapaya Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7023/8f52aed4-d2ba-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/708e04d2-d0a8-4550-a902-4d282727a3fc-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/IWlz7XZy5wJ7hrJGlxnuBH8I9INsQdUIytQrW08sMcI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZDQ1MTgwYS0zNjBj/LTQzZjItYTg0Yy0y/YWJkMTgwOTk1YjEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjctYS0xNi4yMy4z/NC5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -403,6 +445,7 @@
     {
       "title": "Zeina - Je Suis L'Amour",
       "sub": "Julien Lascar\nBlue Okapi",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7022/a97f6c4a-d2ba-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c363a886-d200-4aee-a60f-431c70c82ac3-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/OOXIUwdtUMgBSl8BkE6z9A1PB3ajIa1MMnT2DqHTwTA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTMyNWExNC05OGU1/LTQxOGEtYTA0Ni04/OGI4ZGM5OTc0M2Qv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjctYS0xNy4yOC4x/Mi5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -411,6 +454,7 @@
     {
       "title": "La Chica - Ratas",
       "sub": "Julien Lascar\nStudio Mirage",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7015/ca99bba9-d2ba-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/88f26d93-0fdc-45cf-b1a8-ee54acdb8379-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ndpV82_yHpFlDi0gSOkWm2Xjm9ILFdN-HD19E3uT3qQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MDE1LTY0MjE5Zjhm/MzdkZjQyLjc4NTUx/MzIzLTQwMmI0MTUy/ZmE2ZmE5N2Y4NDMz/YjQwY2M1ZGNkNzI0/LmpwZw?v=1&format=webp",
       "cat": "MUSIC VIDEO",
