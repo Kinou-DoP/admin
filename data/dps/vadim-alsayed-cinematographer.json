@@ -4,6 +4,9 @@
   "hue": 281,
   "bundle": "https://kinou.slateapp.com/bundles/92cf2e29-d2db-11f1-a349-0215583debcb",
   "open": 10391,
+  "showcase": [
+    "NARRATIVE"
+  ],
   "overrides": {
     "4997": {
       "types": [
@@ -45,6 +48,53 @@
         "Music Video"
       ]
     },
+    "5033": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/mange-1",
+          "title": "MANGE - 1",
+          "img": "https://images.slatecdn.net/eClfV0klU4i_B1_KrnIA2vk2hoHnWKc2Us4Y6J35vmc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MDM0LTYwOWU2MWUx/MWY4NzI3LjkyMzk2/NDAyLTM3MTczNDU2/M2IzN2Q5MDdiZjA3/NTJmZmY1MzZhOGIz/LmpwZw?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/mange-2",
+          "title": "MANGE - 2",
+          "img": "https://images.slatecdn.net/zElUaoWM8TWKGhhFaXThvy4zqCFOn7hZv4R9ebsrao8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MDM1LTYwOWU2MWRm/M2UwMzg5LjY5NzI5/ODA5LTU1MmJjNmQx/ZjI3Mzk0ZWMzNjll/YTM2ZTk1MTc2YjYw/LmpwZw?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/mange-3",
+          "title": "MANGE - 3",
+          "img": "https://images.slatecdn.net/qb52kHP6VjiDcZu6Awu4V4fzeUGJ4rnkggouOUl16cM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MDM2LTYwOWU2MWUw/ZDk4MGI3LjM0NDQw/MTU5LWIzOWQ0ZjRl/NzhjNjllODk3NWIz/Y2YxZjQ0YWYyMDdi/LmpwZw?v=1&format=webp"
+        }
+      ]
+    },
+    "5104": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/beauty-boys-short-film-stills",
+          "title": "Beauty Boys (short film stills)",
+          "stills": [
+            "https://images.slatecdn.net/rxlwyq04gTZVegMtCO2Gb-DmnMVtXbE3AYLiEHyGkOQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/Y2EyNWI4MS01ZDA2/LTQxZGEtOWNkMC0z/ZGJlZjBmNTM1NmMv/MWZmYjY0MDEtYTRi/Ni00YWQ1LThhMDkt/MzA4NDY2ZDhkZDZm/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/OdYkd92wHWMm0vk9Mmtdk7U-nBA8gaWRDU1yGIB4VPM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MDU2NmQ4NC04ZjMz/LTQ2YmQtODNiNS1j/OTU4YmQ4NTI5YjEv/MmQ5YTNiZDAtNDhm/My00ZDQ1LTg3NWYt/YTI0NjI1NjhiZDRh/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/J2sJhJafv1RLeWeSM2Fsz7wVIAJJWUEhIAUF9eyYCv4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjAyMzg2OC0xYmEx/LTRlYzItOTgxZi0x/ZmZmN2NhNDJkOGMv/MDNmOWNiYjUtM2Y0/YS00ZmQ5LWE2Y2Mt/NzAwMDVlY2Y3MTRk/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/CnO_r7fkN2WvFzB_mJY-ZdH57tiWRQWujrn0xUErAoc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MzU4MzIyMi03ZDJk/LTQ3YTYtODc1OC1i/OTFkMWY1MDIyYjMv/N2YwMTAyZTktZWI0/ZS00N2M3LThmZTkt/OTlhZGZlZmE5YjU1/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/6hMlPpJaGDWuPwUdaBryIdvXzxuIbzt45Eb7eO7-UbU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/Y2NjNzI3Yi0xNjA4/LTQ1NWEtYWI1MC00/N2M0ZTViZmEzNjkv/OWI0ZjJlOWEtOTNj/Yi00MTliLWEwNmQt/Yjc0ZDY0N2M2MzM4/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/LhqTkfRd6PjY5A--gYjKOEAjIaQ581HWjYTXqNzZQvA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/M2JmNmNmZi1iOGJm/LTRmMzctYjhjNi1k/Y2UwZmY5MWMwODQv/MzZkMWVmMjAtMTMx/Mi00OWUwLThmNjkt/MTdiYzAxMDA2MjM3/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/hvvEcmKIbvo7CBmaenXHh0arloNP5_NDHZqsarlyJ8o/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NGFkMDIzMC1lODcz/LTRmNmQtYTg2Yy05/YTRhNzBlZDA5Y2Uv/NjVmZmUzZmItMjA5/Ni00ZmI1LWJhMjYt/YWI3NjY3ZDhmMWRj/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/y2m1Ek_V-xRG9mv0iA8GTkoq6-bgvRBRo39g83Ob6xw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/Y2IyMjkwMy1mZmQy/LTQwMmQtOTYyZC0w/MzRhOWRmNjgxZDgv/OTJjODJhMTQtZDRl/OC00Y2EyLWE4ZDUt/MDYzMDA2MzBhNjc2/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/gaTHHRDSWKQW9IE3Agfy__5jd1tMEldKEUlaMu43gbI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NDJmNDAxYi02M2U1/LTQ0MWUtYjQ4My00/NjI4YjgxZGVmOTUv/MTA3ZDg4NzItNWEw/MS00NWI0LWJlNjUt/NDA5ODBmNjQ2ZTlh/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/EcKFGel9qUTktRqYdXZhfuSGyPiLc2fJb1DtiDLTDT4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/ZjZmZGM0MC05MTUx/LTRhNDEtYWZkNC1i/MmU5ZDc1OGYwYTIv/NDk1Y2Q1YmYtZDUw/ZS00NWY1LThhZGEt/NTYyNWU4Yzg2OTM3/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/Dt-NZtlseTs6kMSqbzJdKbgY81BdKzXQ4MBPzzHosaQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZTJjYjQ5MC03ZWRk/LTQyZjAtODgxMS1j/ZTcwY2FkMzA0Zjkv/MTUwNWUwNDgtYTU4/OS00MjkyLWEwZTYt/OGU0ZjZhNjc2OWFj/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/0ovPgfe5qgOBfdLom621PtpypiVyw3kgeAKK1Y9NfSE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MGZiMTAwMy03ODFm/LTRjMTEtOTYwMS1m/YTE3YmZkM2ZjMzgv/ODMxOWIzZmItYzZk/Mi00YWM1LWFmNjkt/ZWZmMDYyNTc4MGIw/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/K1M1A8QNSDpVJlAaxyP8u-7HgsMH04--nh0DbT5VBbk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTRhYjBjNi1mYjZi/LTRmMDgtOTFmNi1m/ZjY1YzI4NWEwYjYv/MDI0ODUyNjctMmVj/ZC00MzJiLTg0YjEt/ZWY5NWU0MjhjZmYw/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/m9FatGCSIAi35fZYxDoXCkjkGaXDTbcQ1WoX9o3Su0E/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MzBmODc1My1hNTQ4/LTQwN2UtYjRkZS1h/NDM2Y2I1NzAyNGEv/MjIzOTcyMzMtNDg0/My00MjZkLWE2OTct/NTM5Yzk0NDU4Njll/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/3fTJDL0tS0frCfeFNP3qIppk0F_6MdAxYJb-UEhn1ds/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZTRmY2IyOS05MzQw/LTQzZmMtYWQ5Yi1m/MzkxNGY0Mjk0ZGQv/Y2JiZGJmOGYtNjA4/NC00NWJmLWFkZDMt/ZGEzNTg4YjZkYWY3/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/W0eiSfKCQ8AJ9sCVLT42tf7CUu1AXs0vNeI6w7-T_K8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/N2I4MTFiMi0zNzBl/LTQ4ZDEtYWI5YS01/Yzg0YWM5ODdlZWYv/ZGJmNGY4NmMtYzBl/ZC00MzgyLTljMDUt/MjBhZDYwMjA4ZDAw/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/VWuaQHZ6oXUrzJvpczKSc1gWSqgGCUGTEClKmncubn4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZTEzYmVmYy1jMmZj/LTRiMjEtYjViYi05/YzNjMTRiNDBmNjQv/ZTkzZjA1YTEtYmYz/ZS00ZTg0LThlNDQt/MGIwNzAyZWY3OTM1/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/B60HWH8R4XWc0I6taewVRcsNMoOx1CbbaLgixjTAIYQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MTFiNDk5Yy00YjY5/LTQ4YWItOWIyYi04/YzIxMWUyZGRmODUv/ZjE1NTFkNGUtOGI0/YS00Njk0LThlZjct/OTA0ODc5MGFhYjkz/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp"
+          ]
+        }
+      ]
+    },
     "6123": {
       "types": [
         "Music Video"
@@ -82,32 +132,27 @@
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-conseil-discipline",
           "title": "Juniors - extrait - conseil discipline",
-          "img": "https://images.slatecdn.net/edrp3Yz2OSvH1-vljc5NBz2kNyQP8mklxHbjGVjtWVg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI5LTY0OTJmYTkx/YzhiNTE2LjIxMjQw/ODkzLTAwZDIxNTU0/NzEyNjUxYWQ1ZjRk/NzVkMzg0NzMyZjEz/LmpwZw?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7c2e962f-d5a8-465e-b4fe-08d8a31f3a92-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/edrp3Yz2OSvH1-vljc5NBz2kNyQP8mklxHbjGVjtWVg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI5LTY0OTJmYTkx/YzhiNTE2LjIxMjQw/ODkzLTAwZDIxNTU0/NzEyNjUxYWQ1ZjRk/NzVkMzg0NzMyZjEz/LmpwZw?v=1&format=webp"
         },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-fete",
           "title": "Juniors - extrait - fête",
-          "img": "https://images.slatecdn.net/u7L9TrPGpysaJHkAQyjZSJ3h0hgXYRZ-GgZEkg0eE8I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI4LTY0OTJmYTkx/ZGE4NzkwLjY4MDIy/MDM5LWIyNzViMWMz/ZjBhYTY3Y2ViM2Fk/YzhjM2VhZDc2YjBh/LmpwZw?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/83d6e0a6-b895-4fdb-b564-e67b6b6f15c7-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/u7L9TrPGpysaJHkAQyjZSJ3h0hgXYRZ-GgZEkg0eE8I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI4LTY0OTJmYTkx/ZGE4NzkwLjY4MDIy/MDM5LWIyNzViMWMz/ZjBhYTY3Y2ViM2Fk/YzhjM2VhZDc2YjBh/LmpwZw?v=1&format=webp"
         },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-chanson",
           "title": "Juniors - extrait - chanson",
-          "img": "https://images.slatecdn.net/njOKDm7_RQocBK4HXqG8yXZ0zy_eQVd5KTfxOgN0nQ8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI3LTY0OTJmYTkx/ZTYyM2Y5LjAyMjEx/MTM1LWUzYmE2ZTY1/OWE0ZGI4ODVlNDQ5/ZThkNjlhZGZhYjEz/LmpwZw?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3fcb48d6-30a0-449a-92c7-8d84fd2c0288-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/njOKDm7_RQocBK4HXqG8yXZ0zy_eQVd5KTfxOgN0nQ8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI3LTY0OTJmYTkx/ZTYyM2Y5LjAyMjEx/MTM1LWUzYmE2ZTY1/OWE0ZGI4ODVlNDQ5/ZThkNjlhZGZhYjEz/LmpwZw?v=1&format=webp"
         },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-mensonge",
           "title": "Juniors - extrait - mensonge",
-          "img": "https://images.slatecdn.net/xzydmaVru_iUYMCsSO71mk3DD_pySA8rbnO8hpEqvs4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI2LTY0OTJmYTkx/ZTVhZDg4LjI5MTU0/MjQwLTJhZDg0NWFj/Y2ZmMjYyYTk4ZGZh/YmUwN2RhY2Q5ZmMz/LmpwZw?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dbb2ad27-bca2-4894-a32d-b52a80688186-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/xzydmaVru_iUYMCsSO71mk3DD_pySA8rbnO8hpEqvs4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI2LTY0OTJmYTkx/ZTVhZDg4LjI5MTU0/MjQwLTJhZDg0NWFj/Y2ZmMjYyYTk4ZGZh/YmUwN2RhY2Q5ZmMz/LmpwZw?v=1&format=webp"
         },
         {
           "link": "https://kinou.slateapp.com/work/juniors-extrait-pattator",
           "title": "Juniors - extrait - pattator",
-          "img": "https://images.slatecdn.net/RTuLqDRViH0NgScv9nt0lKWZp7wK1lyslAMsQUrdXDg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI1LTY0OTJmYTkx/Y2QzMzQ0LjQyOTQ5/NDIyLTAzYTJmYzM1/M2FjMTgwMjYwNjhl/N2JlOTU1ZjU0Yzg4/LmpwZw?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e9f6ac3b-617d-46bc-b395-c8d535407996-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/RTuLqDRViH0NgScv9nt0lKWZp7wK1lyslAMsQUrdXDg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDI1LTY0OTJmYTkx/Y2QzMzQ0LjQyOTQ5/NDIyLTAzYTJmYzM1/M2FjMTgwMjYwNjhl/N2JlOTU1ZjU0Yzg4/LmpwZw?v=1&format=webp"
         }
       ],
       "types": [
@@ -153,8 +198,7 @@
         {
           "link": "https://kinou.slateapp.com/work/aicha-extrait-1",
           "title": "Aïcha - extrait 1",
-          "img": "https://images.slatecdn.net/NxGPcp6Z3B6IZfoiCj6fVV-i4SMoARgitfG-FRdLKbk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MTg0YTEzOS1kMzlm/LTRjOTctYTMyZC1h/OWJmNGU2ZmQ2NDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjItYS0xNS40Mi41/OC5wbmc?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/89078920-6c0f-43ec-a5ff-88e74a64f083-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/NxGPcp6Z3B6IZfoiCj6fVV-i4SMoARgitfG-FRdLKbk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MTg0YTEzOS1kMzlm/LTRjOTctYTMyZC1h/OWJmNGU2ZmQ2NDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjItYS0xNS40Mi41/OC5wbmc?v=1&format=webp"
         }
       ],
       "types": [
@@ -291,6 +335,28 @@
         "Clip"
       ]
     },
+    "9577": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/the-tears-you-left-with-me-stills",
+          "title": "THE TEARS YOU LEFT WITH ME - stills",
+          "stills": [
+            "https://images.slatecdn.net/UQbUyGg6_Vz4xatN6YcoYALk75wjK7H3bZ4DBh1khQ0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OGFmZjhmYi01NTJh/LTRlOTMtYjE5ZS1i/NTllODQwNzEzMGIv/ZWE4MzgzNzctNjdl/My00ZGZjLWEzZTQt/NDQ2NGMyOTZhZDZj/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjY2MC0xNjIwLWRl/dGFpbC5wbmc.webp",
+            "https://images.slatecdn.net/N9zo_p6NDV92TeFrEsJGZBaEZnf8KZrwTcln-hYPBaM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YTdlNTkxYy05Nzlj/LTQ2MWItOWNhZS0z/YjA1ZjZhYjQ4MTYv/NTdhMmUzZjgtY2Uy/MS00ZGQ1LWIyZDAt/NmRiN2UyNDc0Y2Yw/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjQ4OC0xNDAwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/g3MxVWd6Ey7N3vADDwcYQt3rauUYHcjMlBDd2Ye54BE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZGVkYWM2MC1iYmMy/LTQxNTUtYmI0Mi1l/ZWYyMjkyNDhjMGUv/OTJiNDZjY2EtYTVl/NC00YjEyLWJjNTQt/OTcyYWU3ZDcxNzkz/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjU5MC0xNjMwLWRl/dGFpbC5wbmc.webp",
+            "https://images.slatecdn.net/GUAzTdw5FGv0if04uOZT7fHVs0A7EpPFt_EX5dn23WU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NzcyNjU3ZS00NDZl/LTQzZGEtOGRlZC0y/OTNkYWUxZjdjZjcv/Mjg1ZGMxMmUtYWUx/Yy00OTg0LWJjYjgt/MzdiZGQ4OTE2N2I1/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjQ4OC0xNDAwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/Fy7sBZClIr0wEvm-OTyWKH0jYzhd5OZ6_5NJBYhuxMU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MjBjNDBkNi1kODgz/LTRlYTItOTIxMC1h/MDY1ZTRhNTJhOGMv/NDQyZDVhZTAtZmE5/NS00MjJkLTk1NzUt/OTY3MjFlN2VjNjZl/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjQxMi0xNDQyLWRl/dGFpbC5wbmc.webp",
+            "https://images.slatecdn.net/iXc6FqL_gcqXmrTPMpV8d-Ob5RBHRzxF8IKNrYZELNU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/NDMzNmRmMS03Y2Jl/LTQyNWMtYTM4My1m/ZTg1NDgxYTcyNDMv/NjQwZDcwN2YtMWZk/NS00ZTIzLTlkOGUt/NDA4ZGQ1MTdiMmFh/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjQ4OC0xNDAwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/kapxF0sQqKCTSJdgYKDboYJyvuNBJcbFkEatOVISnqY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OTBhMzc2ZS1jYzdj/LTRmMTAtOGU5YS0x/NDQ0MGY2ZjUzMDYv/ODgxMmQ1ZWQtNjI2/NS00Yjg5LWJmM2Et/ZjU3YzM3MDA2NmRl/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjQ4OC0xNDAwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/-O31bXhxI1RRkTEY866p8BJoNIRgbgkmubEUC-3udj4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZTdmYWUwZC1hNzc5/LTQ5NjMtOGM1Zi1h/Zjk1Nzk4OGJlYmYv/YTZiMjg5ZjQtYzY0/My00MzdhLWE4OTkt/NjVjZTk5OTY1NjZl/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjQ4OC0xNDAwLWRl/dGFpbC5qcGc.webp",
+            "https://images.slatecdn.net/Xxfwh0SqvNsiNeLcbqtPlQJsekusyOq8HhSxZgI0ojQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MmQ1YTQzYi1mNWU2/LTQyNWMtOWM3NC01/OTFhZjkyNGQ0OTUv/YTM2Njk4OGYtYWM0/Zi00N2NlLTk0ZmYt/MWIxYTJlYjQ3ZDFi/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjY4Ni0xNjI0LWRl/dGFpbC5wbmc.webp",
+            "https://images.slatecdn.net/W50FU3Hz1vY2g1tsDBGpjp77kZkWDPWS9pjPh5JHAXo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NTUwNGFjOS1hYTgw/LTRiN2UtYjhjMS02/MWMyNWYwMmJjODEv/YjRmNTkwZjEtZDYy/Yi00YmIzLWE4NTQt/ZjYyYjJkYTYzYzJm/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjY2MC0xNjIyLWRl/dGFpbC5wbmc.webp",
+            "https://images.slatecdn.net/qRhaL2CxcyWLPHFucBECBRavIpj9rDqATsHHnfDCZtQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NTc3YjRhNy1lOTU2/LTQxMjEtODRkNS04/M2M4MTE1MjIyZDkv/ZDBiZjkzNmEtNGQz/Ni00MjY0LWJhODAt/OTUyMWM4ZWIzNzNm/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjY3MC0xNjE4LWRl/dGFpbC5wbmc.webp",
+            "https://images.slatecdn.net/sNMH0nXRMAAw1D-s8RvdNTttRoCxzYYRokRFIvCGjzI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/M2Y2NWJkZS0yNGNm/LTRhYzEtYjFmZS1h/Y2EwMGQyODQyZWMv/ZTM0YTkxMWQtNTdl/NC00NTI0LWJjMTQt/N2FjNmY4NTM4Njll/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc.webp"
+          ]
+        }
+      ]
+    },
     "9580": {
       "types": [
         "Commercial"
@@ -361,10 +427,140 @@
   "about": {},
   "categories": [
     "FEATURED",
+    "NARRATIVE",
     "COMMERCIAL",
     "MUSIC VIDEO"
   ],
   "clips": [
+    {
+      "title": "TOMOE - trailer",
+      "sub": "Marine Hébert\nHRouge Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6661/20656b23-0fc0-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dc6f5d91-80f9-445a-be29-d9ebdbab4a0b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/01msBudGYQys0YL1S6HixWihBt1ABbU6GZKwQ4OxMuY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YWNlZmI1NS1iZWNk/LTRmNzktODhmYy1h/MmM2NWFhN2NkNWUv/dW50aXRsZWQtMS4x/LjgucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6661,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "PANDA - stills",
+      "sub": "Jeremy Mainguy\nSuperprod",
+      "img": "https://images.slatecdn.net/s_My4kP4CQ9YmJ7mwTosXNJuGf5w3wRS8y9od8vrr1A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MWQyOGZjYy1iYzk3/LTRjMzEtOTcxNy02/ZGZjODJlNjYxOWEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTIt/MDktYS0xNy41NS4w/NS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 8216
+    },
+    {
+      "title": "Juniors - trailer",
+      "sub": "Hugo P. Thomas\nLes films Velvet",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7445/6067e5e6-0fc0-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f2537168-a477-4ae2-8ec3-214fe96db2e6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/vk5H7X7xMARBtPnrX9PUumcHzYTr22zOxTYpqXd9ekg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MzRkZjkyOS01NmY3/LTQxZjEtOTU1Yy04/ZmNlYzgyMjdjYWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MTUtYS0wMS40Mi4z/OC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 7445,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Aïcha - extrait 2",
+      "sub": "Coralie Lavergne\nLes Films du Clan",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f082ea37-0187-46a5-9a19-6152ce0c92ba-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GEJyMcxT04iOJEcJAS543ZTz60WXJZbWSF8ZwC537QE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OWNiY2U4YS1kNzlk/LTQ5ZDAtYTdlYy1k/ZmM2ODk3OTU2NjQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjItYS0xNS4xMy40/Ny5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 8056,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "CET AUTRE HIVER - Margo Brière Bordier - Teaser",
+      "sub": "Margo Brière Bordier\nPunchline Cinema",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5001/03674ecd-0fc2-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/86918e7a-93dc-4165-ad55-82827209022f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fvWhqwGryc-vb3jnIJpqcxLEQBuX4bkc1x6gxN5PGBo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MzVhYTNkNy01OTFk/LTQ1YWQtYjJmMC05/MzRkMThiZTA4ZjQv/NjJmODE1NzctMWIy/Yy00NTU1LWI2NzEt/N2EzNWZiMzdiOTMy/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5001
+    },
+    {
+      "title": "THE TEARS YOU LEFT WITH ME",
+      "sub": "Thibaut Buccellato\n27 films, Anomalie Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9577/b4c4e0b5-0fc0-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d61d03a1-495f-43f7-ad03-547295d3d025-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jRaXvmMPTK_JQU297uH01rJ_5aGVKO6zenZKsp5QC9E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZTc0MTVkOS0wYzYz/LTRjMDItODEzMC0w/YjJjNmZiMjI2MGQv/YjRmNTkwZjEtZDYy/Yi00YmIzLWE4NTQt/ZjYyYjJkYTYzYzJm/LnBuZy4xOTIweDAt/cTk1LWJveC0wLTAt/MjY2MC0xNjIyLWRl/dGFpbC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9577
+    },
+    {
+      "title": "Trois Nuits Par Semaine - Bande annonce",
+      "sub": "Florent Gouëlou\nYukunkun Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6349/e913c710-0fc0-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/22601d93-ac20-4d57-985b-e369fa76d951-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JM80wHJOwPVgHtR86Epw4SPU5k2wtZS06zvR4d6v2dU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YTJhZTgxNi0yNmU1/LTRhZDEtYTAyYi1m/Yzk5MTk3NWE1ZWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjgtYS0xOC4xMC4x/Ny5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6349
+    },
+    {
+      "title": "SET LAM - Teaser VF",
+      "sub": "Vincent Fontano\nDobro Films, Martin Mauvoisin",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9442/0c523c55-0fc1-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/89b85b7d-b1ef-4b6c-87c5-f849ed73784b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/cv6FtKxYQXdl9m-yZoWCWwFSmLkPPLoXaabdP38d56o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZWE4YTA0My01Y2Ji/LTRhMmMtYWFiOC03/ZmYwMGQwY2I3OTYv/Y2ZjZDhhODktNzFh/Mi00ODQzLWJhZGYt/ZmVmZTE1YjU4OGVi/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTQ2Mi0xMDgwLWRl/dGFpbC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9442,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Pipo et l'amour aveugle - Teaser",
+      "sub": "Hugo Le Gourrierec\nEllabel Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5021/3b883b16-0fc3-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4fdee7d1-3a0c-4b20-b711-ff1e8c4860e6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/u-wuiTaNmHQCnZs5qj5wOFeZRN3hwWfFhgplFNWladE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ODc2YzBiMC02MDBi/LTQyZWMtODZjNy05/ZTE1YjkxYWU1YzYv/YmEwZTlmM2MtNDg5/Yy00OGUzLTkxNjQt/OWZjM2E2ZmRkN2Ux/LmpwZy44MDB4MC1x/ODUtYm94LTU4LTI2/LTE4NTYtMTAzNi1j/cm9wLmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5021
+    },
+    {
+      "title": "Traque",
+      "sub": "Vadim Alsayed, Joffrey Monteiro-Noël",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5029/544755ab-0fc1-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8e641260-ddce-44da-88fe-bd4f2488c816-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/iYSEgHWASzfVnKQc07hfY9UZKs33WzMt7qMqSWxmuM4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZjQ2YTQ4Ni04N2Fm/LTQzOWQtYTBhNC0w/OTQ0YTg1Y2JkYWEv/MDg0YzViODItZjBi/OC00M2UzLTg5OTIt/NjMxZWRiNDZjYWJh/LnBuZy4xOTIweDAt/cTk1LWJveC0wLW5h/bi0wLW5hbi1kZXRh/aWwucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5029
+    },
+    {
+      "title": "Beauty Boys",
+      "sub": "Florent Gouëlou\nYukunkun",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5104/b2ebd7cc-0fc1-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b59b2e2a-d07e-4227-815d-28811eb3c33d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/QZ2Y2rkDmcmtZAkL5ow3GN7mJS8Xv027YJ9O7l-RZRg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MzdiMTNkMy1iY2Zm/LTQxYmUtYmVmNC0z/ZmU1ODFjNTliZDYv/N2YwMTAyZTktZWI0/ZS00N2M3LThmZTkt/OTlhZGZlZmE5YjU1/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTkyMC0xMDgwLWRl/dGFpbC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5104
+    },
+    {
+      "title": "MANGE Bande-annonce",
+      "sub": "Joffrey Monteiro-Noël\nGoodseed Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5033/db65a601-0fc1-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/26f07601-cfb3-4296-a47a-0f363fd5d6b0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/y6RyrA2YETr-Nv_edVyNzvJABw6AcxafS9D-AIK9Pxg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/Yzk2Zjk3Zi1jNThi/LTQ4MDgtYmUxNC1i/NWNiNWFmZjEyZWYv/YzExYWJhOGMtNDNk/ZC00MzhjLThmMmMt/YTMyZTY4YTQ5OGMw/LnRpZi4xOTIweDAt/cTk1LWJveC0wLTAt/MjA0OC04NTgtZGV0/YWlsLnBuZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5033
+    },
+    {
+      "title": "La Nuit nous réunit (feature film stills)",
+      "sub": "Métilde Weyergans et Samuel Hercule\nLa Cordonnerie et Punchline Cinéma",
+      "img": "https://images.slatecdn.net/-3f-SmgVBL8ZcF5_pmSNkdrysZVnH15VkL_-m1x1Lz8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NTkxNzA3Yi01NTNi/LTQwZGYtYmQzMy04/ODczMmMzODI4MmYv/M2IyZWI4YjYtYjg5/YS00ODE0LWE2ODct/ZTg3YTRiODZmYjk3/LnBuZy4xNjAweDAt/cTg1LWJveC0wLTQ4/LTI4ODAtMTc1Mi1k/ZXRhaWwucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6040
+    },
+    {
+      "title": "Refuge",
+      "sub": "Vadim Alsayed\nFemis, La",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5023/75939273-0fc3-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d4d68618-76c4-4e8d-9bb9-6a495c0bea09-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/sbEY6TUXgswWZzprNFZ59B06_9b2OTknoquWWWnYVw4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MDIzLTYwOWU1ZDhl/ODRiZGQyLjk0Njc2/OTQwLTdiM2UzZDEx/YWQyNjNjYTkwZmU4/MTYwMzM5ZjU4NTU3/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5023
+    },
     {
       "title": "FOUQUET'S - Windows of Greatness",
       "sub": "Laure Atanasyan\nFilms & Digital, SPOA",
@@ -661,49 +857,6 @@
       "slate": 9475,
       "featured": true,
       "featuredOrder": 2
-    },
-    {
-      "title": "TOMOE - trailer",
-      "sub": "Marine Hébert\nHRouge Productions",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6661/20656b23-0fc0-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dc6f5d91-80f9-445a-be29-d9ebdbab4a0b-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/01msBudGYQys0YL1S6HixWihBt1ABbU6GZKwQ4OxMuY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YWNlZmI1NS1iZWNk/LTRmNzktODhmYy1h/MmM2NWFhN2NkNWUv/dW50aXRsZWQtMS4x/LjgucG5n?v=1&format=webp",
-      "cat": "",
-      "slate": 6661,
-      "featured": true,
-      "featuredOrder": 5
-    },
-    {
-      "title": "Aïcha - extrait 2",
-      "sub": "Coralie Lavergne\nLes Films du Clan",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f082ea37-0187-46a5-9a19-6152ce0c92ba-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/GEJyMcxT04iOJEcJAS543ZTz60WXJZbWSF8ZwC537QE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OWNiY2U4YS1kNzlk/LTQ5ZDAtYTdlYy1k/ZmM2ODk3OTU2NjQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjItYS0xNS4xMy40/Ny5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 8056,
-      "featured": true,
-      "featuredOrder": 7
-    },
-    {
-      "title": "SET LAM - Teaser VF",
-      "sub": "Vincent Fontano\nDobro Films, Martin Mauvoisin",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9442/0c523c55-0fc1-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/89b85b7d-b1ef-4b6c-87c5-f849ed73784b-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/cv6FtKxYQXdl9m-yZoWCWwFSmLkPPLoXaabdP38d56o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZWE4YTA0My01Y2Ji/LTRhMmMtYWFiOC03/ZmYwMGQwY2I3OTYv/Y2ZjZDhhODktNzFh/Mi00ODQzLWJhZGYt/ZmVmZTE1YjU4OGVi/LmpwZy4xOTIweDAt/cTk1LWJveC0wLTAt/MTQ2Mi0xMDgwLWRl/dGFpbC5qcGc?v=1&format=webp",
-      "cat": "",
-      "slate": 9442,
-      "featured": true,
-      "featuredOrder": 8
-    },
-    {
-      "title": "Juniors - trailer",
-      "sub": "Hugo P. Thomas\nLes films Velvet",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7445/6067e5e6-0fc0-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f2537168-a477-4ae2-8ec3-214fe96db2e6-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/vk5H7X7xMARBtPnrX9PUumcHzYTr22zOxTYpqXd9ekg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MzRkZjkyOS01NmY3/LTQxZjEtOTU1Yy04/ZmNlYzgyMjdjYWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MTUtYS0wMS40Mi4z/OC5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 7445,
-      "featured": true,
-      "featuredOrder": 9
     }
   ]
 }
