@@ -5,44 +5,210 @@
   "bundle": "https://kinou.slateapp.com/bundles/bbdb15e6-cec8-11f1-a349-0215583debcb",
   "open": 10681,
   "overrides": {
+    "10680": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "10681": {
       "phoneX": 55.7,
-      "title": "Zara • Japan"
+      "title": "Zara • Japan",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10683": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10685": {
-      "title": "Mierda, Mama"
+      "title": "Mierda, Mama",
+      "types": [
+        "Short Film",
+        "Fiction",
+        "narrative"
+      ]
+    },
+    "10686": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10687": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10688": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10724": {
       "zoom": 1.33,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10725": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10726": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10727": {
       "zoom": 1.2,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10728": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10729": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10730": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10731": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10732": {
+      "types": [
+        "Music Video"
+      ]
     },
     "10733": {
       "zoom": 1.19,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10734": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10735": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10736": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10737": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10738": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10739": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10740": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10741": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10742": {
+      "types": [
+        "Music Video"
+      ]
     },
     "10743": {
       "zoom": 1.21,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
     },
     "10744": {
       "zoom": 1.31,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
     },
     "10745": {
       "zoom": 1.25,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "10746": {
       "zoom": 1.36,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Documentary",
+        "narrative"
+      ]
+    },
+    "10747": {
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "10748": {
       "zoom": 1.37,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
+    },
+    "11301": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11302": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "11303": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "11430": {
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {

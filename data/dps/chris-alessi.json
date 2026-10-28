@@ -7,34 +7,102 @@
   "overrides": {
     "10696": {
       "title": "Prose Studio - A different kind of love",
-      "phoneX": 41.3
+      "phoneX": 41.3,
+      "types": [
+        "Commercial",
+        "Fashion film"
+      ]
+    },
+    "10697": {
+      "types": [
+        "Short Film",
+        "Fiction",
+        "narrative"
+      ]
     },
     "10698": {
       "title": "Joudi - TKT"
     },
     "10699": {
-      "title": "Charlotte Vanhoubroeck"
+      "title": "Charlotte Vanhoubroeck",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10700": {
+      "types": [
+        "Music Video"
+      ]
     },
     "10701": {
-      "title": "Saint Sébastien Mon Amour"
+      "title": "Saint Sébastien Mon Amour",
+      "types": [
+        "Short Film",
+        "Fiction",
+        "narrative"
+      ]
     },
     "10702": {
-      "title": "Yomi Universe - Another sign of love"
+      "title": "Yomi Universe - Another sign of love",
+      "types": [
+        "Commercial",
+        "Fashion film"
+      ]
     },
     "10703": {
       "zoom": 1.1,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10753": {
+      "types": [
+        "Music Video"
+      ]
     },
     "10772": {
       "title": "Base x Camille Yembe",
       "zoom": 1.07,
       "zoomThumb": true
     },
+    "10776": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "10777": {
-      "sub": "Chris Alessi"
+      "sub": "Chris Alessi",
+      "types": [
+        "Documentary"
+      ]
+    },
+    "10778": {
+      "types": [
+        "Music Video"
+      ]
     },
     "10779": {
-      "zoom": 1.1
+      "zoom": 1.1,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10780": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10781": {
+      "types": [
+        "narrative",
+        "Short Doc"
+      ]
+    },
+    "11150": {
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {

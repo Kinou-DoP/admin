@@ -40,37 +40,158 @@
     },
     "3100": {
       "title": "Qoros",
-      "zoom": 1.52
+      "zoom": 1.52,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3120": {
+      "types": [
+        "Commercial"
+      ]
     },
     "3140": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3288": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3575": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3630": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4050": {
-      "zoom": 1.51
+      "zoom": 1.51,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4290": {
+      "types": [
+        "Commercial",
+        "Food",
+        "Comedy"
+      ]
+    },
+    "4291": {
+      "types": [
+        "Commercial",
+        "Food",
+        "Comedy"
+      ]
     },
     "4292": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Commercial",
+        "Car"
+      ]
+    },
+    "4605": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4971": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Commercial",
+        "Studio",
+        "Car",
+        "Comedy"
+      ]
+    },
+    "5162": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5248": {
+      "types": [
+        "Commercial"
+      ]
     },
     "5444": {
-      "zoom": 1.32
+      "zoom": 1.32,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5811": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5962": {
+      "types": [
+        "Commercial"
+      ]
     },
     "6030": {
-      "zoom": 1.19
+      "zoom": 1.19,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7057": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8349": {
-      "title": "Sephora Color"
+      "title": "Sephora Color",
+      "types": [
+        "Commercial"
+      ]
     },
     "8574": {
-      "zoom": 1.74
+      "zoom": 1.74,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8593": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8813": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8945": {
-      "title": "Burger King - TOAST"
+      "title": "Burger King - TOAST",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8990": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9092": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9139": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9194": {
       "extras": [
@@ -118,14 +239,53 @@
           "img": "https://images.slatecdn.net/MqpPdMuBD-Icz4q2ei9vxBVEGtlK9GzK9dY41OB6U-c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YTE1ZWMyOC04N2I4/LTQ4YzAtODk3OS1k/N2FhOGFjOTg4ZmUv/MTY4NjE1MzEzMzg2/MC5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4cf08b7c-d58b-4071-8d20-e318658b2457-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "9560": {
       "zoom": 1.26,
-      "zoomPos": "52.4% 30.6%"
+      "zoomPos": "52.4% 30.6%",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9803": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9804": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9805": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9851": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9853": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10052": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Beauty"
+      ]
+    },
+    "10535": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10537": {
       "extras": [
@@ -143,6 +303,19 @@
           "img": "https://images.slatecdn.net/o92B35Y2yyY_zeFPudNMKp1irIZcle6cfxRLP8tIqbM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NGQzMTE2NS1iZjAy/LTQwZTQtOTRlNy1h/YzEyMDRiMTg2YzEv/MTc3MTkzOTI2MDEz/Ni5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6d2976e8-d70a-493b-89c0-eb6891b19d95-0x1080.5000.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10589": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10657": {
+      "types": [
+        "Commercial"
       ]
     }
   },

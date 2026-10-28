@@ -34,11 +34,18 @@
           ]
         }
       ],
-      "title": "Rue du lac"
+      "title": "Rue du lac",
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "8598": {
       "zoom": 1.39,
-      "title": "Nestlé - Lion"
+      "title": "Nestlé - Lion",
+      "types": [
+        "Commercial"
+      ]
     },
     "8599": {
       "zoom": 1.29,
@@ -56,11 +63,17 @@
           ]
         }
       ],
-      "title": "Bosco Roger - Tiramisu"
+      "title": "Bosco Roger - Tiramisu",
+      "types": [
+        "Music Video"
+      ]
     },
     "8600": {
       "zoom": 1.35,
-      "title": "Paul Woox - Succube"
+      "title": "Paul Woox - Succube",
+      "types": [
+        "Music Video"
+      ]
     },
     "8601": {
       "zoom": 1.21,
@@ -87,7 +100,11 @@
           ]
         }
       ],
-      "title": "Godford - I you she"
+      "title": "Godford - I you she",
+      "types": [
+        "Music Video",
+        "narrative"
+      ]
     },
     "8603": {
       "zoom": 1.08,
@@ -111,19 +128,31 @@
           ]
         }
       ],
-      "title": "Syra - Sandman"
+      "title": "Syra - Sandman",
+      "types": [
+        "Music Video"
+      ]
     },
     "8604": {
       "zoom": 1.36,
-      "title": "Gael Faye - Balade brésilienne"
+      "title": "Gael Faye - Balade brésilienne",
+      "types": [
+        "Music Video"
+      ]
     },
     "8605": {
       "zoom": 1.33,
-      "title": "Palatine - Elenore"
+      "title": "Palatine - Elenore",
+      "types": [
+        "Music Video"
+      ]
     },
     "8606": {
       "zoom": 1.33,
-      "title": "Loveni (bon gamin) - Stop encore"
+      "title": "Loveni (bon gamin) - Stop encore",
+      "types": [
+        "Music Video"
+      ]
     },
     "8607": {
       "zoom": 1.1,
@@ -144,7 +173,10 @@
           ]
         }
       ],
-      "title": "Spider zed - Chaussette"
+      "title": "Spider zed - Chaussette",
+      "types": [
+        "Music Video"
+      ]
     },
     "8608": {
       "extras": [
@@ -167,7 +199,11 @@
           ]
         }
       ],
-      "title": "Jeff Mills - Crossing the threshold"
+      "title": "Jeff Mills - Crossing the threshold",
+      "types": [
+        "Teaser",
+        "Art Video"
+      ]
     },
     "8609": {
       "zoom": 1.16,
@@ -175,6 +211,12 @@
     },
     "8611": {
       "title": "Louis Vuitton - Objets Nomades"
+    },
+    "8613": {
+      "types": [
+        "Commercial",
+        "Fashion"
+      ]
     },
     "8616": {
       "zoom": 1.48,
@@ -225,7 +267,12 @@
           ]
         }
       ],
-      "title": "Sun never set on me - Julien Jaca - NOWNESS"
+      "title": "Sun never set on me - Julien Jaca - NOWNESS",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Art Video"
+      ]
     },
     "8618": {
       "zoom": 1.35,
@@ -283,7 +330,10 @@
       "zoom": 1.08
     },
     "8624": {
-      "title": "Style"
+      "title": "Style",
+      "types": [
+        "Art Video"
+      ]
     },
     "8625": {
       "title": "Obvious Parfums",
@@ -309,6 +359,9 @@
             "https://images.slatecdn.net/yomLKGpFgvqUlMREaqOjotWuxOlotp8hhPlPMg6hUmI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTg5MWFh/N2YtOWQ1My00MDY4/LWJjNGEtZmI5NzVm/MWY1ZDkzL2ZiNDcx/ZTc3ZjcxNmY4N2Uu/anBn.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "8628": {
@@ -331,11 +384,18 @@
           ]
         }
       ],
-      "title": "Trio mow long"
+      "title": "Trio mow long",
+      "types": [
+        "Art Video"
+      ]
     },
     "8630": {
       "zoom": 1.33,
-      "title": "Nymphose"
+      "title": "Nymphose",
+      "types": [
+        "Short Film",
+        "Narrative"
+      ]
     },
     "8631": {
       "zoom": 1.14,
@@ -368,10 +428,17 @@
           ]
         }
       ],
-      "title": "Karma police"
+      "title": "Karma police",
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "9550": {
-      "zoom": 1.15
+      "zoom": 1.15,
+      "types": [
+        "Music Video"
+      ]
     },
     "9551": {
       "extras": [
@@ -400,7 +467,11 @@
           ]
         }
       ],
-      "title": "adieu belleville"
+      "title": "adieu belleville",
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "9552": {
       "zoom": 1.3,
@@ -430,7 +501,11 @@
           ]
         }
       ],
-      "title": "sous le gel de glasgow"
+      "title": "sous le gel de glasgow",
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "9571": {
       "zoom": 1.06,
@@ -454,7 +529,10 @@
           ]
         }
       ],
-      "title": "I SEE YOU"
+      "title": "I SEE YOU",
+      "types": [
+        "Art Video"
+      ]
     },
     "9572": {
       "zoom": 1.29,
@@ -478,13 +556,23 @@
           ]
         }
       ],
-      "title": "Le reste n'a pas d'importance"
+      "title": "Le reste n'a pas d'importance",
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "9815": {
-      "zoom": 2.27
+      "zoom": 2.27,
+      "types": [
+        "Commercial"
+      ]
     },
     "9816": {
-      "zoom": 1.14
+      "zoom": 1.14,
+      "types": [
+        "Commercial"
+      ]
     },
     "10053": {
       "extras": [
@@ -515,7 +603,12 @@
           ]
         }
       ],
-      "title": "Balam Balam"
+      "title": "Balam Balam",
+      "types": [
+        "narrative",
+        "Extract",
+        "Shortfilm"
+      ]
     },
     "10054": {
       "extras": [
@@ -539,7 +632,10 @@
         }
       ],
       "zoom": 1.03,
-      "title": "in a perpetual remix where is my own song "
+      "title": "in a perpetual remix where is my own song ",
+      "types": [
+        "Art Video"
+      ]
     },
     "10055": {
       "zoom": 1.26
@@ -565,6 +661,9 @@
             "https://images.slatecdn.net/pGgJF02kGnU1afib7CStlJbHm3p84yPY7p6X08RG5N4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTZhYmUx/MWYtMDUzNS00Yzhj/LTk5MzMtZGJlMjE1/MTM2YTU0L2ZhMTA1/MDVhOWU1ODcxZTku/cG5n.webp"
           ]
         }
+      ],
+      "types": [
+        "Music Video"
       ]
     },
     "10186": {
@@ -584,6 +683,10 @@
             "https://images.slatecdn.net/3sY7hptIKNBXSz0SlzzgN7ZaOT80aE8qzG1P01_4yEY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWFkMDM1/OWUtODk1ZS00NmYw/LWJkMTEtNjM5N2Jk/ODMwYjRlL2YwZWIy/NGI2ZmUwY2JhMmYu/cG5n.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial",
+        "Edito"
       ]
     },
     "10394": {
@@ -604,6 +707,10 @@
             "https://images.slatecdn.net/NzQpB_CURTkh5YRXyYyGSDbJppdc0TP0wiwKOvKS3xU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDZlYjgw/N2ItNzkwNy00NWNl/LTgyNjItNmFiNzcy/YTY5MDE3L2ZiNTVj/NDc3YjY5NGE5Ny5w/bmc.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial",
+        "Edito"
       ]
     },
     "10938": {
@@ -634,6 +741,9 @@
             "https://images.slatecdn.net/3ho8z5h6e3yDlOPmdbor0y5eRtzSpTj_rVdNwCWKTpk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2RmZTUz/ZmUtNjVjNS00Yzkw/LWFmZjMtYmEwYWEz/YWExMDI4L2YxODdj/YWE3ZDAwNzA4ZTgu/anBn.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "11144": {
@@ -661,7 +771,11 @@
           ]
         }
       ],
-      "title": "Belleville nous verra toujours danser"
+      "title": "Belleville nous verra toujours danser",
+      "types": [
+        "Documentary",
+        "Narrative"
+      ]
     },
     "11145": {
       "zoom": 1.05,
@@ -688,7 +802,13 @@
           ]
         }
       ],
-      "title": "La Dounia"
+      "title": "La Dounia",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Extract",
+        "Extrait"
+      ]
     },
     "11146": {
       "title": "Le donjon et ses monstres",
@@ -779,6 +899,11 @@
         1.6764,
         1.6764,
         1.6764
+      ],
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Stills"
       ]
     },
     "11251": {
@@ -804,6 +929,9 @@
             "https://images.slatecdn.net/sD2HV_2yjsak6A9Tt8VsVMUc7uEaihrSB-Qs-YWHO2o/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZDE5YTky/ODQtNWQxZi00MzQ5/LWJmNWMtNDhiZjFm/NDVlMmY2L2RjNDg2/NWUwOTJkYmJiNjAu/cG5n.webp"
           ]
         }
+      ],
+      "types": [
+        "Music Video"
       ]
     },
     "11429": {
@@ -920,6 +1048,9 @@
         1.5079,
         0.663,
         0.9945
+      ],
+      "types": [
+        "Photography"
       ]
     }
   },

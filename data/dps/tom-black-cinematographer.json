@@ -7,38 +7,81 @@
   "overrides": {
     "8356": {
       "zoom": 1.24,
-      "title": "1300 ‘Oldboy’"
+      "title": "1300 ‘Oldboy’",
+      "types": [
+        "Music Video"
+      ]
     },
     "8357": {
       "zoom": 1.04,
-      "title": "1300 ‘ROCKSTAR’"
+      "title": "1300 ‘ROCKSTAR’",
+      "types": [
+        "Music Video"
+      ]
     },
     "8360": {
-      "title": "ASHWARYA ‘Why’s It Gotta Hurt"
+      "title": "ASHWARYA ‘Why’s It Gotta Hurt",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "8361": {
+      "types": [
+        "Music Video"
+      ]
     },
     "8363": {
       "zoom": 1.06,
-      "title": "CARLA WEBHE  ‘Is Forever Off The Table’"
+      "title": "CARLA WEBHE  ‘Is Forever Off The Table’",
+      "types": [
+        "Music Video"
+      ]
     },
     "8365": {
-      "title": "COMMBANK 'Speed Of You’"
+      "title": "COMMBANK 'Speed Of You’",
+      "types": [
+        "Commercial"
+      ]
     },
     "8366": {
-      "title": "CXLOE ‘One and Lonely’"
+      "title": "CXLOE ‘One and Lonely’",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "8369": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8375": {
-      "title": "MONCLER ‘How Do You Like Your Eggs’"
+      "title": "MONCLER ‘How Do You Like Your Eggs’",
+      "types": [
+        "Commercial",
+        "Fashion film"
+      ]
     },
     "8378": {
-      "title": "PAUL FRANK x DAVID FLORES"
+      "title": "PAUL FRANK x DAVID FLORES",
+      "types": [
+        "Commercial",
+        "Fashion film"
+      ]
     },
     "8380": {
-      "title": "SAMSUNG ‘Be At Your Best’"
+      "title": "SAMSUNG ‘Be At Your Best’",
+      "types": [
+        "Commercial"
+      ]
     },
     "8383": {
       "zoom": 1.34,
       "zoomPos": "51.5% 32.2%",
-      "title": "SONG FOR THE MUTE FW23"
+      "title": "SONG FOR THE MUTE FW23",
+      "types": [
+        "Commercial",
+        "Fashion film"
+      ]
     },
     "8387": {
       "extras": [
@@ -57,14 +100,24 @@
           ]
         }
       ],
-      "title": "THE COMMUTE"
+      "title": "THE COMMUTE",
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "8388": {
       "zoom": 1.34,
-      "title": "HARLEY DAVIDSON x GIBSON"
+      "title": "HARLEY DAVIDSON x GIBSON",
+      "types": [
+        "Commercial"
+      ]
     },
     "8400": {
-      "zoom": 1.32
+      "zoom": 1.32,
+      "types": [
+        "Commercial"
+      ]
     },
     "8401": {
       "images": [
@@ -134,6 +187,10 @@
         1.7778,
         1.7778,
         1.7778
+      ],
+      "types": [
+        "Serie",
+        "narrative"
       ]
     },
     "8402": {
@@ -175,6 +232,10 @@
         1.4458,
         1.4458,
         1.4458
+      ],
+      "types": [
+        "Short Film",
+        "narrative"
       ]
     },
     "8403": {
@@ -230,6 +291,10 @@
         2.4,
         2.4,
         2.4
+      ],
+      "types": [
+        "Short Film",
+        "narrative"
       ]
     },
     "8404": {
@@ -326,33 +391,78 @@
         }
       ],
       "zoom": 1.06,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "8408": {
       "zoom": 1.36,
-      "title": "SKELETEN ‘Sharing The Fire’"
+      "title": "SKELETEN ‘Sharing The Fire’",
+      "types": [
+        "Music Video"
+      ]
     },
     "8409": {
-      "zoom": 1.31
+      "zoom": 1.31,
+      "types": [
+        "Music Video"
+      ]
     },
     "8411": {
       "zoom": 1.34,
       "zoomPos": "49.2% 36.5%",
-      "title": "BLESSED ‘Love Yourself’"
+      "title": "BLESSED ‘Love Yourself’",
+      "types": [
+        "Music Video"
+      ]
     },
     "8416": {
-      "title": "ADIDAS ‘Change is a Team Sport’"
+      "title": "ADIDAS ‘Change is a Team Sport’",
+      "types": [
+        "Commercial"
+      ]
     },
     "8419": {
       "zoom": 1.09,
-      "title": "THE RUBENS ‘Pets & Drugs’"
+      "title": "THE RUBENS ‘Pets & Drugs’",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "8431": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "8812": {
+      "types": [
+        "Edito"
+      ]
+    },
+    "8875": {
+      "types": [
+        "Music Video"
+      ]
     },
     "8881": {
       "zoom": 1.35,
-      "zoomPos": "50.8% 21.5%"
+      "zoomPos": "50.8% 21.5%",
+      "types": [
+        "Commercial"
+      ]
     },
     "8947": {
-      "title": "NUMERO"
+      "title": "NUMERO",
+      "types": [
+        "Edito"
+      ]
+    },
+    "9290": {
+      "types": [
+        "Jewellery"
+      ]
     },
     "9528": {
       "extras": [
@@ -385,11 +495,23 @@
           ]
         }
       ],
-      "title": "By Lucas Wilson"
+      "title": "By Lucas Wilson",
+      "types": [
+        "Short Film",
+        "Narrative"
+      ]
+    },
+    "9975": {
+      "types": [
+        "Music"
+      ]
     },
     "9987": {
       "zoom": 1.1,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
     },
     "9988": {
       "title": "Monsters and Madonna"
@@ -397,7 +519,10 @@
     "9990": {
       "zoom": 1.09,
       "zoomThumb": true,
-      "title": "Jungle Jungle • Hope you're well"
+      "title": "Jungle Jungle • Hope you're well",
+      "types": [
+        "Commercial"
+      ]
     },
     "9995": {
       "zoom": 1.08,
@@ -471,10 +596,17 @@
             "https://images.slatecdn.net/YICGuV22DVe0686QuuKET696qigVzVGxoilis00MHTA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWEyM2M4/OGUtMzgwNi00NDE1/LWFkNzEtNTI4ZTky/ODk5ZGExL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTEwLTIzLWEt/MTEuNDguMjgucG5n.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial",
+        "Fashion"
       ]
     },
     "10139": {
-      "title": "Kolon Sport - Longform"
+      "title": "Kolon Sport - Longform",
+      "types": [
+        "Commercial"
+      ]
     },
     "10344": {
       "zoomPos": "50.2% 1.2%",
@@ -503,6 +635,9 @@
           "img": "https://images.slatecdn.net/O-1Hwb2jfc7DjSN41EqF_PBeQkKgoxVIkj5mMIen4i8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NzIxZGY2Mi0wZDIw/LTQ5YWEtOTU5Yi0w/NTEyZTc0ZDY5ZWIv/MTc3MTQzMzM1MTc4/My5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7a11251e-4aac-461d-b640-a770a0d45178-0x1080.5000.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "10534": {
@@ -529,7 +664,10 @@
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8b0cc981-dcaa-4f6a-a431-1de4fc862252-0x1080.5000.mp4"
         }
       ],
-      "title": "Van Cleef & Arpels Frivole"
+      "title": "Van Cleef & Arpels Frivole",
+      "types": [
+        "Commercial"
+      ]
     },
     "11099": {
       "extras": [
@@ -575,6 +713,9 @@
           "img": "https://images.slatecdn.net/UmfWSemTE9sMS4aOKkxU6HigM6nRa9cLIGbnBqQ2CNg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MTg1NWFlZS0yYTI3/LTRmNTQtOGY4Zi05/ZGU1OTg5NzNhNjEv/MTc4MzU5MTUzOTYw/My5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/68fbbd61-f32d-4231-bab3-83ecc8c39d32-0x1080.5000.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "11305": {
@@ -593,6 +734,9 @@
           "img": "https://images.slatecdn.net/2afSaAZbLsusZOqTIyPIlLo9zt78j1PvbZHvDEaDLQs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTMwNi02YWFiZjU2/MmU2ZDhlMS45MDcx/MTY3Ni1mOGU5MWFm/ZWZmYWMzM2E4MTcy/OTg3YjFhODlhZGI2/My5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/96b169b6-bbea-4b07-a41c-f3ba08248c20-0x1080.5000.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     }
   },

@@ -6,39 +6,105 @@
   "open": 7372,
   "overrides": {
     "4145": {
-      "zoom": 1.09
+      "zoom": 1.09,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4664": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4800": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4837": {
-      "zoom": 1.31
+      "zoom": 1.31,
+      "types": [
+        "Music Video",
+        "Experimental"
+      ]
+    },
+    "5109": {
+      "types": [
+        "Commercial"
+      ]
     },
     "5146": {
-      "title": "Clara Luciani \"Respire Encore\""
+      "title": "Clara Luciani \"Respire Encore\"",
+      "types": [
+        "Music Video"
+      ]
     },
     "5254": {
       "zoom": 1.28,
-      "title": "Masque 19"
+      "title": "Masque 19",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
+      ]
     },
     "5493": {
       "zoom": 1.32,
-      "title": "PETIT POUSSIN"
+      "title": "PETIT POUSSIN",
+      "types": [
+        "Short Film",
+        "Fiction",
+        "narrative"
+      ]
     },
     "5612": {
-      "zoom": 1.18
+      "zoom": 1.18,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5728": {
+      "types": [
+        "Music Video"
+      ]
     },
     "5845": {
-      "zoom": 1.16
+      "zoom": 1.16,
+      "types": [
+        "Short Film",
+        "Music Video"
+      ]
     },
     "5874": {
-      "zoom": 1.32
+      "zoom": 1.32,
+      "types": [
+        "Music Video"
+      ]
     },
     "5954": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6098": {
+      "types": [
+        "Commercial"
+      ]
     },
     "6370": {
-      "zoom": 1.3
+      "zoom": 1.3,
+      "types": [
+        "Music Video"
+      ]
     },
     "6432": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Music Video",
+        "Clip",
+        "Music"
+      ]
     },
     "7372": {
       "extras": [
@@ -50,11 +116,17 @@
         }
       ],
       "title": "Jaeger - LeCoultre",
-      "phoneX": 42.5
+      "phoneX": 42.5,
+      "types": [
+        "Commercial"
+      ]
     },
     "7876": {
       "zoom": 1.34,
-      "title": "Fanfare"
+      "title": "Fanfare",
+      "types": [
+        "Short Film"
+      ]
     },
     "7877": {
       "title": "Mirage",
@@ -76,10 +148,21 @@
             "https://images.slatecdn.net/AYX8cyoATGp6cM1iVivQeDKeQcF8mosqZfEOIcdoqzk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NTFhMDRiZi0wZDlm/LTQ1MTYtYmMwZS0w/MmNmOWM4YzRkZDYv/aW1nLTIwMjIwNjIx/LXdhMDAxMy5qcGc.webp"
           ]
         }
+      ],
+      "types": [
+        "Short Film"
+      ]
+    },
+    "8095": {
+      "types": [
+        "Commercial"
       ]
     },
     "8225": {
-      "zoom": 1.13
+      "zoom": 1.13,
+      "types": [
+        "Music Video"
+      ]
     },
     "8334": {
       "images": [
@@ -195,23 +278,40 @@
         1.7933,
         1.7866,
         1.7844
+      ],
+      "types": [
+        "Narrative",
+        "TV Serie"
       ]
     },
     "8567": {
       "zoom": 1.25,
-      "title": "HOME EXTRAIT"
+      "title": "HOME EXTRAIT",
+      "types": [
+        "Short Film",
+        "Narrative"
+      ]
     },
     "8716": {
       "zoom": 1.33
     },
     "8824": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Comedy"
+      ]
     },
     "8849": {
-      "zoom": 1.07
+      "zoom": 1.07,
+      "types": [
+        "Music Video"
+      ]
     },
     "8850": {
-      "zoom": 1.08
+      "zoom": 1.08,
+      "types": [
+        "Music Video"
+      ]
     },
     "9026": {
       "title": "Mort d'un acteur",
@@ -242,13 +342,22 @@
             "https://images.slatecdn.net/agUja5Q14xvbdlDgO0KtlS4sIQqaZnoF0GnqD5MNOek/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWM0OGNh/ZWYtNGJkYy00MGI0/LTgzYTktMGFlOGZi/MzUwNzYzL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjQtMDktMjEt/YS1jYy04MC0xMS4w/OC4zNy5wbmc.webp"
           ]
         }
+      ],
+      "types": [
+        "Narrative"
       ]
     },
     "9229": {
-      "zoom": 1.22
+      "zoom": 1.22,
+      "types": [
+        "Music Video"
+      ]
     },
     "9376": {
-      "zoom": 1.2
+      "zoom": 1.2,
+      "types": [
+        "Clip"
+      ]
     },
     "9389": {
       "zoom": 1.19
@@ -285,7 +394,12 @@
       ]
     },
     "9880": {
-      "title": "Coquelicot"
+      "title": "Coquelicot",
+      "types": [
+        "Short Film",
+        "Teaser",
+        "narrative"
+      ]
     },
     "9980": {
       "zoom": 1.2,
@@ -314,6 +428,10 @@
             "https://images.slatecdn.net/6SsDOm6_N2X7iswIqwKy-zFkUQHBOeFwYH44jVVAKi4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZTJkOTQ5YS1jYTRk/LTQzMTAtODkzYi02/NzkxMjY5MDQzMTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDct/MDctYS0yMS4yNi4z/Mi5wbmc.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial",
+        "Prevention"
       ]
     },
     "10227": {
@@ -326,10 +444,27 @@
           "img": "https://images.slatecdn.net/EpXaMdcUxCr0wz9uJm8to_vUr2_gBIDaQYam6jrdFfM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NmI0OTQxOC04MjVl/LTQ4MDAtYWI3NC01/YmFkMjFmYjNjNWIv/MTc2MzAyODE3MjA2/MC5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0befba19-cca2-4ac5-a3aa-bd79b16a4fd1-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "10380": {
-      "zoom": 1.16
+      "zoom": 1.16,
+      "types": [
+        "Music Video",
+        "Clip"
+      ]
+    },
+    "10707": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11224": {
+      "types": [
+        "Music Video"
+      ]
     },
     "11431": {
       "images": [
@@ -391,7 +526,12 @@
         "img": "https://images.slatecdn.net/2ydMsvuHPtgutI2Q5cYB12WnxMou3r-Si2KsSlgtrWA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YWZjZGY3My1mNWZk/LTRlZWItOWU3ZS0x/ZGI4NmMyZjM1NTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MDEtYS0yMS41MS4y/OC5wbmc?v=1&format=webp"
       },
       "title": "La Plus Belle Fille du Monde",
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Short Film",
+        "Stills",
+        "narrative"
+      ]
     },
     "11433": {
       "images": [
@@ -438,7 +578,12 @@
         1.6647,
         1.6609
       ],
-      "title": "La philosophie de la bernique"
+      "title": "La philosophie de la bernique",
+      "types": [
+        "Short Film",
+        "Stills",
+        "narrative"
+      ]
     },
     "11434": {
       "images": [
@@ -467,7 +612,12 @@
         1.4545,
         1.4575
       ],
-      "title": "Roche Amère"
+      "title": "Roche Amère",
+      "types": [
+        "Short Film",
+        "Stills",
+        "narrative"
+      ]
     },
     "11435": {
       "title": "Fiction",
@@ -510,6 +660,11 @@
         1.9303,
         1.9277,
         1.9226
+      ],
+      "types": [
+        "Short Film",
+        "Stills",
+        "narrative"
       ]
     },
     "11436": {
@@ -569,6 +724,11 @@
         1.6705,
         1.6667,
         1.6667
+      ],
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Stills"
       ]
     }
   },

@@ -5,106 +5,292 @@
   "bundle": "https://kinou.slateapp.com/bundles/fc4a0169-ce23-11f1-a349-0215583debcb",
   "open": 8253,
   "overrides": {
+    "7005": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "7008": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "7009": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7010": {
+      "types": [
+        "Commercial"
+      ]
     },
     "7011": {
-      "zoom": 1.08
+      "zoom": 1.08,
+      "types": [
+        "Commercial"
+      ]
     },
     "7012": {
       "zoom": 1.2,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
     },
     "7015": {
       "zoom": 1.38,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
     },
     "7016": {
       "title": "Reboot Now!",
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Short Film"
+      ]
+    },
+    "7021": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "7022": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "7023": {
+      "types": [
+        "Music Video"
+      ]
     },
     "7025": {
       "zoom": 1.2,
-      "zoomPos": "53.8% 50%"
+      "zoomPos": "53.8% 50%",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7026": {
+      "types": [
+        "Commercial"
+      ]
     },
     "7027": {
-      "zoom": 1.31
+      "zoom": 1.31,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7029": {
+      "types": [
+        "Music Video"
+      ]
     },
     "7032": {
-      "title": "Roger"
+      "title": "Roger",
+      "types": [
+        "Short Film"
+      ]
     },
     "7033": {
-      "zoom": 1.23
+      "zoom": 1.23,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "7035": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7374": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7574": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7579": {
+      "types": [
+        "Commercial"
+      ]
     },
     "7645": {
-      "zoom": 1.2
+      "zoom": 1.2,
+      "types": [
+        "Commercial"
+      ]
     },
     "7860": {
-      "zoom": 1.14
+      "zoom": 1.14,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "7861": {
+      "types": [
+        "Commercial"
+      ]
     },
     "7862": {
-      "zoom": 1.06
+      "zoom": 1.06,
+      "types": [
+        "Music Video"
+      ]
     },
     "8009": {
-      "title": "AMG Thrill"
+      "title": "AMG Thrill",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8068": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8229": {
-      "title": "Altered TCG  - Open The Gates !"
+      "title": "Altered TCG  - Open The Gates !",
+      "types": [
+        "Commercial"
+      ]
     },
     "8253": {
-      "phoneX": 56.8
+      "phoneX": 56.8,
+      "types": [
+        "Music Video"
+      ]
     },
     "8715": {
-      "title": "Upway"
+      "title": "Upway",
+      "types": [
+        "Commercial"
+      ]
     },
     "8735": {
-      "title": "Hisense x Euro 2024"
+      "title": "Hisense x Euro 2024",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8743": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "8766": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8795": {
-      "zoom": 1.43
+      "zoom": 1.43,
+      "types": [
+        "Music Video"
+      ]
     },
     "8817": {
-      "zoom": 1.21
+      "zoom": 1.21,
+      "types": [
+        "Commercial"
+      ]
     },
     "8821": {
       "zoom": 1.37,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
     },
     "8949": {
       "title": "Mc Donald's",
-      "zoom": 1.08
+      "zoom": 1.08,
+      "types": [
+        "Commercial"
+      ]
     },
     "8971": {
-      "title": "Decathlon x Kipsta - Logic Says"
+      "title": "Decathlon x Kipsta - Logic Says",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9104": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9159": {
-      "title": "Westfield"
+      "title": "Westfield",
+      "types": [
+        "Commercial"
+      ]
     },
     "9178": {
       "title": "Till The End",
       "zoom": 1.35,
       "zoomPos": "49.4% 88.9%",
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Narrative"
+      ]
     },
     "9332": {
-      "title": "Renault Youclip"
+      "title": "Renault Youclip",
+      "types": [
+        "Studio",
+        "Car",
+        "POV"
+      ]
     },
     "9504": {
       "title": "Eva Fumée Blanche",
       "zoom": 1.32,
-      "zoomPos": "50.4% 34.9%"
+      "zoomPos": "50.4% 34.9%",
+      "types": [
+        "Car",
+        "Night",
+        "City"
+      ]
+    },
+    "10225": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10383": {
       "zoom": 1.22,
-      "zoomPos": "52.7% 49.9%"
+      "zoomPos": "52.7% 49.9%",
+      "types": [
+        "Music Video"
+      ]
     },
     "10602": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10785": {
+      "types": [
+        "Commercial"
+      ]
     },
     "11177": {
       "zoom": 1.12,
       "zoomPos": "51.5% 15.4%",
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {

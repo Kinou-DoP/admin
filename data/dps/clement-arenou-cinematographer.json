@@ -8,23 +8,45 @@
     "6532": {
       "zoom": 1.32
     },
+    "6533": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "6534": {
       "zoom": 1.25
     },
     "6536": {
-      "zoom": 1.2
+      "zoom": 1.2,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
+    },
+    "6538": {
+      "types": [
+        "Commercial"
+      ]
     },
     "6545": {
       "zoom": 1.06
     },
     "6546": {
-      "zoom": 1.11
+      "zoom": 1.11,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "6548": {
       "zoom": 1.34
     },
     "6703": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "6705": {
       "extras": [
@@ -35,10 +57,17 @@
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6c8671b2-4896-4eec-ac19-424b33bdffc2-1280x720.2500.mp4"
         }
       ],
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Commercial"
+      ]
     },
     "6707": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Short Film",
+        "Narrative"
+      ]
     },
     "6708": {
       "zoom": 1.34
@@ -62,6 +91,12 @@
       "title": "Mai Lan • Blaze Up",
       "zoom": 1.49
     },
+    "6716": {
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
+    },
     "6718": {
       "title": "Bref. On a fait replay"
     },
@@ -69,24 +104,58 @@
       "zoom": 1.31,
       "zoomThumb": true
     },
+    "6775": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6796": {
+      "types": [
+        "TV Serie",
+        "Trailer"
+      ]
+    },
+    "6797": {
+      "types": [
+        "Music Video",
+        "Clip"
+      ]
+    },
     "6798": {
-      "title": "Carrément Craignos"
+      "title": "Carrément Craignos",
+      "types": [
+        "TV Serie",
+        "Trailer"
+      ]
     },
     "6981": {
-      "zoom": 1.53
+      "zoom": 1.53,
+      "types": [
+        "Commercial"
+      ]
     },
     "7404": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Commercial"
+      ]
     },
     "7747": {
-      "zoom": 1.13
+      "zoom": 1.13,
+      "types": [
+        "Commercial"
+      ]
     },
     "8959": {
       "title": "En Place - Saison 2",
       "zoom": 1.19,
       "zoomPos": "4% 38.8%",
       "zoomThumb": true,
-      "phoneX": 47.3
+      "phoneX": 47.3,
+      "types": [
+        "Narrative",
+        "Serie"
+      ]
     },
     "9185": {
       "extras": [
@@ -153,10 +222,32 @@
       ],
       "title": "20 Piges, les 2 âges dor du rap français - Partie 1"
     },
+    "9190": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "9881": {
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    },
     "10705": {
       "zoom": 1.18,
       "zoomThumb": true,
-      "title": "Recalé"
+      "title": "Recalé",
+      "types": [
+        "TV Serie",
+        "Fiction",
+        "Serie",
+        "narrative"
+      ]
+    },
+    "10893": {
+      "types": [
+        "Commercial"
+      ]
     },
     "11195": {
       "extras": [
@@ -181,7 +272,11 @@
         }
       ],
       "title": "Surveillant ! • Saison 1",
-      "zoom": 1.07
+      "zoom": 1.07,
+      "types": [
+        "Narrative",
+        "Series"
+      ]
     },
     "11380": {
       "images": [

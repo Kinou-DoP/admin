@@ -5,33 +5,232 @@
   "bundle": "https://kinou.slateapp.com/bundles/35a5cf0e-c71e-11f1-a349-0215583debcb",
   "open": 10716,
   "overrides": {
+    "803": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "1617": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "1977": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "2927": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3353": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3447": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3649": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3674": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3726": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3958": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3959": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4619": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "4740": {
-      "title": "Renault Megane"
+      "title": "Renault Megane",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4791": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4877": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4878": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4953": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "5242": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5809": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6043": {
+      "types": [
+        "Commercial"
+      ]
     },
     "6319": {
-      "title": "Porsche - Connected Watch"
+      "title": "Porsche - Connected Watch",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6670": {
+      "types": [
+        "Commercial",
+        "Fashion",
+        "Car",
+        "Luxe",
+        "Watch"
+      ]
+    },
+    "6671": {
+      "types": [
+        "Commercial",
+        "Car"
+      ]
+    },
+    "6875": {
+      "types": [
+        "Studio",
+        "Sport",
+        "Comedy"
+      ]
+    },
+    "6881": {
+      "types": [
+        "Special effects",
+        "Phone"
+      ]
+    },
+    "7069": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7648": {
+      "types": [
+        "Music Video"
+      ]
     },
     "8326": {
-      "zoom": 1.13
+      "zoom": 1.13,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8712": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8846": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9043": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9201": {
-      "zoom": 1.23
+      "zoom": 1.23,
+      "types": [
+        "Commercial"
+      ]
     },
     "9840": {
       "zoom": 1.51
     },
     "9841": {
-      "zoom": 1.12
+      "zoom": 1.12,
+      "types": [
+        "Commercial"
+      ]
     },
     "10082": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Commercial"
+      ]
     },
     "10180": {
       "zoomPos": "76.8% 0%"
     },
     "10563": {
       "zoom": 1.29,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10656": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10662": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10716": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10902": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10903": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11225": {
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {

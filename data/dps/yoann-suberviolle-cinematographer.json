@@ -5,34 +5,83 @@
   "bundle": "https://kinou.slateapp.com/bundles/f7afd978-cf05-11f1-a349-0215583debcb",
   "open": 6979,
   "overrides": {
+    "3367": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "3369": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Commercial"
+      ]
     },
     "3371": {
-      "title": "Gavarnie | Un regard sur l'aventure"
+      "title": "Gavarnie | Un regard sur l'aventure",
+      "types": [
+        "Narrative"
+      ]
     },
     "3373": {
       "zoom": 1.26,
-      "title": "La Rage"
+      "title": "La Rage",
+      "types": [
+        "Narrative"
+      ]
     },
     "3374": {
       "zoom": 1.34,
-      "title": "Monica Volvo"
+      "title": "Monica Volvo",
+      "types": [
+        "Fiction"
+      ]
     },
     "3375": {
       "zoom": 1.32,
-      "title": "No Way Out"
+      "title": "No Way Out",
+      "types": [
+        "Narrative"
+      ]
     },
     "3376": {
       "zoom": 1.35,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "3378": {
       "zoom": 1.32,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
     },
     "3379": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "3380": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "3382": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "3383": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "3384": {
+      "types": [
+        "Music Video"
+      ]
     },
     "3385": {
       "extras": [
@@ -55,17 +104,36 @@
             "https://images.slatecdn.net/5XO_eTfF9HU-ivy7oc0f-ZAW3gr3Z5_QtQ1HMj-ggHk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZDcxMTYx/MTMtZGJlMy00YTA4/LWFkNGMtMzg3MGU3/ODE5ODRiL3NsdC1z/dXphbm5lLTEuMS41/My5qcGc.webp"
           ]
         }
+      ],
+      "types": [
+        "Music Video"
       ]
     },
     "3388": {
       "zoom": 1.07,
-      "title": "Vas-y Casse toi"
+      "title": "Vas-y Casse toi",
+      "types": [
+        "Narrative"
+      ]
+    },
+    "3389": {
+      "types": [
+        "Short fim"
+      ]
     },
     "3453": {
       "title": "Né Du Tonnerre"
     },
+    "3664": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "3666": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Commercial"
+      ]
     },
     "3878": {
       "zoom": 1.36,
@@ -103,11 +171,20 @@
             "https://images.slatecdn.net/xle4DOiYflBmuIkMrAf29RV27DD2jXhToL8fA1Q4Lwg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzQ0Yzg4/MWQtNjZmZC00MTlj/LTlkZTktM2M0ODRk/OTUwNmMxL2x4aWlp/LWRpci1jdXQtMy41/LjEuanBn.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "3956": {
       "zoom": 1.34,
-      "zoomPos": "51.4% 26.2%"
+      "zoomPos": "51.4% 26.2%",
+      "types": [
+        "Art Film",
+        "Narrative",
+        "Fiction",
+        "Experimental"
+      ]
     },
     "4014": {
       "extras": [
@@ -129,19 +206,51 @@
             "https://images.slatecdn.net/o_r2q5t6CG6wi1rATyJ3Ma9P8mVA01jG0Z7lNiJhY8c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNGI4OWRh/NGQtNDQ4Yi00YTVj/LTllZmYtMDYyZjU2/MDk5NzU0L3VudGl0/bGVkLTEuNTcuMS5q/cGc.webp"
           ]
         }
+      ],
+      "types": [
+        "Music Video"
       ]
     },
     "4114": {
       "zoom": 1.36,
-      "title": "Cortège"
+      "title": "Cortège",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
+      ]
+    },
+    "4132": {
+      "types": [
+        "Music Video"
+      ]
     },
     "4133": {
       "zoom": 1.34,
       "zoomPos": "50.6% 24.9%",
-      "title": "Un homme, un vrai"
+      "title": "Un homme, un vrai",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
+      ]
+    },
+    "4172": {
+      "types": [
+        "Short Film",
+        "Documentary"
+      ]
     },
     "4192": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Short Film",
+        "Art Film",
+        "Narrative",
+        "Fiction",
+        "Experimental",
+        "Artwork"
+      ]
     },
     "4193": {
       "zoom": 1.49,
@@ -164,14 +273,25 @@
             "https://images.slatecdn.net/5R6rBAIM30ju2Lq1xCkK9gCddC6gqSZXY8JuTu1rYr8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTJjMjA1/NGYtMjI5Zi00YmI4/LWE5OGItOGQwZmYw/M2MzZmNiL2Zvcm0t/d2F0ZXJmYWxsLTZr/LTItMjktMy4yLjE5/LmpwZw.webp"
           ]
         }
+      ],
+      "types": [
+        "Music Video"
       ]
     },
     "4306": {
       "zoom": 1.45,
-      "title": "Warren"
+      "title": "Warren",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
+      ]
     },
     "4326": {
-      "zoom": 1.32
+      "zoom": 1.32,
+      "types": [
+        "Music Video"
+      ]
     },
     "4370": {
       "images": [
@@ -204,6 +324,11 @@
         2.3607,
         2.3607,
         2.3585
+      ],
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
       ]
     },
     "4371": {
@@ -229,19 +354,41 @@
         1.3333,
         1.3333,
         1.3333
+      ],
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
       ]
     },
     "4407": {
-      "zoom": 1.5
+      "zoom": 1.5,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4408": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4431": {
-      "zoom": 1.16
+      "zoom": 1.16,
+      "types": [
+        "Music Video"
+      ]
     },
     "4433": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Commercial"
+      ]
     },
     "4620": {
-      "zoom": 1.27
+      "zoom": 1.27,
+      "types": [
+        "Commercial"
+      ]
     },
     "4634": {
       "extras": [
@@ -253,10 +400,22 @@
         }
       ],
       "zoom": 1.33,
-      "title": "Nodaleto"
+      "title": "Nodaleto",
+      "types": [
+        "Commercial"
+      ]
     },
     "4651": {
-      "title": "Inylchek"
+      "title": "Inylchek",
+      "types": [
+        "Documentary"
+      ]
+    },
+    "4692": {
+      "types": [
+        "Commercial",
+        "Charity"
+      ]
     },
     "4767": {
       "extras": [
@@ -284,6 +443,9 @@
             "https://images.slatecdn.net/ltFJASNpWq2vf_dbXbjbDd-qSNRskORtxu0ch_pnJwM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzk4NjE5/MTctMWFjNS00MWEy/LTgxYmUtYjRjZjAx/OWVhNGVhL2RlZmF1/bHQtMS4xLjIyLmpw/Zw.webp"
           ]
         }
+      ],
+      "types": [
+        "Music Video"
       ]
     },
     "4768": {
@@ -313,6 +475,10 @@
             "https://images.slatecdn.net/x9GSGk_xeF5WOnA0UDH3WoIRfUeJoDDdDC_BDqTdppA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDMzZDRj/MDItN2U0Yy00MDgw/LWJlY2EtMThiNzlm/YThhMTA3L2Jvbi1l/bnRlbmRldXItMS4x/LjM5LmpwZw.webp"
           ]
         }
+      ],
+      "types": [
+        "Short Film",
+        "Music Video"
       ]
     },
     "4787": {
@@ -329,6 +495,16 @@
           "img": "https://images.slatecdn.net/uDybGN4HeKxY2G2ZAWF78N4dNaf3r-W2KrrXed01ti4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/Nzg2LTYwMmFhYWU0/MDhjYTc0LjcyNDk5/MTQzLTU0ZjY3NGUx/Y2UwMTU1MTlhMmZh/MDlkOWVhMjIyNjBh/LmpwZw?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b31fe945-e69b-4044-92f7-a047005c7e80-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4797": {
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
       ]
     },
     "4973": {
@@ -366,6 +542,9 @@
             "https://images.slatecdn.net/HZtakQhZHAA0zwsbmOuH8eHSeIE1zuEAJ9T8rLQJ7wM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2QzOTIy/MDMtN2Q2YS00NDAx/LTkzNDEtYTVhNTYw/YmMwZjU4L2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTEwLTI2LWEt/MTEuMDcuNTcucG5n.webp"
           ]
         }
+      ],
+      "types": [
+        "Music Video"
       ]
     },
     "4996": {
@@ -390,6 +569,9 @@
             "https://images.slatecdn.net/dGCJtNAmsKCv9rvJKVMqJggmZNh8BpEZNy7Tn5IcZK4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTk2YjVm/Y2MtY2FhYS00MWUw/LWI3MzctMmIwZGM3/NDZhOTBlL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTEwLTI2LWEt/MTEuMTUuNDcucG5n.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "5671": {
@@ -416,6 +598,9 @@
             "https://images.slatecdn.net/hfKxuv5Ofk6A6jB_NrEPAa1Pm7SoJGYBk2c8YfVnNdU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDEwZWRj/MzYtMmMzOC00MWU0/LWFjODAtNTJlMmZi/OWVkOGJlL2RlZmF1/bHQtMS4xLjMxLmpw/Zw.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "5868": {
@@ -499,6 +684,9 @@
             "https://images.slatecdn.net/UPCT02B24gftqEz4r7bw7NLG7YBu0sVa65GYfuQqwso/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmMwYzcy/MjgtNjNjMS00Yjdi/LTg3OTYtOTA0MjE2/YjJkNTRhL2RlZmF1/bHQtMS4xMC40Ni53/ZWJw.webp"
           ]
         }
+      ],
+      "types": [
+        "Serie"
       ]
     },
     "6459": {
@@ -547,6 +735,10 @@
         1.8509,
         1.8509,
         1.8509
+      ],
+      "types": [
+        "Short Film",
+        "Stills"
       ]
     },
     "6461": {
@@ -587,6 +779,11 @@
             "https://images.slatecdn.net/UlhsKOPS3910er3xoc9u6wC5bmADAxBo0ldjUo3Qa5k/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MmY3ZGQ3My03YmQ3/LTQ5MWQtODM2Mi1i/OWY0M2U5Zjc5MzUv/aWFiLTEuMTQ2LjEu/anBn.webp"
           ]
         }
+      ],
+      "types": [
+        "Short Film",
+        "Short  Film Trailer",
+        "Trailer"
       ]
     },
     "6462": {
@@ -623,6 +820,10 @@
             "https://images.slatecdn.net/-EYG08rSJH1WYgs73JLea0SG439stWw7ojQg3hf-aVs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmEzM2Ey/NWEtZmZmMi00MjI0/LTk5MjEtYmI5ZTdi/ZGFmNTk1L2RlZmF1/bHQtMS4xLjY0Lmpw/Zw.webp"
           ]
         }
+      ],
+      "types": [
+        "Short Film",
+        "narrative"
       ]
     },
     "6463": {
@@ -659,6 +860,10 @@
         1.6667,
         1.6667,
         1.6667
+      ],
+      "types": [
+        "Short Film",
+        "narrative"
       ]
     },
     "6464": {
@@ -733,6 +938,10 @@
         2.3881,
         2.3881,
         2.3881
+      ],
+      "types": [
+        "Short Film",
+        "narrative"
       ]
     },
     "6556": {
@@ -779,6 +988,9 @@
           "img": "https://images.slatecdn.net/d7jFENu8kmmzzET6Vf1PvMsm9iw7htDJ2plUkq_w-Z4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MDZiMTljMC0yNWZm/LTQ4MTQtYjQyNS01/NmNjZmQwMWQ3YmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTIt/MDgtYS0xNS4xMC4x/OS5wbmc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7a658481-fb47-4aed-90a2-5b5121acf38b-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "6692": {
@@ -814,6 +1026,15 @@
             "https://images.slatecdn.net/awjEG9M3xCngkGMScUricqKMdrNOTz4T-DwNULZ_kS8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTk3NDFj/M2MtMzk0OS00NDg4/LTg2YzQtNDllYWI5/YWUxODE2L21hcnRl/bGwtMS4xLjI3Lmpw/Zw.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6847": {
+      "types": [
+        "Sport",
+        "Foot"
       ]
     },
     "6979": {
@@ -876,7 +1097,12 @@
           ]
         }
       ],
-      "title": "Kukeri "
+      "title": "Kukeri ",
+      "types": [
+        "Short Film",
+        "Documentary",
+        "Teaser"
+      ]
     },
     "7613": {
       "images": [
@@ -976,6 +1202,9 @@
             "https://images.slatecdn.net/y3I7_RT5tqeEGX8KsXA0y6gTrpTwW_8Uf96sDrOf4aU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTE2NjUx/OGQtOThjZS00MWI5/LTkyZjQtMDYxNWQ5/ZDg5MWFlL2RlZmF1/bHQtMS4zMjUuMi53/ZWJw.webp"
           ]
         }
+      ],
+      "types": [
+        "Short Film"
       ]
     },
     "9173": {
@@ -1016,7 +1245,10 @@
           ]
         }
       ],
-      "title": "CONTE NUPTIAL"
+      "title": "CONTE NUPTIAL",
+      "types": [
+        "Narrative"
+      ]
     },
     "9209": {
       "extras": [
@@ -1041,6 +1273,9 @@
             "https://images.slatecdn.net/NHTwMnr-cQa5hG3tDhUnmomLEhZdX9pvQkPVqdUOikM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTVlNTkw/MDUtZDA5MC00MDEz/LTljZWMtNzk3ZWU0/NTU2OWUzL3Nuc20t/MS4xLjE3LmpwZw.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "9464": {
@@ -1124,10 +1359,21 @@
       ]
     },
     "9467": {
-      "zoom": 1.05
+      "zoom": 1.05,
+      "types": [
+        "Short Film"
+      ]
     },
     "9468": {
-      "zoom": 1.12
+      "zoom": 1.12,
+      "types": [
+        "Short Film"
+      ]
+    },
+    "9476": {
+      "types": [
+        "Serie"
+      ]
     },
     "9979": {
       "zoom": 1.14,
@@ -1176,7 +1422,13 @@
           ]
         }
       ],
-      "title": "Culte – 2Be3"
+      "title": "Culte – 2Be3",
+      "types": [
+        "TV Serie",
+        "Fiction",
+        "Series",
+        "narrative"
+      ]
     },
     "10322": {
       "extras": [
@@ -1206,7 +1458,10 @@
         }
       ],
       "zoom": 1.05,
-      "title": "Aurelia - Absolute Beauty"
+      "title": "Aurelia - Absolute Beauty",
+      "types": [
+        "Commercial"
+      ]
     },
     "10355": {
       "extras": [
@@ -1234,6 +1489,9 @@
             "https://images.slatecdn.net/_Coz0H629Gf3l9yg7kXEojb-ssCodL36EtP6GTXe7Tg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzMyNDVk/M2ItMTY3Yy00NDcw/LWFkNTYtNjQ4ZmQ2/NGFkNzViL2R1bmUt/MS41LjYud2VicA.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "10357": {
@@ -1275,11 +1533,23 @@
           ]
         }
       ],
-      "title": "Délits Mineurs"
+      "title": "Délits Mineurs",
+      "types": [
+        "TV Serie",
+        "narrative"
+      ]
+    },
+    "10539": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10867": {
       "zoom": 1.16,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {

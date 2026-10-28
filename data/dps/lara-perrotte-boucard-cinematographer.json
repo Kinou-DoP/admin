@@ -5,14 +5,29 @@
   "bundle": "https://kinou.slateapp.com/bundles/39910847-c6ea-11f1-a349-0215583debcb",
   "open": 11314,
   "overrides": {
+    "6454": {
+      "types": [
+        "Serie"
+      ]
+    },
     "6455": {
-      "title": "Matt Pokora • Déjà Volé"
+      "title": "Matt Pokora • Déjà Volé",
+      "types": [
+        "Music Video"
+      ]
     },
     "6457": {
-      "zoom": 1.01
+      "zoom": 1.01,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "6790": {
-      "zoom": 1.08
+      "zoom": 1.08,
+      "types": [
+        "Fashion film"
+      ]
     },
     "6791": {
       "zoom": 2.5,
@@ -22,59 +37,123 @@
       "zoom": 1.13
     },
     "7727": {
-      "zoom": 1.37
+      "zoom": 1.37,
+      "types": [
+        "Commercial"
+      ]
     },
     "7740": {
       "zoom": 1.14,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Fashion film"
+      ]
     },
     "8012": {
-      "title": "SHAY • Sans Coeur"
+      "title": "SHAY • Sans Coeur",
+      "types": [
+        "Music Video"
+      ]
     },
     "8126": {
       "zoom": 1.23,
-      "title": "Shay • teaser"
+      "title": "Shay • teaser",
+      "types": [
+        "Music Video"
+      ]
     },
     "8127": {
       "zoom": 1.36,
-      "title": "RSKO • Channel bag"
+      "title": "RSKO • Channel bag",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "8240": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8333": {
-      "title": "KEL-P feat KALASH • In My Feelings"
+      "title": "KEL-P feat KALASH • In My Feelings",
+      "types": [
+        "Music Video"
+      ]
     },
     "8398": {
       "zoom": 1.22,
-      "title": "NAZA • J'AI MAL"
+      "title": "NAZA • J'AI MAL",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "8427": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8594": {
-      "zoom": 1.22
+      "zoom": 1.22,
+      "types": [
+        "Music Video"
+      ]
     },
     "8595": {
       "zoom": 1.35,
-      "title": "IDK • GUNNA"
+      "title": "IDK • GUNNA",
+      "types": [
+        "Music Video"
+      ]
     },
     "8820": {
       "zoom": 1.2,
       "zoomThumb": true,
-      "title": "ATHENA (2nd Unit DOP)"
+      "title": "ATHENA (2nd Unit DOP)",
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "8960": {
-      "title": "VANS • ALWAYS PUSHING"
+      "title": "VANS • ALWAYS PUSHING",
+      "types": [
+        "Commercial"
+      ]
     },
     "8961": {
-      "title": "NIKE • CASA"
+      "title": "NIKE • CASA",
+      "types": [
+        "Commercial"
+      ]
     },
     "8962": {
-      "title": "NIKE • PARIS"
+      "title": "NIKE • PARIS",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8967": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8975": {
-      "zoom": 1.32
+      "zoom": 1.32,
+      "types": [
+        "Edito"
+      ]
     },
     "8994": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Commercial"
+      ]
     },
     "9007": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Commercial"
+      ]
     },
     "9028": {
       "zoom": 1.21
@@ -103,16 +182,29 @@
           "img": "https://images.slatecdn.net/7Vz2_rQYmvO-pIDlziDqDg1ruOxL6pZbZDPOgIaeLIg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NTdlZmIxMy1iMzNj/LTQ1NmItYjE3NC0z/YWM1ZmM1ZmQ5MWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDkt/MjMtYS0xNy40My4y/Ni5wbmc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8fb02692-81e8-400b-b95a-66ec021813e8-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "9031": {
       "zoom": 1.23
     },
     "9530": {
-      "title": "FLIGHT MODE • ELLA"
+      "title": "FLIGHT MODE • ELLA",
+      "types": [
+        "Lifestyle",
+        "Outdoor",
+        "Portrait"
+      ]
     },
     "9531": {
-      "title": "Louis Vuitton • FLIGHT MODE SEPT24 MASHUP"
+      "title": "Louis Vuitton • FLIGHT MODE SEPT24 MASHUP",
+      "types": [
+        "Lifestyle",
+        "Outdoor",
+        "Portrait"
+      ]
     },
     "9842": {
       "zoom": 1.2,
@@ -151,6 +243,11 @@
           "img": "https://images.slatecdn.net/iAySU0MsR5y3cl8OCNGHO3gVIzMyZEFvsErXv58qzwY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MDkyZThiMS1iYTYw/LTQ4MzQtYjkwZC00/NGQwYjMyNTUwMzQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MjMtYS0xOC4yNy4y/NC5wbmc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/56c60797-ff99-4679-b8b8-c1366897b793-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Fiction",
+        "Serie",
+        "narrative"
       ]
     },
     "10179": {
@@ -177,6 +274,10 @@
             "https://images.slatecdn.net/gQHHfG86j8hUukPzkHlpXR4nAh1j7J13osJtNU2sT00/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NmJhZGNhYy0yNzFm/LTRkZjktYjFiNC1h/NzNhYTIxZDY3NjIv/c28tcHJvdWQtdG8t/YmUtcGFydC1vZi10/aGlzLWFkdmVudHVy/ZS5zaG9vdGluZy10/aGUtZXBpYy1vcGVu/aW5nLWNyZWRpdHMt/d2l0aC10b21rYW5k/ZXNpZ24tYW5kLXRo/aXMtYnJpbGxpYW50/LWNyZXctd2FzLWFu/LWFic29sdXRlLWJs/YXN0LmJpZy10aGFu/a3MtdG8tdmFuZXNz/YXZhbnp1eWxlbi1m/b3ItdGhlLXRydXN0/LWFuZC1vcHBvcnR1/bml0eS5zaGFyaW5n/LXdpdGgtYmVuamFt/aW52b2lzaW4uLi5k/aXJlYy5qcGc.webp"
           ]
         }
+      ],
+      "types": [
+        "Serie",
+        "narrative"
       ]
     },
     "10183": {
@@ -185,15 +286,26 @@
       "title": "Télérama • Marina Foïs & Isabelle Huppert"
     },
     "10197": {
-      "zoom": 1.09
+      "zoom": 1.09,
+      "types": [
+        "Commercial"
+      ]
     },
     "10203": {
       "zoom": 1.19,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "10361": {
       "zoom": 1.24,
-      "title": "Chinaman"
+      "title": "Chinaman",
+      "types": [
+        "Short Film",
+        "Trailer",
+        "narrative"
+      ]
     },
     "10405": {
       "zoom": 1.08,
@@ -206,25 +318,62 @@
           "img": "https://images.slatecdn.net/7z5II7cUaxEDu8QGdbQs9CTabu0yoKARRz2lDCLtCjo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ODAwLTY4MWRkOTFj/YjY5NmQ0LjQxMTg4/MTI4LTM4ZmQ2ZmY0/NWM3YjhkNDYzYzNm/MTA1OTUwZWVkZWI3/LmpwZw?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2c744965-1dd7-4286-a58d-74453e398b4e-1280x720.2500.mp4"
         }
+      ],
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10411": {
+      "types": [
+        "Commercial"
       ]
     },
     "10717": {
-      "title": "GENER8ION • STORM | starring Yung Lean"
+      "title": "GENER8ION • STORM | starring Yung Lean",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10836": {
+      "types": [
+        "Commercial",
+        "Documentary"
+      ]
     },
     "10838": {
-      "zoom": 1.23
+      "zoom": 1.23,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11007": {
+      "types": [
+        "Commercial"
+      ]
     },
     "11308": {
-      "zoom": 1.21
+      "zoom": 1.21,
+      "types": [
+        "Commercial"
+      ]
     },
     "11309": {
-      "zoom": 1.2
+      "zoom": 1.2,
+      "types": [
+        "Commercial"
+      ]
     },
     "11310": {
-      "zoom": 1.18
+      "zoom": 1.18,
+      "types": [
+        "Commercial"
+      ]
     },
     "11311": {
-      "zoom": 1.19
+      "zoom": 1.19,
+      "types": [
+        "Commercial"
+      ]
     },
     "11314": {
       "title": "Mylène Farmer • Des Lols et des Quoi",
@@ -250,7 +399,10 @@
         "https://images.slatecdn.net/D-a1I_JcjqJPyWmah-nOOk6cKDicMVPhAqsAl_XELi4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZGY2MTRh/ZDYtM2I0Yi00ZDQw/LWJhN2EtZjQ3ZWYw/NjU5NmJkL21lbGFp/bmVmYXJtZXItc3Rp/bGxzLTAwMDkwMDY2/LnBuZw.webp"
       ],
       "stillsLink": "https://kinou.slateapp.com/work/mylene-farmer-des-lols-et-des-quoi-stills",
-      "phoneX": 54.6
+      "phoneX": 54.6,
+      "types": [
+        "Music Video"
+      ]
     },
     "11428": {
       "images": [
@@ -306,6 +458,9 @@
         0.7524,
         1.133,
         0.8544
+      ],
+      "types": [
+        "Photography"
       ]
     }
   },

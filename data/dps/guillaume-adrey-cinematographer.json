@@ -14,11 +14,17 @@
     },
     "619": {
       "zoom": 1.34,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "638": {
       "title": "Seloger.com",
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Commercial"
+      ]
     },
     "654": {
       "title": "Givenchy - Soin Noir"
@@ -29,7 +35,10 @@
     },
     "801": {
       "zoomThumb": true,
-      "zoom": 1.25
+      "zoom": 1.25,
+      "types": [
+        "Commercial"
+      ]
     },
     "825": {
       "title": "Piaget - Possession",
@@ -54,7 +63,10 @@
       "zoom": 1.03
     },
     "1753": {
-      "zoom": 1.02
+      "zoom": 1.02,
+      "types": [
+        "Experimental"
+      ]
     },
     "1774": {
       "zoom": 1.29
@@ -100,66 +112,182 @@
       "zoom": 1.36
     },
     "3080": {
-      "zoom": 1.27
+      "zoom": 1.27,
+      "types": [
+        "Commercial"
+      ]
     },
     "3179": {
       "title": "Vichy - Mineral 89",
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Commercial"
+      ]
     },
     "3184": {
-      "title": "Le Petit Marseillais - Cold Cream"
+      "title": "Le Petit Marseillais - Cold Cream",
+      "types": [
+        "Commercial"
+      ]
     },
     "3587": {
-      "zoom": 1.3
+      "zoom": 1.3,
+      "types": [
+        "Commercial"
+      ]
     },
     "3644": {
       "title": "Pizza Del Arte",
-      "zoom": 1.06
+      "zoom": 1.06,
+      "types": [
+        "Commercial"
+      ]
     },
     "3739": {
-      "zoom": 1.32
+      "zoom": 1.32,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4004": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4252": {
-      "title": "Louboutin Nudes"
+      "title": "Louboutin Nudes",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4436": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4857": {
-      "title": "Chanel - Activation"
+      "title": "Chanel - Activation",
+      "types": [
+        "Commercial"
+      ]
     },
     "5262": {
       "zoom": 1.2,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "5753": {
       "title": "Marie",
-      "zoom": 1.3
+      "zoom": 1.3,
+      "types": [
+        "Commercial"
+      ]
     },
     "5825": {
-      "zoom": 1.5
+      "zoom": 1.5,
+      "types": [
+        "Commercial"
+      ]
     },
     "6336": {
       "title": "La Bresse Bleue",
-      "zoom": 1.37
+      "zoom": 1.37,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6494": {
+      "types": [
+        "Commercial",
+        "Beauty",
+        "Fashion"
+      ]
+    },
+    "6587": {
+      "types": [
+        "Commercial",
+        "Ong"
+      ]
     },
     "6669": {
-      "title": "Dior - Prestige"
+      "title": "Dior - Prestige",
+      "types": [
+        "Beauty",
+        "Fashion film",
+        "Texture",
+        "Luxe"
+      ]
     },
     "6738": {
-      "title": "Guerlain - Shalimar Tonka"
+      "title": "Guerlain - Shalimar Tonka",
+      "types": [
+        "Commercial",
+        "Texture",
+        "Parfum"
+      ]
     },
     "6746": {
-      "zoom": 1.28
+      "zoom": 1.28,
+      "types": [
+        "Commercial",
+        "Food"
+      ]
+    },
+    "7430": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7433": {
+      "types": [
+        "Commercial"
+      ]
     },
     "7644": {
-      "title": "Taureau Ailé"
+      "title": "Taureau Ailé",
+      "types": [
+        "Commercial"
+      ]
     },
     "7829": {
-      "title": "Omega - Seamaster"
+      "title": "Omega - Seamaster",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8101": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8434": {
-      "title": "Dior - Prestige White Oleo Essence Lotion"
+      "title": "Dior - Prestige White Oleo Essence Lotion",
+      "types": [
+        "Commercial"
+      ]
     },
     "8435": {
-      "title": "Dior - Snow Focus Serum"
+      "title": "Dior - Snow Focus Serum",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8732": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8733": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8734": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9812": {
       "title": "Clarins - SPA"
@@ -168,23 +296,48 @@
       "title": "Maille - Le Sandwich"
     },
     "10078": {
-      "zoom": 1.38
+      "zoom": 1.38,
+      "types": [
+        "Commercial"
+      ]
     },
     "10528": {
       "title": "Lustucru - Gnocchi star"
     },
+    "10894": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10896": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "10898": {
       "title": "Maggi - So good together",
-      "zoom": 1.37
+      "zoom": 1.37,
+      "types": [
+        "Commercial"
+      ]
     },
     "10932": {
-      "title": "Maison Francis Kurkdjian - Aqua Media Cologne"
+      "title": "Maison Francis Kurkdjian - Aqua Media Cologne",
+      "types": [
+        "Commercial"
+      ]
     },
     "11004": {
-      "title": "Dior - Incanto"
+      "title": "Dior - Incanto",
+      "types": [
+        "Commercial"
+      ]
     },
     "11016": {
-      "title": "Gucci - Flora"
+      "title": "Gucci - Flora",
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {

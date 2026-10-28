@@ -5,41 +5,200 @@
   "bundle": "https://kinou.slateapp.com/bundles/2ae79235-cec3-11f1-a349-0215583debcb",
   "open": 11185,
   "overrides": {
+    "10949": {
+      "types": [
+        "narrative"
+      ]
+    },
+    "10950": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10951": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10952": {
+      "types": [
+        "Clip"
+      ]
+    },
+    "10953": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "10954": {
       "title": "Ante Tsp"
     },
     "10955": {
       "zoom": 1.35,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "narrative"
+      ]
+    },
+    "10956": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10957": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10958": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10959": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10960": {
       "zoom": 1.28,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Clip"
+      ]
+    },
+    "10961": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10962": {
       "zoom": 1.37,
       "zoomThumb": true,
-      "zoomPos": "49% 2.9%"
+      "zoomPos": "49% 2.9%",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10963": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10965": {
       "zoom": 1.14,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Clip"
+      ]
     },
     "10966": {
       "zoom": 1.25,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Clip"
+      ]
     },
     "10967": {
       "zoom": 1.26,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Clip"
+      ]
+    },
+    "10968": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10969": {
       "zoom": 1.36,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "narrative"
+      ]
+    },
+    "10970": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10971": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10972": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10973": {
+      "types": [
+        "narrative"
+      ]
+    },
+    "10974": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10975": {
       "zoom": 1.29,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10976": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10977": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10978": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10980": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10981": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10982": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10983": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11148": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11185": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11339": {
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {

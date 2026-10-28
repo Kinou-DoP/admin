@@ -4,6 +4,11 @@
   "hue": 2,
   "bundle": "https://kinou.slateapp.com/bundles/67d21139-d2bb-11f1-a349-0215583debcb",
   "overrides": {
+    "154": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "250": {
       "title": "Ushuaia - Savon"
     },
@@ -13,6 +18,11 @@
     "512": {
       "title": "Strellson - Loaded"
     },
+    "859": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "868": {
       "title": "Eau Jeune - Rebelle Chic"
     },
@@ -20,7 +30,10 @@
       "title": "Pathology"
     },
     "1005": {
-      "title": "Dracula : Year Zero"
+      "title": "Dracula : Year Zero",
+      "types": [
+        "Feature Film"
+      ]
     },
     "1180": {
       "title": "Opel - Insignia Sports Tourer"
@@ -31,32 +44,158 @@
     "1278": {
       "title": "Mercedes-Benz - B Class"
     },
+    "1279": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "1880": {
       "title": "Toyota - Harrier"
     },
+    "2324": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "2757": {
-      "title": "Ultimate Game (Gamer)"
+      "title": "Ultimate Game (Gamer)",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
     },
     "2853": {
-      "title": "I.T."
+      "title": "I.T.",
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "3437": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3818": {
+      "types": [
+        "Commercial"
+      ]
     },
     "3999": {
-      "title": "Pathology (teaser)"
+      "title": "Pathology (teaser)",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "4278": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4656": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5154": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5404": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6015": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6310": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6315": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6317": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6813": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6852": {
+      "types": [
+        "Car"
+      ]
+    },
+    "6870": {
+      "types": [
+        "Car"
+      ]
+    },
+    "6871": {
+      "types": [
+        "Car"
+      ]
     },
     "6878": {
-      "title": "Schwarzkopf Gliss"
+      "title": "Schwarzkopf Gliss",
+      "types": [
+        "Underwater",
+        "Hair"
+      ]
+    },
+    "7341": {
+      "types": [
+        "Commercial"
+      ]
     },
     "7742": {
-      "title": "Deka - back to the future"
+      "title": "Deka - back to the future",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8272": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8969": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8973": {
       "title": "McDonalds - Big Arch",
       "zoom": 1.62,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10573": {
+      "types": [
+        "Commercial"
+      ]
     },
     "11443": {
       "zoom": 1.36,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {
