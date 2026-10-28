@@ -3,7 +3,112 @@
   "name": "Guillaume Deffontaines, AFC",
   "hue": 121,
   "bundle": "https://kinou.slateapp.com/bundles/8ac53d47-d2e6-11f1-a349-0215583debcb",
-  "overrides": {},
+  "overrides": {
+    "339": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "343": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "1645": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2021": {
+      "types": [
+        "Narrative"
+      ]
+    },
+    "2122": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2771": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2861": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "4173": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "4423": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "5060": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "5266": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "6434": {
+      "types": [
+        "Feature Film trailer"
+      ]
+    },
+    "8227": {
+      "types": [
+        "Narrative"
+      ]
+    },
+    "8590": {
+      "types": [
+        "Narrative"
+      ]
+    },
+    "8983": {
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
+    },
+    "9982": {
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "10299": {
+      "types": [
+        "Feature Film",
+        "Trailer",
+        "narrative",
+        "Feature Film trailer"
+      ]
+    },
+    "10695": {
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    }
+  },
   "about": {},
   "categories": [
     "NARRATIVE"
