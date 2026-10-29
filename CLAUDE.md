@@ -112,6 +112,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   `data/site.json` en un seul commit (« Mise à jour du contact »). Historique de la page : `data/contact.json`.
 - Contact, aussi : logo du site (PNG/WebP blanc sur transparent) → `data/brand/logo-<horodatage>.png` + `data/site.json`
   (`logo`, `logoHeight`). Sans logo : texte « kinou ».
+- À propos : Instagram, Site web, puis « Autres liens » (`moreLinks`, nom du bouton + adresse, ↑ ↓ ×, « + Ajouter un lien ») →
+  `about.links` = `[{ label, url }]` (IMDb, Vimeo… ; affichés sur le site après Instagram et Website).
 - Portrait : compressé dans le navigateur (1600 px max, WebP) → `data/dps/img/<slug>.webp`.
   Point de cadrage : clic/glisser sur la photo → `about.pos` = "X% Y%" (background-position sur le site), aperçus
   ordinateur (16:10) et téléphone (9:19,5) ; « Recentrer » = défaut "center 30%".

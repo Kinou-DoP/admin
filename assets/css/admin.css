@@ -253,6 +253,7 @@ body.vedit-on { overflow: hidden; }
 
 /* Contact : une ligne par personne (rôle, prénom, e-mail, téléphone, ↑ ↓ ×) */
 .team .tline { display: grid; grid-template-columns: 1.3fr 1fr 1.4fr 1.1fr auto auto auto; gap: 12px; align-items: end; margin-bottom: 10px; }
+.team.links .tline { grid-template-columns: 1fr 2fr auto auto auto; } /* liens de l'About : nom du bouton, adresse */
 .team .xbtn { width: 22px; height: 28px; padding: 0; border: 0; background: none; color: var(--dim); font-size: 14px; cursor: pointer; }
 .team .xbtn:hover { color: var(--kinou-fg); }
 .team .xbtn:disabled { opacity: .25; cursor: default; }

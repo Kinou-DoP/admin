@@ -988,6 +988,32 @@
   function paras(a) { return (a || []).join("\n\n"); }
   function unparas(t) { return t.split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean); }
 
+  // Liens en plus de l'onglet About (Gus) : nom du bouton + adresse → about.links = [{ label, url }], dans l'ordre.
+  function moreLinks() {
+    var box = el("div", { class: "team links" });
+    function draw() {
+      var a = state.about, list = a.links || [];
+      box.textContent = "";
+      list.forEach(function (l, i) {
+        function inp(k, ph, type) {
+          var x = el("input", { type: type || "text", placeholder: ph, value: l[k] || "" });
+          x.addEventListener("input", function () { l[k] = x.value.trim(); });
+          return x;
+        }
+        function btn(txt, title, fn, off) { var b = el("button", { class: "xbtn", type: "button", title: title, text: txt }); b.disabled = !!off; b.addEventListener("click", function () { fn(); if (!list.length) delete a.links; draw(); touch(); }); return b; }
+        box.appendChild(el("div", { class: "tline" }, [inp("label", "Nom du bouton (ex. IMDb)"), inp("url", "https://…", "url"),
+          btn("↑", "Monter", function () { list.splice(i - 1, 0, list.splice(i, 1)[0]); }, i === 0),
+          btn("↓", "Descendre", function () { list.splice(i + 1, 0, list.splice(i, 1)[0]); }, i === list.length - 1),
+          btn("×", "Retirer", function () { list.splice(i, 1); })]));
+      });
+      var add = el("button", { class: "btn ghost", type: "button", text: "+ Ajouter un lien" });
+      add.addEventListener("click", function () { (a.links = a.links || []).push({ label: "", url: "" }); draw(); touch(); var ins = box.querySelectorAll(".tline input"); if (ins.length) ins[ins.length - 2].focus(); });
+      box.appendChild(add);
+    }
+    draw();
+    return box;
+  }
+
   function aboutSection() {
     var a = state.about;
     function text(key, ph) {
@@ -1010,6 +1036,7 @@
         el("div", { class: "field" }, [el("label", { class: "label", text: "Instagram" }), line("instagram", "https://instagram.com/…")]),
         el("div", { class: "field" }, [el("label", { class: "label", text: "Site web" }), line("website", "https://…")])
       ]),
+      el("div", { class: "field" }, [el("label", { class: "label", text: "Autres liens (IMDb, Vimeo…), affichés après Instagram et Website" }), moreLinks()]),
       el("div", { class: "cols" }, [
         el("div", { class: "field" }, [el("label", { class: "label", text: "Portrait (fond de l'onglet About)" }), portraitDrop(), focalPicker()]),
         el("div", { class: "field" }, [el("label", { class: "label", text: "CV (PDF, téléchargé depuis le site)" }), cvDrop()])
