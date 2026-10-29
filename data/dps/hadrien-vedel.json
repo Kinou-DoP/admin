@@ -1071,7 +1071,13 @@
       "En publicité, il travaille avec de nombreux réalisateurs pour des marques comme Obvious (réalisé par Theo Gosselin et Maud Chalard), Lacoste, Louis Vuitton, Dior, Manor, S.Oliver, L’Oréal, Louise Damas, Patricia Blanchet, Nespresso, Well ou encore From Future. Il met également en image plusieurs clips musicaux notamment pour Jeff Mills l’un des pionniers de la techno (réalisé par Manu Obadia Wills), Madben, Gaël Faye, Julien Doré et Eddy De Pretto, Ben L’Oncle Soul, Bosco Rogers, Syra, Loveni, Zed Yun Pavarotti, Palatine, ou encore Godford."
     ],
     "img": "img/hadrien-vedel.webp",
-    "cv": "cv/CV-Hadrien-Vedel.pdf"
+    "cv": "cv/CV-Hadrien-Vedel.pdf",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm5220670/?language=fr-fr"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
