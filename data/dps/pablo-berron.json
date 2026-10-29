@@ -21,7 +21,8 @@
         "Serie",
         "narrative"
       ],
-      "zoom": 1.34
+      "zoom": 1.34,
+      "zoomThumb": true
     },
     "9109": {
       "types": [
