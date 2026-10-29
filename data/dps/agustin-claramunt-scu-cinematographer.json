@@ -4,6 +4,104 @@
   "hue": 279,
   "bundle": "https://kinou.slateapp.com/bundles/366d84ea-d38d-11f1-a349-0215583debcb",
   "overrides": {
+    "3219": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3293": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3419": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3435": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3672": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3839": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3840": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3977": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4121": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4277": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4303": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4392": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4566": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4629": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4876": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4967": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5155": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6417": {
+      "types": [
+        "Commercial",
+        "Food",
+        "Drink",
+        "Beer"
+      ]
+    },
+    "6481": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "6880": {
       "title": "Ringo",
       "types": [
@@ -13,6 +111,46 @@
       "zoom": 1.14,
       "zoomThumb": true
     },
+    "7322": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7415": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7416": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7421": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7576": {
+      "types": [
+        "Campaign"
+      ]
+    },
+    "7583": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7584": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7826": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "8143": {
       "title": "Land of Bad",
       "types": [
@@ -21,6 +159,58 @@
       ],
       "zoom": 1.37,
       "zoomThumb": true
+    },
+    "8242": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8271": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8738": {
+      "types": [
+        "Narrative"
+      ]
+    },
+    "8770": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8957": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9176": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9256": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9379": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9710": {
+      "types": [
+        "Commercial",
+        "Prevention"
+      ]
+    },
+    "10892": {
+      "types": [
+        "Commercial",
+        "narrative"
+      ]
     },
     "11187": {
       "title": "Ghost Soldier",
