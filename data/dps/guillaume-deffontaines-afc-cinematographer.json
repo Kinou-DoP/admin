@@ -206,7 +206,13 @@
     ],
     "pos": "59% 58%",
     "instagram": "https://www.instagram.com/guillaumedeffontaines/",
-    "img": "img/guillaume-deffontaines-afc-cinematographer.webp"
+    "img": "img/guillaume-deffontaines-afc-cinematographer.webp",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm1117898/?reasonForLanguagePrompt=language_preference_mismatch"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
