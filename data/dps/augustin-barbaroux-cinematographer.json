@@ -544,7 +544,8 @@
           "img": "https://images.slatecdn.net/NmR1CXcKh5BhmpWLDA2_uANn_431jzGgomRb5WQgwEU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU2OS02OWIxOGZl/NTIyZTIwMy40MDc4/MDQ1Ny0xMmMzOWNh/OWE0NmQ2NjU0ODk5/MjQxNGJiOTNmYmY5/OC5qcGc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd7c4f51-03de-4775-b5fd-5ea557f35537-0x1080.5000.mp4"
         }
-      ]
+      ],
+      "zoomThumb": true
     },
     "11340": {
       "zoom": 1.34,
