@@ -161,7 +161,20 @@
       ],
       "zoom": 1.12,
       "zoomPos": "50.6% 30.3%",
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Teddy",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/teddy-feature-film-teaser-1-champis",
+          "title": "Teddy - Feature Film Teaser #1 (Champis)",
+          "img": "https://images.slatecdn.net/E77Bvby9T0pRmQeKJ-u9WQB56xeRbtvLCqm96rJT4yU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjA0Njc1NDE5MTYy/L3RlZGR5LXBob3Rv/Z3JhbW1lLTAwMTg1/NzkxLmpwZw?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/teddy-le-loup-teaser-2",
+          "title": "Teddy - Le Loup Teaser #2",
+          "img": "https://images.slatecdn.net/fb69lqCcnqLFqi1vHUvZ-T1BtFYLMYjHmDp3Bq6Z1Hs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjA0Njc1NDI1NTQx/L3RlZGR5LXBob3Rv/Z3JhbW1lLTAwMTg2/NzM0LmpwZw?v=1&format=webp"
+        }
+      ]
     },
     "5675": {
       "types": [
@@ -180,7 +193,15 @@
         "Comedy"
       ],
       "zoom": 1.27,
-      "zoomPos": "51.2% 34.6%"
+      "zoomPos": "51.2% 34.6%",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/les-cesar-2022-actrices",
+          "title": "Les César 2022 - Actrices",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5815/c4ef1b90-9eae-11f0-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/IcbU06xGn1ShKJIBtDOlK1-20IftO32BJwOOwJHQgmQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NzQ4ZmE3NC1jZDRi/LTRkYzQtOTVjOC1m/MzllY2YwYTQ4N2Qv/YWN0cmljZS04LnBu/Zw?v=1&format=webp"
+        }
+      ]
     },
     "5884": {
       "types": [
@@ -197,7 +218,7 @@
     },
     "6414": {
       "zoom": 1.24,
-      "zoomPos": "50% 19.6%",
+      "zoomPos": "48.5% 48.2%",
       "types": [
         "Commercial"
       ]
@@ -253,13 +274,15 @@
       "zoom": 1.36,
       "types": [
         "Narrative"
-      ]
+      ],
+      "title": "LEURS ENFANTS APRÈS EUX"
     },
     "9141": {
       "zoom": 1.33,
       "types": [
         "Narrative"
-      ]
+      ],
+      "title": "Les Tempêtes"
     },
     "9162": {
       "types": [
@@ -285,7 +308,21 @@
         "narrative"
       ],
       "zoom": 1.04,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/juste-une-illusion-teaser-ndeg1",
+          "title": "JUSTE UNE ILLUSION - Teaser n°1",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10568/7dadbfb1-1d68-11f1-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/sILUzclbMFm59jHEGMblKCHD9wPQpcM1xBWM9DC0eX8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU2OC02OWIxOGZl/NTIzMDA2My45NDE1/MjkyMC04ZjE2MGQx/OThlOGZkOTllYTc3/YzgyMzQwNTQxMzI4/Ni5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/juste-une-illusion-teaser-ndeg2",
+          "title": "JUSTE UNE ILLUSION - Teaser n°2",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10569/726a8ff7-1d68-11f1-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/NmR1CXcKh5BhmpWLDA2_uANn_431jzGgomRb5WQgwEU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU2OS02OWIxOGZl/NTIyZTIwMy40MDc4/MDQ1Ny0xMmMzOWNh/OWE0NmQ2NjU0ODk5/MjQxNGJiOTNmYmY5/OC5qcGc?v=1&format=webp"
+        }
+      ]
     },
     "10586": {
       "zoom": 1.04,
@@ -293,6 +330,21 @@
         "Fiction",
         "Feature Film",
         "narrative"
+      ],
+      "title": "Juste Une Illusion",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/juste-une-illusion-teaser-ndeg1",
+          "title": "JUSTE UNE ILLUSION - Teaser n°1",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10568/7dadbfb1-1d68-11f1-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/sILUzclbMFm59jHEGMblKCHD9wPQpcM1xBWM9DC0eX8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU2OC02OWIxOGZl/NTIzMDA2My45NDE1/MjkyMC04ZjE2MGQx/OThlOGZkOTllYTc3/YzgyMzQwNTQxMzI4/Ni5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/juste-une-illusion-teaser-ndeg2",
+          "title": "JUSTE UNE ILLUSION - Teaser n°2",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10569/726a8ff7-1d68-11f1-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/NmR1CXcKh5BhmpWLDA2_uANn_431jzGgomRb5WQgwEU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU2OS02OWIxOGZl/NTIyZTIwMy40MDc4/MDQ1Ny0xMmMzOWNh/OWE0NmQ2NjU0ODk5/MjQxNGJiOTNmYmY5/OC5qcGc?v=1&format=webp"
+        }
       ]
     },
     "11340": {
@@ -301,7 +353,8 @@
       "types": [
         "Feature Film",
         "narrative"
-      ]
+      ],
+      "title": "Un Bon Avocat"
     }
   },
   "about": {
@@ -321,13 +374,15 @@
   ],
   "clips": [
     {
-      "title": "JUSTE UNE ILLUSION - Teaser n°1",
-      "sub": "Eric Toledano, Olivier Nakache\nQuad Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10568/7dadbfb1-1d68-11f1-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d9cfdbff-6d54-472e-a914-b94a258b0e9c-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/sILUzclbMFm59jHEGMblKCHD9wPQpcM1xBWM9DC0eX8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU2OC02OWIxOGZl/NTIzMDA2My45NDE1/MjkyMC04ZjE2MGQx/OThlOGZkOTllYTc3/YzgyMzQwNTQxMzI4/Ni5qcGc?v=1&format=webp",
+      "title": "Juste Une Illusion - bande-annonce",
+      "sub": "Eric Toledano, Olivier Nakache\nQuad",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10586/d61a1f9c-cd6b-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d8c2e756-993f-43c1-a8d3-79028abd631b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/EOZagn8hDerfJXsHmARtgegsq2uB1OG6RAIVnBIA3Nk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU4Ni02OWI5NTU4/MGFiNjBhMi45OTQ3/ODIzMi1iNzBjOWRk/OGEyYTBkZWUyMDE5/ODg5YTgwYmEzMDdj/Zi5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 10568
+      "slate": 10586,
+      "featured": true,
+      "featuredOrder": 2
     },
     {
       "title": "LEURS ENFANTS APRÈS EUX - Bande Annonce",
@@ -794,13 +849,13 @@
       "slate": 4799
     },
     {
-      "title": "Les César 2022 - Actrices",
+      "title": "Les César 2022 - Hollywood Institute",
       "sub": "Louis de Caunes\nIconoclast",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5815/c4ef1b90-9eae-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/da8efbe3-9a61-4538-a381-e80d338ef3d5-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/IcbU06xGn1ShKJIBtDOlK1-20IftO32BJwOOwJHQgmQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NzQ4ZmE3NC1jZDRi/LTRkYzQtOTVjOC1m/MzllY2YwYTQ4N2Qv/YWN0cmljZS04LnBu/Zw?v=1&format=webp",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5816/3c7473e0-9eaf-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2e63313a-ca7b-4907-9e59-71fdffeb46ac-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/lGSTcuC2cjLFCHkjU0Lh5G1L_pb3-HtarJbXjRcqjsA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZWIwNzc0Ny1mN2Qx/LTQzYTMtODkxYS1i/NDEzMDA3M2ExNjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MDktYS0xNy4xNy4w/OS5wbmc?v=1&format=webp",
       "cat": "COMMERCIALS",
-      "slate": 5815
+      "slate": 5816
     },
     {
       "title": "On a tous une bonne raison d'aller au cinéma - La Fédération Nationale des Cinémas Français",
@@ -810,15 +865,6 @@
       "img": "https://images.slatecdn.net/LQrmv_yX6G012sFPF7n5MXDreCWcbp3SlmGQoGfIHSQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/N2ZlNGRhOC0yZjE3/LTQ4OTMtOTU3OC01/MWM4NmUwMWMwZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MjctYS0xMC41NC41/Ny5wbmc?v=1&format=webp",
       "cat": "COMMERCIALS",
       "slate": 6421
-    },
-    {
-      "title": "Les César 2022 - Hollywood Institute",
-      "sub": "Louis de Caunes\nIconoclast",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5816/3c7473e0-9eaf-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2e63313a-ca7b-4907-9e59-71fdffeb46ac-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/lGSTcuC2cjLFCHkjU0Lh5G1L_pb3-HtarJbXjRcqjsA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZWIwNzc0Ny1mN2Qx/LTQzYTMtODkxYS1i/NDEzMDA3M2ExNjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MDktYS0xNy4xNy4w/OS5wbmc?v=1&format=webp",
-      "cat": "COMMERCIALS",
-      "slate": 5816
     },
     {
       "title": "Éducation Nationale",
@@ -848,17 +894,6 @@
       "slate": 11340,
       "featured": true,
       "featuredOrder": 1
-    },
-    {
-      "title": "Juste Une Illusion - bande-annonce",
-      "sub": "Eric Toledano, Olivier Nakache\nQuad",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10586/d61a1f9c-cd6b-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d8c2e756-993f-43c1-a8d3-79028abd631b-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/EOZagn8hDerfJXsHmARtgegsq2uB1OG6RAIVnBIA3Nk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU4Ni02OWI5NTU4/MGFiNjBhMi45OTQ3/ODIzMi1iNzBjOWRk/OGEyYTBkZWUyMDE5/ODg5YTgwYmEzMDdj/Zi5qcGc?v=1&format=webp",
-      "cat": "",
-      "slate": 10586,
-      "featured": true,
-      "featuredOrder": 2
     }
   ]
 }
