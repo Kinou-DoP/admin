@@ -226,7 +226,13 @@
     "instagram": "https://www.instagram.com/jaredfadel",
     "pos": "58% 29%",
     "color": true,
-    "img": "img/jared-fadel.webp"
+    "img": "img/jared-fadel.webp",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm7398175/?ref_=nv_sr_srsg_0_tt_0_nm_3_in_0_q_jared%2520fadel"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
