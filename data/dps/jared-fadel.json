@@ -6,106 +6,202 @@
   "open": 10868,
   "overrides": {
     "9884": {
-      "zoom": 1.39
+      "zoom": 1.39,
+      "types": [
+        "Commercial"
+      ]
     },
     "9885": {
-      "zoom": 1.22
+      "zoom": 1.22,
+      "types": [
+        "Commercial"
+      ]
     },
     "9886": {
       "zoom": 1.38
     },
     "9887": {
-      "zoom": 1.39
+      "zoom": 1.39,
+      "types": [
+        "Commercial"
+      ]
     },
     "9888": {
-      "zoom": 1.2
+      "zoom": 1.2,
+      "types": [
+        "Commercial"
+      ]
     },
     "9889": {
-      "zoom": 1.39
+      "zoom": 1.39,
+      "types": [
+        "Commercial"
+      ]
     },
     "9890": {
-      "zoom": 1.47
+      "zoom": 1.47,
+      "types": [
+        "Commercial"
+      ]
     },
     "9891": {
       "zoom": 1.41
     },
     "9892": {
-      "zoom": 1.55
+      "zoom": 1.55,
+      "types": [
+        "Commercial"
+      ]
     },
     "9893": {
       "zoom": 1.36
     },
     "9894": {
-      "zoom": 1.4
+      "zoom": 1.4,
+      "types": [
+        "Art Video"
+      ]
     },
     "9895": {
-      "zoom": 1.41
+      "zoom": 1.41,
+      "types": [
+        "Commercial"
+      ]
     },
     "9896": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Commercial"
+      ]
     },
     "9897": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Commercial"
+      ]
     },
     "9898": {
       "zoom": 1.35
     },
     "9899": {
-      "zoom": 1.46
+      "zoom": 1.46,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "9902": {
-      "zoom": 1.41
+      "zoom": 1.41,
+      "types": [
+        "Commercial"
+      ]
     },
     "9903": {
-      "zoom": 1.57
+      "zoom": 1.57,
+      "types": [
+        "Commercial"
+      ]
     },
     "9904": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Commercial"
+      ]
     },
     "9905": {
       "zoom": 1.5
     },
     "9906": {
-      "zoom": 1.2
+      "zoom": 1.2,
+      "types": [
+        "Commercial"
+      ]
     },
     "9907": {
-      "zoom": 1.53
+      "zoom": 1.53,
+      "types": [
+        "Commercial"
+      ]
     },
     "9908": {
-      "zoom": 1.57
+      "zoom": 1.57,
+      "types": [
+        "Commercial"
+      ]
     },
     "9909": {
-      "zoom": 1.55
+      "zoom": 1.55,
+      "types": [
+        "Commercial"
+      ]
     },
     "9910": {
-      "zoom": 1.29
+      "zoom": 1.29,
+      "types": [
+        "Documentary",
+        "narrative"
+      ]
     },
     "9911": {
-      "zoom": 1.37
+      "zoom": 1.37,
+      "types": [
+        "Commercial"
+      ]
     },
     "9912": {
       "zoom": 1.19
     },
     "9913": {
-      "zoom": 1.41
+      "zoom": 1.41,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
+    },
+    "9914": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9915": {
-      "zoom": 1.41
+      "zoom": 1.41,
+      "types": [
+        "Commercial"
+      ]
     },
     "9916": {
-      "zoom": 1.38
+      "zoom": 1.38,
+      "types": [
+        "Commercial"
+      ]
     },
     "9917": {
       "zoom": 1.35
     },
     "9918": {
-      "zoom": 1.57
+      "zoom": 1.57,
+      "types": [
+        "Commercial"
+      ]
     },
     "10063": {
-      "zoom": 1.26
+      "zoom": 1.26,
+      "types": [
+        "Commercial"
+      ]
     },
     "10412": {
-      "zoom": 1.39
+      "zoom": 1.39,
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "10868": {
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {
