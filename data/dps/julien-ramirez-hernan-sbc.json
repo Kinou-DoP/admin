@@ -472,6 +472,13 @@
   ],
   "clips": [
     {
+      "title": "The Conjuring 5 : Bridgeport",
+      "sub": "Rodrigue Huart",
+      "img": "https://images.slatecdn.net/oj8LOYkWWWlD4cvDSgpaA1jH7HCOps21Q872FbhnU5A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGJiOGQy/MjYtNjQ2MS00NWEx/LTgxNzItMjY4NzQx/OWNkODVhLzg1MTgw/MDM2OC0xODYzMzc5/NTM5NzA2Mjk0Mi04/NDg3NTczNDY2NDE1/MDQ5Nzk4LW4uanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11476
+    },
+    {
       "title": "Other - Feature Film Trailer",
       "sub": "David Moreau\nRadar Films",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9845/b4c97c83-3d36-11f0-bfce-022353abf6f5.mp4",
@@ -595,7 +602,7 @@
       "cat": "COMMERCIAL",
       "slate": 10120,
       "featured": true,
-      "featuredOrder": 1
+      "featuredOrder": 2
     },
     {
       "title": "Nike x Patta | Dir Cut",
@@ -606,7 +613,7 @@
       "cat": "COMMERCIAL",
       "slate": 9922,
       "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 1
     },
     {
       "title": "Adidas - Grand Paris Basketball",
@@ -617,7 +624,7 @@
       "cat": "COMMERCIAL",
       "slate": 8279,
       "featured": true,
-      "featuredOrder": 6
+      "featuredOrder": 3
     },
     {
       "title": "KFC | DuoDeals Tankstelle",
@@ -637,7 +644,7 @@
       "cat": "COMMERCIAL",
       "slate": 8889,
       "featured": true,
-      "featuredOrder": 5
+      "featuredOrder": 4
     },
     {
       "title": "KFC | 5 for 5 Schwanger",
@@ -746,7 +753,7 @@
       "cat": "MUSIC VIDEO",
       "slate": 10543,
       "featured": true,
-      "featuredOrder": 4
+      "featuredOrder": 5
     },
     {
       "title": "Augure - stories",
@@ -783,7 +790,7 @@
       "cat": "MUSIC VIDEO",
       "slate": 6323,
       "featured": true,
-      "featuredOrder": 3
+      "featuredOrder": 6
     },
     {
       "title": "Eddy de Pretto - LOVE'n'TENDRESSE",
