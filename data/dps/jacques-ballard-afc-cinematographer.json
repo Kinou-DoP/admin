@@ -130,6 +130,13 @@
       "types": [
         "Narrative",
         "Feature Film"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/b-camera-jacques-ballard",
+          "title": "B-Camera: Jacques Ballard",
+          "img": "https://images.slatecdn.net/NxgXteXFyOg4hcKP5I5ucJMgczC87vVXIuwgHaVm4tI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMjg5MTg3MjAx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI4LWEtMTIuMzIu/NDctMi5wbmc?v=1&format=webp"
+        }
       ]
     },
     "3454": {
@@ -200,6 +207,13 @@
       "types": [
         "narrative",
         "Underwater"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/le-chant-du-loup-underwater-cinematography-jacques-ballard",
+          "title": "Le Chant du Loup • Underwater Cinematography: Jacques Ballard",
+          "img": "https://images.slatecdn.net/FdkIQJp6BwjVimkZlInSW45BuRAeGBp7tEKhSuyiSHc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMjg4OTk5MTk4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI4LWEtMTIuMjku/MzMucG5n?v=1&format=webp"
+        }
       ]
     },
     "6665": {
@@ -260,6 +274,23 @@
     "8280": {
       "types": [
         "Commercial"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/mc-donalds-signature-comte",
+          "title": "Mc Donald's - Signature Comté",
+          "img": "https://images.slatecdn.net/ehSlHxJImbyU6wRaWFOnKoabgB2-Z7y4otZ2o_FxVOQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MzM2NTUwMS1kOTRh/LTQwY2EtODIzZS0x/NmIwYTZlYzgxMDIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDQt/MTktYS0xMC41MS41/Ni5wbmc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/signature-by-mac-donalds",
+          "title": "Signature by mac donald's",
+          "img": "https://images.slatecdn.net/bg8Ro3OOovqy9nCwTz6bt-mRfU9ylPIahG75sXa69Fk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTQ4LTYwY2EwYjY3/ODA2ZTk2LjA5MjQ4/NTQzLWVjOTY4ZTQy/MmYwNjcxYzQwYWM5/ZGUwMTg5OWFmNWI1/LmpwZw?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/mc-donalds-tomme",
+          "title": "Mc Donald's Tomme",
+          "img": "https://images.slatecdn.net/ysA8uVdpwkEGqdY3Bi0lOFXIOSBRSK4n5GJK_MDUZ7M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NjMzNGU0Yi0wNmJh/LTQyYWUtODE4ZC1l/MTQ0OGQyMTMxMjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MDktYS0xNS4zMC4x/Ny5wbmc?v=1&format=webp"
+        }
       ]
     },
     "8350": {
@@ -280,6 +311,13 @@
     "10077": {
       "types": [
         "Commercial"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/kfc-legend-burgers",
+          "title": "KFC - Legend Burgers",
+          "img": "https://images.slatecdn.net/YgRcGqngCqeXhefAdi8qn2TU5yL-41mO7I5Mhq0Jr5c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NDQ1ZWMzNC1lOTA1/LTRhYWItYjE5YS0w/Mzc0YTQ3NmJiOWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MTktYS0xMS40My4x/My5wbmc?v=1&format=webp"
+        }
       ]
     },
     "11017": {
@@ -305,6 +343,24 @@
     "11093": {
       "types": [
         "Commercial"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/mcdo-xtreme",
+          "title": "McDO XTREME",
+          "img": "https://images.slatecdn.net/jwfCF0K4k117VPKn3p4nZ2EwIo-RHlLnHre3p8V8aeE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NGM1NTNjMC0xYjA2/LTRmMjctYjNlMy0w/ZjJiMDBhZjQ2YTMv/MTcyOTAwNTUzMDYw/MC5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/mcdonalds-gamme-crazy-bbq-avec-laeticia-d-et-hugo-p",
+          "title": "MCDONALDS - GAMME CRAZY BBQ avec Laëticia D et Hugo P",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9793/32b8f363-2a71-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/PyIpRXOUGx4wU0wqWDf-VRJISbFPiwHscmmFyTIMBRs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZDhkMmE4OS04YjM1/LTRlODItYjQ2OS1k/YzFiOTdiYmU0MWMv/MTc0NjUzMjU3NjU2/Ni5qcGc?v=1&format=webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/kfc-legend-burgers",
+          "title": "KFC - Legend Burgers",
+          "img": "https://images.slatecdn.net/YgRcGqngCqeXhefAdi8qn2TU5yL-41mO7I5Mhq0Jr5c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NDQ1ZWMzNC1lOTA1/LTRhYWItYjE5YS0w/Mzc0YTQ3NmJiOWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MTktYS0xMS40My4x/My5wbmc?v=1&format=webp"
+        }
       ]
     },
     "11351": {
@@ -327,7 +383,13 @@
       "Jacques Ballard also won best cinematography award at the Berlin Music Video Awards 2018 for AMA, short film, directed and performed by Julie Gautier, shot in the deepest pool in the world (Y-40 Deep joy, in Italy)."
     ],
     "img": "img/jacques-ballard-afc-cinematographer.webp",
-    "cv": "cv/CV-Jacques-Ballard.pdf"
+    "cv": "cv/CV-Jacques-Ballard.pdf",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm1852658/"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
