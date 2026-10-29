@@ -747,7 +747,13 @@
     "bio": [
       "Léo est un directeur de la photographie français installé à Paris."
     ],
-    "zoom": 1.08
+    "zoom": 1.08,
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm5590134/"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
