@@ -1,0 +1,69 @@
+{
+  "slug": "agustin-claramunt-scu-cinematographer",
+  "name": "Agustín Claramunt, SCU",
+  "hue": 279,
+  "bundle": "https://kinou.slateapp.com/bundles/366d84ea-d38d-11f1-a349-0215583debcb",
+  "overrides": {
+    "6880": {
+      "title": "Ringo"
+    },
+    "8143": {
+      "title": "Land of Bad"
+    },
+    "11187": {
+      "title": "Ghost Soldier"
+    },
+    "11470": {
+      "title": "The Last Druid (coming soon)"
+    }
+  },
+  "about": {
+    "bioEn": [
+      "Agustin Claramunt was born in Montevideo, Uruguay. He graduated from UCUDAL and holds a Master's degree in Cinematography (Escuela Superior de Cine y Audiovisuales de Cataluña). Since 2004 he has developed a career as Director of Photography in films, series and commercials in different places around the world and has been awarded for his achievements on different occasions. He has worked with directors such as William Eubank, Nicolas Perez Veiga, Armando Bo, Vellas, Alaska and Jaron Albertin, among others.",
+      "Narrative\n2023 - Ringo, Disney+ tv serie directed by Nico Perez Veiga\n2024 - Land Of Bad, feature film directed by William Eubank (starring Russell Crowe, Liam Hemsworth and Milo Ventimiglia)\n2026 - Ghost Soldier, feature film directed by William Eubank (starring Jim Caviezel)\n2027 - The Last Druid, feature film directed by William Eubank (starring Russell Crowe, Rose Leslie and Daniel Zovatto)"
+    ],
+    "website": "https://agustinclaramunt.com/",
+    "instagram": "https://www.instagram.com/agustinclaramunt/",
+    "pos": "61% 29%",
+    "img": "img/agustin-claramunt-scu-cinematographer.webp"
+  },
+  "categories": [
+    "NARRATIVE"
+  ],
+  "clips": [
+    {
+      "title": "The Last Druid",
+      "sub": "William Eubank\nNostromo Pictures",
+      "img": "https://images.slatecdn.net/GqYb_9nInduWQQoxQf7vG2ShymCxauukW8s1t8bX8BA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzkwM2Rk/YTItM2UxZS00OGY3/LTkyY2UtYmVmODEz/N2VhMDlmL212NWJt/amN3eW12aG0yaXR5/enU1bWMwMG1tbTBs/dGd3bXprdHl6bXl5/bXV6bnpjNHlqY3d4/a2V5eGtmcWNnYy52/MS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11470
+    },
+    {
+      "title": "Ghost Soldier • Trailer",
+      "sub": "William Eubank\nSony Pictures",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11187/7c87f602-a163-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/956897d8-9021-4bf8-aca9-d75658870944-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/p3BqRNHf1V8QcbPJvNZAMokhnCFGZfoaey1W6jIS6es/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZWJkZTU5OS05MGFj/LTQ3OWMtYWJhMS02/MjQ3MWU5NzdmY2Qv/c3RpbGxzLWdob3N0/c29sZGllci0wMDA4/NjQzMy5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11187
+    },
+    {
+      "title": "Ringo - trailer",
+      "sub": "Nico Perez Veiga\nPampa films, Primo Content",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6880/52014b3a-d448-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/873bb4c7-997a-4d4e-ae97-95dcb925f306-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/4abJNKLuXkBySBInzkJIhUfl5GCICBHbso-IHt6lHQQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/ODgwLTY0MDFjMWI1/NDFmZDcwLjU2NzM3/MTA5LTA3ZWZlNDNk/NTIzMDYwOTk3NzI4/NjQ1ZmU2YjhhOTdl/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6880
+    },
+    {
+      "title": "Land of Bad - trailer",
+      "sub": "William Eubank\nVolition Media Partners",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8143/2571c4da-b9fb-11ee-ade3-028f723623ff.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6eb2fdb8-23c7-4c20-8e86-8fb39a396258-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/u-V0Irrd5vhnVBKedaDBR9F4K9SkBPM2pZnUvjQOB9c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/NDg3ZjcwMy1lYjU2/LTQyNDUtODg3Yy1i/OGNmZGJhNDNkOTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTIt/MTgtYS0xNi4xNC41/OS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 8143
+    }
+  ]
+}
