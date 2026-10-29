@@ -476,7 +476,13 @@
     "website": "https://www.laraperrotteboucard.com/",
     "img": "img/lara-perrotte-boucard-cinematographer.webp",
     "pos": "45% 35%",
-    "shade": "linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.52) 55%, rgba(0,0,0,.28)), linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,0) 40%, rgba(0,0,0,.5))"
+    "shade": "linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.52) 55%, rgba(0,0,0,.28)), linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,0) 40%, rgba(0,0,0,.5))",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm4667071/?ref_=nv_sr_srsg_0_tt_0_nm_8_q_lara%2520perrotte"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
