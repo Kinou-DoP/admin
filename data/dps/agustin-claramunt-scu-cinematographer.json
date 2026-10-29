@@ -5,16 +5,39 @@
   "bundle": "https://kinou.slateapp.com/bundles/366d84ea-d38d-11f1-a349-0215583debcb",
   "overrides": {
     "6880": {
-      "title": "Ringo"
+      "title": "Ringo",
+      "types": [
+        "TV Serie",
+        "Sport"
+      ]
     },
     "8143": {
-      "title": "Land of Bad"
+      "title": "Land of Bad",
+      "types": [
+        "narrative",
+        "Feature"
+      ]
     },
     "11187": {
-      "title": "Ghost Soldier"
+      "title": "Ghost Soldier",
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "11470": {
-      "title": "The Last Druid (coming soon)"
+      "title": "The Last Druid (coming soon)",
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ],
+      "images": [
+        "https://images.slatecdn.net/ZD-TUvGsxBhQkZ7aNYyjomJrT6TpeApU500AM9ro7Wg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzkwM2Rk/YTItM2UxZS00OGY3/LTkyY2UtYmVmODEz/N2VhMDlmL212NWJt/amN3eW12aG0yaXR5/enU1bWMwMG1tbTBs/dGd3bXprdHl6bXl5/bXV6bnpjNHlqY3d4/a2V5eGtmcWNnYy52/MS5qcGc.webp"
+      ],
+      "ratios": [
+        1.7778
+      ]
     }
   },
   "about": {
