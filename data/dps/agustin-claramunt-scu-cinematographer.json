@@ -70,7 +70,8 @@
     "4277": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.32
     },
     "4303": {
       "types": [
@@ -92,7 +93,8 @@
     "4629": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.5
     },
     "4876": {
       "types": [
@@ -102,7 +104,9 @@
     "4967": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.25,
+      "zoomPos": "50.2% 49.7%"
     },
     "5155": {
       "types": [
@@ -134,12 +138,16 @@
     "7322": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.24,
+      "zoomPos": "50% 23.5%"
     },
     "7415": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.25,
+      "zoomPos": "52.7% 35.2%"
     },
     "7416": {
       "types": [
@@ -149,7 +157,8 @@
     "7421": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.21
     },
     "7576": {
       "types": [
@@ -183,7 +192,8 @@
     "8242": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.21
     },
     "8271": {
       "types": [
@@ -203,7 +213,9 @@
     "8957": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.43,
+      "zoomPos": "50% 34.9%"
     },
     "9176": {
       "types": [
@@ -215,7 +227,8 @@
     "9256": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.23
     },
     "9379": {
       "types": [
