@@ -75,7 +75,8 @@
       "types": [
         "Commercial"
       ],
-      "zoom": 1.35
+      "zoom": 1.35,
+      "zoomThumb": true
     },
     "1546": {
       "zoom": 1.26
@@ -210,7 +211,8 @@
       "types": [
         "Commercial"
       ],
-      "zoom": 1.39
+      "zoom": 1.39,
+      "zoomThumb": true
     },
     "3007": {
       "types": [
@@ -278,7 +280,8 @@
         "Fiction",
         "Feature Film"
       ],
-      "zoom": 1.35
+      "zoom": 1.35,
+      "zoomThumb": true
     },
     "4576": {
       "types": [
@@ -562,7 +565,8 @@
     },
     "9792": {
       "zoom": 1.16,
-      "zoomPos": "50.2% 2.7%"
+      "zoomPos": "50.2% 2.7%",
+      "zoomThumb": true
     },
     "9807": {
       "types": [
