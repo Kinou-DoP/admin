@@ -146,7 +146,9 @@
     "9128": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.34,
+      "zoomThumb": true
     },
     "9129": {
       "types": [
