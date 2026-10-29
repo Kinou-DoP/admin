@@ -4,7 +4,315 @@
   "hue": 136,
   "bundle": "https://kinou.slateapp.com/bundles/bc31e9c4-d39d-11f1-a349-0215583debcb",
   "open": 5244,
-  "overrides": {},
+  "overrides": {
+    "149": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "335": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "416": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "431": {
+      "types": [
+        "Experimental"
+      ]
+    },
+    "759": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "1150": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "1213": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "1324": {
+      "types": [
+        "Fiction"
+      ]
+    },
+    "1562": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "1894": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "2120": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "2181": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "2231": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2312": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "2434": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "2437": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "2537": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "2554": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "2618": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "2622": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "2623": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "2836": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "3007": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "3307": {
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
+    },
+    "3308": {
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
+    },
+    "3454": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3689": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3942": {
+      "types": [
+        "Immersive film"
+      ]
+    },
+    "4015": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4190": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "4576": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "4703": {
+      "types": [
+        "Commercial",
+        "Food",
+        "Comedy"
+      ]
+    },
+    "5057": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "5244": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5807": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6290": {
+      "types": [
+        "narrative",
+        "Underwater"
+      ]
+    },
+    "6291": {
+      "types": [
+        "narrative",
+        "Underwater"
+      ]
+    },
+    "6665": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6776": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6905": {
+      "types": [
+        "Food"
+      ]
+    },
+    "7284": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7646": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7869": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7966": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7967": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7968": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7969": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8252": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8280": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8350": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8745": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9807": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10077": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11017": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11018": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11019": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11021": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11093": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11351": {
+      "types": [
+        "Commercial"
+      ]
+    }
+  },
   "about": {
     "pos": "70% 34%",
     "instagram": "https://www.instagram.com/jacquesballard/",
