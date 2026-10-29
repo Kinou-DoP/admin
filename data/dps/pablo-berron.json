@@ -80,7 +80,14 @@
       ]
     }
   },
-  "about": {},
+  "about": {
+    "bioEn": [
+      "Born and raised in Mexico City. College at the University of Colorado, Boulder. A few crucial years in NYC, and then off to LA where he’s been getting his mail for the last 14 years. He’s a big skier, cook, record collecting music nerd, and loves being outside. His mom lives in Miami, Fl. He has a brother that lives in Switzerland. The rest of his extended family is in Mexico City. He recently wrapped up principal photography on Robert Rodriguez latest thriller, HYPNOTIC, starring Ben Affleck. He can’t wait to make another movie. Send him a message at the email below."
+    ],
+    "pos": "43% 94%",
+    "color": true,
+    "img": "img/pablo-berron.webp"
+  },
   "categories": [
     "COMMERCIAL"
   ],
