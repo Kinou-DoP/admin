@@ -266,7 +266,9 @@
       "types": [
         "Short Film",
         "Stills"
-      ]
+      ],
+      "zoom": 1.14,
+      "zoomThumb": true
     },
     "6237": {
       "types": [
@@ -447,16 +449,16 @@
       ]
     },
     "11476": {
-      "types": [
-        "Fiction",
-        "Feature Film",
-        "narrative"
-      ],
       "images": [
         "https://images.slatecdn.net/xK1B9ID-D2RvlVj8oRxQAzaKeHwbK5zDolxIDH5BQ-o/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGJiOGQy/MjYtNjQ2MS00NWEx/LTgxNzItMjY4NzQx/OWNkODVhLzg1MTgw/MDM2OC0xODYzMzc5/NTM5NzA2Mjk0Mi04/NDg3NTczNDY2NDE1/MDQ5Nzk4LW4uanBn.webp"
       ],
       "ratios": [
         1.9083
+      ],
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
       ]
     }
   },
