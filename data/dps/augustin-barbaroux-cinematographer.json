@@ -4,7 +4,208 @@
   "hue": 79,
   "bundle": "https://kinou.slateapp.com/bundles/6ca011ea-d38f-11f1-a349-0215583debcb",
   "open": 11340,
-  "overrides": {},
+  "overrides": {
+    "3755": {
+      "types": [
+        "Short Film",
+        "Pêcheur"
+      ]
+    },
+    "3756": {
+      "types": [
+        "Short Film",
+        "Pêcheur"
+      ]
+    },
+    "3757": {
+      "types": [
+        "Short Film",
+        "Pêcheur"
+      ]
+    },
+    "3758": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "3759": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "3760": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "3762": {
+      "types": [
+        "Short Film",
+        "Enfant"
+      ]
+    },
+    "3763": {
+      "types": [
+        "Short Film",
+        "Enfant"
+      ]
+    },
+    "3764": {
+      "types": [
+        "Short Film",
+        "Enfant"
+      ]
+    },
+    "3766": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "3768": {
+      "types": [
+        "Short Film",
+        "Cadavre"
+      ]
+    },
+    "3769": {
+      "types": [
+        "Short Film",
+        "Cadavre"
+      ]
+    },
+    "3770": {
+      "types": [
+        "Short Film",
+        "Cadavre"
+      ]
+    },
+    "4799": {
+      "types": [
+        "Car",
+        "Comedy"
+      ]
+    },
+    "5037": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "5675": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "5815": {
+      "types": [
+        "Comedy"
+      ]
+    },
+    "5816": {
+      "types": [
+        "Comedy"
+      ]
+    },
+    "5884": {
+      "types": [
+        "Serie",
+        "narrative"
+      ]
+    },
+    "6380": {
+      "types": [
+        "Trailer"
+      ]
+    },
+    "6414": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6416": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6421": {
+      "types": [
+        "Commercial",
+        "Cinema"
+      ]
+    },
+    "6801": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7422": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7925": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8241": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8742": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8831": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9105": {
+      "types": [
+        "Narrative"
+      ]
+    },
+    "9141": {
+      "types": [
+        "Narrative"
+      ]
+    },
+    "9162": {
+      "types": [
+        "Food",
+        "Comedy"
+      ]
+    },
+    "9493": {
+      "types": [
+        "Comedy"
+      ]
+    },
+    "10568": {
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "10586": {
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "11340": {
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    }
+  },
   "about": {
     "instagram": "https://www.instagram.com/augustinbarbaroux/",
     "pos": "55% 34%",
