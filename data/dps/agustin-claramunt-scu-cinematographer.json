@@ -105,7 +105,7 @@
       "types": [
         "Commercial"
       ],
-      "zoom": 1.25,
+      "zoom": 1.24,
       "zoomPos": "50.2% 49.7%"
     },
     "5155": {
@@ -132,7 +132,7 @@
         "TV Serie",
         "Sport"
       ],
-      "zoom": 1.14,
+      "zoom": 1.15,
       "zoomThumb": true
     },
     "7322": {
@@ -140,7 +140,7 @@
         "Commercial"
       ],
       "zoom": 1.24,
-      "zoomPos": "50% 23.5%"
+      "zoomPos": "50% 23.6%"
     },
     "7415": {
       "types": [
@@ -203,7 +203,8 @@
     "8738": {
       "types": [
         "Narrative"
-      ]
+      ],
+      "zoom": 1.06
     },
     "8770": {
       "types": [
@@ -214,14 +215,14 @@
       "types": [
         "Commercial"
       ],
-      "zoom": 1.43,
-      "zoomPos": "50% 34.9%"
+      "zoom": 1.45,
+      "zoomPos": "50% 35.4%"
     },
     "9176": {
       "types": [
         "Commercial"
       ],
-      "zoom": 1.34,
+      "zoom": 1.35,
       "zoomThumb": true
     },
     "9256": {
