@@ -1,0 +1,508 @@
+{
+  "slug": "jared-fadel",
+  "name": "Jared Fadel",
+  "hue": 21,
+  "bundle": "https://kinou.slateapp.com/bundles/f93148b1-d3b4-11f1-a349-0215583debcb",
+  "open": 10868,
+  "overrides": {
+    "9884": {
+      "zoom": 1.39
+    },
+    "9885": {
+      "zoom": 1.22
+    },
+    "9886": {
+      "zoom": 1.38
+    },
+    "9887": {
+      "zoom": 1.39
+    },
+    "9888": {
+      "zoom": 1.2
+    },
+    "9889": {
+      "zoom": 1.39
+    },
+    "9890": {
+      "zoom": 1.47
+    },
+    "9891": {
+      "zoom": 1.41
+    },
+    "9892": {
+      "zoom": 1.55
+    },
+    "9893": {
+      "zoom": 1.36
+    },
+    "9894": {
+      "zoom": 1.4
+    },
+    "9895": {
+      "zoom": 1.41
+    },
+    "9896": {
+      "zoom": 1.35
+    },
+    "9897": {
+      "zoom": 1.36
+    },
+    "9898": {
+      "zoom": 1.35
+    },
+    "9899": {
+      "zoom": 1.46
+    },
+    "9902": {
+      "zoom": 1.41
+    },
+    "9903": {
+      "zoom": 1.57
+    },
+    "9904": {
+      "zoom": 1.36
+    },
+    "9905": {
+      "zoom": 1.5
+    },
+    "9906": {
+      "zoom": 1.2
+    },
+    "9907": {
+      "zoom": 1.53
+    },
+    "9908": {
+      "zoom": 1.57
+    },
+    "9909": {
+      "zoom": 1.55
+    },
+    "9910": {
+      "zoom": 1.29
+    },
+    "9911": {
+      "zoom": 1.37
+    },
+    "9912": {
+      "zoom": 1.19
+    },
+    "9913": {
+      "zoom": 1.41
+    },
+    "9915": {
+      "zoom": 1.41
+    },
+    "9916": {
+      "zoom": 1.38
+    },
+    "9917": {
+      "zoom": 1.35
+    },
+    "9918": {
+      "zoom": 1.57
+    },
+    "10063": {
+      "zoom": 1.26
+    },
+    "10412": {
+      "zoom": 1.39
+    }
+  },
+  "about": {
+    "bio": [
+      "Jared Fadel est un directeur de la photographie basé à Salt Lake City, dans l’Utah. Il travaille entre la fiction et la publicité, avec une spécialisation marquée dans les campagnes automobiles pour des marques comme Jeep, Polestar, Lexus, Nissan ou Kawasaki, et a signé l’image du long métrage Solo Mio, avec Kevin James, Alyson Hannigan, Kim Coates et Jonathan Roumie."
+    ],
+    "bioEn": [
+      "Jared Fadel is a cinematographer based in Salt Lake City, Utah. He works across both narrative and commercial projects, with a strong focus on automotive campaigns for brands including Jeep, Polestar, Lexus, Nissan, and Kawasaki, and served as the cinematographer of the feature film Solo Mio, starring Kevin James, Alyson Hannigan, Kim Coates, and Jonathan Roumie."
+    ],
+    "website": "https://www.jaredfadel.com/",
+    "instagram": "https://www.instagram.com/jaredfadel",
+    "pos": "58% 29%",
+    "color": true,
+    "img": "img/jared-fadel.webp"
+  },
+  "categories": [
+    "FEATURED",
+    "COMMERCIAL",
+    "AUTOMOTIVE",
+    "NARRATIVE",
+    "ART"
+  ],
+  "clips": [
+    {
+      "title": "Bushmills",
+      "sub": "Kacper Larski",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9889/55a5f1e1-899c-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e144562f-ab75-4d4d-8a53-5f4906338ca0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jiLgZFCDG4CXWCFSo37ceNveITXHPvs7R0YIFeRSq9Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MzM5ZjM2Yy1lMWVh/LTRlOGItYWMzNS1k/ZTJjMjNlMzFiNDcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi4zMy41/NS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9889,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Brooks Running - Glycerin 21",
+      "sub": "Roos",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9888/2858c33b-899e-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b626b939-6396-4462-9aba-e17521092a17-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/M4bM-e8-AvwWob7iEzK6bMlpo3us6MbnhGAisl67nfo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MDM2YzVhMy02MDk3/LTQ0ZTEtOGVkYy0w/MDM1YTA5MTU3ZjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi4zNy41/Ni5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9888,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Silent Night - Salvation Army",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9912/8e245cb3-898a-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c6ba7555-d8be-44fc-8c55-4e3aef0f600c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/hYLT5Pxzi6HxyKnY8KX87QsLLbwI4ogoLvAy6jCmQSo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTlmZjZlNi1iNjkw/LTQxNTAtYjBhMS0y/ZThjYjM1ODc0NTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNC4yNS41/NS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9912,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "PWC | The Golden Ratio",
+      "sub": "Eliot Rausch",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9915/e35c63f5-8988-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0efcf3f0-d7f5-4d14-9d3e-cc7358b0a0a9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Wcm2qVVJEC-nb_QWIc8zkSohZ2tn8rGrbxNgILhJu7s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NmJhMDNhMi0wMTM4/LTQ5YjItYjA4Ni1k/YWRlZmRjYjg0ODAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNC4xNC4z/MS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9915
+    },
+    {
+      "title": "peloton_-_directors_cut (1080p)",
+      "sub": "Lloyd Lee Choi",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9907/94fa8489-8994-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/185b487d-8c48-42a2-b0db-6e7cd241bab5-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/yCo60RY0hzKmm19rWz2SjmLUUON4wLq-dYJ3VQLcZFM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/YTIwYWZkNC1lNWYy/LTQxMjgtYWNlOS0z/ODA0MjJmMzcxODcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNS4zOC4y/MC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9907
+    },
+    {
+      "title": "Samsung - The Frame",
+      "sub": "Nick Enriquez",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9911/509e5ba0-898c-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/794ad7e4-6a9d-4fb8-a9df-9681d2e4123d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/TTDz6JCCafJ4VtYcwP9G-Rq08E_plqpw8XTL0E60dBc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/ZGJkZjdlOC02ZWQ0/LTRhOTctOWIwNS1m/MWJmZDQzZTk0MDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNC40MC4z/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9911
+    },
+    {
+      "title": "Cartier - Juste un Clou",
+      "sub": "Camille Marotte\nMint",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9890/e122eb66-899b-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fe4eae40-397b-4d72-89a6-a46487bd12f2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/uSlYMiWvYonTTn8uqKQ2umwBT2J2B3IbzYNSEzuSE-c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YjQ2MzU0NC00MjE2/LTQ4NTItYjg4Yi00/Y2M2YWQwMzYyNDQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi4zMi4x/MC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9890
+    },
+    {
+      "title": "Markelle Fultz  “Pulse of the Draft” JBL",
+      "sub": "Julian Acosta\nRSA Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9902/1e54ddf1-8997-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/54eac710-9d8c-42d1-8bc7-2f7af2ef5ddb-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UfFqqh3nBEfeyfViikuCGZb5rZJKpw6FiUmm9IMp7OA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZDMzMGE3OS04Yzdi/LTRjOTgtOGNiMC00/ZTMwNTYyMTEzYjEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi40Ni4x/NS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9902
+    },
+    {
+      "title": "Mayer - Elliot_Convergence",
+      "sub": "Jonny Mass",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9904/33bd26f8-8996-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/58bb7d6d-9541-47d8-a909-fa1bc6ce91c0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/rzgf3UShAGTmOXZ5Cf6WUsv8OKpSBwqsuR5c29f21yw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/Yjc0ZGYyZi05YWEz/LTRiODQtOGYyOC00/MWFkMmE1YTU4NzMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNS41MC4w/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9904
+    },
+    {
+      "title": "Defined by Personality - Persol",
+      "sub": "Jonny Mass\nM SS NG P ECES",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9891/500b694c-8979-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6bd6ad06-d5d7-4949-8362-6f00013030e3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/PucVVtCnsRzUgnEWoAfNIw4emTI_I69arYuZF1Wz5kE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YjA5NWM4OC1kNWNk/LTRhODAtOThmYy00/OWI2OGQxYzg5Zjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xMi4yNC40/My5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9891
+    },
+    {
+      "title": "Find Your Soul - Hennessy",
+      "sub": "Germain Lalot\nMaul Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9894/10e11d94-899b-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a507c358-f4c2-4c64-ba42-c06f73af826b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/rMxbGJB5S8-I_xKCpeAwJBf0k4hgMUeVkhWSYIe5zJo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OGNiYTViOC1hZTNj/LTQ0ZjUtYjE5Mi1j/ODQyMzU0MDJjMGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDktYS0xNS4yOC41/OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9894
+    },
+    {
+      "title": "Underdog",
+      "sub": "Jonny Mass\nAbandon Visuals",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9917/55709a45-8977-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/58c4f536-bf52-4876-9c1f-87ae6e51f7a7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/9P9jd14lN7iIGKdfvIDxmbD7mSdHL85aTs4N_yCD6YY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MjBmMWQ1Zi0wNDE4/LTRhM2ItOTEzMi05/MTg2YmE0MDYzODkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xMi4wOC4y/My5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9917
+    },
+    {
+      "title": "Arvo | Holding On",
+      "sub": "Cameron Gade\nStunspots",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9886/e0e8dffc-8977-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8d63d02c-232c-43b5-984f-112491c980dd-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/cQjofrLSYJkjzdSn9g0bladnI8ViGqVAWh2hHkKCQ9k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ODg2LTY4NDk5NDI2/NTQ3ODQyLjQ2OTA1/NDMxLTFmOGQ5MjUy/MzIwMjkzMjRjMjc2/ZWUxY2ZhZTgyZWVk/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9886
+    },
+    {
+      "title": "Triumph Motorcycles - For The Ride",
+      "sub": "Lincoln Caplice",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10063/495da08c-899e-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bfe36bd4-0f21-4d74-8025-a13cdbf79e70-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/mLcVxUn8rRHTQISYUNLBAxpfL1DijdrBWPZZltP__sM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/Y2ZhMjk5MS1iZTA5/LTRmNzQtOTYyNy02/OTRkOTM1ZWExOWIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xMy41OS4y/My5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 10063,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Happy Chaos • Nissan",
+      "sub": "Roos",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10868/81fc4482-58df-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/652e3ad3-5e1a-4a1e-97ca-fddafdb54e77-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/bRVTgj0PnXfpfB2kqtbVnkttBDv6qQsOpkqB71229FE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/ZmE3YWU5MS00OTgz/LTQzOWItYjU3ZS02/MTU0NmRmYTcxNDUv/MTc3OTc4NTE2NDE2/OC5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 10868,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Polestar - The Guiding Star",
+      "sub": "The Roos Brothers",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9909/86f1f584-898d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d2cba76e-51c4-4e26-b2cd-a1e40c779839-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tCZqIv9I064SYgYikOoQDrjMUsLSUr1-WNaiNw7UvlA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NWE1MGRiOS01MTVi/LTRkNDQtODNiZC00/ZDk2MmY4MGU4YmMv/MTc1Njk5MDEwNTA0/My5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9909,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "LEXUS  Electrified",
+      "sub": "Realite",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9900/e9535577-8997-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3f36d346-e4bd-40ad-a7d0-558b763dde35-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GNfgYnKGnHKQRbWIp0O5GCPU7nCO8j_qYkDkJpz0HSU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZjdlNzVlNC1kYmMw/LTRhNjQtYjEzMi1k/NjRlYjQwMWIyZDQv/MTc1Njk5NDU2MDUx/NC5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9900
+    },
+    {
+      "title": "Acura - Born to Perform",
+      "sub": "Nico Poalillo",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9884/97498976-899d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/baaa35f1-a2c3-40af-a077-91862077be85-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/to65AVrfCHceFtuQKglhq9wGjyGYsvpUEev-6paQcCo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/OGJkYmMxZi1mYzdj/LTQwYjktOTNlMi02/Njk4ZmQ0ZmYzNzMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi40My4x/Ny5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9884
+    },
+    {
+      "title": "Dodge - Bad Kitty",
+      "sub": "The Roos Brothers",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9892/dd2f7c5a-8979-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/825c254c-8871-48fd-b147-441c94e04c13-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Voct1Em4MAFVFqXgNLy5dMMQY92RMdYkD96EpOQnz5M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZTdjNWU1Mi1iMjhl/LTQ0NmEtOGUwNC0z/MjZkZGRmNDkyMzMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi4yOC4y/MC5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9892
+    },
+    {
+      "title": "Acura - Vince Staples Slide",
+      "sub": "Dave Meyers, Mia Barnes",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9885/29bfcbfb-899d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/50a48128-81a7-455d-8b58-a0f0aa9057e3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/hj62H4kdQuJyUX9tyMq9IgFR8FLJP4gINvIigoiLHZw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YzM3ZjNlNC0yYTM2/LTQ1ZGUtYmM5My04/MGVlM2YwZWI2ZTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi40MC4x/OS5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9885
+    },
+    {
+      "title": "Jeep - Memories",
+      "sub": "Cole Webley",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9905/52d4093f-8995-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2217d13a-ac92-44cc-85a8-e87aa363071b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/cHsfd4O5fSg64F-0VR_XofAxepxUdudWTZ2gP6ZTlIc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NWYwZWYwZS1kNTFl/LTQyNDItOTMxNi0y/ZGUwM2NlYjMyMzEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNS40My41/My5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9905
+    },
+    {
+      "title": "Subaru - WRXout",
+      "sub": "Roos",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9914/64cccb3c-8989-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fa551ea6-30d6-4e1b-b8e2-9f4137d73075-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3EZgUhYl0Kiv8-545iLN5xNOXdYPZSYcGH_a4KzjMfk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/OTg1MTdjYS05N2Ri/LTQ0MTctYjhiMy0x/OWEzYTc2Y2RmNzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNC4xOC4y/My5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9914
+    },
+    {
+      "title": "Lincoln Corsair GT ft. Miles Chamley-Watson",
+      "sub": "Jones",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9901/a020ee31-8997-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2f789532-e2a7-4129-903a-cdaab4f70e93-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3KQB4zYT4gkKhTt4SblN-oP4R6gk-iYzRsY3xusrZtU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZDkxYzk2YS03Nzhl/LTQzMTYtOTNkYS0w/NWJmMjAyYzdmNzkv/MTc1Njk5NDQxMjA4/NS5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9901
+    },
+    {
+      "title": "Maserati - David Beckham",
+      "sub": "Harmony Korine",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9903/c2193073-8996-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/114f704e-8b8d-4852-8ab6-11447a0ce56f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/kQU9tdc7O2CvSmFe1zCJAOknV-i52JC9cGyepEi_g2M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YjY1MmZiMy1jYTRj/LTQ0MmUtODE5MC00/OWYyNDE4NWExMWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNS41NS4y/OS5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9903
+    },
+    {
+      "title": "next-gen_integra_x_vince_staples_-_magic_✰_acura (1080p)",
+      "sub": "Dave Meyers, Mia Barnes",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9906/f646ac95-8994-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3aeeb402-dce7-413d-b174-de1fdd237fc2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ns2XIFtZR9xT8cNv1TQyPc1FKgYOVpqOLB_MzzIOFDI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MmE5OTg3ZS0yYzcy/LTQxOTEtYjNhMS1m/MTEyNjk2NWVmNDAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNS40MC4y/OS5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9906
+    },
+    {
+      "title": "Infiniti - Demand Center Stage",
+      "sub": "Tobias Nathan\nRaucous Content",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9897/bf5eed32-8999-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7c52b0d6-81eb-475d-81ac-cb13cec37a67-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/R2fR8f8xWNZG6CVHDLAzl3YU_s1JDH68oMD_FJhtAsk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YjljMzJhZi0xOTIx/LTQ0ZmMtYWI0OS1l/YjYxOGZkZGY4NDgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi4xNS41/MS5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9897
+    },
+    {
+      "title": "BMW - Journey",
+      "sub": "Jonny Mass\nM SS NG P ECES",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9887/214a2fa3-8978-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c1fc5e40-3bbd-4b60-9235-07e5b5966a4b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KG4KQZ7BlTS6R-xI7WpMoAXTsjnGqkdkLvO04Wfbluo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YjYwYThkNS01ODNl/LTQwZDAtYTAwOS02/ZTRhNDhkZDVlZGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xMi4yMS40/NC5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9887
+    },
+    {
+      "title": "Toyota - Toughest Field",
+      "sub": "Jonny Mass\nM SS NG P ECES",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9916/576cebd7-8988-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bbf15ab3-6eac-4c6d-a6e6-664afff24d1c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/M7GcjDK2P9RuPwWvnXEGcJiIHQSESVpvvi1Liwq-DOY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MjI3NGZmMi1mMjhl/LTRkYWYtYmNkYS04/MDU2MDYyNTlkYWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNC4xMC40/NC5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9916
+    },
+    {
+      "title": "Volvo - Moving Forward (90 sec)",
+      "sub": "Aaron & Winston Tao",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9918/b7393b25-8977-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e23edb7e-47d7-44d5-a67b-2701314cfb83-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3ov00AouZqsYGxxZ6gWc7kuuc8bXlq8ldAglhiuLpLM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NmQyMTMwMS05M2Zj/LTQ0ZTQtOGNlNC01/YzEwZTE2MWYxZWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xMi4xMS41/MS5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9918
+    },
+    {
+      "title": "Performance Meets Art • Michelin",
+      "sub": "Jonny Mass\nM SS NG P ECES",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9908/18a2eeb9-8994-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/87d7f7f7-8306-4326-b7cf-3c8a9d11adb7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/W4lkhmDkQyFXVtAZTSiAlsde6F_1sVkkzQeYww2NvkQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OWUwZmVmZC1kOWUz/LTRkNjQtODA1Ny1j/NGQyODliOTYzOWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNS4zMy4w/OS5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9908
+    },
+    {
+      "title": "Fire  Ice  Lamborghini Huracan",
+      "sub": "Jonny Mass\nM SS NG P ECES",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9895/ac256788-899a-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9f5937b8-7f98-4476-a0eb-f61382de57d5-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Bjo_dM9akTF9E5rUyln2C6O09OHg7SH5SragF6rbvEc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjYyM2I2Mi05Y2Vk/LTQ2MWYtYTM5Ny1m/ZDhmMmM1MzVjODgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi4yMS4z/OS5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9895
+    },
+    {
+      "title": "Legend of Solorzano",
+      "sub": "Jonny Mass\nM SS NG P ECES, Abandon Visuals, Limbo",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9899/59428158-8998-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/64db4dfe-7c91-4071-bb92-816472256f41-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Z7tMynLxi9VEXhaKdpIupr5fciN4ANion3Uyw6ovaAo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MjE1NDUwYy0zMWNk/LTRlZjEtODRlMy03/MWZjNDNjMjI1ODkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi4wNS4z/NC5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9899
+    },
+    {
+      "title": "hyundai___kona__split_ (1080p)",
+      "sub": "Jonny Mass\nPopp Rok",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9896/2c45cf05-899a-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c730a03b-a4c7-426b-81d5-ac825e21b102-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_Rw016NxV1Lb9NrzWCU15gb2q-O5T3Pw-KaHImQ0fHU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/Y2I5YTFjZC1hYTBj/LTRmYzMtYTM2ZC1j/N2UxZDE3NjIzY2Mv/MTc1NzQyNDM1MTM1/MS5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9896
+    },
+    {
+      "title": "Solo Mio - Feature film trailer",
+      "sub": "Kinnane Brothers\nNickel City Pictures, A Higher Standard",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10412/b376b716-0742-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/12853d77-18db-421d-aa3c-db36a9b047df-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GfwldylWuY8ide6foLc4uYyQ01rpupYn6hYG1Ql8d1c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQxMi02OThjNmY4/N2NhNjhhMy44MDg0/Nzc4MS1jOWM4YmFm/N2MxNWIzOGJiYjZm/YjQxNmIwNzRlZmQy/OC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10412,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Sleep Well, My Baby",
+      "sub": "Twintaoers\nMr. Romance",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9913/ef788f89-8989-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b9e91968-6c80-447a-8fea-b4f3044f266c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/YQLg0AbODlIubC2Q0p7Ay8kS8Yfg0ugoYYyeWe1Wraw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZDIwNGJmNi00YjEw/LTRlOGQtYTBkNi0y/YTIzMzhiODQzZWEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNC4yMi4z/MS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9913,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Project Alive Finn",
+      "sub": "Christian Schultz\nCaravan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9910/f528be7e-898c-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/77d925c8-edc9-47b6-aafd-061629358c55-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Ew8876m1YBMtA-WZ9M0lpQGoeljpK8xzQM0FZbIcCAM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YjFiZGNhMS1kMDQ4/LTQ3M2YtOTYzOC03/ZGVlZGJkMzU4NTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNC40My40/MC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9910
+    },
+    {
+      "title": "Legend of Solorzano",
+      "sub": "Jonny Mass\nM SS NG P ECES, Abandon Visuals, Limbo",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9899/59428158-8998-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/64db4dfe-7c91-4071-bb92-816472256f41-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Z7tMynLxi9VEXhaKdpIupr5fciN4ANion3Uyw6ovaAo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MjE1NDUwYy0zMWNk/LTRlZjEtODRlMy03/MWZjNDNjMjI1ODkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi4wNS4z/NC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9899
+    },
+    {
+      "title": "Elise",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9893/6227e919-897a-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c7cd90ac-7797-4fe8-8061-9beccba63c5b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/U3bfLGeVCpuJM5o2rgOjkbCnndF0wvdFxOxTZrQcrio/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTU4N2JkYi01MTM5/LTRjZmYtYmUwNC0w/N2QxNDA5NGE4NDYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xMi4zMS4w/Mi5wbmc?v=1&format=webp",
+      "cat": "ART",
+      "slate": 9893
+    },
+    {
+      "title": "Find Your Soul - Hennessy",
+      "sub": "Germain Lalot\nMaul Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9894/10e11d94-899b-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a507c358-f4c2-4c64-ba42-c06f73af826b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/rMxbGJB5S8-I_xKCpeAwJBf0k4hgMUeVkhWSYIe5zJo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OGNiYTViOC1hZTNj/LTQ0ZjUtYjE5Mi1j/ODQyMzU0MDJjMGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDktYS0xNS4yOC41/OC5wbmc?v=1&format=webp",
+      "cat": "ART",
+      "slate": 9894
+    },
+    {
+      "title": "Jeep - The Road",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9898/694bf3e9-8999-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5b9df4cd-c6e0-4832-b3ae-fea58054ea83-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/MO0SDtkNRTSAIG-ZjsmSaWGpDwDi29Y2xa_0q8lp4Mo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MGJkOTY5Yi0zZWFl/LTQyZDktYTEzMC0z/NDhlZjQ0ZGU3YTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xNi40Ni40/Mi5wbmc?v=1&format=webp",
+      "cat": "",
+      "slate": 9898,
+      "featured": true,
+      "featuredOrder": 7
+    }
+  ]
+}
