@@ -248,7 +248,15 @@
     ],
     "pos": "43% 94%",
     "color": true,
-    "img": "img/pablo-berron.webp"
+    "img": "img/pablo-berron.webp",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://pro.imdb.com/name/nm1638511/credits"
+      }
+    ],
+    "instagram": "https://www.instagram.com/pablo_berron/?locale=Online%2Bentertainment%2C%2Breal%2Bperson%2C%2Belectronic%2Bchess%2Band%2Bcards%2C%2Blottery%2C%2Bsports%2C%2Bcomprehensive%2Breputation%2B(Telegram%3A%2B%40UUjd888888).abuk&hl=en",
+    "website": "https://pabloberron.com/"
   },
   "categories": [
     "FEATURED",
