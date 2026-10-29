@@ -1309,7 +1309,13 @@
     "instagram": "https://www.instagram.com/vadim_alsayed/",
     "website": "https://www.vadimalsayed.com/",
     "img": "img/vadim-alsayed-cinematographer.webp",
-    "cv": "cv/CV-Vadim-Alsayed.pdf"
+    "cv": "cv/CV-Vadim-Alsayed.pdf",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm7717502/"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
