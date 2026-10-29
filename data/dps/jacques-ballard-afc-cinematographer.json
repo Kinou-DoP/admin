@@ -25,6 +25,11 @@
         "Experimental"
       ]
     },
+    "486": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "759": {
       "types": [
         "Music Video"
@@ -35,6 +40,11 @@
         "Short Film"
       ]
     },
+    "1157": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "1213": {
       "types": [
         "Documentary"
@@ -43,6 +53,11 @@
     "1324": {
       "types": [
         "Fiction"
+      ]
+    },
+    "1541": {
+      "types": [
+        "Commercial"
       ]
     },
     "1562": {
@@ -110,14 +125,29 @@
         "Music Video"
       ]
     },
+    "2663": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "2836": {
       "types": [
         "Short Film"
       ]
     },
+    "3006": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "3007": {
       "types": [
         "Feature Film"
+      ]
+    },
+    "3260": {
+      "types": [
+        "Commercial"
       ]
     },
     "3307": {
@@ -146,6 +176,11 @@
       ]
     },
     "3689": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3849": {
       "types": [
         "Commercial"
       ]
@@ -193,7 +228,17 @@
         "Commercial"
       ]
     },
+    "5540": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "5807": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6262": {
       "types": [
         "Commercial"
       ]
@@ -234,6 +279,11 @@
       ]
     },
     "7284": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7575": {
       "types": [
         "Commercial"
       ]
@@ -307,46 +357,68 @@
           "link": "https://kinou.slateapp.com/work/sanofi-3",
           "title": "Sanofi",
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11023/25751c64-76c4-11f1-a349-0215583debcb.mp4",
-          "img": "https://images.slatecdn.net/kfoY15BR0pCMjoLW6hsBcaETAzWDdzEtYnE2tSxHZGA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZjNlYWJlZS1lZGEx/LTRjODctODYwYy1i/Y2MyNDczYTcxNTIv/MTc4MzA3MTkwODI4/Ni5qcGc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/kfoY15BR0pCMjoLW6hsBcaETAzWDdzEtYnE2tSxHZGA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZjNlYWJlZS1lZGEx/LTRjODctODYwYy1i/Y2MyNDczYTcxNTIv/MTc4MzA3MTkwODI4/Ni5qcGc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10be483e-bf43-4899-9bfd-34b7636811ce-0x1080.5000.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/sanofi-4",
           "title": "SANOFI",
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8354/51631e1e-da11-11ee-ade3-028f723623ff.mp4",
-          "img": "https://images.slatecdn.net/kNj8bwJqOskxfeqyWKXnTDY9bttngK9liZTxcsgPIlI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NjZiNWUxMC0yZDUx/LTRkNmMtYjBkNy0z/YmFhZDNhNWRkZGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MDQtYS0xMS4yMC4y/Ni5wbmc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/kNj8bwJqOskxfeqyWKXnTDY9bttngK9liZTxcsgPIlI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NjZiNWUxMC0yZDUx/LTRkNmMtYjBkNy0z/YmFhZDNhNWRkZGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MDQtYS0xMS4yMC4y/Ni5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/13885397-9447-48e9-b329-4ecf31a46253-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/sanofi-jo-2024",
           "title": "SANOFI JO 2024",
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8353/fb2f62b3-da10-11ee-ade3-028f723623ff.mp4",
-          "img": "https://images.slatecdn.net/lUaGlsQLiBERhYyAq9SpLinj903kyAuAsZDWc_XlF8s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YTliNzVkZS1mOWJj/LTQ1NDAtODQyZi0z/YWY0MGVmYTM5ZGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MDQtYS0xMS4xOC4x/MS5wbmc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/lUaGlsQLiBERhYyAq9SpLinj903kyAuAsZDWc_XlF8s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YTliNzVkZS1mOWJj/LTQ1NDAtODQyZi0z/YWY0MGVmYTM5ZGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MDQtYS0xMS4xOC4x/MS5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8089a497-a281-4301-a897-9c3df4cd9ef7-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/sanofi-brand-film-long",
           "title": "SANOFI BRAND FILM LONG",
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8352/dcd59f77-da0e-11ee-ade3-028f723623ff.mp4",
-          "img": "https://images.slatecdn.net/pz1HyQx8TuGez2U9cWHeKg0jDS1r0i8j4nPSkNCnWkg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YTY3Y2M5Ny02MGQ3/LTRiYjAtYTY5NC0x/ZWU3ZDhiZTEwZmQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MDQtYS0xMS4wMi40/OC5wbmc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/pz1HyQx8TuGez2U9cWHeKg0jDS1r0i8j4nPSkNCnWkg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YTY3Y2M5Ny02MGQ3/LTRiYjAtYTY5NC0x/ZWU3ZDhiZTEwZmQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MDQtYS0xMS4wMi40/OC5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85b357a4-4b33-421e-9d72-ce34b2101f55-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/sanofi-brand",
           "title": "SANOFI BRAND",
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8351/1feb850e-da0e-11ee-ade3-028f723623ff.mp4",
-          "img": "https://images.slatecdn.net/kCcKFY2wUfuDhJ1znI2-MHYvQMJD8Mjzr6sdMDywkP0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MDRlZmI5Ni0yZTQx/LTQ0MTQtYjNkMy1k/NjQ2OWFlZTZkMjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MDQtYS0xMC41OS4w/Ny5wbmc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/kCcKFY2wUfuDhJ1znI2-MHYvQMJD8Mjzr6sdMDywkP0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MDRlZmI5Ni0yZTQx/LTQ0MTQtYjNkMy1k/NjQ2OWFlZTZkMjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MDQtYS0xMC41OS4w/Ny5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/64f4145c-b35e-4cba-8b18-9fe721420095-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/sanofi-bridging-the-gap",
           "title": "Sanofi – Bridging the Gap",
-          "img": "https://images.slatecdn.net/aYWREjaSb8E5bAFrV0TFdZC8nsjI17GgTPoen1PMJP4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ODVkMGI0YS0yYmI1/LTRmZGUtOTAyOC0x/N2QxZjhkMzM3ODAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MTktYS0xNC41Mi4w/Mi5wbmc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/aYWREjaSb8E5bAFrV0TFdZC8nsjI17GgTPoen1PMJP4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ODVkMGI0YS0yYmI1/LTRmZGUtOTAyOC0x/N2QxZjhkMzM3ODAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MTktYS0xNC41Mi4w/Mi5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f5b47de2-cf65-45da-b061-3c598c434062-1280x720.2500.mp4"
         },
         {
           "link": "https://kinou.slateapp.com/work/sanofi-2",
           "title": "SANOFI",
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5788/8efa2cda-4b21-11ee-ade3-028f723623ff.mp4",
-          "img": "https://images.slatecdn.net/IdiQT8RWoo--Ez66b-Sfl5u4DeW1PfomPKHR_xG6PBE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MTZkMTJlYy1lNWFk/LTRkOTUtYWNmMy1j/YmI3YjkwYjliMjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTctYS0wOS41NS4x/My5qcGc?v=1&format=webp"
+          "img": "https://images.slatecdn.net/IdiQT8RWoo--Ez66b-Sfl5u4DeW1PfomPKHR_xG6PBE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MTZkMTJlYy1lNWFk/LTRkOTUtYWNmMy1j/YmI3YjkwYjliMjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTctYS0wOS41NS4x/My5qcGc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c42f8bf-410e-4b37-8918-677df46bc348-1280x720.2500.mp4"
         }
       ]
     },
+    "8489": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "8745": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8887": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9014": {
       "types": [
         "Commercial"
       ]
@@ -367,6 +439,11 @@
           "img": "https://images.slatecdn.net/YgRcGqngCqeXhefAdi8qn2TU5yL-41mO7I5Mhq0Jr5c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NDQ1ZWMzNC1lOTA1/LTRhYWItYjE5YS0w/Mzc0YTQ3NmJiOWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MTktYS0xMS40My4x/My5wbmc?v=1&format=webp",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/61cbaff1-5969-41e0-bd3f-21771f4f191f-1280x720.2500.mp4"
         }
+      ]
+    },
+    "10097": {
+      "types": [
+        "Commercial"
       ]
     },
     "11017": {
