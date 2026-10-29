@@ -1114,6 +1114,11 @@
     var reset = el("button", { type: "button", class: "btn ghost", text: "Recentrer" });
     reset.addEventListener("click", function () { delete a.pos; delete a.zoom; zr.value = "100"; xy = parsePos(); show(); touch(); });
     show();
+    // Noir et blanc (par défaut) ou couleur : about.color = true si l'interrupteur est décoché (Gus).
+    var bw = el("input", { type: "checkbox", class: "nodirty" }); bw.checked = !a.color;
+    box.classList.toggle("color", !!a.color);
+    bw.addEventListener("change", function () { if (bw.checked) delete a.color; else a.color = true; box.classList.toggle("color", !!a.color); touch(); });
+    box.appendChild(el("label", { class: "showsw" }, [bw, el("i"), el("span", { text: "Noir et blanc sur le site" })]));
     box.appendChild(el("p", { class: "hint", text: "Cliquez (ou glissez) sur la photo pour placer le point qui doit toujours rester visible, par exemple le visage." }));
     box.appendChild(el("div", { class: "frow" }, [stage, el("div", { class: "fprevs" }, [
       el("div", {}, [desk, el("span", { class: "label", text: "Ordinateur" })]),

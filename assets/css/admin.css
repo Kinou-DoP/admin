@@ -218,6 +218,8 @@ input[readonly] { color: var(--dim); }
 .film .thumb .zframe[hidden] { display: none; }
 /* Le site affiche les portraits en noir et blanc : mêmes aperçus ici */
 .focal .fstage img, .focal .fprev .fimg { filter: grayscale(1); }
+.focal.color .fstage img, .focal.color .fprev .fimg { filter: none; } /* interrupteur « Noir et blanc » décoché */
+.focal .showsw { margin: 14px 0 4px; }
 .focal .fzoom { max-width: 420px; margin-top: 12px; }
 /* Cadrage téléphone du fond de la liste (1er film FEATURED) : extrait entier + bande rouge = partie visible, aperçu téléphone */
 .pctl { margin-top: 8px; }
