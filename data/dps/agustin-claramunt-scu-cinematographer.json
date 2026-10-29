@@ -9,14 +9,18 @@
       "types": [
         "TV Serie",
         "Sport"
-      ]
+      ],
+      "zoom": 1.14,
+      "zoomThumb": true
     },
     "8143": {
       "title": "Land of Bad",
       "types": [
         "narrative",
         "Feature"
-      ]
+      ],
+      "zoom": 1.37,
+      "zoomThumb": true
     },
     "11187": {
       "title": "Ghost Soldier",
