@@ -359,7 +359,13 @@
       "Passionné par la pellicule Kodak et l’expérimentation visuelle."
     ],
     "pos": "47% 47%",
-    "img": "img/nikita-popkov.webp"
+    "img": "img/nikita-popkov.webp",
+    "links": [
+      {
+        "label": "SHOWREEL",
+        "url": "https://kinou.slateapp.com/work/nikita-popkov-showreel"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
