@@ -324,7 +324,13 @@
     "instagram": "https://www.instagram.com/clement_arenou_dop/",
     "pos": "70% 35%",
     "img": "img/clement-arenou-cinematographer.webp",
-    "cv": "cv/CV-Clement-Arenou.pdf"
+    "cv": "cv/CV-Clement-Arenou.pdf",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm3374427/"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
