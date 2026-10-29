@@ -8,12 +8,14 @@
       "types": [
         "Short Film",
         "Narrative"
-      ]
+      ],
+      "title": "As you were futurestates trevin matcek"
     },
     "9107": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "title": "Billie eilish oxytocin"
     },
     "9108": {
       "types": [
@@ -21,55 +23,63 @@
         "Serie",
         "narrative"
       ],
-      "zoom": 1.34,
-      "zoomThumb": true
+      "zoom": 1.36,
+      "zoomThumb": true,
+      "title": "Curb you enthusiasm alan williams"
     },
     "9109": {
       "types": [
         "Commercial"
       ],
       "zoom": 1.11,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Dolby atmos anyma"
     },
     "9110": {
       "types": [
         "Commercial"
       ],
       "zoom": 1.25,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Dolby ed sheeran"
     },
     "9111": {
       "types": [
         "Commercial"
       ],
-      "zoom": 1.13,
+      "zoom": 1.17,
       "zoomThumb": true,
-      "zoomPos": "100% 45.1%"
+      "zoomPos": "56.6% 60.5%",
+      "title": "Dolby jennifer lopez"
     },
     "9112": {
       "types": [
         "Music Video"
       ],
       "zoom": 1.36,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Dua lipa silk city electricity"
     },
     "9113": {
       "types": [
         "narrative"
       ],
       "zoom": 1.35,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Fracture"
     },
     "9114": {
       "types": [
         "Documentary",
         "narrative"
-      ]
+      ],
+      "title": "Happier than ever a love letter to los angeles robert rodriguez patrick osborne"
     },
     "9115": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "title": "Harry styles late night talking"
     },
     "9116": {
       "types": [
@@ -84,8 +94,10 @@
         "Serie",
         "narrative"
       ],
-      "zoom": 1.27,
-      "zoomThumb": true
+      "zoom": 1.12,
+      "zoomThumb": true,
+      "zoomPos": "48.3% 96.5%",
+      "title": "How to change your mind"
     },
     "9119": {
       "types": [
@@ -104,58 +116,66 @@
       "types": [
         "Music Video"
       ],
-      "zoom": 1.18,
-      "zoomPos": "48.4% 49.8%",
-      "zoomThumb": true
+      "zoom": 1.17,
+      "zoomPos": "48.3% 49.8%",
+      "zoomThumb": true,
+      "title": "Jungkook feat latto"
     },
     "9122": {
       "types": [
         "Music Video"
       ],
       "zoom": 1.54,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Justin bieber company"
     },
     "9123": {
       "types": [
         "Music Video"
       ],
       "zoom": 1.52,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Kacey musgraves too good to be true"
     },
     "9125": {
       "types": [
         "Commercial"
       ],
       "zoom": 1.36,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Lego"
     },
     "9126": {
       "types": [
         "Music Video"
       ],
       "zoom": 1.39,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Lil nas x ft nas rodeo"
     },
     "9127": {
       "types": [
         "Music Video"
       ],
       "zoom": 1.35,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Mark ronson camila cabello find u again"
     },
     "9128": {
       "types": [
         "Commercial"
       ],
-      "zoom": 1.34,
-      "zoomThumb": true
+      "zoom": 1.37,
+      "zoomThumb": true,
+      "zoomPos": "79.6% 49.4%"
     },
     "9129": {
       "types": [
         "Commercial"
       ],
       "zoom": 1.16,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Nike travis scott robert rodriguez"
     },
     "9130": {
       "types": [
@@ -169,14 +189,16 @@
         "Music Video"
       ],
       "zoom": 1.38,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Rosalia haute couture"
     },
     "9133": {
       "types": [
         "Music Video"
       ],
       "zoomThumb": true,
-      "zoom": 1.37
+      "zoom": 1.37,
+      "title": "Selena gomez back to you scott cudmore"
     },
     "9134": {
       "types": [
@@ -187,7 +209,10 @@
     "9135": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "title": "Tres agaves brigg bloomquist",
+      "zoomThumb": true,
+      "zoom": 1.41
     },
     "9136": {
       "types": [
@@ -228,7 +253,8 @@
     "10704": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.6
     },
     "10782": {
       "types": [
@@ -304,7 +330,7 @@
     },
     {
       "title": "as you were futurestates trevin matcek",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9106/8fcc7434-8d69-11ef-bfce-022353abf6f5.mp4",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9106/7eefc81e-d3be-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1a23ac2a-b8ca-46f6-9ea0-24cc0ff0dc4d-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/hBTRLhQC9vrByBIFkwVynOPmzdDgVt1oP_RFitmM4Qs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTA2LTY3MTI2ZWIz/MDllN2YxLjM5NDI0/MjcxLTRlZjhjYzRk/ZDA1ZjAzNDdmNzFh/MzQ1MjUxYWY2MTJi/LmpwZw?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -484,9 +510,9 @@
     {
       "title": "Nike | Los Angeles",
       "sub": "Brigg Bloomquist",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9128/7dfb95b0-8d60-11ef-bfce-022353abf6f5.mp4",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9128/58a6242a-d3be-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b0c3b108-3fe0-457b-af20-b5d9e0704dbe-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/2RNpz2YCW9FPKzoxxc1gLksjzGFo0NUS3vkDr1Naucw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTI4LTY3MTI3MGZl/ZTU3MmIzLjQwNzU3/ODU3LTdhMzhlNGYw/ZDdjZTg1YmY4NmIy/OTNkMGQzOTI5N2Q2/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/ZsJSDbEKwPK-UElyJJo7iQxvakX-xbnPWA7rf763bwA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MmYwMzZkZS05NmZm/LTQzMjAtYmNiYy01/OGFlODkzZjk2MTUv/MTc5MzI5NTAzODYy/MC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 9128
     },
