@@ -4,7 +4,30 @@
   "hue": 139,
   "bundle": "https://kinou.slateapp.com/bundles/df481ece-d3ab-11f1-a349-0215583debcb",
   "overrides": {
+    "9106": {
+      "types": [
+        "Short Film",
+        "Narrative"
+      ]
+    },
+    "9107": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "9108": {
+      "types": [
+        "Documentary",
+        "Serie",
+        "narrative"
+      ]
+    },
     "9109": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9110": {
       "types": [
         "Commercial"
       ]
@@ -14,9 +37,43 @@
         "Commercial"
       ]
     },
+    "9112": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "9113": {
+      "types": [
+        "narrative"
+      ]
+    },
+    "9114": {
+      "types": [
+        "Documentary",
+        "narrative"
+      ]
+    },
+    "9115": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "9116": {
       "types": [
         "Commercial"
+      ]
+    },
+    "9118": {
+      "types": [
+        "Documentary",
+        "Serie",
+        "narrative"
+      ]
+    },
+    "9119": {
+      "types": [
+        "Feature Film",
+        "narrative"
       ]
     },
     "9120": {
@@ -24,9 +81,34 @@
         "Commercial"
       ]
     },
+    "9121": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "9122": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "9123": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "9125": {
       "types": [
         "Commercial"
+      ]
+    },
+    "9126": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "9127": {
+      "types": [
+        "Music Video"
       ]
     },
     "9129": {
@@ -37,6 +119,16 @@
     "9130": {
       "types": [
         "Commercial"
+      ]
+    },
+    "9132": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "9133": {
+      "types": [
+        "Music Video"
       ]
     },
     "9134": {
@@ -52,6 +144,11 @@
     "9158": {
       "types": [
         "Commercial"
+      ]
+    },
+    "9424": {
+      "types": [
+        "Music Video"
       ]
     },
     "9426": {
