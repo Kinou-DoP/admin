@@ -89,11 +89,6 @@
       ]
     },
     "4374": {
-      "types": [
-        "Short Film",
-        "Narrative",
-        "Fiction"
-      ],
       "images": [
         "https://images.slatecdn.net/6sBb4QyWS9Aa-S4wnCV5R9YYtsixZ1nWj-v7aci8LIw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTU5NTIz/ODc0MDI1Ny9wcm9t/by1saWdpZS1zdWl0/ZS0xLjEuMTIuanBn.webp",
         "https://images.slatecdn.net/BUCjQ3ymvTzFizLx2ONvPveulP1PdetgVa07pztm2wE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTU5NTIz/ODc0MDI0NC9wcm9t/by1saWdpZS1zdWl0/ZS0xLjEuMTkuanBn.webp",
@@ -149,6 +144,11 @@
         2,
         2,
         2
+      ],
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
       ]
     },
     "4414": {
@@ -164,7 +164,8 @@
     "4574": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.13
     },
     "4609": {
       "types": [
@@ -175,7 +176,8 @@
       "types": [
         "Music Video",
         "Music videos"
-      ]
+      ],
+      "zoom": 1.11
     },
     "4795": {
       "types": [
@@ -213,10 +215,6 @@
       ]
     },
     "6218": {
-      "types": [
-        "Short Film",
-        "Stills"
-      ],
       "images": [
         "https://images.slatecdn.net/CSoae-jLlOBKYBGIjqkve9jQ3Uas5ovNttdm0O-l6cA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NGFlYzc4Yy0yYmZh/LTQ0ZDMtOTRlYS02/NmMxODExYjJmYzMv/aW1hZ2UwMDAxMi5q/cGVn.webp",
         "https://images.slatecdn.net/DxoE5-0xNsvEJuBpmEqjKLQ7tPeVFPt7uKMZsY8P99A/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MDk1ODAyZS03NGVh/LTRjNmQtOTFhNS01/ZDcxY2YzZmU1ZTkv/aW1hZ2UwMDAwMS5q/cGVn.webp",
@@ -264,6 +262,10 @@
         1.7778,
         1.7778,
         1.7778
+      ],
+      "types": [
+        "Short Film",
+        "Stills"
       ]
     },
     "6237": {
@@ -279,7 +281,8 @@
     "6323": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.19
     },
     "6484": {
       "types": [
@@ -288,9 +291,6 @@
       ]
     },
     "6696": {
-      "types": [
-        "Short film stills"
-      ],
       "images": [
         "https://images.slatecdn.net/_kIgLgaZtqXo8F1r4NMLTCCquAJBV81G5o6z9vz3_Ic/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/Nzk3NWNlZi1lMmI5/LTRjNjYtYjY0Ny1m/N2RiYTUxYTBkMjcv/aW1hZ2UwMDAxOS5q/cGVn.webp",
         "https://images.slatecdn.net/aEO3KGVDD4g2z80MmjSDfjyZxfZz4rVft5tft1ZSdeo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MWZmMWM3ZS05YmY4/LTQ5ZTAtYWIwMS01/NTk2MzcyYzQzN2Yv/aW1hZ2UwMDAwNS5q/cGVn.webp",
@@ -338,6 +338,9 @@
         1.6647,
         1.6667,
         1.6647
+      ],
+      "types": [
+        "Short film stills"
       ]
     },
     "6726": {
@@ -350,6 +353,9 @@
       "types": [
         "Commercial"
       ]
+    },
+    "6839": {
+      "zoom": 1.2
     },
     "6995": {
       "types": [
@@ -367,6 +373,7 @@
       ]
     },
     "8644": {
+      "zoom": 1.34,
       "types": [
         "Narrative"
       ]
@@ -384,12 +391,17 @@
     "9040": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.3
     },
     "9202": {
+      "zoom": 1.07,
       "types": [
         "Narrative"
       ]
+    },
+    "9746": {
+      "zoom": 1.37
     },
     "9811": {
       "types": [
@@ -397,6 +409,8 @@
       ]
     },
     "9845": {
+      "zoom": 1.16,
+      "zoomThumb": true,
       "types": [
         "Feature Film",
         "narrative"
