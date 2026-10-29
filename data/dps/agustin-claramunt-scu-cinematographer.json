@@ -249,6 +249,7 @@
     "img": "img/agustin-claramunt-scu-cinematographer.webp"
   },
   "categories": [
+    "FEATURED",
     "NARRATIVE",
     "COMMERCIAL",
     "AUTOMOTIVE"
@@ -268,7 +269,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/956897d8-9021-4bf8-aca9-d75658870944-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/p3BqRNHf1V8QcbPJvNZAMokhnCFGZfoaey1W6jIS6es/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZWJkZTU5OS05MGFj/LTQ3OWMtYWJhMS02/MjQ3MWU5NzdmY2Qv/c3RpbGxzLWdob3N0/c29sZGllci0wMDA4/NjQzMy5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 11187
+      "slate": 11187,
+      "featured": true,
+      "featuredOrder": 2
     },
     {
       "title": "Ringo - trailer",
@@ -277,7 +280,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/873bb4c7-997a-4d4e-ae97-95dcb925f306-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/4abJNKLuXkBySBInzkJIhUfl5GCICBHbso-IHt6lHQQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/ODgwLTY0MDFjMWI1/NDFmZDcwLjU2NzM3/MTA5LTA3ZWZlNDNk/NTIzMDYwOTk3NzI4/NjQ1ZmU2YjhhOTdl/LmpwZw?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 6880
+      "slate": 6880,
+      "featured": true,
+      "featuredOrder": 8
     },
     {
       "title": "Land of Bad - trailer",
@@ -295,7 +300,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/42a3c6d2-161e-4eeb-a950-4a761a07b6f8-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Fp4YjubdOLP_sUNd7t5wzjtI_oLzoUC2YtKeFYpMFvQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/Nzc1YmQ1Yy1hOGY3/LTQyNjktYTc4OC1j/YWYzMWJkYWVhYjkv/cmlzZS1kZWFkLW1h/bi1nYW1lLXRyYWls/ZXItdGhlLWNhbGxp/c3RvLXByb3RvY29s/LWRpZ2l0YWwta2l0/Y2hlbi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 6481
+      "slate": 6481,
+      "featured": true,
+      "featuredOrder": 4
     },
     {
       "title": "the shooting",
@@ -304,7 +311,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c21bb912-9d92-4f8f-8334-d82d077f8f33-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/76XzJOfSPHCi3QI3OLtGwXvKsWsbCa9kVKxID8zMsRo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWRkNDc2NC00N2Q5/LTQ3OTgtODk1Ni0y/MjRkZmU1NDFjOWIv/MTc0NDI5OTk2NDIz/MC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9710
+      "slate": 9710,
+      "featured": true,
+      "featuredOrder": 1
     },
     {
       "title": "Gatorade \"Breakup\"",
@@ -313,7 +322,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/96c4995e-4c71-4fb3-87e7-e946efce9dc8-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/WdPvc-xkeTo-OblCWHxS02ohH6lQpO4SOiRQWRFMfNA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MzIyLTY0NWI2NWNi/ZDE2ZmMyLjY4NDUz/MjcxLWFjMWRiODg5/NWMxYWM5OWUxMzhi/NTRjODY0ZWJhNWQz/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 7322
+      "slate": 7322,
+      "featured": true,
+      "featuredOrder": 7
     },
     {
       "title": "CYTA - DIVER",
@@ -322,7 +333,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8caf3cf9-8ca3-4342-a532-5e429063a1e7-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/8VrZ11TSfqNUofZo5z65hJZVLMP5h-Ono4MW3zlriu0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTc2LTY3MzRiOGNl/NzM1NjA3LjE1NzQ2/ODg0LWE3MGQ5M2U1/OGViZjA5NTM0OTYw/YTdjNGIyMmUwMjdl/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9176
+      "slate": 9176,
+      "featured": true,
+      "featuredOrder": 3
     },
     {
       "title": "Victoria - Nuestra Tierra",
@@ -331,7 +344,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a4f0228f-6ca7-42b3-82af-e34713aaf10d-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/jXiwTuc907PH5LxTshsuI4BJFVGg7FXVy4TZKa2unM0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OTY3LTYwODY5ZTEy/MGNkZTY2Ljg5MDE4/NjgwLThiMjA0YTUy/YzI0NmZiZTAyMzQ2/MTUxMGIwNDFjYTNk/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 4967
+      "slate": 4967,
+      "featured": true,
+      "featuredOrder": 9
     },
     {
       "title": "Movistar • The Best",
@@ -664,10 +679,12 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0376ccb3-8120-4727-83e5-0a168d51339d-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/tCzJYDGUh7D_8Vc-vESpuoes6nuzpUxv-Kmf_Hhcges/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MDIzY2NmNy04MzQ3/LTQwYWYtOWNhMS1i/OWM4YWFlMmY0Zjgv/MTc2NTIwNjY0NzYx/MS5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
-      "slate": 9379
+      "slate": 9379,
+      "featured": true,
+      "featuredOrder": 6
     },
     {
-      "title": "Nissan Infiniti - Alebrije",
+      "title": "Infiniti - Alebrije",
       "sub": "Kid Burro\nMadrefoca",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9256/5d6ac62e-b644-11ef-bfce-022353abf6f5.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fe82642c-7afd-4746-8923-aaabf44e64a1-1280x720.2500.mp4",
@@ -689,7 +706,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0fa2f335-b57e-4fef-b82e-71eb4d1e8f34-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/fK2I50EKkMcnwNmuHpNP9ZML0ONGhNmou8HEjwR2iu8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTU1LTYwY2NhNjk2/OTc5ZjI3LjUzOTI4/ODYwLWNjM2JkNGMx/NjllNjdhZTcwMTMy/NDZiMWM1Yjc0ZTYz/LmpwZw?v=1&format=webp",
       "cat": "AUTOMOTIVE",
-      "slate": 5155
+      "slate": 5155,
+      "featured": true,
+      "featuredOrder": 5
     },
     {
       "title": "Volkswagen Plantacao",
