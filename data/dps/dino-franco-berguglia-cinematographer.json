@@ -341,6 +341,22 @@
         "Short Film",
         "Trailer",
         "narrative"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/enter-paradise-stills",
+          "title": "Enter Paradise Stills",
+          "stills": [
+            "https://images.slatecdn.net/DozxE5Ty_RsqZ4tF4Zjml5S_T2UxlSEKcLMWIXFfTHc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/NmIzM2QzYS05OGIy/LTQ1ZDktYTYzNS1j/YzhhOGJiODMwZDcv/c3RpbGwtMjAyNS0w/My0yMC0wMTEyNDUt/MS4yNy4xLWdyYW5k/ZS03Njh4MzA4Lmpw/ZWc.webp",
+            "https://images.slatecdn.net/Em8SS5lQz2oXj2X4sME7842i-USPWp64WVBFqfS9C1U/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NjA1MjRmOS1mNjFj/LTQ0ZmQtOGY0Yy1k/ZDU5MjM5NDIxMTgv/c3RpbGwtMjAyNS0w/My0yMC0wMTEyNDUt/MS4xMC4xLWdyYW5k/ZS03Njh4MzA4Lmpw/ZWc.webp",
+            "https://images.slatecdn.net/2sw-WUGUqauOgQ8d4pObWu1m3bDNPGlyemNdeaSL_Bc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YzE1YzM2NC0yMjU3/LTQ3NzctYTk1Ni03/MzdkM2FjMmExYzQv/c3RpbGwtMjAyNS0w/My0yMC0wMTEyNDUt/MS41OS4xLWdyYW5k/ZS03Njh4MzA4Lmpw/ZWc.webp",
+            "https://images.slatecdn.net/xuX50Bx_apy_cNX2hWYA9Bl783BqoYAhc8B1qy3QPcM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MjU3ZDM2Ny05NWY5/LTRkN2EtOWYzZC03/ZDRhY2ZhZGM3ZGIv/c3RpbGwtMjAyNS0w/My0yMC0wMTEyNDUt/MS43MS4xLWdyYW5k/ZS03Njh4MzA4Lmpw/ZWc.webp",
+            "https://images.slatecdn.net/iuC-ky-fK3M-J_2zWDFNWPL4mMWCyCHVgf61AiEXCt0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YzEwODZlYS01ZGQw/LTQyMGMtYTg1ZC01/OTk0ZWViMGZmYWYv/c3RpbGwtMjAyNS0w/My0yMC0wMTEyNDUt/MS43Ny4xLWdyYW5k/ZS03Njh4MzA4Lmpw/ZWc.webp",
+            "https://images.slatecdn.net/U_6co_73RF9FHvm9pC4Ma2DuNLfagj738Qfnw0RpBqA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZGViMTFiYS01MjM1/LTRlOWYtODRhNC03/N2NlZWVhZGM1NzQv/c3RpbGwtMjAyNS0w/My0yMC0wMTEyNDUt/MS45NC4xLWdyYW5k/ZS03Njh4MzA4Lmpw/ZWc.webp",
+            "https://images.slatecdn.net/LkDzClLRXVfXnuftflpC3QdGdqdew5ZgMajQ7jczx80/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/Mjg3YzkzOS01YTVj/LTQ1N2UtOWExOS1i/MTg3YTExY2VjZjQv/c3RpbGwtMjAyNS0w/My0yMC0wMTEyNDUt/MS4xMjUuMS1ncmFu/ZGUtNzY4eDMwOC5q/cGVn.webp",
+            "https://images.slatecdn.net/EnSVGkjk-IdzLckcvrdMpsjI1_2VunYJm8Nl0eNJ76M/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MGRiYmM3Yi03MWUz/LTQ3MjAtOTQ4Yy1i/ZjJlMjE2MTgxZjYv/c3RpbGwtMjAyNS0w/My0yMC0wMTEyNDUt/MS4xNDMuMS1ncmFu/ZGUtNzY4eDMwOC5q/cGVn.webp"
+          ]
+        }
       ]
     },
     "10835": {
