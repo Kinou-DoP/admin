@@ -59,7 +59,9 @@
     "img": "img/agustin-claramunt-scu-cinematographer.webp"
   },
   "categories": [
-    "NARRATIVE"
+    "NARRATIVE",
+    "COMMERCIAL",
+    "AUTOMOTIVE"
   ],
   "clips": [
     {
@@ -95,6 +97,462 @@
       "img": "https://images.slatecdn.net/u-V0Irrd5vhnVBKedaDBR9F4K9SkBPM2pZnUvjQOB9c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/NDg3ZjcwMy1lYjU2/LTQyNDUtODg3Yy1i/OGNmZGJhNDNkOTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTIt/MTgtYS0xNi4xNC41/OS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
       "slate": 8143
+    },
+    {
+      "title": "The Callisto Protocol",
+      "sub": "Vellas\nPrettybird",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6481/e216bd90-d448-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/42a3c6d2-161e-4eeb-a950-4a761a07b6f8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Fp4YjubdOLP_sUNd7t5wzjtI_oLzoUC2YtKeFYpMFvQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/Nzc1YmQ1Yy1hOGY3/LTQyNjktYTc4OC1j/YWYzMWJkYWVhYjkv/cmlzZS1kZWFkLW1h/bi1nYW1lLXRyYWls/ZXItdGhlLWNhbGxp/c3RvLXByb3RvY29s/LWRpZ2l0YWwta2l0/Y2hlbi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6481
+    },
+    {
+      "title": "the shooting",
+      "sub": "Charly Gutierrez, Yupi Segura\nOriental Film Mexico",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9710/9231b799-1622-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c21bb912-9d92-4f8f-8334-d82d077f8f33-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/76XzJOfSPHCi3QI3OLtGwXvKsWsbCa9kVKxID8zMsRo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWRkNDc2NC00N2Q5/LTQ3OTgtODk1Ni0y/MjRkZmU1NDFjOWIv/MTc0NDI5OTk2NDIz/MC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9710
+    },
+    {
+      "title": "Gatorade \"Breakup\"",
+      "sub": "Nico Perez Veiga\nPrimo Content",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7322/a884475e-0179-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/96c4995e-4c71-4fb3-87e7-e946efce9dc8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/WdPvc-xkeTo-OblCWHxS02ohH6lQpO4SOiRQWRFMfNA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MzIyLTY0NWI2NWNi/ZDE2ZmMyLjY4NDUz/MjcxLWFjMWRiODg5/NWMxYWM5OWUxMzhi/NTRjODY0ZWJhNWQz/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7322
+    },
+    {
+      "title": "CYTA - DIVER",
+      "sub": "Reynald Gresset\nCube Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9176/ff15068e-a1ca-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8caf3cf9-8ca3-4342-a532-5e429063a1e7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8VrZ11TSfqNUofZo5z65hJZVLMP5h-Ono4MW3zlriu0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTc2LTY3MzRiOGNl/NzM1NjA3LjE1NzQ2/ODg0LWE3MGQ5M2U1/OGViZjA5NTM0OTYw/YTdjNGIyMmUwMjdl/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9176
+    },
+    {
+      "title": "Victoria - Nuestra Tierra",
+      "sub": "Alaska\nOriental Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4967/62986762-0178-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a4f0228f-6ca7-42b3-82af-e34713aaf10d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jXiwTuc907PH5LxTshsuI4BJFVGg7FXVy4TZKa2unM0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OTY3LTYwODY5ZTEy/MGNkZTY2Ljg5MDE4/NjgwLThiMjA0YTUy/YzI0NmZiZTAyMzQ2/MTUxMGIwNDFjYTNk/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4967
+    },
+    {
+      "title": "Movistar • The Best",
+      "sub": "Vellas\nRebolucion",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10892/3f834024-5a9d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fa6f8e73-f014-4a28-a50d-f27157cf6633-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/vStlcRXeerAAKEtus7gO_YZ1cHVIG-svLRbDEaR8pII/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NTkxMThjNS04NzZi/LTQ0MDAtOGVjOS05/MjhkYjE5NjljMjYv/MTc3OTk3NjU2NDA4/My5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10892
+    },
+    {
+      "title": "Movistar - This is not a game",
+      "sub": "Lucas Shannon\nLandia",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8957/e65ffa44-48cf-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0716ce14-a5e7-4dd2-8501-5a12a5d34860-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/9Rdm5h9l7ksJHEZPBLFhc-b4OyaDNlQL4WFGrMk03YU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZjM3NWJhNi1iNzMx/LTRjNDctYmFlZC0w/MGM4ZDQ1YzliZDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDct/MjMtYS0xMC40NC4y/My5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 8957
+    },
+    {
+      "title": "Spaten - station 1397",
+      "sub": "Ian Ruschel\nIconoclast Brazil",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8770/817eefc1-1dab-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/505f8cb0-8af5-4d9b-a10d-60135044e577-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JDhpC8KBNMkiCfjiQ7q2FHgYIEtETJzMB8PPYXSWukg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/OWUxNGM1ZS1jM2U5/LTRkYmUtYmI0My01/ZmEwZmQ4MzE0ZDQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDUt/MjktYS0xMi41OS4x/MS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 8770
+    },
+    {
+      "title": "Historias que no pudieron ser",
+      "sub": "Charly Gutierrez, Marindia\nOriental Films Mexico",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8738/3f27ec40-1365-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f58fdcf9-799f-4bd5-ac3d-a71120a53399-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/BU-HJKN9jjWb8mSYn7Gr6xGZbbeAb2vkoHyeTxiMV00/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YzNlY2Q2NC1hZWE1/LTQzNDMtYjczYS0y/OTM1MDVhOWNkNjMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDUt/MTYtYS0xMS4xMC4x/MC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 8738
+    },
+    {
+      "title": "Ubisoft - The Crew Motorfest",
+      "sub": "Jean-Baptiste Saurel\nBig Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f2163710-cf5e-43db-a5a9-40281bc09dac-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/J4L8E1nUtqvj5CfMV77F_3bfId7jE9I1oIba1HAq1D0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ODU1ODFiMC00MThk/LTQ0YWYtYWRhMS02/YzBhZjQyMmE0YjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MTMtYS0xMy4wOC4z/Mi5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 8271
+    },
+    {
+      "title": "PEPSI BLACK - SABE A TODO",
+      "sub": "youth\nOriental Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8242/32a9edd3-0178-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0f606657-fe12-4402-aabd-c67b28415616-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/OwHLHomgSGIYD1rFlapypDV3w05SiOyfMMIiz_ZgoUE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZWJiMzU5ZS1lODUw/LTQ3MjQtOTQ0Yi0z/MGJhYzVhNmM1ZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDEt/MjYtYS0xNS41MC4y/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 8242
+    },
+    {
+      "title": "Betsson “A Bet Makes the Difference”",
+      "sub": "Rodrigo Saavedra\nImmigrant",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0da9be3a-dc84-4538-92e6-8436afc8664e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Qcx1EbaReXeHLqKBPDUjymIWMd5WksrWeoiroVRXxg0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MjEwYTc4NC00MDcz/LTQ5ZDMtYjQzMi03/ZWExZjE5NmFlNGUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTIt/MDQtYS0xMS40Ny40/OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7826
+    },
+    {
+      "title": "COOP - Together",
+      "sub": "TINO\nThe Family",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7584/3bfd8a92-cb7d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a69fb4de-2b64-4147-8a30-8787267f8bed-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tuHzWF9YZQgAJjGhw9otu9LaCKJ9pOPlnZ62q7vXiRU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZWEyNzNkOS0zMzcx/LTQ2ZmItODVjOS1h/MjkwMzZkZTdmZmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDct/MTgtYS0xNS41MC4x/Mi5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7584
+    },
+    {
+      "title": "AIG : Action is everything",
+      "sub": "Jaron Albertin\nHabitant Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2d683202-65d2-4bf1-95c5-97975393875e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/IQEkz4sur7kvD9jvDPzJwiZBd4pezG78nQl92dFjBDk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDE5NzQzNy03OGY0/LTQ3YjQtYTRiMy0w/OGExMjg5YmQwZGUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDct/MTgtYS0xNS40Ni4w/OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7583
+    },
+    {
+      "title": "LLUVIA - Save The Children",
+      "sub": "Garra + Charly\nOriental Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/adc077b0-0008-4ed6-a418-4e6406e1cd21-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/sUxLQbVIgm3P4lX_uQst0_M2SeO-Jrwd9FWfiMgnuvY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NThjMjcwNS05ZjM0/LTQyOTQtODNmZC1j/ZGJjYTk1ZjQ3YWIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDct/MTItYS0xNi40MS4w/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7576
+    },
+    {
+      "title": "III",
+      "sub": "Yupi Segura, Sauna\nOriental Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7421/ac3d5a43-d05c-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8716de6a-6c14-48db-98ba-f5adf9ff0ce6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/MIYaWKQWDGhQRmiz1cmRrB_ZtK4i1m3ac_BoMARnhWM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NWZlMWU0Zi03Y2Jl/LTRkM2MtOWY0OS0z/YTZmYTY5NDMzMGEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDct/MTAtYS0xMi41My4y/Ni5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7421
+    },
+    {
+      "title": "Safe Space",
+      "sub": "Fridman Sisters\nStink Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7415/5d08f5ea-0179-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/92f5de28-fb5b-4c60-848d-f484930405f4-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/5Rexsx6JJtdfW5VgC1auqoILtbI-L2O27v4n9LjTavc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDE1LTY0OTAxM2Fl/ZGU5Yjg4LjA4OTU0/MzYyLTQ2ZDNjZDZh/NTg4ZDc0YmY0NWQy/YjNkNDVmYjBiNjJj/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7415
+    },
+    {
+      "title": "Victoria - Nuestras Manos",
+      "sub": "youth, vira-lata\nOriental Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6417/862bb4a7-0178-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c6a2a77b-9180-4084-a9d1-f6743768330b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/TNUvOZTF0TkRkHJX3GjB2xF-Zkuy_7mwSq0BGyZc8Pg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NDE3LTYzNTdiYjg4/NGVkMGI2LjIzOTA1/ODY3LTc5YWYyNjU0/NDAyZmM1NWYzYWE2/MzkyNDNmZTRmYTM1/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6417
+    },
+    {
+      "title": "Volkswagen Plantacao",
+      "sub": "Vellas\nSaigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ca1cf463-ef4b-40cf-b94b-bb92beaf6630-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7g-YeBheKVUpcgdz2psPbTwDc5yoGVa0VIhBDyFrF6w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MTRkMjZmMi0xNTdm/LTRmNzEtYWYxNC0y/MTczYzI5N2RmNTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMTEt/MjktYS0xNi41OC4z/Ni5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4876
+    },
+    {
+      "title": "O Boticário - Tightrope",
+      "sub": "Vellas",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4629/f86565c3-1dac-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1e35e243-b1a6-4d88-b0ed-4d485db5aba5-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/T_MHf67yuK2KrrTyqTWJG4h6MGMHijxf38uxKWFnZLw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjA0NTcwNTE2NTc1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTEx/LTA1LWEtMTEuMDEu/MzEucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4629
+    },
+    {
+      "title": "Mercado Libre",
+      "sub": "Armando Bo, Javier Usandi\nRebolucion, Salado Media",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7fc4bce6-91bb-424f-83b0-dfebce1c5add-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KvNCIJZSKBqTnJ2xMGZdeIRm77kL_0r_qc8oFMXSCVI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/M2NlYjI1MS1lYWJl/LTQzYjYtOGQ1NC1j/YzVhOWIxODU3ZGMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDIt/MjMtYS0xNi41Ni4y/MS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4566
+    },
+    {
+      "title": "Vivo - Route",
+      "sub": "Vellas",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4ab0534b-7978-457a-9a2b-6df180515637-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/nG7KdwTc-_r_S29EX8lBovd7szGFCD3ufY5IuAMxSTk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NzkzMjlhZC1jZGYy/LTQ3ZmQtYTExZS1j/NjcwMzA0Y2IzMmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDQt/MjQtYS0xNy4xMC40/NS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4392
+    },
+    {
+      "title": "Pepsi Black - Into The Void",
+      "sub": "Alaska\nOriental Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4303/5fef5956-b9a1-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ebae1c32-b3fe-4617-b19c-b93678ae1b49-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/iapu9565PkQeKQrpcEj9FThnGPtePscWLPTAg35ImIE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YTA3ZDBiYy1kODVj/LTQ5NjYtODJlMC1j/MWVmMTg3M2YzMTkv/MTc2MjI3NjI4NzAw/MS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4303
+    },
+    {
+      "title": "Babybel",
+      "sub": "Hervé de Crecy\nSolab Pictures",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4277/39609e83-0179-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49acdc8b-1fd2-4b98-bb32-b4c8092fb776-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/WTmwlyRk-aUfL95p3_t10su0i3yAYMyzmOcJ0W3bL0c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/Y2M5NmI5ZC0yMDc4/LTRhYTEtYWI4YS1k/OTljMDk1ZTBhMTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTYtYS0xNi4xNi4y/Mi5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4277
+    },
+    {
+      "title": "Lacta",
+      "sub": "Salsa\nFoss Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/35183355-e95f-4efa-9747-9a84226eac9d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Zb5_BUcB5WLcbbH6UV-xFLAxIJCG_Qcu1BsfDXOB3uE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjA4MzYzNjk0/LzguanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4121
+    },
+    {
+      "title": "MercadoLivre - Grandiosity by Vellas",
+      "sub": "Vellas",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1571914949-mercadolivre-grandiosity.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ydx50ZEjk7-1BPw-gUrzubwYFZh6cvHto01NQ4n8O6U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjA4NTI5MDQ5/LzQuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3840
+    },
+    {
+      "title": "Itaú - Read for a Child by Vellas",
+      "sub": "Vellas",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1571911652-itaao-read-for-a-child-2019.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RTR7sdZj7UyuJ6VHxYHptAP4XTp61FV3VYzgNRqAUBs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MzhhMGQ1My1kMjAx/LTRiZGEtYTQwYS00/ZTI5Y2NmZTY2Zjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDEt/MjMtYS0xNS40Mi4z/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3839
+    },
+    {
+      "title": "WWC’19",
+      "sub": "Marc Coromias\nRebolucion",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1559560325-wwc-19.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/05dtx-9slP05cpzGfytXGdNWdiDpBHCTJjW8OdIbfHE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NmU0ZWEyYS0wYTky/LTQwNzktYmUxMi01/NzlkMGUxNjYxN2Mv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDEt/MjMtYS0xNS4zNC4y/Ni5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3435
+    },
+    {
+      "title": "O Boticario - The Blend by Ian Rushel @ Iconoclast",
+      "sub": "Ian Rushel\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3293/4f5bb131-1d0b-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0c55a28c-3742-44b6-98c8-b50da104c6a1-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jBw827jKwaFhB3R4FDsn7jUMOVTZ2h1CQlvE-f-Yn-g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9v/LWJvdGFuaWNvLXRo/ZS1ibGVuZC1ieS1p/YW4tcnVzaGVsLWlj/b25vY2xhc3QtY2Rm/NDIxYmVhYTM5ZWU0/ZjE0MGVkOGM3ZmQw/NmQ3OTUuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3293
+    },
+    {
+      "title": "Samsung - Bookholder by Felipe Mansur @ Alice Filmes",
+      "sub": "Felipe Mansur\nAlice Filmes",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551954040-samsung-bookholder.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UWUkpUM0ZDUlqdk8NIxgoQDbLFnkHDDH25ftvfMuU68/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkxNzg3ODA4MDc3/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTEwLWEtMTMuMTYu/MDAucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3246
+    },
+    {
+      "title": "Benson & Thomas by Boki & Chelo @ Oriental Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887546-benson-thomas.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/a7oQgql5ued3LWTGN51Z9kec72wtWcmonmWJZGKQBTs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZW5zb24tdGhvbWFz/LWJ5LWJva2ktY2hl/bG8tb3JpZW50YWwt/ZmlsbXMtYTIxMDY5/MmI5NzczY2VlMTA0/OGE0NjFhMmNkMDJh/YTAuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3230
+    },
+    {
+      "title": "Samsung - Defy Barriers by Felipe Mansur @ Alice Filmes",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887545-samsung-defy-barriers-director-s-cut.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dtofeQ59hjuQCMmE7mtXWCuH1qvxJ6-RGllfTGrnYvA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjEwMTAxNjA5/LzYuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3224
+    },
+    {
+      "title": "VIVO #Relove by Vellas @ Saigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887544-vivo-relove.mp4.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/r9qPPSIP_E_knvz-NRIUrn_vH7vmCReEH01zYPfQnDY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjEwMjYxMDUz/LzIuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3222
+    },
+    {
+      "title": "Itaú - Buscar by Vellas @ Saigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887544-itau-buscar-24fps-vrsvelas-ing.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/T31XS-xp-NYxLAsbdlOcN_0QW-Dzq4IciumkWq9HrMU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjA5MzU2NjM4/LzkuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3221
+    },
+    {
+      "title": "La Mer Secrete by Boki & Chelo @ Oriental Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887543-la-mer-secrete.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RKXJjByTlVo40Dd3dhRiyz9rdPvXyLJzJY550KK42Vw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjEwODMzNzcy/LzkuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3217
+    },
+    {
+      "title": "Itaú - Relecao Repertorio by Vellas @ Saigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887543-itau-prelecao-repertorio-24fps.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7J1pPlhv1e5Lnm4ovXksRNwxqlt_kssiPAC3AeKy5_w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9p/dGF1LXJlbGVjYW8t/cmVwZXJ0b3Jpby1i/eS12ZWxsYXMtc2Fp/Z29uLTRiOTM0NWRh/ZjQ2ZTJjMzc1ZDg5/ODI2ZGQyZGMzYjAy/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3220
+    },
+    {
+      "title": "WOM by Facundo Españon @ Cueca Films",
+      "sub": "Facundo Españon\ncueca films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887543-wom.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/5Id4vXrajIkLj7zZx0Jhr8cZ5P6OXNyfhGrSMszlSY0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjEwNDU3NzE2/LzMuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3219
+    },
+    {
+      "title": "Itaú - I am the future by Vellas @ Saigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e6f4e6fc-d93d-44c0-95a2-e5669f784954-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/alos_Qsdf7BgI8Z67kMyB3ULX6rcrFHJtVPTgztF_pM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/N2FlZTU1Ny1lNzc0/LTRlNzEtYjM2MS00/MjczMTJlOGQ0NDcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjktYS0xNy4yMS41/MS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3218
+    },
+    {
+      "title": "Itaú - Read for a Child by Vellas @ Saigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887542-itau-read-for-a-child.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2EKDhgMdpP_m85ZorSuo3RZidKBDawMPHrW1BYJ2nD8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkxNzg3NTMxMzM5/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTEwLWEtMTMuMTEu/NDEucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3215
+    },
+    {
+      "title": "Pepsi - Wake Up by Alaska @ Oriental Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3214/7e515979-0179-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bf0952da-ae9c-4224-af9b-13a20ea9469c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/g73Lp0IPQbNgMk1qq2n0azyIKcVV1CzPI53_s-DKnjQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkxNzg3NjUxMjU1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTEwLWEtMTMuMTMu/NDcucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3214
+    },
+    {
+      "title": "Advil - Usain Bolt | Everybody Hurts by Dos Ex Maquina @ Paranafilms",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887541-advil-usain-bolt-everybody-hurts-director-s-cut.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/nMMVAwziLWZM7TKG6DaKJ3fyuel7UsKVPCYA6l6mijo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjExMDA1Mjgw/LzcuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3213
+    },
+    {
+      "title": "Nike by Rodrigo Garcia Saiz @ Central Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887540-nike-director-s-cut.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/yHqz05JwT0clffTCyO2--nx3OWYN9m2vZmD9jg1xZGk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkxNzg3NzE4NjQ0/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTEwLWEtMTMuMTQu/NDcucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3211
+    },
+    {
+      "title": "O Boticario - Dragon by Ian Rushel @ Iconoclast",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/53b98f24-8089-4171-81a7-493eb87ffbbb-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/BCetCxhNDlI9PbeDfbf6I4Zl6N5-aml4QSUXTNmNLsg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/YjRkY2NjYi01OTNm/LTRmMDUtYTZjMy0z/MTAwM2E2N2QyODIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjktYS0xNi40Mi40/MS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3210
+    },
+    {
+      "title": "Nike Kids China",
+      "sub": "Manson",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7416/4bbbc56c-0178-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d40c7892-7dde-498d-9bd9-fcf3bd1f6340-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zO-NqbNa_eepQRxqgGWHJX6mbSP2jQ08XANApZcgDNY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NmM3ZWJhNS1iZjBj/LTRlNGEtYTllYS1m/NDU4MTFiNTViYWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDEt/MjMtYS0xNS4zOC40/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7416
+    },
+    {
+      "title": "Kia K3 | Hecho en México, para México",
+      "sub": "Luis Cervero\nThe Maestros",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10040/110aa464-6c64-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/714479c4-e2d0-4daa-a442-bdbeea24b814-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/4SNtZsFjZsFD0YBW9WeJGA9zNRIbEsUYB2cauRxxU9Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/OGYzODY5NC1jZDVk/LTRmYmEtYmEzZC05/YTZhYjc5YWVkYzUv/MTc1Mzc4MzcwODU3/OS5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 10040
+    },
+    {
+      "title": "Nissan Kicks - Trigger",
+      "sub": "The Youth\nOriental Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9379/1f9da391-d448-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0376ccb3-8120-4727-83e5-0a168d51339d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tCzJYDGUh7D_8Vc-vESpuoes6nuzpUxv-Kmf_Hhcges/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MDIzY2NmNy04MzQ3/LTQwYWYtOWNhMS1i/OWM4YWFlMmY0Zjgv/MTc2NTIwNjY0NzYx/MS5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9379
+    },
+    {
+      "title": "Nissan Infiniti - Alebrije",
+      "sub": "Kid Burro\nMadrefoca",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9256/5d6ac62e-b644-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fe82642c-7afd-4746-8923-aaabf44e64a1-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7BXHCkJiNEmtOgFPp31jkKuaVav_GjjgJEHhfSFbxDA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NWIyMDQyYS1mZTQ2/LTQzM2UtODU3MC04/YjcwYjcxNzc0NDAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMTIt/MjMtYS0xMi4yMi40/Ny5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9256
+    },
+    {
+      "title": "Ubisoft - The Crew Motorfest",
+      "sub": "Jean-Baptiste Saurel\nBig Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f2163710-cf5e-43db-a5a9-40281bc09dac-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/J4L8E1nUtqvj5CfMV77F_3bfId7jE9I1oIba1HAq1D0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ODU1ODFiMC00MThk/LTQ0YWYtYWRhMS02/YzBhZjQyMmE0YjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MTMtYS0xMy4wOC4z/Mi5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 8271
+    },
+    {
+      "title": "Nissan Marca",
+      "sub": "Alaska\nOriental film uruguay",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0fa2f335-b57e-4fef-b82e-71eb4d1e8f34-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fK2I50EKkMcnwNmuHpNP9ZML0ONGhNmou8HEjwR2iu8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTU1LTYwY2NhNjk2/OTc5ZjI3LjUzOTI4/ODYwLWNjM2JkNGMx/NjllNjdhZTcwMTMy/NDZiMWM1Yjc0ZTYz/LmpwZw?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 5155
+    },
+    {
+      "title": "Volkswagen Plantacao",
+      "sub": "Vellas\nSaigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ca1cf463-ef4b-40cf-b94b-bb92beaf6630-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7g-YeBheKVUpcgdz2psPbTwDc5yoGVa0VIhBDyFrF6w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MTRkMjZmMi0xNTdm/LTRmNzEtYWYxNC0y/MTczYzI5N2RmNTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMTEt/MjktYS0xNi41OC4z/Ni5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 4876
+    },
+    {
+      "title": "Renault Captur",
+      "sub": "Felipe Mansur\nOriental Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f733ce6b-9ef7-4b82-89d7-6f0cb6a31740-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/chDIHYvfwfXG5iSKjvd7IsfaZrzk3cRIttnDpPY8EMk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTc3LTVlMWRkZjll/MTlkYjUzLjE0ODM5/MzkxLTMzZDcwNTE4/ODE5ZDljYTJmM2Fj/NTY5YTJjMWI0MDAx/LmpwZw?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 3977
+    },
+    {
+      "title": "Renault - Stepway by Vellas @ Saigon",
+      "sub": "Vellas\nSaigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1564418510-renault-stepway-aposta.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Kk0ki5m_eUU2iZk1OJfSXqaIF4vnR2PhHxsGT63Kfjs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjEyNTY3OTEx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA3/LTAxLWEtMTYuMDgu/NDEuanBn?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 3672
+    },
+    {
+      "title": "Fiat Argo \"Tribos\" by Vellas @ Saigon",
+      "sub": "Vellas\nSaigon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1558519495-fiat-argo-tribos-director-s-cut.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/AGKZP266JvxqG3_KbTTqmczU8uH2-7hjk5bRAVb0wUQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTYwNzgwNTY4NDA5/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDE5LTA2/LTE3LWEtMTYuMDku/MjQucG5n?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 3419
+    },
+    {
+      "title": "Chevrolet - Journey by Salsa @ Stink SP",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887546-chevrolet-journey.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/n02yyYmJVXZFlRUqLLiwTqNO0j_K5BRSVDZxlb07IFg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNjEyNzAxNDgx/LzIuanBn?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 3228
+    },
+    {
+      "title": "Renault Duster Motivador by Agustin Carbonere",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887544-renault-duster-motivador.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RQYnmQXR87Msx0S87j_NnYwfIKCEgKCjHUHPLx6wMEQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9y/ZW5hdWx0LWR1c3Rl/ci1tb3RpdmFkb3It/YnktYWd1c3Rpbi1j/YXJib25lcmUtZTE4/NzM4OGMwNzhiMWEy/ZGNlODM1MjM2MWJj/Zjc4MWYuanBn?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 3223
+    },
+    {
+      "title": "Jeep - Instinto by Felipe Mansur @ Alice Filmes",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1551887543-jeep-instinto-directoras-cut.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GT3FRtg2hQn563T6zPiK-TENRSSZg8yYMjttpjhG11I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9q/ZWVwLWluc3RpbnRv/LWJ5LWZlbGlwZS1t/YW5zdXItYWxpY2Ut/ZmlsbWVzLWNhZmE4/NGFkN2NlZDc3YTJj/M2IzOGZmZjdkMWI2/Mjg5LmpwZw?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 3216
     }
   ]
 }
