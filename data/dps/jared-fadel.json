@@ -73,7 +73,8 @@
       "types": [
         "Commercial"
       ],
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "hyundai Kona Split"
     },
     "9897": {
       "zoom": 1.36,
@@ -91,6 +92,9 @@
         "narrative"
       ]
     },
+    "9900": {
+      "title": "Lexuxs Electrified"
+    },
     "9902": {
       "zoom": 1.41,
       "types": [
@@ -107,7 +111,8 @@
       "zoom": 1.36,
       "types": [
         "Commercial"
-      ]
+      ],
+      "title": "Mayer - Elliot Convergence"
     },
     "9905": {
       "zoom": 1.5
@@ -116,13 +121,15 @@
       "zoom": 1.2,
       "types": [
         "Commercial"
-      ]
+      ],
+      "title": "Acura"
     },
     "9907": {
       "zoom": 1.53,
       "types": [
         "Commercial"
-      ]
+      ],
+      "title": "Peloton"
     },
     "9908": {
       "zoom": 1.57,
@@ -184,7 +191,8 @@
       "zoom": 1.57,
       "types": [
         "Commercial"
-      ]
+      ],
+      "title": "Volvo - Moving Forward"
     },
     "10063": {
       "zoom": 1.26,
@@ -198,7 +206,8 @@
         "Fiction",
         "Feature Film",
         "narrative"
-      ]
+      ],
+      "title": "Solo Mio "
     },
     "10868": {
       "types": [
