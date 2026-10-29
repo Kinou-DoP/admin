@@ -3,7 +3,83 @@
   "name": "Pablo Berron",
   "hue": 139,
   "bundle": "https://kinou.slateapp.com/bundles/df481ece-d3ab-11f1-a349-0215583debcb",
-  "overrides": {},
+  "overrides": {
+    "9109": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9111": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9116": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9120": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9125": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9129": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9130": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9134": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9136": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9158": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9426": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9924": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10704": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10782": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11350": {
+      "types": [
+        "Commercial"
+      ]
+    }
+  },
   "about": {},
   "categories": [
     "COMMERCIAL"
