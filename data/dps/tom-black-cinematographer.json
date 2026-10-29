@@ -773,7 +773,13 @@
     "website": "https://www.tomblackdp.com/",
     "pos": "63% 54%",
     "img": "img/tom-black-cinematographer.webp",
-    "cv": "cv/CV-Tom-Black.pdf"
+    "cv": "cv/CV-Tom-Black.pdf",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://pro.imdb.com/name/nm1638511/credits/"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
