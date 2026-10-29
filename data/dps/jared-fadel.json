@@ -133,7 +133,8 @@
       "zoom": 1.55,
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoomThumb": true
     },
     "9910": {
       "zoom": 1.29,
