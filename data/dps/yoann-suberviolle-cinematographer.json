@@ -1577,7 +1577,13 @@
       "As well as advertising campaigns for well-known brands such as Google, Martel, Jaeger Lecoultre, Perrier-Jouet, Louis XIII, LaPierre and associations like UNICEF and SNSM..."
     ],
     "img": "img/yoann-suberviolle-cinematographer.webp",
-    "cv": "cv/CV-Yoann-Suberviolle.pdf"
+    "cv": "cv/CV-Yoann-Suberviolle.pdf",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm8374484/?reasonForLanguagePrompt=language_preference_mismatch"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
