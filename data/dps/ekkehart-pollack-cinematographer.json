@@ -207,7 +207,13 @@
     "instagram": "https://www.instagram.com/ekkehart_pollack/",
     "website": "https://www.epollack.com/",
     "pos": "45% 40%",
-    "img": "img/ekkehart-pollack-cinematographer.webp"
+    "img": "img/ekkehart-pollack-cinematographer.webp",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm0689375/"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
