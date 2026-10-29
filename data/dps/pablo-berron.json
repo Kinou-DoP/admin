@@ -142,6 +142,11 @@
       "zoom": 1.35,
       "zoomThumb": true
     },
+    "9128": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "9129": {
       "types": [
         "Commercial"
@@ -175,6 +180,11 @@
         "Commercial"
       ],
       "zoom": 1.14
+    },
+    "9135": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9136": {
       "types": [
