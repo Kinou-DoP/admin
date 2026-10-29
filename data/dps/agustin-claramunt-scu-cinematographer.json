@@ -268,7 +268,13 @@
     "website": "https://agustinclaramunt.com/",
     "instagram": "https://www.instagram.com/agustinclaramunt/",
     "pos": "61% 29%",
-    "img": "img/agustin-claramunt-scu-cinematographer.webp"
+    "img": "img/agustin-claramunt-scu-cinematographer.webp",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm4619606/?ref_=nv_sr_srsg_0_tt_0_nm_2_in_0_q_agustin%2520claramunt&reasonForLanguagePrompt=language_preference_mismatch"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
