@@ -423,7 +423,13 @@
     "instagram": "https://www.instagram.com/dino_berguglia/",
     "pos": "52% 71%",
     "img": "img/dino-franco-berguglia-cinematographer.webp",
-    "cv": "cv/CV-Dino-Franco-Berguglia.pdf"
+    "cv": "cv/CV-Dino-Franco-Berguglia.pdf",
+    "links": [
+      {
+        "label": "IMDB",
+        "url": "https://www.imdb.com/fr/name/nm6230871/?ref_=nv_sr_srsg_0_tt_0_nm_2_in_0_q_dino%2520franco%2520berguglia"
+      }
+    ]
   },
   "categories": [
     "FEATURED",
