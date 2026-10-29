@@ -20,22 +20,30 @@
         "Documentary",
         "Serie",
         "narrative"
-      ]
+      ],
+      "zoom": 1.34
     },
     "9109": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.11,
+      "zoomThumb": true
     },
     "9110": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.25,
+      "zoomThumb": true
     },
     "9111": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.13,
+      "zoomThumb": true,
+      "zoomPos": "100% 45.1%"
     },
     "9112": {
       "types": [
@@ -45,7 +53,9 @@
     "9113": {
       "types": [
         "narrative"
-      ]
+      ],
+      "zoom": 1.35,
+      "zoomThumb": true
     },
     "9114": {
       "types": [
@@ -61,14 +71,18 @@
     "9116": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.37,
+      "zoomThumb": true
     },
     "9118": {
       "types": [
         "Documentary",
         "Serie",
         "narrative"
-      ]
+      ],
+      "zoom": 1.27,
+      "zoomThumb": true
     },
     "9119": {
       "types": [
@@ -79,7 +93,9 @@
     "9120": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.37,
+      "zoomThumb": true
     },
     "9121": {
       "types": [
@@ -99,7 +115,9 @@
     "9125": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.36,
+      "zoomThumb": true
     },
     "9126": {
       "types": [
@@ -119,7 +137,9 @@
     "9130": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoomThumb": true,
+      "zoom": 1.35
     },
     "9132": {
       "types": [
@@ -134,32 +154,44 @@
     "9134": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.14
     },
     "9136": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.14,
+      "zoomThumb": true
     },
     "9158": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.35,
+      "zoomThumb": true
     },
     "9424": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.35,
+      "zoomThumb": true
     },
     "9426": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.15,
+      "zoomThumb": true
     },
     "9924": {
       "types": [
         "Commercial"
       ]
+    },
+    "10365": {
+      "zoom": 1.37
     },
     "10704": {
       "types": [
@@ -174,7 +206,8 @@
     "11350": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.39
     }
   },
   "about": {
@@ -186,9 +219,65 @@
     "img": "img/pablo-berron.webp"
   },
   "categories": [
-    "COMMERCIAL"
+    "FEATURED",
+    "NARRATIVE",
+    "COMMERCIAL",
+    "MUSIC VIDEO"
   ],
   "clips": [
+    {
+      "title": "Hypnotic",
+      "sub": "Robert Rodriguez",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9119/2384d531-8d61-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c2c3780-fcdf-42c1-8403-0d118394ed79-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/rvgcanNjwPnNRpPz9UT78VMa1rPVR3IqjRg3DlBCBFY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTE5LTY3MTI3MTNj/Y2MxMGE1LjU5NjMw/OTg4LTFkNWY0YzIz/MmZhOGNmNjkyMGUy/OWU4YWQ1YWEzMmZi/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9119,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "happier than ever a love letter to los angeles robert rodriguez patrick osborne",
+      "sub": "Robert Rodriguez & Patrick Osborne",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9114/f6a76254-8d68-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7c09e310-afeb-4584-9d55-a70dab9ecb42-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GSSURyLs0sMCAZyUd_OGUTUCOPKWfKLy9LpWkVw7Sl8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTE0LTY3MTI3MTFk/NzFkMzY2LjQ0MjM4/ODY2LTNmNWQ3ZWM3/ODk0Mzk5NmU4ZGZj/N2QxOTZiNDU1Yzll/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9114
+    },
+    {
+      "title": "how to change your mind",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9118/5284c2e6-8d61-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bdc843d6-067b-45de-9779-306b947aee3a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/BVnCcrQhITq11o3ItONBmXbVThy5x2hSCq1LftizYcs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTE4LTY3MTI3MTNj/ZDFmN2Y3LjgwNDQ0/NTQ3LTMwODBkZjJi/MDkxYWE1ODgzOWFl/NTk0NjcyNzk3N2Jl/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9118
+    },
+    {
+      "title": "fracture",
+      "sub": "Bradley & Pablo\nPrettybird",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9113/03bfa3a2-8d69-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a9437ba1-d6fb-418f-aea4-b34e1bb192d2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-ijZrRn44fL6vBO1nEz5p_3NLhWC4_IBhZtxRHBLj4M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTEzLTY3MTI3MGZl/ZTYwMTM4LjU0OTM5/NDU4LTIxODVkZjkw/Y2VhYmNiNjEwOTc0/YTNiY2YyMTFiNjI3/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9113
+    },
+    {
+      "title": "as you were futurestates trevin matcek",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9106/8fcc7434-8d69-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1a23ac2a-b8ca-46f6-9ea0-24cc0ff0dc4d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/hBTRLhQC9vrByBIFkwVynOPmzdDgVt1oP_RFitmM4Qs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTA2LTY3MTI2ZWIz/MDllN2YxLjM5NDI0/MjcxLTRlZjhjYzRk/ZDA1ZjAzNDdmNzFh/MzQ1MjUxYWY2MTJi/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9106
+    },
+    {
+      "title": "curb you enthusiasm alan williams",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9108/64af7070-8d69-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1cd9f384-936c-4442-ba1a-6f06fb6f841e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0mLgmfpJQSQyolWwcPJoFu7fwkX97FftBD7GYi1bFeM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTA4LTY3MTI3MGZl/ZTc4Y2Q5LjgzMDI3/MzU2LWM3YjU0ZGQ3/YmZlZDdlZjA2Yzgy/Y2U5YWQ4OGU0MjBl/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9108
+    },
     {
       "title": "Bose",
       "sub": "Bradley & Pablo\nPrettybird",
@@ -196,7 +285,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0b99656b-a716-449e-b689-c63f6f3f25a1-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/-YTfi5fjL0-FIo_xQDat-BIr4HrvLz5o0BA7cd-fSkM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTM2LTY3MTYyMzc4/NmRkOTUwLjk2ODY4/NjgxLWEwM2I5M2Jl/NjY1YTRhZGY0Y2Yy/ZjVhNDIxMTQ5MjI0/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9136
+      "slate": 9136,
+      "featured": true,
+      "featuredOrder": 1
     },
     {
       "title": "Tik Tok",
@@ -205,7 +296,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1f26f4f4-84a8-4512-99fb-76229f2a2ef7-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/mm0VnFOeoOgtqxik59-RxIfRQJj6nw7J3iHK6BIzWso/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTM0LTY3MTI3MTVj/M2M5OTEzLjAwMzQx/ODkzLWFkMGUzMmE3/NWQyZGIxOTFkNjNh/ZDllZWY0YjQ4Y2Uy/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9134
+      "slate": 9134,
+      "featured": true,
+      "featuredOrder": 3
     },
     {
       "title": "nike travis scott robert rodriguez",
@@ -214,7 +307,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/68f4aa74-b1da-46b8-bd0d-4aed723c8b9e-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/evXF4JE29iXb7HrXLJynEfT0Px4NxBJRiaF3j5g6N-o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTI5LTY3MTI3MTNj/Y2IyODQyLjcyODAx/Mzg0LTZjM2FkYTk1/ZjQ1MWEwY2ZmNDUz/NjZlNDQxMjBmNmQ5/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9129
+      "slate": 9129,
+      "featured": true,
+      "featuredOrder": 5
     },
     {
       "title": "Orange • Scamophonie",
@@ -223,7 +318,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/279ec287-db27-4df1-8833-bc519bd28f6b-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/qUQ-xEJU-xxcD3oxeYv5Q2uxS0pyajjTinAfbPe207k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZGIwZDljNC0zMjFm/LTRjNTYtYTg2Zi03/YjkwODFhZjFlZDgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MTQtYS0xNy41Ni40/Ni5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 11350
+      "slate": 11350,
+      "featured": true,
+      "featuredOrder": 2
     },
     {
       "title": "Desperados | GUAO GUAO",
@@ -232,7 +329,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ce487c47-fd2c-4938-b599-b3039ba4941a-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Tcm59CozFzbYmTXjl2GCpupUvUel3IN2D4Qr8iM_t9I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDI2LTY3YWRlMDQ5/ODY0YzgzLjAxMTk4/ODkwLWEwN2U1YTg2/ZDAwZmIxNjI1N2Ix/OTMxNDFjN2E0Mjdi/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9426
+      "slate": 9426,
+      "featured": true,
+      "featuredOrder": 4
     },
     {
       "title": "Pepsi x Lenny Kravitz",
@@ -241,7 +340,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f72058fc-c1dd-40f0-8e72-422e92bf6b2a-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/aizuwvfAb3r-Cng2peEJtn2fpveRS5NF4_WP8X0YdE4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTU4LTY3MjhhMzFj/YWM3Y2U4LjI4OTg0/ODUxLWIwYmI2NDZh/OWMzMjQ4ZTQ0MmI4/OGFjN2Y5ZmM3MGU5/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9158
+      "slate": 9158,
+      "featured": true,
+      "featuredOrder": 6
     },
     {
       "title": "lego",
@@ -262,13 +363,13 @@
       "slate": 9130
     },
     {
-      "title": "Ikea",
-      "sub": "Scott Cudmore\nRevolver Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9120/115574ea-8d61-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2fdec1cd-2b83-450f-8ce2-7e9f6a0948c3-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/zocpifzW0mvUzHePoclo_QkrS7Gd0T4Jev1jSeSWD9c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTIwLTY3MTI3MGZl/ZTQ0OGUwLjIxMTQ2/NDMzLTNjYmNjYTdm/NjU4MmQ0MmJmYjZh/NzhmOTliMzI3YWI4/LmpwZw?v=1&format=webp",
+      "title": "dolby atmos anyma",
+      "sub": "Colin Tilley",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9109/550ea5e3-8d69-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4aa5e513-68fc-4f5d-b50d-60217e9a8544-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/LolY14fXtvcK7ma2CnKLeGYWxPI22kD3JC5twaTPhYY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTA5LTY3MTI3MTFk/NzQ3NWY2LjAzMzg0/Mjc2LThhMWFlMWYz/MjlhZWZkNTkyOTk5/ZTVlZDNhNTE3MGZi/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9120
+      "slate": 9109
     },
     {
       "title": "Holland and Barrett • Back your Body",
@@ -278,6 +379,15 @@
       "img": "https://images.slatecdn.net/Npd16bTY8l70kaFnyRuI44PjfrIYaPj9z38yTENY1b0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZWI1NDczOS04NTM2/LTQ1ZGMtYWYwYy0y/MGZlNjA0MGFkNDUv/MTc3NzU1NDQzODI0/Ni5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 10782
+    },
+    {
+      "title": "Ikea",
+      "sub": "Scott Cudmore\nRevolver Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9120/115574ea-8d61-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2fdec1cd-2b83-450f-8ce2-7e9f6a0948c3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zocpifzW0mvUzHePoclo_QkrS7Gd0T4Jev1jSeSWD9c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTIwLTY3MTI3MGZl/ZTQ0OGUwLjIxMTQ2/NDMzLTNjYmNjYTdm/NjU4MmQ0MmJmYjZh/NzhmOTliMzI3YWI4/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9120
     },
     {
       "title": "Mc Donald's - Mario Galaxy",
@@ -315,13 +425,13 @@
       "slate": 9116
     },
     {
-      "title": "dolby atmos anyma",
+      "title": "dolby ed sheeran",
       "sub": "Colin Tilley",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9109/550ea5e3-8d69-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4aa5e513-68fc-4f5d-b50d-60217e9a8544-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/LolY14fXtvcK7ma2CnKLeGYWxPI22kD3JC5twaTPhYY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTA5LTY3MTI3MTFk/NzQ3NWY2LjAzMzg0/Mjc2LThhMWFlMWYz/MjlhZWZkNTkyOTk5/ZTVlZDNhNTE3MGZi/LmpwZw?v=1&format=webp",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9110/45cd8afb-8d69-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/de18635f-d4f2-4e23-8e13-78af9e62f2b2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/WEr5sm8dp7VQMJKg2Nhi8yPE4MuIvqVEWyMPe2Nw1xM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTEwLTY3MTI3MTFk/NmUzMjgzLjAyNTg5/NTIzLTc0NmEzYWE1/MTc2Nzk0YTA0MzAx/ZjA4ZjBkM2U2N2Mx/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 9109
+      "slate": 9110
     },
     {
       "title": "dolby jennifer lopez",
@@ -331,6 +441,109 @@
       "img": "https://images.slatecdn.net/OyBqm5KRvUBD3kriv1sKpk8t7nzs_jQzGWTrTDiloJs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTExLTY3MTI3MGZl/ZTllMzA1LjEzMDAy/MDU5LWI0ZTg4NjQx/Zjc4ODczOWFiMGJk/Y2RlNmUyMjg5NTg4/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 9111
+    },
+    {
+      "title": "harry styles late night talking",
+      "sub": "Prettybird",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9115/d7fd97f7-8d68-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d54eed46-d038-49c0-8016-951186f617e6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/4Js2dMubXtSP2wbpdzLRV5Dev2v8UymCzZHj8SiY6iA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTE1LTY3MTI3MTFk/NzFjN2I3LjEyMjQ0/NzAwLTI0NzgzYjY1/MjNhZDRlYzMxYTE4/ZTMxN2E2ZDk4NTQx/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9115,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "rosalia haute couture",
+      "sub": "Bradley & Pablo\nPRETTYBIRD UK",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9132/3f95a96d-8d60-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/51c74204-7a32-4ef6-836f-b9d96e9c76df-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jyXGxUPgDGQxX3P7RbnYgRrtTT1POEJHLmr_DeH7h0A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTMyLTY3MTI3MTNj/YzdhOTIyLjQ5Nzk4/MTY3LWE2ZTZhYWI5/MmI3MzVjNmFkN2U2/YWNjY2UyN2VkM2Qy/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9132
+    },
+    {
+      "title": "dua lipa silk city electricity",
+      "sub": "Bradley & Pablo\nPRETTYBIRD UK",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9112/1739b267-8d69-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/27e9e51c-3733-4a4d-bb96-0d463ae92504-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/XejtLZSwVnAgnZMUk3X2EdBKn4DnS5G1UnS5-qEYuTE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTEyLTY3MTI3MTFk/NmQzZTc5LjA4ODQ4/Nzk3LTYyZDcyZjk0/ZDJiZWNjMDhiYzU4/OTM2ZmY5ZjYxYjI2/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9112
+    },
+    {
+      "title": "selena gomez back to you scott cudmore",
+      "sub": "Scott Cudmore\nGood Company",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9133/352a9279-8d60-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/74bd3125-8f94-47a5-a4cf-02b1afdf8a60-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JOUu8FbMjfsJhz7w9oe6ELvNMMAEzIaL0LnV4acc4b4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTMzLTY3MTI3MTVj/M2U1MTMwLjk2NTcy/ODcyLTNkNzY3NDZm/NWYwYTlmZTYyYTI4/MDNmYzFjOGY2M2Fi/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9133
+    },
+    {
+      "title": "billie eilish oxytocin",
+      "sub": "Robert Rodriguez\nAron Levine Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9107/7d0711f8-8d69-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd356ca7-5c5f-4a26-9199-fe52d605b0f8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/VaraSsUZhXwvJ6-UNvX1nEl3tJgO6oTcEsUvR5PiVn4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTA3LTY3MTI2ZWIz/MDllYjM0LjE3NTM3/MDA2LWJhMmNlMjk3/OGI1MDJkZDUwZmQ5/ZjdiMWFmYTI5NTBi/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9107
+    },
+    {
+      "title": "justin bieber company",
+      "sub": "Scott Cudmore\nGood Company",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9122/f08e3fd1-8d60-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bacf4a78-1f85-4ca9-b7a4-dfcc354f5466-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1JMQBqDUi41Kisg3bjgxj0njNo3wlFBF99DeVMscDzQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTIyLTY3MTI3MTNj/YzhhMWYzLjU3ODEy/MTc2LTk0Njk2N2Qx/Mjk0NGUyNjk2NDA2/MDAxMmU1OTA4NDNl/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9122
+    },
+    {
+      "title": "jungkook feat latto",
+      "sub": "Seven",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9121/05880675-8d61-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5cc0ccfb-72c3-4bec-80f8-4ca45c41fee2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_Sg_2qQZ-Fz2MOevLhUwjFnvfgz-mNqnkTFePJijWZo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTIxLTY3MTI3MTNj/YzhkYTE4LjY5NDcw/NzE0LTczZTM4ZTRi/YzY3YTQyNzg4N2I2/ZTYxYjRlZjYyMjU3/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9121
+    },
+    {
+      "title": "Love Hangover - Jennie KIM",
+      "sub": "Bradley & Pablo\nPrettybird",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9424/618ded30-ed0f-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3073bffc-be85-4521-a1d3-d6148f6ccdfc-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/hsTw1Z6oTUL4MqRD9Vq39fyRpaaOnq8oIVVVWGa7aDk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDI0LTY3YWRlMTRi/YmE1ZGY0LjU2NDEy/MzM3LTMyZjAxYzMw/NjU1ZTRiOGJjNTE0/M2VkYmFiZjk2YWE0/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9424,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "mark ronson camila cabello find u again",
+      "sub": "Bradley & Pablo\nPrettybird",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9127/89c7aa4a-8d60-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ab1ec1af-2a17-43b2-ad14-b3a4a92c525a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/yi3YoySDBc1Pcwp3PLSQ5bnsCjdFdlSpQb8gKy6LoAs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTI3LTY3MTI3MGZl/ZThkYjg3LjgzOTMz/MzA0LTIxMGY4ZjM5/NzVjYWRkYmQ0MzQ3/NjE1Y2VlNmVjMTI1/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9127
+    },
+    {
+      "title": "lil nas ft nas rodeo",
+      "sub": "Bradley & Pablo\nPrettybird",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9126/955d2ca2-8d60-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c51a10a4-74e6-49d2-b9e0-4beb2d44c700-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/CQlS0ymvsUkYw1xiBdVpIO_7QqR1peKqOT_1hHiSy-0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTI2LTY3MTI3MTVj/NDViMjY5LjAzMDA5/MDMxLTA0M2Q5ODli/OTdlMjdlYjRkNWEx/Zjk3NGI4MmVkZDNk/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9126
+    },
+    {
+      "title": "kacey musgraves too good to be true",
+      "sub": "Scott Cudmore",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9123/c23728af-8d60-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7a717655-49fc-4c09-a0fe-777e0a1e0acc-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/6-SybvSnnZOER9G2oYpux2Z059HbylL0aOKc83DMLs0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTIzLTY3MTI3MTVj/M2ViNTA5Ljc1NDc2/NjY1LTg3OWY5MDdj/NzA3ZDk5ZTgyYjdk/YzM2ZTA2ODhjMjUw/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 9123
     }
   ]
 }
