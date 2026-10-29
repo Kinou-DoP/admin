@@ -526,15 +526,399 @@
   },
   "categories": [
     "FEATURED",
-    "UNDERWATER",
-    "AUTOMOTIVE",
-    "FOOD",
-    "DOCUMENTARIES",
     "NARRATIVE",
+    "DOCUMENTARIES",
+    "AUTOMOTIVE",
+    "UNDERWATER",
+    "FOOD",
     "COMMERCIALS",
     "MUSIC VIDEO"
   ],
   "clips": [
+    {
+      "title": "LE CHANT DU LOUP UNDERWATER CINEMATOGRAPHY (main cinematographer: Pierre Cottereau)",
+      "sub": "Antonin Baudry",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e3a4431b-ee69-4c23-a01f-4dbfd0d61c3b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/52XA3cbBJeXZzOMjsLK83uvNGpSsGpnbX6qyEgSs7Lw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YmQ2ZTYzZi1kZDU0/LTQ3ODktYjgwNy0y/ODU5MTAzYmVkZjIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDgt/MDUtYS0xNy4yNC4y/NC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6291
+    },
+    {
+      "title": "Mary Magdelene • Underwater Cinematography: Jacques Ballard",
+      "sub": "Garth Davis\nsee-saw films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1554475377-mary-magdaleine-underwater-v2.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/T1Td-FyOxIY6rcyZLOmmZTtF0HseNzS8x2M-jn-oVGE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzQ2OTgxMDEz/L21hcnkuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 3308
+    },
+    {
+      "title": "EMPEREUR DE PARIS UNDERWATER CINEMATOGRAPHY (main cinematographer: Manuel Dacosse)",
+      "sub": "Jean-François Richet",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b282ad67-6752-4a0f-a086-8514aec22b75-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/12hPnsKFcQY5TcTvrwuiIvkvZ1pwMBgfTZ9a5FG_wD4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NTI0YjU4MC01YzM5/LTQ4OGMtOGRmMy0x/M2Y1ODQ2MmQ2YmIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDgt/MDUtYS0xNy4yNi4z/My5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6290
+    },
+    {
+      "title": "Plonger • Underwater Cinematography: Jacques Ballard",
+      "sub": "Mélanie Laurent\nMove Movie",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c3474c61-a504-4312-8318-549d8d90e2ec-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Z9kWMpU4aE9Af94IMRjPbKF0WHzfSETK-dAqbdRVj40/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMjg4ODQzMjI3/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI4LWEtMTIuMjYu/NTUucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4576
+    },
+    {
+      "title": "Forte | Feature Film Trailer",
+      "sub": "Katia Lewkowicz\nQUAD Production",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ae55b4cf-14d2-449b-b93f-f23192a0bbac-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/PmkX-NDwp79_B6ZvET0-UTEhUWyD68dtuV3A1eqsRW0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YTJjMjljNy04ODBm/LTRhYzItYmU5Yy04/OTM0M2IzNjFhMjMv/MTc5MzI4NTM1MjYx/OC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4190
+    },
+    {
+      "title": "The Deep House - Feature Film Trailer",
+      "sub": "Julien Maury, Alexandre Bustillo\nRadar Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2000dee6-0d5c-48f3-8de7-f4673f6eceea-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KlfWgYr_kVdnPfnWJ7o9eBPRv5vTvltXMJVuPzzSRi0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ODAzNWM2OS00OTlj/LTQwNDYtYmQ2Yi0y/ZjcxNTQ1NmMzY2Mv/dGhlLWRlZXAtaG91/c2UtcGhvdG8tMTM3/OTYxMy5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5057
+    },
+    {
+      "title": "Là Où On Va | Feature Film Trailer",
+      "sub": "Jérôme de Gerlahche\nMarty est une entreprise",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1547812011-ba-loov-24is-mix-stereo.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/OyYblzvyyUaPGc-vDslXCq7pANUeOJwWBjiqUeR-Qm8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ2OTM5MTk2/L212NWJtbWpobTJp/MW1kcXR6bW00emMw/MG1keTRsdGt4bm1l/dHp3aTF6amJpbWRl/em9ncTV4a2V5eGtm/cWNnZGVxeHZ5bXRl/eG1qazVtenkudjEu/anBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 3007
+    },
+    {
+      "title": "Deep | Trailer",
+      "sub": "Jean-François Julian\nSave Ferris",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545440290-43512241_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/xYt1CmTwy-g4Gqec75pPetMfa00tK2gOA5hCddgettk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ3MTU4OTE2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTcuMTgu/MzUtMi5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2231
+    },
+    {
+      "title": "Noor / Teaser",
+      "sub": "Guillaume Giovanetti & Cagla Zencirci",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404042-noor-teaser-hd.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/thiKOzVs4VVrfgLikN1LejCdsj_MPnd29cA4U_F9wYA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ3Mjc5OTE5/L3gxMDgwLmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 1324
+    },
+    {
+      "title": "Night Fare",
+      "sub": "Julien Seri\nDaigoro Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357849-night-fare-bande-annonce-hd.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8vg3GnoFme_376mAU_Icc1HvugyFvY6KE3vt5JEKor8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDM4NTU5OTcx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTQuNTQu/MTEucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 335
+    },
+    {
+      "title": "BELIEVE",
+      "sub": "Paul Mignot\nQuad",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545451004-43513409_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/aW-rcK-x9_GiXnhsmCrTkXFjvZz9g6EHbRl83ROf-Bk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzQ4MTQ1NDY1/L2JlbGlldmUuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2434
+    },
+    {
+      "title": "AMA",
+      "sub": "Julie Gautier\nSpark Seeker",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546527737-53412172_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bkT3S_2PllaAQZ8-tayaIGKOkW760Y49kzSwV38Y4hQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNjMxMTAzMTA4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI1LWEtMTIuMzcu/MjYuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2537
+    },
+    {
+      "title": "Wrong Place, Wrong Time",
+      "sub": "The Salto Brothers",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545350493-40109162_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8tkbFi5KZj6k6UUxuyKLlsx4u6y8c1remgDk2_bfGko/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzQ4MzMzNzM2/L3dyb25nLXBsYWNl/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 149
+    },
+    {
+      "title": "Finding",
+      "sub": "Salto Brothers",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545841465-finding-the-movie.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fgU9rk94P25wIbsZ-yPIhQB6j7H2iq7jPWH4dXSArDI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ5NzYwNTg4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTguMDIu/MTIucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2836
+    },
+    {
+      "title": "Narcose",
+      "sub": "Julie Gautier",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545397730-49163659_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2vACMUIoEQHqHtQiL98NwGroa9mepKs7Ppvnmqnhxwk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ5MjQ5MDY1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTcuNTMu/MzIucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 1150
+    },
+    {
+      "title": "Peugeot x Yellowkorner - Teresa Freitas - The atlas of colours",
+      "sub": "Julien Faure\nJACKFLASH",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d79ecf34-f30e-4b61-8640-26d705f6e651-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-hS0OtZxLM2kHLlCJNAMxe-LC8BLBlv_BOFoOWVDllY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MGFmMDUzNy1jMmY2/LTRkNGYtYTJlZi1j/ZTM3NGU0OWU1NmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDItYS0xNC41NS4z/NC5wbmc?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 7969
+    },
+    {
+      "title": "Peugeot x Yellowkorner - Oliviero Toscani - Pure Tuscany",
+      "sub": "Julien Faure\nJACKFLASH",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/afdce112-b87a-4abd-946e-f86b96f12004-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-E-DAwcdgV_lRzvWiFK0kO1L2itUE77gb2yih1Lq3TI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NDI0YTg2MS02Yjhl/LTRjMjUtOTA4Ni00/ODcyMDVhMTg3NDYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDItYS0xNC41My4z/My5wbmc?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 7968
+    },
+    {
+      "title": "Peugeot x Yellowkorner - Laurent Baheux - Into the Kenyan wild",
+      "sub": "Fabien Ecochard\nJACKFLASH",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bde3e69e-b80a-4848-b2f8-63a2a9809573-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/iUozLbKoC5Xv430Q0e3KXnNrOKWysjXE3ZxRYxYnowo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDZiN2RkMi1lNDdk/LTQ0NmMtOWUwMS0x/NGM3NDk0YzI3YmYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDItYS0xNC40OC4x/MC5wbmc?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 7967
+    },
+    {
+      "title": "Peugeot x Yellowkorner - Laurence Laborie - Woman to woman",
+      "sub": "Julien Faure\nJACKFLASH",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7966/c5b290e0-9ee8-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/df942f39-cc94-41fc-a129-5ea2aaebc5c8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ZJj4z8xHt2Unok3BIooa3lvkW3BiiqsiQ1cLp4lYtkA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YjY2NjY4MC04ZWI1/LTQzZTAtYWQ2YS04/NzM1NDQ1Mjc2Mjgv/cGV1Z2VvdC15ZWxs/b3drb3JuZXItMS5w/bmc?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 7966,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Peugeot x Yellowkorner - Mr Fifou - Looking for pride",
+      "sub": "Fabien Ecochard\nJACKFLASH",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/79d0bcf9-c378-40de-8523-64c7da635435-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gfbTuwiXFNbMc0e407xZkDu5Y7nVRB6vWxMMjguy5W8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTIwMjdhMy1jOTQ4/LTQ2ZjUtYWRlMi1j/NjFmMWE5ZTViZDIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDItYS0xNC4zNi40/NC5wbmc?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 7869,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "The Greasy Hands Preachers NOWNESS",
+      "sub": "Clément Bauvais & Arthur de Kersauson",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545360394-40107002_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/W78-VsuiEJdN_XF2NIBVhU9SNiuSWQqtTmkPGkncwng/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzQ4NzU2OTAx/L3RoZS1ncmVhc3kt/aGFuZHMtcHJlYWNo/ZXJzLW5vd25lc3Mu/anBn?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 416
+    },
+    {
+      "title": "Mongolie - Les Nouveaux Explorateurs",
+      "sub": "Christophe Cousin",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545399131-43512240_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gK9r2dkA6IqMpUJ1CXGYEFFkSBEnUrBzHmwJoyhgKik/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1Mzk5MDkwLzQz/NTEyMjQwX2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 1213
+    },
+    {
+      "title": "Ethiopie - Les Nouveaux Explorateurs",
+      "sub": "Jerome Delafosse",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545425463-43511337_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/9FCMS0RlepaKxC4L2D7IVPQFD7w_k2uWSkrUo_z8xNE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDI1NDQ2LzQz/NTExMzM3X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 1894
+    },
+    {
+      "title": "Chili - Les Nouveaux Explorateurs",
+      "sub": "Jerome Delafosse",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545437302-43511324_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/WTE_l7hG7bW2HgSNTXN1uTxSWpt_dD7w9NEYq9y8jG4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDM3MjIxLzQz/NTExMzI0X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 2120
+    },
+    {
+      "title": "Bolivie - Les Nouveaux Explorateurs",
+      "sub": "Jerome Delafosse",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545444779-43512230_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/VyGh-LoeIVRpHocY0-AvJSi0KkODv7TK8TYbgkORqbc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDQ0NjY5LzQz/NTEyMjMwX2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 2312
+    },
+    {
+      "title": "Bangladesh - Les Nouveaux Explorateurs",
+      "sub": "Jerome Delafosse",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450509-43512231_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gB4Di2Kkb60tOKynP72Qu2BXkZ_zz2ZJEDVT2rD7miE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDUwNDcxLzQz/NTEyMjMxX2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 2437
+    },
+    {
+      "title": "Afrique du sud - Les Nouveaux Explorateurs",
+      "sub": "Jerome Delafosse",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545455210-43511314_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/MqAYV6B9nD84sSPpt4itSobEIv1GqTHOv8TqRhLScxE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDU1MTQxLzQz/NTExMzE0X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 2554
+    },
+    {
+      "title": "Les Nouveaux Explorateurs | Documentary Trailer",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545410902-57572389_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Nly03oOPrYqC5u6lYBHz7rQmfoGmSXZYG7zp9MfDFwA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/ZXMtbm91dmVhdXgt/ZXhwbG9yYXRldXJz/LWRvY3VtZW50YXJ5/LXRyYWlsZXItMWM1/NGQ4YmZjYWMwZTdi/OGIwYjJhMWY1ODU2/NTRhYTkuanBn?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 1562
+    },
+    {
+      "title": "Nissan Almera",
+      "sub": "The Salto Brothers\nStandard Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545392414-nissan_almera_60s_vreal_170413.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/U4pfdoZfN5L0mZTCpZ3T4qvtt0SPgtyyoW5bzVW04QU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDM3MzU3ODIw/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTQuMzUu/MzcucG5n?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 1070
+    },
+    {
+      "title": "Lexus",
+      "sub": "Limin Wang\nMidas Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8252/c51d6ffa-c40d-11ee-ade3-028f723623ff.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/66934170-db1a-4345-88e1-3e240b518a3c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/kFf-KZolNCJaY6Rjemk1CgRbP86x7gp_USy1qlTeZ6E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZTQ1Mjc3Yi1hN2Ni/LTQ5YjktYTQ0Yy1m/OGYzNmI0ZWIyZDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MDUtYS0xMS4wMC4z/Ni5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 8252,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Europcar",
+      "sub": "Julien Vallon\nCraft",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10097/2a1a145f-9ee8-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d0a10dc0-df32-457d-a43d-624ec441322e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/oxr1USk9GBjCDoSryOyGYo1WaQGhmF04OtfGzuU0pV0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MzFjMWMyMC02NDkw/LTQ4NTgtYjE4Ni1i/NzAyOWI5ZWYyMWUv/MTc1OTMzODA4NTQ5/My5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 10097
+    },
+    {
+      "title": "Bentley",
+      "sub": "Nick Bartleet\nKode Media Ltd",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/05409030-4565-4a58-95c4-d3743046bfc4-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UMDj5HnTBAdhDm_PCnbwIHeVRx5VpWDvbWXg21qRYJ4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MGE5N2I3Yi0xYzkw/LTRkMjktODlmMy01/MWRkOGNhNTA1ZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MDItYS0xMi4yNi4z/NS5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 4015,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Peugeot x Yellowkorner - Laurence Laborie - Woman to woman",
+      "sub": "Julien Faure\nJACKFLASH",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7966/c5b290e0-9ee8-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/df942f39-cc94-41fc-a129-5ea2aaebc5c8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ZJj4z8xHt2Unok3BIooa3lvkW3BiiqsiQ1cLp4lYtkA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YjY2NjY4MC04ZWI1/LTQzZTAtYWQ2YS04/NzM1NDQ1Mjc2Mjgv/cGV1Z2VvdC15ZWxs/b3drb3JuZXItMS5w/bmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 7966
+    },
+    {
+      "title": "Peugeot 9X8 - Time has a Heartbeat",
+      "sub": "Antoine Elizabé\nElse Prod, BBC Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9014/6b481c40-740d-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/262ebbb5-84bc-43f5-b6b0-8fd1f640199a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/XfwykYR9pWHYwGtgzYIYzV3mhzdgTDmZIxETPWcmEnc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MGE4NzJjZC1kYTMw/LTRlYmUtODZlNi0y/MjYwZWNlM2ZmMjgv/MTcyNjQ3NjEwNzY3/OC5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 9014
+    },
+    {
+      "title": "Lexus",
+      "sub": "Paul Mignot\nEagle Media",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546/dde01bf1-9ee8-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545410071-_lexus_dircut_60s_confo_19h-h264.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/F52mNjsLmDvt3RNVMCHoVPkgxjGQBYLOeZari15PLWU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwMzQ5OTk1NDEw/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTE3LWEtMTUuMzku/MzktMi5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 1546
+    },
+    {
+      "title": "Renault Traffic",
+      "sub": "Philippe Locquet\nProdigious",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b0cf9b01-31f3-4942-8600-7ea563404381-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/6U4R2zlKI8fr80hd5UUDNMk3_tVHaJVShnaBiBqdRx8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MDdhZGRkYS04YWEx/LTQwNDctYjAwOS1k/YTBhYWM3NWY5MGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMTEt/MTctYS0xNy41My4w/OC5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 5540
+    },
+    {
+      "title": "Swerve",
+      "sub": "Cokau",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545364388-61085062_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/y_KwEoe-LGJ69J2nGwIffOm0ugbmNZbGXOJY6_N-y8U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwMzQ5ODg2Njk0/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTE3LWEtMTUuMzgu/MDItMi5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 486
+    },
+    {
+      "title": "Ny Citroën C4 Cactus - Stile",
+      "sub": "James F. Coton",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/21894f68-3bfc-4cfa-bef6-27975cb03e9d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/e1hAwRwhyPyo47lhX8K_sLob_pfSbetUeDtFJCpXyG8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjI1LTYzYTFiYzlh/Y2VmZjQ4LjI2MDgy/ODI2LTdiOGIzZmY4/Yjk5M2I3ZWEwMWRk/NmYxNTEwOWQ4ZTQ5/LmpwZw?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 6625
+    },
+    {
+      "title": "Lexus",
+      "sub": "Xavier Chassaing\nGwantsi",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545410033-lex-ls-26lc-90s.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ykMPGBoN38Gj6tG-M_jEh9mW4BQSf8f2b_nKkhPUF1E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDA5OTk5LzUy/NTQwODAxX2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 1543
+    },
+    {
+      "title": "Lexus",
+      "sub": "Xavier Chassaing",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545409959-60724411_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/FumhwyAW3ODWs7fpeWkKCkB0OdUSonT6ruLBrb4LQrk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwMzUwMDQ3MzM5/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTE3LWEtMTUuNDAu/MjYtMi5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 1541
+    },
+    {
+      "title": "Citroen C4 / The Pickup",
+      "sub": "---\n---",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545433572-6468256_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/d-lt4SP92mdITIaLV6inLF-xm2fQ88f3_1utVvVnXaY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDMzNTQ3LzY0/NjgyNTZfbGFyZ2Uu/anBn?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 2076
+    },
+    {
+      "title": "Renault Duster - Grass",
+      "sub": "julien widmer\nfirecracker",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6262/ca833961-9ee7-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/596e8856-ca2a-45f9-ab6f-b3537a975cf0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fDoanSKNYJBA_a6_R3WnBEHZgrgXMKIgiyjeUHCifrQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YTQ4ZWQ4Ny0zMmY0/LTRkNjMtYmVlMi1k/ZGYzY2IxNWUxY2Yv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MjUtYS0xMC41Mi4y/MS5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 6262
+    },
+    {
+      "title": "Citroen Ami One / User Journey (Dircut)",
+      "sub": "Camille & Jean-Baptiste\nSoldats",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1552383437-citroen-ami-one-user-journey-director-s-cut.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dtRNVOyVwxcnTbGFHQEr97VUebXCoxlpieNsX-7SH58/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/aXRyb2VuLWFtaS1v/bmUtdXNlci1qb3Vy/bmV5LWRpcmN1dC1i/Y2Y5YjM5ZjQzNDRj/M2FiM2IxNGNmNzQ0/ZjllMDkyOS5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 3260
+    },
+    {
+      "title": "Mazda",
+      "sub": "The Salto Brothers\nN-Europa",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1357/d4c65e42-4b21-11ee-ade3-028f723623ff.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404852-mazda-salto-brothers-n-europa.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Gfn55zTKtycKKYw9cb-AvhfMaC4RIMkLExXQmGYYRYw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjljNmNhYS04ZmFi/LTRmZWEtYWMxMS02/ZDk3ZGEzZDFiZWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MDItYS0xMi40Mi4w/Mi5wbmc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 1357
+    },
+    {
+      "title": "i-Cockpit - Charlotte",
+      "sub": "Cokau\nGang Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1769/fdeeff05-9ee7-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545420000-29290440_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/93YWqJZxoLxphYELsttTjpmKekn4FeCDasDgM9msddo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDM3NzQyMTE0/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTQuNDEu/NDgucG5n?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 1769
+    },
+    {
+      "title": "Crossovers - Stories by the Million [Trailer]",
+      "sub": "Julien Rocher\nWanda",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545445848-nissan-crossovers-stories-by-the-million-trailer-julien-rocher-wanda.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ICak9wKCQkT50vYY3pswgd5VJcsaFe9CJX0iniqYLgo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzY2NDIzODM1/L2Nyb3Nzb3Zlci5q/cGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 2325
+    },
     {
       "title": "Mary Magdelene • Underwater Cinematography: Jacques Ballard",
       "sub": "Garth Davis\nsee-saw films",
@@ -661,164 +1045,6 @@
       "slate": 1150
     },
     {
-      "title": "Nissan Almera",
-      "sub": "The Salto Brothers\nStandard Films",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545392414-nissan_almera_60s_vreal_170413.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/U4pfdoZfN5L0mZTCpZ3T4qvtt0SPgtyyoW5bzVW04QU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDM3MzU3ODIw/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTQuMzUu/MzcucG5n?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 1070
-    },
-    {
-      "title": "Lexus",
-      "sub": "Limin Wang\nMidas Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8252/c51d6ffa-c40d-11ee-ade3-028f723623ff.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/66934170-db1a-4345-88e1-3e240b518a3c-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/kFf-KZolNCJaY6Rjemk1CgRbP86x7gp_USy1qlTeZ6E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZTQ1Mjc3Yi1hN2Ni/LTQ5YjktYTQ0Yy1m/OGYzNmI0ZWIyZDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MDUtYS0xMS4wMC4z/Ni5wbmc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 8252,
-      "featured": true,
-      "featuredOrder": 9
-    },
-    {
-      "title": "Europcar",
-      "sub": "Julien Vallon\nCraft",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10097/2a1a145f-9ee8-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d0a10dc0-df32-457d-a43d-624ec441322e-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/oxr1USk9GBjCDoSryOyGYo1WaQGhmF04OtfGzuU0pV0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MzFjMWMyMC02NDkw/LTQ4NTgtYjE4Ni1i/NzAyOWI5ZWYyMWUv/MTc1OTMzODA4NTQ5/My5qcGc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 10097
-    },
-    {
-      "title": "Bentley",
-      "sub": "Nick Bartleet\nKode Media Ltd",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/05409030-4565-4a58-95c4-d3743046bfc4-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/UMDj5HnTBAdhDm_PCnbwIHeVRx5VpWDvbWXg21qRYJ4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MGE5N2I3Yi0xYzkw/LTRkMjktODlmMy01/MWRkOGNhNTA1ZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MDItYS0xMi4yNi4z/NS5wbmc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 4015,
-      "featured": true,
-      "featuredOrder": 5
-    },
-    {
-      "title": "Peugeot x Yellowkorner - Laurence Laborie - Woman to woman",
-      "sub": "Julien Faure\nJACKFLASH",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7966/c5b290e0-9ee8-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/df942f39-cc94-41fc-a129-5ea2aaebc5c8-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/ZJj4z8xHt2Unok3BIooa3lvkW3BiiqsiQ1cLp4lYtkA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YjY2NjY4MC04ZWI1/LTQzZTAtYWQ2YS04/NzM1NDQ1Mjc2Mjgv/cGV1Z2VvdC15ZWxs/b3drb3JuZXItMS5w/bmc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 7966,
-      "featured": true,
-      "featuredOrder": 4
-    },
-    {
-      "title": "Peugeot 9X8 - Time has a Heartbeat",
-      "sub": "Antoine Elizabé\nElse Prod, BBC Studios",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9014/6b481c40-740d-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/262ebbb5-84bc-43f5-b6b0-8fd1f640199a-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/XfwykYR9pWHYwGtgzYIYzV3mhzdgTDmZIxETPWcmEnc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MGE4NzJjZC1kYTMw/LTRlYmUtODZlNi0y/MjYwZWNlM2ZmMjgv/MTcyNjQ3NjEwNzY3/OC5qcGc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 9014
-    },
-    {
-      "title": "Lexus",
-      "sub": "Paul Mignot\nEagle Media",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546/dde01bf1-9ee8-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545410071-_lexus_dircut_60s_confo_19h-h264.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/F52mNjsLmDvt3RNVMCHoVPkgxjGQBYLOeZari15PLWU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwMzQ5OTk1NDEw/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTE3LWEtMTUuMzku/MzktMi5wbmc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 1546
-    },
-    {
-      "title": "Renault Traffic",
-      "sub": "Philippe Locquet\nProdigious",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b0cf9b01-31f3-4942-8600-7ea563404381-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/6U4R2zlKI8fr80hd5UUDNMk3_tVHaJVShnaBiBqdRx8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MDdhZGRkYS04YWEx/LTQwNDctYjAwOS1k/YTBhYWM3NWY5MGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMTEt/MTctYS0xNy41My4w/OC5wbmc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 5540
-    },
-    {
-      "title": "Swerve",
-      "sub": "Cokau",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545364388-61085062_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/y_KwEoe-LGJ69J2nGwIffOm0ugbmNZbGXOJY6_N-y8U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwMzQ5ODg2Njk0/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTE3LWEtMTUuMzgu/MDItMi5wbmc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 486
-    },
-    {
-      "title": "Ny Citroën C4 Cactus - Stile",
-      "sub": "James F. Coton",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/21894f68-3bfc-4cfa-bef6-27975cb03e9d-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/e1hAwRwhyPyo47lhX8K_sLob_pfSbetUeDtFJCpXyG8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjI1LTYzYTFiYzlh/Y2VmZjQ4LjI2MDgy/ODI2LTdiOGIzZmY4/Yjk5M2I3ZWEwMWRk/NmYxNTEwOWQ4ZTQ5/LmpwZw?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 6625
-    },
-    {
-      "title": "Lexus",
-      "sub": "Xavier Chassaing\nGwantsi",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545410033-lex-ls-26lc-90s.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/ykMPGBoN38Gj6tG-M_jEh9mW4BQSf8f2b_nKkhPUF1E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDA5OTk5LzUy/NTQwODAxX2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 1543
-    },
-    {
-      "title": "Lexus",
-      "sub": "Xavier Chassaing",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545409959-60724411_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/FumhwyAW3ODWs7fpeWkKCkB0OdUSonT6ruLBrb4LQrk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwMzUwMDQ3MzM5/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTE3LWEtMTUuNDAu/MjYtMi5wbmc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 1541
-    },
-    {
-      "title": "Citroen C4 / The Pickup",
-      "sub": "---\n---",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545433572-6468256_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/d-lt4SP92mdITIaLV6inLF-xm2fQ88f3_1utVvVnXaY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDMzNTQ3LzY0/NjgyNTZfbGFyZ2Uu/anBn?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 2076
-    },
-    {
-      "title": "Renault Duster - Grass",
-      "sub": "julien widmer\nfirecracker",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6262/ca833961-9ee7-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/596e8856-ca2a-45f9-ab6f-b3537a975cf0-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/fDoanSKNYJBA_a6_R3WnBEHZgrgXMKIgiyjeUHCifrQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YTQ4ZWQ4Ny0zMmY0/LTRkNjMtYmVlMi1k/ZGYzY2IxNWUxY2Yv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MjUtYS0xMC41Mi4y/MS5qcGc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 6262
-    },
-    {
-      "title": "Citroen Ami One / User Journey (Dircut)",
-      "sub": "Camille & Jean-Baptiste\nSoldats",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1552383437-citroen-ami-one-user-journey-director-s-cut.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/dtRNVOyVwxcnTbGFHQEr97VUebXCoxlpieNsX-7SH58/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/aXRyb2VuLWFtaS1v/bmUtdXNlci1qb3Vy/bmV5LWRpcmN1dC1i/Y2Y5YjM5ZjQzNDRj/M2FiM2IxNGNmNzQ0/ZjllMDkyOS5qcGc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 3260
-    },
-    {
-      "title": "Mazda",
-      "sub": "The Salto Brothers\nN-Europa",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1357/d4c65e42-4b21-11ee-ade3-028f723623ff.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404852-mazda-salto-brothers-n-europa.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Gfn55zTKtycKKYw9cb-AvhfMaC4RIMkLExXQmGYYRYw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjljNmNhYS04ZmFi/LTRmZWEtYWMxMS02/ZDk3ZGEzZDFiZWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MDItYS0xMi40Mi4w/Mi5wbmc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 1357
-    },
-    {
-      "title": "i-Cockpit - Charlotte",
-      "sub": "Cokau\nGang Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1769/fdeeff05-9ee7-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545420000-29290440_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/93YWqJZxoLxphYELsttTjpmKekn4FeCDasDgM9msddo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDM3NzQyMTE0/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTQuNDEu/NDgucG5n?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 1769
-    },
-    {
-      "title": "Crossovers - Stories by the Million [Trailer]",
-      "sub": "Julien Rocher\nWanda",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545445848-nissan-crossovers-stories-by-the-million-trailer-julien-rocher-wanda.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/ICak9wKCQkT50vYY3pswgd5VJcsaFe9CJX0iniqYLgo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzY2NDIzODM1/L2Nyb3Nzb3Zlci5q/cGc?v=1&format=webp",
-      "cat": "AUTOMOTIVE",
-      "slate": 2325
-    },
-    {
       "title": "McDo 280",
       "sub": "Maud Poilpré\nElse-4Good-OMNICOM",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11093/65bdbd3d-7a17-11f1-a349-0215583debcb.mp4",
@@ -937,240 +1163,6 @@
       "img": "https://images.slatecdn.net/cnHHV-oKhfR8h3wmeSWLQkYIaxaewJYggbWlVKa9qHs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZmI3NjA3ZC05YWI0/LTRjOGQtYmVlZS1j/MzQyZjkzZjk5Yjkv/MTc0NjUzMjQ1MTY3/Ny5qcGc?v=1&format=webp",
       "cat": "FOOD",
       "slate": 9792
-    },
-    {
-      "title": "Peugeot x Yellowkorner - Teresa Freitas - The atlas of colours",
-      "sub": "Julien Faure\nJACKFLASH",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d79ecf34-f30e-4b61-8640-26d705f6e651-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/-hS0OtZxLM2kHLlCJNAMxe-LC8BLBlv_BOFoOWVDllY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MGFmMDUzNy1jMmY2/LTRkNGYtYTJlZi1j/ZTM3NGU0OWU1NmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDItYS0xNC41NS4z/NC5wbmc?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 7969
-    },
-    {
-      "title": "Peugeot x Yellowkorner - Oliviero Toscani - Pure Tuscany",
-      "sub": "Julien Faure\nJACKFLASH",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/afdce112-b87a-4abd-946e-f86b96f12004-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/-E-DAwcdgV_lRzvWiFK0kO1L2itUE77gb2yih1Lq3TI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NDI0YTg2MS02Yjhl/LTRjMjUtOTA4Ni00/ODcyMDVhMTg3NDYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDItYS0xNC41My4z/My5wbmc?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 7968
-    },
-    {
-      "title": "Peugeot x Yellowkorner - Laurent Baheux - Into the Kenyan wild",
-      "sub": "Fabien Ecochard\nJACKFLASH",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bde3e69e-b80a-4848-b2f8-63a2a9809573-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/iUozLbKoC5Xv430Q0e3KXnNrOKWysjXE3ZxRYxYnowo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDZiN2RkMi1lNDdk/LTQ0NmMtOWUwMS0x/NGM3NDk0YzI3YmYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDItYS0xNC40OC4x/MC5wbmc?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 7967
-    },
-    {
-      "title": "Peugeot x Yellowkorner - Laurence Laborie - Woman to woman",
-      "sub": "Julien Faure\nJACKFLASH",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7966/c5b290e0-9ee8-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/df942f39-cc94-41fc-a129-5ea2aaebc5c8-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/ZJj4z8xHt2Unok3BIooa3lvkW3BiiqsiQ1cLp4lYtkA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YjY2NjY4MC04ZWI1/LTQzZTAtYWQ2YS04/NzM1NDQ1Mjc2Mjgv/cGV1Z2VvdC15ZWxs/b3drb3JuZXItMS5w/bmc?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 7966
-    },
-    {
-      "title": "Peugeot x Yellowkorner - Mr Fifou - Looking for pride",
-      "sub": "Fabien Ecochard\nJACKFLASH",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/79d0bcf9-c378-40de-8523-64c7da635435-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/gfbTuwiXFNbMc0e407xZkDu5Y7nVRB6vWxMMjguy5W8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTIwMjdhMy1jOTQ4/LTQ2ZjUtYWRlMi1j/NjFmMWE5ZTViZDIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDItYS0xNC4zNi40/NC5wbmc?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 7869,
-      "featured": true,
-      "featuredOrder": 8
-    },
-    {
-      "title": "The Greasy Hands Preachers NOWNESS",
-      "sub": "Clément Bauvais & Arthur de Kersauson",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545360394-40107002_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/W78-VsuiEJdN_XF2NIBVhU9SNiuSWQqtTmkPGkncwng/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzQ4NzU2OTAx/L3RoZS1ncmVhc3kt/aGFuZHMtcHJlYWNo/ZXJzLW5vd25lc3Mu/anBn?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 416
-    },
-    {
-      "title": "Mongolie - Les Nouveaux Explorateurs",
-      "sub": "Christophe Cousin",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545399131-43512240_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/gK9r2dkA6IqMpUJ1CXGYEFFkSBEnUrBzHmwJoyhgKik/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1Mzk5MDkwLzQz/NTEyMjQwX2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 1213
-    },
-    {
-      "title": "Ethiopie - Les Nouveaux Explorateurs",
-      "sub": "Jerome Delafosse",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545425463-43511337_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/9FCMS0RlepaKxC4L2D7IVPQFD7w_k2uWSkrUo_z8xNE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDI1NDQ2LzQz/NTExMzM3X2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 1894
-    },
-    {
-      "title": "Chili - Les Nouveaux Explorateurs",
-      "sub": "Jerome Delafosse",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545437302-43511324_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/WTE_l7hG7bW2HgSNTXN1uTxSWpt_dD7w9NEYq9y8jG4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDM3MjIxLzQz/NTExMzI0X2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 2120
-    },
-    {
-      "title": "Bolivie - Les Nouveaux Explorateurs",
-      "sub": "Jerome Delafosse",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545444779-43512230_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/VyGh-LoeIVRpHocY0-AvJSi0KkODv7TK8TYbgkORqbc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDQ0NjY5LzQz/NTEyMjMwX2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 2312
-    },
-    {
-      "title": "Bangladesh - Les Nouveaux Explorateurs",
-      "sub": "Jerome Delafosse",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450509-43512231_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/gB4Di2Kkb60tOKynP72Qu2BXkZ_zz2ZJEDVT2rD7miE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDUwNDcxLzQz/NTEyMjMxX2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 2437
-    },
-    {
-      "title": "Afrique du sud - Les Nouveaux Explorateurs",
-      "sub": "Jerome Delafosse",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545455210-43511314_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/MqAYV6B9nD84sSPpt4itSobEIv1GqTHOv8TqRhLScxE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDU1MTQxLzQz/NTExMzE0X2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 2554
-    },
-    {
-      "title": "Les Nouveaux Explorateurs | Documentary Trailer",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545410902-57572389_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Nly03oOPrYqC5u6lYBHz7rQmfoGmSXZYG7zp9MfDFwA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/ZXMtbm91dmVhdXgt/ZXhwbG9yYXRldXJz/LWRvY3VtZW50YXJ5/LXRyYWlsZXItMWM1/NGQ4YmZjYWMwZTdi/OGIwYjJhMWY1ODU2/NTRhYTkuanBn?v=1&format=webp",
-      "cat": "DOCUMENTARIES",
-      "slate": 1562
-    },
-    {
-      "title": "The Deep House - Feature Film Trailer",
-      "sub": "Julien Maury, Alexandre Bustillo\nRadar Films",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2000dee6-0d5c-48f3-8de7-f4673f6eceea-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/KlfWgYr_kVdnPfnWJ7o9eBPRv5vTvltXMJVuPzzSRi0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ODAzNWM2OS00OTlj/LTQwNDYtYmQ2Yi0y/ZjcxNTQ1NmMzY2Mv/dGhlLWRlZXAtaG91/c2UtcGhvdG8tMTM3/OTYxMy5qcGc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 5057
-    },
-    {
-      "title": "Forte | Feature Film Trailer",
-      "sub": "Katia Lewkowicz\nQUAD Production",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ae55b4cf-14d2-449b-b93f-f23192a0bbac-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/4Yshp_4qL8bOmkXgjNeHOa_FV06lh-JygjGP1Nkf4t4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/M2U0ZjA2My0yNjI2/LTRlNDEtYWRlZC1k/ZDcwYzI3MWZkNTgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDEt/MDQtYS0xMS4zOS40/Mi5wbmc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 4190
-    },
-    {
-      "title": "Là Où On Va | Feature Film Trailer",
-      "sub": "Jérôme de Gerlahche\nMarty est une entreprise",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1547812011-ba-loov-24is-mix-stereo.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/OyYblzvyyUaPGc-vDslXCq7pANUeOJwWBjiqUeR-Qm8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ2OTM5MTk2/L212NWJtbWpobTJp/MW1kcXR6bW00emMw/MG1keTRsdGt4bm1l/dHp3aTF6amJpbWRl/em9ncTV4a2V5eGtm/cWNnZGVxeHZ5bXRl/eG1qazVtenkudjEu/anBn?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 3007
-    },
-    {
-      "title": "Deep | Trailer",
-      "sub": "Jean-François Julian\nSave Ferris",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545440290-43512241_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/xYt1CmTwy-g4Gqec75pPetMfa00tK2gOA5hCddgettk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ3MTU4OTE2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTcuMTgu/MzUtMi5wbmc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 2231
-    },
-    {
-      "title": "Noor / Teaser",
-      "sub": "Guillaume Giovanetti & Cagla Zencirci",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404042-noor-teaser-hd.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/thiKOzVs4VVrfgLikN1LejCdsj_MPnd29cA4U_F9wYA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ3Mjc5OTE5/L3gxMDgwLmpwZw?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 1324
-    },
-    {
-      "title": "Night Fare",
-      "sub": "Julien Seri\nDaigoro Films",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357849-night-fare-bande-annonce-hd.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/8vg3GnoFme_376mAU_Icc1HvugyFvY6KE3vt5JEKor8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDM4NTU5OTcx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTQuNTQu/MTEucG5n?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 335
-    },
-    {
-      "title": "LE CHANT DU LOUP UNDERWATER CINEMATOGRAPHY (main cinematographer: Pierre Cottereau)",
-      "sub": "Antonin Baudry",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e3a4431b-ee69-4c23-a01f-4dbfd0d61c3b-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/52XA3cbBJeXZzOMjsLK83uvNGpSsGpnbX6qyEgSs7Lw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YmQ2ZTYzZi1kZDU0/LTQ3ODktYjgwNy0y/ODU5MTAzYmVkZjIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDgt/MDUtYS0xNy4yNC4y/NC5wbmc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 6291
-    },
-    {
-      "title": "EMPEREUR DE PARIS UNDERWATER CINEMATOGRAPHY (main cinematographer: Manuel Dacosse)",
-      "sub": "Jean-François Richet",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b282ad67-6752-4a0f-a086-8514aec22b75-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/12hPnsKFcQY5TcTvrwuiIvkvZ1pwMBgfTZ9a5FG_wD4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NTI0YjU4MC01YzM5/LTQ4OGMtOGRmMy0x/M2Y1ODQ2MmQ2YmIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDgt/MDUtYS0xNy4yNi4z/My5wbmc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 6290
-    },
-    {
-      "title": "B-Camera: Jacques Ballard",
-      "sub": "Garth Davis\nsee-saw films",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1554473176-mary-magdaleine-jerusalem-temple-of-god-v1.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/NxgXteXFyOg4hcKP5I5ucJMgczC87vVXIuwgHaVm4tI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMjg5MTg3MjAx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI4LWEtMTIuMzIu/NDctMi5wbmc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 3307
-    },
-    {
-      "title": "Mary Magdelene • Underwater Cinematography: Jacques Ballard",
-      "sub": "Garth Davis\nsee-saw films",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1554475377-mary-magdaleine-underwater-v2.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/T1Td-FyOxIY6rcyZLOmmZTtF0HseNzS8x2M-jn-oVGE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzQ2OTgxMDEz/L21hcnkuanBn?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 3308
-    },
-    {
-      "title": "Plonger • Underwater Cinematography: Jacques Ballard",
-      "sub": "Mélanie Laurent\nMove Movie",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c3474c61-a504-4312-8318-549d8d90e2ec-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Z9kWMpU4aE9Af94IMRjPbKF0WHzfSETK-dAqbdRVj40/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMjg4ODQzMjI3/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI4LWEtMTIuMjYu/NTUucG5n?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 4576
-    },
-    {
-      "title": "BELIEVE",
-      "sub": "Paul Mignot\nQuad",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545451004-43513409_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/aW-rcK-x9_GiXnhsmCrTkXFjvZz9g6EHbRl83ROf-Bk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzQ4MTQ1NDY1/L2JlbGlldmUuanBn?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 2434
-    },
-    {
-      "title": "AMA",
-      "sub": "Julie Gautier\nSpark Seeker",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546527737-53412172_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/bkT3S_2PllaAQZ8-tayaIGKOkW760Y49kzSwV38Y4hQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNjMxMTAzMTA4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI1LWEtMTIuMzcu/MjYuanBn?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 2537
-    },
-    {
-      "title": "Wrong Place, Wrong Time",
-      "sub": "The Salto Brothers",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545350493-40109162_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/8tkbFi5KZj6k6UUxuyKLlsx4u6y8c1remgDk2_bfGko/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk4MzQ4MzMzNzM2/L3dyb25nLXBsYWNl/LmpwZw?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 149
-    },
-    {
-      "title": "Finding",
-      "sub": "Salto Brothers",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545841465-finding-the-movie.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/fgU9rk94P25wIbsZ-yPIhQB6j7H2iq7jPWH4dXSArDI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ5NzYwNTg4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTguMDIu/MTIucG5n?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 2836
-    },
-    {
-      "title": "Narcose",
-      "sub": "Julie Gautier",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545397730-49163659_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/2vACMUIoEQHqHtQiL98NwGroa9mepKs7Ppvnmqnhxwk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMDQ5MjQ5MDY1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI1LWEtMTcuNTMu/MzIucG5n?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 1150
     },
     {
       "title": "Lattafa • Khamrah Mira",
