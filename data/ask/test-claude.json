@@ -1,5 +1,18 @@
 {
-  "items": [{ "kind": "stills", "link": "https://shots.re/19c405" }],
+  "items": [
+    {
+      "kind": "stills",
+      "link": "https://shots.re/19c405",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/burger-king-krispper-tenders-only-food-shots",
+        "title": "BURGER KING - Krispper Tenders (only food shots)",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/819e9cef-8a04-4a38-ba22-b56a077e9e2f-1280x720.2500.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10079/69c2fb36-8f27-11f0-9ce3-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/2eIiX_vks7rbpVCsBJ4IOSbiwM3_PXbQeBgampIT1Ns/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDA3OS02OGMyZWRk/NTdlNmMzOC4wNTcx/Mzc4OS0yMjllYjM4/NjNkNDljYzE5NDU4/YzRmNzlkNTQyNDU1/My5qcGc.webp"
+      }
+    }
+  ],
   "at": "2026-10-30T11:21:31Z",
-  "by": "test-claude"
+  "by": "test-claude",
+  "doneAt": "2026-10-30T11:21:47.142Z"
 }
