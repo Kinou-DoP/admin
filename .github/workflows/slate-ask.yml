@@ -1,0 +1,30 @@
+# Lecture de Slate pour l'admin (import d'un bundle, liens de stills / vidéos sous un film, bande de l'accueil), à la place des
+# fonctions Netlify du site, coupées (« Usage exceeded », 30/10). L'admin dépose une demande dans data/ask/, le robot y écrit
+# la réponse (tools/ask.mjs). Gratuit (Actions, dépôt public). Un passage traite toutes les demandes en attente.
+name: Lecture Slate pour l'admin
+on:
+  push:
+    branches: [main]
+    paths: ["data/ask/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: slate-ask
+jobs:
+  ask:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node tools/ask.mjs
+      - name: Enregistrer
+        run: |
+          git add -A data/ask
+          if ! git diff --cached --quiet; then
+            git config user.name "kinou-robot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Slate : réponses du robot"
+            for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 3; done
+          fi
