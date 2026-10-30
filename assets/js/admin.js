@@ -172,12 +172,53 @@
   }
 
   // ---------- API du site (Slate) ----------
+  // Lecture de Slate : par les fonctions Netlify du site (SITE) ; si elles ne répondent pas (coupées : « Usage exceeded », 30/10),
+  // par le robot GitHub : demande déposée dans data/ask/, réponse écrite dans le même fichier par tools/ask.mjs (environ 1 min).
+  // Les demandes faites ensemble (ex. tous les liens de stills d'une fiche) partent dans un seul fichier.
+  var siteDown = false, askQ = [], askT = 0;
+  function slateWait(fast) { return siteDown ? " (par le robot GitHub : environ 1 min)…" : fast; }
+  function siteGet(url, fail) { // rejet { down: true } = fonctions Netlify hors service
+    if (siteDown) return Promise.reject({ down: true });
+    return fetch(url, { cache: "no-store" }).then(function (r) {
+      if (r.status === 503) { siteDown = true; throw { down: true }; }
+      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || fail); return d; });
+    }, function () { siteDown = true; throw { down: true }; });
+  }
+  function orRobot(kind, link) { return function (e) { if (e && e.down) return askRobot(kind, link); throw e; }; }
+  function askRobot(kind, link) {
+    return new Promise(function (ok, ko) {
+      askQ.push({ kind: kind, link: String(link || "").trim(), ok: ok, ko: ko });
+      clearTimeout(askT); askT = setTimeout(askSend, 300);
+    });
+  }
+  function askSend() {
+    var q = askQ, t0 = Date.now(), who = user && user.login || "";
+    var path = "data/ask/" + t0 + "-" + Math.random().toString(36).slice(2, 7) + ".json";
+    askQ = [];
+    function fail(e) { q.forEach(function (x) { x.ko(e); }); }
+    function send(n) { // commit refusé si une autre publication passe au même moment : on réessaie
+      return commit([{ path: path, text: json({ items: q.map(function (x) { return { kind: x.kind, link: x.link }; }), at: new Date().toISOString(), by: who }) }],
+        "Slate : demande de lecture (admin, " + who + ")").catch(function (e) {
+        if (n <= 0) throw e;
+        return new Promise(function (r) { setTimeout(r, 1500); }).then(function () { return send(n - 1); });
+      });
+    }
+    send(3).then(function () {
+      (function poll() {
+        setTimeout(function () {
+          if (Date.now() - t0 > 300000) return fail(new Error("Le robot GitHub n'a pas répondu (5 min) : réessayez."));
+          readFile(path).then(function (d) {
+            if (!d || !d.doneAt) return poll();
+            q.forEach(function (x, i) { var a = (d.items || [])[i] || {}; if (a.error || !a.answer) x.ko(new Error(a.error || "pas de réponse")); else x.ok(a.answer); });
+          }, poll);
+        }, 5000);
+      })();
+    }, fail);
+  }
   function importBundle(link) {
     var id = bundleId(link);
     if (!id) return Promise.reject(new Error("Lien non reconnu : collez un lien shots.re/… ou kinou.slateapp.com/bundles/…"));
-    return fetch(SITE + "/api/bundle/" + id, { cache: "no-store" }).then(function (r) {
-      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture du bundle impossible"); return d; });
-    });
+    return siteGet(SITE + "/api/bundle/" + id, "lecture du bundle impossible").catch(orRobot("bundle", /^[0-9a-f-]{36}$/.test(id) ? id : "https://shots.re/" + id));
   }
   // Demande une fois chaque vignette allégée au site : Netlify la prépare et la garde en cache,
   // le premier visiteur n'attend donc pas sa fabrication.
@@ -195,20 +236,17 @@
   // est ajouté juste après la publication par le robot GitHub (tools/fill-home.mjs).
   function importStills(link) {
     link = shortLink(link);
-    function get(api) {
-      return fetch(SITE + api + encodeURIComponent(link.trim()), { cache: "no-store" }).then(function (r) {
-        return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture du lien impossible"); return d; });
-      });
-    }
+    function get(api) { return siteGet(SITE + api + encodeURIComponent(link.trim()), "lecture du lien impossible"); }
     return get("/api/stills?link=").catch(function (e) {
+      if (e && e.down) throw e;
       return get("/api/reel?link=").then(function (d) {
         // Certaines vidéos Slate n'ont pas d'extrait (seulement le film complet) : on les garde quand même,
         // le robot GitHub ajoute leur film complet à la publication.
         var f = d.films && d.films[0];
         if (!f) throw e;
         return { link: d.link, title: f.title, full: f.full, video: f.video, img: f.img };
-      }, function () { throw e; });
-    });
+      }, function (e2) { throw e2 && e2.down ? e2 : e; });
+    }).catch(orRobot("stills", link));
   }
   // Sous un film, dans le lecteur du site : galeries de stills et autres vidéos (liens Slate « work » ou shots.re),
   // dans l'ordre choisi ici. Une case vide en bas pour ajouter un lien de plus ; flèches pour réordonner.
@@ -249,7 +287,9 @@
       var job = jobs[next++];
       return job().catch(function () { failed++; }).then(worker);
     }
-    return Promise.all([worker(), worker(), worker(), worker()]).then(function () { return { links: jobs.length, failed: failed }; });
+    // Robot GitHub (Netlify hors service) : toutes les lectures d'un coup, pour qu'elles partent dans une seule demande.
+    var all = siteDown ? jobs.map(function (job) { return job().catch(function () { failed++; }); }) : [worker(), worker(), worker(), worker()];
+    return Promise.all(all).then(function () { return { links: jobs.length, failed: failed }; });
   }
   function relinkMsg(r) {
     if (!r.links) return "";
@@ -267,7 +307,7 @@
         if (!v) { if (x) { list.splice(i, 1); save(list); } return; }
         if (x && !force && v === x.link) return; // Entrée : relit toujours Slate
         if (input._busy === v) return; // Entrée déclenche aussi « change »
-        input._busy = v; st.textContent = "Lecture du lien…";
+        input._busy = v; st.textContent = "Lecture du lien" + slateWait("…");
         importStills(v).then(function (d) {
           var n = extraOf(d);
           if (x) list[i] = n; else list.push(n);
@@ -297,6 +337,7 @@
     return box;
   }
   function refreshSite(slug) {
+    if (siteDown) return Promise.reject(new Error("fonctions du site hors service"));
     return fetch(SITE + "/api/refresh/" + slug, { method: "POST", headers: { Authorization: "Bearer " + token } })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "mise à jour refusée"); }); });
   }
@@ -579,7 +620,7 @@
     var st = el("p", { class: "hint" });
     var imp = el("button", { class: "btn", text: state.bundle ? "Relire le bundle" : "Importer" });
     imp.addEventListener("click", function () {
-      imp.disabled = true; st.textContent = "Lecture du bundle sur Slate (environ 5 s)…";
+      imp.disabled = true; st.textContent = "Lecture du bundle sur Slate" + slateWait(" (environ 5 s)…");
       importBundle(input.value).then(function (d) {
         // Chef op déjà dans la liste du site (même nom) : on garde son adresse actuelle,
         // et s'il a déjà une fiche, on ouvre celle-ci plutôt que d'en créer une seconde.
@@ -588,7 +629,7 @@
       }).then(function (r) {
         var d = r[0], known = r[1];
         if (r[2]) { dirty = false; flash = d.name + " a déjà une fiche : la voici. Utilisez « Relire le bundle » pour la mettre à jour."; location.hash = "#/dp/" + known.slug; return; }
-        st.textContent = "Lecture des liens ajoutés sous les films…";
+        st.textContent = "Lecture des liens ajoutés sous les films" + slateWait("…");
         return relinkAll(Object.keys(state.overrides).map(function (k) { return state.overrides[k]; })).then(function (rl) { r[3] = rl; return r; });
       }).then(function (r) {
         if (!r) return;
@@ -948,7 +989,7 @@
         if (!v) { if (cur) { setOverride(c, "hover"); hst.textContent = ""; sync(); touch(); } return; }
         if (!force && cur && v === cur.link) return;
         if (hin._busy === v) return; // Entrée déclenche aussi « change »
-        hin._busy = v; hst.textContent = "Lecture du lien…";
+        hin._busy = v; hst.textContent = "Lecture du lien" + slateWait("…");
         importStills(v).then(function (d) {
           hin._busy = null;
           if (d.stills) throw new Error("C'est une page de stills : collez le lien d'une vidéo.");
@@ -1283,9 +1324,7 @@
   var home = null;
   function importReel(link) {
     link = shortLink(link);
-    return fetch(SITE + "/api/reel?link=" + encodeURIComponent(link.trim()), { cache: "no-store" }).then(function (r) {
-      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "lecture de la bande impossible"); return d; });
-    });
+    return siteGet(SITE + "/api/reel?link=" + encodeURIComponent(link.trim()), "lecture de la bande impossible").catch(orRobot("reel", link.trim()));
   }
   function dpOf(name) {
     var k = slugify(name), e = index.dps.filter(function (d) { return slugify(d.name) === k; })[0];
@@ -1319,9 +1358,9 @@
     var imp = el("button", { class: "btn primary", text: home.reel ? "Rafraîchir" : "Importer" }), st = el("p", { class: "hint" });
     function load() {
       if (!input.value.trim()) return;
-      imp.disabled = true; st.textContent = "Lecture de la bande…";
+      imp.disabled = true; st.textContent = "Lecture de la bande" + slateWait("…");
       importReel(input.value).then(function (d) {
-        st.textContent = "Lecture des liens ajoutés sous les films…";
+        st.textContent = "Lecture des liens ajoutés sous les films" + slateWait("…");
         return relinkAll(Object.keys(home.overrides).map(function (k) { return home.overrides[k]; })).then(function (rl) { return [d, rl]; });
       }).then(function (r) {
         var d = r[0];
@@ -1949,6 +1988,7 @@
     histBox.appendChild(list);
     gh("/repos/" + REPO + "/commits?sha=" + BRANCH + "&per_page=40&path=" + encodeURIComponent(path || "data")).then(function (cs) {
       list.textContent = "";
+      cs = cs.filter(function (c) { return !/^Slate : /.test(c.commit.message); }); // demandes de lecture au robot : pas des publications
       if (!cs.length) list.appendChild(el("li", { class: "hint", text: "Aucune publication." }));
       cs.forEach(function (c) {
         var msg = c.commit.message.split("\n")[0].replace(/\s*\(admin, [^)]+\)\s*$/, "");

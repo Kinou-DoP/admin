@@ -12,6 +12,13 @@ version du 21/10** : un changement de `netlify/functions/` du repo site n'y arri
   de l'accueil) en lisant Slate directement, après chaque publication de `data/home.json` ou `data/dps/*.json`.
 - Projets en images seulement : le robot lit leurs images sur le bundle Slate → `overrides[<id>].images`
   (fiches du commit publié ; toutes au lancement manuel). L'admin ne touche pas à ce champ.
+- **Depuis le 30/10, plus aucune fonction Netlify ne répond** (503 « Usage exceeded ») : l'admin lit alors Slate **par le robot
+  GitHub** (`siteGet` → `askRobot`, `siteDown`) : demande déposée dans `data/ask/<horodatage>.json` = `{ items: [{ kind, link }], at, by }`
+  (kind `bundle` | `stills` | `reel` ; demandes faites ensemble = un seul fichier), commit « Slate : demande de lecture » (caché dans
+  l'historique) ; workflow `.github/workflows/slate-ask.yml` + `tools/ask.mjs` (lecture = `tools/slate.mjs`, copie de
+  `netlify/functions/slate.mjs` du site, à garder identique) écrit `items[].answer` / `error` + `doneAt` dans le même fichier ;
+  l'admin le relit toutes les 5 s (5 min au plus). Environ 1 min par lecture. Fichiers de plus d'un jour supprimés par le robot.
+  `refreshSite` n'est plus appelé quand Netlify est hors service (le site lit `raw.githubusercontent.com`, cache 5 min).
 Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `site` (« Hébergement actuel »).
 
 ## Rôle
