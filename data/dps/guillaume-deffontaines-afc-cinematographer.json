@@ -91,6 +91,13 @@
         "Narrative",
         "Fiction",
         "Feature Film"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/camille-claudel-1915-teaser",
+          "title": "Camille Claudel 1915 [Teaser]",
+          "img": "https://images.slatecdn.net/eMcTkoXSFJAQ3nAwn356rPsKDft7Yd556wZvmWh5uho/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDM5NzkwLzY0/Njg4MDdfbGFyZ2Uu/anBn?v=1&format=webp"
+        }
       ]
     },
     "4358": {
@@ -140,6 +147,14 @@
     "8063": {
       "types": [
         "Commercial"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/lidl-ecole",
+          "title": "Lidl - École",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8062/6960176a-d2fa-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/N8GiImnOKEibOm1zYDvH4MvYQTv9kBX-keiBDFbCsao/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYyLTY1NjQ2NDNj/YTE5Y2U3LjUxODQy/MTYzLTY3ZmUwOGZh/ZTFiODc3YTYzNjMw/YTYyZGFlNTYwOThh/LmpwZw?v=1&format=webp"
+        }
       ]
     },
     "8227": {
