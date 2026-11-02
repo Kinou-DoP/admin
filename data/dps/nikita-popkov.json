@@ -346,6 +346,10 @@
         "Commercial"
       ]
     },
+    "11485": {
+      "zoom": 1.33,
+      "zoomThumb": true
+    },
     "11492": {
       "types": [
         "Music Video"
@@ -629,13 +633,13 @@
       "slate": 9235
     },
     {
-      "title": "BOLT - Ready to get Tallinn-ted Relocate with Bolt",
-      "sub": "Aleksandr Kovaljonok\nNafta Films OÜ",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10209/0b65f801-b989-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/60c0af3b-3c8f-4188-a637-331d6294c4fa-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/bQIYIrzeCK-dD2ZrwXFLYbr_82p6JTYIFLcjq29ooaE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDIwOS02OTBhMDlh/ODZhZWRhOC43MjAw/ODgzNC00YzQyODRk/ZTVjNTg3NTkyMDRj/M2M4YmFjNGE3YWZl/OC5qcGc?v=1&format=webp",
+      "title": "Expo 2017 Astana opening ceremony id",
+      "sub": "Anton Nenashev, Andzej Gavriss\nNenashev™",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11485/e8cd4eb1-d6b3-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8e1ba771-3830-47b9-b9ec-3d9c214e1a17-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/TURQhjV-NNetXjrcFK5fVgm6zGi_JE3fMENI-VCRP1E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTQ4NS02YWU4NzZh/NDQ3YjJjMC45MzA4/MzAzOS04MzdkNmQy/OGY4MjA5YzhjZjA0/Y2Q1ODRmYjBiZTEz/ZC5qcGc?v=1&format=webp",
       "cat": "",
-      "slate": 10209,
+      "slate": 11485,
       "featured": true,
       "featuredOrder": 8
     }
