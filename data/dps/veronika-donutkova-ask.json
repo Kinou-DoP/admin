@@ -179,7 +179,7 @@
     "NARRATIVE",
     "COMMERCIAL",
     "MUSIC VIDEO",
-    "FASHION"
+    "FASHION / BEAUTY"
   ],
   "clips": [
     {
@@ -258,6 +258,15 @@
       "featuredOrder": 1
     },
     {
+      "title": "Tiktok 1",
+      "sub": "Tobby Morris\nFlux Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11480/dfdd97ad-d6ae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/00b47cd4-89df-4de0-9cd7-6706be583c34-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/VZzotZGCSzNJUIv1TThNUVVNpDURsYdrW6DTGSLEILI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ODA3Yzc4Yy0wNzlm/LTQ3OTQtOGVhOS00/YTliMmFjMjk2YWQv/MTc5MzYxODE4MjI4/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11480
+    },
+    {
       "title": "Czech Paralympic Team - Same but different",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10105/dabd758a-995e-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd3c43af-bf0c-46d5-aba0-f4dd2a9538f1-1280x720.2500.mp4",
@@ -276,6 +285,15 @@
       "slate": 10118,
       "featured": true,
       "featuredOrder": 8
+    },
+    {
+      "title": "Tiktok 2",
+      "sub": "Tobby Morris\nFlux Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11481/cc59dbe1-d6ae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6ebd4ece-4c83-49f6-bb8e-12ec474a4c39-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/OYnyOUeUfjrduBqBj95ko6g4f-yG_ztqFpEmxuGojVc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTQ4MS02YWU4NzA1/MTRmYTQ1NS4xOTQ0/NjA2My04MmQxOTE1/N2Y0OGMwY2I4OTQ2/ODdhNjg3OWI4ZTMx/NC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11481
     },
     {
       "title": "Konsent - It's okay to be genk",
@@ -305,6 +323,15 @@
       "img": "https://images.slatecdn.net/dFDdiZRh08VWvFKQ76CEKNwMzu2-uWfn5MBR4KkIRLQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE0NS02OGU4ZDMz/NzQyZGMxNS4zMDQw/MzY4Ny1lNjU2ZDRm/YTlkMDIxNTI1Mzli/MDAxM2NhMDNjMDc4/NC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 10145
+    },
+    {
+      "title": "Tiktok 3",
+      "sub": "Tobby Morris\nFlux Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11482/b88e4b73-d6ae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c263cfdb-91f6-4fb2-b6f8-d3410ee61461-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/WgHnpwfUatgJu4eqik3cgN_WScCuOvaoh-jtR1yLU9I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTQ4Mi02YWU4NzA1/MTUwYTE3Mi42MjU5/NzAyNC1kYThlOTkw/ZjBkODcyOWI4NGEw/ZWQwNzhmZDIwZjky/Yy5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11482
     },
     {
       "title": "Makadi Heights",
@@ -369,19 +396,37 @@
       "slate": 10151
     },
     {
+      "title": "Dove 1",
+      "sub": "Maison Vignaux\nIrresistible Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11483/5bc02757-d6b1-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b5db47ef-5a16-4861-8e3e-549ef9329090-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/5AObGsLavMsnYrbheeBewKqoo-0x4lbYvdWIhh29IkA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NTY2OTA3NS01MTM4/LTRjN2EtYjc4OS1i/MDgwMWFiMTU0MzQv/ZmViMWY0OGEtOTY1/Ni00YzA0LTlhNjEt/OTRjMWY3YTRjNTkw/LmpwZWc?v=1&format=webp",
+      "cat": "FASHION / BEAUTY",
+      "slate": 11483
+    },
+    {
       "title": "Módny editoriál magazínu Top Fashion Season_01",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10111/1ca0bb50-9acb-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c70ea9f2-a1d0-4d0b-b8f8-654c0659d909-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ksWNyHjiwlPhXxKU6Ti3mR8KS3832H5cgLTQyl2n4ME/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDExMS02OGQ2NmVh/Y2E2YzU1OC4zODQ2/Mjk2MC0xMzkwZTJj/MTYxMDJjNDBjNzI2/ZDYyMzgxNWZkZTg1/OS5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10111
+    },
+    {
+      "title": "Dove 2",
+      "sub": "Maison Vignaux\nIrresistible Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11484/7097a6fb-d6b1-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/74dca9b5-863f-4930-8dde-8f585a9866fb-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/CE1JYzM3Iht1zQPRxojV3FH3bK6kWkSLe3Xl63oKWlg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MjFjZjE4ZS0wNmU1/LTQ2NjctYjMyZC04/YzdjYzQ1MmQ5NmIv/OTQ3ZTdhNmItODU5/ZC00YjQyLWJiMjgt/OGU1ZjI1ZjViOTJj/LXJ3LTM4NDAuanBn?v=1&format=webp",
+      "cat": "FASHION / BEAUTY",
+      "slate": 11484
     },
     {
       "title": "S hlavou v oblacích s Elle...",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10114/3b6a2b2d-9acb-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/96fa30c5-b4fd-4332-ae3c-da4889e14994-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/3ZXEr-n0TY5YAc37fOAeCo0qvy6pzUcpRVs2unDhivc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDExNC02OGQ2NmVh/Yzc0NDk2NS42NzE1/MjYzNC1lMGYzYWFh/OWE4MjlkZDBhZjM1/YmNlNWQyOThiOWRm/MC5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10114
     },
     {
@@ -389,7 +434,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10113/30dba3cd-9acb-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2a5bb0dc-0623-4286-8a66-f849f95a696c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/5m0hPLhYQ6GomtK6Q7nCEdciq26uy9jyXeaq-1I5eig/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDExMy02OGQ2NmVh/Y2E3ODIwMi42NzEz/MTQxOC1lOGJhMjQ4/ZTEwNzZmNmMzNWFh/ODMwYzBkMjFkNTY3/YS5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10113
     },
     {
@@ -397,7 +442,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10115/48229025-9acb-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0e272486-3bbc-494a-b18e-466e4a2a207c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/5r4tl7SOeWhqSYBuETl49h_9mg5ICiEQmsvItYfrCcI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDExNS02OGQ2NmVh/Y2E1Y2QxNi45Mjg2/MzQ3MC0xMTMwNzhl/YjcwZGZlODk2Yjc3/ODU2OWNiNjAwZDIz/Zi5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10115
     },
     {
@@ -405,7 +450,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10146/6ae10f40-a5bd-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ef3aa109-da88-4cff-89e5-e95dac6423a8-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/G6Drj_X149DU_5jla8YSxLP0Igt3uVfnesjR4n0aMTQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE0Ni02OGU4ZDMz/NzQ3MWJiNC41OTk2/MDE1OC1mZWIxNWM2/YzhiZTgzMmZkOTE4/NmZjYzUxNmIwNjQ5/OC5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10146
     },
     {
@@ -413,7 +458,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10147/5de46508-a5bd-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2db7feeb-5a4a-4d65-9a75-45e4850b3c14-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/UmagDQ5x3WPs6Dk-7f9-YIksOiOOFIdr40Hj183fNco/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE0Ny02OGU4ZDMz/NzQzNTk5Mi42NjY5/Mzg4Ni04YmFiZmFh/NjYzYzI5OTJhMTlk/NzVlMDk4ZGQ4ZDBj/OS5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10147
     },
     {
@@ -421,7 +466,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10148/5072e0ba-a5bd-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/540b55fa-84cd-4e56-a2f1-2b01cb20ca87-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/OvhLHDNLcrb-qSZ1x4lt8xRYrdIMxXhgYGpp_-eyKHw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE0OC02OGU4ZDMz/NzQyOTllMi4wMDE4/OTg0Mi0yNjc2MWQ5/MTA2ZWU1MTVlODYz/YzRmYjJjMjBlM2M0/YS5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10148
     },
     {
@@ -429,7 +474,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10149/4424a02b-a5bd-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4d07412d-e3db-420e-b651-d60b984f1641-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/sU2KYE-4gD3ifEabtIZv8OnvMxX7FPcsWqUf6bqfpKk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE0OS02OGU4ZDMz/NzQ5YTYxMy4yNzU0/NzM5MS0yNmMwNWY4/MDAyNmQyN2I2N2Q5/NmE1ODAyZWRkMjVj/My5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10149
     },
     {
@@ -437,7 +482,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10150/38f01379-a5bd-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49138c12-3128-408f-a60d-138442c85e95-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/UM-U0Z5Nro9jTEcGly5eBlfxqddfnyz_Ni0MeJJAjzE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE1MC02OGU4ZDMz/NzQ1Yzg3NC41MDc0/NTg2NC1kMzRhM2Q2/MzgzYzlkNDVlNGFl/MGQ2OTNjNDY3MGIw/Mi5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10150
     },
     {
@@ -445,7 +490,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10152/1f1ce424-a5bd-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/39a4a884-7d02-4a99-b424-3e75809c92af-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/OrZfDYJTf8ll8l50NklsdWHnN-6wY2bjs_IXwYFXoNs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE1Mi02OGU4ZDMz/NzRhYzRlMy40Njk5/NzgwNS0wNjg0N2Qz/NzBmNmM4NzMyNWE2/ZTA4ZDY3ZTkyMWUy/MS5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10152
     },
     {
@@ -453,7 +498,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10145/820d0db6-a5bd-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/90a18f0f-102d-42fd-b5dd-6704c76aa395-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/dFDdiZRh08VWvFKQ76CEKNwMzu2-uWfn5MBR4KkIRLQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDE0NS02OGU4ZDMz/NzQyZGMxNS4zMDQw/MzY4Ny1lNjU2ZDRm/YTlkMDIxNTI1Mzli/MDAxM2NhMDNjMDc4/NC5qcGc?v=1&format=webp",
-      "cat": "FASHION",
+      "cat": "FASHION / BEAUTY",
       "slate": 10145
     }
   ]
