@@ -14,40 +14,53 @@
     "339": {
       "types": [
         "Feature Film"
-      ]
+      ],
+      "title": "Le P'tit Quinquin",
+      "zoom": 1.13
     },
     "343": {
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.37,
+      "title": "Loin des Hommes"
     },
     "685": {
       "zoom": 1.34,
       "zoomThumb": true
     },
     "747": {
-      "zoom": 1.46,
-      "zoomPos": "50% 40.2%",
-      "zoomThumb": true
+      "zoom": 1.45,
+      "zoomThumb": true,
+      "zoomPos": "50.2% 39.9%"
     },
     "1016": {
       "zoom": 1.11,
       "zoomThumb": true
     },
+    "1110": {
+      "zoom": 1.32
+    },
     "1645": {
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.2,
+      "zoomPos": "50% 32%",
+      "title": "JEANNETTE L'ENFANCE DE JEANNE D'ARC"
     },
     "2021": {
       "types": [
         "Narrative"
-      ]
+      ],
+      "zoom": 1.34,
+      "title": "Coincoin et les z'inhumains"
     },
     "2122": {
       "types": [
         "Feature Film"
-      ]
+      ],
+      "title": "Chien"
     },
     "2393": {
       "zoom": 1.39,
@@ -63,12 +76,16 @@
     "2771": {
       "types": [
         "Feature Film"
-      ]
+      ],
+      "title": "Frères Ennemis",
+      "zoom": 1.33
     },
     "2861": {
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.32,
+      "title": "Ma Loute"
     },
     "3067": {
       "zoom": 1.36,
@@ -96,10 +113,12 @@
         {
           "link": "https://kinou.slateapp.com/work/camille-claudel-1915-teaser",
           "title": "Camille Claudel 1915 [Teaser]",
-          "img": "https://images.slatecdn.net/eMcTkoXSFJAQ3nAwn356rPsKDft7Yd556wZvmWh5uho/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDM5NzkwLzY0/Njg4MDdfbGFyZ2Uu/anBn?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545439836-camille_claudel_1915_teaser_bruno_dumont.1280x720.2500.mp4"
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545439836-camille_claudel_1915_teaser_bruno_dumont.1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/K5UfP_c12DI47PjR44JczNO4NHv8UH8DwNShKfIGeCE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDM5NzkwLzY0/Njg4MDdfbGFyZ2Uu/anBn.webp"
         }
-      ]
+      ],
+      "title": "Camille Claudel 1915",
+      "zoom": 1.37
     },
     "4358": {
       "types": [
@@ -111,21 +130,27 @@
         "Narrative",
         "Fiction",
         "Feature Film"
-      ]
+      ],
+      "title": "Des Hommes",
+      "zoom": 1.36
     },
     "5060": {
       "types": [
         "Narrative",
         "Fiction",
         "Feature Film"
-      ]
+      ],
+      "title": "La Fine Fleur",
+      "zoom": 1.33
     },
     "5266": {
       "types": [
         "Narrative",
         "Fiction",
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.04,
+      "title": "L'Homme De La Cave"
     },
     "6434": {
       "types": [
@@ -135,10 +160,11 @@
         {
           "link": "https://kinou.slateapp.com/work/nos-frangins-extract",
           "title": "Nos Frangins (extract)",
-          "img": "https://images.slatecdn.net/IODkutVBm_gNLocm2RyxoJD4LWqNP1gRQND4m7TwGIE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NDVmNTI5Zi0yNjhi/LTQzZTYtYWY4ZC0x/ODE5MzA4NDlhMDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDgt/MDItYS0xMi4wMy4y/NS5wbmc?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d1ae7084-3545-4176-9ab0-91b8ffeff635-1280x720.2500.mp4"
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d1ae7084-3545-4176-9ab0-91b8ffeff635-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/0W-wZ5ZxjwNVFGlNUgyiWbcoR2Vn3Cmwhy6tnnrFWOA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NDVmNTI5Zi0yNjhi/LTQzZTYtYWY4ZC0x/ODE5MzA4NDlhMDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDgt/MDItYS0xMi4wMy4y/NS5wbmc.webp"
         }
-      ]
+      ],
+      "title": "Nos Frangins"
     },
     "8062": {
       "types": [
@@ -153,9 +179,9 @@
         {
           "link": "https://kinou.slateapp.com/work/lidl-ecole",
           "title": "Lidl - École",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5801ec53-6a50-4c9b-a097-5a9227f98b3d-1280x720.2500.mp4",
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8062/6960176a-d2fa-11f1-a349-0215583debcb.mp4",
-          "img": "https://images.slatecdn.net/N8GiImnOKEibOm1zYDvH4MvYQTv9kBX-keiBDFbCsao/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYyLTY1NjQ2NDNj/YTE5Y2U3LjUxODQy/MTYzLTY3ZmUwOGZh/ZTFiODc3YTYzNjMw/YTYyZGFlNTYwOThh/LmpwZw?v=1&format=webp",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5801ec53-6a50-4c9b-a097-5a9227f98b3d-1280x720.2500.mp4"
+          "img": "https://images.slatecdn.net/mUTG5EJlMq-yfRpyaJ172ibKDsT197BQYYyaQvzr-eg/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYyLTY1NjQ2NDNj/YTE5Y2U3LjUxODQy/MTYzLTY3ZmUwOGZh/ZTFiODc3YTYzNjMw/YTYyZGFlNTYwOThh/LmpwZw.webp"
         }
       ]
     },
@@ -185,7 +211,8 @@
             "https://images.slatecdn.net/U8mmJGy37-aj-huiS5qxZFmBQkIT7bCpMaFccpbVg-E/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDFlZjU0/ZmQtMzVmNi00NWZj/LThmMWEtODAwYzBj/MjhhNDU1L2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjQtMDEtMTYt/YS1jYy04MC0xNi4z/MS4xNS5wbmc.webp"
           ]
         }
-      ]
+      ],
+      "zoom": 1.32
     },
     "8590": {
       "title": "Sei Fratelli",
@@ -302,6 +329,7 @@
     {
       "title": "Les derniers hommes - trailer",
       "sub": "David Oelhoffen\nGalatée Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8227/63a91c0d-d444-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c9b9254c-1868-47d6-831a-3333116d9871-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FJ_540AoZq1YwcyfaP9Jnewx4srVT1opPHoXWixNc4w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZDFjY2M5Zi0xYjVj/LTQ4Y2ItYjcyNC05/NGI2NzczNDllZDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDEt/MTYtYS0xNC4zNS40/NS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -312,6 +340,7 @@
     {
       "title": "Nos Frangins - bande-annonce",
       "sub": "Rachid Bouchareb\n3B Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6434/8baee306-d444-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/876c8165-6c59-415c-889b-8d28eff2c555-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/8av_S22WQe35_51Vx1m4OPdmSvrRCuwGJ5Tqj8Bz2d8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZjcxZDY4Yy03NzMw/LTQ4ZjEtOTM2Yi1h/MmMxMmU4ZTgxMWQv/bm9zLWZyYW5naW5z/LXBob3RvLXNhbWly/LWd1ZXNtaS0xNDMx/NDMxLmpwZw?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -322,6 +351,7 @@
     {
       "title": "L'Homme De La Cave - Feature Film Trailer",
       "sub": "Philippe Le Guay\nLes Films des Tournelles",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5266/bbf9620d-d444-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4e6eb2eb-e136-45aa-aa0b-a993d813bebf-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/sqGCWXpitgYWMFQzcgOdbgpn-QnUx2wOBa6cb8y-CU0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/OTMyMTE5OC1kZThj/LTQyMTctYjAyNS00/NjU0MDU1NTZhNzIv/aG9tbWUtY2F2ZS5w/bmc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -330,6 +360,7 @@
     {
       "title": "Des Hommes | Feature Film Trailer",
       "sub": "Lucas Belvaux\nSynecdoche, Artémis",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4423/da008fd5-d444-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1873eca0-23a7-4990-80c3-5b9e86c625c2-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Zt7xKupEbEIHkE0P1Hc6WCaK0fSHq3WSeosdMSOQAg0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZDM1Y2Q0My1iNmRh/LTQ3NGMtYWE3Yi1l/NDUwNjM1NjE5MWYv/NWVkZmEyYTE2NGFh/NC1kZXMtaG9tbWVz/Y3Bob3RvZ3JwaGUt/ZGF2aWQta29za2Fz/LXN5bmVjZG9jaGUt/YXJ0ZW1pcy1wcm9k/dWN0aW9ucy00ODYx/NTM2LmpwZw?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -340,6 +371,7 @@
     {
       "title": "La Fine Fleur - Bande-Annonce",
       "sub": "Pierre Pinaud\nEstrella Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5060/04569460-d445-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/87db2d2b-3f4d-4c1f-b436-3f33164822b6-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/BiHvt9d-wF3tnvDXN39d5NRZw2zv2h9-843j9frZY9o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MTMzODk2MC1iNjMz/LTQ4MDYtYTBlOC05/M2UyYzg0NmU5MDAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MzEtYS0xNS41MS4z/OC5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -348,6 +380,7 @@
     {
       "title": "Loin des Hommes | Feature film Trailer",
       "sub": "David Oelhoffen\nOne World Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/343/2e415da6-d445-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357901-vff_2014_-_far_from_men_trailer_-_viggo_mortensen_reda_kateb_drama_hd.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Tvm_NZ2604_S0RDgym13-ijCAH0vIV5bTZKNx5bXxfU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyNDc0Njg5Mzg2/LzEuanBn?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -358,6 +391,7 @@
     {
       "title": "Coincoin et les z'inhumains | Trailer",
       "sub": "Bruno Dumont\nTaos Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2021/5e5b62b5-d445-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545431151-60327370_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/tkh8MP9veCdvAD9KW3Xe49wuKKz8LwETmhhm-0K79lQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODI4MTE5NTA3/L2NvaW5jb2luLmpw/Zw?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -366,6 +400,7 @@
     {
       "title": "Frères Ennemis | Feature Film Trailer",
       "sub": "David Oelhoffen\nOne World Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2771/9d84a5fa-d445-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545837920-bande-annonce-fre-cc-80res-ennemis-reda-kateb-et-matthias-schoenae.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/qFjOcUvPxK7ZH7v9z6yxgZTtDpXv8ahSKle7bE9_IOo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OWE5N2MzYi05MzJh/LTQ3YWUtOGUzMS01/MGI3NzdlOGIxMmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MzEtYS0xNi4yNC4z/NS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -376,6 +411,7 @@
     {
       "title": "Le P'tit Quinquin | Trailer",
       "sub": "Bruno Dumont\n3B Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/339/7e3e2efb-d445-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357874-p_tit-quinquin-une-se-cc-81rie-de-bruno-dumont.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/3Qo7tg6TMkQUQI18pYewhLgU7uAv4S9PDGJlVJwa8w8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODI4ODAyMTUz/L2xlLXB0dGl0Lmpw/Zw?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -384,6 +420,7 @@
     {
       "title": "JEANNETTE L'ENFANCE DE JEANNE D'ARC | TRAILER",
       "sub": "Bruno Dumont\n3B Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1645/c51acff6-d445-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545415188-42832369_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/VBuAOJ3NRUhw9A0SJWCvWiweBNqkHdJ0uGrFMcbhYtw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODI4NTY3NDMw/L2plYW5uZXR0ZS5q/cGc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -392,6 +429,7 @@
     {
       "title": "Chien | Feature Film Trailer",
       "sub": "Samuel Benchetrit\nSingle Man Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2122/34a200a8-d446-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545437286-51301488_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/pi6ka55faawlMSpOnFq92THIPpvyEAFl6jDPRjPjuBE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyNDc0MTU4MjI0/L25vdXZlYXUtc2l0/ZS5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -400,6 +438,7 @@
     {
       "title": "Ma Loute | Feature Film Trailer",
       "sub": "Bruno Dumont\n3B Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2861/5c1c414e-d446-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842905-28770100_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ozam5UTOVCCfOaB84iPdtK9ukMb2ISNT5Z9TfRuGfWA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyNDc1MTIzOTMz/LzEuanBn?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -410,6 +449,7 @@
     {
       "title": "Camille Claudel 1915 | Feature Film Trailer",
       "sub": "Bruno Dumont\n3B Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4173/7cffb276-d446-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/39a8936a-5be7-47f1-b75f-825c204740c4-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/6QlCi23IY62qZ_aIAPy9kMjd9xFt3xQkDkiB9vS-4uw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyNDc1ODg0MzI3/LzEwLmpwZw?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -436,18 +476,11 @@
     {
       "title": "Lidl - Noël",
       "sub": "Mathias Pardo\nProdigious",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8063/787befd0-d2fa-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8050c91d-8062-4755-9020-5a266f6366c3-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/-GT7nqI4i6cS1LDHI1eUZkk-o5SSCwMT33s431dJQ_s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYzLTY1NjQ2NDZl/MDgyMDkzLjI4NTE3/OTY1LTMxMTNlZTEw/NzdlMTlhOTJmYTQz/NDA2MmE2YzhiZTM2/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 8063
-    },
-    {
-      "title": "Lidl - École",
-      "sub": "Mathias Pardo\nProdigious",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5801ec53-6a50-4c9b-a097-5a9227f98b3d-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/N8GiImnOKEibOm1zYDvH4MvYQTv9kBX-keiBDFbCsao/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MDYyLTY1NjQ2NDNj/YTE5Y2U3LjUxODQy/MTYzLTY3ZmUwOGZh/ZTFiODc3YTYzNjMw/YTYyZGFlNTYwOThh/LmpwZw?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 8062
     },
     {
       "title": "Carrefour Google",
