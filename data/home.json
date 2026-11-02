@@ -11,7 +11,8 @@
     },
     "10552": {
       "start": 65.3,
-      "phoneX": 59.1
+      "phoneX": 59.1,
+      "legend": "Jules Dalod-Danesi"
     },
     "10586": {
       "song": "",
@@ -312,7 +313,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0056c6b0-a0a7-4f20-b9c9-3b735fa47654-0x1080.5000.mp4",
       "film": "Outsiders Club",
       "song": "",
-      "legend": "Jules Danod-Danesi",
+      "legend": "Jules Dalod-Danesi",
       "dps": [
         {
           "name": "Julien Teissier",
