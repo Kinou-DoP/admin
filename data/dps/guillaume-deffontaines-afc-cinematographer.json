@@ -206,7 +206,8 @@
       "types": [
         "Feature Film",
         "narrative"
-      ]
+      ],
+      "zoom": 1.34
     },
     "10299": {
       "title": "Furcy né libre",
@@ -215,14 +216,16 @@
         "Trailer",
         "narrative",
         "Feature Film trailer"
-      ]
+      ],
+      "zoom": 1.35
     },
     "10695": {
       "title": "Histoires Parallèles",
       "types": [
         "Feature Film",
         "narrative"
-      ]
+      ],
+      "zoom": 1.06
     }
   },
   "about": {
