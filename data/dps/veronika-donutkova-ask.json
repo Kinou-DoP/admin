@@ -45,11 +45,6 @@
     },
     "10125": {
       "title": "Záhadné případy",
-      "types": [
-        "Fiction",
-        "Serie",
-        "narrative"
-      ],
       "images": [
         "https://images.slatecdn.net/0_2b-_Tk8_w-F9Hc7SWl5FNBwvjCQDq2sIoZbb2asQA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/Y2MzNTc4Ny1lOTIy/LTQ4NDktYWY0ZC02/NjVhMTM4ZjMzY2Qv/ODc3OWQxMTQtNzU2/Ny00MmM0LTg0YTEt/MzJiODRjOGIxYTVk/LXJ3LTE5MjAuanBn.webp",
         "https://images.slatecdn.net/uH2-uWoZIN-gvfdsFYVJWOQ2TaxT7oa4nbfSOuRbhdI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MWE5ZjljZC01NGFk/LTRiYzYtYjBjYy1m/NmFmZDVhODYyNmIv/MDhhYmNiZGMtMWFk/Ny00ZDI5LWIzZjct/ZmY3ZWJiN2ViMmI1/LXJ3LTE5MjAuanBn.webp",
@@ -85,6 +80,11 @@
         1.7778,
         1.7778,
         1.7778
+      ],
+      "types": [
+        "Fiction",
+        "Serie",
+        "narrative"
       ]
     },
     "10126": {
