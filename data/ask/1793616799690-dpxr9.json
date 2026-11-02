@@ -2,9 +2,11 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/2086c0"
+      "link": "https://shots.re/2086c0",
+      "error": "ce lien shots.re ne mène pas à une page de stills Slate"
     }
   ],
   "at": "2026-11-02T10:53:19.690Z",
-  "by": "John-Kinou"
+  "by": "John-Kinou",
+  "doneAt": "2026-11-02T10:53:37.642Z"
 }
