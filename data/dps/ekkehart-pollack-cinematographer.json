@@ -7,7 +7,8 @@
     "154": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.32
     },
     "250": {
       "title": "Ushuaia - Savon"
@@ -16,12 +17,14 @@
       "title": "Togo"
     },
     "512": {
-      "title": "Strellson - Loaded"
+      "title": "Strellson - Loaded",
+      "zoom": 1.33
     },
     "859": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.36
     },
     "868": {
       "title": "Eau Jeune - Rebelle Chic"
@@ -33,13 +36,20 @@
       "title": "Dracula : Year Zero",
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.35
+    },
+    "1163": {
+      "zoom": 1.51
     },
     "1180": {
-      "title": "Opel - Insignia Sports Tourer"
+      "title": "Opel - Insignia Sports Tourer",
+      "zoom": 1.06,
+      "zoomThumb": true
     },
     "1246": {
-      "title": "Café Royal - The Agent On The Rocks"
+      "title": "Café Royal - The Agent On The Rocks",
+      "zoom": 1.4
     },
     "1278": {
       "title": "Mercedes-Benz - B Class"
@@ -49,13 +59,37 @@
         "Commercial"
       ]
     },
+    "1281": {
+      "zoom": 1.39
+    },
+    "1466": {
+      "zoom": 1.33
+    },
+    "1542": {
+      "zoom": 1.33
+    },
+    "1794": {
+      "zoom": 1.33,
+      "zoomThumb": true
+    },
+    "1840": {
+      "zoom": 1.32
+    },
     "1880": {
-      "title": "Toyota - Harrier"
+      "title": "Toyota - Harrier",
+      "zoom": 1.49
     },
     "2324": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.33
+    },
+    "2330": {
+      "zoom": 1.33
+    },
+    "2573": {
+      "zoom": 1.37
     },
     "2757": {
       "title": "Ultimate Game (Gamer)",
@@ -72,10 +106,15 @@
       ],
       "zoom": 1.34
     },
+    "3317": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
     "3437": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.34
     },
     "3818": {
       "types": [
@@ -95,16 +134,32 @@
     "4278": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.37
     },
     "4656": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.49
     },
     "5154": {
       "types": [
         "Commercial"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/smart-evil-boss",
+          "title": "Smart - Evil Boss",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0078bfec-97a7-4fac-b259-02e3dcda3b52-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/xX1M1X5km109e2oodTeetZExUuMhI6LIgX2SNlV1NXo/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTUyLTYwY2M1ZjNj/NGE0NjE1LjEwNzk3/MzE3LTViODIyNDRh/NTliMzEyMTdkY2E4/NmQyYWJhMTU2Zjk4/LmpwZw.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/smart-monster",
+          "title": "Smart - Monster",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7497af30-4993-440f-bcff-a433043839ec-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/FgZUCUFAbnPXH2J9yt6fl8BfAXgPQGWoN-EA0v5FGWk/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTUzLTYwY2M1ZjNi/ZTVlZWIxLjgyOTA4/NzUwLTQ2NmE5MmJh/MDQwMGRmMjgxMTc4/OGE4YTgyMmEyN2Ix/LmpwZw.webp"
+        }
       ]
     },
     "5404": {
@@ -120,22 +175,27 @@
     "6310": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.33
     },
     "6315": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.33
     },
     "6317": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.34
     },
     "6813": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.48,
+      "zoomThumb": true
     },
     "6852": {
       "types": [
@@ -150,7 +210,8 @@
     "6871": {
       "types": [
         "Car"
-      ]
+      ],
+      "zoom": 1.32
     },
     "6878": {
       "title": "Schwarzkopf Gliss",
@@ -158,6 +219,9 @@
         "Underwater",
         "Hair"
       ]
+    },
+    "7066": {
+      "zoom": 1.09
     },
     "7341": {
       "types": [
@@ -168,6 +232,16 @@
       "title": "Deka - back to the future",
       "types": [
         "Commercial"
+      ],
+      "zoom": 1.04,
+      "zoomThumb": true,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/deka-angels",
+          "title": "Deka Angels",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cdf8589b-ef53-4b04-b122-40af00cdecd8-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/GAs8ACp9vqUg1YeZ1F1RrHVnhEbZ2KYiA1VyTjvcz6k/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NTNmNThiOS03MmJj/LTRhODUtOGRmMi0x/YmJmNjgzMTdlZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDkt/MjItYS0xMi41MC4w/Ny5wbmc.webp"
+        }
       ]
     },
     "8272": {
@@ -190,7 +264,8 @@
     "10573": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.33
     },
     "11443": {
       "zoom": 1.36,
@@ -255,6 +330,7 @@
     },
     {
       "title": "Dracula | Feature Film Trailer",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1005/bc6b812c-d778-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545391272-dracula_20mos_20universal_hd.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/iIbbGYFPhvaMisWr0SxvIIlOPmOrUoSJbakEjducKy8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDU4NzU0Njk5/L2RyYWN1bGEuanBn?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -292,6 +368,7 @@
     {
       "title": "Harrier Side A",
       "sub": "Kosai Sekine\nTohokushinsha Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1880/e515a5f2-d777-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546527105-29649570_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/f3dU2Sq6DQnrKaWzrTWL5pzJuGL8R5vCSaRmbY6_idc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/ZmI5YjU3Ny1iMjRm/LTRjYzgtYmU2My0z/NmU1ZTA2ODRmZWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MTEtYS0xMS4yOS4x/NC5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -300,6 +377,7 @@
     {
       "title": "Playstation Maya",
       "sub": "Markus Walter\nReset",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/859/51a0e35a-d779-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545387047-64413755_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/YmH9ATas3Pu5_Hmnl9Lnu613UiEd57aKDbG_AE2jSs8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NTRhMDk5OC05YTEy/LTRkMzgtOWVjYy1i/NzViNWI5M2RkMmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MDgtYS0xMi40MC4z/Mi5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -310,6 +388,7 @@
     {
       "title": "Hasselblad",
       "sub": "Marco Kalantari",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1867/c88d7f9e-d779-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545424057-39563497_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/K5sa_hytWZyfb3x0fQaqvE_JmCbrhgmSZmYwxSx4UqI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9o/YXNzZWxibGFkLWMx/MTA5NTBhNTFjMTE2/Y2IyOGFlMDdmYTlm/ZDVkY2Q1LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -329,6 +408,7 @@
     {
       "title": "HH3",
       "sub": "Kosai Sekine",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1840/a6e32afd-d77a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545423028-toyota-hh3.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/L5tBRlNgbeAlinQfAfyLmU5j967Bmc9Iyp4J4PVJnj0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYwMTc1NTM3/L2hoMy5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -337,6 +417,7 @@
     {
       "title": "Deka back to the future",
       "sub": "Max Millies\nZauberberg",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7742/d5620395-d78b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d401950a-1815-4295-8bac-dcad98d5dce7-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/6ACAoL3yF5_WcbFQsA12KKqRxCeiGhVg9jc0dhLTBlU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MTllMTRmZS1jZWUx/LTQ1NDgtOGI1Yy04/MGM2MDE2YTdkOTQv/MTY5NTM4NTc4NDQ4/NS5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -345,6 +426,7 @@
     {
       "title": "Vodafone x Netflix Barbarians",
       "sub": "Max Millies\nTempomedia",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6315/f71383ab-d78b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7624cd44-ee84-42df-9654-c73496c0084e-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/KjQInqi-ingnWcscIhAS-4dEvHnjiGWfyxAGzG9Bl-Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZjliMDk5Ni1kYzRj/LTQ2NjMtYmJjZC1k/OTI2MTgxYjRlZDEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MDgtYS0xMi40Mi4z/MC5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -364,6 +446,7 @@
     {
       "title": "Olympic Dream",
       "sub": "Gary Shore\nMoonwalk",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1216/28df918e-d78c-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546526509-29649626_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FKbYjkorXbRw79T7YLrT-2AdM_E4DQKKApko2Uz8mzs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9v/bHltcGljLWRyZWFt/LTIwNjk5ODQzMWZm/MDk3M2QyMThjMDQ5/NjlhOTZhMTQ1Lmpw/Zw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -391,6 +474,7 @@
     {
       "title": "Aachen Muenchener - Mafia",
       "sub": "Marc Schoelermann",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2573/43cd9531-d78a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545455573-aachen-muenchener-mafia-hd.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Nu6TFXfy9zLpkhxtTqV2ie0fz0IuFB53aA7Jzt8DXUY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYxODgwMzIw/L2FhY2hlbi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -399,6 +483,7 @@
     {
       "title": "Mercedes | Skyplanter",
       "sub": "Knut Burgdorf",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1279/58607f54-d78a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545401772-61335994_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FiDFZ5VjcwTWDqcM16gzxrwjOdp99qic-G06-qIOUWw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9t/ZXJjZWRlcy1za3lw/bGFudGVyLTMxNWJk/MDhhMTQxMjQ4OTc2/NDk2NDcxNzgyMTYy/NmZkLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -407,6 +492,7 @@
     {
       "title": "BMW 7Series",
       "sub": "Knut Burgdorf",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2330/89527017-d78a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545446861-54859323_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Sw3tK-POFV1mcrbXyp9gYjDYcssJyl4n3Un_9O1Hbvc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWU2ZDFhMi02MjJh/LTQxNmItOWRhOC0z/ZDUxZTc0NjVhZmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MTEtYS0xMi4wNC4z/NS5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -415,6 +501,7 @@
     {
       "title": "Wolfenstein 2",
       "sub": "Markus Walter\nReset",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/154/b5fe6e89-d78a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545350660-wolfenstein-2-the-new-colossus-liesel-tv_sd.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/CEvUTc9AqUMauMB_uzC9opGjdriQW_IOIHKYx_BayWE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDU5NjYwNjAw/L3dvbGZlbnN0ZWlu/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -423,6 +510,7 @@
     {
       "title": "Mercedes-Benz / B Class",
       "sub": "Aleksander Bach\n---",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1278/f021681b-d78a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545401710-mercedes-b-class-aleksander-bach.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/8dQFCjjFESIsi_M1ZB7D7QD4VEXSsLxHam8Ahqr9_RY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDAxNjk3LzY0/Njc0MTNfbGFyZ2Uu/anBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -431,14 +519,16 @@
     {
       "title": "Euronics",
       "sub": "Daniel Warwick\nBig Fish",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1890/1ffc927c-d78b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545425390-euronics-daniel-warwick-big-fish.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/zrLUjd7yGyQFfXF72mDpV3K23ds3mY8HxngG6mhwHD0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDI1MzYxLzM5/Njc5MjMyX2xhcmdl/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/g4E11QvHDodwOSI4WRwJito2OVs56Fnd8skY-0DA7XU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/M2YyYmZiZC01ZmU2/LTQ3YzYtYWEwMC0y/MjEyYjU3NThhZjAv/MTc5MzcxMjgzNTQ4/MC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 1890
     },
     {
       "title": "Huawei",
       "sub": "Yao Fei\nRocket Science",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1794/4cf2ecf0-d78b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546527080-39563503_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/sHtJijuiz_j-cBV6MPgiEbugcHyX9AnZ7SuyhpfQ3A4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9o/dWF3ZWktYTdkZmU3/NTRiOTZhZTc5NmFj/MGUyMTA0ZTJmMDZm/NGEuanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -447,6 +537,7 @@
     {
       "title": "Komilfo",
       "sub": "Anders Hallberg",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1542/5ed79dfd-d78b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545409981-komilfo.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/uflIinop1uO8b1EARj6s-zwrpzWlSbBtWSpHzCV3LzU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYyNTU2MjE0/L2tvbWlsZm8uanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -455,6 +546,7 @@
     {
       "title": "Mission « Agent en danger » / Au service du bon gout feat. Robbie Williams",
       "sub": "Marc Schölermann\nMarkenfilm",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1246/712ca4a0-d78b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545400838-40437158_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/wh8ERWqhEQ-sRk3nPnqzVXSWhF3RukWTVsO7YIg1dFs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYwNDY1Njgz/L21pc3Npb24tYWdl/bnQtZW4tZGFuZ2Vy/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -463,6 +555,7 @@
     {
       "title": "Opel / Insignia Sports Tourer",
       "sub": "---",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1180/8549988c-d78b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545397709-insignia_sportstourer.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/02lGD1MxMhAfaByPUWqwj3ZkMevRyaS3X9FDHUh-ArM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9v/cGVsLWluc2lnbmlh/LXNwb3J0cy10b3Vy/ZXItYTM1MmU4ZjA1/MWRkNzAwNTZlMmQz/Nzg0YWNiNWU1OWMu/anBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -471,6 +564,7 @@
     {
       "title": "Panasonic - Eluga Waterproof",
       "sub": "Ole Peters",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1038/9f86e785-d78b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545391723-54902325_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/_qTfUyVvaEBmmOqm79YzM2ZFnG0eTiXF_Vak28mYTZE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzkxNjk5LzU0/OTAyMzI1X2xhcmdl/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -548,6 +642,7 @@
     {
       "title": "Mercedes X-Class 'Follow'",
       "sub": "Jan Wentz\nMarkenfilm",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1281/5296b030-d780-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545401885-52685593_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/TWqrNwRg3ub4wCDthwE9iItwHw3YE0pnKMxZBo82Rbs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyMzE4MzIyNDgx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTE2LWEtMTYuMzcu/MjEuanBn?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -565,6 +660,7 @@
     {
       "title": "BMW X Drive",
       "sub": "Jan Wentz",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4278/6d882a72-d780-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bc00ef88-4d74-458a-b700-30faf0e57690-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/b7V7DKvy9HH5Tq65Xl0Z3gFo0MHQzLjF-rZLiRhkdgk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyMjA5NjU4ODA0/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTE1LWEtMTAuMjYu/MjYucG5n?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -573,8 +669,9 @@
     {
       "title": "Lamborghini - Gods of Dust",
       "sub": "Manu Cossu\nThe Box Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6813/925b9105-d780-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2ad9a7d5-58a9-405c-adee-00ab3ec7e026-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/C_Yvcoq35ebHJMawzPOzBF9GHcXs86PQtqAS51ZM5tc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/Nzc1NDhmNi1hNjc2/LTQ2ZDYtOGMyNC1j/NTNmMDU0YjA5Mjkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MTYtYS0xMi40Mi4x/Ny5wbmc?v=1&format=webp",
+      "img": "https://images.slatecdn.net/5sPotYJWAv-B9b77qdDISDQ4w4wJgBiINrgX8PtHkQs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/Mzc3NmE3NS0yZDE4/LTRjNjAtYWJjNC1l/ZGMxNTAwOTFkNDEv/MTc5MzcwODI4Mzc5/Ni5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
       "slate": 6813
     },
@@ -590,6 +687,7 @@
     {
       "title": "Porsche Daytona",
       "sub": "Paul Mignot\nBonaparte Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6317/b5af3397-d780-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/586df6eb-b51d-4802-b64e-20f1b113bef3-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/uO_MESkqierw0P1sjfUC7CkI0zkGBAgjiENSTtG7xH8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/OTZiNjU3NS0yMzc2/LTRhYjAtODJmZC01/YjExMmZiN2JiMWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MDgtYS0xMi41NS4x/MS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -598,6 +696,7 @@
     {
       "title": "Toyota Yaris - Cross Hybrid",
       "sub": "Jake Scott\nRSA London",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5404/e38235dd-d780-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/67ded3c2-0b82-4a90-8bab-eb2309c28824-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/va7zIA_ajQZgr0KaAy-rM-hUM-L7YJL_u54YrqMMP8Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/N2VlMjBjMy1lZDc5/LTRkYmUtYmFiZi0y/NTU4MzJlMzE4OGMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDkt/MTQtYS0xMi4xOS4z/Ny5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -606,6 +705,7 @@
     {
       "title": "Mercedes GLE Coupé",
       "sub": "Augusto de Fraga\nMarkenfilm",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4656/ff73b76a-d780-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9f5d5b5b-1dc5-4baf-9207-e1646416ea05-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/_S1Yqbtk4XJkgJKxq8-ORT0o-BU-GERcM1HKdmkFlqI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/YjQ3ZTJhMy01NTBl/LTRmNjEtODEwNS01/NzA4ZTQ3NmU2M2Yv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MTEtYS0xMS4xNi41/NS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -614,6 +714,7 @@
     {
       "title": "Peugeot 208, Unboring the future",
       "sub": "Jan Wentz\nQUAD Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3818/1b647c60-d781-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1570712535-peugeot-208-dc-69s-191008.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/OHof1mX9n1VbvH0gy02QH-NRsWq1F8rLFbVLik6qAhE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ODE4LTVkOWYyYmQ3/ZTE4ODQ5Ljc2MjMx/MzgwLTEwMTllYTVl/ZjY0YzQ0ZmVjY2Yw/ZjYxNmJkMjFjMzgw/LmpwZw?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -622,6 +723,7 @@
     {
       "title": "GoodYear",
       "sub": "Marc Schölermann\nE+P Films GmbH",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3437/2e739117-d781-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1559636073-190603-goodyear-hd.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/-jAwnkLiJq_BPsOeZXk8MkFIaTdUJ0USndJxSa4jJ4M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YzA1YWU0ZC0zOTM1/LTQ2NzItOWM3Mi1m/NDNlZTdlZWM4MjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MTEtYS0xMS40Mi40/Ni5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -629,14 +731,16 @@
     },
     {
       "title": "BMW 3Series",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3317/3e51bb5b-d781-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1555583157-3series-final.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/LTElJA2Pv8rebtSB4E1EoHL3RM-R6BXd3Z_GuhWT_u8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYyNzYxMzQ1/L2Jtdy0zLXNlcmll/cy5qcGc?v=1&format=webp",
+      "img": "https://images.slatecdn.net/djlJtMNo6Ri9Dhcb0Xq3Otbj2v58nUWuDEUVL27wkFE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjY1ZjU0Ni0xMGQz/LTQzMDItYTljYy1j/YjhlZWIwYjJlODAv/MTc5MzcwODU1Nzc0/OS5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
       "slate": 3317
     },
     {
       "title": "BMW | THE8",
       "sub": "Ali Bach\nAnorak",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2324/55a1dbcb-d781-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545445834-bmw_g15_the8_dc_master_sd.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/KX7fFxdo0OA4E5uFCBeMmiyyg6uUNmp4Wlo6djjgxXQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYzNTAzNjkw/L3RoZTguanBn?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -645,6 +749,7 @@
     {
       "title": "SUV Range",
       "sub": "William Armstrong\nMarkenfilm",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/494/b602b91c-d789-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545364533-mercedes_suvrange_60s_hd.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/drh5Cpe11uJWGNoYnpnm6sytu6UltDMoKNPk161Bhlw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/OTBiZDE0ZS1iNTMz/LTQ4ODMtOTNhZC04/M2JiMDk4ZWI2YWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MTEtYS0xMS41MS40/OS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -653,6 +758,7 @@
     {
       "title": "Opel \"Adam & You\"",
       "sub": "Matthaeus Bussmann\nMarkenfilm",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1188/e5ccbb12-d789-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545398002-opel_adam_dc_hd_proreshq.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/JeoZ4Ub5ZicCwS4DjnGWMFpshDpKgi6pylV9FNvO4oM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9v/cGVsLWFkYW0teW91/LTViZDFlMGJkYTJi/MmEyZmI0ZTBmYmMz/OTRhN2UxZDZlLmpw/Zw?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -661,6 +767,7 @@
     {
       "title": "Opel Insignia Leadership",
       "sub": "Matthaeus Bussmann",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1163/053203f1-d78a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545397108-43615954_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Hc0UOkku56WjlsRqn_20Dtfqzk6-zPp_VT07KON-8mQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDMzOTk5OS01NDky/LTRkNzUtYTdmNS0w/YmJjYWZmNDJiZTgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MTEtYS0xMS4zMS40/MS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -669,6 +776,7 @@
     {
       "title": "L'Oréal Invincible Manifesto",
       "sub": "Jan Wentz",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1466/23f50d5b-d78a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545406921-43620340_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/6SghNcWDwJUaQMK-9-0HIRAZS5c_T5EjPcsrO1mLxNo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYwMDAxOTEx/L2wtb3JlYWsuanBn?v=1&format=webp",
       "cat": "BEAUTY",
@@ -688,21 +796,16 @@
     {
       "title": "STRELLSON - LOADED",
       "sub": "Anders Hallberg",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/512/e03115c9-d77e-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545365212-strellson_loaded_anders_hallberg.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/QtGT6Fno85mHz5t4wI_hK_HAHuW_m-dqCV7VCmWxeO4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MDYyMjk5MjMx/L3N0cmVsbHNvbi5q/cGc?v=1&format=webp",
       "cat": "BEAUTY",
       "slate": 512
     },
     {
-      "title": "Eau Jeune",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd478f2e-79cc-4d49-b4ef-94a8b0cf7706-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/KeymYmoqyZcOCdUG76VTBo6JTmIxwIH8Z8r29rNHyjM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZWEzZGJkMy04NWM4/LTQyYTQtOTc3Yy01/ZWM3MzNjM2FjMTgv/MTY4MDg2NDM1MjAw/MC5qcGc?v=1&format=webp",
-      "cat": "BEAUTY",
-      "slate": 7064
-    },
-    {
       "title": "SCHWARZKOPF GLISS",
       "sub": "Jeremy Charbit\nTempomedia Hamburg",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6878/f8b4e777-d77e-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ef91f20f-de5b-45a8-b78b-f39e1ff897a0-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/y4uKGnRr31p_8ahLUmgUdwIiUst9ZgpjlYEV2_J-TTk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MzlmZmI2Zi03NTFl/LTQwMjUtYjBhMC04/M2U3OTk5MTRlMWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MDEtYS0xMS41Ni4z/NS5wbmc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -710,6 +813,7 @@
     },
     {
       "title": "Gucci",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7066/1ac72eb9-d77f-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8cc1db55-2351-4a9b-9719-c30e3afddac0-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/t3gbxLBJmANhawXrIbFfR3bn2XYeZ22iBO7VS-im97k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZGUyMTU5Ny04MDE0/LTQ0NDItODQ1MC1j/MzdjMTAwNzczZDIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDQt/MDctYS0xMi40Ny4z/MS5wbmc?v=1&format=webp",
       "cat": "BEAUTY",
@@ -717,38 +821,43 @@
     },
     {
       "title": "Rebelle Chic",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/868/54bc3644-d77f-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545387173-eaujeune.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/-oRxaiBwdG_RKOKLXCVxEtIP5krG4ePKBtbY4HVmeww/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1Mzg3MTYxLzY0/NjczNjRfbGFyZ2Uu/anBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/GiLsAFd_6I0_CycY-EzbV-8G1zHdGYH2lqjMitIRTlo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/YTZlZTE1Ny1iZDMz/LTQ4YjctYWZiZS01/ODBiMjNiOWFiNDYv/MTc5MzcwNzcxNTEx/MS5qcGc?v=1&format=webp",
       "cat": "BEAUTY",
       "slate": 868
     },
     {
       "title": "Nivea Bath Care",
       "sub": "Nick Vecchi\nSoup Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1056/a32f1bfe-d77f-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545392051-nivea_bathcare.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/9WaSFO8QdQeD44iwuKZL4emtSLVFjJFLgR7ucKLqW2Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzkyMDM2LzY0/Njg2NDlfbGFyZ2Uu/anBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/EKIFBj3sIbO_Fy6l-D2akZ_qMLQewwjTEJO7pCa6ea0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YWRkZGNjMi05N2Jj/LTRiZWItOGU3OC03/ZjMwYzM2NWNiZTYv/MTc5MzcwNzg0MDAw/Ni5qcGc?v=1&format=webp",
       "cat": "BEAUTY",
       "slate": 1056
     },
     {
       "title": "Timotei",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/381/d2a35f71-d77f-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545358506-timotei_vivid.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/tQRgu_IJkKH5Eqvkoi6LVvE-lnuPgqsvV5FL9q9GDuE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzU4NDg0LzY0/Njc2MjRfbGFyZ2Uu/anBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/Fqmju3yzMkHWPUYPSF7d4Azxjb9DNVoahjvNW-_5yPI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjhmMTQyZi1iZGEx/LTRkNGUtYTc5Zi1j/ZjdkZDU5MzUxYjQv/MTc5MzcwNzkxNzU0/Mi5qcGc?v=1&format=webp",
       "cat": "BEAUTY",
       "slate": 381
     },
     {
       "title": "Togo / Double",
       "sub": "Anders Hallberg\nBRW Filmland",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/375/fec0f70c-d77f-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545358446-brw_filmland-double_sd.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/evJRR9-iNo7Gf4ZBciUS3w0pmKaMvl1BHuBg0QNS-R0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzU4NDI3LzY0/NjgyOTlfbGFyZ2Uu/anBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/xriw94FWhERFE00jTUoiiotTFYL2uk_fNVouiIhHoLA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YmYzZGQzZS1jZWVj/LTQ0NGEtYThhNS0y/MDk0MjhiMTRkYWYv/MTc5MzcwODAzMjg2/OS5qcGc?v=1&format=webp",
       "cat": "BEAUTY",
       "slate": 375
     },
     {
       "title": "Ushuaia / Savon",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/250/1edfb83e-d780-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545355026-ushuaia-vreal-savon.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/upB3XsT47Q6OhcIerNkftnDqJWk9KIMUPOtupGBKeME/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzU1MDE4LzY0/NjgyOThfbGFyZ2Uu/anBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/InmtCrHdTcKxsPzzKHxfM9Nf89zYiGNwvpJl1O6vtHo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OTJkYWJjNS04NGYx/LTRkNzYtOTI2ZS0z/OWU0ZTc5NTk1YWQv/MTc5MzcwODA3ODkx/MS5qcGc?v=1&format=webp",
       "cat": "BEAUTY",
       "slate": 250
     },
