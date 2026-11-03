@@ -68,7 +68,8 @@
         "Short Film",
         "narrative"
       ],
-      "zoomThumb": true
+      "zoomThumb": true,
+      "zoom": 1.08
     },
     "10425": {
       "zoom": 1.34,
