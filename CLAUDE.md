@@ -147,6 +147,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 L'admin compare son `?v=` avec celui de `index.html` en ligne (`checkVersion`, au chargement, au retour sur l'onglet et avant chaque
 publication) : plus récent → bandeau « Nouvelle version de l'admin disponible » + Recharger en haut, publication bloquée en attendant (Gus 30/10 :
 une admin restée en mémoire sur un téléphone avait effacé le `showcase` de Vadim).
+« Recharger » garde les modifications non publiées (Gus 03/11) : `saveDraft` met la page ouverte (données + `refs` : bundle lu,
+fichiers déposés, aperçus `blob:` changés en base64) dans `sessionStorage` (`kinou-admin-draft`, avec l'adresse), et `histInit` la
+remet à la réouverture de la même page (message « Modifications non publiées reprises… », Annuler revient à la version en ligne).
 
 ## Robot GitHub (branche main)
 - `.github/workflows/home-full.yml` + `tools/fill-home.mjs` : après chaque publication de `data/home.json`, de

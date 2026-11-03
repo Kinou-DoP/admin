@@ -27,7 +27,8 @@
       // Bandeau en haut (Gus 30/10) : « Nouvelle version disponible » + Recharger. La publication reste bloquée d'ici là.
       var go = el("button", { type: "button", text: "Recharger" });
       go.addEventListener("click", function () {
-        if (dirty && !window.confirm("Vos modifications non publiées seront perdues. Recharger quand même ?")) return;
+        // Modifications non publiées : gardées le temps du rechargement, puis remises dans la nouvelle version (Gus 03/11).
+        if (dirty && !saveDraft() && !window.confirm("Vos modifications non publiées n'ont pas pu être gardées et seront perdues. Recharger quand même ?")) return;
         location.replace(location.pathname + "?v=" + m[1] + location.hash);
       });
       document.body.appendChild(el("div", { class: "newver" }, [el("span", { text: "Nouvelle version de l'admin disponible" }), go]));
@@ -545,6 +546,33 @@
     pageModel = model;
     if (!hist) hist = { stack: [snapNow()], i: 0, d0: dirty };
     histBtns();
+    // Brouillon gardé avant un rechargement (nouvelle version de l'admin) pour cette même page : on le remet.
+    if (draft && draft.hash === location.hash) {
+      var d = draft; draft = null;
+      try { sessionStorage.removeItem(DRAFT_KEY); } catch (e) {}
+      setTimeout(function () {
+        hist.busy = true; model.set({ data: d.data, refs: d.refs || {} }); hist.busy = false;
+        touch(); status("Modifications non publiées reprises après le rechargement : vérifiez, puis publiez.", "warn");
+      }, 0);
+    }
+  }
+  // Brouillon de la page ouverte (données + bundle lu + fichiers déposés), gardé dans l'onglet le temps d'un rechargement.
+  var DRAFT_KEY = "kinou-admin-draft", draft = null;
+  try { draft = JSON.parse(sessionStorage.getItem(DRAFT_KEY)); } catch (e) {}
+  function saveDraft() {
+    if (!pageModel) return false;
+    var m = pageModel.get(), refs = m.refs || {}, keep = {};
+    // Images déposées (portrait, affiches) : leur aperçu « blob: » ne survit pas au rechargement → image en clair (base64).
+    function fix(o) {
+      if (!o || typeof o !== "object") return o;
+      var c = Array.isArray(o) ? [] : {};
+      Object.keys(o).forEach(function (k) { c[k] = fix(o[k]); });
+      if (c.base64 && /^blob:/.test(c.preview || "")) c.preview = "data:image/webp;base64," + c.base64;
+      return c;
+    }
+    Object.keys(refs).forEach(function (k) { try { keep[k] = JSON.parse(JSON.stringify(fix(refs[k]))); } catch (e) {} });
+    try { sessionStorage.setItem(DRAFT_KEY, JSON.stringify({ hash: location.hash, data: JSON.stringify(m.data), refs: keep, at: Date.now() })); return true; }
+    catch (e) { return false; }
   }
   function histReset() { hist = null; clearTimeout(histT); histT = 0; histBtns(); }
   function histCommit() {
