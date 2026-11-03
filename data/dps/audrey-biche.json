@@ -270,11 +270,17 @@
         "Editorial"
       ]
     },
+    "11508": {
+      "zoom": 1.1,
+      "zoomThumb": true
+    },
     "11509": {
       "types": [
         "Edito",
         "Editorial"
-      ]
+      ],
+      "zoom": 1.36,
+      "zoomThumb": true
     },
     "11511": {
       "types": [
