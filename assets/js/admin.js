@@ -180,10 +180,13 @@
   function slateWait(fast) { return siteDown ? " (par le robot GitHub : environ 1 min)…" : fast; }
   function siteGet(url, fail) { // rejet { down: true } = fonctions Netlify hors service
     if (siteDown) return Promise.reject({ down: true });
+    // 503 « Usage exceeded », site Netlify supprimé (404, page qui n'est pas du JSON) ou injoignable : robot GitHub.
+    // Seule une vraie erreur de lecture Slate de la fonction (502 + message JSON) est montrée telle quelle.
+    function down() { siteDown = true; throw { down: true }; }
     return fetch(url, { cache: "no-store" }).then(function (r) {
-      if (r.status === 503) { siteDown = true; throw { down: true }; }
-      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || fail); return d; });
-    }, function () { siteDown = true; throw { down: true }; });
+      if (!r.ok && r.status !== 502) down();
+      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || fail); return d; }, down);
+    }, down);
   }
   function orRobot(kind, link) { return function (e) { if (e && e.down) return askRobot(kind, link); throw e; }; }
   function askRobot(kind, link) {
@@ -224,6 +227,7 @@
   // Demande une fois chaque vignette allégée au site : Netlify la prépare et la garde en cache,
   // le premier visiteur n'attend donc pas sa fabrication.
   function warmThumbs(clips) {
+    if (siteDown) return; // Netlify hors service : rien à préparer
     var seen = {};
     (clips || []).forEach(function (c) {
       if (!c.img || seen[c.img] || !/^https:\/\/images\.slatecdn\.net\//.test(c.img)) return;
