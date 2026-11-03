@@ -31,9 +31,20 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   (un commit par publication sur `main`), avec le token personnel de l'utilisateur.
 
 ## Fonctionnement
-- Connexion : token GitHub « fine-grained » personnel (un par personne), limité aux repos `Kinou-DoP/admin` et `Kinou-DoP/site`
-  (site : pour les pages d'aperçu des liens, voir plus bas), permission Contents : Read and write. Stocké dans le `localStorage` du navigateur, jamais dans le repo.
-  Créé sans expiration (autorisé par l'organisation Kinou-DoP).
+- Connexion : token GitHub « fine-grained » personnel (un par personne, sur son propre compte GitHub ; Resource owner = Kinou-DoP),
+  limité aux repos `Kinou-DoP/admin`, `Kinou-DoP/site` (pages d'aperçu des liens, voir plus bas) et `Kinou-DoP/notes` (notes internes,
+  privé), permission Contents : Read and write. Stocké dans le `localStorage` du navigateur, jamais dans le repo.
+  Créé sans expiration (autorisé par l'organisation Kinou-DoP). Depuis le 04/11 : une clé sur le compte perso de Gus, une sur
+  kinou-agency, une pour son frère (anciennes clés de kinou-agency supprimées ; projets Netlify supprimés).
+- **Ajouter une personne à l'admin** (Gus 04/11) : une clé ne peut jamais faire plus que le compte de la personne. Donc :
+  1. l'inviter dans l'organisation Kinou-DoP (People → Invite member) ;
+  2. lui donner le rôle **Write** sur les 3 dépôts `admin`, `site` et **`notes`** (dépôt → Settings → Collaborators and teams →
+     Add people → Write), ou une seule fois créer une équipe avec Write sur les 3 et y ajouter chaque nouvelle personne
+     (sans Write sur `notes` : notes lisibles mais « Pas enregistré : GitHub 403 … Resource not accessible by personal access
+     token », cas du frère de Gus) ; les owners ont déjà tout ;
+  3. elle crée sa clé fine-grained (Resource owner Kinou-DoP, les 3 dépôts, Contents Read and write, sans expiration) et la
+     colle dans l'admin ; si « pending approval » : organisation → Settings → Personal access tokens → Pending requests.
+  Tout futur dépôt privé de données internes (tableaux, contacts…) : même règle, Write pour chaque personne + dépôt ajouté à sa clé.
 - Import d'un bundle Slate : `GET <SITE>/api/bundle/<uuid | code shots.re>` (fonction du repo `site`).
 - Forcer la mise à jour du site : `POST <SITE>/api/refresh/<slug>` avec le token (vide le cache CDN du DP).
 - Corrections par film : `overrides` indexés par id Slate (suivent le film si l'ordre change sur Slate).
