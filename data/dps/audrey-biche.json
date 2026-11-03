@@ -268,7 +268,9 @@
     "11507": {
       "types": [
         "Editorial"
-      ]
+      ],
+      "zoom": 1.08,
+      "zoomThumb": true
     },
     "11508": {
       "zoom": 1.1,
