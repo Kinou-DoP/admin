@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/a988d"
+      "link": "https://shots.re/a988d",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/hugo-boss-kelvyn",
+        "title": "Hugo Boss Kelvyn",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b50ba54f-b1c5-45af-b5ee-4c7324ade464-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/RD2rRlDEktZYSd9WI79l7-UvU3P58-B4wrDMlq-MFPA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NzY3NzlmMy1lYTVm/LTQxN2EtOGIzYS1l/OGQzYzQzNjFjZTMv/aW1hZ2UwLnBuZw.webp"
+      }
     }
   ],
   "at": "2026-11-03T15:28:10.374Z",
-  "by": "kinou-agency"
+  "by": "kinou-agency",
+  "doneAt": "2026-11-03T15:28:28.207Z"
 }
