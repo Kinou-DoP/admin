@@ -67,7 +67,8 @@
       "types": [
         "Short Film",
         "narrative"
-      ]
+      ],
+      "zoomThumb": true
     },
     "10425": {
       "zoom": 1.34,
