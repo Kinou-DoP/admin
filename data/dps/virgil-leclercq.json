@@ -4,39 +4,152 @@
   "hue": 0,
   "bundle": "https://kinou.slateapp.com/bundles/9f7ea055-d76c-11f1-a349-0215583debcb",
   "overrides": {
+    "10243": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10244": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10245": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "10246": {
-      "zoom": 1.43
+      "zoom": 1.43,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10247": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10248": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10249": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Commercial"
+      ]
     },
     "10250": {
-      "zoom": 1.26
+      "zoom": 1.26,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10251": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10252": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10253": {
       "zoom": 1.19,
       "zoomPos": "50.6% 0%"
     },
     "10254": {
-      "zoom": 1.23
+      "zoom": 1.23,
+      "types": [
+        "Music Video"
+      ]
     },
     "10255": {
-      "zoom": 1.23
+      "zoom": 1.23,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10256": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10259": {
-      "zoom": 1.25
+      "zoom": 1.25,
+      "types": [
+        "Commercial"
+      ]
     },
     "10260": {
       "zoom": 1.26
     },
+    "10262": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10263": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "10265": {
       "zoom": 1.22
     },
+    "10266": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10267": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "10268": {
-      "zoom": 1.25
+      "zoom": 1.25,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10270": {
+      "types": [
+        "Short Film",
+        "Teaser",
+        "narrative"
+      ]
     },
     "10271": {
-      "zoom": 1.07
+      "zoom": 1.07,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
+    },
+    "10272": {
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
+    },
+    "10841": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11498": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11499": {
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {
