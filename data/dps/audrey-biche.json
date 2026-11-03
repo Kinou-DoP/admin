@@ -173,8 +173,155 @@
       ],
       "types": [
         "Short Film",
-        "narrative",
-        "Docu-Fiction"
+        "Fiction",
+        "narrative"
+      ]
+    },
+    "11503": {
+      "types": [
+        "Short Film",
+        "Fiction",
+        "narrative"
+      ],
+      "images": [
+        "https://images.slatecdn.net/kMyjFEv-mYVJUifNEvf36laAqY8TY-hceTIRpG9aNvw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjNiY2Rj/NDItNTFhZS00ZWMy/LWJmOTQtYzc3NDY5/NWJkZjhhLzJiODZi/OC1jZjM2NmNhMGFj/M2M0MTAwODdjNzBm/ZmY4Nzk3Y2JkOS1t/djIucG5n.webp",
+        "https://images.slatecdn.net/xcUPXVANlKJ49if7VyFiuQFC94maeN7hV0EDZizUlzg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTE2MWNk/OTEtYTMxYy00YzY3/LWE5OGItN2ZjODU1/OWVjMzgzLzJiODZi/OC0zYzlkYWJmODcy/Y2Q0MGIxOGIzYjgx/YzBmMTMzOTYyMC1t/djIucG5n.webp",
+        "https://images.slatecdn.net/TZ1hObXvCaIQi4bB-1rJ4oBDSKI87W-0yi02b33KXyo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjQxNjZm/YTUtYTY2Zi00ZDVk/LWI4MWMtMjMzNGZj/MTA0NTIxLzJiODZi/OC05Y2M0YWIzMmJh/YjA0OGM0OWRlZWQx/MDY3OTAwNzQ3Zi1t/djIucG5n.webp",
+        "https://images.slatecdn.net/AdUbYaNz3Z2b3W16CCNLn7WnwreGpYwWtxTmpTHRsSw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMWMxMzJm/ZDktOTgxOC00ZDYw/LWIxZDctNDFhYWZj/NTRhYjYwLzJiODZi/OC0xNzEwZDU5NzMz/ZTM0ODgyYTRlMmE3/MGE4YTMxZDEzNy1t/djIucG5n.webp",
+        "https://images.slatecdn.net/nxcmOCXwzT2m1wjx8how0nKw3KriZ4HHWdAas51re2Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTViNWZm/NmItMjlmOC00NGU0/LTg3N2ItMTdmZDlh/YzIwNTNjLzJiODZi/OC0zMjkxMTk1Zjg3/NWY0OTAwOGYyMzAz/ZGFlNjY3OTAzOS1t/djIucG5n.webp",
+        "https://images.slatecdn.net/jbe5hPkkLb6c8iw2ei0DGe2jSJRW3Qd3O9zanIozaHE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjRhYzdl/MmUtOTYwMC00YWI5/LThjYWMtOTRlNTFk/M2YzMWE4LzJiODZi/OC1mZWVkMWJkMjk4/YzA0YWM5ODMwNzg5/ZDhkYmU3NmE3Yi1t/djIucG5n.webp",
+        "https://images.slatecdn.net/H4a_EOvoMTop1muVpWnUxhV27q6S4oIujzgourmvpRE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNmU1Mzgz/NWQtN2E4MS00ZWI2/LWEyNmEtZmRhNDNk/MDYwZGI0LzJiODZi/OC1jNzMxOTJmZTRi/ZDU0OTk2YjhlYmEx/YWUyNjE2N2ZhYS1t/djIucG5n.webp"
+      ],
+      "ratios": [
+        1.5482,
+        1.5482,
+        1.5482,
+        1.5482,
+        1.5482,
+        1.5482,
+        1.5482
+      ]
+    },
+    "11504": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "11505": {
+      "types": [
+        "Short Film",
+        "Fiction",
+        "narrative"
+      ],
+      "images": [
+        "https://images.slatecdn.net/ZpvFzhzHShZ-bPEJ98Xduf9EppqHe1mQ_n9exwGZIDk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjEzNGRl/NGYtYzYxMy00MTg0/LTlmZGQtMTZhMzVk/NWJiYWY1LzJiODZi/OC0xYWZjYzcwZWRl/Y2I0NTk5YjUzNGRj/MWY2NGI2OTliYS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/-PpcCJD7Eu_OlBSM3gTXw-f1qJ2xh8fgnQT4wgQfVG4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDQ4MjJh/ZDYtZjk4MS00Mjcy/LWFlYmYtY2MwNmNl/NWIzZTVlLzJiODZi/OC00YjU0MGFiYzZl/MWY0YWMzODc2ZDQ2/NDQ4ZWRiZWEwNS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/ZzCCz8lJQi2NCO7HPezszd3TiCtd1aPbLsC6uB1FWD4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDhhZDE2/NjMtMzM2MS00N2Vk/LWI1NDEtOGMxNDFh/YjhhZGE4LzJiODZi/OC0wNWY1ZjVhODY4/OTg0NmEwODFiNThm/YmMzNDFhNWIxZi1t/djIuanBn.webp",
+        "https://images.slatecdn.net/YsDLd5qY-2A0Of-8RitofiXSIsxoLBE5oDQYJHe0iFQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2NlMGNm/ODUtNmVhMC00ZmY1/LTgzN2UtMzhjMjcz/N2RmOTRmLzJiODZi/OC0xNGNkZTRhOTk5/ZjA0ODZiYjI2YzAz/YWNiMjVkNmI1NC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/Ndyid0cvjKRe16PT2Ffx5oD_fyjcYf0SK-oLFhYlKi4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWMxZmU2/MWEtMTE1Zi00NDll/LTlhM2UtNjA4ZGVm/YTBkODRhLzJiODZi/OC0xMDRiYzkzYTQ0/NDc0NjMyYTBmZDM3/MTE0NzZkOTQ1NS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/WmxhCn6PtSSl9naACvadoLCwu1x3Bqwj7Dnt6EKmZBE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNmQ2OTQ5/NWItNDU4My00ODVi/LWJmNzYtNWQ4YWRl/MmRjZGJkLzJiODZi/OC0yMzRhN2ExYjdl/NTU0MWE5YWViNzYz/MTFjZjZmYzU5MC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/tgrKxyXZwLxdqmIwaafR_m2-FkV-C5O-2buOyRxG7bA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDEzOGMy/MzMtZWYxZC00ODli/LTljNmEtNjI0ZGRk/ZjMwZTJhLzJiODZi/OC01ODVlZGEwMzRl/OGY0ZDNhYmI2OGUy/NDE0MTY3MmY0ZS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/0GFphM68N-n_BFRYfc-7q2OAN6-2R3rddTo3p5tBhyQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmJkZGYy/MjktMzM1My00YWNi/LWIxYjctMjk1ODQx/MmJiZWJjLzJiODZi/OC02OTlhNzIxODA2/NTk0MDhkYWNjY2U1/ZWNhOTM3YzExNy1t/djIuanBn.webp",
+        "https://images.slatecdn.net/lq8pNr3Q3OVr0Iz9LSWkK5HfGuReKj0CFPLLfItrGc4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODIwMDNm/YzktYWUxYy00MmFh/LTk1ZWUtOWE5MzIy/ZWZlODNhLzJiODZi/OC05MTBjZmYwMWQ4/MDA0ZGZhYTI3YjU1/YmQyMzRmMTU2MS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/NKR1bbgdQkxQoJ7FuC-uli26fSDa9XafmV7w5lYfLxI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTdlZjQ2/ZTQtM2M1Ny00ZjZl/LTk3MDItYzYwODdl/NWZjNWVhLzJiODZi/OC0zODYwY2ZlMDlj/YzE0ZDYxYWExZWQy/MjhkMmYzNjdhYy1t/djIuanBn.webp",
+        "https://images.slatecdn.net/28eVTh5LXgz5mxeOzwjd9kdw6uNdifpAxcmLgW-qFh8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMWI1MjBi/MjItY2JjNi00YWUx/LThkYTctZjEwY2Ux/ZWUzYjU3LzJiODZi/OC04MDg2MThlMjIx/Mjg0ZTM5OGJmMDdm/ZmU2MzU0MWNlYy1t/djIuanBn.webp",
+        "https://images.slatecdn.net/Rkr98Ki2nVqI1A8yx5Lb7jLOcFcq_Vme7nnvH92UwIg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTgxYTZi/NjktMmMwZi00MTQ1/LTk4N2YtOWI3MmEx/ZjFjNzAyLzJiODZi/OC03MDc1NTY2MjBk/NTU0NjAxYWRhZDYy/NTUwZjRkNjZmNC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/AtoW2XYkysIXkDiVm-EkhDshWgAoKOZoIX6FCRhOPEY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTExMTFl/MjktYjMzMS00ZTUx/LWEwZjYtZmVlYTEx/ODZkMDkwLzJiODZi/OC1iMGIzYWZlN2Y3/NzQ0ZDkxYjVmNTc0/MGI1MTExOGE5ZS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/KR6NcIg_MMrNZgDiiHz4XAi3uUCGExD92MuMsyXcZHY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDgyMDYz/MTktNDJiNS00N2Fl/LTlhM2ItYWMxZjc3/NTdmNTAwLzJiODZi/OC1iNjBjNDNjYzcz/ODU0N2RmYjc4ODdh/Nzk1MWIwZDgyMi1t/djIuanBn.webp",
+        "https://images.slatecdn.net/1fDTCA4o627Dqrmlv-2xYGSSuyIetFcM0vplsiwVY_w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTExZmI1/ZTQtOWYzZC00ZmFh/LWJjZjQtM2IwNDZl/Mjc0YTViLzJiODZi/OC1jM2Y0MzE2YTA4/ZmU0MjFkYWVmMjhj/ZDQ4NThiZmY0NC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/KQHRkxcAENCPq4NmtoRp7f8LpujnTfYRSGCFyu0wy-c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjQ4ODdh/NWUtZGI3MC00M2Q3/LWJkNGMtZGUwZGI1/NTUwNWM0LzJiODZi/OC1jYzA4YjliZWJj/ZDY0NGE5YTAwNDJh/ZDVkZGNhNjMxNS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/NMv4xrfxx8tVQeQb9DqF9oGAWYFF4Hkt6U5W-7S0uow/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzIxMzAz/OWQtN2VlOS00MmMy/LWI2YTctNjMyYmNi/ZjcxNjQ3LzJiODZi/OC1jYzQ3ZDkxYTIz/ZjM0MDUxOGIxOGM2/NDc1Njk0NmJmNC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/tMCIOv8SnKtHRu-Lp7eozveYSjAhINo5Ft8HfU6aNQ0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYmNlOTVl/YTEtOTVhNS00YzE1/LTg1MGQtOWViMzRk/YTQ3MTc1LzJiODZi/OC1jZGE2MDY2YjQ1/YTI0NDAyYjFmZmQ0/ODdmYzQzZjdjYi1t/djIuanBn.webp",
+        "https://images.slatecdn.net/QQJiV4yEXyPUPPIz6P6RpaK1jnYAQlzF0WkruvYQCnQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWY3OGI2/ODgtNjQzOC00MWIz/LTg0MGItZGZlMWJl/OTk1NDQwLzJiODZi/OC1jZjg3Yjc2NmFj/NDM0NzAyOTJkNWFm/YmU1YzMyOTNiZC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/EXlM4ZD79nScNR5qP1TEwLD4ZeOhSO-azyiBccdS1_A/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzQ5NzBi/MjgtNTgwMy00ZDUy/LThjY2MtN2NkYjM5/YzJjOWVlLzJiODZi/OC1lN2I0YmNhNjFh/NDk0NDM5OWVhN2I1/MDMxNDZkMTYxOC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/OfL5wxZUncy-QiJXy9XcMqJpR4ueH7YrUeyMKWNiYuA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNGVlMzhj/MDEtOTNlYi00YTVm/LWE4ZTgtN2M3OTlj/OWE4M2IwLzJiODZi/OC1lZjZlMWIzZjE2/NjM0MDk4OWM4NzYx/YzcwOTMzYzUwYy1t/djIuanBn.webp",
+        "https://images.slatecdn.net/5SiZ2wCxGcLPbBVfi91hlh9YtAThKKsJXlNV7WoSCm0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzY1MTQw/MmQtOTJhNy00MmEz/LWFmNTktZmJkZjM4/YTg4ODJjLzJiODZi/OC1mNGIxMzUyZjli/OTY0OTY2YTA4ZTRj/Y2E0ZTczMGE3MS1t/djIuanBn.webp"
+      ],
+      "ratios": [
+        1.7766,
+        1.7729,
+        1.7729,
+        1.7729,
+        1.7729,
+        1.7766,
+        1.7729,
+        1.7729,
+        1.7766,
+        1.7766,
+        1.7766,
+        1.7766,
+        1.7766,
+        1.7766,
+        1.7729,
+        1.7729,
+        1.7766,
+        1.7729,
+        1.7729,
+        1.7729,
+        1.7766,
+        1.7766
+      ]
+    },
+    "11507": {
+      "types": [
+        "Editorial"
+      ]
+    },
+    "11509": {
+      "types": [
+        "Edito",
+        "Editorial"
+      ]
+    },
+    "11511": {
+      "types": [
+        "Short Film",
+        "Fiction",
+        "narrative"
+      ],
+      "images": [
+        "https://images.slatecdn.net/TmArlll9pBieZuwHRYo-z4TdGxzIwevl1QhulzCS5Tw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmZkMTQ2/MDEtY2U1Ny00ZDdl/LTk4OGQtM2I0ZDAx/NTA5MjI2LzJiODZi/OC0zZTczZmExMzNj/NmY0ZGU3OTU4NWQ3/MWZlMmZkY2M2Yy1t/djIuanBn.webp",
+        "https://images.slatecdn.net/GfGXQQ9frwO-vlsC2vhIzVFRIn1DR18UwEkGio3Vrxg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTFiYjgw/MzUtNmVlMS00OWMx/LWE5MmItNmQzZWUz/MTgzMmMwLzJiODZi/OC0wMWM4MTJjNTU0/MzM0ZTU2OTU4ZTQ2/N2Q4ZWViNTU1OS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/on4aqeU_7zdIPNGf8VXAK2GvZi2QiHTI066u-ba0HgY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZThjZGQ5/ODktZjI2NS00ZDcz/LTgwMDAtNTNiMWU3/M2M0ODE3LzJiODZi/OC00ZjQyNTlhNGE1/MTg0YTg3YmY3NTEw/YmRhNjY0M2QzNi1t/djIuanBn.webp",
+        "https://images.slatecdn.net/cYz1LUXb2JtnFiF25OXvdoaU3PKXhoC8W7hlRYwMkuI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTk2NzRk/MmItNjRiMy00NzFi/LWIxMjUtNzA1MDc5/MmJkOWE0LzJiODZi/OC03ZGY5YTQ4NTBi/NGQ0NTQyYTEzN2Nk/NjQ1M2NhMDYxNi1t/djIuanBn.webp",
+        "https://images.slatecdn.net/SPiHybOEt0GSSHeqIQbmkLrZ9Btqj6Mhl9VUUC40_B4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGFmMDZk/M2UtYTA4ZS00NTFl/LWE3MTItMGU5N2Y2/MzA4ZjE3LzJiODZi/OC04ZGJlNWU5Y2M2/MjU0ZTVkOTViZDNk/NDY2ODVhMTc2YS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/_AfO8l3pxc7kcqbDu1gTHF6vhyhRcW6CLrEFUh1VcaI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjk1OWJi/NDktY2RhNS00ZTUz/LTkyYTAtYzc0MzY1/NDNkMTRmLzJiODZi/OC0xNmQzYTY4ZjAy/OGY0MjkyYjJmMzk2/Y2Q3MzQ1YTYwMC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/xFNcfpcHEfDDyzMI47byDid32eq089A9B8_I2j2eTY8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTcyMzE5/NjMtZGI5MS00OGJj/LTkzYmYtZDYxYWJj/MTQ1NjZjLzJiODZi/OC0zNGRhZTVjNDQx/YzE0MmJiYjdhYmI3/YmRjYzFkODY0NC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/lE6yBs25_mTWXInQugePiui4rKMgny3jDM5idLbu-gA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjgzMGRk/ZTUtMWM4OC00ODk1/LWJlNGUtMmM1ODVh/YmZmOWM4LzJiODZi/OC05MmUxM2MzNDVl/MjE0MGRiOTVlOGI2/OWQ2ZGMxNGIxMy1t/djIuanBn.webp",
+        "https://images.slatecdn.net/5pILxFZcwihq4j0hQh7BJwZ0XfHCrX082LFop3NGJ5s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYmRkYjhj/YmUtNjAwNy00NGM1/LWJiNWItZDExYWY0/NWViYThhLzJiODZi/OC03MDJjYzM3MmRm/NDQ0NDczYTFkMmM2/ZjQwN2U5NGEzZi1t/djIuanBn.webp",
+        "https://images.slatecdn.net/VXEEdtPP4GX-vfVohMrCIukFppfaSunAbACQXFNtQPI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjg1ZjI3/NzYtMmI1My00MWU4/LWI0YzYtYzY4Nzkx/MDFiMmFkLzJiODZi/OC03NDNiNzgwZmEy/MmM0MWY5YjM0ZTc1/NTdlNDJkNGUzOS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/Jttj9XWytbjRWxwgEdbrFh4FC4kEA3OVdzqzhoGhMmA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2Q0YjNm/MGMtZGQzZi00YWJi/LTkyNTctNGNkZjI3/OTMwMmUwLzJiODZi/OC0yNzc1MjQ5NTNi/ZTc0NTUwOWJiNDU0/ZGUxMjI2ZTM3MS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/FTxEuj5Ta-K2-UDwh7qBgTV2pxIK8R2rHJqs_SXK9bE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTQ3YWVk/MzktYzE1NS00N2Qw/LTllN2MtZTRmZWQ2/MGNhNmY1LzJiODZi/OC02OTcwMjU3NDRl/MjM0YjQ3OTU2YWQx/NDcxZGYxMTExMC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/kkL5HCodzPViMAIXAbQlq6ZJsinfC3hpSaLGlhzVlZg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjFmZTFh/NzctNTIyMC00ODU1/LWEwYWUtNWYxYWQy/YmRmZjQxLzJiODZi/OC05OTAwMTA3MTdk/ZTQ0YjM4YWYyNzJk/MjgxZTY4MWJmMy1t/djIuanBn.webp",
+        "https://images.slatecdn.net/zEbmkhKToDhGQ5b3PyohFXl4mdEWaxjuSF49UPJ9218/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjJjNjcx/NTgtOTZmMS00ZGRj/LTk0MWMtMTgyNjc2/OTI4MTE5LzJiODZi/OC1hOWZmYmZkMGY4/NzA0ZjQzYWYxOTdi/ZDljY2M4OWI2ZS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/Se1DZT2_6LJ8Cdpucmf8_RDws5KZSqU2Kae08SROeVg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2U2ZTUy/YzQtOGQ4MS00NTBm/LWI5YTAtNDc0ZGFm/ZWFmYTcxLzJiODZi/OC1hZTk2ZmVhMWIw/N2M0ZmM1ODE4NTdh/NjRkNTA4YTI4My1t/djIuanBn.webp",
+        "https://images.slatecdn.net/agvmXOr4p3JlYoJXmTtCkTYGbsTUTrpDlOwZ1R2m9Pk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDVlOWI5/YmQtNmViNC00Yzhh/LWI4ZjctMDFmZDgx/NmRlYTk3LzJiODZi/OC1iM2EzMjlhN2Rj/NDQ0ZTQ5OWU5NmFk/M2ZmY2UwMTk3NC1t/djIuanBn.webp",
+        "https://images.slatecdn.net/pTJZx-2_VrD5VNCYgTUjaa7HiwVIsVShKu3iin7Ox14/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzg0NmFk/N2UtOWM5Zi00MjIx/LTkwMjktMzEyY2Fi/OWQ5NzAwLzJiODZi/OC1iNDVkN2Y3ZTJh/MmI0YjYxOGZlZDhm/ZWY1YTYyYzlhYy1t/djIuanBn.webp",
+        "https://images.slatecdn.net/ylsHKgrWuajL6uI4FChksVtiEf5sLaeLWufctjT09yk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTllMzNk/NjgtYjllNS00ZWM0/LWI1MDQtM2ZkN2Qx/NjZjNzc4LzJiODZi/OC1kNzJiMGZmMmRk/Yjg0ZDQxODcyN2Q2/YThmMGY2MWZlMi1t/djIuanBn.webp",
+        "https://images.slatecdn.net/Wsjdz2vSJ0ia9GNCeU6LL2gAo0b34s9OWAaUGUDA0QY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDZjNjkw/ZWItMjVmYi00OTg0/LWIyMWItNWYwMmM2/NGI3MWM5LzJiODZi/OC1kMjk4NzhmMTMz/MGU0Y2YxYWU4NGM1/YjExM2JhNWM2OS1t/djIuanBn.webp",
+        "https://images.slatecdn.net/FUeUKXJ37fRcRu-2oc_oTE-PyPodPaeanUfEISK6qlM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTJkYjEz/OGQtZDZkMS00ODIy/LTkwMjUtMzE4OGE3/YTkwMDVmLzJiODZi/OC1lNzc5ZDQ1OTM3/ZDY0ZDRmODA3YWFh/Yzc1NmZmNzdiZS1t/djIuanBn.webp"
+      ],
+      "ratios": [
+        1.7754,
+        1.7807,
+        1.7754,
+        1.7807,
+        1.7807,
+        1.7807,
+        1.7754,
+        1.7754,
+        1.7807,
+        1.7807,
+        1.7754,
+        1.7807,
+        1.7754,
+        1.7754,
+        1.7754,
+        1.7754,
+        1.7807,
+        1.7807,
+        1.7754,
+        1.7807
       ]
     }
   },
