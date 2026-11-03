@@ -2,9 +2,365 @@
   "items": [
     {
       "kind": "bundle",
-      "link": "e0cfaf30-081f-11f1-9ce3-0215583debcb"
+      "link": "e0cfaf30-081f-11f1-9ce3-0215583debcb",
+      "answer": {
+        "name": "Audrey Biche",
+        "categories": [
+          "FEATURED",
+          "NARRATIVE",
+          "COMMERCIAL",
+          "MUSIC VIDEO"
+        ],
+        "clips": [
+          {
+            "title": "SQUIRREL (stills)",
+            "sub": "Laura Campbell",
+            "img": "https://images.slatecdn.net/IBHOZth6WeOyw9d0uXvvmsd20GIRg9I-_GpKjBYXTZM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjBmMzU4/OGQtMmI1Yy00NzQ1/LThkYTQtMzg3Y2Q3/YzNhNWJlL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuMjEucG5n?v=1&format=webp",
+            "stills": [
+              "https://images.slatecdn.net/IXjTfSKsaS0xHjtXpUS5cgy8ptGGhzR4-nB4SRyj9mk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjBmMzU4/OGQtMmI1Yy00NzQ1/LThkYTQtMzg3Y2Q3/YzNhNWJlL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuMjEucG5n.webp",
+              "https://images.slatecdn.net/xhrhkEKxc-PXQIBItNSR8uH_5XHrYJ7BILobZSrc93g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTk2MmVh/NjAtMDNmOS00M2Ex/LThhNmUtYjY0ZmZm/MTQ3YzViL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuNTUucG5n.webp",
+              "https://images.slatecdn.net/Cll6v4i_MCLMIvm5MDSV5-rqRX_XqLs3vz-Ca-2PYW0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODNhOThm/NmMtM2I0YS00MGEw/LTgzYzEtOTNmYzIw/NzEwZmExL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuNTAucG5n.webp",
+              "https://images.slatecdn.net/30edhirnjB3V61TK74VQDR4hxj8olh3l-y0WuDFWy5c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZWZhNGRj/NGYtMTM3NS00NzMy/LWE4MGMtM2VkY2Uw/YjQ1YWZlL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuNDQucG5n.webp",
+              "https://images.slatecdn.net/0UbG33lQ5SZruaR8r0jOb3qj1H4UFLg4utDqhp1NIRY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjU0ZjFi/OGEtODRmMS00Mzc4/LWEyMWUtOTlhZjY5/NWQxMDFiL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuMzkucG5n.webp",
+              "https://images.slatecdn.net/dJtUyLJw6cQDvVB7F6i37t8F3_tg-X8_ui8ViSYUw5I/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWI4MDY2/ZGEtZTBiZS00ZDI4/LTlhMTEtZTU2ZWJi/OTZhOWUxL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuMzAucG5n.webp",
+              "https://images.slatecdn.net/zuC9ki9Au1zNvpmB2czsD8X8vS-5i1eWpioqHNem7Xk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWU3M2U4/ZjQtNThlMC00MWY1/LTgxOGMtZmYyYTI5/OTlkNDQzL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuMjcucG5n.webp",
+              "https://images.slatecdn.net/xvsQ-xlP01hq1pMemj0sjYC48elJmqBDLW8QPmOwc6s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOGJmMjE3/NDYtYTg5MS00ZjZm/LTlhNGEtMzk5MGQ4/NmNlNDE3L2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuMTUucG5n.webp",
+              "https://images.slatecdn.net/TKWMnJ9mPD-KRPvR7ue6wNJFFxtaIrdpVohxGU-nA0g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTYwMDlm/YTYtNzMwYS00NTRm/LThhMmQtMjY2MDll/Y2VhMDZkL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuMDUucG5n.webp",
+              "https://images.slatecdn.net/tpZs69N7WJiSQia3oZ1-SCvyM_ougS6ljby5A03o1Co/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTAyMmUw/NWUtNDBmNC00ZTE0/LTk4MGUtZmIxNjM3/ZGNjNGQxL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTQuNTQucG5n.webp"
+            ],
+            "cat": "NARRATIVE",
+            "slate": 11501
+          },
+          {
+            "title": "Light Go Shining (stills)",
+            "sub": "Max Olson",
+            "img": "https://images.slatecdn.net/i5C5pOQ7QDpYB2uuspDo-rmEOXn0Vb9KYuJt7CkfCqQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjNiY2Rj/NDItNTFhZS00ZWMy/LWJmOTQtYzc3NDY5/NWJkZjhhLzJiODZi/OC1jZjM2NmNhMGFj/M2M0MTAwODdjNzBm/ZmY4Nzk3Y2JkOS1t/djIucG5n?v=1&format=webp",
+            "stills": [
+              "https://images.slatecdn.net/kMyjFEv-mYVJUifNEvf36laAqY8TY-hceTIRpG9aNvw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjNiY2Rj/NDItNTFhZS00ZWMy/LWJmOTQtYzc3NDY5/NWJkZjhhLzJiODZi/OC1jZjM2NmNhMGFj/M2M0MTAwODdjNzBm/ZmY4Nzk3Y2JkOS1t/djIucG5n.webp",
+              "https://images.slatecdn.net/xcUPXVANlKJ49if7VyFiuQFC94maeN7hV0EDZizUlzg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTE2MWNk/OTEtYTMxYy00YzY3/LWE5OGItN2ZjODU1/OWVjMzgzLzJiODZi/OC0zYzlkYWJmODcy/Y2Q0MGIxOGIzYjgx/YzBmMTMzOTYyMC1t/djIucG5n.webp",
+              "https://images.slatecdn.net/TZ1hObXvCaIQi4bB-1rJ4oBDSKI87W-0yi02b33KXyo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjQxNjZm/YTUtYTY2Zi00ZDVk/LWI4MWMtMjMzNGZj/MTA0NTIxLzJiODZi/OC05Y2M0YWIzMmJh/YjA0OGM0OWRlZWQx/MDY3OTAwNzQ3Zi1t/djIucG5n.webp",
+              "https://images.slatecdn.net/AdUbYaNz3Z2b3W16CCNLn7WnwreGpYwWtxTmpTHRsSw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMWMxMzJm/ZDktOTgxOC00ZDYw/LWIxZDctNDFhYWZj/NTRhYjYwLzJiODZi/OC0xNzEwZDU5NzMz/ZTM0ODgyYTRlMmE3/MGE4YTMxZDEzNy1t/djIucG5n.webp",
+              "https://images.slatecdn.net/nxcmOCXwzT2m1wjx8how0nKw3KriZ4HHWdAas51re2Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTViNWZm/NmItMjlmOC00NGU0/LTg3N2ItMTdmZDlh/YzIwNTNjLzJiODZi/OC0zMjkxMTk1Zjg3/NWY0OTAwOGYyMzAz/ZGFlNjY3OTAzOS1t/djIucG5n.webp",
+              "https://images.slatecdn.net/jbe5hPkkLb6c8iw2ei0DGe2jSJRW3Qd3O9zanIozaHE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjRhYzdl/MmUtOTYwMC00YWI5/LThjYWMtOTRlNTFk/M2YzMWE4LzJiODZi/OC1mZWVkMWJkMjk4/YzA0YWM5ODMwNzg5/ZDhkYmU3NmE3Yi1t/djIucG5n.webp",
+              "https://images.slatecdn.net/H4a_EOvoMTop1muVpWnUxhV27q6S4oIujzgourmvpRE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNmU1Mzgz/NWQtN2E4MS00ZWI2/LWEyNmEtZmRhNDNk/MDYwZGI0LzJiODZi/OC1jNzMxOTJmZTRi/ZDU0OTk2YjhlYmEx/YWUyNjE2N2ZhYS1t/djIucG5n.webp"
+            ],
+            "cat": "NARRATIVE",
+            "slate": 11503
+          },
+          {
+            "title": "Réplique",
+            "sub": "Max Olson",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10429/f3ae20ae-0821-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0470ec15-297d-4419-bf81-947ef9727bb9-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/QkRwjRQUDUncd2mM1D1POAd_rf2q90LSM2nFMIUKfPw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyOS02OThkZTI5/YzI1ZDlkMS4wMDMz/OTEyMC00OGQ4NmM1/MjIzNGY3NWZlYWVl/YTcyZWQwZTU5NzJh/OS5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 10429,
+            "featured": true,
+            "featuredOrder": 6
+          },
+          {
+            "title": "Bughouse (stills)",
+            "sub": "Bella Newman",
+            "img": "https://images.slatecdn.net/PTg_1PDwvTRKYNE0jDJ_HdH4cvFim80js3wAbkYkhA0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjEzNGRl/NGYtYzYxMy00MTg0/LTlmZGQtMTZhMzVk/NWJiYWY1LzJiODZi/OC0xYWZjYzcwZWRl/Y2I0NTk5YjUzNGRj/MWY2NGI2OTliYS1t/djIuanBn?v=1&format=webp",
+            "stills": [
+              "https://images.slatecdn.net/ZpvFzhzHShZ-bPEJ98Xduf9EppqHe1mQ_n9exwGZIDk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjEzNGRl/NGYtYzYxMy00MTg0/LTlmZGQtMTZhMzVk/NWJiYWY1LzJiODZi/OC0xYWZjYzcwZWRl/Y2I0NTk5YjUzNGRj/MWY2NGI2OTliYS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/-PpcCJD7Eu_OlBSM3gTXw-f1qJ2xh8fgnQT4wgQfVG4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDQ4MjJh/ZDYtZjk4MS00Mjcy/LWFlYmYtY2MwNmNl/NWIzZTVlLzJiODZi/OC00YjU0MGFiYzZl/MWY0YWMzODc2ZDQ2/NDQ4ZWRiZWEwNS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/ZzCCz8lJQi2NCO7HPezszd3TiCtd1aPbLsC6uB1FWD4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDhhZDE2/NjMtMzM2MS00N2Vk/LWI1NDEtOGMxNDFh/YjhhZGE4LzJiODZi/OC0wNWY1ZjVhODY4/OTg0NmEwODFiNThm/YmMzNDFhNWIxZi1t/djIuanBn.webp",
+              "https://images.slatecdn.net/YsDLd5qY-2A0Of-8RitofiXSIsxoLBE5oDQYJHe0iFQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2NlMGNm/ODUtNmVhMC00ZmY1/LTgzN2UtMzhjMjcz/N2RmOTRmLzJiODZi/OC0xNGNkZTRhOTk5/ZjA0ODZiYjI2YzAz/YWNiMjVkNmI1NC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/Ndyid0cvjKRe16PT2Ffx5oD_fyjcYf0SK-oLFhYlKi4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWMxZmU2/MWEtMTE1Zi00NDll/LTlhM2UtNjA4ZGVm/YTBkODRhLzJiODZi/OC0xMDRiYzkzYTQ0/NDc0NjMyYTBmZDM3/MTE0NzZkOTQ1NS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/WmxhCn6PtSSl9naACvadoLCwu1x3Bqwj7Dnt6EKmZBE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNmQ2OTQ5/NWItNDU4My00ODVi/LWJmNzYtNWQ4YWRl/MmRjZGJkLzJiODZi/OC0yMzRhN2ExYjdl/NTU0MWE5YWViNzYz/MTFjZjZmYzU5MC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/tgrKxyXZwLxdqmIwaafR_m2-FkV-C5O-2buOyRxG7bA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDEzOGMy/MzMtZWYxZC00ODli/LTljNmEtNjI0ZGRk/ZjMwZTJhLzJiODZi/OC01ODVlZGEwMzRl/OGY0ZDNhYmI2OGUy/NDE0MTY3MmY0ZS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/0GFphM68N-n_BFRYfc-7q2OAN6-2R3rddTo3p5tBhyQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmJkZGYy/MjktMzM1My00YWNi/LWIxYjctMjk1ODQx/MmJiZWJjLzJiODZi/OC02OTlhNzIxODA2/NTk0MDhkYWNjY2U1/ZWNhOTM3YzExNy1t/djIuanBn.webp",
+              "https://images.slatecdn.net/lq8pNr3Q3OVr0Iz9LSWkK5HfGuReKj0CFPLLfItrGc4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODIwMDNm/YzktYWUxYy00MmFh/LTk1ZWUtOWE5MzIy/ZWZlODNhLzJiODZi/OC05MTBjZmYwMWQ4/MDA0ZGZhYTI3YjU1/YmQyMzRmMTU2MS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/NKR1bbgdQkxQoJ7FuC-uli26fSDa9XafmV7w5lYfLxI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTdlZjQ2/ZTQtM2M1Ny00ZjZl/LTk3MDItYzYwODdl/NWZjNWVhLzJiODZi/OC0zODYwY2ZlMDlj/YzE0ZDYxYWExZWQy/MjhkMmYzNjdhYy1t/djIuanBn.webp",
+              "https://images.slatecdn.net/28eVTh5LXgz5mxeOzwjd9kdw6uNdifpAxcmLgW-qFh8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMWI1MjBi/MjItY2JjNi00YWUx/LThkYTctZjEwY2Ux/ZWUzYjU3LzJiODZi/OC04MDg2MThlMjIx/Mjg0ZTM5OGJmMDdm/ZmU2MzU0MWNlYy1t/djIuanBn.webp",
+              "https://images.slatecdn.net/Rkr98Ki2nVqI1A8yx5Lb7jLOcFcq_Vme7nnvH92UwIg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTgxYTZi/NjktMmMwZi00MTQ1/LTk4N2YtOWI3MmEx/ZjFjNzAyLzJiODZi/OC03MDc1NTY2MjBk/NTU0NjAxYWRhZDYy/NTUwZjRkNjZmNC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/AtoW2XYkysIXkDiVm-EkhDshWgAoKOZoIX6FCRhOPEY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTExMTFl/MjktYjMzMS00ZTUx/LWEwZjYtZmVlYTEx/ODZkMDkwLzJiODZi/OC1iMGIzYWZlN2Y3/NzQ0ZDkxYjVmNTc0/MGI1MTExOGE5ZS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/KR6NcIg_MMrNZgDiiHz4XAi3uUCGExD92MuMsyXcZHY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDgyMDYz/MTktNDJiNS00N2Fl/LTlhM2ItYWMxZjc3/NTdmNTAwLzJiODZi/OC1iNjBjNDNjYzcz/ODU0N2RmYjc4ODdh/Nzk1MWIwZDgyMi1t/djIuanBn.webp",
+              "https://images.slatecdn.net/1fDTCA4o627Dqrmlv-2xYGSSuyIetFcM0vplsiwVY_w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTExZmI1/ZTQtOWYzZC00ZmFh/LWJjZjQtM2IwNDZl/Mjc0YTViLzJiODZi/OC1jM2Y0MzE2YTA4/ZmU0MjFkYWVmMjhj/ZDQ4NThiZmY0NC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/KQHRkxcAENCPq4NmtoRp7f8LpujnTfYRSGCFyu0wy-c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjQ4ODdh/NWUtZGI3MC00M2Q3/LWJkNGMtZGUwZGI1/NTUwNWM0LzJiODZi/OC1jYzA4YjliZWJj/ZDY0NGE5YTAwNDJh/ZDVkZGNhNjMxNS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/NMv4xrfxx8tVQeQb9DqF9oGAWYFF4Hkt6U5W-7S0uow/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzIxMzAz/OWQtN2VlOS00MmMy/LWI2YTctNjMyYmNi/ZjcxNjQ3LzJiODZi/OC1jYzQ3ZDkxYTIz/ZjM0MDUxOGIxOGM2/NDc1Njk0NmJmNC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/tMCIOv8SnKtHRu-Lp7eozveYSjAhINo5Ft8HfU6aNQ0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYmNlOTVl/YTEtOTVhNS00YzE1/LTg1MGQtOWViMzRk/YTQ3MTc1LzJiODZi/OC1jZGE2MDY2YjQ1/YTI0NDAyYjFmZmQ0/ODdmYzQzZjdjYi1t/djIuanBn.webp",
+              "https://images.slatecdn.net/QQJiV4yEXyPUPPIz6P6RpaK1jnYAQlzF0WkruvYQCnQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWY3OGI2/ODgtNjQzOC00MWIz/LTg0MGItZGZlMWJl/OTk1NDQwLzJiODZi/OC1jZjg3Yjc2NmFj/NDM0NzAyOTJkNWFm/YmU1YzMyOTNiZC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/EXlM4ZD79nScNR5qP1TEwLD4ZeOhSO-azyiBccdS1_A/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzQ5NzBi/MjgtNTgwMy00ZDUy/LThjY2MtN2NkYjM5/YzJjOWVlLzJiODZi/OC1lN2I0YmNhNjFh/NDk0NDM5OWVhN2I1/MDMxNDZkMTYxOC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/OfL5wxZUncy-QiJXy9XcMqJpR4ueH7YrUeyMKWNiYuA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNGVlMzhj/MDEtOTNlYi00YTVm/LWE4ZTgtN2M3OTlj/OWE4M2IwLzJiODZi/OC1lZjZlMWIzZjE2/NjM0MDk4OWM4NzYx/YzcwOTMzYzUwYy1t/djIuanBn.webp",
+              "https://images.slatecdn.net/5SiZ2wCxGcLPbBVfi91hlh9YtAThKKsJXlNV7WoSCm0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzY1MTQw/MmQtOTJhNy00MmEz/LWFmNTktZmJkZjM4/YTg4ODJjLzJiODZi/OC1mNGIxMzUyZjli/OTY0OTY2YTA4ZTRj/Y2E0ZTczMGE3MS1t/djIuanBn.webp"
+            ],
+            "cat": "NARRATIVE",
+            "slate": 11505
+          },
+          {
+            "title": "Steer",
+            "sub": "Max Olson",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10417/3b8cd33b-0822-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4586c3d6-4b2b-4c01-b5e2-e09d7968daed-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/vizZsh13mOSbRrVN9QYtqIJD8MsDqrZV3fN9jo4s_4Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQxNy02OThkZTJi/YjYyMGU0My42Njc0/MDAwNS1lMWI2MmNk/YmQxMjM2Y2FkNTQ0/Y2E4MzAxYTcxOGJk/OS5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 10417
+          },
+          {
+            "title": "Mother Superior",
+            "sub": "Pablo Riesgo",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10419/e60a6235-0820-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1df35334-9ff8-4529-a813-5768075869d4-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/1zfWFGPubucXChAOhRzau6Xz4xlk9y0EiI3N4FDAUZE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQxOS02OThkZTI5/YzIyNTEyNS4yMDY2/NzU4MC0yNThlMGFl/MzlhOTIxNjZiZDI0/ZDUyMmJmOTg4ZDMw/OC5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 10419
+          },
+          {
+            "title": "East Of Hollywood (stills)",
+            "sub": "Ben Segal",
+            "img": "https://images.slatecdn.net/TyWZH1K6qGxnKdONdWgw2wq466V8hdG1Z_0q55b94w0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmZkMTQ2/MDEtY2U1Ny00ZDdl/LTk4OGQtM2I0ZDAx/NTA5MjI2LzJiODZi/OC0zZTczZmExMzNj/NmY0ZGU3OTU4NWQ3/MWZlMmZkY2M2Yy1t/djIuanBn?v=1&format=webp",
+            "stills": [
+              "https://images.slatecdn.net/TmArlll9pBieZuwHRYo-z4TdGxzIwevl1QhulzCS5Tw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmZkMTQ2/MDEtY2U1Ny00ZDdl/LTk4OGQtM2I0ZDAx/NTA5MjI2LzJiODZi/OC0zZTczZmExMzNj/NmY0ZGU3OTU4NWQ3/MWZlMmZkY2M2Yy1t/djIuanBn.webp",
+              "https://images.slatecdn.net/GfGXQQ9frwO-vlsC2vhIzVFRIn1DR18UwEkGio3Vrxg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTFiYjgw/MzUtNmVlMS00OWMx/LWE5MmItNmQzZWUz/MTgzMmMwLzJiODZi/OC0wMWM4MTJjNTU0/MzM0ZTU2OTU4ZTQ2/N2Q4ZWViNTU1OS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/on4aqeU_7zdIPNGf8VXAK2GvZi2QiHTI066u-ba0HgY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZThjZGQ5/ODktZjI2NS00ZDcz/LTgwMDAtNTNiMWU3/M2M0ODE3LzJiODZi/OC00ZjQyNTlhNGE1/MTg0YTg3YmY3NTEw/YmRhNjY0M2QzNi1t/djIuanBn.webp",
+              "https://images.slatecdn.net/cYz1LUXb2JtnFiF25OXvdoaU3PKXhoC8W7hlRYwMkuI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTk2NzRk/MmItNjRiMy00NzFi/LWIxMjUtNzA1MDc5/MmJkOWE0LzJiODZi/OC03ZGY5YTQ4NTBi/NGQ0NTQyYTEzN2Nk/NjQ1M2NhMDYxNi1t/djIuanBn.webp",
+              "https://images.slatecdn.net/SPiHybOEt0GSSHeqIQbmkLrZ9Btqj6Mhl9VUUC40_B4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGFmMDZk/M2UtYTA4ZS00NTFl/LWE3MTItMGU5N2Y2/MzA4ZjE3LzJiODZi/OC04ZGJlNWU5Y2M2/MjU0ZTVkOTViZDNk/NDY2ODVhMTc2YS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/_AfO8l3pxc7kcqbDu1gTHF6vhyhRcW6CLrEFUh1VcaI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjk1OWJi/NDktY2RhNS00ZTUz/LTkyYTAtYzc0MzY1/NDNkMTRmLzJiODZi/OC0xNmQzYTY4ZjAy/OGY0MjkyYjJmMzk2/Y2Q3MzQ1YTYwMC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/xFNcfpcHEfDDyzMI47byDid32eq089A9B8_I2j2eTY8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTcyMzE5/NjMtZGI5MS00OGJj/LTkzYmYtZDYxYWJj/MTQ1NjZjLzJiODZi/OC0zNGRhZTVjNDQx/YzE0MmJiYjdhYmI3/YmRjYzFkODY0NC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/lE6yBs25_mTWXInQugePiui4rKMgny3jDM5idLbu-gA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjgzMGRk/ZTUtMWM4OC00ODk1/LWJlNGUtMmM1ODVh/YmZmOWM4LzJiODZi/OC05MmUxM2MzNDVl/MjE0MGRiOTVlOGI2/OWQ2ZGMxNGIxMy1t/djIuanBn.webp",
+              "https://images.slatecdn.net/5pILxFZcwihq4j0hQh7BJwZ0XfHCrX082LFop3NGJ5s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYmRkYjhj/YmUtNjAwNy00NGM1/LWJiNWItZDExYWY0/NWViYThhLzJiODZi/OC03MDJjYzM3MmRm/NDQ0NDczYTFkMmM2/ZjQwN2U5NGEzZi1t/djIuanBn.webp",
+              "https://images.slatecdn.net/VXEEdtPP4GX-vfVohMrCIukFppfaSunAbACQXFNtQPI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjg1ZjI3/NzYtMmI1My00MWU4/LWI0YzYtYzY4Nzkx/MDFiMmFkLzJiODZi/OC03NDNiNzgwZmEy/MmM0MWY5YjM0ZTc1/NTdlNDJkNGUzOS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/Jttj9XWytbjRWxwgEdbrFh4FC4kEA3OVdzqzhoGhMmA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2Q0YjNm/MGMtZGQzZi00YWJi/LTkyNTctNGNkZjI3/OTMwMmUwLzJiODZi/OC0yNzc1MjQ5NTNi/ZTc0NTUwOWJiNDU0/ZGUxMjI2ZTM3MS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/FTxEuj5Ta-K2-UDwh7qBgTV2pxIK8R2rHJqs_SXK9bE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTQ3YWVk/MzktYzE1NS00N2Qw/LTllN2MtZTRmZWQ2/MGNhNmY1LzJiODZi/OC02OTcwMjU3NDRl/MjM0YjQ3OTU2YWQx/NDcxZGYxMTExMC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/kkL5HCodzPViMAIXAbQlq6ZJsinfC3hpSaLGlhzVlZg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjFmZTFh/NzctNTIyMC00ODU1/LWEwYWUtNWYxYWQy/YmRmZjQxLzJiODZi/OC05OTAwMTA3MTdk/ZTQ0YjM4YWYyNzJk/MjgxZTY4MWJmMy1t/djIuanBn.webp",
+              "https://images.slatecdn.net/zEbmkhKToDhGQ5b3PyohFXl4mdEWaxjuSF49UPJ9218/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjJjNjcx/NTgtOTZmMS00ZGRj/LTk0MWMtMTgyNjc2/OTI4MTE5LzJiODZi/OC1hOWZmYmZkMGY4/NzA0ZjQzYWYxOTdi/ZDljY2M4OWI2ZS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/Se1DZT2_6LJ8Cdpucmf8_RDws5KZSqU2Kae08SROeVg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2U2ZTUy/YzQtOGQ4MS00NTBm/LWI5YTAtNDc0ZGFm/ZWFmYTcxLzJiODZi/OC1hZTk2ZmVhMWIw/N2M0ZmM1ODE4NTdh/NjRkNTA4YTI4My1t/djIuanBn.webp",
+              "https://images.slatecdn.net/agvmXOr4p3JlYoJXmTtCkTYGbsTUTrpDlOwZ1R2m9Pk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDVlOWI5/YmQtNmViNC00Yzhh/LWI4ZjctMDFmZDgx/NmRlYTk3LzJiODZi/OC1iM2EzMjlhN2Rj/NDQ0ZTQ5OWU5NmFk/M2ZmY2UwMTk3NC1t/djIuanBn.webp",
+              "https://images.slatecdn.net/pTJZx-2_VrD5VNCYgTUjaa7HiwVIsVShKu3iin7Ox14/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzg0NmFk/N2UtOWM5Zi00MjIx/LTkwMjktMzEyY2Fi/OWQ5NzAwLzJiODZi/OC1iNDVkN2Y3ZTJh/MmI0YjYxOGZlZDhm/ZWY1YTYyYzlhYy1t/djIuanBn.webp",
+              "https://images.slatecdn.net/ylsHKgrWuajL6uI4FChksVtiEf5sLaeLWufctjT09yk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTllMzNk/NjgtYjllNS00ZWM0/LWI1MDQtM2ZkN2Qx/NjZjNzc4LzJiODZi/OC1kNzJiMGZmMmRk/Yjg0ZDQxODcyN2Q2/YThmMGY2MWZlMi1t/djIuanBn.webp",
+              "https://images.slatecdn.net/Wsjdz2vSJ0ia9GNCeU6LL2gAo0b34s9OWAaUGUDA0QY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDZjNjkw/ZWItMjVmYi00OTg0/LWIyMWItNWYwMmM2/NGI3MWM5LzJiODZi/OC1kMjk4NzhmMTMz/MGU0Y2YxYWU4NGM1/YjExM2JhNWM2OS1t/djIuanBn.webp",
+              "https://images.slatecdn.net/FUeUKXJ37fRcRu-2oc_oTE-PyPodPaeanUfEISK6qlM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTJkYjEz/OGQtZDZkMS00ODIy/LTkwMjUtMzE4OGE3/YTkwMDVmLzJiODZi/OC1lNzc5ZDQ1OTM3/ZDY0ZDRmODA3YWFh/Yzc1NmZmNzdiZS1t/djIuanBn.webp"
+            ],
+            "cat": "NARRATIVE",
+            "slate": 11511
+          },
+          {
+            "title": "Sunday",
+            "sub": "Christian Schifano\nPIMLICO PICTURES",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10418/c8c69939-0821-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d7efed9f-a27d-406c-bbb7-ee665ff8410d-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/cXfA3a_0i61tnf8n5yD6L_075HzOefQdNE5wGc8ciYI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQxOC02OThkZTI5/YzI3MTkwNC40MTI1/OTc2MS1hMGRkNWE2/ZjZhMTI3ZDlmMDhk/ODkxMWY4YjRkNjA0/NC5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 10418
+          },
+          {
+            "title": "Black Or Blue",
+            "sub": "Max Olson",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10427/8d728098-0821-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d2e24d4f-662b-4936-9981-330a447407db-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/N2M7fIpDACSsPg6RkuYq0-YR5KnDNTD9HBwzn5lEq6g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyNy02OThkZTJi/YjYxODFmNi4xNjM0/NDEwNS05NmEzMmZj/OWVjMWMwNzVkZTYx/N2FlMGQ2N2NkMzYx/OC5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 10427
+          },
+          {
+            "title": "Motherland",
+            "sub": "Kristina Spassovska\nBELLE VUE KINO, ORPHÉE FILMS",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10424/89a08c30-0820-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/58fbf2a5-6476-470b-b074-4734a470d08b-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/y0b-UHN4c-CH5ycpfUnMaRNlrqpNb_vkoydgn_Buylg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyNC02OThkZTI5/YzIyNGQ1NC4yMDYx/ODk4Ni03YTcxZDFl/YWQ1MjhmNzcyNGJk/MjQ4ZmQwMjM3MTdj/ZS5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 10424
+          },
+          {
+            "title": "Isaac",
+            "sub": "Edoardo Pasquini\nCINEMADAMARE",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10416/da5cd4a1-0821-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/46111668-188a-4db5-aac5-7de37faf3313-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/c5Pa92JQiQ3lj5bIxTkIwZzKAogW0FrvJYtGtWQidTw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQxNi02OThkZTJi/YjY0ZGJmMS4wNTQ4/NzcxNy01ZjlmMTcx/ODVmNWY5NzI5Yzg0/MGIxYWVlMTJkNTU1/OC5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 10416
+          },
+          {
+            "title": "Cinematography Reel (narrative)",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10435/4ff997b4-0824-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3a769def-5ec0-4b85-8e07-7be6bbc327d8-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/tqisExAmrQzm1c9Poob0fccvvduuicUTU-IciEIfRZs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQzNS02OThkZWI1/MTdlYjQ0NC4wNDE4/OTQ0Ni02YjNlMDcx/NTk1MDg5ZTM5Nzc5/ZGE0YTYwMzg5MmVm/NC5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 10435,
+            "featured": true,
+            "featuredOrder": 7
+          },
+          {
+            "title": "Mother Denim x Reifler",
+            "sub": "Max Olson\nNorth Six",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10433/b1e120f4-0821-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7120af33-122b-462c-ac98-9a4f5749a746-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/cF08pDkEhvzEBJDh24XCOlESpQJBLtMaii-QKTYchAI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQzMy02OThkZTI5/YzI0YTVmNC44MDUy/OTk2OC03M2IyMmMy/MDE0NTMxZmVhNGJh/Yzg5YzExZWVkNWNk/Zi5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10433,
+            "featured": true,
+            "featuredOrder": 5
+          },
+          {
+            "title": "Forty Two - Warm up",
+            "sub": "Carden Katz\nFORTYTWO",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10428/f1e81eba-0820-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a7eb242a-520e-4d85-a70c-4a977a38f711-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/WKQm9R-9hJ7xkney4qYveva1DCz4rfTfb41Jo1d-M28/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyOC02OThkZTJk/OWVkNjIxOC45MTgw/NDQ0Mi0yYTFhNGZl/MmNjN2M0YjQ1NzU0/MjFiZmQxMDY4NGMx/NS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10428,
+            "featured": true,
+            "featuredOrder": 3
+          },
+          {
+            "title": "Mother Denim x Reifler",
+            "sub": "Max Olson\nNorth Six",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10431/997746b0-0821-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/949fd4c1-8586-4d53-bff1-e2d0e5403638-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/xa0bJw4vDlgyv17V0bAnp_5n12w3faWvwQEMHRUtxrI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQzMS02OThkZTI5/YzIyMzY5MS43MzM0/MTg4Ni01ZTk1ZGVi/ODBjOGQ3Y2Y1YzI4/YTc5NGQ3ZGY5MjY4/Yi5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10431
+          },
+          {
+            "title": "A Rat's Nest",
+            "sub": "Max Olson\nFBP",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/219b9d63-e7d9-473a-9a14-d84eea885c89-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/2_gMs2wh9UUZlw-P4s8oDhVRruc7L2BoXVk6jOh5gZU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YzI0ODIwYi04ZTY0/LTQ4MTEtODE5YS03/NDgwZDg3OGI2OGMv/MTc5MzcyNTg3MzQ4/Ny5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 11507
+          },
+          {
+            "title": "Mother Denim x Reifler",
+            "sub": "Max Olson\nNorth Six",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10430/b17e0659-0820-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/071ddfa8-dfda-4644-914c-5f019b11ca47-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/K_AvIIUPFlJr1K_g-AO3MhT_xTTWafJwmBdGttMF-t4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQzMC02OThkZTJk/OWVjYjkyMi4xMTgw/NjkzMy02ZDhmZDIw/OWFlYzM3YzhiYzg1/MWE2YjFiNTJhNjFl/NS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10430
+          },
+          {
+            "title": "Dune",
+            "sub": "Pablo Riesgo\nFBP",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11509/e12072bf-d7ad-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5056873f-528f-4745-9a95-229e3ce59ca4-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/sx2F4ROMAGbAuj0OKuLLOonUcxINIvX-qC3N0rlK5_Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTUwOS02YWVhMWIx/MmJjMzczOC42MzA5/Nzg0My0xZGU1ZDNl/YmU5ZGYwNDlmNjU1/ZjRiZjliYWVkNjM3/OS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 11509
+          },
+          {
+            "title": "Hoka",
+            "sub": "Austin Hall, Zach Visvikis\nSAD ARCADE",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10421/a7b0d2a4-0821-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dc41b57a-d8cc-47b9-9999-35be32fa7bf9-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/S0TcruVPh-xCAQK8UuETy3mGP8Puy_4g0UHBeW0kDeU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyMS02OThkZTI5/YzI4Mzc2Ny44NTMy/Nzc4MS00ZDgyMTEy/YjAyOGZkZmQ1OTlk/MWY4ZmMwMTliZjZh/My5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10421
+          },
+          {
+            "title": "H&M Move - Summer Hiking ​(part one)",
+            "sub": "Casper Sejersen\nThe Curated",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11488/e896cfb7-d6c3-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/52e6aac6-3c32-4704-9093-7462d648ab5e-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/zvpo74gRtSpL_qyA0Wayeh06uIyKFZoXhQvFXOQH5_g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTQ4OC02YWU4OTNh/YTJmNTQxMy44NDAy/NzE2Ny00NzQyY2Fl/MTJjYTZiNzIxZDhk/ZjdlMTJkOTkyODUw/Yy5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 11488
+          },
+          {
+            "title": "Metro Boulot Dodo",
+            "sub": "Pablo Riesgo\nFBP",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/df88b296-218f-4098-898c-c88afeb728e9-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/c57wP0S2C8kqU_QQDPwA6XHxcGjvrQSIqqmBQbBwg2M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MjdlMjE1My1mNDYw/LTRhZDYtOGZkOC0z/NzgyODU4MmNjOWQv/MTc5MzcyNjA2MjE1/NS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 11508
+          },
+          {
+            "title": "H&M Move - Summer Hiking ​(part two)",
+            "sub": "Casper Sejersen\nThe Curated",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11489/0d3d1e31-d6c4-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e85e589c-7b53-4490-9c89-8386fea915fd-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/GS5usm4Bpch1LtosCBfKRTbQRkrgIHC1XdLVfMYpX84/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTQ4OS02YWU4OTQy/MDg3M2QwNy45NTEx/NDAxNS1mNTBhODI2/YzllOGQ0ZDQxYjY2/MWU4MmViOTVkOWUy/Yi5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 11489
+          },
+          {
+            "title": "After Party",
+            "sub": "Luisa Dale\nFBP",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10425/e60c185e-0821-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9756a91d-1351-46d3-92f3-0f90d01d247c-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/6nDVeLc1BfYUY4m-1moy-6CO4-PWW3gLEDRwaVYnQC0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyNS02OThkZTJi/YjYzNTc1MS4yMjQ3/NDMzNC1jOWU3NzEw/ZDBjNjU1ZTg4MTRk/Mzk4MjY2YTkwMWQ0/Ny5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10425
+          },
+          {
+            "title": "Cinematography Reel (commercial)",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10434/5504a27a-0824-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5ddb38ee-3294-4c56-bbf2-c3705a6ad4e0-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/_FyCXpVFV0TuwJWDD8EaAjiXeYth5sNRmk-o3tyO6RM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQzNC02OThkZWI1/MTdmMDU3Ni4xMzc5/NTk1MS1lZGMwNTdl/NTc3ZTg0MDMzOGU3/MmQ3ODkxNWI3MjNj/NS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10434,
+            "featured": true,
+            "featuredOrder": 9
+          },
+          {
+            "title": "Badvril - Push it Down",
+            "sub": "CG Watkins\nCaviar Paris",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11487/fd8fa019-d6c3-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f6c4b1e2-3057-455a-82a4-27b66b8f851a-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/MIxPFEzuVK2Z4OvPOmSdM2QknFStLhHT33_AEBnKESY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTQ4Ny02YWU4OTI1/ZjM2NmViNC45MjI2/MzU4MC0wMjAwYWM0/ZjE5NjcyNDNjN2Nh/YTViZDc1OTAzYWU2/Yy5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 11487,
+            "featured": true,
+            "featuredOrder": 1
+          },
+          {
+            "title": "Cain Culto - Brujería",
+            "sub": "Xinger Xanger​",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10432/255bba23-0822-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bca17520-0dc3-4d31-8425-ca883f5cc59f-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/T_pu3o4un3B4ebdYKefsVZAnogYmd28S0ZLMzPMwWS0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQzMi02OThkZTJi/YjYxZjc2Ny4wNjM3/NDE4MS1lNzczM2I0/NzBjYmEwYjBlM2M0/ODBjZWQ1YTNiOWQw/MC5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 10432,
+            "featured": true,
+            "featuredOrder": 2
+          },
+          {
+            "title": "CeCe - Ugly",
+            "sub": "Julia Ponce Diaz\nTYPEFACE",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10420/007d345f-0822-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c4ab7a2-6ad3-4b0a-943c-73384c0347e8-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/S9JIdeW6xXNdJR6jcYboh-wuyHUtGB6cV0lG6mQV5eg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyMC02OThkZTJi/YjYzMGY4MS40MzI5/ODE0Ny1hNDEwYjAy/YWQ1OTYxM2UzNDM5/NjI2OGY4YTc0ZWI5/Yi5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 10420,
+            "featured": true,
+            "featuredOrder": 4
+          },
+          {
+            "title": "CeCe - Blue Truck (The Road West)",
+            "sub": "Julia Ponce Diaz\nTYPEFACE",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10422/a2505a0a-0820-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3b576385-bddf-4b9b-a43a-4a7f9d9a8caf-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/hhQ9RThobiMUkv3GbbSczncwz8j54_mwazYAlYVl4hc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyMi02OThkZTJi/YjYzYjY1MC4zMTQ2/Nzk4Mi1lNmYyMzc5/MGE2MzJhOTgwZjQx/MzhjMTljMTYyM2Iw/YS5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 10422,
+            "featured": true,
+            "featuredOrder": 8
+          },
+          {
+            "title": "Gustavo Bertoni ft Henry Zaga - Logo Logo",
+            "sub": "Luisa Dale\nFBP",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10423/14b44789-0822-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e73cd250-c277-4390-8fc8-e184c2be3c18-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/cPcY3MyaQaH-9px-QPmeLR24domTXe9rGIhRJlehkTM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQyMy02OThkZTI5/YzIxMWYzMi4xOTYx/ODIzNS0zZDE5OTdk/NjJkMGI4Mjk1MzYy/OWUwYTQzZmY0YWUz/MS5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 10423
+          },
+          {
+            "title": "Cain Culto - BIMBAMBAU",
+            "sub": "Xinger Xanger​",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11504/b9700010-d7a5-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6ec7c959-abe3-414d-9dcc-045c3a5f41f5-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/-Gi3M1qUm8e7VcXret1UK1BtljwOhIeapAu-avvTrRo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTUwNC02YWVhMGM3/NTM2MDczNy41Nzk4/ODkwNy1iOTU3MzBi/NDE2YjFjZjAxMzM3/YzA5OWZhNTZiMDg5/My5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 11504
+          }
+        ],
+        "bundle": "https://kinou.slateapp.com/bundles/e0cfaf30-081f-11f1-9ce3-0215583debcb"
+      }
     }
   ],
   "at": "2026-11-03T17:46:09.595Z",
-  "by": "John-Kinou"
+  "by": "John-Kinou",
+  "doneAt": "2026-11-03T17:46:31.363Z"
 }
