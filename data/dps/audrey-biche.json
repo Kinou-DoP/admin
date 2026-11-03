@@ -143,7 +143,18 @@
       ]
     }
   },
-  "about": {},
+  "about": {
+    "bioEn": [
+      "Audrey is a cinematographer, raised between Spain, China, France and the Caribbean, based in Los Angeles. (EU passport / US O-1B)",
+      "Shooting on both film and digital, she is an ASC Heritage Award and Laszlo Kovacs Award nominee.  A two-time Panavision grant recipient, her work has screened at AFI Fest, EnergaCamerimage, Palm Springs Short Fest, Zagreb Film Festival, Raindance, and Urbanworld.",
+      "Audrey attended the American Film Institute Conservatory as a Fulbright/Georges Lurcy Scholar and is the recipient of an ASC Vision mentorship."
+    ],
+    "instagram": "https://www.instagram.com/audrey_biche/",
+    "website": "https://www.audreybiche.com/",
+    "pos": "38% 32%",
+    "color": true,
+    "img": "img/audrey-biche.webp"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
