@@ -37,6 +37,7 @@
     },
     "10420": {
       "zoom": 1.35,
+      "zoomThumb": true,
       "types": [
         "Music Video"
       ]
@@ -50,12 +51,14 @@
     },
     "10422": {
       "zoom": 1.07,
+      "zoomThumb": true,
       "types": [
         "Music Video"
       ]
     },
     "10423": {
       "zoom": 1.35,
+      "zoomThumb": true,
       "types": [
         "Music Video"
       ]
@@ -68,6 +71,7 @@
     },
     "10425": {
       "zoom": 1.34,
+      "zoomThumb": true,
       "types": [
         "Music Video"
       ]
@@ -115,7 +119,8 @@
       ]
     },
     "10434": {
-      "zoom": 1.02
+      "zoom": 1.12,
+      "zoomThumb": true
     },
     "10435": {
       "zoom": 1.1
