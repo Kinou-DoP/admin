@@ -145,11 +145,6 @@
     },
     "11501": {
       "title": "Squirrel",
-      "types": [
-        "Short Film",
-        "narrative",
-        "Docu-Fiction"
-      ],
       "images": [
         "https://images.slatecdn.net/IXjTfSKsaS0xHjtXpUS5cgy8ptGGhzR4-nB4SRyj9mk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjBmMzU4/OGQtMmI1Yy00NzQ1/LThkYTQtMzg3Y2Q3/YzNhNWJlL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuMjEucG5n.webp",
         "https://images.slatecdn.net/xhrhkEKxc-PXQIBItNSR8uH_5XHrYJ7BILobZSrc93g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTk2MmVh/NjAtMDNmOS00M2Ex/LThhNmUtYjY0ZmZm/MTQ3YzViL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTAzLWEt/MTcuMTUuNTUucG5n.webp",
@@ -173,6 +168,11 @@
         1.6495,
         1.6533,
         1.6514
+      ],
+      "types": [
+        "Short Film",
+        "narrative",
+        "Docu-Fiction"
       ]
     }
   },
