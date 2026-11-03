@@ -2,17 +2,36 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/smart-evil-boss"
+      "link": "https://kinou.slateapp.com/work/smart-evil-boss",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/smart-evil-boss",
+        "title": "Smart - Evil Boss",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0078bfec-97a7-4fac-b259-02e3dcda3b52-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/xX1M1X5km109e2oodTeetZExUuMhI6LIgX2SNlV1NXo/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTUyLTYwY2M1ZjNj/NGE0NjE1LjEwNzk3/MzE3LTViODIyNDRh/NTliMzEyMTdkY2E4/NmQyYWJhMTU2Zjk4/LmpwZw.webp"
+      }
     },
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/smart-monster"
+      "link": "https://kinou.slateapp.com/work/smart-monster",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/smart-monster",
+        "title": "Smart - Monster",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7497af30-4993-440f-bcff-a433043839ec-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/FgZUCUFAbnPXH2J9yt6fl8BfAXgPQGWoN-EA0v5FGWk/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTUzLTYwY2M1ZjNi/ZTVlZWIxLjgyOTA4/NzUwLTQ2NmE5MmJh/MDQwMGRmMjgxMTc4/OGE4YTgyMmEyN2Ix/LmpwZw.webp"
+      }
     },
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/deka-angels"
+      "link": "https://kinou.slateapp.com/work/deka-angels",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/deka-angels",
+        "title": "Deka Angels",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cdf8589b-ef53-4b04-b122-40af00cdecd8-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/GAs8ACp9vqUg1YeZ1F1RrHVnhEbZ2KYiA1VyTjvcz6k/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NTNmNThiOS03MmJj/LTRhODUtOGRmMi0x/YmJmNjgzMTdlZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDkt/MjItYS0xMi41MC4w/Ny5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-03T13:54:01.339Z",
-  "by": "kinou-agency"
+  "by": "kinou-agency",
+  "doneAt": "2026-11-03T13:54:19.919Z"
 }
