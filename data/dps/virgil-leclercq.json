@@ -2,6 +2,331 @@
   "slug": "virgil-leclercq",
   "name": "Virgil Leclercq",
   "hue": 0,
-  "overrides": {},
-  "about": {}
+  "bundle": "https://kinou.slateapp.com/bundles/9f7ea055-d76c-11f1-a349-0215583debcb",
+  "overrides": {
+    "10246": {
+      "zoom": 1.43
+    },
+    "10249": {
+      "zoom": 1.33
+    },
+    "10250": {
+      "zoom": 1.26
+    },
+    "10253": {
+      "zoom": 1.19,
+      "zoomPos": "50.6% 0%"
+    },
+    "10254": {
+      "zoom": 1.23
+    },
+    "10255": {
+      "zoom": 1.23
+    },
+    "10259": {
+      "zoom": 1.25
+    },
+    "10260": {
+      "zoom": 1.26
+    },
+    "10265": {
+      "zoom": 1.22
+    },
+    "10268": {
+      "zoom": 1.25
+    },
+    "10271": {
+      "zoom": 1.07
+    }
+  },
+  "about": {
+    "bio": [
+      "Virgil Leclercq est un directeur de la photographie belge basé à Bruxelles. Il travaille entre publicité, fiction et clips musicaux, avec des campagnes pour des marques comme Samsung, Toyota, Nike, McDonald’s, Danone, Nestlé et Decathlon, ainsi que plusieurs courts métrages dont BOI d’Anthony Nti."
+    ],
+    "bioEn": [
+      "Virgil Leclercq is a Belgian cinematographer based in Brussels. He works across commercials, narrative projects, and music videos, with campaigns for brands including Samsung, Toyota, Nike, McDonald’s, Danone, Nestlé, and Decathlon, as well as narrative shorts such as BOI directed by Anthony Nti."
+    ],
+    "instagram": "https://www.instagram.com/virgilleclercq/?hl=en",
+    "website": "https://www.virgilleclercq.com/",
+    "pos": "73% 27%",
+    "img": "img/virgil-leclercq.webp"
+  },
+  "categories": [
+    "FEATURED",
+    "COMMERCIAL",
+    "MUSIC VIDEO",
+    "NARRATIVE"
+  ],
+  "clips": [
+    {
+      "title": "Nike x Snipes - Nike AirMax DN x Roshi",
+      "sub": "NITRAM",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11498/516eae17-d76e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1aa920b8-f9a2-475e-8a52-1dcbea567837-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/goIGPQoWh71AOMLBC8WTigP3vL1x3mjf4P_1fgSSjjI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NWExMjdhZi0yM2Zl/LTQ1YzUtODRmNi0z/ODFmYzgwZjNkYjcv/MTc5MzcwMDM5MzY2/Ni5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11498,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Mc Donald's - Crunchiverse",
+      "sub": "No Maybe Yes\nCake Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10841/99650a35-52bb-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/305efb08-ecca-45bb-b6fa-832c993ac950-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/aUg_7LsvWEWpcnHUAFMtMY5wl_ZfT7H1pHgYVMpCWOg/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDg0MS02YTBiMGZk/NDFkNzBhOS41NzE4/MzUyNS05NWM2MDc2/ZmYxYmM4NGMxYzY0/MzcyZDBmZGI4M2I2/MS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10841,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "EASTPAK | Built to resist",
+      "sub": "Anthony Nti\nILA Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10256/2ab0d5dc-c553-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/628e71e9-3ac3-4e51-a888-740be6de43ae-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JUdIcCGDS0sBNJWhYtUSX43jU2b_SbWXXGTob7uP1HQ/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MjdhMWQ5Yy0wYThh/LTRmOWEtYjE5Ny04/MWU1ZjJiZjJjMTYv/MTc2OTE4MjQzNjY0/OC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10256,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "McDO- 'AIR MCDO'",
+      "sub": "Fred De Loof\nLovo",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10265/3db32a03-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e5034c5f-38c1-44eb-adf9-e3302aaa8597-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/5W3OsVKepIoDRn53hiK6InqHBFBCmbyScvcnjG59EiI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NDkzYTM3Mi0xYjc3/LTQ0MDktYjkzNy05/ZGZmOThhMWY1ZTgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNi4yOC4z/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10265,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "SAMSUNG x WK Breaking | Flip the rules",
+      "sub": "Anthony Nti\nWenneker",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10253/0001a31b-c553-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f9ffb098-9eac-43b7-b966-2b596a06ab24-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/mHcTwPCXF39-rNFZhPVp12pQDExyhAQHhyu-IKQrYh8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MmM0MDFmOS1jOTJl/LTQxNDUtOTE2MS1i/YWU0NWEyYjExMGEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNi4yNi4z/NC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10253,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Proximus- 'Digital Hide-and-Seek'",
+      "sub": "NITRAM\nHamlet",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10260/768b7efa-c553-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6073391b-355d-49b5-89dd-63843449a347-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/d_2zmpC4PPLuSDTFM7mdIGGH5yV_h2Rvk3G6pMgGYiE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWQ0MzMxMC1lNjEx/LTRiNzMtYTljMC1m/MjNhZGU1MzUxNTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNi4yMy41/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10260,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Tupperware - Haunted Fridge",
+      "sub": "NITRAM",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11499/6e9346bf-d76e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/885d066a-9721-4665-968d-7af1693ab6a7-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Inm7eYd0a4fgYwQj1mUPdh9eKzR9vRXmGfhs4Kaic0I/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MzQzY2U5Mi1mNDY0/LTQxMGEtOWI0NS0y/ZmMxNDdmNmNiOTYv/MTc5MzcwMDQ1Njcz/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11499
+    },
+    {
+      "title": "GOLDEN PALACE- 'PLAY AS YOU ARE'",
+      "sub": "John Israël\nThe Satisfaction",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10243/5b13a9fe-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8fcafe49-4c51-4f37-9ad8-2fca3f0fa314-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8wyycyd-wvMsm43u6Cr3P7kz1DPBWYOSqimjBLF3K04/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OGFiMjIyNC00MTU5/LTQ3MGMtOTEyZi02/Y2U2MjFjZDY4OWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNy4wMS4y/My5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10243
+    },
+    {
+      "title": "CANARY FLY 'Numerologo'",
+      "sub": "Guillermo Polo\nWander People",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10263/4d0814ba-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e180f17f-caf2-47cb-b6a7-501ecbff3c09-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/u7CpF24Og4YgHezevZurYpkEF0ZymDXSqlBObKMMPu8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZmU3OTExYi0wMGI5/LTQzNmQtYTYwMi1k/NjM2ZjdjNjJhMDIv/MTc2OTE4MjgyNDQz/Ni5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10263
+    },
+    {
+      "title": "TOMBOY x JUPILER SS 22 Collab Collection",
+      "sub": "John Israël\nThe Satisfaction",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10249/c7711164-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ea9fe21f-305f-4e43-884d-dbd148a155d8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/DpkS5pyNgqiQvZ3K-OFHaFqWB39joc5YVXfAXTvGdOI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZDhhMDQ3ZC0wYTdi/LTQwZDYtYjAxNS01/YzEwYmEzM2M2ZTYv/MTc2OTE4MzAzMDg5/OS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10249
+    },
+    {
+      "title": "CLUB BRUGGE | 'Boeren voor Boeren'",
+      "sub": "Arnaud Deroudhile\nFledge",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10250/d57e64bc-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/503a01e4-34c4-404b-83ed-94c845cbc9cd-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/cKIzTUGcS9D43KKLfrwb_x02yI0OsvGpfZpQLt9Rwi8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZTRlM2FlZC0wMmYw/LTQ1MWUtYTAzNy1k/Y2ExNzJiZDk1YWUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNy4zMi4z/OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10250
+    },
+    {
+      "title": "Brussels Mobility - 'The Speech'",
+      "sub": "Arnaud Deroudilhe\nFledge",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10248/a4f8ec00-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9baa6905-b8d7-4cd2-992d-e0c046816351-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/wwDrNzxAI8jz6b7qlwPsMC3NwYbl23yXlQfznivnPmM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZDVjYzQ1OS01MDQw/LTQzZGItODYxOS04/M2NmODlkNmRlZDcv/MTc2OTE4MjkwODI2/Ny5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10248
+    },
+    {
+      "title": "BELLEROSE x USG",
+      "sub": "Charlotte De Cort, Camille Ghekiere\nWenneker",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10251/e8e93176-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/415a34eb-a792-4f17-a978-4ea39b892109-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0PyDLe8pKLq1T4F3NLHKzsq9FMHrtZFbhD7yl5o5T3Q/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MzNiOTljZS05ZmU1/LTQzNzQtODM0MS1j/MmY2OGZjYTg4NjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNi41NC4y/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10251
+    },
+    {
+      "title": "DECATHLON- 'The Breakaway'",
+      "sub": "Sydney van Wichelen\nFledge",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10247/96118742-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/516779ab-8971-4ad4-a564-5b53fbf0c284-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JBepgSEvp3hYOLjgnxiBaKiWN62ICJACpCf-FuPrMMM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YjM1YzJmNi0zMWM5/LTRjNWEtOTk5Mi1k/MTY0MWM3Mjc2ZDEv/MTc2OTE4MzI1NTU3/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10247
+    },
+    {
+      "title": "CANARY FLY 'Adan Eva'",
+      "sub": "Guillermo Polo\nWander People",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10252/f39f7d00-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/00ac9b4f-206e-44cf-97b0-2935f9664b12-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/xyoH0-ZYgfqMs-DNXu-YuzK0U6iDZhXIZP9iHQKmaBk/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MjdlMjNhYy0yZjVl/LTRmZjYtODczOC0y/NjcyNzkzMzMwZWYv/MTc2OTE4MjY1NTkz/My5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10252
+    },
+    {
+      "title": "LIVE 2020 - Winter Campaign",
+      "sub": "Sydney van Wichelen\nHappiness Brussels",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10245/7b68b9b5-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f01f3c34-af51-4515-baac-e916116e3490-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/14YZA5V8l6MfRvVgvTzK5s7Li5lYe6cI--a_ICBESaU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ODBkZjQzNC1lMDky/LTQzMGMtYjliOC0z/YjY5N2RmZDQ5YzQv/MTc2OTE4MzM4MjQw/NC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10245
+    },
+    {
+      "title": "TELENET PLAYSPORTS- 'Ongeziene genialiteit'",
+      "sub": "Sydney van Wichelen\nAKA De Mensen",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10244/6cd541dc-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dd941497-2a77-4c97-9f83-0eab003f30f3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/sjN3eZhRLnYuG86UjwZ22k0PzqFy60fIW8V20TGXV2s/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MzUwNTZmOC01MDdj/LTQ2ZGItODYzZi00/ZTkzZGYxNDA3NGYv/MTc2OTE4MzUyMTAx/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10244
+    },
+    {
+      "title": "Nyx Cosmetics x Netflix - 'Wednesday Adams'",
+      "sub": "Guy de la Palme\nCaviar",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10262/91c6c363-c553-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f4bdb1fe-f150-435f-be1b-18dc2b6faf45-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JMjy0HczoumB46HI9oGudusxhF35kneCwPQQMS56rTU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NDAzY2ZjYS00Mzc3/LTQwY2QtOTZmYi1m/YTVkMGI5YjkzNTIv/MTc2OTE4MTUyODEx/MS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10262
+    },
+    {
+      "title": "WIKIFIN",
+      "sub": "No Maybe Yes\nLes Mecs",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10255/1736a3ce-c553-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f26f4873-e8f4-43d7-b17d-f66170e5ad0d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/afADQTndrPQgJDTh_ci9l2Tk0KA9BpnK7522lKrJqFw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDI1NS02OTFjYjBj/YmQ5NTM5OC43NDYz/OTYyMS00ZjEwMmNi/ODQ2MDUxMzc4YWNh/Y2RlMzQwMzJlOTRh/OC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10255
+    },
+    {
+      "title": "SOS CONSUMER",
+      "sub": "NITRAM",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10259/65fa5bc3-c553-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8b5ecd23-bae7-40d0-aaf2-d163af0e4fcb-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/lkEj9Ld_kYaYkcLAJLp8f0qvPbyLqv3SaKfA5THpFPE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OTczZjVhMS02YTg2/LTQ5MjMtOGMxMy0w/MTVjN2EwYTlhYWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNi4zMi4w/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10259
+    },
+    {
+      "title": "OHNA - KODAK",
+      "sub": "NITRAM\nMimesis",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10254/0c496e47-c553-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/31525e01-74d7-415c-88a6-0bd02fe4078f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/lxG_pH9G9jP-1W2Cbf8vZYAIebZy9VR7QdvJyBODqF4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OWU5MjU3Yi02MTIw/LTQzNDUtOTcwNC03/NWQzNjg2OGYzNjEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNy4wMy41/OS5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10254,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "FEU CHATTERTON - UN MONDE NOUVEAU",
+      "sub": "Sidney Van Wichelen",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10246/88863b78-c552-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c5f36367-1004-4afb-80f9-c2f989a1f38e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/z4hER8F9o6-jU8CRBDL2psu3jXw7vH86xvRzR5wvK2s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZDYzZWFjMy1mZGE3/LTRlZjUtODJjYy04/Mzc4ODQ4NzY1MTEv/MTc2OTE4NTUxNDQ4/Ny5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10246,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "LA GIOVENTU",
+      "sub": "Romain Vennekens\nTOAST PROD",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10266/b9b840af-c559-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c9860dd2-fb19-4827-b6ee-68c018220c10-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/6M63_31dKADLr1crc-9Q_LUX6SAoRG_GoowPH0Uk1II/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OWIwNmM0ZS0zOWMw/LTRhODMtYmZiNS1h/OTM3NWVlNDVjZTkv/MTc2OTE4NDM1NDgw/MC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10266
+    },
+    {
+      "title": "JOANE - TÊTE HAUTE",
+      "sub": "Romain Vennekens",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10268/981c18af-c559-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/822d786b-96cc-485f-ab89-d562ac334513-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/j0IuWg_0_9s4vf0JkxSXqanOUp9u9aw0i1ujsd28oNI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MWY0YWRmMS1iNjQ0/LTRiODctOWE0NC1j/MDA2ZjNiYWVhYjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNy4xNC4x/NC5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10268
+    },
+    {
+      "title": "CABALLERO - POLAIRE",
+      "sub": "Cyprien Delire, Ryan Imoulah",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10267/b2f7b777-c559-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/35bf61c8-d462-44b7-b634-5a04b12b10e6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/sulOVAiFvUuEjacREb8NABPNXHGOPIOOp5gZ_AWa8ng/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NDAzZTFhOC0xYjhi/LTQ1ZTYtYmEzMy1m/ZDExYzlmY2Q2NDgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNy4xMi4w/MC5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10267
+    },
+    {
+      "title": "BOI",
+      "sub": "Anthony Nti",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10271/cf01c9dc-c55b-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/69a3fbdb-fd74-4302-9273-900e7b951a01-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/TLrfograTVzWxa7DnPsnzbZAq9k7J-wN2XVR-f7q5x4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZGJlNGQwOS01NWQ4/LTQ5ZDAtYTY5OC03/YmY1ZGJlOWQ3MGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNy4xNi41/NS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10271
+    },
+    {
+      "title": "FIRELILY - Teaser",
+      "sub": "Emily Van de Veer",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10270/7f04cba6-f877-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7bcc3d6b-2284-4d4d-a23b-9d78e1d28a3c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/09mWDjf03IwxyDXQ1J97zZ1g2-Vi7ViaH_-34-k5r9c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/M2M5NTlkZi1lYjQ4/LTQ2MmEtYmQ5Ny05/NDllOGM0YTg0Y2Uv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNy4xOS40/Ni5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10270,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Meli Melo - teaser",
+      "sub": "Julian Wolf",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10272/c50d1691-c55b-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5423fda3-f483-450c-a04e-cf148e6d44de-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/k3l60xn6-N0a-pwvQKXCyrJ-mkeToAvV7UMxAIvtHjE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NzkzNDE0YS05MzIx/LTQ2NGUtOWZmZS0x/ODgxNjRkNmMyMTgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDEt/MjMtYS0xNy4yMi4z/MS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10272
+    }
+  ]
 }
