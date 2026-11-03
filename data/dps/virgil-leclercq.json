@@ -78,6 +78,11 @@
         "Commercial"
       ]
     },
+    "10258": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "10259": {
       "zoom": 1.25,
       "types": [
@@ -112,6 +117,11 @@
     },
     "10268": {
       "zoom": 1.25,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10269": {
       "types": [
         "Music Video"
       ]
