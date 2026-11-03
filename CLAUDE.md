@@ -48,6 +48,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   → `overrides[<id>].hover` = `{ link, title, video, img? }` ; sur le site l'extrait joue au survol, le clic montre la galerie.
   Le recadrage (zoom / zoomPos) de ce projet se règle sur cet extrait.
 - Téléphone : toucher autre chose qu'un champ de texte le quitte (sinon le clavier revenait au lâcher d'un curseur).
+- Vignette d'un film (fiches) : pastille en haut à droite (`.snipmark`, Gus 03/11) = snippet Slate : pleine verte = extrait présent
+  (`video`), vide = pas encore d'extrait (à « snipper » sur Slate, puis « Relire le bundle ») ; rien sur un projet en images seulement.
 - Case « Aussi sur la vignette » : cocher / décocher arrête l'aperçu de l'extrait pour montrer la vignette.
 - Fiche, onglet ouvert (sauf ALL) : interrupteur « Présentation vidéo + stills » → `showcase` de la fiche (liste des onglets) ;
   le site affiche alors cet onglet en présentation « vidéo + 6 stills » (voir CLAUDE.md du site, `renderShow`). Les stills viennent

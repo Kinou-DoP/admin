@@ -954,6 +954,9 @@
     if (c.img) thumb.style.backgroundImage = 'url("' + c.img + '")';
     var chips = el("div", { class: "chips" });
     thumb.appendChild(chips);
+    // Snippet Slate (extrait d'aperçu) : petite pastille en haut à droite, pleine = extrait présent, vide = pas encore d'extrait
+    // (vidéo à « snipper » sur Slate, puis « Relire le bundle »). Gus 03/11.
+    if (c.full || c.video) thumb.appendChild(el("span", { class: "snipmark" + (c.video ? " on" : ""), title: c.video ? "Snippet présent" : "Pas de snippet sur Slate" }));
     var title = el("input", { type: "text", value: val(c, "title") });
     var sub = el("textarea", { rows: 2 }); sub.value = val(c, "sub");
     var hide = el("button", {}), reset = el("button", { text: "Rétablir" });

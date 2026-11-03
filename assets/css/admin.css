@@ -192,6 +192,8 @@ input[readonly] { color: var(--dim); }
 .film .thumb { overflow: hidden; }
 .film .thumb video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .film .thumb .chips { z-index: 1; }
+.film .thumb .snipmark { position: absolute; z-index: 1; right: 9px; top: 9px; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid rgba(255,252,235,.85); background: transparent; box-shadow: 0 0 6px rgba(0,0,0,.6); }
+.film .thumb .snipmark.on { border-color: var(--ok, #6fcf97); background: var(--ok, #6fcf97); } /* snippet présent ; vide = à snipper */
 .zoom { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 12px; margin-top: 8px; }
 .zoom .zval { flex: none; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 .zoom input[type=range] { order: -1; flex: 1 1 100%; width: 100%; min-width: 0; margin: 0; accent-color: var(--kinou-fg); } /* toute la largeur de la vidéo (plus précis), texte et « Recentrer » dessous */
