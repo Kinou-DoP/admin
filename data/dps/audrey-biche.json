@@ -6,53 +6,134 @@
   "open": 11487,
   "overrides": {
     "10416": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "10417": {
       "zoom": 1.38,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "10418": {
-      "zoom": 1.37
+      "zoom": 1.37,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "10419": {
       "zoom": 1.34,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "10420": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Music Video"
+      ]
     },
     "10421": {
       "zoom": 1.25,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "10422": {
-      "zoom": 1.07
+      "zoom": 1.07,
+      "types": [
+        "Music Video"
+      ]
     },
     "10423": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10424": {
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "10425": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "types": [
+        "Music Video"
+      ]
     },
     "10427": {
       "zoom": 1.52,
-      "zoomPos": "24.7% 49.6%"
+      "zoomPos": "24.7% 49.6%",
+      "types": [
+        "Narrative",
+        "Short fim"
+      ]
     },
     "10428": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Commercial"
+      ]
     },
     "10429": {
-      "zoom": 1.39
+      "zoom": 1.39,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
+    },
+    "10430": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10431": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10432": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10433": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10434": {
       "zoom": 1.02
     },
     "10435": {
       "zoom": 1.1
+    },
+    "11487": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "11488": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11489": {
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {},
