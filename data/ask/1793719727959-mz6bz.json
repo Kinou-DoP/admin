@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/a988c"
+      "link": "https://shots.re/a988c",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/hugo-boss-toby",
+        "title": "Hugo Boss Toby",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7c4c613d-5511-4bb6-bd47-3ea68a834958-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/qZjzySr2TMAYRh7eW8vCW8XbFQnAtL9jmJ_mNJt5GaA/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MTU2LTYyYjU3ZmVm/ODBhYjg3LjgxNTY1/MDI3LTQ1OGI4ZmQ2/ZjM3NGFlNjNjZDQ0/MjdmNmFkNDk3YmU0/LmpwZw.webp"
+      }
     }
   ],
   "at": "2026-11-03T15:28:47.959Z",
-  "by": "kinou-agency"
+  "by": "kinou-agency",
+  "doneAt": "2026-11-03T15:29:07.893Z"
 }
