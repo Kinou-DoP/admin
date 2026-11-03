@@ -97,7 +97,9 @@
       "types": [
         "Short Film",
         "narrative"
-      ]
+      ],
+      "zoomThumb": true,
+      "zoomPos": "49.3% 17.5%"
     },
     "10430": {
       "types": [
