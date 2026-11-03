@@ -617,13 +617,47 @@
       var entry = slug && index.dps.filter(function (d) { return d.slug === slug; })[0];
       isNew = !r[1]; listed = !!entry; pending = {}; origSlug = listed || !isNew ? slug : null; // adresse actuelle
       state = r[1] || { slug: slug || "", name: entry ? entry.name : "", hue: 0, overrides: {}, about: {} };
-      state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false; histReset();
+      state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false; histReset(); notesFor = null; // notes relues à chaque ouverture
       slate = state.clips ? { name: state.name, categories: state.categories || [], clips: state.clips } : null;
       curCat = null;
       render();
     }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
   }
 
+  // Notes internes d'une fiche (Gus 03/11) : jamais sur le site, et pas dans ce dépôt (public) : dépôt privé Kinou-DoP/notes,
+  // un fichier par chef op (dps/<adresse>.md), lu à l'ouverture et enregistré tout seul 1,2 s après la frappe (sans « Publier »).
+  // Clé GitHub sans accès à ce dépôt (ou dépôt absent) : message dans le bloc, le reste de la fiche marche normalement.
+  var NOTES_REPO = "Kinou-DoP/notes", notesFor = null, notesNode = null;
+  function b64enc(t) { return btoa(unescape(encodeURIComponent(t))); }
+  function b64dec(b) { return decodeURIComponent(escape(atob(String(b).replace(/\s/g, "")))); }
+  function notesBox(slug) {
+    var ta = el("textarea", { class: "nodirty", rows: "3", placeholder: "Notes pour l'équipe (jamais affichées sur le site)…" }), st = el("span", { class: "nst" });
+    var box = el("section", { class: "notes" }, [el("div", { class: "nhead" }, [el("span", { class: "label", text: "Notes" }), st]), ta]);
+    var path = "/repos/" + NOTES_REPO + "/contents/dps/" + slug + ".md", sha = null, saved = "", t = 0, busy = false, again = false;
+    function grow() { ta.style.height = "auto"; ta.style.height = Math.max(ta.scrollHeight, 60) + "px"; }
+    ta.disabled = true; st.textContent = "Chargement…";
+    gh(path, { allow404: true }).then(function (f) {
+      if (f) { sha = f.sha; saved = b64dec(f.content); return; }
+      return gh("/repos/" + NOTES_REPO, { allow404: true }).then(function (r) { if (!r) throw new Error("absent"); });
+    }).then(function () { ta.value = saved; ta.disabled = false; st.textContent = ""; requestAnimationFrame(grow); },
+      function () { box.classList.add("off"); st.textContent = "Indisponibles : le dépôt privé « Kinou-DoP/notes » doit exister et être ajouté à votre clé GitHub."; });
+    function put() {
+      return gh(path, { method: "PUT", body: { message: "Notes " + (state && state.name || slug) + " (admin, " + (user && user.login || "") + ")", content: b64enc(ta.value), sha: sha || undefined } });
+    }
+    function save() {
+      if (busy) { again = true; return; }
+      if (ta.value === saved) { st.textContent = "Enregistré"; return; }
+      var v = ta.value; busy = true; st.textContent = "Enregistrement…";
+      put().catch(function () { // modifiée ailleurs entre-temps (autre personne, autre onglet) : on reprend sa version et on réessaie
+        return gh(path, { allow404: true }).then(function (f) { sha = f ? f.sha : null; return put(); });
+      }).then(function (r) { sha = r.content.sha; saved = v; st.textContent = "Enregistré"; },
+        function (e) { st.textContent = "Pas enregistré : " + e.message; })
+        .then(function () { busy = false; if (again) { again = false; save(); } });
+    }
+    ta.addEventListener("input", function () { grow(); st.textContent = "…"; clearTimeout(t); t = setTimeout(save, 1200); });
+    ta.addEventListener("blur", function () { clearTimeout(t); save(); });
+    return box;
+  }
   function render() {
     view.textContent = ""; editing = true; pagePublish = publish;
     histInit({
@@ -632,6 +666,8 @@
     });
     view.appendChild(el("div", { class: "dp-head" }, [el("h1", { text: state.name || "Nouveau chef op" }), isNew ? null : progressCtl()]));
     view.appendChild(el("p", { class: "lead", text: isNew ? "Nouvelle fiche — collez le lien du bundle Slate pour commencer." : (state.bundle ? "Films synchronisés avec Slate." : "Fiche sans bundle Slate : les films sont figés.") }));
+    var nk = origSlug || (!isNew && state.slug); // une fois par fiche ouverte (render est rappelé à chaque changement)
+    if (nk) { if (notesFor !== nk) { notesFor = nk; notesNode = notesBox(nk); } view.appendChild(notesNode); }
     view.appendChild(bundleSection());
     view.appendChild(identitySection());
     view.appendChild(filmsSection());

@@ -363,3 +363,13 @@ body.vedit-on { overflow: hidden; }
 .newver { position: fixed; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 14px; padding: 9px 16px calc(9px); padding-top: calc(env(safe-area-inset-top, 0px) + 9px); background: var(--kinou-fg); color: #000; font-family: var(--kinou-sans); font-weight: 600; font-size: 12px; letter-spacing: .08em; animation: newverIn .4s ease both; }
 .newver button { padding: 5px 12px; border: 1px solid #000; background: #000; color: var(--kinou-fg); font: inherit; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
 @keyframes newverIn { from { transform: translateY(-100%); } }
+
+/* Notes internes d'une fiche (dépôt privé Kinou-DoP/notes) : bloc blanc crème, sous le titre (Gus 03/11). */
+.notes { margin: -8px 0 44px; padding: 14px 18px 10px; background: #FFFCEB; color: #1c1b17; border-radius: 3px; }
+.notes .nhead { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+.notes .label { color: rgba(28,27,23,.6); margin: 0; }
+.notes .nst { margin-left: auto; font-family: var(--kinou-sans); font-size: 11px; color: rgba(28,27,23,.45); text-align: right; }
+.notes textarea { display: block; width: 100%; min-height: 60px; padding: 4px 0; border: 0; background: none; color: #1c1b17; font: 400 16px/1.55 var(--kinou-body); resize: none; outline: none; overflow: hidden; }
+.notes textarea::placeholder { color: rgba(28,27,23,.38); }
+.notes.off textarea { display: none; }
+.notes.off { background: rgba(255,252,235,.12); color: var(--kinou-fg); } .notes.off .nst, .notes.off .label { color: rgba(255,252,235,.6); }

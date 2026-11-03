@@ -76,6 +76,11 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   typo Press Start 2P (Google Fonts) ; pas de grade ni d'XP, Gus 27/10 ;
   clic sur une jauge = n'afficher que les fiches pas encore à cette étape, combiné à la recherche) et pastilles de couleur sous
   chaque nom (`pips`). Fichier hors des chemins du robot : aucune Action lancée.
+- Notes internes d'une fiche (Gus 03/11) : bloc blanc crème sous le titre (`notesBox`), jamais sur le site, **pas dans ce dépôt
+  (public)** : dépôt **privé `Kinou-DoP/notes`**, un fichier par chef op `dps/<adresse>.md` (adresse à l'ouverture de la fiche ;
+  pas déplacé si l'adresse change), lu à l'ouverture, enregistré tout seul 1,2 s après la frappe ou en quittant le champ (API
+  contents, sans « Publier », hors annuler / rétablir). Dépôt absent ou clé sans accès : message dans le bloc. Chaque clé GitHub
+  doit avoir accès à ce dépôt (Contents : Read and write).
 - Liste des chefs op : champ de recherche au-dessus (filtre au fil de la frappe, sans accents ; Entrée ouvre le 1er résultat).
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi
