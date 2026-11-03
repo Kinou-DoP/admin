@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/f9360"
+      "link": "https://shots.re/f9360",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/deka-angels",
+        "title": "Deka Angels",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cdf8589b-ef53-4b04-b122-40af00cdecd8-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/GAs8ACp9vqUg1YeZ1F1RrHVnhEbZ2KYiA1VyTjvcz6k/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NTNmNThiOS03MmJj/LTRhODUtOGRmMi0x/YmJmNjgzMTdlZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDkt/MjItYS0xMi41MC4w/Ny5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-03T11:55:06.196Z",
-  "by": "kinou-agency"
+  "by": "kinou-agency",
+  "doneAt": "2026-11-03T11:55:27.122Z"
 }
