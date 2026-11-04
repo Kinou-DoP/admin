@@ -17,6 +17,11 @@
     "123": {
       "title": "YSL"
     },
+    "142": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "153": {
       "title": "Woodkid - Run Boy Run",
       "types": [
@@ -312,6 +317,13 @@
     "6369": {
       "types": [
         "Commercial"
+      ]
+    },
+    "6558": {
+      "types": [
+        "Commercial",
+        "Fashion",
+        "Jewelry"
       ]
     },
     "6748": {
