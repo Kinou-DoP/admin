@@ -1792,7 +1792,6 @@
     });
     return { name: "Fiction", categories: ["NEW RELEASES", "COMING SOON", "PAST RELEASES"], clips: clips };
   }
-  // Réglages propres à la fiction, sous le titre d'un film : statut, genre, date de sortie, affiche.
   // Infos d'un film (Gus 04/11) : année, épisodes, durée, format d'image, plateformes, caméra, optiques, prix & sélections,
   // synopsis → overrides[<id>].info (texte libre, champs vides absents). Sur le site : dans le lecteur, sous les crédits
   // (et la ligne année | durée | format dans la présentation vidéo + stills). Bloc replié ; son titre dit combien sont remplies.
@@ -1817,17 +1816,40 @@
     count();
     return box;
   }
+  // NEW RELEASES : 9 films au plus (Gus 04/11). Au-delà, les plus anciens (date de sortie ; sans date = tout juste ajouté, donc
+  // gardé) passent tout seuls en Past release. Même règle que le site (ficToDP), qui l'applique aussi à l'affichage.
+  var FIC_NEW_MAX = 9;
+  function ficNewOrder() {
+    var films = fic.films || [];
+    return films.map(function (f, i) { return { f: f, i: i, o: fic.overrides[f.slate] || {} }; })
+      .filter(function (x) { return x.o.status === "new"; })
+      .sort(function (a, b) { return (b.o.date || "9999") < (a.o.date || "9999") ? -1 : (b.o.date || "9999") > (a.o.date || "9999") ? 1 : a.i - b.i; });
+  }
+  function ficCapNew() {
+    var out = ficNewOrder().slice(FIC_NEW_MAX).map(function (x) { setOverride(x.f, "status"); return x.f.title; });
+    if (out.length) flash = "9 New releases au plus : « " + out.join(" », « ") + " » passe" + (out.length > 1 ? "nt" : "") + " en Past release.";
+    return out.length;
+  }
+  // Réglages propres à la fiction, sous le titre d'un film : statut, genre, date de sortie, affiche.
   function ficCtl(c) {
     function o() { return fic.overrides[c.slate] || {}; }
     var stSel = el("select", { class: "nodirty" }), genre = el("select", { class: "nodirty" });
-    FIC_STATUS.forEach(function (x) { var op = el("option", { value: x[0], text: x[1] }); if ((o().status || "past") === x[0]) op.selected = true; stSel.appendChild(op); });
+    // Statut : on choisit New release ou Coming soon ; Past release se fait tout seul (plus de 9 New releases), et ne s'affiche
+    // que pour les films déjà passés (Gus 04/11).
+    FIC_STATUS.forEach(function (x) {
+      if (x[0] === "past" && (o().status || "past") !== "past") return;
+      var op = el("option", { value: x[0], text: x[1] }); if ((o().status || "past") === x[0]) op.selected = true; stSel.appendChild(op);
+    });
     [["", "Genre…"]].concat(FIC_GENRES.map(function (g) { return [g, g.charAt(0) + g.slice(1).toLowerCase()]; })).forEach(function (x) {
       var op = el("option", { value: x[0], text: x[1] }); if ((o().genre || "") === x[0]) op.selected = true; genre.appendChild(op);
     });
     var date = el("input", { type: "date", class: "nodirty", value: o().date || "" });
-    stSel.addEventListener("change", function () { setOverride(c, "status", stSel.value === "past" ? undefined : stSel.value); touch(); });
+    stSel.addEventListener("change", function () {
+      setOverride(c, "status", stSel.value === "past" ? undefined : stSel.value); touch();
+      var y = window.scrollY; ficCapNew(); slate = ficSlate(); renderFic(); window.scrollTo(0, y); // le film change d'onglet ; le 10e New release passe en Past release
+    });
     genre.addEventListener("change", function () { setOverride(c, "genre", genre.value || undefined); touch(); });
-    date.addEventListener("change", function () { setOverride(c, "date", date.value || undefined); touch(); });
+    date.addEventListener("change", function () { setOverride(c, "date", date.value || undefined); touch(); if (o().status === "new" && ficCapNew()) { var y = window.scrollY; slate = ficSlate(); renderFic(); window.scrollTo(0, y); } });
     // Plateformes (Netflix, Canal+…) : un mot + Entrée = une étiquette ; × pour la retirer. Sur le site, en haut à gauche
     // de la vignette après le genre (« FEATURE FILM · NETFLIX »), au survol / à la sélection.
     var plats = el("div", { class: "plats" }), pin = el("input", { type: "text", class: "nodirty", placeholder: "Plateforme + Entrée" });
@@ -1906,6 +1928,7 @@
   }
   // Publication : fichier en ligne relu (films du robot gardés) ; on n'y écrit que le lien et les réglages, + les affiches déposées.
   function publishFic(justLink) {
+    if (justLink !== true) ficCapNew(); // 9 New releases au plus (ex. 10 en ligne avant cette règle)
     publishBtn.disabled = true; status("Publication…");
     var files = [], stamp = Date.now().toString(36);
     for (var id in pending.posters || {}) {

@@ -106,7 +106,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
 - Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight, fiction, press (à venir), contact.
 - Fiction (lien « fiction » du menu, `data/fiction.json`) : comme le spotlight (lien d'une bande Slate + « Relire la bande », lue en
   entier par le robot ; mêmes réglages par film via `filmsSection` / `filmCard`, `state` = fic), plus sous le titre de chaque film
-  (`ficCtl`) : statut New release / Coming soon / Past release (`status`, défaut past), genre (`genre`, onglet du genre si Past release),
+  (`ficCtl`) : statut New release / Coming soon (`status` ; Past release = défaut, proposé seulement pour un film déjà passé :
+  **9 New releases au plus**, au-delà les plus anciens par date de sortie passent tout seuls en Past release, `ficCapNew`, au
+  changement de statut ou de date et à la publication, avec un message ; Gus 04/11), genre (`genre`, onglet du genre si Past release),
   plateformes (`platforms`, un mot + Entrée = une étiquette, × pour retirer), date de
   sortie (`date`), affiche (compressée en WebP → `data/fiction/<id>-<horodatage>.webp` à la publication, `poster`).
   Cadrage cinémascope (`scopeCtl`, à la place du recadrage habituel) : onglets Vignette / Extrait ; image entière (16:9) et cadre
