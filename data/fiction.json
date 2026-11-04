@@ -647,8 +647,8 @@
     },
     "11187": {
       "genre": "FEATURE FILM",
-      "status": "new",
-      "date": "2026-11-04",
+      "status": "soon",
+      "date": "2026-11-11",
       "title": "Ghost Soldier",
       "thumbCrop": {
         "y": 55.3
@@ -797,7 +797,7 @@
       "thumbCrop": {
         "y": 64.4
       },
-      "autoPast": true
+      "status": "new"
     },
     "11324": {
       "zoom": 1.37,
@@ -1746,6 +1746,6 @@
       ]
     }
   ],
-  "readAsk": "2026-10-27T15:38:42.122Z",
+  "readAsk": "2026-11-04T11:46:45.860Z",
   "readAt": "2026-11-04T11:43:37.264Z"
 }
