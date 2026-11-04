@@ -1798,7 +1798,7 @@
   // (et la ligne année | durée | format dans la présentation vidéo + stills). Bloc replié ; son titre dit combien sont remplies.
   var INFO_FIELDS = [["year", "Année", "2025"], ["episodes", "Épisodes", "8 (séries)"], ["runtime", "Durée", "90 min"], ["ratio", "Format d'image", "1.85"],
     ["platforms", "Plateformes", "Netflix, Canal+"], ["camera", "Caméra", "ALEXA 35"], ["lenses", "Optiques", "Cooke S4"],
-    ["awards", "Prix & sélections", "Un prix ou une sélection par ligne", 3], ["synopsis", "Synopsis", "Une ligne vide entre deux paragraphes (ex. français puis anglais)", 5]];
+    ["awards", "Prix & sélections", "Un prix ou une sélection par ligne", 3], ["synopsis", "Synopsis (français)", "Une ligne vide entre deux paragraphes", 5], ["synopsisEn", "Synopsis (anglais)", "Sur le site : l'anglais d'abord, avec un choix EN / FR si les deux sont remplis", 5]];
   function infoCtl(c) {
     function cur() { return (state.overrides[c.slate] || {}).info || {}; }
     var sum = el("summary"), grid = el("div", { class: "infogrid" }), box = el("details", { class: "infobox" }, [sum, grid]);
