@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/17082d"
+      "link": "https://shots.re/17082d",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/muse-teaser",
+        "title": "MUSE TEASER",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/27ff9773-25ec-48d0-b04a-3e191316eab4-1280x720.2500.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9524/3ba7f962-ff25-11ef-bfce-022353abf6f5.mp4",
+        "img": "https://images.slatecdn.net/3MiMGgBpF9i58S1T4AjOyiOLIGRbDJCrqasVHABQiFU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/YmUzYjlhMS03MmQ4/LTQ0NWEtYjdjYS0w/MGM5NWQ5MGIyNzEv/bXVzZS5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-04T11:52:42.530Z",
-  "by": "John-Kinou"
+  "by": "John-Kinou",
+  "doneAt": "2026-11-04T11:52:58.450Z"
 }
