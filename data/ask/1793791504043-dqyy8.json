@@ -2,9 +2,11 @@
   "items": [
     {
       "kind": "stills",
-      "link": "hsh fh jksghkj fghsgfj hslf b"
+      "link": "hsh fh jksghkj fghsgfj hslf b",
+      "error": "lien invalide : attendu https://kinou.slateapp.com/work/…"
     }
   ],
   "at": "2026-11-04T11:25:04.043Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-04T11:25:19.776Z"
 }
