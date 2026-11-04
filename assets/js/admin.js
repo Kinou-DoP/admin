@@ -1825,10 +1825,20 @@
       .filter(function (x) { return x.o.status === "new"; })
       .sort(function (a, b) { return (b.o.date || "9999") < (a.o.date || "9999") ? -1 : (b.o.date || "9999") > (a.o.date || "9999") ? 1 : a.i - b.i; });
   }
+  // Film poussé en Past release par cette règle : marqué `autoPast`. Si une place se libère (un New release passe en Coming soon…),
+  // le plus récent d'entre eux revient tout seul en New release (Gus 04/11 : sinon 8 New releases après un aller-retour).
   function ficCapNew() {
-    var out = ficNewOrder().slice(FIC_NEW_MAX).map(function (x) { setOverride(x.f, "status"); return x.f.title; });
-    if (out.length) flash = "9 New releases au plus : « " + out.join(" », « ") + " » passe" + (out.length > 1 ? "nt" : "") + " en Past release.";
-    return out.length;
+    var out = ficNewOrder().slice(FIC_NEW_MAX).map(function (x) { setOverride(x.f, "status"); setOverride(x.f, "autoPast", true); return x.f.title; });
+    var back = [], n = ficNewOrder().length;
+    (fic.films || []).map(function (f, i) { return { f: f, i: i, o: fic.overrides[f.slate] || {} }; })
+      .filter(function (x) { return x.o.autoPast && (x.o.status || "past") === "past"; })
+      .sort(function (a, b) { return (b.o.date || "9999") < (a.o.date || "9999") ? -1 : (b.o.date || "9999") > (a.o.date || "9999") ? 1 : a.i - b.i; })
+      .forEach(function (x) { if (n >= FIC_NEW_MAX) return; setOverride(x.f, "autoPast"); setOverride(x.f, "status", "new"); back.push(x.f.title); n++; });
+    var msg = [];
+    if (out.length) msg.push("9 New releases au plus : « " + out.join(" », « ") + " » passe" + (out.length > 1 ? "nt" : "") + " en Past release.");
+    if (back.length) msg.push("« " + back.join(" », « ") + " » revien" + (back.length > 1 ? "nent" : "t") + " en New release.");
+    if (msg.length) flash = msg.join(" ");
+    return out.length + back.length;
   }
   // Réglages propres à la fiction, sous le titre d'un film : statut, genre, date de sortie, affiche.
   function ficCtl(c) {
@@ -1845,7 +1855,7 @@
     });
     var date = el("input", { type: "date", class: "nodirty", value: o().date || "" });
     stSel.addEventListener("change", function () {
-      setOverride(c, "status", stSel.value === "past" ? undefined : stSel.value); touch();
+      setOverride(c, "status", stSel.value === "past" ? undefined : stSel.value); setOverride(c, "autoPast"); touch(); // choix à la main : plus « automatique »
       var y = window.scrollY; ficCapNew(); slate = ficSlate(); renderFic(); window.scrollTo(0, y); // le film change d'onglet ; le 10e New release passe en Past release
     });
     genre.addEventListener("change", function () { setOverride(c, "genre", genre.value || undefined); touch(); });
