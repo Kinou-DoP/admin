@@ -277,7 +277,16 @@
         "Documentary"
       ],
       "zoom": 1.53,
-      "zoomPos": "15.9% 54.8%"
+      "zoomPos": "15.9% 54.8%",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/christine-the-queens",
+          "title": "Christine & The Queens",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b8b0a96b-fad2-4ce3-bf32-f52ae87b3548-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4994/073f4cf9-d870-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/re7g7tpUAxhUmfumemvnceTdHkIwR1BaQ3btMM3lBfY/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OTk0LTYwOTE1NTAz/NWVkYzgwLjEyNTE5/OTQ1LTEyN2U3OTc2/NzlkOWJjY2EwYWRk/OGRkMmM5M2U0Yzg1/LmpwZw.webp"
+        }
+      ]
     },
     "4994": {
       "title": "Christine & The Queens : CHRIS",
@@ -1257,6 +1266,7 @@
     {
       "title": "DJ Snake feat Justin Bieber | Let Me Love You",
       "sub": "Philip Andelman\nHigh Noon",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2057/cf282b14-d874-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545432169-dj-snake-feat-justin-bieber-let-me-love-you.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/rHxZGJoZ6eu_Y96ZQ4UN99w7ocKXVQ-D8vnPt-6Qg-8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YWYwMzAzMi0zMGI1/LTQ0NTctODM3Mi1k/Nzc1ZTkwYjk2OTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjAtMTIt/MDEtYS0xNS4wNS4y/MC5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -1274,6 +1284,7 @@
     {
       "title": "Data | Soldier's Flag",
       "sub": "Julien Paolini\nPicseyes",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2273/f0eef212-d874-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545443304-data_julien_paolini_nolita_picseyes.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/dXdzNIhnQsDzuiD52U_AqLqJwV7xeETxhRmwpQmA3GA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNTU0ODI2Nzc4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI0LWEtMTUuMzMu/NDEtMi5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -1320,22 +1331,16 @@
     {
       "title": "Ana Zimmer \"Money\"",
       "sub": "Akatre\nWacko / Première Heure",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2628/0ab560c8-d875-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545457900-26983221_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/gJ-HgKPRkXGU6VuIVH1IfhF6VD2_Fn1pwOBtFit6AuI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ODQyNGU4OS1mZGE1/LTQ1YjItODY0Mi0y/ODk0NjkxYmYyMTIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTQtYS0xNy4wOC4y/Ny5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
       "slate": 2628
     },
     {
-      "title": "Mikano \"It's Alright\"",
-      "sub": "Juliette Labrousse\nHercules",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/572c161f-8359-4f85-b846-ca6b1635f815-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/xoKT2zOPqyw_pc6Eo8ezjp-_ZcfkvxHZWsI3SmOz8gA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDY4LTVlNDI3ZTg1/MzFjYTM3Ljg1NDA2/OTQxLTE4YjBiYWZm/NDM4ZjgwYWFlZDU1/YjgwYzQ4OGM5YmRh/LmpwZw?v=1&format=webp",
-      "cat": "MUSIC VIDEO",
-      "slate": 4068
-    },
-    {
       "title": "C2C \"Arcades\"",
       "sub": "Remi Paoli\nPicseyes",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2241/39ee2ec2-d875-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545440445-c2c-excerpt.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/-YDzxvLLIQkK4gvVxzmI_dM2AfioUUhkQ3zF1XpGBVw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MmMtYXJjYWRlcy1t/dXNpYy12aWRlby1l/eGNlcnB0LWQzZjMy/YWU4OTM2Mzg5MjZl/NzJhMzFiNGY4MDhj/MjFiLmpwZw?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -1353,6 +1358,7 @@
     {
       "title": "Chase & Status \"Control\"",
       "sub": "Henrik Hanson\nAble & Baker",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2648/57d3cfb6-d875-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545459099-26983226_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/2B3gBsy24D_B6RQUdZnS2MLDizDNuYqWryUn-CrRzdA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNTU0NTA3MzU1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI0LWEtMTUuMjgu/MjAtMi5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -1361,6 +1367,7 @@
     {
       "title": "« J’ai Vaguement ton Coeur » [Music Video]",
       "sub": "Nathalie Hinstin\nBermudes",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/113/656f59e7-d875-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545343908-26983259_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/RDQvx8end8MUaY9s9hc_k5A-9PntWw8gRgsTaRr0InE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NzBiMGYwOC1jNTc2/LTRjNzItOTU0NC0w/ZDZlYjQ4YThlNzgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTQtYS0xNy4xMy4y/NC5wbmc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
@@ -1387,8 +1394,9 @@
     {
       "title": "Yelle \"OMG\" | Music Video",
       "sub": "Ines & Panteros\nHeko",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/142/79d9ce2b-d875-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545350213-yelle-omg.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/pEBJhJfHj2zqfjau4OBTdRc6p3RaVuLSimXgAZDt2ik/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy95/ZWxsZS1vbWctbXVz/aWMtdmlkZW8tODQw/ZDY2ZDlkOWFjZDdh/MWI1YzI3MDA0OTM0/Zjk3NzQuanBn?v=1&format=webp",
+      "img": "https://images.slatecdn.net/IzLnZFCqT4Gya7xBLkinOJpNYsC5wUg3lofbY47jpvE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy95/ZWxsZS1vbWctbXVz/aWMtdmlkZW8tN2U5/ZDg0NDIwYTYyNGJj/NTczMzIxYjJmMWMy/NWVjYWMuanBn?v=1&format=webp",
       "cat": "MUSIC VIDEO",
       "slate": 142
     },
