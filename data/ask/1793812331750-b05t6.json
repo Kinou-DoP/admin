@@ -2,9 +2,889 @@
   "items": [
     {
       "kind": "bundle",
-      "link": "35ff1654-d869-11f1-a349-0215583debcb"
+      "link": "35ff1654-d869-11f1-a349-0215583debcb",
+      "answer": {
+        "name": "Baptiste Chesnais",
+        "categories": [
+          "FEATURED",
+          "SKIN",
+          "STILL LIFE / TEXTURES",
+          "HAIR",
+          "FASHION",
+          "NARRATIVE",
+          "MUSIC VIDEO"
+        ],
+        "clips": [
+          {
+            "title": "Lancôme - Renergie",
+            "sub": "Damien Krisl\nCadence",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5665/52b00305-fe6e-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e462bfba-7887-442c-81f9-84d455df05de-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Kbvy2HHs2kQlHYUnYMA3a_S0q0zR15Er_ZPAoje9Kbo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YTBlMmU0NC03YmZi/LTRiOWYtYjk0YS05/NDJiY2VhYzJhYmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDEt/MTMtYS0xMi4yMy41/NS5wbmc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 5665
+          },
+          {
+            "title": "YSL - Coeur",
+            "sub": "Ines Dieleman\nProse on Pixels",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10177/689f6d00-a9d6-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/83e8bcac-07ed-47fe-bd80-d20111430e31-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/pjRtLdwhC8pSML1D3uEbZIN6cfIcAn22Uh6DMv9I1vI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZDk4YjQzOS04NzA4/LTRlMGMtODBlYi01/N2MwNTJiZWI1ODMv/MTc2MDUzOTg1MTE2/Ny5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 10177
+          },
+          {
+            "title": "TASAKI AWARENESS",
+            "sub": "Christophe Chudy\nBirth",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8972/1b1f5794-4f5a-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/caa108f4-b37b-449b-bb2f-a90a1574a8e6-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/IUf-FCAYAGU8KtD4sHe_p7LOdld_S5hicLtX3bMI5DE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OTcyLTY2YWE2NjBm/OGRlYjMzLjgyMjk1/NTE3LTM2N2QyMjQy/M2FjMGFiMTIyOTM2/NjcwOTk2NjZmMGQ1/LmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 8972
+          },
+          {
+            "title": "Clé de Peau - Radiance",
+            "sub": "Damien Krisl\nCadence Paris",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8151/11b22e75-a981-11ee-ade3-028f723623ff.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dec0ce68-cbfc-4355-9bfe-440934373cc7-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/GDf_p96mFvoerLM5ueOIopg3kwb_3qgVe2g2Y9BO8X4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MTUxLTY1OTQyMGE1/ODBmZjEwLjYwMjY2/MjY3LWRiOWU2YWY2/OWJjZjU0MzJlMTM4/NDZmMWNmNDA4NGJm/LmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 8151
+          },
+          {
+            "title": "YSL - BabyCat",
+            "sub": "Ines Dieleman\nProse on Pixels",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10176/370a0dea-a9d6-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d5838466-f4d1-4ab4-8139-271021253f1d-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/2QjtCXnsNK-AL6SXY4YlnNT0SRxtq0cCdOJRe2yyGPg/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NTU2ODNjOS1kODhj/LTRmNTAtODUyZi0y/NTJiOTNkNWQ2Zjkv/MTc2MDUzOTc0Njc1/Mi5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 10176
+          },
+          {
+            "title": "YSL Beauty - The Slim",
+            "sub": "Audrey Mascina\nUbiquity",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5256/8da3fe33-fe6e-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/afc612f7-bb04-4168-85d9-59ca5a53c3a4-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Kwe9L6ZUw3cRxIZiihFqhSRBZWcUR2yyqnsbntWhdZg/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MjU2LTYxMGFiYjJh/ZjNiMzM5LjA0OTE3/MjI0LWUzN2JjMzU1/ZGJkZDRjMDA3Njk5/MTFjMmI1Y2UzN2Yz/LmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 5256
+          },
+          {
+            "title": "yves saint-laurent",
+            "sub": "Nathalie Canguilhem\nLa Pac",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/123/ee4ceb1d-fe97-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545348642-36327631_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/4B3j4UHp5pFdh8SGe5sM2qPMkmlsnNUlNi3EizjxCs4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NzliMDBhNy0wYTc1/LTRhMTItYTlhNC02/NzYyZmM4MWU1YTYv/MTY3MjkyOTgxNTYw/MC5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 123,
+            "featured": true,
+            "featuredOrder": 7
+          },
+          {
+            "title": "givenchy le rouge liquide",
+            "sub": "Bouha Kazmi\nStink Paris",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2694/bea6ab66-fe6e-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545835492-57092164_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/OIOBuZVf4YFBwfLkAZYH2FwahF9JXyqh-zmDZThV-kQ/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyMjMwODkxNDk5/L3NsYXRlLmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 2694
+          },
+          {
+            "title": "YSL Beauty | All Hours",
+            "sub": "Felix Cooper\nHelmut",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3566/0eab4ebd-fe70-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1561540782-ysl-all-hour-fluid-38-190509.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/sccxmZ0tvsJ4HUXy45ZEYTzyyO5Z-9QFPm6iN34-Gpo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy95/c2wtYmVhdXR5LWFs/bC1ob3Vycy1iY2Y5/ZWMxMjQyMjFkMzA3/MmE4Zjg2MTg0NGYy/OWE0My5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 3566,
+            "featured": true,
+            "featuredOrder": 2
+          },
+          {
+            "title": "Vogue Japon",
+            "sub": "Nathaniel Goldberg\nHello Stranger",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4139/f8d59460-fe6e-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c3522669-ad55-4e4f-a284-899e09ed0170-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/KhRB-ctb9MrITY5MTn8FwiVhdGJy8PQW4_1iZOqZzTk/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MTM5LTVlNTc4Yzc3/N2FmMWY5Ljc3MTU1/MzYyLWUzNWQ0MmIw/N2E1NmM2ZDk0YzVk/NTZkMjJkODViMGRj/LmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 4139
+          },
+          {
+            "title": "Agustinus Bader",
+            "sub": "Marine Billet\nObvious Film",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10085/288df41a-9302-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a1dcf2e4-ce53-4803-916d-92b740f0b64c-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/tLRafXLo0urun7fMLWQ3znu6YdJwPtW2dOXWfxSCeTo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NWZhYzQwNS1mYmJl/LTRjYjAtYTVkZC1m/NGE2OTJmNDlhODQv/MTc1ODAyOTc0OTAz/MS5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 10085
+          },
+          {
+            "title": "Shu Uemura - TSUYA",
+            "sub": "Christophe Chudy\nBirth",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10191/1df324fb-b019-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/eeba8097-d838-4089-b448-38cea6073e40-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/-5tvt3xGuYa0tEPn13EG66gWIIKriHgdzYC1TADv7w4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTZhMjljZS03NzZj/LTRjOGUtOTJkMC01/Y2UxOThjYmNjODYv/MTc2MTIyODE5MTkz/MS5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 10191
+          },
+          {
+            "title": "Guerlain",
+            "sub": "Luca Finotti\nHelmut Production",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4058/e1782412-fe6e-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2e2ef359-e42d-4573-ba60-2c9d2e31feae-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/slba_PZzo1RuedsaBeA9oP8WbrS-3RtaWdL9YEMwEBU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDU4LTVlMzgwYmE3/NDZkNGYyLjIyMzEw/MzQ3LTI5ZjA2MGU4/YjAyNGM4N2VjMjYw/NzU3ZTBkNzgxMTFm/LmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 4058
+          },
+          {
+            "title": "Shu Uemura - Kinu Care Nudes",
+            "sub": "Christophe Chudy\nBirth",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10189/71b88f8b-b018-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ef689052-b901-49cd-9959-40bdec1f609c-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/_mSb1LywoVaRNpEfW4DsngHD32A2mi1UlW6TRm6DRK0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjVjNThlMi0zZDVh/LTRmY2QtOTkwNS05/MTFlODAxYjBjYjEv/MTc2MTIyNzg5NjI3/OC5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 10189
+          },
+          {
+            "title": "Darphin",
+            "sub": "Nicolas Menu\nD-Motion D-Factory",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4055/90635484-fe6f-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/afcf9f25-6315-46ec-917e-9bd9fdc6bf4a-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/dT0X8SFPM4tpg06LpiP345IaBITSLlUHrz3PAN74ac0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDU1LTVlMzMwNmNm/M2VkZDY2LjUxNDI4/OTU5LTgyNjVkNjVk/ZWIxZjcwYmY1NTE3/NGYwMzFmOTBiNDVi/LmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 4055
+          },
+          {
+            "title": "Shu Uemura - Quad Cealer",
+            "sub": "Christophe Chudy\nBirth",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10190/db59641b-b018-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bcfc5d33-ecfa-4342-ab8f-8e6ed5f8c96e-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/zRw5wQ0Ax4WetwbmKCoJklOIMuTw0JaUN9-WKdT-Z9c/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTViYjI2Yy1jMzRj/LTQyZTgtYmQ2My0w/Mjg4OTIxMWM2ZDYv/MTc2MTIyODA4Njk0/Ny5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 10190
+          },
+          {
+            "title": "Philosophy - Dermatologic wisdom",
+            "sub": "Johann Besse\nMirror Mirror",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8140/d7459730-fe6f-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2b5cfa2d-defc-4afe-aa91-3682c4628766-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/a-xns0YiAHI39Gor2D7PGhlNOK5Nd8RYF3uPWSZqtso/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZTgxYzUzNi1lYzRh/LTRjMjktYjMxYS1h/YWQ1ZWZjNzE4Y2Uv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTIt/MTUtYS0xNi4yMC4x/OC5wbmc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 8140
+          },
+          {
+            "title": "SHU UEMURA Moppo",
+            "sub": "Christophe Chudy\nBirth",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8341/01eab8fc-d627-11ee-ade3-028f723623ff.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ca6cdf15-ef71-450f-a7e1-c3dc963ddd13-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/hsd9JRXzGZkyoBY78M1tkqwBP7bCV27_EsKhHOd7jVA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ODVmYTk4OS1jMTc3/LTQ0YmYtODA3ZS0z/ODkzNjlmYWFhNTcv/MTcwOTExNzM0Njkz/My5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 8341
+          },
+          {
+            "title": "Chanel Cosmétiques Horoscope",
+            "sub": "Gregoire Byer\nSlang Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3507/4931d7ff-fe70-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1561364679-1224826627.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/uCeoEz4EniQnya7QPoAhKlcnqVhHDr4Dzg9hQEMLDU8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MjI0ODI2NjI3LTdi/NzQ5YWUxY2MwYjZi/NzdkZTM4NmU2YzQx/YzI3NmNkLmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 3507
+          },
+          {
+            "title": "Shu Uemura - Awareness",
+            "sub": "Christophe Chudy\nBirth",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4627/14661321-fe6f-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c5456d34-f2bf-4c94-b4b6-79b429047e79-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/2ocNJ3S38Q4E_0fQcSzauJmuSVZjtT-RufJRXvhmodU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NjI3LTVmYTJkODMx/MjM3Zjc5LjA3NTg5/MTczLTk2OGU3Yzkz/YTY1MjRmYzQyMTk1/ZDE0MzU0YzkxOWM0/LmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 4627
+          },
+          {
+            "title": "Lancome Genifique - Five Star Reviews",
+            "sub": "Anairam\nDfactory",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3695/7801272b-fe70-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1566833516-lancome-genifique-five-star-reviews.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/i-0e0NyoxreIOtI1WqGtXIzpv5vUw6hGE9TBKCBB7Qw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/Njk1LTVkNjNmYjZj/NWU1YTI3LjQ2MTEw/ODExLTk1ZTYzODcx/NjhmNjhlMjg4MjA0/NmRiOTY0MTU2ZWQ3/LmpwZw?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 3695
+          },
+          {
+            "title": "dior diorouge liquid | barnaby roper | premiere heure x uturn",
+            "sub": "Barnaby Roper\nU-Turn X Premiere Heure",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2107/a465d0e6-fe70-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545436586-46430947_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Q9xXDWgKOgDQ8reKxDYpkY1hZS5Pj5fD9yVMVFmvuGY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/aW9yLWRpb3JvdWdl/LWxpcXVpZC04NzA5/M2Y3M2Y1N2M4YWI4/NGUxYWQ3MjI2NmRl/MjE4Ny5qcGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 2107
+          },
+          {
+            "title": "Dior Addict | Lacquer Plump | Bella Haddid",
+            "sub": "Aurélien Juner\nSuffragettes",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2123/d5636620-fe70-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545437301-57092112_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/DVokw-IiitvRSw2sPkpIWaBMCLIf8h8lma7CCDS8w5g/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/aW9yLWFkZGljdC1s/YWNxdWVyLXBsdW1w/LWJlbGxhLWhhZGRp/ZC0yYzU4YmIzOGUz/ZjE1NzlkNjk1ZjBi/Y2M0YzNiYzk0ZS5q/cGc?v=1&format=webp",
+            "cat": "SKIN",
+            "slate": 2123
+          },
+          {
+            "title": "Azzaro",
+            "sub": "Julien Fandon d'Andon\nDOWNTOWN PARIS",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9649/397b5d29-1494-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/63657816-b327-4745-92aa-990be87c40c4-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/1uHePa27GAwJXpPeWXcFKrDUaQsMPa9CO69nW8vxYPI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjQ5LTY3ZjU0OTI0/NDJjMjQ0LjMxMDgx/MDI1LWQyYmZkYjAw/MWU2MTdmNzcxOTFl/MTc2NzI3NDNkYjRm/LmpwZw?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 9649,
+            "featured": true,
+            "featuredOrder": 4
+          },
+          {
+            "title": "The Essence of La Prairie",
+            "sub": "Gilles Esteve\nSuffragettes",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/420/91486645-d870-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545360575-54093411_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/7okGdTCp6NbdsZV4AtsufA-QULRcaGYQes7leKtNlQM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/Y2VkM2JjMC05NThm/LTQwMjMtYWFhYy1j/YmYxOWI4OTBiZTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDEt/MTMtYS0xMi40Ni4z/MC5wbmc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 420
+          },
+          {
+            "title": "Garnier Ultra Doux",
+            "sub": "Les Cokau\nCokau Lab",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8072/869a9f2a-4b7d-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d97b5d8a-ee63-444d-a68e-c959ffbd0baa-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/G-XYwdyihLY5eNWGvnoJKni9Rtaxoy3zpuaHEL5NtDY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NDE0ZjQzMC1jZDli/LTQ1OWItYTU2MC1h/ODhkOGViYjRhN2Yv/MS5wbmc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 8072
+          },
+          {
+            "title": "Dior | Asmr",
+            "sub": "Christophe Chudy\nChristophe Chudy Studio SAS",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10900/2feb7d12-5f66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4c5606f1-136f-4229-9c29-1eeb2b02c009-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/M3sM_CWlbHMHecm53NOTQEpQlvcJRRkC-Ng9vX2vuH0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MzFjZjVhNy0yMTRm/LTRhMGMtODQ3MC04/NDRhMGFiMjBkZGMv/MTc4MDUwMjcwOTYw/Mi5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 10900
+          },
+          {
+            "title": "YSL - Muse",
+            "sub": "Ines Dieleman\nProse on Pixels",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10178/adbe25f3-a9d6-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49f45e37-dfea-44fc-9577-e79e3f86f046-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/sBfmfbqxjMlx1e7t4p0r5LalJqYEuL3e5jDQFH5Z54M/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/N2I0MjMxOS0xYjE5/LTRiYjMtYTUwMC1l/MjE5OTZlNzNjZDIv/MTc2MDUzOTk1Mjcz/Mi5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 10178
+          },
+          {
+            "title": "Valentino Make up | PACKS TEXTURES",
+            "sub": "Craft Paris",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10207/b8313d86-b981-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a4ab7efd-f83b-4345-ba7e-d55bd4a5f666-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/-kBsNdRZPKK5ouII1CPhCl4bVZzjt5ajiVViwtbqq68/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NmFlNDQzZS03OGM3/LTRiZGQtYjM0OC05/NjZhMWFlODYyNDgv/MTc2MjI2MjU4NDk3/NC5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 10207
+          },
+          {
+            "title": "La Provençale - Or de Jouvence",
+            "sub": "Damien Krisl\nCadence",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6756/bb1e02de-d870-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/19e5db3b-61a2-4fec-bd73-b282b5f0b986-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/-4KeOVI0LtbtKFal1Qwkfruoi8AKoZhhUQhyHERnp0k/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/YTFkNTc0Ni1jYzE3/LTRhNzktYTA3Yi1l/ODlhMTI5ZjE2ZjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MDItYS0xMC4zNy40/My5wbmc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 6756
+          },
+          {
+            "title": "YVES SAINT-LAURENT – MANIFESTO L’ÉCLAT",
+            "sub": "Cokau\nElse",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/121/e1859482-d870-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545348617-ysl_manifesto_cockau_else.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/W-Ebibnwbe7CFDayEHvzq-DRYeusDqMgTlIZSaMhEeM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy95/dmVzLXNhaW50LWxh/dXJlbnQtbWFuaWZl/c3RvLWwtZWNsYXQt/ODBjYjA1MDc0NzRj/Y2U2YTZiOWMwMWUx/ZmY5Y2I1YzkuanBn?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 121
+          },
+          {
+            "title": "Louis Vuitton (only watch shots)",
+            "sub": "La Pac",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7631/7faa4e28-c156-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/234479d9-2324-41b8-a7ed-2d070d8963dc-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/TUB7285vaKUnpri5y_WFrn4Jz4z9k78X73IWeOAhaN8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OTMxNDNjYi1mYTQw/LTQ3M2EtYTRkMS0y/ZjRiMzcwMGUzNmMv/MTY5Mjg4NDkxNzg5/MC5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 7631
+          },
+          {
+            "title": "Lancôme - Mille et une roses",
+            "sub": "Kate Jackling\nCadence",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6770/a9e0c318-5f4b-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1f5f993e-7220-40e8-ab8f-8264f97516c8-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/g8w92eKXOqWMmEmNfLuJa1k4AhlTK83kSOIXTcnfFMo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NmE1YTU4YS03MmI2/LTQyODEtYWQxMi1j/NmRjNDdkMTdiZGUv/MTY3NTY3ODQwMDQ4/OS5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 6770
+          },
+          {
+            "title": "giorgio armani passione | antoine pai | maison carnot",
+            "sub": "Antoine Pai\nMaison Carnot",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/980/f41c2563-d870-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545390269-52423438_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/IAwwouQeWJqgi-c1QmE2Tw1L8AvlRD3DQ7QoHNcohVM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9w/YXNzaW9uZS1naW9y/Z2lvLWFybWFuaS00/YmM1OTFkMzc2MWY1/NTE2M2M4NWYwZjE4/NjI3YzNjNy5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 980
+          },
+          {
+            "title": "La Prairie | Essence In Foundation",
+            "sub": "Gilles Esteve\nSuffragettes",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1799/12ed37e8-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545421019-57093425_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/oVmhWW0RpGhRChnb8eOXBioGF3mrcukQXjAl05Ve92Y/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/YS1wcmFpcmllLWVz/c2VuY2UtaW4tZm91/bmRhdGlvbi03ZTM0/MWJhOWMzOTcxMDJl/NDkxNzU1ZDljYzY3/YmZkZi5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 1799
+          },
+          {
+            "title": "Emporio Armani | SÌ",
+            "sub": "Antoine Pai\nMaison Carnot",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1936/24f01eeb-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545427857-60255960_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/6ccQq7w6K-EtQaIYVfpIEqCpofX4r5CY7vaOMqQBZmM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDI3NzQwLzYw/MjU1OTYwX2xhcmdl/LmpwZw?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 1936
+          },
+          {
+            "title": "dior diorouge liquid | barnaby roper | premiere heure x uturn",
+            "sub": "Barnaby Roper\nU-Turn X Premiere Heure",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2107/a465d0e6-fe70-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545436586-46430947_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Q9xXDWgKOgDQ8reKxDYpkY1hZS5Pj5fD9yVMVFmvuGY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/aW9yLWRpb3JvdWdl/LWxpcXVpZC04NzA5/M2Y3M2Y1N2M4YWI4/NGUxYWQ3MjI2NmRl/MjE4Ny5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 2107
+          },
+          {
+            "title": "Chanel | Rouge Allure",
+            "sub": "Manon Gicquel\nWomanray",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2148/58880560-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545437766-63427834_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/0d-2gWXxLKpTO-VDVgEeadkJa9UlpL1B_qNByZKOppM/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDM3NjYxLzYz/NDI3ODM0X2xhcmdl/LmpwZw?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 2148
+          },
+          {
+            "title": "Chanel N°5 | Red",
+            "sub": "Thomas Lagrange\nWomanray",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2150/78e21ab0-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545438203-63427822_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/I8OlYySBMrYe5Qf8dA7IY-icP5CIbCE20CZKdIwe7l0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/aGFuZWwtbmRlZzUt/cmVkLWRjYTk5MTlm/M2ZhYTViYzIxY2Iw/ZDZkYmZkZTg0YjU3/LmpwZw?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 2150
+          },
+          {
+            "title": "Spring",
+            "sub": "Coppi Barbieri\nRita",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/532/fde4ca1d-cea0-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545365530-van-cleef-2c-spring.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/aWBqxeB4Q7VC_PQTNRuDtLW5b0J_dvZQrCNrV8IYqN8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/cHJpbmctNjU1YzRj/MzIwN2U0ZTU3YzRl/NGFmZmYzMGMxN2I0/MTQuanBn?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 532
+          },
+          {
+            "title": "CAROLINA HERRERA",
+            "sub": "Benjamin Rousselle\nAl Dente",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2176/86982ce9-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545439045-36333964_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/6IbZFcGT7R_y_n9E2SH4IzUY8LQO-tgLnuZbzqCMqyU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YXJvbGluYS1oZXJy/ZXJhLWRjMzZmOTcx/N2Q3MzQxY2FhODVi/NDkyYWY3MzE2MzAx/LmpwZw?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 2176
+          },
+          {
+            "title": "Guerlain",
+            "sub": "Raphael Hache\nMad",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2669/9cbbb4da-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545834153-am-version-couleur-on-vimeo.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Q7CVpZ1nxLP9mK5RtNcKTQaP6uXZSFR6p8eKBjj7hBo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/YmE2NDYzMi0xYjZj/LTQ5NTItOTZmOS1j/ZTEwZjhhNzRlY2Mv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MDEtYS0xNy4wMy4y/MC5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 2669
+          },
+          {
+            "title": "L'Oréal Manifesto",
+            "sub": "Fabien Baron\nBoudoir Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3418/202b6087-29c3-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1558356358-loreal-manifesto-fabien-baron-edit.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Ga2PowTnosaB0cOk7bYgOZ7i5OmTtbX4g4KyF7W_xi0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/b3JlYWwtbWFuaWZl/c3RvLTdjMDg4ZmYy/Yjg5MzIyOWI1NWNh/NTExMzU0NWY3Y2M2/LmpwZw?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 3418
+          },
+          {
+            "title": "Nespresso [Excerpts]",
+            "sub": "Maxime Bruneel\nChez Eddy + Splash Prod",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1127/ada84f97-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545394753-nespresso_excerpts.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/vf4VuD7qJwwL_EV2Hbsf4XoUrr5w_ycHAs5ztr9ShTo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9u/ZXNwcmVzc28tZXhj/ZXJwdHMtNDIxYmJk/M2U0MWZmMzQzYTU0/Y2I0Y2M0OWE0OWE2/MDYuanBn?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 1127
+          },
+          {
+            "title": "Rolex",
+            "sub": "Alain Costa\nTristan Godefroy",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/751/8e2ce3c0-6dfb-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545380500-44417606_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/5E2RJ4jQNrzwAB3el4DuFRvasoqxrJViRjjBigyi7c8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9y/b2xleC1kYmVhMjA1/ZTljMjk1MGI0ODgx/OGEzNTk4MDJiYjVi/YS5qcGc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 751
+          },
+          {
+            "title": "IWC",
+            "sub": "Xavier Chassaing\nLes Telecreateurs",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1689/2d7ad6f4-c156-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545416488-master_iwc_full_edit_h264_20150119.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/hkQUvNFxjCAsUcy4Aos7mBPCRbSniB1YRAyhH45LAN8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9p/d2MtY2M0YzYxMDFm/MmEyMGVjMjQ2NTI2/NjQ0MWM4MmI0YzQu/anBn?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 1689
+          },
+          {
+            "title": "Dior Prestige",
+            "sub": "Sandro Baebler\nDrama Paris",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3569/c434f6f6-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1561554826-master-chap4-va-190421.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/s_k87QriR5ygmWD1T81hJrJbH7YvY_ezr7vMmrL3zJE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NjJmYzIyYS0xM2Zi/LTRjYjItOGJlZS0z/YmU4NjgzNWQyM2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTQtYS0xOC4yMi4x/Mi5wbmc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 3569
+          },
+          {
+            "title": "Lancôme LNT",
+            "sub": "Christophe Chudy\nvelvet agency",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6749/d9c59294-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/12a1c54b-4da5-4634-b53a-3f63b3db4aec-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/ZCFWR5V15Agq4xRwl8T4EiI0Zam22VomQr2aC6fnDlE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YTZiNTZmMC1mYWJh/LTQwNzctOTY0MC01/ZDhmMjBjMTU3MGEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MDEtYS0xNS4xOS4x/OC5wbmc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 6749
+          },
+          {
+            "title": "Lancôme Rose Odyssey",
+            "sub": "Christophe Chudy\nvelvet agency",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6748/fd03163e-4b7d-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4e1668d5-0629-4ede-b1f5-f72bebf5aa37-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/94NYhObVvR5ZvGl9pdJigQvEr41DkgaVDGrnaZsOr4s/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ZDRmZjBkMi1jMDI3/LTQ3N2MtOTJhYi1m/NThlYWJiMTIyNTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MDEtYS0xNS4xNC4w/NC5wbmc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 6748
+          },
+          {
+            "title": "Givenchy - L'Interdit Rouge",
+            "sub": "Jonathan Lagache\nGeneral Pop",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6369/e9b1e366-d871-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c11d7814-4185-49b9-89b6-69e86fc3a710-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/_uwlFZwbk-1gPW3ONNRc7RItvMULKAvaudvmrJkYq1w/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NmU4MzEzNy0xNmRj/LTQ3NjgtYTgyMS0z/NzBkM2YwZTM3YTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MDctYS0xNi40Ny4y/Mi5wbmc?v=1&format=webp",
+            "cat": "STILL LIFE / TEXTURES",
+            "slate": 6369
+          },
+          {
+            "title": "Syoss - 2",
+            "sub": "Damien Krisl\nE+P Films GmbH",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5620/7475e2d9-fe6e-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/62c2edf1-4548-4c5f-b749-ce3cdd20e0e3-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/isd6y2gNL4bCxfieoWuOasPq1tZ1tZUppEVxZ9cQtwo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/Mjg2ZDRiMy03ZWMz/LTQ3Y2EtYTliNS04/ZWFhMjU1YWU0YWQv/MTY3MjkyOTU3NDA2/NC5qcGc?v=1&format=webp",
+            "cat": "HAIR",
+            "slate": 5620
+          },
+          {
+            "title": "L'Oréal Manifesto",
+            "sub": "Fabien Baron\nBoudoir Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3418/202b6087-29c3-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1558356358-loreal-manifesto-fabien-baron-edit.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Ga2PowTnosaB0cOk7bYgOZ7i5OmTtbX4g4KyF7W_xi0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/b3JlYWwtbWFuaWZl/c3RvLTdjMDg4ZmYy/Yjg5MzIyOWI1NWNh/NTExMzU0NWY3Y2M2/LmpwZw?v=1&format=webp",
+            "cat": "HAIR",
+            "slate": 3418
+          },
+          {
+            "title": "Syoss Coloration - Oleo Intense",
+            "sub": "Damien Krisl\nE+P Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7444/4108d246-d870-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ed2b5d5-4b55-4891-b55e-7e0935f6915d-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/qsv5SJ7bhUGNfiK8tATIIqAuet34K98N6b1gvPBpSBs/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MDdhZDhmMy1kYjEz/LTRiODUtOWQ3Yi04/MjgyZGE2MmEzOTEv/MTc3NDYwNTI5NDky/Mi5qcGc?v=1&format=webp",
+            "cat": "HAIR",
+            "slate": 7444
+          },
+          {
+            "title": "OLIA TESTI HELENA",
+            "sub": "Maison Vignaux\nProdigious France",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9644/4ed07126-1486-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dbfd3c25-e2f7-49b9-afb8-a1616ca1255e-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/staTq2XC-0MoDVOmn8Ul7Kw6XboGTx_iyTOMpxW6lxY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MGRjZTY3OC0zNjI0/LTQ5NGYtODkyNi0y/YTQ3NTAzMTExNzgv/MTc0NDEyMjc0OTEx/Mi5qcGc?v=1&format=webp",
+            "cat": "HAIR",
+            "slate": 9644
+          },
+          {
+            "title": "Syoss - 1",
+            "sub": "Damien Krisl\nE+P Films GmbH",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5619/b5770ea1-fe6f-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8f03ca9c-e947-4e32-b991-fa38de35ae16-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/XhJIBIzVgjd-dm9tRmb93BtS-FO2UA1p3VmT9W_Sr4U/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NjE5LTYxYjc2YzMw/MjQ2M2MwLjk1OTg1/NDIxLTMwZWM4NDFj/NTcxMWFlNjNiOGI4/MjExYWFlOWM5YjNk/LmpwZw?v=1&format=webp",
+            "cat": "HAIR",
+            "slate": 5619
+          },
+          {
+            "title": "OLIA TESTI KAMIINOO",
+            "sub": "Maison Vignaux\nProdigious France",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9643/1620b232-1486-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2fd8cdd3-ac3a-4cf5-a250-21c8897a4bbe-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/z0CQPRMUAdEWsYii04QHkw9vXSHQm_VvDETF1B11lds/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjQzLTY3ZjUzMWJi/NzY0YTUxLjI3MjUz/NDg3LTcyOTIxYTdi/NjdmZGUyMzIyYWVl/ZWRiOGM3NzVhN2Vl/LmpwZw?v=1&format=webp",
+            "cat": "HAIR",
+            "slate": 9643
+          },
+          {
+            "title": "Le Coq Sportif | DirCut",
+            "sub": "Virna Hagen\nLa Belle Façon",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9844/839cb4f4-3bc1-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/38fb5707-11e4-4384-844e-4d69310876d5-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/e9Ok1n6D3WaIX2w_byMbenFgOw9F9U0aHEdgw-Gpb-w/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NjVjZDAwMi0xNjEz/LTRmNDctYWNjYi04/Y2UzNDhmYzIzMjMv/MTc0ODQzNjMxMDgy/OS5qcGc?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 9844,
+            "featured": true,
+            "featuredOrder": 1
+          },
+          {
+            "title": "Eclipsing Equilbrium",
+            "sub": "Damien Krisl",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8221/9af82a1c-4b7e-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/24945c8f-d7b1-41dd-bb9d-b7692ce5d4a9-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/HAaFZEz6YjxEym416hxzNNXijM5CYTku1t-hCjxiCEI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/Mzk5MmVkYy1hNTlm/LTRmNTktYTllZS04/MWQyOTk5YjI0ZTMv/MTcwNDgwNzU1MjI1/Mi5qcGc?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 8221,
+            "featured": true,
+            "featuredOrder": 9
+          },
+          {
+            "title": "MAYL",
+            "sub": "Maison Vignaux, Cyrill Durigon",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6558/c7c7c8ff-4b7d-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f443df8a-33da-4039-869b-6db8e6a316ac-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/A9_sb115uGo-5RCD5Z68QZyZM4uEkOlTKFMEPVz703A/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MmUyMzdkZS1hNWE3/LTRkOTgtYTdhZi1j/NDYxMzM4OTYzMzEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTIt/MDgtYS0xNS41MS4x/MS5wbmc?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 6558
+          },
+          {
+            "title": "A New Beginning - Full Lenght",
+            "sub": "Christophe Chudy\nBend",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5546/d83c453b-794d-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1582835c-08e5-45a5-9265-7a6b7fdb7c19-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/9fT3PV3uULgcOn199Sy5EA5Lo6Hm2kT-wt-1OsBWDEs/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTA2MzllNC1mOGY4/LTRjMWYtOGNiMi01/ZWU5NDEwNmZiZjEv/MjExMDE4LWFuYi12/b2d1ZS1wdC0wNC1m/dWxsLWZyYW1lLmpw/Zw?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 5546
+          },
+          {
+            "title": "Sphere",
+            "sub": "Damien Krisl\nCadence",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5246/681b0322-81ec-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/51e8c651-ddcd-42fe-88b2-6bba320a3657-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/LRQiRMY_9D9ax1FCubx7mdO7gvxR58aFj809uFSr_00/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MjQ2LTYwZjE4ZDIz/Y2M0ZTY4LjI3MTE2/ODcwLTBjOWYwMzVh/YjFjMjQ2NmY5MmUx/MjRhNzExMDdjZTM3/LmpwZw?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 5246
+          },
+          {
+            "title": "Nátturá Mantra x Numéro Netherlands",
+            "sub": "Christophe Chudy",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6313/3cbaf642-a5f4-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e881dbcb-c1f1-4a4b-a5a0-fd6619c5b823-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/q5hSWYsp8kqgfDM_jKr8DVr9Ofs1dd34V3VZWgPjzxQ/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MGRjMDY2OC0xNDMy/LTQzYjgtYTFmNS0w/NGI5OWQyNjlhYzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MDctYS0xOC40NS4x/NS5wbmc?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 6313
+          },
+          {
+            "title": "Vogue Japon",
+            "sub": "Nathaniel Goldberg\nHello Stranger",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4139/f8d59460-fe6e-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c3522669-ad55-4e4f-a284-899e09ed0170-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/KhRB-ctb9MrITY5MTn8FwiVhdGJy8PQW4_1iZOqZzTk/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MTM5LTVlNTc4Yzc3/N2FmMWY5Ljc3MTU1/MzYyLWUzNWQ0MmIw/N2E1NmM2ZDk0YzVk/NTZkMjJkODViMGRj/LmpwZw?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 4139
+          },
+          {
+            "title": "Nike Air Vapor Max feat. Joke “Vision”",
+            "sub": "Nathalie Canguilhem\nLa Pac",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1089/2775c75f-d86a-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545393432-40959860_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/07w490Zp0yB7lrwOsh356g-S0l-BAIp7AMpDhSXuFok/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MzhlYjNmNC0xNzU5/LTQ1NzktOTVlYS0z/M2VkNThlMWUyZmQv/MTc5MzgwODU3ODY2/MS5qcGc?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 1089,
+            "featured": true,
+            "featuredOrder": 6
+          },
+          {
+            "title": "yves saint-laurent",
+            "sub": "Nathalie Canguilhem\nLa Pac",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/123/ee4ceb1d-fe97-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545348642-36327631_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/4B3j4UHp5pFdh8SGe5sM2qPMkmlsnNUlNi3EizjxCs4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NzliMDBhNy0wYTc1/LTRhMTItYTlhNC02/NzYyZmM4MWU1YTYv/MTY3MjkyOTgxNTYw/MC5qcGc?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 123
+          },
+          {
+            "title": "Hieroglyphs - TRZTN Featuring Karen O",
+            "sub": "Barnaby Roper\nU-Turn",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4743/63bca4db-a5f4-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/40cd4d37-e57e-4cb5-a0f5-fa4c843fe8d3-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/bpLdNBwsj9F36lBvv8GYJSoBk9AM2tV-yVOoFUdsNX4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NWE3M2MyYS1lODZk/LTQ2MTctODliYy01/ODAwY2JhZmY5MWEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTAt/MDMtYS0xNi4wMi4y/NS5wbmc?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 4743
+          },
+          {
+            "title": "Alaïa - Editions - Chapter 1",
+            "sub": "Norman Lemay & BK Studio\n1718",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4657/1226bccb-d872-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/73a76ce0-8d73-49dd-a9c3-6fe9ed86c8a4-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/TUwKG6C7UFzhAzHoHcI4O7P_P1oE7reXzhinGuN91Bw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NjU3LTVmYzRlMDgw/YTdjMWM5LjI2ODkz/OTc3LWY1MWVlODFj/OTdkNWM5ODg0NWZk/YTRmNWE3ZDFhZGMx/LmpwZw?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 4657
+          },
+          {
+            "title": "dior sneekers",
+            "sub": "Jean-Baptiste Mondino\nIconoclast",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/699/722580bb-fe6f-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545377242-dior-sneakers-mondino.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/RECEab8n3hRS4wZetxm9JLf_j2tPbs2pMQQo2aLqFV8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/bmVha2Vycy00N2U3/NDU1YmU4MGEzYjcz/OGU4NmRlM2Q4OTlh/NjlmNC5qcGc?v=1&format=webp",
+            "cat": "FASHION",
+            "slate": 699,
+            "featured": true,
+            "featuredOrder": 5
+          },
+          {
+            "title": "Un jour fille - trailer",
+            "sub": "Jean-Claude Monod\nLes Films d'Ici",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8433/38c3d887-e536-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fc6f2401-b20e-4320-9b8f-b5b4d292c660-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/tf-TzPbJu9cMHi5SdkMKVHws1n3plYzQzEr7-Uo2M3o/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/OWFmYWVkYi1iY2Y3/LTQwMjQtOTU3NC02/ODA3ODUxZmRiZjEv/Y291di5qcGc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 8433
+          },
+          {
+            "title": "Christine & The Queens",
+            "sub": "Charles Todd\nApple Music",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4994/073f4cf9-d870-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b8b0a96b-fad2-4ce3-bf32-f52ae87b3548-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/rkZb4crUpJTx2cJGm_-ZnfA-Vm2n1n_F5FNEV3N3URE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OTk0LTYwOTE1NTAz/NWVkYzgwLjEyNTE5/OTQ1LTEyN2U3OTc2/NzlkOWJjY2EwYWRk/OGRkMmM5M2U0Yzg1/LmpwZw?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 4994
+          },
+          {
+            "title": "Toril | Feature Film Trailer",
+            "sub": "Laurent Teyssier\nTita Productions",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2860/35ee9010-d872-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842512-32923961_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/6KQ54pHLnWfytLKENPDNe0Zl5pj_YOO2iAtWVUOTRtQ/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ZmY5ZTAzOS1mNGM2/LTQ2NmQtOTI1ZC1i/ZWYwZjA1ODEwZDAv/dG9yaWwtcGhvdG8u/anBn?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 2860
+          },
+          {
+            "title": "Alteration | VR Short Film Teaser",
+            "sub": "Jérôme Blanquet\nFat Cat Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2539/6594c66f-d872-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545454233-54209252_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/fVpV_PSfP7jwOm4Gnuk3peCCX9Nix4G8neZLDdwssn4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTUyNjQ2NTM2NTg3/L2FsdC1zdGlsbDIz/LmpwZw?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 2539
+          },
+          {
+            "title": "Star Dust | Short Film Trailer",
+            "sub": "Arnaud Le Roch\nLes Films du Repère",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/341/dd281301-81ec-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357890-20282508_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/wKCXZLqITrv1JMgJ7SDW54Cu_KKCuxt9ewLwpCBnRUI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy90/cmFpbGVyLTIyLTEx/MDIzNjIyNzhmMWIw/OGQzZTg1OWU2ZjIx/NTU3YzdkLmpwZw?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 341
+          },
+          {
+            "title": "VR Experience Teaser",
+            "sub": "Stéphane Barbato\nStarbreeze",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/184/7dc74559-d872-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545351566-31885260_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/uCYk3kKkPdcmDhjDVsBPv84oGjCdm-HnWXSUs-Lrqo0/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MDE2MDQzOTUy/L3ZyLWV4cGVyaWVu/Y2UuanBn?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 184
+          },
+          {
+            "title": "Bangs In My Chest | Short Film Trailer",
+            "sub": "Julien Paolini\nNolita & Picseyes",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2436/ed42c187-81ec-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450470-bangs-in-my-chest-trailer-julien-paolini-nolita-picseyes.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/mHVgO2dT5B2qpi0cfRA6q7rZoECLwxj3SyzUh2USI3M/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YW5ncy1pbi1teS1j/aGVzdC10cmFpbGVy/LTUwNDUxNTFjYTcz/YTYwY2I1NDNhODQz/MjNjYjUwMGMwLmpw/Zw?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 2436
+          },
+          {
+            "title": "Sirène",
+            "sub": "Adrien Servadio",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/774/954ed783-d872-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545381226-37631210_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/sFF9ebocW6na7Umhe6qKpWUuToobfQao9ef-0BLAfNU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/aXJlbmUtMWNkY2M5/YmVlNDk5MDZjYjZi/YmNiNDAzZGY2MjQx/MDYuanBn?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 774
+          },
+          {
+            "title": "L'Autostoppeur | Short Film Trailer",
+            "sub": "Julien Paolini\nNolita",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545452186-autostoppeur-trailer-julien-paolini-nolita.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/qnmRh8NLgBeAPMeWxpFHza76yVFeJVjgzEp-h6_RG_c/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MDE2NzE5NjYy/L2wtYXV0b3N0b3Bw/ZXVyLmpwZw?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 2479
+          },
+          {
+            "title": "Woodkid \"Run Boy Run\"",
+            "sub": "Yoann Lemoine\nIconoclast",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/153/83f697f0-36b0-11ee-ade3-028f723623ff.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545350649-woodkid_rune_boy_run_yoann_lemoine.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/A59-yvn7xftVfF56lJC1Ld_2vdqO10vjml6YhfLeZiU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTc5MDgzNzIxNjc1/L3J1bi1ib3ktcnVu/LmpwZw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 153,
+            "featured": true,
+            "featuredOrder": 3
+          },
+          {
+            "title": "Nike Air Vapor Max feat. Joke “Vision”",
+            "sub": "Nathalie Canguilhem\nLa Pac",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1089/2775c75f-d86a-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545393432-40959860_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/07w490Zp0yB7lrwOsh356g-S0l-BAIp7AMpDhSXuFok/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MzhlYjNmNC0xNzU5/LTQ1NzktOTVlYS0z/M2VkNThlMWUyZmQv/MTc5MzgwODU3ODY2/MS5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 1089
+          },
+          {
+            "title": "DJ Snake feat Justin Bieber | Let Me Love You",
+            "sub": "Philip Andelman\nHigh Noon",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545432169-dj-snake-feat-justin-bieber-let-me-love-you.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/rHxZGJoZ6eu_Y96ZQ4UN99w7ocKXVQ-D8vnPt-6Qg-8/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YWYwMzAzMi0zMGI1/LTQ0NTctODM3Mi1k/Nzc1ZTkwYjk2OTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjAtMTIt/MDEtYS0xNS4wNS4y/MC5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 2057
+          },
+          {
+            "title": "Moodoïd | Reptile",
+            "sub": "Pablo Padovani\nPartizan",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1184/94300d1d-29c9-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545397884-47743296_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/VeP5wcyi5Y4ceMzqYKewkVKZdwDcgOW58EUwZHxYLRQ/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9t/b29kb2lkLXJlcHRp/bGUtMDEwNGI2NDI1/ZTQzYjYyMzU0NzQ2/OGM0YWU1YTI2YTUu/anBn?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 1184
+          },
+          {
+            "title": "Data | Soldier's Flag",
+            "sub": "Julien Paolini\nPicseyes",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545443304-data_julien_paolini_nolita_picseyes.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/dXdzNIhnQsDzuiD52U_AqLqJwV7xeETxhRmwpQmA3GA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNTU0ODI2Nzc4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI0LWEtMTUuMzMu/NDEtMi5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 2273
+          },
+          {
+            "title": "Carla Bruni | Miss you",
+            "sub": "Jean-Baptiste Mondino\nIconoclast",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2178/11b69b18-a5f4-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545439123-43819065_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/K0XVnutO_3v1R_QAQxBw96g2iZCtvUI8mWgYvfsfi4s/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDM5MDY0LzQz/ODE5MDY1X2xhcmdl/LmpwZw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 2178
+          },
+          {
+            "title": "Mikano \"Silhouette\"",
+            "sub": "Juliette Labrousse\nHercules",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3962/70cd6a90-a5f4-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b527fa0a-5cc3-4922-b3ea-ea852e1de6e7-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/GmPpb3m9-avTgwL1nAMDiQBw6l_FSJFPfLUZcD5QRjU/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/Nzg4MDNlMS04YjIz/LTQ1YjEtYjdhYi1l/ZWMzMzhlNTBmNzkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDYt/MjktYS0xOC4zMC4w/OC5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 3962
+          },
+          {
+            "title": "Hieroglyphs - TRZTN Featuring Karen O",
+            "sub": "Barnaby Roper\nU-Turn",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4743/63bca4db-a5f4-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/40cd4d37-e57e-4cb5-a0f5-fa4c843fe8d3-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/bpLdNBwsj9F36lBvv8GYJSoBk9AM2tV-yVOoFUdsNX4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NWE3M2MyYS1lODZk/LTQ2MTctODliYy01/ODAwY2JhZmY5MWEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTAt/MDMtYS0xNi4wMi4y/NS5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4743
+          },
+          {
+            "title": "Christine and the Queens: “CHRIS”",
+            "sub": "Charles Todd",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4789/129513e8-d870-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/46c182d6-7a1b-4b85-8765-b40549d5c110-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/PVXZXUJEcv-omLauXiQq-PBM7NkHA8OCkprW7xSKuuc/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NzcxNWY2OS04NWQw/LTRhODAtODM2Ni0w/M2IyMmZhNGY3YjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDYt/MjktYS0xOC4wMy4x/MS5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4789,
+            "featured": true,
+            "featuredOrder": 8
+          },
+          {
+            "title": "Ana Zimmer \"Money\"",
+            "sub": "Akatre\nWacko / Première Heure",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545457900-26983221_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/gJ-HgKPRkXGU6VuIVH1IfhF6VD2_Fn1pwOBtFit6AuI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ODQyNGU4OS1mZGE1/LTQ1YjItODY0Mi0y/ODk0NjkxYmYyMTIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTQtYS0xNy4wOC4y/Ny5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 2628
+          },
+          {
+            "title": "Mikano \"It's Alright\"",
+            "sub": "Juliette Labrousse\nHercules",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/572c161f-8359-4f85-b846-ca6b1635f815-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/xoKT2zOPqyw_pc6Eo8ezjp-_ZcfkvxHZWsI3SmOz8gA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDY4LTVlNDI3ZTg1/MzFjYTM3Ljg1NDA2/OTQxLTE4YjBiYWZm/NDM4ZjgwYWFlZDU1/YjgwYzQ4OGM5YmRh/LmpwZw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4068
+          },
+          {
+            "title": "C2C \"Arcades\"",
+            "sub": "Remi Paoli\nPicseyes",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545440445-c2c-excerpt.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/-YDzxvLLIQkK4gvVxzmI_dM2AfioUUhkQ3zF1XpGBVw/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MmMtYXJjYWRlcy1t/dXNpYy12aWRlby1l/eGNlcnB0LWQzZjMy/YWU4OTM2Mzg5MjZl/NzJhMzFiNGY4MDhj/MjFiLmpwZw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 2241
+          },
+          {
+            "title": "\"Gin Fizz\" [Music Video]",
+            "sub": "Colts\nFink",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2640/5d412416-81ed-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545458565-26983248_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/leuSgIRNgUnGE-SBXTntXbIp7YrjrEdk7Sl2GkuQAlc/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9n/aW4tZml6ei1tdXNp/Yy12aWRlby01NGY3/MWExYjNkMjJhNDJj/MzNlYmJjMjliOGMw/ZDY2Mi5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 2640
+          },
+          {
+            "title": "Chase & Status \"Control\"",
+            "sub": "Henrik Hanson\nAble & Baker",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545459099-26983226_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/2B3gBsy24D_B6RQUdZnS2MLDizDNuYqWryUn-CrRzdA/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNTU0NTA3MzU1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI0LWEtMTUuMjgu/MjAtMi5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 2648
+          },
+          {
+            "title": "« J’ai Vaguement ton Coeur » [Music Video]",
+            "sub": "Nathalie Hinstin\nBermudes",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545343908-26983259_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/RDQvx8end8MUaY9s9hc_k5A-9PntWw8gRgsTaRr0InE/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NzBiMGYwOC1jNTc2/LTRjNzItOTU0NC0w/ZDZlYjQ4YThlNzgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTQtYS0xNy4xMy4y/NC5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 113
+          },
+          {
+            "title": "The Rope",
+            "sub": "Justin Wu\nBandits",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/402/50497f77-a5f4-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545360179-28204585_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/BcrEAwdPhumnFqJFLxWZkOWBZ1CW6aXeYrjCsjoAciY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/YjZlYzU4My0yYzc1/LTRkNmMtOWJlYy1m/ZDRmMzg5OWM2Zjkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjAtMTIt/MDEtYS0xNS4wNi4x/MC5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 402
+          },
+          {
+            "title": "Julien Bellanger x Julien Rogaume - Absence",
+            "sub": "Jonathan Le Berre",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10628/3cf5213d-d86b-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1bc6cd59-d1f2-44c8-8b9d-65091fa5287c-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/kgQ2JicQc-20iSQtzC3-KVSa_oaAik_tbu4jOWC9Kq4/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/M2UxNWUxZi03ZTZj/LTRlZTgtODRmYS1l/MTQ5ZmI0NDUwOGYv/MTc3NDYxMjU0NjQz/My5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 10628
+          },
+          {
+            "title": "Yelle \"OMG\" | Music Video",
+            "sub": "Ines & Panteros\nHeko",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545350213-yelle-omg.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/pEBJhJfHj2zqfjau4OBTdRc6p3RaVuLSimXgAZDt2ik/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy95/ZWxsZS1vbWctbXVz/aWMtdmlkZW8tODQw/ZDY2ZDlkOWFjZDdh/MWI1YzI3MDA0OTM0/Zjk3NzQuanBn?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 142
+          }
+        ],
+        "bundle": "https://kinou.slateapp.com/bundles/35ff1654-d869-11f1-a349-0215583debcb"
+      }
     }
   ],
   "at": "2026-11-04T17:12:11.750Z",
-  "by": "John-Kinou"
+  "by": "John-Kinou",
+  "doneAt": "2026-11-04T17:12:31.033Z"
 }
