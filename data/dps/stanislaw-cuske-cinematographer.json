@@ -276,9 +276,6 @@
       ]
     },
     "8554": {
-      "types": [
-        "Commercial"
-      ],
       "images": [
         "https://images.slatecdn.net/JPHuIBiKXMgxFzItNaFEaiMJVn3g69zApBIgGt9oaUA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/Njg3MzUyYS0yYzMy/LTRlY2ItOWQ5Yi02/YTdhMDJiNzM3ZDcv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNC40MC5w/bmc.webp",
         "https://images.slatecdn.net/8g-a0hcgQmAOJwTI4dWlCYt0L4H9-tBFu0ZQtBFtPsc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OGU5ZThhOC05OGRm/LTQxYjAtYjUzMy05/MTk0OTUzMmE0MTEv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNS4yNS5w/bmc.webp",
@@ -296,6 +293,9 @@
         1.5401,
         1.7778,
         1.7844
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "8557": {
@@ -453,6 +453,15 @@
       "title": "Muse",
       "types": [
         "Black and white"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/muse-teaser",
+          "title": "MUSE TEASER",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/27ff9773-25ec-48d0-b04a-3e191316eab4-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9524/3ba7f962-ff25-11ef-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/3MiMGgBpF9i58S1T4AjOyiOLIGRbDJCrqasVHABQiFU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/YmUzYjlhMS03MmQ4/LTQ0NWEtYjdjYS0w/MGM5NWQ5MGIyNzEv/bXVzZS5wbmc.webp"
+        }
       ]
     },
     "10206": {
