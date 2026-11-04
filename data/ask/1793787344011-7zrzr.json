@@ -2,9 +2,191 @@
   "items": [
     {
       "kind": "bundle",
-      "link": "https://shots.re/20941e"
+      "link": "https://shots.re/20941e",
+      "answer": {
+        "name": "Stanisław Cuske",
+        "categories": [
+          "FEATURED",
+          "NARRATIVE",
+          "DOCUMENTARY",
+          "COMMERCIAL",
+          "2ND UNIT DOP / CAMERA OP"
+        ],
+        "clips": [
+          {
+            "title": "MUSE",
+            "sub": "Pawel Pawlikowski",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9570/b048a85e-0b24-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/959ddbf2-7bee-47a4-955e-59032b29c14c-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/ejxZFwKv4A1CDooX4PxUpGX7H99Sb1hQvb_bETkq9gI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZDA3MDBlZi1jMDJi/LTQxZjctYmVmNS04/ODYwOGI3YmU2MDIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDMt/MjctYS0xNi41OS40/OS5wbmc?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 9570,
+            "featured": true,
+            "featuredOrder": 6
+          },
+          {
+            "title": "East-West - Trailer",
+            "sub": "Natalia Koniarz",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8531/e8e5a5fe-f0d5-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e6caf2d8-d76e-47e1-8598-99bb9d3bafe4-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/RuGf96XcwcuDd3V4gf697-nVa83d1X6bihlZQIzGhIQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/Mzk0MjlhYy1iMTE1/LTQyNTAtOTQ2NS1m/MzUzNzk3YTJiZGYv/ZWFzdHdlc3Q2LnBu/Zw?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 8531
+          },
+          {
+            "title": "The Little One - short film",
+            "sub": "Stanisław Cuske",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8537/6339851e-f0d5-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/90d9aacb-0d2a-4e59-b92b-8044152157f0-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/razQ0HuiM0GSC2jqbD7HKE3lUahjfH569qx_Vz-07xw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NDIwNGU0Zi0zZTkz/LTQ3M2YtYTE5OS02/YTg4MmUxODY1ZjMv/dW50aXRsZWQtMS43/NC4zLmpwZw?v=1&format=webp",
+            "cat": "NARRATIVE",
+            "slate": 8537
+          },
+          {
+            "title": "Silver | Trailer",
+            "sub": "Natalia Koniarz\nTelemark",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10206/6ba9f455-b968-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/627d123b-9156-4955-94d2-bf25d543ba5d-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/wOXl7gvQUBIhsBWjLvcGX0nN-XStYrfE0yu90msiOHk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDM3OTZmYi1hMWEy/LTRkM2EtYTM5ZC00/MTM3MDE1ZjYxNDMv/c2lsdmVyLWZvdG9z/Mi5qcGc?v=1&format=webp",
+            "cat": "DOCUMENTARY",
+            "slate": 10206,
+            "featured": true,
+            "featuredOrder": 3
+          },
+          {
+            "title": "Postcards from the verge - Trailer",
+            "sub": "Natalia Koniarz",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8533/c2510111-f0d5-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a7b2f76a-929a-4cd3-b1d7-baec2380b0b5-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/sPPqI5fQhvZEdxtbhUgJbx50E9YiUhbuvccmOATvO00/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MzM2Y2M4OS01OGIw/LTQzYTQtOWY3Ny0x/ZTVhNTkyNTgxMDMv/cG9zdGNhcmRzMTku/cG5n?v=1&format=webp",
+            "cat": "DOCUMENTARY",
+            "slate": 8533,
+            "featured": true,
+            "featuredOrder": 9
+          },
+          {
+            "title": "The Pawnshop Film Trailer",
+            "sub": "Lukasz Kowalski",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8582/a18c3e40-f5c5-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fbb81a32-f6c9-4183-9e08-9a714b9a23a1-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/0EZ-OUoOFrmgEzCeaJipD8fpmgX1gmfeJcrCejGBFL4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/Yjg4N2M4Ni1jYjVm/LTQwNjctOTg4Mi00/ZGM5MzNmMDRkODQv/bG9tYmFyZGNvdmVy/cHJvYmEucG5n?v=1&format=webp",
+            "cat": "DOCUMENTARY",
+            "slate": 8582
+          },
+          {
+            "title": "The Kiosk - Trailer",
+            "sub": "Daniel Stopa",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8536/7e589947-f0d5-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b32c53b0-d3a6-42df-9be0-f7c3d2fd4f51-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/aH5L0NwN26Ht5Iz2AL0xg3ip5W55ZTfZtKVvsHunNew/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/M2U0ZThjZC1hMTg2/LTQ0NWMtOTFkNi03/OGRmMTY4ZWU4YjYv/a2lvc2stMS4xLjE1/LmpwZw?v=1&format=webp",
+            "cat": "DOCUMENTARY",
+            "slate": 8536
+          },
+          {
+            "title": "The Dam - Trailer",
+            "sub": "Natalia Koniarz",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8534/acb179c0-f0d5-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f1abcaf9-94d7-4bdd-9c39-9ae3997e2238-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/z4TvOzSIKXNXPZkl4wgBvVcPLuecewuRGAPgTU1-xe8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/YTA0NDQ2ZC1mZTQ1/LTRiZjgtOGExZS1m/Njg5Y2Q1NjczMjAv/dGFtYTIucG5n?v=1&format=webp",
+            "cat": "DOCUMENTARY",
+            "slate": 8534
+          },
+          {
+            "title": "The End of the Season - trailer",
+            "sub": "Stanisław Cuske\nStudio Munka",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8535/9ccdae26-f0d5-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fe37d25a-0a1e-4888-b726-9ac24eeb97e8-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Oa6DcGtWqe1ZTZaw12FpD4kmerSnL1oXDJkcoY7SuEU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/OGE3MzcwNi1lNzlj/LTRjYjctODhjNS1m/NTQ4OGY1OWUzYTMv/a29uaWVjc2Vvem51/NC5wbmc?v=1&format=webp",
+            "cat": "DOCUMENTARY",
+            "slate": 8535
+          },
+          {
+            "title": "New Balance",
+            "sub": "Michał Chmielewski\nSTONE STUDIO",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9214/f52895eb-ae56-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/af542716-5a81-44ea-b68e-b9ad99d76bbb-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/vEoHIoUD9CUegWNOzUaI19Ig-BhLVgKdy-cYR3wTVSo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OGRiNTAwOS1iMTdj/LTRmNTEtOTY1Ni0w/NDlkNTMwZWQwMmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMTEt/MjktYS0xMi41OC4y/Ni5wbmc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 9214,
+            "featured": true,
+            "featuredOrder": 8
+          },
+          {
+            "title": "ATHLETICS x ADIDAS",
+            "sub": "Michal Chmielewski\nSHOOTME",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10215/c4c48ad8-d177-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8b768cd4-995e-41d4-a207-5d23dfc6a3c2-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/u48yHjf7QOf7yTAMLu_-3m9SgV9LqTz2C_mQvlYYwE4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/Y2ZiNmRmNC00YmU5/LTRkMmUtODYxOC1k/YTgxOTc0OGQ2N2Mv/MTc2MjQ0NDQzODI2/MS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10215,
+            "featured": true,
+            "featuredOrder": 2
+          },
+          {
+            "title": "HTSI",
+            "sub": "Malgosia Bela",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9471/71278b03-f4f8-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bb24cad0-1a69-4dae-8255-a333c1fa87f7-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/UOKGwResYeSF8C1eHRNW30FbOsUCl_QcH_goL80UJp8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MzAyYmU5MS03OTcz/LTQ5ZGEtOGI1MC0x/MzRlMDk4ZDA2ZGMv/MTc0MDY1MjExOTMz/NS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 9471,
+            "featured": true,
+            "featuredOrder": 4
+          },
+          {
+            "title": "Hamnet | Trailer",
+            "sub": "Chloé Zhao\nAmblin Entertainment",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10214/9c057632-bb12-11f0-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/abf7a686-917e-4df0-9a8f-4cd7887e559d-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/oH1cS2Yo3Dqet0_WJqzz-sQM2T3vV-QLfT7SLvUOZtA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/MjM3N2FmOS0wNTAw/LTRjNzctYmI2Zi03/YTE0NTFlYmJmZmEv/MTc2MjQzNDgzNjQ5/Mi5qcGc?v=1&format=webp",
+            "cat": "2ND UNIT DOP / CAMERA OP",
+            "slate": 10214,
+            "featured": true,
+            "featuredOrder": 1
+          },
+          {
+            "title": "The Zone of Interest - trailer (dop. Lukasz Żal)",
+            "sub": "Jonathan Glazer\nA24",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8560/f0320386-f0fd-11ee-83d2-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5a52ca2c-6967-4815-80f0-14dcdb60eef8-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/TOgf7aMgQqNBWusiahGxzjUcTq7-nzlDzbm96_gRc6Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MTI5YmZjNC03NDc1/LTQ3ZjMtYmE5OC05/M2IwMDNjMDQ1NDIv/NDIwMTk3MDQ3LTg4/OTQ4ODk4NjUyMDA2/MC04MjcwMTcyNzQy/NjYxNDE4ODI4LW4u/anBn?v=1&format=webp",
+            "cat": "2ND UNIT DOP / CAMERA OP",
+            "slate": 8560,
+            "featured": true,
+            "featuredOrder": 5
+          },
+          {
+            "title": "Pianoforte - Trailer (dop. Filip Drożdż)",
+            "sub": "Jakub Piątek\nTelemark",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a9b2ae8f-e03f-4258-acd4-96520da62071-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/PHEs5uQ6hHe-TatTktGsc277kO2lews-jQUT4R1fWDE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YmFhMzAxMS00ZjMx/LTQxZjgtYjcxMy00/ZGU3YjQ4MWNmMmYv/cGlhbm9mb3J0ZTIu/anBlZw?v=1&format=webp",
+            "cat": "2ND UNIT DOP / CAMERA OP",
+            "slate": 8557
+          },
+          {
+            "title": "Gesaffelstein - Hard dreams (dop. Lukasz Żal)",
+            "sub": "Jordan Hemingway\nDivision Paris",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/531054b2-e990-48ac-a64b-8a1021c8ae52-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Pxo6zsQpev60cCI7XlEbB8axtbybFJlzIbiliNWRZs0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/Y2Q2NzVmZS0wYzc4/LTQ5YjMtYTQwOC0x/OGQ5MDY2YWRiYjYv/enJ6dXQtZWtyYW51/LTIwMjQtMDMtMjkt/by0yMC4yNS4xMC5w/bmc?v=1&format=webp",
+            "cat": "2ND UNIT DOP / CAMERA OP",
+            "slate": 8562,
+            "featured": true,
+            "featuredOrder": 7
+          },
+          {
+            "title": "Gesaffelstein - Gamma - Official Album Trailer (dop. Lukasz Żal)",
+            "sub": "Jordan Hemingway\nDivision Paris",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/776d2795-7f9a-47a1-8414-38b0c548f19f-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/vocisX228ZsnXVMzPYkeRTUNriTwz82TcGUMwbu0iQk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTYxLTY2MGMxNjI3/NDRlOTczLjA4NzE2/NTg1LTU3ZTM4YjM5/NDU0NWNlZWE1MWY4/YTYzMzNkYmJjZDA1/LmpwZw?v=1&format=webp",
+            "cat": "2ND UNIT DOP / CAMERA OP",
+            "slate": 8561
+          }
+        ],
+        "bundle": "https://kinou.slateapp.com/bundles/44168bc4-d837-11f1-a349-0215583debcb"
+      }
     }
   ],
   "at": "2026-11-04T10:15:44.012Z",
-  "by": "John-Kinou"
+  "by": "John-Kinou",
+  "doneAt": "2026-11-04T10:16:03.144Z"
 }
