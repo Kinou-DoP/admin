@@ -5,22 +5,47 @@
   "bundle": "https://kinou.slateapp.com/bundles/44168bc4-d837-11f1-a349-0215583debcb",
   "overrides": {
     "8531": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "title": "East-West"
     },
     "8533": {
-      "zoom": 1.39
+      "zoom": 1.39,
+      "title": "Postcards from the Verge"
     },
     "8534": {
-      "zoom": 1.06
+      "zoom": 1.06,
+      "title": "The Dam"
     },
     "8535": {
-      "zoom": 1.06
+      "zoom": 1.06,
+      "title": "The End of the Season"
     },
     "8536": {
-      "zoom": 1.06
+      "zoom": 1.06,
+      "title": "The Kiosk"
+    },
+    "8537": {
+      "title": "The Little One"
+    },
+    "8557": {
+      "title": "Pianoforte (camera operator)",
+      "sub": "Jakub Piątek\nTelemark\ndop. Filip Drożdż"
+    },
+    "8560": {
+      "title": "The Zone of Interest (camera operator)",
+      "sub": "Jonathan Glazer\nA24\ndop. Lukasz Żal"
+    },
+    "8561": {
+      "title": "Gesaffelstein - Gamma - Trailer (2nd Unit DOP)",
+      "sub": "Jordan Hemingway\nDivision Paris\ndop. Lukasz Żal"
+    },
+    "8562": {
+      "sub": "Jordan Hemingway\nDivision Paris\ndop. Lukasz Żal",
+      "title": "Gesaffelstein - Hard dreams (2nd Unit DOP)"
     },
     "8582": {
-      "zoom": 1.05
+      "zoom": 1.05,
+      "title": "The Pawnshop"
     },
     "9214": {
       "zoom": 1.33
@@ -29,13 +54,30 @@
       "zoom": 1.2
     },
     "9570": {
-      "zoom": 1.22
+      "zoom": 1.22,
+      "title": "Muse"
     },
     "10206": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "title": "Silver"
+    },
+    "10214": {
+      "title": "Hamnet (camera operator)",
+      "sub": "Chloé Zhao\nAmblin Entertainment\ndop. Lukasz Żal"
+    },
+    "10215": {
+      "title": "Adidas x Athletics"
     }
   },
-  "about": {},
+  "about": {
+    "bioEn": [
+      "Cinematographer, documentary film director and photographer. He graduated Cinematography Art in Krzysztof Kieslowski's Film School in Katowice, Poland and documentary course at Andrzej Wajda's School. Creator of music videos, feature films and documentaries, including The Dam (2018), The end of the Season (2019), The Pawnshop (2022), The Kiosk (2023), Postcards From The Verge (2023) which were at many prestigious film festivals. He has worked across the globe, undertaking projects in  South America, Asia and Europe. He worked as a camera operator for Jonathan Glazer's latest film: The Zone of Interest (2023), winner of the Grand Prix at the Cannes festival. He is working with Łukasz Żal as his camera operator and 2nd unit dop on films and commercial projects.\nHe is ambitious, creative and looking for new challenges. For each film, he looks for his own, original visual language and is open for experiments. His documentary background and experience make him a mature creator who approaches each topic with unique perspective."
+    ],
+    "website": "https://stanislawcuske.com/",
+    "instagram": "https://www.instagram.com/stanislawcuske/",
+    "pos": "22% 37%",
+    "img": "img/stanislaw-cuske-cinematographer.webp"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
