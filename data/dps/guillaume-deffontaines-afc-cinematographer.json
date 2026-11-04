@@ -252,7 +252,10 @@
         "Feature Film",
         "narrative"
       ],
-      "zoom": 1.06
+      "zoom": 1.06,
+      "info": {
+        "year": "2026"
+      }
     }
   },
   "about": {
