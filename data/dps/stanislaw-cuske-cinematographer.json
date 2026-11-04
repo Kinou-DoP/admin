@@ -275,6 +275,29 @@
         2.3453
       ]
     },
+    "8554": {
+      "types": [
+        "Commercial"
+      ],
+      "images": [
+        "https://images.slatecdn.net/JPHuIBiKXMgxFzItNaFEaiMJVn3g69zApBIgGt9oaUA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/Njg3MzUyYS0yYzMy/LTRlY2ItOWQ5Yi02/YTdhMDJiNzM3ZDcv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNC40MC5w/bmc.webp",
+        "https://images.slatecdn.net/8g-a0hcgQmAOJwTI4dWlCYt0L4H9-tBFu0ZQtBFtPsc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OGU5ZThhOC05OGRm/LTQxYjAtYjUzMy05/MTk0OTUzMmE0MTEv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNS4yNS5w/bmc.webp",
+        "https://images.slatecdn.net/bXhHWoNPkz2YfOptUoj4Qk5UmQGDXbviKIoapynMpgU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OWZmZTRlNC0wN2Q5/LTQyMmEtYTc4Mi01/N2I4NTdhYzRmYWEv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNS40MS5w/bmc.webp",
+        "https://images.slatecdn.net/5uP-aMcwl4aPWvlo_gFpMdGQDZlxbPt9KXUvMt5WcKs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NTBlZTg4Ny0xMTdm/LTQ5Y2EtOThiYS1m/YTYyN2QyZmY1ODAv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNS41MC5w/bmc.webp",
+        "https://images.slatecdn.net/dWMQGpzjHTPs5yWTei7tFuSVwbUtSj8E5ZZhvCkmxvc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/NWM4OTgzZS1lYmM0/LTRlMGEtOWIwMy1l/YTdkOWVhZjk3ZmYv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNS41Ni5w/bmc.webp",
+        "https://images.slatecdn.net/ld92ZsP5yR_M7oRk5a_JXAjJS-96uFiVYrXC7GTDzZQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MTY5ZjZhNy03M2Yw/LTRiZTQtOTY2OS04/OTA4YTA5ZmYzYjcv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNi4xMC5w/bmc.webp",
+        "https://images.slatecdn.net/jBRALgySOxqRLpw_MiLI67UUsMZeBVp4bjHleOkoZII/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NDFhYjA2ZC0xYWIw/LTRlYjctYTg3YS0x/YTE4N2FhZWY5Nzcv/enJ6dXQtZWtyYW51/LTIwMjMtMTAtMjUt/by0xNi4yNy4xMS5w/bmc.webp"
+      ],
+      "ratios": [
+        1.7778,
+        1.5401,
+        1.7844,
+        1.7822,
+        1.5401,
+        1.7778,
+        1.7844
+      ]
+    },
     "8557": {
       "title": "Pianoforte (camera operator)",
       "sub": "Jakub Piątek\nTelemark\ndop. Filip Drożdż",
