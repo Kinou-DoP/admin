@@ -373,3 +373,16 @@ body.vedit-on { overflow: hidden; }
 .notes textarea::placeholder { color: rgba(28,27,23,.38); }
 .notes.off textarea { display: none; }
 .notes.off { background: rgba(255,252,235,.12); color: var(--kinou-fg); } .notes.off .nst, .notes.off .label { color: rgba(255,252,235,.6); }
+
+/* Infos d'un film (overrides[<id>].info, Gus 04/11) : bloc replié sous les crédits de chaque film. */
+.infobox { margin: 10px 0 2px; }
+.infobox summary { cursor: pointer; list-style: none; font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.infobox summary::-webkit-details-marker { display: none; }
+.infobox summary::before { content: "+ "; } .infobox[open] summary::before { content: "− "; }
+.infobox summary:hover { color: var(--kinou-fg); }
+.infogrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; margin-top: 10px; }
+.infogrid .ifield { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.infogrid .ifield.wide { grid-column: 1 / -1; }
+.infogrid .label { font-size: 9px; margin: 0; }
+.infogrid input, .infogrid textarea { min-height: 0; padding: 4px 0; font-size: 12px; line-height: 1.5; }
+.infogrid textarea { resize: vertical; }

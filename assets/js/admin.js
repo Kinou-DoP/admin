@@ -1100,6 +1100,7 @@
     if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(title); card.appendChild(sub);
     if (state === fic) card.appendChild(ficCtl(c));
+    card.appendChild(infoCtl(c));
     card.appendChild(el("div", { class: "acts" }, [hide, reset]));
     if (hoverBox) card.appendChild(hoverBox);
     card.appendChild(extras);
@@ -1792,6 +1793,30 @@
     return { name: "Fiction", categories: ["NEW RELEASES", "COMING SOON", "PAST RELEASES"], clips: clips };
   }
   // Réglages propres à la fiction, sous le titre d'un film : statut, genre, date de sortie, affiche.
+  // Infos d'un film (Gus 04/11) : année, épisodes, durée, format d'image, plateformes, caméra, optiques, prix & sélections,
+  // synopsis → overrides[<id>].info (texte libre, champs vides absents). Sur le site : dans le lecteur, sous les crédits
+  // (et la ligne année | durée | format dans la présentation vidéo + stills). Bloc replié ; son titre dit combien sont remplies.
+  var INFO_FIELDS = [["year", "Année", "2025"], ["episodes", "Épisodes", "8 (séries)"], ["runtime", "Durée", "90 min"], ["ratio", "Format d'image", "1.85"],
+    ["platforms", "Plateformes", "Netflix, Canal+"], ["camera", "Caméra", "ALEXA 35"], ["lenses", "Optiques", "Cooke S4"],
+    ["awards", "Prix & sélections", "Un prix ou une sélection par ligne", 3], ["synopsis", "Synopsis", "Une ligne vide entre deux paragraphes (ex. français puis anglais)", 5]];
+  function infoCtl(c) {
+    function cur() { return (state.overrides[c.slate] || {}).info || {}; }
+    var sum = el("summary"), grid = el("div", { class: "infogrid" }), box = el("details", { class: "infobox" }, [sum, grid]);
+    function count() { var n = Object.keys(cur()).length; sum.textContent = "Infos du film" + (n ? " · " + n + " renseignée" + (n > 1 ? "s" : "") : ""); }
+    INFO_FIELDS.forEach(function (f) {
+      if (f[0] === "platforms" && state === fic) return; // fiction : plateformes déjà réglées plus haut (étiquettes)
+      var inp = f[3] ? el("textarea", { rows: String(f[3]), placeholder: f[2] }) : el("input", { type: "text", placeholder: f[2] });
+      inp.value = cur()[f[0]] || "";
+      inp.addEventListener("input", function () {
+        var i = Object.assign({}, cur()), v = inp.value.trim();
+        if (v) i[f[0]] = v; else delete i[f[0]];
+        setOverride(c, "info", Object.keys(i).length ? i : undefined); count();
+      });
+      grid.appendChild(el("label", { class: "ifield" + (f[3] ? " wide" : "") }, [el("span", { class: "label", text: f[1] }), inp]));
+    });
+    count();
+    return box;
+  }
   function ficCtl(c) {
     function o() { return fic.overrides[c.slate] || {}; }
     var stSel = el("select", { class: "nodirty" }), genre = el("select", { class: "nodirty" });
