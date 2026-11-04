@@ -39,7 +39,9 @@
       "title": "Star Dust",
       "types": [
         "Short Film"
-      ]
+      ],
+      "zoom": 1.06,
+      "zoomThumb": true
     },
     "402": {
       "types": [
