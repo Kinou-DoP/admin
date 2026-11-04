@@ -17,7 +17,9 @@ version du 21/10** : un changement de `netlify/functions/` du repo site n'y arri
   (kind `bundle` | `stills` | `reel` ; demandes faites ensemble = un seul fichier), commit « Slate : demande de lecture » (caché dans
   l'historique) ; workflow `.github/workflows/slate-ask.yml` + `tools/ask.mjs` (lecture = `tools/slate.mjs`, copie de
   `netlify/functions/slate.mjs` du site, à garder identique) écrit `items[].answer` / `error` + `doneAt` dans le même fichier ;
-  l'admin le relit toutes les 5 s (5 min au plus). Environ 1 min par lecture. Fichiers de plus d'un jour supprimés par le robot.
+  l'admin le relit toutes les 5 s (5 min au plus). Environ 1 min par lecture.
+  `commit` réessaie tout seul (3 fois) si un autre commit arrive pendant la publication (GitHub 422 « Update is not a fast forward » :
+  réponse du robot, autre personne qui publie ; Gus 04/11) : refait par-dessus le nouveau dernier commit. Fichiers de plus d'un jour supprimés par le robot.
   Netlify considéré hors service (`siteDown`) pour toute réponse autre que OK / 502 JSON (503, 404 d'un site Netlify supprimé, page
   non JSON, réseau) : les projets Netlify peuvent être supprimés sans rien casser (Gus 04/11).
   `refreshSite` n'est plus appelé quand Netlify est hors service (le site lit `raw.githubusercontent.com`, cache 5 min).

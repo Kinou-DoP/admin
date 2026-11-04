@@ -104,7 +104,16 @@
       .then(function (t) { return t === null ? null : JSON.parse(t); });
   }
   // Un seul commit pour tous les fichiers : [{ path, text } | { path, base64 } | { path, remove: true }]
-  function commit(files, message) {
+  // Si un autre commit arrive pendant ce temps (robot GitHub qui répond, autre personne qui publie : « Update is not a fast
+  // forward », GitHub 422), on refait le commit par-dessus le nouveau dernier commit, 3 fois au plus (Gus 04/11).
+  function commit(files, message, tries) {
+    tries = tries || 0;
+    return commitOnce(files, message).catch(function (e) {
+      if (tries >= 3 || !/GitHub 422/.test(e.message)) throw e;
+      return new Promise(function (r) { setTimeout(r, 1200 + tries * 800); }).then(function () { return commit(files, message, tries + 1); });
+    });
+  }
+  function commitOnce(files, message) {
     var base;
     return gh("/repos/" + REPO + "/git/ref/heads/" + BRANCH).then(function (ref) {
       base = ref.object.sha;
