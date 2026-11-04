@@ -575,7 +575,8 @@
       "title": "Une Affaire Turque",
       "thumbCrop": {
         "y": 65.6
-      }
+      },
+      "status": "new"
     },
     "11143": {
       "zoom": 1.09,
@@ -795,7 +796,8 @@
       "title": "Tombé Du Ciel",
       "thumbCrop": {
         "y": 64.4
-      }
+      },
+      "autoPast": true
     },
     "11324": {
       "zoom": 1.37,
