@@ -6,7 +6,10 @@
   "open": 9844,
   "overrides": {
     "113": {
-      "title": "Bessa - J’ai Vaguement ton Coeur"
+      "title": "Bessa - J’ai Vaguement ton Coeur",
+      "types": [
+        "Music Video"
+      ]
     },
     "121": {
       "title": "YSL - Manifesto L'éclat"
@@ -15,19 +18,43 @@
       "title": "YSL"
     },
     "153": {
-      "title": "Woodkid - Run Boy Run"
+      "title": "Woodkid - Run Boy Run",
+      "types": [
+        "Music Video"
+      ]
     },
     "184": {
-      "title": "Cockatoo Spritz (VR)"
+      "title": "Cockatoo Spritz (VR)",
+      "types": [
+        "Short Film"
+      ]
     },
     "341": {
-      "title": "Star Dust"
+      "title": "Star Dust",
+      "types": [
+        "Short Film"
+      ]
+    },
+    "402": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "421": {
+      "types": [
+        "Short Film"
+      ]
     },
     "532": {
       "title": "Van Cleef"
     },
     "699": {
       "title": "Dior Sneekers"
+    },
+    "948": {
+      "types": [
+        "Art Film"
+      ]
     },
     "980": {
       "title": "Giorgio Armani Passione"
@@ -42,97 +69,306 @@
       "title": "Moodoïd - Reptile"
     },
     "1583": {
-      "title": "Les Galeries Lafayette - Mutant Stage 10"
+      "title": "Les Galeries Lafayette - Mutant Stage 10",
+      "types": [
+        "Art Film"
+      ]
     },
     "1799": {
-      "title": "La Prairie - Essence In Foundation"
+      "title": "La Prairie - Essence In Foundation",
+      "types": [
+        "Commercial"
+      ]
     },
     "1936": {
       "title": "Emporio Armani - SÌ"
     },
     "2057": {
-      "title": "DJ Snake feat Justin Bieber - Let Me Love You"
+      "title": "DJ Snake feat Justin Bieber - Let Me Love You",
+      "types": [
+        "Music Video"
+      ]
     },
     "2107": {
       "title": "Dior - Diorouge Liquid"
     },
     "2123": {
-      "title": "Dior Addict - Lacquer Plump x Bella Haddid"
+      "title": "Dior Addict - Lacquer Plump x Bella Haddid",
+      "types": [
+        "Commercial"
+      ]
     },
     "2148": {
-      "title": "Chanel - Rouge Allure"
+      "title": "Chanel - Rouge Allure",
+      "types": [
+        "Commercial"
+      ]
     },
     "2150": {
-      "title": "Chanel N°5 - Red"
+      "title": "Chanel N°5 - Red",
+      "types": [
+        "Commercial"
+      ]
     },
     "2176": {
       "title": "Carolina Herrera"
     },
     "2178": {
-      "title": "Carla Bruni - Miss you"
+      "title": "Carla Bruni - Miss you",
+      "types": [
+        "Music Video"
+      ]
     },
     "2241": {
-      "title": "C2C - Arcades"
+      "title": "C2C - Arcades",
+      "types": [
+        "Music Video"
+      ]
     },
     "2436": {
-      "title": "Bangs In My Chest"
+      "title": "Bangs In My Chest",
+      "types": [
+        "Fiction"
+      ]
     },
     "2479": {
-      "title": "L'Autostoppeur "
+      "title": "L'Autostoppeur ",
+      "types": [
+        "Fiction"
+      ]
     },
     "2539": {
-      "title": "Alteration (VR)"
+      "title": "Alteration (VR)",
+      "types": [
+        "Narrative"
+      ]
     },
     "2628": {
-      "title": "Ana Zimmer - Money"
+      "title": "Ana Zimmer - Money",
+      "types": [
+        "Music Video"
+      ]
     },
     "2640": {
-      "title": "Les Fils du Calvaire - Gin Fizz"
+      "title": "Les Fils du Calvaire - Gin Fizz",
+      "types": [
+        "Music Video"
+      ]
     },
     "2648": {
-      "title": "Chase & Status - Control"
+      "title": "Chase & Status - Control",
+      "types": [
+        "Music Video"
+      ]
     },
     "2694": {
-      "title": "Givenchy - Le Rouge Liquide"
+      "title": "Givenchy - Le Rouge Liquide",
+      "types": [
+        "Commercial"
+      ]
     },
     "2860": {
-      "title": "Toril"
+      "title": "Toril",
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "3418": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3507": {
+      "types": [
+        "Commercial"
+      ]
     },
     "3566": {
-      "title": "YSL Beauty - All Hours"
+      "title": "YSL Beauty - All Hours",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3569": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3695": {
+      "types": [
+        "Commercial"
+      ]
     },
     "3962": {
-      "title": "Mikano - Silhouette"
+      "title": "Mikano - Silhouette",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4055": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4058": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4068": {
-      "title": "Mikano - It's Alright"
+      "title": "Mikano - It's Alright",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4139": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4627": {
+      "types": [
+        "Beauty",
+        "Makeup",
+        "Textures",
+        "Packshot"
+      ]
     },
     "4657": {
-      "title": "Alaïa"
+      "title": "Alaïa",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4743": {
+      "types": [
+        "Music Video"
+      ]
     },
     "4789": {
-      "title": "Christine and the Queens: CHRIS"
+      "title": "Christine and the Queens: CHRIS",
+      "types": [
+        "Music Video",
+        "Documentary"
+      ]
     },
     "4994": {
-      "title": "Christine & The Queens : CHRIS"
+      "title": "Christine & The Queens : CHRIS",
+      "types": [
+        "Documentary"
+      ]
+    },
+    "5246": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5256": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5546": {
+      "types": [
+        "Experimental",
+        "Beauty",
+        "Fashion film"
+      ]
     },
     "5619": {
-      "title": "Syoss"
+      "title": "Syoss",
+      "types": [
+        "Commercial"
+      ]
     },
     "5620": {
       "title": "Syoss"
     },
+    "5665": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6313": {
+      "types": [
+        "Fashion film"
+      ]
+    },
+    "6369": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6748": {
+      "types": [
+        "Commercial",
+        "Texture"
+      ]
+    },
+    "6749": {
+      "types": [
+        "Commercial",
+        "Texture"
+      ]
+    },
+    "6756": {
+      "types": [
+        "Commercial",
+        "Texture",
+        "Skincare"
+      ]
+    },
+    "6770": {
+      "types": [
+        "Commercial",
+        "Beauty",
+        "Parfume"
+      ]
+    },
+    "7444": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "7631": {
-      "title": "Louis Vuitton (watch shots)"
+      "title": "Louis Vuitton (watch shots)",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8072": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8140": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8151": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8341": {
-      "title": "Shu Uemura Moppo"
+      "title": "Shu Uemura Moppo",
+      "types": [
+        "Commercial"
+      ]
     },
     "8433": {
-      "title": "Un Jour Fille"
+      "title": "Un Jour Fille",
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "8972": {
-      "title": "Shu Uemura - Tasaki Awareness"
+      "title": "Shu Uemura - Tasaki Awareness",
+      "types": [
+        "Commercial"
+      ]
     },
     "9643": {
       "title": "Garnier Olia"
@@ -140,17 +376,59 @@
     "9644": {
       "title": "Garnier Olia"
     },
+    "9649": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "9844": {
-      "title": "Le Coq Sportif"
+      "title": "Le Coq Sportif",
+      "types": [
+        "Dircut"
+      ]
+    },
+    "10085": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10176": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10177": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10178": {
+      "types": [
+        "Commercial"
+      ]
     },
     "10191": {
-      "title": "Shu Uemura - Tsuya"
+      "title": "Shu Uemura - Tsuya",
+      "types": [
+        "Commercial"
+      ]
     },
     "10207": {
       "title": "Valentino Make up"
     },
+    "10628": {
+      "types": [
+        "Music Video",
+        "Artwork",
+        "Artfilm",
+        "Dance film"
+      ]
+    },
     "10900": {
-      "title": "Dior - Asmr"
+      "title": "Dior - Asmr",
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {
