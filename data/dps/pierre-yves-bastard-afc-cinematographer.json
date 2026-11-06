@@ -6,30 +6,54 @@
   "open": 11008,
   "overrides": {
     "210": {
-      "title": "Virgil"
+      "title": "Virgil",
+      "types": [
+        "Feature Film"
+      ]
     },
     "329": {
-      "title": "JCVD"
+      "title": "JCVD",
+      "types": [
+        "Feature Film"
+      ]
     },
     "330": {
-      "title": "Le Vilain"
+      "title": "Le Vilain",
+      "types": [
+        "Feature Film"
+      ]
     },
     "331": {
       "title": "Un Jour Mon Père Viendra",
       "zoom": 1.34,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Feature Film"
+      ]
     },
     "332": {
-      "title": "Victor Young Perez"
+      "title": "Victor Young Perez",
+      "types": [
+        "Feature Film"
+      ]
     },
     "333": {
-      "title": "Chef"
+      "title": "Chef",
+      "types": [
+        "TV Show"
+      ]
     },
     "334": {
-      "title": "Versailles"
+      "title": "Versailles",
+      "types": [
+        "TV Show"
+      ]
     },
     "630": {
-      "title": "Maison close"
+      "title": "Maison close",
+      "types": [
+        "TV Show"
+      ]
     },
     "853": {
       "title": "Point S x Patrick Bosso"
@@ -38,7 +62,10 @@
       "title": "Le Bon Coin x Iggy Pop"
     },
     "1303": {
-      "title": "Nox"
+      "title": "Nox",
+      "types": [
+        "Series"
+      ]
     },
     "1311": {
       "zoom": 1.34,
@@ -53,31 +80,56 @@
       "title": "Bouygues - Noel"
     },
     "2285": {
-      "title": "Dans La Brume"
+      "title": "Dans La Brume",
+      "types": [
+        "Feature Film"
+      ]
     },
     "2424": {
       "title": "Bbox Miami - Game Of Thrones"
     },
     "2855": {
-      "title": "Iris"
+      "title": "Iris",
+      "types": [
+        "Feature Film"
+      ]
     },
     "3667": {
-      "title": "Le Dindon"
+      "title": "Le Dindon",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
     },
     "3842": {
       "title": "Pathe-Gaumont x Apple Play"
     },
     "5670": {
-      "title": "Kung Fu Zohra"
+      "title": "Kung Fu Zohra",
+      "types": [
+        "Feature Film"
+      ]
     },
     "6725": {
-      "title": "Vortex"
+      "title": "Vortex",
+      "types": [
+        "TV Serie",
+        "Trailer"
+      ]
     },
     "6826": {
-      "title": "Le Roi des Ombres"
+      "title": "Le Roi des Ombres",
+      "types": [
+        "Trailer"
+      ]
     },
     "11008": {
-      "title": "GIGN"
+      "title": "GIGN",
+      "types": [
+        "Series",
+        "narrative"
+      ]
     }
   },
   "about": {
