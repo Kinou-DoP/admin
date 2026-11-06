@@ -16,7 +16,8 @@
     },
     "331": {
       "title": "Un Jour Mon Père Viendra",
-      "zoom": 1.34
+      "zoom": 1.34,
+      "zoomThumb": true
     },
     "332": {
       "title": "Victor Young Perez"
@@ -40,11 +41,13 @@
       "title": "Nox"
     },
     "1311": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "zoomThumb": true
     },
     "1690": {
       "title": "Le Bon Coin - Le Déménagement",
-      "zoom": 1.34
+      "zoom": 1.34,
+      "zoomThumb": true
     },
     "2277": {
       "title": "Bouygues - Noel"
