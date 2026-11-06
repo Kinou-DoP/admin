@@ -2,9 +2,263 @@
   "items": [
     {
       "kind": "bundle",
-      "link": "b0af0137-d9d8-11f1-a349-0215583debcb"
+      "link": "b0af0137-d9d8-11f1-a349-0215583debcb",
+      "answer": {
+        "name": "Pierre-Yves Bastard, AFC",
+        "categories": [
+          "FEATURED",
+          "SERIES",
+          "FEATURE FILMS",
+          "COMMERCIALS"
+        ],
+        "clips": [
+          {
+            "title": "GIGN • Bande Annonce",
+            "sub": "Julien Leclercq\nLabyrinthe Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11008/8cb2c4bd-70bb-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d1eb4f26-59eb-40e7-b578-4fc3f5b5e618-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/29qDELlfOK1kGU4qNQBTbn_vjQM1nMcDPz2J9ixedi0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZTc2YjRhOC05Mjg4/LTQxMTUtYjZhYS0y/ZThmODgwMDhlOWEv/Z2lnbi5wbmc?v=1&format=webp",
+            "cat": "SERIES",
+            "slate": 11008,
+            "featured": true,
+            "featuredOrder": 1
+          },
+          {
+            "title": "Le Roi des Ombres - trailer",
+            "sub": "Marc Fouchard\nGetaway Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6826/8b3358f8-d9dd-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6b5e80ca-a8f2-47fb-9c71-b1fbfcf49b0b-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/x4CKyuMUj2BMHP__vxVobz8LZhsTW7CEh0GkmkllNuU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MmFmODU1NC1lMGMy/LTQzNWMtOGZkMi02/NGRhMzhkMmVhN2Uv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MTQtYS0xMS4wMC4x/OS5wbmc?v=1&format=webp",
+            "cat": "SERIES",
+            "slate": 6826,
+            "featured": true,
+            "featuredOrder": 3
+          },
+          {
+            "title": "Vortex - trailer",
+            "sub": "Slimane-Baptiste Berhoun\nQuad Drama",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6725/c49cc228-d9dd-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5c3f3a0d-f967-4175-8eee-a1602c419fd5-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/sSYcEFeGUEZXoEDur9FaY_bd3bp6mSrUxBUw0Phn9vo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MzgzNDAzZS00MmIw/LTQ0NjktYjk3OS1k/MGUzNjI5ZmZiYWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDEt/MjAtYS0xNC4zMy4y/NC5wbmc?v=1&format=webp",
+            "cat": "SERIES",
+            "slate": 6725
+          },
+          {
+            "title": "Nox | Trailer",
+            "sub": "Mabrouk El Mechri\nGaumont Télévision",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1303/57b8d1e5-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545403117-53113572_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/cFryIYDItirC8fqXliLSWTj7tygP-ye0mP0tLoR7BWQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTMxMDcyNTY1/L25veC5qcGc?v=1&format=webp",
+            "cat": "SERIES",
+            "slate": 1303
+          },
+          {
+            "title": "Maison close  - UK Trailer",
+            "sub": "Jérôme Cornuau & Mabrouk El Mechri\nNoé Productions & Canal +",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/630/ad639895-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545373903-31930973_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/uI2iUCFet1S4aBu2q922rrWJQ6X3OwuFemucnmcW7nA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9z/ZWFzb24tMi11ay10/cmFpbGVyLWJlNWM1/MGJhYTI2NTE3Mzdm/MjY3MWM0YWIwMjI0/YmNkLmpwZw?v=1&format=webp",
+            "cat": "SERIES",
+            "slate": 630,
+            "featured": true,
+            "featuredOrder": 7
+          },
+          {
+            "title": "Versailles saison 1/ Trailer",
+            "sub": "Simon Mirren + David Wolstencroft\nCanal +",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/334/b5d43eb6-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357823-versailles-tv-series-official-trailer-28english-29.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Cfh-6Pj0Urp40jEUpAkf21AqEpuSntpYKQvzyoiSssI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NTBlMjgxYi1kZTJl/LTQ2ODQtYmEwMi02/ODYzYTcwMjExZWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDIt/MTYtYS0xOC4wMS4y/NC5wbmc?v=1&format=webp",
+            "cat": "SERIES",
+            "slate": 334,
+            "featured": true,
+            "featuredOrder": 8
+          },
+          {
+            "title": "Chef saison 1 / Trailer",
+            "sub": "Arnaud Malherbe\nCalt Production + France Television",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/333/c47fc5bf-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357823-23399354_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/0ba9GECORFHa8BFHlL0oa6DVzm7xByPIMrC2tiAtqZQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy90/cmFpbGVyLTE0LTUz/NjZkMjc4Y2YyMGIz/NGZlYjQzNTkxYTU1/OTVlYWU2LmpwZw?v=1&format=webp",
+            "cat": "SERIES",
+            "slate": 333
+          },
+          {
+            "title": "Kung Fu Zohra - Feature Film Trailer",
+            "sub": "Mabrouk El Mechri\nLes Films du Kiosque",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5670/d94d0e93-d9dd-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9c4e8c65-26d7-42bc-93a7-eb69fad070f7-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/sJ_IfspjWo8m1YXiL6KvJBKjBRL2Rju1_88PJmQ8CSI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZWZkZmU0Ny1iY2Rl/LTQ0NjItOWRlZi04/YWJjMGNiOGEzN2Qv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MDktYS0xMC41NC4z/Ny5wbmc?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 5670
+          },
+          {
+            "title": "Le Dindon | Feature Film Trailer",
+            "sub": "Jalil Lespert\nCinéfrance Studios",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3667/7100e46d-d9de-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1563892919-le-dindon-trailer-1.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/bxq5kKTI3j8qjVG_x8Ti2l0aF5gL1XEO2jQYrzV0by0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZDRiYzA4MC1mNjE2/LTRlMzItYjg2Yi00/OTE4ZDk5MTY4N2Uv/b3Nkc3RpbGwtbGUt/ZGluZG9uLTE4MDkx/MS0xNjI2MjYuanBn?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 3667
+          },
+          {
+            "title": "Iris / Feature Film Trailer",
+            "sub": "Jalil Lespert\nWY Production",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2855/9ed832fe-d9de-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842269-37789707_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/DPUHbRUB6N03kcN3ClLe3sUTR7iXTimqJtDO2LMX1ts/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZjcyMDJhMC0xNTY0/LTRmMjMtYjMzMS1k/Mzk5YmU0NmZkNmIv/MTc5Mzk2ODU0NTQx/MC5qcGc?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 2855,
+            "featured": true,
+            "featuredOrder": 5
+          },
+          {
+            "title": "Dans La Brume | Feature Film Trailer",
+            "sub": "Daniel Roby\nSection9 films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2285/e388e8cb-d9de-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545443700-dans-la-brume.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/2r3-G7QVblI6gAj_6Cj31NjLCvOhKr6sEk_qJsdKeoU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTRlYTg4Ni0wMmQ0/LTRkMjctYTYyMC0y/ZjA0ZjlkYjhhYTYv/NTc5Njc2Mi5qcGct/ci0xMjgwLTcyMC1m/LWpwZy1xLXgteHh5/eHguanBn?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 2285,
+            "featured": true,
+            "featuredOrder": 4
+          },
+          {
+            "title": "Victor Young Perez / Trailer",
+            "sub": "Jacques Ouaniche\nMazel Productions + Noe Productions",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/332/e5e87b9c-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357787-victor-young-perez-trailer-youtube-720p.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/P4AZfVoCOTRD0b88RQVMiL_lapixqBLa4yZ4GiFouWs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy90/cmFpbGVyLTEzLTM3/N2E3Y2JlYWEyNzI3/Nzc2YWVhMDk3MDdh/MzAzYzAyLmpwZw?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 332
+          },
+          {
+            "title": "un jour mon père viendra / Trailer",
+            "sub": "Martin Valente\nKare Productions",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/331/fa082e59-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357778-23399433_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/M-vWPUgtjJ92Mf0dgU6Qkckcsz5AJ1D6b7iogmPN6-Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy90/cmFpbGVyLTEyLTg3/Yjg3YjAyOWI5MWQy/YzBhNjE0ZDM1YzRk/MzA3MjgwLmpwZw?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 331
+          },
+          {
+            "title": "Le Vilain / Trailer",
+            "sub": "Albert Dupontel\nADCB Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/330/05ff35ef-d9e0-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357747-23399711_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/33dfJWJkt9aY4yqc4ESpcPd3MFgtbinMI0NnOH6JFH8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OGUwMTljYS0xYWRi/LTRjMWEtOTM1Ni0z/ODFkZWZlZjU0ODEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDIt/MTYtYS0xOC4xNS4w/NC5wbmc?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 330
+          },
+          {
+            "title": "JCVD / Trailer",
+            "sub": "Mabrouk El Mechri\nBankable Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/329/307f5a25-d9e0-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357737-jcvd-trailer-youtube-720p.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/L-Ewq0mFKOT6rirvBjxXD_3xcp3N8DiZValijNkQjb0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/YTJlZmNkYi02ZDRl/LTQyODEtODQ3Zi0w/Y2RhOTdiMTM5YmEv/amN2ZC1tYWJyb3Vr/LWVsLW1lY2hyaS5q/cGc?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 329,
+            "featured": true,
+            "featuredOrder": 9
+          },
+          {
+            "title": "Virgil [Teaser]",
+            "sub": "Mabrouk El Mechri\nGaumont",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545353318-virgil-bande-annonce.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/ujzrE2_LQbD-C9jAjtoHQuSMGYBD2wDeOGm7srNFVmg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy92/aXJnaWwtdGVhc2Vy/LWMxNGUwOTgyMDk3/ODcwYWQ0MjUyZTk5/ZDYwMWM1OTBlLmpw/Zw?v=1&format=webp",
+            "cat": "FEATURE FILMS",
+            "slate": 210
+          },
+          {
+            "title": "Pathe-Gaumont / Apple Play Version 2",
+            "sub": "Jalil Lespert\nStandard Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3842/1e9fd278-d9de-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1572514928-190911-vlongue-pathe-web-24fps-h264.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/9bYAVJb5ViJeXUgwPGPOs2PnjGcajKZtq1MnXZNwF48/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YmI0OTIyZS1jNjk5/LTQ4YWItYjQ3OS1i/MWQ5ZGQ1MTBiNjkv/MTc5Mzk2ODM3Njg5/Ny5qcGc?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 3842,
+            "featured": true,
+            "featuredOrder": 2
+          },
+          {
+            "title": "Le Bon Coin | Iggy Pop",
+            "sub": "Mabrouk El Mechri\nWanda",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/35db6bc7-b747-47e4-b3dd-67a6834780ef-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/WOz7ZN9yUXvpg_NdlU11B1Yr_6x3mvlGcNJ22gaxKxE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MzlmNzYzYS1lZDdh/LTQzODAtYjAyZi03/ODU4MTc2ODRjN2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjktYS0xNi4wNC40/My5wbmc?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 1299,
+            "featured": true,
+            "featuredOrder": 6
+          },
+          {
+            "title": "Bbox_Miami_GOT_30s_MASTER_1",
+            "sub": "Mabrouk El Mechri\nWanda",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2424/c420c787-d9de-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450137-36732878_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Va_tNXAbaLJYLtRx7Yd-2HShmOG3gKGBChbUKSi5mKE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MzE1ZDIyYS1lZGEw/LTQ0N2MtYWNlYi0z/MjU5MDgyMWE4ODkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDIt/MTYtYS0xNy41Ni41/Ni5wbmc?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 2424
+          },
+          {
+            "title": "Futuroscope",
+            "sub": "Bruno Maillard\nMc Murphy",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4198/0eaa260c-d9de-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0047d14e-b675-4f6e-953a-d26fb090d015-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/YUa9-viCScuXFYXUieKcAYBOAIVmU18Oluyhd0TASDM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MTk4LTVlY2QwNzBi/OWU0Y2E3LjkyMjY0/MTYxLTRmNzg2NzJh/ZTA3OTA3M2UxMmM0/NjU2ZjczMGViMDBj/LmpwZw?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 4198
+          },
+          {
+            "title": "Autosphere",
+            "sub": "Mabrouk El Mechri\nWanda",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2480/ad18827a-d9de-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545452698-36732615_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/UZ3rjugbObT3o1KPtw0Q76Xe2kRCbmcwSYmFu5KaJyA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/dXRvc3BoZXJlLWxv/dG8tMjBzLW1peC10/di0zYWIwMzg4Yzgz/NDg3N2E2OTdkMGI5/NGNmODhmOWNmNy5q/cGc?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 2480
+          },
+          {
+            "title": "Bouygues Noel",
+            "sub": "Mabrouk El Mechri\nWanda",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2277/1e0a5727-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545443410-36388379_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/DIbDhatjPMibe2S-dQiKsaeiDewqR9HLicB9yrI95CA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/b3V5Z3Vlcy1ub2Vs/LTIwMTYtYmJveC0z/MHMtZmJhNjYwZjMx/ZDJjMzNiYzczNjIx/Yjc4ZjFlNjA5NTIu/anBn?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 2277
+          },
+          {
+            "title": "Le Déménagement",
+            "sub": "Mabrouk El Mechri\nWanda",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1690/3b9caaac-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545416506-33478028_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/ok07mkRCL9kCDb7x7MTm4pgAPD_SV0Brwegzn-rY6Ko/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/ZS1kZW1lbmFnZW1l/bnQtYTA5ZThlYzY5/NmIzMDg5ZDMwNTA1/OWRjMjc0NjI1YWEu/anBn?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 1690
+          },
+          {
+            "title": "MeilleursAgents 2018 - Le Roi de l'Estimation",
+            "sub": "Jony Guedj\nCream",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1311/46d4d6e7-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545403559-52674081_web.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/PvwR-eFhl9hmIvryWnpvnzEoRCAFSMO8jp7WQRgIfek/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9t/ZWlsbGV1cnNhZ2Vu/dHMtMjAxOC1sZS1y/b2ktZGUtbGVzdGlt/YXRpb24tZGE4MTlh/NGQ2MzE4MGNjMDUw/YTg4OTZkNTIwZmQ5/ZTUuanBn?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 1311
+          },
+          {
+            "title": "Point S - Patrick Bosso",
+            "sub": "Mabrouk El Mechri\nWanda",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/853/8927d836-d9df-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545386801-point-s-patrick-bosso.1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/XDFWpzyrtgN3ahMlSWjMM5uOgc8aG0_sjTflMww0A6o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTMyMDYwMjM1/L3BvaW50LXMuanBn?v=1&format=webp",
+            "cat": "COMMERCIALS",
+            "slate": 853
+          }
+        ],
+        "bundle": "https://kinou.slateapp.com/bundles/b0af0137-d9d8-11f1-a349-0215583debcb"
+      }
     }
   ],
   "at": "2026-11-06T12:48:21.232Z",
-  "by": "John-Kinou"
+  "by": "John-Kinou",
+  "doneAt": "2026-11-06T12:48:40.679Z"
 }
