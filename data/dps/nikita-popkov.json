@@ -359,7 +359,10 @@
       ]
     },
     "11516": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {
