@@ -129,7 +129,9 @@
       "types": [
         "Series",
         "narrative"
-      ]
+      ],
+      "zoom": 1.12,
+      "zoomPos": "0% 100%"
     }
   },
   "about": {
