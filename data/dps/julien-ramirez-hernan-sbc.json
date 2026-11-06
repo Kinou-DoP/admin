@@ -527,7 +527,9 @@
     ],
     "pos": "26% 56%",
     "color": true,
-    "img": "img/julien-ramirez-hernan-sbc.webp"
+    "img": "img/julien-ramirez-hernan-sbc.webp",
+    "og": "img/julien-ramirez-hernan-sbc-og-1793974455983.jpg",
+    "ogColor": true
   },
   "categories": [
     "FEATURED",

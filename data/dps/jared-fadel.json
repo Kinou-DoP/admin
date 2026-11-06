@@ -232,7 +232,9 @@
         "label": "IMDB",
         "url": "https://www.imdb.com/fr/name/nm7398175/?ref_=nv_sr_srsg_0_tt_0_nm_3_in_0_q_jared%2520fadel"
       }
-    ]
+    ],
+    "og": "img/jared-fadel-og-1793974455983.jpg",
+    "ogColor": true
   },
   "categories": [
     "FEATURED",

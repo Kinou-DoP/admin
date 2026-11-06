@@ -172,7 +172,9 @@
     "website": "https://veronikadonutkova.com/",
     "pos": "30% 52%",
     "img": "img/veronika-donutkova-ask.webp",
-    "color": true
+    "color": true,
+    "og": "img/veronika-donutkova-ask-og-1793974455983.jpg",
+    "ogColor": true
   },
   "categories": [
     "FEATURED",

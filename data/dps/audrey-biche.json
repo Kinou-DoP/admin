@@ -348,7 +348,9 @@
     "website": "https://www.audreybiche.com/",
     "pos": "0% 33%",
     "color": true,
-    "img": "img/audrey-biche.webp"
+    "img": "img/audrey-biche.webp",
+    "og": "img/audrey-biche-og-1793974455983.jpg",
+    "ogColor": true
   },
   "categories": [
     "FEATURED",
