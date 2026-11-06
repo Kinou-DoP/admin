@@ -121,7 +121,8 @@
     "3842": {
       "title": "Pathe-Gaumont x Apple Play",
       "zoom": 1.79,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "zoomPos": "50% 48.5%"
     },
     "4198": {
       "types": [
