@@ -6,95 +6,371 @@
   "open": 11358,
   "overrides": {
     "129": {
-      "title": "YSL - Black Opium"
+      "title": "YSL - Black Opium",
+      "types": [
+        "Commercial"
+      ]
     },
     "189": {
       "title": "Volvo XC60"
     },
+    "325": {
+      "types": [
+        "Feature Film"
+      ]
+    },
     "643": {
       "title": "Scotch and Soda - From Everywhere"
     },
+    "659": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "681": {
-      "title": "Société Générale - C'est Vous l'Avenir"
+      "title": "Société Générale - C'est Vous l'Avenir",
+      "types": [
+        "Commercial"
+      ]
     },
     "1066": {
       "title": "Nissan X-Trail - The Volcano"
     },
+    "1225": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "1523": {
       "title": "leroy merlin \"life's adventure\""
+    },
+    "1545": {
+      "types": [
+        "Commercial"
+      ]
     },
     "1751": {
       "title": "Ikea - Wonderful World"
     },
     "2028": {
-      "title": "Don't Grow up"
+      "title": "Don't Grow up",
+      "types": [
+        "Feature Film"
+      ]
     },
     "2198": {
-      "title": "Canal+"
+      "title": "Canal+",
+      "types": [
+        "Commercial"
+      ]
     },
     "2691": {
-      "title": "Goal Of The Dead"
+      "title": "Goal Of The Dead",
+      "types": [
+        "Feature Film"
+      ]
     },
     "2868": {
-      "title": "L'Odyssée"
+      "title": "L'Odyssée",
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "3118": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3301": {
+      "types": [
+        "Commercial"
+      ]
     },
     "3303": {
-      "title": "Paco Rabanne - Invictus & Olympea Legend"
+      "title": "Paco Rabanne - Invictus & Olympea Legend",
+      "types": [
+        "Commercial"
+      ]
     },
     "3312": {
-      "title": "Orange - Content Battle"
+      "title": "Orange - Content Battle",
+      "types": [
+        "Commercial"
+      ]
     },
     "3321": {
       "title": "Hermès - Not So Square"
     },
+    "3433": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "3450": {
-      "title": "Nike - Dream Further"
+      "title": "Nike - Dream Further",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3738": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3741": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3872": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3979": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4067": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4279": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4302": {
-      "title": "BMW - Sometimes Electric. Always BMW"
+      "title": "BMW - Sometimes Electric. Always BMW",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4434": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4685": {
+      "types": [
+        "Commercial"
+      ]
     },
     "5110": {
-      "title": "Eiffel"
+      "title": "Eiffel",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "5250": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5272": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5279": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5933": {
+      "types": [
+        "Commercial"
+      ]
     },
     "6223": {
-      "title": "Athena"
+      "title": "Athena",
+      "types": [
+        "Feature Film"
+      ]
     },
     "6253": {
-      "title": "Kompromat "
+      "title": "Kompromat ",
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "6256": {
+      "types": [
+        "Commercial",
+        "Music"
+      ]
+    },
+    "6257": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6325": {
+      "types": [
+        "Commercial"
+      ]
     },
     "6343": {
-      "title": "Athena"
+      "title": "Athena",
+      "types": [
+        "Feature Film",
+        "Trailer"
+      ]
+    },
+    "6363": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6387": {
+      "types": [
+        "Commercial",
+        "Fashion",
+        "Dua Lipa"
+      ]
+    },
+    "6590": {
+      "types": [
+        "Commercial",
+        "Sport extreme"
+      ]
+    },
+    "6785": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6786": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6843": {
+      "types": [
+        "Fashion"
+      ]
+    },
+    "6906": {
+      "types": [
+        "Prevention"
+      ]
+    },
+    "6982": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7748": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7984": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8003": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8215": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8233": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "9208": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9555": {
       "title": "Carême"
     },
     "10038": {
       "zoom": 1.19,
-      "title": "Genesis - No Old Ideas"
+      "title": "Genesis - No Old Ideas",
+      "types": [
+        "Commercial"
+      ]
     },
     "10061": {
-      "title": "WINAMAX"
+      "title": "WINAMAX",
+      "types": [
+        "Commercial"
+      ]
     },
     "10117": {
-      "title": "Les Sentinelles"
+      "title": "Les Sentinelles",
+      "types": [
+        "Narrative",
+        "Series"
+      ]
     },
     "10345": {
       "title": "Canal+ - Tango"
     },
+    "10347": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10723": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "10862": {
-      "title": "YSL - Myself"
+      "title": "YSL - Myself",
+      "types": [
+        "Commercial"
+      ]
     },
     "11296": {
-      "zoom": 1.23
+      "zoom": 1.23,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11297": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11299": {
+      "types": [
+        "Commercial"
+      ]
     },
     "11304": {
-      "title": "Chopard - Happy Collections"
+      "title": "Chopard - Happy Collections",
+      "types": [
+        "Commercial"
+      ]
     },
     "11355": {
-      "title": "Sacrifice"
+      "title": "Sacrifice",
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "11358": {
-      "title": "Sacrifice"
+      "title": "Sacrifice",
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     }
   },
   "about": {
