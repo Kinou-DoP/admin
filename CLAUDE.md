@@ -155,6 +155,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   Zoom 100–250 % → `about.zoom` (agrandissement vers le point de cadrage, `transform: scale` sur le site).
   Le site affiche le portrait en noir et blanc (filtre CSS) : la photo déposée peut rester en couleur. Interrupteur « Noir et blanc
   sur le site » (coché par défaut) au-dessus du cadrage : décoché → `about.color: true`, portrait en couleur sur le site (et aperçus).
+  Image d'aperçu des liens partagés (Gus 06/11, `makeOg`) : à la publication d'une fiche, le portrait en JPEG 1200 px, noir et blanc
+  (ou couleur si décoché) → `data/dps/img/<slug>-og-<horodatage>.jpg` = `about.og` (+ `ogColor`) ; refaite seulement si le portrait
+  ou ce choix change (nouveau nom, l'ancienne supprimée) ; utilisée par `sharePage` et `tools/share-pages.mjs` du site.
 - CV : PDF → `data/dps/cv/CV-Prenom-Nom.pdf`, servi en téléchargement (`_headers`).
 - Adresse (slug) : proposée depuis le nom (minuscules, sans accents) ; modifiable ensuite (demande de Gus : reprendre les
   adresses de kinou.fr). Changement d'adresse = un seul commit : nouvelle fiche, ancienne supprimée (`remove` dans `commit`),

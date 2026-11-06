@@ -1304,6 +1304,34 @@
       doPublish(moved ? r[1] : null);
     }, function (e) { publishBtn.disabled = false; status(e.message, "err"); });
   }
+  // Image d'aperçu des liens partagés (og:image, WhatsApp, iMessage…) : le portrait en JPEG (mieux lu que le WebP), en noir et blanc
+  // comme sur le site, ou en couleur si « Noir et blanc sur le site » est décoché (Gus 06/11) → about.og (+ ogColor). Refaite quand
+  // le portrait ou ce choix change, sous un nouveau nom (les messageries gardent les aperçus en cache) ; l'ancienne est supprimée.
+  // En cas d'échec, la fiche est publiée quand même (aperçu inchangé).
+  function makeOg(slug, a) {
+    if (!a.img && !pending.portrait) return Promise.resolve(null);
+    if (!pending.portrait && a.og && !!a.ogColor === !!a.color) return Promise.resolve(null);
+    var src = pending.portrait ? Promise.resolve("data:image/webp;base64," + pending.portrait.base64)
+      : portraitURL[a.img] ? Promise.resolve(portraitURL[a.img])
+      : fetch("https://api.github.com/repos/" + REPO + "/contents/data/dps/" + a.img + "?ref=" + BRANCH, { headers: { Authorization: "Bearer " + token, Accept: "application/vnd.github.raw+json" } })
+        .then(function (r) { if (!r.ok) throw new Error("portrait illisible"); return r.blob(); }).then(function (b) { return portraitURL[a.img] = URL.createObjectURL(b); });
+    return src.then(function (url) {
+      return new Promise(function (ok, ko) { var im = new Image(); im.onload = function () { ok(im); }; im.onerror = ko; im.src = url; });
+    }).then(function (im) {
+      var k = Math.min(1, 1200 / im.width), c = document.createElement("canvas");
+      c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+      var x = c.getContext("2d"); x.drawImage(im, 0, 0, c.width, c.height);
+      if (!a.color) { // noir et blanc (mêmes coefficients que le filtre grayscale du site)
+        var px = x.getImageData(0, 0, c.width, c.height), d = px.data;
+        for (var i = 0; i < d.length; i += 4) { var y = 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2]; d[i] = d[i + 1] = d[i + 2] = y; }
+        x.putImageData(px, 0, 0);
+      }
+      var old = a.og;
+      a.og = "img/" + slug + "-og-" + Date.now() + ".jpg";
+      if (a.color) a.ogColor = true; else delete a.ogColor;
+      return { add: a.og, remove: old && old !== a.og ? old : null, base64: c.toDataURL("image/jpeg", 0.85).split(",")[1] };
+    }).catch(function () { return null; });
+  }
   function doPublish(homeData) {
     var s = state, from = origSlug && s.slug !== origSlug ? origSlug : null; // changement d'adresse
     var files = [], about = s.about;
@@ -1342,6 +1370,12 @@
     var waitRobot = needsRobot(extrasLists(out.overrides));
     readFile("data/dps/" + (from || s.slug) + ".json").then(function (remote) {
       if (remote) robotFrom(out, remote);
+      // Image d'aperçu déjà faite en ligne (fiche ouverte avant) : reprise telle quelle.
+      var ra = remote && remote.about || {};
+      if (!about.og && ra.og && !pending.portrait) { about.og = ra.og; if (ra.ogColor) about.ogColor = true; }
+      return makeOg(out.slug, about);
+    }).then(function (og) {
+      if (og) { files.push({ path: "data/dps/" + og.add, base64: og.base64 }); if (og.remove) files.push({ path: "data/dps/" + og.remove, remove: true }); }
       ficheFile.text = json(out);
       return commit(files, (isNew ? "Ajout " : "Mise à jour ") + out.name.split(",")[0] + " (admin, " + user.login + ")");
     }).then(function (ref) {
@@ -1378,7 +1412,8 @@
   function sharePage(d) {
     function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;"); }
     var a = d.about || {}, img = "", slug = d.slug;
-    if (a.img) img = /^https?:/.test(a.img) ? a.img : RAW_DATA + "dps/" + a.img;
+    if (a.og) img = RAW_DATA + "dps/" + a.og; // portrait en JPEG, noir et blanc ou couleur comme sur le site (makeOg)
+    else if (a.img) img = /^https?:/.test(a.img) ? a.img : RAW_DATA + "dps/" + a.img;
     else if (d.clips) { var c = d.clips.filter(function (x) { return x.featured; }).sort(function (x, y) { return (x.featuredOrder || 0) - (y.featuredOrder || 0); })[0] || d.clips[0]; if (c && c.img) img = c.img; }
     var url = SITE_URL + slug + "/";
     var html = '<!doctype html>\n<!-- Page d\'aperçu de lien, fabriquée par tools/share-pages.mjs : ne pas modifier à la main. -->\n' +
