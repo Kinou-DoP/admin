@@ -2,9 +2,11 @@
   "items": [
     {
       "kind": "stills",
-      "link": "ttps://kinou.slateapp.com/work/palatine-elenore-stills"
+      "link": "ttps://kinou.slateapp.com/work/palatine-elenore-stills",
+      "error": "lien invalide : attendu https://kinou.slateapp.com/work/…"
     }
   ],
   "at": "2026-11-09T22:02:37.984Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-09T22:02:52.074Z"
 }
