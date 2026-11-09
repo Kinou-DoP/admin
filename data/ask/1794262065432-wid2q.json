@@ -2,9 +2,19 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/s-oliver-stills"
+      "link": "https://kinou.slateapp.com/work/s-oliver-stills",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/s-oliver-stills",
+        "title": "S.Oliver | Stills",
+        "stills": [
+          "https://images.slatecdn.net/pmCMr3wboB1xVVlt2_3hwovdjBduB2sfvTE_0F-9IRs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjY5ZmE3/ZDctNzM5NS00Mjhh/LThiODItZDVmMWE2/Y2M2ZDQyL3Mub2xp/dmVyLTEucG5n.webp",
+          "https://images.slatecdn.net/vG9jm04jdlGCZudFUzGvUznT2h_kR9wijqFjfUBiOh8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTc5MmYy/NGItN2Q2Mi00MWU4/LTk1ZTItNmQyZTEw/ODNhZTJhL3Mub2xp/dmVyLTIucG5n.webp",
+          "https://images.slatecdn.net/1mNiyovJESF0B4rbPzefuTyR3_2aML7-Z9NDwqIKwJs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTRlNGYz/ZmMtNTRjMS00ZDE4/LWI3MGEtNDcwYzAy/OGVlMmNiL3Mub2xp/dmVyLTMucG5n.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-09T22:07:45.432Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-09T22:08:02.744Z"
 }
