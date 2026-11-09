@@ -2,9 +2,20 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/nestle-lion-stills"
+      "link": "https://kinou.slateapp.com/work/nestle-lion-stills",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/nestle-lion-stills",
+        "title": "Nestlé - Lion | Stills",
+        "stills": [
+          "https://images.slatecdn.net/zLN64v8YSGNF4O31F9SZCdp8APF8npAYJVtVxi8Sdkc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjAxZmNl/NzQtYjM4ZC00NGUx/LWE3YTQtNzNhYjBl/YmVhMWIwL2xpb24t/ZS1zcG9ydC0xLnBu/Zw.webp",
+          "https://images.slatecdn.net/Zw-D-om2Cbz66qjeCjRwr29i_qmfEI-GaiaBYjhEr1I/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTE3MjA2/NWMtMjlhNy00NDc0/LTgzYTYtZDE2YWQz/ZjE4MDQ4L2xpb24t/ZS1zcG9ydC0yLnBu/Zw.webp",
+          "https://images.slatecdn.net/UUBX82Hh1vSlj8W-v48hMW4f3CQpqydv6PSOVt59aIY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODJjM2M2/NTAtYTg3Mi00NzA1/LTgwZTgtNzM0YmMw/Mjg0MzAyL2xpb24t/ZS1zcG9ydC0zLnBu/Zw.webp",
+          "https://images.slatecdn.net/rvd4kNrGA_hNDPnzotn0RMugKQ53J5fgK3FhNWnyvzE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTMzMTZi/NjYtZDMzNC00OWJh/LTlhMTktYWVmNjZh/MDQxYjBhL2xpb24t/ZS1zcG9ydC00LnBu/Zw.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-09T21:38:07.304Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-09T21:38:24.513Z"
 }
