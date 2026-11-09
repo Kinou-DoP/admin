@@ -6,31 +6,65 @@
   "open": 8652,
   "overrides": {
     "151": {
-      "title": "World's End Press - Second Day Uptown"
+      "title": "World's End Press - Second Day Uptown",
+      "types": [
+        "Music Video"
+      ]
     },
     "282": {
-      "title": "Mission - Season 1"
+      "title": "Mission - Season 1",
+      "types": [
+        "TV Serie"
+      ]
     },
     "457": {
-      "title": "A Distance"
+      "title": "A Distance",
+      "types": [
+        "Short Film"
+      ]
+    },
+    "467": {
+      "types": [
+        "Short Film"
+      ]
     },
     "626": {
-      "title": "No Limit - Season 3"
+      "title": "No Limit - Season 3",
+      "types": [
+        "TV Show",
+        "Serie",
+        "narrative"
+      ]
     },
     "757": {
-      "title": "Skip The Use - Thomas Tyman"
+      "title": "Skip The Use - Thomas Tyman",
+      "types": [
+        "Music Video"
+      ]
     },
     "785": {
-      "title": "Si Les Papillons Parlaient"
+      "title": "Si Les Papillons Parlaient",
+      "types": [
+        "Feature Film"
+      ]
     },
     "860": {
-      "title": "Playground"
+      "title": "Playground",
+      "types": [
+        "TV Serie"
+      ]
     },
     "973": {
-      "title": "Puggy - To Win The World"
+      "title": "Puggy - To Win The World",
+      "types": [
+        "Music Video"
+      ]
     },
     "1372": {
-      "title": "Margaux Avril"
+      "title": "Margaux Avril",
+      "types": [
+        "Music Video"
+      ]
     },
     "2272": {
       "title": "Break"
@@ -39,58 +73,145 @@
       "title": "Sound Of Violence"
     },
     "2531": {
-      "title": "Amour sur place ou à emporter"
+      "title": "Amour sur place ou à emporter",
+      "types": [
+        "Fiction"
+      ]
     },
     "2567": {
-      "title": "Accident"
+      "title": "Accident",
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "3359": {
+      "types": [
+        "Music Video"
+      ]
     },
     "3701": {
-      "title": "Missions - Saison 2"
+      "title": "Missions - Saison 2",
+      "types": [
+        "Fiction"
+      ]
     },
     "3723": {
-      "title": "Douran - Phenomena"
+      "title": "Douran - Phenomena",
+      "types": [
+        "Music Video"
+      ]
     },
     "3888": {
-      "title": "Plan Coeur - Saison 2"
+      "title": "Plan Coeur - Saison 2",
+      "types": [
+        "Series"
+      ]
+    },
+    "4600": {
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
+      ]
     },
     "4601": {
-      "title": "Moah"
+      "title": "Moah",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Serie"
+      ]
     },
     "4730": {
-      "title": "On Va Manquer"
+      "title": "On Va Manquer",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
+      ]
     },
     "4744": {
-      "title": "Merci de votre Visite"
+      "title": "Merci de votre Visite",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
+      ]
     },
     "5061": {
-      "title": "Mortel - Saison 2"
+      "title": "Mortel - Saison 2",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Serie"
+      ]
     },
     "5626": {
-      "title": "Missions - Saison 3"
+      "title": "Missions - Saison 3",
+      "types": [
+        "Serie"
+      ]
     },
     "7578": {
-      "title": "Antigang : La Relève"
+      "title": "Antigang : La Relève",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "7708": {
+      "types": [
+        "Serie",
+        "narrative"
+      ]
     },
     "8268": {
-      "title": "Furies"
+      "title": "Furies",
+      "types": [
+        "Serie",
+        "narrative"
+      ]
     },
     "8652": {
-      "title": "Les Trois Fantastiques"
+      "title": "Les Trois Fantastiques",
+      "types": [
+        "Narrative"
+      ]
     },
     "9137": {
-      "title": "GTMax"
+      "title": "GTMax",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "9974": {
-      "title": "Les Orphelins"
+      "title": "Les Orphelins",
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative",
+        "Long-métrage"
+      ]
     },
     "10439": {
-      "title": "Lucky Luke - (Episode 8)"
+      "title": "Lucky Luke - (Episode 8)",
+      "types": [
+        "Narrative",
+        "Serie"
+      ]
     },
     "10541": {
-      "title": "Ultra Vomit - Tikawahukwa"
+      "title": "Ultra Vomit - Tikawahukwa",
+      "types": [
+        "Music Video"
+      ]
     },
     "10542": {
-      "title": "Ultra Vomit - Ricard Peinard"
+      "title": "Ultra Vomit - Ricard Peinard",
+      "types": [
+        "Music Video"
+      ]
     }
   },
   "about": {
