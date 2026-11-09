@@ -74,6 +74,16 @@
         "Music Video"
       ]
     },
+    "1591": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "1976": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "2272": {
       "title": "Break"
     },
@@ -97,7 +107,10 @@
     },
     "3128": {
       "zoom": 1.37,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "3359": {
       "types": [
@@ -241,6 +254,19 @@
         "Music Video"
       ],
       "zoom": 1.53
+    },
+    "11520": {
+      "types": [
+        "Fiction",
+        "Serie",
+        "narrative"
+      ],
+      "images": [
+        "https://images.slatecdn.net/b2VcdT6xxqQMzsAVgdAbR6Tu9A7MI6U5MgLadrEV1Nc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjE2YzEw/NzYtNGNhYy00MTU1/LTgwNDYtN2QxN2U3/ZGU3MGJhL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTA5LWEt/MTIuMTYuMDMucG5n.webp"
+      ],
+      "ratios": [
+        1.2872
+      ]
     }
   },
   "about": {
