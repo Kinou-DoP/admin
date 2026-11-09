@@ -302,6 +302,9 @@
             "https://images.slatecdn.net/19Kl3hLVoBFj5eRdFH6JGe1wDn264lVX4tCMZ439PE4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWJiZGQy/MTEtMGYzOC00MmFh/LWIwNjgtYzgxNjA0/YmQ5NWEzL2xpc3Nh/Yy0zLnBuZw.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "8611": {
@@ -325,6 +328,9 @@
             "https://images.slatecdn.net/DpjmCJm1v0np-_55Io_8BA6V04NliZj0Au0vycPi_IQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTM2ZjMx/NjItZWViNC00OTJk/LWE4NjAtZmNjYjJh/NGFlZmFlL2xvdWlz/LXZ1aXR0b24tMTIu/cG5n.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "8613": {
@@ -421,6 +427,9 @@
             "https://images.slatecdn.net/mw2yIka_auSPcyPArfWt3dYP9SB-Lp3c61G4djQRlHk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjc3MGQz/ZTEtYTBiOC00NTA5/LWFiZTEtN2VlZGVh/OWQwYjI0L3dlbGwt/NC5wbmc.webp"
           ]
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     },
     "8620": {
@@ -891,7 +900,10 @@
           ]
         }
       ],
-      "title": "Monoprix"
+      "title": "Monoprix",
+      "types": [
+        "Commercial"
+      ]
     },
     "10185": {
       "zoom": 1.33,
