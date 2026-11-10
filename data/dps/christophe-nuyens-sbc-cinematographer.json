@@ -1,0 +1,270 @@
+{
+  "slug": "christophe-nuyens-sbc-cinematographer",
+  "name": "Christophe Nuyens, SBC",
+  "hue": 315,
+  "bundle": "https://kinou.slateapp.com/bundles/bf9c1d6c-dd29-11f1-a349-0215583debcb",
+  "open": 11199,
+  "overrides": {
+    "115": {
+      "title": "Zone Blanche"
+    },
+    "227": {
+      "title": "Vermist"
+    },
+    "764": {
+      "title": "Riviera"
+    },
+    "1870": {
+      "title": "Hassel"
+    },
+    "2385": {
+      "title": "Cordon"
+    },
+    "2390": {
+      "title": "Coppers"
+    },
+    "2577": {
+      "title": "A Discovery of Witches"
+    },
+    "3098": {
+      "title": "Zone Blanche"
+    },
+    "3434": {
+      "title": "Versailles"
+    },
+    "4143": {
+      "title": "Baghdad Central"
+    },
+    "4683": {
+      "title": "Lupin"
+    },
+    "5862": {
+      "title": "Entre la Vie et la Mort"
+    },
+    "5863": {
+      "title": "Infiniti"
+    },
+    "9459": {
+      "zoom": 1.37,
+      "zoomPos": "39.9% 51%",
+      "zoomThumb": true,
+      "title": "Star Wars - Andor Season 2",
+      "sub": "Ariel Kleiman\nEpisodes 1 to 6"
+    },
+    "9977": {
+      "zoom": 1.37,
+      "title": "Lhomme qui rétrécit"
+    },
+    "11199": {
+      "zoom": 1.3,
+      "zoomPos": "43.4% 51.6%"
+    }
+  },
+  "about": {
+    "bioEn": [
+      "Christophe Nuyens is a Belgian based Cinematographer.",
+      "He started his professional career as an AC, later to become a camera-operator on various music videos, commercials, documentary and travel-shows, in Belgium and abroad.",
+      "Since 2009, his main focus lays on TV-drama, gaining his full membership of the Belgian SBC guild in 2014."
+    ],
+    "website": "https://www.christophenuyens.com/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm1691243/"
+      }
+    ],
+    "instagram": "https://www.instagram.com/christophenuyens/",
+    "pos": "65% 32%",
+    "img": "img/christophe-nuyens-sbc-cinematographer.webp",
+    "og": "img/christophe-nuyens-sbc-cinematographer-og-1794330935307.jpg"
+  },
+  "categories": [
+    "FEATURED",
+    "SERIE",
+    "FEATURE FILM",
+    "COMMERCIAL"
+  ],
+  "clips": [
+    {
+      "title": "Harry Potter and the Philosophers Stone",
+      "sub": "Jon Brown, Francesca Gardiner\nBonte Film ant TV",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11199/56cbd98b-a77d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10fcba02-1065-40ee-bb67-8b546dce7582-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/YrDJLUBrPaHjUYALsIZ9VoW4M6etvQoZ9oSlBJuwIJE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZGFiM2M5MC1hNTNi/LTQ1ZWQtOTA1ZS0y/NjBjNzllNjM0NzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDkt/MDMtYS0xMS40MS4w/NC5wbmc?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 11199,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Star Wars - Andor Season 2 - Trailer (Episodes 1 to 6​)",
+      "sub": "Ariel Kleiman",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9459/39f3c5ed-f35e-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2ef0b81-0efa-4e96-bff7-d3a82c61f6a8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/F9Szs-xKjqF50uzGClOeDKAG5p5IMXs9HAIZghicYoU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDU5LTY3YmNiMGVj/OTNhYmY4LjIyNDM2/MDI2LTFiOTgyNmU5/Y2Q4OGUxZDg0ODRl/MjgyOWQyNDc2Yzk0/LmpwZw?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 9459,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Infiniti (trailer)",
+      "sub": "Thierry Poiraud\nempreinte digitale",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b1b57a70-f40d-44b8-ad1a-c384cb21338b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/QqRuPLHB60udZQSphEPBYzJjeUsCPdAhtpWNQKBeDug/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NDZlZjdkOC04OWU5/LTQ2YWMtODU5Ni0w/MDg2ZGMyZGU2OTcv/cmF3LmpwZw?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 5863,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Lupin | Trailer",
+      "sub": "Louis Leterrier, Marcela Said, Hugo Gélin\nGaumont",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/db623a85-c20f-461d-aec1-e3c2db6666e3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/LhsJ-GLpXpDb-n7AwT1xYmNFwCTnEzL2ytWJtEJzCYc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MTc0OWRkMC01MDcw/LTQ0ZTMtYjFmOS00/MmRjMjAyYjBkMzQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDQt/MDEtYS0xMS4wMS40/OS5wbmc?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 4683,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Versailles 3 | Trailer",
+      "sub": "Ed Bazalgette\nCapa Drama",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1559559357-versailles-ba-mip-h264-20180319.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/53vHSWIhaitP6rsT_t1Kr_Xeo7VRBhpAmJUKN4zoKJI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NmE3MmIyNC0xMDE0/LTQ0YTctOWYxZS1j/N2I3NzJkZWJhMTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MzAtYS0xMS4zMS41/NC5wbmc?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 3434,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "A Discovery of Witches | Trailer",
+      "sub": "Alice Troughton\nBad Wolf",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3645dcfc-734c-4682-9a73-ddac9833ecac-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ux5IMLzggJGbTQWzHTZOyyEUfFLMlJ9OYoTTLgwHwAE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/Y2NiMjliOC05MWJh/LTRjYTQtOWQ1Yy0y/ZTkxNDJmYzEwMWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MzAtYS0xMS4zMy4w/MC5wbmc?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 2577
+    },
+    {
+      "title": "Coppers | TV Series Trailer",
+      "sub": "Maarten Moerkerke\nMenuet",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545448465-51780597_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tjIBXOLm8jjnC-AMxJrKEmpkmNJFKK-I4An0q3xhwsE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDQ4NDI0LzUx/NzgwNTk3X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 2390
+    },
+    {
+      "title": "Cordon | TV Series Trailer",
+      "sub": "Tim Mielants\nEyeworks Film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545448159-51780579_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Be6JCPrMoZQ9FGMd6-thm4foj4BZCXFaeYO43JMR3io/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDQ4MDg2LzUx/NzgwNTc5X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 2385
+    },
+    {
+      "title": "Hassel | TV Series Trailer",
+      "sub": "Eshref Reybrouck\nNicedrama | Lunanime",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545424214-trailer-hassel.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/wY1ZTsxszgwfXIJK7umrmYcK4N4kEuHqNWKwz1OF-JE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZTNhNTBhNS03NjJi/LTQ1MDctOTI5YS03/MWY2MWJlYzJhN2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MzAtYS0xMS40Mi41/MC5wbmc?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 1870
+    },
+    {
+      "title": "Riviera | TV Series Trailer",
+      "sub": "Hans Herbots & Paul Walker\nAchery Pictures | Peninsula Film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545380799-51783082_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/qriOXjjFR-IS8uz9f659212UMqXRRcqwe1gm4JTzw9k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NTFjNzFhMy03YTMx/LTQ2OTgtODVlMS04/M2E2OWVkNmUxYzMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MzAtYS0xMS40NC4z/MC5wbmc?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 764
+    },
+    {
+      "title": "The Tunnel",
+      "sub": "Tim Mielants\nKudos & Shine France",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545359141-51780633_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/P1CHzukkYYscX-TxRyhHoQLizWB3v0Yy6PpyTrGGubo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk0MTI3MzY3NDYw/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA3/LTA3LWEtMTUuMDku/MTUucG5n?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 395
+    },
+    {
+      "title": "Vermist |TV Series Trailer",
+      "sub": "Hans Herbots\nEyeworks Film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545354522-vermist-trailer-s6.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1XNUeDOo1JJiTCPHC-FDh4-viu0ky3rKrBNdpbhfwW0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MTM5ODk0NjQx/L3Zlcm1pc3QuanBn?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 227
+    },
+    {
+      "title": "Zone Blanche | TV Series Trailer",
+      "sub": "Thierry Poiraud\nEgo Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545344910-trailer-zone-blanche.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/XTIvZcohENR3S9dWA5i2Vn3jBcPbiHLruP8oJ4-lCpg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MWNlM2M2OS0zOGJk/LTRkMjUtYjc4My1m/NmEzNTJkMzQwMDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MzAtYS0xMS4zNy4y/NC5wbmc?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 115
+    },
+    {
+      "title": "Lhomme qui rétrécit - Feature Film Trailer",
+      "sub": "Jan Kounen\nPitchipoï Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9977/fc0f7cf6-58d2-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0d372a8e-a388-41d8-916c-dee3b660be43-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/k6MTyUxvXW5uwy-nbPdQVjkQKmV2Eu9b5d9tKAUL-5o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZTM2ZDI4My00ODA5/LTQyNDEtYTgxMi1m/Zjg5NjQxMzUwNTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MjItYS0xMi41MS4y/My5wbmc?v=1&format=webp",
+      "cat": "FEATURE FILM",
+      "slate": 9977,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Entre la Vie et la Mort (trailer)",
+      "sub": "Giordano Gederlini\nFrakas Production, Noodles Productions, Fasten Films, Eyeworks",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/844ce4be-c55c-48e9-9e4f-84eca4b72e23-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7CApvpQKBxLZGQBD-FHIob73nerxI-KAAC_9J2BuICQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/ZWIyYjM5Yi02M2Zk/LTQyMmYtYTMwNi04/OGExYWVjNTI4ZDcv/My1jLWZyYWthcy1w/cm9kdWN0aW9ucy5q/cGc?v=1&format=webp",
+      "cat": "FEATURE FILM",
+      "slate": 5862,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "EDF - The Race",
+      "sub": "Thierry Poiraud\nInsurrection",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ddc3d059-e635-4e8d-becb-66fdc6ff5436-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Gayq1f9Ib-XMtw_jljeDFHU1gr2_csNZSXgtojd2o64/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MTZkMjQ4NC1lZmQw/LTQyMTctODdiMC03/MGJlYTNjOTBhZTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTAt/MTktYS0xNi4zNi40/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7897
+    },
+    {
+      "title": "Deadline",
+      "sub": "Maarten Moerkerke\nMenuet",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/73248814-5292-477e-8133-a89faaa64562-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Egnsz_j5IHDcucnbDWxwJ-g6ZwAQliflRUHZgWryjQA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MGM3MTA1OC0wODRm/LTQ4MWEtYWViYS1h/ZTc2ZDRkMTNiNTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjktYS0xNS40Ny4w/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3089
+    },
+    {
+      "title": "Viewmasters",
+      "sub": "Ralf Demesmaeker\nViewmasters",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545353392-viewmasters-281080p-29.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/aVwEgQWb_Qkus9Oduj1Iq8Uun7vO5BygYewhN_laZcg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3MTM5MjY2ODE4/L3ZpZXdtYXN0ZXJz/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 214
+    },
+    {
+      "title": "Zone Blanche | Season 2 Trailer",
+      "sub": "Thierry Poiraud\nEgo Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1560768862-zone-blanche-s2.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KFeVx7EEZ-QV1Vt6YWoUOpaUT77XIHgZYf-d62NUodY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyODIzMjY4NjIx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI3LWEtMTguMDYu/MzMucG5n?v=1&format=webp",
+      "cat": "",
+      "slate": 3098,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Baghdad Central | TV Serie Trailer",
+      "sub": "Alice Troughton\nEuston Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/18fdc5d4-e13a-4ed3-945d-97a4929c3f44-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GOUJH6d5zMoVXdYCHImvNTVDSuKUS6kld9gjpi9aaAU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ZDgyNWFkNi02MTE5/LTRhNjUtYjJjNi1i/NjExZTEyZDgyZWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MzAtYS0xMS4yNi4w/OS5wbmc?v=1&format=webp",
+      "cat": "",
+      "slate": 4143,
+      "featured": true,
+      "featuredOrder": 9
+    }
+  ]
+}
