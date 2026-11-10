@@ -3,7 +3,73 @@
   "name": "Ana Maria Miranda",
   "hue": 0,
   "bundle": "https://kinou.slateapp.com/bundles/d409bd31-dd17-11f1-a349-0215583debcb",
-  "overrides": {},
+  "overrides": {
+    "10842": {
+      "types": [
+        "narrative"
+      ]
+    },
+    "10843": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10844": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10845": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10846": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10848": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10849": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10850": {
+      "types": [
+        "narrative"
+      ]
+    },
+    "10851": {
+      "types": [
+        "Clip"
+      ]
+    },
+    "11337": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11338": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11494": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "11495": {
+      "types": [
+        "Commercial"
+      ]
+    }
+  },
   "about": {
     "bio": [
       "Née au Brésil et installée en France depuis 2020, Ana Maria vient d’un parcours en art et histoire de l’art, avec une spécialisation en peinture moderniste, qui nourrit encore aujourd’hui sa manière de penser. Avec un début sur les plateaux comme technicienne — entre flash et lumière continue—, elle a évolué vers la direction de la photographie. C’est dans l’univers de la mode qu’elle a développé sa passion pour l’image en collaborant avec des maisons comme Louis Vuitton, Valentino, Hermès, Dior, Chanel, Tom Ford, MiuMiu et Dries Van Noten. Aujourd’hui, son travail cherche à faire dialoguer ce regard nourri par la mode et l'art aussi avec le clip et la fiction, notamment à travers des univers inspirés par le cinéma d’horreur et la science-fiction."
