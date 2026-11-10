@@ -12,7 +12,9 @@
     "10843": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoomThumb": true,
+      "zoom": 1.21
     },
     "10844": {
       "types": [
