@@ -144,16 +144,6 @@
       "featuredOrder": 5
     },
     {
-      "title": "Tom Ford FW26 - Kristen Mcmenamy",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10847/e1669b5e-52cb-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ea1cae52-8050-4ece-a5df-717ee6c37201-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/Pjaj5sIqQOm2XpXObNL0rZmWiHDXUxwrTEoWjulaDT8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDg0Ny02YTBiMTc5/NjFhZDM1NS4yNDA1/ODY5MS1hY2U4ZDdi/Nzg3MTJjNzZiYWUx/ZmU4YzY4MmVmMTM2/Yi5qcGc?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 10847,
-      "featured": true,
-      "featuredOrder": 8
-    },
-    {
       "title": "Elle Brasil - O Tempo Passa Voando",
       "sub": "Olivia Mucido\nElle Magazine",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10846/e3d2d0b2-52cb-11f1-a349-0215583debcb.mp4",
@@ -191,7 +181,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8c16b907-4798-4868-a050-422e82b96f4d-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/rciAq1qJrzzGFHFJ0a3RG7fQ8YtsBNG1pS7SRqwpf0c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDg0My02YTBiMTc5/ODkyNzFkOS43NzE3/OTM5My00ZDA5MDhi/ZDllMTFiNTliYTli/MmIyNmYxM2UzODU0/Zi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10843
+      "slate": 10843,
+      "featured": true,
+      "featuredOrder": 8
     },
     {
       "title": "Dante's Turn Around",
