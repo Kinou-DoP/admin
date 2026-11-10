@@ -4,7 +4,143 @@
   "hue": 99,
   "bundle": "https://kinou.slateapp.com/bundles/77b12b5b-dcfd-11f1-a349-0215583debcb",
   "open": 10277,
-  "overrides": {},
+  "overrides": {
+    "1833": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3513": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4567": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5454": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "5644": {
+      "types": [
+        "Commercial",
+        "Food",
+        "Comedy"
+      ]
+    },
+    "5740": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5946": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5948": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5950": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6095": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6234": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6252": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6302": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6428": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6828": {
+      "types": [
+        "Food"
+      ]
+    },
+    "7061": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "7620": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8220": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8495": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8521": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8858": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "8943": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "10277": {
+      "types": [
+        "Serie",
+        "narrative",
+        "DOP mood"
+      ]
+    },
+    "10572": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11319": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "11478": {
+      "types": [
+        "narrative",
+        "Extract"
+      ]
+    }
+  },
   "about": {
     "pos": "58% 41%",
     "instagram": "https://www.instagram.com/mahdilepart/",
