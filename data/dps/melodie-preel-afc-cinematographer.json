@@ -5,56 +5,222 @@
   "bundle": "https://kinou.slateapp.com/bundles/b38ac10b-dd25-11f1-a349-0215583debcb",
   "open": 9404,
   "overrides": {
+    "1655": {
+      "types": [
+        "Short Film"
+      ]
+    },
     "1738": {
       "zoom": 1.37,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "1989": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "2300": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3022": {
+      "types": [
+        "Commercial"
+      ]
     },
     "3082": {
       "zoom": 1.25,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "3313": {
-      "title": "Roger Vivier - Le Casting"
+      "title": "Roger Vivier - Le Casting",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3572": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3700": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3750": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3817": {
+      "types": [
+        "Publicity",
+        "Pub",
+        "Gold card"
+      ]
+    },
+    "3939": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3940": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4210": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4511": {
-      "title": "Part Time Friends - Même si"
+      "title": "Part Time Friends - Même si",
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4595": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4608": {
-      "title": "Andros"
+      "title": "Andros",
+      "types": [
+        "Commercial"
+      ]
     },
     "4610": {
-      "zoom": 1.17
+      "zoom": 1.17,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4611": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4680": {
-      "title": "En Thérapie"
+      "title": "En Thérapie",
+      "types": [
+        "Narrative",
+        "TV Serie",
+        "Fiction",
+        "Serie"
+      ]
+    },
+    "4898": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4969": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4970": {
-      "zoom": 1.66
+      "zoom": 1.66,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5102": {
+      "types": [
+        "Music Video"
+      ]
     },
     "5418": {
       "title": "Apple x Fnac"
     },
+    "5502": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "5545": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5674": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "5708": {
-      "title": "Ami Paris"
+      "title": "Ami Paris",
+      "types": [
+        "Commercial"
+      ]
     },
     "5742": {
       "title": "Fondation des Hopitaux",
-      "zoom": 1.37
+      "zoom": 1.37,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6772": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6967": {
+      "types": [
+        "Music Video",
+        "Clip"
+      ]
     },
     "6994": {
-      "title": "Les Éveillées"
+      "title": "Les Éveillées",
+      "types": [
+        "Short Film"
+      ]
     },
     "7637": {
-      "title": "Une Année Difficile"
+      "title": "Une Année Difficile",
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "8050": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8399": {
-      "title": "Becoming Karl Lagerfeld"
+      "title": "Becoming Karl Lagerfeld",
+      "types": [
+        "Narrative"
+      ]
+    },
+    "8519": {
+      "types": [
+        "Commercial"
+      ]
     },
     "8634": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Commercial"
+      ]
     },
     "9404": {
-      "title": "Wildwood"
+      "title": "Wildwood",
+      "types": [
+        "Short Film"
+      ]
     }
   },
   "about": {},
