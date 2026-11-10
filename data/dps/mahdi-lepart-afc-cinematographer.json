@@ -5,6 +5,31 @@
   "bundle": "https://kinou.slateapp.com/bundles/77b12b5b-dcfd-11f1-a349-0215583debcb",
   "open": 10277,
   "overrides": {
+    "461": {
+      "types": [
+        "Narrative"
+      ]
+    },
+    "464": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "767": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "807": {
+      "types": [
+        "Short Film"
+      ]
+    },
+    "1716": {
+      "types": [
+        "Short Film"
+      ]
+    },
     "1833": {
       "types": [
         "Commercial"
@@ -15,9 +40,26 @@
         "Commercial"
       ]
     },
+    "3526": {
+      "types": [
+        "Series"
+      ]
+    },
+    "3691": {
+      "types": [
+        "Documentary"
+      ]
+    },
     "4567": {
       "types": [
         "Commercial"
+      ]
+    },
+    "4794": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
       ]
     },
     "5454": {
@@ -62,6 +104,13 @@
         "Commercial"
       ]
     },
+    "6235": {
+      "types": [
+        "Fiction",
+        "Serie",
+        "narrative"
+      ]
+    },
     "6252": {
       "types": [
         "Commercial"
@@ -90,6 +139,12 @@
     "7620": {
       "types": [
         "Commercial"
+      ]
+    },
+    "8069": {
+      "types": [
+        "TV Serie",
+        "narrative"
       ]
     },
     "8220": {
@@ -124,9 +179,22 @@
         "DOP mood"
       ]
     },
+    "10283": {
+      "types": [
+        "Serie",
+        "narrative",
+        "Extrait"
+      ]
+    },
     "10572": {
       "types": [
         "Commercial"
+      ]
+    },
+    "10584": {
+      "types": [
+        "Feature Film",
+        "narrative"
       ]
     },
     "11319": {
