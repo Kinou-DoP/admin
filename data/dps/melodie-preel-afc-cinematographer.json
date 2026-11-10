@@ -169,7 +169,8 @@
       "zoom": 1.37,
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoomThumb": true
     },
     "6772": {
       "types": [
