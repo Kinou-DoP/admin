@@ -5,79 +5,237 @@
   "bundle": "https://kinou.slateapp.com/bundles/f440ac09-dd2c-11f1-a349-0215583debcb",
   "overrides": {
     "4016": {
-      "title": "August"
+      "title": "August",
+      "types": [
+        "Short  Film Trailer"
+      ]
     },
     "4017": {
-      "title": "Bastaard"
+      "title": "Bastaard",
+      "types": [
+        "Short  Film Trailer"
+      ]
     },
     "4018": {
       "zoom": 1.08,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "TV Serie"
+      ]
+    },
+    "4019": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4020": {
-      "title": "Cleo"
+      "title": "Cleo",
+      "types": [
+        "Trailer"
+      ]
+    },
+    "4021": {
+      "types": [
+        "Music Video"
+      ]
     },
     "4022": {
-      "title": "The Day"
+      "title": "The Day",
+      "types": [
+        "TV Serie"
+      ]
     },
     "4024": {
       "zoom": 1.38,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4025": {
+      "types": [
+        "Music Video"
+      ]
     },
     "4026": {
-      "title": "Kinder"
+      "title": "Kinder",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4028": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4029": {
+      "types": [
+        "TV Serie"
+      ]
     },
     "4030": {
-      "title": "Pizza Hut - Boring"
+      "title": "Pizza Hut - Boring",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4036": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4037": {
+      "types": [
+        "Music Video"
+      ]
     },
     "4039": {
-      "title": "Tabula Rasa"
+      "title": "Tabula Rasa",
+      "types": [
+        "TV Serie"
+      ]
     },
     "4040": {
       "zoom": 1.16,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4041": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4042": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4043": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4044": {
+      "types": [
+        "Music Video"
+      ]
     },
     "4045": {
-      "title": "Zone Blanche"
+      "title": "Zone Blanche",
+      "types": [
+        "TV Serie"
+      ]
     },
     "4348": {
       "zoomThumb": true,
       "zoom": 1.39,
       "zoomPos": "44.3% 50%",
-      "title": "Earth and Blood"
+      "title": "Earth and Blood",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film",
+        "Netflix"
+      ]
+    },
+    "4618": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4813": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Serie"
+      ]
+    },
+    "4860": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5197": {
+      "types": [
+        "Commercial"
+      ]
     },
     "6127": {
-      "title": "Suspect"
+      "title": "Suspect",
+      "types": [
+        "TV Serie"
+      ]
     },
     "6232": {
-      "title": "Paris Police 1900"
+      "title": "Paris Police 1900",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Serie"
+      ]
     },
     "8066": {
       "zoom": 1.15,
       "zoomThumb": true,
-      "title": "Les 7 Vies de Léa"
+      "title": "Les 7 Vies de Léa",
+      "types": [
+        "Serie",
+        "narrative"
+      ]
     },
     "8070": {
-      "title": "Cold"
+      "title": "Cold",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "8991": {
       "zoom": 1.36,
       "zoomThumb": true,
-      "title": "Monsieur Aznavour"
+      "title": "Monsieur Aznavour",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "9288": {
+      "types": [
+        "Food"
+      ]
+    },
+    "9294": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9641": {
       "zoom": 1.37,
-      "title": "Coka Chicas"
+      "title": "Coka Chicas",
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "10553": {
       "zoom": 1.39,
       "zoomThumb": true,
-      "title": "Paris Police 1905"
+      "title": "Paris Police 1905",
+      "types": [
+        "Serie",
+        "narrative"
+      ]
     },
     "11171": {
       "zoom": 1.38,
       "zoomPos": "42.7% 50.4%",
-      "title": "Jusqu'au bout"
+      "title": "Jusqu'au bout",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     }
   },
   "about": {
