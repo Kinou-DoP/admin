@@ -6,58 +6,139 @@
   "open": 11199,
   "overrides": {
     "115": {
-      "title": "Zone Blanche"
+      "title": "Zone Blanche",
+      "types": [
+        "TV Serie"
+      ]
+    },
+    "214": {
+      "types": [
+        "Short Film"
+      ]
     },
     "227": {
-      "title": "Vermist"
+      "title": "Vermist",
+      "types": [
+        "TV Serie"
+      ]
+    },
+    "395": {
+      "types": [
+        "TV Serie"
+      ]
     },
     "764": {
-      "title": "Riviera"
+      "title": "Riviera",
+      "types": [
+        "TV Serie"
+      ]
     },
     "1870": {
-      "title": "Hassel"
+      "title": "Hassel",
+      "types": [
+        "TV Serie"
+      ]
     },
     "2385": {
-      "title": "Cordon"
+      "title": "Cordon",
+      "types": [
+        "TV Serie"
+      ]
     },
     "2390": {
-      "title": "Coppers"
+      "title": "Coppers",
+      "types": [
+        "TV Serie"
+      ]
     },
     "2577": {
-      "title": "A Discovery of Witches"
+      "title": "A Discovery of Witches",
+      "types": [
+        "Series"
+      ]
+    },
+    "3089": {
+      "types": [
+        "TV Serie"
+      ]
     },
     "3098": {
-      "title": "Zone Blanche"
+      "title": "Zone Blanche",
+      "types": [
+        "Commercial"
+      ]
     },
     "3434": {
-      "title": "Versailles"
+      "title": "Versailles",
+      "types": [
+        "Series"
+      ]
     },
     "4143": {
-      "title": "Baghdad Central"
+      "title": "Baghdad Central",
+      "types": [
+        "Narrative",
+        "TV Serie",
+        "Fiction",
+        "Drama",
+        "Thriller"
+      ]
     },
     "4683": {
-      "title": "Lupin"
+      "title": "Lupin",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Serie"
+      ]
     },
     "5862": {
-      "title": "Entre la Vie et la Mort"
+      "title": "Entre la Vie et la Mort",
+      "types": [
+        "Feature Film"
+      ]
     },
     "5863": {
-      "title": "Infiniti"
+      "title": "Infiniti",
+      "types": [
+        "Serie"
+      ]
+    },
+    "7897": {
+      "types": [
+        "Commercial"
+      ]
     },
     "9459": {
       "zoom": 1.37,
       "zoomPos": "39.9% 51%",
       "zoomThumb": true,
       "title": "Star Wars - Andor Season 2",
-      "sub": "Ariel Kleiman\nEpisodes 1 to 6"
+      "sub": "Ariel Kleiman\nEpisodes 1 to 6",
+      "types": [
+        "Fiction",
+        "Series",
+        "Serie",
+        "narrative"
+      ]
     },
     "9977": {
       "zoom": 1.37,
-      "title": "Lhomme qui rétrécit"
+      "title": "Lhomme qui rétrécit",
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative",
+        "Long-métrage"
+      ]
     },
     "11199": {
       "zoom": 1.3,
-      "zoomPos": "43.4% 51.6%"
+      "zoomPos": "43.4% 51.6%",
+      "types": [
+        "Series",
+        "narrative"
+      ]
     }
   },
   "about": {
