@@ -2,9 +2,28 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/il-faut-bruler-maman"
+      "link": "https://kinou.slateapp.com/work/il-faut-bruler-maman",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/il-faut-bruler-maman",
+        "title": "Il Faut Brûler Maman",
+        "stills": [
+          "https://images.slatecdn.net/cv5bZqCith4AVKn5CweCaIzpKWjHHjsvVAbPGfKupe8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGZmNjAw/MzUtZTg5ZC00ZjQx/LWEzODgtMzQ2ODQx/MjFhMGE2L3N0aWxs/cy0wMDA4NjQwMC5q/cGc.webp",
+          "https://images.slatecdn.net/rSqW7A8EeRZg07PMgma6EX_SBPB9A7VsfaaMyn6vES0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjc4Zjc3/NWItNjBkYi00Mzgx/LWFlY2MtMWIzYjRl/N2Q0NzY0L3N0aWxs/cy0wMDA4NjQwMi5q/cGc.webp",
+          "https://images.slatecdn.net/rgGPg51NwqBF3Umje3RiXKj2cWePJh4C04IPc67RdTQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTNmZDcx/ODYtOTYxZC00Nzdj/LTg2Y2ItZDUyMTE0/OGIzNzM5L3N0aWxs/cy0wMDA4NjQwNi5q/cGc.webp",
+          "https://images.slatecdn.net/vyPkspebjKtp0fdXDObZjOAnfnKODNW2pqfn2Rt-6jI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWI5ZWEx/ODYtMWQ0Ni00YWJl/LWIwMjktOWJhM2Vl/MmJhYTk4L3N0aWxs/cy0wMDA4NjQwNy5q/cGc.webp",
+          "https://images.slatecdn.net/xGWJUVogYqZP61Mbxa8yLRr66Ff1VFsBLGcOmrPoX1c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjdjMTlk/MTAtMWNlMS00ZTdk/LTljOGItZGNiOTky/OTgwMDc0L3N0aWxs/cy0wMDA4NjQwOS5q/cGc.webp",
+          "https://images.slatecdn.net/rChFqSoHnpyKyjpAnI7n3AiJRL9oscpXi7Rl2U37Rg0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjE5YzY3/ZmQtMDNlNi00ODUx/LWE2N2QtNTUzM2M4/ODQ2N2ZhL3N0aWxs/cy0wMDA4NjQxNS5q/cGc.webp",
+          "https://images.slatecdn.net/iHa75jyFDUETEWIaqbcyOme5K3gp9ovpx3XFqeWFfJw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjNlNDY4/MWEtZjZmOS00ODll/LTg5ODEtMDRiZmQ0/MzQ1YzdmL3N0aWxs/cy0wMDA4NjQxOC5q/cGc.webp",
+          "https://images.slatecdn.net/RyIZodJbrP9AXOjkaepMtBFDKFp2DBYR8KKAonk0JfM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjhjNjlh/YjQtZDE4NC00NjQy/LWExMmYtNzM0ZTdk/YWE2MjM4L3N0aWxs/cy0wMDA4NjQyMi5q/cGc.webp",
+          "https://images.slatecdn.net/ivPjMUytJdmExtl6UYosr7_cF5PTGjxmCxTXyfAZR9k/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTMzYzMx/MzEtZmY4Ni00ZmVj/LThjNDItMThjMGE4/MDA4NjFlL3N0aWxs/cy0wMDA4NjQyMy5q/cGc.webp",
+          "https://images.slatecdn.net/ACDG8XK-IVojMQbCWwJ2MKfUX5AlKwJE_YdiWHFU6us/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWRiNmU2/MGMtMzQyNi00ODE5/LWExMTEtODEzY2Qw/YTZlMjA0L3N0aWxs/cy0wMDA4NjQyNi5q/cGc.webp",
+          "https://images.slatecdn.net/7QgUV7SL8EraCJf7IgdErY8WFaL31Y7KzPoAti9g6sM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOGUwYWJh/NGItNGJlOC00ZjQz/LTgyOTMtM2E5MWFl/MmU2YzIxL3N0aWxs/cy0wMDA4NjQyNy5q/cGc.webp",
+          "https://images.slatecdn.net/_8fyuThxnb_VmFcA5fYjqlq8TgCBPfYCoG7IF3_qRKg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDhiMTA1/YTEtYzRjMS00NWNm/LWFkYWYtNzI0OTNi/ODhjYWE1L3N0aWxs/cy0wMDA4NjQzMC5q/cGc.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-10T15:55:13.719Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-10T15:55:30.671Z"
 }
