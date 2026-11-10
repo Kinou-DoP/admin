@@ -386,3 +386,8 @@ body.vedit-on { overflow: hidden; }
 .infogrid .label { font-size: 9px; margin: 0; }
 .infogrid input, .infogrid textarea { min-height: 0; padding: 4px 0; font-size: 12px; line-height: 1.5; }
 .infogrid textarea { resize: vertical; }
+
+/* Page en ligne / cachée sur le site (Gus 10/11) : interrupteur sous le titre d'une fiche ; « hors ligne » dans la liste. */
+.showsw.online { margin: 0 0 26px; }
+.dps a.off { opacity: .45; }
+.dps .offtag { margin-left: 10px; font-family: var(--kinou-sans); font-weight: 600; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #ff9f6b; vertical-align: middle; }

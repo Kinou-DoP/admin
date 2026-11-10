@@ -99,6 +99,9 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   pas déplacé si l'adresse change), lu à l'ouverture, enregistré tout seul 1,2 s après la frappe ou en quittant le champ (API
   contents, sans « Publier », hors annuler / rétablir). Dépôt absent ou clé sans accès : message dans le bloc. Chaque clé GitHub
   doit avoir accès à ce dépôt (Contents : Read and write).
+- **En ligne sur le site** (Gus 10/11) : interrupteur sous le titre d'une fiche (`onlineCtl`) → `hidden: true` dans l'entrée de
+  `data/dps/index.json` quand il est décoché (écrit à la publication ; `state.hidden` = choix pas encore publié, `isHidden`). **Une
+  nouvelle fiche est créée cachée** ; les fiches existantes au 10/11 sont en ligne. Liste de l'admin : « hors ligne » + nom estompé.
 - Liste des chefs op : champ de recherche au-dessus (filtre au fil de la frappe, sans accents ; Entrée ouvre le 1er résultat).
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi

@@ -406,7 +406,7 @@
       var ul = el("ul", { class: "dps" }), entries = [], want = 0; // want : étape choisie dans le tableau de bord (fiches pas encore à cette étape)
       index.dps.forEach(function (d) {
         var has = files[d.slug + ".json"], step = stepOf(d.slug, has);
-        var li = el("li", {}, [el("a", { href: "#/dp/" + d.slug, class: has ? "live" : "" }, [d.name, has ? pips(step) : el("small", { text: "Pas encore de fiche" })])]);
+        var li = el("li", {}, [el("a", { href: "#/dp/" + d.slug, class: (has ? "live" : "") + (d.hidden ? " off" : "") }, [d.name, d.hidden ? el("span", { class: "offtag", text: "hors ligne" }) : null, has ? pips(step) : el("small", { text: "Pas encore de fiche" })])]);
         li._key = slugify(d.name).replace(/-/g, " ") + " " + d.slug.replace(/-/g, " "); li._step = step;
         entries.push({ step: step });
         ul.appendChild(li);
@@ -671,6 +671,22 @@
     ta.addEventListener("blur", function () { clearTimeout(t); save(); });
     return box;
   }
+  // Page en ligne ou cachée sur le site (Gus 10/11) : `hidden` de l'entrée de data/dps/index.json (le site ne liste ni n'ouvre une
+  // page cachée). Une nouvelle fiche est créée cachée ; on la met en ligne avec l'interrupteur, puis « Publier ».
+  // state.hidden = choix pas encore publié (absent : valeur de la liste ; pas de liste = nouvelle fiche = cachée).
+  function isHidden() {
+    if (state.hidden !== undefined) return state.hidden;
+    var e = index && index.dps.filter(function (d) { return d.slug === (origSlug || state.slug); })[0];
+    return e ? !!e.hidden : true;
+  }
+  function onlineCtl() {
+    var sw = el("input", { type: "checkbox", class: "nodirty" }); sw.checked = !isHidden();
+    var hint = el("small");
+    function txt() { hint.textContent = sw.checked ? "La page apparaît dans la liste des chefs op du site." : "Page cachée : absente du site (liste, liens). Activez puis publiez pour la mettre en ligne."; }
+    sw.addEventListener("change", function () { state.hidden = !sw.checked; txt(); touch(); });
+    txt();
+    return el("label", { class: "showsw online" }, [sw, el("i"), el("span", { text: "En ligne sur le site" }), hint]);
+  }
   function render() {
     view.textContent = ""; editing = true; pagePublish = publish;
     histInit({
@@ -678,6 +694,7 @@
       set: function (h) { state = JSON.parse(h.data); slate = h.refs.slate; pending = Object.assign({}, h.refs); delete pending.slate; render(); }
     });
     view.appendChild(el("div", { class: "dp-head" }, [el("h1", { text: state.name || "Nouveau chef op" }), isNew ? null : progressCtl()]));
+    view.appendChild(onlineCtl());
     view.appendChild(el("p", { class: "lead", text: isNew ? "Nouvelle fiche — collez le lien du bundle Slate pour commencer." : (state.bundle ? "Films synchronisés avec Slate." : "Fiche sans bundle Slate : les films sont figés.") }));
     var nk = origSlug || (!isNew && state.slug); // une fois par fiche ouverte (render est rappelé à chaque changement)
     if (nk) { if (notesFor !== nk) { notesFor = nk; notesNode = notesBox(nk); } view.appendChild(notesNode); }
@@ -1358,10 +1375,15 @@
     }
     // Liste des DPs : ajout (rangé par nom de famille) ou mise à jour du nom (et de l'adresse).
     var dps = index.dps.slice(), i = dps.findIndex(function (d) { return d.slug === (from || s.slug); });
-    if (i > -1) { if (dps[i].name !== out.name || dps[i].slug !== s.slug) { dps[i] = Object.assign({}, dps[i], { name: out.name, slug: s.slug }); } }
-    else {
-      var k = surname(out.name), at = dps.findIndex(function (d) { return surname(d.name) > k; });
-      dps.splice(at < 0 ? dps.length : at, 0, { slug: s.slug, name: out.name });
+    var hide = isHidden(); // nouvelle fiche : cachée tant qu'on ne la met pas en ligne
+    if (i > -1) {
+      if (dps[i].name !== out.name || dps[i].slug !== s.slug || !!dps[i].hidden !== hide) {
+        dps[i] = Object.assign({}, dps[i], { name: out.name, slug: s.slug }); if (hide) dps[i].hidden = true; else delete dps[i].hidden;
+      }
+    } else {
+      var k = surname(out.name), at = dps.findIndex(function (d) { return surname(d.name) > k; }), ne = { slug: s.slug, name: out.name };
+      if (hide) ne.hidden = true;
+      dps.splice(at < 0 ? dps.length : at, 0, ne);
     }
     if (JSON.stringify(dps) !== JSON.stringify(index.dps)) files.push({ path: "data/dps/index.json", text: json({ dps: dps }) });
     // Ce que le robot écrit (images, proportions, types de contenu, films complets) est repris du fichier en ligne : sinon la
