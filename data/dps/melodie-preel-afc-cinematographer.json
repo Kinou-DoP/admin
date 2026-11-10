@@ -225,7 +225,16 @@
       "zoom": 1.06
     }
   },
-  "about": {},
+  "about": {
+    "bioEn": [
+      "Melodie was born and raised in the close suburbs of Paris. She started street photography and went on to graduate film school with a specialization in cinematography. Since then, she evolved in the movie  industry first as a camera assistant and now as a director of  photography."
+    ],
+    "instagram": "https://www.instagram.com/melopreel/",
+    "website": "https://melodiepreel.com/",
+    "pos": "64% 42%",
+    "img": "img/melodie-preel-afc-cinematographer.webp",
+    "og": "img/melodie-preel-afc-cinematographer-og-1794329547597.jpg"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
