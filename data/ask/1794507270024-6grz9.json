@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/124e84"
+      "link": "https://shots.re/124e84",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/porsche-taycan",
+        "title": "Porsche Taycan",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0168a892-29d6-461b-883a-af90524da779-1280x720.2500.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8593/4028bab6-d2c1-11f1-a349-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/iBkWKmPfMaDO-phGfpqRJSjcoaCyimADq4CU-jYsU5g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTZkMTQ5OC1jNmQ1/LTQ5MjItOTA0YS04/YzAzMjA1Nzk3ZTYv/d2hhdHNhcHAtaW1h/Z2UtMjAyNS0wNi0x/MS1hdC0xMS4yMS40/NC0xLmpwZWc.webp"
+      }
     }
   ],
   "at": "2026-11-12T18:14:30.024Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T18:15:34.463Z"
 }
