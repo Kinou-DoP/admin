@@ -5,6 +5,11 @@
   "bundle": "https://kinou.slateapp.com/bundles/77b12b5b-dcfd-11f1-a349-0215583debcb",
   "open": 10277,
   "overrides": {
+    "164": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "461": {
       "types": [
         "Narrative"
@@ -18,6 +23,11 @@
     "767": {
       "types": [
         "Short Film"
+      ]
+    },
+    "770": {
+      "types": [
+        "Music Video"
       ]
     },
     "807": {
@@ -35,6 +45,26 @@
         "Commercial"
       ]
     },
+    "2416": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "2653": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "3083": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "3347": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "3513": {
       "types": [
         "Commercial"
@@ -50,9 +80,29 @@
         "Documentary"
       ]
     },
+    "4131": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4295": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4416": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "4567": {
       "types": [
         "Commercial"
+      ]
+    },
+    "4621": {
+      "types": [
+        "Music Video"
       ]
     },
     "4794": {
@@ -94,6 +144,11 @@
             "https://images.slatecdn.net/UhcJJDftrL7z8Zm6oYcJjbdy9zoAwRPmmTU1nU55Fyo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGRmZTA0/MzAtYTQ5Mi00Mjli/LTg3NTQtNTI1YjI5/MjQ3YTZhL2NhcHR1/cmUtZC1lMi04MC05/OWUtY2MtODFjcmFu/LTIwMjMtMTEtMjgt/YS1jYy04MC0xNy41/Ni4wNC5wbmc.webp"
           ]
         }
+      ]
+    },
+    "5934": {
+      "types": [
+        "Music Video"
       ]
     },
     "5946": {
@@ -306,6 +361,9 @@
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10281/60221f1e-c62c-11f0-9ce3-0215583debcb.mp4",
           "img": "https://images.slatecdn.net/Hs0aUU29hbb5Lq2-j7yHuMYhBy4C9rEKfaDzki9on2s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZDY2NjEwNy0yODYx/LTQ1MmItOTZjNC04/NGE2MTBhNWViMmYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTEt/MjAtYS0xNy4xOC40/Ni5wbmc.webp"
         }
+      ],
+      "types": [
+        "Narrative"
       ]
     },
     "10277": {
