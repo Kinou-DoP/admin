@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1a70a6"
+      "link": "https://shots.re/1a70a6",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/shu-uemura-quad-cealer",
+        "title": "Shu Uemura - Quad Cealer",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bcfc5d33-ecfa-4342-ab8f-8e6ed5f8c96e-1280x720.2500.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10190/db59641b-b018-11f0-9ce3-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/9dpaqJ7lWsmoc7H-RR_4eWFVZ7Ut9IamDWiIi7Y84MY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTViYjI2Yy1jMzRj/LTQyZTgtYmQ2My0w/Mjg4OTIxMWM2ZDYv/MTc2MTIyODA4Njk0/Ny5qcGc.webp"
+      }
     }
   ],
   "at": "2026-11-12T14:39:34.988Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T14:39:56.232Z"
 }
