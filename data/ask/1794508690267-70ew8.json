@@ -2,9 +2,20 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/ven-y-bailame-guille-toledano-stills"
+      "link": "https://kinou.slateapp.com/work/ven-y-bailame-guille-toledano-stills",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/ven-y-bailame-guille-toledano-stills",
+        "title": "Ven Y Bailame • Guille Toledano | Stills",
+        "stills": [
+          "https://images.slatecdn.net/fCgbdJpMZQNxdZcli83mWat8he0B8DhGGHczECPbM94/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTNmYTJj/NTQtYWIzNS00M2Jj/LWEzMDItYmRmMDk4/ZTNjNDk2L2ltZy05/Njg0LmpwZw.webp",
+          "https://images.slatecdn.net/plQasoqbaT87-b_L17WBfJxetWnogEUVTiVfWwiiTbQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTRhMmE4/OGMtYTc0OS00MjNh/LTlkYzktNDY3ODE0/NDZjMmY3L2ltZy05/Njg1LmpwZw.webp",
+          "https://images.slatecdn.net/YJD9AFX1e4T3lwDiEstqJSXvXbZIxhEZzz82IXB-A4s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjAxNzZh/OTUtYzg2ZS00YzY0/LTg4MjktNmQ3OWFh/MDg1NmJkL2ltZy05/Njg2LmpwZw.webp",
+          "https://images.slatecdn.net/onVL1R78fKdm2NAtsvFpeLSE0_1jXeTbBotxlqadxng/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjdjY2Ez/YjQtZmMzNC00MDE2/LTg2ZWUtYzViZmY2/NjYzNTVmL2ltZy05/Njg4LmpwZw.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-12T18:38:10.268Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T18:38:25.783Z"
 }
