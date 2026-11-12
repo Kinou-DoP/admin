@@ -2,9 +2,28 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/harry-potter-and-the-philosophers-stone-stills"
+      "link": "https://kinou.slateapp.com/work/harry-potter-and-the-philosophers-stone-stills",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/harry-potter-and-the-philosophers-stone-stills",
+        "title": "Harry Potter and the Philosophers Stone | Stills",
+        "stills": [
+          "https://images.slatecdn.net/dPXOIW1cl1-53x167SqAxjfq2APvDBfQiP1figIDVw0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjQwZjUw/YjAtOTBiOS00ZjNj/LWE0ZWQtYzVkY2Mz/M2Y4MGYwLzAxLnBu/Zw.webp",
+          "https://images.slatecdn.net/DLCe1Kg6n2eRABanvaoxl8hA1Eh_v5dkBv1la4vqTs4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTU1NjBk/NzctOTc2NC00NTM2/LThmNTAtMTZlMzAz/MDQ1ZWE2LzAyLnBu/Zw.webp",
+          "https://images.slatecdn.net/vFm9HWRVcz8JmNWJmAL7k4S-3sEYO3VYvf9SLhYGd-8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzIwYjAz/MWUtZWFhYy00MDU4/LWEzZWQtNWQ3YmQy/Y2M0OGI4LzAzLnBu/Zw.webp",
+          "https://images.slatecdn.net/tisDfYF7xSmsPqT7wcFiGOAr38Jxs3_KBHDJ93LsFfU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjcyM2Nh/NGItYzdkNi00YTBl/LTgwNTgtMTc3YmZh/NDQ3NDFmLzA0LnBu/Zw.webp",
+          "https://images.slatecdn.net/on_DkT-DbAJY8bgOHOffQXe98SRxGOWwJe0VErGO3iU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzE5OGEw/MTYtMjk1OC00YTEw/LWFmY2YtNGJmZmQ5/YTc3NzE2LzA1LnBu/Zw.webp",
+          "https://images.slatecdn.net/NZ5r1PSVpjzffx_1UtDtQIdbCAw6Gf8QuNBnMQC2qOU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTM5MTk1/YTctMmQxZS00NjE2/LTlmNmItZjE3MTAw/Yjc1YjA3LzA2LnBu/Zw.webp",
+          "https://images.slatecdn.net/0zh2sKj_Eb1GN2mW0YB-Yv1tUCSYy7iGA-1IUJwk3oo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTMzZjA4/OGMtMDRmZC00OWEx/LTlmOWItNGIzZjQx/YjRhOTYwLzA3LnBu/Zw.webp",
+          "https://images.slatecdn.net/liN2lEkwHEELYuu_ifKAD00FHRh6bbAOTOfO9GxIGtw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vM2ZiZGFj/MDUtZTlhOC00MTFi/LWIyZWEtYWE0ZWI0/MGFiYWMyLzA4LnBu/Zw.webp",
+          "https://images.slatecdn.net/MeSR2lJPBafTzk0rjMovmdTiOafoGQQW-5wY3-5nEYA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzVjMTMx/ZDctYWIxMi00MWY1/LThhNGMtNTZjZTI4/MGYxNzFlLzA5LnBu/Zw.webp",
+          "https://images.slatecdn.net/a4n7Hv54Q1M1OnAaU_2LD8FfxPHm_8cOesl5IZspXDw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZGYyMGE5/NzktNTViNS00Njcx/LWI2ZTctNzM1MDM4/NjlmMzZhLzEwLnBu/Zw.webp",
+          "https://images.slatecdn.net/pqX0tvn5mXRT0On5CMuQPp8fEeNgOo21svsDsRY32mg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTAzZTUy/M2UtNTk2Ny00MTQy/LTg2MjUtZGIyMzc1/NzE2NzZhLzExLnBu/Zw.webp",
+          "https://images.slatecdn.net/YhNnx9KOkxMqP5nSMQcEfekJQ_JAxwyiZC3d499i1pw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vY2EzZDU0/NTYtY2RmMy00N2I1/LWFhMzEtMTVmOWNl/YzBjYTlkLzEyLnBu/Zw.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-12T17:43:38.559Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T17:43:54.896Z"
 }
