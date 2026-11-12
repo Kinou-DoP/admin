@@ -54,6 +54,10 @@
         "Short Film"
       ]
     },
+    "522": {
+      "zoom": 1.07,
+      "zoomThumb": true
+    },
     "532": {
       "title": "Van Cleef"
     },
@@ -662,7 +666,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e462bfba-7887-442c-81f9-84d455df05de-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Kbvy2HHs2kQlHYUnYMA3a_S0q0zR15Er_ZPAoje9Kbo/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YTBlMmU0NC03YmZi/LTRiOWYtYjk0YS05/NDJiY2VhYzJhYmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDEt/MTMtYS0xMi4yMy41/NS5wbmc?v=1&format=webp",
       "cat": "SKIN",
-      "slate": 5665
+      "slate": 5665,
+      "featured": true,
+      "featuredOrder": 4
     },
     {
       "title": "YSL - Coeur",
@@ -871,9 +877,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/63657816-b327-4745-92aa-990be87c40c4-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/1uHePa27GAwJXpPeWXcFKrDUaQsMPa9CO69nW8vxYPI/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjQ5LTY3ZjU0OTI0/NDJjMjQ0LjMxMDgx/MDI1LWQyYmZkYjAw/MWU2MTdmNzcxOTFl/MTc2NzI3NDNkYjRm/LmpwZw?v=1&format=webp",
       "cat": "STILL LIFE / TEXTURES",
-      "slate": 9649,
-      "featured": true,
-      "featuredOrder": 4
+      "slate": 9649
     },
     {
       "title": "The Essence of La Prairie",
@@ -1431,6 +1435,7 @@
     {
       "title": "Le Cantique des Oiseaux",
       "sub": "Baptiste Chesnais\nHeko",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1697/39e901a2-d876-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545416692-le-cantique-des-oiseaux-baptiste-chesnais-heko.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/19NY_f76AvYunJ8mt4D_Oj0_UWOZrRjE4ihiU8oKrjk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/ZS1jYW50aXF1ZS1k/ZXMtb2lzZWF1eC01/Nzc5N2EwYjkyYmNm/ZTQ4MjNjNDUyNDk1/YTFmYzRjZi5qcGc?v=1&format=webp",
       "cat": "ARTWORK",
@@ -1457,6 +1462,7 @@
     {
       "title": "Transcendence - Falling Angel",
       "sub": "Timothy Elias Wright\nCadence",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/315/2c14fe87-d876-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357129-falling_angel_edit_v7_final_h264.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/K0f6dX2VkzQCjC9brN9X-61jjUcAB5UvLZ2fo6C4vxk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy90/cmFuc2NlbmRlbmNl/LWZhbGxpbmctYW5n/ZWwtNzU4YTU4ZDYw/Y2Q4MGJjYmZkMmI4/ODU4YTU1ZDFkMTcu/anBn?v=1&format=webp",
       "cat": "ARTWORK",
@@ -1474,6 +1480,7 @@
     {
       "title": "Immersives",
       "sub": "Adrien Servadio\nSplash Prod",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1748/3235fab0-d876-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545418935-immersives_adrien_servadio.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/CUXvWhF2F7l_H0v0UUmJRPiQcZp7EmSqW7aM0DtHoL4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9p/bW1lcnNpdmVzLTE3/NmZkNWEwNTQwOGY0/NDMxOGQyNDhlM2Vk/NTllNmIzLmpwZw?v=1&format=webp",
       "cat": "ARTWORK",
