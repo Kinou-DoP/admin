@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1853d3"
+      "link": "https://shots.re/1853d3",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/maserati-way-too-much-logos",
+        "title": "MASERATI | Way Too Much | LOGOS",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4638e2ea-2491-4b19-935f-9a880f09c50a-1280x720.2500.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9851/cc6336bd-4079-11f0-bfce-022353abf6f5.mp4",
+        "img": "https://images.slatecdn.net/CZqOnmTytKFqXbDa2pISl_BaVTD-qxnuxyq4FDsANvE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTE4NDhmMS05MDU5/LTQ4NGYtOWQyMC0w/NjdlYjNjY2MwMDkv/d2hhdHNhcHAtaW1h/Z2UtMjAyNS0wNi0w/NC1hdC0xMS40Mi4y/NS5qcGVn.webp"
+      }
     }
   ],
   "at": "2026-11-12T18:04:48.458Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T18:05:06.612Z"
 }
