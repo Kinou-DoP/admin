@@ -493,10 +493,10 @@
   // Tableau de bord de la liste, façon jeu vidéo : progression globale (somme des étapes / 4 × nombre de chefs op), une jauge
   // par étape (nombre de fiches qui l'ont passée) ; clic sur une jauge = n'afficher que les fiches qui ne l'ont pas encore passée.
   function progressBoard(entries, onPick) {
-    // ROUND 1 : importé, recadrage & noms, snippet (les stills viendront ensuite) ; ROUND 2 : stills.
-    var N = entries.length || 1, r1 = 0, r2 = 0;
-    entries.forEach(function (e) { r1 += Math.min(e.step, 3); if (e.step >= 4) r2++; });
-    var p1 = r1 / (N * 3), p2 = r2 / N, picked = 0, pickers = [];
+    // ROUND 1 : les 4 étapes (importé, snippet, recadrage & infos, stills) ; pas de ROUND 2 pour l'instant (Gus 12/11).
+    var N = entries.length || 1, r1 = 0;
+    entries.forEach(function (e) { r1 += Math.min(e.step, 4); });
+    var p1 = r1 / (N * 4), picked = 0, pickers = [];
     function bar(ratio, cls, n) {
       n = n || 20;
       var b = el("div", { class: "pbar " + (cls || "") }), lit = Math.round(ratio * n);
@@ -520,15 +520,12 @@
       bar(p1, "xp"),
       el("div", { class: "bnum", text: Math.round(p1 * 100) + " %" + (p1 >= 1 ? " ★" : "") })]));
     var gauges = el("div", { class: "bgauges" });
-    STEPS.slice(0, 3).forEach(function (t, k) {
+    STEPS.forEach(function (t, k) {
       var n = entries.filter(function (e) { return e.step > k; }).length;
       gauges.appendChild(pickable(el("button", { type: "button", class: "bgauge s" + (k + 1) + (n === entries.length ? " full" : ""), title: "Voir les fiches pas encore à l'étape « " + t + " »" }, [
         el("span", { class: "bt", text: t }), bar(n / N), el("span", { class: "bn", text: n + " / " + entries.length + (n === entries.length ? " ★" : "") })]), k + 1));
     });
     board.appendChild(gauges);
-    board.appendChild(pickable(el("button", { type: "button", class: "bround2 s4" + (r2 === entries.length ? " full" : ""), title: "Voir les fiches sans leurs stills" }, [
-      el("div", { class: "r2head" }, [el("span", { class: "round", text: "ROUND 2 ! STILLS" }), el("span", { class: "bn", text: r2 + " / " + entries.length + (r2 === entries.length ? " ★" : "") })]),
-      bar(p2, "", 40)]), 4));
     return board;
   }
 

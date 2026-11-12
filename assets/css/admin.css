@@ -305,7 +305,7 @@ body.vedit-on { overflow: hidden; }
 .pbar i.lit { background: var(--bc, var(--kinou-fg)); box-shadow: 0 0 8px var(--bc, rgba(255,255,255,.6)); animation: plit .35s calc(var(--i) * 35ms + 150ms) both; }
 @keyframes plit { from { opacity: 0; transform: scaleY(.3); } to { opacity: 1; transform: none; } }
 .pbar.xp { height: 18px; --bc: var(--gold); }
-.bgauges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 22px; }
+.bgauges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 22px; }
 .bgauge { display: grid; grid-template-columns: 1fr auto; gap: 8px 10px; align-items: center; padding: 10px 12px; border: 1px solid transparent; background: none; color: var(--kinou-fg); text-align: left; cursor: pointer; transition: border-color .2s, opacity .2s; }
 .bgauge:hover { border-color: var(--faint); }
 .bgauge .pbar { grid-column: 1 / -1; grid-row: 2; height: 10px; }

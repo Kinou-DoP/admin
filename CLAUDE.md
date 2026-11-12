@@ -89,8 +89,8 @@ Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `si
   1 Importé, 2 Snippet, 3 Recadrage & infos, 4 Stills (ordre du 29/10 ; avant : 2 Recadrage, 3 Snippet) (dernière étape faite ; sans entrée : 1 si la fiche existe, sinon 0).
   Fiche : curseur en haut à droite (`progressCtl`, crans + libellés cliquables), enregistré tout seul 0,7 s après (sans « Publier » :
   fichier relu puis seule la ligne du chef op changée, commit « Avancement Nom : étape »). Liste : tableau de bord « jeu vidéo »
-  (`progressBoard` : « ROUND 1 ! » = progression des 3 premières étapes en % (somme des étapes plafonnées à 3 / 3 × nombre de chefs op),
-  une jauge à 20 cases par étape (Importé, Snippet, Recadrage & infos) ; dessous « ROUND 2 ! STILLS » sur toute la largeur (fiches à l'étape 4) ;
+  (`progressBoard` : « ROUND 1 ! » = progression des 4 étapes en % (somme des étapes / 4 × nombre de chefs op),
+  une jauge à 20 cases par étape (Importé, Snippet, Recadrage & infos, Stills) ; plus de « ROUND 2 » pour l'instant (stills remis dans le round 1, Gus 12/11) ;
   typo Press Start 2P (Google Fonts) ; pas de grade ni d'XP, Gus 27/10 ;
   clic sur une jauge = n'afficher que les fiches pas encore à cette étape, combiné à la recherche) et pastilles de couleur sous
   chaque nom (`pips`). Fichier hors des chemins du robot : aucune Action lancée.
