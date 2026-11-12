@@ -2,9 +2,20 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/zara-itx-corea-stills"
+      "link": "https://kinou.slateapp.com/work/zara-itx-corea-stills",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/zara-itx-corea-stills",
+        "title": "Zara • Itx Corea | Stills",
+        "stills": [
+          "https://images.slatecdn.net/Emmj593ZRAH9Oj-lA4wN1AY6XYJ4OhfoiATu_jsQIck/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWJlOGY0/ZTItNDAzZC00ODI2/LWE0YjMtMTI0Mzhk/ZGY1OTJlL2ltZy05/ODU3LmpwZw.webp",
+          "https://images.slatecdn.net/huVeFDATRd6YZFVXkOY-tiS2_3CWpDy_wxhMtIQBvjg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOGVmNjlj/ZjUtZmNhYy00YzQ2/LThhYTEtYTU5YTA2/NmU5NTg5L2ltZy05/ODU4LmpwZw.webp",
+          "https://images.slatecdn.net/nb5BGpWVgZx1KLCfLxQ0t3wBrG0fjkGIwcw-rC3xtr8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzcyNzky/MzEtNzJjYy00ZGZl/LWIyNjMtNmM1Y2U1/NjI1YjVkL2ltZy05/ODU5LmpwZw.webp",
+          "https://images.slatecdn.net/go_yxJgN8CC4JKAVJnjKf_y7LB808wtQK7AWiAg0-PA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGM4MmNi/YzktMGVmYS00ZWE3/LTg3NWUtOTA5OTNl/MThjMTA4L2ltZy05/ODYyLmpwZw.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-12T18:37:25.547Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T18:37:46.263Z"
 }
