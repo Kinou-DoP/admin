@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1a4b71"
+      "link": "https://shots.re/1a4b71",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/ysl-coeur",
+        "title": "YSL - Coeur",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/83e8bcac-07ed-47fe-bd80-d20111430e31-1280x720.2500.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10177/689f6d00-a9d6-11f0-9ce3-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/sE_oiTGR127C1J41QPe1MjUzhzyswc-hM8jzeKEcUL8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZDk4YjQzOS04NzA4/LTRlMGMtODBlYi01/N2MwNTJiZWI1ODMv/MTc2MDUzOTg1MTE2/Ny5qcGc.webp"
+      }
     }
   ],
   "at": "2026-11-12T14:26:16.554Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T14:26:38.310Z"
 }
