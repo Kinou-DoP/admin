@@ -426,13 +426,15 @@
   ],
   "clips": [
     {
-      "title": "Sacrifice • Trailer vostfr",
+      "title": "Sacrifice • Trailer",
       "sub": "Romain Gavras\nIconoclast USA",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11355/33d94995-c946-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b8ca9a29-7ade-428e-8a65-416d5f0c3fc5-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/CInzB4DYVBiqA9f3ojWf4SX2pZ3hhs5xJTzPJNNmPs0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OTM4MWIyZS04NTA3/LTQ3MDAtYjRiYy00/ZjQ0YTQ2NDFiMmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MTUtYS0xMi4yMC41/Ni5wbmc?v=1&format=webp",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11358/f6b90e48-c9a0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d31c837f-7b95-4402-aae9-5b9f70d01409-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/NZFb6IczqlU0rWGB7FZIIi3PFV3SlYmNHHe-JCQaeVE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZGM2NmFmZS00NTQ4/LTRhNTctOTU0NC1j/MjM2MDU4YzYzOTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MTUtYS0xMi4yMC41/Ni5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 11355
+      "slate": 11358,
+      "featured": true,
+      "featuredOrder": 1
     },
     {
       "title": "Les Sentinelles - Trailer",
@@ -1186,17 +1188,6 @@
       "img": "https://images.slatecdn.net/NShaywP27AcfyAYHvgILqm5WGxsOCMO-fljS_XyaeRc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ0MzY5OTMz/L3BldWdlb3QtMzA4/LmpwZw?v=1&format=webp",
       "cat": "AUTOMOTIVE",
       "slate": 906
-    },
-    {
-      "title": "Sacrifice • Trailer",
-      "sub": "Romain Gavras\nIconoclast USA",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11358/f6b90e48-c9a0-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d31c837f-7b95-4402-aae9-5b9f70d01409-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/NZFb6IczqlU0rWGB7FZIIi3PFV3SlYmNHHe-JCQaeVE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZGM2NmFmZS00NTQ4/LTRhNTctOTU0NC1j/MjM2MDU4YzYzOTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MTUtYS0xMi4yMC41/Ni5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 11358,
-      "featured": true,
-      "featuredOrder": 1
     },
     {
       "title": "GENER8ION - STORM starring Yung Lean (part 1)",
