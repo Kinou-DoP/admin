@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1f78e4"
+      "link": "https://shots.re/1f78e4",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/harry-potter-hbo-bande-annonce",
+        "title": "Harry Potter • HBO • Bande Annonce",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/03c9a05b-f9f8-4560-afc7-d79fb65272ea-0x1080.5000.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11196/6a336bdb-a6ad-11f1-a349-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/CpNePYKP8fy4fXbgZ4W2W5OonQlRj8hzW0hhGBTdkMY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZWQzNmQ1ZS01NmVh/LTQ5YzctYWVlMy01/ZjhmY2I2MmU1NzEv/MDUucG5n.webp"
+      }
     }
   ],
   "at": "2026-11-12T17:45:20.566Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T17:45:39.582Z"
 }
