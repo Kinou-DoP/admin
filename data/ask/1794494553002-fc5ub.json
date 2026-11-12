@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1a70a8"
+      "link": "https://shots.re/1a70a8",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/shu-uemura-tsuya-1",
+        "title": "Shu Uemura - TSUYA",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/eeba8097-d838-4089-b448-38cea6073e40-1280x720.2500.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10191/1df324fb-b019-11f0-9ce3-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/Jv8MQrYSJwKFIcmYbSFrBt7muKAet2u2uRkDg1Egimo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTZhMjljZS03NzZj/LTRjOGUtOTJkMC01/Y2UxOThjYmNjODYv/MTc2MTIyODE5MTkz/MS5qcGc.webp"
+      }
     }
   ],
   "at": "2026-11-12T14:42:33.002Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T14:42:58.813Z"
 }
