@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1aea97"
+      "link": "https://shots.re/1aea97",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/anaon-extrait-1",
+        "title": "Anaon | extrait 1",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b708a308-dbf2-4990-994d-a941d11cc5da-1280x720.2500.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10283/0dec16d9-c62b-11f0-9ce3-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/zGUq1OKLKcWuHfniyHCFCJPjBktiM_yBvNKDjuenchQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/ZThlZTliMC1mOTlj/LTQ3MDktYmE5Yi00/YTFhNDI0M2JhNTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTEt/MjAtYS0xNy4wNi40/NS5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-12T17:10:13.992Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T17:10:31.461Z"
 }
