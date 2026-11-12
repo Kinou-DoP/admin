@@ -2,9 +2,11 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/124e8"
+      "link": "https://shots.re/124e8",
+      "error": "ce lien shots.re ne mène pas à une page de stills Slate"
     }
   ],
   "at": "2026-11-12T18:14:10.313Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T18:14:30.519Z"
 }
