@@ -2,9 +2,28 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/jusquau-bout-stills"
+      "link": "https://kinou.slateapp.com/work/jusquau-bout-stills",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/jusquau-bout-stills",
+        "title": "Jusqu'au bout • Stills",
+        "stills": [
+          "https://images.slatecdn.net/uLUrQX0KDM5O4k8b4-q6GpgkgknggoJQpPNI-7bEW6w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWU1OTAx/MDgtNjNhMS00OGEw/LTlkZGMtYWY5Mzk0/YjhhYzNhLzAxLnBu/Zw.webp",
+          "https://images.slatecdn.net/pYdmk9nOX3agOOAMIHGXkt-umCRpKykIuv0uCAwun6Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWY2ZDli/YmItNjllMi00YjJm/LTkwNmMtMDlmMDZk/ZDNmMzgwLzAyLnBu/Zw.webp",
+          "https://images.slatecdn.net/_WBv7YR19yOGf_y93Yw7plk7NIFdgJ5bgDZhXQGEKG4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjhjZGUz/M2YtZGNjMC00ZTc4/LWFiNTMtNGNlOGRh/YjZlNDM3LzAzLnBu/Zw.webp",
+          "https://images.slatecdn.net/2m3o2mUpdFH8lO6-ry9qSHCfPsgrRBbYCJlhSe-U6TI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNGEyNTg0/NGItNzFjMC00NTc2/LWEwYzItM2JjNmQ3/YjhhYzk0LzA0LnBu/Zw.webp",
+          "https://images.slatecdn.net/9PkDxQW1mA_08HKIlwSqCkgT2lqMGfo8SWcQkIgLYK8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYmNkMjA2/ZDQtNWZlNy00ZTUx/LTlhODMtZDRlMjU4/Nzg0YWFkLzA1LnBu/Zw.webp",
+          "https://images.slatecdn.net/FrLCXFDHp5hxiKH6GBDgUIGGdu_v9k-Q3qfNOLbve18/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjRhMTUy/NzMtYmY0NC00Zjk2/LWEzNjYtMDhjYTdh/Y2E3OWU4LzA2LnBu/Zw.webp",
+          "https://images.slatecdn.net/mJx8GEOBjxaXO1Rkf-mUJpbZdcKDNSgzJMP3DorMHCY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMGM1NTRk/MTQtODkxYi00ZjBh/LTg2M2MtZTg4NGU3/OTk4MDU5LzA3LnBu/Zw.webp",
+          "https://images.slatecdn.net/V-CBemX0s2Qxgcrgmf-0EixBGIrkDjB5hWtbqy2L62Y/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzBiYTgw/M2MtYTlkYS00ZmZl/LTg3MmYtOWE2ZTNi/ZTNhMTU2LzA4LnBu/Zw.webp",
+          "https://images.slatecdn.net/lxAANVQVfl3CDoG9WpTSYTjB5MP-Fc_M5dsu2C-69Mw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDExNzg5/YzgtMWJlNi00Nzcw/LWI1NTEtZThlNzA2/NDA4ZWE1LzA5LnBu/Zw.webp",
+          "https://images.slatecdn.net/I2QFI3Y4BheaH8p_nGDak34Mv9R9-llBNYeuEuhnQew/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2MxYTVh/NDQtMmIyYS00ZDhm/LWE3MTEtODFlODFj/ZGJkN2VkLzEwLnBu/Zw.webp",
+          "https://images.slatecdn.net/MEIHs2BbpPoMbvW5VGydT7GXfTG6prh6s144_O7378M/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZDU4ZDIw/ZDQtZjVlNi00ZjA3/LWFmNmMtZWJiZjFl/ZDU2NTNkLzExLnBu/Zw.webp",
+          "https://images.slatecdn.net/syBD2IivsI2iFS4ApGpulMuWoLAJKSMlQqRefnwJwpg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmQyMDZk/NDUtMTIwZS00ZjQ1/LWJhMmItMjk1ZDJk/MzljNjI1LzEyLnBu/Zw.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-12T16:56:32.824Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T16:56:50.936Z"
 }
