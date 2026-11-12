@@ -17,89 +17,137 @@
     "325": {
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.36
     },
     "643": {
       "title": "Scotch and Soda - From Everywhere",
       "zoom": 1.53,
       "zoomThumb": true,
-      "zoomPos": "100% 50.1%"
+      "zoomPos": "51.7% 49.6%"
     },
     "659": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.16
     },
     "681": {
       "title": "Société Générale - C'est Vous l'Avenir",
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.15
+    },
+    "901": {
+      "zoom": 1.5
+    },
+    "906": {
+      "zoom": 1.52
     },
     "1066": {
-      "title": "Nissan X-Trail - The Volcano"
+      "title": "Nissan X-Trail - The Volcano",
+      "zoom": 1.51
+    },
+    "1097": {
+      "zoom": 1.36
+    },
+    "1167": {
+      "zoom": 1.52
     },
     "1225": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.53
+    },
+    "1465": {
+      "zoom": 1.54
     },
     "1523": {
-      "title": "leroy merlin \"life's adventure\""
+      "title": "leroy merlin \"life's adventure\"",
+      "zoom": 1.39
     },
     "1545": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.14
     },
     "1751": {
       "title": "Ikea - Wonderful World"
+    },
+    "1843": {
+      "zoom": 1.35
+    },
+    "1955": {
+      "zoom": 1.52
     },
     "2028": {
       "title": "Don't Grow up",
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.36
     },
     "2198": {
       "title": "Canal+",
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.16
+    },
+    "2266": {
+      "zoom": 1.52
+    },
+    "2306": {
+      "zoom": 1.34
+    },
+    "2395": {
+      "zoom": 1.37
     },
     "2691": {
       "title": "Goal Of The Dead",
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.36
     },
     "2868": {
       "title": "L'Odyssée",
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.51
+    },
+    "2908": {
+      "zoom": 1.48
     },
     "3118": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.14
     },
     "3301": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.24
     },
     "3303": {
       "title": "Paco Rabanne - Invictus & Olympea Legend",
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.35
     },
     "3312": {
       "title": "Orange - Content Battle",
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.35
     },
     "3321": {
       "title": "Hermès - Not So Square"
@@ -107,7 +155,8 @@
     "3433": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.34
     },
     "3450": {
       "title": "Nike - Dream Further",
@@ -128,19 +177,21 @@
     "3872": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.21
     },
     "3979": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.52
     },
     "4067": {
       "types": [
         "Commercial"
       ],
-      "zoom": 1.04,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "zoom": 1.04
     },
     "4279": {
       "types": [
@@ -151,17 +202,20 @@
       "title": "BMW - Sometimes Electric. Always BMW",
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.16
     },
     "4434": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.35
     },
     "4685": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.53
     },
     "5110": {
       "title": "Eiffel",
@@ -169,7 +223,8 @@
         "Narrative",
         "Fiction",
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.28
     },
     "5250": {
       "types": [
@@ -184,12 +239,14 @@
     "5279": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.21
     },
     "5933": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.34
     },
     "6223": {
       "title": "Athena",
@@ -201,7 +258,8 @@
       "title": "Kompromat ",
       "types": [
         "Feature Film"
-      ]
+      ],
+      "zoom": 1.36
     },
     "6256": {
       "types": [
@@ -226,12 +284,15 @@
       "types": [
         "Feature Film",
         "Trailer"
-      ]
+      ],
+      "zoom": 1.56,
+      "zoomPos": "49% 24.2%"
     },
     "6363": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.51
     },
     "6387": {
       "types": [
@@ -265,12 +326,14 @@
     "6906": {
       "types": [
         "Prevention"
-      ]
+      ],
+      "zoom": 1.18
     },
     "6982": {
       "types": [
         "Commercial"
-      ]
+      ],
+      "zoom": 1.2
     },
     "7748": {
       "types": [
@@ -302,7 +365,7 @@
       "types": [
         "Commercial"
       ],
-      "zoom": 1.31,
+      "zoom": 1.28,
       "zoomThumb": true
     },
     "9555": {
@@ -322,7 +385,7 @@
       "types": [
         "Commercial"
       ],
-      "zoom": 1.58
+      "zoom": 1.54
     },
     "10117": {
       "title": "Les Sentinelles",
@@ -340,12 +403,13 @@
       "types": [
         "Commercial"
       ],
-      "zoom": 1.15
+      "zoom": 1.13
     },
     "10723": {
       "types": [
         "Music Video"
-      ]
+      ],
+      "zoom": 1.04
     },
     "10862": {
       "title": "YSL - Myself",
@@ -413,7 +477,7 @@
         "url": "https://www.imdb.com/name/nm1458040/"
       }
     ],
-    "pos": "70% 27%",
+    "pos": "69% 19%",
     "img": "img/matias-boucard-afc-cinematographer.webp",
     "og": "img/matias-boucard-afc-cinematographer-og-1793975630437.jpg"
   },
@@ -448,6 +512,7 @@
     {
       "title": "ATHENA - Trailer",
       "sub": "Romain Gavras\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6343/65a577c1-de99-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9bf7a78a-37f2-4c42-ae33-b4a363c37aa4-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/fgL_Cay0mhjOlapihGy4c4xQB8vf9C-vi1n1qKLo9ds/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NzdmMDdiZi0zZTdk/LTQzM2YtYWZkMi04/YmU5YzM1NjUwNmYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xMC40Ny40/MC5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -467,6 +532,7 @@
     {
       "title": "Eiffel - Feature Film Trailer",
       "sub": "Martin Bourboulon\nWZ Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5110/9859c0ae-de99-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6721049b-341f-401f-861a-cc34c37e90e3-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/WLWvBFZD0XQ_agoo4AsilGFT6LdOfBfJwrUdsqD3Yp4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZGRmZGFmZi00YjE1/LTQxMTctOTQzYy1m/Yzg5MDQ3OWQ0OGUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MTAtYS0xMi4xNS4z/NC5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -475,6 +541,7 @@
     {
       "title": "L'Odyssée | Feature Film Trailer",
       "sub": "Jérôme Salle\nFidélité Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2868/f38b6da3-de99-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1548181354-lodyssee-trailer-jerome-salle.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/F55RahZgRM3N6b-gEnYDdQBr_E19yL4QoQmwGyOg6q8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyMzAyMjEzMTgx/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTE2LWEtMTIuMDgu/MDIuanBn?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -483,6 +550,7 @@
     {
       "title": "Don't Grow up | Feature Film Trailer",
       "sub": "Thierry Poiraud\nNoodles Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2028/2ef742b4-de9a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545431233-27545015_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/4HESS9zywK2mw1HM-bjza4bN4rtWC6Rn5ElrVrJxabU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ2ODc4MDY0/L2Fsb25lLmpwZw?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -491,6 +559,7 @@
     {
       "title": "Kompromat - Feature Film Trailer",
       "sub": "Jérôme Salle\nSuper 8 Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6253/6589dd86-de9a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/73f0ab60-7274-45d9-9349-3eb09b82b6e3-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/k3EAObv1bhi2LMKZcSJ1XhA1POQKKPPhXK6y2zA_B00/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YWQwNjY0OC1kMGQw/LTQzOTEtYTg4YS1h/NGNkYTExNDljZDcv/MTYwODQ1MS5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -499,6 +568,7 @@
     {
       "title": "Koho",
       "sub": "Fleur Fortuné\nDivision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545/aeee9dab-de9a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545410110-58547985_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/EiRyyR2C6vcUc_ip0UwAnT4viD3KrWT-QvL2KxrEDzo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ2NDg3Nzg2/L2tvaG8uanBn?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -507,6 +577,7 @@
     {
       "title": "GOAL OF THE DEAD - SECONDE MI-TEMPS [TRAILER]",
       "sub": "Thierry Poiraud\nCapture [The Flag] Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2691/e1f1e83c-de9a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545835293-goal-of-the-dead-seconde-mi-temps-5btrailer-5d.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/X5LaCWV6AMnAO6KMXNP49PnzgndD0D6P6ta7F-HWCTI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YTc3ZTg5OC0wNjE1/LTQ5N2UtOWQzOS0x/ZDA1N2IxMDI3ZTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MDUtYS0xMy4yNy4z/NC5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -515,6 +586,7 @@
     {
       "title": "L'Affaire SK1",
       "sub": "Frederic Tellier\nLabyrinthe Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/325/f5641286-de9a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357547-sk1-trailer-fred-tellier.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/uWUxMU9w1pvyCxVlM_acC9_vLVKUc7byGqCk-oLvWpE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YjViYzIwNy1kZmZm/LTRmNjItODUwMS04/ZWQzNmZhNmJkNDcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MDUtYS0xMy4yNi4x/Ny5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
@@ -534,6 +606,7 @@
     {
       "title": "John Lewis : snapper the perfect tree",
       "sub": "Mégaforce\nRiff Raff FIlms",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8003/108dff2f-de9b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/93b78c8c-4eee-4bf3-a21c-4111a8d9535f-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FX1oFCj9ZCMzGkYYQVpIPD2XL5VqvJUDmvbsYf6KES0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NTc0M2VmYi0wMzcx/LTRiNTUtYmNmOS0z/NjU2Y2NiMzQyMjYv/MTY5OTg2OTc1NzQz/My5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -571,6 +644,7 @@
     {
       "title": "Winamax",
       "sub": "Romain Chassaing\nSolab Pictures",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6363/343a753c-de9b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ad965a92-350e-4e2f-979f-92d217fb39d0-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/l0kCc8zy-mUlSv6IZXKktssymsKl6Isz1xb5tknsvVk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MTY1OGM4NC1kYzk0/LTRhN2UtYTkwMi03/ZDhlOWRkNzNlMDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MDUtYS0xNy4zMS40/OC5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -590,6 +664,7 @@
     {
       "title": "No answer - Road Safety",
       "sub": "François Rousselet\nAnorak Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6906/5411ef49-de9b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0d7c5058-b688-434f-8636-e5ad57d4b4ef-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/8qdoJuQxq0_qDIcsHTATscA246P4lWvKgjBqYwRvC6E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MDNlNzRkNS1lODRh/LTRiNzctYWQ5Yi1j/MGZlNzc0ZGE4MWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MDktYS0xNi4wMy4z/Mi5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -598,6 +673,7 @@
     {
       "title": "Apple Airpods",
       "sub": "Mégaforce\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6982/6b92c365-de9b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/15a1385b-8bb4-4caf-b081-7bfd471e563f-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/u9pu6Jf5Ts3aBYPHkIKn0SRjTOHFhNv-3tJaMxrkwHA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NTU1MzMwMC00NmYw/LTQ3OGEtYjFlYi1k/ZDBjYWJhMzVjYWEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MzAtYS0xMy4wMS4x/Mi5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -608,6 +684,7 @@
     {
       "title": "Moncler",
       "sub": "Jonas Lindstroem\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6590/7d4d1185-de9b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c507de2e-1781-4374-9ec3-b10a0deb79d5-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/W-6BC9HNAvWkvQylRnhTieeGGn8dgtHIDpfDog8wNC8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZDQwYjQ2YS0wMjNj/LTQ2MGEtYWRkNy1m/NGJkNjY4OTBlOWEv/MTY3MTAxMjY0MjA3/NC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -625,6 +702,7 @@
     {
       "title": "Diesel x Francesca",
       "sub": "François Rousselet\nDivision Paris",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4279/a4c909ca-de9b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/37c5745c-a8c8-430d-b4e5-ae759fa1db77-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ZRBnM3sr5FDkGsF6tTiGYxQg1g3bZ49f586pomCkDZA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyMzE3MDU3NTE2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTE2LWEtMTUuNTUu/NDEucG5n?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -635,6 +713,7 @@
     {
       "title": "The Chanel Pharrell Collection",
       "sub": "Fleur Fortuné\nDivision, Walter Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3301/cdaca4e2-de9b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/48c36f3a-91e2-490d-b796-279cddd8258f-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/iSFXHqGTyhLMFvFs5h81tj305pILOWE-ulv-D-QnB74/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/M2Y4M2NmYy1kZTk4/LTQyMjMtYWJlMS04/ZGFlYzNhZjRlYTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjktYS0xNy4xMS4w/MC5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -643,6 +722,7 @@
     {
       "title": "leroy merlin \"life's adventure\" | reynald gresset | la pac",
       "sub": "Reynald Gresset\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1523/0ff902bf-de99-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545409678-40680004_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/_uyMaRZSGoS_A6mt_c0GYF7q87G8uXAFDcRXsk_d1sc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyMzAyOTQ1NTgx/LzEuanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -651,6 +731,7 @@
     {
       "title": "nike \"da da ding\"",
       "sub": "François Rousselet\nDivision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2306/2bb6047c-de99-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ed37083-d5b9-4291-8e1a-467eb1cc33af-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Jt1aBGCx-g-equ3v9n-9p1ku31fQnjnhiC7yJeB0ObA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YjBiYmIyYS01NjVk/LTRjYjItYWZhYy00/Y2E3MWU4NWIwYjkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjktYS0xNS40OS40/Ny5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -659,6 +740,7 @@
     {
       "title": "Sega",
       "sub": "Romain Chassaing\nSolab Pictures",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4685/499ad2fe-de99-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/56621212-1bea-4d51-a974-c90756155fab-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/gqkHaYNZ4MpGRD1OS0BcnvU5pJ9K8zrXjHBlAEQETiM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MTViYTY4YS1mZjEy/LTQwNDctODVkOC03/NDljMGI4ODcwNjkv/c2VnYS5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -667,6 +749,7 @@
     {
       "title": "Orange | Content Battle",
       "sub": "François Rousselet\nInsurrection",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3312/1a807d42-de95-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1555317996-orange-francois-rousselet-insurrection.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/XUwnNstVfn7ym95RynWS2ccZe3bjB_D4ap3lorPk1ng/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ3MzcwOTc4/L29yYW5nZS1iYXR0/bGVzLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -675,6 +758,7 @@
     {
       "title": "Lloyds Bank",
       "sub": "Frédéric Planchon\nAcademy Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1465/4bfb2b51-de95-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545407105-41544032_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/wSOVwHNP35QGEedwGvk8UHMcno1tEFeEcQ26f-_ZhSg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NDllODAxOC0zZmE0/LTQ5OTAtYWMyMy03/MGViMzdhYmZiYjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MDUtYS0xMy4xOS4z/NC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -683,6 +767,7 @@
     {
       "title": "Paco Rabanne - Phantom",
       "sub": "Antoine Bardou-Jacquet\nPartizan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5279/73f2ac89-de95-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fe7e3ab5-391b-4093-8acd-8ef929f4aa2c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/EQERHhhOdF8dynEok-2D2MjQC2M3zIuvUvvLw7P-Ykw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZjJkZDAyMS0xOGZh/LTQzOGMtOGRkMC03/OGM4ZGIwNzk1N2Yv/ZTJkZDBlZjNhMTYw/YmFmNi0yLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -691,6 +776,7 @@
     {
       "title": "Koho",
       "sub": "Fleur Fortuné\nDivision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545/aeee9dab-de9a-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545410110-58547985_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/EiRyyR2C6vcUc_ip0UwAnT4viD3KrWT-QvL2KxrEDzo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ2NDg3Nzg2/L2tvaG8uanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -699,6 +785,7 @@
     {
       "title": "Bacardi - Conga",
       "sub": "Henry Schofield\nCaviar London",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6256/b8f56765-de95-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/892b6f33-0723-453b-8b8a-9b4a97439c81-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/kP7C2iFtPnvKyotduccCtN0AAriphv5hh4arqtKPHBU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NzdkZTZiYy05OTFi/LTQzMDctYmNjZC02/NmE5YmVjOWYwZDIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MTktYS0xMS4zMS40/My5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -707,6 +794,7 @@
     {
       "title": "Volvo switch",
       "sub": "Gustav Johansson",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3741/684660a9-de96-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1570105391-volvo-switch-directorscut-90s-1080p.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/78fCJd4mut7YvOI1ay-LBK38cH8Hfh7TjaiNeifb9To/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NzQxLTVkOTVlODJm/ODgwYzQ5LjIyNTM3/MTM0LTFlMjM1YjJl/ZGE4ZGZiZTdiYWYz/YTRkNjA0YTEzOTI1/LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -715,6 +803,7 @@
     {
       "title": "Nike | Dream Further",
       "sub": "François Rousselet\nPrettybird LA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3450/a6840180-de96-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1559895411-y2mate.com-nike-dream-further-hovkehadcg4-1080p-3.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FGb7scKUKXrCfXhzu6zHktwLRuNgtdsiIm8mGgseLc8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9u/aWtlLWRyZWFtLWZ1/cnRoZXItNWM0NjRl/MDZlMjNlOTcwNzUx/NmZhZDAxMzAxYTBm/ZTQuanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -723,6 +812,7 @@
     {
       "title": "canal+ | ivan grbovic | wanda",
       "sub": "Ivan Grbovic\nWanda",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2198/d529711d-de96-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545439625-master-canal-comete-vl-va-passep-181017.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/V6Crilf1I2E58Uud09uW8KuHSlELkFv_9gvuKfYzRXA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ3NDcyNjM1/L2NhbmFsLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -731,6 +821,7 @@
     {
       "title": "GEODIS - Keep Rising",
       "sub": "Reynald Gresset\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3979/4fb5f0bc-de97-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8bc6c081-40d0-4ec0-9b73-74aa1848381e-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/iKfoh0YKkiGq0gw0RPgESf1hAeuMxm6gVOUXCGNKSJk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MzQ5NTMxMS0xNmVj/LTQ5NjUtODM4ZS1l/MTAyOTI3YTE0Y2Uv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNS4wNy40/OS5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -739,6 +830,7 @@
     {
       "title": "Experience S Cube",
       "sub": "Antoine Bardou Jacquet\nPartizan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2908/79d1d818-de97-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545844233-canal-2b-experience-s-cube-abj.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/JAGu-irYed-SMYPgyd9HUDqMu-NdxPs2szHmP52z8jQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTE1MjY4Njk1/L2V4cGVyaWVuY2Ut/cy1jdWJlLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -747,6 +839,7 @@
     {
       "title": "Diesel SS20 - Superhero",
       "sub": "François Rousselet",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6257/c3227f67-de97-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/06f16526-9f55-47ea-9f55-389d448058a3-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/mLoc68MXqRhl-r7Yq8-edKQ4BAtDyA4yZmhvquOCbY0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YTdhYTY5MC0yNTUx/LTQxYTQtYjU1My0w/ZTkyYjJhZDg4ZTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MTktYS0xMS4zOS41/Ni5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -755,6 +848,7 @@
     {
       "title": "Perrier",
       "sub": "Manu Cossu\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3433/fa270661-de97-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1559558330-y2mate.com-mona-lisa-by-perrier-105-secondes-pvgkmrxw0dw-1080p.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/99wBDgcZ3q_da5Y8BpJ6ZVHoNF9gfKMN0SkoxZVrGEk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ3MjYwNzQ5/L3BlcnJpZXIuanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -763,14 +857,16 @@
     {
       "title": "Moet & Chandon",
       "sub": "Manu Cossu\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1225/40c09238-de98-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545399477-57035635_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/yXF3d1nUeKg8CWsJZIGud3cChjZQArCN68oZoWGW8-4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ3Njc4MDM5/L21vZXQtZXQtY2hh/bmRvbi5qcGc?v=1&format=webp",
+      "img": "https://images.slatecdn.net/BJT9uFirY4XV7wG1CcF0VuiUV44lgdyV5_0mUb6F_Eo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZGExMDRhMC1jZmE1/LTQzMmYtOTExNi04/YzJkNDE4MGM2OTMv/MTc5NDQ4ODE4NTI3/My5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 1225
     },
     {
       "title": "ikea \"wonderful world\" | reynald gresset | revolver films",
       "sub": "Reynald Gresset\nRevolver Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1751/ba9a08c5-de98-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/31f37668-cf68-4d7a-b678-4601e92cb493-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Kcnm__IlCIDX8kLAadARzhbOca5weakrCqf2vAXDC70/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZjhjNDI2Ni03ZjE5/LTQxYTYtYTViMy0y/NGQ0MDhmZGIyMzAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNC40MS41/Ni5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -779,6 +875,7 @@
     {
       "title": "La Charge",
       "sub": "Thierry Poiraud\nRods",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1843/f0ec64bd-de98-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545423042-canalsat-thierry-poiraud-rods.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/cIkMgnsuXiItCAFSgAStg7w4k8ZdecVXqwh0ziDtsW4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTE0MTI5ODIz/L2xhLWNoYXJnZS5q/cGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -787,6 +884,7 @@
     {
       "title": "Carrefour 60 Noëls déjà",
       "sub": "Thierry Poiraud\nInsurrection",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3872/ef4e03be-de90-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dd6764f7-af01-4bc0-9604-6b06d23ac86d-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/OIUr0fd6h7LJpYWFSK-zZ2edPBgMVHXhFU-occlrKjg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NWFjZGFkMy00YjA2/LTQ1OWUtYWJhMC02/ZDJkZmRkMDVmZGUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNC4wNS4z/NC5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -795,6 +893,7 @@
     {
       "title": "Save The Children",
       "sub": "Frédéric Planchon\nAcademy Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/659/594106da-de91-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545376289-save-the-children-censored.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/JVMVbeFDffrB2zdSE80-Wx54-oY6OERQFCh2CWVWvls/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTE1NDMzNzU2/L3NhdmUtdGhlLWNo/aWxkcmVuLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -803,6 +902,7 @@
     {
       "title": "British Telecom",
       "sub": "Frédéric Planchon\nAcademy Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2266/838a4de7-de91-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545443114-bl2_70s_dircut_180531_grade.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/WKR16D5Xwmajchs9g1pPKc_JueILH0C8wsADm7Nj-74/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ4MDYyMTE5/L2JvdXlndWVzLmpw/Zw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -811,14 +911,16 @@
     {
       "title": "Scotch and Soda I From Everywhere",
       "sub": "Fleur Fortuné\nInsurrection",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/643/19d7598a-de92-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545375226-scotch-and-soda-i-from-everywhere-by-fluer-fortune-281080p-29.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/zBoTczJ0265bbxcV_P_s9rwbPozy5OJRYg8FcZnW02s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1Mzc1MjA4LzUw/MTEwMTIwX2xhcmdl/LmpwZw?v=1&format=webp",
+      "img": "https://images.slatecdn.net/sG5f76F-P1xaZY9E2PBsk0YNazybFFRWfCoAeiq3n4o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YjA0YmFlMC00ZWU2/LTQ2YTItYjZkNS00/ZjFmN2YxZGY0ZWQv/MTc5NDQ4NTUwMjQ2/OS5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 643
     },
     {
       "title": "Société Générale | C'est Vous l'Avenir",
       "sub": "Antoine Bardou-Jacquet\nPartizan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/681/a05ba30d-de92-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545376915-63560019_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/tkrf87svcVMCG-yfIVg4bNs-xBUtqiqmSh8laRjcAPw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTE1MDg2Nzgy/L3NvY2lldGUtZ2Vu/ZXJhbGUuanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -827,6 +929,7 @@
     {
       "title": "EDF",
       "sub": "Rob Chiu\nStandard Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1955/0ece1f7c-de93-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545428639-edf_rob_chiu_standard_films.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/dbaMeReYMx4_We-O2mE8rNyuCGiwaanvb6JyAE2i_sg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTE1NjQ4MjM2/L2VkZi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -835,6 +938,7 @@
     {
       "title": "Nissan X-Trail | The Volcano",
       "sub": "Reynald Gresset\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1066/6367e251-de93-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/728e5f75-0b18-448b-8baf-13e737bebe0d-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ZWl-fDY_O1gpVRrTn3Td2uyNPj_6TlQQEIKhiQD7I-U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/OGFmZDhjMi00MzQ5/LTRkNDgtODUxZC1j/ZTVkM2IyOWIyZjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xMi4zOC4w/MS5wbmc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -867,6 +971,7 @@
     {
       "title": "Contrex",
       "sub": "Frédéric Planchon\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2395/8f0f3ecf-de93-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545448662-40795152_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/VcxGGbrgVqFJdjR6gIIS68rmfMrzU-TOp0YnE0hslpo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTE3MzA4MDcz/L2NvbnRyZXguanBn?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -875,6 +980,7 @@
     {
       "title": "NF - La Sérénité Certifiée",
       "sub": "Thierry Poiraud\nRods",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1097/b344dbdf-de93-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545393597-nf-thierry-poiraud-rods.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/x7nf_B23pjJqApugBjcKvig59Ff2XTd9WqHqqyqn_f0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3OTE3MTAwNzgx/L25mLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -883,6 +989,7 @@
     {
       "title": "Mr & Mrs Smith",
       "sub": "Reynald Gresset\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1167/01cce7df-de94-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545397281-35856579_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/L_VaD6FXNKxon4-ZBQ7pzk47gFp643d4VDoBP6Tpefg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ0MTE0Nzky/L21yLW1ycy1zbWl0/aC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
@@ -922,6 +1029,7 @@
     {
       "title": "Dior - Miss Dior",
       "sub": "Manu Cossu\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2102/2b1aa9a6-de94-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545436343-46065730_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/p49_s3XfQMD26ZmhIz5P1tv6nYvd8yEo2Y2Y-LQpj_s/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ5Mjc2NDY4Nzk4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDE5LTAy/LTA0LWEtMTEuMzMu/MDUucG5n?v=1&format=webp",
       "cat": "BEAUTY / LUXE",
@@ -966,6 +1074,7 @@
     {
       "title": "Paco Rabanne - Phantom",
       "sub": "Antoine Bardou-Jacquet\nPartizan",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5279/73f2ac89-de95-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fe7e3ab5-391b-4093-8acd-8ef929f4aa2c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/MxCy39Gy7qRYi4th0lj1P-J0LwRCE_FTaFY-gZkXy3o/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/ZjJkZDAyMS0xOGZh/LTQzOGMtOGRkMC03/OGM4ZGIwNzk1N2Yv/ZTJkZDBlZjNhMTYw/YmFmNi0yLmpwZw?v=1&format=webp",
       "cat": "BEAUTY / LUXE",
@@ -992,6 +1101,7 @@
     {
       "title": "Paco Rabanne | Invictus & Olympea Legend",
       "sub": "François Rousselet\nInsurrection",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3303/dbaefcde-de8c-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1557156834-paco-rabanne-epic-race-va.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/fvMkpE0XF36A8Sd5RRVYg3lNQAbaiHEbPm5IqdbZ-30/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NzY2NmI4YS05MGNh/LTRiYTktYWViYS02/YWU5NTUzZjdjNjQv/YjBiZjI1MGExMmVl/YmZjMC5wbmc?v=1&format=webp",
       "cat": "BEAUTY / LUXE",
@@ -1000,6 +1110,7 @@
     {
       "title": "Sì by Gorgio Armani",
       "sub": "Fleur Fortuné\nDivision Paris",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3118/08c74b5a-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1549278190-gorgio-armani-si.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/8IWJcAoTKvowd3fa1DC99rGyI0lcvdDJbWSVDhm1FJQ/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YjcwMTY2NC05YzUz/LTRiYzQtODdlZi04/MjJhZDc5NWMzZjcv/MzYzNTA3Zjc1NzVl/ZjhjNi5wbmc?v=1&format=webp",
       "cat": "BEAUTY / LUXE",
@@ -1017,6 +1128,7 @@
     {
       "title": "ysl black opium | jonas lindstroem | iconoclast",
       "sub": "Jonas Lindstroem\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/129/249f537d-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545349472-59541652_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/urawIgV7JrJo5e0bHLqcqKWkXJ2Lemv7TsRsuFQOjPY/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YTZlOWQzNy0xYzg5/LTQ4Y2YtOTg3OC00/MjEyMDMzYWRiZTkv/NmNjMWEwNzZhMGE2/ZmI4Yy5wbmc?v=1&format=webp",
       "cat": "BEAUTY / LUXE",
@@ -1025,6 +1137,7 @@
     {
       "title": "Hermès | Not So Square",
       "sub": "Laura Weaver\nStandard Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3321/38d48159-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1556110301-190418-hermes-silk-62s-dircut-h264.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/KxU4JxO54GosbvOSCDlzVnC10y_cYmXj3swjuoXnnWk/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MWI0ZjhlZS0wOGU5/LTRmMjAtOTkxNy02/YjIzYjlmNDc2ZmMv/YmM4NThiM2Y1NDY1/Y2NlYS5wbmc?v=1&format=webp",
       "cat": "BEAUTY / LUXE",
@@ -1042,6 +1155,7 @@
     {
       "title": "The Chanel Pharrell Collection",
       "sub": "Fleur Fortuné\nDivision, Walter Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3301/cdaca4e2-de9b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/48c36f3a-91e2-490d-b796-279cddd8258f-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/H-B7udKCxZyhkgORGcMM2pF5h_8-hilrlPq1hm-A5Xc/rs:fill:1920:1080:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/M2Y4M2NmYy1kZTk4/LTQyMjMtYWJlMS04/ZGFlYzNhZjRlYTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjktYS0xNy4xMS4w/MC5wbmc?v=1&format=webp",
       "cat": "BEAUTY / LUXE",
@@ -1059,6 +1173,7 @@
     {
       "title": "Mercedes-Benz x Moncler",
       "sub": "Thibaut Grevet\nAnorak Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6843/501d9822-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/65c1d19b-f253-4c28-a636-349470c5b971-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/tIuNI9bDFEZ2LVyZolaz-AezutpcTRGvHi_P_y-du_k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/ZTNmMTYwOS0zZTUy/LTQ1Y2YtOGE1Mi0x/NzJiMjhlYTEwMGYv/MTY3NzA4NTU4OTUy/NC5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1080,6 +1195,7 @@
     {
       "title": "Renault Megane - Horses",
       "sub": "François Rousselet\nDivision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5933/6dc3426d-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd6e5a4c-0288-4162-82ea-f3c17516ad6e-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FpXGBkRpZN_IEWVM4HwWj_Hwx9xXyvTxjCc10pYy7vo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NzM0YjU5YS03OTlm/LTQwMzctOGY3OS1k/MmY0MzA3ZGM2MWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDQt/MjgtYS0xMS4yNi4z/OC5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1088,6 +1204,7 @@
     {
       "title": "Renault Pixels",
       "sub": "Thibaut Grevet\nDivision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6786/913975ea-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/13ae3145-6ae8-4587-819a-d7f1fe495f86-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/BPJKZZ05fysdLEAUYMBZV8HQMlguIFKdLTU7e1G_w0Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZTNlMjhlYS0xMmFm/LTRiYzEtYTRhZS0w/M2NlNzA2M2M2M2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MTMtYS0xMC4yNC4x/OS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1096,6 +1213,7 @@
     {
       "title": "Citroën C4 - Happy Day",
       "sub": "Thierry Poiraud\nInsurrection",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4434/a6774603-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/71edd173-6571-4d33-a0a9-abdc4522097c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/sIsuMcDe5XKkiP5dVwYSjBDDRBfEzbWh-NTPgUKbGPg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwMDc3MzU3MjY0/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTE0LWEtMTEuNTUu/MjcucG5n?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1104,6 +1222,7 @@
     {
       "title": "Volvo switch",
       "sub": "Gustav Johansson",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3741/684660a9-de96-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1570105391-volvo-switch-directorscut-90s-1080p.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/78fCJd4mut7YvOI1ay-LBK38cH8Hfh7TjaiNeifb9To/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NzQxLTVkOTVlODJm/ODgwYzQ5LjIyNTM3/MTM0LTFlMjM1YjJl/ZGE4ZGZiZTdiYWYz/YTRkNjA0YTEzOTI1/LmpwZw?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1112,6 +1231,7 @@
     {
       "title": "Toyota",
       "sub": "Rob Chiu\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6785/b71eec94-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8733768d-cf9b-4ce2-92e8-ee7efecee492-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/r2Up7IU107uVMIwrY9ZX-8bGfsfU8w8G5mr9pTvrQoQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MmQ2ZjNkYy00NzFm/LTQwNzMtOGY2NS1k/MWRhYWVmMDZjYzcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MDktYS0xMy4xNy40/MS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1120,6 +1240,7 @@
     {
       "title": "BMW | Sometimes Electric. Always BMW",
       "sub": "Rob Chiu\nIconoclast London\nco-DoP Lara Perrotte Boucard",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4302/d73633ac-de8d-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7de94201-48bb-4fa1-aebe-7511450304b0-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ZqP-_pEQ6MxQpyR-biupwyHxDnOZmseqLdnyxg6CPLI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMDA3NjYyOTU2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTI0LWEtMTYuMDcu/MDMucG5n?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1128,6 +1249,7 @@
     {
       "title": "BMW iSeries",
       "sub": "Manu Cossu\nIconoclast Germany GmBH\nco-DoP Lara Perrotte Boucard",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2328/21ec93af-de8e-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546527718-55765863_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/r-p1x94Sh5Vvb0a8_4-4egVQQ0odRD-Jf8lrhHDBIFE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/bXctaXNlcmllcy02/NjkzY2Q0NjExOWM5/Y2JkNzBmZDRlNjZj/YzVmMzFlNC5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1136,6 +1258,7 @@
     {
       "title": "Nissan X-Trail | The Volcano",
       "sub": "Reynald Gresset\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1066/6367e251-de93-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/728e5f75-0b18-448b-8baf-13e737bebe0d-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/ZWl-fDY_O1gpVRrTn3Td2uyNPj_6TlQQEIKhiQD7I-U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/OGFmZDhjMi00MzQ5/LTRkNDgtODUxZC1j/ZTVkM2IyOWIyZjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xMi4zOC4w/MS5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1152,6 +1275,7 @@
     {
       "title": "Peugeot 5008",
       "sub": "Jérôme Salle\nIconoclast",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/901/3798f11a-de8e-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545388008-peugeot-5008-director-26-2339-3bs-cut-2.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/HQ3mYe-uWNJNvZfFPJ67E2xXjwMDGBbuUfxcXRxtnrc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQzODQ4MTQx/L3BldWdlb3QtNTAw/OC5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1160,6 +1284,7 @@
     {
       "title": "Volvo XC60 | Dircut",
       "sub": "Jérôme Salle\nNew L. Film AB",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/189/1faeb7fc-de90-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545351686-volvo-jerome-salle.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/jYLHE8y6XV8d85uQf1CLLEzH8p4dhaJUsFDWgxgjoKw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzUxNjczLzQ4/ODAwODM1X2xhcmdl/LmpwZw?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1168,6 +1293,7 @@
     {
       "title": "Mr & Mrs Smith",
       "sub": "Reynald Gresset\nLa Pac",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1167/01cce7df-de94-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545397281-35856579_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/L_VaD6FXNKxon4-ZBQ7pzk47gFp643d4VDoBP6Tpefg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ0MTE0Nzky/L21yLW1ycy1zbWl0/aC5qcGc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1176,6 +1302,7 @@
     {
       "title": "Citroën",
       "sub": "Thierry Poiraud, François Rousselet\nDivision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8233/3a611132-de90-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0b50551c-cd90-46de-9b29-92483ba1d335-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/4r37MfrmtEC2g1d-LClIxaykrz3WrnNuUYkdkTr8deA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NTU5MGVmOC04NDJk/LTQzMTMtYTU2ZS05/Yzg1ZDk5NmNiZTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDEt/MjMtYS0xMi4yNS41/Mi5wbmc?v=1&format=webp",
       "cat": "AUTOMOTIVE",
@@ -1184,6 +1311,7 @@
     {
       "title": "Peugeot 308",
       "sub": "Rob Chiu\nStandard Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/906/8f2f8354-de90-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545388213-peugeot-308-rob-chiu-standard.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/NShaywP27AcfyAYHvgILqm5WGxsOCMO-fljS_XyaeRc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3ODQ0MzY5OTMz/L3BldWdlb3QtMzA4/LmpwZw?v=1&format=webp",
       "cat": "AUTOMOTIVE",
