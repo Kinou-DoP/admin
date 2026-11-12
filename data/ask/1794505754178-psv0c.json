@@ -2,9 +2,42 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/lhomme-qui-retrecit-stills"
+      "link": "https://kinou.slateapp.com/work/lhomme-qui-retrecit-stills",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/lhomme-qui-retrecit-stills",
+        "title": "Lhomme qui rétrécit | Stills",
+        "stills": [
+          "https://images.slatecdn.net/k8VDn7xplC09fNJU03LaGebLwL27XGxzDq_uSe-STrg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTljNDlj/ZWYtMDVhZS00M2Iw/LTlmNDMtMzM4NTA0/ZDcyYmRlL3N0aWxs/cy0wMDA4NjQwMC5q/cGc.webp",
+          "https://images.slatecdn.net/kYL0xa_8Zo7q3pT6g7_tp0aSZ-qGVRbMqgEbqO-TT74/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZGMzNzI5/NmMtNGVhYS00MDNk/LTkxNTEtYzQ5OTJh/YjgwYzNjL3N0aWxs/cy0wMDA4NjQwMS5q/cGc.webp",
+          "https://images.slatecdn.net/si2izcZ02VyVWPPWR9n7X1V8IOrMvWlYIOPrJHXQYiM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYThkNWNh/MjQtMzQ2Zi00Njgx/LTgyMGQtMTNiMjQ1/MjA4ZjFlL3N0aWxs/cy0wMDA4NjQwMi5q/cGc.webp",
+          "https://images.slatecdn.net/vxdd4X8gXJMiuyRqp9DABVforpkRz4WV9uVxmfip9l4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTBhY2Uw/YWUtMjYzZC00OTMw/LWEyNmMtMDBmN2Y4/YzI4ZDg0L3N0aWxs/cy0wMDA4NjQwMy5q/cGc.webp",
+          "https://images.slatecdn.net/SE1NDY67b3SQPp4-ALFgkI1fmc-jBT1xMSkb0ux5isQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWNkMmIw/N2MtNTY2Ny00ZWM1/LWI3MGEtMjA5MDEz/NTQyOWFkL3N0aWxs/cy0wMDA4NjQwNC5q/cGc.webp",
+          "https://images.slatecdn.net/N7juD6hk0leUvIt7s1ssgTpf5xEmBI52PEJhtjAwxA4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTU3MmIx/Y2UtZGExZi00ZDBk/LWE3ZTEtYWRkNGI0/NjQ3YjM4L3N0aWxs/cy0wMDA4NjQwNS5q/cGc.webp",
+          "https://images.slatecdn.net/MvNI2id1CGu5QH9wX1z-V02jm3IMlboHxd-_02xqgZM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTJmZjc5/MmUtMmE3NC00OTFi/LTg5NmQtYjQ0ZmQ4/MWNhODg0L3N0aWxs/cy0wMDA4NjQwNi5q/cGc.webp",
+          "https://images.slatecdn.net/8sotBPpYWPaAvYviFH4DN1laE9CeoWaMz43_obufcpM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDQxOWE4/NzYtMWNiYS00MGI5/LThiZjItZDAyOWIz/OWIzYmIzL3N0aWxs/cy0wMDA4NjQwNy5q/cGc.webp",
+          "https://images.slatecdn.net/vkgxaDlwF9uM75_fXPUHGEexczQlFhn-cT3C6MYkjRA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTkzOTcx/YTctMDMwMS00MmIw/LWIwYzQtMDlmZmYw/YTRmYmZjL3N0aWxs/cy0wMDA4NjQwOC5q/cGc.webp",
+          "https://images.slatecdn.net/JB3qrpuKnmpMst75C_e5eDWqPJmDQREKoCa2Bm9OuRk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzU2Yjcw/MTEtNjRkZS00Yjc2/LWE3N2UtOWZhYjVh/ZTQyNWZjL3N0aWxs/cy0wMDA4NjQwOS5q/cGc.webp",
+          "https://images.slatecdn.net/ZvsvFl_8jhPgh7jHY05SE6XEht2GhO5kY5XfQB-u_F4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTVjYWFj/NDctNmRmMS00NDc2/LWI0NmUtYTAyMTc2/NjRlZDE0L3N0aWxs/cy0wMDA4NjQxMC5q/cGc.webp",
+          "https://images.slatecdn.net/Y7orUOt6YMWPTHYsssoND1o2InAQxZNQ0d_5aTyeigw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTliZTcz/NjAtM2RjZS00ZmU5/LTllNmEtY2QwZjRl/NmY2NGE1L3N0aWxs/cy0wMDA4NjQxMS5q/cGc.webp",
+          "https://images.slatecdn.net/4cyN4hgyP4dQpCRwHd-OTeol5Bjc-UaLsV9XTUCA6WI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTVkNGMy/NjItNjk2ZS00OTEz/LWE3OGYtNGEwMDFj/NmFhYThlL3N0aWxs/cy0wMDA4NjQxMi5q/cGc.webp",
+          "https://images.slatecdn.net/gXxyzuOs1SnuA-1kG_Er9s7W64CNzcSLVn8YDBrGuq0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmM5MmE0/OTMtN2E3ZC00Njdm/LWJmM2MtMjZmNjk5/MjgwZGNlL3N0aWxs/cy0wMDA4NjQxMy5q/cGc.webp",
+          "https://images.slatecdn.net/SZFd39FhyD0W7UC2JjML-27B76N0IPsXPMGnKTu5R6Y/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMjdkYmY0/Y2QtYzgyYy00MjJl/LWI0ZWYtOWE0NTdk/YjIxNjkwL3N0aWxs/cy0wMDA4NjQxNC5q/cGc.webp",
+          "https://images.slatecdn.net/cCKkfdbjFbHMb282x5fkwWXmvPGweEH5YfM8MZzrxVw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNmM0Y2Uy/MTgtNGRiZi00NmEx/LTk0YjUtMjJkYWIx/ZmZlM2RiL3N0aWxs/cy0wMDA4NjQxNS5q/cGc.webp",
+          "https://images.slatecdn.net/iHrLdOSoMvB_TCVjH2yQCwmZ6EhzDzP3qYCWuNjLPms/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjE5Yzk0/M2YtNzY0MS00OTA0/LWI4ZTQtNmQxNjQy/M2E4ZDEwL3N0aWxs/cy0wMDA4NjQxNi5q/cGc.webp",
+          "https://images.slatecdn.net/0hs-dy8OzYZD9PCvIGLCcT0jf_SV5iQgMh3xlGkD5wE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTFiODc4/NmQtYzFkOS00N2Zh/LWJlNWItYzYyZjdl/MDI4MDk4L3N0aWxs/cy0wMDA4NjQxNy5q/cGc.webp",
+          "https://images.slatecdn.net/5CW4wNTyrve7D3uqrT6JTgc2hJiOBLqhzP-swEsHtDQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTdhYmY1/ZjMtMTc2MC00MWQw/LTkxYjQtZjhmNjYw/MjEzZDdjL3N0aWxs/cy0wMDA4NjQxOC5q/cGc.webp",
+          "https://images.slatecdn.net/HZkcDD9ktA4PT8eBB4cJBYjsMp-ijKhXUU-tTOoWmcs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWY0Nzk2/OGItZTQ0Zi00YWNm/LWExZTUtZDEyNTNl/MmFlNTA3L3N0aWxs/cy0wMDA4NjQxOS5q/cGc.webp",
+          "https://images.slatecdn.net/VbQ7p_LloDvv7FXSnnDWb9BY6VPupm8Hzs3AIKSYx2U/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDA5Yzc4/N2YtMWUwNC00OTFh/LWIxN2ItNjhlYzdi/NGI1MzIzL3N0aWxs/cy0wMDA4NjQyMC5q/cGc.webp",
+          "https://images.slatecdn.net/m708dx31E1OZ-MsipzRWfyLly__JP5hhQDMUdqEQvq8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjJjNGYw/ZTUtNGJlMi00Njg1/LTk0MzItNWRmZjhi/MzFkOTA4L3N0aWxs/cy0wMDA4NjQyMS5q/cGc.webp",
+          "https://images.slatecdn.net/xozR8FP40p90LLbjrwiObwwUcFOv0Hk_p-3yyM62ewQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTZkNmMy/M2ItZDgxNy00ZDM5/LTlmY2ItOTUxMzcz/MTExZjM4L3N0aWxs/cy0wMDA4NjQyMi5q/cGc.webp",
+          "https://images.slatecdn.net/TkrW06EddazB-Y6zrpENShWJDqjsAf76t4-qI_bH5g4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vM2I4ZmJh/OTItZjQyZi00OGYy/LWE4MWItZTdjNTkx/N2Y4Mjg2L3N0aWxs/cy0wMDA4NjQyMy5q/cGc.webp",
+          "https://images.slatecdn.net/TwngT5bq3_VnQtC-4ifejBuY4pVZ-EG9L7H5tdIj7uM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTUxMzJi/MDgtN2RmOS00YTM2/LTliYmYtOTA0YTVk/ZjIzMWZkL3N0aWxs/cy0wMDA4NjQyNC5q/cGc.webp",
+          "https://images.slatecdn.net/k4mCl1fJtLUIi1fVkSSp8mzbmIaoNqVkl-_OWdBx3uk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTY2MDBh/N2MtZjE5MS00ZTkz/LTg0MTgtYjBiN2U2/NTFlNmEwL3N0aWxs/cy0wMDA4NjQyNS5q/cGc.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-12T17:49:14.178Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T17:49:30.162Z"
 }
