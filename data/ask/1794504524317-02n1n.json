@@ -2,9 +2,25 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://kinou.slateapp.com/work/puma-slipstream-stills"
+      "link": "https://kinou.slateapp.com/work/puma-slipstream-stills",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/puma-slipstream-stills",
+        "title": "Puma - Slipstream | Stills",
+        "stills": [
+          "https://images.slatecdn.net/Xv4T0a_jeIzviptXkL1d-yTbh6vgQHjF2ygHInjwxUQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTFmZDhl/NjgtNzJjMC00Y2Zi/LWI2MjEtZTdkOTk5/OTk4ZWE4LzEtb2tv/a29rLnBuZw.webp",
+          "https://images.slatecdn.net/u372AHttXG7c5A9bNyX5SVCC-8nVhgr6qVU9oCpDHD8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYTUwYjJh/MWMtNjhmZC00N2M5/LTgxOWEtMzc2YTdm/ZWIwNTM2LzIucG5n.webp",
+          "https://images.slatecdn.net/-QIdupgZ_uc7mK1YXX4AN5YkSfF9ZeuLReUvZwiL62A/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2E4MWU2/OTMtZTk1Yi00NWUz/LWEzZTMtN2YzYjNk/NjFkYTYzLzUucG5n.webp",
+          "https://images.slatecdn.net/I6k3XbD-TkzWCSAaaUN1gELAZ1SbhpySlOB0qLVm1D8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODhkM2Zj/NGEtMTNmYS00ZDhm/LWEwN2MtYjU4ZTg3/NWI4Y2YwLzkucG5n.webp",
+          "https://images.slatecdn.net/XnAftAGOKNPc4Q5EcZE2YsRrK9ovF_pHvru8oQM1px0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMjkxYTdj/NTktMDBkZi00ZGM1/LWEyODUtNTg0NDY1/MjBmN2RhL3B1bWEy/MDIyLTA2LTA5LTE4/aDQwbTAyczA1OC5q/cGc.webp",
+          "https://images.slatecdn.net/iz0-dz6LMsucNhfWrffzU6Mvo4f7GFouWQoUuLkKirg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZThiMDRk/NTktZjc4Yi00YzRh/LWE2MGYtYWY1Mzll/Yzk2ZmFlL3B1bWEy/MDIyLTA2LTA5LTE4/aDQwbTM0czkxNC5q/cGc.webp",
+          "https://images.slatecdn.net/_CFQbBW86Up_dhn5WkVf2qDTQYeRD1bq-_o5DXFCd1Y/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNzM5MThl/OGUtM2IwMi00OTQ1/LTk0NDQtYzY2ODIz/YmZmZDc5L3B1bWEy/MDIyLTA2LTA5LTE4/aDQwbTU4czU2Ni5q/cGc.webp",
+          "https://images.slatecdn.net/1YtLXbGhdZigXkonl00RijUJi04DN1lPlT1lziNTRMs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWVkODc2/ODgtYTY0MC00M2Mx/LTgyOWItNzU1Mzdk/MjFlNWFjL3B1bWEy/MDIyLTA2LTA5LTE4/aDQxbTE3czY5My5q/cGc.webp",
+          "https://images.slatecdn.net/nm_XzbvApklaGqjOzngNgBdalKUWmf_TZvYsjzK2Hno/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjI3MTQ4/M2MtZmVhNy00ZGIx/LWI2YmUtYTEzZmFi/ZjFkODRiL3B1bWEy/MDIyLTA2LTA5LTE4/aDQxbTMyczI4Ny5q/cGc.webp"
+        ]
+      }
     }
   ],
   "at": "2026-11-12T17:28:44.317Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-12T17:29:02.115Z"
 }
