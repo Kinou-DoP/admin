@@ -2,9 +2,174 @@
   "items": [
     {
       "kind": "bundle",
-      "link": "https://shots.re/20c477"
+      "link": "https://shots.re/20c477",
+      "answer": {
+        "name": "Andy PML",
+        "categories": [
+          "FEATURED",
+          "COMMERCIAL",
+          "MUSIC VIDEO"
+        ],
+        "clips": [
+          {
+            "title": "Chanel x Wallpaper feat Leah Dou",
+            "sub": "Water",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11181/9b3ac465-8b66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/57052b53-81db-456b-8d9f-055081548dd7-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/8mF0FjQR9lCOKhhAHGnRU__AHj2rKHTpamsOWLoCLs8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjJjNTI1Yi02MThj/LTQ1OWMtODQ3NS1m/ZDhhNTFjODI2NTIv/c2NyZWVuc2hvdC0y/MDI2LTA1LTE3LWF0/LTIzLjU1LjEzLnBu/Zw?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 11181,
+            "featured": true,
+            "featuredOrder": 1
+          },
+          {
+            "title": "HOUSE OF UNENDING",
+            "sub": "Star Han",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10679/b757979a-373a-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0f566255-9eb8-4840-aedc-8c031bdeb399-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/l58fq8DbHP4T9qLdBsDZDH64sl9EabZ2wqsP3saARdM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3OS02OWRjZDIw/MjJkNTM0Ni40MTgw/MzI2NS00YTdjMzY1/MjI2N2JmN2Y2NGMw/ODU3NWVkNGQ2ZDhk/Ni5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10679,
+            "featured": true,
+            "featuredOrder": 8
+          },
+          {
+            "title": "Rom Hunts Truffles",
+            "sub": "Andy PML",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10678/99c282a2-3728-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f0aea143-4be6-4b51-95d3-95409e874f0a-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/7ZoiLk4S7xq3Dqwh2TeQ_hHH84xxIrOlkUgYUDvWPEk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3OC02OWRjY2M3/NzI2NjQ1NS4wODUw/MjY4NC00NDE4ZGZm/Njk1YTdhMzE3NjYw/OWNiZjRlZDcxYzc2/MC5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10678
+          },
+          {
+            "title": "Quietude",
+            "sub": "Élison bartolomeu",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10677/b9d243e5-3728-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/25c0976d-5fb7-44e9-941b-27ffbe183dff-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/U_ApNpWYCHzsUXj1mfsL1gtmCnofFesg72kqmvXVlLk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3Ny02OWRjY2M3/NzI2ZGZiMS43Mzk3/OTA0MS05M2U4MTY3/MmI1YTYwZGVlNGFh/Nzg5NWY0MDRlMDVk/OS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10677
+          },
+          {
+            "title": "Lacoste x feat. Shuhei Uesugi",
+            "sub": "Keisuke Ogawa",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10674/f2d844d3-3728-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/76efc409-eb53-42ba-80a4-1eedb1451779-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/1Tko6vGTnh6PFkHQL-0DSh5y5F0mZuYN3ls2WI_ec20/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3NC02OWRjY2M3/NzI2ZTA2NC4yMzU3/MzI1MS04OTIxYTJm/NjAzMmY4Zjk1ZDg2/NThmMDNlNDlkNzQz/Yi5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10674,
+            "featured": true,
+            "featuredOrder": 3
+          },
+          {
+            "title": "ISABEL MARANT",
+            "sub": "Shuwei",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10672/16c0d672-3729-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/365f661e-9c93-4e11-b81e-df803d4f1309-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/Rpdjye4jTOzO2kFzN4a5N3XU9bB9f4L31S1951pe7pE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3Mi02OWRjY2M3/MTIxNmYzMy42MjM4/NTkyMC1lYWZmZTJi/ZjE2MWJmMjAyZDlk/YzdlYmFmNTlmZGJm/ZC5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10672,
+            "featured": true,
+            "featuredOrder": 7
+          },
+          {
+            "title": "Byredo - 2026 Valentine CNY",
+            "sub": "Candice Lo",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10671/27da1f08-3729-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/60526c6d-47f6-473d-a04a-a1a8090130f7-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/EyxqTzriXfJ1QgstrJIaAy4bWD-QWA7Nk4Pn_dx_PTM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3MS02OWRjY2M3/MTI0Y2I2MS4yMjcy/NTI4OS04ZDZiMDdh/N2YxNGNmNTNiMjEx/MDRkYmM2YTkwNDI3/Zi5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10671,
+            "featured": true,
+            "featuredOrder": 9
+          },
+          {
+            "title": "Byredo - 2026 CNY",
+            "sub": "Candice Lo",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10670/3cd2e849-3729-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/59b56031-22af-4641-9336-d8420ab7706a-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/-hBUZLkZFjQZ3sk1uOtn-gVrFTsFNHYERy2YRHgRVsA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3MC02OWRjY2M3/MTIxZTM0Ni42MDk0/MDI0Ni0xZDFkNzlj/NTkwMDg1ZjBmZDVi/ZDkzYzE3ZjM5Nzc0/ZC5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10670
+          },
+          {
+            "title": "MODERN WEEKLY & DIOR x Becoming Deva Cassel",
+            "sub": "Candice Lo",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10669/4d346a02-3729-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7eeed554-958e-4b4c-9d02-4d270ccf6b38-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/om_XGL_aCB8iKV4Hd7LFKCMTAhQ1H7pEwA5VY5zvpTQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY2OS02OWRjY2M3/MTFjMDllOS4yNzgx/Mzc0Ni0wNmY4YTcy/YWUwMmEwMzcwNTU0/YTEyMjk0Y2EyNmI3/NS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10669,
+            "featured": true,
+            "featuredOrder": 2
+          },
+          {
+            "title": "AW PROJECT x CORNIE VALLESE",
+            "sub": "AJ DUAN",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10668/5f1c972a-3729-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f8d1da5f-362c-4b44-b795-9881f500a88a-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/7EOqSvXyZ4jrUPBbEsmkdYI2IJg0G1TVyQcnC88I_co/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY2OC02OWRjY2M3/MTE5ZjNlNi4xOTYw/OTQwNy1mMmJhZTI0/MDU5OWUwZjA3NTlh/YTZiOGQzNTlhMWFi/NC5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10668
+          },
+          {
+            "title": "AW PROJECT",
+            "sub": "AJ DUAN",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10667/737bccfe-3729-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/17178686-8d46-4e6f-aee9-620b64ddb41f-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/edpA9OHXJxALLTb52pdwAvAtapJWvDIv_ZM_SuKT4DI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY2Ny02OWRjY2M3/MTFjMGEyNy4wOTAw/NjQ0Mi02YWUwMzJm/ZWZmZDc0Mjk0ZDU2/YWY5NWUzYWUxY2Ew/MS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10667
+          },
+          {
+            "title": "[UN]CURRENT - r.l.e",
+            "sub": "Freya Qiu",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10666/93d56279-3729-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f90c66ab-6796-448a-90d1-722c6a191301-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/4bKCQqXtfvd5VzWB_pr5pdHGUxA6hlS95MK5HQtQTuw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY2Ni02OWRjY2M3/MTFkYTYyOC40MDU5/ODk4Mi1kYWMwMDgz/YzNiYTQ4NmM1NmNk/MDFlZDY0MTQ0MjY0/Yy5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 10666,
+            "featured": true,
+            "featuredOrder": 5
+          },
+          {
+            "title": "Monty - Novo Amor & Yvette Young",
+            "sub": "Victor Nauwynck, Leo Villares",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10676/ca77f0c7-3728-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/80674bde-549c-4cb2-a2ba-4f2059fc9b0e-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/H3SCKJPW8iHfauhYOBfPnUsVTkI7ew7YcOOEXiVFCgM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3Ni02OWRjY2M3/MTFjOGQ5Ny4xNjI0/NTU3Ny04NThjMjM5/YTJkZDY2NDI0MWM0/YmY2ZTBiMjkyMjRj/ZC5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 10676,
+            "featured": true,
+            "featuredOrder": 6
+          },
+          {
+            "title": "IRL - LOWSWIMMER",
+            "sub": "Victor Nauwynck, Leo Villares",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10675/e0819767-3728-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/36ddb5ea-57a2-486c-bb84-b344de1eaa40-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/vpIZB8tY7SSkuoLCcQIXshRWImY3sefEmg6BiwS4yFo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3NS02OWRjY2M3/NzRmMjIyMy44NTM1/OTQyMS04YTExNzU2/MzExMDg5MDI2MWY4/MDcwNzU4YWRlNjU1/Mi5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 10675
+          },
+          {
+            "title": "Kayan 9896 - LOST IN THE RAIN",
+            "sub": "The 11th",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10673/0bba34bb-3729-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fdc2d1c9-1bc0-43c7-83a5-434a421a886d-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/PJs8ulpjtE7mxfS7OqA3ZjnZ724-NNsjNpk8GHYfrOw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3My02OWRjY2M3/NzUxZDYyOC4yNTQ3/MzQxNS00OGE1MDAz/ZTVhMmM2Yzc2NTE5/MjdjZWM1Y2YyOGRi/NS5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 10673,
+            "featured": true,
+            "featuredOrder": 4
+          }
+        ],
+        "bundle": "https://kinou.slateapp.com/bundles/f64d8d7a-df6f-11f1-a349-0215583debcb"
+      }
     }
   ],
   "at": "2026-11-13T14:46:45.084Z",
-  "by": "John-Kinou"
+  "by": "John-Kinou",
+  "doneAt": "2026-11-13T14:47:06.132Z"
 }
