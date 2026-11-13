@@ -2,9 +2,17 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1dd12f"
+      "link": "https://shots.re/1dd12f",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/la-mutuelle-des-motards-films",
+        "title": "La mutuelle des motards • Films",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/efb64be4-9503-4bee-b3b6-44b893a4f862-0x1080.5000.mp4",
+        "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10854/627ca834-5395-11f1-a349-0215583debcb.mp4",
+        "img": "https://images.slatecdn.net/OUaEBANN_9owz7ZFhZMhyid5EpQbr_hUHTepPIxiNdU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/OWQ1MDM2OC03M2Ix/LTQzOGItODZiNS00/ZGQ5ZWExNDM4YzEv/MTc3OTIwMzYyMDkx/OS5qcGc.webp"
+      }
     }
   ],
   "at": "2026-11-13T17:38:40.977Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T17:38:58.309Z"
 }
