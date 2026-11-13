@@ -133,7 +133,8 @@
         "Short Film",
         "Teaser",
         "narrative"
-      ]
+      ],
+      "title": "FIRELILY"
     },
     "10271": {
       "zoom": 1.07,
@@ -146,7 +147,8 @@
       "types": [
         "Short Film",
         "narrative"
-      ]
+      ],
+      "title": "Meli Melo"
     },
     "10841": {
       "types": [
@@ -177,7 +179,7 @@
     ],
     "instagram": "https://www.instagram.com/virgilleclercq/?hl=en",
     "website": "https://www.virgilleclercq.com/",
-    "pos": "73% 27%",
+    "pos": "85% 15%",
     "img": "img/virgil-leclercq.webp",
     "og": "img/virgil-leclercq-og-1793974455983.jpg"
   },
