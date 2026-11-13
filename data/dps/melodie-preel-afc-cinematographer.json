@@ -309,10 +309,16 @@
     },
     "9783": {
       "zoom": 1.35,
-      "zoomPos": "50.2% 78.1%"
+      "zoomPos": "50.2% 78.1%",
+      "types": [
+        "Commercial"
+      ]
     },
     "10300": {
-      "zoom": 1.32
+      "zoom": 1.32,
+      "types": [
+        "Commercial"
+      ]
     },
     "10855": {
       "extras": [
@@ -324,10 +330,16 @@
           "img": "https://images.slatecdn.net/OUaEBANN_9owz7ZFhZMhyid5EpQbr_hUHTepPIxiNdU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/OWQ1MDM2OC03M2Ix/LTQzOGItODZiNS00/ZGQ5ZWExNDM4YzEv/MTc3OTIwMzYyMDkx/OS5qcGc.webp"
         }
       ],
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Commercial"
+      ]
     },
     "10860": {
-      "zoom": 1.14
+      "zoom": 1.14,
+      "types": [
+        "Commercial"
+      ]
     },
     "10987": {
       "zoom": 1.13,
@@ -339,6 +351,9 @@
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10988/6acf1cc3-6a58-11f1-a349-0215583debcb.mp4",
           "img": "https://images.slatecdn.net/eFoVcW7GFJo7xOK6jiUrnsphC4iUu2QwAPNP8VRW1og/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/ODBjYjMzYS1hODg1/LTRkN2UtOTY2Yy1k/ZWI4MmQ1MTFkYzMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDYt/MTctYS0xNi4yNC41/OS5wbmc.webp"
         }
+      ],
+      "types": [
+        "Commercial"
       ]
     }
   },
