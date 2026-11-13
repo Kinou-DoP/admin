@@ -543,7 +543,8 @@
     "color": true,
     "img": "img/julien-ramirez-hernan-sbc.webp",
     "og": "img/julien-ramirez-hernan-sbc-og-1793974455983.jpg",
-    "ogColor": true
+    "ogColor": true,
+    "cv": "cv/CV-Julien-Ramirez-Hernan.pdf"
   },
   "categories": [
     "FEATURED",
