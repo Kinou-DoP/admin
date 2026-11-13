@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/2f956"
+      "link": "https://shots.re/2f956",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/orange-bank-cadeau",
+        "title": "Orange Bank Cadeau",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1566988346-y2mate.com-orange-bank-cadeau-qv2cxjmp-di-1080p.1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/BWkJ3JapnEFJui7Dd-fGBsYWmiXVpFKd8iI11c7PqAE/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/Njk4LTVkNjY1ODNh/NWYyYmM1Ljc2OTE0/MjQ5LWE4NTlmN2Jh/MjczOGFjMTJjZDA1/ZGExZjFhNjc3MDY1/LmpwZw.webp"
+      }
     }
   ],
   "at": "2026-11-13T17:02:57.346Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T17:03:14.689Z"
 }
