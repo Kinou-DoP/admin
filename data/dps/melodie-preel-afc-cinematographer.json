@@ -255,7 +255,14 @@
     "website": "https://melodiepreel.com/",
     "pos": "64% 42%",
     "img": "img/melodie-preel-afc-cinematographer.webp",
-    "og": "img/melodie-preel-afc-cinematographer-og-1794329547597.jpg"
+    "og": "img/melodie-preel-afc-cinematographer-og-1794329547597.jpg",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm4439355/"
+      }
+    ],
+    "cv": "cv/CV-Melodie-Preel.pdf"
   },
   "categories": [
     "FEATURED",
