@@ -5,6 +5,10 @@
   "bundle": "https://kinou.slateapp.com/bundles/f64d8d7a-df6f-11f1-a349-0215583debcb",
   "open": 11181,
   "overrides": {
+    "10669": {
+      "zoom": 1.03,
+      "zoomThumb": true
+    },
     "10673": {
       "zoom": 1.04,
       "zoomThumb": true
