@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/56c24"
+      "link": "https://shots.re/56c24",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/pollux",
+        "title": "Pollux",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1ce28e93-c319-4a73-95b7-a68df6578d66-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/bGf7tEvSQQx6qt276op4yrapQE1OCCLw1BIFSvF5Ym8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZjI3YTYxZC01ZGY5/LTRlOGUtODdhYS1m/MjViZjgyMzJhNDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MTUtYS0xMi4xMC4w/MC5qcGc.webp"
+      }
     }
   ],
   "at": "2026-11-13T11:12:19.950Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T11:12:41.544Z"
 }

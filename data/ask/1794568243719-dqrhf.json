@@ -2,9 +2,11 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1e490`"
+      "link": "https://shots.re/1e490`",
+      "error": "lien invalide : attendu https://kinou.slateapp.com/work/…"
     }
   ],
   "at": "2026-11-13T11:10:43.719Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T11:12:39.127Z"
 }
