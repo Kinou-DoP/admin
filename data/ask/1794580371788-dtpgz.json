@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/29f7a"
+      "link": "https://shots.re/29f7a",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/yes-i-do-extracts",
+        "title": "Yes I Do | Extracts",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1561388566-extrait-yes-i-do.1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/WCfiFa5mwBv5lKTHNX0DWnXYfKpEMIgJN4dER5IsHjM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgzOTQ3MjY4NDc5/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAz/LTExLWEtMTguMjEu/MDUtMi5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-13T14:32:51.789Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T14:33:09.397Z"
 }
