@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/7887b"
+      "link": "https://shots.re/7887b",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/bebat-oude-man",
+        "title": "Bebat - Oude Man",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/45e9d4dd-b34c-47d3-9193-c1660f71d9c6-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/TyQRV63owkWu9S41J514K4qXLhjAkBZH4XsreRBQqzc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTJiMGE0MS00Yzll/LTRiODItYjkwZi1i/MTNkZjI4NDBkMzQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MDgtYS0xNC41OC41/Ni5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-13T13:19:09.956Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T13:19:26.540Z"
 }
