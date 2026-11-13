@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/78879"
+      "link": "https://shots.re/78879",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/bebat-voetbal",
+        "title": "Bebat - Voetbal",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a50d3889-da92-4ace-be9f-8d723f2de432-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/M-qKBlZTlx9g0pVtv8wOuxXNugZWtUUciid3M7hRqSk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/YWUzNTYzYi05OGMx/LTQ3NzAtOTZhMC1l/ZmU1MmYyOTNmNmYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MDgtYS0xNC41Ny40/OC5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-13T13:19:45.402Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T13:20:01.733Z"
 }
