@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/62469"
+      "link": "https://shots.re/62469",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/merci-de-votre-visite-short-film",
+        "title": "Merci de votre Visite | Short Film",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/90484de0-caad-44be-98f0-ad4dfda21c15-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/WNum_bK8eOXtTPeFaofbARlN9Ux-0oF-jtC2-br49uw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NDZjZmY2Ny1mYTU4/LTRmMWEtYmExMS1h/N2EyMjlkZmY5MTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDEt/MjEtYS0xNS41MC40/MC5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-13T11:12:33.981Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T11:13:27.360Z"
 }
