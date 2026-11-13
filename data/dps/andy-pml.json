@@ -24,8 +24,7 @@
     "11181": {
       "types": [
         "Commercial"
-      ],
-      "phoneX": 62.4
+      ]
     }
   },
   "about": {
@@ -89,7 +88,7 @@
       "cat": "COMMERCIAL",
       "slate": 10679,
       "featured": true,
-      "featuredOrder": 8
+      "featuredOrder": 9
     },
     {
       "title": "ISABEL MARANT",
@@ -120,9 +119,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/60526c6d-47f6-473d-a04a-a1a8090130f7-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/EyxqTzriXfJ1QgstrJIaAy4bWD-QWA7Nk4Pn_dx_PTM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3MS02OWRjY2M3/MTI0Y2I2MS4yMjcy/NTI4OS04ZDZiMDdh/N2YxNGNmNTNiMjEx/MDRkYmM2YTkwNDI3/Zi5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10671,
-      "featured": true,
-      "featuredOrder": 9
+      "slate": 10671
     },
     {
       "title": "AW PROJECT x CORNIE VALLESE",
@@ -187,7 +184,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/36ddb5ea-57a2-486c-bb84-b344de1eaa40-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/vpIZB8tY7SSkuoLCcQIXshRWImY3sefEmg6BiwS4yFo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY3NS02OWRjY2M3/NzRmMjIyMy44NTM1/OTQyMS04YTExNzU2/MzExMDg5MDI2MWY4/MDcwNzU4YWRlNjU1/Mi5qcGc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
-      "slate": 10675
+      "slate": 10675,
+      "featured": true,
+      "featuredOrder": 8
     },
     {
       "title": "Kayan 9896 - LOST IN THE RAIN",
