@@ -79,6 +79,17 @@
         "Feature Film"
       ]
     },
+    "845": {
+      "title": "Pollux",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/pollux",
+          "title": "Pollux",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1ce28e93-c319-4a73-95b7-a68df6578d66-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/bGf7tEvSQQx6qt276op4yrapQE1OCCLw1BIFSvF5Ym8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZjI3YTYxZC01ZGY5/LTRlOGUtODdhYS1m/MjViZjgyMzJhNDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MTUtYS0xMi4xMC4w/MC5qcGc.webp"
+        }
+      ]
+    },
     "860": {
       "title": "Playground",
       "types": [
@@ -136,6 +147,14 @@
       "zoomThumb": true,
       "types": [
         "Commercial"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/pate-a-pain",
+          "title": "Pâte à Pain",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545389810-26498356_web.1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/RmAM2p1zxBMNVzEy4Y382_4hyDaK6spL3KkapL5UaFY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTQ1MTM1OC0wOTkw/LTQ2ODktYTFlNS0y/NTA1MjUxMjFmMDAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDgt/MDUtYS0xNS4xNS4x/MC5wbmc.webp"
+        }
       ]
     },
     "3359": {
@@ -149,6 +168,32 @@
       "title": "Missions - Saison 2",
       "types": [
         "Fiction"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/mission-season-1-trailer",
+          "title": "Mission | Season 1 Trailer",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e3e8767b-cf4c-4f90-b1ef-ae9cea00f569-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/3LMpfSsc5rsjw0hFoyCIXmxoXlJfdJ9y1xoGGj3uNYU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAyMTQ2Njc3NTE4/L3h2bTk5MmVlNWIw/LTU2ODUtMTFlNy1h/N2Y0LTlhOTFjNmY2/NzQzNC5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/missions-saison-3-trailer",
+          "title": "Missions - Saison 3 (trailer)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/80d7ffd6-6e52-41ad-878f-0b417c8d0ff6-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/_7Vr4cSDukh1TrmV3Fv9aeiA3B6w6Q9eIQVl8EGlduo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MTc1NjUxNi0zM2Y5/LTQzN2ItOTc2Mi1k/NTBmN2FjOTg5N2Uv/bWlzc2lvbnMtczMt/a2Etem9vbS5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/missions-season-2-opening-scene",
+          "title": "Missions | Season 2 (opening scene)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1562664223-missions-season-2-first-minutes.1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/ejv6Hb3hpi8kcx2WWZVJRmJFbZ8XvLdnBrUlnZ77T9s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTY0NzU5NjI1NTQ5/L212cy1tb3ZpZS03/NTc4My0xMjEwLmpw/Zw.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/missions-season-1-extract",
+          "title": "Missions | Season 1 Extract",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545356244-missions-premie-cc-80res-minutes-sous-tension-pour-la-nouvelle-se-cc-81r.1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/p5A9Esg0LMV_CTmRioapqHncX0HqfiCYUM7y0TJxUNY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzU2MjEwLzM5/NDA3MzU5X2xhcmdl/LmpwZw.webp"
+        }
       ]
     },
     "3723": {
@@ -176,6 +221,16 @@
         "Narrative",
         "Fiction",
         "Serie"
+      ]
+    },
+    "4729": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/merci-de-votre-visite-short-film",
+          "title": "Merci de votre Visite | Short Film",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/90484de0-caad-44be-98f0-ad4dfda21c15-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/WNum_bK8eOXtTPeFaofbARlN9Ux-0oF-jtC2-br49uw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NDZjZmY2Ny1mYTU4/LTRmMWEtYmExMS1h/N2EyMjlkZmY5MTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDEt/MjEtYS0xNS41MC40/MC5wbmc.webp"
+        }
       ]
     },
     "4730": {
@@ -206,6 +261,32 @@
       "title": "Missions - Saison 3",
       "types": [
         "Serie"
+      ],
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/mission-season-1-trailer",
+          "title": "Mission | Season 1 Trailer",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e3e8767b-cf4c-4f90-b1ef-ae9cea00f569-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/3LMpfSsc5rsjw0hFoyCIXmxoXlJfdJ9y1xoGGj3uNYU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAyMTQ2Njc3NTE4/L3h2bTk5MmVlNWIw/LTU2ODUtMTFlNy1h/N2Y0LTlhOTFjNmY2/NzQzNC5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/missions-saison-2-trailer",
+          "title": "Missions - Saison 2 Trailer",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1567005716-y2mate.com-missions-ocs-bande-annonce-chaine-saison-2-9zhawrn02rm-1080p.1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/uA4KR0KJLhAXgC6Kl4fkV8EkowdgEjQLew2BSLntFfE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAyMTUxNDk1NDU1/L2MzZTA1N2JlLWZm/MjItMmZhYS1iYzcy/LWNmNTBkOTZkNWM5/Mi5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/missions-season-2-opening-scene",
+          "title": "Missions | Season 2 (opening scene)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1562664223-missions-season-2-first-minutes.1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/ejv6Hb3hpi8kcx2WWZVJRmJFbZ8XvLdnBrUlnZ77T9s/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTY0NzU5NjI1NTQ5/L212cy1tb3ZpZS03/NTc4My0xMjEwLmpw/Zw.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/missions-season-1-extract",
+          "title": "Missions | Season 1 Extract",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545356244-missions-premie-cc-80res-minutes-sous-tension-pour-la-nouvelle-se-cc-81r.1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/p5A9Esg0LMV_CTmRioapqHncX0HqfiCYUM7y0TJxUNY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1MzU2MjEwLzM5/NDA3MzU5X2xhcmdl/LmpwZw.webp"
+        }
       ]
     },
     "7578": {
@@ -321,11 +402,12 @@
     ],
     "pos": "22% 50%",
     "img": "img/maxime-cointe-afc.webp",
-    "og": "img/maxime-cointe-afc-og-1794222606660.jpg"
+    "og": "img/maxime-cointe-afc-og-1794222606660.jpg",
+    "cv": "cv/CV-Maxime-Cointe.pdf"
   },
   "categories": [
     "FEATURED",
-    "SERIE",
+    "SERIES",
     "FEATURE FILM",
     "SHORT FILM",
     "MUSIC VIDEO",
@@ -339,7 +421,7 @@
       "stills": [
         "https://images.slatecdn.net/b2VcdT6xxqQMzsAVgdAbR6Tu9A7MI6U5MgLadrEV1Nc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjE2YzEw/NzYtNGNhYy00MTU1/LTgwNDYtN2QxN2U3/ZGU3MGJhL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTA5LWEt/MTIuMTYuMDMucG5n.webp"
       ],
-      "cat": "SERIE",
+      "cat": "SERIES",
       "slate": 11520
     },
     {
@@ -348,7 +430,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10439/8ddbd026-0c1d-11f1-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/43fc0230-1f18-47f4-9d27-06b1dbe793fe-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/cwafr57HCIPkhBxEQUx2B4jpsAYuUnZUf_dd0CVppNc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/YWZlYmNhZC03MTEx/LTQzNGUtYTI0YS02/Y2M4YTdlYzAwZDIv/NDAyLTAyLWwtMS5q/cGc?v=1&format=webp",
-      "cat": "SERIE",
+      "cat": "SERIES",
       "slate": 10439,
       "featured": true,
       "featuredOrder": 5
@@ -358,7 +440,7 @@
       "sub": "Julien Lacombe\nempreinte digitale",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e3e8767b-cf4c-4f90-b1ef-ae9cea00f569-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/e9jw20cYjitDDLc4Jt1GjLXR2uf3i1QBfbci5-6lGX4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAyMTQ2Njc3NTE4/L3h2bTk5MmVlNWIw/LTU2ODUtMTFlNy1h/N2Y0LTlhOTFjNmY2/NzQzNC5qcGc?v=1&format=webp",
-      "cat": "SERIE",
+      "cat": "SERIES",
       "slate": 282,
       "featured": true,
       "featuredOrder": 9
@@ -369,7 +451,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7708/935fa1ac-c4db-11ee-ade3-028f723623ff.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b4792940-c20b-4e3c-8b0c-ef6e7d6a26cd-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/G7Zpp_gxJZlNKdLFCBXDfuGLdHzFVO9lTtWiLM0FTMo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NzE0NmYzOC1iNWM4/LTRkNGUtYmEwZC1h/NGQxZDA0ZmQ5ZGMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDkt/MTItYS0xMi40NC4z/MS5wbmc?v=1&format=webp",
-      "cat": "SERIE",
+      "cat": "SERIES",
       "slate": 7708,
       "featured": true,
       "featuredOrder": 7
@@ -380,7 +462,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8268/400dfde2-c4db-11ee-ade3-028f723623ff.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b87eda2b-117d-4362-a878-eecb4914048a-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/mwHaqe1lIuvemPbGYsTd2IRhxbORWmMJ3brlSaKBs4g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YmQyN2E2NS0wZDlh/LTRjN2UtOGRiMC0x/MmY5YjE3Yjc0ZmQv/ZnVyaWVzLTEucG5n?v=1&format=webp",
-      "cat": "SERIE",
+      "cat": "SERIES",
       "slate": 8268,
       "featured": true,
       "featuredOrder": 6
@@ -390,7 +472,7 @@
       "sub": "Simon Astier\nMandarin Télévision",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e78ec0be-5dc5-49ab-be51-3eee239f15ea-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/pkovNl8szxN_vh_KppYjdM903NZj2LTuEjJ2srczClw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZjE2Njc1OS03MjNk/LTQ2NDktOWY4ZS1j/ZmQzMzQ5NDQ2Y2Uv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDYt/MDEtYS0xMi4wMi41/OC5wbmc?v=1&format=webp",
-      "cat": "SERIE",
+      "cat": "SERIES",
       "slate": 5061
     },
     {
@@ -398,7 +480,7 @@
       "sub": "Benjamin Rocher\nempreinte digitale, OCS",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d4323a98-927b-436e-baeb-dba479ca4981-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/yXRzn_Kp2qJVBRjodZGjWF6KCyqmHN3ScgVW8iBjxB4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAyMTUxNDA5OTAz/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTEw/LTA4LWEtMTIuMDIu/NTUucG5n?v=1&format=webp",
-      "cat": "SERIE",
+      "cat": "SERIES",
       "slate": 4601
     },
     {
@@ -460,12 +542,12 @@
       "slate": 2567
     },
     {
-      "title": "Merci de votre Visite | Short Film",
+      "title": "Merci de votre Visite - Short film teaser",
       "sub": "Panayotis Pascot\nDomino Films",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/90484de0-caad-44be-98f0-ad4dfda21c15-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/bh2mPQ0R6XqYgNpTfjzA8fedalqSIFigLgCKEW5RQL4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NDZjZmY2Ny1mYTU4/LTRmMWEtYmExMS1h/N2EyMjlkZmY5MTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDEt/MjEtYS0xNS41MC40/MC5wbmc?v=1&format=webp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5936ac29-32cf-41c9-a46b-7b62ee45aa8d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/InUDxRgFkg5KJPMqRlkyShvas1DYsNWyyWY3jsz1GP4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YTdmZWQxMy1kMTM3/LTQ0NjUtYmRjZC03/OGI4YjJiYzQ0Njkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDEt/MjEtYS0xNS41MC40/MC5wbmc?v=1&format=webp",
       "cat": "SHORT FILM",
-      "slate": 4744
+      "slate": 4729
     },
     {
       "title": "On Va Manquer - Short Film",
@@ -476,12 +558,12 @@
       "slate": 4730
     },
     {
-      "title": "Pollux",
+      "title": "Pollux | Short Film Excerpt",
       "sub": "Michaël Dichter\nLes FIlms Norfolk",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1ce28e93-c319-4a73-95b7-a68df6578d66-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/15pMDUYj1nceveCGvXen7A7fNpv_2psh8DLRhakMlZQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZjI3YTYxZC01ZGY5/LTRlOGUtODdhYS1m/MjViZjgyMzJhNDMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MTUtYS0xMi4xMC4w/MC5qcGc?v=1&format=webp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545386587-pollux-michaa-cc-83-c2-abl-dichter-extrait.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/p3Qz0S0Ibmu1WDTFz6syDk1fdVkDyL4gNVqEIOr2EQM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwNzg4MTcyNTE2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTIyLWEtMTcuMjIu/MDgucG5n?v=1&format=webp",
       "cat": "SHORT FILM",
-      "slate": 4600
+      "slate": 845
     },
     {
       "title": "A Distance | Short Film Teaser",
@@ -612,14 +694,6 @@
       "img": "https://images.slatecdn.net/U6WiO1zYN-RTDyT0US85bZ6i5Y4j6apjf5c8sp0D74E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/cm91c3RpcGF0ZS1z/ZWNyZXQtYmllbi1n/YXJkZS1kYTY4MWNh/ZGVjNTQ3Njk4ZmNk/MzYzZjE0NGNhYmEz/NC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 3128
-    },
-    {
-      "title": "Pâte à Pain",
-      "sub": "Sid & Lacombe\nMad",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545389810-26498356_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/r7zyqkwK7SoXqsCn8lOeRNHGihi_2720mH-9v7zfU1c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTQ1MTM1OC0wOTkw/LTQ2ODktYTFlNS0y/NTA1MjUxMjFmMDAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDgt/MDUtYS0xNS4xNS4x/MC5wbmc?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 978
     },
     {
       "title": "Liebig - Les Colocs",
