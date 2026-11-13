@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1c5d5"
+      "link": "https://shots.re/1c5d5",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/roger-vivier",
+        "title": "Roger Vivier",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1549989504-190130-rv-perfect-pair-1min30-master.1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/WwJwZ_wZfHtSZzrTLRs6P9o3fvCY3yDOiW999Xp8pC0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9y/b2dlci12aXZpZXIt/NzAwZDc3YWM5Zjg5/ZTNjMDE0OGUzZWUz/OTdlMGNkMzAuanBn.webp"
+      }
     }
   ],
   "at": "2026-11-13T17:05:27.608Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T17:05:46.707Z"
 }
