@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/6b7b5"
+      "link": "https://shots.re/6b7b5",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/europcar-1",
+        "title": "Europcar",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3cdef189-0917-4b9a-974a-49704ea73e22-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/5twzyHgcEEBkRjnWS0VhrbLt3xGSH6erpc-C-cfiTyY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/M2UyOGRiNS1jNWRj/LTRlNjktOTEzZC1m/NTRkNDllY2NjYTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDQt/MDEtYS0xNi4wNC4x/My5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-13T14:38:41.718Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T14:39:03.099Z"
 }
