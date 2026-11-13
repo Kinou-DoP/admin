@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/29f3e"
+      "link": "https://shots.re/29f3e",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/st-hubert-flash-info",
+        "title": "St Hubert | Flash Info",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1561382154-st-hubert-flash-info-25s-mix-tv-190506-422hq.1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/gTSpAp-pfd_4_L5wkBsLARm_y3qp7JjluF0K6glYwSc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTYxMzgyODY4MzQ3/L2xlcGFydC1zdC1o/dWJlcnQtMi5qcGc.webp"
+      }
     }
   ],
   "at": "2026-11-13T14:39:54.308Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T14:40:39.655Z"
 }
