@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/4c14a"
+      "link": "https://shots.re/4c14a",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/roger-vivier-1",
+        "title": "Roger Vivier",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f360974d-64ab-45eb-8372-0caf2cc08048-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/EfuOEX00NNKVbE8vcPVhWV2eQEOwt72MVSKL219LwBI/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MzIzLTVlZjllZDFm/NzUzMGMzLjQxNjI1/NTA0LTY4YWEwMDc0/N2Y5OWUzYjQ2YWEz/YjFhZTUzNTgwYmNm/LmpwZw.webp"
+      }
     }
   ],
   "at": "2026-11-13T17:03:27.411Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T17:05:13.022Z"
 }

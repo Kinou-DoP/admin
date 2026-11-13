@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/240d4"
+      "link": "https://shots.re/240d4",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/roger-vivier-le-casting",
+        "title": "Roger Vivier | Le Casting",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1555333803-190413-master-version-longue.1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/KY_wnkFMZ9E1Ct9J3r7NjOKfjjYI51c_YgG7DO4yTZI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNzg2MDU1NTE3/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA3/LTAzLWEtMTYuMjAu/MjQtMi5wbmc.webp"
+      }
     }
   ],
   "at": "2026-11-13T17:04:56.640Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T17:05:14.174Z"
 }
