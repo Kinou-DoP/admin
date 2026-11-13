@@ -2,9 +2,347 @@
   "items": [
     {
       "kind": "bundle",
-      "link": "f440ac09-dd2c-11f1-a349-0215583debcb"
+      "link": "f440ac09-dd2c-11f1-a349-0215583debcb",
+      "answer": {
+        "name": "Brecht Goyvaerts, SBC",
+        "categories": [
+          "FEATURED",
+          "FEATURE FILM",
+          "SERIE",
+          "COMMERCIAL",
+          "MUSIC VIDEO"
+        ],
+        "clips": [
+          {
+            "title": "Jusqu'au bout • Bande Annonce",
+            "sub": "Ludovic Colbeau-Justin\nMOANA FILMS",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11171/45918643-869e-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7fb8672c-a58b-4be2-91a5-c9f3c598f0a1-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/oJOPnLifV-xqrWnBVaz9r-eZyZf3t4K9hIHS_4ZkS8M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NGFhODlkYS0zNjAz/LTQ0OTMtYmViMC01/NmZlODE3MWMyOTgv/MDEucG5n?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 11171,
+            "featured": true,
+            "featuredOrder": 1
+          },
+          {
+            "title": "CokaChicas Bande Annonce",
+            "sub": "Roxine Helberg\nBien ou Bien prod.",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9641/d3d9d563-1476-11f0-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5e8d874e-bc6c-43c5-9a09-3da494690818-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/iDVoie8YmmcA5oMPmTuZsoaFxoEclMBAVEDH9fOpuv0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NWUxYTBlZi1iMGIy/LTQzMDItOWFiOS0y/NjlhMTI3NjQ2YWMv/Y29rYWNpY2FzLnBu/Zw?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 9641,
+            "featured": true,
+            "featuredOrder": 3
+          },
+          {
+            "title": "Monsieur Aznavour - Bande-annonce",
+            "sub": "Mehdi Idir, Grand Corps Malade\nMandarin et compagnie",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8991/014030b4-69fb-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/da787b93-b68c-412c-afa5-14a28af7a3ff-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/ek_650kzdsEoYtaM7QKziR8s5NHI-AAznZFaOVLVWUU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OTkxLTY2ZDcxMTJm/NDkwM2UwLjU4ODA5/MTQ0LTE1ZWI4YjI2/ZjVkZjc4N2VmMzhl/OTJjODU2MDJkYTYy/LmpwZw?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 8991,
+            "featured": true,
+            "featuredOrder": 4
+          },
+          {
+            "title": "Cold - Feature Film Trailer",
+            "sub": "Erlingur Thoroddsen\nCompass Films",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8070/1350a189-df69-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/460be6fb-e867-4d71-97ac-19fd31a3e9be-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/dVp6GvFzyLufygRN60K3prnYuQ1ZPXpFdWfcCDzuIng/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YWJmNmQyMi1iNjhk/LTQwNTUtYjRjMi00/NzY5MDNlMTg4YzQv/aW1nLTA0MjEuanBn?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 8070,
+            "featured": true,
+            "featuredOrder": 5
+          },
+          {
+            "title": "Sentinelle (trailer)",
+            "sub": "Julien Leclercq\nLabyrinthe Films, Netflix",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4813/29b5fad6-df69-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5512575f-8e7d-4563-84c1-c4c4afeb93e7-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/H_i6JQsWTeww027srsl7plfK6rjJpvBgHMFmQQ_GOjY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/M2E0N2I0MC0xMzFj/LTQ1ODUtYWJiOC1h/YmY5MWZkY2QwOTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MjEtYS0xNi4zOS4w/Ny5wbmc?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 4813
+          },
+          {
+            "title": "Earth and Blood | Feature Film Trailer (Netflix)",
+            "sub": "Julien Leclercq",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4348/50d8bee6-dd2b-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c0a30b88-a5b6-4b45-b817-8eef60f4da7c-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Ek5uyChG7vl4A-mKzjN9RnXfb6AxTjo0eH7XRVRJvis/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YzY3MDY1NC03YmNl/LTRjMmItYTVlMS03/YWQ5NzRhMjE3OTIv/MTc5NDMzMTI5MDU1/MS5qcGc?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 4348
+          },
+          {
+            "title": "CLEO  Trailer",
+            "sub": "Eva Cools\nLunanime",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4020/830a303c-df68-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e848fba6-b63f-4dd5-b724-a9d60ee79b4e-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/e85ooy3CcjUlO8fBKZuMWk1puW1JNwkDaI9SGqbXw3M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNjQ4NDM4Nzcz/L3N0aWxsc2NsZW8t/MTkyMHg4MDMuanBn?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 4020
+          },
+          {
+            "title": "BASTAARD  Trailer",
+            "sub": "Mathieu  Mortelmans",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4017/9b16db7d-df68-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6fd4983c-3e68-43ee-b79b-419208bc7c9e-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/mEToHVF79eZ6gl166_3wZSEcdVGnuOq7O2328dUO58I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNjQ4NjI5MDk2/L3NjaGVybWFmYmVl/bGRpbmctMjAxNy0w/OC0yOS1vbS0xNS41/Mi4zOC5wbmc?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 4017
+          },
+          {
+            "title": "August - Official trailer",
+            "sub": "Jeroen Perceval\nSavage Film",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4016/b5e92d33-df68-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5c473bbd-c39b-40af-a609-e0b297fb0bd9-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/rq8feyZQnCdZXvdPI6l6mRTkvsy7_DSLALRtR1omjF8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3NjcxNDQ1NDMw/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA4/LTE3LWEtMTUuMzYu/MzUuanBn?v=1&format=webp",
+            "cat": "FEATURE FILM",
+            "slate": 4016
+          },
+          {
+            "title": "Paris Police 1905 - Bande-annonce",
+            "sub": "Julien Despaux\nTetra Media",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10553/f821b589-164c-11f1-9ce3-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/62c5acbf-5c8d-4a4a-a2ac-44f4dae7752e-0x1080.5000.mp4",
+            "img": "https://images.slatecdn.net/kLY53n82l0Nj5ZJqrKVrSn2Mx-eEeUCv4Alw3r4OkIc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/Zjk5YTRmOC1kNDEy/LTRmYzQtYTVkNS05/OTE2MGNlZjg5ZGYv/YmVsbHktMTAud2Vi/cA?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 10553,
+            "featured": true,
+            "featuredOrder": 2
+          },
+          {
+            "title": "Les 7 Vies de Léa - Trailer",
+            "sub": "Julien Despaux, Emilie NOBLET\nempreinte digitale",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8066/db0c6919-df68-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/16f34a0f-1227-41ac-a051-2473924e41b5-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/EnMA3BQknQHNrUzXV2IXqhDthu_h87sfwFGrhHpLoHI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NjczMGM1OS05ZmQz/LTQ3NjQtODMxZS0y/OWMzZmFjNzQ1Nzgv/MjMyLTEtNi1hMDU1/YzAxMi0yMTAyMjMt/cm5iMC0wMi0wOC0z/NC0wMi5qcGc?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 8066
+          },
+          {
+            "title": "Paris Police 1900 - Trailer",
+            "sub": "Julien Despaux, Frederick Balekdjian, Fabien Nury\nCanal +, Tetra Media",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6232/fdb87623-df68-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/344a7aab-4765-4bb7-b4ab-a43d811d7164-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/S2cWnFn53jrW5Iy8k5Ly69b3tGJg9hhIus5Iu-ysI4g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MDkyNTcyNy04MjY0/LTRkNmYtOTljNy05/ZjZiOTI2MzFkMmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MDQtYS0xNi41NC40/MC5wbmc?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 6232
+          },
+          {
+            "title": "Suspect (tv serie trailer)",
+            "sub": "Dries Vos\nEagle Eye Drama",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6127/cafe566d-df66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6518c0b4-09ce-4598-980a-4a001a83e480-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/8AoHxNopGAIkBAr9Bo4IBUc9mSeGE0lr-kRWaKkEwYE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YjY4MWNhNS1hZTVi/LTQ3OTgtYTQ5MS0x/NTI4Y2I1ZWE2OTIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MjEtYS0xNi41OS40/MC5wbmc?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 6127,
+            "featured": true,
+            "featuredOrder": 6
+          },
+          {
+            "title": "Zone Blanche  Black Spot",
+            "sub": "Thierry Poiraud, Julien Despaux\nEgo Productions",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4045/f9fef6a0-df66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/48e32d40-165d-471b-bc55-6a3c52d9d163-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/mrVZSQPIag1uLormchl2onEAqsSmpJuHWnLdjWaVPRY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNjQ4OTY4MDQ5/L3piLTMzLmpwZw?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 4045
+          },
+          {
+            "title": "Tabula Rasa - Trailer",
+            "sub": "Jonas Govaerts, Kaat Beels\nCaviar",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4039/24578f05-df67-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5ff8e003-3050-4346-adf9-c23f9f1eed2e-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/0r9NMO-BJGoWl86tUDbdGkk8TDTmnKykRwnn8eZtMrc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNjUwMzgwMjEw/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI1LWEtMTguMDAu/MjktMi5wbmc?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 4039
+          },
+          {
+            "title": "Ontspoord",
+            "sub": "Jakob Verbruggen & Maarten Moerkerke\nMenuet",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4029/7734bf13-df67-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/351166ca-92fb-4fe7-8b17-863a67868f16-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/GvLOy4lvVfYuBe7JZaakIKuZdcHwWRWDYf64fJY_Usk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDI5LTVlMzAzZDIx/ZDQ4YzcyLjMwMTY5/MTg2LTU4NDQwYjQ3/NWVkODlkOGZmM2Zj/NGMyMmMzYzcyMWE5/LmpwZw?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 4029
+          },
+          {
+            "title": "De Dag  The Day Trailer",
+            "sub": "Gilles Coulier, Dries Vos\nFBO, Woestijnvis, VIER, ZDF NEO",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4022/b8111a4c-df67-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/18081fae-7f60-4e3e-8bf4-0d38be32436a-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/mrPD3oy4_55msCTtVB_f-F6wW7V8I6fkMai1KJyRl7o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNjQ4ODUzNzM2/L3NjaGVybWFmYmVl/bGRpbmctMjAxOC0w/My0xNi1vbS0xMS40/NC40My5wbmc?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 4022
+          },
+          {
+            "title": "Chaussee damour",
+            "sub": "Pieter Van Hees & Frank Devos\ndeMensen",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4018/e4e329b9-df67-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8edd2c18-b580-4e7b-8947-1059653ad315-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/kQMNeD1HHxR9rHK_WLz0v8zz6rm7_iLGA9VkSL_8XbI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDE4LTVlMzAzZDQw/Njk0Nzc0LjMyMjk4/MDA2LTM3ODhlMGIy/MmJhYTU4ZjQ3Yzg4/NzA5N2I2OWYzODcw/LmpwZw?v=1&format=webp",
+            "cat": "SERIE",
+            "slate": 4018
+          },
+          {
+            "title": "Ministère de la Justice",
+            "sub": "Ed McCulloch\nGang Life",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4618/fe96c0ac-df67-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/be93dcab-86c1-474b-92e5-ece6b5bd4117-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/pgLopKHcrxJde16PwEV-tXjFiLPvTV0A655HK8_20r0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAzMzcyNTA5OTM3/L21pbmlzdGVyZS1k/ZS1sYS1qdXN0aWNl/LmpwZw?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 4618,
+            "featured": true,
+            "featuredOrder": 7
+          },
+          {
+            "title": "Telenet",
+            "sub": "Guy de la Palme\nCaviar Brussels",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9294/29e4921f-cc4a-11ef-bfce-022353abf6f5.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/98bb2b41-d38a-4d0c-9610-a2afcaf9c59c-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/iTZsSvrle_bTsZukh9bdfiRoH7heCpjG_MsRGOovuII/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/Mjk0LTY3N2JmZmMy/MTlmOGMzLjczMDQ5/Njg3LTEwMDlmNjk3/YzY4MjA5YWE4MzVk/MmJiMjlkNjdlYjE4/LmpwZw?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 9294,
+            "featured": true,
+            "featuredOrder": 8
+          },
+          {
+            "title": "Sidaction - La lutte contre le Sida",
+            "sub": "Ben Lacour\nBirth",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4860/31d30b96-df68-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b2fd55eb-2e36-4da7-878d-ead9c66d7a84-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/E9GQ5axJlhI129YH-sYXGjDkJXJG_5kycr8rEQSfbis/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NjEwZjhjYS05M2I2/LTQwZmYtODJjNi1j/Y2FjMTE2ZjQ4YWQv/c2lkYS5qcGc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 4860,
+            "featured": true,
+            "featuredOrder": 9
+          },
+          {
+            "title": "FRM",
+            "sub": "Julien Despaux\nProdigious",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5203/57852119-df68-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d5c9b4d9-5719-4ae3-8c2e-d9b5fa420c29-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Et-_OX1cu_R_xoHuq4aZWSYiO-t6MBUwKvjwsbfLX_k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NjlmNWE5YS1iNDcy/LTQxYTQtYjc4ZC00/ODkyNTE0ZjQ1NTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MDgtYS0xNC41Ni40/MC5wbmc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 5203
+          },
+          {
+            "title": "Bebat - Parking",
+            "sub": "Joris Rabijns\nCaviar",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5201/6b8c9004-df68-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/900a5c93-f50d-4dbe-ad7e-60d780c51053-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/Kk4gzldL8JTNg86jrs5p6NyTYbR_Bd52IrCRtr_fmrw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NTQwOTE0OS03NmJm/LTRiZTQtODVmNi05/MjcwODA0NzQ2YWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MDgtYS0xNC41OC4y/Ni5wbmc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 5201
+          },
+          {
+            "title": "Côté d'Or",
+            "sub": "Jeroen Willekens\nWho Killed Joe?",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5199/3e4bcb7a-df65-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85f5ab4a-3289-4463-b28f-6abc86fc01c3-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/N7J4jRzwAmuYAnTrfjiCHkBrjKc1lBcsqCSPp237KS0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZDk5MjYzZS1lNDE1/LTQ3YmUtYWE0Ni03/OTRiZTgxNDAxZWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MDgtYS0xNC41OS40/NS5wbmc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 5199
+          },
+          {
+            "title": "Belfius",
+            "sub": "Nathalie Basteyns\nAKA",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5198/60595bb7-df65-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/715938e9-7f2e-46b4-80f8-36e4de793b16-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/2Ic3HF6pkUujsF25dHiV201p0mHnOFoD-PajBRw3zEk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/Y2Y3MjhmOC1iODg3/LTQ4MDAtOGVhMS0z/N2U4ZjU0ZTc4MWIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MDgtYS0xNS4wMC4x/NS5wbmc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 5198
+          },
+          {
+            "title": "Quick",
+            "sub": "Frank Devos\nCaviar",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5197/ac68379a-df65-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/869659da-ff96-498d-80c1-ff41079c911b-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/xiVvYtltuNSwciyZrxxp08ASYbalsmkVVVLFDf1X8n4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MzMxMTI5NS02MjM0/LTQxMzYtYjAwZC1m/YjZlMGEwOTMyOTIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MDgtYS0xNS4wMC4z/OS5wbmc?v=1&format=webp",
+            "cat": "COMMERCIAL",
+            "slate": 5197
+          },
+          {
+            "title": "The Gift",
+            "sub": "Ralf Demesmaeker\nViktor Ziegler",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4041/d6c6e78b-df65-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dbef124b-1cb9-4c9f-bc40-3cdabfd7d328-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/SOhTFW8rV9zAPIDEjGKLH-8c6Qo0aiDqgItKc5JIqO0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3Njc5MjEwMDY5/L3RoZS1naWZ0Lmpw/Zw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4041
+          },
+          {
+            "title": "The Van Jets - Broken Bones",
+            "sub": "Jonas Govaerts",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4044/ed2ef20e-df65-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9dff1e54-553a-49a8-8ce0-ec3956755a68-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/WEGBDwgpEXhryUS7WGlbbSEtD1T8AYB-3CBhS7RpF-g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OGU0NDI4ZS0zN2I0/LTQ2ZTQtYWYwNC0z/NzNmODNkMTA1MzEv/MTc5NDU3NjQ0MjM4/MC5qcGc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4044
+          },
+          {
+            "title": "The Jon Spencer Blues Explosion - Black Mold",
+            "sub": "Toon Aerts\nCzar",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4042/03317e9e-df66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5c904124-4052-4d58-bba2-d6a885dc579b-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/JzQUm9gOBNgdeoVsYNnldyLDwOjiqko7vtqU2EsZ3E8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3Njc5MTA3NjIx/L3RoZS1qb24uanBn?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4042
+          },
+          {
+            "title": "Sound Of Stereo - Unicorn",
+            "sub": "Kurt De Lijer\nCaviar",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4036/244cd8db-df66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f49c6e12-18ad-4397-8e34-be2d25cc06d6-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/vdKKkdo9jeXT8HtlYEcXhy9QTSXShTQP0vptBOTzzQA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDM2LTVlMzAzZDQw/YTgzZjc0LjQ1NjA2/MTc0LTc0NjQ0NzY3/YjRmOWE5MzEyZTMy/OWNhM2MxOTkyMjY2/LmpwZw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4036
+          },
+          {
+            "title": "Millionaire - Im not who you think you are",
+            "sub": "Jonas Govaerts\nCzar",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4028/378d626d-df66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/51064e4d-479d-48c6-8b13-25630ad342ae-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/0HLK3MSVMBuMNb1NG5M4QblDXFJ5ZcQGqfShjIy2Wek/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgyNjUwMzA0NzQ3/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTI1LWEtMTguMDIu/MzQtMi5wbmc?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4028
+          },
+          {
+            "title": "Stromae - Ave Cesaria",
+            "sub": "Henry Scholfield\nCaviar",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4037/54f6d353-df66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/07b34194-70c8-4615-90de-00e953a59a3a-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/6u6TfWVtbdZa_0rcPWvUaOpruuUAeDU0u1YO-rC7ark/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk3Njc5OTc0MDU3/L3N0cm9tYWUxLmpw/Zw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4037
+          },
+          {
+            "title": "Irma - Hear me out",
+            "sub": "Raf Reyntjens\nCaviar",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4025/78987217-df66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7eee7136-bc83-4efb-acc0-55d5b9a9431b-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/OrpcwwQ4qQw9NK3cw7fw2crjM1ndjaMsWLQFM3NycT4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDI1LTVlMzAzZDQw/YTdkNmY1Ljg2MDU1/MzI4LTI2MTI5NTgz/YTQzNDM1NmMyNjFj/Mzg2N2M5MmFkZmIy/LmpwZw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4025
+          },
+          {
+            "title": "The Black Box Revelation - Never alone",
+            "sub": "Joris Rabijns",
+            "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4040/a2e0128e-df66-11f1-a349-0215583debcb.mp4",
+            "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/22787c5b-75da-45bf-b5d0-2a71c28c7384-1280x720.2500.mp4",
+            "img": "https://images.slatecdn.net/pEJSxHEjXEttg6t1yc3mdWYmU05od2YQ8Om4JjyI6N8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDQwLTVlMzAzZDVm/MDUzZjEzLjcyMzcy/Nzc2LTQzMzQ1MWE3/MjA4Nzg2NGJlZTQw/OWE0YTc3MjU4Njhm/LmpwZw?v=1&format=webp",
+            "cat": "MUSIC VIDEO",
+            "slate": 4040
+          }
+        ],
+        "bundle": "https://kinou.slateapp.com/bundles/f440ac09-dd2c-11f1-a349-0215583debcb"
+      }
     }
   ],
   "at": "2026-11-13T13:54:01.909Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T13:54:18.761Z"
 }
