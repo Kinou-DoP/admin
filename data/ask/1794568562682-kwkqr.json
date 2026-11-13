@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1bf35"
+      "link": "https://shots.re/1bf35",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/mission-season-1-trailer",
+        "title": "Mission | Season 1 Trailer",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e3e8767b-cf4c-4f90-b1ef-ae9cea00f569-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/3LMpfSsc5rsjw0hFoyCIXmxoXlJfdJ9y1xoGGj3uNYU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAyMTQ2Njc3NTE4/L3h2bTk5MmVlNWIw/LTU2ODUtMTFlNy1h/N2Y0LTlhOTFjNmY2/NzQzNC5qcGc.webp"
+      }
     }
   ],
   "at": "2026-11-13T11:16:02.682Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T11:16:20.981Z"
 }
