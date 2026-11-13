@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1cc11"
+      "link": "https://shots.re/1cc11",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/cordon-2-tv-series-trailer",
+        "title": "Cordon 2 | TV Series Trailer",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545448201-51780653_web.1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/WFMMDADZmAcd924551HywiXZBgtrrCC8-pdq4O9E8nY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDQ4MTgwLzUx/NzgwNjUzX2xhcmdl/LmpwZw.webp"
+      }
     }
   ],
   "at": "2026-11-13T16:09:04.653Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T16:09:23.251Z"
 }
