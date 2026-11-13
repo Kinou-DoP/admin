@@ -4,7 +4,13 @@
   "hue": 292,
   "bundle": "https://kinou.slateapp.com/bundles/f64d8d7a-df6f-11f1-a349-0215583debcb",
   "open": 11181,
-  "overrides": {},
+  "overrides": {
+    "11181": {
+      "types": [
+        "Commercial"
+      ]
+    }
+  },
   "about": {
     "bio": [
       "Andy PML est un directeur de la photographie né à Hong Kong et basé à Londres. Il travaille principalement sur des fashion films, des projets narratifs courts et des clips musicaux, avec notamment House of Unending, Saving Art (sélectionné au Slamdance Film Festival et au LA Shorts Fest) et des collaborations musicales comme IRL de Lowswimmer."
