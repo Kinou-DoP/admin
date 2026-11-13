@@ -514,7 +514,14 @@
     "instagram": "https://www.instagram.com/stanislawcuske/",
     "pos": "22% 37%",
     "img": "img/stanislaw-cuske-cinematographer.webp",
-    "og": "img/stanislaw-cuske-cinematographer-og-1793974455983.jpg"
+    "og": "img/stanislaw-cuske-cinematographer-og-1793974455983.jpg",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://pro.imdb.com/name/nm8474750/?rf=cons_nm_contact&ref_=cons_nm_contact"
+      }
+    ],
+    "cv": "cv/CV-Stanis-aw-Cuske.pdf"
   },
   "categories": [
     "FEATURED",
