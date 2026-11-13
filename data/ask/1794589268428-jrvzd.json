@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/2f955"
+      "link": "https://shots.re/2f955",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/orange-bank-pari",
+        "title": "Orange Bank Pari",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1566988346-y2mate.com-orange-bank-pari-izugh4lc7qg-1080p.1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/0uo2NFUWCnZwm8wWUvij8HiONISKO2V_k6UrXJvQOW4/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/Njk5LTVkNjY1ODNh/NWY1NDcwLjkxMDc5/MTU2LTYxYzljNDhj/NGY0OTE4OGI1N2Fm/MWQxYmViZTYyYjM0/LmpwZw.webp"
+      }
     }
   ],
   "at": "2026-11-13T17:01:08.428Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T17:01:29.858Z"
 }
