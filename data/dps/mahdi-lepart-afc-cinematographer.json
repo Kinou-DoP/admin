@@ -494,7 +494,14 @@
     "instagram": "https://www.instagram.com/mahdilepart/",
     "website": "https://www.mahdilepart.com",
     "img": "img/mahdi-lepart-afc-cinematographer.webp",
-    "og": "img/mahdi-lepart-afc-cinematographer-og-1794318139833.jpg"
+    "og": "img/mahdi-lepart-afc-cinematographer-og-1794318139833.jpg",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/fr/name/nm2152391/"
+      }
+    ],
+    "cv": "cv/CV-Mahdi-Lepart.pdf"
   },
   "categories": [
     "FEATURED",
