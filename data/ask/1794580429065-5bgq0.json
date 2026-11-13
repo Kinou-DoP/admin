@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/1bdff"
+      "link": "https://shots.re/1bdff",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/rise-of-a-star-short-film-extract",
+        "title": "Rise of a Star | Short Film Extract",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1547560974-rise-of-a-star-naissance-d-une-etoile-extrait.1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/Zh_TXZpSNFA9BpspYGCwU0FIzOXf_DMgoKUrs4_rDyQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9y/aXNlLW9mLWEtc3Rh/ci1zaG9ydC1maWxt/LWV4dHJhY3QtYzRm/MWJhZGY5ZGJhNjRi/MmFhZDIwMDJmZTE1/NjhiMTguanBn.webp"
+      }
     }
   ],
   "at": "2026-11-13T14:33:49.065Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T14:34:08.875Z"
 }
