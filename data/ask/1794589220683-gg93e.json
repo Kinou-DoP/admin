@@ -2,9 +2,16 @@
   "items": [
     {
       "kind": "stills",
-      "link": "https://shots.re/807a7"
+      "link": "https://shots.re/807a7",
+      "answer": {
+        "link": "https://kinou.slateapp.com/work/orange-x-euro-2021",
+        "title": "Orange X Euro 2021",
+        "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/caf37dcc-9d0a-4cbe-9625-027c01467a39-1280x720.2500.mp4",
+        "img": "https://images.slatecdn.net/plk2elaUUwnDKGUXuhtVg8S72tHpRT3Td3XFRPj_Rh8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDM4ZTY3Mi1hMTgz/LTRlNmYtYjZkMi0w/ODk3NzI0ZThlZGYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDkt/MDgtYS0xNC40NS41/Ny5qcGc.webp"
+      }
     }
   ],
   "at": "2026-11-13T17:00:20.683Z",
-  "by": "GusBZH"
+  "by": "GusBZH",
+  "doneAt": "2026-11-13T17:00:37.345Z"
 }
