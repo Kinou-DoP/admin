@@ -4,7 +4,8 @@
   var REPO = "Kinou-DoP/admin", BRANCH = "main";
   // Site qui héberge les fonctions Slate (/api/bundle, /api/refresh) et où l'on vérifie le résultat.
   var SITE = "https://beta--kinou-test.netlify.app"; // fonctions du site (Slate, données) : Netlify, figées depuis le 21/10
-  var SITE_PAGES = "https://kinou-dop.github.io/site"; // le site lui-même (beta) : GitHub Pages ; bouton « Voir sur le site »
+  var SITE_PAGES = "https://kinou-dop.github.io/site"; // le site lui-même (beta) : GitHub Pages (pages d'aperçu des liens)
+  var SITE_VIEW = "https://kinou-4tv.pages.dev"; // bouton « Voir sur le site » : copie Cloudflare de la beta (essai, Gus 16/11)
   var TOKEN_KEY = "kinou-admin-token";
   // Sites dont on prépare les vignettes (service d'images Netlify) après une publication.
   var WARM_SITES = [SITE, "https://kinou-test.netlify.app"];
@@ -700,7 +701,7 @@
     view.appendChild(filmsSection());
     view.appendChild(aboutSection());
     bar.hidden = false;
-    seeLink.href = SITE_PAGES + "/#" + (state.slug || "");
+    seeLink.href = SITE_VIEW + "/#" + (state.slug || "");
     seeLink.hidden = isNew;
     if (flash) status(flash, "ok"); else if (dirty) touch(); else status("");
     flash = "";
@@ -1516,7 +1517,7 @@
     else if (!home.reel) sec.appendChild(el("p", { class: "hint", text: "Accueil actuel (saisi à la main) : importez une bande Slate pour le remplacer." }));
     home.slides.forEach(function (sl) { grid.appendChild(slideCard(sl)); });
     sec.appendChild(grid); view.appendChild(sec);
-    bar.hidden = false; seeLink.href = SITE_PAGES + "/"; seeLink.hidden = false;
+    bar.hidden = false; seeLink.href = SITE_VIEW + "/"; seeLink.hidden = false;
     if (dirty) touch(); else status(flash || "", flash ? "ok" : ""); flash = "";
   }
   // Extrait HD de l'accueil : passage du film complet (1080p) choisi ici, à la place de l'extrait Slate (plus compressé).
@@ -1790,7 +1791,7 @@
       el("p", { class: "hint", text: "Chaque film va dans les onglets dont le nom figure dans ses types de contenu sur Slate (ex. Commercial, Music Video, Art Video). Un film sans catégorie reconnue n'apparaît que dans ALL." })]));
     view.appendChild(spotFilms());
     bar.hidden = false;
-    seeLink.href = SITE_PAGES + "/#spotlight"; seeLink.hidden = false;
+    seeLink.href = SITE_VIEW + "/#spotlight"; seeLink.hidden = false;
     if (flash) status(flash, "ok"); else if (dirty) touch(); else status("");
     flash = "";
   }
@@ -1986,7 +1987,7 @@
     view.appendChild(el("section", {}, [el("h2", { text: "Bande Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), imp]), st]));
     view.appendChild((fic.films || []).length ? filmsSection() : el("section", {}, [el("h2", { text: "Films" }), el("p", { class: "empty", text: "Pas encore de films : relisez la bande." })]));
     bar.hidden = false;
-    seeLink.href = SITE_PAGES + "/#fiction"; seeLink.hidden = false;
+    seeLink.href = SITE_VIEW + "/#fiction"; seeLink.hidden = false;
     if (flash) status(flash, "ok"); else if (dirty) touch(); else status("");
     flash = "";
   }
@@ -2117,7 +2118,7 @@
         el("div", { class: "field" }, [el("label", { class: "label", text: "Aperçu" }), preview,
           el("label", { class: "label", text: "Hauteur (px, ordinateur ; 83 % sur téléphone)" }), size])
       ])]));
-    bar.hidden = false; seeLink.href = SITE_PAGES + "/#contact"; seeLink.hidden = false;
+    bar.hidden = false; seeLink.href = SITE_VIEW + "/#contact"; seeLink.hidden = false;
     if (dirty) touch(); else status(flash || "", flash ? "ok" : ""); flash = "";
   }
   function publishContact() {
