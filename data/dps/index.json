@@ -208,8 +208,7 @@
     },
     {
       "slug": "lara-perrotte-boucard-cinematographer",
-      "name": "Lara Perrotte Boucard",
-      "gender": "f"
+      "name": "Lara Perrotte Boucard"
     },
     {
       "slug": "steeven-petitteville-afc-cinematographer",
@@ -237,7 +236,8 @@
     },
     {
       "slug": "penelope-pourriat-afc-cinematographer",
-      "name": "Pénélope Pourriat, AFC"
+      "name": "Pénélope Pourriat, AFC",
+      "gender": "f"
     },
     {
       "slug": "melodie-preel-afc-cinematographer",
