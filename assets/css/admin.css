@@ -648,3 +648,30 @@ h3.selfest { margin: 28px 0 12px; font-family: var(--kinou-sans); font-weight: 6
 @media (max-width: 700px) { .selrow { grid-template-columns: 1fr; gap: 6px; } }
 .selfold { padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
 .selfold:hover { color: var(--warn); }
+/* Sorties fiction : calendrier (Gus 17/11) */
+.calbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 16px; }
+.calbar .calm { width: 40px; padding: 0; font-size: 20px; }
+.calbar .calj { width: 40px; padding: 0; font-size: 18px; }
+.caltitle { min-width: 230px; text-align: center; font-family: var(--kinou-sans); font-weight: 600; font-size: 22px; letter-spacing: -0.02em; text-transform: capitalize; }
+.cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px; background: var(--faint); border: 1px solid var(--faint); }
+.calh { padding: 8px 10px; background: #000; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.calc { min-height: 112px; padding: 6px; background: #000; display: flex; flex-direction: column; gap: 4px; }
+.cal.week .calc { min-height: 300px; }
+.calc.out { background: #070707; } .calc.out .cald { opacity: .35; }
+.calc.wed .cald { text-decoration: underline; text-underline-offset: 3px; }
+.calc.today { box-shadow: inset 0 0 0 1px var(--warn); } .calc.today .cald { color: var(--warn); }
+.cald { font-family: var(--kinou-sans); font-weight: 600; font-size: 12px; color: var(--dim); }
+.calev { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; width: 100%; padding: 5px 7px; border: 0; border-left: 2px solid #fff; background: rgba(255,255,255,.1); color: #fff; text-align: left; cursor: pointer; }
+.calev:hover { background: rgba(255,255,255,.2); }
+.calev.platform, .calev.tv { border-left-color: #9ec5ff; background: rgba(158,197,255,.13); }
+.calev.series { outline: 1px dashed rgba(255,255,255,.35); outline-offset: -1px; }
+.calev strong { font-family: var(--kinou-sans); font-weight: 600; font-size: 12px; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.calev small { color: var(--dim); font-size: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+.callegend { margin: 10px 0 40px; }
+.caldetail { margin: 14px 0 30px; }
+.caldetail h3 { margin: 0 0 4px; font-family: var(--kinou-sans); font-weight: 600; font-size: 20px; }
+@media (max-width: 700px) {
+  .cal.month .calc { min-height: 64px; padding: 3px; } .cal.month .calev small { display: none; } .cal.month .calev strong { font-size: 10px; }
+  .cal.week { grid-template-columns: 1fr; } .cal.week .calh { display: none; } .cal.week .calc { min-height: 0; }
+  .caltitle { min-width: 0; font-size: 18px; }
+}

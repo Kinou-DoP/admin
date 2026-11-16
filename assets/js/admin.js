@@ -2622,13 +2622,15 @@
       keys.forEach(function (k) { s1.appendChild(filmBox(byP[k])); });
       box.appendChild(s1);
       // 2. Récent : confirmé, festival dans les 6 derniers mois (ou à venir).
-      var lim = new Date(Date.now() - 183 * 864e5).toISOString().slice(0, 10);
-      var rec = ok.filter(function (x) { return when(x) >= lim; }).sort(function (a, b) { return when(b).localeCompare(when(a)); });
+      // Récent = festival (ou prix) des 4 derniers mois, d'après sa date ; sans date exacte : pas dans « Récent » (sauf ajout à la main récent).
+      var lim = new Date(Date.now() - 122 * 864e5).toISOString().slice(0, 10);
+      function evd(x) { return x.date || (x.manual && x.at ? x.at.slice(0, 10) : ""); }
+      var rec = ok.filter(function (x) { return evd(x) >= lim; }).sort(function (a, b) { return evd(b).localeCompare(evd(a)); });
       // Repliable (mémorisé dans ce navigateur), 30 lignes puis « Afficher plus ».
       var s2 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "selfold" + (recOpen ? " open" : ""), on: { click: function () {
         recOpen = !recOpen; try { localStorage.setItem("kinou-sel-rec", recOpen ? "1" : "0"); } catch (e) {} draw(); } } }, [(recOpen ? "▾ " : "▸ ") + "Récent · " + rec.length])])]);
       if (recOpen) {
-        if (!rec.length) s2.appendChild(el("p", { class: "hint", text: "Rien ces six derniers mois." }));
+        if (!rec.length) s2.appendChild(el("p", { class: "hint", text: "Rien ces quatre derniers mois." }));
         rec.slice(0, st.nRec).forEach(function (x) { s2.appendChild(line(x)); });
         var m1 = more(rec, st.nRec, "nRec", draw); if (m1) s2.appendChild(m1);
       }
@@ -2761,6 +2763,212 @@
       at.after(form2); if (!x0) q.focus();
     }
     function add(btn) { form(null, btn.parentNode); }
+  }
+
+  // ---------- Sorties fiction (Gus 17/11) ----------
+  // Calendrier des sorties de nos longs métrages et séries. Sources, de la plus sûre à la moins sûre :
+  //  1. la page fiction du site (data/fiction.json : `overrides[<id>].date`, plateformes, genre) — saisi par l'équipe ;
+  //  2. les sorties ajoutées ici à la main et celles trouvées par le robot (dépôt notes, sorties/sorties.json : TMDB, gratuit ;
+  //     Claude seulement en dernier recours) = { releases: [{ id, title, project?, slate?, date, kind: cinema | platform | tv,
+  //     platform?, country?, source: human | tmdb | claude, url?, by?, at? }], films: { <clé>: { at, found } }, at } ;
+  //  3. nos films sans date connue (projets.json : longs, téléfilms, séries) : liste « sans date ».
+  var SORT_PATH = "/repos/" + NOTES_REPO + "/contents/sorties/sorties.json", sorties = null, sortSha = null;
+  function sortRead() {
+    return gh(SORT_PATH, { allow404: true }).then(function (f) {
+      if (f) { sortSha = f.sha; sorties = JSON.parse(b64dec(f.content)); } else { sortSha = null; sorties = { releases: [], films: {} }; }
+      sorties.releases = sorties.releases || []; return sorties;
+    });
+  }
+  function sortPut(items, msg, remove) {
+    return sortRead().then(function () {
+      items.forEach(function (x) { sorties.releases = sorties.releases.filter(function (y) { return y.id !== x.id; }); if (!remove) sorties.releases.push(x); });
+      return gh(SORT_PATH, { method: "PUT", body: { message: msg + " (admin, " + (user && user.login || "") + ")", content: b64enc(JSON.stringify(sorties, null, 2) + "\n"), sha: sortSha || undefined } });
+    }).then(function (r) { sortSha = r.content.sha; });
+  }
+  function sortSave(before, after, label, remove) {
+    var b = before && JSON.parse(JSON.stringify(before)), a = JSON.parse(JSON.stringify(after));
+    return sortPut([a], "Sorties : " + label, remove).then(function () {
+      immPush({ label: label, undo: function () { return b ? sortPut([b], "Sorties : annulé — " + label) : sortPut([a], "Sorties : annulé — " + label, true); },
+        redo: function () { return sortPut([a], "Sorties : rétabli — " + label, remove); } });
+    });
+  }
+  // « Les Filles d'Abraham • Bande Annonce » → « Les Filles d'Abraham ».
+  function ficTitle(t) {
+    return String(t || "").replace(/ /g, " ").split(/\s+[•|]\s*|\s+[-–]\s+(?=(?:bande|trailer|teaser|saison|season|\()|.*bande|.*trailer)/i)[0]
+      .replace(/\((?:feature film )?(?:trailer|teaser|bande[- ]annonce)\)/ig, "").replace(/\b(bande[- ]annon?ce|trailer|teaser)\b.*$/i, "").trim();
+  }
+  var SK = { cinema: "Cinéma", platform: "Plateforme", tv: "Télé" };
+  var MOISL = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+  var JOURS = ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."];
+  function showSorties() {
+    bar.hidden = true; editing = false; view.textContent = "";
+    view.appendChild(el("h1", { text: "Sorties fiction" }));
+    view.appendChild(el("p", { class: "lead", text: "Les sorties de nos longs métrages et séries : cinéma (sortie française d'abord, sinon européenne ou américaine), plateformes, télé. Les dates viennent de la page fiction du site, de l'équipe et du robot." }));
+    var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
+    view.appendChild(box); immInit(function () { build(); draw(); });
+    var fic = null, st = { mode: "month", at: today(), q: "", openNoDate: false };
+    Promise.all([sortRead(), readFile("data/fiction.json").catch(function () { return null; }), projRead().catch(function () { return null; })]).then(function (r) {
+      fic = r[1]; build(); draw();
+    }, function (e) { box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message })); });
+    function nrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); }
+    function iso(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+    var events = [], noDate = [];
+    // Toutes les sorties connues + films sans date ; infos (réal, chef op, prod) complétées par projets.json et la page fiction.
+    function build() {
+      events = []; noDate = [];
+      var byTitle = {}, projs = ((proj && proj.projects) || []).filter(function (p) { return /^(LM|TVF|STV)$/.test(p.type) && !p.agency && p.title && !p.workTitle; });
+      projs.forEach(function (p) { byTitle[nrm(p.title)] = p; });
+      var seen = {};
+      function add(e) { var k = nrm(e.title) + "|" + e.date; if (seen[k]) return; seen[k] = 1; events.push(e); }
+      var ov = (fic && fic.overrides) || {};
+      ((fic && fic.films) || []).forEach(function (f) {
+        var o = ov[f.slate] || {}, t = ficTitle(o.title || f.title), p = byTitle[nrm(t)], sub = String(f.sub || "").split("\n");
+        var info = { title: t, slate: f.slate, project: p && p.id, directors: p ? p.directors || [] : sub[0] ? sub[0].split(/,\s*/) : [], dops: f.artists || (p && p.dops) || [],
+          prod: (p && p.prod) || sub[1] || "", platforms: o.platforms || [], series: o.genre === "SERIES" || /series/i.test((f.cats || []).join(" ")), img: f.img };
+        if (o.date) add(Object.assign({}, info, { date: o.date, kind: (o.platforms || []).length ? "platform" : "cinema", source: "fiction", id: "fic-" + f.slate }));
+        else seen["nd|" + nrm(t)] = info;
+        if (p) seen["p|" + p.id] = 1;
+      });
+      sorties.releases.forEach(function (r) {
+        var p = (r.project && projs.filter(function (q) { return q.id === r.project; })[0]) || byTitle[nrm(r.title)];
+        add(Object.assign({ directors: p ? p.directors || [] : [], dops: p ? p.dops || [] : [], prod: p ? p.prod || "" : "", platforms: r.platform ? [r.platform] : [], series: p ? p.type === "STV" : false }, r));
+        if (p) seen["p|" + p.id] = 1;
+      });
+      var dated = {}; events.forEach(function (e) { dated[nrm(e.title)] = 1; });
+      Object.keys(seen).filter(function (k) { return /^nd\|/.test(k); }).forEach(function (k) { if (!dated[k.slice(3)]) noDate.push(seen[k]); });
+      projs.forEach(function (p) { if (!seen["p|" + p.id] && !dated[nrm(p.title)]) noDate.push({ title: p.title, project: p.id, directors: p.directors || [], dops: p.dops || [], prod: p.prod || "", series: p.type === "STV", start: p.start }); });
+      events.sort(function (a, b) { return a.date.localeCompare(b.date); });
+      noDate.sort(function (a, b) { return String(b.start || "").localeCompare(String(a.start || "")); });
+    }
+    function hay(e) { return nrm([e.title, (e.directors || []).join(" "), (e.dops || []).join(" "), e.prod, (e.platforms || []).join(" "), e.country, SK[e.kind]].join(" ")); }
+    function match(e) { var w = nrm(st.q).split(" ").filter(Boolean); if (!w.length) return true; var h = hay(e); return w.every(function (x) { return h.indexOf(x) > -1; }); }
+    function range() {
+      var a = new Date(st.at), b;
+      if (st.mode === "month") { a = new Date(a.getFullYear(), a.getMonth(), 1); b = new Date(a.getFullYear(), a.getMonth() + 1, 0); }
+      else { var d = (a.getDay() + 6) % 7; a = new Date(a.getFullYear(), a.getMonth(), a.getDate() - d); b = new Date(a.getFullYear(), a.getMonth(), a.getDate() + 6); }
+      return [a, b];
+    }
+    function move(k) {
+      var a = new Date(st.at);
+      st.at = st.mode === "month" ? new Date(a.getFullYear(), a.getMonth() + k, 1) : new Date(a.getFullYear(), a.getMonth(), a.getDate() + 7 * k);
+      draw();
+    }
+    // Saut à la sortie précédente / suivante (hors de la période affichée), en tenant compte de la recherche.
+    function jump(k) {
+      var r = range(), l = events.filter(match);
+      var e = k > 0 ? l.filter(function (x) { return x.date > iso(r[1]); })[0] : l.filter(function (x) { return x.date < iso(r[0]); }).pop();
+      if (!e) return;
+      st.at = dOf(e.date); draw();
+    }
+    function draw() {
+      box.textContent = "";
+      var r = range(), l = events.filter(match);
+      // Barre : recherche, mois / semaine, flèches, aujourd'hui, saut de sortie en sortie.
+      var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, un réalisateur, un chef op, une plateforme, une production…", value: st.q });
+      q.addEventListener("input", function () { st.q = q.value; var c = q.selectionStart; draw(); var n = box.querySelector(".find"); n.focus(); n.setSelectionRange(c, c); });
+      box.appendChild(q);
+      var title = st.mode === "month" ? MOISL[r[0].getMonth()] + " " + r[0].getFullYear() : "Semaine du " + r[0].getDate() + " " + MOISL[r[0].getMonth()] + (r[0].getMonth() !== r[1].getMonth() ? " au " + r[1].getDate() + " " + MOISL[r[1].getMonth()] : " au " + r[1].getDate()) + " " + r[1].getFullYear();
+      var before = l.filter(function (x) { return x.date < iso(r[0]); }).length, after = l.filter(function (x) { return x.date > iso(r[1]); }).length;
+      box.appendChild(el("div", { class: "calbar" }, [
+        el("button", { type: "button", class: "btn ghost calj", title: "Sortie précédente", disabled: !before, text: "⇤", on: { click: function () { jump(-1); } } }),
+        el("button", { type: "button", class: "btn calm", title: st.mode === "month" ? "Mois précédent" : "Semaine précédente", text: "‹", on: { click: function () { move(-1); } } }),
+        el("strong", { class: "caltitle", text: title }),
+        el("button", { type: "button", class: "btn calm", title: st.mode === "month" ? "Mois suivant" : "Semaine suivante", text: "›", on: { click: function () { move(1); } } }),
+        el("button", { type: "button", class: "btn ghost calj", title: "Sortie suivante", disabled: !after, text: "⇥", on: { click: function () { jump(1); } } }),
+        el("button", { type: "button", class: "btn ghost", text: "Aujourd'hui", on: { click: function () { st.at = today(); draw(); } } }),
+        el("span", { class: "rcgap" }),
+        el("div", { class: "rcmode" }, [["month", "Mois"], ["week", "Semaine"]].map(function (m) { return el("button", { type: "button", class: st.mode === m[0] ? "on" : "", text: m[1], on: { click: function () { st.mode = m[0]; draw(); } } }); })),
+        el("button", { type: "button", class: "btn fadd", text: "+ Ajouter une sortie", on: { click: function (e) { form(null, e.target.closest(".calbar")); } } })
+      ]));
+      // Grille.
+      var g = el("div", { class: "cal " + st.mode });
+      JOURS.forEach(function (j) { g.appendChild(el("div", { class: "calh", text: j })); });
+      var start = new Date(r[0]); start.setDate(start.getDate() - (start.getDay() + 6) % 7);
+      var end = new Date(r[1]); end.setDate(end.getDate() + (7 - (end.getDay() + 6) % 7) % 7);
+      var td = iso(today());
+      for (var d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+        var k = iso(d), out = d < r[0] || d > r[1];
+        var cell = el("div", { class: "calc" + (out ? " out" : "") + (k === td ? " today" : "") + (d.getDay() === 3 ? " wed" : "") }, [el("span", { class: "cald", text: String(d.getDate()) })]);
+        l.filter(function (x) { return x.date === k; }).forEach(function (x) {
+          var ev = el("button", { type: "button", class: "calev " + (x.kind || "cinema") + (x.series ? " series" : "") }, [el("strong", { text: x.title }),
+            el("small", { text: [(x.platforms || []).join(", ") || SK[x.kind || "cinema"], (x.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") })]);
+          ev.addEventListener("click", function () { detail(x, ev); });
+          cell.appendChild(ev);
+        });
+        g.appendChild(cell);
+      }
+      box.appendChild(g);
+      box.appendChild(el("p", { class: "hint callegend" }, ["Blanc : cinéma · bleu : plateforme / télé · bord pointillé : série · le mercredi (sorties en salle en France) est souligné. ", before || after ? (before + " sortie" + (before > 1 ? "s" : "") + " avant, " + after + " après cette période" + (st.q ? " (avec la recherche)" : "") + " : ⇤ ⇥ pour y aller.") : ""]));
+      // Recherche : la liste de ce qui correspond, toutes dates.
+      if (st.q) {
+        var s0 = el("section", {}, [el("h2", { text: "Résultats · " + l.length })]);
+        l.slice().reverse().forEach(function (x) { s0.appendChild(rowOf(x)); });
+        var nd = noDate.filter(match); nd.forEach(function (x) { s0.appendChild(rowOf(x, true)); });
+        if (!l.length && !nd.length) s0.appendChild(el("p", { class: "hint", text: "Rien ne correspond." }));
+        box.appendChild(s0);
+      }
+      // À venir.
+      var up = events.filter(function (x) { return x.date >= td; });
+      var s1 = el("section", {}, [el("h2", { text: "À venir · " + up.length })]);
+      if (!up.length) s1.appendChild(el("p", { class: "hint", text: "Aucune sortie annoncée pour l'instant." }));
+      up.forEach(function (x) { s1.appendChild(rowOf(x)); });
+      box.appendChild(s1);
+      // Sans date connue (repliable).
+      var s2 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "selfold", on: { click: function () { st.openNoDate = !st.openNoDate; draw(); } } }, [(st.openNoDate ? "▾ " : "▸ ") + "Sans date connue · " + noDate.length])])]);
+      if (st.openNoDate) noDate.forEach(function (x) { s2.appendChild(rowOf(x, true)); });
+      box.appendChild(s2);
+    }
+    function rowOf(x, nod) {
+      var r = el("div", { class: "selrow ok" }, [
+        nod ? el("span", { class: "selk", text: "Sans date" }) : el("span", { class: "selk " + (x.kind === "cinema" ? "prize" : "nom"), text: fdate(x.date) }),
+        el("div", { class: "selwhat" }, [el("strong", { text: x.title + (x.series ? " (série)" : "") }),
+          el("span", { text: nod ? (x.start ? "Tourné en " + x.start.slice(0, 4) : "") : [SK[x.kind || "cinema"], (x.platforms || []).join(", "), x.country].filter(Boolean).join(" · ") }),
+          el("small", { text: [(x.directors || []).length && "réal. " + x.directors.join(", "), (x.dops || []).length && "DoP " + x.dops.map(rcBase).join(", "), x.prod].filter(Boolean).join(" · ") })]),
+        el("div", { class: "selsrc" }, x.url ? [el("a", { href: x.url, target: "_blank", rel: "noopener", text: "source ↗" })] : []),
+        el("div", { class: "fwbtns" }, nod ? [el("button", { type: "button", class: "btn ghost", text: "+ Ajouter une date", on: { click: function () { form({ title: x.title, project: x.project, kind: x.series ? "platform" : "cinema" }, r, true); } } })]
+          : [el("button", { type: "button", class: "btn ghost", text: "Voir", on: { click: function () { st.at = dOf(x.date); draw(); window.scrollTo({ top: 0, behavior: "smooth" }); } } })])]);
+      return r;
+    }
+    function detail(x, at) {
+      var old = box.querySelector(".caldetail"); if (old) { old.remove(); if (old._x === x) return; }
+      var srcs = { fiction: "page fiction du site (à changer là-bas)", human: "ajouté par " + (x.by || "l'équipe"), tmdb: "trouvé par le robot (TMDB)", claude: "trouvé par le robot (Claude)" };
+      var d = el("div", { class: "caldetail fcard" }, [
+        el("h3", { text: x.title + (x.series ? " (série)" : "") }),
+        el("p", { class: "fwhere", text: [fdate(x.date), SK[x.kind || "cinema"], (x.platforms || []).join(", "), x.country].filter(Boolean).join(" · ") }),
+        el("p", { class: "hint", text: [(x.directors || []).length && "Réalisation : " + x.directors.join(", "), (x.dops || []).length && "Image : " + x.dops.map(rcBase).join(", "), x.prod && "Production : " + x.prod].filter(Boolean).join(" · ") }),
+        el("p", { class: "hint", text: "Source : " + (srcs[x.source] || x.source || "") }),
+        el("div", { class: "fwbtns" }, [x.url ? el("a", { class: "btn", href: x.url, target: "_blank", rel: "noopener", text: "Source ↗" }) : null,
+          x.source !== "fiction" ? el("button", { type: "button", class: "btn", text: "Modifier", on: { click: function () { d.remove(); form(x, at.closest(".cal")); } } }) : el("a", { class: "btn", href: "#/fiction", text: "Page fiction" }),
+          el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: function () { d.remove(); } } })])]);
+      d._x = x;
+      at.closest(".cal").after(d); d.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+    // Ajout / modification à la main : film (projets + page fiction), date, type, plateforme, pays.
+    function form(x0, at, fromNoDate) {
+      var old = box.querySelector(".sortadd"); if (old) old.remove();
+      var edit = x0 && x0.id && !fromNoDate, x = edit ? JSON.parse(JSON.stringify(x0)) : Object.assign({ kind: "cinema", country: "France" }, x0 || {});
+      var titles = {}; events.concat(noDate).forEach(function (e) { titles[e.title] = e; });
+      var dl = el("datalist", { id: "sortfilms" }, Object.keys(titles).sort().map(function (t) { return el("option", { value: t }); }));
+      function inp(k, ph, type) { var i = el("input", { type: type || "text", class: "nodirty", placeholder: ph, value: x[k] || (k === "platform" && (x.platforms || [])[0]) || "" }); i.addEventListener("input", function () { x[k] = i.value.trim(); }); return el("label", { class: "field" }, [el("span", { class: "label", text: ph }), i]); }
+      var ti = inp("title", "Film ou série"); ti.querySelector("input").setAttribute("list", "sortfilms");
+      var kinds = el("div", { class: "fchips" });
+      ["cinema", "platform", "tv"].forEach(function (k) { kinds.appendChild(el("button", { type: "button", class: "chip" + (x.kind === k ? " on" : ""), "data-k": k, text: SK[k], on: { click: function () { x.kind = k; kinds.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("on", c.dataset.k === k); }); f.classList.add("changed"); } } })); });
+      var msg = el("span", { class: "fmsg" });
+      var f = el("article", { class: "fcard fedit sortadd" }, [dl, el("div", { class: "fgrid" }, [ti, inp("date", "Date de sortie", "date"), inp("platform", "Plateforme / chaîne (facultatif)")]),
+        el("div", { class: "field" }, [el("span", { class: "label", text: "Type de sortie" }), kinds]),
+        el("div", { class: "fgrid" }, [inp("country", "Pays"), inp("url", "Lien (facultatif)")]),
+        el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: edit ? "Enregistrer" : "Ajouter", on: { click: function (e) {
+          if (!x.title || !/^\d{4}-\d{2}-\d{2}$/.test(x.date || "")) { msg.textContent = "Il faut le film et la date."; return; }
+          var t = titles[x.title]; if (t && t.project) x.project = t.project;
+          var y = { id: edit ? x.id : "s" + Date.now().toString(36), title: x.title, project: x.project, date: x.date, kind: x.kind, platform: x.platform || undefined, country: x.country || undefined, url: x.url || undefined, source: "human", by: user && user.login || "", at: new Date().toISOString() };
+          if (edit && x0.source !== "human") y.was = x0.source;
+          e.target.disabled = true; msg.textContent = "Enregistrement…";
+          sortSave(edit ? x0 : null, y, y.title + " : " + fdate(y.date)).then(function () { st.at = dOf(y.date); build(); draw(); }, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+        } } }),
+          edit ? el("button", { type: "button", class: "btn ghost", text: "Supprimer", on: { click: function () { sortSave(x0, x0, x0.title + " : supprimé", true).then(function () { build(); draw(); }); } } }) : null,
+          el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { f.remove(); } } }), msg])]);
+      at.after(f); f.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
   }
 
   // ---------- Récupération (Gus 16/11, remplace l'ancien outil k-recup) ----------
@@ -3187,7 +3395,7 @@
     if (page === "press") return showSoon("Press");
     if (page === "festivals") return showFestivals();
     if (page === "selections") return showFestSel();
-    if (page === "sorties") return showSoon("Sorties fiction", "Bientôt : le calendrier des prochaines sorties de nos films (cinéma et plateformes), d'après IMDb puis AlloCiné ; sortie française d'abord, sinon européenne ou américaine.");
+    if (page === "sorties") return showSorties();
     if (page === "recup") return showRecup();
     if (page === "hello") return showHello();
     showList();
