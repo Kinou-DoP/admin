@@ -237,7 +237,8 @@
     },
     {
       "slug": "penelope-pourriat-afc-cinematographer",
-      "name": "Pénélope Pourriat, AFC"
+      "name": "Pénélope Pourriat, AFC",
+      "gender": "f"
     },
     {
       "slug": "melodie-preel-afc-cinematographer",
@@ -293,8 +294,7 @@
     },
     {
       "slug": "maeva-vo-dinh-cinematographer",
-      "name": "Maëva Vo Dinh",
-      "gender": "f"
+      "name": "Maëva Vo Dinh"
     },
     {
       "slug": "christos-voudouris-cinematographer",
