@@ -2263,10 +2263,10 @@
   }
   function festBadge() {
     var a = side.querySelector('.sgroup[data-group="festivals"]'); if (!a) return;
-    var n = fest ? festAlerts(fest.festivals).length : 0, b = a.querySelector(".nbadge");
+    var n = fest ? festAlerts(fest.festivals).length + (fest.festivals || []).filter(function (f) { return f.check && (f.check.issues || []).some(function (i) { return i.kind !== "page"; }) && f.checkSeen !== f.check.hash; }).length : 0, b = a.querySelector(".nbadge");
     if (!n) { if (b) b.remove(); return; }
     if (!b) { b = el("span", { class: "nbadge" }); a.appendChild(b); }
-    b.textContent = n; b.title = n + " date(s) limite(s) d'inscription dans les 14 jours";
+    b.textContent = n; b.title = "Dates limites d'inscription dans les 14 jours et festivals à vérifier (triangle orange)";
   }
 
   function showFestivals() {
@@ -2311,21 +2311,29 @@
         .forEach(function (f) { cal.appendChild(card(f)); });
       box.appendChild(cal);
     }
+    // Robot du matin (dépôt notes, tools/check-festivals.mjs) : f.check.issues = désaccords avec le site du festival. Ce que l'équipe a
+    // saisi reste ; un triangle orange le signale tant que personne ne l'a marqué « vu » (checkSeen = check.hash, Gus 16/11).
+    function warnOn(f) {
+      var l = f.check && f.checkSeen !== f.check.hash ? (f.check.issues || []).filter(function (i) { return i.kind !== "page"; }) : [];
+      return l.length ? l : null;
+    }
+    function tri(title) { return el("span", { class: "ftri", title: title || "Le site du festival indique autre chose", text: "!" }); }
     function card(f) {
-      var past = days(f.end || f.start) < 0;
+      var past = days(f.end || f.start) < 0, warn = warnOn(f);
       var c = el("article", { class: "fcard" + (past ? " past" : "") });
       c.appendChild(el("div", { class: "fhead" }, [
-        el("div", {}, [el("h3", { text: f.name }), el("p", { class: "fwhere", text: [f.city, f.country].filter(Boolean).join(" · ") })]),
+        el("div", {}, [el("h3", {}, [warn ? tri() : null, f.name]), el("p", { class: "fwhere", text: [f.city, f.country].filter(Boolean).join(" · ") })]),
         el("div", { class: "ftags" }, (f.types || []).map(function (t) { return el("span", { class: "ftag", text: FEST_TYPES[t] || t }); }))
       ]));
-      c.appendChild(el("p", { class: "fdates" }, [el("span", { class: "label", text: "Festival" }), el("strong", { text: frange(f.start, f.end) }),
+      var wStart = warn && warn.filter(function (i) { return i.kind === "start" || (i.kind === "new" && !i.label); })[0];
+      c.appendChild(el("p", { class: "fdates" }, [el("span", { class: "label", text: "Festival" }), wStart ? tri(wStart.msg) : null, el("strong", { text: frange(f.start, f.end) }),
         f.est ? el("em", { text: "estimé" }) : null, past ? el("em", { class: "old", text: "édition passée : dates à mettre à jour" }) : null]));
       if ((f.deadlines || []).length) {
         var dl = el("ul", { class: "fdl" });
         f.deadlines.slice().sort(function (a, b) { return String(a.date).localeCompare(String(b.date)); }).forEach(function (d) {
-          var n = days(d.date);
+          var n = days(d.date), w = warn && warn.filter(function (i) { return i.label && i.date === d.date && i.label === d.label; })[0];
           dl.appendChild(el("li", { class: n !== null && n < 0 ? "gone" : n !== null && n <= 14 ? "hot" : "" }, [
-            el("span", { class: "fdlabel", text: d.label + (d.ed ? " · édition " + d.ed : "") }),
+            el("span", { class: "fdlabel" }, [w ? tri(w.msg) : null, d.label + (d.ed ? " · édition " + d.ed : "")]),
             el("span", { class: "fddate", text: fdate(d.date) }),
             el("span", { class: "fdwhen", text: n === null ? "" : (n < 0 ? "passée" : when(n)) + (d.est ? " · estimée" : "") })
           ]));
@@ -2333,13 +2341,32 @@
         c.appendChild(el("div", {}, [el("span", { class: "label", text: "Inscriptions" }), dl]));
       } else c.appendChild(el("p", { class: "hint", text: "Pas de date limite connue." }));
       if (f.note) c.appendChild(el("p", { class: "fnote", text: f.note }));
+      if (warn) {
+        var wb = el("div", { class: "fwarn" }, [el("strong", {}, [tri(), "Le site du festival ne dit pas la même chose"])]);
+        warn.forEach(function (i) {
+          var t = (i.label ? i.label + " — " : i.kind !== "deadline" ? "Festival — " : "") + "chez nous : " + fdate(i.date) + (i.kind === "new" ? " (estimée)" : "")
+            + " · sur le site : " + (i.dates || []).map(function (d) { return fdate(d); }).join(", ") + ". " + i.msg;
+          wb.appendChild(el("p", { text: t }));
+        });
+        var pg = el("p", { class: "fwpages" }, ["Pages lues : "]);
+        (f.check.pages || []).forEach(function (x, k) { if (k) pg.appendChild(document.createTextNode(" · ")); pg.appendChild(el("a", { href: x.url, target: "_blank", rel: "noopener", text: x.url.replace(/^https?:\/\/(www\.)?/, "").slice(0, 48) + " ↗" })); });
+        wb.appendChild(pg);
+        wb.appendChild(el("div", { class: "fwbtns" }, [
+          el("button", { type: "button", class: "btn", text: "Vu, nos infos sont bonnes", on: { click: function (e) {
+            var g = JSON.parse(JSON.stringify(f)); g.checkSeen = f.check.hash; e.target.disabled = true;
+            festSave(g).then(draw, function (er) { e.target.disabled = false; window.alert("Pas enregistré : " + er.message); });
+          } } }),
+          el("button", { type: "button", class: "btn ghost", text: "Corriger", on: { click: function () { edit(f); } } })
+        ]));
+        c.appendChild(wb);
+      }
       var links = el("div", { class: "flinks" });
       if (f.submit) links.appendChild(el("a", { class: "btn primary", href: f.submit, target: "_blank", rel: "noopener", text: "S'inscrire ↗" }));
       if (f.site) links.appendChild(el("a", { class: "btn", href: f.site, target: "_blank", rel: "noopener", text: "Site ↗" }));
       if (f.selection) links.appendChild(el("a", { class: "btn", href: f.selection, target: "_blank", rel: "noopener", text: "Sélection ↗" }));
       (f.types || []).forEach(function (t) { var o = FEST_OURS[t]; if (o) links.appendChild(el("a", { class: "btn ours", href: SITE_VIEW + o[1], target: "_blank", rel: "noopener", text: o[0] + " ↗" })); });
       c.appendChild(links);
-      c.appendChild(el("div", { class: "ffoot" }, [el("span", { text: f.checked ? "Vérifié le " + fdate(f.checked) : "" }),
+      c.appendChild(el("div", { class: "ffoot" }, [el("span", { text: (f.checked ? "Vérifié le " + fdate(f.checked) : "") + (f.check ? " · robot : " + fdate(f.check.at.slice(0, 10)) + ((f.check.issues || []).some(function (i) { return i.kind === "page"; }) ? " (site illisible pour lui)" : "") : "") }),
         el("button", { type: "button", class: "btn ghost", text: "Modifier", on: { click: function () { edit(f); } } })]));
       return c;
     }
@@ -2392,6 +2419,7 @@
         if (!f.id) f.id = slugify(f.name) + "-" + Date.now().toString(36);
         f.deadlines = (f.deadlines || []).filter(function (d) { return d.date || d.label; });
         f.checked = new Date().toISOString().slice(0, 10);
+        if (f.check) f.checkSeen = f.check.hash; // la personne vient de vérifier : désaccords actuels marqués « vus »
         Object.keys(f).forEach(function (k) { if (f[k] === "") delete f[k]; });
         save.disabled = true; msg.textContent = "Enregistrement…";
         festSave(f).then(function () { festBadge(); done(); }, function (e) { save.disabled = false; msg.textContent = "Pas enregistré : " + e.message; });

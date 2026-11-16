@@ -123,7 +123,12 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   festivals qui commencent dans les 30 jours ou en cours), filtres par type, cartes (dates, inscriptions, remarques, liens S'inscrire /
   Site / Sélection, boutons « Nos … » vers le site Cloudflare `FEST_OURS` : clips → `spotlight/music-video`, pub → `spotlight/commercial`,
   longs → `fiction/feature-films`, courts → `fiction/short-films`), édition passée = estompée « à mettre à jour », formulaire « Modifier »
-  / « + Ajouter un festival ». Nos sélections (`showFestSel`) : à venir (robot quotidien qui cherche nos films, titres + réalisateurs,
+  / « + Ajouter un festival ». **Robot du matin** (dépôt notes, `tools/check-festivals.mjs`, chaque jour vers 9 h à Paris) : écrit seulement `check`
+  (`issues` = date proche mais différente sur le site du festival : `deadline` / `start`, ou `new` = nouvelles dates possibles quand
+  les nôtres sont estimées ; `page` = site illisible, affiché en petit dans le pied de carte, sans triangle). **Ce que l'équipe a saisi
+  n'est jamais modifié** (Gus 16/11) : triangle orange « ! » (`.ftri`) devant le nom, la date concernée et un encadré (`.fwarn` : chez
+  nous / sur le site, pages lues, « Vu, nos infos sont bonnes » = `checkSeen` = `check.hash`, « Corriger ») ; enregistrer le festival
+  marque aussi les désaccords actuels comme vus ; la pastille du menu les compte. Nos sélections (`showFestSel`) : à venir (robot quotidien qui cherche nos films, titres + réalisateurs,
   dans les pages de sélection ; liste des projets d'après les captures de k-recup).
 - Fiction (lien « fiction » du menu, `data/fiction.json`) : comme le spotlight (lien d'une bande Slate + « Relire la bande », lue en
   entier par le robot ; mêmes réglages par film via `filmsSection` / `filmCard`, `state` = fic), plus sous le titre de chaque film

@@ -467,3 +467,12 @@ body.vedit-on { overflow: hidden; }
 }
 .fedit input[type=date] { width: 100%; padding: 10px 0; border: 0; border-bottom: 1px solid var(--faint); background: none; color: var(--kinou-fg); font: 300 16px var(--kinou-body); color-scheme: dark; }
 .fedit .fdlrow input[type=date] { font-size: 14px; padding: 8px 0; }
+/* Désaccord avec le site du festival (robot du matin) : triangle orange « ! », encadré sous la carte. */
+.ftri { display: inline-flex; align-items: flex-end; justify-content: center; width: 18px; height: 16px; margin-right: 8px; padding-bottom: 1px; background: #ff9a3d; clip-path: polygon(50% 0, 100% 100%, 0 100%); color: #000; font: 700 11px/1 var(--kinou-body); vertical-align: -1px; cursor: help; flex: none; }
+.fhead h3 .ftri { width: 20px; height: 18px; font-size: 12px; vertical-align: 0; }
+.fwarn { margin: 0 0 16px; padding: 14px 16px; border: 1px solid rgba(255,154,61,.5); background: rgba(255,154,61,.06); font-size: 13px; line-height: 1.5; }
+.fwarn strong { display: flex; align-items: center; margin-bottom: 6px; color: #ffb36b; font-weight: 600; }
+.fwarn p { margin: 0 0 4px; color: var(--dim); }
+.fwarn .fwpages a { color: var(--dim); }
+.fwbtns { display: flex; gap: 8px; margin-top: 10px; }
+.fwbtns .btn { height: 32px; font-size: 12px; padding: 0 12px; }
