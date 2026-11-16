@@ -597,3 +597,15 @@ body.vedit-on { overflow: hidden; }
 .rcmail .rcmode { display: inline-flex; }
 .rcmail .btn.primary[disabled] { opacity: .35; }
 main { padding-bottom: 200px; }
+/* Accueil de l'admin : « Hello la Dream Team ! » (Gus 17/11, pour sourire) */
+.tag { text-decoration: none; }
+.hellobox { min-height: 62vh; display: flex; align-items: center; }
+.hello { margin: 0; font-family: "Rubik Wet Paint", var(--kinou-sans); font-weight: 400; font-size: clamp(64px, 10vw, 170px); letter-spacing: 0; line-height: 1.02; cursor: default; user-select: none; }
+.hello .hw { display: inline-block; white-space: nowrap; }
+.hello .hl { display: inline-block; opacity: 0; transform: translateY(-80px) rotate(var(--r)); animation: hDrop .9s cubic-bezier(.34, 1.7, .5, 1) forwards; animation-delay: calc(var(--i) * 55ms); transition: color .2s; }
+.hello .hl:hover { color: #ffd27a; animation: hWiggle .5s ease-in-out; opacity: 1; transform: rotate(var(--r)); }
+.hello .hl.boing { animation: hBoing .6s cubic-bezier(.34, 1.7, .5, 1); opacity: 1; }
+@keyframes hDrop { to { opacity: 1; transform: translateY(0) rotate(var(--r)); } }
+@keyframes hWiggle { 0%, 100% { transform: rotate(var(--r)); } 25% { transform: rotate(calc(var(--r) - 12deg)) scale(1.08); } 75% { transform: rotate(calc(var(--r) + 12deg)) scale(1.08); } }
+@keyframes hBoing { 0% { transform: rotate(var(--r)) scale(1); } 30% { transform: translateY(-40px) rotate(calc(var(--r) * -2)) scale(1.25); } 100% { transform: rotate(var(--r)) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .hello .hl { animation: none; opacity: 1; transform: none; } }

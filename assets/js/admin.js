@@ -2893,6 +2893,19 @@
     }
   }
 
+  // ---------- Accueil de l'admin (Gus 17/11) : juste pour sourire. Logo « kinou admin » = cette page ; la liste des chefs op est sur #/dops.
+  function showHello() {
+    bar.hidden = true; editing = false; view.textContent = "";
+    var h = el("h1", { class: "hello", "aria-label": "Hello la Dream Team !" }), n = 0;
+    ["Hello", "la", "Dream", "Team\u00a0!"].forEach(function (w, k, all) {
+      var word = el("span", { class: "hw" });
+      w.split("").forEach(function (c) { word.appendChild(el("span", { class: "hl", style: "--i:" + (n++) + ";--r:" + ((n * 37) % 13 - 6) + "deg", text: c })); });
+      h.appendChild(word); if (k === 1) h.appendChild(el("br")); else if (k < all.length - 1) h.appendChild(document.createTextNode(" ")); // « Hello la / Dream Team ! »
+    });
+    h.addEventListener("click", function (e) { var l = e.target.closest(".hl"); if (!l) return; l.classList.remove("boing"); void l.offsetWidth; l.classList.add("boing"); });
+    view.appendChild(el("div", { class: "hellobox" }, [h]));
+  }
+
   // ---------- Historique des publications ----------
   // Petite fenêtre (lien « historique » du menu) : derniers commits de data/ sur GitHub = qui a publié quoi et quand.
   // Sur une fiche / l'accueil / le contact : l'historique de ce fichier, avec un bouton pour tout voir.
@@ -2960,7 +2973,7 @@
   function route() {
     var h = location.hash;
     document.getElementById("back").hidden = !token || !/^#\/(dp\/|new)/.test(h);
-    var page = /^#\/(home|spotlight|fiction|press|contact|festivals|selections|sorties|recup)$/.test(h) ? h.slice(2) : "cinematographers";
+    var page = /^#\/(home|spotlight|fiction|press|contact|festivals|selections|sorties|recup)$/.test(h) ? h.slice(2) : /^#\/(dops|dp\/.*|new)$/.test(h) ? "cinematographers" : "hello";
     side.hidden = !token;
     if (token && !festTried) { festTried = true; festLoad().then(festBadge, function () {}); } // pastille du menu (dates limites proches)
     side.querySelectorAll("a").forEach(function (a) { a.classList.toggle("on", a.dataset.page === page); });
@@ -2978,6 +2991,7 @@
     if (page === "selections") return showFestSel();
     if (page === "sorties") return showSoon("Sorties fiction", "Bientôt : le calendrier des prochaines sorties de nos films (cinéma et plateformes), d'après IMDb puis AlloCiné ; sortie française d'abord, sinon européenne ou américaine.");
     if (page === "recup") return showRecup();
+    if (page === "hello") return showHello();
     showList();
   }
   // Quitter la fiche (retour, autre page, rechargement) avec des modifications non publiées : on demande confirmation.

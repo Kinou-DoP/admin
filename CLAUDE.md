@@ -106,6 +106,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
 - **En ligne sur le site** (Gus 10/11) : interrupteur sous le titre d'une fiche (`onlineCtl`) → `hidden: true` dans l'entrée de
   `data/dps/index.json` quand il est décoché (écrit à la publication ; `state.hidden` = choix pas encore publié, `isHidden`). **Une
   nouvelle fiche est créée cachée** ; les fiches existantes au 10/11 sont en ligne. Liste de l'admin : « hors ligne » + nom estompé.
+- **Accueil de l'admin** (Gus 17/11, `showHello`, adresse `#/`, clic sur « kinou admin ») : « Hello la Dream Team ! » en très grand, police Rubik Wet Paint (Google Fonts), lettres qui tombent une à une, gigotent au survol, sautent au clic ; juste pour sourire. La liste des chefs op est sur `#/dops` (menu website → cinematographers).
 - Liste des chefs op : champ de recherche au-dessus (filtre au fil de la frappe, sans accents ; Entrée ouvre le 1er résultat).
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi
