@@ -180,8 +180,7 @@
     },
     {
       "slug": "frida-marzouk-afc",
-      "name": "Frida Marzouk, AFC",
-      "gender": "f"
+      "name": "Frida Marzouk, AFC"
     },
     {
       "slug": "nicolas-massart-afc-cinematographer",
@@ -209,7 +208,8 @@
     },
     {
       "slug": "lara-perrotte-boucard-cinematographer",
-      "name": "Lara Perrotte Boucard"
+      "name": "Lara Perrotte Boucard",
+      "gender": "f"
     },
     {
       "slug": "steeven-petitteville-afc-cinematographer",
