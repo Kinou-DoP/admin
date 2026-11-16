@@ -2162,6 +2162,38 @@
       .then(function () { publishBtn.disabled = false; });
   }
 
+  // ---------- Pages enregistrées tout de suite (festivals, récupération) : Annuler / Rétablir, modifications en cours ----------
+  // Chaque enregistrement garde l'avant et l'après : « Annuler » réenregistre l'avant, « Rétablir » l'après (Gus 17/11).
+  // Barre en bas à droite (.immbar) ; ⌘Z / Ctrl+Z, ⌘⇧Z / Ctrl+Y hors champ de texte.
+  var imm = { stack: [], i: 0 };
+  function immInit(redraw) {
+    var u = el("button", { type: "button", class: "btn ghost hbtn", title: "Annuler le dernier enregistrement (⌘Z / Ctrl+Z)", on: { click: function () { immGo(-1); } } }, ["↶", el("span", { class: "lg", text: " Annuler" })]);
+    var r = el("button", { type: "button", class: "btn ghost hbtn", title: "Rétablir (⌘⇧Z / Ctrl+Y)", on: { click: function () { immGo(1); } } }, ["↷", el("span", { class: "lg", text: " Rétablir" })]);
+    imm = { stack: [], i: 0, redraw: redraw, u: u, r: r, msg: el("span", { class: "immmsg" }) };
+    imm.bar = el("div", { class: "immbar" }, [u, r, imm.msg]);
+    view.appendChild(imm.bar); immBtns();
+  }
+  function immBtns() { if (!imm.u) return; imm.u.disabled = imm.busy || imm.i === 0; imm.r.disabled = imm.busy || imm.i >= imm.stack.length; }
+  function immPush(e) { imm.stack.length = imm.i; imm.stack.push(e); imm.i++; if (imm.stack.length > 50) { imm.stack.shift(); imm.i--; } immBtns(); if (imm.msg) imm.msg.textContent = "Enregistré : " + e.label; }
+  function immGo(k) {
+    var e = k < 0 ? imm.stack[imm.i - 1] : imm.stack[imm.i];
+    if (!e || imm.busy) return;
+    imm.busy = true; immBtns(); imm.msg.textContent = (k < 0 ? "Annulation" : "Rétablissement") + "…";
+    (k < 0 ? e.undo() : e.redo()).then(function () {
+      imm.i += k; imm.msg.textContent = (k < 0 ? "Annulé : " : "Rétabli : ") + e.label;
+      if (imm.redraw) imm.redraw();
+    }, function (er) { imm.msg.textContent = "Pas fait : " + er.message; }).then(function () { imm.busy = false; immBtns(); });
+  }
+  document.addEventListener("keydown", function (e) {
+    if (!(e.metaKey || e.ctrlKey) || !bar.hidden || !imm.bar || !imm.bar.isConnected) return;
+    var k = e.key.toLowerCase(), t = e.target, typing = t && (t.tagName === "TEXTAREA" || t.tagName === "SELECT" || (t.tagName === "INPUT" && !/^(range|checkbox|button)$/.test(t.type)));
+    if (typing || (k !== "z" && k !== "y")) return;
+    e.preventDefault(); immGo(k === "y" || e.shiftKey ? 1 : -1);
+  });
+  // Formulaire ouvert et modifié mais pas enregistré (festival, film de la récupération, mail) : classe .changed → on prévient avant de quitter.
+  ["input", "change"].forEach(function (ev) { view.addEventListener(ev, function (e) { var f = e.target.closest && e.target.closest(".fedit, .rcedit"); if (f) f.classList.add("changed"); }); });
+  function formsDirty() { return !!view.querySelector(".fedit.changed, .rcedit.changed"); }
+
   var festTried = false;
   function showSoon(title, txt) {
     bar.hidden = true; editing = false; view.textContent = "";
@@ -2261,6 +2293,15 @@
       return festPut((remove ? "Festival supprimé : " : "Festival : ") + f.name);
     });
   }
+  // Enregistre (ou supprime) avec Annuler / Rétablir : avant = version d'avant (absente pour un nouveau festival).
+  function festSaveLog(f, before, remove, label) {
+    var a = JSON.parse(JSON.stringify(f)), b = before ? JSON.parse(JSON.stringify(before)) : null;
+    return festSave(a, remove).then(function () {
+      immPush({ label: label || f.name,
+        undo: function () { return b ? festSave(b) : festSave(a, true); },
+        redo: function () { return festSave(a, remove); } });
+    });
+  }
   // Demande au robot du dépôt notes (festivals/ask/…, workflow festival-ask.yml) : réponse écrite dans le même fichier.
   function festAsk(name, hint) {
     var path = "/repos/" + NOTES_REPO + "/contents/festivals/ask/" + Date.now() + "-" + Math.random().toString(36).slice(2, 7) + ".json", t0 = Date.now();
@@ -2327,9 +2368,9 @@
     view.appendChild(el("h1", { text: "Festivals" }));
     view.appendChild(el("p", { class: "lead", text: "Dates des festivals, dates limites d'inscription et liens. Les dates « estimées » viennent de l'édition précédente : à vérifier sur le site du festival." }));
     var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
-    view.appendChild(box);
+    view.appendChild(box); immInit(function () { festBadge(); draw(); });
     festLoad().then(function () { festBadge(); draw(); }, function () { box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + festErr })); });
-    var filter = "";
+    var filter = "", fq = "";
     function draw() {
       box.textContent = "";
       var list = (fest.festivals || []).slice();
@@ -2359,10 +2400,21 @@
         chips.appendChild(el("button", { type: "button", class: "chip" + (filter === c[0] ? " on" : ""), text: c[1], on: { click: function () { filter = c[0]; draw(); } } }));
       });
       chips.appendChild(el("button", { type: "button", class: "btn fadd", text: "+ Ajouter un festival", on: { click: function () { edit({ id: "", name: "", types: [], deadlines: [] }, true); } } }));
-      var cal = el("section", { class: "fcal" }, [el("h2", { text: "Calendrier" }), chips]);
-      list.filter(function (f) { return !filter || (f.types || []).indexOf(filter) > -1; })
-        .sort(function (a, b) { var pa = days(a.end || a.start) < 0, pb = days(b.end || b.start) < 0; return pa !== pb ? (pa ? 1 : -1) : String(a.start || "9").localeCompare(String(b.start || "9")); })
-        .forEach(function (f) { cal.appendChild(card(f)); });
+      // Recherche (comme la liste des chefs op) : nom, ville, pays, sans accents ; seules les cartes sont refaites (le champ garde la main).
+      var find = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un festival, une ville, un pays…", value: fq });
+      var cards = el("div", {}), none = el("p", { class: "hint", text: "Aucun festival ne correspond." });
+      var cal = el("section", { class: "fcal" }, [el("h2", { text: "Calendrier" }), find, chips, cards]);
+      function nrm(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
+      function fillCards() {
+        var w = nrm(fq).split(/\s+/).filter(Boolean); cards.textContent = "";
+        var l = list.filter(function (f) { return (!filter || (f.types || []).indexOf(filter) > -1) && w.every(function (x) { return nrm([f.name, f.city, f.country].join(" ")).indexOf(x) > -1; }); })
+          .sort(function (a, b) { var pa = days(a.end || a.start) < 0, pb = days(b.end || b.start) < 0; return pa !== pb ? (pa ? 1 : -1) : String(a.start || "9").localeCompare(String(b.start || "9")); });
+        l.forEach(function (f) { cards.appendChild(card(f)); });
+        if (!l.length) cards.appendChild(none);
+      }
+      find.addEventListener("input", function () { fq = find.value; fillCards(); });
+      find.addEventListener("keydown", function (e) { if (e.key === "Enter") { var c = cards.querySelector(".fcard"); if (c) c.scrollIntoView({ behavior: "smooth", block: "start" }); } });
+      fillCards();
       box.appendChild(cal);
     }
     // Robot du matin (dépôt notes, tools/check-festivals.mjs) : f.check.issues = désaccords avec le site du festival. Ce que l'équipe a
@@ -2409,7 +2461,7 @@
         wb.appendChild(el("div", { class: "fwbtns" }, [
           el("button", { type: "button", class: "btn", text: "Vu, nos infos sont bonnes", on: { click: function (e) {
             var g = JSON.parse(JSON.stringify(f)); g.checkSeen = f.check.hash; e.target.disabled = true;
-            festSave(g).then(draw, function (er) { e.target.disabled = false; window.alert("Pas enregistré : " + er.message); });
+            festSaveLog(g, f, false, f.name + " : vu").then(draw, function (er) { e.target.disabled = false; window.alert("Pas enregistré : " + er.message); });
           } } }),
           el("button", { type: "button", class: "btn ghost", text: "Corriger", on: { click: function () { edit(f); } } })
         ]));
@@ -2493,16 +2545,16 @@
         if (f.check) f.checkSeen = f.check.hash; // la personne vient de vérifier : désaccords actuels marqués « vus »
         Object.keys(f).forEach(function (k) { if (f[k] === "") delete f[k]; });
         save.disabled = true; msg.textContent = "Enregistrement…";
-        festSave(f).then(function () { festBadge(); done(); }, function (e) { save.disabled = false; msg.textContent = "Pas enregistré : " + e.message; });
+        festSaveLog(f, isNew ? null : f0).then(function () { festBadge(); done(); }, function (e) { save.disabled = false; msg.textContent = "Pas enregistré : " + e.message; });
       } } });
       var del = isNew ? null : el("button", { type: "button", class: "btn ghost", text: "Supprimer", on: { click: function () {
         if (!window.confirm("Supprimer « " + f0.name + " » du calendrier ?")) return;
-        festSave(f0, true).then(function () { festBadge(); done(); }, function (e) { msg.textContent = "Pas supprimé : " + e.message; });
+        festSaveLog(f0, f0, true, f0.name + " supprimé").then(function () { festBadge(); done(); }, function (e) { msg.textContent = "Pas supprimé : " + e.message; });
       } } });
       form.appendChild(el("div", { class: "ffoot" }, [msg, el("div", {}, [del, el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: done } }), save])]));
       if (node) { node.replaceWith(form); return; } // nouvel affichage après « Compléter automatiquement »
       var at = isNew ? box.querySelector(".fcal h2") : null;
-      if (at) at.parentNode.insertBefore(form, at.nextSibling.nextSibling);
+      if (at) at.parentNode.insertBefore(form, at.parentNode.querySelector(".fchips").nextSibling);
       else { var mine = box.querySelector('.fcard[data-id="' + f0.id + '"]'); if (mine) mine.replaceWith(form); else box.prepend(form); }
       form.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -2527,7 +2579,13 @@
   var RC_CAT = { PUB: "pub", CLIP: "clip", LM: "long", TVF: "long", STV: "serie", CM: "court", MM: "moyen", DOC: "doc" };
   var RC_URG = { relance: "relance prévue", red: "+3 mois", yellow: "+1 mois" };
   var proj = null, projSha = null, rcGender = {};
-  var rcState = { q: "", st: "", types: [], dop: "", ag: true, n: 150, tab: "all", mode: "film", sort: "count", urg: "" };
+  var rcState = { q: "", st: "", types: [], dop: "", ag: true, n: 150, tab: "all", mode: "film", sort: "count", urg: "", fic: false };
+  // Types : [] = non-fiction (arrivée, et quand tout est décoché) ; "all" = tous ; "nf" = non-fiction (pub + clip) ; sinon familles cochées.
+  function rcNF(p) { var c = RC_CAT[p.type]; return c === "pub" || c === "clip"; }
+  function rcTypeOk(p) {
+    var t = rcState.types.length ? rcState.types : ["nf"];
+    return t.indexOf("all") > -1 || (t.indexOf("nf") > -1 && rcNF(p)) || t.indexOf(RC_CAT[p.type]) > -1;
+  }
   function projRead() {
     return Promise.all([gh(PROJ_DIR, { allow404: true }), gh(PROJ_PATH, { raw: true, allow404: true })]).then(function (r) {
       if (!r[1]) throw new Error("projets/projets.json introuvable dans Kinou-DoP/notes (ou clé GitHub sans accès)");
@@ -2545,6 +2603,12 @@
     }).then(function (r) { projSha = r.content.sha; }, function (e) {
       if (tries < 2 && /GitHub (409|422)/.test(e.message)) return projSave(changed, msg, tries + 1);
       throw e;
+    });
+  }
+  function rcSaveLog(before, after, label) {
+    var b = JSON.parse(JSON.stringify(before)), a = JSON.parse(JSON.stringify(after));
+    return projSave(a, "Récupération : " + label).then(function () {
+      immPush({ label: label, undo: function () { return projSave(b, "Récupération : annulé — " + label); }, redo: function () { return projSave(a, "Récupération : rétabli — " + label); } });
     });
   }
   function rcNorm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
@@ -2574,7 +2638,7 @@
   function rcMail(list, lang, relance) {
     var prod = list[0].prod || "", dops = [], films = list.map(function (p) {
       var d = rcDop(p); (p.dops || []).forEach(function (x) { x = rcBase(x); if (dops.indexOf(x) < 0) dops.push(x); });
-      return "• " + (p.title || "Sans titre") + (p.directors && p.directors.length ? " | " + p.directors.join(", ") : "") + " | " + d;
+      return "• " + (p.title || "Sans titre") + (p.directors && p.directors.length ? (lang === "fr" ? ", réalisé par " : ", directed by ") + p.directors.join(", ") : "") + (lang === "fr" ? ", DoP : " : ", DoP: ") + d;
     }).join("\n");
     var one = list.length === 1, p0 = list[0], fr = lang === "fr";
     var g = dops.map(rcGen), allF = g.every(function (x) { return x === "f"; });
@@ -2582,18 +2646,19 @@
     var who = fr ? (dops.length === 1 ? (g[0] === "f" ? "notre cheffe opératrice " : g[0] === "x" ? "" : "notre chef opérateur ") + dops[0]
         : dops.length <= 3 ? names(" et ") : allF ? "nos cheffes opératrices" : "nos chefs opérateurs")
       : (dops.length === 1 ? "our cinematographer " + dops[0] : dops.length <= 3 ? names(" and ") : "our cinematographers");
-    var plural = dops.length > 1;
-    var subject = one ? p0.title + " | " + ((p0.directors || [])[0] || (fr ? "[Réal]" : "[Dir]")) + " | " + rcDop(p0) : (fr ? "Récupération de films | Kinou" : "Film recovery request | Kinou");
+    var plural = dops.length > 1, rp = p0.directors && p0.directors.length ? (fr ? ", réalisé par " : ", directed by ") + p0.directors.join(", ") + "," : "";
+    var t0 = (p0.title || "Sans titre") + rp;
+    var subject = one ? (p0.title || "Sans titre") + " | " + ((p0.directors || [])[0] || (fr ? "[Réal]" : "[Dir]")) + " | " + rcDop(p0) : (fr ? "Récupération de films | Kinou" : "Film recovery request | Kinou");
     var body;
     if (fr) body = (one ? "Hello [prénom],\n\n" : "Hello l'équipe " + prod + ",\n\n") + (one
-      ? (relance ? "Je me permets de vous relancer concernant le film " + p0.title + " sur lequel " + who + " " + (plural ? "ont" : "a") + " travaillé.\nEst-ce que ce serait possible de nous envoyer un lien pour le télécharger ?"
-        : "Est-ce que ce serait possible de m'envoyer le film " + p0.title + " sur lequel " + who + " " + (plural ? "ont" : "a") + " travaillé ?")
+      ? (relance ? "Je me permets de vous relancer concernant le film " + t0 + " sur lequel " + who + " " + (plural ? "ont" : "a") + " travaillé.\nEst-ce que ce serait possible de nous envoyer un lien pour le télécharger ?"
+        : "Est-ce que ce serait possible de m'envoyer le film " + t0 + " sur lequel " + who + " " + (plural ? "ont" : "a") + " travaillé ?")
       : (relance ? "Je me permets de vous relancer concernant certains films sur lesquels " + who + " " + (plural ? "ont" : "a") + " travaillé.\nEst-ce que ce serait possible de nous envoyer des liens pour télécharger les films suivants :"
         : "Je cherche à récupérer certains films sur lesquels " + who + " " + (plural ? "ont" : "a") + " travaillé. Ce serait super si vous pouviez m'envoyer le master de ces films :") + "\n\n" + films)
       + "\n\nMerci d'avance pour votre aide !\nBelle journée,";
     else body = (one ? "Hello [first name],\n\n" : "Hi " + prod + " team,\n\n") + (one
-      ? (relance ? "I'm following up regarding the film " + p0.title + " that " + who + " worked on.\nWould it be possible to send us a link to download it?"
-        : "Would it be possible to send me the film " + p0.title + " that " + who + " worked on?")
+      ? (relance ? "I'm following up regarding the film " + t0 + " that " + who + " worked on.\nWould it be possible to send us a link to download it?"
+        : "Would it be possible to send me the film " + t0 + " that " + who + " worked on?")
       : (relance ? "I'm following up regarding some films that " + who + " " + (plural ? "have" : "has") + " worked on. Have you had a chance to gather the master files for these:"
         : "I'm looking to recover some films that " + who + " " + (plural ? "have" : "has") + " worked on. It would be great if you could send us the master files for these films:") + "\n\n" + films)
       + "\n\nThank you in advance for your help!\nHave a great day,";
@@ -2605,7 +2670,7 @@
     view.appendChild(el("h1", { text: "Récupération" }));
     view.appendChild(el("p", { class: "lead", text: "Les copies des films de nos chefs op à récupérer auprès des productions : où on en est, qui relancer, et les mails tout prêts. Chaque changement est enregistré tout de suite." }));
     var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
-    view.appendChild(box);
+    view.appendChild(box); immInit(function () { draw(); });
     Promise.all([projRead(), readFile("data/dps/index.json").catch(function () { return null; })]).then(function (r) {
       rcGender = {}; ((r[1] && r[1].dps) || []).forEach(function (d) { if (d.gender) rcGender[rcNorm(rcBase(d.name)).replace(/[^a-z]/g, "")] = d.gender; });
       draw();
@@ -2613,15 +2678,18 @@
     var out, count;
     function draw() {
       box.textContent = "";
-      var all = proj.projects.filter(function (p) { return rcState.ag || !p.agency; }), cnt = {};
+      var all = proj.projects.filter(function (p) { return (rcState.ag || !p.agency) && (rcState.fic || rcNF(p)); }), cnt = {};
       RC_ST.forEach(function (s) { cnt[s] = 0; }); all.forEach(function (p) { cnt[rcSt(p)]++; });
       var pct = all.length ? Math.round(cnt["Récupéré"] / all.length * 100) : 0;
       var stats = el("section", { class: "rcstats" }, RC_ST.map(function (s) {
         return el("button", { type: "button", class: "rcstat " + RC_CLS[s] + (rcState.tab === "all" && rcState.st === s ? " on" : ""), on: { click: function () { rcState.tab = "all"; rcState.st = rcState.st === s ? "" : s; rcState.n = 150; draw(); } } },
           [el("strong", { text: String(cnt[s]) }), el("span", { text: RC_LBL[s] })]);
       }));
-      stats.appendChild(el("div", { class: "rcbar" }, [el("i", { style: "width:" + pct + "%" }), el("span", { text: pct + " % récupérés" })]));
+      stats.appendChild(el("div", { class: "rcbar" }, [el("i", { style: "width:" + pct + "%" }), el("span", { text: pct + " % récupérés" + (rcState.fic ? "" : " · non-fiction (pub, clips)") })]));
       box.appendChild(stats);
+      var fic = el("label", { class: "rcfic" }, [el("input", { type: "checkbox", class: "nodirty" }), "Compter aussi la fiction"]);
+      fic.firstChild.checked = rcState.fic; fic.firstChild.addEventListener("change", function () { rcState.fic = fic.firstChild.checked; draw(); });
+      box.appendChild(fic);
       // Onglets : tous les films (arrivée) | à relancer.
       var nTodo = all.filter(function (p) { return rcUrg(p); }).length;
       box.appendChild(el("div", { class: "rctabs" }, [["all", "Tous les films"], ["todo", "À relancer · " + nTodo]].map(function (t) {
@@ -2647,15 +2715,24 @@
       c.appendChild(chips);
       // Types : liste déroulante à cases (plusieurs à la fois).
       var dd = el("details", { class: "rcdd" }), sum = el("summary", { class: "nodirty" });
-      function sumTxt() { sum.textContent = rcState.types.length ? RC_CATS.filter(function (x) { return rcState.types.indexOf(x[0]) > -1; }).map(function (x) { return x[1]; }).join(", ") : "Tous les types"; }
+      var OPTS = [["all", "Tous les types"], ["nf", "Non-fiction", "pub + clip"]].concat(RC_CATS);
+      function cur() { return rcState.types.length ? rcState.types : ["nf"]; }
+      function sumTxt() { sum.textContent = OPTS.filter(function (x) { return cur().indexOf(x[0]) > -1; }).map(function (x) { return x[1]; }).join(", "); }
       sumTxt(); dd.appendChild(sum);
       var pane = el("div", { class: "rcddpane" });
-      RC_CATS.forEach(function (x) {
-        var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = rcState.types.indexOf(x[0]) > -1;
-        cb.addEventListener("change", function () { rcState.types = rcState.types.filter(function (t) { return t !== x[0]; }); if (cb.checked) rcState.types.push(x[0]); sumTxt(); rcState.n = 150; fill(); });
-        pane.appendChild(el("label", {}, [cb, x[1], x[2] ? el("small", { text: x[2] }) : null]));
+      function sync() { pane.querySelectorAll("input").forEach(function (i) { i.checked = cur().indexOf(i.value) > -1; }); sumTxt(); rcState.n = 150; fill(); }
+      OPTS.forEach(function (x, k) {
+        var cb = el("input", { type: "checkbox", class: "nodirty", value: x[0] });
+        cb.addEventListener("change", function () {
+          var t = cur().filter(function (v) { return v !== x[0] && v !== "all"; });
+          if (x[0] === "all") t = cb.checked ? ["all"] : [];
+          else if (cb.checked) t.push(x[0]);
+          rcState.types = t; sync();
+        });
+        pane.appendChild(el("label", { class: k === 1 ? "sep" : "" }, [cb, x[1], x[2] ? el("small", { text: x[2] }) : null]));
       });
-      pane.appendChild(el("button", { type: "button", class: "btn ghost", text: "Tout décocher", on: { click: function () { rcState.types = []; pane.querySelectorAll("input").forEach(function (i) { i.checked = false; }); sumTxt(); fill(); } } }));
+      pane.appendChild(el("button", { type: "button", class: "btn ghost", text: "Revenir à non-fiction", on: { click: function () { rcState.types = []; sync(); } } }));
+      setTimeout(sync, 0);
       dd.appendChild(pane);
       document.addEventListener("click", function (e) { if (dd.open && !dd.contains(e.target)) dd.open = false; });
       var dset = {}; proj.projects.forEach(function (p) { (p.dops || []).forEach(function (d) { dset[rcBase(d)] = 1; }); });
@@ -2678,7 +2755,7 @@
         if (p.agency && !rcState.ag) return false;
         if (rcState.tab === "todo") { var u = rcUrg(p); if (!u || (rcState.urg && u !== rcState.urg)) return false; }
         else if (rcState.st && rcSt(p) !== rcState.st) return false;
-        if (rcState.types.length && rcState.types.indexOf(RC_CAT[p.type]) < 0) return false;
+        if (!rcTypeOk(p)) return false;
         if (rcState.dop && rcDop(p).split(", ").indexOf(rcState.dop) < 0) return false;
         var h = rcNorm([p.title, (p.aka || []).join(" "), p.prod, (p.directors || []).join(" "), (p.dops || []).join(" ")].join(" "));
         return w.every(function (x) { return h.indexOf(x) > -1; });
@@ -2723,31 +2800,54 @@
       });
       return el("div", { class: "rcgwrap" }, [g, films]);
     }
-    // Mail prêt à copier (ou à ouvrir dans la messagerie) ; « Envoyé » = statut En cours + dernier contact aujourd'hui (+ e-mail si rempli).
+    // Mail prêt à copier (ou à ouvrir dans la messagerie). Plusieurs films : liste à cocher en haut (tous cochés), le texte suit.
+    // Première demande ou relance : au choix (relance d'office si tous les films cochés sont déjà « En cours »).
+    // « Envoyé » = films cochés en « En cours » + dernier contact aujourd'hui (+ e-mail si rempli).
     function mail(after, l, lang) {
       var old = after.nextElementSibling; if (old && old.classList.contains("rcmail")) { old.remove(); if (old.dataset.lang === lang) return; }
-      var relance = l.some(function (p) { return rcSt(p) === "En cours"; }), m = rcMail(l, lang, relance);
-      var subj = el("input", { type: "text", class: "nodirty", value: m.subject }), body = el("textarea", { class: "nodirty", rows: Math.min(18, m.body.split("\n").length + 1) });
-      body.value = m.body;
-      var to = el("input", { type: "email", class: "nodirty", placeholder: "adresse de la production (facultatif, gardée pour la prochaine fois)", value: m.to });
-      var msg = el("span", { class: "fmsg" });
+      var sel = l.slice(), kind = null;
+      var subj = el("input", { type: "text", class: "nodirty" }), body = el("textarea", { class: "nodirty" });
+      var to = el("input", { type: "email", class: "nodirty", placeholder: "adresse de la production (facultatif, gardée pour la prochaine fois)", value: rcMail(l, lang, false).to });
+      var msg = el("span", { class: "fmsg" }), sent;
+      var kinds = el("div", { class: "rcmode" });
+      function relance() { return kind !== null ? kind : sel.length > 0 && sel.every(function (p) { return rcSt(p) === "En cours"; }); }
+      function gen() {
+        kinds.querySelectorAll("button").forEach(function (b) { b.classList.toggle("on", (b.dataset.k === "r") === relance()); });
+        if (!sel.length) { subj.value = ""; body.value = ""; sent.disabled = true; return; }
+        var m = rcMail(sel, lang, relance()); subj.value = m.subject; body.value = m.body; body.rows = Math.min(20, m.body.split("\n").length + 1); sent.disabled = false;
+        sent.textContent = "Envoyé" + (l.length > 1 ? " (" + sel.length + " film" + (sel.length > 1 ? "s" : "") + ")" : "");
+      }
+      [["d", "Première demande"], ["r", "Relance"]].forEach(function (k) { kinds.appendChild(el("button", { type: "button", "data-k": k[0], text: k[1], on: { click: function () { kind = k[0] === "r"; gen(); } } })); });
+      var pick = null;
+      if (l.length > 1) {
+        pick = el("div", { class: "rcpick" });
+        l.forEach(function (p) {
+          var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = true;
+          cb.addEventListener("change", function () { sel = l.filter(function (q, i) { return pick.querySelectorAll("input")[i].checked; }); gen(); });
+          pick.appendChild(el("label", {}, [cb, el("span", { class: "rcst " + RC_CLS[rcSt(p)], text: RC_LBL[rcSt(p)] }), el("strong", { text: p.title || "Sans titre" }), el("small", { text: [(p.directors || []).join(", "), rcDop(p), p.start ? fdate(p.start).replace(/^\d+ /, "") : ""].filter(Boolean).join(" · ") })]));
+        });
+      }
+      sent = el("button", { type: "button", class: "btn primary", title: "Statut « En cours » et dernier contact aujourd'hui pour les films cochés", on: { click: function (e) {
+        var t = new Date(), iso = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+        var ch = sel.map(function (p) { var q = JSON.parse(JSON.stringify(p)), r = q.recup = q.recup || {}; r.statut = rcSt(p) === "Récupéré" ? "Récupéré" : "En cours"; r.dernierContact = iso; delete r.relance; if (to.value.trim()) r.email = to.value.trim(); return q; });
+        e.target.disabled = true; msg.textContent = "Enregistrement…";
+        rcSaveLog(sel, ch, "relance " + (sel[0].prod || sel[0].title || "")).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+      } } });
       var box2 = el("div", { class: "rcmail", "data-lang": lang }, [
+        pick ? el("div", { class: "field" }, [el("span", { class: "label", text: "Films dans le mail" }), pick]) : null,
+        el("div", { class: "field" }, [el("span", { class: "label", text: "Message" }), kinds]),
         el("label", { class: "field" }, [el("span", { class: "label", text: "À" }), to]),
         el("label", { class: "field" }, [el("span", { class: "label", text: "Objet" }), subj]),
-        el("label", { class: "field" }, [el("span", { class: "label", text: relance ? "Message (relance)" : "Message (première demande)" }), body]),
+        el("label", { class: "field" }, [el("span", { class: "label", text: "Texte" }), body]),
         el("div", { class: "fwbtns" }, [
           el("button", { type: "button", class: "btn", text: "Copier", on: { click: function () {
             (navigator.clipboard ? navigator.clipboard.writeText(subj.value + "\n\n" + body.value) : Promise.reject()).then(function () { msg.textContent = "Copié."; }, function () { body.select(); msg.textContent = "Sélectionné : ⌘C pour copier."; });
           } } }),
           el("a", { class: "btn", target: "_blank", rel: "noopener", text: "Ouvrir dans la messagerie ↗", on: { click: function (e) { e.currentTarget.href = "mailto:" + encodeURIComponent(to.value.trim()) + "?subject=" + encodeURIComponent(subj.value) + "&body=" + encodeURIComponent(body.value); } } }),
-          el("button", { type: "button", class: "btn primary", text: "Envoyé", title: "Statut « En cours » et dernier contact aujourd'hui pour " + (l.length > 1 ? "ces " + l.length + " films" : "ce film"), on: { click: function (e) {
-            var t = new Date(), iso = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
-            var ch = l.map(function (p) { var q = JSON.parse(JSON.stringify(p)), r = q.recup = q.recup || {}; r.statut = rcSt(p) === "Récupéré" ? "Récupéré" : "En cours"; r.dernierContact = iso; delete r.relance; if (to.value.trim()) r.email = to.value.trim(); return q; });
-            e.target.disabled = true; msg.textContent = "Enregistrement…";
-            projSave(ch, "Récupération : relance " + (l[0].prod || "")).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
-          } } }), msg]),
-        el("p", { class: "hint", text: "« Envoyé » passe " + (l.length > 1 ? "ces films" : "ce film") + " en « En cours » avec la date d'aujourd'hui comme dernier contact (relance dans 1 mois, puis 3 mois). L'adresse n'est pas obligatoire." })
+          sent, msg]),
+        el("p", { class: "hint", text: "L'admin n'envoie rien : copiez le mail ou ouvrez-le dans votre messagerie. « Envoyé » note ensuite les films cochés en « En cours » avec la date d'aujourd'hui (relance dans 1 mois, puis 3 mois). L'adresse n'est pas obligatoire." })
       ]);
+      gen();
       after.after(box2);
     }
     function row(p) {
@@ -2767,7 +2867,7 @@
       document.querySelectorAll(".rcedit").forEach(function (x) { x.remove(); });
       var q = JSON.parse(JSON.stringify(p)), r = q.recup = q.recup || {}; r.statut = rcSt(p);
       var st = el("div", { class: "fchips" });
-      RC_ST.forEach(function (s) { st.appendChild(el("button", { type: "button", class: "chip" + (r.statut === s ? " on" : ""), "data-s": s, text: RC_LBL[s], on: { click: function () { r.statut = s; st.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("on", c.dataset.s === s); }); } } })); });
+      RC_ST.forEach(function (s) { st.appendChild(el("button", { type: "button", class: "chip" + (r.statut === s ? " on" : ""), "data-s": s, text: RC_LBL[s], on: { click: function () { r.statut = s; st.parentNode.classList.add("changed"); st.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("on", c.dataset.s === s); }); } } })); });
       function dt(k, lab) { var i = el("input", { type: "date", class: "nodirty", value: r[k] || "" }); i.addEventListener("input", function () { r[k] = i.value; }); return el("label", { class: "field" }, [el("span", { class: "label", text: lab }), i]); }
       var em = el("input", { type: "email", class: "nodirty", value: r.email || "", placeholder: "contact de la production" }); em.addEventListener("input", function () { r.email = em.value.trim(); });
       var no = el("textarea", { class: "nodirty", rows: 2 }); no.value = r.notes || ""; no.addEventListener("input", function () { r.notes = no.value; });
@@ -2783,7 +2883,7 @@
             Object.keys(r).forEach(function (k) { if (r[k] === "" || r[k] == null) delete r[k]; });
             if (r.statut === "Récupéré") q.recovered = true; else delete q.recovered;
             e.target.disabled = true; msg.textContent = "Enregistrement…";
-            projSave([q], "Récupération : " + (q.title || q.id) + " → " + RC_LBL[r.statut]).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+            rcSaveLog([p], [q], (q.title || q.id) + " → " + RC_LBL[r.statut]).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
           } } }),
           el("button", { type: "button", class: "btn", text: "Mail FR", on: { click: function () { mail(box2, [p], "fr"); } } }),
           el("button", { type: "button", class: "btn", text: "Mail EN", on: { click: function () { mail(box2, [p], "en"); } } }),
@@ -2885,9 +2985,10 @@
   window.addEventListener("hashchange", function () {
     if (!token) return;
     if (dirty && !window.confirm("Des modifications ne sont pas publiées. Quitter quand même (elles seront perdues) ?")) { history.replaceState(null, "", here || "#/"); return; }
+    if (!dirty && formsDirty() && !window.confirm("Un formulaire ouvert n'est pas enregistré. Quitter quand même (les changements seront perdus) ?")) { history.replaceState(null, "", here || "#/"); return; }
     dirty = false; here = location.hash; route();
   });
-  window.addEventListener("beforeunload", function (e) { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+  window.addEventListener("beforeunload", function (e) { if (dirty || formsDirty()) { e.preventDefault(); e.returnValue = ""; } });
 
   var saved = store(true);
   if (saved) login(saved).then(route, function () { store(false, null); showLogin("Token expiré ou révoqué : reconnectez-vous."); });

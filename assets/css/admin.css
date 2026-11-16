@@ -578,3 +578,22 @@ body.vedit-on { overflow: hidden; }
 .fstxt .fskind { align-self: flex-start; padding: 2px 6px; font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 .fsrow.dl .fskind { color: #ff8a5c; background: rgba(255,138,92,.12); }
 .fsrow.fest .fskind { color: #7ee2a8; background: rgba(126,226,168,.12); }
+/* Annuler / Rétablir des pages enregistrées tout de suite (festivals, récupération) */
+.immbar { position: fixed; z-index: 8; right: 24px; bottom: calc(env(safe-area-inset-bottom, 0px) + 18px); display: flex; align-items: center; gap: 4px; padding: 6px 8px; border: 1px solid var(--faint); background: rgba(0,0,0,.92); backdrop-filter: blur(8px); }
+.immbar .btn { height: 34px; padding: 0 12px; }
+.immmsg { max-width: 340px; padding: 0 8px; color: var(--dim); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.immmsg:empty { display: none; }
+@media (max-width: 700px) { .immbar { left: 12px; right: 12px; } .immbar .lg { display: none; } }
+/* Récupération v3 */
+.rcfic { display: inline-flex; align-items: center; gap: 8px; margin: -44px 0 44px; color: var(--dim); font-size: 12px; cursor: pointer; }
+.rcfic input { accent-color: #fff; margin: 0; }
+.rcddpane label.sep { padding-bottom: 12px; margin-bottom: 6px; border-bottom: 1px solid var(--faint); }
+.rcpick { display: flex; flex-direction: column; gap: 2px; max-height: 280px; overflow: auto; padding-right: 14px; }
+.rcpick label { display: grid; grid-template-columns: 18px 96px 1fr; column-gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--soft); cursor: pointer; }
+.rcpick label input { accent-color: #fff; margin: 0; }
+.rcpick label strong { font-family: var(--kinou-sans); font-weight: 600; font-size: 14px; }
+.rcpick label small { grid-column: 3; color: var(--dim); font-size: 12px; }
+.rcpick .rcst { justify-self: start; font-size: 9px; padding: 2px 5px; }
+.rcmail .rcmode { display: inline-flex; }
+.rcmail .btn.primary[disabled] { opacity: .35; }
+main { padding-bottom: 200px; }
