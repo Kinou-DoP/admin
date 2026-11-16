@@ -2587,107 +2587,168 @@
   function showFestSel() {
     bar.hidden = true; editing = false; view.textContent = "";
     view.appendChild(el("h1", { text: "Nos sélections" }));
-    view.appendChild(el("p", { class: "lead", text: "Chaque matin, un robot lit les pages de sélection des festivals du calendrier (de deux mois et demi avant le festival à un mois et demi après) et y cherche nos films : titre, réalisateur, artiste. Ses trouvailles arrivent ici : confirmez ou écartez-les d'un clic." }));
+    view.appendChild(el("p", { class: "lead", text: "Les festivals où nos films ont été sélectionnés, nommés ou primés. Deux robots cherchent : chaque nuit, Claude cherche film par film sur le web (AlloCiné, Unifrance, IMDb, festivals, presse, tous festivals confondus) ; chaque matin, un autre lit les pages de sélection des festivals du calendrier. Leurs trouvailles arrivent dans « À vérifier »." }));
     var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
     view.appendChild(box); immInit(function () { draw(); });
-    var showNo = false;
+    var st = { cat: "", fest: "", dop: "", year: "", q: "", showNo: false };
     Promise.all([selRead(), festLoad().catch(function () { return null; }), projRead().catch(function () { return null; })]).then(draw, function (e) {
       box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message }));
     });
     function nrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
     function typeOf(x) { return x.type === "PUB" ? (x.genre === "web" ? "Pub · web" : x.genre === "corporate" ? "Pub · corporate" : "Pub") : x.type === "TVF" ? "Téléfilm" : (RC_CATS.filter(function (c) { return c[0] === RC_CAT[x.type]; })[0] || [0, x.type])[1]; }
+    function kindOf(x) { return x.kind === "prize" ? (x.image ? "img" : "prize") : x.kind === "nomination" ? "nom" : "sel"; }
+    var KL = { prize: "Prix", img: "Prix de l'image", nom: "Nomination", sel: "Sélection" };
+    function when(x) { return x.date || (x.edition ? x.edition + "-06-30" : (x.at || "").slice(0, 10)); }
+    function festLine(x) { return x.festName + (x.city ? " (" + x.city + ")" : "") + (x.edition ? " " + x.edition : ""); }
+    function what(x) { return [x.kind !== "selection" && x.prize, x.section].filter(Boolean).join(" · "); }
     function draw() {
       box.textContent = "";
-      var l = sel.found.slice().sort(function (a, b) { return String(b.foundAt || b.at || "").localeCompare(String(a.foundAt || a.at || "")); });
-      var nw = l.filter(function (x) { return x.status === "new"; }), ok = l.filter(function (x) { return x.status === "ok"; }), no = l.filter(function (x) { return x.status === "no"; });
+      var all = sel.found, nw = all.filter(function (x) { return x.status === "new"; }), ok = all.filter(function (x) { return x.status === "ok"; }), no = all.filter(function (x) { return x.status === "no"; });
       var pages = 0; Object.keys(sel.pages || {}).forEach(function (k) { pages += ((sel.pages[k] || {}).read || []).length; });
-      box.appendChild(el("p", { class: "hint selrobot", text: sel.at ? "Dernier passage du robot le " + fdate(sel.at.slice(0, 10)) + " · " + pages + " pages lues" : "Le robot n'est pas encore passé : il lit les festivals en saison chaque matin vers 9 h 30." }));
-      box.appendChild(el("div", { class: "fchips" }, [el("button", { type: "button", class: "btn fadd", text: "+ Ajouter une sélection", on: { click: function (e) { add(e.target); } } })]));
+      var nf = Object.keys(sel.films || {}).length;
+      box.appendChild(el("p", { class: "hint selrobot", text: (nf ? nf + " films déjà cherchés par Claude" : "Claude n'a pas encore cherché nos films (chaque nuit vers 3 h, 25 films)") + (sel.at ? " · pages des festivals lues le " + fdate(sel.at.slice(0, 10)) + " (" + pages + ")" : "") }));
+      box.appendChild(el("div", { class: "fchips" }, [el("button", { type: "button", class: "btn fadd", text: "+ Ajouter une sélection ou un prix", on: { click: function (e) { add(e.target); } } })]));
+      // 1. À vérifier, groupé par film.
       var s1 = el("section", {}, [el("h2", { text: "À vérifier · " + nw.length })]);
       if (!nw.length) s1.appendChild(el("p", { class: "hint", text: "Rien à vérifier pour l'instant." }));
-      nw.forEach(function (x) { s1.appendChild(card(x)); });
+      var byP = {}, keys = [];
+      nw.forEach(function (x) { var k = x.project || x.title; if (!byP[k]) { byP[k] = []; keys.push(k); } byP[k].push(x); });
+      keys.forEach(function (k) { s1.appendChild(filmBox(byP[k])); });
       box.appendChild(s1);
-      var s2 = el("section", {}, [el("h2", { text: "Nos films sélectionnés · " + ok.length })]);
-      if (!ok.length) s2.appendChild(el("p", { class: "hint", text: "Aucune sélection confirmée pour l'instant." }));
-      var byF = {}, keys = [];
-      ok.forEach(function (x) { var k = x.festName + " " + x.edition; if (!byF[k]) { byF[k] = []; keys.push(k); } byF[k].push(x); });
-      keys.sort().forEach(function (k) { s2.appendChild(el("h3", { class: "selfest", text: k })); byF[k].forEach(function (x) { s2.appendChild(card(x)); }); });
+      // 2. Récent : confirmé, festival dans les 6 derniers mois (ou à venir).
+      var lim = new Date(Date.now() - 183 * 864e5).toISOString().slice(0, 10);
+      var rec = ok.filter(function (x) { return when(x) >= lim; }).sort(function (a, b) { return when(b).localeCompare(when(a)); });
+      var s2 = el("section", {}, [el("h2", { text: "Récent · " + rec.length })]);
+      if (!rec.length) s2.appendChild(el("p", { class: "hint", text: "Rien ces six derniers mois." }));
+      rec.forEach(function (x) { s2.appendChild(line(x)); });
       box.appendChild(s2);
+      // 3. Toutes nos sélections : catégories + filtres.
+      var s3 = el("section", {}, [el("h2", { text: "Toutes nos sélections · " + ok.length })]);
+      var cnt = { "": ok.length, prize: 0, img: 0, sel: 0, nom: 0 };
+      ok.forEach(function (x) { var k = kindOf(x); cnt[k]++; if (k === "img") cnt.prize++; });
+      s3.appendChild(el("div", { class: "fchips" }, [["", "Tout"], ["prize", "Prix"], ["img", "Prix de l'image"], ["sel", "Sélections"], ["nom", "Nominations"]].map(function (c) {
+        return el("button", { type: "button", class: "chip" + (st.cat === c[0] ? " on" : ""), text: c[1] + " · " + cnt[c[0]], on: { click: function () { st.cat = c[0]; draw(); } } });
+      })));
+      function dd(key, label, vals) {
+        var s = el("select", { class: "nodirty" }, [el("option", { value: "", text: label })].concat(vals.map(function (v) { return el("option", { value: v, text: v }); })));
+        s.value = st[key]; s.addEventListener("change", function () { st[key] = s.value; draw(); }); return s;
+      }
+      function uniq(f) { var o = {}; ok.forEach(function (x) { [].concat(f(x)).forEach(function (v) { if (v) o[v] = 1; }); }); return Object.keys(o); }
+      var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, un festival, un prix…", value: st.q });
+      var list = el("div", {});
+      s3.appendChild(el("div", { class: "rcsel" }, [dd("fest", "Tous les festivals", uniq(function (x) { return x.festName; }).sort(function (a, b) { return a.localeCompare(b, "fr"); })),
+        dd("dop", "Tous les chefs op", uniq(function (x) { return (x.dops || []).map(rcBase); }).sort(function (a, b) { return a.localeCompare(b, "fr"); })),
+        dd("year", "Toutes les années", uniq(function (x) { return x.edition; }).sort().reverse())]));
+      s3.appendChild(q); s3.appendChild(list);
+      function fillAll() {
+        var w = nrm(st.q).split(/\s+/).filter(Boolean); list.textContent = "";
+        var l = ok.filter(function (x) {
+          var k = kindOf(x);
+          if (st.cat && !(st.cat === k || (st.cat === "prize" && k === "img"))) return false;
+          if (st.fest && x.festName !== st.fest) return false;
+          if (st.dop && (x.dops || []).map(rcBase).indexOf(st.dop) < 0) return false;
+          if (st.year && x.edition !== st.year) return false;
+          var h = nrm([x.title, x.festName, x.city, x.section, x.prize, (x.directors || []).join(" "), (x.dops || []).join(" ")].join(" "));
+          return w.every(function (v) { return h.indexOf(v) > -1; });
+        }).sort(function (a, b) { return when(b).localeCompare(when(a)) || a.festName.localeCompare(b.festName); });
+        if (!l.length) list.appendChild(el("p", { class: "hint", text: ok.length ? "Rien avec ces filtres." : "Aucune sélection confirmée pour l'instant." }));
+        l.forEach(function (x) { list.appendChild(line(x)); });
+      }
+      q.addEventListener("input", function () { st.q = q.value; fillAll(); });
+      fillAll();
+      box.appendChild(s3);
       if (no.length) {
-        var s3 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "btn ghost", text: (showNo ? "Masquer" : "Voir") + " les trouvailles écartées · " + no.length, on: { click: function () { showNo = !showNo; draw(); } } })])]);
-        if (showNo) no.forEach(function (x) { s3.appendChild(card(x)); });
-        box.appendChild(s3);
+        var s4 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "btn ghost", text: (st.showNo ? "Masquer" : "Voir") + " les trouvailles écartées · " + no.length, on: { click: function () { st.showNo = !st.showNo; draw(); } } })])]);
+        if (st.showNo) no.forEach(function (x) { s4.appendChild(line(x)); });
+        box.appendChild(s4);
       }
     }
-    function card(x) {
-      var c = el("article", { class: "selcard " + x.status });
-      c.appendChild(el("div", { class: "selhead" }, [
-        el("div", {}, [el("h3", { text: x.title || "Sans titre" }),
-          el("p", { class: "fwhere", text: [typeOf(x), (x.directors || []).length && "réal. " + x.directors.join(", "), "DoP " + (x.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") })]),
-        el("div", { class: "selfest2" }, [el("strong", { text: x.festName }), el("span", { text: "édition " + x.edition })])
-      ]));
-      if (x.snippet) {
-        var t = nrm(String(x.title || "").replace(/^.+?\s+[–-]\s+/, "").replace(/^.+?\s*["“«]\s*(.+?)\s*["”»].*$/, "$1").replace(/\(.*?\)/g, "")).replace(/[’']/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
-        var i = t ? x.snippet.indexOf(t) : -1, sn = el("p", { class: "selsnip" });
-        if (i > -1) { sn.appendChild(document.createTextNode("… " + x.snippet.slice(0, i))); sn.appendChild(el("mark", { text: x.snippet.slice(i, i + t.length) })); sn.appendChild(document.createTextNode(x.snippet.slice(i + t.length) + " …")); }
-        else sn.textContent = "… " + x.snippet + " …";
-        c.appendChild(sn);
+    function badge(x) { var k = kindOf(x); return el("span", { class: "selk " + k, text: KL[k] }); }
+    function save(x, y, label) { var z = x || y; return selSave(x, y, (z.title || "") + " — " + z.festName + " : " + label).then(draw); }
+    function setSt(x, s, label) { var y = JSON.parse(JSON.stringify(x)); y.status = s; y.by = user && user.login || ""; y.at = new Date().toISOString(); return save(x, y, label); }
+    // Un film à vérifier : ses trouvailles, chacune « ✓ / ✗ », et « Tout confirmer / Tout écarter ».
+    function filmBox(l) {
+      var x0 = l[0], msg = el("span", { class: "fmsg" });
+      var b = el("article", { class: "selcard new" }, [el("div", { class: "selhead" }, [
+        el("div", {}, [el("h3", { text: x0.title || "Sans titre" }), el("p", { class: "fwhere", text: [typeOf(x0), (x0.directors || []).length && "réal. " + x0.directors.join(", "), "DoP " + (x0.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") })]),
+        el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "Tout confirmer", on: { click: function (e) { all(e, "ok", "tout confirmé"); } } }),
+          el("button", { type: "button", class: "btn ghost", text: "Tout écarter", on: { click: function (e) { all(e, "no", "tout écarté"); } } })])])]);
+      function all(e, s, label) {
+        e.target.disabled = true; msg.textContent = "Enregistrement…";
+        var ys = l.map(function (x) { var y = JSON.parse(JSON.stringify(x)); y.status = s; y.by = user && user.login || ""; y.at = new Date().toISOString(); return y; });
+        var bs = JSON.parse(JSON.stringify(l));
+        selPut(ys, "Sélections : " + (x0.title || "") + " — " + label).then(function () {
+          immPush({ label: (x0.title || "") + " — " + label, undo: function () { return selPut(bs, "Sélections : annulé"); }, redo: function () { return selPut(ys, "Sélections : rétabli"); } });
+          draw();
+        }, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
       }
-      var meta = el("div", { class: "flinks" });
-      (x.urls || []).forEach(function (u) { meta.appendChild(el("a", { class: "btn", href: u, target: "_blank", rel: "noopener", text: "Page " + u.replace(/^https?:\/\/(www\.)?/, "").slice(0, 34) + " ↗" })); });
-      if (x.manual) meta.appendChild(el("span", { class: "fsrc h", text: "ajouté à la main" }));
-      else if (x.status === "new") meta.appendChild(el("span", { class: "selwhy", text: (x.why || []).length ? "Titre + " + x.why.join(" + ") + " sur la page" : "Titre seul sur la page : à bien vérifier" }));
-      c.appendChild(meta);
-      var msg = el("span", { class: "fmsg" });
-      function set(st, label) {
-        return function (e) {
-          var y = JSON.parse(JSON.stringify(x)); y.status = st; y.by = user && user.login || ""; y.at = new Date().toISOString();
-          if (sec && sec.value.trim()) y.section = sec.value.trim(); else delete y.section;
-          e.target.disabled = true; msg.textContent = "Enregistrement…";
-          selSave(x, y, (x.title || "") + " — " + x.festName + " : " + label).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
-        };
-      }
-      var sec = x.status === "ok" ? el("input", { type: "text", class: "nodirty", placeholder: "Section ou prix (ex. Compétition officielle, Grand prix)", value: x.section || "" }) : null;
-      var btns = x.status === "new" ? [el("button", { type: "button", class: "btn primary", text: "C'est nous ✓", on: { click: set("ok", "confirmé") } }), el("button", { type: "button", class: "btn ghost", text: "Pas nous", on: { click: set("no", "écarté") } })]
-        : x.status === "ok" ? [sec, el("button", { type: "button", class: "btn", text: "Enregistrer", on: { click: set("ok", "section") } }), el("button", { type: "button", class: "btn ghost", text: x.manual ? "Supprimer" : "Remettre à vérifier", on: { click: x.manual ? function (e) {
-            e.target.disabled = true; selSave(x, x, (x.title || "") + " — " + x.festName + " : supprimé", true).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas supprimé : " + er.message; });
-          } : set("new", "à vérifier") } })]
-        : [el("button", { type: "button", class: "btn ghost", text: "Finalement c'est nous", on: { click: set("ok", "confirmé") } })];
-      c.appendChild(el("div", { class: "fwbtns selbtns" }, btns.concat([msg])));
-      if (x.status === "ok" && x.by) c.appendChild(el("p", { class: "hint", text: "Confirmé par " + x.by + (x.at ? " le " + fdate(x.at.slice(0, 10)) : "") + ". Bientôt : ajout direct aux « prix & sélections » du film sur le site." }));
-      return c;
+      l.sort(function (a, b) { return when(b).localeCompare(when(a)); }).forEach(function (x) {
+        var r = el("div", { class: "selrow" }, [badge(x), el("div", { class: "selwhat" }, [el("strong", { text: festLine(x) }), el("span", { text: what(x) || (x.source === "claude" ? "" : "") })]),
+          el("div", { class: "selsrc" }, (x.urls || []).slice(0, 2).map(function (u) { return el("a", { href: u, target: "_blank", rel: "noopener", text: u.replace(/^https?:\/\/(www\.)?/, "").split("/")[0] + " ↗" }); })),
+          el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn", title: "C'est nous", text: "✓", on: { click: function (e) { e.target.disabled = true; setSt(x, "ok", "confirmé"); } } }),
+            el("button", { type: "button", class: "btn ghost", title: "Pas nous", text: "✗", on: { click: function (e) { e.target.disabled = true; setSt(x, "no", "écarté"); } } })])]);
+        b.appendChild(r);
+        if (x.snippet && x.source !== "claude") b.appendChild(el("p", { class: "selsnip", text: "… " + x.snippet + " …" }));
+      });
+      b.appendChild(msg);
+      return b;
     }
-    // Ajout à la main : un de nos films (recherche), un festival du calendrier, l'édition, la section ou le prix.
-    function add(btn) {
-      if (box.querySelector(".seladd")) return;
+    // Une ligne de « Récent » / « Toutes nos sélections » ; « Modifier » ouvre le formulaire en place.
+    function line(x) {
+      var r = el("div", { class: "selrow ok" + (x.status === "no" ? " no" : "") }, [badge(x),
+        el("div", { class: "selwhat" }, [el("strong", { text: (x.title || "Sans titre") }), el("span", { text: festLine(x) + (what(x) ? " — " + what(x) : "") }),
+          el("small", { text: [typeOf(x), (x.directors || []).length && "réal. " + x.directors.join(", "), "DoP " + (x.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") })]),
+        el("div", { class: "selsrc" }, (x.urls || []).slice(0, 1).map(function (u) { return el("a", { href: u, target: "_blank", rel: "noopener", text: "source ↗" }); })),
+        el("div", { class: "fwbtns" }, x.status === "no" ? [el("button", { type: "button", class: "btn ghost", text: "Finalement c'est nous", on: { click: function () { setSt(x, "ok", "confirmé"); } } })]
+          : [el("button", { type: "button", class: "btn ghost", text: "Modifier", on: { click: function () { form(x, r); } } })])]);
+      return r;
+    }
+    // Formulaire (ajout à la main ou modification) : film, festival (libre), ville, année, type, prix, section, prix de l'image.
+    function form(x0, at) {
+      var old = box.querySelector(".seladd"); if (old) old.remove();
+      var x = x0 ? JSON.parse(JSON.stringify(x0)) : { kind: "selection", status: "ok", manual: true, edition: String(new Date().getFullYear()) }, chosen = x0 ? { id: x.project } : null;
       var projs = (proj && proj.projects || []).filter(function (p) { return !p.agency && p.title && !p.workTitle; });
-      var q = el("input", { type: "search", class: "nodirty", placeholder: "Titre du film, réalisateur, chef op…" }), res = el("div", { class: "selres" }), chosen = null;
+      var q = el("input", { type: "search", class: "nodirty", placeholder: "Titre du film, réalisateur, chef op…", value: x.title || "" }), res = el("div", { class: "selres" });
       q.addEventListener("input", function () {
         var w = nrm(q.value).split(/\s+/).filter(Boolean); res.textContent = ""; chosen = null;
         if (!w.length) return;
-        projs.filter(function (p) { var h = nrm([p.title, (p.directors || []).join(" "), (p.dops || []).join(" ")].join(" ")); return w.every(function (x) { return h.indexOf(x) > -1; }); }).slice(0, 8).forEach(function (p) {
+        projs.filter(function (p) { var h = nrm([p.title, (p.directors || []).join(" "), (p.dops || []).join(" ")].join(" ")); return w.every(function (v) { return h.indexOf(v) > -1; }); }).slice(0, 8).forEach(function (p) {
           res.appendChild(el("button", { type: "button", class: "selpick", on: { click: function () { chosen = p; q.value = p.title; res.textContent = ""; res.appendChild(el("p", { class: "hint", text: typeOf(p) + " · DoP " + rcDop(p) })); } } },
             [el("strong", { text: p.title }), el("small", { text: [typeOf(p), (p.directors || []).join(", "), rcDop(p), p.start ? p.start.slice(0, 4) : ""].filter(Boolean).join(" · ") })]));
         });
       });
-      var fs = el("select", { class: "nodirty" }, ((fest && fest.festivals) || []).slice().sort(function (a, b) { return a.name.localeCompare(b.name, "fr"); }).map(function (f) { return el("option", { value: f.id, text: f.name }); }));
-      var ed = el("input", { type: "text", class: "nodirty", value: String(new Date().getFullYear() + 1), placeholder: "Édition" });
-      var sec = el("input", { type: "text", class: "nodirty", placeholder: "Section ou prix (facultatif)" }), msg = el("span", { class: "fmsg" });
-      var form = el("article", { class: "fcard fedit seladd" }, [
+      var names = {}; ((fest && fest.festivals) || []).forEach(function (f) { names[f.name] = 1; }); sel.found.forEach(function (y) { names[y.festName] = 1; });
+      var dl = el("datalist", { id: "selfests" }, Object.keys(names).sort().map(function (n) { return el("option", { value: n }); }));
+      function inp(k, ph) { var i = el("input", { type: "text", class: "nodirty", placeholder: ph, value: x[k] || "" }); i.addEventListener("input", function () { x[k] = i.value.trim(); }); return el("label", { class: "field" }, [el("span", { class: "label", text: ph }), i]); }
+      var fn = inp("festName", "Festival"); fn.querySelector("input").setAttribute("list", "selfests");
+      var kinds = el("div", { class: "fchips" });
+      [["selection", "Sélection"], ["nomination", "Nomination"], ["prize", "Prix"]].forEach(function (k) {
+        kinds.appendChild(el("button", { type: "button", class: "chip" + (x.kind === k[0] ? " on" : ""), "data-k": k[0], text: k[1], on: { click: function () { x.kind = k[0]; kinds.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("on", c.dataset.k === k[0]); }); form2.classList.add("changed"); } } }));
+      });
+      var img = el("label", { class: "rcag" }, [el("input", { type: "checkbox", class: "nodirty" }), "Prix ou nomination pour l'image"]);
+      img.firstChild.checked = !!x.image; img.firstChild.addEventListener("change", function () { x.image = img.firstChild.checked; });
+      var msg = el("span", { class: "fmsg" });
+      var form2 = el("article", { class: "fcard fedit seladd" }, [dl,
         el("label", { class: "field" }, [el("span", { class: "label", text: "Film" }), q, res]),
-        el("div", { class: "fgrid" }, [el("label", { class: "field" }, [el("span", { class: "label", text: "Festival" }), fs]), el("label", { class: "field" }, [el("span", { class: "label", text: "Édition" }), ed]), el("label", { class: "field" }, [el("span", { class: "label", text: "Section ou prix" }), sec])]),
-        el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "Ajouter", on: { click: function (e) {
+        el("div", { class: "fgrid" }, [fn, inp("city", "Ville"), inp("edition", "Année")]),
+        el("div", { class: "field" }, [el("span", { class: "label", text: "Type" }), kinds, img]),
+        el("div", { class: "fgrid" }, [inp("prize", "Prix (nom exact)"), inp("section", "Section (ex. Compétition officielle)"), inp("country", "Pays")]),
+        el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: x0 ? "Enregistrer" : "Ajouter", on: { click: function (e) {
           if (!chosen) { msg.textContent = "Choisissez un film dans la liste."; return; }
-          var f = ((fest && fest.festivals) || []).filter(function (x) { return x.id === fs.value; })[0] || { id: fs.value, name: fs.value };
-          var x = { id: "m" + Date.now().toString(36), fest: f.id, festName: f.name, edition: ed.value.trim(), project: chosen.id, title: chosen.title, type: chosen.type, genre: chosen.genre,
-            directors: chosen.directors || [], dops: chosen.dops || [], urls: [], status: "ok", manual: true, by: user && user.login || "", at: new Date().toISOString() };
-          if (sec.value.trim()) x.section = sec.value.trim();
+          if (!x.festName) { msg.textContent = "Il faut le nom du festival."; return; }
+          if (!x0) { var p = chosen; Object.assign(x, { id: "m" + Date.now().toString(36), project: p.id, title: p.title, type: p.type, genre: p.genre, directors: p.directors || [], dops: p.dops || [], urls: [] }); }
+          else if (chosen.title) Object.assign(x, { project: chosen.id, title: chosen.title, type: chosen.type, genre: chosen.genre, directors: chosen.directors || [], dops: chosen.dops || [] });
+          if (x.kind === "selection") delete x.prize;
+          x.by = user && user.login || ""; x.at = new Date().toISOString(); x.status = "ok";
           e.target.disabled = true; msg.textContent = "Enregistrement…";
-          selSave(null, x, x.title + " — " + x.festName + " : ajouté").then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
-        } } }), el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { form.remove(); } } }), msg])
+          save(x0, x, x0 ? "modifié" : "ajouté").catch(function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+        } } }),
+          x0 ? el("button", { type: "button", class: "btn ghost", text: "Retirer de nos sélections", on: { click: function () { setSt(x0, "no", "retiré"); } } }) : null,
+          el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { form2.remove(); } } }), msg])
       ]);
-      btn.parentNode.after(form); q.focus();
+      at.after(form2); if (!x0) q.focus();
     }
+    function add(btn) { form(null, btn.parentNode); }
   }
 
   // ---------- Récupération (Gus 16/11, remplace l'ancien outil k-recup) ----------
