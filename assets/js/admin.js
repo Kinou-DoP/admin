@@ -686,6 +686,23 @@
     txt();
     return el("label", { class: "showsw online" }, [sw, el("i"), el("span", { text: "En ligne sur le site" }), hint]);
   }
+  // Genre du chef op (Gus 16/11) : `gender` de l'entrée de data/dps/index.json, "f" = femme, "x" = autre, absent = homme (défaut).
+  // Sert aux mails de la rubrique récupération (« notre cheffe opératrice … »). Écrit à la publication, comme `hidden`.
+  function curGender() {
+    if (state.gender !== undefined) return state.gender;
+    var e = index && index.dps.filter(function (d) { return d.slug === (origSlug || state.slug); })[0];
+    return e && e.gender || "";
+  }
+  function genderCtl() {
+    var g = curGender(), row = el("div", { class: "gender" }, [el("span", { class: "label", text: "Genre" })]);
+    [["", "Homme"], ["f", "Femme"], ["x", "Autre"]].forEach(function (o) {
+      row.appendChild(el("button", { type: "button", class: "chip" + (g === o[0] ? " on" : ""), text: o[1], on: { click: function () {
+        state.gender = o[0]; row.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("on", c.textContent === o[1]); }); touch();
+      } } }));
+    });
+    row.appendChild(el("small", { text: "Pour les mails de récupération (« notre cheffe opératrice … »)." }));
+    return row;
+  }
   function render() {
     view.textContent = ""; editing = true; pagePublish = publish;
     histInit({
@@ -694,6 +711,7 @@
     });
     view.appendChild(el("div", { class: "dp-head" }, [el("h1", { text: state.name || "Nouveau chef op" }), isNew ? null : progressCtl()]));
     view.appendChild(onlineCtl());
+    view.appendChild(genderCtl());
     view.appendChild(el("p", { class: "lead", text: isNew ? "Nouvelle fiche — collez le lien du bundle Slate pour commencer." : (state.bundle ? "Films synchronisés avec Slate." : "Fiche sans bundle Slate : les films sont figés.") }));
     var nk = origSlug || (!isNew && state.slug); // une fois par fiche ouverte (render est rappelé à chaque changement)
     if (nk) { if (notesFor !== nk) { notesFor = nk; notesNode = notesBox(nk); } view.appendChild(notesNode); }
@@ -1374,14 +1392,16 @@
     }
     // Liste des DPs : ajout (rangé par nom de famille) ou mise à jour du nom (et de l'adresse).
     var dps = index.dps.slice(), i = dps.findIndex(function (d) { return d.slug === (from || s.slug); });
-    var hide = isHidden(); // nouvelle fiche : cachée tant qu'on ne la met pas en ligne
+    var hide = isHidden(), gen = curGender(); // nouvelle fiche : cachée tant qu'on ne la met pas en ligne
     if (i > -1) {
-      if (dps[i].name !== out.name || dps[i].slug !== s.slug || !!dps[i].hidden !== hide) {
+      if (dps[i].name !== out.name || dps[i].slug !== s.slug || !!dps[i].hidden !== hide || (dps[i].gender || "") !== gen) {
         dps[i] = Object.assign({}, dps[i], { name: out.name, slug: s.slug }); if (hide) dps[i].hidden = true; else delete dps[i].hidden;
+        if (gen) dps[i].gender = gen; else delete dps[i].gender;
       }
     } else {
       var k = surname(out.name), at = dps.findIndex(function (d) { return surname(d.name) > k; }), ne = { slug: s.slug, name: out.name };
       if (hide) ne.hidden = true;
+      if (gen) ne.gender = gen;
       dps.splice(at < 0 ? dps.length : at, 0, ne);
     }
     if (JSON.stringify(dps) !== JSON.stringify(index.dps)) files.push({ path: "data/dps/index.json", text: json({ dps: dps }) });
@@ -2316,17 +2336,18 @@
       // Bientôt : dates limites dans les 45 jours, festivals qui commencent dans les 30 jours (ou en cours).
       var soon = [];
       list.forEach(function (f) {
-        (f.deadlines || []).forEach(function (d) { var n = days(d.date); if (n !== null && n >= 0 && n <= 45) soon.push({ n: n, f: f, txt: "Date limite · " + d.label + (d.ed ? " (édition " + d.ed + ")" : ""), est: d.est, url: f.submit || f.site, go: "S'inscrire ↗" }); });
+        // Deux sortes de dates, bien distinguées (Gus 16/11) : dernier jour pour inscrire un film / dates du festival lui-même.
+        (f.deadlines || []).forEach(function (d) { var n = days(d.date); if (n !== null && n >= 0 && n <= 45) soon.push({ n: n, f: f, kind: "dl", date: d.date, txt: "Dernier jour pour inscrire un film : " + fdate(d.date) + " · " + d.label + (d.ed ? " (édition " + d.ed + ")" : ""), est: d.est, url: f.submit || f.site, go: "S'inscrire ↗" }); });
         var s = days(f.start), e = days(f.end || f.start);
-        if (s !== null && e >= 0 && s <= 30) soon.push({ n: Math.max(s, 0), f: f, txt: s <= 0 ? "En ce moment · jusqu'au " + fdate(f.end, false) : "Le festival commence · " + frange(f.start, f.end), est: f.est, url: f.selection || f.site, go: "Programme ↗", live: s <= 0 });
+        if (s !== null && e >= 0 && s <= 30) soon.push({ n: Math.max(s, 0), f: f, kind: "fest", date: f.start, txt: s <= 0 ? "Le festival a lieu en ce moment, jusqu'au " + fdate(f.end) : "Dates du festival : " + frange(f.start, f.end), est: f.est, url: f.selection || f.site, go: "Programme ↗", live: s <= 0 });
       });
       soon.sort(function (a, b) { return a.n - b.n; });
       var sec = el("section", { class: "fsoon" }, [el("h2", { text: "Bientôt" })]);
       if (!soon.length) sec.appendChild(el("p", { class: "hint", text: "Rien dans les semaines qui viennent." }));
       soon.forEach(function (x) {
-        sec.appendChild(el("div", { class: "fsrow" + (x.n <= 7 ? " hot" : "") + (x.live ? " live" : "") }, [
-          el("span", { class: "fswhen", text: x.live ? "en cours" : when(x.n) }),
-          el("div", { class: "fstxt" }, [el("strong", { text: x.f.name }), el("span", { text: x.txt + (x.est ? " · estimée" : "") })]),
+        sec.appendChild(el("div", { class: "fsrow " + x.kind + (x.n <= 7 ? " hot" : "") + (x.live ? " live" : "") }, [
+          el("span", { class: "fswhen" }, [x.live ? "en cours" : when(x.n), el("small", { text: x.live ? "" : fdate(x.date, false) })]),
+          el("div", { class: "fstxt" }, [el("span", { class: "fskind", text: x.kind === "dl" ? "Inscriptions" : "Festival" }), el("strong", { text: x.f.name }), el("span", { text: x.txt + (x.est ? " (date estimée)" : "") })]),
           x.url ? el("a", { class: "btn", href: x.url, target: "_blank", rel: "noopener", text: x.go }) : null
         ]));
       });
@@ -2495,14 +2516,18 @@
 
   // ---------- Récupération (Gus 16/11, remplace l'ancien outil k-recup) ----------
   // Suivi des copies de films à récupérer auprès des productions. Données : dépôt privé Kinou-DoP/notes, projets/projets.json
-  // (relevé k-recup + captures), un film à la fois enregistré tout de suite (fichier relu avant, comme les festivals).
+  // (relevé k-recup + captures), un film (ou un groupe) enregistré tout de suite (fichier relu avant, comme les festivals).
   // p.recup = { statut, dernierContact?, relance?, sortiePrevue?, email?, notes? } ; p.recovered = statut « Récupéré ».
   var PROJ_DIR = "/repos/" + NOTES_REPO + "/contents/projets", PROJ_PATH = PROJ_DIR + "/projets.json";
   var RC_ST = ["Pas commencé", "En cours", "Récupéré", "Impossible !"];
   var RC_LBL = { "Pas commencé": "À demander", "En cours": "En cours", "Récupéré": "Récupéré", "Impossible !": "Impossible" };
   var RC_CLS = { "Pas commencé": "todo", "En cours": "wip", "Récupéré": "ok", "Impossible !": "no" };
-  var RC_TYPES = { PUB: "Pub", CLIP: "Clip", LM: "Long", TVF: "Téléfilm", STV: "Série", CM: "Court", MM: "Moyen", DOC: "Doc" };
-  var proj = null, projSha = null, rcState = { q: "", st: "", type: "", dop: "", ag: false, n: 150 };
+  // Familles de types (filtre à cases) : la pub comprend films web et corporate, le long métrage les téléfilms (Gus 16/11).
+  var RC_CATS = [["pub", "Pub", "web et corporate compris"], ["clip", "Clip"], ["long", "Long métrage", "téléfilms compris"], ["serie", "Série"], ["court", "Court métrage"], ["moyen", "Moyen métrage"], ["doc", "Documentaire"]];
+  var RC_CAT = { PUB: "pub", CLIP: "clip", LM: "long", TVF: "long", STV: "serie", CM: "court", MM: "moyen", DOC: "doc" };
+  var RC_URG = { relance: "relance prévue", red: "+3 mois", yellow: "+1 mois" };
+  var proj = null, projSha = null, rcGender = {};
+  var rcState = { q: "", st: "", types: [], dop: "", ag: true, n: 150, tab: "all", mode: "film", sort: "count", urg: "" };
   function projRead() {
     return Promise.all([gh(PROJ_DIR, { allow404: true }), gh(PROJ_PATH, { raw: true, allow404: true })]).then(function (r) {
       if (!r[1]) throw new Error("projets/projets.json introuvable dans Kinou-DoP/notes (ou clé GitHub sans accès)");
@@ -2522,9 +2547,17 @@
       throw e;
     });
   }
+  function rcNorm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+  function rcBase(d) { return d.replace(/,? (AFC|SCU|SBC|SASC|FSC|ASK)\b.*$/, ""); }
   function rcSt(p) { return (p.recup && p.recup.statut) || (p.recovered ? "Récupéré" : "Pas commencé"); }
-  function rcDop(p) { return (p.dops || []).map(function (d) { return d.replace(/,? (AFC|SCU|SBC|SASC|FSC|ASK)\b.*$/, ""); }).join(", "); }
-  function rcType(p) { return p.genre === "web" ? "Web" : p.genre === "corporate" ? "Corporate" : RC_TYPES[p.type] || p.type; }
+  function rcDop(p) { return (p.dops || []).map(rcBase).join(", "); }
+  function rcType(p) {
+    var c = RC_CAT[p.type];
+    if (c === "pub") return p.genre === "web" ? "Pub · web" : p.genre === "corporate" ? "Pub · corporate" : "Pub";
+    if (p.type === "TVF") return "Long · téléfilm";
+    return (RC_CATS.filter(function (x) { return x[0] === c; })[0] || [0, p.type])[1];
+  }
+  function rcGen(name) { return rcGender[rcNorm(rcBase(name)).replace(/[^a-z]/g, "")] || ""; }
   // Urgence (comme k-recup) : relance programmée échue ; rouge = +90 j sans contact (ou jamais) ou sortie dans moins de 30 j ; jaune = 30–90 j.
   function rcUrg(p) {
     var s = rcSt(p), r = p.recup || {};
@@ -2537,25 +2570,32 @@
     if (-c > 30) return "yellow";
     return "";
   }
+  // Mail (textes de k-recup) ; FR : « notre chef opérateur / notre cheffe opératrice … » selon le genre de la fiche (Gus 16/11).
   function rcMail(list, lang, relance) {
     var prod = list[0].prod || "", dops = [], films = list.map(function (p) {
-      var d = rcDop(p); if (dops.indexOf(d) < 0) dops.push(d);
-      return "• " + p.title + (p.directors && p.directors.length ? " | " + p.directors.join(", ") : "") + " | " + d;
+      var d = rcDop(p); (p.dops || []).forEach(function (x) { x = rcBase(x); if (dops.indexOf(x) < 0) dops.push(x); });
+      return "• " + (p.title || "Sans titre") + (p.directors && p.directors.length ? " | " + p.directors.join(", ") : "") + " | " + d;
     }).join("\n");
-    var one = list.length === 1, p0 = list[0], who = dops.length <= 3 ? (dops.length > 1 ? dops.slice(0, -1).join(", ") + (lang === "fr" ? " et " : " and ") + dops[dops.length - 1] : dops[0]) : "";
-    var subject = one ? p0.title + " | " + ((p0.directors || [])[0] || (lang === "fr" ? "[Réal]" : "[Dir]")) + " | " + rcDop(p0) : (lang === "fr" ? "Récupération de films | Kinou" : "Film recovery request | Kinou");
+    var one = list.length === 1, p0 = list[0], fr = lang === "fr";
+    var g = dops.map(rcGen), allF = g.every(function (x) { return x === "f"; });
+    function names(and) { return dops.length > 1 ? dops.slice(0, -1).join(", ") + and + dops[dops.length - 1] : dops[0]; }
+    var who = fr ? (dops.length === 1 ? (g[0] === "f" ? "notre cheffe opératrice " : g[0] === "x" ? "" : "notre chef opérateur ") + dops[0]
+        : dops.length <= 3 ? names(" et ") : allF ? "nos cheffes opératrices" : "nos chefs opérateurs")
+      : (dops.length === 1 ? "our cinematographer " + dops[0] : dops.length <= 3 ? names(" and ") : "our cinematographers");
+    var plural = dops.length > 1;
+    var subject = one ? p0.title + " | " + ((p0.directors || [])[0] || (fr ? "[Réal]" : "[Dir]")) + " | " + rcDop(p0) : (fr ? "Récupération de films | Kinou" : "Film recovery request | Kinou");
     var body;
-    if (lang === "fr") body = (one ? "Hello [prénom],\n\n" : "Hello l'équipe " + prod + ",\n\n") + (one
-      ? (relance ? "Je me permets de vous relancer concernant le film " + p0.title + " sur lequel " + who + " a travaillé.\nEst-ce que ce serait possible de nous envoyer un lien pour le télécharger ?"
-        : "Est-ce que ce serait possible de m'envoyer le film " + p0.title + " sur lequel " + who + " a travaillé ?")
-      : (relance ? "Je me permets de vous relancer concernant certains films sur lesquels " + (who || "nos chefs opérateurs") + " " + (dops.length === 1 ? "a" : "ont") + " travaillé.\nEst-ce que ce serait possible de nous envoyer des liens pour télécharger les films suivants :"
-        : "Je cherche à récupérer certains films sur lesquels " + (who || "nos chefs opérateurs") + " " + (dops.length === 1 ? "a" : "ont") + " travaillé. Ce serait super si vous pouviez m'envoyer le master de ces films :") + "\n\n" + films)
+    if (fr) body = (one ? "Hello [prénom],\n\n" : "Hello l'équipe " + prod + ",\n\n") + (one
+      ? (relance ? "Je me permets de vous relancer concernant le film " + p0.title + " sur lequel " + who + " " + (plural ? "ont" : "a") + " travaillé.\nEst-ce que ce serait possible de nous envoyer un lien pour le télécharger ?"
+        : "Est-ce que ce serait possible de m'envoyer le film " + p0.title + " sur lequel " + who + " " + (plural ? "ont" : "a") + " travaillé ?")
+      : (relance ? "Je me permets de vous relancer concernant certains films sur lesquels " + who + " " + (plural ? "ont" : "a") + " travaillé.\nEst-ce que ce serait possible de nous envoyer des liens pour télécharger les films suivants :"
+        : "Je cherche à récupérer certains films sur lesquels " + who + " " + (plural ? "ont" : "a") + " travaillé. Ce serait super si vous pouviez m'envoyer le master de ces films :") + "\n\n" + films)
       + "\n\nMerci d'avance pour votre aide !\nBelle journée,";
     else body = (one ? "Hello [first name],\n\n" : "Hi " + prod + " team,\n\n") + (one
-      ? (relance ? "I'm following up regarding the film " + p0.title + " that " + who + " worked on as cinematographer.\nWould it be possible to send us a link to download it?"
-        : "Would it be possible to send me the film " + p0.title + " that " + who + " worked on as cinematographer?")
-      : (relance ? "I'm following up regarding some films that " + (who || "our cinematographers") + " " + (dops.length === 1 ? "has" : "have") + " worked on. Have you had a chance to gather the master files for these:"
-        : "I'm looking to recover some films that " + (who || "our cinematographers") + " " + (dops.length === 1 ? "has" : "have") + " worked on. It would be great if you could send us the master files for these films:") + "\n\n" + films)
+      ? (relance ? "I'm following up regarding the film " + p0.title + " that " + who + " worked on.\nWould it be possible to send us a link to download it?"
+        : "Would it be possible to send me the film " + p0.title + " that " + who + " worked on?")
+      : (relance ? "I'm following up regarding some films that " + who + " " + (plural ? "have" : "has") + " worked on. Have you had a chance to gather the master files for these:"
+        : "I'm looking to recover some films that " + who + " " + (plural ? "have" : "has") + " worked on. It would be great if you could send us the master files for these films:") + "\n\n" + films)
       + "\n\nThank you in advance for your help!\nHave a great day,";
     return { subject: subject, body: body, to: list.map(function (p) { return p.recup && p.recup.email; }).filter(Boolean)[0] || "" };
   }
@@ -2566,60 +2606,130 @@
     view.appendChild(el("p", { class: "lead", text: "Les copies des films de nos chefs op à récupérer auprès des productions : où on en est, qui relancer, et les mails tout prêts. Chaque changement est enregistré tout de suite." }));
     var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
     view.appendChild(box);
-    projRead().then(draw, function (e) { box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message })); });
-    function ours() { return proj.projects.filter(function (p) { return !p.agency; }); }
+    Promise.all([projRead(), readFile("data/dps/index.json").catch(function () { return null; })]).then(function (r) {
+      rcGender = {}; ((r[1] && r[1].dps) || []).forEach(function (d) { if (d.gender) rcGender[rcNorm(rcBase(d.name)).replace(/[^a-z]/g, "")] = d.gender; });
+      draw();
+    }, function (e) { box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message })); });
+    var out, count;
     function draw() {
       box.textContent = "";
-      var all = ours(), cnt = {}; RC_ST.forEach(function (s) { cnt[s] = 0; }); all.forEach(function (p) { cnt[rcSt(p)]++; });
+      var all = proj.projects.filter(function (p) { return rcState.ag || !p.agency; }), cnt = {};
+      RC_ST.forEach(function (s) { cnt[s] = 0; }); all.forEach(function (p) { cnt[rcSt(p)]++; });
       var pct = all.length ? Math.round(cnt["Récupéré"] / all.length * 100) : 0;
-      // Chiffres : un clic = filtre de la liste.
       var stats = el("section", { class: "rcstats" }, RC_ST.map(function (s) {
-        return el("button", { type: "button", class: "rcstat " + RC_CLS[s] + (rcState.st === s ? " on" : ""), on: { click: function () { rcState.st = rcState.st === s ? "" : s; rcState.n = 150; draw(); document.querySelector(".rcall").scrollIntoView({ behavior: "smooth" }); } } },
+        return el("button", { type: "button", class: "rcstat " + RC_CLS[s] + (rcState.tab === "all" && rcState.st === s ? " on" : ""), on: { click: function () { rcState.tab = "all"; rcState.st = rcState.st === s ? "" : s; rcState.n = 150; draw(); } } },
           [el("strong", { text: String(cnt[s]) }), el("span", { text: RC_LBL[s] })]);
       }));
       stats.appendChild(el("div", { class: "rcbar" }, [el("i", { style: "width:" + pct + "%" }), el("span", { text: pct + " % récupérés" })]));
       box.appendChild(stats);
-      box.appendChild(todo(all));
-      box.appendChild(list(all));
+      // Onglets : tous les films (arrivée) | à relancer.
+      var nTodo = all.filter(function (p) { return rcUrg(p); }).length;
+      box.appendChild(el("div", { class: "rctabs" }, [["all", "Tous les films"], ["todo", "À relancer · " + nTodo]].map(function (t) {
+        return el("button", { type: "button", class: rcState.tab === t[0] ? "on" : "", text: t[1], on: { click: function () { rcState.tab = t[0]; rcState.n = 150; draw(); } } });
+      })));
+      box.appendChild(controls());
+      count = el("p", { class: "hint rccount" }); out = el("div", { class: "rclist" });
+      box.appendChild(count); box.appendChild(out);
+      fill();
     }
-    // À relancer : films en cours (ou relance programmée) groupés par production = un mail par production.
-    function todo(all) {
-      var sec = el("section", { class: "rctodo" }, [el("h2", { text: "À relancer" })]);
+    function controls() {
+      var c = el("div", { class: "rcctl" });
+      var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, une production, un réalisateur…", value: rcState.q });
+      var tId = 0; q.addEventListener("input", function () { clearTimeout(tId); tId = setTimeout(function () { rcState.q = q.value; rcState.n = 150; fill(); }, 200); });
+      c.appendChild(q);
+      var chips = el("div", { class: "fchips" });
+      if (rcState.tab === "all") [["", "Tous"]].concat(RC_ST.map(function (s) { return [s, RC_LBL[s]]; })).forEach(function (x) {
+        chips.appendChild(el("button", { type: "button", class: "chip" + (rcState.st === x[0] ? " on" : ""), text: x[1], on: { click: function () { rcState.st = x[0]; rcState.n = 150; draw(); } } }));
+      });
+      else [["", "Tous"], ["red", "+3 mois sans réponse"], ["yellow", "+1 mois"], ["relance", "Relances prévues"]].forEach(function (x) {
+        chips.appendChild(el("button", { type: "button", class: "chip" + (x[0] ? " u-" + x[0] : "") + (rcState.urg === x[0] ? " on" : ""), text: x[1], on: { click: function () { rcState.urg = x[0]; rcState.n = 150; draw(); } } }));
+      });
+      c.appendChild(chips);
+      // Types : liste déroulante à cases (plusieurs à la fois).
+      var dd = el("details", { class: "rcdd" }), sum = el("summary", { class: "nodirty" });
+      function sumTxt() { sum.textContent = rcState.types.length ? RC_CATS.filter(function (x) { return rcState.types.indexOf(x[0]) > -1; }).map(function (x) { return x[1]; }).join(", ") : "Tous les types"; }
+      sumTxt(); dd.appendChild(sum);
+      var pane = el("div", { class: "rcddpane" });
+      RC_CATS.forEach(function (x) {
+        var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = rcState.types.indexOf(x[0]) > -1;
+        cb.addEventListener("change", function () { rcState.types = rcState.types.filter(function (t) { return t !== x[0]; }); if (cb.checked) rcState.types.push(x[0]); sumTxt(); rcState.n = 150; fill(); });
+        pane.appendChild(el("label", {}, [cb, x[1], x[2] ? el("small", { text: x[2] }) : null]));
+      });
+      pane.appendChild(el("button", { type: "button", class: "btn ghost", text: "Tout décocher", on: { click: function () { rcState.types = []; pane.querySelectorAll("input").forEach(function (i) { i.checked = false; }); sumTxt(); fill(); } } }));
+      dd.appendChild(pane);
+      document.addEventListener("click", function (e) { if (dd.open && !dd.contains(e.target)) dd.open = false; });
+      var dset = {}; proj.projects.forEach(function (p) { (p.dops || []).forEach(function (d) { dset[rcBase(d)] = 1; }); });
+      var dp = el("select", { class: "nodirty" }, [el("option", { value: "", text: "Tous les chefs op" })].concat(Object.keys(dset).sort(function (a, b) { return a.localeCompare(b, "fr"); }).map(function (d) { return el("option", { value: d, text: d }); })));
+      dp.value = rcState.dop; dp.addEventListener("change", function () { rcState.dop = dp.value; rcState.n = 150; fill(); });
+      var ag = el("label", { class: "rcag" }, [el("input", { type: "checkbox", class: "nodirty" }), "Films d'autres agences"]);
+      ag.firstChild.checked = rcState.ag; ag.firstChild.addEventListener("change", function () { rcState.ag = ag.firstChild.checked; rcState.n = 150; draw(); });
+      // Par film / par production (+ ordre des productions).
+      var mode = el("div", { class: "rcmode" }, [["film", "Par film"], ["prod", "Par production"]].map(function (m) {
+        return el("button", { type: "button", class: rcState.mode === m[0] ? "on" : "", text: m[1], on: { click: function () { rcState.mode = m[0]; rcState.n = 150; draw(); } } });
+      }));
+      var sort = el("select", { class: "nodirty" }, [el("option", { value: "count", text: "Plus de films d'abord" }), el("option", { value: "recent", text: "Tournage le plus récent d'abord" })]);
+      sort.value = rcState.sort; sort.hidden = rcState.mode !== "prod"; sort.addEventListener("change", function () { rcState.sort = sort.value; fill(); });
+      c.appendChild(el("div", { class: "rcsel" }, [dd, dp, ag, el("span", { class: "rcgap" }), mode, sort]));
+      return c;
+    }
+    function filtered() {
+      var w = rcNorm(rcState.q).split(/\s+/).filter(Boolean);
+      return proj.projects.filter(function (p) {
+        if (p.agency && !rcState.ag) return false;
+        if (rcState.tab === "todo") { var u = rcUrg(p); if (!u || (rcState.urg && u !== rcState.urg)) return false; }
+        else if (rcState.st && rcSt(p) !== rcState.st) return false;
+        if (rcState.types.length && rcState.types.indexOf(RC_CAT[p.type]) < 0) return false;
+        if (rcState.dop && rcDop(p).split(", ").indexOf(rcState.dop) < 0) return false;
+        var h = rcNorm([p.title, (p.aka || []).join(" "), p.prod, (p.directors || []).join(" "), (p.dops || []).join(" ")].join(" "));
+        return w.every(function (x) { return h.indexOf(x) > -1; });
+      }).sort(function (a, b) { return String(b.start || "0").localeCompare(String(a.start || "0")); });
+    }
+    function more(left) {
+      if (left > 0) out.appendChild(el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + left + ")", on: { click: function () { rcState.n += 300; fill(); } } }));
+    }
+    function fill() {
+      var l = filtered(); out.textContent = "";
+      if (rcState.mode === "film") {
+        count.textContent = l.length + " film" + (l.length > 1 ? "s" : "");
+        l.slice(0, rcState.n).forEach(function (p) { out.appendChild(row(p)); });
+        return more(l.length - rcState.n);
+      }
       var groups = {}, keys = [];
-      all.forEach(function (p) {
-        var u = rcUrg(p); if (!u) return;
-        var k = (p.prod || "Production inconnue").toLowerCase();
-        if (!groups[k]) { groups[k] = []; keys.push(k); }
-        groups[k].push(p);
-      });
-      var rank = function (l) { return Math.max.apply(null, l.map(function (p) { var u = rcUrg(p); return u === "relance" ? 3 : u === "red" ? 2 : 1; })) * 1000 + l.length; };
-      keys.sort(function (a, b) { return rank(groups[b]) - rank(groups[a]); });
-      if (!keys.length) { sec.appendChild(el("p", { class: "hint", text: "Personne à relancer pour l'instant." })); return sec; }
-      sec.appendChild(el("p", { class: "hint", text: keys.length + " productions · relances programmées, puis plus de 90 jours sans nouvelles (ou jamais relancées), puis 30 à 90 jours." }));
-      var shown = rcState.todoAll ? keys : keys.slice(0, 12);
-      shown.forEach(function (k) {
-        var l = groups[k], u = l.some(function (p) { return rcUrg(p) === "relance"; }) ? "relance" : l.some(function (p) { return rcUrg(p) === "red"; }) ? "red" : "yellow";
-        var last = l.map(function (p) { return p.recup && p.recup.dernierContact; }).filter(Boolean).sort().pop();
-        var row = el("div", { class: "rcgrp " + u }, [
-          el("div", { class: "rcgtxt" }, [el("strong", { text: l[0].prod || "Production inconnue" }),
-            el("span", { text: l.length + " film" + (l.length > 1 ? "s" : "") + " · " + (u === "relance" ? "relance programmée" : last ? "dernier contact le " + fdate(last) : "jamais relancé") }),
-            el("span", { class: "rcgfilms", text: l.map(function (p) { return p.title + " (" + rcDop(p) + ")"; }).join(" · ") })]),
-          el("div", { class: "rcgbtn" }, [
-            el("button", { type: "button", class: "btn", text: "Mail FR", on: { click: function () { mail(row, l, "fr"); } } }),
-            el("button", { type: "button", class: "btn", text: "Mail EN", on: { click: function () { mail(row, l, "en"); } } })])
-        ]);
-        sec.appendChild(row);
-      });
-      if (keys.length > 12) sec.appendChild(el("button", { type: "button", class: "btn ghost", text: rcState.todoAll ? "Moins" : "Tout voir (" + keys.length + ")", on: { click: function () { rcState.todoAll = !rcState.todoAll; draw(); } } }));
-      return sec;
+      l.forEach(function (p) { var k = rcNorm(p.prod || "").replace(/[^a-z0-9]/g, ""); if (!groups[k]) { groups[k] = []; keys.push(k); } groups[k].push(p); });
+      var last = function (g) { return g.map(function (p) { return p.start || ""; }).sort().pop() || ""; };
+      keys.sort(rcState.sort === "recent" ? function (a, b) { return (b !== "") - (a !== "") || last(groups[b]).localeCompare(last(groups[a])); } : function (a, b) { return (b !== "") - (a !== "") || groups[b].length - groups[a].length || last(groups[b]).localeCompare(last(groups[a])); }); // production inconnue à la fin
+      count.textContent = keys.length + " production" + (keys.length > 1 ? "s" : "") + " · " + l.length + " film" + (l.length > 1 ? "s" : "");
+      var shown = 0, done = 0; // productions affichées jusqu'à ~150 films, puis « Afficher plus »
+      keys.forEach(function (k) { if (shown >= rcState.n) return; shown += groups[k].length; done++; out.appendChild(group(groups[k])); });
+      more(l.length - shown);
     }
-    // Mail prêt à copier (ou à ouvrir dans la messagerie) ; « Envoyé » = statut En cours + dernier contact aujourd'hui.
+    function urgTag(u) { return u ? el("span", { class: "rcurg u-" + u, text: RC_URG[u] }) : null; }
+    function worst(l) { var u = l.map(rcUrg); return u.indexOf("relance") > -1 ? "relance" : u.indexOf("red") > -1 ? "red" : u.indexOf("yellow") > -1 ? "yellow" : ""; }
+    function group(l) {
+      var u = worst(l), c = {}; l.forEach(function (p) { var s = rcSt(p); c[s] = (c[s] || 0) + 1; });
+      var lastC = l.map(function (p) { return p.recup && p.recup.dernierContact; }).filter(Boolean).sort().pop();
+      var films = el("div", { class: "rcgfilms-list" }); films.hidden = true;
+      var head = el("div", { class: "rcgtxt" }, [
+        el("strong", {}, [l[0].prod || "Production inconnue", urgTag(u)]),
+        el("span", { text: l.length + " film" + (l.length > 1 ? "s" : "") + " · " + RC_ST.filter(function (s) { return c[s]; }).map(function (s) { return c[s] + " " + RC_LBL[s].toLowerCase(); }).join(", ") + (lastC ? " · dernier contact le " + fdate(lastC) : "") }),
+        el("span", { class: "rcgfilms", text: l.map(function (p) { return (p.title || "Sans titre") + " (" + rcDop(p) + ")"; }).join(" · ") })]);
+      var todo = l[0].prod ? l.filter(function (p) { var s = rcSt(p); return s === "Pas commencé" || s === "En cours"; }) : []; // sans production : pas de mail groupé
+      var g = el("div", { class: "rcgrp" + (u ? " " + u : "") }, [head, el("div", { class: "rcgbtn" }, todo.length ? [
+        el("button", { type: "button", class: "btn", text: "Mail FR", on: { click: function () { mail(g, todo, "fr"); } } }),
+        el("button", { type: "button", class: "btn", text: "Mail EN", on: { click: function () { mail(g, todo, "en"); } } })] : [])]);
+      head.addEventListener("click", function () {
+        films.hidden = !films.hidden; g.classList.toggle("open", !films.hidden);
+        if (!films.hidden && !films.firstChild) l.forEach(function (p) { films.appendChild(row(p)); });
+      });
+      return el("div", { class: "rcgwrap" }, [g, films]);
+    }
+    // Mail prêt à copier (ou à ouvrir dans la messagerie) ; « Envoyé » = statut En cours + dernier contact aujourd'hui (+ e-mail si rempli).
     function mail(after, l, lang) {
       var old = after.nextElementSibling; if (old && old.classList.contains("rcmail")) { old.remove(); if (old.dataset.lang === lang) return; }
       var relance = l.some(function (p) { return rcSt(p) === "En cours"; }), m = rcMail(l, lang, relance);
       var subj = el("input", { type: "text", class: "nodirty", value: m.subject }), body = el("textarea", { class: "nodirty", rows: Math.min(18, m.body.split("\n").length + 1) });
       body.value = m.body;
-      var to = el("input", { type: "email", class: "nodirty", placeholder: "adresse de la production (gardée pour la prochaine fois)", value: m.to });
+      var to = el("input", { type: "email", class: "nodirty", placeholder: "adresse de la production (facultatif, gardée pour la prochaine fois)", value: m.to });
       var msg = el("span", { class: "fmsg" });
       var box2 = el("div", { class: "rcmail", "data-lang": lang }, [
         el("label", { class: "field" }, [el("span", { class: "label", text: "À" }), to]),
@@ -2632,51 +2742,13 @@
           el("a", { class: "btn", target: "_blank", rel: "noopener", text: "Ouvrir dans la messagerie ↗", on: { click: function (e) { e.currentTarget.href = "mailto:" + encodeURIComponent(to.value.trim()) + "?subject=" + encodeURIComponent(subj.value) + "&body=" + encodeURIComponent(body.value); } } }),
           el("button", { type: "button", class: "btn primary", text: "Envoyé", title: "Statut « En cours » et dernier contact aujourd'hui pour " + (l.length > 1 ? "ces " + l.length + " films" : "ce film"), on: { click: function (e) {
             var t = new Date(), iso = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
-            var ch = l.map(function (p) { var q = JSON.parse(JSON.stringify(p)), r = q.recup = q.recup || {}; r.statut = r.statut === "Récupéré" ? r.statut : "En cours"; r.dernierContact = iso; delete r.relance; if (to.value.trim()) r.email = to.value.trim(); return q; });
+            var ch = l.map(function (p) { var q = JSON.parse(JSON.stringify(p)), r = q.recup = q.recup || {}; r.statut = rcSt(p) === "Récupéré" ? "Récupéré" : "En cours"; r.dernierContact = iso; delete r.relance; if (to.value.trim()) r.email = to.value.trim(); return q; });
             e.target.disabled = true; msg.textContent = "Enregistrement…";
             projSave(ch, "Récupération : relance " + (l[0].prod || "")).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
-          } } }), msg])
+          } } }), msg]),
+        el("p", { class: "hint", text: "« Envoyé » passe " + (l.length > 1 ? "ces films" : "ce film") + " en « En cours » avec la date d'aujourd'hui comme dernier contact (relance dans 1 mois, puis 3 mois). L'adresse n'est pas obligatoire." })
       ]);
       after.after(box2);
-    }
-    // Tous les films : recherche, filtres, liste (150 à la fois) ; clic = fiche du film en place.
-    function list(all) {
-      var sec = el("section", { class: "rcall" }, [el("h2", { text: "Tous les films" })]);
-      var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, une production, un réalisateur…", value: rcState.q });
-      var tId = 0; q.addEventListener("input", function () { clearTimeout(tId); tId = setTimeout(function () { rcState.q = q.value; rcState.n = 150; fill(); }, 200); });
-      var chips = el("div", { class: "fchips" });
-      [["", "Tous"]].concat(RC_ST.map(function (s) { return [s, RC_LBL[s]]; })).forEach(function (c) {
-        chips.appendChild(el("button", { type: "button", class: "chip" + (rcState.st === c[0] ? " on" : ""), text: c[1], on: { click: function () { rcState.st = c[0]; rcState.n = 150; draw(); } } }));
-      });
-      var types = {}; proj.projects.forEach(function (p) { types[rcType(p)] = 1; });
-      var ty = el("select", { class: "nodirty" }, [el("option", { value: "", text: "Tous les types" })].concat(Object.keys(types).sort().map(function (t) { return el("option", { value: t, text: t }); })));
-      ty.value = rcState.type; ty.addEventListener("change", function () { rcState.type = ty.value; rcState.n = 150; fill(); });
-      var dset = {}; proj.projects.forEach(function (p) { (p.dops || []).forEach(function (d) { dset[d.replace(/,? (AFC|SCU|SBC|SASC|FSC|ASK)\b.*$/, "")] = 1; }); });
-      var dp = el("select", { class: "nodirty" }, [el("option", { value: "", text: "Tous les chefs op" })].concat(Object.keys(dset).sort(function (a, b) { return a.localeCompare(b, "fr"); }).map(function (d) { return el("option", { value: d, text: d }); })));
-      dp.value = rcState.dop; dp.addEventListener("change", function () { rcState.dop = dp.value; rcState.n = 150; fill(); });
-      var ag = el("label", { class: "rcag" }, [el("input", { type: "checkbox", class: "nodirty" }), "Films d'autres agences"]);
-      ag.firstChild.checked = rcState.ag; ag.firstChild.addEventListener("change", function () { rcState.ag = ag.firstChild.checked; rcState.n = 150; fill(); });
-      sec.appendChild(q); sec.appendChild(chips); sec.appendChild(el("div", { class: "rcsel" }, [ty, dp, ag]));
-      var out = el("div", { class: "rclist" }), count = el("p", { class: "hint" });
-      sec.appendChild(count); sec.appendChild(out);
-      function norm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
-      function fill() {
-        var w = norm(rcState.q).split(/\s+/).filter(Boolean);
-        var l = proj.projects.filter(function (p) {
-          if (p.agency && !rcState.ag) return false;
-          if (rcState.st && rcSt(p) !== rcState.st) return false;
-          if (rcState.type && rcType(p) !== rcState.type) return false;
-          if (rcState.dop && rcDop(p).split(", ").indexOf(rcState.dop) < 0) return false;
-          var h = norm([p.title, (p.aka || []).join(" "), p.prod, (p.directors || []).join(" "), (p.dops || []).join(" ")].join(" "));
-          return w.every(function (x) { return h.indexOf(x) > -1; });
-        }).sort(function (a, b) { return String(b.start || "0").localeCompare(String(a.start || "0")); });
-        count.textContent = l.length + " film" + (l.length > 1 ? "s" : "");
-        out.textContent = "";
-        l.slice(0, rcState.n).forEach(function (p) { out.appendChild(row(p)); });
-        if (l.length > rcState.n) out.appendChild(el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + (l.length - rcState.n) + ")", on: { click: function () { rcState.n += 300; fill(); } } }));
-      }
-      fill();
-      return sec;
     }
     function row(p) {
       var s = rcSt(p), u = rcUrg(p), r = p.recup || {};
@@ -2685,7 +2757,7 @@
         el("div", { class: "rctitle" }, [el("strong", { text: p.title || "Sans titre" }), el("span", { text: [rcType(p), p.prod, (p.directors || []).join(", ")].filter(Boolean).join(" · ") })]),
         el("span", { class: "rcdop", text: rcDop(p) }),
         el("span", { class: "rcwhen", text: p.start ? fdate(p.start).replace(/^\d+ /, "") : r.annee || "" }),
-        el("span", { class: "rclast", text: r.dernierContact ? "contact " + fdate(r.dernierContact) : r.relance ? "relance " + fdate(r.relance) : "" })
+        el("span", { class: "rclast" }, [urgTag(u), r.dernierContact ? "contact " + fdate(r.dernierContact) : r.relance ? "relance " + fdate(r.relance) : s === "En cours" ? "jamais relancé" : ""])
       ]);
       d.addEventListener("click", function () { open(d, p); });
       return d;

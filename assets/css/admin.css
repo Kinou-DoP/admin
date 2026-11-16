@@ -528,3 +528,53 @@ body.vedit-on { overflow: hidden; }
 .rcedit .fwbtns, .rcmail .fwbtns { flex-wrap: wrap; align-items: center; }
 .rcedit .fchips { margin-bottom: 18px; }
 @media (max-width: 700px) { .rcedit .fgrid { grid-template-columns: 1fr; } }
+/* Récupération v2 : onglets, sélecteur de types à cases, par film / par production, ancienneté de la relance */
+.rctabs { display: flex; gap: 28px; margin: 0 0 26px; border-bottom: 1px solid var(--faint); }
+.rctabs button, .rcmode button { padding: 0 0 12px; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: color .2s, border-color .2s; }
+.rctabs button:hover, .rcmode button:hover { color: var(--kinou-fg); }
+.rctabs button.on { color: var(--kinou-fg); border-bottom-color: var(--kinou-fg); }
+.rcgap { flex: 1; }
+.rcmode { display: flex; border: 1px solid var(--faint); }
+.rcmode button { padding: 9px 12px; margin: 0; border: 0; font-size: 11px; }
+.rcmode button.on { background: var(--kinou-fg); color: var(--kinou-bg); }
+.rcsel select[hidden] { display: none; }
+.rcdd { position: relative; }
+.rcdd summary { list-style: none; padding: 8px 28px 8px 10px; border: 1px solid var(--faint); font-family: var(--kinou-sans); font-size: 12px; cursor: pointer; max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rcdd summary::-webkit-details-marker { display: none; }
+.rcdd summary::after { content: "▾"; position: absolute; right: 10px; top: 8px; color: var(--dim); }
+.rcdd[open] summary { border-color: var(--kinou-fg); }
+.rcddpane { position: absolute; z-index: 6; top: calc(100% + 4px); left: 0; min-width: 260px; padding: 10px 14px; border: 1px solid var(--faint); background: #000; box-shadow: 0 10px 30px rgba(0,0,0,.8); }
+.rcddpane label { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; font-size: 14px; cursor: pointer; }
+.rcddpane label input { accent-color: #fff; }
+.rcddpane small { color: var(--dim); font-size: 12px; }
+.rcddpane .btn { height: 28px; padding: 0; margin-top: 4px; font-size: 10px; }
+.rcurg { display: inline-block; margin: 0 8px 0 0; padding: 2px 6px; font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; vertical-align: 2px; }
+.rcgtxt .rcurg { margin: 0 0 0 10px; }
+.rcurg.u-red { background: rgba(255,138,122,.16); color: var(--err); }
+.rcurg.u-yellow { background: rgba(255,210,122,.14); color: var(--warn); }
+.rcurg.u-relance { background: rgba(255,255,255,.12); color: #fff; }
+.chip.u-red.on { border-color: var(--err); color: var(--err); } .chip.u-yellow.on { border-color: var(--warn); color: var(--warn); }
+.rcgrp .rcgtxt { cursor: pointer; }
+.rcgrp.open { background: var(--soft); }
+.rcgfilms-list { padding-left: 22px; border-bottom: 1px solid var(--faint); }
+.rcgfilms-list .rcrow:last-child { border-bottom: 0; }
+.rcrow .rclast { white-space: normal; }
+.rcrow { grid-template-columns: 104px 1fr 170px 76px 190px; }
+@media (max-width: 700px) {
+  .rcsel { gap: 8px; } .rcgap { display: none; }
+  .rcrow { grid-template-columns: 92px 1fr; }
+  .rcrow .rclast { display: block; grid-column: 2; margin-top: -8px; }
+  .rcrow .rclast:empty { display: none; }
+}
+.gender { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: -14px 0 26px; }
+.gender .label { margin: 0 6px 0 0; }
+.gender small { color: var(--dim); font-size: 12px; margin-left: 6px; }
+.gender .chip { border: 1px solid var(--faint); background: none; color: var(--dim); cursor: pointer; padding: 6px 10px; }
+.gender .chip.on { border-color: var(--kinou-fg); color: var(--kinou-fg); }
+/* Festivals, « Bientôt » : inscriptions (orange) et festival (vert) bien distingués (Gus 16/11) */
+.fswhen small { display: block; margin-top: 3px; font-weight: 400; font-size: 12px; letter-spacing: 0; color: var(--dim); }
+.fsrow { border-left: 2px solid transparent; padding-left: 12px; }
+.fsrow.dl { border-left-color: #ff8a5c; } .fsrow.fest { border-left-color: #7ee2a8; }
+.fstxt .fskind { align-self: flex-start; padding: 2px 6px; font-family: var(--kinou-sans); font-weight: 600; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.fsrow.dl .fskind { color: #ff8a5c; background: rgba(255,138,92,.12); }
+.fsrow.fest .fskind { color: #7ee2a8; background: rgba(126,226,168,.12); }
