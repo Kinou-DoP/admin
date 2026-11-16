@@ -168,8 +168,7 @@
     },
     {
       "slug": "juliette-lossky-cinematographer",
-      "name": "Juliette Lossky",
-      "gender": "f"
+      "name": "Juliette Lossky"
     },
     {
       "slug": "benjamin-louet-cinematographer",
@@ -189,7 +188,8 @@
     },
     {
       "slug": "ana-maria-miranda",
-      "name": "Ana Maria Miranda"
+      "name": "Ana Maria Miranda",
+      "gender": "f"
     },
     {
       "slug": "stephan-muhlau",
