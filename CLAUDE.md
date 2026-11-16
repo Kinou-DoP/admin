@@ -125,8 +125,10 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   longs → `fiction/feature-films`, courts → `fiction/short-films`), édition passée = estompée « à mettre à jour », formulaire « Modifier »
   / « + Ajouter un festival ». **Robot du matin** (dépôt notes, `tools/check-festivals.mjs`, chaque jour vers 9 h à Paris) : écrit seulement `check`
   (`issues` = date proche mais différente sur le site du festival : `deadline` / `start`, ou `new` = nouvelles dates possibles quand
-  les nôtres sont estimées ; `page` = site illisible, affiché en petit dans le pied de carte, sans triangle). **Ce que l'équipe a saisi
-  n'est jamais modifié** (Gus 16/11) : triangle orange « ! » (`.ftri`) devant le nom, la date concernée et un encadré (`.fwarn` : chez
+  les nôtres sont estimées ; `page` = site illisible, affiché en petit dans le pied de carte, sans triangle). **Robot / humain** (Gus 16/11) : `source` = `robot` (liste de départ, remplie par Claude ; mis à jour directement par le
+  robot, pas de triangle, pastille « robot ») ou `human` (enregistré par quelqu'un : « Enregistrer » pose `source: human`, `editedBy`,
+  `editedAt` ; pastille verte « humain » ; le robot n'y touche plus). **Ce que l'équipe a saisi
+  n'est jamais modifié** : triangle orange « ! » (`.ftri`, festivals `human` seulement) devant le nom, la date concernée et un encadré (`.fwarn` : chez
   nous / sur le site, pages lues, « Vu, nos infos sont bonnes » = `checkSeen` = `check.hash`, « Corriger ») ; enregistrer le festival
   marque aussi les désaccords actuels comme vus ; la pastille du menu les compte. **« Compléter automatiquement »** (bouton blanc sous le nom, formulaire d'un festival ; `festAsk` / `festFill`) : demande au robot du
   dépôt notes (`festivals/ask/<horodatage>.json`, workflow `festival-ask.yml` : Claude + recherche web, ~1–2 min, clé `ANTHROPIC_API_KEY`

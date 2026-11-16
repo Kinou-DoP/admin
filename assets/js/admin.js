@@ -2208,7 +2208,7 @@
       deadlines: [], site: "https://www.filmcourt.fr", note: "Premiers films européens (fiction). Date limite à vérifier. 2026 : 10–15 novembre." },
     { id: "les-arcs", name: "Les Arcs Film Festival", city: "Les Arcs", country: "France", types: ["feature"], start: "2026-12-12", end: "2026-12-19",
       deadlines: [{ label: "Appel à films", date: "2027-08-15", ed: "2027", est: true }], site: "https://film.lesarcs-filmfest.com", note: "Cinéma européen. Appel à films 2026 clos le 15/08." }
-  ].map(function (f) { f.checked = "2026-11-16"; return f; });
+  ].map(function (f) { f.checked = "2026-11-16"; f.source = "robot"; return f; }); // remplis par Claude (recherche du 16/11), pas par l'équipe
 
   var fest = null, festSha = null, festErr = "", festBusy = null;
   function festLoad() { // une seule lecture à la fois (menu + page ouverts ensemble : sinon la liste de départ serait écrite deux fois)
@@ -2296,7 +2296,7 @@
   }
   function festBadge() {
     var a = side.querySelector('.sgroup[data-group="festivals"]'); if (!a) return;
-    var n = fest ? festAlerts(fest.festivals).length + (fest.festivals || []).filter(function (f) { return f.check && (f.check.issues || []).some(function (i) { return i.kind !== "page"; }) && f.checkSeen !== f.check.hash; }).length : 0, b = a.querySelector(".nbadge");
+    var n = fest ? festAlerts(fest.festivals).length + (fest.festivals || []).filter(function (f) { return f.source === "human" && f.check && (f.check.issues || []).some(function (i) { return i.kind !== "page"; }) && f.checkSeen !== f.check.hash; }).length : 0, b = a.querySelector(".nbadge");
     if (!n) { if (b) b.remove(); return; }
     if (!b) { b = el("span", { class: "nbadge" }); a.appendChild(b); }
     b.textContent = n; b.title = "Dates limites d'inscription dans les 14 jours et festivals à vérifier (triangle orange)";
@@ -2346,8 +2346,9 @@
     }
     // Robot du matin (dépôt notes, tools/check-festivals.mjs) : f.check.issues = désaccords avec le site du festival. Ce que l'équipe a
     // saisi reste ; un triangle orange le signale tant que personne ne l'a marqué « vu » (checkSeen = check.hash, Gus 16/11).
+    // Triangles seulement sur les festivals enregistrés par quelqu'un (source « human ») : ceux du robot sont mis à jour par lui.
     function warnOn(f) {
-      var l = f.check && f.checkSeen !== f.check.hash ? (f.check.issues || []).filter(function (i) { return i.kind !== "page"; }) : [];
+      var l = f.source === "human" && f.check && f.checkSeen !== f.check.hash ? (f.check.issues || []).filter(function (i) { return i.kind !== "page"; }) : [];
       return l.length ? l : null;
     }
     function tri(title) { return el("span", { class: "ftri", title: title || "Le site du festival indique autre chose", text: "!" }); }
@@ -2399,7 +2400,9 @@
       if (f.selection) links.appendChild(el("a", { class: "btn", href: f.selection, target: "_blank", rel: "noopener", text: "Sélection ↗" }));
       (f.types || []).forEach(function (t) { var o = FEST_OURS[t]; if (o) links.appendChild(el("a", { class: "btn ours", href: SITE_VIEW + o[1], target: "_blank", rel: "noopener", text: o[0] + " ↗" })); });
       c.appendChild(links);
-      c.appendChild(el("div", { class: "ffoot" }, [el("span", { text: (f.checked ? "Vérifié le " + fdate(f.checked) : "") + (f.filled ? " · complété automatiquement le " + fdate(f.filled.at.slice(0, 10)) : "") + (f.check ? " · robot : " + fdate(f.check.at.slice(0, 10)) + ((f.check.issues || []).some(function (i) { return i.kind === "page"; }) ? " (site illisible pour lui)" : "") : "") }),
+      var who = f.source === "human" ? "Modifié" + (f.editedBy ? " par " + f.editedBy : "") + (f.editedAt ? " le " + fdate(f.editedAt.slice(0, 10)) : "") + " · le robot n'y touche plus"
+        : "Rempli par le robot" + (f.filled ? " le " + fdate(f.filled.at.slice(0, 10)) : f.checked ? " le " + fdate(f.checked) : "") + " · mis à jour automatiquement";
+      c.appendChild(el("div", { class: "ffoot" }, [el("span", {}, [el("span", { class: "fsrc " + (f.source === "human" ? "h" : "r"), text: f.source === "human" ? "humain" : "robot" }), who + (f.filled && f.source === "human" ? " · complété automatiquement le " + fdate(f.filled.at.slice(0, 10)) : "") + (f.check ? " · vérifié par le robot le " + fdate(f.check.at.slice(0, 10)) : "") + ((f.check && (f.check.issues || []).some(function (i) { return i.kind === "page"; })) ? " (site illisible pour lui)" : "")]),
         el("button", { type: "button", class: "btn ghost", text: "Modifier", on: { click: function () { edit(f); } } })]));
       return c;
     }
@@ -2465,6 +2468,7 @@
         if (!f.id) f.id = slugify(f.name) + "-" + Date.now().toString(36);
         f.deadlines = (f.deadlines || []).filter(function (d) { return d.date || d.label; });
         f.checked = new Date().toISOString().slice(0, 10);
+        f.source = "human"; f.editedBy = user && user.login || ""; f.editedAt = new Date().toISOString(); // enregistré par quelqu'un : le robot n'y touche plus
         if (f.check) f.checkSeen = f.check.hash; // la personne vient de vérifier : désaccords actuels marqués « vus »
         Object.keys(f).forEach(function (k) { if (f[k] === "") delete f[k]; });
         save.disabled = true; msg.textContent = "Enregistrement…";

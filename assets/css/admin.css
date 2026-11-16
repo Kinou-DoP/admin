@@ -478,3 +478,5 @@ body.vedit-on { overflow: hidden; }
 .fwbtns .btn { height: 32px; font-size: 12px; padding: 0 12px; }
 .fauto { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: -6px 0 26px; }
 .fauto .btn { height: 36px; font-size: 13px; }
+.fsrc { display: inline-block; margin-right: 8px; padding: 1px 6px; border: 1px solid var(--faint); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.fsrc.h { border-color: rgba(126,226,168,.5); color: #7ee2a8; }
