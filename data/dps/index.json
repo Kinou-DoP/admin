@@ -136,7 +136,8 @@
     },
     {
       "slug": "jenna-huskisson",
-      "name": "Jenna Huskisson"
+      "name": "Jenna Huskisson",
+      "gender": "f"
     },
     {
       "slug": "alexis-kavyrchine-cinematographer",
@@ -216,8 +217,7 @@
     },
     {
       "slug": "paloma-pineda-cinematographer",
-      "name": "Paloma Pineda",
-      "gender": "f"
+      "name": "Paloma Pineda"
     },
     {
       "slug": "andy-pml",
