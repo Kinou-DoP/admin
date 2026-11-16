@@ -2902,6 +2902,7 @@
       w.split("").forEach(function (c) { word.appendChild(el("span", { class: "hl", style: "--i:" + (n++) + ";--r:" + ((n * 37) % 13 - 6) + "deg", text: c })); });
       h.appendChild(word); if (k === 1) h.appendChild(el("br")); else if (k < all.length - 1) h.appendChild(document.createTextNode(" ")); // « Hello la / Dream Team ! »
     });
+    h.addEventListener("animationend", function (e) { var l = e.target; if (e.animationName === "hDrop") l.classList.add("in"); else l.classList.remove("boing"); });
     h.addEventListener("click", function (e) { var l = e.target.closest(".hl"); if (!l) return; l.classList.remove("boing"); void l.offsetWidth; l.classList.add("boing"); });
     view.appendChild(el("div", { class: "hellobox" }, [h]));
   }
