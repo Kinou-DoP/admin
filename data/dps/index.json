@@ -217,8 +217,7 @@
     },
     {
       "slug": "paloma-pineda-cinematographer",
-      "name": "Paloma Pineda",
-      "gender": "f"
+      "name": "Paloma Pineda"
     },
     {
       "slug": "andy-pml",
@@ -294,7 +293,8 @@
     },
     {
       "slug": "maeva-vo-dinh-cinematographer",
-      "name": "Maëva Vo Dinh"
+      "name": "Maëva Vo Dinh",
+      "gender": "f"
     },
     {
       "slug": "christos-voudouris-cinematographer",
