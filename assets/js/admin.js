@@ -2941,6 +2941,14 @@
         el("p", { class: "hint", text: "Source : " + (srcs[x.source] || x.source || "") }),
         el("div", { class: "fwbtns" }, [x.url ? el("a", { class: "btn", href: x.url, target: "_blank", rel: "noopener", text: /imdb\.com/.test(x.url) ? "IMDb ↗" : "Source ↗" }) : null,
           x.source !== "fiction" ? el("button", { type: "button", class: "btn", text: "Modifier", on: { click: function () { d.remove(); form(x, at.closest(".cal")); } } }) : el("a", { class: "btn", href: "#/fiction", text: "Page fiction" }),
+          // Sortie trouvée par le robot : « Confirmer » = vérifiée par l'équipe → gardée pour toujours dans l'archive (plus une donnée TMDB).
+          x.source === "tmdb" || x.source === "claude" ? el("button", { type: "button", class: "btn primary", text: "Confirmer", title: "Date vérifiée : gardée pour toujours dans nos archives", on: { click: function (e) {
+            var y = JSON.parse(JSON.stringify(x)); ["directors", "dops", "prod", "platforms", "series", "img"].forEach(function (k) { delete y[k]; });
+            y.id = "s" + Date.now().toString(36); y.was = x.source; y.source = "human"; y.by = user && user.login || ""; y.at = new Date().toISOString(); delete y.key;
+            if (x.platforms && x.platforms[0]) y.platform = x.platforms[0];
+            e.target.disabled = true;
+            sortSave(null, y, y.title + " : confirmé").then(function () { return sortPut([x], "Sorties : " + x.title + " (robot) remplacé", true); }).then(function () { build(); draw(); });
+          } } }) : null,
           el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: function () { d.remove(); } } })])]);
       d._x = x;
       at.closest(".cal").after(d); d.scrollIntoView({ behavior: "smooth", block: "nearest" });
