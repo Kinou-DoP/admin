@@ -646,3 +646,5 @@ h3.selfest { margin: 28px 0 12px; font-family: var(--kinou-sans); font-weight: 6
 .selrow .fwbtns { margin: 0; } .selrow .fwbtns .btn { height: 30px; min-width: 34px; padding: 0 10px; }
 .selcard.new .selhead { margin-bottom: 8px; }
 @media (max-width: 700px) { .selrow { grid-template-columns: 1fr; gap: 6px; } }
+.selfold { padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
+.selfold:hover { color: var(--warn); }

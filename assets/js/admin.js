@@ -2590,7 +2590,13 @@
     view.appendChild(el("p", { class: "lead", text: "Les festivals où nos films ont été sélectionnés, nommés ou primés. Deux robots cherchent : chaque nuit, Claude cherche film par film sur le web (AlloCiné, Unifrance, IMDb, festivals, presse, tous festivals confondus) ; chaque matin, un autre lit les pages de sélection des festivals du calendrier. Leurs trouvailles arrivent dans « À vérifier »." }));
     var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
     view.appendChild(box); immInit(function () { draw(); });
-    var st = { cat: "", fest: "", dop: "", year: "", q: "", showNo: false };
+    var st = { cat: "", fest: "", dop: "", year: "", q: "", showNo: false, nRec: 30, nAll: 60 };
+    var recOpen = true; try { recOpen = localStorage.getItem("kinou-sel-rec") !== "0"; } catch (e) {}
+    function prodOf(x) { var p = proj && proj.projects && proj.projects.filter(function (q) { return q.id === x.project; })[0]; return p && p.prod || ""; }
+    function more(list, n, key, redraw) { // « Afficher plus » quand la liste dépasse
+      if (list.length > n) return el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + (list.length - n) + ")", on: { click: function () { st[key] += 100; redraw(); } } });
+      return null;
+    }
     Promise.all([selRead(), festLoad().catch(function () { return null; }), projRead().catch(function () { return null; })]).then(draw, function (e) {
       box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message }));
     });
@@ -2618,9 +2624,14 @@
       // 2. Récent : confirmé, festival dans les 6 derniers mois (ou à venir).
       var lim = new Date(Date.now() - 183 * 864e5).toISOString().slice(0, 10);
       var rec = ok.filter(function (x) { return when(x) >= lim; }).sort(function (a, b) { return when(b).localeCompare(when(a)); });
-      var s2 = el("section", {}, [el("h2", { text: "Récent · " + rec.length })]);
-      if (!rec.length) s2.appendChild(el("p", { class: "hint", text: "Rien ces six derniers mois." }));
-      rec.forEach(function (x) { s2.appendChild(line(x)); });
+      // Repliable (mémorisé dans ce navigateur), 30 lignes puis « Afficher plus ».
+      var s2 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "selfold" + (recOpen ? " open" : ""), on: { click: function () {
+        recOpen = !recOpen; try { localStorage.setItem("kinou-sel-rec", recOpen ? "1" : "0"); } catch (e) {} draw(); } } }, [(recOpen ? "▾ " : "▸ ") + "Récent · " + rec.length])])]);
+      if (recOpen) {
+        if (!rec.length) s2.appendChild(el("p", { class: "hint", text: "Rien ces six derniers mois." }));
+        rec.slice(0, st.nRec).forEach(function (x) { s2.appendChild(line(x)); });
+        var m1 = more(rec, st.nRec, "nRec", draw); if (m1) s2.appendChild(m1);
+      }
       box.appendChild(s2);
       // 3. Toutes nos sélections : catégories + filtres.
       var s3 = el("section", {}, [el("h2", { text: "Toutes nos sélections · " + ok.length })]);
@@ -2634,7 +2645,7 @@
         s.value = st[key]; s.addEventListener("change", function () { st[key] = s.value; draw(); }); return s;
       }
       function uniq(f) { var o = {}; ok.forEach(function (x) { [].concat(f(x)).forEach(function (v) { if (v) o[v] = 1; }); }); return Object.keys(o); }
-      var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, un festival, un prix…", value: st.q });
+      var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, un festival, un prix, un chef op, un réalisateur, une production…", value: st.q });
       var list = el("div", {});
       s3.appendChild(el("div", { class: "rcsel" }, [dd("fest", "Tous les festivals", uniq(function (x) { return x.festName; }).sort(function (a, b) { return a.localeCompare(b, "fr"); })),
         dd("dop", "Tous les chefs op", uniq(function (x) { return (x.dops || []).map(rcBase); }).sort(function (a, b) { return a.localeCompare(b, "fr"); })),
@@ -2648,13 +2659,14 @@
           if (st.fest && x.festName !== st.fest) return false;
           if (st.dop && (x.dops || []).map(rcBase).indexOf(st.dop) < 0) return false;
           if (st.year && x.edition !== st.year) return false;
-          var h = nrm([x.title, x.festName, x.city, x.section, x.prize, (x.directors || []).join(" "), (x.dops || []).join(" ")].join(" "));
+          var h = nrm([x.title, x.festName, x.city, x.country, x.section, x.prize, prodOf(x), (x.directors || []).join(" "), (x.dops || []).join(" ")].join(" "));
           return w.every(function (v) { return h.indexOf(v) > -1; });
         }).sort(function (a, b) { return when(b).localeCompare(when(a)) || a.festName.localeCompare(b.festName); });
         if (!l.length) list.appendChild(el("p", { class: "hint", text: ok.length ? "Rien avec ces filtres." : "Aucune sélection confirmée pour l'instant." }));
-        l.forEach(function (x) { list.appendChild(line(x)); });
+        l.slice(0, st.nAll).forEach(function (x) { list.appendChild(line(x)); });
+        var m2 = more(l, st.nAll, "nAll", fillAll); if (m2) list.appendChild(m2);
       }
-      q.addEventListener("input", function () { st.q = q.value; fillAll(); });
+      q.addEventListener("input", function () { st.q = q.value; st.nAll = 60; fillAll(); });
       fillAll();
       box.appendChild(s3);
       if (no.length) {
@@ -2887,7 +2899,7 @@
     }
     function controls() {
       var c = el("div", { class: "rcctl" });
-      var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, une production, un réalisateur…", value: rcState.q });
+      var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, une production, un réalisateur, un chef op…", value: rcState.q });
       var tId = 0; q.addEventListener("input", function () { clearTimeout(tId); tId = setTimeout(function () { rcState.q = q.value; rcState.n = 150; fill(); }, 200); });
       c.appendChild(q);
       var chips = el("div", { class: "fchips" });
