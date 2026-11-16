@@ -68,8 +68,7 @@
     },
     {
       "slug": "julie-chevailler-cinematographer",
-      "name": "Julie Chevailler",
-      "gender": "f"
+      "name": "Julie Chevailler"
     },
     {
       "slug": "agustin-claramunt-scu-cinematographer",
@@ -169,7 +168,8 @@
     },
     {
       "slug": "juliette-lossky-cinematographer",
-      "name": "Juliette Lossky"
+      "name": "Juliette Lossky",
+      "gender": "f"
     },
     {
       "slug": "benjamin-louet-cinematographer",
