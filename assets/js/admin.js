@@ -2924,20 +2924,20 @@
         el("div", { class: "selwhat" }, [el("strong", { text: x.title + (x.series ? " (série)" : "") }),
           el("span", { text: nod ? (x.start ? "Tourné en " + x.start.slice(0, 4) : "") : [SK[x.kind || "cinema"], (x.platforms || []).join(", "), x.country].filter(Boolean).join(" · ") }),
           el("small", { text: [(x.directors || []).length && "réal. " + x.directors.join(", "), (x.dops || []).length && "DoP " + x.dops.map(rcBase).join(", "), x.prod].filter(Boolean).join(" · ") })]),
-        el("div", { class: "selsrc" }, x.url ? [el("a", { href: x.url, target: "_blank", rel: "noopener", text: "source ↗" })] : []),
+        el("div", { class: "selsrc" }, x.url ? [el("a", { href: x.url, target: "_blank", rel: "noopener", text: /imdb\.com/.test(x.url) ? "IMDb ↗" : "source ↗" })] : []),
         el("div", { class: "fwbtns" }, nod ? [el("button", { type: "button", class: "btn ghost", text: "+ Ajouter une date", on: { click: function () { form({ title: x.title, project: x.project, kind: x.series ? "platform" : "cinema" }, r, true); } } })]
           : [el("button", { type: "button", class: "btn ghost", text: "Voir", on: { click: function () { st.at = dOf(x.date); draw(); window.scrollTo({ top: 0, behavior: "smooth" }); } } })])]);
       return r;
     }
     function detail(x, at) {
       var old = box.querySelector(".caldetail"); if (old) { old.remove(); if (old._x === x) return; }
-      var srcs = { fiction: "page fiction du site (à changer là-bas)", human: "ajouté par " + (x.by || "l'équipe"), tmdb: "trouvé par le robot (TMDB)", claude: "trouvé par le robot (Claude)" };
+      var srcs = { fiction: "page fiction du site (à changer là-bas)", human: "ajouté par " + (x.by || "l'équipe"), tmdb: "trouvé par le robot (base TMDB, lien IMDb)", claude: "trouvé par le robot (Claude)" };
       var d = el("div", { class: "caldetail fcard" }, [
         el("h3", { text: x.title + (x.series ? " (série)" : "") }),
         el("p", { class: "fwhere", text: [fdate(x.date), SK[x.kind || "cinema"], (x.platforms || []).join(", "), x.country].filter(Boolean).join(" · ") }),
         el("p", { class: "hint", text: [(x.directors || []).length && "Réalisation : " + x.directors.join(", "), (x.dops || []).length && "Image : " + x.dops.map(rcBase).join(", "), x.prod && "Production : " + x.prod].filter(Boolean).join(" · ") }),
         el("p", { class: "hint", text: "Source : " + (srcs[x.source] || x.source || "") }),
-        el("div", { class: "fwbtns" }, [x.url ? el("a", { class: "btn", href: x.url, target: "_blank", rel: "noopener", text: "Source ↗" }) : null,
+        el("div", { class: "fwbtns" }, [x.url ? el("a", { class: "btn", href: x.url, target: "_blank", rel: "noopener", text: /imdb\.com/.test(x.url) ? "IMDb ↗" : "Source ↗" }) : null,
           x.source !== "fiction" ? el("button", { type: "button", class: "btn", text: "Modifier", on: { click: function () { d.remove(); form(x, at.closest(".cal")); } } }) : el("a", { class: "btn", href: "#/fiction", text: "Page fiction" }),
           el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: function () { d.remove(); } } })])]);
       d._x = x;
