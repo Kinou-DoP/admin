@@ -173,7 +173,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
 ## Hébergement et branches
 - L'admin utilisée au quotidien est sur **GitHub Pages** : https://kinou-dop.github.io/admin/ (publie la branche `beta`,
   gratuit, sans crédits Netlify). Le code de l'admin se modifie donc sur `beta` ; en ligne ~1 min après un push.
-- Elle appelle les fonctions du site beta (`SITE` = https://beta--kinou-test.netlify.app : import Slate, refresh).
+- Elle appelle les fonctions du site (`SITE` = https://kinou-4tv.pages.dev, Cloudflare depuis le 16/11 : import Slate, refresh).
   « Voir sur le site » ouvre la copie Cloudflare de la beta (`SITE_VIEW` = https://kinou-4tv.pages.dev, essai depuis le 16/11 ;
   la beta GitHub Pages `SITE_PAGES` = https://kinou-dop.github.io/site reste l'adresse des pages d'aperçu des liens).
 - `main` est publié sur Netlify (https://kinou-admin.netlify.app) : ancienne version, plus utilisée
