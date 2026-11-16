@@ -110,7 +110,20 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi
   (lien vers le commit). Sur une fiche / l'accueil / le contact : ce fichier seulement, bouton « Tout voir ».
-- Navigation à gauche (comme l'en-tête du site) : cinematographers (fiches), home page, spotlight, fiction, press (à venir), contact.
+- Navigation à gauche **en rubriques** (Gus 16/11) : WEBSITE (cinematographers, home page, spotlight, fiction, press à venir, contact),
+  FESTIVALS (dates `#/festivals`, nos sélections `#/selections`), SORTIES FICTION (calendrier `#/sorties`, à venir), RÉCUPÉRATION
+  (suivi `#/recup`, à venir : k-recup, mails) ; téléphone : rubriques en ligne. Notification = pastille rouge sur « dates »
+  (`festBadge` : dates limites d'inscription dans les 14 jours, hors estimées), calculée à la connexion.
+- **Festivals** (Gus 16/11, `showFestivals`) : données dans le dépôt **privé** `Kinou-DoP/notes`, `festivals/festivals.json` =
+  `{ festivals: [{ id, name, city, country, types: [feature|short|music-video|commercial|cinematography|event], start, end, est?,
+  deadlines: [{ label, date, ed (édition), est? }], submit, site, selection, note, checked }] }` ; lu / enregistré directement (comme les
+  notes, sans « Publier » ; un festival à la fois, fichier relu avant). Absent : créé avec la liste de départ `FEST_SEED` (19 festivals,
+  dates relevées le 16/11/2026 ; `est` = estimée d'après l'édition précédente). Page : « Ça arrive » (dates limites dans les 45 jours,
+  festivals qui commencent dans les 30 jours ou en cours), filtres par type, cartes (dates, inscriptions, remarques, liens S'inscrire /
+  Site / Sélection, boutons « Nos … » vers le site Cloudflare `FEST_OURS` : clips → `spotlight/music-video`, pub → `spotlight/commercial`,
+  longs → `fiction/feature-films`, courts → `fiction/short-films`), édition passée = estompée « à mettre à jour », formulaire « Modifier »
+  / « + Ajouter un festival ». Nos sélections (`showFestSel`) : à venir (robot quotidien qui cherche nos films, titres + réalisateurs,
+  dans les pages de sélection ; liste des projets d'après les captures de k-recup).
 - Fiction (lien « fiction » du menu, `data/fiction.json`) : comme le spotlight (lien d'une bande Slate + « Relire la bande », lue en
   entier par le robot ; mêmes réglages par film via `filmsSection` / `filmCard`, `state` = fic), plus sous le titre de chaque film
   (`ficCtl`) : statut New release / Coming soon (`status` ; Past release = défaut, proposé seulement pour un film déjà passé :
