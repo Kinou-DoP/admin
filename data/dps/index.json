@@ -169,8 +169,7 @@
     },
     {
       "slug": "juliette-lossky-cinematographer",
-      "name": "Juliette Lossky",
-      "gender": "f"
+      "name": "Juliette Lossky"
     },
     {
       "slug": "benjamin-louet-cinematographer",
@@ -218,7 +217,8 @@
     },
     {
       "slug": "paloma-pineda-cinematographer",
-      "name": "Paloma Pineda"
+      "name": "Paloma Pineda",
+      "gender": "f"
     },
     {
       "slug": "andy-pml",
