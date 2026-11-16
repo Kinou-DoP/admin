@@ -2917,6 +2917,8 @@
       var s2 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "selfold", on: { click: function () { st.openNoDate = !st.openNoDate; draw(); } } }, [(st.openNoDate ? "▾ " : "▸ ") + "Sans date connue · " + noDate.length])])]);
       if (st.openNoDate) noDate.forEach(function (x) { s2.appendChild(rowOf(x, true)); });
       box.appendChild(s2);
+      // Conditions de TMDB (dates trouvées par le robot) : logo + mention, moins visibles que kinou.
+      box.appendChild(el("p", { class: "tmdbnote" }, [el("span", { class: "tmdblogo", text: "TMDB" }), "Cet outil utilise TMDB et les API de TMDB, mais n'est ni approuvé, ni certifié, ni soutenu par TMDB. (This product uses the TMDB API but is not endorsed or certified by TMDB.)"]));
     }
     function rowOf(x, nod) {
       var r = el("div", { class: "selrow ok" }, [
