@@ -180,7 +180,8 @@
     },
     {
       "slug": "frida-marzouk-afc",
-      "name": "Frida Marzouk, AFC"
+      "name": "Frida Marzouk, AFC",
+      "gender": "f"
     },
     {
       "slug": "nicolas-massart-afc-cinematographer",
@@ -188,8 +189,7 @@
     },
     {
       "slug": "ana-maria-miranda",
-      "name": "Ana Maria Miranda",
-      "gender": "f"
+      "name": "Ana Maria Miranda"
     },
     {
       "slug": "stephan-muhlau",
