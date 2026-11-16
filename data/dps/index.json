@@ -240,8 +240,7 @@
     },
     {
       "slug": "melodie-preel-afc-cinematographer",
-      "name": "Mélodie Preel, AFC",
-      "gender": "f"
+      "name": "Mélodie Preel, AFC"
     },
     {
       "slug": "julien-ramirez-hernan-sbc",
@@ -293,7 +292,8 @@
     },
     {
       "slug": "maeva-vo-dinh-cinematographer",
-      "name": "Maëva Vo Dinh"
+      "name": "Maëva Vo Dinh",
+      "gender": "f"
     },
     {
       "slug": "christos-voudouris-cinematographer",
