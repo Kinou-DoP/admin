@@ -2559,11 +2559,135 @@
       form.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
+  // ---------- Nos sélections (Gus 17/11) ----------
+  // Le robot du dépôt notes (tools/find-selections.mjs, chaque matin) lit les pages de sélection des festivals et y cherche nos films ;
+  // trouvailles dans festivals/selections.json = { found: [{ id, fest, festName, edition, project, title, type, genre, directors, dops,
+  // urls, snippet, why, score, foundAt, status: new | ok | no, section?, by?, at?, manual? }], pages, at }. Ici : confirmer
+  // (« C'est nous ») ou écarter (« Pas nous »), préciser la section ou le prix, ajouter une sélection à la main.
+  var SEL_PATH = "/repos/" + NOTES_REPO + "/contents/festivals/selections.json", sel = null, selSha = null;
+  function selRead() {
+    return gh(SEL_PATH, { allow404: true }).then(function (f) {
+      if (f) { selSha = f.sha; sel = JSON.parse(b64dec(f.content)); } else { selSha = null; sel = { found: [], pages: {} }; }
+      sel.found = sel.found || []; return sel;
+    });
+  }
+  function selPut(items, msg, remove) {
+    return selRead().then(function () {
+      items.forEach(function (x) { sel.found = sel.found.filter(function (y) { return y.id !== x.id; }); if (!remove) sel.found.push(x); });
+      return gh(SEL_PATH, { method: "PUT", body: { message: msg + " (admin, " + (user && user.login || "") + ")", content: b64enc(JSON.stringify(sel, null, 2) + "\n"), sha: selSha || undefined } });
+    }).then(function (r) { selSha = r.content.sha; });
+  }
+  function selSave(before, after, label, remove) { // avec Annuler / Rétablir
+    var b = before && JSON.parse(JSON.stringify(before)), a = JSON.parse(JSON.stringify(after));
+    return selPut([a], "Sélections : " + label, remove).then(function () {
+      immPush({ label: label, undo: function () { return b ? selPut([b], "Sélections : annulé — " + label) : selPut([a], "Sélections : annulé — " + label, true); },
+        redo: function () { return selPut([a], "Sélections : rétabli — " + label, remove); } });
+    });
+  }
   function showFestSel() {
     bar.hidden = true; editing = false; view.textContent = "";
     view.appendChild(el("h1", { text: "Nos sélections" }));
-    view.appendChild(el("p", { class: "lead", text: "Bientôt : chaque jour, un robot lira les pages de sélection des festivals du calendrier et y cherchera nos films (titres, réalisateurs, productions). Ses trouvailles arriveront ici, à confirmer d'un clic, puis à ajouter aux « prix & sélections » du film sur le site." }));
-    view.appendChild(el("p", { class: "hint", text: "En préparation : la liste de nos projets (captures de k-recup)." }));
+    view.appendChild(el("p", { class: "lead", text: "Chaque matin, un robot lit les pages de sélection des festivals du calendrier (de deux mois et demi avant le festival à un mois et demi après) et y cherche nos films : titre, réalisateur, artiste. Ses trouvailles arrivent ici : confirmez ou écartez-les d'un clic." }));
+    var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
+    view.appendChild(box); immInit(function () { draw(); });
+    var showNo = false;
+    Promise.all([selRead(), festLoad().catch(function () { return null; }), projRead().catch(function () { return null; })]).then(draw, function (e) {
+      box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message }));
+    });
+    function nrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+    function typeOf(x) { return x.type === "PUB" ? (x.genre === "web" ? "Pub · web" : x.genre === "corporate" ? "Pub · corporate" : "Pub") : x.type === "TVF" ? "Téléfilm" : (RC_CATS.filter(function (c) { return c[0] === RC_CAT[x.type]; })[0] || [0, x.type])[1]; }
+    function draw() {
+      box.textContent = "";
+      var l = sel.found.slice().sort(function (a, b) { return String(b.foundAt || b.at || "").localeCompare(String(a.foundAt || a.at || "")); });
+      var nw = l.filter(function (x) { return x.status === "new"; }), ok = l.filter(function (x) { return x.status === "ok"; }), no = l.filter(function (x) { return x.status === "no"; });
+      var pages = 0; Object.keys(sel.pages || {}).forEach(function (k) { pages += ((sel.pages[k] || {}).read || []).length; });
+      box.appendChild(el("p", { class: "hint selrobot", text: sel.at ? "Dernier passage du robot le " + fdate(sel.at.slice(0, 10)) + " · " + pages + " pages lues" : "Le robot n'est pas encore passé : il lit les festivals en saison chaque matin vers 9 h 30." }));
+      box.appendChild(el("div", { class: "fchips" }, [el("button", { type: "button", class: "btn fadd", text: "+ Ajouter une sélection", on: { click: function (e) { add(e.target); } } })]));
+      var s1 = el("section", {}, [el("h2", { text: "À vérifier · " + nw.length })]);
+      if (!nw.length) s1.appendChild(el("p", { class: "hint", text: "Rien à vérifier pour l'instant." }));
+      nw.forEach(function (x) { s1.appendChild(card(x)); });
+      box.appendChild(s1);
+      var s2 = el("section", {}, [el("h2", { text: "Nos films sélectionnés · " + ok.length })]);
+      if (!ok.length) s2.appendChild(el("p", { class: "hint", text: "Aucune sélection confirmée pour l'instant." }));
+      var byF = {}, keys = [];
+      ok.forEach(function (x) { var k = x.festName + " " + x.edition; if (!byF[k]) { byF[k] = []; keys.push(k); } byF[k].push(x); });
+      keys.sort().forEach(function (k) { s2.appendChild(el("h3", { class: "selfest", text: k })); byF[k].forEach(function (x) { s2.appendChild(card(x)); }); });
+      box.appendChild(s2);
+      if (no.length) {
+        var s3 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "btn ghost", text: (showNo ? "Masquer" : "Voir") + " les trouvailles écartées · " + no.length, on: { click: function () { showNo = !showNo; draw(); } } })])]);
+        if (showNo) no.forEach(function (x) { s3.appendChild(card(x)); });
+        box.appendChild(s3);
+      }
+    }
+    function card(x) {
+      var c = el("article", { class: "selcard " + x.status });
+      c.appendChild(el("div", { class: "selhead" }, [
+        el("div", {}, [el("h3", { text: x.title || "Sans titre" }),
+          el("p", { class: "fwhere", text: [typeOf(x), (x.directors || []).length && "réal. " + x.directors.join(", "), "DoP " + (x.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") })]),
+        el("div", { class: "selfest2" }, [el("strong", { text: x.festName }), el("span", { text: "édition " + x.edition })])
+      ]));
+      if (x.snippet) {
+        var t = nrm(String(x.title || "").replace(/^.+?\s+[–-]\s+/, "").replace(/^.+?\s*["“«]\s*(.+?)\s*["”»].*$/, "$1").replace(/\(.*?\)/g, "")).replace(/[’']/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+        var i = t ? x.snippet.indexOf(t) : -1, sn = el("p", { class: "selsnip" });
+        if (i > -1) { sn.appendChild(document.createTextNode("… " + x.snippet.slice(0, i))); sn.appendChild(el("mark", { text: x.snippet.slice(i, i + t.length) })); sn.appendChild(document.createTextNode(x.snippet.slice(i + t.length) + " …")); }
+        else sn.textContent = "… " + x.snippet + " …";
+        c.appendChild(sn);
+      }
+      var meta = el("div", { class: "flinks" });
+      (x.urls || []).forEach(function (u) { meta.appendChild(el("a", { class: "btn", href: u, target: "_blank", rel: "noopener", text: "Page " + u.replace(/^https?:\/\/(www\.)?/, "").slice(0, 34) + " ↗" })); });
+      if (x.manual) meta.appendChild(el("span", { class: "fsrc h", text: "ajouté à la main" }));
+      else if (x.status === "new") meta.appendChild(el("span", { class: "selwhy", text: (x.why || []).length ? "Titre + " + x.why.join(" + ") + " sur la page" : "Titre seul sur la page : à bien vérifier" }));
+      c.appendChild(meta);
+      var msg = el("span", { class: "fmsg" });
+      function set(st, label) {
+        return function (e) {
+          var y = JSON.parse(JSON.stringify(x)); y.status = st; y.by = user && user.login || ""; y.at = new Date().toISOString();
+          if (sec && sec.value.trim()) y.section = sec.value.trim(); else delete y.section;
+          e.target.disabled = true; msg.textContent = "Enregistrement…";
+          selSave(x, y, (x.title || "") + " — " + x.festName + " : " + label).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+        };
+      }
+      var sec = x.status === "ok" ? el("input", { type: "text", class: "nodirty", placeholder: "Section ou prix (ex. Compétition officielle, Grand prix)", value: x.section || "" }) : null;
+      var btns = x.status === "new" ? [el("button", { type: "button", class: "btn primary", text: "C'est nous ✓", on: { click: set("ok", "confirmé") } }), el("button", { type: "button", class: "btn ghost", text: "Pas nous", on: { click: set("no", "écarté") } })]
+        : x.status === "ok" ? [sec, el("button", { type: "button", class: "btn", text: "Enregistrer", on: { click: set("ok", "section") } }), el("button", { type: "button", class: "btn ghost", text: x.manual ? "Supprimer" : "Remettre à vérifier", on: { click: x.manual ? function (e) {
+            e.target.disabled = true; selSave(x, x, (x.title || "") + " — " + x.festName + " : supprimé", true).then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas supprimé : " + er.message; });
+          } : set("new", "à vérifier") } })]
+        : [el("button", { type: "button", class: "btn ghost", text: "Finalement c'est nous", on: { click: set("ok", "confirmé") } })];
+      c.appendChild(el("div", { class: "fwbtns selbtns" }, btns.concat([msg])));
+      if (x.status === "ok" && x.by) c.appendChild(el("p", { class: "hint", text: "Confirmé par " + x.by + (x.at ? " le " + fdate(x.at.slice(0, 10)) : "") + ". Bientôt : ajout direct aux « prix & sélections » du film sur le site." }));
+      return c;
+    }
+    // Ajout à la main : un de nos films (recherche), un festival du calendrier, l'édition, la section ou le prix.
+    function add(btn) {
+      if (box.querySelector(".seladd")) return;
+      var projs = (proj && proj.projects || []).filter(function (p) { return !p.agency && p.title && !p.workTitle; });
+      var q = el("input", { type: "search", class: "nodirty", placeholder: "Titre du film, réalisateur, chef op…" }), res = el("div", { class: "selres" }), chosen = null;
+      q.addEventListener("input", function () {
+        var w = nrm(q.value).split(/\s+/).filter(Boolean); res.textContent = ""; chosen = null;
+        if (!w.length) return;
+        projs.filter(function (p) { var h = nrm([p.title, (p.directors || []).join(" "), (p.dops || []).join(" ")].join(" ")); return w.every(function (x) { return h.indexOf(x) > -1; }); }).slice(0, 8).forEach(function (p) {
+          res.appendChild(el("button", { type: "button", class: "selpick", on: { click: function () { chosen = p; q.value = p.title; res.textContent = ""; res.appendChild(el("p", { class: "hint", text: typeOf(p) + " · DoP " + rcDop(p) })); } } },
+            [el("strong", { text: p.title }), el("small", { text: [typeOf(p), (p.directors || []).join(", "), rcDop(p), p.start ? p.start.slice(0, 4) : ""].filter(Boolean).join(" · ") })]));
+        });
+      });
+      var fs = el("select", { class: "nodirty" }, ((fest && fest.festivals) || []).slice().sort(function (a, b) { return a.name.localeCompare(b.name, "fr"); }).map(function (f) { return el("option", { value: f.id, text: f.name }); }));
+      var ed = el("input", { type: "text", class: "nodirty", value: String(new Date().getFullYear() + 1), placeholder: "Édition" });
+      var sec = el("input", { type: "text", class: "nodirty", placeholder: "Section ou prix (facultatif)" }), msg = el("span", { class: "fmsg" });
+      var form = el("article", { class: "fcard fedit seladd" }, [
+        el("label", { class: "field" }, [el("span", { class: "label", text: "Film" }), q, res]),
+        el("div", { class: "fgrid" }, [el("label", { class: "field" }, [el("span", { class: "label", text: "Festival" }), fs]), el("label", { class: "field" }, [el("span", { class: "label", text: "Édition" }), ed]), el("label", { class: "field" }, [el("span", { class: "label", text: "Section ou prix" }), sec])]),
+        el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "Ajouter", on: { click: function (e) {
+          if (!chosen) { msg.textContent = "Choisissez un film dans la liste."; return; }
+          var f = ((fest && fest.festivals) || []).filter(function (x) { return x.id === fs.value; })[0] || { id: fs.value, name: fs.value };
+          var x = { id: "m" + Date.now().toString(36), fest: f.id, festName: f.name, edition: ed.value.trim(), project: chosen.id, title: chosen.title, type: chosen.type, genre: chosen.genre,
+            directors: chosen.directors || [], dops: chosen.dops || [], urls: [], status: "ok", manual: true, by: user && user.login || "", at: new Date().toISOString() };
+          if (sec.value.trim()) x.section = sec.value.trim();
+          e.target.disabled = true; msg.textContent = "Enregistrement…";
+          selSave(null, x, x.title + " — " + x.festName + " : ajouté").then(draw, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+        } } }), el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { form.remove(); } } }), msg])
+      ]);
+      btn.parentNode.after(form); q.focus();
+    }
   }
 
   // ---------- Récupération (Gus 16/11, remplace l'ancien outil k-recup) ----------

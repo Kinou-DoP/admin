@@ -600,7 +600,7 @@ main { padding-bottom: 200px; }
 /* Accueil de l'admin : « Hello la Dream Team ! » (Gus 17/11, pour sourire), centré sur l'écran */
 .tag { text-decoration: none; }
 .hellobox { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 24px; text-align: center; pointer-events: none; }
-.hello { margin: 0; font-family: "Bagel Fat One", var(--kinou-sans); font-weight: 400; font-size: clamp(60px, 10vw, 170px); letter-spacing: 0; line-height: 1.05; cursor: default; user-select: none; pointer-events: auto; }
+.hello { margin: 0; font-family: "Bagel Fat One", var(--kinou-sans); font-weight: 400; font-size: clamp(46px, 7vw, 118px); letter-spacing: 0; line-height: 1.05; cursor: default; user-select: none; pointer-events: auto; }
 .hello .hw { display: inline-block; white-space: nowrap; }
 .hello .hl { display: inline-block; opacity: 0; transform: translateY(-80px) rotate(var(--r)); animation: hDrop .9s cubic-bezier(.34, 1.7, .5, 1) forwards; animation-delay: calc(var(--i) * 55ms); transition: color .2s; }
 .hello .hl.in { opacity: 1; transform: rotate(var(--r)); animation: none; } /* arrivée finie : la lettre reste là quoi qu'il arrive */
@@ -610,3 +610,23 @@ main { padding-bottom: 200px; }
 @keyframes hWiggle { 0%, 100% { transform: rotate(var(--r)); } 25% { transform: rotate(calc(var(--r) - 12deg)) scale(1.08); } 75% { transform: rotate(calc(var(--r) + 12deg)) scale(1.08); } }
 @keyframes hBoing { 0%, 100% { transform: rotate(var(--r)) scale(1); } 30% { transform: translateY(-40px) rotate(calc(var(--r) * -2)) scale(1.25); } }
 @media (prefers-reduced-motion: reduce) { .hello .hl { animation: none; opacity: 1; transform: none; } }
+/* Nos sélections (Gus 17/11) */
+.selrobot { margin: -30px 0 26px; }
+.selcard { margin: 0 0 14px; padding: 18px 22px; border: 1px solid var(--faint); border-left: 2px solid var(--warn); background: rgba(255,255,255,.02); }
+.selcard.ok { border-left-color: var(--ok); } .selcard.no { border-left-color: var(--faint); opacity: .6; }
+.selhead { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; }
+.selhead h3 { margin: 0 0 4px; font-family: var(--kinou-sans); font-weight: 600; font-size: 20px; letter-spacing: -0.02em; }
+.selfest2 { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; }
+.selfest2 strong { font-family: var(--kinou-sans); font-weight: 600; font-size: 14px; }
+.selfest2 span { color: var(--dim); font-size: 12px; }
+.selsnip { margin: 12px 0; padding: 10px 12px; background: var(--soft); color: var(--dim); font-size: 13px; line-height: 1.5; }
+.selsnip mark { background: rgba(255,210,122,.25); color: #fff; padding: 0 2px; }
+.selwhy { color: var(--dim); font-size: 12px; align-self: center; }
+.selbtns input { flex: 1; min-width: 220px; padding: 8px 0; border: 0; border-bottom: 1px solid var(--faint); background: none; color: var(--kinou-fg); font: 300 14px var(--kinou-body); outline: none; }
+h3.selfest { margin: 28px 0 12px; font-family: var(--kinou-sans); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.seladd input[type=search], .seladd input[type=text], .seladd select { width: 100%; padding: 10px 0; border: 0; border-bottom: 1px solid var(--faint); background: #000; color: var(--kinou-fg); font: 300 16px var(--kinou-body); outline: none; color-scheme: dark; }
+.selres { display: flex; flex-direction: column; }
+.selpick { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 8px 0; border: 0; border-bottom: 1px solid var(--soft); background: none; color: var(--kinou-fg); text-align: left; cursor: pointer; }
+.selpick:hover { color: var(--warn); }
+.selpick strong { font-family: var(--kinou-sans); font-weight: 600; font-size: 14px; } .selpick small { color: var(--dim); font-size: 12px; }
+@media (max-width: 700px) { .selhead { flex-direction: column; } .selfest2 { align-items: flex-start; text-align: left; } }
