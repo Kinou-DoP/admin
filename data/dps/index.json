@@ -68,8 +68,7 @@
     },
     {
       "slug": "julie-chevailler-cinematographer",
-      "name": "Julie Chevailler",
-      "gender": "f"
+      "name": "Julie Chevailler"
     },
     {
       "slug": "agustin-claramunt-scu-cinematographer",
@@ -182,7 +181,8 @@
     },
     {
       "slug": "frida-marzouk-afc",
-      "name": "Frida Marzouk, AFC"
+      "name": "Frida Marzouk, AFC",
+      "gender": "f"
     },
     {
       "slug": "nicolas-massart-afc-cinematographer",
