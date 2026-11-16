@@ -392,13 +392,29 @@ body.vedit-on { overflow: hidden; }
 .dps a.off { opacity: .45; }
 .dps .offtag { margin-left: 10px; font-family: var(--kinou-sans); font-weight: 600; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #ff9f6b; vertical-align: middle; }
 
-/* Menu en rubriques (Gus 16/11) : website, festivals, sorties fiction, récupération. Pastille = dates limites proches. */
-.side { gap: 9px; }
-.side .sgroup { margin: 14px 0 0; color: var(--dim); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
-.side .sgroup:first-child { margin-top: 0; }
-.side a { font-size: 15px; }
-.nbadge { display: inline-block; min-width: 18px; margin-left: 8px; padding: 2px 5px; border-radius: 9px; background: #ff4d3d; color: #fff; font-size: 11px; font-weight: 600; line-height: 14px; text-align: center; vertical-align: 2px; }
-@media (max-width: 900px) { .side { align-items: baseline; } .side .sgroup { margin: 0 0 0 6px; } .side .sgroup:first-child { margin-left: 0; } .side .histlink { margin-top: 0; } }
+/* Menu en rubriques déroulantes (Gus 16/11) : website, festivals (sous-rubriques qui se déroulent au clic), sorties fiction et
+   récupération (une seule page : lien direct). La rubrique de la page ouverte est déroulée. Pastille = dates limites proches. */
+.side { gap: 12px; }
+.side .sgroup { display: block; padding: 0; border: 0; background: none; color: var(--kinou-fg); font: inherit; font-size: 16px; text-align: left; text-decoration: none; opacity: .45; cursor: pointer; transition: opacity .2s; }
+.side .sgroup:hover { opacity: .8; }
+.side .sgroup.open, .side .sgroup.on { opacity: 1; }
+.side button.sgroup::after { content: "+"; display: inline-block; margin-left: 8px; font-size: 13px; opacity: .6; transition: transform .3s; }
+.side button.sgroup.open::after { transform: rotate(45deg); }
+.ssub { display: grid; grid-template-rows: 0fr; margin-top: -12px; transition: grid-template-rows .35s cubic-bezier(.2, .7, .2, 1), margin .35s; }
+.ssub > div { overflow: hidden; display: flex; flex-direction: column; gap: 8px; padding-left: 14px; }
+.ssub.open { grid-template-rows: 1fr; margin-top: -2px; }
+.ssub.open > div { padding-bottom: 6px; }
+.ssub a { font-size: 14px; }
+.nbadge { display: inline-block; min-width: 18px; margin-left: 8px; padding: 2px 5px; border-radius: 9px; background: #ff4d3d; color: #fff; font-size: 11px; font-weight: 600; line-height: 14px; text-align: center; vertical-align: 2px; opacity: 1; }
+.side .sgroup:not(.open) .nbadge { opacity: 1; }
+@media (max-width: 900px) {
+  .side { align-items: baseline; gap: 8px 20px; }
+  .side .histlink { margin-top: 0; }
+  .ssub { order: 10; width: 100%; margin-top: 0; }
+  .ssub.open { margin-top: 0; }
+  .ssub > div { flex-direction: row; flex-wrap: wrap; gap: 6px 18px; padding-left: 0; }
+  .side .histlink { order: 9; }
+}
 
 /* Festivals : « Ça arrive » puis calendrier (cartes), formulaire en place de la carte. */
 .fsoon, .fcal { margin: 0 0 56px; }

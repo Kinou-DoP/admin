@@ -2262,7 +2262,7 @@
     return out;
   }
   function festBadge() {
-    var a = side.querySelector('a[data-page="festivals"]'); if (!a) return;
+    var a = side.querySelector('.sgroup[data-group="festivals"]'); if (!a) return;
     var n = fest ? festAlerts(fest.festivals).length : 0, b = a.querySelector(".nbadge");
     if (!n) { if (b) b.remove(); return; }
     if (!b) { b = el("span", { class: "nbadge" }); a.appendChild(b); }
@@ -2280,7 +2280,7 @@
     function draw() {
       box.textContent = "";
       var list = (fest.festivals || []).slice();
-      // Ça arrive : dates limites dans les 45 jours, festivals qui commencent dans les 30 jours (ou en cours).
+      // Bientôt : dates limites dans les 45 jours, festivals qui commencent dans les 30 jours (ou en cours).
       var soon = [];
       list.forEach(function (f) {
         (f.deadlines || []).forEach(function (d) { var n = days(d.date); if (n !== null && n >= 0 && n <= 45) soon.push({ n: n, f: f, txt: "Date limite · " + d.label + (d.ed ? " (édition " + d.ed + ")" : ""), est: d.est, url: f.submit || f.site, go: "S'inscrire ↗" }); });
@@ -2288,7 +2288,7 @@
         if (s !== null && e >= 0 && s <= 30) soon.push({ n: Math.max(s, 0), f: f, txt: s <= 0 ? "En ce moment · jusqu'au " + fdate(f.end, false) : "Le festival commence · " + frange(f.start, f.end), est: f.est, url: f.selection || f.site, go: "Programme ↗", live: s <= 0 });
       });
       soon.sort(function (a, b) { return a.n - b.n; });
-      var sec = el("section", { class: "fsoon" }, [el("h2", { text: "Ça arrive" })]);
+      var sec = el("section", { class: "fsoon" }, [el("h2", { text: "Bientôt" })]);
       if (!soon.length) sec.appendChild(el("p", { class: "hint", text: "Rien dans les semaines qui viennent." }));
       soon.forEach(function (x) {
         sec.appendChild(el("div", { class: "fsrow" + (x.n <= 7 ? " hot" : "") + (x.live ? " live" : "") }, [
@@ -2470,6 +2470,14 @@
   window.addEventListener("hashchange", function () { if (!histBox.hidden) { histAll = false; histShow(); } });
 
   // ---------- Navigation ----------
+  // Menu en rubriques : clic sur « website » / « festivals » = déroule ses sous-rubriques (une seule rubrique ouverte à la fois).
+  function sideOpen(g, only) {
+    side.querySelectorAll(".sgroup[data-group], .ssub").forEach(function (x) {
+      var me = x.dataset.group === g;
+      x.classList.toggle("open", me ? (only ? true : !x.classList.contains("open")) : false);
+    });
+  }
+  side.querySelectorAll("button.sgroup").forEach(function (b) { b.addEventListener("click", function () { sideOpen(b.dataset.group); }); });
   function route() {
     var h = location.hash;
     document.getElementById("back").hidden = !token || !/^#\/(dp\/|new)/.test(h);
@@ -2477,6 +2485,8 @@
     side.hidden = !token;
     if (token && !festTried) { festTried = true; festLoad().then(festBadge, function () {}); } // pastille du menu (dates limites proches)
     side.querySelectorAll("a").forEach(function (a) { a.classList.toggle("on", a.dataset.page === page); });
+    var cur = side.querySelector("a.on"), grp = cur && cur.closest(".ssub");
+    if (grp) sideOpen(grp.dataset.group, true);
     if (!token) return showLogin();
     if (/^#\/dp\//.test(h)) return showDP(decodeURIComponent(h.slice(5)));
     if (h === "#/new") return showDP(null);
