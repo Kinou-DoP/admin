@@ -2241,6 +2241,39 @@
       return festPut((remove ? "Festival supprimé : " : "Festival : ") + f.name);
     });
   }
+  // Demande au robot du dépôt notes (festivals/ask/…, workflow festival-ask.yml) : réponse écrite dans le même fichier.
+  function festAsk(name, hint) {
+    var path = "/repos/" + NOTES_REPO + "/contents/festivals/ask/" + Date.now() + "-" + Math.random().toString(36).slice(2, 7) + ".json", t0 = Date.now();
+    var body = { name: name, hint: hint || undefined, at: new Date().toISOString(), by: user && user.login || "" };
+    return gh(path, { method: "PUT", body: { message: "Festivals : demande au robot (admin, " + body.by + ")", content: b64enc(JSON.stringify(body, null, 2) + "\n") } }).then(function () {
+      return new Promise(function (ok, ko) {
+        (function poll() {
+          setTimeout(function () {
+            if (Date.now() - t0 > 300000) return ko(new Error("le robot n'a pas répondu (5 min) : réessayez plus tard."));
+            gh(path, { allow404: true }).then(function (r) {
+              var d = r && JSON.parse(b64dec(r.content));
+              if (!d || !d.doneAt) return poll();
+              if (d.error || !d.answer) ko(new Error(d.error || "rien trouvé")); else ok(d.answer);
+            }, poll);
+          }, 5000);
+        })();
+      });
+    });
+  }
+  // Réponse du robot → champs du formulaire : seulement les champs vides (et les dates « estimées », remplacées par des dates
+  // annoncées). Ce que l'équipe a saisi n'est jamais remplacé (Gus 16/11). Renvoie le nombre de champs remplis.
+  function festFill(f, a) {
+    var n = 0;
+    ["city", "country", "submit", "site", "selection", "note"].forEach(function (k) { if (!f[k] && a[k]) { f[k] = a[k]; n++; } });
+    if (!f.name && a.name) { f.name = a.name; n++; }
+    if (!(f.types || []).length && (a.types || []).length) { f.types = a.types; n++; }
+    if ((!f.start || (f.est && !a.est)) && a.start) { f.start = a.start; f.end = a.end || a.start; if (a.est) f.est = true; else delete f.est; n++; }
+    var dl = f.deadlines || [], firm = (a.deadlines || []).filter(function (d) { return !d.est; });
+    if (!dl.length && (a.deadlines || []).length) { f.deadlines = a.deadlines; n++; }
+    else if (dl.length && dl.every(function (d) { return d.est; }) && firm.length) { f.deadlines = a.deadlines; n++; }
+    if (n) f.filled = { by: "robot", at: new Date().toISOString(), sources: a.sources || [] };
+    return n;
+  }
   function today() { var d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
   function dOf(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ""); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; }
   function days(s) { var d = dOf(s); return d ? Math.round((d - today()) / 864e5) : null; }
@@ -2320,7 +2353,7 @@
     function tri(title) { return el("span", { class: "ftri", title: title || "Le site du festival indique autre chose", text: "!" }); }
     function card(f) {
       var past = days(f.end || f.start) < 0, warn = warnOn(f);
-      var c = el("article", { class: "fcard" + (past ? " past" : "") });
+      var c = el("article", { class: "fcard" + (past ? " past" : ""), "data-id": f.id });
       c.appendChild(el("div", { class: "fhead" }, [
         el("div", {}, [el("h3", {}, [warn ? tri() : null, f.name]), el("p", { class: "fwhere", text: [f.city, f.country].filter(Boolean).join(" · ") })]),
         el("div", { class: "ftags" }, (f.types || []).map(function (t) { return el("span", { class: "ftag", text: FEST_TYPES[t] || t }); }))
@@ -2366,19 +2399,32 @@
       if (f.selection) links.appendChild(el("a", { class: "btn", href: f.selection, target: "_blank", rel: "noopener", text: "Sélection ↗" }));
       (f.types || []).forEach(function (t) { var o = FEST_OURS[t]; if (o) links.appendChild(el("a", { class: "btn ours", href: SITE_VIEW + o[1], target: "_blank", rel: "noopener", text: o[0] + " ↗" })); });
       c.appendChild(links);
-      c.appendChild(el("div", { class: "ffoot" }, [el("span", { text: (f.checked ? "Vérifié le " + fdate(f.checked) : "") + (f.check ? " · robot : " + fdate(f.check.at.slice(0, 10)) + ((f.check.issues || []).some(function (i) { return i.kind === "page"; }) ? " (site illisible pour lui)" : "") : "") }),
+      c.appendChild(el("div", { class: "ffoot" }, [el("span", { text: (f.checked ? "Vérifié le " + fdate(f.checked) : "") + (f.filled ? " · complété automatiquement le " + fdate(f.filled.at.slice(0, 10)) : "") + (f.check ? " · robot : " + fdate(f.check.at.slice(0, 10)) + ((f.check.issues || []).some(function (i) { return i.kind === "page"; }) ? " (site illisible pour lui)" : "") : "") }),
         el("button", { type: "button", class: "btn ghost", text: "Modifier", on: { click: function () { edit(f); } } })]));
       return c;
     }
     // Formulaire (en place de la carte, ou en haut pour un nouveau festival) ; « Enregistrer » écrit tout de suite.
-    function edit(f0, isNew) {
-      var f = JSON.parse(JSON.stringify(f0)), form = el("article", { class: "fcard fedit" });
+    function edit(f0, isNew, draft, node) {
+      var f = draft || JSON.parse(JSON.stringify(f0)), form = el("article", { class: "fcard fedit" });
       function inp(k, ph, type) {
         var i = el("input", { type: type || "text", class: "nodirty", placeholder: ph || "", value: f[k] || "" });
         i.addEventListener("input", function () { f[k] = i.value.trim(); });
         return el("label", { class: "field" }, [el("span", { class: "label", text: ph }), i]);
       }
       form.appendChild(el("div", { class: "fgrid" }, [inp("name", "Nom"), inp("city", "Ville"), inp("country", "Pays")]));
+      // « Compléter automatiquement » : le robot du dépôt notes cherche le festival sur le web (Claude) et remplit les champs vides.
+      var amsg = el("span", { class: "fmsg", text: f.autoMsg || "" }); delete f.autoMsg;
+      var auto = el("button", { type: "button", class: "btn primary", text: "Compléter automatiquement", on: { click: function () {
+        if (!f.name) { amsg.textContent = "Écrivez d'abord le nom du festival."; return; }
+        auto.disabled = true; amsg.textContent = "Recherche sur le web par le robot (1 à 2 min)…";
+        festAsk(f.name, [f.city, f.country].filter(Boolean).join(", ")).then(function (a) {
+          var n = festFill(f, a);
+          f.autoMsg = n ? "Complété (" + n + " champ" + (n > 1 ? "s" : "") + ") : vérifiez, puis « Enregistrer »." + (a.sources && a.sources.length ? " Sources : " + a.sources.map(function (u) { return u.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]; }).join(", ") : "")
+            : "Rien de nouveau trouvé : les champs remplis par l'équipe ne sont jamais remplacés.";
+          edit(f0, isNew, f, form);
+        }, function (e) { auto.disabled = false; amsg.textContent = "Pas de réponse : " + e.message; });
+      } } });
+      form.appendChild(el("div", { class: "fauto" }, [auto, amsg]));
       var ty = el("div", { class: "ftypes" });
       Object.keys(FEST_TYPES).forEach(function (k) {
         var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = (f.types || []).indexOf(k) > -1;
@@ -2429,9 +2475,10 @@
         festSave(f0, true).then(function () { festBadge(); done(); }, function (e) { msg.textContent = "Pas supprimé : " + e.message; });
       } } });
       form.appendChild(el("div", { class: "ffoot" }, [msg, el("div", {}, [del, el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: done } }), save])]));
+      if (node) { node.replaceWith(form); return; } // nouvel affichage après « Compléter automatiquement »
       var at = isNew ? box.querySelector(".fcal h2") : null;
       if (at) at.parentNode.insertBefore(form, at.nextSibling.nextSibling);
-      else { var cards = box.querySelectorAll(".fcard"), mine = null; cards.forEach(function (x) { if (x.querySelector("h3") && x.querySelector("h3").textContent === f0.name) mine = x; }); if (mine) mine.replaceWith(form); else box.prepend(form); }
+      else { var mine = box.querySelector('.fcard[data-id="' + f0.id + '"]'); if (mine) mine.replaceWith(form); else box.prepend(form); }
       form.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }

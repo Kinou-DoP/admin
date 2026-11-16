@@ -128,7 +128,11 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   les nôtres sont estimées ; `page` = site illisible, affiché en petit dans le pied de carte, sans triangle). **Ce que l'équipe a saisi
   n'est jamais modifié** (Gus 16/11) : triangle orange « ! » (`.ftri`) devant le nom, la date concernée et un encadré (`.fwarn` : chez
   nous / sur le site, pages lues, « Vu, nos infos sont bonnes » = `checkSeen` = `check.hash`, « Corriger ») ; enregistrer le festival
-  marque aussi les désaccords actuels comme vus ; la pastille du menu les compte. Nos sélections (`showFestSel`) : à venir (robot quotidien qui cherche nos films, titres + réalisateurs,
+  marque aussi les désaccords actuels comme vus ; la pastille du menu les compte. **« Compléter automatiquement »** (bouton blanc sous le nom, formulaire d'un festival ; `festAsk` / `festFill`) : demande au robot du
+  dépôt notes (`festivals/ask/<horodatage>.json`, workflow `festival-ask.yml` : Claude + recherche web, ~1–2 min, clé `ANTHROPIC_API_KEY`
+  en secret du dépôt notes), réponse relue toutes les 5 s ; ne remplit **que les champs vides** (et remplace des dates estimées par des
+  dates annoncées), puis « Enregistrer » ; `filled = { by, at, sources }` (« complété automatiquement le … » en pied de carte). Festival
+  ajouté avec son nom seul : complété par le robot du matin. Nos sélections (`showFestSel`) : à venir (robot quotidien qui cherche nos films, titres + réalisateurs,
   dans les pages de sélection ; liste des projets d'après les captures de k-recup).
 - Fiction (lien « fiction » du menu, `data/fiction.json`) : comme le spotlight (lien d'une bande Slate + « Relire la bande », lue en
   entier par le robot ; mêmes réglages par film via `filmsSection` / `filmCard`, `state` = fic), plus sous le titre de chaque film

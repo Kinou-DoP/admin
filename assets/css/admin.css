@@ -476,3 +476,5 @@ body.vedit-on { overflow: hidden; }
 .fwarn .fwpages a { color: var(--dim); }
 .fwbtns { display: flex; gap: 8px; margin-top: 10px; }
 .fwbtns .btn { height: 32px; font-size: 12px; padding: 0 12px; }
+.fauto { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: -6px 0 26px; }
+.fauto .btn { height: 36px; font-size: 13px; }
