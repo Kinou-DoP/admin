@@ -3,7 +3,8 @@
 (function () {
   var REPO = "Kinou-DoP/admin", BRANCH = "main";
   // Site qui héberge les fonctions Slate (/api/bundle, /api/refresh) et où l'on vérifie le résultat.
-  var SITE = "https://beta--kinou-test.netlify.app"; // fonctions du site (Slate, données) : Netlify, figées depuis le 21/10
+  var SITE = "https://kinou-4tv.pages.dev"; // fonctions du site (lecture de Slate, refresh) : Cloudflare Pages (functions/ du dépôt site, 16/11) ;
+  // avant : Netlify (beta--kinou-test.netlify.app), coupé depuis le 30/10. Hors service ou trop long → robot GitHub (siteDown).
   var SITE_PAGES = "https://kinou-dop.github.io/site"; // le site lui-même (beta) : GitHub Pages (pages d'aperçu des liens)
   var SITE_VIEW = "https://kinou-4tv.pages.dev"; // bouton « Voir sur le site » : copie Cloudflare de la beta (essai, Gus 16/11)
   var TOKEN_KEY = "kinou-admin-token";

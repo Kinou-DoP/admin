@@ -24,6 +24,10 @@ version du 21/10** : un changement de `netlify/functions/` du repo site n'y arri
   non JSON, réseau) : les projets Netlify peuvent être supprimés sans rien casser (Gus 04/11).
   `refreshSite` n'est plus appelé quand Netlify est hors service (le site lit `raw.githubusercontent.com`, cache 5 min).
 Liste complète et choses à faire au retour sur Netlify : CLAUDE.md du repo `site` (« Hébergement actuel »).
+**Depuis le 16/11 : fonctions sur Cloudflare Pages** (`SITE` = https://kinou-4tv.pages.dev, dossier `functions/` du dépôt site) :
+`/api/bundle`, `/api/stills`, `/api/reel` (même lecture de Slate, `netlify/functions/slate.mjs`, version à jour : `/api/stills`
+lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit toujours le dernier commit). Réponse autre que OK / 502 JSON
+(ex. erreur Cloudflare « CPU dépassé » sur un gros bundle, offre gratuite = 10 ms de calcul par appel) → robot GitHub, comme avant.
 
 ## Rôle
 - `data/` : données du site (kinou.fr **et** sa beta), lues par le site directement dans ce repo GitHub
