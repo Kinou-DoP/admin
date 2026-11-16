@@ -650,6 +650,7 @@ h3.selfest { margin: 28px 0 12px; font-family: var(--kinou-sans); font-weight: 6
 .selfold:hover { color: var(--warn); }
 /* Sorties fiction : calendrier (Gus 17/11) */
 .calbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 16px; }
+.calres { margin: 4px 0 30px; padding-bottom: 18px; border-bottom: 1px solid var(--faint); }
 .calbar .calm { width: 40px; padding: 0; font-size: 20px; }
 .calbar .calj { width: 40px; padding: 0; font-size: 18px; }
 .caltitle { min-width: 230px; text-align: center; font-family: var(--kinou-sans); font-weight: 600; font-size: 22px; letter-spacing: -0.02em; text-transform: capitalize; }

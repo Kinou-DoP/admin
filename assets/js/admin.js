@@ -38,6 +38,10 @@
   }
   checkVersion();
   document.addEventListener("visibilitychange", function () { if (!document.hidden) checkVersion(); });
+  // Aussi toutes les minutes et à chaque changement de page (Gus 16/11) : sur les pages enregistrées tout de suite
+  // (récupération, festivals, sorties…), on ne publie jamais et l'onglet peut rester ouvert à l'écran des heures.
+  setInterval(function () { if (!document.hidden) checkVersion(); }, 60000);
+  window.addEventListener("hashchange", function () { checkVersion(); });
 
   // ---------- Outils ----------
   function el(tag, attrs, kids) {
@@ -2867,6 +2871,14 @@
       var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, un réalisateur, un chef op, une plateforme, une production…", value: st.q });
       q.addEventListener("input", function () { st.q = q.value; var c = q.selectionStart; draw(); var n = box.querySelector(".find"); n.focus(); n.setSelectionRange(c, c); });
       box.appendChild(q);
+      // Recherche : la liste de ce qui correspond, toutes dates, juste sous le champ (au-dessus du calendrier, Gus 16/11).
+      if (st.q) {
+        var nd = noDate.filter(match), s0 = el("section", { class: "calres" }, [el("h2", { text: "Résultats · " + (l.length + nd.length) })]);
+        l.slice().reverse().forEach(function (x) { s0.appendChild(rowOf(x)); });
+        nd.forEach(function (x) { s0.appendChild(rowOf(x, true)); });
+        if (!l.length && !nd.length) s0.appendChild(el("p", { class: "hint", text: "Rien ne correspond." }));
+        box.appendChild(s0);
+      }
       var title = st.mode === "month" ? MOISL[r[0].getMonth()] + " " + r[0].getFullYear() : "Semaine du " + r[0].getDate() + " " + MOISL[r[0].getMonth()] + (r[0].getMonth() !== r[1].getMonth() ? " au " + r[1].getDate() + " " + MOISL[r[1].getMonth()] : " au " + r[1].getDate()) + " " + r[1].getFullYear();
       var before = l.filter(function (x) { return x.date < iso(r[0]); }).length, after = l.filter(function (x) { return x.date > iso(r[1]); }).length;
       box.appendChild(el("div", { class: "calbar" }, [
@@ -2899,14 +2911,6 @@
       }
       box.appendChild(g);
       box.appendChild(el("p", { class: "hint callegend" }, ["Blanc : cinéma · bleu : plateforme / télé · bord pointillé : série · le mercredi (sorties en salle en France) est souligné. ", before || after ? (before + " sortie" + (before > 1 ? "s" : "") + " avant, " + after + " après cette période" + (st.q ? " (avec la recherche)" : "") + " : ⇤ ⇥ pour y aller.") : ""]));
-      // Recherche : la liste de ce qui correspond, toutes dates.
-      if (st.q) {
-        var s0 = el("section", {}, [el("h2", { text: "Résultats · " + l.length })]);
-        l.slice().reverse().forEach(function (x) { s0.appendChild(rowOf(x)); });
-        var nd = noDate.filter(match); nd.forEach(function (x) { s0.appendChild(rowOf(x, true)); });
-        if (!l.length && !nd.length) s0.appendChild(el("p", { class: "hint", text: "Rien ne correspond." }));
-        box.appendChild(s0);
-      }
       // À venir.
       var up = events.filter(function (x) { return x.date >= td; });
       var s1 = el("section", {}, [el("h2", { text: "À venir · " + up.length })]);
@@ -2928,7 +2932,7 @@
           el("small", { text: [(x.directors || []).length && "réal. " + x.directors.join(", "), (x.dops || []).length && "DoP " + x.dops.map(rcBase).join(", "), x.prod].filter(Boolean).join(" · ") })]),
         el("div", { class: "selsrc" }, x.url ? [el("a", { href: x.url, target: "_blank", rel: "noopener", text: /imdb\.com/.test(x.url) ? "IMDb ↗" : "source ↗" })] : []),
         el("div", { class: "fwbtns" }, nod ? [el("button", { type: "button", class: "btn ghost", text: "+ Ajouter une date", on: { click: function () { form({ title: x.title, project: x.project, kind: x.series ? "platform" : "cinema" }, r, true); } } })]
-          : [el("button", { type: "button", class: "btn ghost", text: "Voir", on: { click: function () { st.at = dOf(x.date); draw(); window.scrollTo({ top: 0, behavior: "smooth" }); } } })])]);
+          : [el("button", { type: "button", class: "btn ghost", text: "Voir", on: { click: function () { st.at = dOf(x.date); draw(); var cb = box.querySelector(".calbar"); if (cb) window.scrollTo({ top: cb.getBoundingClientRect().top + window.scrollY - 140, behavior: "smooth" }); } } })])]);
       return r;
     }
     function detail(x, at) {
