@@ -14,8 +14,10 @@ function decode(s) {
     return String.fromCodePoint(k[1] === "x" ? parseInt(k.slice(2), 16) : parseInt(k.slice(1), 10));
   });
 }
+// Slate refuse (403) les demandes sans User-Agent depuis son retour du 18/11 ; Cloudflare n'en envoie pas : on en donne un.
+var UA = { headers: { "User-Agent": "Mozilla/5.0 (compatible; kinou-admin/1.0; +https://kinou.fr)", "Accept": "text/html,*/*" } };
 async function page(url) {
-  var r = await fetch(url);
+  var r = await fetch(url, UA);
   if (!r.ok) throw new Error("Slate " + r.status + " " + url);
   return r.text();
 }
@@ -112,7 +114,7 @@ export async function readStills(link) {
   var c = s.match(/^(?:https?:\/\/)?shots\.re\/([A-Za-z0-9]{3,20})\/?$/);
   if (w) url = ORIGIN + "/work/" + w[1].toLowerCase();
   else if (c) {
-    var r = await fetch("https://shots.re/" + c[1]);
+    var r = await fetch("https://shots.re/" + c[1], UA);
     var m = r.url.match(/^https:\/\/kinou\.slateapp\.com\/work\/([a-z0-9-]+)/i);
     if (!m) throw new Error("ce lien shots.re ne mène pas à une page de stills Slate");
     url = ORIGIN + "/work/" + m[1].toLowerCase();
@@ -135,7 +137,7 @@ export async function readStills(link) {
 export async function readReel(link, max) {
   var s = String(link || "").trim(), url;
   var c = s.match(/^(?:https?:\/\/)?shots\.re\/([A-Za-z0-9]{3,20})\/?$/);
-  if (c) url = (await fetch("https://shots.re/" + c[1])).url;
+  if (c) url = (await fetch("https://shots.re/" + c[1], UA)).url;
   else url = s;
   var u = url.match(/^https:\/\/kinou\.slateapp\.com(\/[\w\/-]+)\/?(?:[?#].*)?$/);
   if (!u) throw new Error("lien invalide : attendu un lien kinou.slateapp.com ou shots.re");
