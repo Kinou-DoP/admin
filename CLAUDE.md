@@ -44,7 +44,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   kinou-agency, une pour son frère (anciennes clés de kinou-agency supprimées ; projets Netlify supprimés).
 - **Prénom à la connexion** (Gus 17/11) : l'équipe peut se connecter avec des clés créées sur un même compte GitHub (kinou-agency,
   une clé par personne, nommée « admin kinou – Prénom » pour pouvoir la supprimer seule) : GitHub ne donne pas le nom de la clé, donc
-  la page de connexion demande aussi le **prénom** (obligatoire, `localStorage` « kinou-admin-name », `myName` / `setName`), qui
+  la page de connexion demande aussi le **prénom**, **lié à la clé** : dépôt privé notes `equipe/noms.json` = `{ <empreinte SHA-256 de la clé, 24 car.>: prénom }` (`tokId`, `nameRemote`, `nameSave` ; jamais la clé elle-même) ; demandé seulement la 1re fois pour une clé, retrouvé ensuite sur tout appareil (copie locale `localStorage` « kinou-admin-name », `myName` / `setName` ; nouvelle clé collée = prénom local effacé), qui
   remplace le login GitHub partout (`user.login` = prénom, `user.gh` = vrai login) : messages des commits « (admin, Prénom) »,
   historique, champs `by` / `editedBy` des données. Clic sur le prénom en haut à droite = le changer.
 - **Ajouter une personne à l'admin** (Gus 04/11) : une clé ne peut jamais faire plus que le compte de la personne. Donc :

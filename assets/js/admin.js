@@ -380,32 +380,67 @@
       // Prénom (Gus 17/11) : plusieurs personnes peuvent se connecter avec des clés du même compte GitHub (kinou-agency). Le
       // prénom saisi à la connexion (gardé dans ce navigateur) remplace le login partout où l'admin écrit qui a fait quoi :
       // messages des commits « (admin, Prénom) », historique, champs `by` des données. GitHub ne donne pas le nom de la clé.
-      user.gh = user.login; var nm = myName(); if (nm) user.login = nm;
-      showWho();
+      user.gh = user.login;
+      // Le prénom est aussi lié à la clé (Gus 17/11) : dépôt privé notes, equipe/noms.json = { <empreinte de la clé>: prénom }
+      // (empreinte SHA-256, jamais la clé). Même clé collée sur un autre appareil = prénom retrouvé, rien à retaper.
+      return nameRemote().then(function (rn) {
+        if (rn) setName(rn, true); else if (myName()) nameSave(myName());
+        user.login = myName() || user.gh;
+        showWho();
+      });
     }, function (e) { token = null; throw e; });
+  }
+  var NAMES_PATH = "/repos/Kinou-DoP/notes/contents/equipe/noms.json";
+  function tokId() {
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(token)).then(function (b) {
+      return Array.prototype.map.call(new Uint8Array(b), function (x) { return ("0" + x.toString(16)).slice(-2); }).join("").slice(0, 24);
+    });
+  }
+  function namesRead() {
+    return gh(NAMES_PATH, { allow404: true }).then(function (f) { return f ? { sha: f.sha, map: JSON.parse(b64dec(f.content)) } : { sha: null, map: {} }; });
+  }
+  function nameRemote() { return Promise.all([tokId(), namesRead()]).then(function (r) { return r[1].map[r[0]] || ""; }).catch(function () { return ""; }); }
+  function nameSave(v) {
+    return Promise.all([tokId(), namesRead()]).then(function (r) {
+      var id = r[0], m = r[1].map;
+      if ((m[id] || "") === v) return;
+      if (v) m[id] = v; else delete m[id];
+      return gh(NAMES_PATH, { method: "PUT", body: { message: "Équipe : prénom lié à une clé (admin, " + (v || "?") + ")", content: b64enc(JSON.stringify(m, null, 2) + "\n"), sha: r[1].sha || undefined } });
+    }).catch(function () {});
   }
   var NAME_KEY = "kinou-admin-name";
   function myName() { try { return (localStorage.getItem(NAME_KEY) || "").trim(); } catch (e) { return ""; } }
-  function setName(v) { v = String(v || "").trim().replace(/[()]/g, ""); try { if (v) localStorage.setItem(NAME_KEY, v); else localStorage.removeItem(NAME_KEY); } catch (e) {} if (user) user.login = v || user.gh; }
+  function setName(v, local) {
+    v = String(v || "").trim().replace(/[()]/g, ""); try { if (v) localStorage.setItem(NAME_KEY, v); else localStorage.removeItem(NAME_KEY); } catch (e) {}
+    if (user && user.gh) { user.login = v || user.gh; if (!local && token) nameSave(v); }
+  }
   function showWho() {
     who.textContent = "";
     var me = el("button", { class: "whome", title: "Changer le prénom affiché dans l'historique", text: user.login });
     me.addEventListener("click", function () { var v = window.prompt("Ton prénom (pour l'historique : qui a publié quoi)", myName()); if (v === null) return; setName(v); showWho(); });
     who.appendChild(me);
-      who.appendChild(el("button", { text: "Se déconnecter", on: { click: function () { store(false, null); location.hash = "#/"; location.reload(); } } }));
+    who.appendChild(el("button", { text: "Se déconnecter", on: { click: function () { store(false, null); location.hash = "#/"; location.reload(); } } }));
   }
   function showLogin(msg) {
     bar.hidden = true;
     var input = el("input", { type: "password", placeholder: "github_pat_…", autocomplete: "off" });
     var st = el("p", { class: "status" + (msg ? " err" : ""), text: msg || "" });
     var go = el("button", { class: "btn primary", text: "Se connecter" });
-    var nameIn = el("input", { type: "text", placeholder: "Prénom", autocomplete: "given-name", value: myName() });
+    var nameIn = el("input", { type: "text", placeholder: "Prénom", autocomplete: "given-name" });
+    // Prénom : demandé seulement si la clé n'en a pas encore (sinon retrouvé tout seul, même sur un autre appareil).
+    var nameRow = el("div", {}, [el("label", { class: "label", text: "Prénom" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [nameIn])])]);
+    nameRow.hidden = true;
     function submit() {
       if (!input.value.trim()) return;
-      if (!nameIn.value.trim()) { st.className = "status err"; st.textContent = "Écris ton prénom (il apparaît dans l'historique : qui a publié quoi)."; nameIn.focus(); return; }
-      setName(nameIn.value);
+      setName(nameIn.value, true); // nouvelle clé : pas le prénom de la personne connectée avant sur ce navigateur
       go.disabled = true; st.className = "status"; st.textContent = "Vérification…";
-      login(input.value.trim()).then(route, function (e) { go.disabled = false; st.className = "status err"; st.textContent = e.message; });
+      login(input.value.trim()).then(function () {
+        if (nameIn.value.trim() && nameIn.value.trim() !== user.login) setName(nameIn.value); // prénom tapé = prénom de cette clé
+        if (user.login !== user.gh) return route();
+        // Clé encore sans prénom : on le demande (il sera retrouvé ensuite sur tous les appareils).
+        go.disabled = false; st.className = "status err"; st.textContent = "Écris ton prénom (il apparaît dans l'historique : qui a publié quoi).";
+        nameRow.hidden = false; nameIn.focus();
+      }, function (e) { go.disabled = false; st.className = "status err"; st.textContent = e.message; });
     }
     go.addEventListener("click", submit);
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
@@ -413,9 +448,8 @@
     view.textContent = "";
     view.appendChild(el("div", { class: "login" }, [
       el("h1", { text: "Connexion" }),
-      el("p", { class: "lead", text: "Ton prénom et la clé GitHub qu'on t'a donnée. Ils restent enregistrés dans ce navigateur." }),
-      el("label", { class: "label", text: "Prénom" }),
-      el("div", { class: "row" }, [el("div", { class: "grow" }, [nameIn])]),
+      el("p", { class: "lead", text: "Colle la clé GitHub qu'on t'a donnée. Elle reste enregistrée dans ce navigateur." }),
+      nameRow,
       el("label", { class: "label", text: "Token GitHub" }),
       el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), go]), st,
       el("ol", {}, [
@@ -425,7 +459,7 @@
         el("li", { text: "Generate token, puis copiez-le ici." })
       ])
     ]));
-    (nameIn.value ? input : nameIn).focus();
+    input.focus();
   }
 
   // ---------- Liste des chefs op ----------
