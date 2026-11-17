@@ -3394,7 +3394,7 @@
         : "Est-ce que ce serait possible de m'envoyer le film " + t0 + " sur lequel " + who + " " + (plural ? "ont" : "a") + " travaillé ?")
       : (relance ? "Je me permets de vous relancer concernant certains films sur lesquels " + who + " " + (plural ? "ont" : "a") + " travaillé.\nEst-ce que ce serait possible de nous envoyer des liens pour télécharger les films suivants :"
         : "Je cherche à récupérer certains films sur lesquels " + who + " " + (plural ? "ont" : "a") + " travaillé. Ce serait super si vous pouviez m'envoyer le master de ces films :") + "\n\n" + films)
-      + "\n\nMerci d'avance pour votre aide !\nBelle journée,";
+      + (one ? "\n\nMerci d'avance !\nBonne journée," : "\n\nMerci d'avance pour votre aide !\nBonne journée,"); // Gus 18/11
     else body = (one ? "Hello [first name],\n\n" : "Hi " + prod + " team,\n\n") + (one
       ? (relance ? "I'm following up regarding the film " + t0 + " that " + who + " worked on.\nWould it be possible to send us a link to download it?"
         : "Would it be possible to send me the film " + t0 + " that " + who + " worked on?")
