@@ -2804,6 +2804,54 @@
   var SK = { cinema: "Cinéma", platform: "Plateforme", tv: "Télé" };
   var MOISL = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
   var JOURS = ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."];
+  function sortNrm(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); }
+  function sortIso(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+  // Deux titres du même film (faute de frappe, un mot de différence) : mêmes mots à 60 % au moins, 3 mots au moins.
+  function sortSame(a, b) {
+    var x = sortNrm(a).split(" ").filter(Boolean), y = sortNrm(b).split(" ").filter(Boolean);
+    if (x.join(" ") === y.join(" ")) return true;
+    if (x.length < 3 || y.length < 3) return false;
+    var n = x.filter(function (w) { return y.indexOf(w) > -1; }).length;
+    return n / (x.length + y.length - n) >= 0.6;
+  }
+  function sortDop(a, b) {
+    var y = (b || []).map(function (d) { return sortNrm(rcBase(d)); });
+    return (a || []).some(function (d) { return y.indexOf(sortNrm(rcBase(d))) > -1; });
+  }
+  // Sorties connues (page fiction du site + sorties.json) et films sans date (projets.json) : calendrier et accueil de l'admin.
+    // Toutes les sorties connues + films sans date ; infos (réal, chef op, prod) complétées par projets.json et la page fiction.
+  function sortBuild(fic, proj, sorties) {
+      var nrm = sortNrm, events = [], noDate = [], ficEv = [];
+      var byTitle = {}, projs = ((proj && proj.projects) || []).filter(function (p) { return /^(LM|TVF|STV)$/.test(p.type) && !p.agency && p.title && !p.workTitle; });
+      projs.forEach(function (p) { byTitle[nrm(p.title)] = p; });
+      var seen = {};
+      function add(e) { var k = nrm(e.title) + "|" + e.date; if (seen[k]) return; seen[k] = 1; events.push(e); }
+      var ov = (fic && fic.overrides) || {};
+      ((fic && fic.films) || []).forEach(function (f) {
+        var o = ov[f.slate] || {}, t = ficTitle(o.title || f.title), p = byTitle[nrm(t)], sub = String(f.sub || "").split("\n");
+        var info = { title: t, slate: f.slate, project: p && p.id, directors: p ? p.directors || [] : sub[0] ? sub[0].split(/,\s*/) : [], dops: f.artists || (p && p.dops) || [],
+          prod: (p && p.prod) || sub[1] || "", platforms: o.platforms || [], series: o.genre === "SERIES" || /series/i.test((f.cats || []).join(" ")), img: f.img };
+        if (o.date) { var fe = Object.assign({}, info, { date: o.date, kind: (o.platforms || []).length ? "platform" : "cinema", source: "fiction", id: "fic-" + f.slate }); add(fe); ficEv.push(fe); }
+        else seen["nd|" + nrm(t)] = info;
+        if (p) seen["p|" + p.id] = 1;
+      });
+      ((sorties && sorties.releases) || []).forEach(function (r) {
+        var p = (r.project && projs.filter(function (q) { return q.id === r.project; })[0]) || byTitle[nrm(r.title)];
+        // Même film déjà daté par la page fiction sous un titre un peu différent (ex. « Ce qui me mène à toi » dans les projets,
+        // « Ce qui nous mène à toi » sur le site, Gus 17/11) : la date de la page fiction l'emporte sur celle du robot.
+        var twin = ficEv.filter(function (e) { return sortSame(e.title, r.title) && (r.date === e.date || sortDop(e.dops, p ? p.dops : r.dops)); })[0];
+        if (twin && (r.source !== "human" || r.date === twin.date)) { if (p) seen["p|" + p.id] = 1; return; }
+        add(Object.assign({ directors: p ? p.directors || [] : [], dops: p ? p.dops || [] : [], prod: p ? p.prod || "" : "", platforms: r.platform ? [r.platform] : [], series: p ? p.type === "STV" : false }, r));
+        if (p) seen["p|" + p.id] = 1;
+      });
+      var dated = {}; events.forEach(function (e) { dated[nrm(e.title)] = 1; });
+      function isDated(t) { return dated[nrm(t)] || events.some(function (e) { return sortSame(e.title, t); }); }
+      Object.keys(seen).filter(function (k) { return /^nd\|/.test(k); }).forEach(function (k) { if (!isDated(seen[k].title)) noDate.push(seen[k]); });
+      projs.forEach(function (p) { if (!seen["p|" + p.id] && !isDated(p.title)) noDate.push({ title: p.title, project: p.id, directors: p.directors || [], dops: p.dops || [], prod: p.prod || "", series: p.type === "STV", start: p.start }); });
+      events.sort(function (a, b) { return a.date.localeCompare(b.date); });
+      noDate.sort(function (a, b) { return String(b.start || "").localeCompare(String(a.start || "")); });
+      return { events: events, noDate: noDate };
+  }
   function showSorties() {
     bar.hidden = true; editing = false; view.textContent = "";
     view.appendChild(el("h1", { text: "Sorties fiction" }));
@@ -2814,36 +2862,10 @@
     Promise.all([sortRead(), readFile("data/fiction.json").catch(function () { return null; }), projRead().catch(function () { return null; })]).then(function (r) {
       fic = r[1]; build(); draw();
     }, function (e) { box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message })); });
-    function nrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); }
-    function iso(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+    function nrm(t) { return sortNrm(t); }
+    function iso(d) { return sortIso(d); }
     var events = [], noDate = [];
-    // Toutes les sorties connues + films sans date ; infos (réal, chef op, prod) complétées par projets.json et la page fiction.
-    function build() {
-      events = []; noDate = [];
-      var byTitle = {}, projs = ((proj && proj.projects) || []).filter(function (p) { return /^(LM|TVF|STV)$/.test(p.type) && !p.agency && p.title && !p.workTitle; });
-      projs.forEach(function (p) { byTitle[nrm(p.title)] = p; });
-      var seen = {};
-      function add(e) { var k = nrm(e.title) + "|" + e.date; if (seen[k]) return; seen[k] = 1; events.push(e); }
-      var ov = (fic && fic.overrides) || {};
-      ((fic && fic.films) || []).forEach(function (f) {
-        var o = ov[f.slate] || {}, t = ficTitle(o.title || f.title), p = byTitle[nrm(t)], sub = String(f.sub || "").split("\n");
-        var info = { title: t, slate: f.slate, project: p && p.id, directors: p ? p.directors || [] : sub[0] ? sub[0].split(/,\s*/) : [], dops: f.artists || (p && p.dops) || [],
-          prod: (p && p.prod) || sub[1] || "", platforms: o.platforms || [], series: o.genre === "SERIES" || /series/i.test((f.cats || []).join(" ")), img: f.img };
-        if (o.date) add(Object.assign({}, info, { date: o.date, kind: (o.platforms || []).length ? "platform" : "cinema", source: "fiction", id: "fic-" + f.slate }));
-        else seen["nd|" + nrm(t)] = info;
-        if (p) seen["p|" + p.id] = 1;
-      });
-      sorties.releases.forEach(function (r) {
-        var p = (r.project && projs.filter(function (q) { return q.id === r.project; })[0]) || byTitle[nrm(r.title)];
-        add(Object.assign({ directors: p ? p.directors || [] : [], dops: p ? p.dops || [] : [], prod: p ? p.prod || "" : "", platforms: r.platform ? [r.platform] : [], series: p ? p.type === "STV" : false }, r));
-        if (p) seen["p|" + p.id] = 1;
-      });
-      var dated = {}; events.forEach(function (e) { dated[nrm(e.title)] = 1; });
-      Object.keys(seen).filter(function (k) { return /^nd\|/.test(k); }).forEach(function (k) { if (!dated[k.slice(3)]) noDate.push(seen[k]); });
-      projs.forEach(function (p) { if (!seen["p|" + p.id] && !dated[nrm(p.title)]) noDate.push({ title: p.title, project: p.id, directors: p.directors || [], dops: p.dops || [], prod: p.prod || "", series: p.type === "STV", start: p.start }); });
-      events.sort(function (a, b) { return a.date.localeCompare(b.date); });
-      noDate.sort(function (a, b) { return String(b.start || "").localeCompare(String(a.start || "")); });
-    }
+    function build() { var r = sortBuild(fic, proj, sorties); events = r.events; noDate = r.noDate; }
     function hay(e) { return nrm([e.title, (e.directors || []).join(" "), (e.dops || []).join(" "), e.prod, (e.platforms || []).join(" "), e.country, SK[e.kind]].join(" ")); }
     function match(e) { var w = nrm(st.q).split(" ").filter(Boolean); if (!w.length) return true; var h = hay(e); return w.every(function (x) { return h.indexOf(x) > -1; }); }
     function range() {
@@ -2901,7 +2923,8 @@
       for (var d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
         var k = iso(d), out = d < r[0] || d > r[1];
         var cell = el("div", { class: "calc" + (out ? " out" : "") + (k === td ? " today" : "") + (d.getDay() === 3 ? " wed" : "") }, [el("span", { class: "cald", text: String(d.getDate()) })]);
-        l.filter(function (x) { return x.date === k; }).forEach(function (x) {
+        // Jours grisés du mois d'avant / d'après : pas de sortie (sinon un film du 30 septembre apparaît aussi en octobre, Gus 17/11).
+        if (!out) l.filter(function (x) { return x.date === k; }).forEach(function (x) {
           var ev = el("button", { type: "button", class: "calev " + (x.kind || "cinema") + (x.series ? " series" : "") }, [el("strong", { text: x.title }),
             el("small", { text: [(x.platforms || []).join(", ") || SK[x.kind || "cinema"], (x.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") })]);
           ev.addEventListener("click", function () { detail(x, ev); });
@@ -3324,6 +3347,30 @@
     h.addEventListener("animationend", function (e) { var l = e.target; if (e.animationName === "hDrop") l.classList.add("in"); else l.classList.remove("boing"); });
     h.addEventListener("click", function (e) { var l = e.target.closest(".hl"); if (!l) return; l.classList.remove("boing"); void l.offsetWidth; l.classList.add("boing"); });
     view.appendChild(el("div", { class: "hellobox" }, [h]));
+    helloNews();
+  }
+  // Petit mot sous « Hello la Dream Team ! » (Gus 17/11) : nos films qui sortent cette semaine (lundi → dimanche ; page fiction
+  // du site + sorties fiction) et les prix trouvés aujourd'hui par les robots (Nos sélections). Rien à dire : rien d'affiché.
+  function helloNews() {
+    var box = el("div", { class: "hellonews" }); view.appendChild(box);
+    var t = today(), mon = new Date(t.getFullYear(), t.getMonth(), t.getDate() - (t.getDay() + 6) % 7), sun = new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + 6);
+    var a = sortIso(mon), b = sortIso(sun), td = sortIso(t);
+    function day(d) { return dOf(d).toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" }); }
+    Promise.all([
+      sortRead().catch(function () { return null; }),
+      readFile("data/fiction.json").catch(function () { return null; }),
+      selRead().catch(function () { return null; })
+    ]).then(function (r) {
+      if (!document.body.contains(box)) return; // page quittée entre-temps
+      var lines = [];
+      var wk = sortBuild(r[1], null, r[0]).events.filter(function (e) { return e.date >= a && e.date <= b; });
+      if (wk.length) lines.push(el("a", { href: "#/sorties", class: "hn" }, [el("span", { class: "hnk", text: wk.length > 1 ? "Sortent cette semaine" : "Sort cette semaine" }),
+        wk.map(function (e) { return e.title + " · " + day(e.date) + (e.platforms && e.platforms.length ? " (" + e.platforms.join(", ") + ")" : ""); }).join("  —  ")]));
+      var pz = ((r[2] && r[2].found) || []).filter(function (x) { return x.kind === "prize" && x.status !== "no" && x.foundAt && sortIso(new Date(x.foundAt)) === td; });
+      if (pz.length) lines.push(el("a", { href: "#/selections", class: "hn" }, [el("span", { class: "hnk", text: pz.length > 1 ? pz.length + " prix trouvés aujourd'hui" : "Prix trouvé aujourd'hui" }),
+        pz.slice(0, 4).map(function (x) { return x.title + " : " + (x.prize || "prix") + (x.festName ? ", " + x.festName : "") + ((x.dops || []).length ? " (" + x.dops.map(rcBase).join(", ") + ")" : ""); }).join("  —  ") + (pz.length > 4 ? "  …" : "")]));
+      lines.forEach(function (l) { box.appendChild(l); });
+    });
   }
 
   // ---------- Historique des publications ----------
