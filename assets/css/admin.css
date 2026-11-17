@@ -587,7 +587,12 @@ body.vedit-on { overflow: hidden; }
 .immbar .btn { height: 34px; padding: 0 12px; }
 .immmsg { max-width: 340px; padding: 0 8px; color: var(--dim); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .immmsg:empty { display: none; }
-@media (max-width: 700px) { .immbar { left: 12px; right: 12px; } .immbar .lg { display: none; } }
+/* Téléphone : barre collée en bas sur toute la largeur, comme la barre « Publier » des pages website (Gus 18/11). */
+@media (max-width: 700px) {
+  .immbar { left: 0; right: 0; bottom: 0; gap: 4px; padding: 10px 16px calc(env(safe-area-inset-bottom, 0px) + 10px); border: 0; border-top: 1px solid var(--faint); }
+  .immbar .lg { display: none; } .immbar .hbtn { font-size: 18px; padding: 0 12px; }
+  .immmsg { flex: 1; max-width: none; }
+}
 /* Récupération v3 */
 .rcfic { display: inline-flex; align-items: center; gap: 8px; margin: -44px 0 44px; color: var(--dim); font-size: 12px; cursor: pointer; }
 .rcfic input { accent-color: #fff; margin: 0; }
@@ -713,3 +718,20 @@ body.readonly.webpage::before { content: "Lecture seule"; position: fixed; z-ind
 .awdel { flex: none; padding: 0 2px; border: 0; background: none; color: var(--dim); font-size: 15px; cursor: pointer; }
 .awdel:hover { color: var(--kinou-fg); }
 body.readonly.webpage #view .awbox button { pointer-events: none; }
+/* Menu (Gus 18/11) : la rubrique de la page ouverte en blanc et en gras ; une rubrique seulement dépliée reste grise. */
+.side .sgroup.open { opacity: .8; }
+.side a.on, .side .sgroup.on { opacity: 1; font-weight: 700; }
+/* Téléphone et tablette : menu en colonne comme sur ordinateur, sous-rubriques juste sous leur rubrique (plus en bas de tout). */
+@media (max-width: 900px) {
+  .side { flex-direction: column; flex-wrap: nowrap; align-items: flex-start; gap: 10px; padding-bottom: 18px; }
+  .ssub { order: 0; width: auto; margin-top: -10px; }
+  .ssub.open { margin-top: -4px; }
+  .ssub > div { flex-direction: column; gap: 8px; padding-left: 14px; }
+  .side .histlink { order: 0; margin-top: 6px; }
+}
+/* Téléphone : boutons des formulaires (festivals, sélections, sorties, récupération) qui passent à la ligne au lieu de dépasser. */
+@media (max-width: 700px) {
+  .ffoot { flex-direction: column; align-items: stretch; }
+  .ffoot > div, .fwbtns { flex-wrap: wrap; }
+  .ffoot > div .btn, .fwbtns .btn { flex: 1 1 auto; }
+}

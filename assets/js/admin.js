@@ -2897,7 +2897,7 @@
       if (list.length > n) return el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + (list.length - n) + ")", on: { click: function () { st[key] += 100; redraw(); } } });
       return null;
     }
-    if (canWeb) view.appendChild(el("p", { class: "awnote hint" }));
+    if (canWeb) view.insertBefore(el("p", { class: "awnote hint" }), box); // sous l'intro, au-dessus des listes
     Promise.all([selRead(), festLoad().catch(function () { return null; }), projRead().catch(function () { return null; })]).then(function () { draw(); awardsSoon(); }, function (e) {
       box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message }));
     });
@@ -3753,7 +3753,9 @@
     if (token && !festTried) { festTried = true; festLoad().then(festBadge, function () {}); } // pastille du menu (dates limites proches)
     side.querySelectorAll("a").forEach(function (a) { a.classList.toggle("on", a.dataset.page === page); });
     var cur = side.querySelector("a.on"), grp = cur && cur.closest(".ssub");
-    if (grp) sideOpen(grp.dataset.group, true);
+    // Rubrique de la page ouverte : dépliée et sélectionnée ; page hors rubrique (sorties, récupération…) : tout est replié (Gus 18/11).
+    sideOpen(grp ? grp.dataset.group : null, true);
+    side.querySelectorAll("button.sgroup").forEach(function (b) { b.classList.toggle("on", !!grp && b.dataset.group === grp.dataset.group); });
     if (!token) return showLogin();
     // Clé sans droit d'écriture sur le site (Gus 17/11) : rubrique website visible en lecture seule (champs grisés, pas de
     // « Publier », bandeau « Lecture seule »). Les notes internes d'une fiche (dépôt notes) restent modifiables.

@@ -136,7 +136,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
 - Navigation à gauche **en rubriques déroulantes** (Gus 16/11 ; clic sur website / festivals = ses sous-rubriques se déroulent, une
   rubrique ouverte à la fois, celle de la page ouverte déroulée d'office ; sorties fiction et récupération = lien direct) : WEBSITE (cinematographers, home page, spotlight, fiction, press à venir, contact),
   FESTIVALS (dates `#/festivals`, nos sélections `#/selections`), SORTIES FICTION (calendrier `#/sorties`, à venir), RÉCUPÉRATION
-  (suivi `#/recup`, à venir : k-recup, mails) ; téléphone : rubriques en ligne. Notification = pastille rouge sur « festivals »
+  (suivi `#/recup`, à venir : k-recup, mails) ; téléphone (Gus 18/11) : même menu en colonne, sous-rubriques juste sous leur rubrique ; page ouverte = sa rubrique et elle-même en blanc et en gras (`.on`), une rubrique seulement dépliée reste grise, page hors rubrique = tout replié. Barre Annuler / Rétablir des pages enregistrées tout de suite : collée en bas sur toute la largeur sur téléphone ; boutons des formulaires qui passent à la ligne. Notification = pastille rouge sur « festivals »
   (`festBadge` : dates limites d'inscription dans les 14 jours, hors estimées), calculée à la connexion.
 - **Festivals** (Gus 16/11, `showFestivals`) : données dans le dépôt **privé** `Kinou-DoP/notes`, `festivals/festivals.json` =
   `{ festivals: [{ id, name, city, country, types: [feature|short|music-video|commercial|cinematography|event], start, end, est?,
