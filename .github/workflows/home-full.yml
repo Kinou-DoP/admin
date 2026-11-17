@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      # Films reliés (même id Slate sur une fiche, la fiction, le spotlight) : infos et stills / vidéos changés recopiés sur les autres pages.
+      - run: CHANGED="$(git diff --name-only HEAD~1 HEAD || true)" node tools/link-films.mjs
       # Publication : fiches modifiées par ce commit ; lancement manuel : toutes les fiches.
       - run: CHANGED="$(git diff --name-only HEAD~1 HEAD || true)" node tools/fill-home.mjs
         env:
@@ -28,7 +30,7 @@ jobs:
           if ! git diff --quiet; then
             git config user.name "kinou-robot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -am "Films complets et images des projets (lus sur Slate)"
+            git commit -am "Films complets, images des projets et films reliés (robot)"
             git pull --rebase origin main && git push
             # Le site garde les données 5 min en cache : on le vide pour que les images / films ajoutés se voient tout de suite
             # (sinon la publication de l'admin, juste avant, a déjà remis en cache la version sans eux).
