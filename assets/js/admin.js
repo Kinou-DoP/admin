@@ -374,9 +374,13 @@
   // ---------- Connexion ----------
   function login(t) {
     token = t;
-    return Promise.all([gh("/repos/" + REPO), gh("/user")]).then(function (r) {
-      if (!r[0].permissions || !r[0].permissions.push) throw new Error("Ce token ne peut pas écrire dans " + REPO + ".");
-      user = r[1]; store(false, t);
+    // Accès « website » (Gus 17/11) : seulement si la clé peut écrire dans le dépôt admin. Test sans effet : on enregistre un
+    // fichier vide (blob jamais relié à un commit, toujours le même). Clé limitée au dépôt notes = festivals, sélections,
+    // récupération et sorties seulement (rubrique website cachée) : c'est GitHub qui l'empêche, pas seulement l'admin.
+    var canW = gh("/repos/" + REPO + "/git/blobs", { method: "POST", body: { content: "", encoding: "utf-8" } }).then(function () { return true; }, function () { return false; });
+    return Promise.all([gh("/user"), canW]).then(function (r) {
+      user = r[0]; canWeb = r[1]; store(false, t);
+      document.body.classList.toggle("noweb", !canWeb);
       // Prénom (Gus 17/11) : plusieurs personnes peuvent se connecter avec des clés du même compte GitHub (kinou-agency). Le
       // prénom saisi à la connexion (gardé dans ce navigateur) remplace le login partout où l'admin écrit qui a fait quoi :
       // messages des commits « (admin, Prénom) », historique, champs `by` des données. GitHub ne donne pas le nom de la clé.
@@ -390,6 +394,7 @@
       });
     }, function (e) { token = null; throw e; });
   }
+  var canWeb = true;
   var NAMES_PATH = "/repos/Kinou-DoP/notes/contents/equipe/noms.json";
   function tokId() {
     return crypto.subtle.digest("SHA-256", new TextEncoder().encode(token)).then(function (b) {
@@ -3546,6 +3551,7 @@
     var cur = side.querySelector("a.on"), grp = cur && cur.closest(".ssub");
     if (grp) sideOpen(grp.dataset.group, true);
     if (!token) return showLogin();
+    if (!canWeb && (page === "cinematographers" || /^(home|contact|spotlight|fiction|press)$/.test(page))) { history.replaceState(null, "", "#/"); here = "#/"; return showHello(); }
     if (/^#\/dp\//.test(h)) return showDP(decodeURIComponent(h.slice(5)));
     if (h === "#/new") return showDP(null);
     if (page === "home") return showHome();

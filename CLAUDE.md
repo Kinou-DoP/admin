@@ -47,6 +47,10 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   la page de connexion demande aussi le **prénom**, **lié à la clé** : dépôt privé notes `equipe/noms.json` = `{ <empreinte SHA-256 de la clé, 24 car.>: prénom }` (`tokId`, `nameRemote`, `nameSave` ; jamais la clé elle-même) ; demandé seulement la 1re fois pour une clé, retrouvé ensuite sur tout appareil (copie locale `localStorage` « kinou-admin-name », `myName` / `setName` ; nouvelle clé collée = prénom local effacé), qui
   remplace le login GitHub partout (`user.login` = prénom, `user.gh` = vrai login) : messages des commits « (admin, Prénom) »,
   historique, champs `by` / `editedBy` des données. Clic sur le prénom en haut à droite = le changer.
+- **Accès « website » réservé** (Gus 17/11) : à la connexion, l'admin teste si la clé peut écrire dans ce dépôt (`canWeb` : POST d'un
+  blob vide, sans effet). Sinon (clé limitée au dépôt `notes` : Repository access = notes seulement, Contents Read and write) : rubrique
+  website cachée (`body.noweb`), ses pages renvoient à l'accueil ; festivals, sélections, récupération et sorties marchent (lecture des
+  dépôts publics admin / site toujours permise). C'est GitHub qui bloque l'écriture, pas seulement l'admin. Clés des collègues = notes seulement.
 - **Ajouter une personne à l'admin** (Gus 04/11) : une clé ne peut jamais faire plus que le compte de la personne. Donc :
   1. l'inviter dans l'organisation Kinou-DoP (People → Invite member) ;
   2. lui donner le rôle **Write** sur les 3 dépôts `admin`, `site` et **`notes`** (dépôt → Settings → Collaborators and teams →
