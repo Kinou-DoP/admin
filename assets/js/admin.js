@@ -215,6 +215,7 @@
   function orRobot(kind, link) { return function (e) { if (e && e.down) return askRobot(kind, link); throw e; }; }
   function askRobot(kind, link) {
     return new Promise(function (ok, ko) {
+      if (!canWeb) return ko(new Error("lecture seule : pas de modification du site avec cette clé"));
       askQ.push({ kind: kind, link: String(link || "").trim(), ok: ok, ko: ko });
       clearTimeout(askT); askT = setTimeout(askSend, 300);
     });
@@ -380,7 +381,7 @@
     var canW = gh("/repos/" + REPO + "/git/blobs", { method: "POST", body: { content: "", encoding: "utf-8" } }).then(function () { return true; }, function () { return false; });
     return Promise.all([gh("/user"), canW]).then(function (r) {
       user = r[0]; canWeb = r[1]; store(false, t);
-      document.body.classList.toggle("noweb", !canWeb);
+      document.body.classList.toggle("readonly", !canWeb);
       // Prénom (Gus 17/11) : plusieurs personnes peuvent se connecter avec des clés du même compte GitHub (kinou-agency). Le
       // prénom saisi à la connexion (gardé dans ce navigateur) remplace le login partout où l'admin écrit qui a fait quoi :
       // messages des commits « (admin, Prénom) », historique, champs `by` des données. GitHub ne donne pas le nom de la clé.
@@ -529,6 +530,7 @@
   }
   var progT = 0, progQ = Promise.resolve();
   function saveStep(slug, name, step, note) {
+    if (!canWeb) { note.textContent = "Lecture seule"; note.className = "pnote err"; return; }
     progress[slug] = { step: step, at: new Date().toISOString(), by: user.login };
     var entry = progress[slug];
     clearTimeout(progT); note.textContent = "…"; note.className = "pnote";
@@ -612,7 +614,9 @@
   var state = null, slate = null, isNew = false, listed = false, origSlug = null, pending = {}, curCat = null, flash = "";
   // dirty : modifications faites dans la page mais pas encore publiées.
   var dirty = false;
-  function touch() { dirty = true; status("Modifications non publiées : cliquez sur « Publier » pour les mettre en ligne.", "warn"); record(); }
+  function touch() {
+    if (!canWeb) { status("Lecture seule : tu peux tout regarder, mais pas modifier le site.", "warn"); return; }
+    dirty = true; status("Modifications non publiées : cliquez sur « Publier » pour les mettre en ligne.", "warn"); record(); }
 
   // ---------- Annuler / Rétablir ----------
   // Instantanés de la page ouverte (fiche, accueil ou contact), pris à chaque modification (saisie regroupée :
@@ -3551,7 +3555,9 @@
     var cur = side.querySelector("a.on"), grp = cur && cur.closest(".ssub");
     if (grp) sideOpen(grp.dataset.group, true);
     if (!token) return showLogin();
-    if (!canWeb && (page === "cinematographers" || /^(home|contact|spotlight|fiction|press)$/.test(page))) { history.replaceState(null, "", "#/"); here = "#/"; return showHello(); }
+    // Clé sans droit d'écriture sur le site (Gus 17/11) : rubrique website visible en lecture seule (champs grisés, pas de
+    // « Publier », bandeau « Lecture seule »). Les notes internes d'une fiche (dépôt notes) restent modifiables.
+    document.body.classList.toggle("webpage", page === "cinematographers" || /^(home|contact|spotlight|fiction|press)$/.test(page));
     if (/^#\/dp\//.test(h)) return showDP(decodeURIComponent(h.slice(5)));
     if (h === "#/new") return showDP(null);
     if (page === "home") return showHome();

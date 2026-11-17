@@ -49,7 +49,9 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   historique, champs `by` / `editedBy` des données. Clic sur le prénom en haut à droite = le changer.
 - **Accès « website » réservé** (Gus 17/11) : à la connexion, l'admin teste si la clé peut écrire dans ce dépôt (`canWeb` : POST d'un
   blob vide, sans effet). Sinon (clé limitée au dépôt `notes` : Repository access = notes seulement, Contents Read and write) : rubrique
-  website cachée (`body.noweb`), ses pages renvoient à l'accueil ; festivals, sélections, récupération et sorties marchent (lecture des
+  website **en lecture seule** (Gus 17/11 : visible avec toutes ses pages, `body.readonly` + `body.webpage` posé par `route`) : champs,
+  interrupteurs, genre et avancement inactifs (CSS), pas de « Publier », pastille « Lecture seule » en haut, `touch` / `askRobot` /
+  `saveStep` refusent ; notes internes des fiches modifiables (dépôt notes) ; festivals, sélections, récupération et sorties marchent (lecture des
   dépôts publics admin / site toujours permise). C'est GitHub qui bloque l'écriture, pas seulement l'admin. Clés des collègues = notes seulement.
 - **Ajouter une personne à l'admin** (Gus 04/11) : une clé ne peut jamais faire plus que le compte de la personne. Donc :
   1. l'inviter dans l'organisation Kinou-DoP (People → Invite member) ;
