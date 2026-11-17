@@ -139,11 +139,14 @@
         return gh("/repos/" + REPO + "/git/blobs", { method: "POST", body: body }).then(function (b) { return { path: f.path, mode: "100644", type: "blob", sha: b.sha }; });
       })).then(function (tree) {
         tree = tree.filter(Boolean);
+        if (!tree.length) return null; // rien à changer (fichiers `edit` déjà à jour) : pas de commit vide
         return gh("/repos/" + REPO + "/git/trees", { method: "POST", body: { base_tree: c.tree.sha, tree: tree } });
       });
     }).then(function (tree) {
+      if (!tree) return null;
       return gh("/repos/" + REPO + "/git/commits", { method: "POST", body: { message: message, tree: tree.sha, parents: [base] } });
     }).then(function (c) {
+      if (!c) return null;
       return gh("/repos/" + REPO + "/git/refs/heads/" + BRANCH, { method: "PATCH", body: { sha: c.sha } });
     });
   }
@@ -180,6 +183,21 @@
       });
     });
     fullsFrom(dst, src);
+    awMerge(dst.overrides, so);
+  }
+  // Prix ajoutés par la synchronisation « Nos sélections » (`info.awardsFrom` = { id de la trouvaille: ligne }) : le fichier en
+  // ligne fait foi. Une page ouverte avant la synchronisation les garde donc à la publication (lignes ajoutées ou retirées).
+  function awMerge(dst, src) {
+    Object.keys(src || {}).forEach(function (id) {
+      var sf = (src[id].info || {}).awardsFrom, d = dst[id], df = d && d.info && d.info.awardsFrom;
+      if (!sf && !df) return;
+      d = dst[id] || (dst[id] = {}); var info = d.info = Object.assign({}, d.info || {}); df = info.awardsFrom || {}; sf = sf || {};
+      var lines = String(info.awards || "").split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean);
+      Object.keys(df).forEach(function (k) { if (!(k in sf)) { var i = lines.indexOf(df[k]); if (i > -1) lines.splice(i, 1); } });
+      Object.keys(sf).forEach(function (k) { if (!(k in df) && lines.indexOf(sf[k]) < 0) lines.push(sf[k]); });
+      info.awards = lines.join("\n"); if (!info.awards) delete info.awards;
+      if (Object.keys(sf).length) info.awardsFrom = sf; else delete info.awardsFrom;
+    });
   }
   function afterRobot(path, ref, slug, done) {
     var sha = ref && ref.object && ref.object.sha, t0 = Date.now();
@@ -1978,7 +1996,7 @@
   function infoCtl(c) {
     function cur() { return (state.overrides[c.slate] || {}).info || {}; }
     var sum = el("summary"), grid = el("div", { class: "infogrid" }), box = el("details", { class: "infobox" }, [sum, grid]);
-    function count() { var n = Object.keys(cur()).length; sum.textContent = "Infos du film" + (n ? " · " + n + " renseignée" + (n > 1 ? "s" : "") : ""); }
+    function count() { var n = Object.keys(cur()).filter(function (k) { return k !== "awardsFrom"; }).length; sum.textContent = "Infos du film" + (n ? " · " + n + " renseignée" + (n > 1 ? "s" : "") : ""); }
     INFO_FIELDS.forEach(function (f) {
       if (f[0] === "platforms" && state === fic) return; // fiction : plateformes déjà réglées plus haut (étiquettes)
       var inp = f[3] ? el("textarea", { rows: String(f[3]), placeholder: f[2] }) : el("input", { type: "text", placeholder: f[2] });
@@ -1986,7 +2004,7 @@
       inp.addEventListener("input", function () {
         var i = Object.assign({}, cur()), v = inp.value.trim();
         if (v) i[f[0]] = v; else delete i[f[0]];
-        setOverride(c, "info", Object.keys(i).length ? i : undefined); count();
+        setOverride(c, "info", Object.keys(i).filter(function (k) { return k !== "awardsFrom"; }).length ? i : undefined); count();
       });
       grid.appendChild(el("label", { class: "ifield" + (f[3] ? " wide" : "") }, [el("span", { class: "label", text: f[1] }), inp]));
     });
@@ -2125,6 +2143,7 @@
     }
     return readFile("data/fiction.json").then(function (remote) {
       var out = remote || {};
+      awMerge(fic.overrides, out.overrides); // prix ajoutés depuis « Nos sélections » entre-temps
       out.reel = fic.reel; out.overrides = fic.overrides;
       if (justLink === true) out.readAsk = new Date().toISOString(); // fichier changé même avec le même lien → le robot relit la bande
       files.push({ path: "data/fiction.json", text: json(out) });
@@ -2676,8 +2695,84 @@
     return selRead().then(function () {
       items.forEach(function (x) { sel.found = sel.found.filter(function (y) { return y.id !== x.id; }); if (!remove) sel.found.push(x); });
       return gh(SEL_PATH, { method: "PUT", body: { message: msg + " (admin, " + (user && user.login || "") + ")", content: b64enc(JSON.stringify(sel, null, 2) + "\n"), sha: selSha || undefined } });
-    }).then(function (r) { selSha = r.content.sha; });
+    }).then(function (r) { selSha = r.content.sha; awardsSoon(); });
   }
+  // ---------- Prix confirmés → « Prix & sélections » des films sur le site (Gus 17/11) ----------
+  // Chaque trouvaille confirmée (✓) devient une ligne dans `info.awards` du film : page fiction (`data/fiction.json`, film au même
+  // titre avec un chef op en commun) et fiche de chaque chef op crédité (`data/dps/<adresse>.json`, film au même titre).
+  // `info.awardsFrom` = { id de la trouvaille: ligne écrite } : une ligne n'est ajoutée qu'une fois (corrigée ou effacée à la main :
+  // pas remise) ; trouvaille retirée ou écartée = sa ligne retirée (si elle n'a pas été corrigée). Seulement avec une clé qui peut
+  // écrire sur le site (`canWeb`) ; lancé à l'ouverture de Nos sélections et après chaque changement.
+  function awLine(x) {
+    var y = String(x.edition || String(x.date || "").slice(0, 4) || ""), fest = String(x.festName || x.fest || "").trim();
+    var where = fest + (y && fest.indexOf(y) < 0 ? " " + y : "");
+    if (x.kind === "prize") return (x.prize || "Prize") + (x.image && !/image|photo|cin[eé]matograph/i.test(x.prize || "") ? " (cinematography)" : "") + ", " + where;
+    if (x.kind === "nomination") return "Nominated" + (x.prize || x.section ? ", " + (x.prize || x.section) : "") + ", " + where;
+    return "Official selection" + (x.section ? " – " + x.section : "") + ", " + where;
+  }
+  function awApply(ov, id, items) {
+    var o = ov[id] || {}, info = Object.assign({}, o.info || {}), from = Object.assign({}, info.awardsFrom || {}), ch = false, want = {};
+    var lines = String(info.awards || "").split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean);
+    items.forEach(function (x) { want[x.id] = 1; });
+    Object.keys(from).forEach(function (k) { if (!want[k]) { var i = lines.indexOf(from[k]); if (i > -1) lines.splice(i, 1); delete from[k]; ch = true; } });
+    function rk(x) { return x.kind === "prize" ? 0 : x.kind === "nomination" ? 1 : 2; }
+    items.slice().sort(function (a, b) { return rk(a) - rk(b) || String(b.edition || b.date || "").localeCompare(String(a.edition || a.date || "")); }).forEach(function (x) {
+      if (from[x.id] !== undefined) return;
+      var l = awLine(x); if (!lines.some(function (z) { return sortNrm(z) === sortNrm(l); })) lines.push(l);
+      from[x.id] = l; ch = true;
+    });
+    if (!ch) return false;
+    info.awards = lines.join("\n"); if (!info.awards) delete info.awards;
+    if (Object.keys(from).length) info.awardsFrom = from; else delete info.awardsFrom;
+    ov[id] = Object.assign({}, o, { info: info });
+    return true;
+  }
+  function awTitles(x) {
+    var p = proj && proj.projects && proj.projects.filter(function (q) { return q.id === x.project; })[0];
+    return [x.title].concat(p ? [p.title].concat(p.aka || []) : []).filter(Boolean);
+  }
+  function awHit(x, title) { return awTitles(x).some(function (t) { return sortSame(ficTitle(title), t); }); }
+  // Applique les trouvailles confirmées à un fichier du site (fiche d'un chef op, ou page fiction) ; null = rien à changer.
+  function awFile(text, items, fiction) {
+    if (!text) return null;
+    var d = JSON.parse(text), ov = d.overrides = d.overrides || {}, ch = false, ids = {};
+    var list = fiction ? (d.films || []).map(function (f) { return { id: String(f.slate), title: (ov[f.slate] || {}).title || f.title, dops: f.artists || [] }; })
+      : (d.clips || []).map(function (c) { return { id: String(c.slate), title: (ov[c.slate] || {}).title || c.title }; });
+    list.forEach(function (f) { if (f.id && f.id !== "undefined") ids[f.id] = f; });
+    Object.keys(ov).forEach(function (id) { if (ov[id].info && ov[id].info.awardsFrom && !ids[id]) ids[id] = { id: id, title: "" }; });
+    Object.keys(ids).forEach(function (id) {
+      var f = ids[id], mine = f.title ? items.filter(function (x) { return awHit(x, f.title) && (!fiction || !f.dops.length || sortDop(f.dops, x.dops)); }) : [];
+      if (awApply(ov, id, mine)) ch = true;
+    });
+    return ch ? json(d) : null;
+  }
+  var awT = 0, awBusy = null;
+  function awardsSoon() { clearTimeout(awT); awT = setTimeout(awardsSync, 1500); }
+  function awardsSync() {
+    if (!canWeb || !sel || awBusy) return awBusy;
+    var ok = sel.found.filter(function (x) { return x.status === "ok" && x.title; });
+    var note = document.querySelector(".awnote"); if (note) { note.textContent = "Site : mise à jour des prix…"; note.className = "awnote hint"; }
+    awBusy = loadIndex().then(function (idx) {
+      // Fiches concernées : chefs op crédités sur une trouvaille confirmée, plus celles qui ont déjà des prix ajoutés (retraits).
+      var byName = {}; (idx.dps || []).forEach(function (d) { byName[sortNrm(rcBase(d.name))] = d.slug; });
+      var slugs = {};
+      sel.found.forEach(function (x) { (x.dops || []).forEach(function (n) { var sl = byName[sortNrm(rcBase(n))]; if (sl) slugs[sl] = 1; }); }); // aussi écartées : retrait
+      Object.keys(awDone).forEach(function (sl) { slugs[sl] = 1; });
+      var files = [{ path: "data/fiction.json", edit: function (t) { return awFile(t, ok, true); } }];
+      Object.keys(slugs).forEach(function (sl) {
+        var name = ((idx.dps || []).filter(function (d) { return d.slug === sl; })[0] || {}).name || "";
+        var mine = ok.filter(function (x) { return (x.dops || []).some(function (n) { return sortNrm(rcBase(n)) === sortNrm(rcBase(name)); }); });
+        files.push({ path: "data/dps/" + sl + ".json", edit: function (t) { var r = awFile(t, mine, false); if (r) awDone[sl] = 1; return r; } });
+      });
+      return commit(files, "Prix & sélections des films mis à jour depuis Nos sélections (admin, " + user.login + ")");
+    }).then(function (r) {
+      if (note) { note.textContent = r ? "Site : prix & sélections des films mis à jour." : "Site : prix & sélections à jour."; note.className = "awnote hint ok"; }
+    }, function (e) {
+      if (note) { note.textContent = "Site : prix pas mis à jour (" + e.message + ")"; note.className = "awnote hint err"; }
+    }).then(function () { awBusy = null; });
+    return awBusy;
+  }
+  var awDone = {}; // fiches modifiées pendant cette session (pour retirer une ligne si la trouvaille est écartée ensuite)
   function selSave(before, after, label, remove) { // avec Annuler / Rétablir
     var b = before && JSON.parse(JSON.stringify(before)), a = JSON.parse(JSON.stringify(after));
     return selPut([a], "Sélections : " + label, remove).then(function () {
@@ -2698,7 +2793,8 @@
       if (list.length > n) return el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + (list.length - n) + ")", on: { click: function () { st[key] += 100; redraw(); } } });
       return null;
     }
-    Promise.all([selRead(), festLoad().catch(function () { return null; }), projRead().catch(function () { return null; })]).then(draw, function (e) {
+    if (canWeb) view.appendChild(el("p", { class: "awnote hint" }));
+    Promise.all([selRead(), festLoad().catch(function () { return null; }), projRead().catch(function () { return null; })]).then(function () { draw(); awardsSoon(); }, function (e) {
       box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message }));
     });
     function nrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
