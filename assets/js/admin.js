@@ -3099,6 +3099,7 @@
       .replace(/\((?:feature film )?(?:trailer|teaser|bande[- ]annonce)\)/ig, "").replace(/\b(bande[- ]annon?ce|trailer|teaser)\b.*$/i, "").trim();
   }
   var SK = { cinema: "Cinéma", platform: "Plateforme", tv: "Télé" };
+  var MOISC = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
   var MOISL = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
   var JOURS = ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."];
   function sortNrm(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); }
@@ -3198,7 +3199,7 @@
         if (!l.length && !nd.length) s0.appendChild(el("p", { class: "hint", text: "Rien ne correspond." }));
         box.appendChild(s0);
       }
-      var title = st.mode === "month" ? MOISL[r[0].getMonth()] + " " + r[0].getFullYear() : "Semaine du " + r[0].getDate() + " " + MOISL[r[0].getMonth()] + (r[0].getMonth() !== r[1].getMonth() ? " au " + r[1].getDate() + " " + MOISL[r[1].getMonth()] : " au " + r[1].getDate()) + " " + r[1].getFullYear();
+      var title = st.mode === "month" ? MOISL[r[0].getMonth()] + " " + r[0].getFullYear() : (r[0].getMonth() !== r[1].getMonth() ? r[0].getDate() + " " + MOISC[r[0].getMonth()] + " – " + r[1].getDate() + " " + MOISC[r[1].getMonth()] : r[0].getDate() + " – " + r[1].getDate() + " " + MOISC[r[1].getMonth()]) + " " + r[1].getFullYear(); // semaine : court, flèches sur la même ligne (Gus 18/11)
       var before = l.filter(function (x) { return x.date < iso(r[0]); }).length, after = l.filter(function (x) { return x.date > iso(r[1]); }).length;
       box.appendChild(el("div", { class: "calbar" }, [
         el("button", { type: "button", class: "btn ghost calj", title: "Sortie précédente", disabled: !before, text: "⇤", on: { click: function () { jump(-1); } } }),
@@ -3743,7 +3744,17 @@
       var me = x.dataset.group === g;
       x.classList.toggle("open", me ? (only ? true : !x.classList.contains("open")) : false);
     });
+    subX();
   }
+  // Téléphone (menu à l'horizontale) : la ligne des sous-rubriques commence sous sa rubrique (Gus 18/11), pas au bord gauche.
+  function subX() {
+    side.querySelectorAll(".ssub").forEach(function (x) {
+      var b = side.querySelector("button.sgroup[data-group='" + x.dataset.group + "']");
+      var dx = b ? b.getBoundingClientRect().left - side.getBoundingClientRect().left - parseFloat(getComputedStyle(side).paddingLeft || 0) : 0;
+      x.style.setProperty("--subx", Math.max(0, Math.min(dx, side.clientWidth * .45)) + "px");
+    });
+  }
+  window.addEventListener("resize", subX);
   side.querySelectorAll("button.sgroup").forEach(function (b) { b.addEventListener("click", function () { sideOpen(b.dataset.group); }); });
   function route() {
     var h = location.hash;
