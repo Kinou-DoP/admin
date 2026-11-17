@@ -1,0 +1,17 @@
+{
+  "slug": "leo-lacan",
+  "name": "Léo Lacan",
+  "hue": 0,
+  "overrides": {},
+  "about": {
+    "bioEn": [
+      "Léo is a Paris-based cinematographer.",
+      "Working across film and digital, his practice spans fiction, commercials, music videos, and documentaries, from auteur-driven projects to collaborations with high-end brands (Louis Vuitton, Netflix, Audemars Piguet, Glenfiddich, Montreux Jazz Festival ect).",
+      "With a background in musicology and anthropology, and early years spent playing in rock bands, he approaches cinematography through rhythm, texture and atmosphere. His images explore the tension between raw, organic environments and controlled visual compositions."
+    ],
+    "website": "https://www.leolacan.com/",
+    "instagram": "https://www.instagram.com/leo_lacan_/",
+    "img": "img/leo-lacan.webp",
+    "og": "img/leo-lacan-og-1794935606067.jpg"
+  }
+}
