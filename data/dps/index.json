@@ -68,8 +68,7 @@
     },
     {
       "slug": "julie-chevailler-cinematographer",
-      "name": "Julie Chevailler",
-      "gender": "f"
+      "name": "Julie Chevailler"
     },
     {
       "slug": "agustin-claramunt-scu-cinematographer",
@@ -170,7 +169,8 @@
     },
     {
       "slug": "juliette-lossky-cinematographer",
-      "name": "Juliette Lossky"
+      "name": "Juliette Lossky",
+      "gender": "f"
     },
     {
       "slug": "benjamin-louet-cinematographer",
@@ -182,8 +182,7 @@
     },
     {
       "slug": "frida-marzouk-afc",
-      "name": "Frida Marzouk, AFC",
-      "gender": "f"
+      "name": "Frida Marzouk, AFC"
     },
     {
       "slug": "nicolas-massart-afc-cinematographer",
@@ -220,8 +219,7 @@
     },
     {
       "slug": "paloma-pineda-cinematographer",
-      "name": "Paloma Pineda",
-      "gender": "f"
+      "name": "Paloma Pineda"
     },
     {
       "slug": "andy-pml",
