@@ -68,7 +68,8 @@
     },
     {
       "slug": "julie-chevailler-cinematographer",
-      "name": "Julie Chevailler"
+      "name": "Julie Chevailler",
+      "gender": "f"
     },
     {
       "slug": "agustin-claramunt-scu-cinematographer",
@@ -182,7 +183,8 @@
     },
     {
       "slug": "frida-marzouk-afc",
-      "name": "Frida Marzouk, AFC"
+      "name": "Frida Marzouk, AFC",
+      "gender": "f"
     },
     {
       "slug": "nicolas-massart-afc-cinematographer",
@@ -211,7 +213,8 @@
     },
     {
       "slug": "lara-perrotte-boucard-cinematographer",
-      "name": "Lara Perrotte Boucard"
+      "name": "Lara Perrotte Boucard",
+      "gender": "f"
     },
     {
       "slug": "steeven-petitteville-afc-cinematographer",
@@ -245,7 +248,8 @@
     },
     {
       "slug": "melodie-preel-afc-cinematographer",
-      "name": "Mélodie Preel, AFC"
+      "name": "Mélodie Preel, AFC",
+      "gender": "f"
     },
     {
       "slug": "julien-ramirez-hernan-sbc",
@@ -297,7 +301,8 @@
     },
     {
       "slug": "maeva-vo-dinh-cinematographer",
-      "name": "Maëva Vo Dinh"
+      "name": "Maëva Vo Dinh",
+      "gender": "f"
     },
     {
       "slug": "christos-voudouris-cinematographer",
