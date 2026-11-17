@@ -126,10 +126,19 @@
       return gh("/repos/" + REPO + "/git/commits/" + base);
     }).then(function (c) {
       return Promise.all(files.map(function (f) {
+        // { path, edit: function (texte du fichier dans le dernier commit) → nouveau texte (null = rien à changer) } : le
+        // fichier est relu dans le commit de base (pas une copie gardée en mémoire depuis l'ouverture de la page : sinon une
+        // publication effaçait les changements faits entre-temps, ex. le genre d'autres chefs op dans index.json, Gus 17/11).
+        if (f.edit) return gh("/repos/" + REPO + "/contents/" + f.path + "?ref=" + base, { raw: true, allow404: true }).then(function (t) {
+          var n = f.edit(t);
+          if (n === null || n === undefined) return null;
+          return gh("/repos/" + REPO + "/git/blobs", { method: "POST", body: { content: n, encoding: "utf-8" } }).then(function (b) { return { path: f.path, mode: "100644", type: "blob", sha: b.sha }; });
+        });
         if (f.remove) return { path: f.path, mode: "100644", type: "blob", sha: null }; // suppression
         var body = f.base64 !== undefined ? { content: f.base64, encoding: "base64" } : { content: f.text, encoding: "utf-8" };
         return gh("/repos/" + REPO + "/git/blobs", { method: "POST", body: body }).then(function (b) { return { path: f.path, mode: "100644", type: "blob", sha: b.sha }; });
       })).then(function (tree) {
+        tree = tree.filter(Boolean);
         return gh("/repos/" + REPO + "/git/trees", { method: "POST", body: { base_tree: c.tree.sha, tree: tree } });
       });
     }).then(function (tree) {
@@ -402,7 +411,12 @@
   }
 
   // ---------- Liste des chefs op ----------
-  function loadIndex() { return readFile("data/dps/index.json").then(function (d) { index = d || { dps: [] }; return index; }); }
+  // Liste des chefs op lue dans le dernier commit (la lecture par nom de branche peut rendre une version d'il y a une minute).
+  function loadIndex() {
+    return gh("/repos/" + REPO + "/git/ref/heads/" + BRANCH).then(function (ref) {
+      return gh("/repos/" + REPO + "/contents/data/dps/index.json?ref=" + ref.object.sha, { raw: true, allow404: true });
+    }).then(function (t) { index = t ? JSON.parse(t) : { dps: [] }; return index; });
+  }
   function showList() {
     bar.hidden = true; editing = false;
     view.textContent = "";
@@ -1395,20 +1409,42 @@
       if (hit) files.push({ path: "data/home.json", text: json(homeData) });
     }
     // Liste des DPs : ajout (rangé par nom de famille) ou mise à jour du nom (et de l'adresse).
-    var dps = index.dps.slice(), i = dps.findIndex(function (d) { return d.slug === (from || s.slug); });
+    // Appliqué à la liste du dernier commit au moment de publier (`edit`), pas à celle gardée en mémoire : seule l'entrée de ce chef op change.
     var hide = isHidden(), gen = curGender(); // nouvelle fiche : cachée tant qu'on ne la met pas en ligne
-    if (i > -1) {
-      if (dps[i].name !== out.name || dps[i].slug !== s.slug || !!dps[i].hidden !== hide || (dps[i].gender || "") !== gen) {
-        dps[i] = Object.assign({}, dps[i], { name: out.name, slug: s.slug }); if (hide) dps[i].hidden = true; else delete dps[i].hidden;
-        if (gen) dps[i].gender = gen; else delete dps[i].gender;
+    function applyIdx(list) {
+      var dps = list.slice(), i = dps.findIndex(function (d) { return d.slug === (from || s.slug); });
+      if (i > -1) {
+        if (dps[i].name !== out.name || dps[i].slug !== s.slug || !!dps[i].hidden !== hide || (dps[i].gender || "") !== gen) {
+          dps[i] = Object.assign({}, dps[i], { name: out.name, slug: s.slug }); if (hide) dps[i].hidden = true; else delete dps[i].hidden;
+          if (gen) dps[i].gender = gen; else delete dps[i].gender;
+        }
+      } else {
+        var k = surname(out.name), at = dps.findIndex(function (d) { return surname(d.name) > k; }), ne = { slug: s.slug, name: out.name };
+        if (hide) ne.hidden = true;
+        if (gen) ne.gender = gen;
+        dps.splice(at < 0 ? dps.length : at, 0, ne);
       }
-    } else {
-      var k = surname(out.name), at = dps.findIndex(function (d) { return surname(d.name) > k; }), ne = { slug: s.slug, name: out.name };
-      if (hide) ne.hidden = true;
-      if (gen) ne.gender = gen;
-      dps.splice(at < 0 ? dps.length : at, 0, ne);
+      return dps;
     }
-    if (JSON.stringify(dps) !== JSON.stringify(index.dps)) files.push({ path: "data/dps/index.json", text: json({ dps: dps }) });
+    var dps = applyIdx(index.dps);
+    // Fiche sans bundle ni films (ex. on règle juste le genre ou « En ligne » d'un chef op pas encore importé, Gus 17/11) : son
+    // avancement reste « À faire » (sans entrée, une fiche qui existe compte comme « Importé »).
+    if (!(progress && progress[s.slug]) && !out.bundle && !(out.clips || []).length) {
+      var p0 = { step: 0, at: new Date().toISOString(), by: user.login };
+      files.push({ path: "data/progress.json", edit: function (t) { var p = t ? JSON.parse(t) : {}; if (p[s.slug]) return null; p[s.slug] = p0; return json(p); } });
+      if (progress) progress[s.slug] = p0;
+    }
+    // Fiche sans bundle ni films (ex. on règle juste le genre ou « En ligne » d'un chef op pas encore importé, Gus 17/11) : son
+    // avancement reste « À faire » (sans entrée, une fiche qui existe compte comme « Importé »).
+    if (!(progress && progress[s.slug]) && !out.bundle && !(out.clips || []).length) {
+      var p0 = { step: 0, at: new Date().toISOString(), by: user.login };
+      files.push({ path: "data/progress.json", edit: function (t) { var p = t ? JSON.parse(t) : {}; if (p[s.slug]) return null; p[s.slug] = p0; return json(p); } });
+      if (progress) progress[s.slug] = p0;
+    }
+    files.push({ path: "data/dps/index.json", edit: function (t) {
+      var cur = t ? JSON.parse(t) : { dps: [] }, n = applyIdx(cur.dps || []);
+      dps = n; return JSON.stringify(n) === JSON.stringify(cur.dps) ? null : json({ dps: n });
+    } });
     // Ce que le robot écrit (images, proportions, types de contenu, films complets) est repris du fichier en ligne : sinon la
     // publication remettait l'ancienne version (ex. ordre des images d'un projet en images changé sur Slate), puis le robot la
     // corrigeait une minute après, sans pouvoir vider le cache du site.
