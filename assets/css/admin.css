@@ -608,7 +608,7 @@ body.vedit-on { overflow: hidden; }
 main { padding-bottom: 200px; }
 /* Accueil de l'admin : « Hello la Dream Team ! » (Gus 17/11, pour sourire), centré sur l'écran */
 .tag { text-decoration: none; }
-.hellobox { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 24px; text-align: center; pointer-events: none; }
+.hellobox { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 24px 24vh; text-align: center; pointer-events: none; } /* un peu plus haut : place pour le petit mot du bas (Gus 18/11) */
 .hello { margin: 0; font-family: "Bagel Fat One", var(--kinou-sans); font-weight: 400; font-size: clamp(46px, 7vw, 118px); letter-spacing: 0; line-height: 1.05; cursor: default; user-select: none; pointer-events: auto; }
 .hello .hw { display: inline-block; white-space: nowrap; }
 .hello .hl { display: inline-block; opacity: 0; transform: translateY(-80px) rotate(var(--r)); animation: hDrop .9s cubic-bezier(.34, 1.7, .5, 1) forwards; animation-delay: calc(var(--i) * 55ms); transition: color .2s; }
@@ -755,3 +755,6 @@ body.readonly.webpage #view .awbox button { pointer-events: none; }
 }
 @media (max-width: 380px) { .calbar .caly { display: none; } } /* petit écran : sans l'année */
 .cal { touch-action: pan-y; }
+/* Pendant le balayage, le calendrier qui sort de l'écran ne doit pas élargir la page : sinon, sur téléphone, la page se décalait et la
+   barre Annuler / Rétablir disparaissait le temps de l'animation (Gus 18/11). */
+.calbox { overflow-x: clip; }

@@ -3158,7 +3158,7 @@
     bar.hidden = true; editing = false; view.textContent = "";
     view.appendChild(el("h1", { text: "Sorties fiction" }));
     view.appendChild(el("p", { class: "lead", text: "Les sorties de nos longs métrages et séries : cinéma (sortie française d'abord, sinon européenne ou américaine), plateformes, télé. Les dates viennent de la page fiction du site, de l'équipe et du robot." }));
-    var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
+    var box = el("div", { class: "calbox" }, [el("p", { class: "hint", text: "Chargement…" })]);
     view.appendChild(box); immInit(function () { build(); draw(); });
     var fic = null, st = { mode: "month", at: today(), q: "", openNoDate: false };
     Promise.all([sortRead(), readFile("data/fiction.json").catch(function () { return null; }), projRead().catch(function () { return null; })]).then(function (r) {
