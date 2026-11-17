@@ -23,6 +23,8 @@ a { color: inherit; }
 .who { margin-left: auto; color: var(--dim); }
 .who button { margin-left: 18px; padding: 0; border: 0; background: none; color: var(--kinou-fg); font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; opacity: .6; transition: opacity .2s; }
 .who button:hover { opacity: 1; }
+.who .whome { margin-left: 0; color: var(--dim); opacity: 1; }
+.who .whome:hover { color: var(--kinou-fg); }
 
 main { max-width: 1200px; margin: 0 auto; padding: 4vh 32px 160px; }
 h1 { margin: 0 0 6px; font-family: var(--kinou-sans); font-weight: 600; font-size: clamp(30px, 5vw, 64px); letter-spacing: -0.04em; line-height: 1; }

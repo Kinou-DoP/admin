@@ -377,37 +377,55 @@
     return Promise.all([gh("/repos/" + REPO), gh("/user")]).then(function (r) {
       if (!r[0].permissions || !r[0].permissions.push) throw new Error("Ce token ne peut pas écrire dans " + REPO + ".");
       user = r[1]; store(false, t);
-      who.textContent = "";
-      who.appendChild(document.createTextNode(user.login));
-      who.appendChild(el("button", { text: "Se déconnecter", on: { click: function () { store(false, null); location.hash = "#/"; location.reload(); } } }));
+      // Prénom (Gus 17/11) : plusieurs personnes peuvent se connecter avec des clés du même compte GitHub (kinou-agency). Le
+      // prénom saisi à la connexion (gardé dans ce navigateur) remplace le login partout où l'admin écrit qui a fait quoi :
+      // messages des commits « (admin, Prénom) », historique, champs `by` des données. GitHub ne donne pas le nom de la clé.
+      user.gh = user.login; var nm = myName(); if (nm) user.login = nm;
+      showWho();
     }, function (e) { token = null; throw e; });
+  }
+  var NAME_KEY = "kinou-admin-name";
+  function myName() { try { return (localStorage.getItem(NAME_KEY) || "").trim(); } catch (e) { return ""; } }
+  function setName(v) { v = String(v || "").trim().replace(/[()]/g, ""); try { if (v) localStorage.setItem(NAME_KEY, v); else localStorage.removeItem(NAME_KEY); } catch (e) {} if (user) user.login = v || user.gh; }
+  function showWho() {
+    who.textContent = "";
+    var me = el("button", { class: "whome", title: "Changer le prénom affiché dans l'historique", text: user.login });
+    me.addEventListener("click", function () { var v = window.prompt("Ton prénom (pour l'historique : qui a publié quoi)", myName()); if (v === null) return; setName(v); showWho(); });
+    who.appendChild(me);
+      who.appendChild(el("button", { text: "Se déconnecter", on: { click: function () { store(false, null); location.hash = "#/"; location.reload(); } } }));
   }
   function showLogin(msg) {
     bar.hidden = true;
     var input = el("input", { type: "password", placeholder: "github_pat_…", autocomplete: "off" });
     var st = el("p", { class: "status" + (msg ? " err" : ""), text: msg || "" });
     var go = el("button", { class: "btn primary", text: "Se connecter" });
+    var nameIn = el("input", { type: "text", placeholder: "Prénom", autocomplete: "given-name", value: myName() });
     function submit() {
       if (!input.value.trim()) return;
+      if (!nameIn.value.trim()) { st.className = "status err"; st.textContent = "Écris ton prénom (il apparaît dans l'historique : qui a publié quoi)."; nameIn.focus(); return; }
+      setName(nameIn.value);
       go.disabled = true; st.className = "status"; st.textContent = "Vérification…";
       login(input.value.trim()).then(route, function (e) { go.disabled = false; st.className = "status err"; st.textContent = e.message; });
     }
     go.addEventListener("click", submit);
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
+    nameIn.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
     view.textContent = "";
     view.appendChild(el("div", { class: "login" }, [
       el("h1", { text: "Connexion" }),
-      el("p", { class: "lead", text: "Collez votre token GitHub personnel. Il reste enregistré dans ce navigateur." }),
+      el("p", { class: "lead", text: "Ton prénom et la clé GitHub qu'on t'a donnée. Ils restent enregistrés dans ce navigateur." }),
+      el("label", { class: "label", text: "Prénom" }),
+      el("div", { class: "row" }, [el("div", { class: "grow" }, [nameIn])]),
       el("label", { class: "label", text: "Token GitHub" }),
       el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), go]), st,
       el("ol", {}, [
         el("li", {}, ["Sur GitHub : Settings → Developer settings → Personal access tokens → ", el("b", { text: "Fine-grained tokens" }), " → Generate new token."]),
-        el("li", { text: "Resource owner : Kinou-DoP. Repository access : Only select repositories → admin." }),
+        el("li", { text: "Resource owner : Kinou-DoP. Repository access : Only select repositories → admin, site, notes. Expiration : No expiration." }),
         el("li", { text: "Permissions → Repository permissions → Contents : Read and write." }),
         el("li", { text: "Generate token, puis copiez-le ici." })
       ])
     ]));
-    input.focus();
+    (nameIn.value ? input : nameIn).focus();
   }
 
   // ---------- Liste des chefs op ----------

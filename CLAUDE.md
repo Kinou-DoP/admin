@@ -42,6 +42,11 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   privé), permission Contents : Read and write. Stocké dans le `localStorage` du navigateur, jamais dans le repo.
   Créé sans expiration (autorisé par l'organisation Kinou-DoP). Depuis le 04/11 : une clé sur le compte perso de Gus, une sur
   kinou-agency, une pour son frère (anciennes clés de kinou-agency supprimées ; projets Netlify supprimés).
+- **Prénom à la connexion** (Gus 17/11) : l'équipe peut se connecter avec des clés créées sur un même compte GitHub (kinou-agency,
+  une clé par personne, nommée « admin kinou – Prénom » pour pouvoir la supprimer seule) : GitHub ne donne pas le nom de la clé, donc
+  la page de connexion demande aussi le **prénom** (obligatoire, `localStorage` « kinou-admin-name », `myName` / `setName`), qui
+  remplace le login GitHub partout (`user.login` = prénom, `user.gh` = vrai login) : messages des commits « (admin, Prénom) »,
+  historique, champs `by` / `editedBy` des données. Clic sur le prénom en haut à droite = le changer.
 - **Ajouter une personne à l'admin** (Gus 04/11) : une clé ne peut jamais faire plus que le compte de la personne. Donc :
   1. l'inviter dans l'organisation Kinou-DoP (People → Invite member) ;
   2. lui donner le rôle **Write** sur les 3 dépôts `admin`, `site` et **`notes`** (dépôt → Settings → Collaborators and teams →
