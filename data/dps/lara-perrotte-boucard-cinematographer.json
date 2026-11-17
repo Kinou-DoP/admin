@@ -248,7 +248,13 @@
         "Fiction",
         "Serie",
         "narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection – Television Competition, American French Film Festival (ex-COLCOA) 2025",
+        "awardsFrom": {
+          "bee8ac9e098f": "Official selection – Television Competition, American French Film Festival (ex-COLCOA) 2025"
+        }
+      }
     },
     "10179": {
       "zoom": 1.22,
@@ -278,7 +284,13 @@
       "types": [
         "Serie",
         "narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection – Film d'ouverture, avant-première mondiale, Séries Mania 2025",
+        "awardsFrom": {
+          "48884bd911c5": "Official selection – Film d'ouverture, avant-première mondiale, Séries Mania 2025"
+        }
+      }
     },
     "10183": {
       "sub": "Sonia Sieff",

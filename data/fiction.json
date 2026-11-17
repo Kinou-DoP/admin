@@ -106,7 +106,15 @@
     "9982": {
       "zoom": 1.36,
       "genre": "FEATURE FILM",
-      "title": "Les Tourmentés"
+      "title": "Les Tourmentés",
+      "info": {
+        "awards": "Nominated, Les Flamboyants, Festival du Film Francophone d'Angoulême 2025\nOfficial selection – Compétition, Festival Cinéroman 2025\nOfficial selection – Film d'ouverture, Brussels International Film Festival (BRIFF) 2025",
+        "awardsFrom": {
+          "054b303377bb": "Nominated, Les Flamboyants, Festival du Film Francophone d'Angoulême 2025",
+          "f7c58fb79896": "Official selection – Compétition, Festival Cinéroman 2025",
+          "6bce4abaa4f0": "Official selection – Film d'ouverture, Brussels International Film Festival (BRIFF) 2025"
+        }
+      }
     },
     "10041": {
       "genre": "SERIES",
@@ -237,7 +245,13 @@
           ]
         }
       ],
-      "poster": "fiction/10117-mwdolaqv.webp"
+      "poster": "fiction/10117-mwdolaqv.webp",
+      "info": {
+        "awards": "Official selection – Television Competition, American French Film Festival (ex-COLCOA) 2025",
+        "awardsFrom": {
+          "bee8ac9e098f": "Official selection – Television Competition, American French Film Festival (ex-COLCOA) 2025"
+        }
+      }
     },
     "10140": {
       "zoom": 1.13,
@@ -590,6 +604,12 @@
       },
       "thumbCrop": {
         "y": 57.3
+      },
+      "info": {
+        "awards": "Official selection – Séance spéciale (Cinéma de la Plage), Festival de Cannes 2026",
+        "awardsFrom": {
+          "a201d51a232e": "Official selection – Séance spéciale (Cinéma de la Plage), Festival de Cannes 2026"
+        }
       }
     },
     "11008": {
@@ -651,7 +671,13 @@
         "x": 53.5,
         "y": 36.3
       },
-      "autoPast": true
+      "autoPast": true,
+      "info": {
+        "awards": "Official selection, Festival du film francophone d'Angoulême 2026",
+        "awardsFrom": {
+          "6cec44995b62": "Official selection, Festival du film francophone d'Angoulême 2026"
+        }
+      }
     },
     "11149": {
       "zoom": 1.36,
@@ -746,6 +772,12 @@
       "title": "Les Filles d'Abraham",
       "thumbCrop": {
         "y": 82.7
+      },
+      "info": {
+        "awards": "Official selection, Festival du film francophone d'Angoulême 2026",
+        "awardsFrom": {
+          "551e907cbc45": "Official selection, Festival du film francophone d'Angoulême 2026"
+        }
       }
     },
     "11195": {
@@ -895,7 +927,13 @@
           ]
         }
       ],
-      "poster": "fiction/11340-mwdpax9q.webp"
+      "poster": "fiction/11340-mwdpax9q.webp",
+      "info": {
+        "awards": "Official selection – Venice Open (hors compétition), Mostra de Venise (Venice International Film Festival, 83e) 2026",
+        "awardsFrom": {
+          "e85eec7d673f": "Official selection – Venice Open (hors compétition), Mostra de Venise (Venice International Film Festival, 83e) 2026"
+        }
+      }
     },
     "11342": {
       "genre": "FEATURE FILM",
@@ -908,6 +946,13 @@
       },
       "snipCrop": {
         "y": 48.3
+      },
+      "info": {
+        "awards": "Valois du scénario, Festival du film francophone d'Angoulême 2026\nValois des étudiants, Festival du film francophone d'Angoulême 2026",
+        "awardsFrom": {
+          "6ea661122e1e": "Valois du scénario, Festival du film francophone d'Angoulême 2026",
+          "f9711d21663f": "Valois des étudiants, Festival du film francophone d'Angoulême 2026"
+        }
       }
     },
     "11347": {

@@ -218,7 +218,14 @@
       "title": "Sei Fratelli",
       "types": [
         "Narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Nominated, Meilleure comédie, Globi d'Oro (Golden Globes Italy) 2024\nOfficial selection, Italian Film Festival Australia 2024",
+        "awardsFrom": {
+          "7b0d6bd217b0": "Nominated, Meilleure comédie, Globi d'Oro (Golden Globes Italy) 2024",
+          "8e4cd1c4cb4d": "Official selection, Italian Film Festival Australia 2024"
+        }
+      }
     },
     "8983": {
       "title": "Le Quatrième Mur",
@@ -234,7 +241,15 @@
         "Feature Film",
         "narrative"
       ],
-      "zoom": 1.34
+      "zoom": 1.34,
+      "info": {
+        "awards": "Nominated, Les Flamboyants, Festival du Film Francophone d'Angoulême 2025\nOfficial selection – Compétition, Festival Cinéroman 2025\nOfficial selection – Film d'ouverture, Brussels International Film Festival (BRIFF) 2025",
+        "awardsFrom": {
+          "054b303377bb": "Nominated, Les Flamboyants, Festival du Film Francophone d'Angoulême 2025",
+          "f7c58fb79896": "Official selection – Compétition, Festival Cinéroman 2025",
+          "6bce4abaa4f0": "Official selection – Film d'ouverture, Brussels International Film Festival (BRIFF) 2025"
+        }
+      }
     },
     "10299": {
       "title": "Furcy né libre",

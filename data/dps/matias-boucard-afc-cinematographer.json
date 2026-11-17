@@ -380,7 +380,13 @@
     "9555": {
       "title": "Carême",
       "zoom": 1.22,
-      "zoomPos": "20.4% 50%"
+      "zoomPos": "20.4% 50%",
+      "info": {
+        "awards": "Official selection – Film d'ouverture, avant-première mondiale, Séries Mania 2025",
+        "awardsFrom": {
+          "48884bd911c5": "Official selection – Film d'ouverture, avant-première mondiale, Séries Mania 2025"
+        }
+      }
     },
     "10038": {
       "zoom": 1.19,
@@ -479,7 +485,13 @@
             "https://images.slatecdn.net/3635weiGg7nNGwn3uJ2eEiPKKl2_orTWuS84Bxj-A5o/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMWNmNTg4/MjktNjhkZi00MWNh/LTkyZDAtODk0NWY4/YmMwMTJiL3N0aWxs/cy1zY29wZS0wMDA4/NjQ0NS5wbmc.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "awards": "Official selection – Television Competition, American French Film Festival (ex-COLCOA) 2025",
+        "awardsFrom": {
+          "bee8ac9e098f": "Official selection – Television Competition, American French Film Festival (ex-COLCOA) 2025"
+        }
+      }
     },
     "10345": {
       "title": "Canal+ - Tango"
