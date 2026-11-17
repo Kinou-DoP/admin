@@ -87,6 +87,13 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   (`info.awards`, ajoutées à la main avec « + Ajouter » ou depuis Nos sélections, marque « robot ») : texte modifiable, bouton
   affiché / masqué (masquées : `info.awardsHidden`, jamais sur le site), × pour retirer ; une ligne des robots corrigée garde son lien
   (`awardsFrom` mis à jour), masquée ou retirée n'est pas remise. Puis « Publier ». (Plus de champ « Prix & sélections » dans Infos du film.)
+- **Films reliés** (Gus 17/11) : un même film (même id Slate) sur une fiche, la page fiction et / ou le spotlight partage ses
+  **infos** (`info`, clé par clé : année, durée, caméra, synopsis, prix…) et ses **stills / vidéos sous le film** (`extras`, ancien
+  `stills` + `stillsLink`) : robot `tools/link-films.mjs` (branche main, avant fill-home dans `home-full.yml`) qui recopie ce que la
+  publication a changé (seulement les champs changés ; changé différemment sur deux pages dans la même publication = laissé).
+  Pas partagés : titre / crédits corrigés, masqué, recadrages, affiche, statut, date, plateformes de la fiction. Page ouverte avant
+  une recopie : à la publication, ce qu'elle n'a pas touché depuis son ouverture est repris de la version en ligne (`ovBase` /
+  `sharedSnap` / `sharedMerge`, fusion à trois). Mise en commun complète faite une fois le 17/11 (`ALL_LINK=1`).
 - Case « Aussi sur la vignette » : cocher / décocher arrête l'aperçu de l'extrait pour montrer la vignette.
 - Fiche, onglet ouvert (sauf ALL) : interrupteur « Présentation vidéo + stills » → `showcase` de la fiche (liste des onglets) ;
   le site affiche alors cet onglet en présentation « vidéo + 6 stills » (voir CLAUDE.md du site, `renderShow`). Les stills viennent

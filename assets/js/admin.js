@@ -183,7 +183,41 @@
       });
     });
     fullsFrom(dst, src);
+    sharedMerge(dst.overrides, so);
     awMerge(dst.overrides, so);
+  }
+  // Films reliés (Gus 17/11) : le robot recopie infos et stills / vidéos d'un film d'une page à l'autre (même id Slate :
+  // fiches, fiction, spotlight ; tools/link-films.mjs). Une page ouverte avant cette recopie ne doit pas la défaire en publiant :
+  // ce que la page n'a pas touché depuis son ouverture (`ovBase`) est repris de la version en ligne (fusion à trois).
+  var SHARED_KEYS = ["info", "extras", "stills", "stillsLink"], ovBase = {};
+  function sharedSnap(ov) {
+    var r = {};
+    Object.keys(ov || {}).forEach(function (id) {
+      var p = {}; SHARED_KEYS.forEach(function (k) { if (ov[id][k] !== undefined) p[k] = JSON.parse(JSON.stringify(ov[id][k])); });
+      if (Object.keys(p).length) r[id] = p;
+    });
+    return r;
+  }
+  function sharedMerge(dst, src) {
+    var J = function (x) { return JSON.stringify(x); };
+    var ids = {}; [dst, src, ovBase].forEach(function (o) { Object.keys(o || {}).forEach(function (id) { ids[id] = 1; }); });
+    Object.keys(ids).forEach(function (id) {
+      var base = ovBase[id] || {}, rem = sharedSnap({ x: (src || {})[id] || {} }).x || {}, loc = dst[id] || {}, o = Object.assign({}, loc), ch = false;
+      // Infos : clé par clé.
+      var bi = base.info || {}, ri = rem.info || {}, li = Object.assign({}, loc.info || {}), ki = {};
+      [bi, ri, li].forEach(function (x) { Object.keys(x).forEach(function (k) { ki[k] = 1; }); });
+      Object.keys(ki).forEach(function (k) {
+        if (/^awards/.test(k)) return; // prix : awMerge s'en charge (lignes ajoutées / retirées)
+        if (J(li[k]) === J(bi[k]) && J(ri[k]) !== J(bi[k])) { if (ri[k] === undefined) delete li[k]; else li[k] = ri[k]; ch = true; }
+      });
+      if (ch) { if (Object.keys(li).length) o.info = li; else delete o.info; }
+      SHARED_KEYS.forEach(function (k) {
+        if (k === "info") return;
+        if (J(loc[k]) === J(base[k]) && J(rem[k]) !== J(base[k])) { if (rem[k] === undefined) delete o[k]; else o[k] = rem[k]; ch = true; }
+      });
+      if (!ch) return;
+      if (Object.keys(o).length) dst[id] = o; else delete dst[id];
+    });
   }
   // Prix ajoutés par la synchronisation « Nos sélections » (`info.awardsFrom` = { id de la trouvaille: ligne }) : le fichier en
   // ligne fait foi. Une page ouverte avant la synchronisation les garde donc à la publication (lignes ajoutées ou retirées).
@@ -734,7 +768,7 @@
       var entry = slug && index.dps.filter(function (d) { return d.slug === slug; })[0];
       isNew = !r[1]; listed = !!entry; pending = {}; origSlug = listed || !isNew ? slug : null; // adresse actuelle
       state = r[1] || { slug: slug || "", name: entry ? entry.name : "", hue: 0, overrides: {}, about: {} };
-      state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false; histReset(); notesFor = null; // notes relues à chaque ouverture
+      state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false; histReset(); ovBase = sharedSnap(state.overrides); notesFor = null; // notes relues à chaque ouverture
       slate = state.clips ? { name: state.name, categories: state.categories || [], clips: state.clips } : null;
       curCat = null;
       render();
@@ -1556,7 +1590,7 @@
         robotFrom(out, d); if (!dirty) render();
         status(waitRobot ? "Le robot a ajouté les films complets : le site est à jour." : "Le robot a relu Slate : le site est à jour.", "ok");
       });
-      index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false; origSlug = out.slug; histReset();
+      index.dps = dps; pending = {}; isNew = false; listed = true; state = out; dirty = false; origSlug = out.slug; histReset(); ovBase = sharedSnap(out.overrides);
       if (homeData && home) home = null; // l'accueil sera relu (liens mis à jour)
       flash = from ? "Publié à la nouvelle adresse kinou.fr/" + out.slug + "." : waitRobot ? "Publié. Le robot ajoute les films complets des vidéos (environ 1 minute)…" : "Publié. Le site sera à jour dans une minute environ.";
       if (wasNew || from) location.hash = "#/dp/" + out.slug; else render();
@@ -1877,7 +1911,7 @@
     readFile("data/spotlight.json").then(function (s) {
       spot = s || { reel: "", categories: SPOT_CATS.slice(), overrides: {}, films: [] };
       spot.overrides = spot.overrides || {}; spot.categories = spot.categories || SPOT_CATS.slice();
-      dirty = false; histReset(); curCat = null; renderSpot();
+      dirty = false; histReset(); ovBase = sharedSnap(spot.overrides); curCat = null; renderSpot();
     }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
   }
   function spotSlate() {
@@ -1919,7 +1953,7 @@
           readFile("data/spotlight.json").then(function (s) {
             if (s && s.readAt && s.readAt !== before) {
               if (dirty) { st.textContent = "Bande relue : publiez vos changements puis rechargez la page pour la voir."; imp.disabled = false; return; }
-              spot = s; spot.overrides = spot.overrides || {}; histReset(); renderSpot();
+              spot = s; spot.overrides = spot.overrides || {}; histReset(); ovBase = sharedSnap(spot.overrides); renderSpot();
               status(s.readError ? "Lecture impossible : " + s.readError : (s.films || []).length + " films lus sur la bande.", s.readError ? "err" : "ok");
               return;
             }
@@ -1954,6 +1988,7 @@
     publishBtn.disabled = true; status("Publication…");
     return readFile("data/spotlight.json").then(function (remote) {
       var out = remote || {};
+      sharedMerge(spot.overrides, out.overrides); awMerge(spot.overrides, out.overrides); // films reliés / prix changés ailleurs entre-temps
       out.reel = spot.reel; out.categories = spot.categories; out.overrides = spot.overrides;
       // « Relire la bande » avec le même lien : sans ce changement le fichier serait identique, le commit vide
       // et le robot GitHub (lancé seulement quand data/spotlight.json change) ne relirait pas la bande.
@@ -1961,7 +1996,7 @@
       return commit([{ path: "data/spotlight.json", text: json(out) }], "Mise à jour du Spotlight (admin, " + user.login + ")").then(function (ref) { out._ref = ref; return out; });
     }).then(function (out) {
       var ref = out._ref; delete out._ref;
-      out.overrides = spot.overrides; spot = out; dirty = false; histReset();
+      out.overrides = spot.overrides; spot = out; dirty = false; histReset(); ovBase = sharedSnap(out.overrides);
       if (justLink !== true && needsRobot(extrasLists(out.overrides))) afterRobot("data/spotlight.json", ref, "spotlight", function (d) {
         if (spot !== out) return;
         fullsFrom(out, d); if (!dirty && pagePublish === publishSpot) renderSpot();
@@ -1985,7 +2020,7 @@
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
     readFile("data/fiction.json").then(function (s) {
       fic = s || { reel: "", overrides: {}, films: [] }; fic.overrides = fic.overrides || {};
-      pending = {}; dirty = false; histReset(); curCat = null; renderFic();
+      pending = {}; dirty = false; histReset(); ovBase = sharedSnap(fic.overrides); curCat = null; renderFic();
     }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
   }
   var FIC_TABS = { new: "NEW RELEASES", soon: "COMING SOON", past: "PAST RELEASES" };
@@ -2176,7 +2211,7 @@
           readFile("data/fiction.json").then(function (s) {
             if (s && s.readAt && s.readAt !== before) {
               if (dirty) { st.textContent = "Bande relue : publiez vos changements puis rechargez la page pour la voir."; imp.disabled = false; return; }
-              fic = s; fic.overrides = fic.overrides || {}; histReset(); renderFic();
+              fic = s; fic.overrides = fic.overrides || {}; histReset(); ovBase = sharedSnap(fic.overrides); renderFic();
               status(s.readError ? "Lecture impossible : " + s.readError : (s.films || []).length + " films lus sur la bande.", s.readError ? "err" : "ok");
               return;
             }
@@ -2205,6 +2240,7 @@
     }
     return readFile("data/fiction.json").then(function (remote) {
       var out = remote || {};
+      sharedMerge(fic.overrides, out.overrides); // films reliés : changé sur une fiche ou le spotlight entre-temps
       awMerge(fic.overrides, out.overrides); // prix ajoutés depuis « Nos sélections » entre-temps
       out.reel = fic.reel; out.overrides = fic.overrides;
       if (justLink === true) out.readAsk = new Date().toISOString(); // fichier changé même avec le même lien → le robot relit la bande
@@ -2212,7 +2248,7 @@
       return commit(files, "Mise à jour de la page fiction (admin, " + user.login + ")").then(function (ref) { out._ref = ref; return out; });
     }).then(function (out) {
       var ref = out._ref; delete out._ref;
-      out.overrides = fic.overrides; fic = out; pending = {}; dirty = false; histReset();
+      out.overrides = fic.overrides; fic = out; pending = {}; dirty = false; histReset(); ovBase = sharedSnap(out.overrides);
       if (justLink !== true && needsRobot(extrasLists(out.overrides))) afterRobot("data/fiction.json", ref, "fiction", function (d) {
         if (fic !== out) return;
         fullsFrom(out, d); if (!dirty && pagePublish === publishFic) renderFic();
