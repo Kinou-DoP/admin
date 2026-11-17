@@ -82,7 +82,11 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   (`video`), vide = pas encore d'extrait (à « snipper » sur Slate, puis « Relire le bundle ») ; rien sur un projet en images seulement.
 - Infos du film (Gus 04/11, fiches, spotlight, fiction) : bloc replié « + Infos du film » sous les crédits (`infoCtl`, titre = nombre
   de champs remplis) : année, épisodes, durée, format d'image, plateformes (pas sur la fiction : déjà en étiquettes), caméra,
-  optiques, prix & sélections (une ligne chacun), synopsis français (`synopsis`) et anglais (`synopsisEn`) → `overrides[<id>].info`. Affichage : CLAUDE.md du site (`info`).
+  optiques, synopsis français (`synopsis`) et anglais (`synopsisEn`) → `overrides[<id>].info`. Affichage : CLAUDE.md du site (`info`).
+- **Prix & sélections** (Gus 17/11, `awardsCtl`, fiches, spotlight, fiction) : bloc sous la vidéo de chaque film, une ligne par prix
+  (`info.awards`, ajoutées à la main avec « + Ajouter » ou depuis Nos sélections, marque « robot ») : texte modifiable, bouton
+  affiché / masqué (masquées : `info.awardsHidden`, jamais sur le site), × pour retirer ; une ligne des robots corrigée garde son lien
+  (`awardsFrom` mis à jour), masquée ou retirée n'est pas remise. Puis « Publier ». (Plus de champ « Prix & sélections » dans Infos du film.)
 - Case « Aussi sur la vignette » : cocher / décocher arrête l'aperçu de l'extrait pour montrer la vignette.
 - Fiche, onglet ouvert (sauf ALL) : interrupteur « Présentation vidéo + stills » → `showcase` de la fiche (liste des onglets) ;
   le site affiche alors cet onglet en présentation « vidéo + 6 stills » (voir CLAUDE.md du site, `renderShow`). Les stills viennent

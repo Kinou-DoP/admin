@@ -696,3 +696,20 @@ body.readonly.webpage #view .gender, body.readonly.webpage #view .showsw, body.r
 body.readonly.webpage #view input[type=text], body.readonly.webpage #view input[type=url], body.readonly.webpage #view input:not([type]), body.readonly.webpage #view select, body.readonly.webpage #view textarea:not(.nodirty), body.readonly.webpage #view .gender, body.readonly.webpage #view .showsw { opacity: .6; }
 body.readonly.webpage #publish { display: none; }
 body.readonly.webpage::before { content: "Lecture seule"; position: fixed; z-index: 9; top: calc(env(safe-area-inset-top, 0px) + 12px); left: 50%; transform: translateX(-50%); padding: 5px 12px; border: 1px solid var(--faint); border-radius: 14px; background: rgba(0,0,0,.85); color: var(--dim); font-family: var(--kinou-sans); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; pointer-events: none; }
+/* Prix & sélections d'un film, sous la vidéo (Gus 17/11). */
+.awbox { margin: 10px 0 4px; padding: 8px 10px; border: 1px solid var(--faint); }
+.awhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.awhead .label { font-size: 10px; }
+.awadd { padding: 0; border: 0; background: none; color: var(--dim); font-family: var(--kinou-sans); font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+.awadd:hover { color: var(--kinou-fg); }
+.awlist:not(:empty) { margin-top: 6px; }
+.awrow { display: flex; align-items: center; gap: 6px; }
+.awrow input { flex: 1; min-width: 0; padding: 4px 0; border: 0; border-bottom: 1px solid transparent; background: none; color: var(--kinou-fg); font: inherit; font-size: 12px; }
+.awrow input:focus { border-bottom-color: var(--faint); outline: none; }
+.awrow.off input { color: var(--dim); text-decoration: line-through; }
+.aweye { flex: none; width: 58px; padding: 2px 0; border: 1px solid var(--faint); border-radius: 10px; background: none; color: var(--kinou-fg); font-family: var(--kinou-sans); font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.aweye.off { color: var(--dim); }
+.awbot { flex: none; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+.awdel { flex: none; padding: 0 2px; border: 0; background: none; color: var(--dim); font-size: 15px; cursor: pointer; }
+.awdel:hover { color: var(--kinou-fg); }
+body.readonly.webpage #view .awbox button { pointer-events: none; }

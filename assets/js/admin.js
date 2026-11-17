@@ -192,11 +192,19 @@
       var sf = (src[id].info || {}).awardsFrom, d = dst[id], df = d && d.info && d.info.awardsFrom;
       if (!sf && !df) return;
       d = dst[id] || (dst[id] = {}); var info = d.info = Object.assign({}, d.info || {}); df = info.awardsFrom || {}; sf = sf || {};
-      var lines = String(info.awards || "").split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean);
-      Object.keys(df).forEach(function (k) { if (!(k in sf)) { var i = lines.indexOf(df[k]); if (i > -1) lines.splice(i, 1); } });
-      Object.keys(sf).forEach(function (k) { if (!(k in df) && lines.indexOf(sf[k]) < 0) lines.push(sf[k]); });
+      var lines = String(info.awards || "").split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean), hid = (info.awardsHidden || []).slice(), nf = {};
+      Object.keys(df).forEach(function (k) {
+        if (k in sf) return;
+        var i = lines.indexOf(df[k]); if (i > -1) lines.splice(i, 1);
+        i = hid.indexOf(df[k]); if (i > -1) hid.splice(i, 1);
+      });
+      Object.keys(sf).forEach(function (k) {
+        if (k in df) { nf[k] = df[k]; return; } // ligne déjà là, peut-être corrigée ou masquée ici : on garde la version de la page
+        nf[k] = sf[k]; if (lines.indexOf(sf[k]) < 0 && hid.indexOf(sf[k]) < 0) lines.push(sf[k]);
+      });
       info.awards = lines.join("\n"); if (!info.awards) delete info.awards;
-      if (Object.keys(sf).length) info.awardsFrom = sf; else delete info.awardsFrom;
+      if (hid.length) info.awardsHidden = hid; else delete info.awardsHidden;
+      if (Object.keys(nf).length) info.awardsFrom = nf; else delete info.awardsFrom;
     });
   }
   function afterRobot(path, ref, slug, done) {
@@ -1229,6 +1237,7 @@
       function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
     card.appendChild(thumb); card.appendChild(zoom);
     if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
+    card.appendChild(awardsCtl(c));
     card.appendChild(title); card.appendChild(sub);
     if (state === fic) card.appendChild(ficCtl(c));
     card.appendChild(infoCtl(c));
@@ -1992,11 +2001,64 @@
   // (et la ligne année | durée | format dans la présentation vidéo + stills). Bloc replié ; son titre dit combien sont remplies.
   var INFO_FIELDS = [["year", "Année", "2025"], ["episodes", "Épisodes", "8 (séries)"], ["runtime", "Durée", "90 min"], ["ratio", "Format d'image", "1.85"],
     ["platforms", "Plateformes", "Netflix, Canal+"], ["camera", "Caméra", "ALEXA 35"], ["lenses", "Optiques", "Cooke S4"],
-    ["awards", "Prix & sélections", "Un prix ou une sélection par ligne", 3], ["synopsis", "Synopsis (français)", "Une ligne vide entre deux paragraphes", 5], ["synopsisEn", "Synopsis (anglais)", "Sur le site : l'anglais d'abord, avec un choix EN / FR si les deux sont remplis", 5]];
+    ["synopsis", "Synopsis (français)", "Une ligne vide entre deux paragraphes", 5], ["synopsisEn", "Synopsis (anglais)", "Sur le site : l'anglais d'abord, avec un choix EN / FR si les deux sont remplis", 5]];
+  // Prix & sélections du film (Gus 17/11), sous la vidéo : une ligne par prix (ajoutées à la main ou depuis « Nos sélections »),
+  // texte modifiable, œil = affichée / masquée sur le site (masquées : `info.awardsHidden`, le site ne lit que `info.awards`),
+  // × = retirée (une ligne des robots retirée n'est pas remise). Une ligne corrigée garde son lien avec la trouvaille (`awardsFrom`).
+  function awardsCtl(c) {
+    function cur() { return (state.overrides[c.slate] || {}).info || {}; }
+    var box = el("div", { class: "awbox" }), list = el("div", { class: "awlist" });
+    function lines() { return String(cur().awards || "").split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean); }
+    function save(vis, hid, ren) {
+      var i = Object.assign({}, cur());
+      vis = vis.map(function (x) { return x.trim(); }).filter(Boolean); hid = hid.map(function (x) { return x.trim(); }).filter(Boolean);
+      if (vis.length) i.awards = vis.join("\n"); else delete i.awards;
+      if (hid.length) i.awardsHidden = hid; else delete i.awardsHidden;
+      if (ren && i.awardsFrom) { var f = Object.assign({}, i.awardsFrom); Object.keys(f).forEach(function (k) { if (f[k] === ren[0]) f[k] = ren[1]; }); i.awardsFrom = f; }
+      setOverride(c, "info", Object.keys(i).length ? i : undefined); touch();
+    }
+    function draw() {
+      list.textContent = "";
+      var vis = lines(), hid = (cur().awardsHidden || []).slice(), from = cur().awardsFrom || {}, robot = {};
+      Object.keys(from).forEach(function (k) { robot[from[k]] = 1; });
+      function row(t, k, hidden) {
+        var inp = el("input", { type: "text", value: t, title: t, placeholder: "Prix, Festival 2026" }), last = t;
+        inp.addEventListener("change", function () {
+          var v = inp.value.trim(), a = lines(), h = (cur().awardsHidden || []).slice(), arr = hidden ? h : a, j = arr.indexOf(last);
+          if (j < 0) return; if (v) arr[j] = v; else arr.splice(j, 1);
+          save(a, h, v ? [last, v] : null); last = v; if (!v) draw();
+        });
+        var eye = el("button", { type: "button", class: "aweye" + (hidden ? " off" : ""), title: hidden ? "Masqué sur le site : cliquer pour l'afficher" : "Affiché sur le site : cliquer pour le masquer", text: hidden ? "masqué" : "affiché" });
+        eye.addEventListener("click", function () {
+          var a = lines(), h = (cur().awardsHidden || []).slice();
+          if (hidden) { h.splice(h.indexOf(last), 1); a.push(last); } else { a.splice(a.indexOf(last), 1); h.push(last); }
+          save(a, h); draw();
+        });
+        var del = el("button", { type: "button", class: "awdel", title: "Retirer", text: "×" });
+        del.addEventListener("click", function () {
+          var a = lines(), h = (cur().awardsHidden || []).slice(), arr = hidden ? h : a, j = arr.indexOf(last);
+          if (j > -1) arr.splice(j, 1); save(a, h); draw();
+        });
+        return el("div", { class: "awrow" + (hidden ? " off" : "") }, [eye, inp, robot[t] ? el("span", { class: "awbot", title: "Ajouté depuis Nos sélections", text: "robot" }) : null, del]);
+      }
+      vis.forEach(function (t, k) { list.appendChild(row(t, k, false)); });
+      hid.forEach(function (t, k) { list.appendChild(row(t, k, true)); });
+      head.textContent = "Prix & sélections" + (vis.length + hid.length ? " · " + vis.length + (hid.length ? " (+ " + hid.length + " masqué" + (hid.length > 1 ? "s" : "") + ")" : "") : "");
+    }
+    var head = el("span", { class: "label" });
+    var add = el("button", { type: "button", class: "awadd", text: "+ Ajouter" });
+    add.addEventListener("click", function () {
+      var v = window.prompt("Prix ou sélection (ex. « Best Cinematography, Festival 2026 »)");
+      if (!v || !v.trim()) return; var a = lines(); a.push(v.trim()); save(a, (cur().awardsHidden || []).slice()); draw();
+    });
+    box.appendChild(el("div", { class: "awhead" }, [head, add])); box.appendChild(list);
+    draw();
+    return box;
+  }
   function infoCtl(c) {
     function cur() { return (state.overrides[c.slate] || {}).info || {}; }
     var sum = el("summary"), grid = el("div", { class: "infogrid" }), box = el("details", { class: "infobox" }, [sum, grid]);
-    function count() { var n = Object.keys(cur()).filter(function (k) { return k !== "awardsFrom"; }).length; sum.textContent = "Infos du film" + (n ? " · " + n + " renseignée" + (n > 1 ? "s" : "") : ""); }
+    function count() { var n = Object.keys(cur()).filter(function (k) { return !/^awards/.test(k); }).length; sum.textContent = "Infos du film" + (n ? " · " + n + " renseignée" + (n > 1 ? "s" : "") : ""); }
     INFO_FIELDS.forEach(function (f) {
       if (f[0] === "platforms" && state === fic) return; // fiction : plateformes déjà réglées plus haut (étiquettes)
       var inp = f[3] ? el("textarea", { rows: String(f[3]), placeholder: f[2] }) : el("input", { type: "text", placeholder: f[2] });
@@ -2004,7 +2066,7 @@
       inp.addEventListener("input", function () {
         var i = Object.assign({}, cur()), v = inp.value.trim();
         if (v) i[f[0]] = v; else delete i[f[0]];
-        setOverride(c, "info", Object.keys(i).filter(function (k) { return k !== "awardsFrom"; }).length ? i : undefined); count();
+        setOverride(c, "info", Object.keys(i).length ? i : undefined); count();
       });
       grid.appendChild(el("label", { class: "ifield" + (f[3] ? " wide" : "") }, [el("span", { class: "label", text: f[1] }), inp]));
     });
@@ -2712,17 +2774,23 @@
   }
   function awApply(ov, id, items) {
     var o = ov[id] || {}, info = Object.assign({}, o.info || {}), from = Object.assign({}, info.awardsFrom || {}), ch = false, want = {};
-    var lines = String(info.awards || "").split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean);
+    var lines = String(info.awards || "").split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean), hid = (info.awardsHidden || []).slice();
     items.forEach(function (x) { want[x.id] = 1; });
-    Object.keys(from).forEach(function (k) { if (!want[k]) { var i = lines.indexOf(from[k]); if (i > -1) lines.splice(i, 1); delete from[k]; ch = true; } });
+    Object.keys(from).forEach(function (k) {
+      if (want[k]) return;
+      var i = lines.indexOf(from[k]); if (i > -1) lines.splice(i, 1);
+      i = hid.indexOf(from[k]); if (i > -1) hid.splice(i, 1);
+      delete from[k]; ch = true;
+    });
     function rk(x) { return x.kind === "prize" ? 0 : x.kind === "nomination" ? 1 : 2; }
     items.slice().sort(function (a, b) { return rk(a) - rk(b) || String(b.edition || b.date || "").localeCompare(String(a.edition || a.date || "")); }).forEach(function (x) {
       if (from[x.id] !== undefined) return;
-      var l = awLine(x); if (!lines.some(function (z) { return sortNrm(z) === sortNrm(l); })) lines.push(l);
+      var l = awLine(x); if (!lines.concat(hid).some(function (z) { return sortNrm(z) === sortNrm(l); })) lines.push(l);
       from[x.id] = l; ch = true;
     });
     if (!ch) return false;
     info.awards = lines.join("\n"); if (!info.awards) delete info.awards;
+    if (hid.length) info.awardsHidden = hid; else delete info.awardsHidden;
     if (Object.keys(from).length) info.awardsFrom = from; else delete info.awardsFrom;
     ov[id] = Object.assign({}, o, { info: info });
     return true;
