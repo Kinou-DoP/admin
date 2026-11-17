@@ -727,10 +727,10 @@ body.readonly.webpage #view .awbox button { pointer-events: none; }
   .ssub > div { margin-left: var(--subx, 0); padding-left: 10px; border-left: 1px solid var(--faint); }
   .ssub:not(.open) > div { border-left-color: transparent; }
 }
-/* Téléphone : nom et « Se déconnecter » sur une petite ligne en haut à gauche, au-dessus du logo. */
+/* Téléphone : nom et « Se déconnecter » sur une petite ligne en haut à droite, au-dessus du logo. */
 @media (max-width: 700px) {
   .top { flex-wrap: wrap; row-gap: 10px; }
-  .who { order: -1; flex: 1 0 100%; margin-left: 0; display: flex; align-items: baseline; gap: 16px; white-space: nowrap; font-size: 10px; }
+  .who { order: -1; flex: 1 0 100%; margin-left: 0; display: flex; justify-content: flex-end; align-items: baseline; gap: 16px; white-space: nowrap; font-size: 10px; }
   .who button { margin-left: 0; }
 }
 /* Téléphone : boutons des formulaires (festivals, sélections, sorties, récupération) qui passent à la ligne au lieu de dépasser. */
@@ -740,8 +740,18 @@ body.readonly.webpage #view .awbox button { pointer-events: none; }
   .ffoot > div .btn, .fwbtns .btn { flex: 1 1 auto; }
 }
 /* Sorties fiction, téléphone : ‹ période › sur la première ligne (titre au milieu), puis ⇤ ⇥, Aujourd'hui, Mois / Semaine (Gus 18/11). */
+/* Téléphone : ⇤ ‹ période › ⇥ sur la 1re ligne, puis « Aujourd'hui » seul à gauche, puis Mois / Semaine seul à gauche (Gus 18/11). */
 @media (max-width: 700px) {
-  .calbar .caltitle { order: 0; flex: 1 1 calc(100% - 110px); min-width: 0; text-align: center; font-size: 17px; white-space: nowrap; }
-  .calbar .calm { order: 0; }
-  .calbar > :not(.calm):not(.caltitle) { order: 1; }
+  .calbar { gap: 4px; }
+  .calbar .calm { width: 32px; height: 34px; order: 0; }
+  .calbar .calj { width: 26px; order: 0; }
+  .calbar .caltitle { order: 0; flex: 1 1 0; min-width: 0; text-align: center; font-size: 16px; white-space: nowrap; }
+  .calbar::before { content: ""; order: 1; flex-basis: 100%; height: 6px; }
+  .calbar .caltoday { order: 2; padding-left: 0; }
+  .calbar::after { content: ""; order: 3; flex-basis: 100%; height: 0; }
+  .calbar .rcmode { order: 4; }
+  .calbar .rcgap { display: none; }
+  .calbar .fadd { order: 5; flex-basis: 100%; margin-top: 8px; }
 }
+@media (max-width: 380px) { .calbar .caly { display: none; } } /* petit écran : sans l'année */
+.cal { touch-action: pan-y; }

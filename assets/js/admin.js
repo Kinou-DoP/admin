@@ -3119,7 +3119,7 @@
   // Sorties connues (page fiction du site + sorties.json) et films sans date (projets.json) : calendrier et accueil de l'admin.
     // Toutes les sorties connues + films sans date ; infos (réal, chef op, prod) complétées par projets.json et la page fiction.
   function sortBuild(fic, proj, sorties) {
-      var nrm = sortNrm, events = [], noDate = [], ficEv = [];
+      var nrm = sortNrm, events = [], noDate = [], ficEv = [], ficAll = [];
       var byTitle = {}, projs = ((proj && proj.projects) || []).filter(function (p) { return /^(LM|TVF|STV)$/.test(p.type) && !p.agency && p.title && !p.workTitle; });
       projs.forEach(function (p) { byTitle[nrm(p.title)] = p; });
       var seen = {};
@@ -3129,6 +3129,7 @@
         var o = ov[f.slate] || {}, t = ficTitle(o.title || f.title), p = byTitle[nrm(t)], sub = String(f.sub || "").split("\n");
         var info = { title: t, slate: f.slate, project: p && p.id, directors: p ? p.directors || [] : sub[0] ? sub[0].split(/,\s*/) : [], dops: f.artists || (p && p.dops) || [],
           prod: (p && p.prod) || sub[1] || "", platforms: o.platforms || [], series: o.genre === "SERIES" || /series/i.test((f.cats || []).join(" ")), img: f.img };
+        ficAll.push(info);
         if (o.date) { var fe = Object.assign({}, info, { date: o.date, kind: (o.platforms || []).length ? "platform" : "cinema", source: "fiction", id: "fic-" + f.slate }); add(fe); ficEv.push(fe); }
         else seen["nd|" + nrm(t)] = info;
         if (p) seen["p|" + p.id] = 1;
@@ -3139,6 +3140,9 @@
         // « Ce qui nous mène à toi » sur le site, Gus 17/11) : la date de la page fiction l'emporte sur celle du robot.
         var twin = ficEv.filter(function (e) { return sortSame(e.title, r.title) && (r.date === e.date || sortDop(e.dops, p ? p.dops : r.dops)); })[0];
         if (twin && (r.source !== "human" || r.date === twin.date)) { if (p) seen["p|" + p.id] = 1; return; }
+        // Même film sur la page fiction (sans date là-bas) : lien vers sa vidéo sur le site (Gus 18/11).
+        var fm = ficAll.filter(function (e) { return sortSame(e.title, r.title) && (!e.dops.length || sortDop(e.dops, p ? p.dops : r.dops) || sortNrm(e.title) === sortNrm(r.title)); })[0];
+        if (fm) r = Object.assign({}, r, { ficSlate: fm.slate });
         add(Object.assign({ directors: p ? p.directors || [] : [], dops: p ? p.dops || [] : [], prod: p ? p.prod || "" : "", platforms: r.platform ? [r.platform] : [], series: p ? p.type === "STV" : false }, r));
         if (p) seen["p|" + p.id] = 1;
       });
@@ -3166,9 +3170,9 @@
     function build() { var r = sortBuild(fic, proj, sorties); events = r.events; noDate = r.noDate; }
     // Film de la page fiction : lien vers le site (pas l'admin), lecteur ouvert sur le film, dans son onglet (Gus 18/11).
     function ficLink(x) {
-      var o = (fic && fic.overrides && fic.overrides[x.slate]) || {};
+      var id = x.source === "fiction" ? x.slate : x.ficSlate, o = (fic && fic.overrides && fic.overrides[id]) || {};
       var tab = o.status === "new" ? "featured" : o.status === "soon" ? "coming-soon" : "past-releases";
-      return SITE_VIEW + "/fiction/" + tab + "/" + encodeURIComponent(x.slate);
+      return SITE_VIEW + "/fiction/" + tab + "/" + encodeURIComponent(id);
     }
     function hay(e) { return nrm([e.title, (e.directors || []).join(" "), (e.dops || []).join(" "), e.prod, (e.platforms || []).join(" "), e.country, SK[e.kind]].join(" ")); }
     function match(e) { var w = nrm(st.q).split(" ").filter(Boolean); if (!w.length) return true; var h = hay(e); return w.every(function (x) { return h.indexOf(x) > -1; }); }
@@ -3210,10 +3214,10 @@
       box.appendChild(el("div", { class: "calbar" }, [
         el("button", { type: "button", class: "btn ghost calj", title: "Sortie précédente", disabled: !before, text: "⇤", on: { click: function () { jump(-1); } } }),
         el("button", { type: "button", class: "btn calm", title: st.mode === "month" ? "Mois précédent" : "Semaine précédente", text: "‹", on: { click: function () { move(-1); } } }),
-        el("strong", { class: "caltitle", text: title }),
+        el("strong", { class: "caltitle" }, [title.replace(/ \d{4}$/, ""), el("span", { class: "caly", text: " " + r[1].getFullYear() })]),
         el("button", { type: "button", class: "btn calm", title: st.mode === "month" ? "Mois suivant" : "Semaine suivante", text: "›", on: { click: function () { move(1); } } }),
         el("button", { type: "button", class: "btn ghost calj", title: "Sortie suivante", disabled: !after, text: "⇥", on: { click: function () { jump(1); } } }),
-        el("button", { type: "button", class: "btn ghost", text: "Aujourd'hui", on: { click: function () { st.at = today(); draw(); } } }),
+        el("button", { type: "button", class: "btn ghost caltoday", text: "Aujourd'hui", on: { click: function () { st.at = today(); draw(); } } }),
         el("span", { class: "rcgap" }),
         el("div", { class: "rcmode" }, [["month", "Mois"], ["week", "Semaine"]].map(function (m) { return el("button", { type: "button", class: st.mode === m[0] ? "on" : "", text: m[1], on: { click: function () { st.mode = m[0]; draw(); } } }); })),
         el("button", { type: "button", class: "btn fadd", text: "+ Ajouter une sortie", on: { click: function (e) { form(null, e.target.closest(".calbar")); } } })
@@ -3237,12 +3241,28 @@
         g.appendChild(cell);
       }
       // Téléphone : balayer le calendrier vers la gauche / la droite = période suivante / précédente (Gus 18/11).
-      var tx = null;
-      g.addEventListener("touchstart", function (e) { var t = e.touches[0]; tx = e.touches.length === 1 ? [t.clientX, t.clientY] : null; }, { passive: true });
+      // Le calendrier suit le doigt, puis glisse hors de l'écran et le suivant arrive du côté opposé (Gus 18/11).
+      var tx = null, horiz = null;
+      g.addEventListener("touchstart", function (e) { var t = e.touches[0]; tx = e.touches.length === 1 ? [t.clientX, t.clientY] : null; horiz = null; g.style.transition = "none"; }, { passive: true });
+      g.addEventListener("touchmove", function (e) {
+        if (!tx) return; var t = e.touches[0], dx = t.clientX - tx[0], dy = t.clientY - tx[1];
+        if (horiz === null && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) horiz = Math.abs(dx) > Math.abs(dy) * 1.2;
+        if (horiz) { g.style.transform = "translateX(" + dx + "px)"; g.style.opacity = String(1 - Math.min(.5, Math.abs(dx) / 600)); }
+      }, { passive: true });
       g.addEventListener("touchend", function (e) {
         if (!tx) return; var t = e.changedTouches[0], dx = t.clientX - tx[0], dy = t.clientY - tx[1]; tx = null;
-        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) move(dx < 0 ? 1 : -1);
+        g.style.transition = "transform .22s ease, opacity .22s ease";
+        if (horiz && Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+          var k = dx < 0 ? 1 : -1;
+          g.style.transform = "translateX(" + (-k * 110) + "%)"; g.style.opacity = "0";
+          setTimeout(function () { st.enter = k; move(k); }, 200);
+        } else { g.style.transform = ""; g.style.opacity = ""; }
       });
+      if (st.enter) { // arrivée de la nouvelle période, depuis le côté opposé
+        var k0 = st.enter; st.enter = 0;
+        g.style.transition = "none"; g.style.transform = "translateX(" + (k0 * 60) + "%)"; g.style.opacity = "0";
+        requestAnimationFrame(function () { requestAnimationFrame(function () { g.style.transition = "transform .26s cubic-bezier(.2,.7,.2,1), opacity .26s ease"; g.style.transform = ""; g.style.opacity = ""; }); });
+      }
       box.appendChild(g);
       box.appendChild(el("p", { class: "hint callegend" }, ["Blanc : cinéma · bleu : plateforme / télé · bord pointillé : série · le mercredi (sorties en salle en France) est souligné. ", before || after ? (before + " sortie" + (before > 1 ? "s" : "") + " avant, " + after + " après cette période" + (st.q ? " (avec la recherche)" : "") + " : ⇤ ⇥ pour y aller.") : ""]));
       // À venir.
@@ -3278,7 +3298,8 @@
         el("p", { class: "hint", text: [(x.directors || []).length && "Réalisation : " + x.directors.join(", "), (x.dops || []).length && "Image : " + x.dops.map(rcBase).join(", "), x.prod && "Production : " + x.prod].filter(Boolean).join(" · ") }),
         el("p", { class: "hint", text: "Source : " + (srcs[x.source] || x.source || "") }),
         el("div", { class: "fwbtns" }, [x.url ? el("a", { class: "btn", href: x.url, target: "_blank", rel: "noopener", text: /imdb\.com/.test(x.url) ? "IMDb ↗" : "Source ↗" }) : null,
-          x.source !== "fiction" ? el("button", { type: "button", class: "btn", text: "Modifier", on: { click: function () { d.remove(); form(x, at.closest(".cal")); } } }) : el("a", { class: "btn", href: ficLink(x), target: "_blank", rel: "noopener", text: "Page fiction ↗" }),
+          x.source !== "fiction" ? el("button", { type: "button", class: "btn", text: "Modifier", on: { click: function () { d.remove(); form(x, at.closest(".cal")); } } }) : null,
+          x.source === "fiction" || x.ficSlate ? el("a", { class: "btn", href: ficLink(x), target: "_blank", rel: "noopener", text: "Page fiction ↗" }) : null,
           // Sortie trouvée par le robot : « Confirmer » = vérifiée par l'équipe → gardée pour toujours dans l'archive (plus une donnée TMDB).
           x.source === "tmdb" || x.source === "claude" ? el("button", { type: "button", class: "btn primary", text: "Confirmer", title: "Date vérifiée : gardée pour toujours dans nos archives", on: { click: function (e) {
             var y = JSON.parse(JSON.stringify(x)); ["directors", "dops", "prod", "platforms", "series", "img"].forEach(function (k) { delete y[k]; });
@@ -3761,6 +3782,16 @@
   }
   // Téléphone (menu à l'horizontale) : la ligne des sous-rubriques commence sous sa rubrique (Gus 18/11), pas au bord gauche.
   function subX() {
+    // Ligne des sous-rubriques placée juste sous la ligne de sa rubrique (pas sous toutes les rubriques) : ce qui est sur les lignes
+    // suivantes passe après elle (ordre CSS), Gus 18/11.
+    var kids = [].slice.call(side.children), narrow = matchMedia("(max-width: 900px)").matches;
+    kids.forEach(function (k) { k.style.order = k.classList.contains("ssub") ? "99" : ""; });
+    var open = narrow && side.querySelector(".ssub.open"), ob = open && side.querySelector("button.sgroup[data-group='" + open.dataset.group + "']");
+    if (ob) {
+      var top = ob.offsetTop;
+      kids.forEach(function (k) { if (!k.classList.contains("ssub")) k.style.order = k.classList.contains("histlink") ? "40" : k.offsetTop > top + 4 ? "30" : "0"; });
+      open.style.order = "10";
+    } else if (!narrow) kids.forEach(function (k) { k.style.order = ""; });
     side.querySelectorAll(".ssub").forEach(function (x) {
       var b = side.querySelector("button.sgroup[data-group='" + x.dataset.group + "']");
       var dx = b ? b.getBoundingClientRect().left - side.getBoundingClientRect().left - parseFloat(getComputedStyle(side).paddingLeft || 0) : 0;
