@@ -3465,15 +3465,18 @@
   // Petite fenêtre (lien « historique » du menu) : derniers commits de data/ sur GitHub = qui a publié quoi et quand.
   // Sur une fiche / l'accueil / le contact : l'historique de ce fichier, avec un bouton pour tout voir.
   var histBox = document.getElementById("hist"), histAll = false;
+  // Sources de l'historique : [dépôt, chemin]. Les pages festivals, nos sélections, récupération et sorties fiction enregistrent
+  // dans le dépôt privé notes (Gus 17/11 : on ne voyait pas leurs changements) ; une fiche : aussi ses notes internes.
+  var HIST_NOTES = ["festivals/festivals.json", "festivals/selections.json", "projets/projets.json", "sorties/sorties.json", "dps"];
   function histPath() {
     var h = location.hash;
-    if (/^#\/dp\//.test(h)) return "data/dps/" + decodeURIComponent(h.slice(5)) + ".json";
-    if (h === "#/home") return "data/home.json";
-    if (h === "#/contact") return "data/contact.json";
-    if (h === "#/spotlight") return "data/spotlight.json";
-    if (h === "#/fiction") return "data/fiction.json";
-    return null;
+    if (/^#\/dp\//.test(h)) { var sl = decodeURIComponent(h.slice(5)); return [[REPO, "data/dps/" + sl + ".json"], [NOTES_REPO, "dps/" + sl + ".md"]]; }
+    var one = { "#/home": [REPO, "data/home.json"], "#/contact": [REPO, "data/contact.json"], "#/spotlight": [REPO, "data/spotlight.json"],
+      "#/fiction": [REPO, "data/fiction.json"], "#/festivals": [NOTES_REPO, "festivals/festivals.json"], "#/selections": [NOTES_REPO, "festivals/selections.json"],
+      "#/recup": [NOTES_REPO, "projets/projets.json"], "#/sorties": [NOTES_REPO, "sorties/sorties.json"] }[h];
+    return one ? [one] : null;
   }
+  function histAllSrc() { return [[REPO, "data"]].concat(HIST_NOTES.map(function (p) { return [NOTES_REPO, p]; })); }
   function histWho(c) {
     var m = /\(admin, ([^)]+)\)\s*$/.exec(c.commit.message.split("\n")[0]);
     if (m) return m[1];
@@ -3493,9 +3496,17 @@
     histBox.textContent = "";
     histBox.appendChild(el("div", { class: "hhead" }, [el("strong", { text: path ? "Historique de cette page" : "Historique des publications" }), mode, close]));
     histBox.appendChild(list);
-    gh("/repos/" + REPO + "/commits?sha=" + BRANCH + "&per_page=40&path=" + encodeURIComponent(path || "data")).then(function (cs) {
+    var src = path || histAllSrc();
+    Promise.all(src.map(function (x) {
+      return gh("/repos/" + x[0] + "/commits?" + (x[0] === REPO ? "sha=" + BRANCH + "&" : "") + "per_page=40&path=" + encodeURIComponent(x[1]))
+        .catch(function () { return []; }); // dépôt notes sans accès : on montre le reste
+    })).then(function (all) {
+      var seen = {}, cs = [];
+      all.forEach(function (l) { (l || []).forEach(function (c) { if (!seen[c.sha]) { seen[c.sha] = 1; cs.push(c); } }); });
+      cs.sort(function (a, b) { return b.commit.author.date.localeCompare(a.commit.author.date); });
       list.textContent = "";
-      cs = cs.filter(function (c) { return !/^Slate : /.test(c.commit.message); }); // demandes de lecture au robot : pas des publications
+      // Demandes au robot et réponses, prénoms des clés : pas des publications.
+      cs = cs.filter(function (c) { return !/^(Slate : |Équipe : )|demande au robot|réponse du robot/.test(c.commit.message); }).slice(0, 50);
       if (!cs.length) list.appendChild(el("li", { class: "hint", text: "Aucune publication." }));
       cs.forEach(function (c) {
         var msg = c.commit.message.split("\n")[0].replace(/\s*\(admin, [^)]+\)\s*$/, "");

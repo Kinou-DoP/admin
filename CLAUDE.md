@@ -115,7 +115,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
 - Liste des chefs op : champ de recherche au-dessus (filtre au fil de la frappe, sans accents ; Entrée ouvre le 1er résultat).
 - Historique (lien « historique » en bas du menu de gauche) : petite fenêtre, derniers commits de `data/` lus sur GitHub
   (`/commits?path=…`) : qui (login entre parenthèses dans le message « (admin, login) », ou « robot GitHub »), quand, quoi
-  (lien vers le commit). Sur une fiche / l'accueil / le contact : ce fichier seulement, bouton « Tout voir ».
+  (lien vers le commit). Sur une fiche / l'accueil / le contact : ce fichier seulement, bouton « Tout voir ». Aussi le dépôt privé notes (Gus 17/11, `histPath` / `histAllSrc`) : festivals, nos sélections, récupération, sorties fiction (leur fichier sur leur page) et notes internes des fiches ; demandes / réponses du robot et prénoms des clés cachés.
 - Navigation à gauche **en rubriques déroulantes** (Gus 16/11 ; clic sur website / festivals = ses sous-rubriques se déroulent, une
   rubrique ouverte à la fois, celle de la page ouverte déroulée d'office ; sorties fiction et récupération = lien direct) : WEBSITE (cinematographers, home page, spotlight, fiction, press à venir, contact),
   FESTIVALS (dates `#/festivals`, nos sélections `#/selections`), SORTIES FICTION (calendrier `#/sorties`, à venir), RÉCUPÉRATION
