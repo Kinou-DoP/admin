@@ -565,7 +565,14 @@
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fd7c4f51-03de-4775-b5fd-5ea557f35537-0x1080.5000.mp4"
         }
       ],
-      "zoomThumb": true
+      "zoomThumb": true,
+      "info": {
+        "awards": "Official selection – Film de clôture, hors compétition, Festival de San Sebastián 2026\nOfficial selection, Filmfest Hamburg 2026",
+        "awardsFrom": {
+          "656ef4ffed85": "Official selection – Film de clôture, hors compétition, Festival de San Sebastián 2026",
+          "b5fe1865f6c6": "Official selection, Filmfest Hamburg 2026"
+        }
+      }
     },
     "11340": {
       "zoom": 1.34,

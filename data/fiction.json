@@ -587,6 +587,13 @@
       },
       "snipCrop": {
         "y": 36.9
+      },
+      "info": {
+        "awards": "Official selection – Film de clôture, hors compétition, Festival de San Sebastián 2026\nOfficial selection, Filmfest Hamburg 2026",
+        "awardsFrom": {
+          "656ef4ffed85": "Official selection – Film de clôture, hors compétition, Festival de San Sebastián 2026",
+          "b5fe1865f6c6": "Official selection, Filmfest Hamburg 2026"
+        }
       }
     },
     "10694": {
@@ -836,6 +843,15 @@
       },
       "snipCrop": {
         "y": 32.2
+      },
+      "info": {
+        "awards": "Grand Prix, Brussels International Film Festival (BRIFF) 2026\nPrix du scénario, Festival de Cannes 2026\nPrix CST de l artiste-technicien (montage, Nicolas Rumpl), Festival de Cannes 2026\nOfficial selection – Compétition officielle, Festival de Cannes 2026",
+        "awardsFrom": {
+          "754142c87fbd": "Grand Prix, Brussels International Film Festival (BRIFF) 2026",
+          "acfbccdf2db1": "Prix du scénario, Festival de Cannes 2026",
+          "897d9ce83aa8": "Prix CST de l artiste-technicien (montage, Nicolas Rumpl), Festival de Cannes 2026",
+          "23eb3c8160b5": "Official selection – Compétition officielle, Festival de Cannes 2026"
+        }
       }
     },
     "11187": {
@@ -1128,7 +1144,13 @@
           ]
         }
       ],
-      "poster": "fiction/11358-mwdo4zx7.webp"
+      "poster": "fiction/11358-mwdo4zx7.webp",
+      "info": {
+        "awards": "Official selection – Special Presentations (première mondiale), Toronto International Film Festival (TIFF) 2025",
+        "awardsFrom": {
+          "53f974fda3d3": "Official selection – Special Presentations (première mondiale), Toronto International Film Festival (TIFF) 2025"
+        }
+      }
     }
   },
   "films": [
