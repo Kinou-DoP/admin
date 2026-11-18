@@ -460,7 +460,11 @@
         "autoSrc": [
           "https://www.unifrance.org/film/55419"
         ],
-        "ratio": "1.85"
+        "ratio": "1.85",
+        "awards": "Official selection • Semaine de la Critique • Closing Film, Festival de Cannes 2023",
+        "awardsFrom": {
+          "e951c1116d3f": "Official selection • Semaine de la Critique • Closing Film, Festival de Cannes 2023"
+        }
       }
     },
     "8958": {
@@ -477,7 +481,15 @@
         "autoSrc": [
           "https://www.festival-cannes.com/en/f/le-proces-du-chien/",
           "https://www.unifrance.org/film/58451/le-proces-du-chien"
-        ]
+        ],
+        "awards": "Valois du scénario, Festival du Film Francophone d'Angoulême 2024\nPalm Dog (Kodi), Festival de Cannes 2024\nNominated, Best Fiction Film, Swiss Film Awards 2025\nNominated, Best Screenplay, Swiss Film Awards 2025\nOfficial selection • Un Certain Regard, Festival de Cannes 2024",
+        "awardsFrom": {
+          "e9328f7e587a": "Valois du scénario, Festival du Film Francophone d'Angoulême 2024",
+          "352e9c0fd454": "Palm Dog (Kodi), Festival de Cannes 2024",
+          "156eb908d6cc": "Nominated, Best Fiction Film, Swiss Film Awards 2025",
+          "ac004de0f9df": "Nominated, Best Screenplay, Swiss Film Awards 2025",
+          "25d08ccea336": "Official selection • Un Certain Regard, Festival de Cannes 2024"
+        }
       }
     },
     "9566": {
