@@ -2476,6 +2476,17 @@
     if (typing || (k !== "z" && k !== "y")) return;
     e.preventDefault(); immGo(k === "y" || e.shiftKey ? 1 : -1);
   });
+  // Taper des lettres n'importe où sur une page qui a un champ de recherche (récupération, sorties, sélections, festivals, chefs op)
+  // = écrire dans la recherche, comme dans la liste des chefs op (Gus 18/11). Pas pendant une saisie, un formulaire ouvert ou un raccourci.
+  document.addEventListener("keydown", function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey || e.key.length !== 1 || e.defaultPrevented) return;
+    var t = document.activeElement;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    if (view.querySelector(".fedit, .rcedit, .sortadd, .seladd") || document.querySelector(".vedit") || (histBox && !histBox.hidden)) return;
+    var f = [].filter.call(view.querySelectorAll("input.find"), function (x) { return x.offsetParent; })[0];
+    if (!f) return;
+    f.focus({ preventScroll: true }); var n = f.value.length; try { f.setSelectionRange(n, n); } catch (er) {} // la lettre s'écrit à la fin du champ
+  });
   // Formulaire ouvert et modifié mais pas enregistré (festival, film de la récupération, mail) : classe .changed → on prévient avant de quitter.
   ["input", "change"].forEach(function (ev) { view.addEventListener(ev, function (e) { var f = e.target.closest && e.target.closest(".fedit, .rcedit"); if (f) f.classList.add("changed"); }); });
   function formsDirty() { return !!view.querySelector(".fedit.changed, .rcedit.changed"); }
@@ -3811,6 +3822,9 @@
       var pz = ((r[2] && r[2].found) || []).filter(function (x) { return x.kind === "prize" && x.status !== "no" && x.foundAt && sortIso(new Date(x.foundAt)) === td; });
       if (pz.length) lines.push(el("a", { href: "#/selections", class: "hn" }, [el("span", { class: "hnk", text: pz.length > 1 ? pz.length + " prix trouvés aujourd'hui" : "Prix trouvé aujourd'hui" }),
         pz.slice(0, 4).map(function (x) { return x.title + " : " + (x.prize || "prix") + (x.festName ? ", " + x.festName : "") + ((x.dops || []).length ? " (" + x.dops.map(rcBase).join(", ") + ")" : ""); }).join("  —  ") + (pz.length > 4 ? "  …" : "")]));
+      var fa = ficAlerts(r[1], r[0]); // autre date de sortie trouvée pour un Coming soon de la page fiction
+      if (fa.length) lines.push(el("a", { href: "#/fiction", class: "hn" }, [el("span", { class: "hnk", text: fa.length > 1 ? fa.length + " nouvelles dates de sortie" : "Nouvelle date de sortie" }),
+        fa.slice(0, 4).map(function (a) { return a.title + " : " + fdate(a.r.date) + " (à vérifier dans fiction)"; }).join("  —  ")]));
       var tn = ((r[0] && r[0].trailers) || []).filter(function (t) { return !t.seen; });
       if (tn.length) lines.push(el("a", { href: "#/sorties", class: "hn" }, [el("span", { class: "hnk", text: tn.length > 1 ? tn.length + " nouvelles bandes-annonces" : "Nouvelle bande-annonce" }),
         tn.slice(0, 4).map(function (t) { return t.title + (t.name ? " : " + t.name : ""); }).join("  —  ") + (tn.length > 4 ? "  …" : "")]));
