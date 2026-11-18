@@ -2018,7 +2018,8 @@
   function showFic() {
     bar.hidden = true; editing = false; view.textContent = "";
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
-    readFile("data/fiction.json").then(function (s) {
+    Promise.all([readFile("data/fiction.json"), sortRead().catch(function () { return null; })]).then(function (r) {
+      var s = r[0]; ficSort = r[1];
       fic = s || { reel: "", overrides: {}, films: [] }; fic.overrides = fic.overrides || {};
       ficAutoOut();
       pending = {}; dirty = false; histReset(); ovBase = sharedSnap(fic.overrides); curCat = null; renderFic();
@@ -2120,6 +2121,50 @@
   }
   // Film poussé en Past release par cette règle : marqué `autoPast`. Si une place se libère (un New release passe en Coming soon…),
   // le plus récent d'entre eux revient tout seul en New release (Gus 04/11 : sinon 8 New releases après un aller-retour).
+  // Date de sortie trouvée par les robots (Sorties fiction : TMDB, Claude) ou ajoutée au calendrier, différente de celle de la page
+  // fiction, pour un film Coming soon (ou New release à venir) : avertissement sous le film + pastille sur « fiction » (Gus 18/11).
+  // La page fiction ne change jamais toute seule : « Utiliser cette date » ou « Garder la nôtre » (`dateSeen` = date vue, pas sur le site).
+  var ficSort = null;
+  function ficAlerts(f0, so) {
+    if (!f0 || !so) return [];
+    var ov = f0.overrides || {}, out = [], today = sortIso(new Date());
+    (f0.films || []).forEach(function (f) {
+      var o = ov[f.slate] || {}, st = o.status || "past";
+      if (!(st === "soon" || (st === "new" && o.date && o.date > today))) return;
+      var t = ficTitle(f.title), hits = (so.releases || []).filter(function (r) { return r.date && (String(r.slate || "") === String(f.slate) || sortSame(t, r.title)); });
+      if (!hits.length) return;
+      hits.sort(function (a, b) { return ((a.country || "France") === "France" ? 0 : 1) - ((b.country || "France") === "France" ? 0 : 1) || (a.date < b.date ? -1 : 1); });
+      var r = hits[0];
+      if (r.date !== o.date && o.dateSeen !== r.date) out.push({ slate: f.slate, title: t, r: r });
+    });
+    return out;
+  }
+  function ficBadge() {
+    var n = ficAlerts(fic, ficSort).length;
+    ['a[data-page="fiction"]', '.sgroup[data-group="website"]'].forEach(function (q) {
+      var a = side.querySelector(q); if (!a) return;
+      var b = a.querySelector(".nbadge");
+      if (!n) { if (b) b.remove(); return; }
+      if (!b) { b = el("span", { class: "nbadge" }); a.appendChild(b); }
+      b.textContent = n; b.title = "Fiction : date de sortie différente trouvée dans Sorties fiction";
+    });
+  }
+  function ficBadgeLoad() {
+    Promise.all([readFile("data/fiction.json"), sortRead()]).then(function (r) { if (!fic) fic = r[0]; ficSort = r[1]; ficBadge(); }, function () {});
+  }
+  function ficDateWarn(c) {
+    var a = ficAlerts(fic, ficSort).filter(function (x) { return String(x.slate) === String(c.slate); })[0];
+    if (!a) return null;
+    var r = a.r, o = fic.overrides[c.slate] || {}, src = r.source === "human" ? "ajoutée par " + (r.by || "l'équipe") : r.source === "tmdb" ? "TMDB" : "recherche Claude";
+    var use = el("button", { type: "button", class: "btn", text: "Utiliser cette date" }), keep = el("button", { type: "button", class: "btn ghost", text: o.date ? "Garder la nôtre" : "Ignorer" });
+    use.addEventListener("click", function () { setOverride(c, "date", r.date); setOverride(c, "dateSeen"); touch(); var y = window.scrollY; ficCapNew(); slate = ficSlate(); renderFic(); window.scrollTo(0, y); ficBadge(); });
+    keep.addEventListener("click", function () { setOverride(c, "dateSeen", r.date); touch(); box.remove(); ficBadge(); });
+    var box = el("div", { class: "fdwarn" }, [
+      el("p", {}, [el("b", { text: "! " }), (o.date ? "Autre date trouvée : " : "Date trouvée : ") + fdate(r.date) + " (" + (SK[r.kind] || r.kind || "") + (r.platform ? " · " + r.platform : "") + (r.country ? ", " + r.country : "") + " ; " + src + ")" + (o.date ? ". Chez nous : " + fdate(o.date) + "." : ".") + " ",
+        r.url ? el("a", { href: r.url, target: "_blank", rel: "noopener", text: "Source ↗" }) : ""]),
+      el("div", { class: "fdbtns" }, [use, keep])]);
+    return box;
+  }
   // Coming soon → New release tout seul le jour de la sortie, dès 9 h (heure de Paris) : le site le fait de lui-même (ficStatus
   // dans app.js) ; l'admin l'applique à l'ouverture de la page fiction et l'écrit à la prochaine publication (Gus 18/11).
   function ficOut(d) {
@@ -2150,6 +2195,7 @@
   }
   // Réglages propres à la fiction, sous le titre d'un film : statut, genre, date de sortie, affiche.
   function ficCtl(c) {
+    var warn = null;
     function o() { return fic.overrides[c.slate] || {}; }
     var stSel = el("select", { class: "nodirty" }), genre = el("select", { class: "nodirty" });
     // Statut : on choisit New release ou Coming soon ; Past release se fait tout seul (plus de 9 New releases), et ne s'affiche
@@ -2167,7 +2213,11 @@
       var y = window.scrollY; ficCapNew(); slate = ficSlate(); renderFic(); window.scrollTo(0, y); // le film change d'onglet ; le 10e New release passe en Past release
     });
     genre.addEventListener("change", function () { setOverride(c, "genre", genre.value || undefined); touch(); });
-    date.addEventListener("change", function () { setOverride(c, "date", date.value || undefined); touch(); if (o().status === "new" && ficCapNew()) { var y = window.scrollY; slate = ficSlate(); renderFic(); window.scrollTo(0, y); } });
+    date.addEventListener("change", function () {
+      setOverride(c, "date", date.value || undefined); touch();
+      var w2 = ficDateWarn(c); if (warn) warn.replaceWith(w2 || el("span")); warn = w2; ficBadge(); // avertissement « autre date trouvée » à jour
+      if (o().status === "new" && ficCapNew()) { var y = window.scrollY; slate = ficSlate(); renderFic(); window.scrollTo(0, y); }
+    });
     // Plateformes (Netflix, Canal+…) : un mot + Entrée = une étiquette ; × pour la retirer. Sur le site, en haut à gauche
     // de la vignette après le genre (« FEATURE FILM · NETFLIX »), au survol / à la sélection.
     var plats = el("div", { class: "plats" }), pin = el("input", { type: "text", class: "nodirty", placeholder: "Plateforme + Entrée" });
@@ -2200,7 +2250,8 @@
         .then(function (b) { if (b) z.style.backgroundImage = 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url("' + URL.createObjectURL(b) + '")'; });
       return z;
     }
-    return el("div", { class: "ficctl" }, [el("div", {}, [el("div", { class: "ficrow" }, [stSel, genre, date]), plats]), posterDrop()]);
+    warn = ficDateWarn(c);
+    return el("div", { class: "ficctl" }, [el("div", {}, [el("div", { class: "ficrow" }, [stSel, genre, date]), warn || "", plats]), posterDrop()]);
   }
   function renderFic() {
     view.textContent = ""; editing = true; pagePublish = publishFic;
@@ -2240,7 +2291,7 @@
     view.appendChild(el("section", {}, [el("h2", { text: "Bande Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), imp]), st]));
     view.appendChild((fic.films || []).length ? filmsSection() : el("section", {}, [el("h2", { text: "Films" }), el("p", { class: "empty", text: "Pas encore de films : relisez la bande." })]));
     bar.hidden = false;
-    seeLink.href = SITE_VIEW + "/#fiction"; seeLink.hidden = false;
+    seeLink.href = SITE_VIEW + "/#fiction"; seeLink.hidden = false; ficBadge();
     if (flash) status(flash, "ok"); else if (dirty) touch(); else status("");
     flash = "";
   }
@@ -2428,7 +2479,7 @@
   ["input", "change"].forEach(function (ev) { view.addEventListener(ev, function (e) { var f = e.target.closest && e.target.closest(".fedit, .rcedit"); if (f) f.classList.add("changed"); }); });
   function formsDirty() { return !!view.querySelector(".fedit.changed, .rcedit.changed"); }
 
-  var festTried = false;
+  var festTried = false, ficTried = false;
   function showSoon(title, txt) {
     bar.hidden = true; editing = false; view.textContent = "";
     view.appendChild(el("h1", { text: title }));
@@ -3829,7 +3880,7 @@
     document.getElementById("back").hidden = !token || !/^#\/(dp\/|new)/.test(h);
     var page = /^#\/(home|spotlight|fiction|press|contact|festivals|selections|sorties|recup)$/.test(h) ? h.slice(2) : /^#\/(dops|dp\/.*|new)$/.test(h) ? "cinematographers" : "hello";
     side.hidden = !token;
-    if (token && !festTried) { festTried = true; festLoad().then(festBadge, function () {}); } // pastille du menu (dates limites proches)
+    if (token && !festTried) { festTried = true; festLoad().then(festBadge, function () {}); } if (token && !ficTried) { ficTried = true; ficBadgeLoad(); } // pastille « fiction » : autre date de sortie trouvée // pastille du menu (dates limites proches)
     side.querySelectorAll("a").forEach(function (a) { a.classList.toggle("on", a.dataset.page === page); });
     var cur = side.querySelector("a.on"), grp = cur && cur.closest(".ssub");
     // Rubrique de la page ouverte : dépliée et sélectionnée ; page hors rubrique (sorties, récupération…) : tout est replié (Gus 18/11).

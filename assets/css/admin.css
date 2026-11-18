@@ -478,6 +478,12 @@ body.vedit-on { overflow: hidden; }
 .fwarn strong { display: flex; align-items: center; margin-bottom: 6px; color: #ffb36b; font-weight: 600; }
 .fwarn p { margin: 0 0 4px; color: var(--dim); }
 .fwarn .fwpages a { color: var(--dim); }
+/* Fiction : autre date de sortie trouvée dans Sorties fiction (ficDateWarn, Gus 18/11) */
+.fdwarn { margin: 10px 0 4px; padding: 10px 12px; border: 1px solid rgba(255,154,61,.5); background: rgba(255,154,61,.06); font-size: 12.5px; line-height: 1.5; color: var(--dim); }
+.fdwarn b { color: #ffb36b; }
+.fdwarn a { color: var(--dim); }
+.fdwarn .fdbtns { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.fdwarn .btn { padding: 5px 10px; font-size: 12px; }
 .fwbtns { display: flex; gap: 8px; margin-top: 10px; }
 .fwbtns .btn { height: 32px; font-size: 12px; padding: 0 12px; }
 .fauto { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: -6px 0 26px; }
