@@ -282,12 +282,14 @@
         "auto": [
           "year",
           "runtime",
-          "starring"
+          "starring",
+          "ratio"
         ],
         "autoSrc": [
-          "https://www.unifrance.org/film/51478/adieu-paris",
-          "https://www.allocine.fr/film/fichefilm_gen_cfilm=287061.html"
-        ]
+          "https://le-pacte.com/storage/uploads/7a62c8b6-6e59-43cc-b716-c86bc3a65c9c/DP-A5-ADIEU-PARIS---ANGLAIS.pdf",
+          "https://www.unifrance.org/film/51478/adieu-paris"
+        ],
+        "ratio": "1.85"
       }
     },
     "5824": {
@@ -390,13 +392,14 @@
         "auto": [
           "year",
           "starring",
-          "runtime"
+          "runtime",
+          "ratio"
         ],
         "autoSrc": [
-          "https://unifrance.org/film/54153/a-mon-seul-desir",
-          "https://cineuropa.org/film/439415"
+          "https://unifrance.org/film/54153"
         ],
-        "runtime": "118"
+        "runtime": "118",
+        "ratio": "Scope"
       }
     },
     "8065": {
@@ -422,13 +425,13 @@
         "auto": [
           "year",
           "runtime",
-          "starring"
+          "starring",
+          "ratio"
         ],
         "autoSrc": [
-          "https://unifrance.org/film/55419/la-fille-de-son-pere",
-          "https://www.allocine.fr/seance/film-299454/",
-          "https://www.music-cinema.com/fr/component/zoo/item/la-fille-de-son-pere?Itemid=949"
-        ]
+          "https://www.unifrance.org/film/55419"
+        ],
+        "ratio": "1.85"
       }
     },
     "8958": {
@@ -496,13 +499,15 @@
           "runtime",
           "starring",
           "camera",
-          "lenses"
+          "lenses",
+          "platforms"
         ],
         "autoSrc": [
-          "https://www.afcinema.com/Alexis-Kavyrchine-parle-de-sa-facon-d-aborder-les-differentes-epoques-de-La-Venue-de-l-avenir-de-Cedric-Klapisch.html?lang=fr"
+          "https://www.sortiraparis.com/en/what-to-do-in-paris/cinema-series/articles/327005-movie-the-arrival-of-the-future-2025"
         ],
         "camera": "Sony Venice 2",
-        "lenses": "Cooke Anamorphic/i Full Frame x1.8 (époque 1895)"
+        "lenses": "Cooke Anamorphic/i Full Frame x1.8 (époque 1895)",
+        "platforms": "Canal+"
       }
     },
     "10140": {
@@ -572,7 +577,6 @@
       "info": {
         "starring": "Artus, Julia Piaton, Nemo Schiffman, Niels Hamel-Brochen, Franck Dubosc, Doria Tillier, Suzanne de Baecque, Xavier Robic",
         "synopsis": "1651. Louis (pas encore XIV) est un jeune adolescent. Alors que la Fronde menace, sa mère Anne d’Autriche décide d’exfiltrer son fils pour le mettre à l’abri et le remplace par un sosie. Louis est confié par D'Artagnan à Cyrano de Bergerac qui le cache au sein de la troupe de théâtre de Madeleine Béjart et Molière. Tandis que Madeleine et Cyrano se découvrent une passion commune pour le jeune Molière, Louis découvre la vie et ses plaisirs, l’art et le travail, le courage et la stratégie, tout ce qui fera de lui le Roi Soleil.",
-        "awards": "Officially Selected – Hors Compétition – Cannes Film Festival 2026",
         "year": "2026",
         "auto": [
           "year",
