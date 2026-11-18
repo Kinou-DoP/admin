@@ -2020,6 +2020,7 @@
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
     readFile("data/fiction.json").then(function (s) {
       fic = s || { reel: "", overrides: {}, films: [] }; fic.overrides = fic.overrides || {};
+      ficAutoOut();
       pending = {}; dirty = false; histReset(); ovBase = sharedSnap(fic.overrides); curCat = null; renderFic();
     }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
   }
@@ -2119,6 +2120,21 @@
   }
   // Film poussé en Past release par cette règle : marqué `autoPast`. Si une place se libère (un New release passe en Coming soon…),
   // le plus récent d'entre eux revient tout seul en New release (Gus 04/11 : sinon 8 New releases après un aller-retour).
+  // Coming soon → New release tout seul le jour de la sortie, dès 9 h (heure de Paris) : le site le fait de lui-même (ficStatus
+  // dans app.js) ; l'admin l'applique à l'ouverture de la page fiction et l'écrit à la prochaine publication (Gus 18/11).
+  function ficOut(d) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d || "")) return false;
+    var now; try { now = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Paris", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", hour12: false }).format(new Date()); } catch (e) { now = new Date().toISOString().slice(0, 13).replace("T", " "); }
+    return now.slice(0, 10) > d || (now.slice(0, 10) === d && +now.slice(11, 13) >= 9);
+  }
+  function ficAutoOut() {
+    state = fic; // setOverride travaille sur state.overrides
+    var out = (fic.films || []).filter(function (f) { var o = fic.overrides[f.slate] || {}; return o.status === "soon" && ficOut(o.date); })
+      .map(function (f) { setOverride(f, "status", "new"); setOverride(f, "autoPast"); return f.title; });
+    if (!out.length) return;
+    ficCapNew();
+    flash = "Sorti" + (out.length > 1 ? "s" : "") + " : « " + out.join(" », « ") + " » passe" + (out.length > 1 ? "nt" : "") + " en New release (déjà le cas sur le site ; écrit à la prochaine publication)." + (flash ? " " + flash : "");
+  }
   function ficCapNew() {
     var out = ficNewOrder().slice(FIC_NEW_MAX).map(function (x) { setOverride(x.f, "status"); setOverride(x.f, "autoPast", true); return x.f.title; });
     var back = [], n = ficNewOrder().length;

@@ -166,7 +166,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   (`ficCtl`) : statut New release / Coming soon (`status` ; Past release = défaut, proposé seulement pour un film déjà passé :
   **9 New releases au plus**, au-delà les plus anciens par date de sortie passent tout seuls en Past release, `ficCapNew`, au
   changement de statut ou de date et à la publication, avec un message ; Gus 04/11 ; film ainsi poussé marqué `autoPast` : il revient
-  tout seul en New release, le plus récent d'abord, dès qu'une place se libère, ex. un New release remis en Coming soon), genre (`genre`, onglet du genre si Past release),
+  tout seul en New release, le plus récent d'abord, dès qu'une place se libère, ex. un New release remis en Coming soon), **Coming soon passé tout seul en New release le jour de la sortie dès 9 h (Paris)** (`ficAutoOut` à l'ouverture de la page fiction, écrit à la publication suivante ; le site le fait déjà de lui-même, Gus 18/11), genre (`genre`, onglet du genre si Past release),
   plateformes (`platforms`, un mot + Entrée = une étiquette, × pour retirer), date de
   sortie (`date`), affiche (compressée en WebP → `data/fiction/<id>-<horodatage>.webp` à la publication, `poster`).
   Cadrage cinémascope (`scopeCtl`, à la place du recadrage habituel) : onglets Vignette / Extrait ; image entière (16:9) et cadre
