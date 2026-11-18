@@ -12,8 +12,19 @@
       "zoom": 1.36,
       "zoomThumb": true
     },
+    "1390": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
     "1653": {
       "zoom": 1.27
+    },
+    "2637": {
+      "zoom": 1.33,
+      "zoomThumb": true
+    },
+    "2850": {
+      "zoom": 1.38
     },
     "4185": {
       "zoom": 1.39,
@@ -51,7 +62,8 @@
   },
   "categories": [
     "FEATURED",
-    "NARRATIVE"
+    "NARRATIVE",
+    "MUSIC VIDEO"
   ],
   "clips": [
     {
@@ -162,6 +174,198 @@
       "slate": 575
     },
     {
+      "title": "Stromae \"Quand C'est ?\"",
+      "sub": "Xavier Reyé\nBenuts",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545388686-20974571_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Po3PbbyWZRSHKOrWjzwyulrrwkd8IcSCzIC_T3Jjw14/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZjIzMTZkMy04OWQ5/LTQyYzctODJiYS1m/NDgzMmM4MTAwYzEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDYt/MzAtYS0xMS4yNC41/NS5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 930,
+      "featured": true,
+      "featuredOrder": 10
+    },
+    {
+      "title": "Damso \"Mosaique Solitaire\"",
+      "sub": "Frédéric de Pontcharra & Mathias Delabarre\nFrench Lab Agency",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545444141-53707205_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/82UqxgGjcAD2bSvPRJQgUz1Pfo1LheiqX1Nq7sVpjbg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YmE1Mzc3OC03Yzk4/LTQ3MGUtODBhMC1m/ODhjN2NkYWE0NjQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDct/MDQtYS0xMC4xNC4y/OC5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2298,
+      "featured": true,
+      "featuredOrder": 12
+    },
+    {
+      "title": "Vanessa Paradis \"Ces Mots Simples\"",
+      "sub": "Jean-Baptiste Mondino\nIconoclast",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545354961-62745586_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RYxikYnxuABOLG_-lMnq-NAusKNjRz_91yJ636-gYhA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy92/YW5lc3NhLXBhcmFk/aXMtY2VzLW1vdHMt/c2ltcGxlcy03NzM3/ZTkzZWQ4NTgwMzhi/YWVjMzI2OGMyNGUy/YTJlMy5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 241,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Vald - Footballeur",
+      "sub": "Lionel Hirlé\nBandits",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fbd42afe-7dd0-4b6f-a687-109b023b6fdf-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/LhKCaubLTyZBrGV7OY8B86ukx7EPPonrFQNYQ_h9HoI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YjEyNWE2NC05OGY1/LTQyZmUtODUzYi1j/NjlkODZmMTNlMzQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDct/MDQtYS0xMC4xNS40/MS5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 7447
+    },
+    {
+      "title": "Pongo \"Chora\"",
+      "sub": "Rush Hour\nFrenzy Paris",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1557239260-pongo-frenzy.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bkfAfqhNoLOg1K3sblC3EBfSOJZtghWoK7SmCQAQIMo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9w/b25nby1jaG9yYS01/ODQ2MDk5ZWNhYTA4/NGYzODFkZGUzYTgw/YWM5MWI2Ny5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 3354,
+      "featured": true,
+      "featuredOrder": 11
+    },
+    {
+      "title": "Green Montana \"Tout Gâcher\" feat Booba",
+      "sub": "M+F\nAbyssal Process",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bb619dbe-692f-4b64-b17c-eae0002b8345-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/QRiZxAu0ZF8XDbU3OSW6R3Sb1uZg6YqAoBJwXNdWaN4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NmZkZDFiMy0yYzEy/LTRiNWEtOTQ5YS00/NDc3YjdmNGUwMWQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDYt/MzAtYS0xMS4yOC41/OS5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 4646
+    },
+    {
+      "title": "Damso \"Smog\"",
+      "sub": "M+F\nFrench Lab Agency",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545444006-57034677_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gO4lCbjkcNEqVuVOa4XUJpcQqGvFtvHx8qB8o5yCk0g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MmQ3MjFhMS04N2Zk/LTQzNTAtYTM5ZS02/YWIyODIyMzc2YzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDEt/MTMtYS0xMy4wNi41/Ny5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2295
+    },
+    {
+      "title": "Patrice Ft. Selah Sue \"Faces\"",
+      "sub": "Greg & Lio\nHK Corp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545458835-patrice_selah_sue_greg_lio.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/nsXYVxWTIJsEA5D3TF_6tEWQnmFYanuJ33NWxcHebmM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NDcyMjRhOS0zNGQ0/LTQxMjAtOGJmZi1j/OTU0OTkzZTcxNTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MTMtYS0xMS4xNi40/Mi5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2643
+    },
+    {
+      "title": "Jain \"Come\"",
+      "sub": "Greg & Lio\nCarcace",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545459207-jain-come-hd.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/II8ZsoyjOzP48VgZuY4bBftx7R_h3eSo3p5h-vGkSyQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTg5MjAxNDU4Mzgy/Lzc1MTQxOS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2650
+    },
+    {
+      "title": "Orelsan & Gringe - Inachevés",
+      "sub": "Greg & Lio\nHK Corp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545458247-29106489_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/hGdEWL-VtVlBkubADmK5YV3bfzfTorYawnBrlQbcGgo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTIzMzI4MDk4/L2luYWNoZXZlcy5q/cGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2635
+    },
+    {
+      "title": "Achile - Vie normale",
+      "sub": "Greg Ohrel\nPelican",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/05bbfe82-d63f-44cd-859d-12695a175908-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/R3Ghz69Gyo9xLxRRjr9qfB-GClNGwO3wOGkeZ8jHiiA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk5NDY4ODc4MjU5/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTA3LWEtMTAuNTMu/NDAucG5n?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 4415
+    },
+    {
+      "title": "Orelsan & Gringe - Histoire à Raconter",
+      "sub": "Greg & Lio\nHK Corp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545439275-57251176_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GTS1Rytm_S73rQyX6_qFRn7_bkgp1vN7xU3jqUGtI1Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTg4MzY1NjA5/LzQuanBn?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2170
+    },
+    {
+      "title": "Maître Gims \"Est-ce que tu m'aimes?\"",
+      "sub": "Greg & Lio",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545405665-57255281_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UZP603of7tp7WnL2nhrPzEIe31Pbz7xP5uT2CprM4CM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9t/YWl0cmUtZ2ltcy1l/c3QtY2UtcXVlLXR1/LW1haW1lcy00YTJm/NDI1MWJkYjZiOTAz/NTg5M2I0MzAyMTNm/NTI3Yy5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 1390
+    },
+    {
+      "title": "Soprano \"Coeurdonnier\" | Music Video",
+      "sub": "Akim Laouar Aronsen\nHK Corp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545373131-57626682_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/HsCZVZVllz_fnH9Xb3_--JCZMg-y-gSbZnQkm3HLf7I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTg4ODYzMzU0/LzYuanBn?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 613
+    },
+    {
+      "title": "Kaaris \"Or Noir\"",
+      "sub": "Greg & Lio\nHK Corp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545457531-kaaris_or_noir_greg_-26_lio_hk_corp.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/OfNO4-WTNaQ7mOshMFfCHPbxEJRDXus_G847X6oe6ug/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTg3NTE0Nzc0/LzIuanBn?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2626
+    },
+    {
+      "title": "MC Solaar \"Eksassaute\"",
+      "sub": "Ben & Seb\nIpanema",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404020-51959034_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bJUJLto5cHlTCHvLPxS0ZGFAjPeXO8HN4xFJcNeJWR4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NDJlODZkZC1jN2Zk/LTQzNzktOGNlOS0y/YjZjNjM3ODI5NGUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MTMtYS0xMS4xOC4y/NC5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 1322
+    },
+    {
+      "title": "Booba \"Jimmy\"",
+      "sub": "Greg & Lio\nHK Corp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545458045-22427542_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/WlgX4d7a8-vrSY2TYuNRNdSl1FaiQziJnD756VIMmuI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MzRhOWExZi00ZDNh/LTRlNzItYWMxMC05/YzExZmQxMWQ5Mjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MTMtYS0xMS4xNS4w/OS5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2633
+    },
+    {
+      "title": "Black M \"Ainsi Valse La Vie\"",
+      "sub": "Tony T.  Datis\nHK Corp",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1574416759-black-m-ainsi-valse-la-vie-clip-officiel.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gHwt57A8HcA1K_aez26ZVbNZDJG6UYJ2KzIZNpRfuj8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ODY1LTVkZDdiMTc3/ZDM0Nzc0Ljg0OTc5/NTk4LTE3ZTAxZWEw/M2NlMjVjNDAwOTc1/N2Q0YWIyNzlhMDMx/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 3865
+    },
+    {
+      "title": "\"Il est où le Bonheur?\"",
+      "sub": "Manu Coeman & John-John Gossens",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545458359-christophe-mae.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/MIn252rVqIMSUITRQmRzWHOFZMBLGqoqEw4pWXpymn4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDU4Mjg0LzM2/MTUxODM4X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 2637
+    },
+    {
+      "title": "Jenifer - En attendant",
+      "sub": "Athys De Galzain\nPelican",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49acd597-d736-499b-b4f7-0e803ed1869c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/MPDjKCzcBQsmcx_bHAm8jACBcfr4yaI8KwnAWl3IUAE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/Yjg1OTM0ZC0yOTY0/LTQyZmUtYTI4MS1m/NzU0MjdiMWU1ZTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTIt/MDktYS0xMS4zMy40/OS5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 6559
+    },
+    {
+      "title": "Jenifer \"Est-ce que tu danses ?\"",
+      "sub": "Athys De Galzain\nPelican",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b9481ff1-41ad-4328-bc8f-0250947c0591-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/HboD4MrDVYiBQEcHuxMP-LshLyu11zQEEZ4WobDqmgE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NDY0MTJiYy1jMDFl/LTQ3MmMtYTJmYS00/YTAyN2NmNjU0ZDgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MzAtYS0xNC41OC4y/Ny5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 6419
+    },
+    {
+      "title": "Jenifer \"Sauve qui aime\"",
+      "sub": "Athys De Galzain\nPelican Paris",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/40dce817-58a0-4dff-8daa-f20ffcc5d288-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fB5VGYNoFJiMQqfWbx5sm6CrL-7tJcJBpRMPJpAvNS0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MDAxMmJjOC1jNzll/LTQ3MGQtOWQ1NS03/MDUyY2YzMzFmMjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MDYtYS0xMi4yNi4w/Mi5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 6306
+    },
+    {
+      "title": "Murman Tsuladze \"Darling\"",
+      "sub": "Jean François Julian\nLes Films de l'Instant",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/47fe7a54-b64d-48a0-b4d4-93fea38f7cb9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GWdl4ebz-ZC3nU5rQwhIwfjxswMpRrIxfzWCZ5R-SXU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/YjUxMTNhNi05NTZl/LTQzNDktODg4MS1m/NzRjZGM4NzRmMDgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MTctYS0xMC4yMC4x/NC5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 6821
+    },
+    {
       "title": "Organic care • An act of love",
       "sub": "Vincent Rodella\nAbyssal Process",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10840/0f708b68-4dfe-11f1-a349-0215583debcb.mp4",
@@ -223,46 +427,6 @@
       "slate": 3627,
       "featured": true,
       "featuredOrder": 8
-    },
-    {
-      "title": "Vanessa Paradis \"Ces Mots Simples\"",
-      "sub": "Jean-Baptiste Mondino\nIconoclast",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545354961-62745586_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/RYxikYnxuABOLG_-lMnq-NAusKNjRz_91yJ636-gYhA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy92/YW5lc3NhLXBhcmFk/aXMtY2VzLW1vdHMt/c2ltcGxlcy03NzM3/ZTkzZWQ4NTgwMzhi/YWVjMzI2OGMyNGUy/YTJlMy5qcGc?v=1&format=webp",
-      "cat": "",
-      "slate": 241,
-      "featured": true,
-      "featuredOrder": 9
-    },
-    {
-      "title": "Stromae \"Quand C'est ?\"",
-      "sub": "Xavier Reyé\nBenuts",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545388686-20974571_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Po3PbbyWZRSHKOrWjzwyulrrwkd8IcSCzIC_T3Jjw14/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZjIzMTZkMy04OWQ5/LTQyYzctODJiYS1m/NDgzMmM4MTAwYzEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDYt/MzAtYS0xMS4yNC41/NS5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 930,
-      "featured": true,
-      "featuredOrder": 10
-    },
-    {
-      "title": "Pongo \"Chora\"",
-      "sub": "Rush Hour\nFrenzy Paris",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1557239260-pongo-frenzy.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/bkfAfqhNoLOg1K3sblC3EBfSOJZtghWoK7SmCQAQIMo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9w/b25nby1jaG9yYS01/ODQ2MDk5ZWNhYTA4/NGYzODFkZGUzYTgw/YWM5MWI2Ny5qcGc?v=1&format=webp",
-      "cat": "",
-      "slate": 3354,
-      "featured": true,
-      "featuredOrder": 11
-    },
-    {
-      "title": "Damso \"Mosaique Solitaire\"",
-      "sub": "Frédéric de Pontcharra & Mathias Delabarre\nFrench Lab Agency",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545444141-53707205_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/82UqxgGjcAD2bSvPRJQgUz1Pfo1LheiqX1Nq7sVpjbg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YmE1Mzc3OC03Yzk4/LTQ3MGUtODBhMC1m/ODhjN2NkYWE0NjQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDct/MDQtYS0xMC4xNC4y/OC5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 2298,
-      "featured": true,
-      "featuredOrder": 12
     }
   ]
 }
