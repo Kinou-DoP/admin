@@ -2,7 +2,61 @@
   "slug": "leo-lacan",
   "name": "Léo Lacan",
   "hue": 0,
-  "overrides": {},
+  "bundle": "https://kinou.slateapp.com/bundles/177229fe-e2a8-11f1-952e-02ffedfede17",
+  "overrides": {
+    "11109": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "11110": {
+      "zoom": 1.39,
+      "zoomThumb": true
+    },
+    "11112": {
+      "zoom": 1.03,
+      "zoomThumb": true
+    },
+    "11125": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "11128": {
+      "zoom": 1.06,
+      "zoomThumb": true
+    },
+    "11130": {
+      "zoomThumb": true,
+      "zoom": 1.4
+    },
+    "11131": {
+      "zoom": 1.1,
+      "zoomThumb": true
+    },
+    "11132": {
+      "zoom": 1.1,
+      "zoomThumb": true
+    },
+    "11133": {
+      "zoom": 1.11,
+      "zoomThumb": true
+    },
+    "11135": {
+      "zoom": 1.29,
+      "zoomThumb": true
+    },
+    "11138": {
+      "zoom": 1.37,
+      "zoomThumb": true
+    },
+    "11141": {
+      "zoom": 1.44,
+      "zoomThumb": true
+    },
+    "11142": {
+      "zoom": 1.35,
+      "zoomThumb": true
+    }
+  },
   "about": {
     "bioEn": [
       "Léo is a Paris-based cinematographer.",
@@ -13,5 +67,316 @@
     "instagram": "https://www.instagram.com/leo_lacan_/",
     "img": "img/leo-lacan.webp",
     "og": "img/leo-lacan-og-1794935606067.jpg"
-  }
+  },
+  "categories": [
+    "FEATURED",
+    "COMMERCIAL",
+    "STILL LIFE / TEXTURE",
+    "MUSIC VIDEO",
+    "NARRATIVE"
+  ],
+  "clips": [
+    {
+      "title": "Glenfiddich - Gran Reserva (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11109/78d1b1c4-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7f39b4ef-5ebb-42e9-8b9f-c351e9da514a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/iramWJjJCEZDM88I0zEOZsvNqTKhgKCe1dALJT0AK2A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEwOS02YTU0Yjky/M2IzM2Q0NC45MDg2/MzY1Ny1iZTNmZDEx/NjM1ODRlZjY1NjE1/ZjY3NTQxYjZhZDRj/Ni5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11109,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Kerbedanz (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11113/c377713a-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a706870c-69bc-49f9-b938-e6e0ae34d51c-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/jgow8pHox7055He7jEFDopx150VFLbPAya6Cx8harZU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExMy02YTU0Yjkx/ZDIyMWRhOC4wNTYx/MDQxNy1iN2ZmNjJl/NzljMGY4ZmJkNmEw/Yzk1YTRlZDFmMGRh/Zi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11113,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Stella Luna (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11120/0ea928ca-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c02f9cdb-b535-49ed-87b8-0221dfda6fc7-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Mahal6G0Zo_HDrz2euczlzQnT_AaL8THTS4RP_vNRlI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyMC02YTU0Yjky/M2JiNThiOC42OTQ5/MzcyNC05OTYwNzQ3/Y2FiYmZkMWM1Y2U5/MTkyYzM2Njk5Njhi/My5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11120,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Cellcosmet (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11108/61ba3611-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/89934f37-c43b-40cc-9a02-299b35d5037e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/e7_LtUeMh2zn_qasIe3mR9w1FvMU6H5TekgNhC7CC6k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEwOC02YTU0Yjkx/ZDIwZWQyNC42MzA5/NjQ2NS1hZjZkMjAx/MzU4MjUxMzY4M2M3/NWVmNWMyNGY4MDU1/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11108,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Audemars Piguet (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11107/4abc0519-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/92638488-2da7-4559-869e-12bc9ef6dc49-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/_jaMx73Dq3rtcUoEeWguJI7dRrYU96rbB2POiPjYaFg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEwNy02YTU0Yjkx/ZDIxZTdlNS42MTg0/MjYzNC0wZjdlYjIy/ZmNjNmM4MGZiZmYz/ZDA4NzdmZjBiN2Uw/NC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11107
+    },
+    {
+      "title": "Glenfiddich - Grand Cru (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11110/8e352ad6-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1ffe2368-6db4-482b-b71e-cbd82059e028-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/yB9PB9fr3WVAnUdUpEjKKrqLeomjtKdEiYQpLIvYUXw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExMC02YTU0Yjky/M2JhYjQ2NS4xNTkx/NTQ2Ni1lYzFiYWU0/N2ZjMWI0YWM0ZTcy/MjU3Nzg5NTYxYjAy/YS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11110
+    },
+    {
+      "title": "Tommy Jeans (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11121/1a625a94-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c87dec8d-dc2d-42b4-8d72-3f94a102e4fe-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/hA9xT2Dn6YwJXKLRQ98OWSrktTJZnVcgMaHFcrnWU5I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyMS02YTU0Yjkx/ZDIzZDFmOC42NTEw/NzE1MS1jODk1YTJm/Mzk1NjQyZWViNjM0/ODMzNGFkNWM4Nzc2/ZS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11121
+    },
+    {
+      "title": "Henry Jacques (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11112/a8cb78d6-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7839d351-fa8c-47eb-8105-34b3f9a548a2-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Ie6uKhnn6GskzEKcbOdQLBUndnAtmHDbUvfUUC-XYZE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExMi02YTU0Yjkx/ZDIyODdjNy4wMDUz/ODc4MC0xNDk3MTFk/MDYwZDllNzFjYjI1/MDZlYTQ2OTU0M2Iw/My5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11112
+    },
+    {
+      "title": "Van Cleef & Arpels #2 (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11123/22c09db9-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8aef0b9a-1ed6-4fd4-b4d1-452af78b81db-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/AoktnZ7K8BQwwfUTQM-rYTnmtaOzFKM0hJGzlh2CaBs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyMy02YTU0Yjkx/ZDIyMTUwNy43NDY5/NDI0NC1lNmIxZWJl/MDc0ZTYyMGY1MThh/ZGNlMGRjZTY4YWIx/Ni5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11123
+    },
+    {
+      "title": "Louis Vuitton #4 (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11117/de2c9610-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e29f3be9-2bbe-4779-8690-acd8eab55973-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/RfnY8sY4rLMTcI0QOq9Gmj0kBWFg8_nBqahGmq5ifMo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNy02YTU0Yjky/M2MzMTkzMi45NjAz/NTI0Mi02ZDdlNmZk/MzliZTE3ZjRlNGQw/YTM4YzdjNjExOTRm/OS5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11117
+    },
+    {
+      "title": "Maison Kitsuné #2 (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11119/fa07dbcc-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/533b3280-7951-4475-9517-dba6bd57b614-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/85LHkKLv1gE2LLvl6ESwnG5Raq6OcWCq9LXGkuoIYk0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExOS02YTU0Yjky/M2IwNDAwOC44NTkz/MjU1NC1mZDk4OWJl/MjhiNGU4NWYzMDQ3/Mjc1OGIwYWRiZTNm/Mi5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11119
+    },
+    {
+      "title": "Van Cleef & Arpels #1 (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11122/1dcbcde5-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2f6fca64-f928-4f9f-ba75-ec94672d2620-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/X8MfnHp1XgDh3ILNUyNGCo7IMCC5sNSvmEC2cp-5EPk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyMi02YTU0Yjky/YTA1NTUxMy45MzE3/ODAyMy1kOGE1MDU5/OGViNjFjYmZmYjQ4/ODljOGRkZGM0MGFj/Ni5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11122
+    },
+    {
+      "title": "Louis Vuitton #3 (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11116/dad1898a-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/873a3383-f94d-4e80-9890-a6698240bdd8-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/YTbQET5H91fBwvSA6FcK7T1WpWo5saFudVkSBUGmMQo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNi02YTU0Yjkx/ZDIzYmU4Ny43NDY5/NDI0NC1jYmQ2MzI3/MWZiZjNjMGQ4OTk5/MzJkZTIyZWQwNTA1/Ny5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11116
+    },
+    {
+      "title": "Maison Kitsuné #1 (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11118/f702fcad-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cdbb9eff-589a-4c9c-8faa-695526b4ccaf-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/WpFw1lt7N7huTVP-8oSXLfXTmvFmD4VVFYtig6RFy4Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExOC02YTU0Yjky/M2IwOGUzMC42MTc5/MjMyOC0wYjdlYjZh/MjlhZmU3MmVjZDli/YjI2NzE5MzVmMDhk/ZC5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11118
+    },
+    {
+      "title": "Louis Vuitton #2 (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11115/d7f87a2e-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d686b438-5c29-40c7-9596-2b57ca4a5ece-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/efd1ivaoV6gtTecPdRlt0soSdYvJgE-cLaVBAKoarSk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNS02YTU0Yjky/M2IzNDU2NS45ODMw/OTE4OC1kNTQ1YjNk/ODczNjQ4NzRlNDJk/OTFlZWU2ZDhmN2Y1/Zi5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11115
+    },
+    {
+      "title": "Glenfiddich x MrPorter (Commercial)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11111/9c184c2a-7eae-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c7765595-c434-4cde-bc44-22a22346114d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/4oCzCSYYgr0MSelfWCGGDipwi0k5ePDJn13MLY6IjEk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExMS02YTU0Yjky/M2FmMWZjOS4yNjgy/MzA3MS00Mzk4MWE1/NDYxNzE2YTZiYTJi/YmI3YTAzMTI5ZWY1/MC5qcGc?v=1&format=webp",
+      "cat": "STILL LIFE / TEXTURE",
+      "slate": 11111
+    },
+    {
+      "title": "Quiet Island - I Don't Remember (Music VIdeo)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11137/09225dce-7eb0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/241340d1-b33d-41a0-b24b-cb022a877962-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/ps6X97HmqQNWunL_Rjdhls05-UuIDcxNmCcTOKkkuMs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzNy02YTU0Y2I4/YWRjY2I1NS40Njk0/NTI4Mi1jOGQ4ZGYz/MzIxMjhkYzBlYjk2/MzRmYzVjNTBiNzQ0/OS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11137,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "Lean Mantles (Music Video)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11135/f58d53d9-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4a552c11-3adf-43d2-99fc-dd8d4efad4bf-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/RynD4n7aWHgVCb4Nbzx_TVbd1MEKQ7yVBD0PGjC5lYA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzNS02YTU0Y2I4/NzAwYTExMC4xMDEy/MzQ5MS1mOGQyYmIx/OWRkMTI3ZmYwNDBl/ODE2ZDBlNTdjMmQ5/MC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11135,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Lenny Kravitz x Netflix (Documentary)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11127/76a85f90-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f2e3cd40-3d40-4d91-89b3-933136001842-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/78w18Uj-5VS_HaH9ofZBoPmNyQaEtDNf9G_YU0oClD0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyNy02YTU0Y2I3/ZTEyNzRjNS4xMjc4/MzY1Ny1hZTcwODE3/Y2RjZTY2ZWZiNjEy/ODMxMmVlOTE5OTUy/YS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11127,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Quiet Island - Overflow (Music Video)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11138/16270f62-7eb0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d3948e8e-fefb-4292-a317-6918461b8ad9-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/v52N2P-D9AupeNM01KdZIchmh6fXOj1TcRb7lNc4Jf4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzOC02YTU0Y2I3/ZTE1ZjJiNi4wNjg0/OTM4MC03Mjk1MWE0/YWMxZDIwZWU1YWQ5/YTVhNDYyZWI2OTc0/NS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11138
+    },
+    {
+      "title": "Parveen Savart - F. Poulenc - Fleurs (Music Video)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11136/fe75f75d-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e93fe945-0cf0-4af9-ad33-eba4214afa5b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/TuD3AiN8MDdZOdf0eBNtkTF2fZ05088CNSVl-bQNd7k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzNi02YTU0Y2I3/ZWVhMTk5MC44MTM4/MDA0Ni00NDA5YzJm/NTNkMGJjNGQwY2Ux/ZmRkMjY5YTVhYTQ1/MC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11136
+    },
+    {
+      "title": "Ed Mount_Ep3",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11133/dea315a5-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/318d557a-7048-4e2f-af67-d3523ef052ab-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/bBVAXOlTZjQgOaH7dzLkJhk7smjEw5EqrJ2ttZs1s1U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzMy02YTU0Y2I4/NzAxZGIzNi45ODMx/MjE2NC05YjFhYjQ5/OGY2ODIxN2RjYjBk/ZTBlNDIyNGRjMjYw/Zi5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11133
+    },
+    {
+      "title": "Ed Mount_Ep2",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11132/d4c02b42-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/66f11cf0-9d4d-4911-ad6f-281e48c9006a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/yCKUutKWsO_urZIW08kYcC-57k2nVHzA-XdpbppR3BM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzMi02YTU0Y2I4/NDY0NjEwOC4yOTgx/MzE2Ny04MmM1OWI2/NTI5MzllZGMyYmU4/NzQwMzdlZmU2MGYz/My5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11132
+    },
+    {
+      "title": "In Case of Fire - U Can't Poo (Music Video)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11134/eae21aa3-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a06fadbd-d05d-49ac-b3ff-1318382adb30-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/apUVwGq2qyv5liQN4qL1aWgxm0MgMeesskxp2CCEv7I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzNC02YTU0Y2I3/ZTExYjJhOC40MDg1/NTk0Mi1jNDk2OGNl/MzBhOWE5ZDZjOWQw/ZGQ4M2FiMGM3MTA0/ZC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11134
+    },
+    {
+      "title": "Ed Mount_Ep1",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11131/b6040a5a-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/472aa6c0-7166-4973-bd25-841704d494ad-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/IN1v-7pLOOFsKy7kgvWxAbx6MB35qpIVGyY_fykaEZ8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzMS02YTU0Y2I4/NDY4YWVhNy4wMzY0/MTk5Ni0yN2QxOThl/NmZmYzg1NDNhYzMy/ZDA2ZjU1ZmRmOGQy/MC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11131
+    },
+    {
+      "title": "Ed Mount - Mariah & Silly Songs (Music Video)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11130/a9e3eb14-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/02f392c9-2fbc-4baa-a88e-77be7390a156-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/cmvmSFWNqpgRuT2pgdvKM5FxurS35M8UhtGZl0h7ewM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzMC02YTU0Y2I4/NDYwMDg2MS44MDAy/Mzc1Mi1hYTc2NWM1/NmUwNTcxM2M3ZTg5/MTNhYzU1NDdiYWRk/Ny5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11130
+    },
+    {
+      "title": "Bracco - Sunshine (Music Video)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11129/9f8c4eac-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/717c44e4-07b4-4a46-ae4b-cd5514ad655a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/nheT1n8-qcTIHIQjbEIE5Ejd0Wv-WuFaADQ5xpcJgtI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyOS02YTU0Y2I3/ZTFhMzgzOC4zMjc3/NTcwOS03YmViODlk/OWQ0MzBlMjZkYTBk/MWM2OGU2YmEyODVj/Ni5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11129
+    },
+    {
+      "title": "Sofiane Pamart - Chicago (Live @ Montreux Jazz Festival)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11139/278cfa98-7eb0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7f1cb65d-a548-4fce-af86-081337b84dc5-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/qATzA4FNocx1_L9BBhLpSwK5u0ft0Ho1uTNWq6OmToQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEzOS02YTU0Y2I4/YWRjYTYzNy43Njk0/NjUxNS02ZWVlOWVj/YjZlYTJiMTVlMjVk/OWE5ZDhhNDdjN2Yz/NC5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 11139
+    },
+    {
+      "title": "Tout ça c'est les autres (Short Film)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11142/4b293fec-7eb0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/355d4901-1e7f-4b5b-89aa-bd6e454d544a-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/3qZGfWh3dKi0J9SakLJm5B5oCyTSvIlT_LY8Gt-O0ME/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTE0Mi02YTU0Y2I4/YWQ4ZjQxMy41MDc4/MDQzMC03ZjRhYmEz/MTQ0MGY1MmFkODFm/ZGQ4NDQwNjdiMzMw/Zi5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11142
+    },
+    {
+      "title": "Lenny Kravitz x Netflix (Documentary)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11127/76a85f90-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f2e3cd40-3d40-4d91-89b3-933136001842-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/78w18Uj-5VS_HaH9ofZBoPmNyQaEtDNf9G_YU0oClD0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyNy02YTU0Y2I3/ZTEyNzRjNS4xMjc4/MzY1Ny1hZTcwODE3/Y2RjZTY2ZWZiNjEy/ODMxMmVlOTE5OTUy/YS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11127
+    },
+    {
+      "title": "Sema (Short Film)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11141/3cf0c11a-7eb0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c8b7c5f8-98e3-49a9-bfaf-84b4641b721e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/_78nbLUKMdejiucRS2RsyN_NwmY-I_upnXKzVGOeO1A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTE0MS02YTU0Y2I3/ZTE0MmY4Ni42ODk3/MTkzMi01YjdlMjEx/YjcwZjg0YWVjZGQ5/NzI1ZTY3NWQ4OWFm/ZC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11141
+    },
+    {
+      "title": "PolG Foundation (Documentary)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11128/8b76a4ee-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/41f7360d-2441-4cb4-9e8e-355f111bc3b0-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Q-wVy1Yt3HZ_Vao8b4vQrhTFG5f6qyBvHH5nCd3cSAw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyOC02YTU0Y2I3/ZTE2N2E3OS4yNTYz/NTAzOC00ZDM5ZDFk/ZTc3OTkwMmNkMTAz/ZWFkYWJiODA4MDdm/MS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11128
+    },
+    {
+      "title": "Nuit Blanche (Short Film)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11140/319191c0-7eb0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d5b851ce-c9d3-47e6-9efa-c7055c4a091b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/cULucIEVu_Qgh5g8sjhlcsR1edu8tJSyJsUss4L_IXk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTE0MC02YTU0Y2I4/YWQ3OWQyNy41Nzk3/NDkwMi05YjYxMTcx/NDMyYjIzNmIwMjQ3/ZDlhMzQ2NmRiMjVl/ZS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11140
+    },
+    {
+      "title": "L'art du geste (Documentary)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11126/6d618058-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8cf560f2-24f6-44a9-a0bd-aba9b1e64dcc-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/yyHryxBcfUKCZFcrBt1EuCFrBnlzayTT7iXKbT1gsMI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyNi02YTU0Y2I4/NDZiZjI5MC44Mjgy/MzcyNC0xNjBlMGFk/M2NlYmM0YzNmMzFm/YzVhMWVjNjEzZDYz/YS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11126
+    },
+    {
+      "title": "Homo Faber (Documentary)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11125/5f6c841d-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a7211c40-f92a-4356-b178-ddf656b7d0dc-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/fGPDr2DGcHjbmKYEOoKv7kPIspKFPUmwgUXaupcZluo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyNS02YTU0Y2I3/ZGRlM2FlMi45MzI0/MTM3MS01ZjMzMDMw/MGMzOTdjZThkYzdj/MWExNDZhMTg4Yzlh/Yy5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11125
+    },
+    {
+      "title": "Chef's Table - Episode 2 (Documentary)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11124/4a7cef1a-7eaf-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e3ecb063-5376-422d-9fdf-091fdb4f8601-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/MlF6WKtzh8AN_Y02YUDQpy09rTChLBB7JYZNtcmoqfQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyNC02YTU0Y2I4/NDNmZWFhNi45ODgw/MTM2OC0zYmI4NDk3/MjRlYWRhOGQxMWI5/MTU0OTg5NDU2Y2Iw/OC5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 11124
+    }
+  ]
 }
