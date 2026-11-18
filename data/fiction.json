@@ -875,9 +875,12 @@
         "y": 82.7
       },
       "info": {
-        "awards": "Official selection, Festival du film francophone d'Angoulême 2026",
+        "awards": "Official selection, Festival du film francophone d'Angoulême 2026\nValois du public, Festival du film francophone d'Angoulême 2026\nMention spéciale d'interprétation (Mélissa Guers, Ava Baya, Gabrielle Cohen), Festival du film francophone d'Angoulême 2026\nOfficial selection – Discovery, Toronto International Film Festival 2026",
         "awardsFrom": {
-          "551e907cbc45": "Official selection, Festival du film francophone d'Angoulême 2026"
+          "551e907cbc45": "Official selection, Festival du film francophone d'Angoulême 2026",
+          "342f1d89ea42": "Valois du public, Festival du film francophone d'Angoulême 2026",
+          "9eb8e5db6fb2": "Mention spéciale d'interprétation (Mélissa Guers, Ava Baya, Gabrielle Cohen), Festival du film francophone d'Angoulême 2026",
+          "fe74f3d84513": "Official selection – Discovery, Toronto International Film Festival 2026"
         }
       }
     },
