@@ -1,0 +1,271 @@
+{
+  "slug": "alexis-kavyrchine-cinematographer",
+  "name": "Alexis Kavyrchine",
+  "hue": 105,
+  "bundle": "https://kinou.slateapp.com/bundles/077ea3af-e36d-11f1-952e-02ffedfede17",
+  "open": 11347,
+  "overrides": {},
+  "about": {},
+  "categories": [
+    "FEATURED",
+    "NARRATIVE",
+    "DOCUMENTARIES"
+  ],
+  "clips": [
+    {
+      "title": "Les Caprices de l'Enfant Roi • Bande Annonce",
+      "sub": "Michel Leclerc\nMandarin et compagnie",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10935/6cdf49b6-6579-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9ed91ead-da4e-454d-9533-e4030e7b3d1e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/f-lqRJLN86AR2s0V9PUjG2B-XPcl1jzvSQKqaXI8MaA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZDVmNTY5MS1hZTRl/LTQyZmMtYmNjMy02/ODc1MmZiNjkwZmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDYt/MTEtYS0xMS40MC40/Mi5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10935,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "La Voie du serpent",
+      "sub": "Kiyoshi Kurosawa\nCinéfrance Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9576/6d9689be-0f04-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/74ed2a90-f8a8-4fdb-a5c1-bdc01d547df0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/pXdEenRJb5_hmse8zBebV7MQ7fvKe-h2VhqpR3HzUCE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MzRmNGI1ZS01ZDNi/LTQ4MDUtOWM0ZS1j/YzJjNjE5MTZlODAv/bGUtc2VycGVudC1q/MjItcnVuZG93bmJ1/aWxkaW5nLTI4Lmpw/Zw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9576,
+      "featured": true,
+      "featuredOrder": 11
+    },
+    {
+      "title": "La Chambre De Mariana",
+      "sub": "Emmanuel Finkiel\nCinéfrance Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9566/7bd9702f-0af0-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ea2d9457-ca9b-444b-9a0d-d998735ff935-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/QT7GFiwntAMugKubOtSuSZoOBgajlVZYQ23yYSqxgz8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NmM2N2Y5Ny0yNGMz/LTRiMzItYjg3Zi0w/N2MzMjIxYzM4YmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDMt/MjctYS0xMC40Ni4z/OC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9566,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "LA VENUE DE LAVENIR | Bande-annonce",
+      "sub": "Cedric Klapish\nCe Qui Me Meut",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9806/6ecbfa21-2fdb-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1ccd80d6-cd19-43a9-b6ab-b240f9641ee0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1TzsHiGkKJVfold3rRXPqNdGBwZKiajN1ecy_P4fWM4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/Y2VlYjM1YS05NmQ3/LTRiZWYtOTIxMi0w/NDVjZmRhZmU1MjEv/dXBzY2FsZS1sYXZl/bnVlZGVsYXZlbmly/LXN0aWxscy0wMDA4/NjQxMS1oaWdoLWZp/ZGVsaXR5LXYyLTJ4/LWZhY2VhaS12Mi5w/bmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9806,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Le procès du chien - trailer",
+      "sub": "Laetitia Dosch\nBande à part, Atelier de Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8958/74d1753b-48d8-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0a2f3ea3-003b-4ea0-a0ce-838d1f36744e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/thWDdC4C7uuZuEemgP3xOsBy1TGEOqeGyH12p6p_3v4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MTNiNDY1YS1iM2Ji/LTRmNTktOTNlNS04/M2Y2NDkzYmUzYTcv/bGUtcHJvY2VzLWR1/LWNoaWVuLXBob3Rv/NC1jLWJhbmRlLWEt/cGFydGZpbG1zLWF0/ZWxpZXItZGUtcHJv/ZHVjdGlvbi1ydHMt/cmFkaW8tdGVsZXZp/c2lvbi1zdWlzc2Ut/c3JnLXNzci1mcmFu/Y2UyY2luZW1hLTIw/MjQuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 8958,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "La fille de son père - trailer",
+      "sub": "Erwan Le Duc\nDomino Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6e27ffa4-50c4-4eb9-89f0-54f69b2058cd-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/x9NuIJll3JXTc-CkKLcVSRc5VN3RLzpUv761JQx4UVU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YmYxZDQ5Yi1iYTUz/LTQwZWUtODAwNC0x/MTU5ZTc4NzY3ZDIv/c2VsZWN0aW9uc3Rp/bGxzMTEyODEuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 8065
+    },
+    {
+      "title": "À MON SEUL DÉSIR - trailer",
+      "sub": "Lucie Borleteau\nApsara Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/97d61508-bb9c-4c89-828a-7adb4446682d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/H0d6lMv42SfOuP0ah7VUzYbJht2yIxiVMRDuRcS7-S8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MzgzYWJmZS04ZjJj/LTQ5NDEtYTZhNS1l/NzUzMmVmZDhlOGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MTQtYS0xNy4wMC40/MC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6947
+    },
+    {
+      "title": "Salade Grecque - Bande-annonce",
+      "sub": "Cédric Klapisch, Lola Doillon, Antoine Garceau\nCe Qui Me Meut\nco-DoP Julien Roux",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ef4b298-b83e-492f-9ac4-509d4e3e90fa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Z__P3o6jJ5lDzG2jcXlpRzuPeAOo5tOP1MxbcgPUIuE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/N2E3Y2M4OS04ZGU5/LTQyNDYtOWJjMS1m/MGZmNjhjNTY2ZmEv/NjAzLTAyMzEzODdy/ZWMuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6777,
+      "featured": true,
+      "featuredOrder": 10
+    },
+    {
+      "title": "La Montagne - Bande-annonce",
+      "sub": "Thomas Salvador\nChristmas In July",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3efec09c-3bb3-4db9-8068-6e7e27d6c7b3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/wwd4tsivloXmU97BG5vrrcZuUe4ApedDusnHjtQQSvA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MTYzNjk3ZC0wMDcx/LTRmNWQtYjE3ZC0x/NWE0NDEyYTBkNmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDEt/MDQtYS0xNS41OC41/MS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6666,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "En Corps (Rise) - Trailer",
+      "sub": "Cédric Klapisch\nCe Qui Me Meut",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d72212a1-6769-451b-aeb9-202298a48a26-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KkJRnYvafMzmOMOZqbifMtNHKyT9303euqSIApOuc6Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NTM4MWZjMC1kZjZk/LTQ2NDctODg5Mi1k/YmViYTdkZTgwZTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MTAtYS0xMC4xMi4x/NS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5824,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Adieu Les Cons - Feature Film Trailer",
+      "sub": "Albert Dupontel\nADCB Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fcdcff5d-46a0-48c3-b5f6-1fefa7ce9837-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tDTOxL9wtXOEQjsy3UdMtdXimFAgDWL6U4ob08Q-JbQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZDFkNGRkZC0xNThh/LTQyNDAtYWUxZi0z/ZmMyMjY3YmFjOTIv/YWRpZXVjb25zLmpw/Zw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4417,
+      "featured": true,
+      "featuredOrder": 12
+    },
+    {
+      "title": "La Douleur | Feature Film Trailer",
+      "sub": "Emmanuel Finkiel\nLes Films du Poisson",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545422900-50336947_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/lwzf0nkrXBnPp2WyOxElolh1ND3lNnfFKXvxQr4VkF4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODQyNDE5MTA4/L2xhLWRvdWxldXIu/anBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 1837,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Chanson Douce | Feature Film Trailer",
+      "sub": "Lucie Borleteau\nWhy Not Produtions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1571738445-y2mate.com-chanson-douce-la-bande-annonce-du-film-avec-leila-bekhti-et-karin-viard-er9j-inhqou-1080p.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zUXXL4091e0bqVsQr0c_vDh2ZviNnu8WU5TK0F0ubrk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgxNjc3OTc2OTA4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTE0LWEtMTEuNTku/MjUtMi5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 3835
+    },
+    {
+      "title": "Perdrix | Feature Film Trailer",
+      "sub": "Erwan Le Duc\nDomino Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1564673850-y2mate.com-perdrix-bande-annonce-vf-rz3hr84uumo-1080p.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/iH7cj6wLMoNAhk2bVpI5FU-VKlVFU-qOfHiFLHVC54U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgxNjc4MTU1OTc2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTE0LWEtMTIuMDIu/MzItMi5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 3682
+    },
+    {
+      "title": "Le Secret de la Chambre Noire | Feature Film Trailer",
+      "sub": "Kiyoshi Kurosawa\nLes Productions Balthazar",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842423-33412297_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tCckp_U4Y7S1Y7lJSsX1xUa04f7MYZFVOolzPuzznwc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTY0MDUxMTU3NTAx/L2xlLXNlY3JldC1k/ZS1sYS1jaGFtYnJl/LW5vaXJlLnBuZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2858
+    },
+    {
+      "title": "La Lutte des Classes | Feature Film Trailer",
+      "sub": "Michel Leclerc\nKare Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1550767549-la-lutte-des-classes-bande-annonce-2019-leila-bekhti-edouard-baer-comedie.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/iSWUdc3rs9XKx7-umyI3JGYlMTtt3p6dm3VYVpyzSdk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgxNjc4OTg2NTMz/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAy/LTE0LWEtMTIuMTYu/MjItMi5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 3142
+    },
+    {
+      "title": "Adieu Paris - feature film trailer",
+      "sub": "Edouard Baer\nCinéfrance Studios",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/28c56c91-e4fb-483f-9efd-8c85d5614859-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/q6BiTttFOcBwKXBdIeq9X-dmLrSyeOdCjsSyagL2dP8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NmQ0Yjc5ZS04M2Vk/LTQxNjctOTIzOC1j/YjJlMzMyZjhjODkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDMt/MTEtYS0xNi40NC4w/NC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5630
+    },
+    {
+      "title": "Des vivants | Trailer",
+      "sub": "Jean Xavier de Lestrade\nWhat's up Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10140/670bbff1-a46b-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49a58085-d2d1-4b5f-8455-57002a9d2c7b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Vur6lCZWLlC0j0p9vUUoyTvu5EmuVudTFLejgEorBoY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/YmE0ZTJmMy01Mzhk/LTQ5MGMtYjcxNi04/YjkzOGNkMWIzNDYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MDgtYS0xOS4xNC4z/NC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10140,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Je Ne Suis Pas Un Salaud | Feature Film Trailer",
+      "sub": "Emmanuel Finkiel\nThelma Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842943-27729745_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/VEdVPYRaJKPRZzM7vr1p-2blsz62C-eOn5pIUkJlZnY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTY0MDUxMTQwODA0/LzE4MDU0MDk1Lmpw/Zw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2864
+    },
+    {
+      "title": "Ce qui nous Lie | Feature Film Trailer",
+      "sub": "Cédric Klapisch\nCe Qui Me Meut",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545438660-42911907_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/QQ1RHcxzLcvDNsxmqOuYM9yiFBQocaigJLAy8eOt82o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyMjI2MDUwNDQw/LzEuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2163
+    },
+    {
+      "title": "Une Vie Ailleurs | Feature Film Trailer",
+      "sub": "Olivier Peyon\nLe Bureau",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842006-39586995_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/geouB9visoMIgzeQKvSylwbQhn3vhNmBkJwrT70BL3g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODQyMDk0ODI0/L3VuZS12aWUtYWls/bGV1cnMuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2851
+    },
+    {
+      "title": "Photo de Famille | Feature Film Trailer",
+      "sub": "Cecilia Rouaud\nFirelight",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545387335-photo-de-famille-bande-annonce-2018-vanessa-paradis-camille-cottin-comedie.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/SdpTPTKkhw1xoIMrFzV8ELpfbxM2kJVYiYTqZu-T104/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDQ5NjgxMS1kZmJj/LTQ5Y2MtYTVlNy1h/Zjc0N2Y4NWI0NzAv/cGhvdG8tZGUtZmFt/aWxsZS1jLmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 878
+    },
+    {
+      "title": "Vincent N'a Pas d'Écailles | Feature Film Trailer",
+      "sub": "Thomas Salvador\nChristmas In July",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842925-vincent_n_a_pas_d_cailles_-_bande_annonce_-_2014.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/4yHbdf2DSO4JX3IuxaKfLgDBVAzIRLTzFBxgOgZkhbs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTY0MDUxMTQ5MTg3/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDE5LTA3/LTI1LWEtMTIuMjgu/NDYucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2863
+    },
+    {
+      "title": "Et Les Mistrals Gagnants",
+      "sub": "Anne Dauphine Julliand\nNour Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545431629-et-les-mistrals-gagnants-anne-dauphine-julliand-nour-films-bande-annonce.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JKG8inw7sfcqtC31FU70mFg6TVTj9FaQ2S7d3GLDQL0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZGI5ZGJiMy01MGIy/LTRhYzEtODYwOS1h/NmUyOGNmZWM5NTcv/c2l0ZS5qcGc?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 2050
+    },
+    {
+      "title": "Cedar Lake",
+      "sub": "Olivier Peyon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545844156-27730675_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/erUPryngnRTFeg8ypLRnza5jfVHQhrXqvDXWseEYpGQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODU2NTEyNjQw/L2V4dHJhY3QuanBn?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 2904
+    },
+    {
+      "title": "Comment J'ai Détesté Les Maths",
+      "sub": "Olivier Peyon\nHaut & Court",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545432139-comment-j-27ai-deteste-cc-81-les-maths.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0K4DYEG4S1GwJSBuYgC-Vj6tJR_eoCnzp9XbQlTatog/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NDRlOTUzMy0xZGEw/LTQwMTAtOTA2Mi1i/NzQ5Y2UyMDY0YTEv/c2l0ZS5qcGc?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 2055
+    },
+    {
+      "title": "Tous Au Larzac",
+      "sub": "Christian Rouaud\nElzévir Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545431726-tous-au-larzac.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JXz1vjx0HjecI9s19aJ3oY4oQ3CEROaRzUDL_JbRg6A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODUzMzc2MzQy/L3RvdXMtYXUtbGFy/emFjLmpwZw?v=1&format=webp",
+      "cat": "DOCUMENTARIES",
+      "slate": 2052
+    },
+    {
+      "title": "Il Faut Brûler Maman • Bande Annonce",
+      "sub": "Albert Dupontel\nADCB Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11347/770483c5-c70d-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/12c1f4ee-100e-49fe-8b3f-8fbfdc61a544-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/BBefJPeq_Y7hJaM5PcmO06gHUSerGPKu2o3C4li2-98/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/N2IxN2YwMy02Nzc1/LTQxOTUtYTdmMi1h/OTgzZWQ0ZmU3Nzgv/c3RpbGxzLTAwMDg2/NDEwLmpwZw?v=1&format=webp",
+      "cat": "",
+      "slate": 11347,
+      "featured": true,
+      "featuredOrder": 1
+    }
+  ]
+}
