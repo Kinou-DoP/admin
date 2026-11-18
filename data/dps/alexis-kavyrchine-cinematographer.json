@@ -79,7 +79,11 @@
         "autoSrc": [
           "https://www.unifrance.org/film/31758/tous-au-larzac",
           "https://cinando.com/en/Film/tous_au_larzac_85426/Detail"
-        ]
+        ],
+        "awards": "Best Documentary, César 2012",
+        "awardsFrom": {
+          "bca68b7874d7": "Best Documentary, César 2012"
+        }
       }
     },
     "2055": {
@@ -153,7 +157,11 @@
         "autoSrc": [
           "https://www.unifrance.org/film/40167",
           "https://celluloid-dreams.com/films/daguerrotype"
-        ]
+        ],
+        "awards": "Official selection • Platform, Toronto International Film Festival 2016",
+        "awardsFrom": {
+          "88d6edf0f2d6": "Official selection • Platform, Toronto International Film Festival 2016"
+        }
       }
     },
     "2863": {
@@ -171,7 +179,13 @@
         "autoSrc": [
           "https://www.offi.fr/cinema/evenement/vincent-na-pas-decailles-56038.html",
           "https://www.unifrance.org/film/36638/vincent-n-a-pas-d-ecailles"
-        ]
+        ],
+        "awards": "Grand Prix du Jury, Festival International du Film Indépendant de Bordeaux 2014\nAudience Award, Festival international du film de La Roche-sur-Yon 2014\nOfficial selection • New Directors, San Sebastián International Film Festival 2014",
+        "awardsFrom": {
+          "de65deb1b810": "Grand Prix du Jury, Festival International du Film Indépendant de Bordeaux 2014",
+          "bee8c7616282": "Audience Award, Festival international du film de La Roche-sur-Yon 2014",
+          "dcea5d928b19": "Official selection • New Directors, San Sebastián International Film Festival 2014"
+        }
       }
     },
     "2864": {
