@@ -4,7 +4,161 @@
   "hue": 105,
   "bundle": "https://kinou.slateapp.com/bundles/077ea3af-e36d-11f1-952e-02ffedfede17",
   "open": 11347,
-  "overrides": {},
+  "overrides": {
+    "878": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "1837": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2050": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "2052": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "2055": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "2163": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2851": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2858": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2863": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2864": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "2904": {
+      "types": [
+        "Documentary"
+      ]
+    },
+    "3142": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "3682": {
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
+    },
+    "3835": {
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
+    },
+    "4417": {
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
+    },
+    "5630": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "5824": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "6666": {
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "6777": {
+      "types": [
+        "Serie",
+        "narrative"
+      ]
+    },
+    "6947": {
+      "types": [
+        "Trailer"
+      ]
+    },
+    "8065": {
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "8958": {
+      "types": [
+        "Narrative",
+        "Feature"
+      ]
+    },
+    "9566": {
+      "types": [
+        "Feature Film trailer"
+      ]
+    },
+    "9576": {
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "9806": {
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    },
+    "10140": {
+      "types": [
+        "TV Serie",
+        "Series",
+        "narrative"
+      ]
+    },
+    "10935": {
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
+    },
+    "11347": {
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
+    }
+  },
   "about": {},
   "categories": [
     "FEATURED",
