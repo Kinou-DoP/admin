@@ -506,7 +506,21 @@
       "types": [
         "Music Video"
       ],
-      "zoom": 1.04
+      "zoom": 1.04,
+      "info": {
+        "awards": "Video of the Year, UK Music Video Awards 2026\nBest Dance / Electronic Video – International, UK Music Video Awards 2026\nBest Performance in a Video, UK Music Video Awards 2026\nBest Casting in a Video, UK Music Video Awards 2026\nBest Choreography in a Video, UK Music Video Awards 2026\nNominated, Best Cinematography in a Video, UK Music Video Awards 2026\nNominated, Video of the Year, MTV Video Music Awards 2026\nNominated, Best Direction, MTV Video Music Awards 2026\nNominated, Best Choreography, MTV Video Music Awards 2026",
+        "awardsFrom": {
+          "8b6570b79247": "Video of the Year, UK Music Video Awards 2026",
+          "896e7e74bf08": "Best Dance / Electronic Video – International, UK Music Video Awards 2026",
+          "602868874c44": "Best Performance in a Video, UK Music Video Awards 2026",
+          "8349b631437d": "Best Casting in a Video, UK Music Video Awards 2026",
+          "721e5eb76dfe": "Best Choreography in a Video, UK Music Video Awards 2026",
+          "da7e0bb0e5b5": "Nominated, Best Cinematography in a Video, UK Music Video Awards 2026",
+          "cc00c13d2fac": "Nominated, Video of the Year, MTV Video Music Awards 2026",
+          "7819014b907c": "Nominated, Best Direction, MTV Video Music Awards 2026",
+          "a6b466ac76f9": "Nominated, Best Choreography, MTV Video Music Awards 2026"
+        }
+      }
     },
     "10862": {
       "title": "YSL - Myself",
