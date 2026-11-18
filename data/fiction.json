@@ -705,7 +705,26 @@
       "snipCrop": {
         "z": 1.08
       },
-      "poster": "fiction/10909-mwm83u53.webp"
+      "poster": "fiction/10909-mwm83u53.webp",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/les-fraises-stills",
+          "title": "Les Fraises | Stills",
+          "stills": [
+            "https://images.slatecdn.net/Srk5Ha7S0N2fNK_zaZUoHvz37cILXGEIxn29vgf6AVg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vODkzMzZj/MTMtMmY1Yi00NjFj/LWIzMTUtODA5YjJm/YjYxMTcwL2ZyYWlz/ZXMtMC1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/O0BBghvXW8kt0U4MliVIS2-aRXlgNZ7g-rfOrzT4SYs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZTdjMDFl/ZGQtM2Y0Yy00MDE5/LTllOGQtNTczMDhh/OWJkNmRhL2ZyYWlz/ZXMtMS1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/qFvGfbUFCVbvJEc604SP-e5GaUbTC00k0i5D15Dp7DY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTdkN2Uw/YjctZTI2My00YzAz/LTkwMzAtOTY5OWEz/ZGZkMGM0L2ZyYWlz/ZXMtMi1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/d9kdtivptuL92XchKISabTdCDg9MauP5tJ8658SUAKw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMWY2OWNi/YWMtMzMxNC00MjA2/LTk3MDEtOWQ5MjIw/OTU5MjdkL2ZyYWlz/ZXMtMy1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/DFyfZgbvICQnyGgTbOIUpVd6Cw9DmlpDcnYal3lFF78/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYjhhY2Fk/NTQtZjU5NS00MWY3/LTlkMDQtZjQ5YzY5/MWZjNTEwL2ZyYWlz/ZXMtNC1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/EoOEKYOmiAWTq3wW4ATF1FISWuOv3T4gAi9rjrMwH0U/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTYxOTcx/ZTktODJkZi00Zjc5/LWI0MzktYTc4YzUy/MGJiY2RhL2ZyYWlz/ZXMtNS1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/eCm7btGsM4soaA8HeiNu9clyky1X38QHfxsgJZsNMn0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYWRjMmVk/MzgtZWIyMS00MDA3/LWFlYzgtMTE2ODQ2/NjZiNzBmL2ZyYWlz/ZXMtNi1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/Jb3RQZMccRsZtEJob7rrFhIlepLK3SxWOoGt47yg_Eo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTg5OTE5/OGMtMzhlOC00OGI5/LTgyOTQtZGYxMWZl/NmQzMTdmL2ZyYWlz/ZXMtNy1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/EuDkYZ1DDjigD0H06PGBFaFudOlv2utNb7wod06H4dk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNGMyMTFk/ZjItY2IxOC00MzQy/LWI1ODItNDJhZWU3/N2RlMDBlL2ZyYWlz/ZXMtOC1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/VLSVgoCBllIRFtYsdx1yrqoYcrl303amB5W7B4OVlFQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMjU5ODU3/OWQtODMyZi00Yjhk/LTllOGMtNjc4N2Nh/OTM2MTU2L2ZyYWlz/ZXMtOS1leHRyYWN0/cGljcy53ZWJw.webp",
+            "https://images.slatecdn.net/libSLS_mQKYL14NDG9FgDY0K6unXx9CwvBXPIx_o4W0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjM5NjRk/MGQtYmM1ZS00MzYw/LWJhYTctNTFjMmU0/MGU4MDk3L2ZyYWlz/ZXMtMTAtZXh0cmFj/dHBpY3Mud2VicA.webp"
+          ]
+        }
+      ]
     },
     "10935": {
       "zoom": 1.04,
@@ -1194,7 +1213,21 @@
       "poster": "fiction/11556-mwm7wu1o.webp",
       "snipCrop": {
         "z": 1.01
-      }
+      },
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/en-haut-de-la-pile-stills",
+          "title": "En Haut de la Pile | Stills",
+          "stills": [
+            "https://images.slatecdn.net/mTdqmX5uWei5VtPw5X3uVD3Lz4nAy21Z-xmWUn15dek/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjUwOWYz/NWQtYzM3Zi00OWUy/LTgwOGYtNGM5Mzc5/N2NlZmMxL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMTEucG5n.webp",
+            "https://images.slatecdn.net/Jh9Ew9tMOmuN2BdA95pJkQmVfQ1LICqYr16LRzzFR4k/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTkzOTJh/MDktYWEyZS00ZmZi/LWFiYmUtODc1MjIz/MDdhNGEwL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMTQucG5n.webp",
+            "https://images.slatecdn.net/LKeR2T76nh5Sh0t20wli6aHYIGfSD6D7zuNGG1M1blE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDk4ZGE1/MDUtMjMyYi00M2Ri/LWFlZWMtYjE5OTM1/OWE2ZTU5L2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMTYucG5n.webp",
+            "https://images.slatecdn.net/u5nrRCwt-o-FMuxT0zeAcIjw3SW9cw2_rUt36n1yCIA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vM2JhODQ5/YTEtMTk5Zi00Njk2/LWFmODctZjg5YWU0/NTBiYTdhL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMTgucG5n.webp",
+            "https://images.slatecdn.net/HoCW4uPoQY41ISHRZydb7Oiyo2xihblI0R5qEl0RGT4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjYyZTMz/NjMtYzU2ZC00ZTU5/LTkyNjktNWM0NDEx/ODE0NWE2L2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMjEucG5n.webp",
+            "https://images.slatecdn.net/ee0n7x8Ue5tW6bZSXIt5AoYm6bmICBPLu5GFEIS4r6A/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzFmMmFh/OTktMTkxMC00NmU0/LTk3ODctNWVhYjI4/NjBhZThjL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMjIucG5n.webp"
+          ]
+        }
+      ]
     }
   },
   "films": [
