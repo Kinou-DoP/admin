@@ -712,9 +712,14 @@
         "year": "2027",
         "starring": "Nisrin Erradi, Hajar Graigaa, Fatima Attif",
         "synopsis": "Hasna et Meriem quittent pour la première fois le Maroc. Elles rejoignent l’Andalousie comme saisonnières dans les serres de fraises, pour offrir une vie meilleure à leurs familles. Très vite, elles sont confrontées à la dure réalité de leur situation. Ensemble, elles vont s’insurger contre tout un système d’exploitation – au risque de tout perdre.",
-        "awards": "Selected for Un Certain Regard at the 2026 Cannes Film Festival",
+        "awards": "Selected for Un Certain Regard at the 2026 Cannes Film Festival\nPrix post-production (nom exact non vu), Festival international du film de Marrakech (Ateliers de l'Atlas) 2025\nOfficial selection, Festival du film francophone d'Angoulême 2026\nOfficial selection • Un certain regard, Festival de Cannes 2026",
         "runtime": "101 min",
-        "camera": "Arri Alexa 35"
+        "camera": "Arri Alexa 35",
+        "awardsFrom": {
+          "38e9e1012a7f": "Prix post-production (nom exact non vu), Festival international du film de Marrakech (Ateliers de l'Atlas) 2025",
+          "1c86eae1c4a3": "Official selection, Festival du film francophone d'Angoulême 2026",
+          "56267d928ad3": "Official selection • Un certain regard, Festival de Cannes 2026"
+        }
       },
       "thumbCrop": {
         "y": 25.1
@@ -1288,7 +1293,11 @@
         "ratio": "2.39",
         "starring": "Anthony Bajon, Aliocha Schneider, Alexandra Lamy",
         "synopsis": "Arthur et Maxime rêvent d’être parents, quitte à devenir hors la loi. Leurs proches décident de s’en mêler, chacun avec ses convictions et ses idées.... Le problème, c'est qu'elles ne sont pas toutes bonnes !",
-        "runtime": "102 min"
+        "runtime": "102 min",
+        "awards": "Official selection, Festival du film francophone d'Angoulême 2026",
+        "awardsFrom": {
+          "e6198a7f0831": "Official selection, Festival du film francophone d'Angoulême 2026"
+        }
       },
       "title": "En Haut de la Pile",
       "poster": "fiction/11556-mwm7wu1o.webp",

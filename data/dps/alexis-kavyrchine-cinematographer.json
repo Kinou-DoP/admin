@@ -465,7 +465,11 @@
           "https://www.unifrance.org/film/59276/la-chambre-de-mariana"
         ],
         "runtime": "131",
-        "starring": "Mélanie Thierry, Artem Kyryk, Julia Goldberg"
+        "starring": "Mélanie Thierry, Artem Kyryk, Julia Goldberg",
+        "awards": "Official selection • Limelight, International Film Festival Rotterdam (IFFR) 2025",
+        "awardsFrom": {
+          "54bee12b6fb2": "Official selection • Limelight, International Film Festival Rotterdam (IFFR) 2025"
+        }
       }
     },
     "9576": {
@@ -483,7 +487,13 @@
           "https://www.allocine.fr/film/fichefilm_gen_cfilm=315023.html?nopub=1",
           "https://www.luxfilmfest.lu/en/movies/la-voie-du-serpent-hebi-no-michi/",
           "https://pro.imdb.com/title/tt29301380/"
-        ]
+        ],
+        "awards": "Official selection, Göteborg Film Festival 2025\nOfficial selection • Compétition officielle, Festival international du film de San Sebastián 2024\nOfficial selection • Gala Presentation, Busan International Film Festival 2024",
+        "awardsFrom": {
+          "eea448465bb9": "Official selection, Göteborg Film Festival 2025",
+          "2474b04165bc": "Official selection • Compétition officielle, Festival international du film de San Sebastián 2024",
+          "e2edbaf84dcd": "Official selection • Gala Presentation, Busan International Film Festival 2024"
+        }
       }
     },
     "9806": {
@@ -507,7 +517,14 @@
         ],
         "camera": "Sony Venice 2",
         "lenses": "Cooke Anamorphic/i Full Frame x1.8 (époque 1895)",
-        "platforms": "Canal+"
+        "platforms": "Canal+",
+        "awards": "Nominated, Meilleure révélation féminine, César du cinéma 2026\nNominated, Meilleurs costumes, César du cinéma 2026\nNominated, Meilleurs décors, César du cinéma 2026\nOfficial selection • Sélection officielle • Hors compétition, Festival de Cannes 2025",
+        "awardsFrom": {
+          "81fc0b5dd106": "Nominated, Meilleure révélation féminine, César du cinéma 2026",
+          "8bfeb65ecb27": "Nominated, Meilleurs costumes, César du cinéma 2026",
+          "89bb30e43adf": "Nominated, Meilleurs décors, César du cinéma 2026",
+          "8b7de534339a": "Official selection • Sélection officielle • Hors compétition, Festival de Cannes 2025"
+        }
       }
     },
     "10140": {
@@ -585,7 +602,11 @@
         "runtime": "114",
         "autoSrc": [
           "https://www.festival-cannes.com/f/les-caprices-de-l-enfant-roi/"
-        ]
+        ],
+        "awards": "Official selection • Séance spéciale (Cinéma de la Plage), Festival de Cannes 2026",
+        "awardsFrom": {
+          "a201d51a232e": "Official selection • Séance spéciale (Cinéma de la Plage), Festival de Cannes 2026"
+        }
       }
     },
     "11347": {
