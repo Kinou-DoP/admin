@@ -2801,12 +2801,15 @@
   // `info.awardsFrom` = { id de la trouvaille: ligne écrite } : une ligne n'est ajoutée qu'une fois (corrigée ou effacée à la main :
   // pas remise) ; trouvaille retirée ou écartée = sa ligne retirée (si elle n'a pas été corrigée). Seulement avec une clé qui peut
   // écrire sur le site (`canWeb`) ; lancé à l'ouverture de Nos sélections et après chaque changement.
-  function awLine(x) {
+  // Tirets longs remplacés par « • » (Gus 18/11).
+  function awDots(t) { return String(t || "").replace(/\s*[–—]\s*/g, " • ").trim(); }
+  function awLine(x) { return awDots(awLine0(x)); }
+  function awLine0(x) {
     var y = String(x.edition || String(x.date || "").slice(0, 4) || ""), fest = String(x.festName || x.fest || "").trim();
     var where = fest + (y && fest.indexOf(y) < 0 ? " " + y : "");
     if (x.kind === "prize") return (x.prize || "Prize") + (x.image && !/image|photo|cin[eé]matograph/i.test(x.prize || "") ? " (cinematography)" : "") + ", " + where;
     if (x.kind === "nomination") return "Nominated" + (x.prize || x.section ? ", " + (x.prize || x.section) : "") + ", " + where;
-    return "Official selection" + (x.section ? " – " + x.section : "") + ", " + where;
+    return "Official selection" + (x.section ? " • " + x.section : "") + ", " + where;
   }
   function awApply(ov, id, items) {
     var o = ov[id] || {}, info = Object.assign({}, o.info || {}), from = Object.assign({}, info.awardsFrom || {}), ch = false, want = {};
@@ -3027,7 +3030,7 @@
     function form(x0, at) {
       var old = box.querySelector(".seladd"); if (old) old.remove();
       var x = x0 ? JSON.parse(JSON.stringify(x0)) : { kind: "selection", status: "ok", manual: true, edition: String(new Date().getFullYear()) }, chosen = x0 ? { id: x.project } : null;
-      var projs = (proj && proj.projects || []).filter(function (p) { return !p.agency && p.title && !p.workTitle; });
+      var projs = (proj && proj.projects || []).filter(function (p) { return p.title && !p.workTitle; }); // autres agences comprises (Gus 18/11)
       var q = el("input", { type: "search", class: "nodirty", placeholder: "Titre du film, réalisateur, chef op…", value: x.title || "" }), res = el("div", { class: "selres" });
       q.addEventListener("input", function () {
         var w = nrm(q.value).split(/\s+/).filter(Boolean); res.textContent = ""; chosen = null;
@@ -3125,7 +3128,7 @@
     // Toutes les sorties connues + films sans date ; infos (réal, chef op, prod) complétées par projets.json et la page fiction.
   function sortBuild(fic, proj, sorties) {
       var nrm = sortNrm, events = [], noDate = [], ficEv = [], ficAll = [];
-      var byTitle = {}, projs = ((proj && proj.projects) || []).filter(function (p) { return /^(LM|TVF|STV)$/.test(p.type) && !p.agency && p.title && !p.workTitle; });
+      var byTitle = {}, projs = ((proj && proj.projects) || []).filter(function (p) { return /^(LM|TVF|STV)$/.test(p.type) && p.title && !p.workTitle; }); // autres agences comprises (Gus 18/11)
       projs.forEach(function (p) { byTitle[nrm(p.title)] = p; });
       var seen = {};
       function add(e) { var k = nrm(e.title) + "|" + e.date; if (seen[k]) return; seen[k] = 1; events.push(e); }
