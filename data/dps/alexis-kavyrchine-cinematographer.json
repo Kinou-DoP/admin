@@ -79,7 +79,11 @@
         "autoSrc": [
           "https://www.unifrance.org/film/31758/tous-au-larzac",
           "https://cinando.com/en/Film/tous_au_larzac_85426/Detail"
-        ]
+        ],
+        "awards": "Best Documentary, César 2012",
+        "awardsFrom": {
+          "bca68b7874d7": "Best Documentary, César 2012"
+        }
       }
     },
     "2055": {
@@ -223,7 +227,11 @@
         "autoSrc": [
           "https://www.unifrance.org/film/46884/perdrix",
           "https://www.offi.fr/cinema/evenement/perdrix-74138.html"
-        ]
+        ],
+        "awards": "Official selection • Directors' Fortnight, Festival de Cannes 2019",
+        "awardsFrom": {
+          "4d8601f3e340": "Official selection • Directors' Fortnight, Festival de Cannes 2019"
+        }
       }
     },
     "3835": {
@@ -371,7 +379,16 @@
           "https://www.cnc.fr/cinema/actualites/alexis-kavyrchine---la-montagne-est-un-film-fantastique-ancre-dans-le-reel_1886063"
         ],
         "runtime": "114",
-        "starring": "Thomas Salvador, Louise Bourgoin, Martine Chevallier, Laurent Poitrenaux"
+        "starring": "Thomas Salvador, Louise Bourgoin, Martine Chevallier, Laurent Poitrenaux",
+        "awards": "Jury Prize, Festival international du film fantastique de Gérardmer 2023\nCritics' Prize, Festival international du film fantastique de Gérardmer 2023\nAudience Award, Paris International Fantastic Film Festival 2022\nPrix Ciné+, Paris International Fantastic Film Festival 2022\nPrix SACD (Directors' Fortnight), Festival de Cannes 2022\nOfficial selection • Directors' Fortnight, Festival de Cannes 2022",
+        "awardsFrom": {
+          "8a7a3eefce32": "Jury Prize, Festival international du film fantastique de Gérardmer 2023",
+          "9ad0c16b6a07": "Critics' Prize, Festival international du film fantastique de Gérardmer 2023",
+          "f15c14251068": "Audience Award, Paris International Fantastic Film Festival 2022",
+          "772e50af48a0": "Prix Ciné+, Paris International Fantastic Film Festival 2022",
+          "18c0a116dbc4": "Prix SACD (Directors' Fortnight), Festival de Cannes 2022",
+          "5974b01236e0": "Official selection • Directors' Fortnight, Festival de Cannes 2022"
+        }
       }
     },
     "6777": {
