@@ -773,7 +773,8 @@
         "runtime": "114",
         "autoSrc": [
           "https://www.festival-cannes.com/f/les-caprices-de-l-enfant-roi/"
-        ]
+        ],
+        "awards": "Official selection • Séance spéciale (Cinéma de la Plage), Festival de Cannes 2026"
       },
       "extras": [
         {
@@ -2238,6 +2239,6 @@
     }
   ],
   "readAsk": "2026-11-18T14:17:19.815Z",
-  "readAt": "2026-11-18T14:43:53.428Z",
+  "readAt": "2026-11-18T17:36:31.548Z",
   "readError": "Slate 403 https://shots.re/206d64"
 }
