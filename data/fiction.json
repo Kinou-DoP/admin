@@ -691,12 +691,21 @@
       "status": "soon",
       "date": "2027-03-24",
       "info": {
-        "year": "2027"
+        "year": "2027",
+        "starring": "Nisrin Erradi, Hajar Graigaa, Fatima Attif",
+        "synopsis": "Hasna et Meriem quittent pour la première fois le Maroc. Elles rejoignent l’Andalousie comme saisonnières dans les serres de fraises, pour offrir une vie meilleure à leurs familles. Très vite, elles sont confrontées à la dure réalité de leur situation. Ensemble, elles vont s’insurger contre tout un système d’exploitation – au risque de tout perdre.",
+        "awards": "Selected for Un Certain Regard at the 2026 Cannes Film Festival",
+        "runtime": "101 min",
+        "camera": "Arri Alexa 35"
       },
       "thumbCrop": {
         "y": 25.1
       },
-      "title": "LES FRAISES"
+      "title": "LES FRAISES",
+      "snipCrop": {
+        "z": 1.08
+      },
+      "poster": "fiction/10909-mwm83u53.webp"
     },
     "10935": {
       "zoom": 1.04,
@@ -1176,10 +1185,16 @@
       "date": "2027-01-06",
       "info": {
         "year": "2027",
-        "ratio": "2.39"
+        "ratio": "2.39",
+        "starring": "Anthony Bajon, Aliocha Schneider, Alexandra Lamy",
+        "synopsis": "Arthur et Maxime rêvent d’être parents, quitte à devenir hors la loi. Leurs proches décident de s’en mêler, chacun avec ses convictions et ses idées.... Le problème, c'est qu'elles ne sont pas toutes bonnes !",
+        "runtime": "102 min"
       },
       "title": "En Haut de la Pile",
-      "poster": "fiction/11556-mwm7wu1o.webp"
+      "poster": "fiction/11556-mwm7wu1o.webp",
+      "snipCrop": {
+        "z": 1.01
+      }
     }
   },
   "films": [
