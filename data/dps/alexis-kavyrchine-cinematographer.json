@@ -7,40 +7,179 @@
   "overrides": {
     "878": {
       "zoom": 1.37,
-      "title": "Photo de Famille"
+      "title": "Photo de Famille",
+      "info": {
+        "year": "2018",
+        "runtime": "98",
+        "starring": "Vanessa Paradis, Camille Cottin, Pierre Deladonchamps, Jean-Pierre Bacri, Chantal Lauby",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/43727/photo-de-famille",
+          "https://www.offi.fr/cinema/evenement/photo-de-famille-69223.html"
+        ]
+      }
     },
     "1837": {
       "zoom": 1.05,
-      "title": "La Douleur"
+      "title": "La Douleur",
+      "info": {
+        "year": "2017",
+        "runtime": "126",
+        "ratio": "1.85",
+        "starring": "Mélanie Thierry, Benoît Magimel, Benjamin Biolay, Shulamit Adar, Grégoire Leprince-Ringuet",
+        "auto": [
+          "year",
+          "runtime",
+          "ratio",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/43291/la-douleur",
+          "https://www.cineuropa.org/film/334179"
+        ]
+      }
     },
     "2050": {
-      "zoom": 1.04
+      "zoom": 1.04,
+      "info": {
+        "year": "2016",
+        "runtime": "79",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/39712",
+          "https://cineuropa.org/en/film/320043",
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=249216.html"
+        ]
+      }
     },
     "2052": {
-      "zoom": 1.05
+      "zoom": 1.05,
+      "info": {
+        "year": "2011",
+        "runtime": "118",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/31758/tous-au-larzac",
+          "https://cinando.com/en/Film/tous_au_larzac_85426/Detail"
+        ]
+      }
     },
     "2055": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "info": {
+        "year": "2013",
+        "runtime": "103",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/34312/comment-j-ai-deteste-les-maths",
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=204518.html"
+        ]
+      }
     },
     "2163": {
       "zoom": 1.34,
-      "title": "Ce qui nous Lie"
+      "title": "Ce qui nous Lie",
+      "info": {
+        "year": "2017",
+        "runtime": "113",
+        "starring": "Pio Marmaï, Ana Girardot, François Civil, Maria Valverde",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=241997.html",
+          "https://www.unifrance.org/film/41132/le-vin-et-le-vent",
+          "https://cineuropa.org/film/320495"
+        ]
+      }
     },
     "2851": {
       "zoom": 1.35,
-      "title": "Une Vie Ailleurs"
+      "title": "Une Vie Ailleurs",
+      "info": {
+        "year": "2017",
+        "runtime": "96",
+        "starring": "Isabelle Carré, Ramzy Bedia, María Dupláa",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.cnc.fr/professionnels/visas-et-classification/128118",
+          "https://www.offi.fr/cinema/evenement/une-vie-ailleurs-63908.html"
+        ]
+      }
     },
     "2858": {
       "title": "Le Secret de la Chambre Noire",
-      "zoom": 1.38
+      "zoom": 1.38,
+      "info": {
+        "year": "2016",
+        "runtime": "131",
+        "starring": "Tahar Rahim, Constance Rousseau, Olivier Gourmet, Mathieu Amalric, Malik Zidi",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/40167",
+          "https://celluloid-dreams.com/films/daguerrotype"
+        ]
+      }
     },
     "2863": {
       "zoom": 1.01,
-      "title": "Vincent N'a Pas d'Écailles"
+      "title": "Vincent N'a Pas d'Écailles",
+      "info": {
+        "year": "2014",
+        "runtime": "78",
+        "starring": "Thomas Salvador, Vimala Pons, Youssef Hajdi, Nicollas Jaillet",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.offi.fr/cinema/evenement/vincent-na-pas-decailles-56038.html",
+          "https://www.unifrance.org/film/36638/vincent-n-a-pas-d-ecailles"
+        ]
+      }
     },
     "2864": {
       "zoom": 1.09,
-      "title": "Je Ne Suis Pas Un Salaud"
+      "title": "Je Ne Suis Pas Un Salaud",
+      "info": {
+        "year": "2015",
+        "runtime": "111",
+        "starring": "Nicolas Duvauchelle, Mélanie Thierry, Driss Ramdi, Marine Cayon",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.cnc.fr/professionnels/visas-et-classification/127107",
+          "https://cineuropa.org/film/298139",
+          "https://www.unifrance.org/film/38723/je-ne-suis-pas-un-salaud"
+        ]
+      }
     },
     "2904": {
       "zoom": 1.35
@@ -53,12 +192,40 @@
     "3682": {
       "zoom": 1.04,
       "zoomThumb": true,
-      "title": "Perdrix"
+      "title": "Perdrix",
+      "info": {
+        "year": "2019",
+        "runtime": "99",
+        "starring": "Swann Arlaud, Maud Wyler, Fanny Ardant, Nicolas Maury, Alexandre Steiger",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/46884/perdrix",
+          "https://www.offi.fr/cinema/evenement/perdrix-74138.html"
+        ]
+      }
     },
     "3835": {
       "zoom": 1.04,
       "zoomThumb": true,
-      "title": "Chanson Douce"
+      "title": "Chanson Douce",
+      "info": {
+        "year": "2019",
+        "runtime": "99",
+        "starring": "Karin Viard, Leïla Bekhti, Antoine Reinartz, Assya Da Sylva",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.cnc.fr/professionnels/visas-et-classification/147647",
+          "https://www.offi.fr/cinema/evenement/chanson-douce-75803.html"
+        ]
+      }
     },
     "4417": {
       "extras": [
@@ -80,15 +247,49 @@
         }
       ],
       "zoom": 1.35,
-      "title": "Adieu Les Cons"
+      "title": "Adieu Les Cons",
+      "info": {
+        "year": "2020",
+        "auto": [
+          "year"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/48134/adieu-les-cons"
+        ]
+      }
     },
     "5630": {
       "zoom": 1.07,
-      "title": "Adieu Paris"
+      "title": "Adieu Paris",
+      "info": {
+        "year": "2022",
+        "runtime": "96",
+        "starring": "Benoît Poelvoorde, Pierre Arditi, Jackie Berroyer, François Damiens, Ludivine Sagnier",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/51478/adieu-paris",
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=287061.html"
+        ]
+      }
     },
     "5824": {
       "zoom": 1.04,
-      "title": "En Corps (Rise)"
+      "title": "En Corps (Rise)",
+      "info": {
+        "year": "2022",
+        "ratio": "1.85",
+        "auto": [
+          "year",
+          "ratio"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/52771/en-corps"
+        ]
+      }
     },
     "6666": {
       "extras": [
@@ -104,12 +305,41 @@
         }
       ],
       "title": "La Montagne",
-      "zoom": 1.05
+      "zoom": 1.05,
+      "info": {
+        "year": "2022",
+        "ratio": "1.85",
+        "auto": [
+          "year",
+          "ratio"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/53496/la-montagne",
+          "https://www.cnc.fr/cinema/actualites/alexis-kavyrchine---la-montagne-est-un-film-fantastique-ancre-dans-le-reel_1886063"
+        ]
+      }
     },
     "6777": {
       "zoom": 1.22,
       "zoomPos": "58.4% 49.4%",
-      "title": "Salade Grecque"
+      "title": "Salade Grecque",
+      "info": {
+        "year": "2023",
+        "episodes": "8",
+        "runtime": "50",
+        "platforms": "France 2, france.tv",
+        "auto": [
+          "year",
+          "episodes",
+          "runtime",
+          "platforms"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/56322/salade-grecque",
+          "https://www.francetvpro.fr/contenu-de-presse/67198503",
+          "https://www.crew-united.com/de/Greek-Salad__319808.html"
+        ]
+      }
     },
     "6947": {
       "extras": [
@@ -127,7 +357,19 @@
         }
       ],
       "zoom": 1.34,
-      "title": "À MON SEUL DÉSIR"
+      "title": "À MON SEUL DÉSIR",
+      "info": {
+        "year": "2023",
+        "starring": "Zita Hanrot, Louise Chevillotte, Laure Giappiconi, Pedro Casablanc",
+        "auto": [
+          "year",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://unifrance.org/film/54153/a-mon-seul-desir",
+          "https://cineuropa.org/film/439415"
+        ]
+      }
     },
     "8065": {
       "extras": [
@@ -144,26 +386,111 @@
         }
       ],
       "title": "La fille de son père",
-      "zoom": 1.04
+      "zoom": 1.04,
+      "info": {
+        "year": "2023",
+        "runtime": "91",
+        "starring": "Nahuel Pérez Biscayart, Céleste Brunnquell, Maud Wyler",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://unifrance.org/film/55419/la-fille-de-son-pere",
+          "https://www.allocine.fr/seance/film-299454/",
+          "https://www.music-cinema.com/fr/component/zoo/item/la-fille-de-son-pere?Itemid=949"
+        ]
+      }
     },
     "8958": {
-      "title": "Le procès du chien"
+      "title": "Le procès du chien",
+      "info": {
+        "year": "2024",
+        "runtime": "85",
+        "starring": "Laetitia Dosch, François Damiens, Jean-Pascal Zadi, Anne Dorval",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.festival-cannes.com/en/f/le-proces-du-chien/",
+          "https://www.unifrance.org/film/58451/le-proces-du-chien"
+        ]
+      }
     },
     "9566": {
       "zoom": 1.33,
-      "zoomPos": "51.6% 15.4%"
+      "zoomPos": "51.6% 15.4%",
+      "info": {
+        "year": "2025",
+        "auto": [
+          "year"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/59276/la-chambre-de-mariana"
+        ]
+      }
     },
     "9576": {
-      "zoom": 1.17
+      "zoom": 1.17,
+      "info": {
+        "year": "2025",
+        "runtime": "112",
+        "starring": "Ko Shibasaki, Damien Bonnard, Mathieu Amalric, Grégoire Colin",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=315023.html?nopub=1",
+          "https://www.luxfilmfest.lu/en/movies/la-voie-du-serpent-hebi-no-michi/",
+          "https://pro.imdb.com/title/tt29301380/"
+        ]
+      }
     },
     "9806": {
       "zoom": 1.36,
       "zoomThumb": true,
-      "title": "La Venue de l'Avenir"
+      "title": "La Venue de l'Avenir",
+      "info": {
+        "year": "2025",
+        "runtime": "124",
+        "starring": "Suzanne Lindon, Abraham Wapler, Julia Piaton, Vincent Macaigne, Zinedine Soualem",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.festival-cannes.com/en/f/la-venue-de-l-avenir/",
+          "https://www.unifrance.org/film/60429"
+        ]
+      }
     },
     "10140": {
       "zoom": 1.14,
-      "title": "Des vivants"
+      "title": "Des vivants",
+      "info": {
+        "year": "2025",
+        "episodes": "8",
+        "runtime": "52",
+        "platforms": "France 2, france.tv",
+        "starring": "Benjamin Lavernhe, Antoine Reinartz, Félix Moati, Alix Poisson",
+        "auto": [
+          "year",
+          "episodes",
+          "runtime",
+          "platforms",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.francetvpro.fr/contenu-de-presse/69340269",
+          "https://www.unifrance.org/film/63560/des-vivants"
+        ]
+      }
     },
     "10935": {
       "title": "Les Caprices de l'Enfant Roi",
@@ -235,10 +562,39 @@
             "https://images.slatecdn.net/_8fyuThxnb_VmFcA5fYjqlq8TgCBPfYCoG7IF3_qRKg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDhiMTA1/YTEtYzRjMS00NWNm/LWFkYWYtNzI0OTNi/ODhjYWE1L3N0aWxs/cy0wMDA4NjQzMC5q/cGc.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "year": "2026",
+        "runtime": "80",
+        "starring": "Albert Dupontel, Louise Coldefy, Julia Piaton, Artus",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/64535",
+          "https://leclaireur.fnac.com/article/699647-albert-dupontel-il-faut-bruler-maman-que-vaut-son-film-avis/"
+        ]
+      }
     }
   },
-  "about": {},
+  "about": {
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/fr/name/nm1132563/?ref_=ext_shr_lnk"
+      }
+    ],
+    "instagram": "https://www.instagram.com/alexiskavyrchine/",
+    "bioEn": [
+      "Alexis Kavyrchine is a french cinematographer based in Paris."
+    ],
+    "pos": "47% 31%",
+    "img": "img/alexis-kavyrchine-cinematographer.webp",
+    "cv": "cv/CV-Alexis-Kavyrchine.pdf",
+    "og": "img/alexis-kavyrchine-cinematographer-og-1795022414482.jpg"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
