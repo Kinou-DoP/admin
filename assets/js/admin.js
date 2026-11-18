@@ -984,10 +984,18 @@
     var box = el("div", { class: "inforobot" }), slug = state.slug;
     var btn = el("button", { type: "button", class: "btn", text: "Compléter les infos des films (robot)" }), st = el("span", { class: "hint" });
     box.appendChild(btn); box.appendChild(st);
+    // Seulement les films des onglets fiction (Gus 18/11) : Narrative, Documentaries, Short film(s), Feature film(s), Series… (variantes et
+    // fautes de frappe comprises) ; pas les pubs ni les clips (sinon des dizaines de recherches dans le vide sur un chef op pub / clip).
+    var FIC_TAB = /narr?at|fiction|docu|short|court|feature|featured? ?films?$|long|metrage|s[eé]ri|tele|t[eé]l[eé]film|tv|movie|cinema/;
+    function ficTab(cat) {
+      var c = String(cat || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+      return c !== "featured" && FIC_TAB.test(c) && !/commercial|advert|\bpub|\btvc\b|clip|music/.test(c); // « TV commercial », « TVC » : de la pub
+    }
     function films() {
-      var seen = {}, out = [];
+      var seen = {}, out = [], ok = {};
+      (slate && slate.clips || []).forEach(function (c) { if (ficTab(c.cat)) ok[String(c.slate)] = true; });
       (slate && slate.clips || []).forEach(function (c) {
-        var id = String(c.slate || ""); if (!id || seen[id]) return; seen[id] = true;
+        var id = String(c.slate || ""); if (!id || seen[id] || !ok[id]) return; seen[id] = true;
         var o = state.overrides[id] || {}; if (o.hidden) return;
         var info = o.info || {}, have = INFO_KEYS.filter(function (k) { return String(info[k] || "").trim(); });
         if (have.length === INFO_KEYS.length) return;
@@ -998,7 +1006,7 @@
     function show(q) {
       clearTimeout(infoAskTimer); infoAskCur = q; st.textContent = ""; btn.disabled = false;
       var old = box.querySelector(".irapply"); if (old) old.remove();
-      if (!q) { st.textContent = "Le robot cherche année, épisodes, durée, format, plateformes, caméra, optiques et starring (pas le synopsis) ; seuls les champs vides seront remplis."; return; }
+      if (!q) { st.textContent = "Films des onglets Narrative, Documentaries, Short film, Feature film, Series (pas les pubs ni les clips) : le robot cherche année, épisodes, durée, format, plateformes, caméra, optiques et starring ; seuls les champs vides seront remplis."; return; }
       if (!q.doneAt) {
         btn.disabled = true;
         st.textContent = "Recherche en cours… " + (q.total ? (q.done || 0) + " / " + q.total + " films" : "démarrage (1 à 2 min)") + " — vous pouvez quitter la page, la réponse sera gardée.";
@@ -1033,7 +1041,7 @@
     }
     btn.addEventListener("click", function () {
       var l = films();
-      if (!l.length) { st.textContent = "Tous les films ont déjà toutes leurs infos."; return; }
+      if (!l.length) { st.textContent = "Rien à chercher : pas de film dans les onglets Narrative, Documentaries, Short film, Feature film ou Series, ou ils ont déjà toutes leurs infos."; return; }
       if (!confirm("Lancer la recherche pour " + l.length + " film" + (l.length > 1 ? "s" : "") + " ? (environ " + Math.max(2, Math.ceil(l.length / 6) * 3) + " min, sur l'abonnement Claude)")) return;
       btn.disabled = true; st.textContent = "Envoi de la demande…";
       var stamp = new Date().toISOString().replace(/[:.]/g, "-"), q = { slug: slug, name: state.name || "", films: l, at: new Date().toISOString(), by: user && user.login || "" };

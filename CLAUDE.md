@@ -88,7 +88,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   optiques, **starring** (`starring`, acteurs séparés par des virgules, Gus 18/11), synopsis français (`synopsis`) et anglais (`synopsisEn`) → `overrides[<id>].info`. Affichage : CLAUDE.md du site (`info`).
   **« Compléter les infos des films (robot) »** (Gus 18/11, fiche d'un chef op, au-dessus des onglets des films, `infoRobotCtl`) : demande au robot du
   dépôt notes (`infos/ask/<adresse>-<horodatage>.json`, workflow `film-infos.yml`, Claude + recherche web, 6 films par recherche, ~3 min chacune ;
-  films masqués et films déjà complets exclus, champs déjà remplis jamais cherchés ; année, épisodes, durée, format, plateformes, caméra, optiques, starring, **pas le synopsis**), avancement relu toutes les 10 s (la page peut être quittée,
+  **seulement les films des onglets fiction** (Narrative, Documentaries, Short film, Feature film, Series… variantes et fautes comprises, `ficTab` ; pas FEATURED seul, ni pub / clip / TV commercial, Gus 18/11), films masqués et films déjà complets exclus, champs déjà remplis jamais cherchés ; année, épisodes, durée, format, plateformes, caméra, optiques, starring, **pas le synopsis**), avancement relu toutes les 10 s (la page peut être quittée,
   la réponse est gardée), puis **« Appliquer (champs vides seulement) »** : ce que l'équipe ou Slate a déjà écrit passe toujours en priorité ;
   champs remplis = `info.auto` (encadré orange « robot, à vérifier », sources `info.autoSrc` ; ignorés par le site), modifier un champ ou
   « Vérifié, tout est bon » enlève la marque ; puis Publier.
