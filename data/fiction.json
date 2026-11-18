@@ -326,7 +326,25 @@
       },
       "platforms": [
         "France TV"
-      ]
+      ],
+      "info": {
+        "year": "2025",
+        "episodes": "8",
+        "runtime": "52",
+        "platforms": "France 2, france.tv",
+        "starring": "Benjamin Lavernhe, Antoine Reinartz, Félix Moati, Alix Poisson",
+        "auto": [
+          "year",
+          "episodes",
+          "runtime",
+          "platforms",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.francetvpro.fr/contenu-de-presse/69340269",
+          "https://www.unifrance.org/film/63560/des-vivants"
+        ]
+      }
     },
     "10206": {
       "zoom": 1.36,
@@ -1194,7 +1212,21 @@
             "https://images.slatecdn.net/_8fyuThxnb_VmFcA5fYjqlq8TgCBPfYCoG7IF3_qRKg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDhiMTA1/YTEtYzRjMS00NWNm/LWFkYWYtNzI0OTNi/ODhjYWE1L3N0aWxs/cy0wMDA4NjQzMC5q/cGc.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "year": "2026",
+        "runtime": "80",
+        "starring": "Albert Dupontel, Louise Coldefy, Julia Piaton, Artus",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/64535",
+          "https://leclaireur.fnac.com/article/699647-albert-dupontel-il-faut-bruler-maman-que-vaut-son-film-avis/"
+        ]
+      }
     },
     "11358": {
       "zoom": 1.35,
