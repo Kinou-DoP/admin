@@ -290,7 +290,15 @@
       "types": [
         "Commercial",
         "Charity film"
-      ]
+      ],
+      "info": {
+        "awards": "Silver Shark – Film Craft, Direction, Shark Awards 2026\nOfficial selection – Film Craft – Direction, Cannes Lions 2026\nOfficial selection – Film Craft – Sound Design, Cannes Lions 2026",
+        "awardsFrom": {
+          "ec3c0f7b66c0": "Silver Shark – Film Craft, Direction, Shark Awards 2026",
+          "14467516387b": "Official selection – Film Craft – Direction, Cannes Lions 2026",
+          "7d65f8673326": "Official selection – Film Craft – Sound Design, Cannes Lions 2026"
+        }
+      }
     },
     "10945": {
       "extras": [
