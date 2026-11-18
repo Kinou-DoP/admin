@@ -328,7 +328,18 @@
         ],
         "runtime": "120",
         "starring": "Marion Barbeau, Hofesh Shechter, Denis Podalydès, Muriel Robin, Pio Marmaï",
-        "lenses": "Leitz Summilux-C"
+        "lenses": "Leitz Summilux-C",
+        "awards": "Nominated, Best Cinematography, César 2023\nNominated, Best Director, César 2023\nNominated, Best Female Revelation (Marion Barbeau), César 2023\nNominated, Best Original Screenplay, César 2023\nNominated, Best Supporting Actor (Pio Marmaï), César 2023\nNominated, Best Supporting Actor (François Civil), César 2023\nNominated, Best Editing, César 2023\nNominated, Best Sound, César 2023",
+        "awardsFrom": {
+          "81b212d43e57": "Nominated, Best Cinematography, César 2023",
+          "33ae473d6d05": "Nominated, Best Director, César 2023",
+          "2ffd1e6fa6ab": "Nominated, Best Female Revelation (Marion Barbeau), César 2023",
+          "78afbc60f4cd": "Nominated, Best Original Screenplay, César 2023",
+          "5b79e2d3e082": "Nominated, Best Supporting Actor (Pio Marmaï), César 2023",
+          "59c8ba454624": "Nominated, Best Supporting Actor (François Civil), César 2023",
+          "500e58edbe5b": "Nominated, Best Editing, César 2023",
+          "dce32f1ff33c": "Nominated, Best Sound, César 2023"
+        }
       }
     },
     "6666": {
@@ -538,12 +549,14 @@
         "camera": "Sony Venice 2",
         "lenses": "Cooke Anamorphic/i Full Frame x1.8 (époque 1895)",
         "platforms": "Canal+",
-        "awards": "Nominated, Meilleure révélation féminine, César du cinéma 2026\nNominated, Meilleurs costumes, César du cinéma 2026\nNominated, Meilleurs décors, César du cinéma 2026\nOfficial selection • Sélection officielle • Hors compétition, Festival de Cannes 2025",
+        "awards": "Nominated, Meilleure révélation féminine, César du cinéma 2026\nNominated, Meilleurs costumes, César du cinéma 2026\nNominated, Meilleurs décors, César du cinéma 2026\nOfficial selection • Sélection officielle • Hors compétition, Festival de Cannes 2025\nOfficial selection • Spotlight, Munich International Film Festival 2025\nOfficial selection • Out of Competition, Festival de Cannes 2025",
         "awardsFrom": {
           "81fc0b5dd106": "Nominated, Meilleure révélation féminine, César du cinéma 2026",
           "8bfeb65ecb27": "Nominated, Meilleurs costumes, César du cinéma 2026",
           "89bb30e43adf": "Nominated, Meilleurs décors, César du cinéma 2026",
-          "8b7de534339a": "Official selection • Sélection officielle • Hors compétition, Festival de Cannes 2025"
+          "8b7de534339a": "Official selection • Sélection officielle • Hors compétition, Festival de Cannes 2025",
+          "30546c023cc9": "Official selection • Spotlight, Munich International Film Festival 2025",
+          "5a197c806673": "Official selection • Out of Competition, Festival de Cannes 2025"
         }
       }
     },
