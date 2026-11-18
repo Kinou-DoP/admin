@@ -79,11 +79,7 @@
         "autoSrc": [
           "https://www.unifrance.org/film/31758/tous-au-larzac",
           "https://cinando.com/en/Film/tous_au_larzac_85426/Detail"
-        ],
-        "awards": "Best Documentary, César 2012",
-        "awardsFrom": {
-          "bca68b7874d7": "Best Documentary, César 2012"
-        }
+        ]
       }
     },
     "2055": {
@@ -98,7 +94,11 @@
         "autoSrc": [
           "https://www.unifrance.org/film/34312/comment-j-ai-deteste-les-maths",
           "https://www.allocine.fr/film/fichefilm_gen_cfilm=204518.html"
-        ]
+        ],
+        "awards": "Nominated, Best Documentary, César 2014",
+        "awardsFrom": {
+          "58d3d44adaea": "Nominated, Best Documentary, César 2014"
+        }
       }
     },
     "2163": {
@@ -190,7 +190,12 @@
           "https://www.cnc.fr/professionnels/visas-et-classification/127107",
           "https://cineuropa.org/film/298139",
           "https://www.unifrance.org/film/38723/je-ne-suis-pas-un-salaud"
-        ]
+        ],
+        "awards": "Valois de la mise en scène, Festival du Film Francophone d'Angoulême 2015\nValois de l'interprétation masculine (Nicolas Duvauchelle), Festival du Film Francophone d'Angoulême 2015",
+        "awardsFrom": {
+          "23468e0386d6": "Valois de la mise en scène, Festival du Film Francophone d'Angoulême 2015",
+          "7592a8ba46c3": "Valois de l'interprétation masculine (Nicolas Duvauchelle), Festival du Film Francophone d'Angoulême 2015"
+        }
       }
     },
     "2904": {
@@ -250,7 +255,11 @@
         "autoSrc": [
           "https://www.cnc.fr/professionnels/visas-et-classification/147647",
           "https://www.offi.fr/cinema/evenement/chanson-douce-75803.html"
-        ]
+        ],
+        "awards": "Official selection • Semaine de la Critique, Festival de Cannes 2019",
+        "awardsFrom": {
+          "a59c8d02908c": "Official selection • Semaine de la Critique, Festival de Cannes 2019"
+        }
       }
     },
     "4417": {
@@ -524,9 +533,11 @@
         ],
         "runtime": "131",
         "starring": "Mélanie Thierry, Artem Kyryk, Julia Goldberg",
-        "awards": "Official selection • Limelight, International Film Festival Rotterdam (IFFR) 2025",
+        "awards": "Official selection • Limelight, International Film Festival Rotterdam (IFFR) 2025\nNominated, Best Actress (Mélanie Thierry), César 2026\nOfficial selection • Limelight, International Film Festival Rotterdam 2025",
         "awardsFrom": {
-          "54bee12b6fb2": "Official selection • Limelight, International Film Festival Rotterdam (IFFR) 2025"
+          "54bee12b6fb2": "Official selection • Limelight, International Film Festival Rotterdam (IFFR) 2025",
+          "1d88e555a348": "Nominated, Best Actress (Mélanie Thierry), César 2026",
+          "7a50db68d9ba": "Official selection • Limelight, International Film Festival Rotterdam 2025"
         }
       }
     },
