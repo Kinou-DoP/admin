@@ -2150,7 +2150,7 @@
     });
   }
   function ficBadgeLoad() {
-    Promise.all([readFile("data/fiction.json"), sortRead()]).then(function (r) { if (!fic) fic = r[0]; ficSort = r[1]; ficBadge(); }, function () {});
+    Promise.all([readFile("data/fiction.json"), sortRead()]).then(function (r) { if (!fic) fic = r[0]; ficSort = r[1]; ficBadge(); sortBadge(); }, function () {});
   }
   function ficDateWarn(c) {
     var a = ficAlerts(fic, ficSort).filter(function (x) { return String(x.slate) === String(c.slate); })[0];
@@ -3168,6 +3168,24 @@
         redo: function () { return sortPut([a], "Sorties : rétabli — " + label, remove); } });
     });
   }
+  // Bandes-annonces trouvées par le robot des sorties (Gus 18/11) : `sorties.trailers`, `seen` = vue par l'équipe (partagé).
+  // Pas encore vues = pastille sur « sorties fiction », encadré en haut du calendrier, ligne sur l'accueil de l'admin.
+  function trUnseen() { return ((sorties && sorties.trailers) || []).filter(function (t) { return !t.seen; }).sort(function (a, b) { return String(b.foundAt).localeCompare(String(a.foundAt)); }); }
+  function trSeen(ids) {
+    return sortRead().then(function () {
+      var by = { by: user && user.login || "", at: new Date().toISOString() };
+      (sorties.trailers || []).forEach(function (t) { if (ids.indexOf(t.id) > -1) t.seen = by; });
+      return gh(SORT_PATH, { method: "PUT", body: { message: "Sorties : bande-annonce vue (admin, " + (user && user.login || "") + ")", content: b64enc(JSON.stringify(sorties, null, 2) + "\n"), sha: sortSha || undefined } });
+    }).then(function (r) { sortSha = r.content.sha; sortBadge(); });
+  }
+  function sortBadge() {
+    var a = side.querySelector('a[data-page="sorties"]'); if (!a) return;
+    var n = trUnseen().length, b = a.querySelector(".nbadge");
+    if (!n) { if (b) b.remove(); return; }
+    if (!b) { b = el("span", { class: "nbadge" }); a.appendChild(b); }
+    b.textContent = n; b.title = "Nouvelles bandes-annonces";
+  }
+  function trLabel(t) { return [t.name, t.kind === "teaser" ? "teaser" : "", t.lang ? t.lang.toUpperCase() : "", t.published ? "publiée le " + fdate(t.published) : ""].filter(Boolean).join(" · "); }
   // « Les Filles d'Abraham • Bande Annonce » → « Les Filles d'Abraham ».
   function ficTitle(t) {
     return String(t || "").replace(/ /g, " ").split(/\s+[•|]\s*|\s+[-–]\s+(?=(?:bande|trailer|teaser|saison|season|\()|.*bande|.*trailer)/i)[0]
@@ -3270,7 +3288,19 @@
       st.at = dOf(e.date); draw();
     }
     function draw() {
-      box.textContent = "";
+      box.textContent = ""; sortBadge();
+      var tn = trUnseen();
+      if (tn.length) {
+        var tb = el("div", { class: "trnew" }, [el("h3", { text: tn.length > 1 ? tn.length + " nouvelles bandes-annonces" : "Nouvelle bande-annonce" })]);
+        tn.forEach(function (t) {
+          var vu = el("button", { type: "button", class: "btn ghost", text: "Vu" });
+          vu.addEventListener("click", function () { vu.disabled = true; trSeen([t.id]).then(draw, function (e) { vu.disabled = false; alert("Pas enregistré : " + e.message); }); });
+          tb.appendChild(el("div", { class: "tritem" }, [el("div", {}, [el("b", { text: t.title }), el("span", { class: "hint", text: trLabel(t) })]),
+            el("div", { class: "fwbtns" }, [el("a", { class: "btn primary", href: t.url, target: "_blank", rel: "noopener", text: /vimeo/.test(t.url) ? "Voir / télécharger ↗" : "Voir sur YouTube ↗" }), vu])]));
+        });
+        if (tn.length > 1) { var all = el("button", { type: "button", class: "btn ghost", text: "Tout marquer comme vu" }); all.addEventListener("click", function () { all.disabled = true; trSeen(tn.map(function (t) { return t.id; })).then(draw); }); tb.appendChild(all); }
+        box.appendChild(tb);
+      }
       var r = range(), l = events.filter(match);
       // Barre : recherche, mois / semaine, flèches, aujourd'hui, saut de sortie en sortie.
       var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, un réalisateur, un chef op, une plateforme, une production…", value: st.q });
@@ -3372,6 +3402,10 @@
         el("p", { class: "fwhere", text: [fdate(x.date), SK[x.kind || "cinema"], (x.platforms || []).join(", "), x.country].filter(Boolean).join(" · ") }),
         el("p", { class: "hint", text: [(x.directors || []).length && "Réalisation : " + x.directors.join(", "), (x.dops || []).length && "Image : " + x.dops.map(rcBase).join(", "), x.prod && "Production : " + x.prod].filter(Boolean).join(" · ") }),
         el("p", { class: "hint", text: "Source : " + (srcs[x.source] || x.source || "") }),
+        (function () { // bandes-annonces du film (robot)
+          var tl = ((sorties && sorties.trailers) || []).filter(function (t) { return t.key === nrm(x.title) || sortSame(t.title, x.title); });
+          return tl.length ? el("p", { class: "hint" }, ["Bandes-annonces : "].concat(tl.map(function (t, i) { return el("span", {}, [i ? " · " : "", el("a", { href: t.url, target: "_blank", rel: "noopener", text: (t.name || "Bande-annonce") + (t.lang ? " (" + t.lang.toUpperCase() + ")" : "") + " ↗" })]); }))) : null;
+        })(),
         el("div", { class: "fwbtns" }, [x.url ? el("a", { class: "btn", href: x.url, target: "_blank", rel: "noopener", text: /imdb\.com/.test(x.url) ? "IMDb ↗" : "Source ↗" }) : null,
           x.source !== "fiction" ? el("button", { type: "button", class: "btn", text: "Modifier", on: { click: function () { d.remove(); form(x, at.closest(".cal")); } } }) : null,
           x.source === "fiction" || x.ficSlate ? el("a", { class: "btn", href: ficLink(x), target: "_blank", rel: "noopener", text: "Page fiction ↗" }) : null,
@@ -3776,6 +3810,9 @@
       var pz = ((r[2] && r[2].found) || []).filter(function (x) { return x.kind === "prize" && x.status !== "no" && x.foundAt && sortIso(new Date(x.foundAt)) === td; });
       if (pz.length) lines.push(el("a", { href: "#/selections", class: "hn" }, [el("span", { class: "hnk", text: pz.length > 1 ? pz.length + " prix trouvés aujourd'hui" : "Prix trouvé aujourd'hui" }),
         pz.slice(0, 4).map(function (x) { return x.title + " : " + (x.prize || "prix") + (x.festName ? ", " + x.festName : "") + ((x.dops || []).length ? " (" + x.dops.map(rcBase).join(", ") + ")" : ""); }).join("  —  ") + (pz.length > 4 ? "  …" : "")]));
+      var tn = ((r[0] && r[0].trailers) || []).filter(function (t) { return !t.seen; });
+      if (tn.length) lines.push(el("a", { href: "#/sorties", class: "hn" }, [el("span", { class: "hnk", text: tn.length > 1 ? tn.length + " nouvelles bandes-annonces" : "Nouvelle bande-annonce" }),
+        tn.slice(0, 4).map(function (t) { return t.title + (t.name ? " : " + t.name : ""); }).join("  —  ") + (tn.length > 4 ? "  …" : "")]));
       lines.forEach(function (l) { box.appendChild(l); });
     });
   }

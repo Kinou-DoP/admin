@@ -764,3 +764,11 @@ body.readonly.webpage #view .awbox button { pointer-events: none; }
 /* Pendant le balayage, le calendrier qui sort de l'écran ne doit pas élargir la page : sinon, sur téléphone, la page se décalait et la
    barre Annuler / Rétablir disparaissait le temps de l'animation (Gus 18/11). */
 .calbox { overflow-x: clip; }
+
+/* Sorties fiction : nouvelles bandes-annonces trouvées par le robot (Gus 18/11) */
+.trnew { margin: 0 0 18px; padding: 14px 16px; border: 1px solid rgba(255,77,61,.45); background: rgba(255,77,61,.06); }
+.trnew h3 { margin: 0 0 10px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+.trnew .tritem { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 8px 0; border-top: 1px solid rgba(255,252,235,.08); }
+.trnew .tritem b { display: block; font-weight: 600; }
+.trnew .tritem .hint { display: block; margin: 2px 0 0; }
+.trnew .fwbtns { margin: 0; }
