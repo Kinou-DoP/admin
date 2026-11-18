@@ -686,6 +686,14 @@
         "y": 32.7
       }
     },
+    "10909": {
+      "genre": "FEATURE FILM",
+      "status": "soon",
+      "date": "2027-03-24",
+      "info": {
+        "year": "2027"
+      }
+    },
     "10935": {
       "zoom": 1.04,
       "genre": "FEATURE FILM",
@@ -911,7 +919,6 @@
       "zoom": 1.2,
       "zoomPos": "24.3% 38.6%",
       "genre": "SERIES",
-      "status": "new",
       "extras": [
         {
           "link": "https://kinou.slateapp.com/work/surveillant-stills",
@@ -943,7 +950,8 @@
       },
       "platforms": [
         "Disney +"
-      ]
+      ],
+      "status": "new"
     },
     "11199": {
       "zoom": 1.24,
@@ -1151,6 +1159,18 @@
         "awardsFrom": {
           "53f974fda3d3": "Official selection • Special Presentations (première mondiale), Toronto International Film Festival (TIFF) 2025"
         }
+      }
+    },
+    "11556": {
+      "thumbCrop": {
+        "y": 58.2
+      },
+      "status": "soon",
+      "genre": "FEATURE FILM",
+      "date": "2027-01-06",
+      "info": {
+        "year": "2027",
+        "ratio": "2.39"
       }
     }
   },
