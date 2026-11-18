@@ -925,17 +925,8 @@
       }, function (e) { imp.disabled = false; st.textContent = e.message; });
     });
     var kids = [el("h2", { text: "Bundle Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), imp]), st];
-    if (!isNew && state.bundle) {
-      var ref = el("button", { class: "btn", text: "Mettre à jour le site depuis Slate" });
-      ref.addEventListener("click", function () {
-        ref.disabled = true; st.textContent = "Mise à jour…";
-        if (slate) warmThumbs(slate.clips);
-        refreshSite(state.slug).then(function () { st.textContent = "C'est fait : le site relit Slate pour " + state.name + " dès la prochaine visite."; ref.disabled = false; },
-          function (e) { st.textContent = "Mise à jour impossible : " + e.message; ref.disabled = false; });
-      });
-      kids.push(el("div", { class: "row", style: "margin-top:18px" }, [ref]));
-      kids.push(el("p", { class: "hint", text: "Le site se met à jour seul toutes les 10 minutes. Ce bouton force la mise à jour tout de suite (après un changement sur Slate)." }));
-    }
+    // Plus de bouton « Mettre à jour le site depuis Slate » (Gus 19/11) : le site ne lit plus Slate en direct, il affiche la copie
+    // publiée de la fiche ; pour reprendre un changement fait sur Slate : « Relire le bundle » puis Publier.
     return el("section", {}, kids);
   }
 
@@ -3944,18 +3935,20 @@
     ]).then(function (r) {
       if (!document.body.contains(box)) return; // page quittée entre-temps
       var lines = [];
+      // Ordre et taille = importance (Gus 19/11) : sorties de la semaine en grand, puis dates de fiction et bandes-annonces,
+      // puis les prix (plus petits : souvent des prix anciens retrouvés par les robots).
       var wk = sortBuild(r[1], null, r[0]).events.filter(function (e) { return e.date >= a && e.date <= b; });
-      if (wk.length) lines.push(el("a", { href: "#/sorties", class: "hn" }, [el("span", { class: "hnk", text: wk.length > 1 ? "Sortent cette semaine" : "Sort cette semaine" }),
+      if (wk.length) lines.push(el("a", { href: "#/sorties", class: "hn hn1" }, [el("span", { class: "hnk", text: wk.length > 1 ? "Sortent cette semaine" : "Sort cette semaine" }),
         wk.map(function (e) { return e.title + " · " + day(e.date) + (e.platforms && e.platforms.length ? " (" + e.platforms.join(", ") + ")" : ""); }).join("  —  ")]));
-      var pz = ((r[2] && r[2].found) || []).filter(function (x) { return x.kind === "prize" && x.status !== "no" && x.foundAt && sortIso(new Date(x.foundAt)) === td; });
-      if (pz.length) lines.push(el("a", { href: "#/selections", class: "hn" }, [el("span", { class: "hnk", text: pz.length > 1 ? pz.length + " prix trouvés aujourd'hui" : "Prix trouvé aujourd'hui" }),
-        pz.slice(0, 4).map(function (x) { return x.title + " : " + (x.prize || "prix") + (x.festName ? ", " + x.festName : "") + ((x.dops || []).length ? " (" + x.dops.map(rcBase).join(", ") + ")" : ""); }).join("  —  ") + (pz.length > 4 ? "  …" : "")]));
-      var fa = ficAlerts(r[1], r[0]); // autre date de sortie trouvée pour un Coming soon de la page fiction
-      if (fa.length) lines.push(el("a", { href: "#/fiction", class: "hn" }, [el("span", { class: "hnk", text: fa.length > 1 ? fa.length + " nouvelles dates de sortie" : "Nouvelle date de sortie" }),
+      var fa = ficAlerts(r[1], r[0]); // date de sortie trouvée ou changée pour un Coming soon de la page fiction
+      if (fa.length) lines.push(el("a", { href: "#/fiction", class: "hn hn2" }, [el("span", { class: "hnk", text: fa.length > 1 ? fa.length + " nouvelles dates de sortie" : "Nouvelle date de sortie" }),
         fa.slice(0, 4).map(function (a) { return a.title + " : " + fdate(a.r.date) + " (à vérifier dans fiction)"; }).join("  —  ")]));
       var tn = ((r[0] && r[0].trailers) || []).filter(function (t) { return !t.seen; });
-      if (tn.length) lines.push(el("a", { href: "#/sorties", class: "hn" }, [el("span", { class: "hnk", text: tn.length > 1 ? tn.length + " nouvelles bandes-annonces" : "Nouvelle bande-annonce" }),
+      if (tn.length) lines.push(el("a", { href: "#/sorties", class: "hn hn2" }, [el("span", { class: "hnk", text: tn.length > 1 ? tn.length + " nouvelles bandes-annonces" : "Nouvelle bande-annonce" }),
         tn.slice(0, 4).map(function (t) { return t.title + (t.name ? " : " + t.name : ""); }).join("  —  ") + (tn.length > 4 ? "  …" : "")]));
+      var pz = ((r[2] && r[2].found) || []).filter(function (x) { return x.kind === "prize" && x.status !== "no" && x.foundAt && sortIso(new Date(x.foundAt)) === td; });
+      if (pz.length) lines.push(el("a", { href: "#/selections", class: "hn hn3" }, [el("span", { class: "hnk", text: pz.length > 1 ? pz.length + " prix trouvés aujourd'hui" : "Prix trouvé aujourd'hui" }),
+        pz.slice(0, 4).map(function (x) { return x.title + " : " + (x.prize || "prix") + (x.festName ? ", " + x.festName : "") + (x.edition ? " " + x.edition : "") + ((x.dops || []).length ? " (" + x.dops.map(rcBase).join(", ") + ")" : ""); }).join("  —  ") + (pz.length > 4 ? "  …" : "")]));
       lines.forEach(function (l) { box.appendChild(l); });
     });
   }
