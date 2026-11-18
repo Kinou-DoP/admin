@@ -187,7 +187,17 @@
     "3142": {
       "title": "La Lutte des Classes",
       "zoom": 1.03,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "info": {
+        "year": "2019",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "runtime": "103",
+        "starring": "Leïla Bekhti, Édouard Baer, Ramzy Bedia, Tom Levy"
+      }
     },
     "3682": {
       "zoom": 1.04,
@@ -251,11 +261,15 @@
       "info": {
         "year": "2020",
         "auto": [
-          "year"
+          "year",
+          "runtime",
+          "starring"
         ],
         "autoSrc": [
           "https://www.unifrance.org/film/48134/adieu-les-cons"
-        ]
+        ],
+        "runtime": "87",
+        "starring": "Virginie Efira, Albert Dupontel, Nicolas Marié"
       }
     },
     "5630": {
@@ -284,11 +298,17 @@
         "ratio": "1.85",
         "auto": [
           "year",
-          "ratio"
+          "ratio",
+          "runtime",
+          "starring",
+          "lenses"
         ],
         "autoSrc": [
-          "https://www.unifrance.org/film/52771/en-corps"
-        ]
+          "https://www.leitz-cine.com/production/rise-2022"
+        ],
+        "runtime": "120",
+        "starring": "Marion Barbeau, Hofesh Shechter, Denis Podalydès, Muriel Robin, Pio Marmaï",
+        "lenses": "Leitz Summilux-C"
       }
     },
     "6666": {
@@ -311,12 +331,16 @@
         "ratio": "1.85",
         "auto": [
           "year",
-          "ratio"
+          "ratio",
+          "runtime",
+          "starring"
         ],
         "autoSrc": [
           "https://www.unifrance.org/film/53496/la-montagne",
           "https://www.cnc.fr/cinema/actualites/alexis-kavyrchine---la-montagne-est-un-film-fantastique-ancre-dans-le-reel_1886063"
-        ]
+        ],
+        "runtime": "114",
+        "starring": "Thomas Salvador, Louise Bourgoin, Martine Chevallier, Laurent Poitrenaux"
       }
     },
     "6777": {
@@ -327,18 +351,20 @@
         "year": "2023",
         "episodes": "8",
         "runtime": "50",
-        "platforms": "France 2, france.tv",
+        "platforms": "Prime Video, France 2",
         "auto": [
           "year",
           "episodes",
           "runtime",
-          "platforms"
+          "platforms",
+          "starring"
         ],
         "autoSrc": [
           "https://www.unifrance.org/film/56322/salade-grecque",
           "https://www.francetvpro.fr/contenu-de-presse/67198503",
           "https://www.crew-united.com/de/Greek-Salad__319808.html"
-        ]
+        ],
+        "starring": "Romain Duris, Kelly Reilly, Cécile de France, Aliocha Schneider, Megan Northam"
       }
     },
     "6947": {
@@ -363,12 +389,14 @@
         "starring": "Zita Hanrot, Louise Chevillotte, Laure Giappiconi, Pedro Casablanc",
         "auto": [
           "year",
-          "starring"
+          "starring",
+          "runtime"
         ],
         "autoSrc": [
           "https://unifrance.org/film/54153/a-mon-seul-desir",
           "https://cineuropa.org/film/439415"
-        ]
+        ],
+        "runtime": "118"
       }
     },
     "8065": {
@@ -426,11 +454,15 @@
       "info": {
         "year": "2025",
         "auto": [
-          "year"
+          "year",
+          "runtime",
+          "starring"
         ],
         "autoSrc": [
           "https://www.unifrance.org/film/59276/la-chambre-de-mariana"
-        ]
+        ],
+        "runtime": "131",
+        "starring": "Mélanie Thierry, Artem Kyryk, Julia Goldberg"
       }
     },
     "9576": {
@@ -462,12 +494,15 @@
         "auto": [
           "year",
           "runtime",
-          "starring"
+          "starring",
+          "camera",
+          "lenses"
         ],
         "autoSrc": [
-          "https://www.festival-cannes.com/en/f/la-venue-de-l-avenir/",
-          "https://www.unifrance.org/film/60429"
-        ]
+          "https://www.afcinema.com/Alexis-Kavyrchine-parle-de-sa-facon-d-aborder-les-differentes-epoques-de-La-Venue-de-l-avenir-de-Cedric-Klapisch.html?lang=fr"
+        ],
+        "camera": "Sony Venice 2",
+        "lenses": "Cooke Anamorphic/i Full Frame x1.8 (époque 1895)"
       }
     },
     "10140": {
@@ -537,7 +572,16 @@
       "info": {
         "starring": "Artus, Julia Piaton, Nemo Schiffman, Niels Hamel-Brochen, Franck Dubosc, Doria Tillier, Suzanne de Baecque, Xavier Robic",
         "synopsis": "1651. Louis (pas encore XIV) est un jeune adolescent. Alors que la Fronde menace, sa mère Anne d’Autriche décide d’exfiltrer son fils pour le mettre à l’abri et le remplace par un sosie. Louis est confié par D'Artagnan à Cyrano de Bergerac qui le cache au sein de la troupe de théâtre de Madeleine Béjart et Molière. Tandis que Madeleine et Cyrano se découvrent une passion commune pour le jeune Molière, Louis découvre la vie et ses plaisirs, l’art et le travail, le courage et la stratégie, tout ce qui fera de lui le Roi Soleil.",
-        "awards": "Officially Selected – Hors Compétition – Cannes Film Festival 2026"
+        "awards": "Officially Selected – Hors Compétition – Cannes Film Festival 2026",
+        "year": "2026",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "runtime": "114",
+        "autoSrc": [
+          "https://www.festival-cannes.com/f/les-caprices-de-l-enfant-roi/"
+        ]
       }
     },
     "11347": {
