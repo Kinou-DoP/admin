@@ -1,5 +1,3 @@
-// Copie de netlify/functions/slate.mjs du dépôt site (à garder identique) : lecture de Slate par le robot GitHub (tools/ask.mjs),
-// depuis que les fonctions Netlify du site sont coupées (« Usage exceeded », 30/10).
 // Lecture d'un bundle Slate : liste des showreels (#featured, #categorie…) puis, pour chaque
 // showreel, la playlist du lecteur (attribut data-media) et les vignettes signées de la grille.
 // Aucune dépendance : fetch natif de Node.
@@ -16,6 +14,14 @@ function decode(s) {
 }
 // Slate refuse (403) les demandes sans User-Agent depuis son retour du 18/11 ; Cloudflare n'en envoie pas : on en donne un.
 var UA = { headers: { "User-Agent": "Mozilla/5.0 (compatible; kinou-admin/1.0; +https://kinou.fr)", "Accept": "text/html,*/*" } };
+// Lien court shots.re/<code> → id du bundle Slate (Gus 18/11 : sans User-Agent, shots.re refuse depuis le 17/11 ; la redirection ajoute
+// aussi « ?_referer=shortlink&_rid=… » à l'adresse). On lit d'abord l'en-tête Location, sinon on suit la redirection.
+export async function shortBundle(code) {
+  var loc = "";
+  try { var r0 = await fetch("https://shots.re/" + code, Object.assign({ redirect: "manual" }, UA)); loc = r0.headers.get("location") || ""; } catch (e) {}
+  if (!/\/bundles\/[0-9a-f-]{36}/.test(loc)) { try { loc = (await fetch("https://shots.re/" + code, UA)).url; } catch (e) {} }
+  return (loc.match(/\/bundles\/([0-9a-f-]{36})/) || [])[1] || null;
+}
 async function page(url) {
   var r = await fetch(url, UA);
   if (!r.ok) throw new Error("Slate " + r.status + " " + url);

@@ -4,7 +4,7 @@
 // Le robot écrit la réponse dans le même fichier (items[].answer ou items[].error, doneAt) ; l'admin la relit.
 // Chaque passage traite toutes les demandes sans réponse et supprime celles qui ont plus d'un jour.
 import fs from "fs";
-import { readBundle, readStills, readReel } from "./slate.mjs";
+import { readBundle, readStills, readReel, shortBundle } from "./slate.mjs";
 
 const DIR = "data/ask";
 
@@ -13,8 +13,7 @@ async function bundle(link) {
   if (!id) {
     var c = s.match(/(?:shots\.re|slt\.re)\/([A-Za-z0-9]{3,20})/) || s.match(/^([A-Za-z0-9]{3,20})$/);
     if (!c) throw new Error("lien invalide");
-    var r = await fetch("https://shots.re/" + c[1]);
-    id = (r.url.match(/\/bundles\/([0-9a-f-]{36})/) || [])[1];
+    id = await shortBundle(c[1]);
     if (!id) throw new Error("ce lien shots.re ne mène pas à un bundle Slate");
   }
   var d = await readBundle(id);
