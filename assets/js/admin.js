@@ -967,6 +967,84 @@
     if (Object.keys(o).length) state.overrides[c.slate] = o; else delete state.overrides[c.slate];
   }
 
+  // « Compléter les infos des films » (Gus 18/11) : demande au robot du dépôt notes (infos/ask/<adresse>-<horodatage>.json, workflow
+  // film-infos.yml : Claude + recherche web, 6 films par recherche) ; réponse relue toutes les 10 s, avancement affiché ; puis
+  // « Appliquer » = seuls les champs VIDES des infos sont remplis (ce que l'équipe ou Slate a écrit passe en priorité), marqués
+  // « à vérifier » (`info.auto` = champs remplis par le robot, `info.autoSrc` = pages lues ; ignorés par le site), puis Publier.
+  var INFO_ASK = "/repos/" + NOTES_REPO + "/contents/infos/ask", INFO_KEYS = ["year", "episodes", "runtime", "ratio", "platforms", "camera", "lenses", "starring", "synopsis", "synopsisEn"];
+  var infoAskCur = null, infoAskTimer = 0;
+  function infoAskLoad(slug) {
+    return gh(INFO_ASK, { allow404: true }).then(function (l) {
+      var f = (l || []).filter(function (x) { return x.name.indexOf(slug + "-") === 0 && /\.json$/.test(x.name); }).sort(function (a, b) { return a.name < b.name ? 1 : -1; })[0];
+      if (!f) return null;
+      return gh(INFO_ASK + "/" + f.name, {}).then(function (g) { var q = JSON.parse(b64dec(g.content)); q._path = INFO_ASK + "/" + f.name; q._sha = g.sha; return q; });
+    });
+  }
+  function infoRobotCtl() {
+    var box = el("div", { class: "inforobot" }), slug = state.slug;
+    var btn = el("button", { type: "button", class: "btn", text: "Compléter les infos des films (robot)" }), st = el("span", { class: "hint" });
+    box.appendChild(btn); box.appendChild(st);
+    function films() {
+      var seen = {}, out = [];
+      (slate && slate.clips || []).forEach(function (c) {
+        var id = String(c.slate || ""); if (!id || seen[id]) return; seen[id] = true;
+        var o = state.overrides[id] || {}; if (o.hidden) return;
+        var info = o.info || {}, have = INFO_KEYS.filter(function (k) { return String(info[k] || "").trim(); });
+        if (have.length === INFO_KEYS.length) return;
+        out.push({ id: id, title: o.title || c.title, sub: o.sub || c.sub || "", cat: c.cat || "", types: o.types || [], have: have });
+      });
+      return out;
+    }
+    function show(q) {
+      clearTimeout(infoAskTimer); infoAskCur = q; st.textContent = ""; btn.disabled = false;
+      var old = box.querySelector(".irapply"); if (old) old.remove();
+      if (!q) { st.textContent = "Le robot cherche année, durée, format, plateformes, caméra, optiques, starring et synopsis (FR / EN) ; seuls les champs vides seront remplis."; return; }
+      if (!q.doneAt) {
+        btn.disabled = true;
+        st.textContent = "Recherche en cours… " + (q.total ? (q.done || 0) + " / " + q.total + " films" : "démarrage (1 à 2 min)") + " — vous pouvez quitter la page, la réponse sera gardée.";
+        infoAskTimer = setTimeout(function () { if (state.slug === slug && box.isConnected) infoAskLoad(slug).then(show, function () {}); }, 10000);
+        return;
+      }
+      var n = Object.keys(q.answer || {}).length;
+      if (q.error && !n) { st.textContent = "Recherche impossible : " + q.error; return; }
+      if (q.appliedAt) { st.textContent = "Dernière recherche appliquée le " + new Date(q.appliedAt).toLocaleDateString("fr-FR") + " (" + n + " films). Les champs remplis par le robot sont marqués « à vérifier »."; return; }
+      st.textContent = n ? "Infos trouvées pour " + n + " film" + (n > 1 ? "s" : "") + (q.error ? " (recherche interrompue : " + q.error + ")" : "") + "." : "Le robot n'a rien trouvé de plus.";
+      if (!n) return;
+      var ap = el("button", { type: "button", class: "btn primary irapply", text: "Appliquer (champs vides seulement)" });
+      ap.addEventListener("click", function () {
+        var nf = 0, nk = 0;
+        Object.keys(q.answer).forEach(function (id) {
+          var v = q.answer[id], o = state.overrides[id] || {}, info = Object.assign({}, o.info || {}), added = [];
+          INFO_KEYS.forEach(function (k) { if (v[k] && !String(info[k] || "").trim()) { info[k] = String(v[k]).trim(); added.push(k); } });
+          if (!added.length) return;
+          info.auto = (info.auto || []).concat(added.filter(function (k) { return (info.auto || []).indexOf(k) < 0; }));
+          if (v.sources && v.sources.length) info.autoSrc = v.sources.slice(0, 4);
+          state.overrides[id] = Object.assign({}, o, { info: info }); nf++; nk += added.length;
+        });
+        touch();
+        q.appliedAt = new Date().toISOString(); q.appliedBy = user && user.login || "";
+        var body = Object.assign({}, q); delete body._path; delete body._sha;
+        gh(q._path, { method: "PUT", body: { message: "Infos des films : appliquées (admin, " + (user && user.login || "") + ")", content: b64enc(JSON.stringify(body, null, 2) + "\n"), sha: q._sha } }).catch(function () {});
+        var sec = box.closest("section"); if (sec) sec.replaceWith(filmsSection());
+        flash = nk + " info" + (nk > 1 ? "s" : "") + " ajoutée" + (nk > 1 ? "s" : "") + " sur " + nf + " film" + (nf > 1 ? "s" : "") + " (marquées « à vérifier »). Vérifiez puis Publier.";
+        status(flash, "ok"); flash = "";
+      });
+      box.appendChild(ap);
+    }
+    btn.addEventListener("click", function () {
+      var l = films();
+      if (!l.length) { st.textContent = "Tous les films ont déjà toutes leurs infos."; return; }
+      if (!confirm("Lancer la recherche pour " + l.length + " film" + (l.length > 1 ? "s" : "") + " ? (environ " + Math.max(2, Math.ceil(l.length / 6) * 3) + " min, sur l'abonnement Claude)")) return;
+      btn.disabled = true; st.textContent = "Envoi de la demande…";
+      var stamp = new Date().toISOString().replace(/[:.]/g, "-"), q = { slug: slug, name: state.name || "", films: l, at: new Date().toISOString(), by: user && user.login || "" };
+      gh(INFO_ASK + "/" + slug + "-" + stamp + ".json", { method: "PUT", body: { message: "Infos des films : demande (admin, " + (user && user.login || "") + ")", content: b64enc(JSON.stringify(q, null, 2) + "\n") } })
+        .then(function () { show(Object.assign(q, { _path: INFO_ASK + "/" + slug + "-" + stamp + ".json" })); },
+          function (e) { btn.disabled = false; st.textContent = "Demande impossible : " + e.message; });
+    });
+    st.textContent = "…";
+    infoAskLoad(slug).then(show, function (e) { st.textContent = "Robot indisponible : " + e.message; });
+    return box;
+  }
   function filmsSection() {
     var sec = el("section", {}, [el("h2", { text: "Films" })]);
     if (!slate) { sec.appendChild(el("p", { class: "empty", text: "Importez le bundle Slate pour voir les films." })); return sec; }
@@ -980,6 +1058,7 @@
       tabs.appendChild(b);
     });
     sec.appendChild(tabs);
+    if (pagePublish === publish && state.slug) sec.insertBefore(infoRobotCtl(), tabs);
     // Fiche d'un chef op : interrupteur de l'onglet ouvert → présentation « vidéo + stills » sur le site (`showcase`) : par projet la
     // vidéo en grand, titre et crédits à côté, les 6 premiers stills (liens de stills ajoutés sous le film) autour.
     if (pagePublish === publish && curCat !== "ALL") {
@@ -2126,18 +2205,29 @@
   function infoCtl(c) {
     function cur() { return (state.overrides[c.slate] || {}).info || {}; }
     var sum = el("summary"), grid = el("div", { class: "infogrid" }), box = el("details", { class: "infobox" }, [sum, grid]);
-    function count() { var n = Object.keys(cur()).filter(function (k) { return !/^awards/.test(k); }).length; sum.textContent = "Infos du film" + (n ? " · " + n + " renseignée" + (n > 1 ? "s" : "") : ""); }
+    function count() { var n = Object.keys(cur()).filter(function (k) { return !/^(awards|auto)/.test(k); }).length; sum.textContent = "Infos du film" + (n ? " · " + n + " renseignée" + (n > 1 ? "s" : "") : ""); }
     INFO_FIELDS.forEach(function (f) {
       if (f[0] === "platforms" && state === fic) return; // fiction : plateformes déjà réglées plus haut (étiquettes)
       var inp = f[3] ? el("textarea", { rows: String(f[3]), placeholder: f[2] }) : el("input", { type: "text", placeholder: f[2] });
       inp.value = cur()[f[0]] || "";
+      var lab = el("span", { class: "label", text: f[1] });
+      if ((cur().auto || []).indexOf(f[0]) > -1) { inp.classList.add("auto"); lab.appendChild(el("em", { class: "autotag", text: " · robot, à vérifier" })); }
       inp.addEventListener("input", function () {
         var i = Object.assign({}, cur()), v = inp.value.trim();
         if (v) i[f[0]] = v; else delete i[f[0]];
+        if (i.auto) { i.auto = i.auto.filter(function (k) { return k !== f[0]; }); if (!i.auto.length) { delete i.auto; delete i.autoSrc; } } // modifié à la main = vérifié
+        inp.classList.remove("auto"); var tg = lab.querySelector(".autotag"); if (tg) tg.remove();
         setOverride(c, "info", Object.keys(i).length ? i : undefined); count();
       });
-      grid.appendChild(el("label", { class: "ifield" + (f[3] || f[4] ? " wide" : "") }, [el("span", { class: "label", text: f[1] }), inp]));
+      grid.appendChild(el("label", { class: "ifield" + (f[3] || f[4] ? " wide" : "") }, [lab, inp]));
     });
+    if ((cur().auto || []).length) { // infos remplies par le robot : sources + « tout est bon »
+      var src = cur().autoSrc || [], ok = el("button", { type: "button", class: "btn ghost", text: "Vérifié, tout est bon" });
+      ok.addEventListener("click", function () { var i = Object.assign({}, cur()); delete i.auto; delete i.autoSrc; setOverride(c, "info", i); touch(); box.replaceWith(infoCtl(c)); });
+      grid.appendChild(el("div", { class: "ifield wide autobox" }, [el("span", { class: "hint", text: "Champs en orange : trouvés par le robot, à vérifier." + (src.length ? " Sources : " : "") }),
+        el("span", {}, src.map(function (u, i) { return el("a", { href: u, target: "_blank", rel: "noopener", text: (i ? " · " : "") + u.replace(/^https?:\/\/(www\.)?/, "").split("/")[0] + " ↗" }); })), ok]));
+      box.open = true;
+    }
     count();
     return box;
   }
