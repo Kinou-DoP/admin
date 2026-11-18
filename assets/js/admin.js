@@ -2835,7 +2835,12 @@
     var p = proj && proj.projects && proj.projects.filter(function (q) { return q.id === x.project; })[0];
     return [x.title].concat(p ? [p.title].concat(p.aka || []) : []).filter(Boolean);
   }
-  function awHit(x, title) { return awTitles(x).some(function (t) { return sortSame(ficTitle(title), t); }); }
+  // Titre du site comparé tel quel (« • » et « | » enlevés) et sans ce qui suit « • Bande-annonce »… : « GENER8ION • STORM | starring
+  // Yung Lean » doit retrouver « GENER8ION - STORM starring Yung Lean » (Gus 18/11).
+  function awHit(x, title) {
+    var cands = [ficTitle(title), String(title || "").replace(/[•|]/g, " ")];
+    return awTitles(x).some(function (t) { return cands.some(function (c) { return sortSame(c, t); }); });
+  }
   // Applique les trouvailles confirmées à un fichier du site (fiche d'un chef op, ou page fiction) ; null = rien à changer.
   function awFile(text, items, fiction) {
     if (!text) return null;
