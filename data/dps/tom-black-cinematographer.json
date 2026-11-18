@@ -777,7 +777,10 @@
     },
     "11560": {
       "zoom": 1.33,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Music Video"
+      ]
     }
   },
   "about": {
