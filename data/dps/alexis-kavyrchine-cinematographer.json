@@ -40,7 +40,15 @@
         "autoSrc": [
           "https://www.unifrance.org/film/43291/la-douleur",
           "https://www.cineuropa.org/film/334179"
-        ]
+        ],
+        "awards": "Nominated, Best Cinematography, César 2019\nNominated, Best Film, César 2019\nNominated, Best Director, César 2019\nNominated, Best Actress (Mélanie Thierry), César 2019\nNominated, Best Adaptation, César 2019",
+        "awardsFrom": {
+          "1d574b82134b": "Nominated, Best Cinematography, César 2019",
+          "b2594cca542d": "Nominated, Best Film, César 2019",
+          "c70183a81f35": "Nominated, Best Director, César 2019",
+          "b183f7ea7a5f": "Nominated, Best Actress (Mélanie Thierry), César 2019",
+          "0e82d6fc2578": "Nominated, Best Adaptation, César 2019"
+        }
       }
     },
     "2050": {
@@ -269,7 +277,17 @@
           "https://www.unifrance.org/film/48134/adieu-les-cons"
         ],
         "runtime": "87",
-        "starring": "Virginie Efira, Albert Dupontel, Nicolas Marié"
+        "starring": "Virginie Efira, Albert Dupontel, Nicolas Marié",
+        "awards": "Best Cinematography, César 2021\nBest Film, César 2021\nBest Director, César 2021\nBest Original Screenplay, César 2021\nBest Supporting Actor (Nicolas Marié), César 2021\nBest Production Design, César 2021\nCésar des lycéens, César 2021",
+        "awardsFrom": {
+          "849b26f9f566": "Best Cinematography, César 2021",
+          "dc92a17ae4ea": "Best Film, César 2021",
+          "a821bf56fa3d": "Best Director, César 2021",
+          "3ed2a96288cc": "Best Original Screenplay, César 2021",
+          "25c0aaf2afb0": "Best Supporting Actor (Nicolas Marié), César 2021",
+          "56dec5d1d5bc": "Best Production Design, César 2021",
+          "92d8b007ba48": "César des lycéens, César 2021"
+        }
       }
     },
     "5630": {
@@ -488,11 +506,13 @@
           "https://www.luxfilmfest.lu/en/movies/la-voie-du-serpent-hebi-no-michi/",
           "https://pro.imdb.com/title/tt29301380/"
         ],
-        "awards": "Official selection, Göteborg Film Festival 2025\nOfficial selection • Compétition officielle, Festival international du film de San Sebastián 2024\nOfficial selection • Gala Presentation, Busan International Film Festival 2024",
+        "awards": "Official selection, Göteborg Film Festival 2025\nOfficial selection • Compétition officielle, Festival international du film de San Sebastián 2024\nOfficial selection • Gala Presentation, Busan International Film Festival 2024\nOfficial selection • Official Competition, San Sebastián International Film Festival 2024\nOfficial selection, Busan International Film Festival 2024",
         "awardsFrom": {
           "eea448465bb9": "Official selection, Göteborg Film Festival 2025",
           "2474b04165bc": "Official selection • Compétition officielle, Festival international du film de San Sebastián 2024",
-          "e2edbaf84dcd": "Official selection • Gala Presentation, Busan International Film Festival 2024"
+          "e2edbaf84dcd": "Official selection • Gala Presentation, Busan International Film Festival 2024",
+          "b35e03c753bc": "Official selection • Official Competition, San Sebastián International Film Festival 2024",
+          "2b96065d937f": "Official selection, Busan International Film Festival 2024"
         }
       }
     },
