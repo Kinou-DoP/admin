@@ -692,7 +692,11 @@
       "date": "2027-03-24",
       "info": {
         "year": "2027"
-      }
+      },
+      "thumbCrop": {
+        "y": 25.1
+      },
+      "title": "LES FRAISES"
     },
     "10935": {
       "zoom": 1.04,
@@ -913,7 +917,8 @@
           "9eb8e5db6fb2": "Mention spéciale d'interprétation (Mélissa Guers, Ava Baya, Gabrielle Cohen), Festival du film francophone d'Angoulême 2026",
           "fe74f3d84513": "Official selection • Discovery, Toronto International Film Festival 2026"
         }
-      }
+      },
+      "poster": "fiction/11188-mwm7wu1o.webp"
     },
     "11195": {
       "zoom": 1.2,
@@ -1088,7 +1093,8 @@
           "6ea661122e1e": "Valois du scénario, Festival du film francophone d'Angoulême 2026",
           "f9711d21663f": "Valois des étudiants, Festival du film francophone d'Angoulême 2026"
         }
-      }
+      },
+      "poster": "fiction/11342-mwm7wu1o.webp"
     },
     "11347": {
       "genre": "FEATURE FILM",
@@ -1171,7 +1177,9 @@
       "info": {
         "year": "2027",
         "ratio": "2.39"
-      }
+      },
+      "title": "En Haut de la Pile",
+      "poster": "fiction/11556-mwm7wu1o.webp"
     }
   },
   "films": [
