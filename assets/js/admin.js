@@ -2038,6 +2038,7 @@
   // (et la ligne année | durée | format dans la présentation vidéo + stills). Bloc replié ; son titre dit combien sont remplies.
   var INFO_FIELDS = [["year", "Année", "2025"], ["episodes", "Épisodes", "8 (séries)"], ["runtime", "Durée", "90 min"], ["ratio", "Format d'image", "1.85"],
     ["platforms", "Plateformes", "Netflix, Canal+"], ["camera", "Caméra", "ALEXA 35"], ["lenses", "Optiques", "Cooke S4"],
+    ["starring", "Starring (acteurs)", "Noms séparés par des virgules", 0, true], // Gus 18/11 : sur le site, ligne STARRING avant caméra / optiques
     ["synopsis", "Synopsis (français)", "Une ligne vide entre deux paragraphes", 5], ["synopsisEn", "Synopsis (anglais)", "Sur le site : l'anglais d'abord, avec un choix EN / FR si les deux sont remplis", 5]];
   // Prix & sélections du film (Gus 17/11), sous la vidéo : une ligne par prix (ajoutées à la main ou depuis « Nos sélections »),
   // texte modifiable, œil = affichée / masquée sur le site (masquées : `info.awardsHidden`, le site ne lit que `info.awards`),
@@ -2105,7 +2106,7 @@
         if (v) i[f[0]] = v; else delete i[f[0]];
         setOverride(c, "info", Object.keys(i).length ? i : undefined); count();
       });
-      grid.appendChild(el("label", { class: "ifield" + (f[3] ? " wide" : "") }, [el("span", { class: "label", text: f[1] }), inp]));
+      grid.appendChild(el("label", { class: "ifield" + (f[3] || f[4] ? " wide" : "") }, [el("span", { class: "label", text: f[1] }), inp]));
     });
     count();
     return box;
@@ -3185,7 +3186,7 @@
     if (!b) { b = el("span", { class: "nbadge" }); a.appendChild(b); }
     b.textContent = n; b.title = "Nouvelles bandes-annonces";
   }
-  function trLabel(t) { return [t.name, t.kind === "teaser" ? "teaser" : "", t.lang ? t.lang.toUpperCase() : "", t.published ? "publiée le " + fdate(t.published) : ""].filter(Boolean).join(" · "); }
+  function trLabel(t) { return [t.name, t.kind === "teaser" ? "teaser" : "", t.lang ? t.lang.toUpperCase() : "", t.channel ? "chaîne " + t.channel : "", t.published ? "publiée le " + fdate(t.published) : t.when || "", t.source === "youtube" ? "trouvée sur YouTube, à vérifier" : ""].filter(Boolean).join(" · "); }
   // « Les Filles d'Abraham • Bande Annonce » → « Les Filles d'Abraham ».
   function ficTitle(t) {
     return String(t || "").replace(/ /g, " ").split(/\s+[•|]\s*|\s+[-–]\s+(?=(?:bande|trailer|teaser|saison|season|\()|.*bande|.*trailer)/i)[0]

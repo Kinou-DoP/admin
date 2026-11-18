@@ -82,7 +82,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   (`video`), vide = pas encore d'extrait (à « snipper » sur Slate, puis « Relire le bundle ») ; rien sur un projet en images seulement.
 - Infos du film (Gus 04/11, fiches, spotlight, fiction) : bloc replié « + Infos du film » sous les crédits (`infoCtl`, titre = nombre
   de champs remplis) : année, épisodes, durée, format d'image, plateformes (pas sur la fiction : déjà en étiquettes), caméra,
-  optiques, synopsis français (`synopsis`) et anglais (`synopsisEn`) → `overrides[<id>].info`. Affichage : CLAUDE.md du site (`info`).
+  optiques, **starring** (`starring`, acteurs séparés par des virgules, Gus 18/11), synopsis français (`synopsis`) et anglais (`synopsisEn`) → `overrides[<id>].info`. Affichage : CLAUDE.md du site (`info`).
 - **Prix & sélections** (Gus 17/11, `awardsCtl`, fiches, spotlight, fiction) : bloc sous la vidéo de chaque film, une ligne par prix
   (`info.awards`, ajoutées à la main avec « + Ajouter » ou depuis Nos sélections, marque « robot ») : texte modifiable, bouton
   affiché / masqué (masquées : `info.awardsHidden`, jamais sur le site), × pour retirer ; une ligne des robots corrigée garde son lien
