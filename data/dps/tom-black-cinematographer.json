@@ -770,6 +770,10 @@
     "11559": {
       "zoom": 1.33,
       "zoomThumb": true
+    },
+    "11560": {
+      "zoom": 1.33,
+      "zoomThumb": true
     }
   },
   "about": {
@@ -1131,13 +1135,13 @@
       "featuredOrder": 9
     },
     {
-      "title": "SDM - IN INFINITUM - Teaser",
-      "sub": "Frederic De Pontcharra\nObvious Film\nco-DoP Julien Lascar",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11559/8c04dcc8-e362-11f1-952e-02ffedfede17.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/712574c0-e041-4302-bde0-42bca63c03b9-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/bzUgE8cseToGQvl3L4F6FqnW1-XI6nU_eIroFYfL0d4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MDE4MGFmMy0zNGQx/LTQ4NGQtOWMxZC01/NjQxODYxMzA4MDQv/MTc5NTAxNDY1OTEy/My5qcGc?v=1&format=webp",
+      "title": "SDM | IN INFINITUM 13112026",
+      "sub": "Frederic De Pontcharra\nObvious Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11560/c7b6583f-e363-11f1-952e-02ffedfede17.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/efcfaf60-3802-4e4b-84f3-f1a6fe60e412-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/7SNLnGYJX3nSX_yAIGkPM_iqnWHJTbNlN6-cXpUMeSo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/OTBiNjc4NC1mZDU5/LTQwYjMtYjhlZi1l/MWJmMzQxNmRhOWUv/MTc5NTAxNTI4NTgy/NC5qcGc?v=1&format=webp",
       "cat": "MUSIC VIDEO",
-      "slate": 11559
+      "slate": 11560
     },
     {
       "title": "LOUANE - LA PLUIE",
