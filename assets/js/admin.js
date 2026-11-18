@@ -362,6 +362,7 @@
         jobs.push(function () { return importStills(x.link).then(function (d) {
           var n = extraOf(d);
           if (!n.full && x.full && n.video && n.video === x.video) n.full = x.full;
+          if (x.cols && !n.stills) n.cols = x.cols;
           o.extras[i] = n;
         }); });
       });
@@ -385,8 +386,13 @@
     if (!r.links) return "";
     return " " + (r.links - r.failed) + " lien" + (r.links - r.failed > 1 ? "s" : "") + " sous les films relu" + (r.links - r.failed > 1 ? "s" : "") + (r.failed ? " (" + r.failed + " sans réponse, ancienne version gardée)" : "") + ".";
   }
+  // Mise en page en vigueur pour la vidéo n° i (son réglage, sinon celui de la dernière vidéo réglée au-dessus sans stills entre deux).
+  function layOf(list, i) {
+    for (var j = i; j >= 0; j--) { var y = list[j]; if (!y || y.stills) return null; if (y.cols) return { d: y.cols.d || 1, m: y.cols.m || 1 }; }
+    return null;
+  }
   function extrasCtl(get, set, label) {
-    var box = el("div", { class: "extras" });
+    var box = el("div", { class: "extras" }), openLay = -1; // réglage de colonnes ouvert (reste ouvert après un choix)
     function save(list) { set(list); touch(); draw(); }
     function kind(x) { return x.stills ? "Stills · " + x.stills.length : x.full || x.video ? "Vidéo" : "Vidéo · à publier"; }
     function row(x, i, list) {
@@ -400,6 +406,7 @@
         input._busy = v; st.textContent = "Lecture du lien" + slateWait("…");
         importStills(v).then(function (d) {
           var n = extraOf(d);
+          if (x && x.cols && !n.stills) n.cols = x.cols; // mise en page gardée quand on relit le lien
           if (x) list[i] = n; else list.push(n);
           save(list);
         }, function (e) { input._busy = null; st.textContent = e.message; });
@@ -412,10 +419,33 @@
       var down = el("button", { type: "button", class: "xbtn", title: "Descendre", text: "↓", on: { click: function () { move(1); } } });
       var del = el("button", { type: "button", class: "xbtn", title: "Retirer", text: "×", on: { click: function () { list.splice(i, 1); save(list); } } });
       up.disabled = i === 0; down.disabled = i === list.length - 1;
+      // Mise en page des vidéos (Gus 18/11) : « + » = nombre de colonnes sur ordinateur et sur téléphone (1 à 3) → `cols: { d, m }`.
+      // Les vidéos suivantes sans réglage suivent la même mise en page, jusqu'à des stills ou une vidéo qui a son propre réglage
+      // (ex. 3 vidéos en ligne puis une grande : 3 colonnes sur la 1re, 1 colonne sur la 4e).
+      var lay = null, lbtn = null;
+      if (!x.stills) {
+        var eff = layOf(list, i), own = !!x.cols;
+        lbtn = el("button", { type: "button", class: "xbtn xlay" + (own ? " on" : eff ? " inh" : ""), title: "Affichage : colonnes sur ordinateur et sur téléphone",
+          text: own ? eff.d + "·" + eff.m : eff ? "↳" + eff.d + "·" + eff.m : "+" });
+        lbtn.addEventListener("click", function () { openLay = openLay === i ? -1 : i; lay.hidden = openLay !== i; });
+        lay = el("div", { class: "xlaybox" }); lay.hidden = openLay !== i;
+        var cur = x.cols || eff || { d: 1, m: 1 };
+        [["d", "Colonnes ordi"], ["m", "Colonnes tél."]].forEach(function (k) {
+          var g = el("div", { class: "xlayg" }, [el("span", { class: "label", text: k[1] })]);
+          [1, 2, 3].forEach(function (n) {
+            g.appendChild(el("button", { type: "button", class: "chip" + (own && cur[k[0]] === n ? " on" : ""), text: String(n), title: n + (n > 1 ? " colonnes" : " colonne"), on: { click: function () {
+              var c = Object.assign({ d: cur.d, m: cur.m }, x.cols || {}); c[k[0]] = n; x.cols = c; save(list);
+            } } }));
+          });
+          lay.appendChild(g);
+        });
+        lay.appendChild(el("p", { class: "hint", text: own ? "Les vidéos suivantes suivent ce réglage, jusqu'à des stills ou une vidéo qui a le sien." : eff ? "Suit le réglage d'une vidéo au-dessus (" + eff.d + " col. ordinateur, " + eff.m + " col. téléphone). Choisir ici = nouveau réglage à partir de cette vidéo." : "Par défaut : en grand, une par ligne." }));
+        if (own) lay.appendChild(el("button", { type: "button", class: "btn ghost", text: "Retirer ce réglage", on: { click: function () { delete x.cols; save(list); } } }));
+      }
       var tag = el("span", { class: "xkind", text: kind(x) });
       if (!x.stills && !x.full && !x.video) tag.title = "Pas d'extrait sur Slate : le film complet est ajouté par le robot GitHub environ 1 min après la publication.";
       if (x.img || (x.stills && x.stills[0])) tag.style.backgroundImage = 'url("' + (x.img || x.stills[0]) + '")';
-      return el("div", { class: "xrow" }, [el("div", { class: "xline" }, [tag, input, up, down, del]), st]);
+      return el("div", { class: "xrow" }, [el("div", { class: "xline" }, [tag, input, lbtn || "", up, down, del]), lay || "", st]);
     }
     function draw() {
       box.textContent = "";

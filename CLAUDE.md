@@ -72,6 +72,9 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   → `GET <SITE>/api/stills?link=…` → `extras` (`overrides[<id>].extras` ou slide de l'accueil) : `{ link, title, stills }` ou
   `{ link, title, full, video, img }` (URLs signées telles quelles). Une case vide en bas pour ajouter un lien de plus,
   flèches ↑ ↓ pour réordonner, × pour retirer. L'ancien `stills` + `stillsLink` est converti à la première modification.
+  **Colonnes des vidéos** (Gus 18/11) : bouton « + » à côté d'une vidéo → nombre de colonnes sur ordinateur et sur téléphone (1 à 3)
+  → `cols: { d, m }` sur cette vidéo (`layOf`) ; les vidéos suivantes sans réglage suivent (bouton « ↳3·2 »), jusqu'à des stills ou une vidéo
+  qui a son propre réglage (ex. 3 vidéos en ligne puis une grande : 3 col. sur la 1re, 1 col. sur la 4e) ; gardé quand on relit le lien.
   « Relire le bundle » (fiche) et « Rafraîchir » (accueil) relisent aussi tous ces liens (`relinkAll` : extras, ancien
   stills, extrait au survol ; 4 à la fois ; lien sans réponse = ancienne version gardée ; `full` du robot gardé si même vidéo).
 - Projet en stills (« Sans vidéo ») : case « Extrait vidéo au survol » → lien Slate d'une vidéo qui a un extrait
