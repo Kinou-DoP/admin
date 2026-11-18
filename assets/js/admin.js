@@ -971,7 +971,7 @@
   // film-infos.yml : Claude + recherche web, 6 films par recherche) ; réponse relue toutes les 10 s, avancement affiché ; puis
   // « Appliquer » = seuls les champs VIDES des infos sont remplis (ce que l'équipe ou Slate a écrit passe en priorité), marqués
   // « à vérifier » (`info.auto` = champs remplis par le robot, `info.autoSrc` = pages lues ; ignorés par le site), puis Publier.
-  var INFO_ASK = "/repos/" + NOTES_REPO + "/contents/infos/ask", INFO_KEYS = ["year", "episodes", "runtime", "ratio", "platforms", "camera", "lenses", "starring", "synopsis", "synopsisEn"];
+  var INFO_ASK = "/repos/" + NOTES_REPO + "/contents/infos/ask", INFO_KEYS = ["year", "episodes", "runtime", "ratio", "platforms", "camera", "lenses", "starring"]; // pas de synopsis (Gus 18/11)
   var infoAskCur = null, infoAskTimer = 0;
   function infoAskLoad(slug) {
     return gh(INFO_ASK, { allow404: true }).then(function (l) {
@@ -998,7 +998,7 @@
     function show(q) {
       clearTimeout(infoAskTimer); infoAskCur = q; st.textContent = ""; btn.disabled = false;
       var old = box.querySelector(".irapply"); if (old) old.remove();
-      if (!q) { st.textContent = "Le robot cherche année, durée, format, plateformes, caméra, optiques, starring et synopsis (FR / EN) ; seuls les champs vides seront remplis."; return; }
+      if (!q) { st.textContent = "Le robot cherche année, épisodes, durée, format, plateformes, caméra, optiques et starring (pas le synopsis) ; seuls les champs vides seront remplis."; return; }
       if (!q.doneAt) {
         btn.disabled = true;
         st.textContent = "Recherche en cours… " + (q.total ? (q.done || 0) + " / " + q.total + " films" : "démarrage (1 à 2 min)") + " — vous pouvez quitter la page, la réponse sera gardée.";
