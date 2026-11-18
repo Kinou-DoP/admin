@@ -4,6 +4,10 @@
   "hue": 0,
   "bundle": "https://kinou.slateapp.com/bundles/055abb79-e2a0-11f1-952e-02ffedfede17",
   "overrides": {
+    "235": {
+      "zoom": 1.53,
+      "zoomThumb": true
+    },
     "575": {
       "zoomThumb": true,
       "zoom": 1.36
@@ -19,6 +23,10 @@
     "1653": {
       "zoom": 1.27
     },
+    "2407": {
+      "zoom": 1.54,
+      "zoomThumb": true
+    },
     "2637": {
       "zoom": 1.33,
       "zoomThumb": true
@@ -26,15 +34,32 @@
     "2850": {
       "zoom": 1.38
     },
+    "3342": {
+      "zoom": 1.37
+    },
     "4185": {
       "zoom": 1.39,
       "zoomThumb": true
+    },
+    "4300": {
+      "zoom": 1.36
+    },
+    "4582": {
+      "zoom": 1.31,
+      "zoomThumb": true
+    },
+    "5496": {
+      "zoom": 1.16,
+      "zoomPos": "53.7% 5.3%"
     },
     "6024": {
       "zoom": 1.24
     },
     "6266": {
       "zoom": 1.39
+    },
+    "6679": {
+      "zoom": 1.37
     },
     "9398": {
       "zoom": 1.37,
