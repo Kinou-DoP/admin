@@ -247,7 +247,13 @@
       },
       "platforms": [
         "France TV"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection • Première mondiale (projection et rencontre), Canneseries 2025",
+        "awardsFrom": {
+          "8777ef27ff9a": "Official selection • Première mondiale (projection et rencontre), Canneseries 2025"
+        }
+      }
     },
     "10076": {
       "zoom": 1.05,
