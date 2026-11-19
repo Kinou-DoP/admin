@@ -16,8 +16,10 @@ function decode(s) {
     return String.fromCodePoint(k[1] === "x" ? parseInt(k.slice(2), 16) : parseInt(k.slice(1), 10));
   });
 }
+// Slate refuse (403) les demandes sans User-Agent depuis le 17/11 (même en-tête que tools/slate.mjs).
+var UA = { headers: { "User-Agent": "Mozilla/5.0 (compatible; kinou-admin/1.0; +https://kinou.fr)", "Accept": "text/html,*/*" } };
 async function page(url) {
-  var r = await fetch(url);
+  var r = await fetch(url, UA);
   if (!r.ok) throw new Error("Slate " + r.status + " " + url);
   return r.text();
 }
@@ -104,7 +106,7 @@ async function ratiosOf(urls) {
     while (next < urls.length) {
       var i = next++;
       try {
-        var r = await fetch(urls[i], { headers: { Range: "bytes=0-65535" } }), sz = imageSize(Buffer.from(await r.arrayBuffer()));
+        var r = await fetch(urls[i], { headers: Object.assign({ Range: "bytes=0-65535" }, UA.headers) }), sz = imageSize(Buffer.from(await r.arrayBuffer()));
         if (sz && sz.w && sz.h) out[i] = Math.round(sz.w / sz.h * 10000) / 10000;
       } catch (e) {}
     }
@@ -154,7 +156,7 @@ function names(m, k) { return (m[k] || []).map(function (x) { return String(x &&
 async function readSpot(link, prev) {
   var url = link;
   var c = String(link).match(/^(?:https?:\/\/)?(?:shots|slt)\.re\/([A-Za-z0-9]{3,20})\/?$/);
-  if (c) url = (await fetch("https://shots.re/" + c[1])).url;
+  if (c) url = (await fetch("https://shots.re/" + c[1], UA)).url;
   url = url.replace(/[?#].*$/, "");
   var html = await page(url), media = playlist(html);
   if (!media) {
