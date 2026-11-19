@@ -4,17 +4,155 @@
   "hue": 0,
   "bundle": "https://kinou.slateapp.com/bundles/177229fe-e2a8-11f1-952e-02ffedfede17",
   "overrides": {
+    "11107": {
+      "title": "Audemars Piguet"
+    },
+    "11108": {
+      "title": "Cellcosmet"
+    },
     "11109": {
       "zoom": 1.36,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Glenfiddich - Gran Reserva"
     },
     "11110": {
       "zoom": 1.39,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Glenfiddich - Grand Cru"
     },
     "11112": {
       "zoom": 1.03,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Henry Jacques"
+    },
+    "11113": {
+      "title": "Kerbedanz"
+    },
+    "11115": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-1-commercial",
+          "title": "Louis Vuitton #1 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49c2f7de-6e65-4fee-9a72-64dacc55d853-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11114/d40ec3e6-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/tx46vI-5CHbuERYn4oEuaxGJzgLJbmTu1NR3UkcOuso/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNC02YTU0Yjkx/ZDIwNTBkNC4yMjc3/OTIxMy04ZTY4NjJi/ZmIwZWYyYWViMjg3/ZDhjZTNiOTlkMDVi/OS5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-3-commercial",
+          "title": "Louis Vuitton #3 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/873a3383-f94d-4e80-9890-a6698240bdd8-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11116/dad1898a-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/54DIGqM_w2y1WJMr0TkDM9BtltwpslOEQQ4ompoJLZc/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNi02YTU0Yjkx/ZDIzYmU4Ny43NDY5/NDI0NC1jYmQ2MzI3/MWZiZjNjMGQ4OTk5/MzJkZTIyZWQwNTA1/Ny5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-4-commercial",
+          "title": "Louis Vuitton #4 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e29f3be9-2bbe-4779-8690-acd8eab55973-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11117/de2c9610-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/eRlyLgRAjew0N_rBaf-UmhZXOU2zOwil2sbN2NRuVmc/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNy02YTU0Yjky/M2MzMTkzMi45NjAz/NTI0Mi02ZDdlNmZk/MzliZTE3ZjRlNGQw/YTM4YzdjNjExOTRm/OS5qcGc.webp"
+        }
+      ]
+    },
+    "11116": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-1-commercial",
+          "title": "Louis Vuitton #1 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49c2f7de-6e65-4fee-9a72-64dacc55d853-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11114/d40ec3e6-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/tx46vI-5CHbuERYn4oEuaxGJzgLJbmTu1NR3UkcOuso/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNC02YTU0Yjkx/ZDIwNTBkNC4yMjc3/OTIxMy04ZTY4NjJi/ZmIwZWYyYWViMjg3/ZDhjZTNiOTlkMDVi/OS5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-2-commercial",
+          "title": "Louis Vuitton #2 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d686b438-5c29-40c7-9596-2b57ca4a5ece-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11115/d7f87a2e-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/JsrsSTP2NT72RL0S_VF4p0q-a5HBCbKv0X9qWS-Hx_4/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNS02YTU0Yjky/M2IzNDU2NS45ODMw/OTE4OC1kNTQ1YjNk/ODczNjQ4NzRlNDJk/OTFlZWU2ZDhmN2Y1/Zi5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-4-commercial",
+          "title": "Louis Vuitton #4 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e29f3be9-2bbe-4779-8690-acd8eab55973-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11117/de2c9610-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/eRlyLgRAjew0N_rBaf-UmhZXOU2zOwil2sbN2NRuVmc/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNy02YTU0Yjky/M2MzMTkzMi45NjAz/NTI0Mi02ZDdlNmZk/MzliZTE3ZjRlNGQw/YTM4YzdjNjExOTRm/OS5qcGc.webp"
+        }
+      ]
+    },
+    "11117": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-1-commercial",
+          "title": "Louis Vuitton #1 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49c2f7de-6e65-4fee-9a72-64dacc55d853-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11114/d40ec3e6-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/tx46vI-5CHbuERYn4oEuaxGJzgLJbmTu1NR3UkcOuso/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNC02YTU0Yjkx/ZDIwNTBkNC4yMjc3/OTIxMy04ZTY4NjJi/ZmIwZWYyYWViMjg3/ZDhjZTNiOTlkMDVi/OS5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-2-commercial",
+          "title": "Louis Vuitton #2 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d686b438-5c29-40c7-9596-2b57ca4a5ece-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11115/d7f87a2e-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/JsrsSTP2NT72RL0S_VF4p0q-a5HBCbKv0X9qWS-Hx_4/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNS02YTU0Yjky/M2IzNDU2NS45ODMw/OTE4OC1kNTQ1YjNk/ODczNjQ4NzRlNDJk/OTFlZWU2ZDhmN2Y1/Zi5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/louis-vuitton-3-commercial",
+          "title": "Louis Vuitton #3 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/873a3383-f94d-4e80-9890-a6698240bdd8-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11116/dad1898a-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/54DIGqM_w2y1WJMr0TkDM9BtltwpslOEQQ4ompoJLZc/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExNi02YTU0Yjkx/ZDIzYmU4Ny43NDY5/NDI0NC1jYmQ2MzI3/MWZiZjNjMGQ4OTk5/MzJkZTIyZWQwNTA1/Ny5qcGc.webp"
+        }
+      ]
+    },
+    "11118": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/maison-kitsune-2-commercial",
+          "title": "Maison Kitsuné #2 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/533b3280-7951-4475-9517-dba6bd57b614-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11119/fa07dbcc-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/2xqnd4sJT8utGF5ko57EeNa5DyC8c_CofmeTqjsXaeo/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExOS02YTU0Yjky/M2IwNDAwOC44NTkz/MjU1NC1mZDk4OWJl/MjhiNGU4NWYzMDQ3/Mjc1OGIwYWRiZTNm/Mi5qcGc.webp"
+        }
+      ]
+    },
+    "11119": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/maison-kitsune-1-commercial",
+          "title": "Maison Kitsuné #1 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cdbb9eff-589a-4c9c-8faa-695526b4ccaf-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11118/f702fcad-7eae-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/llYZqeIVkn3FMsWdASp6E3dXj1eEPRjuN-DJtbeqMn0/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTExOC02YTU0Yjky/M2IwOGUzMC42MTc5/MjMyOC0wYjdlYjZh/MjlhZmU3MmVjZDli/YjI2NzE5MzVmMDhk/ZC5qcGc.webp"
+        }
+      ]
+    },
+    "11120": {
+      "title": "Stella Luna"
+    },
+    "11121": {
+      "title": "Tommy Jeans"
+    },
+    "11122": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/van-cleef-arpels-2-commercial",
+          "title": "Van Cleef & Arpels #2 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8aef0b9a-1ed6-4fd4-b4d1-452af78b81db-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11123/22c09db9-7eaf-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/JAZhSGpEnt7WPSiHztkeSHk7x-ToME0lvAmfW9XhbmI/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyMy02YTU0Yjkx/ZDIyMTUwNy43NDY5/NDI0NC1lNmIxZWJl/MDc0ZTYyMGY1MThh/ZGNlMGRjZTY4YWIx/Ni5qcGc.webp"
+        }
+      ]
+    },
+    "11123": {
+      "title": "Van Cleef & Arpels #2",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/van-cleef-arpels-1-commercial",
+          "title": "Van Cleef & Arpels #1 (Commercial)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2f6fca64-f928-4f9f-ba75-ec94672d2620-0x1080.5000.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11122/1dcbcde5-7eaf-11f1-a349-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/tzHBbXMx2nWqASC4Qf7aZy9GMvrg6dzzrnRBso2gibg/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MTEyMi02YTU0Yjky/YTA1NTUxMy45MzE3/ODAyMy1kOGE1MDU5/OGViNjFjYmZmYjQ4/ODljOGRkZGM0MGFj/Ni5qcGc.webp"
+        }
+      ]
     },
     "11125": {
       "zoom": 1.36,
