@@ -977,7 +977,8 @@
     box.appendChild(btn); box.appendChild(st);
     // Seulement les films des onglets fiction (Gus 18/11) : Narrative, Documentaries, Short film(s), Feature film(s), Series… (variantes et
     // fautes de frappe comprises) ; pas les pubs ni les clips (sinon des dizaines de recherches dans le vide sur un chef op pub / clip).
-    var FIC_TAB = /narr?at|fiction|docu|short|court|feature|featured? ?films?$|long|metrage|s[eé]ri|tele|t[eé]l[eé]film|tv|movie|cinema/;
+    // + onglets 2nd unit / cam op / camera operator / cadreur (Gus 19/11).
+    var FIC_TAB = /narr?at|fiction|docu|short|court|feature|featured? ?films?$|long|metrage|s[eé]ri|tele|t[eé]l[eé]film|tv|movie|cinema|2n?d|second|unit|unite|cam ?op|camera ?op|operat|cadr/;
     function ficTab(cat) {
       var c = String(cat || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
       return c !== "featured" && FIC_TAB.test(c) && !/commercial|advert|\bpub|\btvc\b|clip|music/.test(c); // « TV commercial », « TVC » : de la pub
@@ -3039,7 +3040,8 @@
   // Titre du site comparé tel quel (« • » et « | » enlevés) et sans ce qui suit « • Bande-annonce »… : « GENER8ION • STORM | starring
   // Yung Lean » doit retrouver « GENER8ION - STORM starring Yung Lean » (Gus 18/11).
   function awHit(x, title) {
-    var cands = [ficTitle(title), String(title || "").replace(/[•|]/g, " ")];
+    // « Fatherland (Camera Operator) », « X (2nd unit) » : le rôle entre parenthèses ne fait pas partie du titre (Gus 19/11).
+    var cands = [ficTitle(title), String(title || "").replace(/[•|]/g, " "), ficTitle(String(title || "").replace(/\s*\([^)]*\)/g, " "))];
     return awTitles(x).some(function (t) { return cands.some(function (c) { return sortSame(c, t); }); });
   }
   // Applique les trouvailles confirmées à un fichier du site (fiche d'un chef op, ou page fiction) ; null = rien à changer.
@@ -3301,7 +3303,27 @@
   }
   // Bandes-annonces trouvées par le robot des sorties (Gus 18/11) : `sorties.trailers`, `seen` = vue par l'équipe (partagé).
   // Pas encore vues = pastille sur « sorties fiction », encadré en haut du calendrier, ligne sur l'accueil de l'admin.
-  function trUnseen() { return ((sorties && sorties.trailers) || []).filter(function (t) { return !t.seen; }).sort(function (a, b) { return String(b.foundAt).localeCompare(String(a.foundAt)); }); }
+  // Films masqués dans Sorties fiction (Gus 19/11, ex. film où notre chef op n'est que cadreur) : `sorties.hidden` =
+  // [{ key (titre normalisé), title, project?, slate?, by, at }] ; ni dans le calendrier, ni bandes-annonces, ni recherche du robot.
+  function sortHid(x, so) {
+    var k = sortNrm(x.title);
+    return ((so || sorties || {}).hidden || []).some(function (h) { return h.key === k || (h.project && x.project === h.project) || (h.slate && (String(x.slate) === String(h.slate) || String(x.ficSlate) === String(h.slate))); });
+  }
+  function sortHide(x, on) {
+    var h = { key: sortNrm(x.title), title: x.title, project: x.project || undefined, slate: x.slate || x.ficSlate || undefined };
+    function put(v, label) {
+      return sortRead().then(function () {
+        sorties.hidden = (sorties.hidden || []).filter(function (y) { return y.key !== h.key; });
+        if (v) sorties.hidden.push(Object.assign({}, h, { by: user && user.login || "", at: new Date().toISOString() }));
+        return gh(SORT_PATH, { method: "PUT", body: { message: "Sorties : " + label + " (admin, " + (user && user.login || "") + ")", content: b64enc(JSON.stringify(sorties, null, 2) + "\n"), sha: sortSha || undefined } });
+      }).then(function (r) { sortSha = r.content.sha; sortBadge(); });
+    }
+    var label = x.title + (on ? " masqué" : " réaffiché");
+    return put(on, label).then(function () {
+      immPush({ label: label, undo: function () { return put(!on, "annulé — " + label); }, redo: function () { return put(on, "rétabli — " + label); } });
+    });
+  }
+  function trUnseen() { return ((sorties && sorties.trailers) || []).filter(function (t) { return !t.seen && !sortHid(t); }).sort(function (a, b) { return String(b.foundAt).localeCompare(String(a.foundAt)); }); }
   function trSeen(ids) {
     return sortRead().then(function () {
       var by = { by: user && user.login || "", at: new Date().toISOString() };
@@ -3374,6 +3396,7 @@
       function isDated(t) { return dated[nrm(t)] || events.some(function (e) { return sortSame(e.title, t); }); }
       Object.keys(seen).filter(function (k) { return /^nd\|/.test(k); }).forEach(function (k) { if (!isDated(seen[k].title)) noDate.push(seen[k]); });
       projs.forEach(function (p) { if (!seen["p|" + p.id] && !isDated(p.title)) noDate.push({ title: p.title, project: p.id, directors: p.directors || [], dops: p.dops || [], prod: p.prod || "", series: p.type === "STV", start: p.start }); });
+      events = events.filter(function (e) { return !sortHid(e, sorties); }); noDate = noDate.filter(function (e) { return !sortHid(e, sorties); });
       events.sort(function (a, b) { return a.date.localeCompare(b.date); });
       noDate.sort(function (a, b) { return String(b.start || "").localeCompare(String(a.start || "")); });
       return { events: events, noDate: noDate };
@@ -3511,6 +3534,17 @@
       var s2 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "selfold", on: { click: function () { st.openNoDate = !st.openNoDate; draw(); } } }, [(st.openNoDate ? "▾ " : "▸ ") + "Sans date connue · " + noDate.length])])]);
       if (st.openNoDate) noDate.forEach(function (x) { s2.appendChild(rowOf(x, true)); });
       box.appendChild(s2);
+      // Films masqués (repliable) : « Réafficher ».
+      var hid = (sorties && sorties.hidden) || [];
+      if (hid.length) {
+        var s3 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "selfold", on: { click: function () { st.openHid = !st.openHid; draw(); } } }, [(st.openHid ? "▾ " : "▸ ") + "Masqués · " + hid.length])])]);
+        if (st.openHid) hid.forEach(function (h) {
+          s3.appendChild(el("div", { class: "selrow no" }, [el("span", { class: "selk", text: "Masqué" }),
+            el("div", { class: "selwhat" }, [el("strong", { text: h.title }), el("small", { text: "par " + (h.by || "l'équipe") + (h.at ? " le " + fdate(h.at.slice(0, 10)) : "") })]),
+            el("div", { class: "selsrc" }), el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn ghost", text: "Réafficher", on: { click: function (e) { e.target.disabled = true; sortHide(h, false).then(function () { build(); draw(); }); } } })])]));
+        });
+        box.appendChild(s3);
+      }
       // Conditions de TMDB (dates trouvées par le robot) : logo + mention, moins visibles que kinou.
       box.appendChild(el("p", { class: "tmdbnote" }, [el("span", { class: "tmdblogo", text: "TMDB" }), "Cet outil utilise TMDB et les API de TMDB, mais n'est ni approuvé, ni certifié, ni soutenu par TMDB. (This product uses the TMDB API but is not endorsed or certified by TMDB.)"]));
     }
@@ -3521,9 +3555,15 @@
           el("span", { text: nod ? (x.start ? "Tourné en " + x.start.slice(0, 4) : "") : [SK[x.kind || "cinema"], (x.platforms || []).join(", "), x.country].filter(Boolean).join(" · ") }),
           el("small", { text: [(x.directors || []).length && "réal. " + x.directors.join(", "), (x.dops || []).length && "DoP " + x.dops.map(rcBase).join(", "), x.prod].filter(Boolean).join(" · ") })]),
         el("div", { class: "selsrc" }, x.url ? [el("a", { href: x.url, target: "_blank", rel: "noopener", text: /imdb\.com/.test(x.url) ? "IMDb ↗" : "source ↗" })] : []),
-        el("div", { class: "fwbtns" }, nod ? [el("button", { type: "button", class: "btn ghost", text: "+ Ajouter une date", on: { click: function () { form({ title: x.title, project: x.project, kind: x.series ? "platform" : "cinema" }, r, true); } } })]
+        el("div", { class: "fwbtns" }, nod ? [el("button", { type: "button", class: "btn ghost", text: "+ Ajouter une date", on: { click: function () { form({ title: x.title, project: x.project, kind: x.series ? "platform" : "cinema" }, r, true); } } }), hideBtn(x)]
           : [el("button", { type: "button", class: "btn ghost", text: "Voir", on: { click: function () { st.at = dOf(x.date); draw(); var cb = box.querySelector(".calbar"); if (cb) window.scrollTo({ top: cb.getBoundingClientRect().top + window.scrollY - 140, behavior: "smooth" }); } } })])]);
       return r;
+    }
+    // « Masquer » : film qui n'est pas vraiment le nôtre (ex. notre chef op cadreur ou 2e équipe, Gus 19/11) : retiré du calendrier,
+    // des bandes-annonces et des recherches du robot ; réaffichable en bas de la page (« Masqués »).
+    function hideBtn(x) {
+      return el("button", { type: "button", class: "btn ghost", text: "Masquer", title: "Pas une sortie à suivre (ex. notre chef op n'était que cadreur) : retiré du calendrier et des recherches du robot",
+        on: { click: function (e) { e.target.disabled = true; var d = box.querySelector(".caldetail"); if (d) d.remove(); sortHide(x, true).then(function () { build(); draw(); }, function (er) { e.target.disabled = false; alert("Pas enregistré : " + er.message); }); } } });
     }
     function detail(x, at) {
       var old = box.querySelector(".caldetail"); if (old) { old.remove(); if (old._x === x) return; }
@@ -3548,6 +3588,7 @@
             e.target.disabled = true;
             sortSave(null, y, y.title + " : confirmé").then(function () { return sortPut([x], "Sorties : " + x.title + " (robot) remplacé", true); }).then(function () { build(); draw(); });
           } } }) : null,
+          x.source !== "fiction" ? hideBtn(x) : null,
           el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: function () { d.remove(); } } })])]);
       d._x = x;
       at.closest(".cal").after(d); d.scrollIntoView({ behavior: "smooth", block: "nearest" });
