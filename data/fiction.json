@@ -154,7 +154,19 @@
           "054b303377bb": "Nominated, Les Flamboyants, Festival du Film Francophone d'Angoulême 2025",
           "f7c58fb79896": "Official selection • Compétition, Festival Cinéroman 2025",
           "6bce4abaa4f0": "Official selection • Film d'ouverture, Brussels International Film Festival (BRIFF) 2025"
-        }
+        },
+        "year": "2025",
+        "runtime": "113",
+        "starring": "Niels Schneider, Ramzy Bedia, Linh-Dan Pham, Déborah François",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=325266.html",
+          "https://tv.apple.com/ca/movie/les-tourmentes/umc.cmc.6ylf4abctnqm3ou5jm29pbw5n"
+        ]
       }
     },
     "10041": {
@@ -394,6 +406,21 @@
       "title": "Furcy né libre",
       "thumbCrop": {
         "y": 50.6
+      },
+      "info": {
+        "year": "2026",
+        "runtime": "108",
+        "starring": "Makita Samba, Romain Duris, Ana Girardot, Vincent Macaigne",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=292718.html",
+          "https://cineuropa.org/en/film/484287",
+          "https://en.unifrance.org/movie/58992/furcy-ne-libre"
+        ]
       }
     },
     "10303": {
@@ -665,7 +692,12 @@
         "year": "2026",
         "runtime": "141 min",
         "awards": "Official selection, Cannes film festival 2026",
-        "synopsis": "En quête d’inspiration pour son nouveau roman, Sylvie espionne ses voisins d’en face. Quand elle engage le jeune Adam pour l’aider dans son quotidien, elle ignore que celui-ci va bouleverser sa vie et son travail, jusqu’à ce que la fiction qu’elle avait imaginée dépasse leur réalité à tous."
+        "synopsis": "En quête d’inspiration pour son nouveau roman, Sylvie espionne ses voisins d’en face. Quand elle engage le jeune Adam pour l’aider dans son quotidien, elle ignore que celui-ci va bouleverser sa vie et son travail, jusqu’à ce que la fiction qu’elle avait imaginée dépasse leur réalité à tous.",
+        "ratio": "1.85",
+        "camera": "Arri Alexa Mini LF",
+        "lenses": "Leitz Hugo Lenses",
+        "synopsisEn": "In search of inspiration for her new novel, Sylvie spies on her neighbors across the street. When she hires young Adam to help her with her daily routine, she has no idea that he will turn her life and her work upside down, until the fiction she had imagined surpasses the reality of them all.",
+        "starring": "Isabelle Huppert, Virginie Efira, Pierre Niney, Vincent Cassel, Adam Bessa"
       }
     },
     "10705": {
