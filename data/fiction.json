@@ -781,6 +781,12 @@
       "title": "Tout va Super",
       "thumbCrop": {
         "y": 32.7
+      },
+      "info": {
+        "awards": "Official selection • Compétition, Festival international du film de comédie de l'Alpe d'Huez 2026",
+        "awardsFrom": {
+          "baf80202dd92": "Official selection • Compétition, Festival international du film de comédie de l'Alpe d'Huez 2026"
+        }
       }
     },
     "10909": {
