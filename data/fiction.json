@@ -366,7 +366,19 @@
             "https://images.slatecdn.net/Tr2r0_mq352e6lAKZIuPFFQK-n491iGT-LmOr-uUtkM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NTk1MzIwYi1jMTU3/LTQxNTItYTJkNS05/YjdhNDc2MzUwNmYv/dW50aXRsZWQtMy4x/Ni4xLmpwZw.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "year": "2025",
+        "runtime": "79",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://polishdocs.pl/en/news/6844/",
+          "https://www.polishdocs.pl/en/films/2773/silver"
+        ]
+      }
     },
     "10296": {
       "zoom": 1.34,
