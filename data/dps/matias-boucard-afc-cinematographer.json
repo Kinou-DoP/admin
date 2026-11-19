@@ -588,9 +588,10 @@
       ],
       "phoneX": 46.8,
       "info": {
-        "awards": "Official selection • Special Presentations (première mondiale), Toronto International Film Festival (TIFF) 2025",
+        "awards": "Official selection • Special Presentations (première mondiale), Toronto International Film Festival (TIFF) 2025\nOfficial selection • Special Presentations, Toronto International Film Festival 2025",
         "awardsFrom": {
-          "53f974fda3d3": "Official selection • Special Presentations (première mondiale), Toronto International Film Festival (TIFF) 2025"
+          "53f974fda3d3": "Official selection • Special Presentations (première mondiale), Toronto International Film Festival (TIFF) 2025",
+          "505064677004": "Official selection • Special Presentations, Toronto International Film Festival 2025"
         }
       }
     },
