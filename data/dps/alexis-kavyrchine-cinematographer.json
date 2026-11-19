@@ -28,12 +28,11 @@
       "title": "La Douleur",
       "info": {
         "year": "2017",
-        "runtime": "126",
+        "runtime": "127",
         "ratio": "1.85",
         "starring": "Mélanie Thierry, Benoît Magimel, Benjamin Biolay, Shulamit Adar, Grégoire Leprince-Ringuet",
         "auto": [
           "year",
-          "runtime",
           "ratio",
           "starring"
         ],
@@ -48,7 +47,9 @@
           "c70183a81f35": "Nominated, Best Director, César 2019",
           "b183f7ea7a5f": "Nominated, Best Actress (Mélanie Thierry), César 2019",
           "0e82d6fc2578": "Nominated, Best Adaptation, César 2019"
-        }
+        },
+        "synopsisEn": "Marguerite must navigate through the hardships of the Liberation after losing her husband and starting a relationship with the enemy during the War.",
+        "synopsis": "Juin 1944, la France est toujours sous l’Occupation allemande. L’écrivain Robert Antelme, figure majeure de la Résistance, est arrêté et déporté. Sa jeune épouse Marguerite, écrivain et résistante, est tiraillée par l'angoisse de ne pas avoir de ses nouvelles et sa liaison secrète avec son camarade Dyonis. Elle rencontre un agent français de la Gestapo, Rabier, et, prête à tout pour retrouver son mari, se met à l’épreuve d’une relation ambiguë avec cet homme trouble, seul à pouvoir l’aider. La fin de la guerre et le retour des camps annoncent à Marguerite le début d’une insoutenable attente, une agonie lente et silencieuse au milieu du chaos de la Libération de Paris."
       }
     },
     "2050": {
@@ -303,14 +304,13 @@
         "year": "2020",
         "auto": [
           "year",
-          "runtime",
-          "starring"
+          "runtime"
         ],
         "autoSrc": [
           "https://www.unifrance.org/film/48134/adieu-les-cons"
         ],
         "runtime": "87",
-        "starring": "Virginie Efira, Albert Dupontel, Nicolas Marié",
+        "starring": "Virginie Efira, Albert Dupontel, Nicolas Marié, Jackie Berroyer, Bastien Ughetto",
         "awards": "Best Cinematography, César 2021\nBest Film, César 2021\nBest Director, César 2021\nBest Original Screenplay, César 2021\nBest Supporting Actor (Nicolas Marié), César 2021\nBest Production Design, César 2021\nCésar des lycéens, César 2021",
         "awardsFrom": {
           "849b26f9f566": "Best Cinematography, César 2021",
@@ -320,7 +320,12 @@
           "25c0aaf2afb0": "Best Supporting Actor (Nicolas Marié), César 2021",
           "56dec5d1d5bc": "Best Production Design, César 2021",
           "92d8b007ba48": "César des lycéens, César 2021"
-        }
+        },
+        "synopsisEn": "A seriously-ill woman tries to find her long-lost child with the help of a man in the middle of a burnout and a blind archivist.",
+        "synopsis": "Lorsque Suze Trappet apprend à 43 ans qu’elle est sérieusement malade, elle décide de partir à la recherche de l'enfant qu’elle a été forcée d'abandonner quand elle avait 15 ans.\n\nSa quête administrative va lui faire croiser JB, quinquagénaire en plein burn out, et M. Blin, archiviste aveugle d’un enthousiasme impressionnant. À eux trois, ils se lancent dans une quête aussi spectaculaire qu’improbable.",
+        "ratio": "2.39",
+        "lenses": "Zeiss Master Prime • Angenieux Optimo Lenses",
+        "camera": "Arri Alexa Mini"
       }
     },
     "5630": {
@@ -352,16 +357,14 @@
         "auto": [
           "year",
           "ratio",
-          "runtime",
-          "starring",
-          "lenses"
+          "starring"
         ],
         "autoSrc": [
           "https://www.leitz-cine.com/production/rise-2022"
         ],
-        "runtime": "120",
+        "runtime": "117",
         "starring": "Marion Barbeau, Hofesh Shechter, Denis Podalydès, Muriel Robin, Pio Marmaï",
-        "lenses": "Leitz Summilux-C",
+        "lenses": "Leitz SUMMILUX-C lenses",
         "awards": "Nominated, Best Cinematography, César 2023\nNominated, Best Director, César 2023\nNominated, Best Female Revelation (Marion Barbeau), César 2023\nNominated, Best Original Screenplay, César 2023\nNominated, Best Supporting Actor (Pio Marmaï), César 2023\nNominated, Best Supporting Actor (François Civil), César 2023\nNominated, Best Editing, César 2023\nNominated, Best Sound, César 2023",
         "awardsFrom": {
           "81b212d43e57": "Nominated, Best Cinematography, César 2023",
@@ -372,7 +375,10 @@
           "59c8ba454624": "Nominated, Best Supporting Actor (François Civil), César 2023",
           "500e58edbe5b": "Nominated, Best Editing, César 2023",
           "dce32f1ff33c": "Nominated, Best Sound, César 2023"
-        }
+        },
+        "synopsisEn": "Elise, a very promising classical dancer, is injured during a performance at 26 years old. Although she's told she will no longer be able to dance, she will try to find a new direction in contemporary dance.",
+        "synopsis": "Elise, 26 ans est une grande danseuse classique. Elle se blesse pendant un spectacle et apprend qu’elle ne pourra plus danser. Dès lors sa vie va être bouleversée, Elise va devoir apprendre à se réparer… Entre Paris et la Bretagne, au gré des rencontres et des expériences, des déceptions et des espoirs, Elise va se rapprocher d’une compagnie de danse contemporaine. Cette nouvelle façon de danser va lui permettre de retrouver un nouvel élan et aussi une nouvelle façon de vivre.",
+        "camera": "SONY Alpha 7S III"
       }
     },
     "6666": {
@@ -413,7 +419,11 @@
           "772e50af48a0": "Prix Ciné+, Paris International Fantastic Film Festival 2022",
           "18c0a116dbc4": "Prix SACD (Directors' Fortnight), Festival de Cannes 2022",
           "5974b01236e0": "Official selection • Directors' Fortnight, Festival de Cannes 2022"
-        }
+        },
+        "synopsisEn": "Pierre, a Parisian engineer, goes up in the Alps for his work. Irresistibly attracted by what surrounds him, he camps out alone high in the mountains and leaves behind his everyday life.",
+        "synopsis": "Pierre, ingénieur parisien, se rend dans les Alpes pour son travail. Irrésistiblement attiré par les montagnes, il s’installe un bivouac en altitude et décide de ne plus redescendre. Là-haut, il fait la rencontre de Léa et découvre de mystérieuses lueurs.",
+        "camera": "Arri Alexa Mini",
+        "lenses": "Panavision Primo Lenses(Angenieux zoom lens)"
       }
     },
     "6777": {
@@ -462,15 +472,15 @@
         "starring": "Zita Hanrot, Louise Chevillotte, Laure Giappiconi, Pedro Casablanc",
         "auto": [
           "year",
-          "starring",
-          "runtime",
-          "ratio"
+          "starring"
         ],
         "autoSrc": [
           "https://unifrance.org/film/54153"
         ],
-        "runtime": "118",
-        "ratio": "Scope"
+        "runtime": "119",
+        "ratio": "2.39",
+        "synopsisEn": "Have you ever been to a strip club? But you've already wanted to - at least once - you didn't dare, that's all. This film tells the story of someone who dared.",
+        "synopsis": "Vous n’avez jamais été dans un club de strip-tease ? Mais vous en avez déjà eu envie ... au moins une fois... vous n’avez pas osé, c’est tout. Ce film raconte l'histoire de quelqu'un qui a osé."
       },
       "zoomPos": "47.5% 32.7%"
     },
@@ -507,7 +517,11 @@
         "awards": "Official selection • Semaine de la Critique • Closing Film, Festival de Cannes 2023",
         "awardsFrom": {
           "e951c1116d3f": "Official selection • Semaine de la Critique • Closing Film, Festival de Cannes 2023"
-        }
+        },
+        "synopsisEn": "Etienne, a young father, must deal with the fact that his now-teenage daughter Rosa is ready to move forward and build her own life away from him.",
+        "synopsis": "Etienne a vingt ans à peine lorsqu'il tombe amoureux de Valérie, et guère plus lorsque naît leur fille Rosa. Le jour où Valérie les abandonne, Etienne choisit de ne pas en faire un drame. Etienne et Rosa se construisent une vie heureuse. Seize ans plus tard, alors que Rosa doit partir étudier et qu’il faut se séparer pour chacun vivre sa vie, le passé ressurgit.",
+        "camera": "ARRI Alexa Mini",
+        "lenses": "Angenieux Zoom lens"
       }
     },
     "8958": {
@@ -532,7 +546,12 @@
           "156eb908d6cc": "Nominated, Best Fiction Film, Swiss Film Awards 2025",
           "ac004de0f9df": "Nominated, Best Screenplay, Swiss Film Awards 2025",
           "25d08ccea336": "Official selection • Un Certain Regard, Festival de Cannes 2024"
-        }
+        },
+        "synopsisEn": "Avril, a young lawyer specializing in animal defense, goes to great lengths to save her client, a repeat-offender dog, from capital punishment. This dog helps Avril accept her own human complexity.",
+        "synopsis": "Avril, avocate abonnée aux causes perdues, s’est fait une promesse : sa prochaine affaire, elle la gagne ! Mais lorsque Dariuch, client aussi désespéré que sa cause, lui demande de défendre son fidèle compagnon Cosmos, les convictions d’Avril reprennent le dessus. Commence alors un procès aussi inattendu qu’agité : le procès du chien.",
+        "ratio": "1.78",
+        "camera": "Alexa Mini • Sony FX3",
+        "lenses": "Sigma FF High Speed Prime Lenses, Angénieux Zoom, Canon Zoom"
       }
     },
     "9566": {
@@ -555,7 +574,9 @@
           "54bee12b6fb2": "Official selection • Limelight, International Film Festival Rotterdam (IFFR) 2025",
           "1d88e555a348": "Nominated, Best Actress (Mélanie Thierry), César 2026",
           "7a50db68d9ba": "Official selection • Limelight, International Film Festival Rotterdam 2025"
-        }
+        },
+        "synopsis": "1943, Ukraine, Hugo a 12 ans. Pour le sauver de la déportation, sa mère le confie à son amie d’enfance Mariana, une prostituée qui vit dans une maison close à la sortie de la ville. Caché dans le placard de la chambre de Mariana, toute son existence est suspendue aux bruits qui l’entourent et aux scènes qu’il devine à travers la cloison…\n\nD'après La Chambre de Mariana d' Aharon Appelfeld.",
+        "synopsisEn": "Based on Aharon Appelfeld's masterpiece, \"Blooms of Darkness\". The story of Hugo (11) as he hides from the raging war in the closet of the eccentric Mariana, who prostitutes herself in a brothel."
       }
     },
     "9576": {
@@ -581,7 +602,12 @@
           "e2edbaf84dcd": "Official selection • Gala Presentation, Busan International Film Festival 2024",
           "b35e03c753bc": "Official selection • Official Competition, San Sebastián International Film Festival 2024",
           "2b96065d937f": "Official selection, Busan International Film Festival 2024"
-        }
+        },
+        "synopsisEn": "A mysterious woman teams up with a man whose daughter was killed and who is now seeking revenge. Together they kidnap members of an organization and torture them to find out what really happened.",
+        "ratio": "1.66",
+        "camera": "Arri Alexa Mini LF",
+        "lenses": "Arri Signature Prime Lenses",
+        "synopsis": "Albert Bacheret est un père dévasté par la disparition inexplicable de sa fille de huit ans. Alors que la police semble incapable de résoudre l'affaire, il décide de mener sa propre enquête et reçoit l'aide inattendue de Sayoko, une énigmatique psychiatre japonaise. Ensemble, ils kidnappent des responsables du \"Cercle\", une société secrète. Mais chaque nouvel indice mène à un nouveau suspect qui présente toujours une version différente des faits... Obsédé par la vérité, Albert va devoir naviguer entre sa soif aveugle de vengeance et une infinie spirale de mensonges."
       },
       "zoomPos": "48.5% 34.7%"
     },
@@ -598,14 +624,12 @@
           "runtime",
           "starring",
           "camera",
-          "lenses",
           "platforms"
         ],
         "autoSrc": [
           "https://www.sortiraparis.com/en/what-to-do-in-paris/cinema-series/articles/327005-movie-the-arrival-of-the-future-2025"
         ],
         "camera": "Sony Venice 2",
-        "lenses": "Cooke Anamorphic/i Full Frame x1.8 (époque 1895)",
         "platforms": "Canal+",
         "awards": "Nominated, Meilleure révélation féminine, César du cinéma 2026\nNominated, Meilleurs costumes, César du cinéma 2026\nNominated, Meilleurs décors, César du cinéma 2026\nOfficial selection • Sélection officielle • Hors compétition, Festival de Cannes 2025\nOfficial selection • Spotlight, Munich International Film Festival 2025\nOfficial selection • Out of Competition, Festival de Cannes 2025",
         "awardsFrom": {
@@ -615,7 +639,10 @@
           "8b7de534339a": "Official selection • Sélection officielle • Hors compétition, Festival de Cannes 2025",
           "30546c023cc9": "Official selection • Spotlight, Munich International Film Festival 2025",
           "5a197c806673": "Official selection • Out of Competition, Festival de Cannes 2025"
-        }
+        },
+        "synopsisEn": "Follows the lives of the cousins who inherit an old house in rural Normandy and retrace their steps of their ancestors in 19th century Paris.",
+        "synopsis": "Aujourd’hui, en 2025, une trentaine de personnes issues d’une même famille apprennent qu’ils vont recevoir en héritage une maison abandonnée depuis des années. Quatre d'entre eux, Seb, Abdel, Céline et Guy sont chargés d’en faire l'état des lieux. Ces lointains \"cousins\" vont alors découvrir des trésors cachés dans cette vieille maison. Ils vont se retrouver sur les traces d'une mystérieuse Adèle qui a quitté sa Normandie natale, à 20 ans. Cette Adèle se retrouve à Paris en 1895, au moment où cette ville est en pleine révolution industrielle et culturelle. Pour les quatre cousins, ce voyage introspectif dans leur généalogie va leur faire découvrir ce moment si particulier de la fin du XIXe siècle où la photographie s'inventait et l’impressionnisme naissait. Ce face à face entre les deux époques 2025 et 1895 remettra en question leur présent et leurs idéaux et racontera le sens de : La venue de l’avenir.",
+        "lenses": "Sony CineAlta Venice 2, Cooke Anamorphic/i FF and Angenieux Optimo Lenses • Sony PXW-FX9, Cooke Anamorphic/i FF and Angenieux Optimo Lenses"
       }
     },
     "10140": {
@@ -698,7 +725,9 @@
         "awards": "Official selection • Séance spéciale (Cinéma de la Plage), Festival de Cannes 2026",
         "awardsFrom": {
           "a201d51a232e": "Official selection • Séance spéciale (Cinéma de la Plage), Festival de Cannes 2026"
-        }
+        },
+        "synopsisEn": "In 1651, as civil wars are menacing in the Kingdom of France, Anne of Austria asks D'Artagnan to take her son to safety. Thus D'Artagnan entrusts the future Louis XIV to Cyrano, who hides him within the theatre troupe of the young Molière.",
+        "ratio": "1.85"
       }
     },
     "11347": {
