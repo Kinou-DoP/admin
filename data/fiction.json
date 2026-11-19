@@ -23,6 +23,16 @@
       "title": "Amour Apocalypse",
       "thumbCrop": {
         "y": 37.8
+      },
+      "info": {
+        "awards": "Grand Prix, Festival du film de Cabourg 2025\nOfficial selection, Göteborg Film Festival 2026\nOfficial selection • Longs métrages, Quinzaine des cinéastes (Festival de Cannes) 2025\nOfficial selection, Vancouver International Film Festival 2025\nOfficial selection, Cairo International Film Festival 2025",
+        "awardsFrom": {
+          "bbec3461145c": "Grand Prix, Festival du film de Cabourg 2025",
+          "6f2268374d8f": "Official selection, Göteborg Film Festival 2026",
+          "3c818bd35b94": "Official selection • Longs métrages, Quinzaine des cinéastes (Festival de Cannes) 2025",
+          "60c715b7bc24": "Official selection, Vancouver International Film Festival 2025",
+          "c01c41c28c47": "Official selection, Cairo International Film Festival 2025"
+        }
       }
     },
     "9925": {
@@ -40,6 +50,18 @@
       "title": "Promis Le Ciel",
       "thumbCrop": {
         "y": 87
+      },
+      "info": {
+        "awards": "Meilleur long métrage, Festival de cinéma africain de Tarifa-Tanger (FCAT) 2026\nPrix du Public TV5MONDE+ du meilleur long métrage, Festival de cinéma africain de Tarifa-Tanger (FCAT) 2026\nPrize, Festival du film francophone d'Angoulême 2025\nÉtoile d'Or, Festival international du film de Marrakech 2025\nPrix de la Critique, Cinemamed 2025\nPrix Les Grenades, Cinemamed 2025\nOfficial selection • Un certain regard, Festival de Cannes 2025",
+        "awardsFrom": {
+          "0dc87f8e7029": "Meilleur long métrage, Festival de cinéma africain de Tarifa-Tanger (FCAT) 2026",
+          "8644b31e0f64": "Prix du Public TV5MONDE+ du meilleur long métrage, Festival de cinéma africain de Tarifa-Tanger (FCAT) 2026",
+          "b627233b3379": "Prize, Festival du film francophone d'Angoulême 2025",
+          "cf062b3493a4": "Étoile d'Or, Festival international du film de Marrakech 2025",
+          "9adb5e8f17c8": "Prix de la Critique, Cinemamed 2025",
+          "107c8b31f5d6": "Prix Les Grenades, Cinemamed 2025",
+          "3b0fbb32e2f2": "Official selection • Un certain regard, Festival de Cannes 2025"
+        }
       }
     },
     "9977": {
