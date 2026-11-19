@@ -1178,7 +1178,26 @@
         "narrative"
       ],
       "title": "Au delà de Katmandou",
-      "zoom": 1.14
+      "zoom": 1.14,
+      "info": {
+        "awards": "Grand Prize Lessinia d'Oro, Lessinia International Film Festival 2026\nOfficial selection, Hong Kong International Film Festival 2026\nOfficial selection, MOOOV Film Festival 2026\nOfficial selection, Jerusalem International Film Festival 2026\nOfficial selection, Maia International Film Festival 2026\nOfficial selection, Transilvania International Film Festival 2026\nOfficial selection, Bergwelten Film Festival 2026\nOfficial selection, Busan International Kids and Youth Film Festival 2026\nOfficial selection, Indian Film Festival Melbourne 2026\nOfficial selection, Der Neue Heimatfilm 2026\nOfficial selection, Aranya Waves Film Festival 2026\nOfficial selection, Nurit Kedar Anthropological Film Festival 2026\nOfficial selection, Dutch Mountain Film Festival 2026\nOfficial selection • Doc@PÖFF • Compétition internationale (première mondiale), Tallinn Black Nights Film Festival 2025",
+        "awardsFrom": {
+          "00498d656ae5": "Grand Prize Lessinia d'Oro, Lessinia International Film Festival 2026",
+          "a128b5794e1c": "Official selection, Hong Kong International Film Festival 2026",
+          "8318600405e4": "Official selection, MOOOV Film Festival 2026",
+          "f205ad43973a": "Official selection, Jerusalem International Film Festival 2026",
+          "ecc075093d93": "Official selection, Maia International Film Festival 2026",
+          "c96faaa3051c": "Official selection, Transilvania International Film Festival 2026",
+          "7ab4081f64fe": "Official selection, Bergwelten Film Festival 2026",
+          "72ccaa2b2d00": "Official selection, Busan International Kids and Youth Film Festival 2026",
+          "ab70029eee51": "Official selection, Indian Film Festival Melbourne 2026",
+          "f21e6bbe39a2": "Official selection, Der Neue Heimatfilm 2026",
+          "eab79b850bd3": "Official selection, Aranya Waves Film Festival 2026",
+          "4a0f503a1f54": "Official selection, Nurit Kedar Anthropological Film Festival 2026",
+          "62287930dade": "Official selection, Dutch Mountain Film Festival 2026",
+          "886abdb45b8e": "Official selection • Doc@PÖFF • Compétition internationale (première mondiale), Tallinn Black Nights Film Festival 2025"
+        }
+      }
     },
     "10564": {
       "types": [

@@ -485,6 +485,16 @@
       "title": "La Maison des Femmes",
       "thumbCrop": {
         "y": 12.8
+      },
+      "info": {
+        "awards": "Prix du public, Glasgow Film Festival 2026\nOfficial selection • Avant-première, Festival du Film d'Ostende 2026\nOfficial selection • Previews, Premiers Plans 2026\nOfficial selection • Horizons, Festival international du film de Marrakech 2025\nOfficial selection • Les grandes premières, Festival du film français d'Helvétie 2025",
+        "awardsFrom": {
+          "f84de1a396d3": "Prix du public, Glasgow Film Festival 2026",
+          "a0c4cd65a3dd": "Official selection • Avant-première, Festival du Film d'Ostende 2026",
+          "83ea76e98f4b": "Official selection • Previews, Premiers Plans 2026",
+          "187373f0aeb2": "Official selection • Horizons, Festival international du film de Marrakech 2025",
+          "c2ed47a27137": "Official selection • Les grandes premières, Festival du film français d'Helvétie 2025"
+        }
       }
     },
     "10364": {
@@ -549,6 +559,25 @@
       },
       "snipCrop": {
         "y": 40.2
+      },
+      "info": {
+        "awards": "Grand Prize Lessinia d'Oro, Lessinia International Film Festival 2026\nOfficial selection, Hong Kong International Film Festival 2026\nOfficial selection, MOOOV Film Festival 2026\nOfficial selection, Jerusalem International Film Festival 2026\nOfficial selection, Maia International Film Festival 2026\nOfficial selection, Transilvania International Film Festival 2026\nOfficial selection, Bergwelten Film Festival 2026\nOfficial selection, Busan International Kids and Youth Film Festival 2026\nOfficial selection, Indian Film Festival Melbourne 2026\nOfficial selection, Der Neue Heimatfilm 2026\nOfficial selection, Aranya Waves Film Festival 2026\nOfficial selection, Nurit Kedar Anthropological Film Festival 2026\nOfficial selection, Dutch Mountain Film Festival 2026\nOfficial selection • Doc@PÖFF • Compétition internationale (première mondiale), Tallinn Black Nights Film Festival 2025",
+        "awardsFrom": {
+          "00498d656ae5": "Grand Prize Lessinia d'Oro, Lessinia International Film Festival 2026",
+          "a128b5794e1c": "Official selection, Hong Kong International Film Festival 2026",
+          "8318600405e4": "Official selection, MOOOV Film Festival 2026",
+          "f205ad43973a": "Official selection, Jerusalem International Film Festival 2026",
+          "ecc075093d93": "Official selection, Maia International Film Festival 2026",
+          "c96faaa3051c": "Official selection, Transilvania International Film Festival 2026",
+          "7ab4081f64fe": "Official selection, Bergwelten Film Festival 2026",
+          "72ccaa2b2d00": "Official selection, Busan International Kids and Youth Film Festival 2026",
+          "ab70029eee51": "Official selection, Indian Film Festival Melbourne 2026",
+          "f21e6bbe39a2": "Official selection, Der Neue Heimatfilm 2026",
+          "eab79b850bd3": "Official selection, Aranya Waves Film Festival 2026",
+          "4a0f503a1f54": "Official selection, Nurit Kedar Anthropological Film Festival 2026",
+          "62287930dade": "Official selection, Dutch Mountain Film Festival 2026",
+          "886abdb45b8e": "Official selection • Doc@PÖFF • Compétition internationale (première mondiale), Tallinn Black Nights Film Festival 2025"
+        }
       }
     },
     "10401": {
