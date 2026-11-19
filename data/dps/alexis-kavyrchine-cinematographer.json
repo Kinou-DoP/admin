@@ -760,8 +760,8 @@
   "categories": [
     "FEATURED",
     "FEATURE FILMS",
-    "DOCUMENTARIES",
-    "SERIES"
+    "SERIES",
+    "DOCUMENTARIES"
   ],
   "clips": [
     {
@@ -983,6 +983,28 @@
       "slate": 2863
     },
     {
+      "title": "Salade Grecque - Bande-annonce",
+      "sub": "Cédric Klapisch, Lola Doillon, Antoine Garceau\nCe Qui Me Meut\nco-DoP Julien Roux",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6777/e186cc4e-e36f-11f1-952e-02ffedfede17.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ef4b298-b83e-492f-9ac4-509d4e3e90fa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Z__P3o6jJ5lDzG2jcXlpRzuPeAOo5tOP1MxbcgPUIuE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/N2E3Y2M4OS04ZGU5/LTQyNDYtOWJjMS1m/MGZmNjhjNTY2ZmEv/NjAzLTAyMzEzODdy/ZWMuanBn?v=1&format=webp",
+      "cat": "SERIES",
+      "slate": 6777,
+      "featured": true,
+      "featuredOrder": 10
+    },
+    {
+      "title": "Des vivants | Trailer",
+      "sub": "Jean Xavier de Lestrade\nWhat's up Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10140/cc0fd48f-e377-11f1-952e-02ffedfede17.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49a58085-d2d1-4b5f-8455-57002a9d2c7b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Vur6lCZWLlC0j0p9vUUoyTvu5EmuVudTFLejgEorBoY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/YmE0ZTJmMy01Mzhk/LTQ5MGMtYjcxNi04/YjkzOGNkMWIzNDYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MDgtYS0xOS4xNC4z/NC5wbmc?v=1&format=webp",
+      "cat": "SERIES",
+      "slate": 10140,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
       "title": "Et Les Mistrals Gagnants",
       "sub": "Anne Dauphine Julliand\nNour Films",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2050/4cb6a299-e371-11f1-952e-02ffedfede17.mp4",
@@ -1017,28 +1039,6 @@
       "img": "https://images.slatecdn.net/JXz1vjx0HjecI9s19aJ3oY4oQ3CEROaRzUDL_JbRg6A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODUzMzc2MzQy/L3RvdXMtYXUtbGFy/emFjLmpwZw?v=1&format=webp",
       "cat": "DOCUMENTARIES",
       "slate": 2052
-    },
-    {
-      "title": "Salade Grecque - Bande-annonce",
-      "sub": "Cédric Klapisch, Lola Doillon, Antoine Garceau\nCe Qui Me Meut\nco-DoP Julien Roux",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6777/e186cc4e-e36f-11f1-952e-02ffedfede17.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ef4b298-b83e-492f-9ac4-509d4e3e90fa-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Z__P3o6jJ5lDzG2jcXlpRzuPeAOo5tOP1MxbcgPUIuE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/N2E3Y2M4OS04ZGU5/LTQyNDYtOWJjMS1m/MGZmNjhjNTY2ZmEv/NjAzLTAyMzEzODdy/ZWMuanBn?v=1&format=webp",
-      "cat": "SERIES",
-      "slate": 6777,
-      "featured": true,
-      "featuredOrder": 10
-    },
-    {
-      "title": "Des vivants | Trailer",
-      "sub": "Jean Xavier de Lestrade\nWhat's up Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10140/cc0fd48f-e377-11f1-952e-02ffedfede17.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49a58085-d2d1-4b5f-8455-57002a9d2c7b-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Vur6lCZWLlC0j0p9vUUoyTvu5EmuVudTFLejgEorBoY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/YmE0ZTJmMy01Mzhk/LTQ5MGMtYjcxNi04/YjkzOGNkMWIzNDYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MDgtYS0xOS4xNC4z/NC5wbmc?v=1&format=webp",
-      "cat": "SERIES",
-      "slate": 10140,
-      "featured": true,
-      "featuredOrder": 4
     }
   ]
 }
