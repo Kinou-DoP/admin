@@ -570,7 +570,16 @@
       "thumbCrop": {
         "y": 68.6
       },
-      "autoPast": true
+      "autoPast": true,
+      "info": {
+        "awards": "Official selection • Panorama, Berlin International Film Festival (Berlinale) 2026\nOfficial selection, Melbourne International Film Festival 2026\nOfficial selection, Calgary International Film Festival 2026\nOfficial selection • Compétition internationale, Tübingen | Stuttgart Festival international du film francophone 2026",
+        "awardsFrom": {
+          "fe316191410b": "Official selection • Panorama, Berlin International Film Festival (Berlinale) 2026",
+          "879943828004": "Official selection, Melbourne International Film Festival 2026",
+          "37cd5c24dd4d": "Official selection, Calgary International Film Festival 2026",
+          "0052fdff4df6": "Official selection • Compétition internationale, Tübingen | Stuttgart Festival international du film francophone 2026"
+        }
+      }
     },
     "10436": {
       "genre": "FEATURE FILM",
@@ -955,6 +964,17 @@
       },
       "snipCrop": {
         "y": 51
+      },
+      "info": {
+        "awards": "Golden Bee du meilleur long métrage, Mediterrane Film Festival 2025\nMeilleur film de fiction arabe, El Gouna Film Festival 2025\nOfficial selection • Compétition officielle fiction, Festival du film arabe de Malmö 2026\nOfficial selection • Stockholm Competition, Festival international du film de Stockholm 2025\nOfficial selection, International Film Festival Rotterdam 2025\nOfficial selection • World Cinema Dramatic Competition, Sundance Film Festival 2025",
+        "awardsFrom": {
+          "d8145c255a8b": "Golden Bee du meilleur long métrage, Mediterrane Film Festival 2025",
+          "5bbf2cae749f": "Meilleur film de fiction arabe, El Gouna Film Festival 2025",
+          "2cb60431dbaa": "Official selection • Compétition officielle fiction, Festival du film arabe de Malmö 2026",
+          "f7ddf7ee8c2a": "Official selection • Stockholm Competition, Festival international du film de Stockholm 2025",
+          "4ce0b1c6a0c7": "Official selection, International Film Festival Rotterdam 2025",
+          "40f12481848e": "Official selection • World Cinema Dramatic Competition, Sundance Film Festival 2025"
+        }
       }
     },
     "11171": {
