@@ -507,7 +507,15 @@
           "https://www.crew-united.com/de/Greek-Salad__319808.html"
         ],
         "starring": "Romain Duris, Kelly Reilly, Cécile de France, Aliocha Schneider, Megan Northam",
-        "ratio": "16:9"
+        "ratio": "16:9",
+        "awards": "Les Éclats • Actress Revelation (Megan Northam), Series Mania 2023\nNominated, Best Series • 40 minutes, A.C.S. Awards (Association des Critiques de Séries) 2023\nNominated, Best Supporting Role in a TV Series • 40 minutes (Romain Duris), A.C.S. Awards (Association des Critiques de Séries) 2023\nNominated, Best Production, A.C.S. Awards (Association des Critiques de Séries) 2023\nNominated, Best Score (Loïc Dury), A.C.S. Awards (Association des Critiques de Séries) 2023",
+        "awardsFrom": {
+          "ab62c32e06c0": "Les Éclats • Actress Revelation (Megan Northam), Series Mania 2023",
+          "cee597a432ed": "Nominated, Best Series • 40 minutes, A.C.S. Awards (Association des Critiques de Séries) 2023",
+          "f8032a87cd04": "Nominated, Best Supporting Role in a TV Series • 40 minutes (Romain Duris), A.C.S. Awards (Association des Critiques de Séries) 2023",
+          "3ae623ad0162": "Nominated, Best Production, A.C.S. Awards (Association des Critiques de Séries) 2023",
+          "b47326ddbe5b": "Nominated, Best Score (Loïc Dury), A.C.S. Awards (Association des Critiques de Séries) 2023"
+        }
       },
       "types": [
         "Serie",
