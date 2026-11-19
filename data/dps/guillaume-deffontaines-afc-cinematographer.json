@@ -16,14 +16,39 @@
         "Feature Film"
       ],
       "title": "Le P'tit Quinquin",
-      "zoom": 1.13
+      "zoom": 1.13,
+      "info": {
+        "year": "2014",
+        "episodes": "4",
+        "ratio": "2.00",
+        "platforms": "Arte",
+        "auto": [
+          "year",
+          "episodes",
+          "ratio",
+          "platforms"
+        ],
+        "autoSrc": [
+          "https://en.wikipedia.org/wiki/P%27tit_Quinquin_(film)"
+        ]
+      }
     },
     "343": {
       "types": [
         "Feature Film"
       ],
       "zoom": 1.37,
-      "title": "Loin des Hommes"
+      "title": "Loin des Hommes",
+      "info": {
+        "ratio": "Scope",
+        "auto": [
+          "ratio"
+        ],
+        "autoSrc": [
+          "https://pathefilms.com/en/movies/loin-des-hommes",
+          "https://www.unifrance.org/film/37167/loin-des-hommes"
+        ]
+      }
     },
     "685": {
       "zoom": 1.34,
@@ -47,20 +72,51 @@
       ],
       "zoom": 1.2,
       "zoomPos": "50% 32%",
-      "title": "JEANNETTE L'ENFANCE DE JEANNE D'ARC"
+      "title": "JEANNETTE L'ENFANCE DE JEANNE D'ARC",
+      "info": {
+        "year": "2017",
+        "runtime": "115",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://en.wikipedia.org/wiki/Jeannette:_The_Childhood_of_Joan_of_Arc",
+          "https://cineuropa.org/film/325134"
+        ]
+      }
     },
     "2021": {
       "types": [
         "Narrative"
       ],
       "zoom": 1.34,
-      "title": "Coincoin et les z'inhumains"
+      "title": "Coincoin et les z'inhumains",
+      "info": {
+        "runtime": "200",
+        "auto": [
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/46140/coincoin-et-les-z-inhumains",
+          "https://cineuropa.org/film/358603"
+        ]
+      }
     },
     "2122": {
       "types": [
         "Feature Film"
       ],
-      "title": "Chien"
+      "title": "Chien",
+      "info": {
+        "year": "2018",
+        "auto": [
+          "year"
+        ],
+        "autoSrc": [
+          "https://www.lavenir.net/cnt/DMF20180427_01162431"
+        ]
+      }
     },
     "2393": {
       "zoom": 1.39,
@@ -78,14 +134,47 @@
         "Feature Film"
       ],
       "title": "Frères Ennemis",
-      "zoom": 1.33
+      "zoom": 1.33,
+      "info": {
+        "year": "2018",
+        "runtime": "111",
+        "lenses": "Leitz M 0.8",
+        "auto": [
+          "year",
+          "runtime",
+          "lenses"
+        ],
+        "autoSrc": [
+          "https://www.cnc.fr/professionnels/visas-et-classification/144399",
+          "https://www.leitz-cine.com/production/close-enemies-2018",
+          "https://www.labiennale.org/en/cinema/2018/lineup/venezia-75-competition/fr%C3%A8res-ennemis"
+        ]
+      }
     },
     "2861": {
       "types": [
         "Feature Film"
       ],
       "zoom": 1.32,
-      "title": "Ma Loute"
+      "title": "Ma Loute",
+      "info": {
+        "year": "2016",
+        "runtime": "122",
+        "ratio": "2.35",
+        "starring": "Fabrice Luchini, Juliette Binoche, Valeria Bruni Tedeschi",
+        "auto": [
+          "year",
+          "runtime",
+          "ratio",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.festival-cannes.com/en/f/ma-loute/",
+          "https://www.newwavefilms.co.uk/assets/1275/PRESS_BOOK_SLACK_BAY.pdf",
+          "https://www.unifrance.org/film/40165",
+          "https://en.wikipedia.org/wiki/Slack_Bay"
+        ]
+      }
     },
     "3067": {
       "zoom": 1.36,
@@ -118,7 +207,22 @@
         }
       ],
       "title": "Camille Claudel 1915",
-      "zoom": 1.37
+      "zoom": 1.37,
+      "info": {
+        "year": "2013",
+        "runtime": "97",
+        "starring": "Juliette Binoche, Jean-Luc Vincent, Robert Leroy, Emmanuel Kauffmann, Marion Keller",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://en.wikipedia.org/wiki/Camille_Claudel_1915",
+          "https://www.viennale.at/en/films/camille-claudel-1915",
+          "https://cineuropa.org/film/231351"
+        ]
+      }
     },
     "4358": {
       "types": [
@@ -132,7 +236,22 @@
         "Feature Film"
       ],
       "title": "Des Hommes",
-      "zoom": 1.36
+      "zoom": 1.36,
+      "info": {
+        "runtime": "101",
+        "ratio": "2.39",
+        "starring": "Gérard Depardieu, Catherine Frot, Jean-Pierre Darroussin, Yoann Zimmer, Félix Kysyl",
+        "auto": [
+          "runtime",
+          "ratio",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.artemisproductions.com/sites/artemisproductions.com/files/html2pdf/fiche_film/pdf/fiche_film-Des_hommes-fr.pdf",
+          "https://www.festival-cannes.com/en/films/des-hommes",
+          "https://www.allocine.fr/film/fichefilm-272523/casting/"
+        ]
+      }
     },
     "5060": {
       "types": [
@@ -141,7 +260,24 @@
         "Feature Film"
       ],
       "title": "La Fine Fleur",
-      "zoom": 1.33
+      "zoom": 1.33,
+      "info": {
+        "year": "2021",
+        "runtime": "94",
+        "ratio": "Scope",
+        "starring": "Catherine Frot, Melan Omerta, Fatsah Bouyahmed, Olivia Côte, Vincent Dedienne",
+        "auto": [
+          "year",
+          "runtime",
+          "ratio",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/48156/la-fine-fleur",
+          "https://en.praesens.com/praesens-pro-presse/katalog/la-fine-fleur/regional/fr/la-fine-fleur-dossier-de-presse/",
+          "https://www.allocine.fr/film/fichefilm-277041/casting/"
+        ]
+      }
     },
     "5266": {
       "types": [
@@ -150,7 +286,21 @@
         "Feature Film"
       ],
       "zoom": 1.04,
-      "title": "L'Homme De La Cave"
+      "title": "L'Homme De La Cave",
+      "info": {
+        "year": "2021",
+        "runtime": "114",
+        "starring": "François Cluzet, Jérémie Renier, Bérénice Bejo",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=287060.html",
+          "https://cineuropa.org/film/411706"
+        ]
+      }
     },
     "6434": {
       "types": [
@@ -164,7 +314,21 @@
           "img": "https://images.slatecdn.net/0W-wZ5ZxjwNVFGlNUgyiWbcoR2Vn3Cmwhy6tnnrFWOA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NDVmNTI5Zi0yNjhi/LTQzZTYtYWY4ZC0x/ODE5MzA4NDlhMDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDgt/MDItYS0xMi4wMy4y/NS5wbmc.webp"
         }
       ],
-      "title": "Nos Frangins"
+      "title": "Nos Frangins",
+      "info": {
+        "year": "2022",
+        "runtime": "92",
+        "starring": "Reda Kateb, Lyna Khoudri, Raphaël Personnaz, Samir Guesmi",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/seance/film-297464/",
+          "https://www.unifrance.org/film/54649/nos-frangins"
+        ]
+      }
     },
     "8062": {
       "types": [
@@ -212,7 +376,19 @@
           ]
         }
       ],
-      "zoom": 1.32
+      "zoom": 1.32,
+      "info": {
+        "year": "2024",
+        "starring": "Guido Caprino, Andrzej Chyra, Nuno Lopes",
+        "auto": [
+          "year",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://unifrance.org/film/54927/les-derniers-hommes",
+          "https://www.offi.fr/cinema/evenement/les-derniers-hommes-95875.html"
+        ]
+      }
     },
     "8590": {
       "title": "Sei Fratelli",
@@ -224,7 +400,19 @@
         "awardsFrom": {
           "7b0d6bd217b0": "Nominated, Meilleure comédie, Globi d'Oro (Golden Globes Italy) 2024",
           "8e4cd1c4cb4d": "Official selection, Italian Film Festival Australia 2024"
-        }
+        },
+        "year": "2024",
+        "runtime": "103",
+        "starring": "Riccardo Scamarcio, Adriano Giannini, Gabriel Montesi, Valentina Bellè, Claire Romain",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://cineuropa.org/film/461686",
+          "https://cinefilos.it/film/2024/sei-fratelli"
+        ]
       }
     },
     "8983": {
@@ -233,7 +421,21 @@
       "types": [
         "Narrative",
         "Feature Film"
-      ]
+      ],
+      "info": {
+        "year": "2025",
+        "runtime": "116",
+        "starring": "Laurent Lafitte, Simon Abkarian, Manal Issa, Bernard Bloch",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=267468.html",
+          "https://unifrance.org/film/56360/le-quatrieme-mur"
+        ]
+      }
     },
     "9982": {
       "title": "Les Tourmentés",
@@ -248,7 +450,19 @@
           "054b303377bb": "Nominated, Les Flamboyants, Festival du Film Francophone d'Angoulême 2025",
           "f7c58fb79896": "Official selection • Compétition, Festival Cinéroman 2025",
           "6bce4abaa4f0": "Official selection • Film d'ouverture, Brussels International Film Festival (BRIFF) 2025"
-        }
+        },
+        "year": "2025",
+        "runtime": "113",
+        "starring": "Niels Schneider, Ramzy Bedia, Linh-Dan Pham, Déborah François",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=325266.html",
+          "https://tv.apple.com/ca/movie/les-tourmentes/umc.cmc.6ylf4abctnqm3ou5jm29pbw5n"
+        ]
       }
     },
     "10299": {
@@ -259,7 +473,22 @@
         "narrative",
         "Feature Film trailer"
       ],
-      "zoom": 1.35
+      "zoom": 1.35,
+      "info": {
+        "year": "2026",
+        "runtime": "108",
+        "starring": "Makita Samba, Romain Duris, Ana Girardot, Vincent Macaigne",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.allocine.fr/film/fichefilm_gen_cfilm=292718.html",
+          "https://cineuropa.org/en/film/484287",
+          "https://en.unifrance.org/movie/58992/furcy-ne-libre"
+        ]
+      }
     },
     "10695": {
       "title": "Histoires Parallèles",
@@ -272,7 +501,12 @@
         "year": "2026",
         "runtime": "141 min",
         "awards": "Official selection, Cannes film festival 2026",
-        "synopsis": "En quête d’inspiration pour son nouveau roman, Sylvie espionne ses voisins d’en face. Quand elle engage le jeune Adam pour l’aider dans son quotidien, elle ignore que celui-ci va bouleverser sa vie et son travail, jusqu’à ce que la fiction qu’elle avait imaginée dépasse leur réalité à tous."
+        "synopsis": "En quête d’inspiration pour son nouveau roman, Sylvie espionne ses voisins d’en face. Quand elle engage le jeune Adam pour l’aider dans son quotidien, elle ignore que celui-ci va bouleverser sa vie et son travail, jusqu’à ce que la fiction qu’elle avait imaginée dépasse leur réalité à tous.",
+        "ratio": "1.85",
+        "camera": "Arri Alexa Mini LF",
+        "lenses": "Leitz Hugo Lenses",
+        "synopsisEn": "In search of inspiration for her new novel, Sylvie spies on her neighbors across the street. When she hires young Adam to help her with her daily routine, she has no idea that he will turn her life and her work upside down, until the fiction she had imagined surpasses the reality of them all.",
+        "starring": "Isabelle Huppert, Virginie Efira, Pierre Niney, Vincent Cassel, Adam Bessa"
       },
       "phoneX": 41.3
     }
