@@ -509,13 +509,16 @@
       "info": {
         "year": "2026",
         "runtime": "141 min",
-        "awards": "Official selection, Cannes film festival 2026",
+        "awards": "Official selection, Cannes film festival 2026\nOfficial selection • Compétition officielle, Festival de Cannes 2026",
         "synopsis": "En quête d’inspiration pour son nouveau roman, Sylvie espionne ses voisins d’en face. Quand elle engage le jeune Adam pour l’aider dans son quotidien, elle ignore que celui-ci va bouleverser sa vie et son travail, jusqu’à ce que la fiction qu’elle avait imaginée dépasse leur réalité à tous.",
         "ratio": "1.85",
         "camera": "Arri Alexa Mini LF",
         "lenses": "Leitz Hugo Lenses",
         "synopsisEn": "In search of inspiration for her new novel, Sylvie spies on her neighbors across the street. When she hires young Adam to help her with her daily routine, she has no idea that he will turn her life and her work upside down, until the fiction she had imagined surpasses the reality of them all.",
-        "starring": "Isabelle Huppert, Virginie Efira, Pierre Niney, Vincent Cassel, Adam Bessa"
+        "starring": "Isabelle Huppert, Virginie Efira, Pierre Niney, Vincent Cassel, Adam Bessa",
+        "awardsFrom": {
+          "922e8fb03043": "Official selection • Compétition officielle, Festival de Cannes 2026"
+        }
       },
       "phoneX": 41.3
     }
