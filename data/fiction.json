@@ -629,7 +629,13 @@
       },
       "platforms": [
         "France TV"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection • Compétition française, Séries Mania 2026",
+        "awardsFrom": {
+          "6e297bd73a57": "Official selection • Compétition française, Séries Mania 2026"
+        }
+      }
     },
     "10584": {
       "genre": "FEATURE FILM",
@@ -730,7 +736,13 @@
       },
       "platforms": [
         "Netflix"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection • Séances spéciales, Séries Mania 2026",
+        "awardsFrom": {
+          "844accade909": "Official selection • Séances spéciales, Séries Mania 2026"
+        }
+      }
     },
     "10706": {
       "zoom": 1.36,

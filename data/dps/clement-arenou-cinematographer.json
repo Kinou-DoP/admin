@@ -242,7 +242,13 @@
         "Fiction",
         "Serie",
         "narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection • Séances spéciales, Séries Mania 2026",
+        "awardsFrom": {
+          "844accade909": "Official selection • Séances spéciales, Séries Mania 2026"
+        }
+      }
     },
     "10893": {
       "types": [
