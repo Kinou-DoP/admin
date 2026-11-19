@@ -21,7 +21,10 @@
           "https://www.unifrance.org/film/43727/photo-de-famille",
           "https://www.offi.fr/cinema/evenement/photo-de-famille-69223.html"
         ]
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "1837": {
       "zoom": 1.05,
@@ -50,7 +53,10 @@
         },
         "synopsisEn": "Marguerite must navigate through the hardships of the Liberation after losing her husband and starting a relationship with the enemy during the War.",
         "synopsis": "Juin 1944, la France est toujours sous l’Occupation allemande. L’écrivain Robert Antelme, figure majeure de la Résistance, est arrêté et déporté. Sa jeune épouse Marguerite, écrivain et résistante, est tiraillée par l'angoisse de ne pas avoir de ses nouvelles et sa liaison secrète avec son camarade Dyonis. Elle rencontre un agent français de la Gestapo, Rabier, et, prête à tout pour retrouver son mari, se met à l’épreuve d’une relation ambiguë avec cet homme trouble, seul à pouvoir l’aider. La fin de la guerre et le retour des camps annoncent à Marguerite le début d’une insoutenable attente, une agonie lente et silencieuse au milieu du chaos de la Libération de Paris."
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "2050": {
       "zoom": 1.04,
@@ -66,7 +72,10 @@
           "https://cineuropa.org/en/film/320043",
           "https://www.allocine.fr/film/fichefilm_gen_cfilm=249216.html"
         ]
-      }
+      },
+      "types": [
+        "Documentary"
+      ]
     },
     "2052": {
       "zoom": 1.05,
@@ -85,7 +94,10 @@
         "awardsFrom": {
           "bca68b7874d7": "Best Documentary, César 2012"
         }
-      }
+      },
+      "types": [
+        "Documentary"
+      ]
     },
     "2055": {
       "zoom": 1.35,
@@ -104,7 +116,10 @@
         "awardsFrom": {
           "58d3d44adaea": "Nominated, Best Documentary, César 2014"
         }
-      }
+      },
+      "types": [
+        "Documentary"
+      ]
     },
     "2163": {
       "zoom": 1.34,
@@ -123,7 +138,10 @@
           "https://www.unifrance.org/film/41132/le-vin-et-le-vent",
           "https://cineuropa.org/film/320495"
         ]
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "2851": {
       "zoom": 1.61,
@@ -142,7 +160,10 @@
           "https://www.offi.fr/cinema/evenement/une-vie-ailleurs-63908.html"
         ]
       },
-      "zoomPos": "50.2% 33.2%"
+      "zoomPos": "50.2% 33.2%",
+      "types": [
+        "Feature Film"
+      ]
     },
     "2858": {
       "title": "Le Secret de la Chambre Noire",
@@ -165,7 +186,10 @@
           "88d6edf0f2d6": "Official selection • Platform, Toronto International Film Festival 2016"
         }
       },
-      "zoomPos": "50% 34.6%"
+      "zoomPos": "50% 34.6%",
+      "types": [
+        "Feature Film"
+      ]
     },
     "2863": {
       "zoom": 1.05,
@@ -189,7 +213,10 @@
           "bee8c7616282": "Audience Award, Festival international du film de La Roche-sur-Yon 2014",
           "dcea5d928b19": "Official selection • New Directors, San Sebastián International Film Festival 2014"
         }
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "2864": {
       "zoom": 1.09,
@@ -213,10 +240,16 @@
           "23468e0386d6": "Valois de la mise en scène, Festival du Film Francophone d'Angoulême 2015",
           "7592a8ba46c3": "Valois de l'interprétation masculine (Nicolas Duvauchelle), Festival du Film Francophone d'Angoulême 2015"
         }
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "2904": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Documentary"
+      ]
     },
     "3142": {
       "title": "La Lutte des Classes",
@@ -231,7 +264,10 @@
         ],
         "runtime": "103",
         "starring": "Leïla Bekhti, Édouard Baer, Ramzy Bedia, Tom Levy"
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "3682": {
       "zoom": 1.04,
@@ -254,7 +290,11 @@
         "awardsFrom": {
           "4d8601f3e340": "Official selection • Directors' Fortnight, Festival de Cannes 2019"
         }
-      }
+      },
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "3835": {
       "zoom": 1.04,
@@ -277,7 +317,11 @@
         "awardsFrom": {
           "a59c8d02908c": "Official selection • Semaine de la Critique, Festival de Cannes 2019"
         }
-      }
+      },
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "4417": {
       "extras": [
@@ -326,7 +370,12 @@
         "ratio": "2.39",
         "lenses": "Zeiss Master Prime • Angenieux Optimo Lenses",
         "camera": "Arri Alexa Mini"
-      }
+      },
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Feature Film"
+      ]
     },
     "5630": {
       "zoom": 1.07,
@@ -346,7 +395,10 @@
           "https://www.unifrance.org/film/51478/adieu-paris"
         ],
         "ratio": "1.85"
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "5824": {
       "zoom": 1.04,
@@ -379,7 +431,10 @@
         "synopsisEn": "Elise, a very promising classical dancer, is injured during a performance at 26 years old. Although she's told she will no longer be able to dance, she will try to find a new direction in contemporary dance.",
         "synopsis": "Elise, 26 ans est une grande danseuse classique. Elle se blesse pendant un spectacle et apprend qu’elle ne pourra plus danser. Dès lors sa vie va être bouleversée, Elise va devoir apprendre à se réparer… Entre Paris et la Bretagne, au gré des rencontres et des expériences, des déceptions et des espoirs, Elise va se rapprocher d’une compagnie de danse contemporaine. Cette nouvelle façon de danser va lui permettre de retrouver un nouvel élan et aussi une nouvelle façon de vivre.",
         "camera": "SONY Alpha 7S III"
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "6666": {
       "extras": [
@@ -424,7 +479,11 @@
         "synopsis": "Pierre, ingénieur parisien, se rend dans les Alpes pour son travail. Irrésistiblement attiré par les montagnes, il s’installe un bivouac en altitude et décide de ne plus redescendre. Là-haut, il fait la rencontre de Léa et découvre de mystérieuses lueurs.",
         "camera": "Arri Alexa Mini",
         "lenses": "Panavision Primo Lenses(Angenieux zoom lens)"
-      }
+      },
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "6777": {
       "zoom": 1.31,
@@ -449,7 +508,11 @@
         ],
         "starring": "Romain Duris, Kelly Reilly, Cécile de France, Aliocha Schneider, Megan Northam",
         "ratio": "16:9"
-      }
+      },
+      "types": [
+        "Serie",
+        "narrative"
+      ]
     },
     "6947": {
       "extras": [
@@ -483,7 +546,10 @@
         "synopsisEn": "Have you ever been to a strip club? But you've already wanted to - at least once - you didn't dare, that's all. This film tells the story of someone who dared.",
         "synopsis": "Vous n’avez jamais été dans un club de strip-tease ? Mais vous en avez déjà eu envie ... au moins une fois... vous n’avez pas osé, c’est tout. Ce film raconte l'histoire de quelqu'un qui a osé."
       },
-      "zoomPos": "47.5% 32.7%"
+      "zoomPos": "47.5% 32.7%",
+      "types": [
+        "Trailer"
+      ]
     },
     "8065": {
       "extras": [
@@ -523,7 +589,10 @@
         "synopsis": "Etienne a vingt ans à peine lorsqu'il tombe amoureux de Valérie, et guère plus lorsque naît leur fille Rosa. Le jour où Valérie les abandonne, Etienne choisit de ne pas en faire un drame. Etienne et Rosa se construisent une vie heureuse. Seize ans plus tard, alors que Rosa doit partir étudier et qu’il faut se séparer pour chacun vivre sa vie, le passé ressurgit.",
         "camera": "ARRI Alexa Mini",
         "lenses": "Angenieux Zoom lens"
-      }
+      },
+      "types": [
+        "Feature Film"
+      ]
     },
     "8958": {
       "title": "Le procès du chien",
@@ -553,7 +622,11 @@
         "ratio": "1.78",
         "camera": "Alexa Mini • Sony FX3",
         "lenses": "Sigma FF High Speed Prime Lenses, Angénieux Zoom, Canon Zoom"
-      }
+      },
+      "types": [
+        "Narrative",
+        "Feature"
+      ]
     },
     "9566": {
       "zoom": 1.33,
@@ -578,7 +651,10 @@
         },
         "synopsis": "1943, Ukraine, Hugo a 12 ans. Pour le sauver de la déportation, sa mère le confie à son amie d’enfance Mariana, une prostituée qui vit dans une maison close à la sortie de la ville. Caché dans le placard de la chambre de Mariana, toute son existence est suspendue aux bruits qui l’entourent et aux scènes qu’il devine à travers la cloison…\n\nD'après La Chambre de Mariana d' Aharon Appelfeld.",
         "synopsisEn": "Based on Aharon Appelfeld's masterpiece, \"Blooms of Darkness\". The story of Hugo (11) as he hides from the raging war in the closet of the eccentric Mariana, who prostitutes herself in a brothel."
-      }
+      },
+      "types": [
+        "Feature Film trailer"
+      ]
     },
     "9576": {
       "zoom": 1.34,
@@ -610,7 +686,11 @@
         "lenses": "Arri Signature Prime Lenses",
         "synopsis": "Albert Bacheret est un père dévasté par la disparition inexplicable de sa fille de huit ans. Alors que la police semble incapable de résoudre l'affaire, il décide de mener sa propre enquête et reçoit l'aide inattendue de Sayoko, une énigmatique psychiatre japonaise. Ensemble, ils kidnappent des responsables du \"Cercle\", une société secrète. Mais chaque nouvel indice mène à un nouveau suspect qui présente toujours une version différente des faits... Obsédé par la vérité, Albert va devoir naviguer entre sa soif aveugle de vengeance et une infinie spirale de mensonges."
       },
-      "zoomPos": "48.5% 34.7%"
+      "zoomPos": "48.5% 34.7%",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "9806": {
       "zoom": 1.36,
@@ -644,7 +724,11 @@
         "synopsisEn": "Follows the lives of the cousins who inherit an old house in rural Normandy and retrace their steps of their ancestors in 19th century Paris.",
         "synopsis": "Aujourd’hui, en 2025, une trentaine de personnes issues d’une même famille apprennent qu’ils vont recevoir en héritage une maison abandonnée depuis des années. Quatre d'entre eux, Seb, Abdel, Céline et Guy sont chargés d’en faire l'état des lieux. Ces lointains \"cousins\" vont alors découvrir des trésors cachés dans cette vieille maison. Ils vont se retrouver sur les traces d'une mystérieuse Adèle qui a quitté sa Normandie natale, à 20 ans. Cette Adèle se retrouve à Paris en 1895, au moment où cette ville est en pleine révolution industrielle et culturelle. Pour les quatre cousins, ce voyage introspectif dans leur généalogie va leur faire découvrir ce moment si particulier de la fin du XIXe siècle où la photographie s'inventait et l’impressionnisme naissait. Ce face à face entre les deux époques 2025 et 1895 remettra en question leur présent et leurs idéaux et racontera le sens de : La venue de l’avenir.",
         "lenses": "Sony CineAlta Venice 2, Cooke Anamorphic/i FF and Angenieux Optimo Lenses • Sony PXW-FX9, Cooke Anamorphic/i FF and Angenieux Optimo Lenses"
-      }
+      },
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "10140": {
       "zoom": 1.29,
@@ -667,7 +751,12 @@
           "https://www.unifrance.org/film/63560/des-vivants"
         ]
       },
-      "zoomPos": "54.7% 27.5%"
+      "zoomPos": "54.7% 27.5%",
+      "types": [
+        "TV Serie",
+        "Series",
+        "narrative"
+      ]
     },
     "10935": {
       "title": "Les Caprices de l'Enfant Roi",
@@ -729,7 +818,11 @@
         },
         "synopsisEn": "In 1651, as civil wars are menacing in the Kingdom of France, Anne of Austria asks D'Artagnan to take her son to safety. Thus D'Artagnan entrusts the future Louis XIV to Cyrano, who hides him within the theatre troupe of the young Molière.",
         "ratio": "1.85"
-      }
+      },
+      "types": [
+        "Narrative",
+        "Feature Film"
+      ]
     },
     "11347": {
       "zoom": 1.33,
@@ -771,7 +864,11 @@
         "synopsis": "Dans une famille de croque-morts, deux sœurs et un frère se retrouvent pour les funérailles de leur mère. Le personnel étant en grève, ils doivent accomplir le protocole funéraire par eux-mêmes. Comment s’accorder pour brûler Maman ?",
         "synopsisEn": "In a family of undertakers, two sisters and a brother reunite for their mother's funeral. With the staff on strike, they must carry out the funeral arrangements themselves. How will they agree on how to cremate Mom?"
       },
-      "phoneX": 47.5
+      "phoneX": 47.5,
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     }
   },
   "about": {
