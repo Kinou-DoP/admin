@@ -101,7 +101,13 @@
             "https://images.slatecdn.net/k4mCl1fJtLUIi1fVkSSp8mzbmIaoNqVkl-_OWdBx3uk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTY2MDBh/N2MtZjE5MS00ZTkz/LTg0MTgtYjBiN2U2/NTFlNmEwL3N0aWxs/cy0wMDA4NjQyNS5q/cGc.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "awards": "Official selection • Longs métrages (film d'ouverture), Festival européen du film fantastique de Strasbourg (FEFFS) 2026",
+        "awardsFrom": {
+          "bb6e3fb35424": "Official selection • Longs métrages (film d'ouverture), Festival européen du film fantastique de Strasbourg (FEFFS) 2026"
+        }
+      }
     },
     "9979": {
       "zoom": 1.14,
@@ -255,7 +261,16 @@
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/511b2f57-d672-48d1-ab2c-252cd67ae608-1280x720.2500.mp4"
         }
       ],
-      "title": "Meteors"
+      "title": "Meteors",
+      "info": {
+        "awards": "Official selection • Compétition internationale, Französische Filmtage Tübingen 2026\nOfficial selection, Festival international du film francophone d'Ottawa (IFFO) 2026\nOfficial selection, Festival Premiers Plans 2026\nOfficial selection • Un certain regard, Festival de Cannes 2025",
+        "awardsFrom": {
+          "5f83bb97b80b": "Official selection • Compétition internationale, Französische Filmtage Tübingen 2026",
+          "24173f990814": "Official selection, Festival international du film francophone d'Ottawa (IFFO) 2026",
+          "aac56428a94b": "Official selection, Festival Premiers Plans 2026",
+          "c543deaace82": "Official selection • Un certain regard, Festival de Cannes 2025"
+        }
+      }
     },
     "10083": {
       "zoom": 1.38,
@@ -560,6 +575,17 @@
       },
       "snipCrop": {
         "y": 41.1
+      },
+      "info": {
+        "awards": "Official selection, Festival Premiers Plans 2026\nOfficial selection • Séance spéciale, Festival de Cannes • Semaine de la Critique 2025\nOfficial selection • Avant-première québécoise, Festival Cinemania 2025\nOfficial selection • Hors compétition, Festival International du Film Indépendant de Bordeaux (FIFIB) 2025\nOfficial selection, Queer Palm (Cannes) 2025\nOfficial selection, Melbourne International Film Festival",
+        "awardsFrom": {
+          "faf2a7bd2599": "Official selection, Festival Premiers Plans 2026",
+          "f0494b73bc48": "Official selection • Séance spéciale, Festival de Cannes • Semaine de la Critique 2025",
+          "4299e5f436e2": "Official selection • Avant-première québécoise, Festival Cinemania 2025",
+          "42c85bca8fe2": "Official selection • Hors compétition, Festival International du Film Indépendant de Bordeaux (FIFIB) 2025",
+          "e36b63fa3f15": "Official selection, Queer Palm (Cannes) 2025",
+          "11614f27c9a6": "Official selection, Melbourne International Film Festival"
+        }
       }
     },
     "10391": {
