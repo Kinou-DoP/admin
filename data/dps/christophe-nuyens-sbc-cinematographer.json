@@ -179,10 +179,12 @@
         "narrative"
       ],
       "info": {
-        "awards": "Nominated, Outstanding Cinematography for a Series (One Hour) • épisode « Harvest », Primetime Emmy Awards 2025\nOutstanding Achievement in Cinematography • Episode of a One-Hour Regular Series (ex aequo) • épisode « I Have Friends Everywhere », ASC Awards 2026",
+        "awards": "Nominated, Outstanding Cinematography for a Series (One Hour) • épisode « Harvest », Primetime Emmy Awards 2025\nOutstanding Achievement in Cinematography • Episode of a One-Hour Regular Series (ex aequo) • épisode « I Have Friends Everywhere », ASC Awards 2026\nOutstanding Achievement in Cinematography in an Episode of a One-Hour Regular Series (ex æquo), ASC Awards (American Society of Cinematographers) 2026\nNominated, Outstanding Cinematography for a Series (One Hour), Primetime Emmy Awards 2025",
         "awardsFrom": {
           "4d67fa934708": "Nominated, Outstanding Cinematography for a Series (One Hour) • épisode « Harvest », Primetime Emmy Awards 2025",
-          "d6e340cd97cc": "Outstanding Achievement in Cinematography • Episode of a One-Hour Regular Series (ex aequo) • épisode « I Have Friends Everywhere », ASC Awards 2026"
+          "d6e340cd97cc": "Outstanding Achievement in Cinematography • Episode of a One-Hour Regular Series (ex aequo) • épisode « I Have Friends Everywhere », ASC Awards 2026",
+          "3ad99afdfdb9": "Outstanding Achievement in Cinematography in an Episode of a One-Hour Regular Series (ex æquo), ASC Awards (American Society of Cinematographers) 2026",
+          "81a4da1f9df7": "Nominated, Outstanding Cinematography for a Series (One Hour), Primetime Emmy Awards 2025"
         }
       }
     },

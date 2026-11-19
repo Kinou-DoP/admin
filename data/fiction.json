@@ -10,10 +10,12 @@
         "Disney +"
       ],
       "info": {
-        "awards": "Nominated, Outstanding Cinematography for a Series (One Hour) • épisode « Harvest », Primetime Emmy Awards 2025\nOutstanding Achievement in Cinematography • Episode of a One-Hour Regular Series (ex aequo) • épisode « I Have Friends Everywhere », ASC Awards 2026",
+        "awards": "Nominated, Outstanding Cinematography for a Series (One Hour) • épisode « Harvest », Primetime Emmy Awards 2025\nOutstanding Achievement in Cinematography • Episode of a One-Hour Regular Series (ex aequo) • épisode « I Have Friends Everywhere », ASC Awards 2026\nOutstanding Achievement in Cinematography in an Episode of a One-Hour Regular Series (ex æquo), ASC Awards (American Society of Cinematographers) 2026\nNominated, Outstanding Cinematography for a Series (One Hour), Primetime Emmy Awards 2025",
         "awardsFrom": {
           "4d67fa934708": "Nominated, Outstanding Cinematography for a Series (One Hour) • épisode « Harvest », Primetime Emmy Awards 2025",
-          "d6e340cd97cc": "Outstanding Achievement in Cinematography • Episode of a One-Hour Regular Series (ex aequo) • épisode « I Have Friends Everywhere », ASC Awards 2026"
+          "d6e340cd97cc": "Outstanding Achievement in Cinematography • Episode of a One-Hour Regular Series (ex aequo) • épisode « I Have Friends Everywhere », ASC Awards 2026",
+          "3ad99afdfdb9": "Outstanding Achievement in Cinematography in an Episode of a One-Hour Regular Series (ex æquo), ASC Awards (American Society of Cinematographers) 2026",
+          "81a4da1f9df7": "Nominated, Outstanding Cinematography for a Series (One Hour), Primetime Emmy Awards 2025"
         }
       }
     },
@@ -448,7 +450,21 @@
         "autoSrc": [
           "https://polishdocs.pl/en/news/6844/",
           "https://www.polishdocs.pl/en/films/2773/silver"
-        ]
+        ],
+        "awards": "Documentary Feature Grand Jury Prize, Slamdance Film Festival 2026\nJury Prize, Trento Film Festival 2026\nStudent Jury Prize, Trento Film Festival 2026\nPrize, CinemAmbiente 2026\nSilver Horn, Krakow Film Festival 2025\nAudience Award, Krakow Film Festival 2025\nBest Film, Ji.hlava International Documentary Film Festival 2025\nOfficial selection, Docudays UA 2026\nOfficial selection, ZagrebDox\nOfficial selection, Artdocfest\nOfficial selection, Mumbai International Film Festival (MIFF)",
+        "awardsFrom": {
+          "0737d057afc2": "Documentary Feature Grand Jury Prize, Slamdance Film Festival 2026",
+          "989989c7f567": "Jury Prize, Trento Film Festival 2026",
+          "7492156cebd6": "Student Jury Prize, Trento Film Festival 2026",
+          "1a517f6738cb": "Prize, CinemAmbiente 2026",
+          "199a50adf5a8": "Silver Horn, Krakow Film Festival 2025",
+          "db5a88d4fed3": "Audience Award, Krakow Film Festival 2025",
+          "09f26a4e4c1a": "Best Film, Ji.hlava International Documentary Film Festival 2025",
+          "5e473ec7727b": "Official selection, Docudays UA 2026",
+          "bfc5e35fdd96": "Official selection, ZagrebDox",
+          "227cdd8c5e82": "Official selection, Artdocfest",
+          "1188b30f4ca8": "Official selection, Mumbai International Film Festival (MIFF)"
+        }
       }
     },
     "10296": {
