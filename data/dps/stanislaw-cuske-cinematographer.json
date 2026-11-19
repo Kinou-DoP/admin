@@ -524,7 +524,17 @@
             "https://images.slatecdn.net/2MDfKFyiJsS6Lqtc--NuDRhXPK6kmmwy3nMS86yoJ7w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vN2RhYzY5/YmEtYzFhOS00NWRm/LWFhN2ItMTVlYjhk/NDRlMmZmLzE5NDkt/ZGlyLnBhd2VsLXBh/d2xpa293c2tpLXBo/b3RvYnktYWdhdGEt/Z3J6eWJvd3NrYS1k/MDMyLTQzNi5qcGc.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "awards": "Prix de la mise en scène (ex aequo), Festival de Cannes 2026\nOfficial selection • Special Presentations, Calgary International Film Festival 2026\nOfficial selection • Film d'ouverture, Sarajevo Film Festival 2026\nOfficial selection • Compétition officielle, Festival de Cannes 2026\nOfficial selection • World Cinema co-produced by France, The American French Film Festival 2026",
+        "awardsFrom": {
+          "46594c1d0651": "Prix de la mise en scène (ex aequo), Festival de Cannes 2026",
+          "a9759454877c": "Official selection • Special Presentations, Calgary International Film Festival 2026",
+          "33dc3dcdb090": "Official selection • Film d'ouverture, Sarajevo Film Festival 2026",
+          "47366ab7c00e": "Official selection • Compétition officielle, Festival de Cannes 2026",
+          "27bb9113c261": "Official selection • World Cinema co-produced by France, The American French Film Festival 2026"
+        }
+      }
     }
   },
   "about": {
