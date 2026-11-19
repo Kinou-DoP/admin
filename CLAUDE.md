@@ -82,7 +82,7 @@ lit aussi les vidéos avec `full`), `/api/refresh` (rien à vider : le site lit 
   Le recadrage (zoom / zoomPos) de ce projet se règle sur cet extrait.
 - Téléphone : toucher autre chose qu'un champ de texte le quitte (sinon le clavier revenait au lâcher d'un curseur).
 - Vignette d'un film (fiches) : pastille en haut à droite (`.snipmark`, Gus 03/11) = snippet Slate : pleine verte = extrait présent
-  (`video`), vide = pas encore d'extrait (à « snipper » sur Slate, puis « Relire le bundle ») ; rien sur un projet en images seulement.
+  (`video`), vide = pas encore d'extrait (à « snipper » sur Slate, puis « Relire le bundle ») ; rien sur un projet en images seulement. « Relire le bundle » garde l'ancien snippet d'un film quand Slate n'en renvoie plus (même id Slate ; Gus 19/11 : 68 snippets de Matias Boucard effacés côté Slate, remis depuis l'historique de la fiche).
 - Infos du film (Gus 04/11, fiches, spotlight, fiction) : bloc replié « + Infos du film » sous les crédits (`infoCtl`, titre = nombre
   de champs remplis) : année, épisodes, durée, format d'image, plateformes (pas sur la fiction : déjà en étiquettes), caméra,
   optiques, **starring** (`starring`, acteurs séparés par des virgules, Gus 18/11), synopsis français (`synopsis`) et anglais (`synopsisEn`) → `overrides[<id>].info`. Affichage : CLAUDE.md du site (`info`).

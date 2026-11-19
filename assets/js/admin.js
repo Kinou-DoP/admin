@@ -914,6 +914,12 @@
       }).then(function (r) {
         if (!r) return;
         var d = r[0], known = r[1];
+        // Snippet absent sur Slate mais présent dans la fiche (Gus 19/11 : la remise en état de Slate après sa panne a effacé des
+        // snippets, ex. 68 chez Matias Boucard) : l'ancien extrait est gardé (même film, même id Slate ; le fichier existe toujours).
+        var kept = 0, oldV = {};
+        (slate && slate.clips || []).forEach(function (c) { if (c.video) oldV[c.slate] = c.video; });
+        d.clips.forEach(function (c) { if (!c.video && oldV[c.slate]) { c.video = oldV[c.slate]; kept++; } });
+        if (kept) r[3] = Object.assign({}, r[3] || {}, { keptSnips: kept });
         slate = d; state.bundle = d.bundle; dirty = true;
         if (!state.name) state.name = d.name;
         if (known) { state.slug = origSlug = known.slug; listed = true; }
@@ -921,7 +927,7 @@
         if (isNew) state.hue = hueOf(state.slug);
         if (isNew && state.open === undefined) { var f = d.clips.filter(function (c) { return c.featured; }).sort(function (a, b) { return a.featuredOrder - b.featuredOrder; })[0]; if (f) state.open = f.slate; }
         render();
-        status((known ? "Déjà sur le site : la fiche reprend son adresse kinou.fr/" + known.slug + ". " : "") + "Bundle importé : " + d.clips.length + " films, " + d.categories.length + " onglets." + relinkMsg(r[3]) + " Vérifiez puis publiez.", "ok");
+        status((known ? "Déjà sur le site : la fiche reprend son adresse kinou.fr/" + known.slug + ". " : "") + "Bundle importé : " + d.clips.length + " films, " + d.categories.length + " onglets." + relinkMsg(r[3]) + ((r[3] || {}).keptSnips ? " " + r[3].keptSnips + " snippet" + (r[3].keptSnips > 1 ? "s" : "") + " absent" + (r[3].keptSnips > 1 ? "s" : "") + " sur Slate gardé" + (r[3].keptSnips > 1 ? "s" : "") + " (anciens extraits)." : "") + " Vérifiez puis publiez.", "ok");
       }, function (e) { imp.disabled = false; st.textContent = e.message; });
     });
     var kids = [el("h2", { text: "Bundle Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [input]), imp]), st];
