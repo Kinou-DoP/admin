@@ -451,6 +451,12 @@
       },
       "snipCrop": {
         "y": 8.7
+      },
+      "info": {
+        "awards": "Official selection • Perspectives du cinéma français, Arras Film Festival 2025",
+        "awardsFrom": {
+          "b3283d648a35": "Official selection • Perspectives du cinéma français, Arras Film Festival 2025"
+        }
       }
     },
     "10323": {
@@ -594,6 +600,12 @@
         "z": 1.2,
         "x": 51.4,
         "y": 19.1
+      },
+      "info": {
+        "awards": "Official selection, International Film Festival Rotterdam 2026",
+        "awardsFrom": {
+          "4c7c789f30ba": "Official selection, International Film Festival Rotterdam 2026"
+        }
       }
     },
     "10404": {
