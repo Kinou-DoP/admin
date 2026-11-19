@@ -533,6 +533,12 @@
       "title": "Police Flash 80",
       "thumbCrop": {
         "y": 12.8
+      },
+      "info": {
+        "awards": "Official selection • Hors compétition • Séance de la présidente, Festival International du Film de Comédie de l'Alpe d'Huez 2026",
+        "awardsFrom": {
+          "f5830ef949b2": "Official selection • Hors compétition • Séance de la présidente, Festival International du Film de Comédie de l'Alpe d'Huez 2026"
+        }
       }
     },
     "10440": {
@@ -608,10 +614,11 @@
         "y": 36.9
       },
       "info": {
-        "awards": "Official selection • Film de clôture, hors compétition, Festival de San Sebastián 2026\nOfficial selection, Filmfest Hamburg 2026",
+        "awards": "Official selection • Film de clôture, hors compétition, Festival de San Sebastián 2026\nOfficial selection, Filmfest Hamburg 2026\nOfficial selection • Perlak, Festival international de cinéma de San Sebastián 2026",
         "awardsFrom": {
           "656ef4ffed85": "Official selection • Film de clôture, hors compétition, Festival de San Sebastián 2026",
-          "b5fe1865f6c6": "Official selection, Filmfest Hamburg 2026"
+          "b5fe1865f6c6": "Official selection, Filmfest Hamburg 2026",
+          "543a524683d9": "Official selection • Perlak, Festival international de cinéma de San Sebastián 2026"
         }
       }
     },
