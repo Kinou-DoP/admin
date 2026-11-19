@@ -1,0 +1,53 @@
+{
+  "code": "djjs83jc",
+  "title": "Bande (19 nov. 2026)",
+  "description": "",
+  "artists": [
+    "Guillaume Adrey"
+  ],
+  "cols": 3,
+  "hide": {
+    "dir": false,
+    "dop": false,
+    "prod": false,
+    "types": false
+  },
+  "expires": "",
+  "download": false,
+  "pw": null,
+  "items": [
+    {
+      "key": "s418",
+      "slate": 418,
+      "title": "The Flower Of Life",
+      "dir": "Damien Krisl, Ronan Gali",
+      "dops": [
+        "Guillaume Adrey"
+      ],
+      "cats": [
+        "BEAUTY"
+      ],
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/418/9f69c1fe-cd70-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545360473-43786916_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/F_RLUdzl79pEcFlDJ0ZK3bnHuL4MNlA4Vqai3851XYw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZDBiNmM2Zi03ZTQz/LTQ1NmUtYjY0OC04/ODhhZTE3ZTJkNzEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTAtYS0xMS4yNi4x/Ny5wbmc?v=1&format=webp"
+    },
+    {
+      "key": "s1744",
+      "slate": 1744,
+      "title": "Lancôme - Lacquer",
+      "dir": "Jérémie Bôle du Chaumont",
+      "prod": "Prodigious",
+      "dops": [
+        "Guillaume Adrey"
+      ],
+      "cats": [
+        "BEAUTY"
+      ],
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1744/305e5799-cd71-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545417756-47748826_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UQvlVM10NX-4KumA7uAvBRWNYIY94diDJvkI4hBqeyQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YjRkYjdjNS1kZTE2/LTQzOGQtYjJjNS1j/Y2I4M2UxYjRmOTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTAt/MjYtYS0xNC4zMi40/Ni5wbmc?v=1&format=webp"
+    }
+  ],
+  "by": "Gurvan",
+  "at": "2026-11-19T16:59:36.815Z"
+}
