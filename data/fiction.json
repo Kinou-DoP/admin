@@ -746,6 +746,19 @@
       "title": "Cotton Queen",
       "thumbCrop": {
         "y": 56.1
+      },
+      "info": {
+        "awards": "Grand Prix de la fiction (FIFDH Fiction Grand Award), Festival international du film et des droits humains (FIFDH) 2026\nPrix du jury du meilleur film, Festival du film africain de Louxor 2026\nMeilleur long métrage, Durban International Film Festival 2026\nJury Award for Emerging Filmmaker, Minneapolis St. Paul International Film Festival 2026\nGolden Alexander Theo Angelopoulos du meilleur film, Festival international du film de Thessalonique 2025\nPrix du public, Festival du film de Doha 2025\nOfficial selection, Chicago International Film Festival 2025\nOfficial selection • Semaine internationale de la critique, Mostra de Venise • Semaine internationale de la critique 2025",
+        "awardsFrom": {
+          "08dfba4211a5": "Grand Prix de la fiction (FIFDH Fiction Grand Award), Festival international du film et des droits humains (FIFDH) 2026",
+          "541a00ec635a": "Prix du jury du meilleur film, Festival du film africain de Louxor 2026",
+          "c631a3b1b733": "Meilleur long métrage, Durban International Film Festival 2026",
+          "79bb56245b84": "Jury Award for Emerging Filmmaker, Minneapolis St. Paul International Film Festival 2026",
+          "114189c73008": "Golden Alexander Theo Angelopoulos du meilleur film, Festival international du film de Thessalonique 2025",
+          "0c6be8dca49d": "Prix du public, Festival du film de Doha 2025",
+          "8d068dfdc400": "Official selection, Chicago International Film Festival 2025",
+          "f18caaa965d9": "Official selection • Semaine internationale de la critique, Mostra de Venise • Semaine internationale de la critique 2025"
+        }
       }
     },
     "10771": {
