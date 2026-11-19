@@ -700,6 +700,14 @@
       },
       "snipCrop": {
         "y": 15.6
+      },
+      "info": {
+        "awards": "Official selection • Compétition, Festival international du film de comédie de l'Alpe d'Huez 2026\nOfficial selection, Internationales Filmfestival Mannheim-Heidelberg 2025\nOfficial selection • Avant-première, Festival du film francophone d'Angoulême 2025",
+        "awardsFrom": {
+          "b63564aec0f4": "Official selection • Compétition, Festival international du film de comédie de l'Alpe d'Huez 2026",
+          "01ad3845d64b": "Official selection, Internationales Filmfestival Mannheim-Heidelberg 2025",
+          "a499cd05afe6": "Official selection • Avant-première, Festival du film francophone d'Angoulême 2025"
+        }
       }
     },
     "10695": {
@@ -753,6 +761,12 @@
       },
       "snipCrop": {
         "y": 49.8
+      },
+      "info": {
+        "awards": "Official selection, Festival de Málaga",
+        "awardsFrom": {
+          "39638663ef44": "Official selection, Festival de Málaga"
+        }
       }
     },
     "10708": {
