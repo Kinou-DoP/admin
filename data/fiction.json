@@ -622,7 +622,13 @@
       },
       "platforms": [
         "Disney +"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection • Séances spéciales (première mondiale, hors compétition), Séries Mania 2026",
+        "awardsFrom": {
+          "b6a2cac757e9": "Official selection • Séances spéciales (première mondiale, hors compétition), Séries Mania 2026"
+        }
+      }
     },
     "10544": {
       "genre": "FEATURE FILM",
