@@ -534,7 +534,11 @@
           "47366ab7c00e": "Official selection • Compétition officielle, Festival de Cannes 2026",
           "27bb9113c261": "Official selection • World Cinema co-produced by France, The American French Film Festival 2026"
         }
-      }
+      },
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     }
   },
   "about": {
