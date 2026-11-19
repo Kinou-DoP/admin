@@ -29,7 +29,20 @@
       ],
       "types": [
         "Narrative"
-      ]
+      ],
+      "info": {
+        "year": "2020",
+        "runtime": "20",
+        "starring": "Ihor Aronov, Daria Polunina, Andrzej Szeremeta",
+        "auto": [
+          "year",
+          "runtime",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://polishshorts.pl/en/films/2284"
+        ]
+      }
     },
     "8533": {
       "zoom": 1.39,
@@ -87,7 +100,19 @@
             "https://images.slatecdn.net/y1OrcSHk4SCKUT7aVm0K-JmZQeETMcW463ZzrS-FBnw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZTUxMjBlMS02ZDhk/LTQ3ZmMtOWQ1Zi1m/ODY5MmJmNmNhMzUv/dGFtYTUucG5n.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "year": "2018",
+        "runtime": "22",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://www.writv.us.edu.pl/en/short-films/480-dam-en1",
+          "https://polishshorts.pl/en/films/1892/dam"
+        ]
+      }
     },
     "8535": {
       "zoom": 1.06,
@@ -115,7 +140,19 @@
       ],
       "types": [
         "Narrative"
-      ]
+      ],
+      "info": {
+        "year": "2019",
+        "runtime": "20",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://polishdocs.pl/en/films/2114/",
+          "https://www.krakowfilmfestival.pl/en/film/2856-the-end-of-the-season"
+        ]
+      }
     },
     "8536": {
       "zoom": 1.06,
@@ -147,7 +184,19 @@
       ],
       "types": [
         "narrative"
-      ]
+      ],
+      "info": {
+        "year": "2023",
+        "runtime": "40",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://polishdocs.pl/en/films/2584/the_kiosk",
+          "https://docudays.ua/eng/2024/movies/docu-korotko/kiosk/"
+        ]
+      }
     },
     "8537": {
       "title": "The Little One",
@@ -243,7 +292,21 @@
         2.3881,
         2.3881,
         2.3881
-      ]
+      ],
+      "info": {
+        "year": "2025",
+        "runtime": "79",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://www.crew-united.com/es/Silver__295215.html",
+          "https://polishdocs.pl/en/news/6739/",
+          "https://www.polishdocs.pl/en/films/2773/silver",
+          "https://watchdocs.pl/en/watch-docs-iff/festival-2025/films/silver"
+        ]
+      }
     },
     "8546": {
       "title": "Upside Down",
@@ -296,7 +359,17 @@
       ],
       "types": [
         "Commercial"
-      ]
+      ],
+      "info": {
+        "year": "2025",
+        "auto": [
+          "year"
+        ],
+        "autoSrc": [
+          "https://www.creativeboom.com/work/new-ad-for-luggage-brand-is-an-epic-slice-of-cinematic-intensity/",
+          "https://lbbonline.com/news/luggage-brand-away-spotlights-travels-power-for-self-exploration-with-sensorial-film"
+        ]
+      }
     },
     "8557": {
       "title": "Pianoforte (camera operator)",
@@ -319,7 +392,20 @@
             "https://images.slatecdn.net/k37oPZ1e2RVVy0T1HGkdS1oHkTmonlclNAARHesAMsU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MDAzODE4NS00ODU2/LTQ2MWUtOGQ2ZS03/MzJjNWE2YzUwNTAv/cGlhbm9mb3J0ZTcu/anBn.webp"
           ]
         }
-      ]
+      ],
+      "zoom": 1.35,
+      "info": {
+        "year": "2023",
+        "runtime": "89",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://culture.pl/en/work/pianoforte-directed-by-jakub-piatek",
+          "https://cineuropa.org/en/film/437018"
+        ]
+      }
     },
     "8560": {
       "title": "The Zone of Interest (camera operator)",
@@ -351,7 +437,20 @@
       ],
       "types": [
         "narrative"
-      ]
+      ],
+      "info": {
+        "camera": "Sony Venice",
+        "lenses": "Leitz M 0.8",
+        "auto": [
+          "camera",
+          "lenses"
+        ],
+        "autoSrc": [
+          "https://www.leitz-cine.com/interview/lukasz-zal-psc",
+          "https://britishcinematographer.co.uk/lukasz-zal-psc-the-zone-of-interest/",
+          "https://shotonwhat.com/the-zone-of-interest-2023"
+        ]
+      }
     },
     "8561": {
       "title": "Gesaffelstein - Gamma - Trailer (2nd Unit DOP)",
@@ -408,7 +507,17 @@
             "https://images.slatecdn.net/k0EVTFrSiZKvF5fzimOSwH6druQwis-NFL4uudhYJw0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YWFjODc0ZC0zNTk0/LTQxZjgtOWQ3OC0x/ODJmYzA0NWQ5OGEv/enJ6dXQtZWtyYW51/LTIwMjQtMDMtMjkt/by0yMC4zNi4zOS5w/bmc.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "year": "2024",
+        "auto": [
+          "year"
+        ],
+        "autoSrc": [
+          "https://www.sonymusic.ca/?p=24389",
+          "https://magazine.032c.com/magazine/setting-horses-on-fire-jordan-hemingway"
+        ]
+      }
     },
     "8582": {
       "zoom": 1.05,
@@ -434,7 +543,19 @@
       ],
       "types": [
         "Documentary"
-      ]
+      ],
+      "info": {
+        "year": "2022",
+        "runtime": "81",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://www.docaviv.co.il/2022-en/films/the-pawnshop",
+          "https://www.krakowfilmfestival.pl/en/film/3917-the-pawnshop"
+        ]
+      }
     },
     "9214": {
       "zoom": 1.33,
@@ -462,7 +583,19 @@
           "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9524/3ba7f962-ff25-11ef-bfce-022353abf6f5.mp4",
           "img": "https://images.slatecdn.net/3MiMGgBpF9i58S1T4AjOyiOLIGRbDJCrqasVHABQiFU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/YmUzYjlhMS03MmQ4/LTQ0NWEtYjdjYS0w/MGM5NWQ5MGIyNzEv/bXVzZS5wbmc.webp"
         }
-      ]
+      ],
+      "info": {
+        "year": "2024",
+        "starring": "Małgosia Bela, Marcin Masecki",
+        "auto": [
+          "year",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://mubi.com/films/muse-2024",
+          "https://watchwhatwhere.com/title/7752926-muse"
+        ]
+      }
     },
     "10206": {
       "zoom": 1.36,
@@ -488,7 +621,19 @@
             "https://images.slatecdn.net/Tr2r0_mq352e6lAKZIuPFFQK-n491iGT-LmOr-uUtkM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NTk1MzIwYi1jMTU3/LTQxNTItYTJkNS05/YjdhNDc2MzUwNmYv/dW50aXRsZWQtMy4x/Ni4xLmpwZw.webp"
           ]
         }
-      ]
+      ],
+      "info": {
+        "year": "2025",
+        "runtime": "79",
+        "auto": [
+          "year",
+          "runtime"
+        ],
+        "autoSrc": [
+          "https://polishdocs.pl/en/news/6844/",
+          "https://www.polishdocs.pl/en/films/2773/silver"
+        ]
+      }
     },
     "10214": {
       "title": "Hamnet (camera operator)",
@@ -498,7 +643,27 @@
         "Trailer",
         "narrative"
       ],
-      "phoneX": 47.8
+      "phoneX": 47.8,
+      "info": {
+        "year": "2026",
+        "runtime": "125",
+        "camera": "ALEXA 35",
+        "lenses": "Zeiss Super Speed, Zeiss Master Primes, Zeiss Standard Speeds",
+        "starring": "Jessie Buckley, Paul Mescal, Emily Watson, Joe Alwyn",
+        "auto": [
+          "year",
+          "runtime",
+          "camera",
+          "lenses",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.offi.fr/cinema/evenement/hamnet-104504.html",
+          "https://www.pathe.fr/actualites/hamnet-pourquoi-le-film-de-chloe-zhao-fait-sensation",
+          "https://www.postmagazine.com/Publications/Post-Magazine/2026/January-February-2026/-I-Hamnet-I-Inside-the-production-and-post.aspx",
+          "https://m.imdb.com/it/name/nm8474750"
+        ]
+      }
     },
     "10215": {
       "title": "Adidas x Athletics",
@@ -533,7 +698,23 @@
           "33dc3dcdb090": "Official selection • Film d'ouverture, Sarajevo Film Festival 2026",
           "47366ab7c00e": "Official selection • Compétition officielle, Festival de Cannes 2026",
           "27bb9113c261": "Official selection • World Cinema co-produced by France, The American French Film Festival 2026"
-        }
+        },
+        "year": "2026",
+        "runtime": "82",
+        "ratio": "1.33",
+        "starring": "Sandra Hüller, Hanns Zischler, August Diehl",
+        "auto": [
+          "year",
+          "runtime",
+          "ratio",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/62884/fatherland",
+          "https://www.festival-cannes.com/en/f/fatherland/",
+          "https://www.offi.fr/cinema/evenement/fatherland-108659.html",
+          "https://www.anothermag.com/design-living/17508/pawel-pawlikowski-on-fatherland-and-the-beauty-of-brevity"
+        ]
       },
       "types": [
         "Feature Film",
