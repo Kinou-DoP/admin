@@ -4272,7 +4272,7 @@
     if (bibCache && !force) return Promise.resolve(bibCache);
     var map = {}, order = [];
     function add(f, from) {
-      var k = f.slate ? "s" + f.slate : "u" + (f.full || f.video || f.img || f.title);
+      var k = f.slate ? "s" + f.slate : f.key || "u" + (f.full || f.video || f.img || f.title); // imports d'images : leur clé « i… »
       var o = map[k];
       if (!o) { o = map[k] = { key: k, slate: f.slate || null, title: "", dir: "", prod: "", dops: [], cats: [], types: [], video: "", full: "", img: "", images: null, pages: [], at: "" }; order.push(o); }
       ["title", "dir", "prod", "video", "full", "img", "at", "link"].forEach(function (x) { if (!o[x] && f[x]) o[x] = f[x]; });
@@ -4338,7 +4338,7 @@
           bibHay(f);
           f.dops.forEach(function (d) { put("dop", d); });
           bibDirs(f).forEach(function (d) { put("dir", d); });
-          put("prod", f.prod); put("client", f.client); f.types.forEach(function (c) { put("type", c); }); f.cats.forEach(function (c) { put("cat", c); });
+          bibProds(f).forEach(function (x) { put("prod", x); }); put("client", f.client); f.types.forEach(function (c) { put("type", c); }); f.cats.forEach(function (c) { put("cat", c); });
         });
         bibCache = { films: order, sug: Object.keys(sug).map(function (k) { return sug[k]; }), lib: lib || { items: [] } };
         return bibCache;
@@ -4352,13 +4352,14 @@
     f.dops = f.dops || []; f.types = f.types || []; f.libEdited = true;
   }
   function bibDirs(f) { return String(f.dir || "").split(/\s*,\s*|\s+&\s+/).filter(Boolean); }
+  function bibProds(f) { return String(f.prod || "").split(/\s*,\s*/).filter(Boolean); } // plusieurs prods = séparées par une virgule
   var BIB_T = { dop: "Chef op", dir: "Réal", prod: "Prod", client: "Client", type: "Type de contenu", cat: "Catégorie" };
   var BIB_ORDER = ["dop", "dir", "prod", "client", "type", "cat"];
   function bibMatch(f, c) {
     var v = bnrm(c.value);
     if (c.type === "dop") return f.dops.some(function (d) { return bnrm(d) === v; });
     if (c.type === "dir") return bibDirs(f).some(function (d) { return bnrm(d) === v; });
-    if (c.type === "prod") return bnrm(f.prod) === v;
+    if (c.type === "prod") return bibProds(f).some(function (x) { return bnrm(x) === v; });
     if (c.type === "client") return bnrm(f.client) === v;
     if (c.type === "type") return f.types.some(function (x) { return bnrm(x) === v; });
     if (c.type === "cat") return f.cats.some(function (x) { return bnrm(x) === v; });
@@ -4542,7 +4543,7 @@
         el("div", { class: "bt" }, [el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); }))]),
         el("div", { class: "bc" }, f.dops.map(function (d) { var r = (f.roles || {})[d]; return r ? el("span", { class: "brole" }, [lnk("dop", d), el("small", { text: r })]) : lnk("dop", d); })),
         el("div", { class: "bc" }, f.cats.slice(0, 2).map(function (c) { return lnk("cat", c); }).concat(f.types.filter(function (t) { return !f.cats.some(function (c) { return bnrm(c) === bnrm(t); }); }).slice(0, 3).map(function (c) { return lnk("type", c); }))),
-        el("div", { class: "bc" }, (f.prod ? [lnk("prod", f.prod)] : []).concat(f.client ? [lnk("client", f.client)] : [])),
+        el("div", { class: "bc" }, bibProds(f).map(function (x) { return lnk("prod", x); }).concat(f.client ? [lnk("client", f.client)] : [])),
         el("div", { class: "bc" }, bibDirs(f).map(function (d) { return lnk("dir", d); })), add]);
       // Clic sur l'image = lecteur ; clic ailleurs sur la ligne = infos du film (Gus 22/11) ; glisser = vers la bande.
       th.addEventListener("click", function (e) { if (Date.now() - (st.dragAt || 0) < 300) return; e.stopPropagation(); bibPlay(f); });
@@ -4904,6 +4905,40 @@
         return [el("span", { class: "label", text: label }), x];
       }
       var list2 = function (s) { return String(s || "").split(/\s*,\s*/).filter(Boolean); };
+      // Crédits en blocs (Gus 22/11) : on tape, la liste propose les noms déjà connus de cette sorte (réals, prods, types) ; un clic
+      // ou Entrée (ou une virgule) en fait un bloc ; clic sur un bloc = le modifier ; Retour arrière dans le champ vide = retirer le dernier.
+      function chipsIn(type, get, set) {
+        var l = get(), box = el("div", { class: "bchipin" }), inp = el("input", { type: "text", placeholder: l.length ? "" : "Taper un nom…", autocomplete: "off" }), sug = el("div", { class: "bcsug", hidden: true }), si = -1;
+        function commit2() { set(l.slice()); it.edited = true; chg(); prevMeta(); }
+        function add(v) { v = String(v || "").trim(); if (!v) return; if (!l.some(function (x) { return bnrm(x) === bnrm(v); })) l.push(v); inp.value = ""; commit2(); drawC(); inp.focus(); }
+        function drawC() {
+          [].slice.call(box.querySelectorAll(".bcc")).forEach(function (x) { x.remove(); });
+          l.forEach(function (v, j) {
+            box.insertBefore(el("span", { class: "bcc", title: "Cliquer pour modifier" }, [el("span", { text: v, on: { click: function () { l.splice(j, 1); commit2(); drawC(); inp.value = v; inp.focus(); suggest(); } } }),
+              el("button", { type: "button", class: "bccx", text: "×", title: "Retirer", on: { click: function (e) { e.stopPropagation(); l.splice(j, 1); commit2(); drawC(); } } })]), inp);
+          });
+          inp.placeholder = l.length ? "" : "Taper un nom…";
+        }
+        function suggest() {
+          sug.textContent = ""; si = -1; var v = bnrm(inp.value); if (!v || !data) { sug.hidden = true; return; }
+          var hits = data.sug.filter(function (x) { return x.type === type && bnrm(x.value).indexOf(v) > -1 && !l.some(function (y) { return bnrm(y) === bnrm(x.value); }); })
+            .sort(function (a, b) { return (bnrm(a.value).indexOf(v) === 0 ? 0 : 1) - (bnrm(b.value).indexOf(v) === 0 ? 0 : 1) || b.n - a.n; }).slice(0, 8);
+          hits.forEach(function (x) { sug.appendChild(el("button", { type: "button", on: { mousedown: function (e) { e.preventDefault(); }, click: function () { add(x.value); sug.hidden = true; } } }, [el("span", { text: x.value }), el("small", { text: x.n + " film" + (x.n > 1 ? "s" : "") })])); });
+          sug.hidden = !hits.length;
+        }
+        inp.addEventListener("input", function () { if (/,/.test(inp.value)) { inp.value.split(",").forEach(function (x, k, a) { if (k < a.length - 1) add(x); else inp.value = x; }); } suggest(); });
+        inp.addEventListener("keydown", function (e) {
+          var b = sug.querySelectorAll("button");
+          if ((e.key === "ArrowDown" || e.key === "ArrowUp") && b.length) { e.preventDefault(); si = (si + (e.key === "ArrowDown" ? 1 : -1) + b.length) % b.length; b.forEach(function (x, k) { x.classList.toggle("on", k === si); }); }
+          else if (e.key === "Enter") { e.preventDefault(); if (si > -1 && b[si]) b[si].click(); else { add(inp.value); sug.hidden = true; } }
+          else if (e.key === "Backspace" && !inp.value && l.length) { l.pop(); commit2(); drawC(); }
+          else if (e.key === "Escape") { sug.hidden = true; }
+        });
+        inp.addEventListener("blur", function () { setTimeout(function () { sug.hidden = true; if (inp.value.trim()) add(inp.value); }, 150); });
+        box.addEventListener("click", function (e) { if (e.target === box) inp.focus(); });
+        box.appendChild(inp); drawC();
+        return el("div", { class: "bchipwrap" }, [box, sug]);
+      }
       // Crédits avec rôle (Gus 22/11) : un de nos chefs op « Camera operator » sur un film est crédité après le cinematographer.
       // it.dops = noms ; it.roles = { nom: rôle } (sans rôle = cinematographer).
       function credEd() {
@@ -4912,12 +4947,14 @@
         function draw() {
           box.textContent = ""; it.dops = it.dops || [];
           it.dops.forEach(function (n, j) {
-            var ni = el("input", { type: "text", value: n, placeholder: "Nom" }), ri = el("input", { type: "text", value: (it.roles || {})[n] || "", placeholder: "Cinematographer", list: "bibroles" });
+            var ni = el("input", { type: "text", value: n, placeholder: "Nom", list: "bibdopnames" }), ri = el("input", { type: "text", value: (it.roles || {})[n] || "", placeholder: "Cinematographer", list: "bibroles" });
             ni.addEventListener("input", function () { var old = it.dops[j], r = it.roles && it.roles[old]; if (r) delete it.roles[old]; it.dops[j] = ni.value.trim(); if (r && it.dops[j]) it.roles[it.dops[j]] = r; mark(); });
             ri.addEventListener("input", function () { var v = ri.value.trim(), k = it.dops[j]; it.roles = it.roles || {}; if (v && !/^(cinematographer|dop|d\.?o\.?p\.?|director of photography|chef op[ée]rat(eur|rice))$/i.test(v)) it.roles[k] = v; else delete it.roles[k]; if (!Object.keys(it.roles).length) delete it.roles; mark(); });
             box.appendChild(el("div", { class: "bcrow" }, [ni, ri, el("button", { type: "button", class: "bx", text: "×", title: "Retirer", on: { click: function () { if (it.roles) delete it.roles[it.dops[j]]; it.dops.splice(j, 1); mark(); draw(); } } })]));
           });
           box.appendChild(el("button", { type: "button", class: "blink", text: "+ Ajouter un chef op ou un rôle", on: { click: function () { it.dops.push(""); draw(); var l = box.querySelectorAll(".bcrow input"); if (l.length) l[l.length - 2].focus(); } } }));
+          var dn = document.getElementById("bibdopnames"); if (dn) dn.remove();
+          if (data) document.body.appendChild(el("datalist", { id: "bibdopnames" }, data.sug.filter(function (x) { return x.type === "dop"; }).sort(function (a, b) { return b.n - a.n; }).map(function (x) { return el("option", { value: x.value }); })));
           if (!document.getElementById("bibroles")) document.body.appendChild(el("datalist", { id: "bibroles" }, ["Camera operator", "B camera operator", "2nd unit DoP", "Additional photography", "Steadicam operator", "Gaffer", "Colorist"].map(function (r) { return el("option", { value: r }); })));
         }
         draw(); return box;
@@ -4969,7 +5006,7 @@
       function fmtF(t) { t = Math.max(0, t || 0); var m = Math.floor(t / 60), s = t - m * 60; return m + ":" + (s < 10 ? "0" : "") + s.toFixed(2).replace(".", ","); }
       if (src) {
         player = el("video", { playsinline: true, preload: "auto", muted: true }); player.muted = true; player.src = src;
-        var FR = 1 / 25, dur = 0, act = "play", loopOn = false, kT = 0, WIN = 30;
+        var FR = 1 / 25, dur = 0, act = "play", loopOn = false, kT = 0, WIN = 30, ptab = "thumb"; // onglet : vignette | extrait (Gus 22/11)
         var oReg = el("i", { class: "tlreg" }), oPh = el("i", { class: "tlph" }), over = el("div", { class: "tlo", title: "Tout le film : cliquez ou glissez" }, [oReg, oPh]);
         var dReg = el("i", { class: "tlreg" }), dPh = el("i", { class: "tlph" }), hIn = el("b", { class: "tlh in", title: "Début de l'extrait" }), hOut = el("b", { class: "tlh out", title: "Fin de l'extrait" });
         var dLab = el("div", { class: "tllab" }), det = el("div", { class: "tld" }, [dReg, dPh, hIn, hOut]);
@@ -4981,7 +5018,7 @@
         var draw = function () {
           if (!dur) return; var t = player.currentTime, w = win();
           oPh.style.left = pc(t, 0, dur); time.textContent = fmtF(t) + " / " + fmtF(dur);
-          det.hidden = dLab.hidden = !it.snip; oReg.hidden = !it.snip;
+          det.hidden = dLab.hidden = !it.snip || ptab !== "snip"; oReg.hidden = !it.snip || ptab !== "snip";
           if (it.snip) {
             var s = it.snip.s, e = s + it.snip.d;
             oReg.style.left = pc(s, 0, dur); oReg.style.width = Math.max(.4, it.snip.d / dur * 100) + "%";
@@ -5017,7 +5054,7 @@
         // Lecture : s'il y a un extrait, toujours en boucle entre le début et la fin (Gus 22/11) ; sinon le film.
         var toggle = function () {
           if (!player.paused) { player.pause(); return; }
-          if (it.snip) { var t = player.currentTime; loopOn = true; if (t < it.snip.s || t >= it.snip.s + it.snip.d - .05) player.currentTime = it.snip.s; player.play().catch(function () {}); }
+          if (it.snip && ptab === "snip") { var t = player.currentTime; loopOn = true; if (t < it.snip.s || t >= it.snip.s + it.snip.d - .05) player.currentTime = it.snip.s; player.play().catch(function () {}); }
           else { loopOn = false; player.play().catch(function () {}); }
         };
         playB.addEventListener("click", function () { toggle(); playB.blur(); });
@@ -5044,7 +5081,7 @@
           if (e.key === " ") { e.preventDefault(); e.stopPropagation(); if (document.activeElement && document.activeElement.blur && box.contains(document.activeElement)) document.activeElement.blur(); if (!e.repeat) toggle(); return; }
           if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
           e.preventDefault(); e.stopPropagation(); var st2 = (e.shiftKey ? 1 : FR) * (e.key === "ArrowLeft" ? -1 : 1);
-          if (act === "play" || !it.snip) seek(player.currentTime + st2);
+          if (act === "play" || !it.snip || ptab !== "snip") seek(player.currentTime + st2);
           else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { chg(); prevSnip(); }, 500); }
         };
         document.addEventListener("keydown", onKey, true);
@@ -5053,11 +5090,18 @@
           playB,
           el("button", { type: "button", class: "btn ghost", text: "1 image ▶", title: "Image suivante (→, Maj + → = 1 s)", on: { click: function (e) { e.currentTarget.blur(); onKey({ key: "ArrowRight", target: player, preventDefault: function () {}, stopPropagation: function () {} }); } } }),
           time]));
-        tools.appendChild(el("div", { class: "tlrow" }, [
-          el("button", { type: "button", class: "btn", text: "Cette image = vignette", on: { click: grab } }),
-          it.full ? el("button", { type: "button", class: "btn", text: "Extrait à partir d'ici", title: "Début = image affichée ; réglez ensuite le début et la fin (10 s au plus)", on: { click: function () {
+        var grabB = el("button", { type: "button", class: "btn", text: "Cette image = vignette", on: { click: grab } });
+        var snipB = it.full ? el("button", { type: "button", class: "btn", text: "Extrait à partir d'ici", title: "Début = image affichée ; réglez ensuite le début et la fin (10 s au plus)", on: { click: function () {
             var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "new"); chg(); prevSnip(); draw(); playSnip(); drawSnip();
-          } } }) : null]));
+          } } }) : null;
+        var tabB = {}, ptabs = el("div", { class: "btabs ptabs" }, [["thumb", "Vignette"], ["snip", "Extrait"]].map(function (t) { return tabB[t[0]] = el("button", { type: "button", text: t[1], on: { click: function () { setTab(t[0]); } } }); }));
+        if (!it.full) tabB.snip.hidden = true;
+        var setTab = function (t) {
+          ptab = t; act = "play"; tabB.thumb.classList.toggle("on", t === "thumb"); tabB.snip.classList.toggle("on", t === "snip");
+          if (thumbPane) thumbPane.hidden = t !== "thumb"; if (snipPane) snipPane.hidden = t !== "snip";
+          if (t === "thumb") { loopOn = false; player.pause(); } else if (it.snip && dur) { seek(it.snip.s); playSnip(); }
+          draw();
+        };
       }
       var snipLine = el("p", { class: "hint" });
       function prevSnip() { if (pvid) { pvid.remove(); pvid = null; } }
@@ -5126,19 +5170,26 @@
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [].concat(
           fld("Titre", function () { return it.title; }, function (v) { it.title = v; }),
-          fld("Réal", function () { return it.dir; }, function (v) { it.dir = v; }),
-          fld("Prod", function () { return it.prod; }, function (v) { it.prod = v; }),
+          [el("span", { class: "label", text: "Réal" }), chipsIn("dir", function () { return bibDirs(it); }, function (l) { it.dir = l.join(", "); })],
+          [el("span", { class: "label", text: "Prod" }), chipsIn("prod", function () { return bibProds(it); }, function (l) { it.prod = l.join(", "); })],
           [el("span", { class: "label", text: "Chefs op et rôles (rôle vide = cinematographer, crédité en premier)" }), credEd()],
-          fld("Types de contenu", function () { return (it.types || it.cats || []).join(", "); }, function (v) { it.types = list2(v); }, "ex. Commercial, Beauty"),
+          [el("span", { class: "label", text: "Types de contenu" }), chipsIn("type", function () { return (it.types || it.cats || []).slice(); }, function (l) { it.types = l; })],
           [orig || lib ? el("button", { type: "button", class: "btn ghost", text: lib ? "Tout remettre comme sur les pages" : "Tout remettre comme dans la bibliothèque", on: { click: function () {
             if (lib) { lib.reset(); close(); return; } var keepKey = it.key; band.items[i] = bandItem(orig); band.items[i].key = keepKey; chg(); close();
           } } }) : null])),
         el("div", {}, [el("span", { class: "label", text: "Aperçu (survol = extrait)" }), pv, el("span", { class: "label", text: "Recadrage" }), zoom, zl, el("label", { class: "bck", title: "Comme la case de recadrage des pages : sinon seulement l'extrait" }, [thumbCk, " Recadrer aussi la vignette"]),
-          el("span", { class: "label", text: "Vignette" }), thumbs])]));
+          player ? null : el("span", { class: "label", text: "Vignette" }), player ? null : thumbs])]));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]), exOut]),
         el("div", {}, [el("span", { class: "label", text: "Prix et sélections" }), aw])]));
-      if (player) box.appendChild(el("div", { class: "bplay" }, [el("span", { class: "label", text: "Le film : image par image avec les flèches ← → (Maj = 1 s) · vignette, début et fin de l'extrait" }), player, tl, tools, pout, snipLine]));
+      // Vignette et extrait : deux onglets sous le film (Gus 22/11), vignette d'abord.
+      var thumbPane = null, snipPane = null;
+      if (player) {
+        thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [grabB]), el("span", { class: "label", text: "Ou une image du film" }), thumbs]);
+        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB]), snipLine]);
+        box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout]));
+        setTab("thumb");
+      }
       box.appendChild(el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } })]));
       ov.appendChild(box); document.body.appendChild(ov);
     }
@@ -5175,7 +5226,11 @@
               return it;
             });
             out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " lu" + (items.length > 1 ? "s" : "") + " : enregistrement…";
-            return libSave(items).then(function () { out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " ajouté" + (items.length > 1 ? "s" : "") + " à la bibliothèque."; go.disabled = false; return bibLoad(true); }).then(function (d) { data = d; draw(); });
+            return libSave(items).then(function () { out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " ajouté" + (items.length > 1 ? "s" : "") + " à la bibliothèque."; go.disabled = false; return bibLoad(true); }).then(function (d) {
+              data = d; draw();
+              // Un seul film : la fenêtre d'infos s'ouvre tout de suite (Gus 22/11 : même fenêtre qu'en cliquant sur un film).
+              if (items.length === 1) { var f = filmOf(items[0].key); if (f) { mo.remove(); libEdit(f); } }
+            });
           }).catch(function (e) { go.disabled = false; out.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
       } } });
       // Fichier depuis l'ordinateur : vérifié ici (poids, durée, taille, lisible par les navigateurs) ; l'envoi attend l'hébergement.
@@ -5199,30 +5254,33 @@
           chk.appendChild(el("p", { class: "hint", text: "Envoi des vidéos depuis l'ordinateur : pas encore branché (il faut d'abord l'hébergement des vidéos, étude « remplacer Slate »). Pour l'instant : vérification seulement." })); }
         vid.src = url;
       });
-      modal("Ajouter une vidéo", [el("span", { class: "label", text: "Depuis Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [link]), go]), out,
+      var mo = modal("Ajouter une vidéo", [el("span", { class: "label", text: "Depuis Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [link]), go]), out,
         el("span", { class: "label", text: "Depuis l'ordinateur" }), fin, chk]);
     }
+    // Suite d'images (Gus 22/11) : on choisit les images, elles sont enregistrées, puis la même fenêtre d'infos s'ouvre (titre,
+    // crédits, vignette…). Images réduites dans le navigateur (WebP) → data/bibli/img/<id>/.
     function importImages() {
-      var title = el("input", { type: "text", placeholder: "Titre de la série (ex. Fatherland | Stills)" }), dop = el("input", { type: "text", placeholder: "Chef op", list: "bibdops" });
-      var dl = el("datalist", { id: "bibdops" }, (data ? data.sug.filter(function (s) { return s.type === "dop"; }) : []).map(function (s) { return el("option", { value: s.value }); }));
-      var fin = el("input", { type: "file", accept: "image/*", multiple: true }), grid = el("div", { class: "bimggrid" }), out = el("p", { class: "hint" }), files = [];
+      var fin = el("input", { type: "file", accept: "image/*", multiple: true }), grid = el("div", { class: "bimggrid" }), out = el("p", { class: "hint" }), files = [], names = [];
       fin.addEventListener("change", function () {
         var l = Array.from(fin.files).sort(function (a, b) { return a.name.localeCompare(b.name, undefined, { numeric: true }); });
-        out.textContent = "Compression de " + l.length + " images…";
+        names = l.map(function (f) { return f.name; }); files = []; grid.textContent = ""; go.disabled = true;
+        out.textContent = "Préparation de " + l.length + " images…";
         l.reduce(function (p, f) { return p.then(function () { return compress(f).then(function (c) { files.push(c); grid.appendChild(el("img", { src: c.preview })); }); }); }, Promise.resolve())
-          .then(function () { out.textContent = files.length + " images prêtes (" + Math.round(files.reduce(function (a, c) { return a + c.size; }, 0) / 1e6) + " Mo)."; }, function (e) { out.textContent = e.message; });
+          .then(function () { out.textContent = files.length + " images prêtes (" + Math.round(files.reduce(function (a, c) { return a + c.size; }, 0) / 1e6) + " Mo)."; go.disabled = false; }, function (e) { out.textContent = e.message; });
       });
-      var save = el("button", { type: "button", class: "btn primary", text: "Enregistrer la série", on: { click: function () {
+      var go = el("button", { type: "button", class: "btn primary", text: "Continuer", disabled: true, on: { click: function () {
         if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter à la bibliothèque."; return; }
-        if (!files.length || !title.value.trim()) { out.textContent = "Il faut un titre et des images."; return; }
-        save.disabled = true; out.textContent = "Envoi…";
+        if (!files.length) return;
+        go.disabled = true; out.textContent = "Envoi des images…";
         var id = Date.now().toString(36), base = "data/bibli/img/" + id + "/", urls = files.map(function (c, i) { return rawURL(base + String(i + 1).padStart(3, "0") + ".webp"); });
-        var it = { key: "i" + id, kind: "images", title: title.value.trim(), dops: dop.value.trim() ? [dop.value.trim()] : [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "",
+        var guess = String(names[0] || "").replace(/\.[a-z0-9]+$/i, "").replace(/[\s_.-]*\d+$/, "").replace(/[_]+/g, " ").trim() || "Images";
+        var it = { key: "i" + id, kind: "images", title: guess, dops: [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "",
           _files: files.map(function (c, i) { return { path: base + String(i + 1).padStart(3, "0") + ".webp", base64: c.base64 }; }) };
-        var keepF = it._files;
-        libSave([it]).then(function () { delete it._files; out.textContent = "Série enregistrée (" + keepF.length + " images)."; return bibLoad(true); }).then(function (d) { data = d; draw(); }, function (e) { save.disabled = false; out.textContent = "Pas enregistré : " + e.message; });
+        libSave([it]).then(function () { delete it._files; return bibLoad(true); }).then(function (d) {
+          data = d; draw(); mo.remove(); var f = filmOf(it.key); if (f) libEdit(f);
+        }, function (e) { go.disabled = false; out.textContent = "Pas enregistré : " + e.message; });
       } } });
-      modal("Ajouter une suite d'images", [dl, el("span", { class: "label", text: "Titre" }), title, el("span", { class: "label", text: "Chef op" }), dop, el("span", { class: "label", text: "Images (dans l'ordre des noms de fichiers)" }), fin, grid, out, el("div", { class: "fwbtns" }, [save])]);
+      var mo = modal("Ajouter une suite d'images", [el("span", { class: "label", text: "Images (dans l'ordre des noms de fichiers) ; titre, crédits et vignette juste après" }), fin, grid, out, el("div", { class: "fwbtns" }, [go])]);
     }
     undoReset(); drawBand();
   }

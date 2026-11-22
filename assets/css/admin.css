@@ -989,3 +989,19 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .bphead strong { font-family: var(--kinou-sans); font-weight: 600; font-size: 18px; }
 .bibinfo.saving::after { content: " · enregistrement…"; color: var(--dim); }
 .brole { display: inline-flex; flex-direction: column; } .brole small { color: #ffb36b; font-size: 10px; }
+/* Crédits en blocs (réal, prod, types) avec suggestions ; onglets Vignette / Extrait */
+.bchipwrap { position: relative; margin-bottom: 18px; }
+.bchipin { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid var(--faint); cursor: text; }
+.bchipin input { flex: 1; min-width: 120px; margin: 0 !important; padding: 4px 0 !important; border: 0 !important; }
+.bcc { display: inline-flex; align-items: center; gap: 4px; padding: 4px 4px 4px 10px; background: rgba(255,252,235,.1); border: 1px solid var(--faint); font-size: 14px; animation: bpop .25s ease-out; }
+.bcc > span { cursor: text; }
+.bcc:hover { border-color: rgba(255,252,235,.45); }
+.bccx { padding: 0 4px; border: 0; background: none; color: var(--dim); font-size: 15px; cursor: pointer; }
+.bccx:hover { color: var(--kinou-fg); }
+.bcsug { position: absolute; z-index: 5; left: 0; right: 0; top: 100%; margin-top: -14px; padding: 4px 0; background: #151515; border: 1px solid var(--faint); box-shadow: 0 12px 30px rgba(0,0,0,.6); }
+.bcsug button { display: flex; justify-content: space-between; gap: 12px; width: 100%; padding: 7px 12px; border: 0; background: none; color: var(--kinou-fg); font: 300 14px var(--kinou-body); text-align: left; cursor: pointer; }
+.bcsug button small { color: var(--dim); }
+.bcsug button:hover, .bcsug button.on { background: var(--soft); }
+.ptabs { margin-bottom: 10px; }
+.ppane { margin-top: 12px; }
+.ppane .bthumbs { margin-top: 8px; }

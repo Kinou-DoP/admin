@@ -75,7 +75,11 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   film** (même fenêtre que les retouches, `editItem(-1, lib)`), enregistrées dans `data/bibli/edits.json` (seulement ce qui diffère des
   pages, `bibApply`, `_orig`), reprises par les films ajoutés ensuite aux bandes, jamais sur le site ; ligne marquée ✎. **Crédits avec
   rôle** : `dops` + `roles { nom: rôle }` (rôle vide = cinematographer, crédité en premier ; ex. « Camera operator »), dans les infos
-  et les retouches ; case à cocher et « + » plus grands.
+  et les retouches ; case à cocher et « + » plus grands. **Réal, prod, types de contenu en blocs** (`chipsIn` : suggestions des noms
+  déjà connus de la même sorte, clic / Entrée / virgule = bloc, clic sur un bloc = le modifier ; enregistrés séparés par « , » ; plusieurs
+  prods = plusieurs suggestions et filtres, `bibProds`). Sous le film : onglets **Vignette** (image du film, stills) puis **Extrait**.
+  **Ajouts** : un film lu sur Slate (un seul) ou une suite d'images (choisies puis enregistrées, titre deviné du nom des fichiers, clé
+  `i<id>`) ouvrent ensuite la même fenêtre d'infos.
   Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement** (hébergement pas encore branché).
 - **Sorties fiction** (`#/sorties`) : calendrier mois / semaine (page fiction + `notes/sorties/sorties.json` + films sans date de
   `projets.json`), bandes-annonces à voir (pastille), confirmer / masquer / ajouter une sortie.
