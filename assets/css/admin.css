@@ -977,7 +977,6 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .brow input[type=checkbox] { width: 20px; height: 20px; margin: 0; cursor: pointer; accent-color: #ff9a3d; }
 .brow .badd { width: 44px; height: 40px; padding: 0; font-size: 22px; line-height: 1; }
 .brow .bthumb { cursor: zoom-in; }
-.brow.edited .bt strong::after { content: " ✎"; color: #ffb36b; font-weight: 400; font-size: 12px; }
 .bcred { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
 .bcrow { display: grid; grid-template-columns: 1.2fr 1fr 22px; gap: 10px; align-items: center; }
 .bcrow input { margin: 0 !important; }
@@ -988,7 +987,7 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .bphead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .bphead strong { font-family: var(--kinou-sans); font-weight: 600; font-size: 18px; }
 .bibinfo.saving::after { content: " · enregistrement…"; color: var(--dim); }
-.brole { display: inline-flex; flex-direction: column; } .brole small { color: #ffb36b; font-size: 10px; }
+.brole { display: inline-flex; flex-direction: column; } .brole small { color: var(--dim); font-size: 10px; }
 /* Crédits en blocs (réal, prod, types) avec suggestions ; onglets Vignette / Extrait */
 .bchipwrap { position: relative; margin-bottom: 18px; }
 .bchipin { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid var(--faint); cursor: text; }
@@ -1005,3 +1004,7 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .ptabs { margin-bottom: 10px; }
 .ppane { margin-top: 12px; }
 .ppane .bthumbs { margin-top: 8px; }
+.bedfoot { justify-content: space-between; align-items: center; }
+.bedfoot .bur { margin: 0; }
+.bhsnip { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.bhsnip .bcc { cursor: pointer; padding: 5px 10px; color: var(--kinou-fg); font: 400 13px ui-monospace, "SF Mono", Menlo, monospace; }

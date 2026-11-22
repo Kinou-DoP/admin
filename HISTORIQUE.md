@@ -353,3 +353,6 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 22/11 (bandes, Gus) : un film ajouté à une bande reprend le recadrage réglé sur sa page (extrait, et vignette si « vignette aussi ») ; une retouche dans la bande passe par-dessus, pour cette bande seulement. Bandes déjà faites : pas changées (copies).
 - 22/11 (bibliothèque, Gus) : clic sur l'image = lecteur, clic sur la ligne = infos du film (titre, crédits, extrait, recadrage… pour les prochaines bandes) ; crédits avec rôle (nos chefs op « Camera operator » etc., crédités après le cinematographer) ; case et « + » plus grands.
 - 22/11 (bibliothèque, Gus) : la fenêtre d'infos s'ouvre aussi après l'ajout d'un film ou d'images ; réals, prods et types de contenu en blocs avec suggestions ; vignette et extrait en deux onglets.
+- 22/11 (bibliothèque, Gus) : « Annuler » de la bande grisé une demi-seconde après chaque geste (corrigé) et Ctrl+Z bloqué dans la
+  fenêtre d'un film (annuler / rétablir ajoutés) ; plus de marques orange ; « Cinematographer » dans les rôles ; onglet Extrait prêt
+  tout de suite (à partir de la vignette) ; historique des vignettes et des extraits ; image et mp4 de l'ordinateur.

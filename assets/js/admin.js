@@ -4262,10 +4262,10 @@
   // a un), le fichier du dépôt public est illisible et son nom ne dit rien. L'original et la liste des bandes (avec les mots de
   // passe) sont dans le dépôt privé notes (bandes/<code>.json, bandes/index.json). Chiffrement : bandSeal (même code dans
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
-  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "img", "snip", "crop", "extras", "awards"];
+  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards"];
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
-  var bibCache = null, bibKey = null;
+  var bibCache = null, bibKey = null, edUndo = new WeakMap();
   document.addEventListener("keydown", function (e) { if (bibKey) bibKey(e); });
   function bnrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ł/g, "l").replace(/\s+/g, " ").trim(); }
   function bibLoad(force) {
@@ -4377,6 +4377,9 @@
     if (f.awards) o.awards = f.awards;
     if (f.crop) o.crop = Object.assign({}, f.crop);
     if (f.snip) o.snip = Object.assign({}, f.snip);
+    if (f.snipVideo) o.snipVideo = f.snipVideo;
+    if (f.thumbT !== undefined) o.thumbT = f.thumbT;
+    if (f.hist) o.hist = JSON.parse(JSON.stringify(f.hist));
     if (f.roles) o.roles = Object.assign({}, f.roles);
     Object.keys(o).forEach(function (k) { if (o[k] === "" || o[k] === null || o[k] === undefined || (Array.isArray(o[k]) && !o[k].length)) delete o[k]; });
     return o;
@@ -4548,7 +4551,6 @@
       // Clic sur l'image = lecteur ; clic ailleurs sur la ligne = infos du film (Gus 22/11) ; glisser = vers la bande.
       th.addEventListener("click", function (e) { if (Date.now() - (st.dragAt || 0) < 300) return; e.stopPropagation(); bibPlay(f); });
       r.addEventListener("click", function (e) { if (Date.now() - (st.dragAt || 0) < 300 || e.target.closest("button, input, a, .bthumb")) return; libEdit(f); });
-      if (f.libEdited) r.classList.add("edited");
       r.addEventListener("pointerdown", function (e) {
         if (e.button !== 0 || e.pointerType === "touch" || e.target.closest("button, input, a")) return;
         var keys = st.sel[f.key] ? Object.keys(st.sel) : [f.key];
@@ -4671,11 +4673,11 @@
 
     // ---------- Enregistrement automatique (Gus 22/11 : plus de bouton « Enregistrer », comme sur Slate) ----------
     var save = { t: 0, busy: false, again: false, files: [], state: "", meta: null, legacy: null };
-    function keep() { try { localStorage.setItem(BAND_KEY, JSON.stringify(band, function (k, v) { return k === "_file" ? undefined : v; })); } catch (e) {} }
-    function changed() { keep(); clearTimeout(save.t); setState("wait"); save.t = setTimeout(saveBand, 1200); undoMark(); }
+    function keep() { try { localStorage.setItem(BAND_KEY, JSON.stringify(band, function (k, v) { return k.charAt(0) === "_" ? undefined : v; })); } catch (e) {} }
+    function changed() { keep(); clearTimeout(save.t); setState("wait"); save.t = setTimeout(saveBand, 1200); undoMark(); undoBtns(); }
     // Annuler / Rétablir (Gus 22/11 : une bande vidée par erreur…) : instantanés de la bande, un par moment de calme (0,6 s).
     var undo = { l: [], i: -1, t: 0 };
-    function snap() { return JSON.stringify(band, function (k, v) { return k === "_file" ? undefined : v; }); }
+    function snap() { return JSON.stringify(band, function (k, v) { return k.charAt(0) === "_" ? undefined : v; }); }
     function undoReset() { undo.l = [snap()]; undo.i = 0; undoBtns(); }
     function undoMark() { clearTimeout(undo.t); undo.t = setTimeout(function () { var s = snap(); if (s === undo.l[undo.i]) return; undo.l = undo.l.slice(0, undo.i + 1); undo.l.push(s); if (undo.l.length > 80) undo.l.shift(); undo.i = undo.l.length - 1; undoBtns(); }, 600); }
     function undoGo(d) {
@@ -4686,7 +4688,10 @@
       keep(); clearTimeout(save.t); setState("wait"); save.t = setTimeout(saveBand, 1200);
       drawBand(); if (data) draw();
     }
-    function undoBtns() { var u = right.querySelector(".bundo"), r = right.querySelector(".bredo"); if (u) u.disabled = undo.i <= 0; if (r) r.disabled = undo.i >= undo.l.length - 1; }
+    function undoBtns() { // un changement pas encore noté compte déjà (sinon « Annuler » restait grisé une demi-seconde après chaque geste)
+      var u = right.querySelector(".bundo"), r = right.querySelector(".bredo"), pend = snap() !== undo.l[undo.i];
+      if (u) u.disabled = undo.i <= 0 && !pend; if (r) r.disabled = pend || undo.i >= undo.l.length - 1;
+    }
     bibKey = function (e) { // Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z (hors champs de texte)
       if (!document.body.classList.contains("bibpage") || !(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || e.target.closest("input, textarea") || document.querySelector(".bmodal")) return;
       e.preventDefault(); undoGo(e.shiftKey ? 1 : -1);
@@ -4717,7 +4722,8 @@
       save.busy = true; save.again = null; if (b === band) setState("busy");
       var isNew = !b.code; if (isNew) b.code = bandCode();
       var now = new Date().toISOString(), artists = artistsOf(b);
-      var items = b.items.map(function (x) { var c = Object.assign({}, x); delete c._file; delete c.key; return c; });
+      var items = b.items.map(function (x) { var c = {}; Object.keys(x).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist") c[k] = x[k]; }); return c; }); // page publique : sans l'historique
+      var srcItems = b.items.map(function (x) { var c = {}; Object.keys(x).forEach(function (k) { if (k.charAt(0) !== "_") c[k] = x[k]; }); return c; });
       var pub = { title: b.title.trim() || "Bande", description: (b.description || "").trim(), artists: artists, cols: b.cols, hide: b.hide, download: !!b.download, items: items, at: now };
       var files = save.files.splice(0);
       var by = user && user.login || "";
@@ -4729,7 +4735,7 @@
         }
         return commit(cf, "Bande : " + pub.title + " (admin, " + by + ")").then(function () {
           save.legacy = null;
-          var src = Object.assign({}, b, { at: now, by: by, created: b.created || now, items: items.map(function (x, i) { return Object.assign({ key: b.items[i].key }, x); }) });
+          var src = Object.assign({}, b, { at: now, by: by, created: b.created || now, items: srcItems });
           b.created = src.created;
           var src0 = Object.assign({}, src); delete src0._file;
           return nPut(BAND_NOTES + b.code + ".json", json(src0), "Bande : " + pub.title + " (admin, " + by + ")").then(function () {
@@ -4779,7 +4785,7 @@
         } else {
           var th = el("div", { class: "bithumb" }), crop = it.crop && it.crop.t !== false ? it.crop : null; // vignette recadrée seulement si « vignette aussi »
           if (it.img) th.appendChild(el("i", { style: 'background-image:url("' + it.img + '")' + (crop ? ";transform:scale(" + crop.z + ");transform-origin:" + crop.x + "% " + crop.y + "%" : "") }));
-          var marks = [it.crop ? "recadré" : "", it.snip ? "extrait" : "", it.edited ? "retouché" : ""].filter(Boolean);
+          var marks = [];
           li = el("div", { class: "bit" }, [el("span", { class: "bgrip", text: "⋮⋮" }), th,
             el("span", { class: "bitt" }, [it.title || "", marks.length ? el("small", { text: marks.join(" · ") }) : null]),
             el("button", { type: "button", class: "bx bed", text: "✎", title: "Retoucher ce film pour cette bande (titre, crédits, vignette, extrait, recadrage)", on: { click: function () { editItem(i); } } }),
@@ -4895,9 +4901,33 @@
     // i = numéro du film dans la bande ; ou lib = { it, orig, onChange, onClose, reset, files } pour les infos d'un film de la
     // bibliothèque (Gus 22/11 : même fenêtre, mais pour toutes les prochaines bandes ; data/bibli/edits.json).
     function editItem(i, lib) {
-      var it = lib ? lib.it : band.items[i], orig = lib ? lib.orig : filmOf(it.key), chg = lib ? lib.onChange : changed, files = lib ? lib.files : save.files;
+      var it = lib ? lib.it : band.items[i], orig = lib ? lib.orig : filmOf(it.key), chg0 = lib ? lib.onChange : changed, files = lib ? lib.files : save.files;
+      // Annuler / Rétablir dans la fenêtre (Gus 22/11) : instantanés du film (gardés quand la fenêtre se redessine après un retour).
+      var ED_K = BIB_EK.concat(["edited"]), eu = edUndo.get(it);
+      function esnap() { var o = {}; ED_K.forEach(function (k) { if (it[k] !== undefined) o[k] = it[k]; }); return JSON.stringify(o); }
+      if (!eu) { eu = { l: [esnap()], i: 0, t: 0 }; edUndo.set(it, eu); }
+      function eMark() { clearTimeout(eu.t); eu.t = setTimeout(function () { var x = esnap(); if (x === eu.l[eu.i]) return; eu.l = eu.l.slice(0, eu.i + 1); eu.l.push(x); if (eu.l.length > 60) eu.l.shift(); eu.i = eu.l.length - 1; eBtns(); }, 500); eBtns(); }
+      function chg() { chg0(); eMark(); }
+      function eBtns() { var pend = esnap() !== eu.l[eu.i]; if (euB) { euB.disabled = eu.i <= 0 && !pend; erB.disabled = pend || eu.i >= eu.l.length - 1; } }
+      function eGo(d) {
+        clearTimeout(eu.t); var x = esnap(); if (x !== eu.l[eu.i]) { eu.l = eu.l.slice(0, eu.i + 1); eu.l.push(x); eu.i++; }
+        var j = eu.i + d; if (j < 0 || j >= eu.l.length) return; eu.i = j;
+        var o = JSON.parse(eu.l[j]); ED_K.forEach(function (k) { if (o[k] === undefined) delete it[k]; else it[k] = o[k]; }); delete it._snipTmp;
+        chg0(); document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib);
+      }
+      var euB = null, erB = null;
+      function eKey(e) {
+        if (!document.body.contains(box)) { document.removeEventListener("keydown", eKey, true); return; }
+        if (!(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || (e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])"))) return;
+        e.preventDefault(); e.stopPropagation(); eGo(e.shiftKey ? 1 : -1);
+      }
+      document.addEventListener("keydown", eKey, true);
       var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox bedit" });
-      function close() { ov.classList.add("out"); setTimeout(function () { ov.remove(); }, 160); if (lib) lib.onClose(); else drawBand(); }
+      function close() {
+        if (it._snipTmp) { delete it._snipTmp; delete it.snip; chg0(); } // extrait proposé mais jamais réglé : celui d'origine reste
+        document.removeEventListener("keydown", eKey, true);
+        ov.classList.add("out"); setTimeout(function () { ov.remove(); }, 160); if (lib) lib.onClose(); else drawBand();
+      }
       ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
       function fld(label, get, set, ph) {
         var x = el("input", { type: "text", value: get() || "", placeholder: ph || "" });
@@ -4955,7 +4985,7 @@
           box.appendChild(el("button", { type: "button", class: "blink", text: "+ Ajouter un chef op ou un rôle", on: { click: function () { it.dops.push(""); draw(); var l = box.querySelectorAll(".bcrow input"); if (l.length) l[l.length - 2].focus(); } } }));
           var dn = document.getElementById("bibdopnames"); if (dn) dn.remove();
           if (data) document.body.appendChild(el("datalist", { id: "bibdopnames" }, data.sug.filter(function (x) { return x.type === "dop"; }).sort(function (a, b) { return b.n - a.n; }).map(function (x) { return el("option", { value: x.value }); })));
-          if (!document.getElementById("bibroles")) document.body.appendChild(el("datalist", { id: "bibroles" }, ["Camera operator", "B camera operator", "2nd unit DoP", "Additional photography", "Steadicam operator", "Gaffer", "Colorist"].map(function (r) { return el("option", { value: r }); })));
+          if (!document.getElementById("bibroles")) document.body.appendChild(el("datalist", { id: "bibroles" }, ["Cinematographer", "Camera operator", "B camera operator", "2nd unit DoP", "Additional photography", "Steadicam operator", "Gaffer", "Colorist"].map(function (r) { return el("option", { value: r }); })));
         }
         draw(); return box;
       }
@@ -4973,10 +5003,10 @@
       }
       function prevMeta() { pmeta.textContent = ""; pmeta.appendChild(el("strong", { text: it.title || "" })); pmeta.appendChild(el("span", { text: (it.types || it.cats || []).join(" · ") })); }
       pv.addEventListener("mouseenter", function () {
-        var src = it.snip ? it.full : it.video; if (!src || pvid) return;
-        pvid = el("video", { muted: true, playsinline: true, autoplay: true, loop: !it.snip }); pvid.muted = true;
-        pvid.src = src + (it.snip ? "#t=" + it.snip.s : "");
-        if (it.snip) pvid.addEventListener("timeupdate", function () { if (pvid && pvid.currentTime > it.snip.s + it.snip.d) pvid.currentTime = it.snip.s; });
+        var own = it.snipVideo, src = own || (it.snip ? it.full : it.video); if (!src || pvid) return;
+        pvid = el("video", { muted: true, playsinline: true, autoplay: true, loop: !!own || !it.snip }); pvid.muted = true;
+        pvid.src = src + (!own && it.snip ? "#t=" + it.snip.s : "");
+        if (!own && it.snip) pvid.addEventListener("timeupdate", function () { if (pvid && pvid.currentTime > it.snip.s + it.snip.d) pvid.currentTime = it.snip.s; });
         pin.appendChild(pvid); prevImg();
       });
       pv.addEventListener("mouseleave", function () { if (pvid) { pvid.remove(); pvid = null; } });
@@ -5039,7 +5069,7 @@
           it.snip = { s: Math.max(0, s), d: Math.round((Math.min(dur, e) - Math.max(0, s)) * 1000) / 1000 }; it.edited = true;
         };
         var moveHandle = function (which, t) { var s = it.snip.s, e = s + it.snip.d; if (which === "in") setSnip(t, e, "in"); else setSnip(s, t, "out"); seek(which === "in" ? it.snip.s : it.snip.s + it.snip.d); };
-        player.addEventListener("loadedmetadata", function () { dur = player.duration || 0; if (it.snip) player.currentTime = it.snip.s; draw(); });
+        player.addEventListener("loadedmetadata", function () { dur = player.duration || 0; if (ptab === "snip") setTab("snip"); else if (it.thumbT !== undefined) player.currentTime = it.thumbT; draw(); });
         player.addEventListener("timeupdate", draw);
         player.addEventListener("seeked", draw);
         player.addEventListener("play", function () { playB.textContent = "❚❚"; });
@@ -5071,7 +5101,7 @@
         drag(det, function (e) { act = "play"; var w = win(); seek(tAt(e, det, w[0], w[1])); });
         var hw = null;
         [[hIn, "in"], [hOut, "out"]].forEach(function (h) {
-          drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; chg(); prevSnip(); playSnip(); });
+          drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; snipCommit(); prevSnip(); playSnip(); });
         });
         // Raccourcis valables où que soit le clic dans la fenêtre (Gus 22/11) : écoutés avant tout le reste (capture), sauf dans un
         // champ de texte. Espace = lecture / pause ; flèches = image par image (la vidéo s'arrête, pas de reprise toute seule).
@@ -5082,7 +5112,7 @@
           if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
           e.preventDefault(); e.stopPropagation(); var st2 = (e.shiftKey ? 1 : FR) * (e.key === "ArrowLeft" ? -1 : 1);
           if (act === "play" || !it.snip || ptab !== "snip") seek(player.currentTime + st2);
-          else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { chg(); prevSnip(); }, 500); }
+          else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { snipCommit(); prevSnip(); }, 500); }
         };
         document.addEventListener("keydown", onKey, true);
         tools.appendChild(el("div", { class: "tlrow" }, [
@@ -5091,26 +5121,74 @@
           el("button", { type: "button", class: "btn ghost", text: "1 image ▶", title: "Image suivante (→, Maj + → = 1 s)", on: { click: function (e) { e.currentTarget.blur(); onKey({ key: "ArrowRight", target: player, preventDefault: function () {}, stopPropagation: function () {} }); } } }),
           time]));
         var grabB = el("button", { type: "button", class: "btn", text: "Cette image = vignette", on: { click: grab } });
-        var snipB = it.full ? el("button", { type: "button", class: "btn", text: "Extrait à partir d'ici", title: "Début = image affichée ; réglez ensuite le début et la fin (10 s au plus)", on: { click: function () {
-            var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "new"); chg(); prevSnip(); draw(); playSnip(); drawSnip();
+        var snipB = it.full ? el("button", { type: "button", class: "btn ghost", text: "Début de l'extrait ici", title: "Place le début sur l'image affichée (même durée)", on: { click: function () {
+            var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "new"); snipCommit(); prevSnip(); draw(); playSnip();
           } } }) : null;
         var tabB = {}, ptabs = el("div", { class: "btabs ptabs" }, [["thumb", "Vignette"], ["snip", "Extrait"]].map(function (t) { return tabB[t[0]] = el("button", { type: "button", text: t[1], on: { click: function () { setTab(t[0]); } } }); }));
         if (!it.full) tabB.snip.hidden = true;
         var setTab = function (t) {
           ptab = t; act = "play"; tabB.thumb.classList.toggle("on", t === "thumb"); tabB.snip.classList.toggle("on", t === "snip");
           if (thumbPane) thumbPane.hidden = t !== "thumb"; if (snipPane) snipPane.hidden = t !== "snip";
-          if (t === "thumb") { loopOn = false; player.pause(); } else if (it.snip && dur) { seek(it.snip.s); playSnip(); }
-          draw();
+          if (t === "thumb") { loopOn = false; player.pause(); if (it._snipTmp) { delete it._snipTmp; delete it.snip; } }
+          else if (dur && !it.snipVideo) {
+            // Extrait : les poignées tout de suite (Gus 22/11) ; sans extrait choisi, il part de l'image de la vignette (ou du début du film).
+            if (!it.snip) { var s0 = it.thumbT !== undefined ? Math.min(it.thumbT, Math.max(0, dur - .5)) : 0; it.snip = { s: s0, d: Math.round(Math.min(5, dur - s0) * 1000) / 1000 }; it._snipTmp = true; }
+            act = "in"; seek(it.snip.s); playSnip();
+          }
+          draw(); drawSnip();
         };
       }
       var snipLine = el("p", { class: "hint" });
       function prevSnip() { if (pvid) { pvid.remove(); pvid = null; } }
       function drawSnip() {
         snipLine.textContent = "";
-        if (it.snip) snipLine.appendChild(el("span", {}, [el("button", { type: "button", class: "blink", text: "Revenir à l'extrait d'origine", on: { click: function () { delete it.snip; act = "play"; chg(); drawSnip(); if (tl) { loopOn = false; draw(); } } } })]));
+        if (it.snipVideo) snipLine.appendChild(el("span", {}, ["Extrait importé de l'ordinateur · ", el("button", { type: "button", class: "blink", text: "le retirer", on: { click: function () { delete it.snipVideo; chg(); prevSnip(); drawSnip(); } } })]));
+        else if (it._snipTmp) snipLine.textContent = "Réglez le début et la fin : l'extrait est créé dès qu'on bouge une poignée (sinon celui d'origine reste).";
+        else if (it.snip) snipLine.appendChild(el("span", {}, [el("button", { type: "button", class: "blink", text: "Revenir à l'extrait d'origine", on: { click: function () { pushHist("snip", it.snip); delete it.snip; lastSnip = null; act = "play"; chg(); drawSnip(); drawHist(); if (tl) { loopOn = false; draw(); } } } })]));
         else snipLine.textContent = it.video ? "Extrait d'origine (Slate)." : "Pas d'extrait.";
       }
       function fmtT(t) { return fmtF(t); }
+      // Historique des vignettes et des extraits (Gus 22/11) : les 8 derniers, pour reprendre un ancien.
+      function pushHist(kind, v) {
+        if (!v) return; it.hist = it.hist || {}; var l = it.hist[kind] = (it.hist[kind] || []).filter(function (x) { return JSON.stringify(x) !== JSON.stringify(v); });
+        l.unshift(v); if (l.length > 8) l.length = 8;
+      }
+      function setImg(u) { if (it.img && it.img !== u) pushHist("img", it.img); it.img = u; it.edited = true; prevImg(); chg(); drawThumbs(); drawHist(); }
+      var lastSnip = it.snip ? JSON.stringify(it.snip) : null;
+      function snipCommit() { // extrait réglé : l'ancien va dans l'historique, le nouveau est enregistré
+        delete it._snipTmp; var x = it.snip ? JSON.stringify(it.snip) : null;
+        if (lastSnip && lastSnip !== x) pushHist("snip", JSON.parse(lastSnip));
+        lastSnip = x; it.edited = true; chg(); drawSnip(); drawHist();
+      }
+      var histImgL = el("span", { class: "label", text: "Anciennes vignettes" }), histImg = el("div", { class: "bthumbs" });
+      var histSnipL = el("span", { class: "label", text: "Anciens extraits" }), histSnip = el("div", { class: "bhsnip" });
+      function drawHist() {
+        var h = it.hist || {};
+        histImg.textContent = ""; (h.img || []).forEach(function (u) { histImg.appendChild(el("button", { type: "button", style: 'background-image:url("' + u + '")', title: "Reprendre cette ancienne vignette", on: { click: function () { setImg(u); } } })); });
+        histImg.hidden = histImgL.hidden = !(h.img || []).length;
+        histSnip.textContent = ""; (h.snip || []).forEach(function (x) { histSnip.appendChild(el("button", { type: "button", class: "bcc", text: fmtF(x.s) + " → " + fmtF(x.s + x.d), title: "Reprendre cet ancien extrait", on: { click: function () {
+          it.snip = { s: x.s, d: x.d }; delete it.snipVideo; snipCommit(); prevSnip(); if (tl) { act = "in"; seek(x.s); playSnip(); draw(); }
+        } } })); });
+        histSnip.hidden = histSnipL.hidden = !(h.snip || []).length;
+      }
+      // Image de l'ordinateur pour la vignette ; mp4 de l'ordinateur pour l'extrait (20 Mo au plus) → data/bibli/img/b/, data/bibli/vid/.
+      var imgUp = el("input", { type: "file", accept: "image/*", hidden: true }), vidUp = el("input", { type: "file", accept: "video/mp4", hidden: true });
+      imgUp.addEventListener("change", function () {
+        var f = imgUp.files[0]; if (!f) return; pout.textContent = "Préparation de l'image…";
+        compress(f).then(function (c) { var path = "data/bibli/img/b/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".webp"; files.push({ path: path, base64: c.base64 }); setImg(rawURL(path)); pout.textContent = "Vignette importée."; imgUp.value = ""; }, function (e) { pout.textContent = e.message; });
+      });
+      vidUp.addEventListener("change", function () {
+        var f = vidUp.files[0]; if (!f) return;
+        if (f.size > 20e6) { pout.textContent = "Vidéo trop lourde (20 Mo au plus pour un extrait)."; vidUp.value = ""; return; }
+        pout.textContent = "Préparation de la vidéo…"; var fr = new FileReader();
+        fr.onload = function () {
+          var path = "data/bibli/vid/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".mp4";
+          files.push({ path: path, base64: fr.result.split(",")[1] }); it.snipVideo = rawURL(path);
+          if (it._snipTmp) { delete it._snipTmp; delete it.snip; } it.edited = true; chg(); prevSnip(); drawSnip();
+          pout.textContent = "Extrait importé (" + Math.round(f.size / 1e5) / 10 + " Mo) : il remplace l'extrait pris dans le film."; vidUp.value = "";
+        };
+        fr.readAsDataURL(f);
+      });
       // Capture d'une image du film : la vidéo de Slate n'autorise pas la copie d'image ; on la relit par la fonction /api/media du site.
       function grab() {
         if (!player) return; var t = player.currentTime; pout.textContent = "Capture de l'image…";
@@ -5127,7 +5205,7 @@
               fr.onload = function () {
                 var path = "data/bibli/img/b/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".webp";
                 files.push({ path: path, base64: fr.result.split(",")[1] });
-                it.img = rawURL(path); it.edited = true; prevImg(); chg(); drawThumbs();
+                it.thumbT = Math.round(t * 1000) / 1000; setImg(rawURL(path));
                 pout.textContent = "Vignette remplacée par l'image à " + fmtT(t) + ".";
               };
               fr.readAsDataURL(bl);
@@ -5141,11 +5219,12 @@
       var thumbs = el("div", { class: "bthumbs" });
       function drawThumbs() {
         thumbs.textContent = "";
-        var l = [orig && orig.img].concat(it.images || (orig && orig.images) || []).filter(Boolean).filter(function (u, k, a) { return a.indexOf(u) === k; }).slice(0, 18);
+        var exS = []; (it.extras || []).forEach(function (x) { exS = exS.concat(x.stills || []); }); // stills sous le film aussi
+        var l = [orig && orig.img].concat(it.images || (orig && orig.images) || [], exS).filter(Boolean).filter(function (u, k, a) { return a.indexOf(u) === k; }).slice(0, 18);
         if (it.img && l.indexOf(it.img) < 0) l.unshift(it.img);
-        l.forEach(function (u) { thumbs.appendChild(el("button", { type: "button", class: u === it.img ? "on" : "", style: 'background-image:url("' + u + '")', title: "Prendre comme vignette", on: { click: function () { it.img = u; it.edited = true; chg(); prevImg(); drawThumbs(); } } })); });
+        l.forEach(function (u) { thumbs.appendChild(el("button", { type: "button", class: u === it.img ? "on" : "", style: 'background-image:url("' + u + '")', title: "Prendre comme vignette", on: { click: function () { setImg(u); } } })); });
       }
-      drawThumbs(); prevImg(); prevMeta(); zlab(); drawSnip();
+      drawThumbs(); prevImg(); prevMeta(); zlab(); drawSnip(); drawHist();
       // Sous le film (comme sur les pages des chefs op) : galeries de stills et autres vidéos, liens Slate « work » ou shots.re.
       var exBox = el("div", { class: "bexs" }), exIn = el("input", { type: "text", placeholder: "Lien Slate (page de stills ou d'une vidéo, shots.re)" }), exOut = el("p", { class: "hint" });
       function drawEx() {
@@ -5178,20 +5257,26 @@
             if (lib) { lib.reset(); close(); return; } var keepKey = it.key; band.items[i] = bandItem(orig); band.items[i].key = keepKey; chg(); close();
           } } }) : null])),
         el("div", {}, [el("span", { class: "label", text: "Aperçu (survol = extrait)" }), pv, el("span", { class: "label", text: "Recadrage" }), zoom, zl, el("label", { class: "bck", title: "Comme la case de recadrage des pages : sinon seulement l'extrait" }, [thumbCk, " Recadrer aussi la vignette"]),
-          player ? null : el("span", { class: "label", text: "Vignette" }), player ? null : thumbs])]));
+          player ? null : el("span", { class: "label", text: "Vignette" }), player ? null : thumbs,
+          player ? null : el("button", { type: "button", class: "btn ghost", text: "Importer une image…", on: { click: function () { imgUp.click(); } } }), player ? null : imgUp,
+          player ? null : histImgL, player ? null : histImg])]));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]), exOut]),
         el("div", {}, [el("span", { class: "label", text: "Prix et sélections" }), aw])]));
       // Vignette et extrait : deux onglets sous le film (Gus 22/11), vignette d'abord.
       var thumbPane = null, snipPane = null;
       if (player) {
-        thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [grabB]), el("span", { class: "label", text: "Ou une image du film" }), thumbs]);
-        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB]), snipLine]);
+        thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [grabB, el("button", { type: "button", class: "btn ghost", text: "Importer une image…", on: { click: function () { imgUp.click(); } } }), imgUp]),
+          el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg]);
+        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, el("button", { type: "button", class: "btn ghost", text: "Importer un mp4…", on: { click: function () { vidUp.click(); } } }), vidUp]), snipLine,
+          histSnipL, histSnip]);
         box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout]));
         setTab("thumb");
       }
-      box.appendChild(el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } })]));
-      ov.appendChild(box); document.body.appendChild(ov);
+      euB = el("button", { type: "button", class: "blink bundo", text: "↶ Annuler", title: "Annuler (Ctrl / Cmd + Z)", on: { click: function () { eGo(-1); } } });
+      erB = el("button", { type: "button", class: "blink bredo", text: "Rétablir ↷", title: "Rétablir (Maj + Ctrl / Cmd + Z)", on: { click: function () { eGo(1); } } });
+      box.appendChild(el("div", { class: "fwbtns bedfoot" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } }), el("span", { class: "bur" }, [euB, erB])]));
+      ov.appendChild(box); document.body.appendChild(ov); eBtns();
     }
 
     // ---------- Imports ----------
