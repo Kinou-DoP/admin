@@ -3016,20 +3016,39 @@
     if (x.kind === "nomination") return "Nominated" + (x.prize || x.section ? ", " + (x.prize || x.section) : "") + ", " + where;
     return "Official selection" + (x.section ? " • " + x.section : "") + ", " + where;
   }
+  // Une ligne écrite à la main parle-t-elle du même prix que la trouvaille x ? Même année, festival reconnu (60 % de ses mots),
+  // et : sélection ↔ ligne de sélection sans mot de prix ; prix / nomination ↔ 60 % des mots du nom du prix.
+  var AW_STOP = " the of a an and in for at de du des la le les l d et en au aux un une festival film films international internationale awards award prix prize best meilleur meilleure edition ";
+  function awWords(t) { return sortNrm(String(t || "").replace(/['’]/g, " ")).split(" ").filter(function (w) { return w && AW_STOP.indexOf(" " + w + " ") < 0; }); }
+  function awSameText(x, z) {
+    var y = String(x.edition || String(x.date || "").slice(0, 4) || ""); if (!y || String(z).indexOf(y) < 0) return false;
+    var zw = awWords(z), has = function (w) { return zw.indexOf(w) > -1; };
+    var fw = awWords(String(x.festName || x.fest || "").replace(/\([^)]*\)/g, " ")).filter(function (w) { return !/^\d+$/.test(w); });
+    if (!fw.length || fw.filter(has).length < Math.ceil(fw.length * 0.6)) return false;
+    var prizeish = /\b(prix|prize|award|winner|laur[eé]at|palme|lion|ours|bear|mention|valois|c[eé]sar|r[eé]compens|won|best|meilleur)/i.test(z);
+    if (x.kind !== "prize" && x.kind !== "nomination") return !prizeish && /s[eé]lect|official|officiel|comp[eé]t|regard|quinzaine|semaine|fortnight|week|panorama|hors|out of|ouverture|opening|cl[oô]ture|closing|sp[eé]cial|screening|s[eé]ance/i.test(z);
+    var pw = awWords(x.prize || x.section); if (!pw.length) return prizeish;
+    return pw.filter(has).length >= Math.ceil(pw.length * 0.6) && (x.kind !== "nomination" || /nomin/i.test(z)) && (x.kind !== "prize" || !/nomin/i.test(z));
+  }
   function awApply(ov, id, items) {
     var o = ov[id] || {}, info = Object.assign({}, o.info || {}), from = Object.assign({}, info.awardsFrom || {}), ch = false, want = {};
     var lines = String(info.awards || "").split(/\n+/).map(function (x) { return x.trim(); }).filter(Boolean), hid = (info.awardsHidden || []).slice();
     items.forEach(function (x) { want[x.id] = 1; });
     Object.keys(from).forEach(function (k) {
       if (want[k]) return;
-      var i = lines.indexOf(from[k]); if (i > -1) lines.splice(i, 1);
-      i = hid.indexOf(from[k]); if (i > -1) hid.splice(i, 1);
+      // Même texte écrit par une autre trouvaille toujours confirmée (doublon écarté) : la ligne reste (Gus 22/11).
+      var shared = Object.keys(from).some(function (j) { return j !== k && want[j] && from[j] === from[k]; });
+      if (!shared) { var i = lines.indexOf(from[k]); if (i > -1) lines.splice(i, 1); i = hid.indexOf(from[k]); if (i > -1) hid.splice(i, 1); }
       delete from[k]; ch = true;
     });
+    var mine = {}; Object.keys(from).forEach(function (k) { mine[from[k]] = 1; });
+    var hand = lines.concat(hid).filter(function (z) { return !mine[z]; }); // lignes écrites à la main
     function rk(x) { return x.kind === "prize" ? 0 : x.kind === "nomination" ? 1 : 2; }
     items.slice().sort(function (a, b) { return rk(a) - rk(b) || String(b.edition || b.date || "").localeCompare(String(a.edition || a.date || "")); }).forEach(function (x) {
       if (from[x.id] !== undefined) return;
-      var l = awLine(x); if (!lines.concat(hid).some(function (z) { return sortNrm(z) === sortNrm(l); })) lines.push(l);
+      // Déjà là, ou déjà écrite à la main autrement (« Official selection, Cannes film festival 2026 », « Selected for Un Certain
+      // Regard at the 2026 Cannes Film Festival », Gus 22/11) : pas de 2e ligne.
+      var l = awLine(x); if (!lines.concat(hid).some(function (z) { return sortNrm(z) === sortNrm(l); }) && !hand.some(function (z) { return awSameText(x, z); })) lines.push(l);
       from[x.id] = l; ch = true;
     });
     if (!ch) return false;

@@ -319,3 +319,9 @@ remet à la réouverture de la même page (message « Modifications non publiée
   « Liens · N » pour modifier ou tout retirer ; Annuler / Rétablir. `awardsSync` : une trouvaille reliée va seulement sur ces films
   (fiche d'un chef op même pas crédité sur la trouvaille), plus de rapprochement par le titre. Au 22/11 : 13 prix ou sélections sans
   film (ex. « Furcy » = « Furcy né libre » sur le site).
+- 22/11 : **doublons de prix sur le site** (Gus : Histoires Parallèles, L'homme qui rétrécit). `awApply` : (1) une trouvaille confirmée
+  n'ajoute plus sa ligne si une ligne écrite à la main dit déjà la même chose autrement (`awSameText` ; ex. « Official selection,
+  Cannes film festival 2026 » ↔ « Official selection • Compétition officielle, Festival de Cannes 2026 », « Selected for Un Certain
+  Regard at the 2026 Cannes Film Festival ») ; (2) bug : écarter une trouvaille dont le texte est identique à celui d'une autre encore
+  confirmée retirait la ligne du site pour les deux — la ligne reste désormais. Données : 3 lignes écrites à la main en double retirées
+  (Histoires Parallèles : page fiction + fiche Guillaume Deffontaines ; Les Fraises : page fiction), la ligne du robot gardée.

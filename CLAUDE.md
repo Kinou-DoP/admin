@@ -66,7 +66,9 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   le site** (Gus 22/11) : triangle orange « ! » quand la trouvaille ne retrouve aucun film des fiches ni de la page fiction (`placed`,
   même rapprochement par le titre qu'`awardsSync`), catégorie **« Sans lien »**, bouton **« Relier à un film »** (`linkForm` : un ou
   plusieurs films de la bibliothèque, autres trouvailles du même film reliées aussi) → `links: [{ page, slate, title }]` dans la
-  trouvaille ; une trouvaille reliée ne va **que** sur ces films (`awFor`).
+  trouvaille ; une trouvaille reliée ne va **que** sur ces films (`awFor`). `awApply` n'ajoute pas une ligne déjà écrite **à la main**
+  autrement (`awSameText` : même année, même festival, sélection ↔ sélection, prix ↔ même nom de prix) et ne retire pas une ligne
+  dont le texte est aussi celui d'une autre trouvaille confirmée (doublon écarté).
 - **Récupération** (`#/recup`, `notes/projets/projets.json`) : statut de récupération par film, à relancer, par production, mails.
 - **Historique** : derniers commits des données (admin et notes) avec qui / quand / quoi.
 - Taper une lettre hors d'un champ écrit dans la recherche de la page (`input.find`).
