@@ -4848,23 +4848,103 @@
         prevImg();
       });
       pv.addEventListener("pointerup", function () { if (dragC) { dragC = null; changed(); } });
-      // Lecteur du film : choisir l'image de la vignette et le début de l'extrait
-      var player = null, pout = el("p", { class: "hint" }), tools = el("div", { class: "fwbtns" });
+      // Lecteur du film (Gus 22/11) : image par image avec les flèches (Maj = 1 s), pour la vignette et pour l'extrait.
+      // Extrait = un début et une fin (0,5 à 10 s) : poignées sur la frise de détail (30 s autour de l'extrait) ; pendant qu'on
+      // bouge une poignée la vidéo montre l'image sans bouger, dès qu'on lâche (ou 0,7 s après la dernière flèche) l'extrait joue en boucle.
+      var player = null, pout = el("p", { class: "hint" }), tools = el("div", { class: "tltools" }), tl = null;
       var src = it.full || it.video;
+      function fmtF(t) { t = Math.max(0, t || 0); var m = Math.floor(t / 60), s = t - m * 60; return m + ":" + (s < 10 ? "0" : "") + s.toFixed(2).replace(".", ","); }
       if (src) {
-        player = el("video", { controls: true, playsinline: true, preload: "metadata", muted: true }); player.muted = true; player.src = src;
-        tools.appendChild(el("button", { type: "button", class: "btn", text: "Cette image = vignette", on: { click: grab } }));
-        if (it.full) tools.appendChild(el("button", { type: "button", class: "btn", text: "L'extrait commence ici (10 s)", on: { click: function () {
-          it.snip = { s: Math.round(player.currentTime * 10) / 10, d: 10 }; changed(); pout.textContent = "Extrait : de " + fmtT(it.snip.s) + " à " + fmtT(it.snip.s + 10) + " (survolez l'aperçu)."; drawSnip();
-        } } }));
+        player = el("video", { playsinline: true, preload: "auto", muted: true }); player.muted = true; player.src = src;
+        var FR = 1 / 25, dur = 0, act = "play", loopOn = false, kT = 0, WIN = 30;
+        var oReg = el("i", { class: "tlreg" }), oPh = el("i", { class: "tlph" }), over = el("div", { class: "tlo", title: "Tout le film : cliquez ou glissez" }, [oReg, oPh]);
+        var dReg = el("i", { class: "tlreg" }), dPh = el("i", { class: "tlph" }), hIn = el("b", { class: "tlh in", title: "Début de l'extrait" }), hOut = el("b", { class: "tlh out", title: "Fin de l'extrait" });
+        var dLab = el("div", { class: "tllab" }), det = el("div", { class: "tld" }, [dReg, dPh, hIn, hOut]);
+        var time = el("span", { class: "tlt" }), playB = el("button", { type: "button", class: "btn ghost", text: "▶", title: "Lecture / pause (espace)" });
+        tl = el("div", { class: "tl" }, [over, det, dLab]);
+        var clamp = function (t) { return Math.max(0, Math.min(dur || 0, t)); };
+        var win = function () { var c = it.snip ? it.snip.s + it.snip.d / 2 : player.currentTime, a = Math.max(0, Math.min(Math.max(0, dur - WIN), c - WIN / 2)); return [a, Math.min(dur, a + WIN)]; };
+        var pc = function (t, a, b) { return Math.max(0, Math.min(100, (t - a) / (b - a || 1) * 100)) + "%"; };
+        var draw = function () {
+          if (!dur) return; var t = player.currentTime, w = win();
+          oPh.style.left = pc(t, 0, dur); time.textContent = fmtF(t) + " / " + fmtF(dur);
+          det.hidden = dLab.hidden = !it.snip; oReg.hidden = !it.snip;
+          if (it.snip) {
+            var s = it.snip.s, e = s + it.snip.d;
+            oReg.style.left = pc(s, 0, dur); oReg.style.width = Math.max(.4, it.snip.d / dur * 100) + "%";
+            dReg.style.left = pc(s, w[0], w[1]); dReg.style.width = (it.snip.d / (w[1] - w[0]) * 100) + "%";
+            hIn.style.left = pc(s, w[0], w[1]); hOut.style.left = pc(e, w[0], w[1]); dPh.style.left = pc(t, w[0], w[1]);
+            dPh.hidden = t < w[0] || t > w[1];
+            hIn.classList.toggle("on", act === "in"); hOut.classList.toggle("on", act === "out");
+            dLab.textContent = "Extrait : " + fmtF(s) + " → " + fmtF(e) + " (" + it.snip.d.toFixed(1).replace(".", ",") + " s)" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image");
+          }
+        };
+        var seek = function (t) { loopOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
+        var playSnip = function () { if (!it.snip) return; loopOn = true; player.currentTime = it.snip.s; player.play().catch(function () {}); };
+        var setSnip = function (s, e, which) { // 0,5 s au moins, 10 s au plus ; la poignée tirée pousse l'autre
+          s = Math.round(s * 1000) / 1000; e = Math.round(e * 1000) / 1000;
+          if (which === "in") { s = Math.max(0, Math.min(s, dur - .5)); if (e < s + .5) e = s + .5; if (e > s + 10) e = s + 10; }
+          else { e = Math.min(dur, Math.max(e, .5)); if (s > e - .5) s = e - .5; if (s < e - 10) s = e - 10; }
+          it.snip = { s: Math.max(0, s), d: Math.round((Math.min(dur, e) - Math.max(0, s)) * 1000) / 1000 }; it.edited = true;
+        };
+        var moveHandle = function (which, t) { var s = it.snip.s, e = s + it.snip.d; if (which === "in") setSnip(t, e, "in"); else setSnip(s, t, "out"); seek(which === "in" ? it.snip.s : it.snip.s + it.snip.d); };
+        player.addEventListener("loadedmetadata", function () { dur = player.duration || 0; if (it.snip) player.currentTime = it.snip.s; draw(); });
+        player.addEventListener("timeupdate", draw);
+        player.addEventListener("seeked", draw);
+        player.addEventListener("play", function () { playB.textContent = "❚❚"; });
+        player.addEventListener("pause", function () { playB.textContent = "▶"; });
+        (function tick() { // boucle de l'extrait + mesure de la cadence (image par image exact)
+          if (dur && !player.isConnected) return; // fenêtre fermée
+          if (loopOn && it.snip && !player.paused && player.currentTime >= it.snip.s + it.snip.d) player.currentTime = it.snip.s;
+          if (!player.paused) draw();
+          requestAnimationFrame(tick);
+        })();
+        if (player.requestVideoFrameCallback) { var lastMT = null; var fcb = function (now, m) { if (lastMT !== null) { var d = m.mediaTime - lastMT; if (d > .015 && d < .05) FR = d; } lastMT = m.mediaTime; if (player.isConnected) player.requestVideoFrameCallback(fcb); }; player.requestVideoFrameCallback(fcb); }
+        playB.addEventListener("click", function () { if (player.paused) { if (act !== "play" && it.snip) playSnip(); else { loopOn = false; player.play(); } } else player.pause(); });
+        player.addEventListener("click", function () { playB.click(); });
+        function drag(elm, onMove, onUp) {
+          elm.addEventListener("pointerdown", function (e) {
+            e.preventDefault(); e.stopPropagation(); elm.setPointerCapture(e.pointerId); onMove(e);
+            function mv(ev) { onMove(ev); } function up() { elm.removeEventListener("pointermove", mv); elm.removeEventListener("pointerup", up); if (onUp) onUp(); }
+            elm.addEventListener("pointermove", mv); elm.addEventListener("pointerup", up);
+          });
+        }
+        var tAt = function (e, box, a, b) { var r = box.getBoundingClientRect(); return a + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (b - a); };
+        drag(over, function (e) { act = "play"; seek(tAt(e, over, 0, dur)); });
+        drag(det, function (e) { act = "play"; var w = win(); seek(tAt(e, det, w[0], w[1])); });
+        var hw = null;
+        [[hIn, "in"], [hOut, "out"]].forEach(function (h) {
+          drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; changed(); prevSnip(); playSnip(); });
+        });
+        var onKey = function (e) {
+          if (!document.body.contains(box)) { document.removeEventListener("keydown", onKey); return; }
+          if (e.target.closest("input, textarea")) return;
+          if (e.key === " ") { e.preventDefault(); playB.click(); return; }
+          if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+          e.preventDefault(); var st2 = (e.shiftKey ? 1 : FR) * (e.key === "ArrowLeft" ? -1 : 1);
+          if (act === "play" || !it.snip) seek(player.currentTime + st2);
+          else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { changed(); prevSnip(); playSnip(); }, 700); }
+        };
+        document.addEventListener("keydown", onKey);
+        tools.appendChild(el("div", { class: "tlrow" }, [
+          el("button", { type: "button", class: "btn ghost", text: "◀ 1 image", title: "Image précédente (←, Maj + ← = 1 s)", on: { click: function () { onKey({ key: "ArrowLeft", target: player, preventDefault: function () {} }); } } }),
+          playB,
+          el("button", { type: "button", class: "btn ghost", text: "1 image ▶", title: "Image suivante (→, Maj + → = 1 s)", on: { click: function () { onKey({ key: "ArrowRight", target: player, preventDefault: function () {} }); } } }),
+          time]));
+        tools.appendChild(el("div", { class: "tlrow" }, [
+          el("button", { type: "button", class: "btn", text: "Cette image = vignette", on: { click: grab } }),
+          it.full ? el("button", { type: "button", class: "btn", text: "Extrait à partir d'ici", title: "Début = image affichée ; réglez ensuite le début et la fin (10 s au plus)", on: { click: function () {
+            var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "in"); changed(); prevSnip(); draw(); playSnip(); drawSnip();
+          } } }) : null]));
       }
       var snipLine = el("p", { class: "hint" });
+      function prevSnip() { if (pvid) { pvid.remove(); pvid = null; } }
       function drawSnip() {
         snipLine.textContent = "";
-        if (it.snip) snipLine.appendChild(el("span", {}, ["Extrait choisi : " + fmtT(it.snip.s) + " → " + fmtT(it.snip.s + it.snip.d) + " · ", el("button", { type: "button", class: "blink", text: "revenir à l'extrait d'origine", on: { click: function () { delete it.snip; changed(); drawSnip(); } } })]));
+        if (it.snip) snipLine.appendChild(el("span", {}, [el("button", { type: "button", class: "blink", text: "Revenir à l'extrait d'origine", on: { click: function () { delete it.snip; act = "play"; changed(); drawSnip(); if (tl) { loopOn = false; draw(); } } } })]));
         else snipLine.textContent = it.video ? "Extrait d'origine (Slate)." : "Pas d'extrait.";
       }
-      function fmtT(t) { t = Math.max(0, t || 0); return Math.floor(t / 60) + ":" + String(Math.floor(t % 60)).padStart(2, "0"); }
+      function fmtT(t) { return fmtF(t); }
       // Capture d'une image du film : la vidéo de Slate n'autorise pas la copie d'image ; on la relit par la fonction /api/media du site.
       function grab() {
         if (!player) return; var t = player.currentTime; pout.textContent = "Capture de l'image…";
@@ -4936,7 +5016,7 @@
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]), exOut]),
         el("div", {}, [el("span", { class: "label", text: "Prix et sélections" }), aw])]));
-      if (player) box.appendChild(el("div", { class: "bplay" }, [el("span", { class: "label", text: "Le film : choisissez une image pour la vignette, ou le début de l'extrait" }), player, tools, pout, snipLine]));
+      if (player) box.appendChild(el("div", { class: "bplay" }, [el("span", { class: "label", text: "Le film : image par image avec les flèches ← → (Maj = 1 s) · vignette, début et fin de l'extrait" }), player, tl, tools, pout, snipLine]));
       box.appendChild(el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } })]));
       ov.appendChild(box); document.body.appendChild(ov);
     }

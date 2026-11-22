@@ -340,3 +340,6 @@ remet à la réouverture de la même page (message « Modifications non publiée
   dans notes.
 - 22/11 (bibliothèque, retours de Gus) : plus de cadre en pointillé (toute la colonne reçoit les films), sections séparées par un trait,
   « Bandes existantes » : seulement le nom, clic sur la ligne pour ouvrir ; Annuler / Rétablir sur la bande (ex. vidée par erreur).
+- 22/11 (retouches d'un film dans une bande, Gus) : image par image avec les flèches (vignette, début et fin de l'extrait) ; extrait =
+  un début et une fin (10 s au plus) au lieu de 10 s fixes ; on voit l'image pendant le réglage, l'extrait joue dès qu'on lâche.
+  Robot `bibli-meta` poussé sur `main` (feu vert de Gus).
