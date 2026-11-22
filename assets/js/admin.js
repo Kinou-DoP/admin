@@ -3051,7 +3051,13 @@
     return awTitles(x).some(function (t) { return cands.some(function (c) { return sortSame(c, t); }); });
   }
   // Applique les trouvailles confirmées à un fichier du site (fiche d'un chef op, ou page fiction) ; null = rien à changer.
-  function awFile(text, items, fiction) {
+  // Liens faits à la main dans Nos sélections (Gus 22/11) : `x.links = [{ page: "fiction" | <adresse du chef op>, slate, title }]`.
+  // Une trouvaille reliée ne va QUE sur ces films-là (plus de rapprochement par le titre).
+  function awFor(x, f, page, fiction) {
+    if (x.links && x.links.length) return x.links.some(function (l) { return l.page === page && String(l.slate) === String(f.id); });
+    return !!f.title && awHit(x, f.title) && (!fiction || !f.dops.length || sortDop(f.dops, x.dops));
+  }
+  function awFile(text, items, fiction, page) {
     if (!text) return null;
     var d = JSON.parse(text), ov = d.overrides = d.overrides || {}, ch = false, ids = {};
     var list = fiction ? (d.films || []).map(function (f) { return { id: String(f.slate), title: (ov[f.slate] || {}).title || f.title, dops: f.artists || [] }; })
@@ -3059,7 +3065,7 @@
     list.forEach(function (f) { if (f.id && f.id !== "undefined") ids[f.id] = f; });
     Object.keys(ov).forEach(function (id) { if (ov[id].info && ov[id].info.awardsFrom && !ids[id]) ids[id] = { id: id, title: "" }; });
     Object.keys(ids).forEach(function (id) {
-      var f = ids[id], mine = f.title ? items.filter(function (x) { return awHit(x, f.title) && (!fiction || !f.dops.length || sortDop(f.dops, x.dops)); }) : [];
+      var f = ids[id], mine = items.filter(function (x) { return awFor(x, f, page || (fiction ? "fiction" : ""), fiction); });
       if (awApply(ov, id, mine)) ch = true;
     });
     return ch ? json(d) : null;
@@ -3074,13 +3080,16 @@
       // Fiches concernées : chefs op crédités sur une trouvaille confirmée, plus celles qui ont déjà des prix ajoutés (retraits).
       var byName = {}; (idx.dps || []).forEach(function (d) { byName[sortNrm(rcBase(d.name))] = d.slug; });
       var slugs = {};
-      sel.found.forEach(function (x) { (x.dops || []).forEach(function (n) { var sl = byName[sortNrm(rcBase(n))]; if (sl) slugs[sl] = 1; }); }); // aussi écartées : retrait
+      var known = {}; (idx.dps || []).forEach(function (d) { known[d.slug] = 1; });
+      sel.found.forEach(function (x) { (x.dops || []).forEach(function (n) { var sl = byName[sortNrm(rcBase(n))]; if (sl) slugs[sl] = 1; });
+        (x.links || []).forEach(function (l) { if (known[l.page]) slugs[l.page] = 1; }); }); // aussi écartées : retrait
       Object.keys(awDone).forEach(function (sl) { slugs[sl] = 1; });
-      var files = [{ path: "data/fiction.json", edit: function (t) { return awFile(t, ok, true); } }];
+      var files = [{ path: "data/fiction.json", edit: function (t) { return awFile(t, ok, true, "fiction"); } }];
       Object.keys(slugs).forEach(function (sl) {
         var name = ((idx.dps || []).filter(function (d) { return d.slug === sl; })[0] || {}).name || "";
-        var mine = ok.filter(function (x) { return (x.dops || []).some(function (n) { return sortNrm(rcBase(n)) === sortNrm(rcBase(name)); }); });
-        files.push({ path: "data/dps/" + sl + ".json", edit: function (t) { var r = awFile(t, mine, false); if (r) awDone[sl] = 1; return r; } });
+        var mine = ok.filter(function (x) { return x.links && x.links.length ? x.links.some(function (l) { return l.page === sl; })
+          : (x.dops || []).some(function (n) { return sortNrm(rcBase(n)) === sortNrm(rcBase(name)); }); });
+        files.push({ path: "data/dps/" + sl + ".json", edit: function (t) { var r = awFile(t, mine, false, sl); if (r) awDone[sl] = 1; return r; } });
       });
       return commit(files, "Prix & sélections des films mis à jour depuis Nos sélections (admin, " + user.login + ")");
     }).then(function (r) {
@@ -3106,13 +3115,118 @@
     view.appendChild(box); immInit(function () { draw(); });
     var st = { cat: "", fest: "", dop: "", year: "", q: "", showNo: false, nRec: 30, nAll: 60 };
     var recOpen = true; try { recOpen = localStorage.getItem("kinou-sel-rec") !== "0"; } catch (e) {}
+    // Prix sans film sur le site (Gus 22/11) : la trouvaille n'est rattachée à aucun film des fiches des chefs op ni de la page
+    // fiction (même recherche par le titre que awardsSync), et n'a pas de lien fait à la main (`links`) → triangle « ! »,
+    // catégorie « Sans lien », bouton « Relier à un film » (un ou plusieurs films de la bibliothèque).
+    var bib = null, bibT = null, plc = {};
+    function tw(t) { return sortNrm(t).split(" ").filter(Boolean); }
+    function sameW(x, y) {
+      if (x.join(" ") === y.join(" ")) return true;
+      if (x.length < 3 || y.length < 3) return false;
+      var n = x.filter(function (w) { return y.indexOf(w) > -1; }).length; return n / (x.length + y.length - n) >= 0.6;
+    }
+    function linkPages(f) { return f.pages.filter(function (p) { return p.slug !== "spotlight"; }); }
+    function placed(x) {
+      if (x.links && x.links.length) return true;
+      if (!bib) return null;
+      var k = x.id + "|" + x.title + "|" + (x.dops || []).join(",");
+      if (plc[k] !== undefined) return plc[k];
+      if (!bibT) bibT = bib.films.filter(function (f) { return f.slate && linkPages(f).length; }).map(function (f) {
+        var t = String(f.title || ""); return { f: f, c: [ficTitle(t), t.replace(/[•|]/g, " "), ficTitle(t.replace(/\s*\([^)]*\)/g, " "))].map(tw) };
+      });
+      var ts = awTitles(x).map(tw), dn = (x.dops || []).map(function (n) { return sortNrm(rcBase(n)); });
+      return plc[k] = bibT.some(function (o) {
+        if (!o.c.some(function (c) { return ts.some(function (t) { return sameW(c, t); }); })) return false;
+        return linkPages(o.f).some(function (p) {
+          if (p.slug === "fiction") return !o.f.dops.length || sortDop(o.f.dops, x.dops);
+          return dn.indexOf(sortNrm(rcBase(p.name))) > -1;
+        });
+      });
+    }
+    function tri(x) {
+      return x.status !== "no" && placed(x) === false ? el("span", { class: "ftri", title: "Film pas retrouvé sur le site (fiches des chefs op, page fiction) : ce prix n'y est pas affiché. « Relier à un film » pour le faire à la main.", text: "!" }) : null;
+    }
+    function linkTitles(x) { var o = {}; (x.links || []).forEach(function (l) { o[l.title || l.slate] = 1; }); return Object.keys(o); }
+    function linkBtn(xs, at) {
+      var n = 0, miss = false; xs.forEach(function (x) { n = Math.max(n, linkTitles(x).length); if (placed(x) === false) miss = true; });
+      if (!n && !miss) return null;
+      return el("button", { type: "button", class: "btn ghost", text: n ? "Liens · " + n : "Relier à un film", on: { click: function () { openLink(xs, at()); } } });
+    }
+    function openLink(xs, at) {
+      if (bib) return linkForm(xs, at);
+      var w = el("p", { class: "hint seladd", text: "Chargement de la bibliothèque…" }); at.after(w);
+      bibLoad().then(function (b) { bib = b; w.remove(); linkForm(xs, at); }, function (e) { w.textContent = "Bibliothèque indisponible : " + e.message; });
+    }
+    // Choisir un ou plusieurs films de la bibliothèque (ceux des fiches et de la page fiction : là où les prix s'affichent).
+    function linkForm(xs, at) {
+      var old = box.querySelector(".seladd"); if (old) old.remove();
+      var chosen = {}, order = [];
+      function choose(f, on) { if (on && !chosen[f.key]) { chosen[f.key] = f; order.push(f.key); } if (!on) { delete chosen[f.key]; order = order.filter(function (k) { return k !== f.key; }); } }
+      xs.forEach(function (x) { (x.links || []).forEach(function (l) { var f = bib.films.filter(function (g) { return String(g.slate) === String(l.slate); })[0]; if (f) choose(f, true); }); });
+      var x0 = xs[0], q = el("input", { type: "search", class: "nodirty", placeholder: "Titre du film, chef op, réalisateur, production…", value: ficTitle(x0.title || "") });
+      var res = el("div", { class: "selres" }), pick = el("div", { class: "sellinked" }), msg = el("span", { class: "fmsg" });
+      function films() { return bib.films.filter(function (f) { return f.slate && linkPages(f).length; }); }
+      function where(f) { return linkPages(f).map(function (p) { return p.slug === "fiction" ? "page fiction" : "fiche " + p.name; }).join(", "); }
+      function drawPick() {
+        pick.textContent = "";
+        if (!order.length) { pick.appendChild(el("p", { class: "hint", text: "Aucun film choisi." })); return; }
+        order.forEach(function (k) { var f = chosen[k];
+          pick.appendChild(el("span", { class: "sellink" }, [el("strong", { text: f.title }), el("small", { text: where(f) }),
+            el("button", { type: "button", class: "selx", title: "Retirer", text: "×", on: { click: function () { choose(f, false); drawPick(); search(); } } })])); });
+      }
+      function search() {
+        // Tolérant : les films qui ont le plus de mots de la recherche d'abord (« L'une des leurs » trouve « Une des leurs »).
+        var w = tw(q.value).filter(function (v) { return v.length > 1; }); res.textContent = "";
+        if (!w.length) return;
+        var need = w.length <= 2 ? w.length : Math.ceil(w.length * 0.6);
+        var l = films().map(function (f) { var h = " " + sortNrm(f.hay) + " ", sc = 0; w.forEach(function (v) { if (h.indexOf(" " + v) > -1) sc++; }); return { f: f, sc: sc }; })
+          .filter(function (o) { return o.sc >= need; }).sort(function (a, b) { return b.sc - a.sc; }).map(function (o) { return o.f; });
+        if (!l.length) res.appendChild(el("p", { class: "hint", text: "Aucun film de la bibliothèque ne correspond." }));
+        l.slice(0, 10).forEach(function (f) {
+          res.appendChild(el("button", { type: "button", class: "selpick" + (chosen[f.key] ? " on" : ""), on: { click: function () { choose(f, !chosen[f.key]); drawPick(); search(); } } },
+            [el("strong", { text: (chosen[f.key] ? "✓ " : "") + f.title }), el("small", { text: [f.dir, f.dops.join(", "), where(f)].filter(Boolean).join(" · ") })]));
+        });
+      }
+      q.addEventListener("input", search);
+      var label = (x0.title || "Sans titre") + (xs.length > 1 ? " (" + xs.length + " trouvailles)" : " — " + x0.festName);
+      // Les autres trouvailles du même film (même projet, sinon même titre), confirmées ou à vérifier : reliées aussi (case cochée).
+      var ids0 = {}; xs.forEach(function (x) { ids0[x.id] = 1; });
+      var sibs = sel.found.filter(function (y) { return !ids0[y.id] && y.status !== "no" && (x0.project ? y.project === x0.project : sortNrm(y.title) === sortNrm(x0.title)); });
+      var also = sibs.length ? el("label", { class: "rcag" }, [el("input", { type: "checkbox", class: "nodirty", checked: true }),
+        "Relier aussi les " + sibs.length + " autre" + (sibs.length > 1 ? "s" : "") + " sélection" + (sibs.length > 1 ? "s" : "") + " ou prix de « " + (x0.title || "") + " »"]) : null;
+      var form2 = el("article", { class: "fcard fedit seladd" }, [
+        el("label", { class: "field" }, [el("span", { class: "label", text: "Relier « " + label + " » à un ou plusieurs films de notre bibliothèque" }), q, res]),
+        el("p", { class: "hint", text: "Le prix ira sur ces films (fiche du chef op, page fiction), au lieu d'être rapproché par le titre." }),
+        pick, also,
+        el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "Enregistrer", on: { click: function (e) {
+          var list = also && also.firstChild.checked ? xs.concat(sibs) : xs;
+          var links = [];
+          order.forEach(function (k) { var f = chosen[k]; linkPages(f).forEach(function (p) { links.push({ page: p.slug, slate: String(f.slate), title: f.title }); }); });
+          var bs = JSON.parse(JSON.stringify(list)), ys = list.map(function (x) {
+            var y = JSON.parse(JSON.stringify(x)); if (links.length) y.links = links; else delete y.links;
+            y.linkBy = user && user.login || ""; y.linkAt = new Date().toISOString(); return y; });
+          var lab = (x0.title || "") + (links.length ? " — relié à " + order.map(function (k) { return chosen[k].title; }).join(", ") : " — liens retirés");
+          e.target.disabled = true; msg.textContent = "Enregistrement…";
+          selPut(ys, "Sélections : " + lab).then(function () {
+            immPush({ label: lab, undo: function () { return selPut(bs, "Sélections : annulé — " + lab).then(draw); }, redo: function () { return selPut(ys, "Sélections : rétabli — " + lab).then(draw); } });
+            draw();
+          }, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+        } } }),
+          el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { form2.remove(); } } }), msg])
+      ]);
+      at.after(form2); q.focus(); search(); drawPick();
+    }
     function prodOf(x) { var p = proj && proj.projects && proj.projects.filter(function (q) { return q.id === x.project; })[0]; return p && p.prod || ""; }
     function more(list, n, key, redraw) { // « Afficher plus » quand la liste dépasse
       if (list.length > n) return el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + (list.length - n) + ")", on: { click: function () { st[key] += 100; redraw(); } } });
       return null;
     }
     if (canWeb) view.insertBefore(el("p", { class: "awnote hint" }), box); // sous l'intro, au-dessus des listes
-    Promise.all([selRead(), festLoad().catch(function () { return null; }), projRead().catch(function () { return null; })]).then(function () { draw(); awardsSoon(); }, function (e) {
+    Promise.all([selRead(), festLoad().catch(function () { return null; }), projRead().catch(function () { return null; })]).then(function () {
+      draw(); awardsSoon();
+      // Bibliothèque (fiches + page fiction) : pour savoir quels prix n'ont pas trouvé leur film sur le site (triangle « ! »).
+      bibLoad().then(function (b) { bib = b; if (!box.querySelector(".seladd")) draw(); }, function () {});
+    }, function (e) {
       box.textContent = ""; box.appendChild(el("p", { class: "hint", text: "Indisponible : " + e.message }));
     });
     function nrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
@@ -3152,10 +3266,12 @@
       box.appendChild(s2);
       // 3. Toutes nos sélections : catégories + filtres.
       var s3 = el("section", {}, [el("h2", { text: "Toutes nos sélections · " + ok.length })]);
-      var cnt = { "": ok.length, prize: 0, img: 0, sel: 0, nom: 0 };
-      ok.forEach(function (x) { var k = kindOf(x); cnt[k]++; if (k === "img") cnt.prize++; });
-      s3.appendChild(el("div", { class: "fchips" }, [["", "Tout"], ["prize", "Prix"], ["img", "Prix de l'image"], ["sel", "Sélections"], ["nom", "Nominations"]].map(function (c) {
-        return el("button", { type: "button", class: "chip" + (st.cat === c[0] ? " on" : ""), text: c[1] + " · " + cnt[c[0]], on: { click: function () { st.cat = c[0]; draw(); } } });
+      var cnt = { "": ok.length, prize: 0, img: 0, sel: 0, nom: 0, nolink: 0 };
+      ok.forEach(function (x) { var k = kindOf(x); cnt[k]++; if (k === "img") cnt.prize++; if (placed(x) === false) cnt.nolink++; });
+      var cats = [["", "Tout"], ["prize", "Prix"], ["img", "Prix de l'image"], ["sel", "Sélections"], ["nom", "Nominations"]];
+      if (bib) cats.push(["nolink", "Sans lien"]); // film pas retrouvé sur le site (Gus 22/11)
+      s3.appendChild(el("div", { class: "fchips" }, cats.map(function (c) {
+        return el("button", { type: "button", class: "chip" + (st.cat === c[0] ? " on" : "") + (c[0] === "nolink" ? " selnolink" : ""), text: c[1] + " · " + cnt[c[0]], on: { click: function () { st.cat = c[0]; draw(); } } });
       })));
       function dd(key, label, vals) {
         var s = el("select", { class: "nodirty" }, [el("option", { value: "", text: label })].concat(vals.map(function (v) { return el("option", { value: v, text: v }); })));
@@ -3172,7 +3288,8 @@
         var w = nrm(st.q).split(/\s+/).filter(Boolean); list.textContent = "";
         var l = ok.filter(function (x) {
           var k = kindOf(x);
-          if (st.cat && !(st.cat === k || (st.cat === "prize" && k === "img"))) return false;
+          if (st.cat === "nolink") { if (placed(x) !== false) return false; }
+          else if (st.cat && !(st.cat === k || (st.cat === "prize" && k === "img"))) return false;
           if (st.fest && x.festName !== st.fest) return false;
           if (st.dop && (x.dops || []).map(rcBase).indexOf(st.dop) < 0) return false;
           if (st.year && x.edition !== st.year) return false;
@@ -3199,8 +3316,11 @@
     function filmBox(l) {
       var x0 = l[0], msg = el("span", { class: "fmsg" });
       var b = el("article", { class: "selcard new" }, [el("div", { class: "selhead" }, [
-        el("div", {}, [el("h3", { text: x0.title || "Sans titre" }), el("p", { class: "fwhere", text: [typeOf(x0), (x0.directors || []).length && "réal. " + x0.directors.join(", "), "DoP " + (x0.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") })]),
-        el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "Tout confirmer", on: { click: function (e) { all(e, "ok", "tout confirmé"); } } }),
+        el("div", {}, [el("h3", {}, [l.some(function (x) { return placed(x) === false; }) ? tri(l.filter(function (x) { return placed(x) === false; })[0]) : null, x0.title || "Sans titre"]),
+          el("p", { class: "fwhere", text: [typeOf(x0), (x0.directors || []).length && "réal. " + x0.directors.join(", "), "DoP " + (x0.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") }),
+          linkTitles(x0).length ? el("p", { class: "sellinks", text: "Relié à : " + linkTitles(x0).join(", ") }) : null]),
+        el("div", { class: "fwbtns" }, [linkBtn(l, function () { return b.firstChild; }),
+          el("button", { type: "button", class: "btn primary", text: "Tout confirmer", on: { click: function (e) { all(e, "ok", "tout confirmé"); } } }),
           el("button", { type: "button", class: "btn ghost", text: "Tout écarter", on: { click: function (e) { all(e, "no", "tout écarté"); } } })])])]);
       function all(e, s, label) {
         e.target.disabled = true; msg.textContent = "Enregistrement…";
@@ -3225,11 +3345,12 @@
     // Une ligne de « Récent » / « Toutes nos sélections » ; « Modifier » ouvre le formulaire en place.
     function line(x) {
       var r = el("div", { class: "selrow ok" + (x.status === "no" ? " no" : "") }, [badge(x),
-        el("div", { class: "selwhat" }, [el("strong", { text: (x.title || "Sans titre") }), el("span", { text: festLine(x) + (what(x) ? " — " + what(x) : "") }),
-          el("small", { text: [typeOf(x), (x.directors || []).length && "réal. " + x.directors.join(", "), "DoP " + (x.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") })]),
+        el("div", { class: "selwhat" }, [el("strong", {}, [tri(x), x.title || "Sans titre"]), el("span", { text: festLine(x) + (what(x) ? " — " + what(x) : "") }),
+          el("small", { text: [typeOf(x), (x.directors || []).length && "réal. " + x.directors.join(", "), "DoP " + (x.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") }),
+          linkTitles(x).length ? el("small", { class: "sellinks", text: "Relié à : " + linkTitles(x).join(", ") }) : null]),
         el("div", { class: "selsrc" }, (x.urls || []).slice(0, 1).map(function (u) { return el("a", { href: u, target: "_blank", rel: "noopener", text: "source ↗" }); })),
         el("div", { class: "fwbtns" }, x.status === "no" ? [el("button", { type: "button", class: "btn ghost", text: "Finalement c'est nous", on: { click: function () { setSt(x, "ok", "confirmé"); } } })]
-          : [el("button", { type: "button", class: "btn ghost", text: "Modifier", on: { click: function () { form(x, r); } } })])]);
+          : [linkBtn([x], function () { return r; }), el("button", { type: "button", class: "btn ghost", text: "Modifier", on: { click: function () { form(x, r); } } })])]);
       return r;
     }
     // Formulaire (ajout à la main ou modification) : film, festival (libre), ville, année, type, prix, section, prix de l'image.

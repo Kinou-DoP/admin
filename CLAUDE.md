@@ -62,7 +62,11 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   `projets.json`), bandes-annonces à voir (pastille), confirmer / masquer / ajouter une sortie.
 - **Festivals** : **dates** (`#/festivals`, `notes/festivals/festivals.json` ; ce que l'équipe a saisi n'est jamais modifié par le
   robot, désaccords = triangle orange) et **nos sélections** (`#/selections`, `notes/festivals/selections.json` : à vérifier ✓ / ✗,
-  récent, toutes ; les prix confirmés vont tout seuls dans `info.awards` des films sur le site, `awardsSync`).
+  récent, toutes ; les prix confirmés vont tout seuls dans `info.awards` des films sur le site, `awardsSync`). **Prix sans film sur
+  le site** (Gus 22/11) : triangle orange « ! » quand la trouvaille ne retrouve aucun film des fiches ni de la page fiction (`placed`,
+  même rapprochement par le titre qu'`awardsSync`), catégorie **« Sans lien »**, bouton **« Relier à un film »** (`linkForm` : un ou
+  plusieurs films de la bibliothèque, autres trouvailles du même film reliées aussi) → `links: [{ page, slate, title }]` dans la
+  trouvaille ; une trouvaille reliée ne va **que** sur ces films (`awFor`).
 - **Récupération** (`#/recup`, `notes/projets/projets.json`) : statut de récupération par film, à relancer, par production, mails.
 - **Historique** : derniers commits des données (admin et notes) avec qui / quand / quoi.
 - Taper une lettre hors d'un champ écrit dans la recherche de la page (`input.find`).

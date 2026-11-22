@@ -309,3 +309,13 @@ remet à la réouverture de la même page (message « Modifications non publiée
 
 ## Après le 21/11/2026
 
+- 22/11 : **Nos sélections : prix sans film sur le site** (Gus : « un petit triangle sur les films qui ont reçu un prix mais que les robots
+  n'ont pas retrouvés dans la bibliothèque », « afficher que ceux qui n'ont pas le lien et pouvoir le faire soi-même avec un ou plusieurs
+  films »). La page charge la bibliothèque (`bibLoad` : fiches + page fiction) et refait le rapprochement d'`awardsSync` (titre, chef op
+  crédité ; spotlight exclu, les prix n'y vont pas) : pas de film → triangle orange « ! » (lignes et cartes « À vérifier »), catégorie
+  « Sans lien · N » dans Toutes nos sélections, bouton « Relier à un film » : recherche tolérante dans la bibliothèque (mots en commun,
+  préremplie avec le titre), plusieurs films possibles, case « relier aussi les autres sélections ou prix de ce film » (cochée).
+  Enregistré dans la trouvaille (dépôt notes) : `links: [{ page: "fiction" | <adresse du chef op>, slate, title }]`, `linkBy`, `linkAt` ;
+  « Liens · N » pour modifier ou tout retirer ; Annuler / Rétablir. `awardsSync` : une trouvaille reliée va seulement sur ces films
+  (fiche d'un chef op même pas crédité sur la trouvaille), plus de rapprochement par le titre. Au 22/11 : 13 prix ou sélections sans
+  film (ex. « Furcy » = « Furcy né libre » sur le site).

@@ -681,6 +681,15 @@ h3.selfest { margin: 28px 0 12px; font-family: var(--kinou-sans); font-weight: 6
 .selrow .fwbtns { margin: 0; } .selrow .fwbtns .btn { height: 30px; min-width: 34px; padding: 0 10px; }
 .selcard.new .selhead { margin-bottom: 8px; }
 @media (max-width: 700px) { .selrow { grid-template-columns: 1fr; gap: 6px; } }
+/* Prix sans film sur le site : triangle, liens faits à la main (Gus 22/11) */
+.selwhat strong .ftri, .selcard h3 .ftri { margin-right: 8px; }
+.sellinks { color: var(--dim); font-size: 12px; } p.sellinks { margin: 4px 0 0; }
+.chip.selnolink:not(.on) { border-color: rgba(255,154,61,.5); color: #ffb36b; }
+.selpick.on strong { color: #ffd27a; }
+.sellinked { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+.sellink { display: inline-flex; align-items: baseline; gap: 8px; padding: 6px 6px 6px 10px; border: 1px solid var(--faint); }
+.sellink strong { font-family: var(--kinou-sans); font-weight: 600; font-size: 13px; } .sellink small { color: var(--dim); font-size: 11px; }
+.selx { padding: 0 6px; border: 0; background: none; color: var(--dim); font-size: 16px; line-height: 1; cursor: pointer; } .selx:hover { color: #fff; }
 .selfold { padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
 .selfold:hover { color: var(--warn); }
 /* Sorties fiction : calendrier (Gus 17/11) */

@@ -26,7 +26,7 @@ Vue d'ensemble des trois dépôts : `ARCHITECTURE.md` du dépôt `site`. Ici : l
 8. **Accueil du site** (`showHome`, éditeur vidéo), **Spotlight** (`showSpot`), **Fiction** (`showFic`, `ficCtl`, `scopeCtl`,
    `ficCapNew`, `ficAutoOut`, `ficAlerts`), **Contact** (`showContact`).
 9. **Pages enregistrées tout de suite** (`immInit`, `immPush`) ; **Festivals** (`showFestivals`, `festLoad`, `festAsk`) ;
-   **Nos sélections** (`showFestSel`, `selRead`, `selPut`) et **prix → site** (`awLine`, `awApply`, `awFile`, `awardsSync`) ;
+   **Nos sélections** (`showFestSel`, `selRead`, `selPut`) et **prix → site** (`awLine`, `awApply`, `awFor`, `awFile`, `awardsSync` ; liens à la main : `placed`, `linkForm`) ;
    **Sorties fiction** (`showSorties`, `sortBuild`, `sortHide`, `trUnseen`) ; **Récupération** (`showRecup`, `projRead`, `projSave`, `rcMail`).
 10. **Accueil de l'admin** (`showHello`, `helloNews`), **Historique** (`histPath`), **Navigation** (`route`).
 11. **Bibliothèque** (`showBibli`, `bibLoad`, bandes `data/bandes/`, imports `data/bibli/`).
