@@ -63,7 +63,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   (`changed` → `saveBand`, nouvel essai seul en cas d'échec). ✎ sur un film = **retouches pour cette bande seulement** (`editItem` :
   titre, crédits, chefs op, types, vignette = image du film capturée par `/api/media` du site ou still, extrait `snip {s, d}` =
   début et fin choisis dans le film complet (0,5 à 10 s : la poignée tirée s'arrête à la limite, l'autre ne bouge pas), lecteur image par image (raccourcis écoutés partout dans la fenêtre sauf champs de texte : flèches ← → = image par image, vidéo arrêtée, Maj = 1 s ; espace = lecture, en boucle entre début et fin s'il y a un extrait ; frise du film + frise de
-  détail de 30 s avec poignées début / fin : image figée pendant le réglage, extrait en boucle dès qu'on lâche), recadrage `crop {z,x,y}`, stills et vidéos sous le film `extras`, prix `awards`). Les films de
+  détail de 30 s avec poignées début / fin : image figée pendant le réglage, extrait en boucle dès qu'on lâche), recadrage `crop {z,x,y,t}` (repris de la page du film : `zoom`, `zoomPos`, `zoomThumb` → `t` = vignette aussi, `cropOf` ; case « Recadrer aussi la vignette » ; la retouche ne vaut que pour la bande), stills et vidéos sous le film `extras`, prix `awards`). Les films de
   la bande sont des copies (prix et extras des fiches repris). Réglages : nom, chefs op (vide = détectés : nos chefs op des films, le
   plus présent d'abord), description, crédits / types / prix cachés, colonnes, expiration, mot de passe, téléchargement.
   **Lien** `SITE_VIEW/b/<code>` (9 caractères au hasard, `bandCode`) ; page publique **chiffrée** `data/b/<empreinte>.json` (`bandSeal` :

@@ -4278,6 +4278,7 @@
       if (!o.images && f.images && f.images.length) o.images = f.images;
       if (!o.extras && f.extras && f.extras.length) o.extras = f.extras; // stills et vidéos sous le film (lecteur)
       if (!o.awards && f.awards) o.awards = f.awards; // prix et sélections (une ligne chacun)
+      if (!o.crop && f.crop) o.crop = f.crop; // recadrage réglé sur la page (point de départ dans les bandes)
       (f.dops || []).forEach(function (d) { d = rcBase(d); if (d && !o.dops.some(function (x) { return bnrm(x) === bnrm(d); })) o.dops.push(d); });
       (f.cats || []).forEach(function (c) { c = String(c || "").trim(); if (c && !/^featured$/i.test(c) && !o.cats.some(function (x) { return bnrm(x) === bnrm(c); })) o.cats.push(c); });
       (f.types || []).forEach(function (c) { c = String(c || "").trim(); if (c && !o.types.some(function (x) { return bnrm(x) === bnrm(c); })) o.types.push(c); });
@@ -4287,6 +4288,13 @@
       var l = String(sub || "").split("\n").map(function (x) { return x.trim(); }).filter(Boolean), r = { dir: "", prod: "", dops: [] };
       l = l.filter(function (x) { var m = /^(?:co-)?dop\s+(.+)$/i.exec(x); if (m) { r.dops = r.dops.concat(m[1].split(/\s*[,&]\s*/)); return false; } return true; });
       r.dir = l[0] || ""; r.prod = l[1] || ""; return r;
+    }
+    // Recadrage d'une page (overrides : zoom, zoomPos « x% y% », zoomThumb) → { z, x, y, t } des bandes (Gus 22/11) ;
+    // t = la vignette aussi (sinon seulement l'extrait, comme sur le site).
+    function cropOf(o) {
+      if (!(o && +o.zoom > 1)) return null;
+      var m = String(o.zoomPos || "").match(/(-?[\d.]+)%\s+(-?[\d.]+)%/);
+      return { z: +o.zoom, x: m ? +m[1] : 50, y: m ? +m[2] : 50, t: !!o.zoomThumb };
     }
     function raw(p) { return fetch(RAW_DATA + p, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
     return Promise.all([loadIndex(), raw("fiction.json"), raw("spotlight.json"), raw("home.json"), readFile(BIB_LIB).catch(function () { return null; }), raw(BIB_META)]).then(function (r) {
@@ -4299,7 +4307,7 @@
           (f.clips || []).forEach(function (c) {
             var o = ov[c.slate] || {}, s = subOf(o.sub !== undefined ? o.sub : c.sub);
             add({ slate: c.slate, title: o.title || c.title, dir: s.dir, prod: s.prod, dops: [d.name].concat(s.dops), cats: [c.cat], types: o.types || [],
-              video: (o.hover && o.hover.video) || c.video, full: c.full, img: c.img, images: o.images || c.stills, extras: extrasOf(o), awards: o.info && o.info.awards }, { slug: d.slug, name: d.name });
+              video: (o.hover && o.hover.video) || c.video, full: c.full, img: c.img, images: o.images || c.stills, extras: extrasOf(o), awards: o.info && o.info.awards, crop: cropOf(o) }, { slug: d.slug, name: d.name });
           });
         });
         [[r[1], "fiction", "Fiction"], [r[2], "spotlight", "Spotlight"]].forEach(function (p) {
@@ -4307,7 +4315,7 @@
           (d.films || []).forEach(function (c) {
             var o = ov[c.slate] || {}, s = subOf(o.sub !== undefined ? o.sub : c.sub);
             add({ slate: c.slate, title: o.title || c.title, dir: s.dir, prod: s.prod, dops: (c.artists || []).concat(s.dops), cats: c.cats || [], types: o.genre ? [o.genre] : [],
-              video: c.video, full: c.full, img: c.img, images: c.images, extras: extrasOf(o), awards: o.info && o.info.awards }, { slug: p[1], name: p[2] });
+              video: c.video, full: c.full, img: c.img, images: c.images, extras: extrasOf(o), awards: o.info && o.info.awards, crop: cropOf(o) }, { slug: p[1], name: p[2] });
           });
         });
         ((r[3] && r[3].slides) || []).forEach(function (s) { add({ slate: s.slate, title: s.film, video: s.video, full: s.full, img: s.img, dops: (s.dps || []).map(function (x) { return x.name; }) }, null); });
@@ -4357,6 +4365,7 @@
     if (f.images && f.images.length) o.images = f.images.slice();
     if (f.extras && f.extras.length) o.extras = JSON.parse(JSON.stringify(f.extras));
     if (f.awards) o.awards = f.awards;
+    if (f.crop) o.crop = Object.assign({}, f.crop);
     Object.keys(o).forEach(function (k) { if (o[k] === "" || o[k] === null || o[k] === undefined || (Array.isArray(o[k]) && !o[k].length)) delete o[k]; });
     return o;
   }
@@ -4697,7 +4706,7 @@
           si.addEventListener("input", function () { it.section = si.value; changed(); });
           li = el("div", { class: "bit sec" }, [el("span", { class: "bgrip", text: "⋮⋮" }), si, el("button", { type: "button", class: "bx", text: "×", title: "Retirer la section", on: { click: function () { remove(i, li); } } })]);
         } else {
-          var th = el("div", { class: "bithumb" }), crop = it.crop;
+          var th = el("div", { class: "bithumb" }), crop = it.crop && it.crop.t !== false ? it.crop : null; // vignette recadrée seulement si « vignette aussi »
           if (it.img) th.appendChild(el("i", { style: 'background-image:url("' + it.img + '")' + (crop ? ";transform:scale(" + crop.z + ");transform-origin:" + crop.x + "% " + crop.y + "%" : "") }));
           var marks = [it.crop ? "recadré" : "", it.snip ? "extrait" : "", it.edited ? "retouché" : ""].filter(Boolean);
           li = el("div", { class: "bit" }, [el("span", { class: "bgrip", text: "⋮⋮" }), th,
@@ -4829,7 +4838,11 @@
       var pvid = null;
       function prevImg() {
         pin.style.backgroundImage = it.img ? 'url("' + it.img + '")' : "";
-        var c = it.crop || { z: 1, x: 50, y: 50 }; pin.style.transform = "scale(" + c.z + ")"; pin.style.transformOrigin = c.x + "% " + c.y + "%";
+        // Recadrage : l'extrait toujours ; la vignette seulement si « vignette aussi » (t), comme sur les pages.
+        var c = it.crop || { z: 1, x: 50, y: 50 }, all = !it.crop || it.crop.t !== false;
+        pin.style.transform = all ? "scale(" + c.z + ")" : ""; pin.style.transformOrigin = c.x + "% " + c.y + "%";
+        if (pvid) { pvid.style.transform = all ? "" : "scale(" + c.z + ")"; pvid.style.transformOrigin = c.x + "% " + c.y + "%"; }
+        if (thumbCk) { thumbCk.checked = !it.crop || it.crop.t !== false; thumbCk.disabled = !it.crop; }
       }
       function prevMeta() { pmeta.textContent = ""; pmeta.appendChild(el("strong", { text: it.title || "" })); pmeta.appendChild(el("span", { text: (it.types || it.cats || []).join(" · ") })); }
       pv.addEventListener("mouseenter", function () {
@@ -4837,15 +4850,16 @@
         pvid = el("video", { muted: true, playsinline: true, autoplay: true, loop: !it.snip }); pvid.muted = true;
         pvid.src = src + (it.snip ? "#t=" + it.snip.s : "");
         if (it.snip) pvid.addEventListener("timeupdate", function () { if (pvid && pvid.currentTime > it.snip.s + it.snip.d) pvid.currentTime = it.snip.s; });
-        pin.appendChild(pvid);
+        pin.appendChild(pvid); prevImg();
       });
       pv.addEventListener("mouseleave", function () { if (pvid) { pvid.remove(); pvid = null; } });
       // Recadrage : zoom + glisser dans l'aperçu
       var zoom = el("input", { type: "range", min: "100", max: "200", step: "1", value: String(Math.round((it.crop ? it.crop.z : 1) * 100)) });
-      var zl = el("span", { class: "hint", text: "" });
+      var zl = el("span", { class: "hint", text: "" }), thumbCk = el("input", { type: "checkbox" });
+      thumbCk.addEventListener("change", function () { if (!it.crop) return; it.crop.t = thumbCk.checked; prevImg(); changed(); });
       function zlab() { zl.textContent = zoom.value + " %" + (+zoom.value > 100 ? " · glissez l'image pour choisir le cadrage" : ""); }
       zoom.addEventListener("input", function () {
-        var z = +zoom.value / 100; if (z <= 1) delete it.crop; else it.crop = { z: z, x: it.crop ? it.crop.x : 50, y: it.crop ? it.crop.y : 50 };
+        var z = +zoom.value / 100; if (z <= 1) delete it.crop; else it.crop = { z: z, x: it.crop ? it.crop.x : 50, y: it.crop ? it.crop.y : 50, t: it.crop ? it.crop.t !== false : true };
         zlab(); prevImg(); changed();
       });
       var dragC = null;
@@ -5029,7 +5043,7 @@
           [orig ? el("button", { type: "button", class: "btn ghost", text: "Tout remettre comme dans la bibliothèque", on: { click: function () {
             var keepKey = it.key; band.items[i] = bandItem(orig); band.items[i].key = keepKey; changed(); close();
           } } }) : null])),
-        el("div", {}, [el("span", { class: "label", text: "Aperçu (survol = extrait)" }), pv, el("span", { class: "label", text: "Recadrage" }), zoom, zl,
+        el("div", {}, [el("span", { class: "label", text: "Aperçu (survol = extrait)" }), pv, el("span", { class: "label", text: "Recadrage" }), zoom, zl, el("label", { class: "bck", title: "Comme la case de recadrage des pages : sinon seulement l'extrait" }, [thumbCk, " Recadrer aussi la vignette"]),
           el("span", { class: "label", text: "Vignette" }), thumbs])]));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]), exOut]),

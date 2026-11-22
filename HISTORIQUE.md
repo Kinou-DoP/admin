@@ -350,3 +350,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
   lecture tourne toujours en boucle entre le début et la fin de l'extrait.
 - 22/11 (bibliothèque, Gus) : revenir de « Bandes existantes » ouvre une nouvelle bande vide (comme au rechargement) ; un changement
   en attente d'enregistrement n'est plus perdu quand on change de bande (`saveBand(b)` garde la bande à enregistrer).
+- 22/11 (bandes, Gus) : un film ajouté à une bande reprend le recadrage réglé sur sa page (extrait, et vignette si « vignette aussi ») ; une retouche dans la bande passe par-dessus, pour cette bande seulement. Bandes déjà faites : pas changées (copies).
