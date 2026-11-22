@@ -1008,3 +1008,7 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .bedfoot .bur { margin: 0; }
 .bhsnip { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .bhsnip .bcc { cursor: pointer; padding: 5px 10px; color: var(--kinou-fg); font: 400 13px ui-monospace, "SF Mono", Menlo, monospace; }
+.tlgrow { flex: 1; } .ppane .btn.primary:disabled { opacity: .35; cursor: default; }
+.bupbtn { border: 1px dashed rgba(255,252,235,.45) !important; transition: background .15s, border-color .15s, transform .15s; }
+.bupbtn:hover { border-style: solid !important; }
+.bupbtn.over { background: rgba(255,154,61,.18) !important; border: 1px solid #ff9a3d !important; transform: scale(1.04); }

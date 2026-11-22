@@ -4351,6 +4351,8 @@
     BIB_EK.forEach(function (k) { if (e[k] !== undefined) f[k] = JSON.parse(JSON.stringify(e[k])); });
     f.dops = f.dops || []; f.types = f.types || []; f.libEdited = true;
   }
+  // Extrait en cours de réglage pas encore validé (Gus 22/11 : « Valider ») : jamais enregistré, on garde l'extrait validé.
+  function snipOk(x, c) { if (x._snipTmp) { if (x._snipSaved) c.snip = x._snipSaved; else delete c.snip; } return c; }
   function bibDirs(f) { return String(f.dir || "").split(/\s*,\s*|\s+&\s+/).filter(Boolean); }
   function bibProds(f) { return String(f.prod || "").split(/\s*,\s*/).filter(Boolean); } // plusieurs prods = séparées par une virgule
   var BIB_T = { dop: "Chef op", dir: "Réal", prod: "Prod", client: "Client", type: "Type de contenu", cat: "Catégorie" };
@@ -4596,7 +4598,7 @@
       BIB_EK.forEach(function (k) { if (f[k] !== undefined) it[k] = JSON.parse(JSON.stringify(f[k])); });
       var base = {}; BIB_EK.forEach(function (k) { base[k] = f._orig ? o[k] : f[k]; });
       function diff() { // ce qui diffère des pages
-        var e = {}; BIB_EK.forEach(function (k) { var a = it[k], b = base[k]; if (JSON.stringify(a === undefined ? null : a) !== JSON.stringify(b === undefined ? null : b)) e[k] = a === undefined ? null : a; });
+        var e = {}; BIB_EK.forEach(function (k) { var a = k === "snip" && it._snipTmp ? it._snipSaved : it[k], b = base[k]; if (JSON.stringify(a === undefined ? null : a) !== JSON.stringify(b === undefined ? null : b)) e[k] = a === undefined ? null : a; });
         Object.keys(e).forEach(function (k) { if (e[k] === null && (k === "snip" || k === "crop" || k === "roles" || k === "awards" || k === "extras")) e[k] = null; });
         return Object.keys(e).length ? e : null;
       }
@@ -4604,7 +4606,7 @@
         onChange: function () {
           var e = diff(), keep = f._orig;
           if (!keep) { f._orig = {}; BIB_EK.forEach(function (k) { f._orig[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); }
-          BIB_EK.forEach(function (k) { f[k] = it[k] === undefined ? undefined : JSON.parse(JSON.stringify(it[k])); });
+          BIB_EK.forEach(function (k) { var v = k === "snip" && it._snipTmp ? it._snipSaved : it[k]; f[k] = v === undefined ? undefined : JSON.parse(JSON.stringify(v)); });
           f.dops = (f.dops || []).filter(Boolean); f.types = f.types || []; f.libEdited = !!e; bibHay(f);
           libQ.todo[f.key] = e; clearTimeout(libQ.t); libQ.t = setTimeout(libSaveEdits, 1500);
         },
@@ -4722,8 +4724,8 @@
       save.busy = true; save.again = null; if (b === band) setState("busy");
       var isNew = !b.code; if (isNew) b.code = bandCode();
       var now = new Date().toISOString(), artists = artistsOf(b);
-      var items = b.items.map(function (x) { var c = {}; Object.keys(x).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist") c[k] = x[k]; }); return c; }); // page publique : sans l'historique
-      var srcItems = b.items.map(function (x) { var c = {}; Object.keys(x).forEach(function (k) { if (k.charAt(0) !== "_") c[k] = x[k]; }); return c; });
+      var items = b.items.map(function (x) { var c = {}; Object.keys(x).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist") c[k] = x[k]; }); return snipOk(x, c); }); // page publique : sans l'historique
+      var srcItems = b.items.map(function (x) { var c = {}; Object.keys(x).forEach(function (k) { if (k.charAt(0) !== "_") c[k] = x[k]; }); return snipOk(x, c); });
       var pub = { title: b.title.trim() || "Bande", description: (b.description || "").trim(), artists: artists, cols: b.cols, hide: b.hide, download: !!b.download, items: items, at: now };
       var files = save.files.splice(0);
       var by = user && user.login || "";
@@ -4904,7 +4906,7 @@
       var it = lib ? lib.it : band.items[i], orig = lib ? lib.orig : filmOf(it.key), chg0 = lib ? lib.onChange : changed, files = lib ? lib.files : save.files;
       // Annuler / Rétablir dans la fenêtre (Gus 22/11) : instantanés du film (gardés quand la fenêtre se redessine après un retour).
       var ED_K = BIB_EK.concat(["edited"]), eu = edUndo.get(it);
-      function esnap() { var o = {}; ED_K.forEach(function (k) { if (it[k] !== undefined) o[k] = it[k]; }); return JSON.stringify(o); }
+      function esnap() { var o = {}; ED_K.forEach(function (k) { var v = k === "snip" && it._snipTmp ? it._snipSaved : it[k]; if (v !== undefined) o[k] = v; }); return JSON.stringify(o); }
       if (!eu) { eu = { l: [esnap()], i: 0, t: 0 }; edUndo.set(it, eu); }
       function eMark() { clearTimeout(eu.t); eu.t = setTimeout(function () { var x = esnap(); if (x === eu.l[eu.i]) return; eu.l = eu.l.slice(0, eu.i + 1); eu.l.push(x); if (eu.l.length > 60) eu.l.shift(); eu.i = eu.l.length - 1; eBtns(); }, 500); eBtns(); }
       function chg() { chg0(); eMark(); }
@@ -4912,7 +4914,7 @@
       function eGo(d) {
         clearTimeout(eu.t); var x = esnap(); if (x !== eu.l[eu.i]) { eu.l = eu.l.slice(0, eu.i + 1); eu.l.push(x); eu.i++; }
         var j = eu.i + d; if (j < 0 || j >= eu.l.length) return; eu.i = j;
-        var o = JSON.parse(eu.l[j]); ED_K.forEach(function (k) { if (o[k] === undefined) delete it[k]; else it[k] = o[k]; }); delete it._snipTmp;
+        var o = JSON.parse(eu.l[j]); ED_K.forEach(function (k) { if (o[k] === undefined) delete it[k]; else it[k] = o[k]; }); delete it._snipTmp; delete it._snipSaved;
         chg0(); document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib);
       }
       var euB = null, erB = null;
@@ -4924,7 +4926,7 @@
       document.addEventListener("keydown", eKey, true);
       var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox bedit" });
       function close() {
-        if (it._snipTmp) { delete it._snipTmp; delete it.snip; chg0(); } // extrait proposé mais jamais réglé : celui d'origine reste
+        if (it._snipTmp) { snipDiscard(); chg0(); } // extrait pas validé : oublié, l'extrait validé reste
         document.removeEventListener("keydown", eKey, true);
         ov.classList.add("out"); setTimeout(function () { ov.remove(); }, 160); if (lib) lib.onClose(); else drawBand();
       }
@@ -5068,7 +5070,7 @@
           else { s = Math.max(0, Math.min(s, dur - .5)); e = Math.min(dur, Math.max(s + .5, Math.min(e, s + 10))); }
           it.snip = { s: Math.max(0, s), d: Math.round((Math.min(dur, e) - Math.max(0, s)) * 1000) / 1000 }; it.edited = true;
         };
-        var moveHandle = function (which, t) { var s = it.snip.s, e = s + it.snip.d; if (which === "in") setSnip(t, e, "in"); else setSnip(s, t, "out"); seek(which === "in" ? it.snip.s : it.snip.s + it.snip.d); };
+        var moveHandle = function (which, t) { snipDraft(); var s = it.snip.s, e = s + it.snip.d; if (which === "in") setSnip(t, e, "in"); else setSnip(s, t, "out"); seek(which === "in" ? it.snip.s : it.snip.s + it.snip.d); };
         player.addEventListener("loadedmetadata", function () { dur = player.duration || 0; if (ptab === "snip") setTab("snip"); else if (it.thumbT !== undefined) player.currentTime = it.thumbT; draw(); });
         player.addEventListener("timeupdate", draw);
         player.addEventListener("seeked", draw);
@@ -5101,7 +5103,7 @@
         drag(det, function (e) { act = "play"; var w = win(); seek(tAt(e, det, w[0], w[1])); });
         var hw = null;
         [[hIn, "in"], [hOut, "out"]].forEach(function (h) {
-          drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; snipCommit(); prevSnip(); playSnip(); });
+          drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; prevSnip(); playSnip(); drawSnip(); });
         });
         // Raccourcis valables où que soit le clic dans la fenêtre (Gus 22/11) : écoutés avant tout le reste (capture), sauf dans un
         // champ de texte. Espace = lecture / pause ; flèches = image par image (la vidéo s'arrête, pas de reprise toute seule).
@@ -5112,7 +5114,7 @@
           if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
           e.preventDefault(); e.stopPropagation(); var st2 = (e.shiftKey ? 1 : FR) * (e.key === "ArrowLeft" ? -1 : 1);
           if (act === "play" || !it.snip || ptab !== "snip") seek(player.currentTime + st2);
-          else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { snipCommit(); prevSnip(); }, 500); }
+          else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { prevSnip(); drawSnip(); }, 300); }
         };
         document.addEventListener("keydown", onKey, true);
         tools.appendChild(el("div", { class: "tlrow" }, [
@@ -5120,19 +5122,19 @@
           playB,
           el("button", { type: "button", class: "btn ghost", text: "1 image ▶", title: "Image suivante (→, Maj + → = 1 s)", on: { click: function (e) { e.currentTarget.blur(); onKey({ key: "ArrowRight", target: player, preventDefault: function () {}, stopPropagation: function () {} }); } } }),
           time]));
-        var grabB = el("button", { type: "button", class: "btn", text: "Cette image = vignette", on: { click: grab } });
+        var grabB = el("button", { type: "button", class: "btn primary", text: "Valider cette image", title: "L'image affichée devient la vignette", on: { click: grab } });
         var snipB = it.full ? el("button", { type: "button", class: "btn ghost", text: "Début de l'extrait ici", title: "Place le début sur l'image affichée (même durée)", on: { click: function () {
-            var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "new"); snipCommit(); prevSnip(); draw(); playSnip();
+            snipDraft(); var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "new"); prevSnip(); draw(); playSnip(); drawSnip();
           } } }) : null;
         var tabB = {}, ptabs = el("div", { class: "btabs ptabs" }, [["thumb", "Vignette"], ["snip", "Extrait"]].map(function (t) { return tabB[t[0]] = el("button", { type: "button", text: t[1], on: { click: function () { setTab(t[0]); } } }); }));
         if (!it.full) tabB.snip.hidden = true;
         var setTab = function (t) {
           ptab = t; act = "play"; tabB.thumb.classList.toggle("on", t === "thumb"); tabB.snip.classList.toggle("on", t === "snip");
           if (thumbPane) thumbPane.hidden = t !== "thumb"; if (snipPane) snipPane.hidden = t !== "snip";
-          if (t === "thumb") { loopOn = false; player.pause(); if (it._snipTmp) { delete it._snipTmp; delete it.snip; } }
+          if (t === "thumb") { loopOn = false; player.pause(); if (it._snipTmp) snipDiscard(); }
           else if (dur && !it.snipVideo) {
             // Extrait : les poignées tout de suite (Gus 22/11) ; sans extrait choisi, il part de l'image de la vignette (ou du début du film).
-            if (!it.snip) { var s0 = it.thumbT !== undefined ? Math.min(it.thumbT, Math.max(0, dur - .5)) : 0; it.snip = { s: s0, d: Math.round(Math.min(5, dur - s0) * 1000) / 1000 }; it._snipTmp = true; }
+            if (!it.snip) { snipDraft(); var s0 = it.thumbT !== undefined ? Math.min(it.thumbT, Math.max(0, dur - .5)) : 0; it.snip = { s: s0, d: Math.round(Math.min(5, dur - s0) * 1000) / 1000 }; }
             act = "in"; seek(it.snip.s); playSnip();
           }
           draw(); drawSnip();
@@ -5141,10 +5143,10 @@
       var snipLine = el("p", { class: "hint" });
       function prevSnip() { if (pvid) { pvid.remove(); pvid = null; } }
       function drawSnip() {
-        snipLine.textContent = "";
+        snipLine.textContent = ""; if (typeof valB !== "undefined" && valB) valB.disabled = !it._snipTmp;
         if (it.snipVideo) snipLine.appendChild(el("span", {}, ["Extrait importé de l'ordinateur · ", el("button", { type: "button", class: "blink", text: "le retirer", on: { click: function () { delete it.snipVideo; chg(); prevSnip(); drawSnip(); } } })]));
-        else if (it._snipTmp) snipLine.textContent = "Réglez le début et la fin : l'extrait est créé dès qu'on bouge une poignée (sinon celui d'origine reste).";
-        else if (it.snip) snipLine.appendChild(el("span", {}, [el("button", { type: "button", class: "blink", text: "Revenir à l'extrait d'origine", on: { click: function () { pushHist("snip", it.snip); delete it.snip; lastSnip = null; act = "play"; chg(); drawSnip(); drawHist(); if (tl) { loopOn = false; draw(); } } } })]));
+        else if (it._snipTmp) snipLine.textContent = "Extrait pas encore enregistré : « Valider l'extrait » pour le garder (sinon il est oublié en fermant).";
+        else if (it.snip) snipLine.appendChild(el("span", {}, [el("button", { type: "button", class: "blink", text: "Revenir à l'extrait d'origine", on: { click: function () { snipDiscard(); pushHist("snip", it.snip); delete it.snip; lastSnip = null; act = "play"; chg(); drawSnip(); drawHist(); if (tl) { loopOn = false; draw(); } } } })]));
         else snipLine.textContent = it.video ? "Extrait d'origine (Slate)." : "Pas d'extrait.";
       }
       function fmtT(t) { return fmtF(t); }
@@ -5155,8 +5157,11 @@
       }
       function setImg(u) { if (it.img && it.img !== u) pushHist("img", it.img); it.img = u; it.edited = true; prevImg(); chg(); drawThumbs(); drawHist(); }
       var lastSnip = it.snip ? JSON.stringify(it.snip) : null;
-      function snipCommit() { // extrait réglé : l'ancien va dans l'historique, le nouveau est enregistré
-        delete it._snipTmp; var x = it.snip ? JSON.stringify(it.snip) : null;
+      // Brouillon de l'extrait : réglé à la souris / aux flèches sans rien enregistrer ; « Valider l'extrait » l'enregistre.
+      function snipDraft() { if (it._snipTmp) return; it._snipSaved = it.snip ? JSON.parse(JSON.stringify(it.snip)) : undefined; it._snipTmp = true; }
+      function snipDiscard() { if (!it._snipTmp) return; if (it._snipSaved) it.snip = it._snipSaved; else delete it.snip; delete it._snipTmp; delete it._snipSaved; if (typeof draw === "function" && tl) draw(); }
+      function snipCommit() { // extrait validé : l'ancien va dans l'historique, le nouveau est enregistré
+        delete it._snipTmp; delete it._snipSaved; var x = it.snip ? JSON.stringify(it.snip) : null;
         if (lastSnip && lastSnip !== x) pushHist("snip", JSON.parse(lastSnip));
         lastSnip = x; it.edited = true; chg(); drawSnip(); drawHist();
       }
@@ -5167,28 +5172,39 @@
         histImg.textContent = ""; (h.img || []).forEach(function (u) { histImg.appendChild(el("button", { type: "button", style: 'background-image:url("' + u + '")', title: "Reprendre cette ancienne vignette", on: { click: function () { setImg(u); } } })); });
         histImg.hidden = histImgL.hidden = !(h.img || []).length;
         histSnip.textContent = ""; (h.snip || []).forEach(function (x) { histSnip.appendChild(el("button", { type: "button", class: "bcc", text: fmtF(x.s) + " → " + fmtF(x.s + x.d), title: "Reprendre cet ancien extrait", on: { click: function () {
-          it.snip = { s: x.s, d: x.d }; delete it.snipVideo; snipCommit(); prevSnip(); if (tl) { act = "in"; seek(x.s); playSnip(); draw(); }
+          snipDraft(); it.snip = { s: x.s, d: x.d }; prevSnip(); drawSnip(); if (tl) { act = "in"; seek(x.s); playSnip(); draw(); }
         } } })); });
         histSnip.hidden = histSnipL.hidden = !(h.snip || []).length;
       }
       // Image de l'ordinateur pour la vignette ; mp4 de l'ordinateur pour l'extrait (20 Mo au plus) → data/bibli/img/b/, data/bibli/vid/.
       var imgUp = el("input", { type: "file", accept: "image/*", hidden: true }), vidUp = el("input", { type: "file", accept: "video/mp4", hidden: true });
-      imgUp.addEventListener("change", function () {
-        var f = imgUp.files[0]; if (!f) return; pout.textContent = "Préparation de l'image…";
+      imgUp.addEventListener("change", function () { doImg(imgUp.files[0]); });
+      vidUp.addEventListener("change", function () { doVid(vidUp.files[0]); });
+      // Boutons d'import (Gus 22/11) : un clic ouvre le choix du fichier ; on peut aussi y lâcher un fichier glissé depuis l'ordinateur.
+      function upBtn(label, input, kind, onFile) {
+        var b = el("button", { type: "button", class: "btn bupbtn", title: "Cliquer ou glisser un fichier ici" }, [label]);
+        b.addEventListener("click", function () { input.click(); });
+        ["dragenter", "dragover"].forEach(function (ev) { b.addEventListener(ev, function (e) { if (!e.dataTransfer || [].indexOf.call(e.dataTransfer.types, "Files") < 0) return; e.preventDefault(); b.classList.add("over"); }); });
+        b.addEventListener("dragleave", function () { b.classList.remove("over"); });
+        b.addEventListener("drop", function (e) { e.preventDefault(); b.classList.remove("over"); var f = [].filter.call(e.dataTransfer.files, function (x) { return x.type.indexOf(kind) === 0; })[0]; if (f) onFile(f); else pout.textContent = kind === "image" ? "Ce n'est pas une image." : "Ce n'est pas une vidéo."; });
+        return b;
+      }
+      function doImg(f) {
+        if (!f) return; pout.textContent = "Préparation de l'image…";
         compress(f).then(function (c) { var path = "data/bibli/img/b/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".webp"; files.push({ path: path, base64: c.base64 }); setImg(rawURL(path)); pout.textContent = "Vignette importée."; imgUp.value = ""; }, function (e) { pout.textContent = e.message; });
-      });
-      vidUp.addEventListener("change", function () {
-        var f = vidUp.files[0]; if (!f) return;
+      }
+      function doVid(f) {
+        if (!f) return;
         if (f.size > 20e6) { pout.textContent = "Vidéo trop lourde (20 Mo au plus pour un extrait)."; vidUp.value = ""; return; }
         pout.textContent = "Préparation de la vidéo…"; var fr = new FileReader();
         fr.onload = function () {
           var path = "data/bibli/vid/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".mp4";
           files.push({ path: path, base64: fr.result.split(",")[1] }); it.snipVideo = rawURL(path);
-          if (it._snipTmp) { delete it._snipTmp; delete it.snip; } it.edited = true; chg(); prevSnip(); drawSnip();
+          snipDiscard(); it.edited = true; chg(); prevSnip(); drawSnip();
           pout.textContent = "Extrait importé (" + Math.round(f.size / 1e5) / 10 + " Mo) : il remplace l'extrait pris dans le film."; vidUp.value = "";
         };
         fr.readAsDataURL(f);
-      });
+      }
       // Capture d'une image du film : la vidéo de Slate n'autorise pas la copie d'image ; on la relit par la fonction /api/media du site.
       function grab() {
         if (!player) return; var t = player.currentTime; pout.textContent = "Capture de l'image…";
@@ -5258,7 +5274,7 @@
           } } }) : null])),
         el("div", {}, [el("span", { class: "label", text: "Aperçu (survol = extrait)" }), pv, el("span", { class: "label", text: "Recadrage" }), zoom, zl, el("label", { class: "bck", title: "Comme la case de recadrage des pages : sinon seulement l'extrait" }, [thumbCk, " Recadrer aussi la vignette"]),
           player ? null : el("span", { class: "label", text: "Vignette" }), player ? null : thumbs,
-          player ? null : el("button", { type: "button", class: "btn ghost", text: "Importer une image…", on: { click: function () { imgUp.click(); } } }), player ? null : imgUp,
+          player ? null : upBtn("⤒ Importer une image", imgUp, "image", doImg), player ? null : imgUp,
           player ? null : histImgL, player ? null : histImg])]));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]), exOut]),
@@ -5266,9 +5282,11 @@
       // Vignette et extrait : deux onglets sous le film (Gus 22/11), vignette d'abord.
       var thumbPane = null, snipPane = null;
       if (player) {
-        thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [grabB, el("button", { type: "button", class: "btn ghost", text: "Importer une image…", on: { click: function () { imgUp.click(); } } }), imgUp]),
+        // « Valider » en bas à droite (Gus 22/11) : la vignette = l'image affichée ; l'extrait réglé n'est enregistré qu'en validant.
+        var valB = el("button", { type: "button", class: "btn primary", text: "Valider l'extrait", on: { click: function () { snipCommit(); valB.disabled = true; prevSnip(); } } });
+        thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [upBtn("⤒ Importer une image", imgUp, "image", doImg), imgUp, el("span", { class: "tlgrow" }), grabB]),
           el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg]);
-        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, el("button", { type: "button", class: "btn ghost", text: "Importer un mp4…", on: { click: function () { vidUp.click(); } } }), vidUp]), snipLine,
+        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine,
           histSnipL, histSnip]);
         box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout]));
         setTab("thumb");

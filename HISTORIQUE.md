@@ -356,3 +356,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 22/11 (bibliothèque, Gus) : « Annuler » de la bande grisé une demi-seconde après chaque geste (corrigé) et Ctrl+Z bloqué dans la
   fenêtre d'un film (annuler / rétablir ajoutés) ; plus de marques orange ; « Cinematographer » dans les rôles ; onglet Extrait prêt
   tout de suite (à partir de la vignette) ; historique des vignettes et des extraits ; image et mp4 de l'ordinateur.
+- 22/11 (bibliothèque, Gus) : « Valider cette image » et « Valider l'extrait » en bas à droite ; un extrait réglé sans valider n'est pas enregistré ; boutons d'import (clic ou fichier glissé dessus).
