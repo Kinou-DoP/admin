@@ -338,3 +338,5 @@ remet à la réouverture de la même page (message « Modifications non publiée
   bandes du 19/11 étaient lisibles en clair dans le dépôt public (liste des codes comprise ; mot de passe vérifié seulement dans le
   navigateur). Désormais : lien court au hasard `…/b/<9 caractères>`, contenu chiffré avec le lien (et le mot de passe), liste privée
   dans notes.
+- 22/11 (bibliothèque, retours de Gus) : plus de cadre en pointillé (toute la colonne reçoit les films), sections séparées par un trait,
+  « Bandes existantes » : seulement le nom, clic sur la ligne pour ouvrir ; Annuler / Rétablir sur la bande (ex. vidée par erreur).

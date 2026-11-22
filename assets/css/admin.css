@@ -946,3 +946,11 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .bx[disabled] { opacity: .2; cursor: default; }
 .bfoot .btn { padding: 8px 10px; }
 .blinkline { font-size: 12px; }
+/* 22/11 (2) : plus de cadre en pointillé (toute la colonne reçoit les films), sections séparées, liste des bandes cliquable */
+.bempty { border: 0; }
+.bit.sec { margin-top: 18px; padding-top: 10px; border-top: 1px solid rgba(255,252,235,.35); border-bottom: 0; }
+.bitems > .bit.sec:first-child { margin-top: 0; }
+.boldrow { cursor: pointer; padding-left: 6px; padding-right: 6px; transition: background .15s; }
+.boldrow:hover { background: var(--soft); }
+.bur { display: flex; gap: 14px; margin-left: auto; margin-right: 14px; }
+.bur .blink:disabled { opacity: .3; cursor: default; text-decoration: none; }

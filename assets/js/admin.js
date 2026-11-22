@@ -4264,7 +4264,8 @@
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
-  var bibCache = null;
+  var bibCache = null, bibKey = null;
+  document.addEventListener("keydown", function (e) { if (bibKey) bibKey(e); });
   function bnrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ł/g, "l").replace(/\s+/g, " ").trim(); }
   function bibLoad(force) {
     if (bibCache && !force) return Promise.resolve(bibCache);
@@ -4591,7 +4592,25 @@
     // ---------- Enregistrement automatique (Gus 22/11 : plus de bouton « Enregistrer », comme sur Slate) ----------
     var save = { t: 0, busy: false, again: false, files: [], state: "", meta: null, legacy: null };
     function keep() { try { localStorage.setItem(BAND_KEY, JSON.stringify(band, function (k, v) { return k === "_file" ? undefined : v; })); } catch (e) {} }
-    function changed() { keep(); clearTimeout(save.t); setState("wait"); save.t = setTimeout(saveBand, 1200); }
+    function changed() { keep(); clearTimeout(save.t); setState("wait"); save.t = setTimeout(saveBand, 1200); undoMark(); }
+    // Annuler / Rétablir (Gus 22/11 : une bande vidée par erreur…) : instantanés de la bande, un par moment de calme (0,6 s).
+    var undo = { l: [], i: -1, t: 0 };
+    function snap() { return JSON.stringify(band, function (k, v) { return k === "_file" ? undefined : v; }); }
+    function undoReset() { undo.l = [snap()]; undo.i = 0; undoBtns(); }
+    function undoMark() { clearTimeout(undo.t); undo.t = setTimeout(function () { var s = snap(); if (s === undo.l[undo.i]) return; undo.l = undo.l.slice(0, undo.i + 1); undo.l.push(s); if (undo.l.length > 80) undo.l.shift(); undo.i = undo.l.length - 1; undoBtns(); }, 600); }
+    function undoGo(d) {
+      clearTimeout(undo.t); var s = snap();
+      if (s !== undo.l[undo.i]) { undo.l = undo.l.slice(0, undo.i + 1); undo.l.push(s); undo.i++; } // changement pas encore noté
+      var j = undo.i + d; if (j < 0 || j >= undo.l.length) return;
+      undo.i = j; var code = band.code, created = band.created; band = JSON.parse(undo.l[j]); band.code = code; band.created = created;
+      keep(); clearTimeout(save.t); setState("wait"); save.t = setTimeout(saveBand, 1200);
+      drawBand(); if (data) draw();
+    }
+    function undoBtns() { var u = right.querySelector(".bundo"), r = right.querySelector(".bredo"); if (u) u.disabled = undo.i <= 0; if (r) r.disabled = undo.i >= undo.l.length - 1; }
+    bibKey = function (e) { // Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z (hors champs de texte)
+      if (!document.body.classList.contains("bibpage") || !(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || e.target.closest("input, textarea") || document.querySelector(".bmodal")) return;
+      e.preventDefault(); undoGo(e.shiftKey ? 1 : -1);
+    };
     function setState(s, msg) {
       save.state = s; var x = right.querySelector(".bsave"); if (!x) return;
       x.className = "bsave " + s;
@@ -4685,7 +4704,7 @@
         });
         ul.appendChild(li);
       });
-      if (!band.items.length) ul.appendChild(el("div", { class: "bempty" }, [el("strong", { text: "Glissez des films ici" }), el("span", { text: "ou « + » sur une ligne. Plusieurs films : cochez-les puis glissez-en un." })]));
+      if (!band.items.length) ul.appendChild(el("div", { class: "bempty" }, [el("strong", { text: "Glissez des films dans cette colonne" }), el("span", { text: "ou « + » sur une ligne. Plusieurs films : cochez-les puis glissez-en un." })]));
       right.appendChild(ul);
       foot = el("div", { class: "bfoot" }); right.appendChild(foot); drawFoot();
     }
@@ -4704,11 +4723,14 @@
         band.code ? el("a", { class: "btn ghost", href: bandURL(band.code), target: "_blank", rel: "noopener", text: "Voir ↗" }) : null,
         el("button", { type: "button", class: "btn primary", text: "+ Nouvelle bande", title: "La bande en cours reste enregistrée (Bandes existantes)", on: { click: function () {
           if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); }
-          band = bandNew(); save.meta = null; keep(); st.tab = "new"; drawBand(); if (data) draw();
+          band = bandNew(); save.meta = null; keep(); st.tab = "new"; undoReset(); drawBand(); if (data) draw();
         } } })]));
-      foot.appendChild(el("div", { class: "bfrow2" }, [el("span", { class: "bsave" }), band.items.length ? el("button", { type: "button", class: "blink", text: "Vider", on: { click: function () { if (!confirm("Retirer tous les films de la bande ?")) return; band.items = []; changed(); drawBand(); if (data) draw(); } } }) : null]));
+      foot.appendChild(el("div", { class: "bfrow2" }, [el("span", { class: "bsave" }),
+        el("span", { class: "bur" }, [el("button", { type: "button", class: "blink bundo", text: "↶ Annuler", title: "Annuler (Ctrl / Cmd + Z)", on: { click: function () { undoGo(-1); } } }),
+          el("button", { type: "button", class: "blink bredo", text: "Rétablir ↷", title: "Rétablir (Maj + Ctrl / Cmd + Z)", on: { click: function () { undoGo(1); } } })]),
+        band.items.length ? el("button", { type: "button", class: "blink", text: "Vider", on: { click: function () { if (!confirm("Retirer tous les films de la bande ?")) return; band.items = []; changed(); drawBand(); if (data) draw(); } } }) : null]));
       foot.appendChild(msg);
-      setState(save.state);
+      setState(save.state); undoBtns();
     }
     function drawOld() {
       var box = el("div", { class: "bold" }, [el("p", { class: "hint", text: "Chargement…" })]); right.appendChild(box);
@@ -4721,10 +4743,11 @@
         l.forEach(function (b, i) {
           var exp = b.expires && b.expires < today;
           var th = el("div", { class: "bithumb" }); if (b.img) th.appendChild(el("i", { style: 'background-image:url("' + b.img + '")' }));
-          box.appendChild(el("div", { class: "boldrow" + (exp ? " exp" : ""), style: "--i:" + i }, [th, el("div", { class: "boldt" }, [el("strong", { text: b.title }),
-            el("small", { text: [b.artists, b.n + " film" + (b.n > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by, b.pw ? "mot de passe" : "", b.expires ? (exp ? "expirée le " : "jusqu'au ") + fdate(b.expires) : "", b.legacy ? "ancien lien" : ""].filter(Boolean).join(" · ") })]),
-            el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn ghost", text: "Ouvrir", on: { click: function () { openBand(b); } } }),
-              el("a", { class: "btn ghost", href: b.legacy ? SITE_VIEW + "/b/?" + b.code : bandURL(b.code), target: "_blank", rel: "noopener", text: "↗" }),
+          // Clic n'importe où sur la bande = l'ouvrir (Gus 22/11) ; seulement son nom, pas les chefs op.
+          box.appendChild(el("div", { class: "boldrow" + (exp ? " exp" : ""), style: "--i:" + i, title: "Ouvrir cette bande", on: { click: function (e) { if (!e.target.closest("a, button")) openBand(b); } } }, [th, el("div", { class: "boldt" }, [el("strong", { text: b.title }),
+            el("small", { text: [b.n + " film" + (b.n > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by, b.pw ? "mot de passe" : "", b.expires ? (exp ? "expirée le " : "jusqu'au ") + fdate(b.expires) : "", b.legacy ? "ancien lien" : ""].filter(Boolean).join(" · ") })]),
+            el("div", { class: "fwbtns" }, [
+              el("a", { class: "btn ghost", title: "Voir la page envoyée", href: b.legacy ? SITE_VIEW + "/b/?" + b.code : bandURL(b.code), target: "_blank", rel: "noopener", text: "↗" }),
               b.legacy ? null : el("button", { type: "button", class: "btn ghost", text: "×", title: "Supprimer cette bande (le lien ne marchera plus)", on: { click: function () { delBand(b); } } })])]));
         });
       }, function (e) { box.textContent = "Indisponible : " + e.message + " (la clé doit avoir accès au dépôt notes)"; });
@@ -4736,7 +4759,7 @@
         band = { code: d.code, title: d.title, description: d.description || "", artists: Array.isArray(d.artists) ? (b.legacy ? "" : d.artists.join(", ")) : (d.artists || ""), items: d.items || [], cols: d.cols || 3,
           hide: d.hide || {}, expires: d.expires || "", download: !!d.download, pw: b.legacy ? "" : (d.pw || ""), created: d.created };
         band.items.forEach(function (x) { if (x.section === undefined && !x.key) x.key = x.slate ? "s" + x.slate : "u" + (x.full || x.video || x.img || x.title); });
-        save.meta = null; save.legacy = b.legacy ? b.code : null; save.state = ""; st.tab = "new"; drawBand(); if (data) draw();
+        save.meta = null; save.legacy = b.legacy ? b.code : null; save.state = ""; st.tab = "new"; undoReset(); drawBand(); if (data) draw();
         if (b.legacy) setState("", "Ancienne bande : elle passera au nouveau lien sécurisé au premier changement.");
       });
     }
@@ -4999,7 +5022,7 @@
       } } });
       modal("Ajouter une suite d'images", [dl, el("span", { class: "label", text: "Titre" }), title, el("span", { class: "label", text: "Chef op" }), dop, el("span", { class: "label", text: "Images (dans l'ordre des noms de fichiers)" }), fin, grid, out, el("div", { class: "fwbtns" }, [save])]);
     }
-    drawBand();
+    undoReset(); drawBand();
   }
 
   function route() {
