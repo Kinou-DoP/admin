@@ -71,6 +71,11 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   (avec les mots de passe) dans le dépôt **notes** `bandes/<code>.json` + `bandes/index.json` (`nGet` / `nPut` / `nEdit`). « Bandes
   existantes » (revenir à l'onglet de la bande = nouvelle bande vide) : clic sur la ligne = ouvrir (seulement le nom de la bande), voir ↗, supprimer ×. **Annuler / Rétablir** (boutons en bas
   ou Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z) : instantanés de la bande (`undo*`), remis à zéro à chaque bande ouverte ou nouvelle. Anciennes bandes en clair (`data/bandes/`, 19/11) : listées, converties au premier changement.
+  **Dans la liste** : clic sur l'image = lecteur (`bibPlay`, film complet, Échap / clic à côté) ; clic ailleurs sur la ligne = **infos du
+  film** (même fenêtre que les retouches, `editItem(-1, lib)`), enregistrées dans `data/bibli/edits.json` (seulement ce qui diffère des
+  pages, `bibApply`, `_orig`), reprises par les films ajoutés ensuite aux bandes, jamais sur le site ; ligne marquée ✎. **Crédits avec
+  rôle** : `dops` + `roles { nom: rôle }` (rôle vide = cinematographer, crédité en premier ; ex. « Camera operator »), dans les infos
+  et les retouches ; case à cocher et « + » plus grands.
   Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement** (hébergement pas encore branché).
 - **Sorties fiction** (`#/sorties`) : calendrier mois / semaine (page fiction + `notes/sorties/sorties.json` + films sans date de
   `projets.json`), bandes-annonces à voir (pastille), confirmer / masquer / ajouter une sortie.
