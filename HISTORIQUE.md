@@ -343,3 +343,5 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 22/11 (retouches d'un film dans une bande, Gus) : image par image avec les flèches (vignette, début et fin de l'extrait) ; extrait =
   un début et une fin (10 s au plus) au lieu de 10 s fixes ; on voit l'image pendant le réglage, l'extrait joue dès qu'on lâche.
   Robot `bibli-meta` poussé sur `main` (feu vert de Gus).
+- 22/11 (extrait d'une bande, Gus) : au-delà de 10 s la poignée tirée se bloque et l'autre reste en place (avant : elle poussait
+  l'autre) ; pour aller plus loin, déplacer d'abord le début puis la fin.

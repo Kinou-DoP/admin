@@ -4881,10 +4881,11 @@
         };
         var seek = function (t) { loopOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
         var playSnip = function () { if (!it.snip) return; loopOn = true; player.currentTime = it.snip.s; player.play().catch(function () {}); };
-        var setSnip = function (s, e, which) { // 0,5 s au moins, 10 s au plus ; la poignée tirée pousse l'autre
+        var setSnip = function (s, e, which) { // 0,5 s au moins, 10 s au plus : la poignée tirée s'arrête, l'autre ne bouge pas (Gus 22/11)
           s = Math.round(s * 1000) / 1000; e = Math.round(e * 1000) / 1000;
-          if (which === "in") { s = Math.max(0, Math.min(s, dur - .5)); if (e < s + .5) e = s + .5; if (e > s + 10) e = s + 10; }
-          else { e = Math.min(dur, Math.max(e, .5)); if (s > e - .5) s = e - .5; if (s < e - 10) s = e - 10; }
+          if (which === "in") s = Math.max(0, e - 10, Math.min(s, e - .5));
+          else if (which === "out") e = Math.min(dur, s + 10, Math.max(e, s + .5));
+          else { s = Math.max(0, Math.min(s, dur - .5)); e = Math.min(dur, Math.max(s + .5, Math.min(e, s + 10))); }
           it.snip = { s: Math.max(0, s), d: Math.round((Math.min(dur, e) - Math.max(0, s)) * 1000) / 1000 }; it.edited = true;
         };
         var moveHandle = function (which, t) { var s = it.snip.s, e = s + it.snip.d; if (which === "in") setSnip(t, e, "in"); else setSnip(s, t, "out"); seek(which === "in" ? it.snip.s : it.snip.s + it.snip.d); };
@@ -4934,7 +4935,7 @@
         tools.appendChild(el("div", { class: "tlrow" }, [
           el("button", { type: "button", class: "btn", text: "Cette image = vignette", on: { click: grab } }),
           it.full ? el("button", { type: "button", class: "btn", text: "Extrait à partir d'ici", title: "Début = image affichée ; réglez ensuite le début et la fin (10 s au plus)", on: { click: function () {
-            var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "in"); changed(); prevSnip(); draw(); playSnip(); drawSnip();
+            var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "new"); changed(); prevSnip(); draw(); playSnip(); drawSnip();
           } } }) : null]));
       }
       var snipLine = el("p", { class: "hint" });
