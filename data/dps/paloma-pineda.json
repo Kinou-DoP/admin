@@ -559,7 +559,14 @@
       "types": [
         "Short Film",
         "narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection, Festival international du court métrage de Clermont-Ferrand 2026\nOfficial selection • Normandie, cinéma en région, Off-Courts Trouville 2025",
+        "awardsFrom": {
+          "5b282b5e4e5e": "Official selection, Festival international du court métrage de Clermont-Ferrand 2026",
+          "4ddb7bf9ca7e": "Official selection • Normandie, cinéma en région, Off-Courts Trouville 2025"
+        }
+      }
     },
     "10339": {
       "title": "Arone - Jour/Nuit",
@@ -613,7 +620,13 @@
         1.6764,
         1.6764,
         1.6764
-      ]
+      ],
+      "info": {
+        "awards": "Official selection • International Short Film Contest, Huesca International Short Film Contest 2026",
+        "awardsFrom": {
+          "bc18bb625745": "Official selection • International Short Film Contest, Huesca International Short Film Contest 2026"
+        }
+      }
     },
     "11349": {
       "title": "Fief (coming soon)",

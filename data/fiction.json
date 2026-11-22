@@ -767,12 +767,15 @@
         "y": 65.5
       },
       "info": {
-        "awards": "Grand Prix, Festival du film de Saint-Jean-de-Luz 2025\nPrix du jury jeunes, Festival du film de Saint-Jean-de-Luz 2025\nOfficial selection • SOON! competition, Film Festival Oostende 2027\nOfficial selection • Compétition, Festival international du film francophone de Namur (FIFF) 2025",
+        "awards": "Grand Prix, Festival du film de Saint-Jean-de-Luz 2025\nPrix du jury jeunes, Festival du film de Saint-Jean-de-Luz 2025\nOfficial selection • SOON! competition, Film Festival Oostende 2027\nOfficial selection • Compétition, Festival international du film francophone de Namur (FIFF) 2025\nGrand Prix, Festival international du film de Saint-Jean-de-Luz\nPrix du jury jeunes, Festival international du film de Saint-Jean-de-Luz\nOfficial selection • Compétition SOON!, Festival du film d'Ostende (Film Festival Oostende) 2027",
         "awardsFrom": {
           "f4dec71c2f2f": "Grand Prix, Festival du film de Saint-Jean-de-Luz 2025",
           "29410929ec6a": "Prix du jury jeunes, Festival du film de Saint-Jean-de-Luz 2025",
           "d17b89166ed2": "Official selection • SOON! competition, Film Festival Oostende 2027",
-          "3df221bca771": "Official selection • Compétition, Festival international du film francophone de Namur (FIFF) 2025"
+          "3df221bca771": "Official selection • Compétition, Festival international du film francophone de Namur (FIFF) 2025",
+          "ca1511f25eb3": "Grand Prix, Festival international du film de Saint-Jean-de-Luz",
+          "9e64796afb60": "Prix du jury jeunes, Festival international du film de Saint-Jean-de-Luz",
+          "ca4a8067f68f": "Official selection • Compétition SOON!, Festival du film d'Ostende (Film Festival Oostende) 2027"
         }
       }
     },

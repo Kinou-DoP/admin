@@ -302,7 +302,13 @@
       "types": [
         "Short Film",
         "Stills"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection, Music & Cinema Marseille 2026",
+        "awardsFrom": {
+          "df8847ece5ad": "Official selection, Music & Cinema Marseille 2026"
+        }
+      }
     },
     "9813": {
       "types": [

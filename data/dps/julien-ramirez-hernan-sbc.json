@@ -475,7 +475,13 @@
         "Feature Film",
         "narrative"
       ],
-      "title": "Other"
+      "title": "Other",
+      "info": {
+        "awards": "Official selection, SLASH Filmfestival 2025",
+        "awardsFrom": {
+          "68404e42c5e4": "Official selection, SLASH Filmfestival 2025"
+        }
+      }
     },
     "9922": {
       "types": [
