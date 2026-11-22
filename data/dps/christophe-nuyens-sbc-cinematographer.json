@@ -230,9 +230,10 @@
         }
       ],
       "info": {
-        "awards": "Official selection • Longs métrages (film d'ouverture), Festival européen du film fantastique de Strasbourg (FEFFS) 2026",
+        "awards": "Official selection • Longs métrages (film d'ouverture), Festival européen du film fantastique de Strasbourg (FEFFS) 2026\nOfficial selection • Film d'ouverture, Festival européen du film fantastique de Strasbourg 2026",
         "awardsFrom": {
-          "bb6e3fb35424": "Official selection • Longs métrages (film d'ouverture), Festival européen du film fantastique de Strasbourg (FEFFS) 2026"
+          "bb6e3fb35424": "Official selection • Longs métrages (film d'ouverture), Festival européen du film fantastique de Strasbourg (FEFFS) 2026",
+          "e860a861d4d6": "Official selection • Film d'ouverture, Festival européen du film fantastique de Strasbourg 2026"
         }
       }
     },
