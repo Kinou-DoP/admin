@@ -3132,8 +3132,8 @@
     view.appendChild(el("p", { class: "lead", text: "Les festivals où nos films ont été sélectionnés, nommés ou primés. Deux robots cherchent : chaque nuit, Claude cherche film par film sur le web (AlloCiné, Unifrance, IMDb, festivals, presse, tous festivals confondus) ; chaque matin, un autre lit les pages de sélection des festivals du calendrier. Leurs trouvailles arrivent dans « À vérifier »." }));
     var box = el("div", {}, [el("p", { class: "hint", text: "Chargement…" })]);
     view.appendChild(box); immInit(function () { draw(); });
-    var st = { cat: "", fest: "", dop: "", year: "", q: "", showNo: false, nRec: 30, nAll: 60 };
-    var recOpen = true; try { recOpen = localStorage.getItem("kinou-sel-rec") !== "0"; } catch (e) {}
+    var st = { cat: "", fest: "", dop: "", year: "", q: "", showNo: false, nAll: 60, tab: "all" };
+    try { if (localStorage.getItem("kinou-sel-tab") === "rec") st.tab = "rec"; } catch (e) {} // onglet mémorisé dans ce navigateur
     // Prix sans film sur le site (Gus 22/11) : la trouvaille n'est rattachée à aucun film des fiches des chefs op ni de la page
     // fiction (même recherche par le titre que awardsSync), et n'a pas de lien fait à la main (`links`) → triangle « ! »,
     // catégorie « Sans lien », bouton « Relier à un film » (un ou plusieurs films de la bibliothèque).
@@ -3269,24 +3269,19 @@
       nw.forEach(function (x) { var k = x.project || x.title; if (!byP[k]) { byP[k] = []; keys.push(k); } byP[k].push(x); });
       keys.forEach(function (k) { s1.appendChild(filmBox(byP[k])); });
       box.appendChild(s1);
-      // 2. Récent : confirmé, festival dans les 6 derniers mois (ou à venir).
-      // Récent = festival (ou prix) des 4 derniers mois, d'après sa date ; sans date exacte : pas dans « Récent » (sauf ajout à la main récent).
+      // 2. Nos sélections confirmées, deux onglets (Gus 22/11) : « Toutes » et « Récent » (festival ou prix des 4 derniers mois, d'après
+      // sa date ; sans date exacte : pas dans Récent, sauf ajout à la main récent). Catégories, filtres et recherche valent pour les deux.
       var lim = new Date(Date.now() - 122 * 864e5).toISOString().slice(0, 10);
       function evd(x) { return x.date || (x.manual && x.at ? x.at.slice(0, 10) : ""); }
-      var rec = ok.filter(function (x) { return evd(x) >= lim; }).sort(function (a, b) { return evd(b).localeCompare(evd(a)); });
-      // Repliable (mémorisé dans ce navigateur), 30 lignes puis « Afficher plus ».
-      var s2 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "selfold" + (recOpen ? " open" : ""), on: { click: function () {
-        recOpen = !recOpen; try { localStorage.setItem("kinou-sel-rec", recOpen ? "1" : "0"); } catch (e) {} draw(); } } }, [(recOpen ? "▾ " : "▸ ") + "Récent · " + rec.length])])]);
-      if (recOpen) {
-        if (!rec.length) s2.appendChild(el("p", { class: "hint", text: "Rien ces quatre derniers mois." }));
-        rec.slice(0, st.nRec).forEach(function (x) { s2.appendChild(line(x)); });
-        var m1 = more(rec, st.nRec, "nRec", draw); if (m1) s2.appendChild(m1);
+      var rec = ok.filter(function (x) { return evd(x) >= lim; });
+      var base = st.tab === "rec" ? rec : ok;
+      function tab(k, label) {
+        return el("button", { type: "button", class: "seltab" + (st.tab === k ? " on" : ""), text: label, on: { click: function () {
+          st.tab = k; st.nAll = 60; try { localStorage.setItem("kinou-sel-tab", k); } catch (e) {} draw(); } } });
       }
-      box.appendChild(s2);
-      // 3. Toutes nos sélections : catégories + filtres.
-      var s3 = el("section", {}, [el("h2", { text: "Toutes nos sélections · " + ok.length })]);
-      var cnt = { "": ok.length, prize: 0, img: 0, sel: 0, nom: 0, nolink: 0 };
-      ok.forEach(function (x) { var k = kindOf(x); cnt[k]++; if (k === "img") cnt.prize++; if (placed(x) === false) cnt.nolink++; });
+      var s3 = el("section", {}, [el("h2", { class: "seltabs" }, [tab("all", "Toutes nos sélections · " + ok.length), tab("rec", "Récent · " + rec.length)])]);
+      var cnt = { "": base.length, prize: 0, img: 0, sel: 0, nom: 0, nolink: 0 };
+      base.forEach(function (x) { var k = kindOf(x); cnt[k]++; if (k === "img") cnt.prize++; if (placed(x) === false) cnt.nolink++; });
       var cats = [["", "Tout"], ["prize", "Prix"], ["img", "Prix de l'image"], ["sel", "Sélections"], ["nom", "Nominations"]];
       if (bib) cats.push(["nolink", "Sans lien"]); // film pas retrouvé sur le site (Gus 22/11)
       s3.appendChild(el("div", { class: "fchips" }, cats.map(function (c) {
@@ -3296,7 +3291,7 @@
         var s = el("select", { class: "nodirty" }, [el("option", { value: "", text: label })].concat(vals.map(function (v) { return el("option", { value: v, text: v }); })));
         s.value = st[key]; s.addEventListener("change", function () { st[key] = s.value; draw(); }); return s;
       }
-      function uniq(f) { var o = {}; ok.forEach(function (x) { [].concat(f(x)).forEach(function (v) { if (v) o[v] = 1; }); }); return Object.keys(o); }
+      function uniq(f) { var o = {}; base.forEach(function (x) { [].concat(f(x)).forEach(function (v) { if (v) o[v] = 1; }); }); return Object.keys(o); }
       var q = el("input", { type: "search", class: "find nodirty", placeholder: "Rechercher un film, un festival, un prix, un chef op, un réalisateur, une production…", value: st.q });
       var list = el("div", {});
       s3.appendChild(el("div", { class: "rcsel" }, [dd("fest", "Tous les festivals", uniq(function (x) { return x.festName; }).sort(function (a, b) { return a.localeCompare(b, "fr"); })),
@@ -3305,7 +3300,7 @@
       s3.appendChild(q); s3.appendChild(list);
       function fillAll() {
         var w = nrm(st.q).split(/\s+/).filter(Boolean); list.textContent = "";
-        var l = ok.filter(function (x) {
+        var l = base.filter(function (x) {
           var k = kindOf(x);
           if (st.cat === "nolink") { if (placed(x) !== false) return false; }
           else if (st.cat && !(st.cat === k || (st.cat === "prize" && k === "img"))) return false;
@@ -3314,8 +3309,8 @@
           if (st.year && x.edition !== st.year) return false;
           var h = nrm([x.title, x.festName, x.city, x.country, x.section, x.prize, prodOf(x), (x.directors || []).join(" "), (x.dops || []).join(" ")].join(" "));
           return w.every(function (v) { return h.indexOf(v) > -1; });
-        }).sort(function (a, b) { return when(b).localeCompare(when(a)) || a.festName.localeCompare(b.festName); });
-        if (!l.length) list.appendChild(el("p", { class: "hint", text: ok.length ? "Rien avec ces filtres." : "Aucune sélection confirmée pour l'instant." }));
+        }).sort(function (a, b) { return (st.tab === "rec" ? evd(b).localeCompare(evd(a)) : 0) || when(b).localeCompare(when(a)) || a.festName.localeCompare(b.festName); });
+        if (!l.length) list.appendChild(el("p", { class: "hint", text: base.length ? "Rien avec ces filtres." : st.tab === "rec" ? "Rien ces quatre derniers mois." : "Aucune sélection confirmée pour l'instant." }));
         l.slice(0, st.nAll).forEach(function (x) { list.appendChild(line(x)); });
         var m2 = more(l, st.nAll, "nAll", fillAll); if (m2) list.appendChild(m2);
       }
@@ -3324,7 +3319,21 @@
       box.appendChild(s3);
       if (no.length) {
         var s4 = el("section", {}, [el("h2", {}, [el("button", { type: "button", class: "btn ghost", text: (st.showNo ? "Masquer" : "Voir") + " les trouvailles écartées · " + no.length, on: { click: function () { st.showNo = !st.showNo; draw(); } } })])]);
-        if (st.showNo) no.forEach(function (x) { s4.appendChild(line(x)); });
+        // Deux sortes d'écartées (Gus 22/11) : « Pas nous » (✗ de l'équipe) et les doublons (même prix trouvé deux fois sous une
+        // autre forme, écarté par les robots : `dupOf` = id de la version gardée).
+        if (st.showNo) {
+          var notUs = no.filter(function (x) { return !x.dupOf; }), dups = no.filter(function (x) { return x.dupOf; });
+          if (notUs.length) {
+            s4.appendChild(el("h3", { class: "selfest", text: "Pas nous · " + notUs.length }));
+            s4.appendChild(el("p", { class: "hint", text: "Écartées avec ✗ : « Finalement c'est nous » les remet dans nos sélections." }));
+            notUs.forEach(function (x) { s4.appendChild(line(x)); });
+          }
+          if (dups.length) {
+            s4.appendChild(el("h3", { class: "selfest", text: "Doublons · " + dups.length }));
+            s4.appendChild(el("p", { class: "hint", text: "Le même prix ou la même sélection trouvé deux fois sous une autre forme (titre, langue, section…) : seule l'autre version est gardée et affichée sur le site. « Pas un doublon » si ce sont bien deux prix différents." }));
+            dups.forEach(function (x) { s4.appendChild(line(x)); });
+          }
+        }
         box.appendChild(s4);
       }
     }
@@ -3362,13 +3371,20 @@
       return b;
     }
     // Une ligne de « Récent » / « Toutes nos sélections » ; « Modifier » ouvre le formulaire en place.
+    function dupText(x) {
+      var k = typeof x.dupOf === "string" && sel.found.filter(function (y) { return y.id === x.dupOf; })[0];
+      return k ? "Doublon de : " + (k.title || "") + " · " + festLine(k) + (what(k) ? " — " + what(k) : "") + (k.status === "ok" ? " (gardée)" : "") : "Doublon d'une autre trouvaille (gardée)";
+    }
     function line(x) {
       var r = el("div", { class: "selrow ok" + (x.status === "no" ? " no" : "") }, [badge(x),
         el("div", { class: "selwhat" }, [el("strong", {}, [tri(x), x.title || "Sans titre"]), el("span", { text: festLine(x) + (what(x) ? " — " + what(x) : "") }),
           el("small", { text: [typeOf(x), (x.directors || []).length && "réal. " + x.directors.join(", "), "DoP " + (x.dops || []).map(rcBase).join(", ")].filter(Boolean).join(" · ") }),
-          linkTitles(x).length ? el("small", { class: "sellinks", text: "Relié à : " + linkTitles(x).join(", ") }) : null]),
+          linkTitles(x).length ? el("small", { class: "sellinks", text: "Relié à : " + linkTitles(x).join(", ") }) : null,
+          x.status === "no" && x.dupOf ? el("small", { class: "sellinks", text: dupText(x) }) : null]),
         el("div", { class: "selsrc" }, (x.urls || []).slice(0, 1).map(function (u) { return el("a", { href: u, target: "_blank", rel: "noopener", text: "source ↗" }); })),
-        el("div", { class: "fwbtns" }, x.status === "no" ? [el("button", { type: "button", class: "btn ghost", text: "Finalement c'est nous", on: { click: function () { setSt(x, "ok", "confirmé"); } } })]
+        el("div", { class: "fwbtns" }, x.status === "no" ? [x.dupOf ? el("button", { type: "button", class: "btn ghost", text: "Pas un doublon", on: { click: function () {
+            var y = JSON.parse(JSON.stringify(x)); y.status = "ok"; delete y.dupOf; y.by = user && user.login || ""; y.at = new Date().toISOString(); save(x, y, "pas un doublon"); } } })
+          : el("button", { type: "button", class: "btn ghost", text: "Finalement c'est nous", on: { click: function () { setSt(x, "ok", "confirmé"); } } })]
           : [linkBtn([x], function () { return r; }), el("button", { type: "button", class: "btn ghost", text: "Modifier", on: { click: function () { form(x, r); } } })])]);
       return r;
     }

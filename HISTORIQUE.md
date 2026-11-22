@@ -325,3 +325,7 @@ remet à la réouverture de la même page (message « Modifications non publiée
   Regard at the 2026 Cannes Film Festival ») ; (2) bug : écarter une trouvaille dont le texte est identique à celui d'une autre encore
   confirmée retirait la ligne du site pour les deux — la ligne reste désormais. Données : 3 lignes écrites à la main en double retirées
   (Histoires Parallèles : page fiction + fiche Guillaume Deffontaines ; Les Fraises : page fiction), la ligne du robot gardée.
+- 22/11 : **Nos sélections** (Gus) : « Récent » devient un **onglet** à droite de « Toutes nos sélections » (mêmes catégories, filtres et
+  recherche ; onglet mémorisé dans le navigateur) au lieu d'une section repliable. **Trouvailles écartées** en deux groupes : « Pas nous »
+  (✗ de l'équipe, « Finalement c'est nous ») et « Doublons » (écartés par les robots : « Doublon de : <version gardée> », bouton « Pas un
+  doublon » qui la remet dans nos sélections) ; Gus : « ça dit finalement c'est nous alors que c'est nous mais c'est des doublons ».
