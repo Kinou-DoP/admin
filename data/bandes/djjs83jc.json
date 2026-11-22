@@ -14,7 +14,7 @@
     "types": false
   },
   "expires": "",
-  "download": false,
+  "download": true,
   "pw": null,
   "items": [
     {
@@ -66,5 +66,5 @@
     }
   ],
   "by": "Gurvan",
-  "at": "2026-11-22T13:49:52.152Z"
+  "at": "2026-11-22T14:09:25.895Z"
 }
