@@ -53,11 +53,23 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   vidéo : extrait HD, recadrage, téléphone), **spotlight**, **fiction** (statut, genre, plateformes, date, affiche, cadrage scope,
   9 New releases au plus, passage automatique en New release le jour de la sortie, alerte « autre date trouvée »), **contact**
   (+ logo, mentions légales).
-- **Bibliothèque** (`#/bibli`, `showBibli`, 1re version) : tous nos films (fiches, fiction, spotlight, accueil, imports
-  `data/bibli/library.json`), recherche avec suggestions → filtres en étiquettes, **bandes** à glisser-déposer (sections = bundle,
-  réglages : colonnes, mot de passe, expiration, téléchargement, crédits cachés) → `data/bandes/<code>.json` + `index.json`, lien
-  `SITE_VIEW/b/?<code>` ; imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement**
-  (hébergement des vidéos pas encore branché).
+- **Bibliothèque** (`#/bibli`, `showBibli`) : tous nos films (fiches, fiction, spotlight, accueil, imports `data/bibli/library.json`),
+  **les plus récents en haut** (id Slate décroissant). Recherche avec suggestions dans cet ordre : chef op (étiquette orange), réal, prod,
+  client, type de contenu, catégorie (jamais les films ; 4 par sorte) → filtres en étiquettes. Client / types de contenu / mots-clés :
+  `data/bibli/meta.json`, écrit chaque nuit par le robot `bibli-meta.yml` (`tools/bibli-meta.mjs`, `readMeta` de `slate.mjs`, `main`).
+  **Bandes** (panneau de droite) : en arrivant, toujours une nouvelle bande vide ; on glisse les films n'importe où dans la colonne
+  (film qui suit la souris avec effet ressort, paquet d'images pour plusieurs films cochés ; Maj + clic = plage), « + », réordonner en
+  glissant ; boutons en bas (+ Section, Réglages, Voir, + Nouvelle bande) ; **enregistrement automatique** 1,2 s après chaque changement
+  (`changed` → `saveBand`, nouvel essai seul en cas d'échec). ✎ sur un film = **retouches pour cette bande seulement** (`editItem` :
+  titre, crédits, chefs op, types, vignette = image du film capturée par `/api/media` du site ou still, extrait = 10 s du film complet
+  à partir d'un moment choisi `snip`, recadrage `crop {z,x,y}`, stills et vidéos sous le film `extras`, prix `awards`). Les films de
+  la bande sont des copies (prix et extras des fiches repris). Réglages : nom, chefs op (vide = détectés : nos chefs op des films, le
+  plus présent d'abord), description, crédits / types / prix cachés, colonnes, expiration, mot de passe, téléchargement.
+  **Lien** `SITE_VIEW/b/<code>` (9 caractères au hasard, `bandCode`) ; page publique **chiffrée** `data/b/<empreinte>.json` (`bandSeal` :
+  PBKDF2-SHA256 150 000 tours du code → nom du fichier + clé AES-GCM ; mot de passe → clé tirée de code + mot de passe), original et liste
+  (avec les mots de passe) dans le dépôt **notes** `bandes/<code>.json` + `bandes/index.json` (`nGet` / `nPut` / `nEdit`). « Bandes
+  existantes » : ouvrir, voir, supprimer. Anciennes bandes en clair (`data/bandes/`, 19/11) : listées, converties au premier changement.
+  Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement** (hébergement pas encore branché).
 - **Sorties fiction** (`#/sorties`) : calendrier mois / semaine (page fiction + `notes/sorties/sorties.json` + films sans date de
   `projets.json`), bandes-annonces à voir (pastille), confirmer / masquer / ajouter une sortie.
 - **Festivals** : **dates** (`#/festivals`, `notes/festivals/festivals.json` ; ce que l'équipe a saisi n'est jamais modifié par le

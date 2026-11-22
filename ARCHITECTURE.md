@@ -10,6 +10,7 @@ Vue d'ensemble des trois dépôts : `ARCHITECTURE.md` du dépôt `site`. Ici : l
 | `assets/css/admin.css` | `beta` | tout le style |
 | `data/` | `main` | **les données du site** (fiches, accueil, spotlight, fiction, contact, bandes, bibliothèque, avancement) |
 | `.github/workflows/home-full.yml` + `tools/fill-home.mjs`, `tools/link-films.mjs` | `main` | robot après chaque publication : films complets manquants, images des projets en images, types de contenu, infos partagées entre pages d'un même film |
+| `.github/workflows/bibli-meta.yml` + `tools/bibli-meta.mjs` | `main` | robot de nuit (~4 h) : client, types de contenu, mots-clés de chaque film lus sur les bundles → `data/bibli/meta.json` |
 | `.github/workflows/slate-ask.yml` + `tools/ask.mjs`, `tools/slate.mjs` | `main` | robot qui lit Slate quand les fonctions du site ne répondent pas (`data/ask/`) |
 | `_headers`, `netlify.toml` | `main` | réglages de l'ancienne admin Netlify (plus utilisée) |
 
@@ -29,7 +30,7 @@ Vue d'ensemble des trois dépôts : `ARCHITECTURE.md` du dépôt `site`. Ici : l
    **Nos sélections** (`showFestSel`, `selRead`, `selPut`) et **prix → site** (`awLine`, `awApply`, `awFor`, `awFile`, `awardsSync` ; liens à la main : `placed`, `linkForm`) ;
    **Sorties fiction** (`showSorties`, `sortBuild`, `sortHide`, `trUnseen`) ; **Récupération** (`showRecup`, `projRead`, `projSave`, `rcMail`).
 10. **Accueil de l'admin** (`showHello`, `helloNews`), **Historique** (`histPath`), **Navigation** (`route`).
-11. **Bibliothèque** (`showBibli`, `bibLoad`, bandes `data/bandes/`, imports `data/bibli/`).
+11. **Bibliothèque** (`showBibli`, `bibLoad`, `bibFly` (glisser), `bandSeal` (chiffrement), `editItem` (retouches) ; bandes chiffrées `data/b/`, originaux dans notes `bandes/` ; imports et `meta.json` dans `data/bibli/`).
 
 ## Données internes
 Les pages festivals, sélections, sorties, récupération, notes et prénoms lisent / écrivent le **dépôt privé `notes`**

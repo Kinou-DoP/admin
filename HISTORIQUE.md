@@ -329,3 +329,12 @@ remet à la réouverture de la même page (message « Modifications non publiée
   recherche ; onglet mémorisé dans le navigateur) au lieu d'une section repliable. **Trouvailles écartées** en deux groupes : « Pas nous »
   (✗ de l'équipe, « Finalement c'est nous ») et « Doublons » (écartés par les robots : « Doublon de : <version gardée> », bouton « Pas un
   doublon » qui la remet dans nos sélections) ; Gus : « ça dit finalement c'est nous alors que c'est nous mais c'est des doublons ».
+- 22/11 : **bibliothèque, 2e version** (retours de Gus). Suggestions : plus de films ; ordre chef op (étiquette orange) → réal → prod →
+  client → type de contenu → catégorie ; client et types lus sur Slate par un nouveau robot de nuit (`bibli-meta`). Films les plus récents
+  en haut. Arrivée = nouvelle bande vide. Boutons de la bande en bas ; on dépose n'importe où dans la colonne ; glisser avec un film qui
+  suit la souris (ressort, paquet si plusieurs, comme Slate). Plus de bouton « Enregistrer » : enregistrement automatique. Retouches
+  film par film pour une bande (titre, crédits, vignette, extrait, recadrage, stills / vidéos dessous, prix). **Liens des bandes** : Gus
+  a remarqué que chez Slate les liens se suivent (on devinait les bandes privées d'autres sociétés en changeant le chiffre) ; et les
+  bandes du 19/11 étaient lisibles en clair dans le dépôt public (liste des codes comprise ; mot de passe vérifié seulement dans le
+  navigateur). Désormais : lien court au hasard `…/b/<9 caractères>`, contenu chiffré avec le lien (et le mot de passe), liste privée
+  dans notes.
