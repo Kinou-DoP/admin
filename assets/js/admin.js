@@ -4876,7 +4876,7 @@
             hIn.style.left = pc(s, w[0], w[1]); hOut.style.left = pc(e, w[0], w[1]); dPh.style.left = pc(t, w[0], w[1]);
             dPh.hidden = t < w[0] || t > w[1];
             hIn.classList.toggle("on", act === "in"); hOut.classList.toggle("on", act === "out");
-            dLab.textContent = "Extrait : " + fmtF(s) + " → " + fmtF(e) + " (" + it.snip.d.toFixed(1).replace(".", ",") + " s)" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image");
+            dLab.textContent = "Extrait : " + fmtF(s) + " → " + fmtF(e) + " (" + it.snip.d.toFixed(1).replace(".", ",") + " s)" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image") + " · espace : lire la boucle";
           }
         };
         var seek = function (t) { loopOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
@@ -4896,13 +4896,19 @@
         player.addEventListener("pause", function () { playB.textContent = "▶"; });
         (function tick() { // boucle de l'extrait + mesure de la cadence (image par image exact)
           if (dur && !player.isConnected) return; // fenêtre fermée
-          if (loopOn && it.snip && !player.paused && player.currentTime >= it.snip.s + it.snip.d) player.currentTime = it.snip.s;
+          if (loopOn && it.snip && !player.paused && (player.currentTime >= it.snip.s + it.snip.d || player.currentTime < it.snip.s - .1)) player.currentTime = it.snip.s;
           if (!player.paused) draw();
           requestAnimationFrame(tick);
         })();
         if (player.requestVideoFrameCallback) { var lastMT = null; var fcb = function (now, m) { if (lastMT !== null) { var d = m.mediaTime - lastMT; if (d > .015 && d < .05) FR = d; } lastMT = m.mediaTime; if (player.isConnected) player.requestVideoFrameCallback(fcb); }; player.requestVideoFrameCallback(fcb); }
-        playB.addEventListener("click", function () { if (player.paused) { if (act !== "play" && it.snip) playSnip(); else { loopOn = false; player.play(); } } else player.pause(); });
-        player.addEventListener("click", function () { playB.click(); });
+        // Lecture : s'il y a un extrait, toujours en boucle entre le début et la fin (Gus 22/11) ; sinon le film.
+        var toggle = function () {
+          if (!player.paused) { player.pause(); return; }
+          if (it.snip) { var t = player.currentTime; loopOn = true; if (t < it.snip.s || t >= it.snip.s + it.snip.d - .05) player.currentTime = it.snip.s; player.play().catch(function () {}); }
+          else { loopOn = false; player.play().catch(function () {}); }
+        };
+        playB.addEventListener("click", function () { toggle(); playB.blur(); });
+        player.addEventListener("click", toggle);
         function drag(elm, onMove, onUp) {
           elm.addEventListener("pointerdown", function (e) {
             e.preventDefault(); e.stopPropagation(); elm.setPointerCapture(e.pointerId); onMove(e);
@@ -4917,20 +4923,22 @@
         [[hIn, "in"], [hOut, "out"]].forEach(function (h) {
           drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; changed(); prevSnip(); playSnip(); });
         });
+        // Raccourcis valables où que soit le clic dans la fenêtre (Gus 22/11) : écoutés avant tout le reste (capture), sauf dans un
+        // champ de texte. Espace = lecture / pause ; flèches = image par image (la vidéo s'arrête, pas de reprise toute seule).
         var onKey = function (e) {
-          if (!document.body.contains(box)) { document.removeEventListener("keydown", onKey); return; }
-          if (e.target.closest("input, textarea")) return;
-          if (e.key === " ") { e.preventDefault(); playB.click(); return; }
+          if (!document.body.contains(box)) { document.removeEventListener("keydown", onKey, true); return; }
+          if (e.target && e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])")) return;
+          if (e.key === " ") { e.preventDefault(); e.stopPropagation(); if (document.activeElement && document.activeElement.blur && box.contains(document.activeElement)) document.activeElement.blur(); if (!e.repeat) toggle(); return; }
           if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-          e.preventDefault(); var st2 = (e.shiftKey ? 1 : FR) * (e.key === "ArrowLeft" ? -1 : 1);
+          e.preventDefault(); e.stopPropagation(); var st2 = (e.shiftKey ? 1 : FR) * (e.key === "ArrowLeft" ? -1 : 1);
           if (act === "play" || !it.snip) seek(player.currentTime + st2);
-          else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { changed(); prevSnip(); playSnip(); }, 700); }
+          else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { changed(); prevSnip(); }, 500); }
         };
-        document.addEventListener("keydown", onKey);
+        document.addEventListener("keydown", onKey, true);
         tools.appendChild(el("div", { class: "tlrow" }, [
-          el("button", { type: "button", class: "btn ghost", text: "◀ 1 image", title: "Image précédente (←, Maj + ← = 1 s)", on: { click: function () { onKey({ key: "ArrowLeft", target: player, preventDefault: function () {} }); } } }),
+          el("button", { type: "button", class: "btn ghost", text: "◀ 1 image", title: "Image précédente (←, Maj + ← = 1 s)", on: { click: function (e) { e.currentTarget.blur(); onKey({ key: "ArrowLeft", target: player, preventDefault: function () {}, stopPropagation: function () {} }); } } }),
           playB,
-          el("button", { type: "button", class: "btn ghost", text: "1 image ▶", title: "Image suivante (→, Maj + → = 1 s)", on: { click: function () { onKey({ key: "ArrowRight", target: player, preventDefault: function () {} }); } } }),
+          el("button", { type: "button", class: "btn ghost", text: "1 image ▶", title: "Image suivante (→, Maj + → = 1 s)", on: { click: function (e) { e.currentTarget.blur(); onKey({ key: "ArrowRight", target: player, preventDefault: function () {}, stopPropagation: function () {} }); } } }),
           time]));
         tools.appendChild(el("div", { class: "tlrow" }, [
           el("button", { type: "button", class: "btn", text: "Cette image = vignette", on: { click: grab } }),

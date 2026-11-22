@@ -345,3 +345,6 @@ remet à la réouverture de la même page (message « Modifications non publiée
   Robot `bibli-meta` poussé sur `main` (feu vert de Gus).
 - 22/11 (extrait d'une bande, Gus) : au-delà de 10 s la poignée tirée se bloque et l'autre reste en place (avant : elle poussait
   l'autre) ; pour aller plus loin, déplacer d'abord le début puis la fin.
+- 22/11 (lecteur des retouches, Gus) : espace et flèches marchaient selon l'endroit cliqué (bouton qui gardait la main, curseur de
+  zoom, recherche de la page) → raccourcis écoutés en premier dans toute la fenêtre ; les flèches ne relancent plus la lecture ; la
+  lecture tourne toujours en boucle entre le début et la fin de l'extrait.
