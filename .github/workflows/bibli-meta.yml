@@ -1,0 +1,29 @@
+# Bibliothèque de l'admin : client, types de contenu et mots-clés de chaque film, relus sur Slate (tools/bibli-meta.mjs) chaque
+# nuit et à la demande. Gratuit (dépôt public), aucune mise en ligne.
+name: Infos des films de la bibliothèque
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: bibli-meta
+jobs:
+  meta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node tools/bibli-meta.mjs
+      - name: Enregistrer
+        run: |
+          git add -A data/bibli/meta.json
+          if ! git diff --cached --quiet; then
+            git config user.name "kinou-robot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Slate : infos des films de la bibliothèque (robot)"
+            for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 3; done
+          fi

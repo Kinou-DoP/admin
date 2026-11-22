@@ -165,3 +165,28 @@ export async function readReel(link, max) {
   });
   return { link: url, films: films };
 }
+
+// Infos de classement des films d'un bundle pour la bibliothèque de l'admin (Gus 22/11) : client, types de contenu,
+// mots-clés (« categories » de Slate) et date de publication, par id Slate. Lu par le robot tools/bibli-meta.mjs de l'admin.
+export async function readMeta(bundle) {
+  var id = (String(bundle).match(/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/) || [])[1];
+  if (!id) throw new Error("lien de bundle invalide");
+  var root = await page(ORIGIN + "/bundles/" + id), ns = [], re = new RegExp('href="/bundles/' + id + '/(\\d+)"', "g"), m;
+  while ((m = re.exec(root))) if (ns.indexOf(m[1]) < 0) ns.push(m[1]);
+  var out = {};
+  for (var n of ns) {
+    showreel(await page(ORIGIN + "/bundles/" + id + "/" + n)).forEach(function (x) {
+      var c = x.m, o = {};
+      if (out[c.id]) return;
+      var cl = c.client && String(c.client.name || "").trim();
+      if (cl) o.client = cl;
+      var ty = (c.content_types || []).map(function (t) { return String(t.name || "").trim(); }).filter(Boolean);
+      if (ty.length) o.types = ty;
+      var tg = Object.values(c.categories || {}).map(function (t) { return String(t.name || "").trim(); }).filter(Boolean);
+      if (tg.length) o.tags = tg;
+      if (c.publication_date) o.date = String(c.publication_date).slice(0, 10);
+      out[c.id] = o;
+    });
+  }
+  return out;
+}
