@@ -348,3 +348,5 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 22/11 (lecteur des retouches, Gus) : espace et flèches marchaient selon l'endroit cliqué (bouton qui gardait la main, curseur de
   zoom, recherche de la page) → raccourcis écoutés en premier dans toute la fenêtre ; les flèches ne relancent plus la lecture ; la
   lecture tourne toujours en boucle entre le début et la fin de l'extrait.
+- 22/11 (bibliothèque, Gus) : revenir de « Bandes existantes » ouvre une nouvelle bande vide (comme au rechargement) ; un changement
+  en attente d'enregistrement n'est plus perdu quand on change de bande (`saveBand(b)` garde la bande à enregistrer).

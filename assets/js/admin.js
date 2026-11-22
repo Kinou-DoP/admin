@@ -4616,23 +4616,27 @@
       x.className = "bsave " + s;
       x.textContent = msg || { wait: "Modifications…", busy: "Enregistrement…", ok: "Enregistré", err: "Pas enregistré", ro: "Lecture seule" }[s] || "";
     }
-    function films() { return band.items.filter(function (x) { return x.section === undefined; }); }
-    function artistsOf() { // chefs op de la bande : réglages en priorité, sinon ceux des films (le plus présent d'abord)
-      if (String(band.artists || "").trim()) return band.artists.split(/\s*,\s*/).filter(Boolean);
+    function films(b) { return (b || band).items.filter(function (x) { return x.section === undefined; }); }
+    function artistsOf(b) { // chefs op de la bande : réglages en priorité, sinon ceux des films (le plus présent d'abord)
+      b = b || band;
+      if (String(b.artists || "").trim()) return b.artists.split(/\s*,\s*/).filter(Boolean);
       var n = {}, first = {};
-      films().forEach(function (x, i) { (x.dops || []).forEach(function (d) { n[d] = (n[d] || 0) + 1; if (first[d] === undefined) first[d] = i; }); });
+      films(b).forEach(function (x, i) { (x.dops || []).forEach(function (d) { n[d] = (n[d] || 0) + 1; if (first[d] === undefined) first[d] = i; }); });
       var l = Object.keys(n).sort(function (a, b) { return n[b] - n[a] || first[a] - first[b]; });
       // seulement nos chefs op (pas un co-chef op d'une autre agence), s'il y en a
       var ours = l.filter(function (d) { return ((index && index.dps) || []).some(function (x) { return bnrm(x.name) === bnrm(d); }); });
       return ours.length ? ours : l;
     }
-    function saveBand() {
+    // bArg : la bande à enregistrer (par défaut celle affichée) ; un enregistrement en cours garde la bande à refaire ensuite,
+    // même si on est passé à une autre bande entre-temps (sinon ses derniers changements se perdaient).
+    function saveBand(bArg) {
+      var b = bArg && bArg.items ? bArg : band;
       if (!canWeb) { setState("ro"); return; }
-      if (!films().length && !band.code) { setState(""); return; } // rien à enregistrer tant qu'il n'y a pas de film
-      if (save.busy) { save.again = true; return; }
-      save.busy = true; save.again = false; setState("busy");
-      var b = band, isNew = !b.code; if (isNew) b.code = bandCode();
-      var now = new Date().toISOString(), artists = artistsOf();
+      if (!films(b).length && !b.code) { if (b === band) setState(""); return; } // rien à enregistrer tant qu'il n'y a pas de film
+      if (save.busy) { save.again = b; return; }
+      save.busy = true; save.again = null; if (b === band) setState("busy");
+      var isNew = !b.code; if (isNew) b.code = bandCode();
+      var now = new Date().toISOString(), artists = artistsOf(b);
       var items = b.items.map(function (x) { var c = Object.assign({}, x); delete c._file; delete c.key; return c; });
       var pub = { title: b.title.trim() || "Bande", description: (b.description || "").trim(), artists: artists, cols: b.cols, hide: b.hide, download: !!b.download, items: items, at: now };
       var files = save.files.splice(0);
@@ -4649,7 +4653,7 @@
           b.created = src.created;
           var src0 = Object.assign({}, src); delete src0._file;
           return nPut(BAND_NOTES + b.code + ".json", json(src0), "Bande : " + pub.title + " (admin, " + by + ")").then(function () {
-            var m = { code: b.code, title: pub.title, n: films().length, by: by, pw: !!b.pw, expires: b.expires || "", artists: artists.join(", "), img: (films()[0] || {}).img || "" };
+            var m = { code: b.code, title: pub.title, n: films(b).length, by: by, pw: !!b.pw, expires: b.expires || "", artists: artists.join(", "), img: (films(b)[0] || {}).img || "" };
             var key = JSON.stringify(m);
             if (key === save.meta && !isNew) return;
             return nEdit(BAND_NOTES + "index.json", function (t) {
@@ -4659,13 +4663,13 @@
           });
         });
       }).then(function () {
-        save.busy = false; keep(); setState("ok");
-        if (isNew) { drawFoot(); flash(right.querySelector(".blinkline")); }
-        if (save.again) saveBand();
+        save.busy = false; keep(); if (b === band) setState("ok");
+        if (isNew && b === band) { drawFoot(); flash(right.querySelector(".blinkline")); }
+        if (save.again) saveBand(save.again);
       }, function (e) {
         save.busy = false; if (isNew && !save.meta) { /* garde le code : réessai avec le même lien */ }
-        save.files = files.concat(save.files); setState("err", "Pas enregistré : " + e.message);
-        clearTimeout(save.t); save.t = setTimeout(saveBand, 8000); // nouvel essai tout seul
+        save.files = files.concat(save.files); if (b === band) setState("err", "Pas enregistré : " + e.message);
+        clearTimeout(save.t); save.t = setTimeout(function () { saveBand(b); }, 8000); // nouvel essai tout seul
       });
     }
     function flash(x) { if (!x) return; x.classList.remove("flash"); void x.offsetWidth; x.classList.add("flash"); }
@@ -4675,7 +4679,11 @@
     function drawBand(popAt, popN) {
       right.textContent = "";
       right.appendChild(el("div", { class: "btabs" }, [
-        el("button", { type: "button", class: st.tab === "new" ? "on" : "", text: band.code ? "Bande" : "Nouvelle bande", on: { click: function () { st.tab = "new"; drawBand(); } } }),
+        // Revenir de « Bandes existantes » = une nouvelle bande vide, comme en rechargeant la page (Gus 22/11) ; la bande en cours reste enregistrée.
+        el("button", { type: "button", class: st.tab === "new" ? "on" : "", text: band.code && st.tab === "new" ? "Bande" : "Nouvelle bande", on: { click: function () {
+          if (st.tab === "old") { if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); } band = bandNew(); save.meta = null; save.legacy = null; save.state = ""; keep(); undoReset(); if (data) draw(); }
+          st.tab = "new"; drawBand();
+        } } }),
         el("button", { type: "button", class: st.tab === "old" ? "on" : "", text: "Bandes existantes", on: { click: function () { st.tab = "old"; drawBand(); } } })]));
       if (st.tab === "old") return drawOld();
       var title = el("input", { type: "text", class: "btitle", value: band.title, "aria-label": "Titre de la bande" });
@@ -4685,7 +4693,7 @@
       band.items.forEach(function (it, i) {
         var li;
         if (it.section !== undefined) {
-          var si = el("input", { type: "text", value: it.section, placeholder: "Titre de la section" });
+          var si = el("input", { type: "text", value: it.section, placeholder: "Titre de la section (facultatif)" });
           si.addEventListener("input", function () { it.section = si.value; changed(); });
           li = el("div", { class: "bit sec" }, [el("span", { class: "bgrip", text: "⋮⋮" }), si, el("button", { type: "button", class: "bx", text: "×", title: "Retirer la section", on: { click: function () { remove(i, li); } } })]);
         } else {
@@ -4753,6 +4761,7 @@
       }, function (e) { box.textContent = "Indisponible : " + e.message + " (la clé doit avoir accès au dépôt notes)"; });
     }
     function openBand(b) {
+      if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); } // la bande affichée garde ses derniers changements
       var p = b.legacy ? readFile(BANDS + b.code + ".json") : nGet(BAND_NOTES + b.code + ".json").then(function (t) { return t ? JSON.parse(t) : null; });
       p.then(function (d) {
         if (!d) return;
