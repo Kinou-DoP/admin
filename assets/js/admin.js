@@ -5008,15 +5008,43 @@
       var foot2 = el("div", { class: "bfoot" }); right.appendChild(foot2);
       bandsList().then(function (all) {
         var by = {}; all.forEach(function (b) { by[b.code] = b; });
-        function drawL() {
+        var dragAt = 0;
+        // Réordonner en glissant (Gus 23/11, comme les films d'une bande) : la bande suit la souris (effet ressort), un trait lumineux
+        // montre où elle va, les autres s'écartent ; au lâcher elle se pose à sa place (petit rebond). Un clic sans glisser l'ouvre.
+        function bunDrag(e, i, row, img) {
+          if (e.button !== 0 || e.pointerType === "touch" || e.target.closest("button")) return;
+          var sx = e.clientX, sy = e.clientY, fly = null, ph = null, at = i;
+          function rowsNow() { return [].filter.call(ul.children, function (x) { return x.classList.contains("bunit") && x !== row; }); }
+          function mv(ev) {
+            if (!fly) { if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return; fly = bibFly(ev, [img], 1); row.classList.add("dragged"); document.body.classList.add("bdragging"); }
+            ev.preventDefault(); fly.move(ev);
+            var rs = rowsNow(); at = rs.length;
+            for (var k = 0; k < rs.length; k++) { var r = rs[k].getBoundingClientRect(); if (ev.clientY < r.top + r.height / 2) { at = k; break; } }
+            if (!ph) ph = el("div", { class: "bph" });
+            var ref = rs[at] || (rs.length ? rs[rs.length - 1].nextSibling : row.nextSibling);
+            if (ph.nextSibling !== ref) ul.insertBefore(ph, ref);
+          }
+          function up() {
+            removeEventListener("pointermove", mv); removeEventListener("pointerup", up);
+            if (!fly) return;
+            dragAt = Date.now(); document.body.classList.remove("bdragging"); row.classList.remove("dragged");
+            fly.end(ph ? ph.getBoundingClientRect() : null); if (ph) ph.remove();
+            if (at === i) return;
+            bun.bands.splice(at, 0, bun.bands.splice(i, 1)[0]); bunChanged(); drawL(at);
+          }
+          addEventListener("pointermove", mv); addEventListener("pointerup", up);
+        }
+        function drawL(popAt) {
           ul.textContent = "";
           bun.bands.forEach(function (c, i) {
             var b = by[c] || { code: c, title: "(bande supprimée ?)", n: 0 };
             var th = el("div", { class: "bithumb" }); if (b.img) th.appendChild(el("i", { style: 'background-image:url("' + b.img + '")' }));
-            ul.appendChild(el("div", { class: "bit bunit", title: "Ouvrir cette bande pour la modifier", on: { click: function (e) { if (e.target.closest("button")) return; if (by[c]) { st.fromBundle = true; openBand(by[c]); } } } }, [
+            var row = el("div", { class: "bit bunit" + (popAt === i ? " pop" : ""), title: "Cliquer pour ouvrir, glisser pour changer l'ordre", on: { click: function (e) { if (e.target.closest("button") || Date.now() - dragAt < 300) return; if (by[c]) { st.fromBundle = true; openBand(by[c]); } } } }, [
               el("span", { class: "bgrip", text: String(i + 1) }), th, el("span", { class: "bitt" }, [b.title || "", el("small", { text: (b.n || 0) + " film" + (b.n > 1 ? "s" : "") })]),
-              el("button", { type: "button", class: "bx", text: "↑", title: "Monter", disabled: i ? null : true, on: { click: function () { bun.bands.splice(i - 1, 0, bun.bands.splice(i, 1)[0]); bunChanged(); drawL(); } } }),
-              el("button", { type: "button", class: "bx", text: "×", title: "Retirer du bundle (la bande reste)", on: { click: function () { bun.bands.splice(i, 1); bunChanged(); drawL(); } } })]));
+              el("button", { type: "button", class: "bx", text: "↑", title: "Monter", disabled: i ? null : true, on: { click: function () { bun.bands.splice(i - 1, 0, bun.bands.splice(i, 1)[0]); bunChanged(); drawL(i - 1); } } }),
+              el("button", { type: "button", class: "bx", text: "×", title: "Retirer du bundle (la bande reste)", on: { click: function () { bun.bands.splice(i, 1); bunChanged(); drawL(); } } })]);
+            row.addEventListener("pointerdown", function (e) { bunDrag(e, i, row, b.img || ""); });
+            ul.appendChild(row);
           });
           if (!bun.bands.length) ul.appendChild(el("div", { class: "bempty" }, [el("strong", { text: "Aucune bande dans ce bundle" }), el("span", { text: "Ajoutez une bande existante ou créez-en une." })]));
           // Ajouter une bande existante : liste avec recherche

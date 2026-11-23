@@ -366,3 +366,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
   → l'alerte revient. Calendrier : un film à date confirmée n'affiche plus les dates des robots. Page fiction : `ficAlerts` regarde toutes
   les sources (plus seulement la 1re), « Garder la nôtre » retient toutes les dates refusées (`datesSeen`), autres sources affichées.
   Sources nommées (`sortSrc`) : TMDB, Wikidata, AlloCiné (recherche Claude) ; « Confirmer » aussi pour Wikidata.
+- 23/11 (bundles, Gus) : réordonner les bandes d'un bundle en les glissant (animation comme pour les films d'une bande).
