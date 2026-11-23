@@ -1,0 +1,208 @@
+{
+  "slug": "arnaud-guez",
+  "name": "Arnaud Guez",
+  "hue": 253,
+  "bundle": "https://kinou.slateapp.com/bundles/a8c0fbba-e742-11f1-952e-02ffedfede17",
+  "open": 10761,
+  "overrides": {
+    "10759": {
+      "title": "In Der Luft"
+    },
+    "10760": {
+      "title": "Je Suis Une Retrouvaille"
+    },
+    "10761": {
+      "title": "La Danse des Renards",
+      "zoom": 1.2
+    },
+    "10762": {
+      "title": "Le Goût Framboise"
+    },
+    "10763": {
+      "zoom": 1.34,
+      "zoomThumb": true,
+      "title": "Le Premier Pas"
+    },
+    "10764": {
+      "zoom": 1.36,
+      "zoomThumb": true,
+      "title": "Maintenant On peut mourir tranquille"
+    },
+    "10765": {
+      "zoom": 1.17,
+      "zoomThumb": true,
+      "title": "Ma Planète"
+    },
+    "10766": {
+      "title": "Ta Fille"
+    },
+    "10767": {
+      "title": "Titan",
+      "zoom": 1.04,
+      "zoomThumb": true
+    },
+    "10768": {
+      "title": "Un Père",
+      "zoom": 1.05,
+      "zoomThumb": true
+    },
+    "10769": {
+      "title": "Zone Blanche"
+    },
+    "10869": {
+      "title": "Sour Milk"
+    }
+  },
+  "about": {
+    "bio": [
+      "Après un master en Histoire du cinéma à Paris-Sorbonne, Arnaud poursuit ses études à l'INSAS (Institut National Supérieur des Arts du Spectacle) à Bruxelles, où il se spécialise dans l'image.",
+      "À sa sortie, il travaille sur de nombreux tournages comme chef électricien. Ces collaborations avec différent·es chef·fes opérateur·ices nourrissent sa pratique et affinent son regard.",
+      "En parallèle, il continue de développer sa propre approche de l'image sur différents projets de court métrage.",
+      "En 2025, il signe l'image de La Danse des Renards, premier long métrage de Valéry Carnoy, sélectionné à la Quinzaine des cinéastes."
+    ],
+    "website": "https://www.arnaudguez.com/",
+    "instagram": "https://www.instagram.com/guezarnaud/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/fr/name/nm8255137/"
+      }
+    ],
+    "pos": "65% 25%",
+    "img": "img/arnaud-guez.webp",
+    "og": "img/arnaud-guez-og-1795441154510.jpg"
+  },
+  "categories": [
+    "FEATURED",
+    "FEATURE FILM",
+    "SHORT FILMS"
+  ],
+  "clips": [
+    {
+      "title": "LA DANSE DES RENARDS",
+      "sub": "Valéry Carnoy\nHélicotronc, Les Films du Poisson",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10761/9a149052-4e0a-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/72068e4d-8926-40e1-9bd7-3e9d62a59092-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/0LP_NKkpN1oWQQ9RFOkhfuqusHq2ccY3WjC-SSiKoo4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MDI0ZGE3Ny0wYzVm/LTQ0ZTEtOTBjMy0z/MjdmM2VjOWEwMjcv/dGMwMTAyMzIyMi0w/MDA5MDA3MC53ZWJw?v=1&format=webp",
+      "cat": "FEATURE FILM",
+      "slate": 10761,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Sour Milk | Stills",
+      "sub": "Melissa Seker\nHélicotronc, les Orties",
+      "img": "https://images.slatecdn.net/ksN-akfNfl-mEQQp2owJbaNVIlFpA-uk8ZJHtxw-sv4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWNjYjU1/MmUtNjEyNy00ODNk/LWE1NGYtOTY0Nzkx/NmZmNWZlL3VudGl0/bGVkLTEtMi0xLmpw/Zw?v=1&format=webp",
+      "stills": [
+        "https://images.slatecdn.net/uDb6DlHJCo4XFJd0BVC1FqqWBpnR7HTvMJzBMygbfY0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOWNjYjU1/MmUtNjEyNy00ODNk/LWE1NGYtOTY0Nzkx/NmZmNWZlL3VudGl0/bGVkLTEtMi0xLmpw/Zw.webp",
+        "https://images.slatecdn.net/attdDC3bpwoshIlxGABS6N-wROLdTm1BumyeKCt_9b4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNWI5M2Ix/MmEtZDI1Yi00ZjUx/LTkwNDgtZWZlZTZk/MzNkMTdiL3VudGl0/bGVkLTEtOC0yLmpw/Zw.webp",
+        "https://images.slatecdn.net/GHBGLTASetq3CTSEn8_Cittb_LUpuVoVHTvnTSRMwVU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMTliYzcz/N2ItMGQwOC00YTE0/LWE5MDMtNGVjZTE3/MDUxYzI4L3VudGl0/bGVkLTEtOS0xLmpw/Zw.webp",
+        "https://images.slatecdn.net/4AJeJYb6qS2n9d1H5gseGyuG7jIj1-o1JVuChfdok2U/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNTNkNDc3/ODktZDc0NC00NjA0/LWI2MTItZjljYTFm/Mzg2NjZhL3VudGl0/bGVkLTEtMTAtMS5q/cGc.webp",
+        "https://images.slatecdn.net/Lt2HmBqJDPt44Rfip-IVOHXCL7kwWywRrqntLb8_DkQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMmUxMGUx/YjgtYjUzNy00YjI0/LWIwYTItMThjYjNm/YTMyYWE5L3VudGl0/bGVkLTEtMzItMS5q/cGc.webp",
+        "https://images.slatecdn.net/35eBpLGS2fpHLQM94BQno2x8S1bumXMfuVWI7FQOiso/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDNkNTQ3/NmQtZTk0YS00OWFj/LTg5MGUtZDdkMTc2/ZDk4NTMzL3VudGl0/bGVkLTEtNDktMS5q/cGc.webp",
+        "https://images.slatecdn.net/FXdZ4Dk-eQGpfy_RdmqgaeWZ_cMMhRwxBjs6x6A2--M/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNmYzYTgw/NzgtY2IwMy00NmU0/LWExY2QtYzgwYTli/NmY0NjdiL3VudGl0/bGVkLTEtNjMtMi5q/cGc.webp",
+        "https://images.slatecdn.net/nY9hAzt6Cyj3AruNuyNeG25OGmsQNmispMP5v24Xyv4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNGFlZjhj/YmQtNWNhZC00YjA0/LTg1YzQtMzZkYTdk/YzU3YTgyL3VudGl0/bGVkLTEtNjQtMS5q/cGc.webp",
+        "https://images.slatecdn.net/aZMvwfrQ8vIzbSBL-Vps-5El6wFvPVe1s850oU_KdSo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vYzZiZGM2/MTctZmIzYy00ODc2/LWI2NWQtMzJhYzI2/YzU4NDYxL3VudGl0/bGVkLTEtNjgtMS5q/cGc.webp",
+        "https://images.slatecdn.net/XXvpgeChfAi8OB1OuAu9zwTC6lHaLNMjc2b29--44Dw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNDM5NjMy/YzUtZmUwYS00ZWM0/LWE5ZWYtYjNlM2E1/ZWM3ZDgyL3VudGl0/bGVkLTEtNzMtMS5q/cGc.webp"
+      ],
+      "cat": "SHORT FILMS",
+      "slate": 10869,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "ZONE BLANCHE",
+      "sub": "David Noblet\nChaz Production, Taste It Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ab59e795-1a5d-461f-99ae-f48ca12f1342-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/_cdjwMrvTS5aRIfz8kYOeht-ADKrzwIdzXHQ1V1i7Y8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/OTNlOWI4Yi1mYjc3/LTRmZDctODVlMS0y/ZDMzMWNmY2U5MTgv/dmxjc25hcC0yMDI0/LTA5LTI3LTIyaDM4/bTA1czk0MC53ZWJw?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10769,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "UN PERE",
+      "sub": "Marine Colomies\nLa Méridienne",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85958ebf-70f4-445d-9f4b-f9692c15d8a0-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/PM-LvCBjU9nsfm_riGMNLmBPgegxXagyN0l-nkMaPZE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc2OC02OWYyMjBh/YTJmYmZjNS4xNzk0/OTA3Ny0yNjJkNTY3/NTczNTUyYmUxYjdh/ZDk4YzcwNGQyNjk5/NS5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10768,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "TITAN",
+      "sub": "Valéry Carnoy\nHélicotronc, Punchline Cinema",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/16dc4f6c-dd4d-4055-9ec1-ddc8a0ce8324-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/1iuoMQ5PVsj3GdjQX9C4CQV4ssPkNv3pJ2I2Qkgj9jU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc2Ny02OWYyMjBh/M2VjZDY5NS4zNDgx/OTk1Ny0wYWY1ZDYx/MDYyOGE2MmUyYThh/YzU2NzgwMDE4ZTk0/MS5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10767,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "TA FILLE",
+      "sub": "Déborah Biton\nToo Many Cowboys, Marnie Production",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b15207ce-7c3a-4828-9186-bbe81a2e7bc7-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/t7IhT4FmZv79QgC9ShxwFP7GzXPJnTLVRe-7LO-iGvI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc2Ni02OWYyMjBh/M2VkMmFmMi40MjA1/Mjk1Ni0yMmVjYmFh/YTcxNDgxMmM2YjIy/ZDM3YWQ0ZTRlMjc3/Zi5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10766,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "MA PLANETE",
+      "sub": "Valéry Carnoy\nInsas",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cfb23379-76af-4195-8f19-7581b41a3112-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/2ztsMgacCVK-fmyDwewDk4tpGMIUswyiIuSfMQ3iIMU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc2NS02OWYyMjBh/YTJmNTIwMS4zNDUz/ODM1MC0yNGRhNjJh/MGI5MDc0NmM4ZDE0/MGFjNTE4OTI1OWIy/Yy5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10765
+    },
+    {
+      "title": "MAINTENANT ON PEUT MOURIR TRANQUILLE",
+      "sub": "Arnaud Guez\nInsas",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b97c12fc-fd13-4d4d-96c3-f677623d9505-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/-oSW95KBlzHP1QHGDliQweBZnSNDFxXb9MHVTfH2QF8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc2NC02OWYyMjBh/M2VkMWE5MC44NTE2/MzEwMy0wMTkyM2Y5/Mzc4NTVlMGU5ZWNj/YmYwZTEyMTA0MDdm/Mi5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10764,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "LE PREMIER PAS",
+      "sub": "David Noblet, Arnaud Guez",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8c0b79a8-d8d4-4da3-a99e-8407bea33be9-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/kB2V6LEKGLiWqcfMvQ4EycGStLEAD3jnPFh5-VMih1s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc2My02OWYyMjBh/M2VjOTUxNi4xMzY4/MzQ0NS01NzcwNGNk/NGEwYzNjZmMyM2Y2/YmZhNjYxYTA1MjRk/OS5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10763
+    },
+    {
+      "title": "LE GOUT FRAMBOISE",
+      "sub": "David Noblet\nInsas",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b1028b0e-2709-47a5-8c59-392b2f67b32e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/y4xxyJzAVFq6BWv9aWFCNYR-ojLxeZr4L9YI-eOI9S8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc2Mi02OWYyMjBh/M2YzNGM0OS4wNDU3/MjA3NS1lM2E2ZGFh/MDBjMzBkZWMzYWU0/NTU4MWQyNGNjOWZi/MS5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10762,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "JE SUIS UNE RETROUVAILLE",
+      "sub": "David Noblet, Arnaud Guez",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bdd513b8-964d-494d-8e00-266ce8ebe9df-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/a-tv5fKOGz9bY06E8pKFmN6C_ORoPOqMxrz17IcbMNk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc2MC02OWYyMjBh/M2VkN2ZlOC41NjAw/MjUzNC0yODlkNTg3/YjE5NDQzMDM4YTgw/Yjc3MGU3YWFhNmI0/Zi5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10760
+    },
+    {
+      "title": "IN DER LUFT",
+      "sub": "Guillaume Erbs\nSupermouche Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/22a4552b-5aa8-4b80-ab7e-47648054e3ac-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/KymAHtFE09rc2yJoVBbUaRMZL8SERs-c0O_IsNOrmzo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDc1OS02OWYyMjBh/YTMwNTkxMC45MzA1/NTc1Ny1hYzUwYzJj/ZDE5MGYxMWFmNWMw/ODBkZDU2OGI1NDY3/OC5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 10759,
+      "featured": true,
+      "featuredOrder": 4
+    }
+  ]
+}
