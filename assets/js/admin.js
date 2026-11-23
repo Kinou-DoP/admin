@@ -3584,7 +3584,7 @@
       return SITE_VIEW + "/fiction/" + tab + "/" + encodeURIComponent(id);
     }
     function hay(e) { return nrm([e.title, (e.directors || []).join(" "), (e.dops || []).join(" "), e.prod, (e.platforms || []).join(" "), e.country, SK[e.kind]].join(" ")); }
-    function match(e) { var w = nrm(st.q).split(" ").filter(Boolean); if (!w.length) return true; var h = hay(e); return w.every(function (x) { return h.indexOf(x) > -1; }); }
+    function match(e) { var w = nrm(st.q).split(" ").filter(Boolean); if (!w.length) return true; var h = hay(e); return h.indexOf(w.join(" ")) > -1; }
     function range() {
       var a = new Date(st.at), b;
       if (st.mode === "month") { a = new Date(a.getFullYear(), a.getMonth(), 1); b = new Date(a.getFullYear(), a.getMonth() + 1, 0); }
@@ -3975,7 +3975,7 @@
         if (!rcTypeOk(p)) return false;
         if (rcState.dop && rcDop(p).split(", ").indexOf(rcState.dop) < 0) return false;
         var h = rcNorm([p.title, (p.aka || []).join(" "), p.prod, (p.directors || []).join(" "), (p.dops || []).join(" ")].join(" "));
-        return w.every(function (x) { return h.indexOf(x) > -1; });
+        return h.indexOf(w.join(" ")) > -1;
       }).sort(function (a, b) { return String(b.start || "0").localeCompare(String(a.start || "0")); });
     }
     function more(left) {
@@ -4614,6 +4614,24 @@
         reset: function () { BIB_EK.forEach(function (k) { f[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); f.dops = f.dops || []; f.types = f.types || []; f.libEdited = false; bibHay(f); libQ.todo[f.key] = null; }
       });
     }
+    // Liens de films partagés seuls (Gus 23/11) : payload d'une « bande » d'un seul film ; création groupée à l'ajout de films.
+    function sharePayload(it, dl) {
+      var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist" && k !== "pages" && k !== "hay" && k !== "libEdited") c[k] = it[k]; }); snipOk(it, c);
+      c.dops = (c.dops || []).filter(Boolean);
+      return { single: true, title: c.title || "", artists: [], cols: 1, hide: {}, download: !!dl, items: [c], at: new Date().toISOString() };
+    }
+    function shareCreate(fl) { // un lien pour chaque film qui n'en a pas encore : un commit (pages chiffrées) + la liste des codes (notes)
+      var by = user && user.login || "";
+      return nGet(BAND_NOTES + "films.json").then(function (t) {
+        var m = t ? JSON.parse(t) : {}, todo = fl.filter(function (f) { return f && !m[f.key]; }).map(function (f) { return { f: f, code: bandCode() }; });
+        if (!todo.length) return;
+        return Promise.all(todo.map(function (x) { return bandSeal(x.code, "", "", sharePayload(x.f, false)); })).then(function (sealed) {
+          return commit(sealed.map(function (x) { return { path: BAND_PUB + x.id + ".json", text: x.text }; }), "Films partagés : " + todo.length + " lien" + (todo.length > 1 ? "s" : "") + " (admin, " + by + ")");
+        }).then(function () {
+          return nEdit(BAND_NOTES + "films.json", function (t2) { var m2 = t2 ? JSON.parse(t2) : {}; todo.forEach(function (x) { if (!m2[x.f.key]) m2[x.f.key] = { code: x.code, download: false, title: x.f.title || "", at: new Date().toISOString(), by: by }; }); return json(m2); }, "Films partagés (admin, " + by + ")");
+        });
+      });
+    }
     function filmOf(k) { return data && data.films.filter(function (x) { return x.key === k; })[0]; }
     function inBand(f) { return band.items.some(function (x) { return x.key === f.key; }); }
     function addKeys(keys, at, fromEl) {
@@ -4769,11 +4787,15 @@
       right.appendChild(el("div", { class: "btabs" }, [
         // Revenir de « Bandes existantes » = une nouvelle bande vide, comme en rechargeant la page (Gus 22/11) ; la bande en cours reste enregistrée.
         el("button", { type: "button", class: st.tab === "new" ? "on" : "", text: band.code && st.tab === "new" ? "Bande" : "Nouvelle bande", on: { click: function () {
-          if (st.tab === "old") { if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); } band = bandNew(); save.meta = null; save.legacy = null; save.state = ""; keep(); undoReset(); if (data) draw(); }
-          st.tab = "new"; drawBand();
+          if (st.tab !== "new") { if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); } band = bandNew(); save.meta = null; save.legacy = null; save.state = ""; keep(); undoReset(); if (data) draw(); }
+          st.tab = "new"; st.fromBundle = false; drawBand();
         } } }),
-        el("button", { type: "button", class: st.tab === "old" ? "on" : "", text: "Bandes existantes", on: { click: function () { st.tab = "old"; drawBand(); } } })]));
+        el("button", { type: "button", class: st.tab === "old" ? "on" : "", text: "Bandes existantes", on: { click: function () { st.tab = "old"; st.fromBundle = false; drawBand(); } } }),
+        el("button", { type: "button", class: "bsmall" + (st.tab === "bundles" || st.tab === "bundle" ? " on" : ""), text: "Bundles", title: "Bundles : des bandes de bandes", on: { click: function () { st.tab = "bundles"; st.fromBundle = false; drawBand(); } } })]));
       if (st.tab === "old") return drawOld();
+      if (st.tab === "bundles") return drawBundles();
+      if (st.tab === "bundle") return drawBundle();
+      if (st.fromBundle && bun) right.appendChild(el("button", { type: "button", class: "blink bback", text: "← Retour au bundle « " + (bun.title || "Bundle") + " »", on: { click: backToBundle } }));
       var title = el("input", { type: "text", class: "btitle", value: band.title, "aria-label": "Titre de la bande" });
       title.addEventListener("input", function () { band.title = title.value; changed(); });
       right.appendChild(title);
@@ -4829,24 +4851,138 @@
       setState(save.state); undoBtns();
     }
     function drawOld() {
-      var box = el("div", { class: "bold" }, [el("p", { class: "hint", text: "Chargement…" })]); right.appendChild(box);
-      Promise.all([nGet(BAND_NOTES + "index.json").then(function (t) { return t ? JSON.parse(t).bandes || [] : []; }), readFile(BANDS + "index.json").catch(function () { return null; })]).then(function (r) {
-        box.textContent = "";
-        var l = r[0].concat(((r[1] && r[1].bandes) || []).map(function (b) { return Object.assign({ legacy: true }, b); }))
-          .sort(function (a, b) { return String(b.at).localeCompare(String(a.at)); });
-        if (!l.length) box.appendChild(el("p", { class: "hint", text: "Aucune bande enregistrée pour l'instant." }));
+      // Recherche par nom (Gus 23/11 : la liste va vite grandir).
+      var q2 = el("input", { type: "search", class: "boldq", placeholder: "Chercher une bande…", autocomplete: "off", value: st.oldQ || "" });
+      var box = el("div", { class: "bold" }, [el("p", { class: "hint", text: "Chargement…" })]); right.appendChild(q2); right.appendChild(box);
+      bandsList().then(function (l) {
         var today = new Date().toISOString().slice(0, 10);
-        l.forEach(function (b, i) {
-          var exp = b.expires && b.expires < today;
-          var th = el("div", { class: "bithumb" }); if (b.img) th.appendChild(el("i", { style: 'background-image:url("' + b.img + '")' }));
-          // Clic n'importe où sur la bande = l'ouvrir (Gus 22/11) ; seulement son nom, pas les chefs op.
-          box.appendChild(el("div", { class: "boldrow" + (exp ? " exp" : ""), style: "--i:" + i, title: "Ouvrir cette bande", on: { click: function (e) { if (!e.target.closest("a, button")) openBand(b); } } }, [th, el("div", { class: "boldt" }, [el("strong", { text: b.title }),
-            el("small", { text: [b.n + " film" + (b.n > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by, b.pw ? "mot de passe" : "", b.expires ? (exp ? "expirée le " : "jusqu'au ") + fdate(b.expires) : "", b.legacy ? "ancien lien" : ""].filter(Boolean).join(" · ") })]),
-            el("div", { class: "fwbtns" }, [
-              el("a", { class: "btn ghost", title: "Voir la page envoyée", href: b.legacy ? SITE_VIEW + "/b/?" + b.code : bandURL(b.code), target: "_blank", rel: "noopener", text: "↗" }),
-              b.legacy ? null : el("button", { type: "button", class: "btn ghost", text: "×", title: "Supprimer cette bande (le lien ne marchera plus)", on: { click: function () { delBand(b); } } })])]));
-        });
+        function rows() {
+          box.textContent = ""; var w = bnrm(q2.value).split(/\s+/).filter(Boolean);
+          var m = l.filter(function (b) { var h = bnrm([b.title, b.artists, b.by].join(" ")); return h.indexOf(w.join(" ")) > -1; });
+          if (!m.length) box.appendChild(el("p", { class: "hint", text: l.length ? "Aucune bande ne correspond." : "Aucune bande enregistrée pour l'instant." }));
+          m.forEach(function (b, i) {
+            var exp = b.expires && b.expires < today;
+            var th = el("div", { class: "bithumb" }); if (b.img) th.appendChild(el("i", { style: 'background-image:url("' + b.img + '")' }));
+            // Clic n'importe où sur la bande = l'ouvrir (Gus 22/11) ; seulement son nom, pas les chefs op.
+            box.appendChild(el("div", { class: "boldrow" + (exp ? " exp" : ""), style: "--i:" + Math.min(i, 20), title: "Ouvrir cette bande", on: { click: function (e) { if (!e.target.closest("a, button")) openBand(b); } } }, [th, el("div", { class: "boldt" }, [el("strong", { text: b.title }),
+              el("small", { text: [b.n + " film" + (b.n > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by, b.pw ? "mot de passe" : "", b.expires ? (exp ? "expirée le " : "jusqu'au ") + fdate(b.expires) : "", b.legacy ? "ancien lien" : ""].filter(Boolean).join(" · ") })]),
+              el("div", { class: "fwbtns" }, [
+                el("a", { class: "btn ghost", title: "Voir la page envoyée", href: b.legacy ? SITE_VIEW + "/b/?" + b.code : bandURL(b.code), target: "_blank", rel: "noopener", text: "↗" }),
+                b.legacy ? null : el("button", { type: "button", class: "btn ghost", text: "×", title: "Supprimer cette bande (le lien ne marchera plus)", on: { click: function () { delBand(b); } } })])]));
+          });
+        }
+        q2.addEventListener("input", function () { st.oldQ = q2.value; rows(); });
+        rows(); q2.focus();
       }, function (e) { box.textContent = "Indisponible : " + e.message + " (la clé doit avoir accès au dépôt notes)"; });
+    }
+    // ---------- Bundles (Gus 23/11) : des bandes de bandes, comme sur Slate ----------
+    // Liste dans le dépôt notes (bandes/bundles.json : { bundles: [{ code, title, description, bands: [codes], at, by, created }] }) ;
+    // page publique chiffrée comme une bande ({ bundle: true, title, description, bands: [{ code }] }), même lien b/<code> : la page
+    // lit chaque bande avec son propre code (toujours à jour). On ajoute des bandes existantes, on les ordonne, on les ouvre pour les
+    // modifier ou on en crée une nouvelle depuis le bundle (« ← Retour au bundle » l'y ajoute).
+    var bun = null, bunQ = Promise.resolve(), bunT = 0, bunState = "";
+    function bundlesList() { return nGet(BAND_NOTES + "bundles.json").then(function (t) { return t ? JSON.parse(t).bundles || [] : []; }); }
+    function bunChanged() { if (!bun.code && !bun.bands.length) return; clearTimeout(bunT); bunSt("wait"); bunT = setTimeout(bunSave, 1000); }
+    function bunSt(x, msg) { bunState = x; var e = right.querySelector(".bsave"); if (e && st.tab === "bundle") { e.className = "bsave " + x; e.textContent = msg || { wait: "Modifications…", busy: "Enregistrement…", ok: "Enregistré", err: "Pas enregistré" }[x] || ""; } }
+    function bunSave() {
+      if (!canWeb || !bun) return;
+      var b = bun, isNew = !b.code; if (isNew) b.code = bandCode();
+      var by = user && user.login || "", now = new Date().toISOString(), snapB = JSON.parse(JSON.stringify(b));
+      bunQ = bunQ.then(function () {
+        bunSt("busy");
+        var pub = { bundle: true, title: snapB.title || "Bundle", description: snapB.description || "", bands: snapB.bands.map(function (c) { return { code: c }; }), at: now };
+        return bandSeal(snapB.code, "", "", pub).then(function (x) {
+          return commit([{ path: BAND_PUB + x.id + ".json", text: x.text }], "Bundle : " + pub.title + " (admin, " + by + ")");
+        }).then(function () {
+          return nEdit(BAND_NOTES + "bundles.json", function (t) {
+            var o = t ? JSON.parse(t) : { bundles: [] }; o.bundles = (o.bundles || []).filter(function (x) { return x.code !== snapB.code; });
+            o.bundles.push({ code: snapB.code, title: pub.title, description: pub.description, bands: snapB.bands, at: now, by: by, created: snapB.created || now }); return json(o);
+          }, "Bundles : liste (admin, " + by + ")");
+        }).then(function () { b.created = b.created || now; bunSt("ok"); if (isNew && st.tab === "bundle") drawBand(); }, function (e) { bunSt("err", "Pas enregistré : " + e.message); });
+      });
+    }
+    function drawBundles() {
+      var q3 = el("input", { type: "search", class: "boldq", placeholder: "Chercher un bundle…", autocomplete: "off" });
+      var box = el("div", { class: "bold" }, [el("p", { class: "hint", text: "Chargement…" })]);
+      right.appendChild(el("div", { class: "bunhead" }, [el("p", { class: "hint", text: "Un bundle regroupe plusieurs bandes sous un seul lien (une bande par onglet)." }),
+        el("button", { type: "button", class: "btn primary", text: "+ Nouveau bundle", on: { click: function () { bun = { code: null, title: "Bundle (" + new Date().getDate() + " " + MOISC[new Date().getMonth()] + ")", description: "", bands: [] }; st.tab = "bundle"; drawBand(); } } })]));
+      right.appendChild(q3); right.appendChild(box);
+      bundlesList().then(function (l) {
+        l.sort(function (a, b) { return String(b.at).localeCompare(String(a.at)); });
+        function rows() {
+          box.textContent = ""; var w = bnrm(q3.value).split(/\s+/).filter(Boolean);
+          var m = l.filter(function (b) { var h = bnrm([b.title, b.by].join(" ")); return h.indexOf(w.join(" ")) > -1; });
+          if (!m.length) box.appendChild(el("p", { class: "hint", text: l.length ? "Aucun bundle ne correspond." : "Aucun bundle pour l'instant." }));
+          m.forEach(function (b, i) {
+            box.appendChild(el("div", { class: "boldrow nothumb", style: "--i:" + Math.min(i, 20), title: "Ouvrir ce bundle", on: { click: function (e) { if (e.target.closest("a, button")) return; bun = JSON.parse(JSON.stringify(b)); st.tab = "bundle"; drawBand(); } } }, [
+              el("div", { class: "boldt" }, [el("strong", { text: b.title }), el("small", { text: [b.bands.length + " bande" + (b.bands.length > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by].filter(Boolean).join(" · ") })]),
+              el("div", { class: "fwbtns" }, [el("a", { class: "btn ghost", href: bandURL(b.code), target: "_blank", rel: "noopener", text: "↗", title: "Voir la page envoyée" }),
+                el("button", { type: "button", class: "btn ghost", text: "×", title: "Supprimer ce bundle (ses bandes restent)", on: { click: function () { delBundle(b); } } })])]));
+          });
+        }
+        q3.addEventListener("input", rows); rows();
+      }, function (e) { box.textContent = "Indisponible : " + e.message; });
+    }
+    function delBundle(b) {
+      if (!confirm("Supprimer le bundle « " + b.title + " » ? Son lien ne marchera plus (les bandes restent).")) return;
+      var by = user && user.login || "";
+      bandKeys(b.code).then(function (k) { return commit([{ path: BAND_PUB + k.id + ".json", remove: true }], "Bundle supprimé : " + b.title + " (admin, " + by + ")").catch(function () {}); })
+        .then(function () { return nEdit(BAND_NOTES + "bundles.json", function (t) { var o = t ? JSON.parse(t) : { bundles: [] }; o.bundles = (o.bundles || []).filter(function (x) { return x.code !== b.code; }); return json(o); }, "Bundles : suppression (admin, " + by + ")"); })
+        .then(function () { if (bun && bun.code === b.code) bun = null; drawBand(); }, function (e) { alert("Pas supprimé : " + e.message); });
+    }
+    function drawBundle() {
+      if (!bun) { st.tab = "bundles"; return drawBundles(); }
+      right.appendChild(el("button", { type: "button", class: "blink bback", text: "← Tous les bundles", on: { click: function () { st.tab = "bundles"; drawBand(); } } }));
+      var title = el("input", { type: "text", class: "btitle", value: bun.title, "aria-label": "Nom du bundle" });
+      title.addEventListener("input", function () { bun.title = title.value; bunChanged(); });
+      right.appendChild(title);
+      var ul = el("div", { class: "bitems" }, [el("p", { class: "hint", text: "Chargement…" })]); right.appendChild(ul);
+      var foot2 = el("div", { class: "bfoot" }); right.appendChild(foot2);
+      bandsList().then(function (all) {
+        var by = {}; all.forEach(function (b) { by[b.code] = b; });
+        function drawL() {
+          ul.textContent = "";
+          bun.bands.forEach(function (c, i) {
+            var b = by[c] || { code: c, title: "(bande supprimée ?)", n: 0 };
+            var th = el("div", { class: "bithumb" }); if (b.img) th.appendChild(el("i", { style: 'background-image:url("' + b.img + '")' }));
+            ul.appendChild(el("div", { class: "bit bunit", title: "Ouvrir cette bande pour la modifier", on: { click: function (e) { if (e.target.closest("button")) return; if (by[c]) { st.fromBundle = true; openBand(by[c]); } } } }, [
+              el("span", { class: "bgrip", text: String(i + 1) }), th, el("span", { class: "bitt" }, [b.title || "", el("small", { text: (b.n || 0) + " film" + (b.n > 1 ? "s" : "") })]),
+              el("button", { type: "button", class: "bx", text: "↑", title: "Monter", disabled: i ? null : true, on: { click: function () { bun.bands.splice(i - 1, 0, bun.bands.splice(i, 1)[0]); bunChanged(); drawL(); } } }),
+              el("button", { type: "button", class: "bx", text: "×", title: "Retirer du bundle (la bande reste)", on: { click: function () { bun.bands.splice(i, 1); bunChanged(); drawL(); } } })]));
+          });
+          if (!bun.bands.length) ul.appendChild(el("div", { class: "bempty" }, [el("strong", { text: "Aucune bande dans ce bundle" }), el("span", { text: "Ajoutez une bande existante ou créez-en une." })]));
+          // Ajouter une bande existante : liste avec recherche
+          var pq = el("input", { type: "search", class: "boldq", placeholder: "Ajouter une bande existante : chercher…", autocomplete: "off" }), pl = el("div", { class: "bunpick" });
+          function pick() {
+            pl.textContent = ""; var w = bnrm(pq.value).split(/\s+/).filter(Boolean);
+            all.filter(function (b) { return !b.legacy && bun.bands.indexOf(b.code) < 0; }).filter(function (b) { var h = bnrm(b.title); return h.indexOf(w.join(" ")) > -1; }).slice(0, w.length ? 30 : 8).forEach(function (b) {
+              pl.appendChild(el("button", { type: "button", on: { click: function () { bun.bands.push(b.code); bunChanged(); drawL(); } } }, [el("span", { text: "+ " + b.title }), el("small", { text: (b.n || 0) + " films" })]));
+            });
+          }
+          pq.addEventListener("input", pick); pick();
+          ul.appendChild(el("div", { class: "bunadd" }, [pq, pl,
+            el("button", { type: "button", class: "btn ghost", text: "+ Créer une bande dans ce bundle", on: { click: function () {
+              if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); }
+              band = bandNew(); save.meta = null; save.legacy = null; save.state = ""; keep(); undoReset(); st.fromBundle = true; st.tab = "new"; drawBand(); if (data) draw();
+            } } })]));
+        }
+        drawL();
+      }, function (e) { ul.textContent = "Indisponible : " + e.message; });
+      if (bun.code) foot2.appendChild(el("div", { class: "blinkline" }, [el("a", { href: bandURL(bun.code), target: "_blank", rel: "noopener", text: bandURL(bun.code).replace(/^https?:\/\//, "") }),
+        el("button", { type: "button", class: "btn ghost", text: "Copier", on: { click: function (e) { var b = e.currentTarget; navigator.clipboard.writeText(bandURL(bun.code)).then(function () { b.textContent = "Copié ✓"; setTimeout(function () { b.textContent = "Copier"; }, 1500); }); } } })]));
+      else foot2.appendChild(el("p", { class: "hint", text: "Le lien du bundle est créé dès qu'on y ajoute une bande." }));
+      foot2.appendChild(el("div", { class: "bfrow2" }, [el("span", { class: "bsave" })])); bunSt(bunState);
+    }
+    function backToBundle() { // depuis une bande ouverte ou créée dans un bundle : elle y est ajoutée si elle n'y est pas encore
+      clearTimeout(save.t); if (band.items.some(function (x) { return x.section === undefined; })) saveBand();
+      if (bun && band.code && bun.bands.indexOf(band.code) < 0) { bun.bands.push(band.code); bunChanged(); }
+      st.fromBundle = false; st.tab = "bundle";
+      setTimeout(drawBand, band.code && save.busy ? 1500 : 0); // laisse la bande finir son 1er enregistrement (liste à jour)
+    }
+    function bandsList() { // toutes les bandes (dépôt notes + anciennes en clair), les plus récentes d'abord
+      return Promise.all([nGet(BAND_NOTES + "index.json").then(function (t) { return t ? JSON.parse(t).bandes || [] : []; }), readFile(BANDS + "index.json").catch(function () { return null; })]).then(function (r) {
+        return r[0].concat(((r[1] && r[1].bandes) || []).map(function (b) { return Object.assign({ legacy: true }, b); })).sort(function (a, b) { return String(b.at).localeCompare(String(a.at)); });
+      });
     }
     function openBand(b) {
       if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); } // la bande affichée garde ses derniers changements
@@ -5299,9 +5435,7 @@
       var shrCk = el("input", { type: "checkbox" }), shrDl = el("label", { class: "bck" }, [shrCk, " Autoriser le téléchargement"]);
       nGet(BAND_NOTES + "films.json").then(function (t) { var m = t ? JSON.parse(t) : {}; var x = m[it.key]; if (x) { shr.code = x.code; shr.dl = !!x.download; shrCk.checked = shr.dl; shrMsg.textContent = "Lien : " + bandURL(x.code).replace(/^https?:\/\//, ""); } }, function () {});
       function shrPublish() {
-        var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist") c[k] = it[k]; }); snipOk(it, c);
-        c.dops = (c.dops || []).filter(Boolean);
-        var pub = { single: true, title: c.title || "", artists: [], cols: 1, hide: {}, download: shr.dl, items: [c], at: new Date().toISOString() };
+        var pub = sharePayload(it, shr.dl), c = pub.items[0];
         var by = user && user.login || "", code = shr.code;
         return bandSeal(code, "", "", pub).then(function (x) {
           return commit([{ path: BAND_PUB + x.id + ".json", text: x.text }].concat(files.splice(0)), "Film partagé : " + (c.title || "") + " (admin, " + by + ")");
@@ -5362,7 +5496,11 @@
             return libSave(items).then(function () { out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " ajouté" + (items.length > 1 ? "s" : "") + " à la filmothèque."; go.disabled = false; return bibLoad(true); }).then(function (d) {
               data = d; draw();
               // Un seul film : la fenêtre d'infos s'ouvre tout de suite (Gus 22/11 : même fenêtre qu'en cliquant sur un film).
-              if (items.length === 1) { var f = filmOf(items[0].key); if (f) { mo.remove(); libEdit(f); } }
+              // Lien de partage créé tout de suite pour chaque film ajouté (Gus 23/11).
+              var added = items.map(function (x) { return filmOf(x.key); }).filter(Boolean);
+              shareCreate(added).catch(function () {}).then(function () {
+                if (items.length === 1 && added[0]) { mo.remove(); libEdit(added[0]); }
+              });
             });
           }).catch(function (e) { go.disabled = false; out.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
       } } });
@@ -5410,7 +5548,8 @@
         var it = { key: "i" + id, kind: "images", title: guess, dops: [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "",
           _files: files.map(function (c, i) { return { path: base + String(i + 1).padStart(3, "0") + ".webp", base64: c.base64 }; }) };
         libSave([it]).then(function () { delete it._files; return bibLoad(true); }).then(function (d) {
-          data = d; draw(); mo.remove(); var f = filmOf(it.key); if (f) libEdit(f);
+          data = d; draw(); var f = filmOf(it.key); out.textContent = "Création du lien de partage…";
+          shareCreate(f ? [f] : []).catch(function () {}).then(function () { mo.remove(); if (f) libEdit(f); });
         }, function (e) { go.disabled = false; out.textContent = "Pas enregistré : " + e.message; });
       } } });
       var mo = modal("Ajouter une suite d'images", [el("span", { class: "label", text: "Images (dans l'ordre des noms de fichiers) ; titre, crédits et vignette juste après" }), fin, grid, out, el("div", { class: "fwbtns" }, [go])]);

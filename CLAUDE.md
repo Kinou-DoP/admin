@@ -87,6 +87,12 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   **Partager un film seul** (fenêtre d'un film, « 🔗 Copier le lien de ce film » + « Autoriser le téléchargement », Gus 23/11) : bande
   d'un seul film `{ single: true }`, même lien court chiffré `SITE_VIEW/b/<code>`, code par film dans notes `bandes/films.json`
   (`{ <clé du film>: { code, download, title, at, by } }`), page republiée 2,5 s après chaque retouche du film (`shr`).
+  Lien de partage **créé dès l'ajout** d'un film ou d'images (`shareCreate` : un commit pour tous, puis `films.json`).
+  **Bundles** (3e onglet discret du panneau, Gus 23/11) : bandes de bandes ; liste avec recherche (notes `bandes/bundles.json`),
+  « + Nouveau bundle », ajouter une bande existante (liste avec recherche), ordre ↑, retirer ×, clic sur une bande = l'ouvrir pour la
+  modifier, « + Créer une bande dans ce bundle » ; « ← Retour au bundle » ajoute la bande ouverte / créée (`backToBundle`) ; lien
+  `SITE_VIEW/b/<code>` (page chiffrée `{ bundle: true, title, description, bands: [{ code }] }`, enregistrée toute seule, `bunSave`).
+  « Bandes existantes » : **recherche** par nom (`drawOld`, `bandsList`).
   **Ajouts** : un film lu sur Slate (un seul) ou une suite d'images (choisies puis enregistrées, titre deviné du nom des fichiers, clé
   `i<id>`) ouvrent ensuite la même fenêtre d'infos.
   Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement** (hébergement pas encore branché).

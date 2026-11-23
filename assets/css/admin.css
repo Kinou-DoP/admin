@@ -1014,3 +1014,28 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .bupbtn.over { background: rgba(255,154,61,.18) !important; border: 1px solid #ff9a3d !important; transform: scale(1.04); }
 .bshare { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--soft); }
 .bshare .hint { margin: 0; word-break: break-all; }
+/* Bundles + recherche des bandes existantes (Gus 23/11) */
+.btabs .bsmall { margin-left: auto; font-size: 10px; opacity: .75; }
+.btabs .bsmall.on { opacity: 1; }
+.boldq.find, .boldq { flex: none; margin: 0 0 10px; padding: 8px 0; font-size: 14px; }
+.boldrow.nothumb { grid-template-columns: 1fr auto; }
+.bunhead { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+.bunhead .hint { margin: 0; }
+.bunhead .btn { align-self: flex-start; }
+.bit.bunit { grid-template-columns: 18px 72px 1fr 22px 22px; cursor: pointer; }
+.bit.bunit .bgrip { letter-spacing: 0; font-size: 11px; text-align: center; }
+.bit.bunit small { display: block; color: var(--dim); font-weight: 400; font-size: 10px; }
+.bunadd { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--soft); display: flex; flex-direction: column; gap: 6px; }
+.bunpick { display: flex; flex-direction: column; }
+.bunpick button { display: flex; justify-content: space-between; gap: 10px; padding: 7px 4px; border: 0; border-bottom: 1px solid var(--soft); background: none; color: var(--kinou-fg); font: 400 13px var(--kinou-body); text-align: left; cursor: pointer; }
+.bunpick button:hover { background: var(--soft); }
+.bunpick small { color: var(--dim); white-space: nowrap; }
+.bback { align-self: flex-start; margin: -6px 0 10px; color: #ffb36b !important; }
+.bunadd .btn { align-self: flex-start; margin-top: 6px; }
+.btabs { gap: 12px; }
+.btabs button { white-space: nowrap; font-size: 10.5px; letter-spacing: .1em; }
+input.boldq { width: 100%; box-sizing: border-box; background: none; border: 0; border-bottom: 1px solid var(--faint); color: var(--kinou-fg); font: 300 14px var(--kinou-body); outline: none; -webkit-appearance: none; appearance: none; }
+input.boldq:focus { border-color: var(--kinou-fg); }
+.bunadd .btn { white-space: normal; text-align: left; }
+.btabs { gap: 10px; } .btabs .bsmall { margin-left: auto; padding-right: 2px; letter-spacing: .06em; }
+.bibr .btabs { margin-right: -6px; }

@@ -358,3 +358,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
   tout de suite (à partir de la vignette) ; historique des vignettes et des extraits ; image et mp4 de l'ordinateur.
 - 22/11 (bibliothèque, Gus) : « Valider cette image » et « Valider l'extrait » en bas à droite ; un extrait réglé sans valider n'est pas enregistré ; boutons d'import (clic ou fichier glissé dessus).
 - 23/11 (Gus) : « Bibliothèque » renommée « Filmothèque » (texte seulement) ; lien de partage d'un film seul (comme sur Slate) avec « Autoriser le téléchargement ».
+- 23/11 (Gus) : lien de partage créé dès l'ajout d'un film ; bundles (bandes de bandes) ; recherche dans les bandes existantes.
