@@ -369,3 +369,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 23/11 (bundles, Gus) : réordonner les bandes d'un bundle en les glissant (animation comme pour les films d'une bande).
 - 23/11 (Gus) : rôle « Underwater DoP » ajouté à la liste des crédits.
 - 23/11 (Gus) : dans les retouches d'une bande, « ★ En faire la vignette / l'extrait officiel du film » (appliqué au film de la filmothèque).
+- 23/11 (Gus) : recadrage de la fenêtre d'un film (filmothèque, bandes) = celui des fiches (cadre rouge, extrait qui défile pendant le réglage, case « Aussi sur la vignette » qui montre la vignette).

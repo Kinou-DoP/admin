@@ -1097,7 +1097,9 @@
   // getP / setP : position du cadre, "X% Y%" (absent = centre) ; le site s'en sert comme transform-origin / background-position.
   // getT / setT (optionnels) : case « aussi sur la vignette » (sinon seul l'extrait est recadré).
   var zoomStopOther = null; // un seul extrait joue à la fois : lancer un aperçu arrête le précédent
-  function zoomCtl(thumb, video, get, set, getP, setP, getT, setT) {
+  // tch (facultatif) : appelé à chaque changement à la place de tch() (fenêtre d'un film de la filmothèque).
+  function zoomCtl(thumb, video, get, set, getP, setP, getT, setT, tch) {
+    tch = tch || touch;
     var range = el("input", { type: "range", min: "100", max: "250", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
     var lab = el("span", { class: "zval" }), v = null, adjusting = false, drag = null;
     var center = el("button", { class: "zcenter", text: "Recentrer" });
@@ -1141,7 +1143,7 @@
         var x = c(((p[0] / 100 * (1 - w0) + w0 / 2) - w / 2) / (1 - w) * 100), y = c(((p[1] / 100 * (1 - w0) + w0 / 2) - w / 2) / (1 - w) * 100);
         setP(x === 50 && y === 50 ? undefined : x + "% " + y + "%");
       }
-      play(); apply(); touch();
+      play(); apply(); tch();
     });
     range.addEventListener("blur", function () { if (drag) return; adjusting = false; apply(); stop(); });
     // Déplacement du cadre : le décalage en pixels devient une position de 0 à 100 % (bords compris).
@@ -1155,12 +1157,12 @@
       if (!drag) return;
       var c = function (n) { return Math.round(Math.max(0, Math.min(100, n)) * 10) / 10; };
       var x = c(drag.p[0] + (e.clientX - drag.x) / drag.sx), y = c(drag.p[1] + (e.clientY - drag.y) / drag.sy);
-      setP(x === 50 && y === 50 ? undefined : x + "% " + y + "%"); apply(); touch();
+      setP(x === 50 && y === 50 ? undefined : x + "% " + y + "%"); apply(); tch();
     });
     function endDrag() { if (!drag) return; drag = null; range.focus({ preventScroll: true }); } // le réglage continue
     frame.addEventListener("pointerup", endDrag);
     frame.addEventListener("pointercancel", endDrag);
-    center.addEventListener("click", function () { setP(undefined); apply(); touch(); });
+    center.addEventListener("click", function () { setP(undefined); apply(); tch(); });
     thumb.addEventListener("mouseenter", play);
     thumb.addEventListener("mouseleave", stop);
     // Clic sur l'image : réglage (extrait entier + cadre rouge), comme en touchant le curseur.
@@ -1171,7 +1173,7 @@
     if (!setT) return box;
     var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = !!getT();
     // Case cochée ou décochée : extrait arrêté, la vignette (recadrée ou non) se voit tout de suite.
-    cb.addEventListener("change", function () { setT(cb.checked || undefined); halt(); touch(); });
+    cb.addEventListener("change", function () { setT(cb.checked || undefined); halt(); tch(); });
     return el("div", {}, [box, el("label", { class: "zthumb" }, [cb, "Aussi sur la vignette"])]);
   }
 
@@ -5239,6 +5241,7 @@
       var pvid = null;
       function prevImg() {
         pin.style.backgroundImage = it.img ? 'url("' + it.img + '")' : "";
+        if (typeof zth !== "undefined" && zth) zth.style.backgroundImage = it.img ? 'url("' + it.img + '")' : "";
         // Recadrage : l'extrait toujours ; la vignette seulement si « vignette aussi » (t), comme sur les pages.
         var c = it.crop || { z: 1, x: 50, y: 50 }, all = !it.crop || it.crop.t !== false;
         pin.style.transform = all ? "scale(" + c.z + ")" : ""; pin.style.transformOrigin = c.x + "% " + c.y + "%";
@@ -5254,6 +5257,19 @@
         pin.appendChild(pvid); prevImg();
       });
       pv.addEventListener("mouseleave", function () { if (pvid) { pvid.remove(); pvid = null; } });
+      // Recadrage repris des fiches (Gus 23/11, zoomCtl) : curseur 100–250 %, pendant le réglage l'extrait entier défile avec le
+      // cadre rouge (partie gardée) à faire glisser ; « Aussi sur la vignette » montre tout de suite la vignette recadrée ou non.
+      var zth = el("div", { class: "thumb" });
+      var cropP = function () { return it.crop && (it.crop.x !== 50 || it.crop.y !== 50) ? it.crop.x + "% " + it.crop.y + "%" : undefined; };
+      var zctl = zoomCtl(zth, function () { return it.snipVideo || (it.snip && it.full ? { src: it.full, start: it.snip.s, end: it.snip.s + it.snip.d } : it.video || it.full); },
+        function () { return it.crop ? it.crop.z : undefined; },
+        function (z) { if (!z || z <= 1) delete it.crop; else it.crop = { z: Math.round(z * 100) / 100, x: it.crop ? it.crop.x : 50, y: it.crop ? it.crop.y : 50, t: it.crop ? it.crop.t !== false : false }; prevImg(); },
+        cropP,
+        function (p) { var m = /^([\d.]+)% ([\d.]+)%$/.exec(p || ""); if (!it.crop) return; it.crop.x = m ? +m[1] : 50; it.crop.y = m ? +m[2] : 50; prevImg(); },
+        function () { return !!(it.crop && it.crop.t !== false); },
+        function (t) { if (it.crop) it.crop.t = !!t; prevImg(); },
+        function () { it.edited = true; chg(); });
+      var zwrap = el("div", { class: "film bzoomw" }, [zth, zctl]);
       // Recadrage : zoom + glisser dans l'aperçu
       var zoom = el("input", { type: "range", min: "100", max: "200", step: "1", value: String(Math.round((it.crop ? it.crop.z : 1) * 100)) });
       var zl = el("span", { class: "hint", text: "" }), thumbCk = el("input", { type: "checkbox" });
@@ -5514,7 +5530,7 @@
           [orig || lib ? el("button", { type: "button", class: "btn ghost", text: lib ? "Tout remettre comme sur les pages" : "Tout remettre comme dans la filmothèque", on: { click: function () {
             if (lib) { lib.reset(); close(); return; } var keepKey = it.key; band.items[i] = bandItem(orig); band.items[i].key = keepKey; chg(); close();
           } } }) : null])),
-        el("div", {}, [el("span", { class: "label", text: "Aperçu (survol = extrait)" }), pv, el("span", { class: "label", text: "Recadrage" }), zoom, zl, el("label", { class: "bck", title: "Comme la case de recadrage des pages : sinon seulement l'extrait" }, [thumbCk, " Recadrer aussi la vignette"]),
+        el("div", {}, [el("span", { class: "label", text: "Aperçu et recadrage (survol = extrait ; cliquer ou bouger le curseur pour régler)" }), zwrap,
           player ? null : el("span", { class: "label", text: "Vignette" }), player ? null : thumbs,
           player ? null : upBtn("⤒ Importer une image", imgUp, "image", doImg), player ? null : imgUp,
           player ? null : histImgL, player ? null : histImg])]));

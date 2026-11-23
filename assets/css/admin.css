@@ -1048,3 +1048,5 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .bit.bunit.dragged { opacity: .25; }
 .boff { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--soft); }
 .boff .blink { color: #ffd27a; }
+.bzoomw { margin-bottom: 18px; }
+.bzoomw .thumb { cursor: pointer; }
