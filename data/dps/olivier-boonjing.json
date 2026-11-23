@@ -122,14 +122,34 @@
         "Fiction",
         "Feature Film",
         "narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Grand Prix, Festival du film de Saint-Jean-de-Luz 2025\nPrix du jury jeunes, Festival du film de Saint-Jean-de-Luz 2025\nGrand Prix, Festival international du film de Saint-Jean-de-Luz\nPrix du jury jeunes, Festival international du film de Saint-Jean-de-Luz\nOfficial selection • SOON! competition, Film Festival Oostende 2027\nOfficial selection • Compétition, Festival international du film francophone de Namur (FIFF) 2025",
+        "awardsFrom": {
+          "f4dec71c2f2f": "Grand Prix, Festival du film de Saint-Jean-de-Luz 2025",
+          "29410929ec6a": "Prix du jury jeunes, Festival du film de Saint-Jean-de-Luz 2025",
+          "ca1511f25eb3": "Grand Prix, Festival international du film de Saint-Jean-de-Luz",
+          "9e64796afb60": "Prix du jury jeunes, Festival international du film de Saint-Jean-de-Luz",
+          "d17b89166ed2": "Official selection • SOON! competition, Film Festival Oostende 2027",
+          "3df221bca771": "Official selection • Compétition, Festival international du film francophone de Namur (FIFF) 2025"
+        }
+      }
     },
     "11186": {
       "title": "Notre Salut",
       "types": [
         "Feature Film",
         "narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Grand Prix, Brussels International Film Festival (BRIFF) 2026\nPrix du scénario, Festival de Cannes 2026\nPrix CST de l artiste-technicien (montage, Nicolas Rumpl), Festival de Cannes 2026\nOfficial selection • Compétition officielle, Festival de Cannes 2026",
+        "awardsFrom": {
+          "754142c87fbd": "Grand Prix, Brussels International Film Festival (BRIFF) 2026",
+          "acfbccdf2db1": "Prix du scénario, Festival de Cannes 2026",
+          "897d9ce83aa8": "Prix CST de l artiste-technicien (montage, Nicolas Rumpl), Festival de Cannes 2026",
+          "23eb3c8160b5": "Official selection • Compétition officielle, Festival de Cannes 2026"
+        }
+      }
     },
     "11201": {
       "title": "Les Silencieux",

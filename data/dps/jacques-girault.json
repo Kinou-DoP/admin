@@ -155,12 +155,32 @@
     },
     "10076": {
       "zoom": 1.06,
-      "title": "Meteors"
+      "title": "Meteors",
+      "info": {
+        "awards": "Official selection • Compétition internationale, Französische Filmtage Tübingen 2026\nOfficial selection, Festival international du film francophone d'Ottawa (IFFO) 2026\nOfficial selection, Festival Premiers Plans 2026\nOfficial selection • Un certain regard, Festival de Cannes 2025",
+        "awardsFrom": {
+          "5f83bb97b80b": "Official selection • Compétition internationale, Französische Filmtage Tübingen 2026",
+          "24173f990814": "Official selection, Festival international du film francophone d'Ottawa (IFFO) 2026",
+          "aac56428a94b": "Official selection, Festival Premiers Plans 2026",
+          "c543deaace82": "Official selection • Un certain regard, Festival de Cannes 2025"
+        }
+      }
     },
     "10381": {
       "zoom": 1.06,
       "zoomThumb": true,
-      "title": "Des Preuves d'Amour"
+      "title": "Des Preuves d'Amour",
+      "info": {
+        "awards": "Official selection, Festival Premiers Plans 2026\nOfficial selection • Séance spéciale, Festival de Cannes • Semaine de la Critique 2025\nOfficial selection • Avant-première québécoise, Festival Cinemania 2025\nOfficial selection • Hors compétition, Festival International du Film Indépendant de Bordeaux (FIFIB) 2025\nOfficial selection, Queer Palm (Cannes) 2025\nOfficial selection, Melbourne International Film Festival",
+        "awardsFrom": {
+          "faf2a7bd2599": "Official selection, Festival Premiers Plans 2026",
+          "f0494b73bc48": "Official selection • Séance spéciale, Festival de Cannes • Semaine de la Critique 2025",
+          "4299e5f436e2": "Official selection • Avant-première québécoise, Festival Cinemania 2025",
+          "42c85bca8fe2": "Official selection • Hors compétition, Festival International du Film Indépendant de Bordeaux (FIFIB) 2025",
+          "e36b63fa3f15": "Official selection, Queer Palm (Cannes) 2025",
+          "11614f27c9a6": "Official selection, Melbourne International Film Festival"
+        }
+      }
     }
   },
   "about": {

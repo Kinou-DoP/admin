@@ -92,11 +92,30 @@
     },
     "9878": {
       "zoom": 1.37,
-      "title": "Amour Apocalypse"
+      "title": "Amour Apocalypse",
+      "info": {
+        "awards": "Grand Prix, Festival du film de Cabourg 2025\nOfficial selection, Göteborg Film Festival 2026\nOfficial selection • Longs métrages, Quinzaine des cinéastes (Festival de Cannes) 2025\nOfficial selection, Vancouver International Film Festival 2025\nOfficial selection, Cairo International Film Festival 2025",
+        "awardsFrom": {
+          "bbec3461145c": "Grand Prix, Festival du film de Cabourg 2025",
+          "6f2268374d8f": "Official selection, Göteborg Film Festival 2026",
+          "3c818bd35b94": "Official selection • Longs métrages, Quinzaine des cinéastes (Festival de Cannes) 2025",
+          "60c715b7bc24": "Official selection, Vancouver International Film Festival 2025",
+          "c01c41c28c47": "Official selection, Cairo International Film Festival 2025"
+        }
+      }
     },
     "10415": {
       "zoom": 1.38,
-      "title": "Paradise"
+      "title": "Paradise",
+      "info": {
+        "awards": "Official selection • Panorama, Berlin International Film Festival (Berlinale) 2026\nOfficial selection, Melbourne International Film Festival 2026\nOfficial selection, Calgary International Film Festival 2026\nOfficial selection • Compétition internationale, Tübingen | Stuttgart Festival international du film francophone 2026",
+        "awardsFrom": {
+          "fe316191410b": "Official selection • Panorama, Berlin International Film Festival (Berlinale) 2026",
+          "879943828004": "Official selection, Melbourne International Film Festival 2026",
+          "37cd5c24dd4d": "Official selection, Calgary International Film Festival 2026",
+          "0052fdff4df6": "Official selection • Compétition internationale, Tübingen | Stuttgart Festival international du film francophone 2026"
+        }
+      }
     },
     "10545": {
       "zoom": 1.37,

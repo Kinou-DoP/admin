@@ -173,7 +173,13 @@
           ]
         }
       ],
-      "zoom": 1.37
+      "zoom": 1.37,
+      "info": {
+        "awards": "Official selection, Festival du film francophone d'Angoulême 2026",
+        "awardsFrom": {
+          "e6198a7f0831": "Official selection, Festival du film francophone d'Angoulême 2026"
+        }
+      }
     }
   },
   "about": {
