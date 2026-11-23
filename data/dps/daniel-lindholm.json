@@ -7,95 +7,233 @@
   "overrides": {
     "4512": {
       "zoom": 1.53,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "4513": {
       "zoom": 1.37,
       "zoomThumb": true,
-      "title": "Destination - Riyadh Season"
+      "title": "Destination - Riyadh Season",
+      "types": [
+        "Commercial"
+      ]
     },
     "4514": {
       "zoom": 1.65,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4515": {
+      "types": [
+        "Feature Film"
+      ]
     },
     "4516": {
-      "title": "Lake Bodom "
+      "title": "Lake Bodom ",
+      "types": [
+        "Feature Film"
+      ]
     },
     "4517": {
       "zoom": 1.38,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "4518": {
-      "title": "Through the supermarket in five easy pieces"
+      "title": "Through the supermarket in five easy pieces",
+      "types": [
+        "Short Film"
+      ]
+    },
+    "4519": {
+      "types": [
+        "Short Film"
+      ]
     },
     "4520": {
-      "title": "Black Sun"
+      "title": "Black Sun",
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "4521": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "4522": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4523": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "4524": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4525": {
       "zoom": 1.34,
-      "title": "Power electronics - Changing the game"
+      "title": "Power electronics - Changing the game",
+      "types": [
+        "Commercial"
+      ]
     },
     "4527": {
       "zoom": 1.35,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "4530": {
       "zoom": 1.12,
       "zoomThumb": true,
-      "title": "Gloria Magazine - Women Empowerment"
+      "title": "Gloria Magazine - Women Empowerment",
+      "types": [
+        "Commercial"
+      ]
     },
     "4537": {
       "zoom": 1.37,
       "zoomThumb": true
     },
+    "5117": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5138": {
+      "types": [
+        "Commercial"
+      ]
+    },
     "5507": {
       "zoom": 1.37,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "5766": {
+      "types": [
+        "Commercial"
+      ]
     },
     "5789": {
       "zoom": 1.37,
-      "title": "The Twin"
+      "title": "The Twin",
+      "types": [
+        "Feature Film"
+      ]
     },
     "6220": {
       "zoom": 1.54,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
     },
     "6221": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "types": [
+        "Commercial"
+      ]
     },
     "6371": {
       "zoom": 1.36,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6523": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "6908": {
+      "types": [
+        "Comedy",
+        "Slowmotion"
+      ]
     },
     "7458": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Commercial"
+      ]
     },
     "8974": {
       "zoom": 1.37,
-      "title": "Subservience"
+      "title": "Subservience",
+      "types": [
+        "Narrative",
+        "Feature"
+      ]
     },
     "9230": {
-      "zoom": 1.2
+      "zoom": 1.2,
+      "types": [
+        "Commercial"
+      ]
     },
     "9390": {
       "zoom": 1.19,
-      "title": "IceBreaker"
+      "title": "IceBreaker",
+      "types": [
+        "Serie",
+        "Trailer"
+      ]
     },
     "10064": {
       "zoom": 1.39,
-      "title": "love & anarchy Helsinki Filmfestival"
+      "title": "love & anarchy Helsinki Filmfestival",
+      "types": [
+        "Commercial",
+        "Festival trailer"
+      ]
     },
     "10160": {
-      "zoom": 2.06
+      "zoom": 2.06,
+      "types": [
+        "Commercial"
+      ]
     },
     "10331": {
-      "zoom": 1.16
+      "zoom": 1.16,
+      "types": [
+        "Commercial"
+      ]
     },
     "10521": {
       "zoom": 1.19
     },
+    "10522": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "10523": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "10665": {
-      "zoom": 1.38
+      "zoom": 1.38,
+      "types": [
+        "Music Video"
+      ]
     }
   },
   "about": {
