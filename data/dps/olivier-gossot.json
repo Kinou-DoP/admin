@@ -5,18 +5,47 @@
   "bundle": "https://kinou.slateapp.com/bundles/49263f7b-e73f-11f1-952e-02ffedfede17",
   "open": 10545,
   "overrides": {
+    "1245": {
+      "title": "Oh What a Wonderful Feeling"
+    },
+    "1258": {
+      "title": "Milk"
+    },
     "1367": {
       "zoom": 2.5,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Maurice"
+    },
+    "1526": {
+      "title": "life's a bitch"
+    },
+    "2336": {
+      "title": "Crème de Menthe"
+    },
+    "2353": {
+      "title": "Bleu Tonnerre"
     },
     "2405": {
       "zoom": 1.56,
       "zoomThumb": true,
-      "zoomPos": "68.9% 41.6%"
+      "zoomPos": "68.9% 41.6%",
+      "title": "Bernard le Grand"
+    },
+    "2817": {
+      "title": "Flots Gris"
+    },
+    "2843": {
+      "title": "Feminin Feminin"
+    },
+    "2872": {
+      "title": "Fauve"
     },
     "3338": {
       "zoom": 1.37,
       "zoomThumb": true
+    },
+    "3449": {
+      "title": "L'Âge Adulte"
     },
     "3589": {
       "zoom": 1.38,
@@ -28,30 +57,72 @@
     },
     "4071": {
       "zoom": 1.34,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Mahalia Melts in the Rain"
+    },
+    "4175": {
+      "title": "Regret"
+    },
+    "4321": {
+      "title": "Jeune Juliette"
+    },
+    "4322": {
+      "title": "Direct Assurance"
+    },
+    "4807": {
+      "title": "Fizz - Playa"
+    },
+    "5749": {
+      "title": "Produits Laitiers du Québec"
+    },
+    "6344": {
+      "title": "Cercueil, tabarnak!"
     },
     "6422": {
       "zoom": 1.16,
       "zoomThumb": true
     },
+    "7419": {
+      "title": "Intermarché"
+    },
     "8566": {
       "zoom": 1.14,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Mothers and Monsters"
     },
     "9878": {
-      "zoom": 1.37
+      "zoom": 1.37,
+      "title": "Amour Apocalypse"
     },
     "10415": {
-      "zoom": 1.38
+      "zoom": 1.38,
+      "title": "Paradise"
     },
     "10545": {
-      "zoom": 1.37
+      "zoom": 1.37,
+      "title": "Lucy Grizzli Sophie"
     },
     "10654": {
       "zoom": 1.25
     }
   },
-  "about": {},
+  "about": {
+    "website": "https://www.oliviergossot.com/",
+    "instagram": "https://www.instagram.com/olivier_gossot/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm3665210/"
+      }
+    ],
+    "pos": "50% 26%",
+    "bioEn": [
+      "Olivier is a Canadian and French cinematographer. He’s known for his work on films such as the critically acclaimed coming-of-age « Jeune Juliette » and many short films selected at Cannes, Sundance and the Academy Awards.",
+      "His background in cinema has a strong influence on his commercial body of work, through precise visual storytelling and mood shaping."
+    ],
+    "img": "img/olivier-gossot.webp",
+    "og": "img/olivier-gossot-og-1795439862079.jpg"
+  },
   "categories": [
     "FEATURED",
     "NARRATIVE",
@@ -426,14 +497,6 @@
       "img": "https://images.slatecdn.net/7K2I4UVTwun4D2F57TWdNZNah7lghGOCEksTtI3Rki8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYxNTU4ODM1/L2JhcnJlYXUtZHUt/cXVlYmVjLmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 2430
-    },
-    {
-      "title": "BDC | Man",
-      "sub": "Sébastien Duguay\n4zero1",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450122-61672652_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/g-oNrNHSBd4hWsUp1gxccSUx67cgtGNhiG1fsp_Sb6E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYxNzM4OTUx/L2JkYzE2LTkuanBn?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 2423
     },
     {
       "title": "Royal Bank of Canada",
