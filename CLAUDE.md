@@ -97,7 +97,11 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   `i<id>`) ouvrent ensuite la même fenêtre d'infos.
   Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement** (hébergement pas encore branché).
 - **Sorties fiction** (`#/sorties`) : calendrier mois / semaine (page fiction + `notes/sorties/sorties.json` + films sans date de
-  `projets.json`), bandes-annonces à voir (pastille), confirmer / masquer / ajouter une sortie.
+  `projets.json`), bandes-annonces à voir (pastille), confirmer / masquer / ajouter une sortie. **Dates qui ne s'accordent pas** (Gus
+  23/11, `sortConflicts`) : sources TMDB / Wikidata / AlloCiné (Claude) différentes, ou date confirmée (`human`) contredite par un robot
+  → pastille + encadré « Date de sortie à vérifier » : « C'est cette date » / « Utiliser cette date » (date confirmée, autres dates
+  retenues dans `seenDates`), « Garder la nôtre » ; une nouvelle date fait revenir l'alerte. Calendrier : date confirmée seule.
+  Page fiction : `ficAlerts` compare toutes les sources, `datesSeen` = dates refusées (« Garder la nôtre »).
 - **Festivals** : **dates** (`#/festivals`, `notes/festivals/festivals.json` ; ce que l'équipe a saisi n'est jamais modifié par le
   robot, désaccords = triangle orange) et **nos sélections** (`#/selections`, `notes/festivals/selections.json` : à vérifier ✓ / ✗,
   onglets « Toutes nos sélections » / « Récent », écartées en deux groupes « Pas nous » et « Doublons » (`dupOf` = version gardée,

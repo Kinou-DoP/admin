@@ -2261,8 +2261,11 @@
       var t = ficTitle(f.title), hits = (so.releases || []).filter(function (r) { return r.date && (String(r.slate || "") === String(f.slate) || sortSame(t, r.title)); });
       if (!hits.length) return;
       hits.sort(function (a, b) { return ((a.country || "France") === "France" ? 0 : 1) - ((b.country || "France") === "France" ? 0 : 1) || (a.date < b.date ? -1 : 1); });
-      var r = hits[0];
-      if (r.date !== o.date && o.dateSeen !== r.date) out.push({ slate: f.slate, title: t, r: r });
+      // Plusieurs sources (TMDB, Wikidata, AlloCiné… Gus 23/11) : alerte pour la 1re date qui n'est ni la nôtre ni déjà refusée
+      // (« Garder la nôtre » retient toutes les dates refusées : une nouvelle date fait revenir l'alerte).
+      var no = [].concat(o.dateSeen || [], o.datesSeen || []);
+      var r = hits.filter(function (h) { return h.date !== o.date && no.indexOf(h.date) < 0; })[0];
+      if (r) out.push({ slate: f.slate, title: t, r: r, all: hits });
     });
     return out;
   }
@@ -2282,13 +2285,15 @@
   function ficDateWarn(c) {
     var a = ficAlerts(fic, ficSort).filter(function (x) { return String(x.slate) === String(c.slate); })[0];
     if (!a) return null;
-    var r = a.r, o = fic.overrides[c.slate] || {}, src = r.source === "human" ? "ajoutée par " + (r.by || "l'équipe") : r.source === "tmdb" ? "TMDB" : "recherche Claude";
+    var r = a.r, o = fic.overrides[c.slate] || {}, src = sortSrc(r);
+    var others = {}; (a.all || []).forEach(function (h) { if (h !== r) (others[h.date] = others[h.date] || []).push(sortSrc(h)); });
     var use = el("button", { type: "button", class: "btn", text: "Utiliser cette date" }), keep = el("button", { type: "button", class: "btn ghost", text: o.date ? "Garder la nôtre" : "Ignorer" });
     use.addEventListener("click", function () { setOverride(c, "date", r.date); setOverride(c, "dateSeen"); touch(); var y = window.scrollY; ficCapNew(); slate = ficSlate(); renderFic(); window.scrollTo(0, y); ficBadge(); });
-    keep.addEventListener("click", function () { setOverride(c, "dateSeen", r.date); touch(); box.remove(); ficBadge(); });
+    keep.addEventListener("click", function () { var l = [].concat(o.datesSeen || [], o.dateSeen ? [o.dateSeen] : []); if (l.indexOf(r.date) < 0) l.push(r.date); setOverride(c, "datesSeen", l); setOverride(c, "dateSeen"); touch(); box.remove(); ficBadge(); });
     var box = el("div", { class: "fdwarn" }, [
       el("p", {}, [el("b", { text: "! " }), (o.date ? "Autre date trouvée : " : "Date trouvée : ") + fdate(r.date) + " (" + (SK[r.kind] || r.kind || "") + (r.platform ? " · " + r.platform : "") + (r.country ? ", " + r.country : "") + " ; " + src + ")" + (o.date ? ". Chez nous : " + fdate(o.date) + "." : ".") + " ",
         r.url ? el("a", { href: r.url, target: "_blank", rel: "noopener", text: "Source ↗" }) : ""]),
+      Object.keys(others).length ? el("p", { class: "hint", text: "Autres sources : " + Object.keys(others).sort().map(function (d) { return fdate(d) + (d === o.date ? " (la nôtre)" : "") + " — " + others[d].join(", "); }).join(" ; ") }) : null,
       el("div", { class: "fdbtns" }, [use, keep])]);
     return box;
   }
@@ -3495,10 +3500,40 @@
   }
   function sortBadge() {
     var a = side.querySelector('a[data-page="sorties"]'); if (!a) return;
-    var n = trUnseen().length, b = a.querySelector(".nbadge");
+    var nt = trUnseen().length, nc = sortConflicts(sorties, fic).length, n = nt + nc, b = a.querySelector(".nbadge");
     if (!n) { if (b) b.remove(); return; }
     if (!b) { b = el("span", { class: "nbadge" }); a.appendChild(b); }
-    b.textContent = n; b.title = "Nouvelles bandes-annonces";
+    b.textContent = n; b.title = [nt ? nt + " nouvelle(s) bande(s)-annonce(s)" : "", nc ? nc + " date(s) de sortie à vérifier" : ""].filter(Boolean).join(" · ");
+  }
+  // Source d'une date de sortie, en clair.
+  function sortSrc(r) {
+    return r.source === "human" ? "confirmée par " + (r.by || "l'équipe") : r.source === "tmdb" ? "TMDB" : r.source === "wikidata" ? "Wikidata"
+      : r.source === "claude" ? (/allocine/i.test(r.url || "") ? "AlloCiné (recherche Claude)" : "recherche Claude") : r.source === "fiction" ? "page fiction" : String(r.source || "");
+  }
+  // Dates de sortie qui ne s'accordent pas (Gus 23/11 : « une notif si un film trouvé a une différence, je confirme une date, et dès
+  // qu'une date change tu renvoies une notif »). Films hors page fiction (eux : alerte sur la page fiction, ficAlerts). Par film :
+  // - pas de date confirmée et les robots (TMDB, Wikidata, AlloCiné) donnent des dates différentes ;
+  // - date confirmée (`source: "human"`) et un robot en donne une autre, pas encore refusée (`seenDates`).
+  // Seulement les films dont une date est à venir ou de moins de 30 jours.
+  function sortConflicts(so, f0) {
+    var lim = sortIso(new Date(Date.now() - 30 * 864e5)), ficT = [];
+    ((f0 && f0.films) || []).forEach(function (f) { ficT.push(ficTitle(((f0.overrides || {})[f.slate] || {}).title || f.title)); });
+    var groups = {};
+    ((so && so.releases) || []).forEach(function (r) {
+      if (!r.date || r.source === "youtube" || sortHid(r, so) || ficT.some(function (t) { return sortSame(t, r.title); })) return;
+      var k = r.key || sortNrm(r.title); (groups[k] = groups[k] || []).push(r);
+    });
+    var out = [];
+    Object.keys(groups).forEach(function (k) {
+      var l = groups[k], hum = l.filter(function (r) { return r.source === "human"; }).sort(function (a, b) { return String(b.at || "").localeCompare(String(a.at || "")); })[0];
+      var bots = l.filter(function (r) { return r.source !== "human"; });
+      if (!l.some(function (r) { return r.date >= lim; })) return;
+      var seen = (hum && hum.seenDates) || [], d = {};
+      bots.forEach(function (r) { d[r.date] = 1; });
+      var pend = hum ? bots.filter(function (r) { return r.date !== hum.date && seen.indexOf(r.date) < 0; }) : [];
+      if (hum ? pend.length : Object.keys(d).length > 1) out.push({ key: k, title: (hum || bots[0]).title, human: hum, bots: bots });
+    });
+    return out.sort(function (a, b) { return a.title.localeCompare(b.title, "fr"); });
   }
   function trLabel(t) { return [t.name, t.kind === "teaser" ? "teaser" : "", t.lang ? t.lang.toUpperCase() : "", t.channel ? "chaîne " + t.channel : "", t.published ? "publiée le " + fdate(t.published) : t.when || "", t.source === "youtube" ? "trouvée sur YouTube, à vérifier" : ""].filter(Boolean).join(" · "); }
   // « Les Filles d'Abraham • Bande Annonce » → « Les Filles d'Abraham ».
@@ -3542,7 +3577,9 @@
         else seen["nd|" + nrm(t)] = info;
         if (p) seen["p|" + p.id] = 1;
       });
+      var humK = {}; ((sorties && sorties.releases) || []).forEach(function (r) { if (r.source === "human") humK[r.key || nrm(r.title)] = 1; });
       ((sorties && sorties.releases) || []).forEach(function (r) {
+        if (r.source !== "human" && humK[r.key || nrm(r.title)]) return; // date confirmée par l'équipe : elle seule dans le calendrier (Gus 23/11)
         var p = (r.project && projs.filter(function (q) { return q.id === r.project; })[0]) || byTitle[nrm(r.title)];
         // Même film déjà daté par la page fiction sous un titre un peu différent (ex. « Ce qui me mène à toi » dans les projets,
         // « Ce qui nous mène à toi » sur le site, Gus 17/11) : la date de la page fiction l'emporte sur celle du robot.
@@ -3616,6 +3653,37 @@
         });
         if (tn.length > 1) { var all = el("button", { type: "button", class: "btn ghost", text: "Tout marquer comme vu" }); all.addEventListener("click", function () { all.disabled = true; trSeen(tn.map(function (t) { return t.id; })).then(draw); }); tb.appendChild(all); }
         box.appendChild(tb);
+      }
+      // Dates de sortie qui ne s'accordent pas (Gus 23/11) : choisir la bonne (elle devient confirmée), ou garder la nôtre.
+      var cf = sortConflicts(sorties, fic);
+      if (cf.length) {
+        var cb = el("div", { class: "trnew sortcf" }, [el("h3", { text: cf.length > 1 ? cf.length + " dates de sortie à vérifier" : "Date de sortie à vérifier" })]);
+        cf.forEach(function (c) {
+          var by = {}; c.bots.forEach(function (r) { (by[r.date] = by[r.date] || []).push(r); });
+          var hum = c.human, msg = el("span", { class: "fmsg" });
+          var rows = Object.keys(by).sort().map(function (d) {
+            var rs = by[d], same = hum && hum.date === d;
+            return el("div", { class: "sortcfd" }, [el("span", {}, [el("b", { text: fdate(d) }), " — " + rs.map(sortSrc).join(", ") + (rs[0].platform ? " · " + rs[0].platform : "") + (rs[0].country ? " · " + rs[0].country : "") + " "].concat(
+                rs.filter(function (r) { return r.url; }).slice(0, 2).map(function (r) { return el("a", { href: r.url, target: "_blank", rel: "noopener", text: "source ↗" }); }))),
+              same ? el("span", { class: "hint", text: "= notre date" }) : el("button", { type: "button", class: "btn" + (hum ? "" : " primary"), text: hum ? "Utiliser cette date" : "C'est cette date", on: { click: function (e) {
+                e.target.disabled = true; msg.textContent = "Enregistrement…";
+                var all = Object.keys(by), r0 = rs[0];
+                var y = hum ? JSON.parse(JSON.stringify(hum)) : { id: "s" + Date.now().toString(36), key: c.key, title: c.title, project: r0.project, slate: r0.slate, source: "human", was: r0.source };
+                Object.assign(y, { date: d, kind: r0.kind, platform: r0.platform, country: r0.country, url: r0.url, by: user && user.login || "", at: new Date().toISOString() });
+                y.seenDates = (y.seenDates || []).concat(all).filter(function (v, i, a) { return a.indexOf(v) === i && v !== d; });
+                sortSave(hum || null, y, c.title + " : date " + fdate(d) + " confirmée").then(function () { build(); draw(); }, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+              } } })]);
+          });
+          var keep = hum ? el("button", { type: "button", class: "btn ghost", text: "Garder la nôtre (" + fdate(hum.date) + ")", on: { click: function (e) {
+            e.target.disabled = true; var y = JSON.parse(JSON.stringify(hum));
+            y.seenDates = (y.seenDates || []).concat(Object.keys(by)).filter(function (v, i, a) { return a.indexOf(v) === i && v !== hum.date; });
+            sortSave(hum, y, c.title + " : date gardée").then(function () { build(); draw(); }, function (er) { e.target.disabled = false; msg.textContent = "Pas enregistré : " + er.message; });
+          } } }) : null;
+          cb.appendChild(el("div", { class: "tritem sortcfi" }, [el("div", {}, [el("b", { text: c.title }),
+            el("span", { class: "hint", text: hum ? "Notre date : " + fdate(hum.date) + " (" + sortSrc(hum) + "). Un robot en a trouvé une autre :" : "Les sources ne sont pas d'accord. Laquelle est la bonne ?" })].concat(rows)),
+            el("div", { class: "fwbtns" }, [keep, msg])]));
+        });
+        box.appendChild(cb);
       }
       var r = range(), l = events.filter(match);
       // Barre : recherche, mois / semaine, flèches, aujourd'hui, saut de sortie en sortie.
@@ -3743,7 +3811,7 @@
           x.source !== "fiction" ? el("button", { type: "button", class: "btn", text: "Modifier", on: { click: function () { d.remove(); form(x, at.closest(".cal")); } } }) : null,
           x.source === "fiction" || x.ficSlate ? el("a", { class: "btn", href: ficLink(x), target: "_blank", rel: "noopener", text: "Page fiction ↗" }) : null,
           // Sortie trouvée par le robot : « Confirmer » = vérifiée par l'équipe → gardée pour toujours dans l'archive (plus une donnée TMDB).
-          x.source === "tmdb" || x.source === "claude" ? el("button", { type: "button", class: "btn primary", text: "Confirmer", title: "Date vérifiée : gardée pour toujours dans nos archives", on: { click: function (e) {
+          x.source === "tmdb" || x.source === "claude" || x.source === "wikidata" ? el("button", { type: "button", class: "btn primary", text: "Confirmer", title: "Date vérifiée : gardée pour toujours dans nos archives", on: { click: function (e) {
             var y = JSON.parse(JSON.stringify(x)); ["directors", "dops", "prod", "platforms", "series", "img"].forEach(function (k) { delete y[k]; });
             y.id = "s" + Date.now().toString(36); y.was = x.source; y.source = "human"; y.by = user && user.login || ""; y.at = new Date().toISOString(); delete y.key;
             if (x.platforms && x.platforms[0]) y.platform = x.platforms[0];

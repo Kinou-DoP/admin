@@ -359,3 +359,10 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 22/11 (bibliothèque, Gus) : « Valider cette image » et « Valider l'extrait » en bas à droite ; un extrait réglé sans valider n'est pas enregistré ; boutons d'import (clic ou fichier glissé dessus).
 - 23/11 (Gus) : « Bibliothèque » renommée « Filmothèque » (texte seulement) ; lien de partage d'un film seul (comme sur Slate) avec « Autoriser le téléchargement ».
 - 23/11 (Gus) : lien de partage créé dès l'ajout d'un film ; bundles (bandes de bandes) ; recherche dans les bandes existantes.
+- 23/11 : **dates de sortie qui ne s'accordent pas** (Gus : « une notif si un film trouvé a une différence, je te confirme une date, et dès
+  que tu as encore une date qui change tu renvoies une notif »). Sorties fiction : `sortConflicts` (films hors page fiction, date à venir
+  ou de moins de 30 jours) → pastille du menu + encadré : sources en désaccord → « C'est cette date » (crée la date confirmée `human`,
+  `seenDates` = autres dates) ; date confirmée contredite par un robot → « Utiliser cette date » / « Garder la nôtre » ; date nouvelle
+  → l'alerte revient. Calendrier : un film à date confirmée n'affiche plus les dates des robots. Page fiction : `ficAlerts` regarde toutes
+  les sources (plus seulement la 1re), « Garder la nôtre » retient toutes les dates refusées (`datesSeen`), autres sources affichées.
+  Sources nommées (`sortSrc`) : TMDB, Wikidata, AlloCiné (recherche Claude) ; « Confirmer » aussi pour Wikidata.
