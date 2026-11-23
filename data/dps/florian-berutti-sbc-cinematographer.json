@@ -1,0 +1,264 @@
+{
+  "slug": "florian-berutti-sbc-cinematographer",
+  "name": "Florian Berutti, SBC",
+  "hue": 284,
+  "bundle": "https://kinou.slateapp.com/bundles/f602932c-e727-11f1-952e-02ffedfede17",
+  "open": 10404,
+  "overrides": {
+    "6918": {
+      "title": "Ailleurs Si J'y Suis"
+    },
+    "6920": {
+      "title": "Braquer Poitiers "
+    },
+    "6929": {
+      "title": "Lachez les Chiens "
+    },
+    "6932": {
+      "title": "Les Doigts Dans La Confiture"
+    },
+    "6933": {
+      "title": "Lucie Perd Son Cheval"
+    },
+    "6937": {
+      "title": "Pompeï"
+    },
+    "6938": {
+      "title": "Premier Amour"
+    },
+    "6941": {
+      "title": "Seul Le Corps Sombre"
+    },
+    "6942": {
+      "title": "The Cow"
+    },
+    "6944": {
+      "title": "Tristesse Animal Sauvage"
+    },
+    "7420": {
+      "title": "L'autre Laurens"
+    },
+    "7729": {
+      "title": "Déserts"
+    },
+    "9469": {
+      "title": "Dolomite & Ash"
+    },
+    "10401": {
+      "title": "Sainte-Marie-aux-Mines"
+    },
+    "10404": {
+      "title": "Nino"
+    }
+  },
+  "about": {
+    "bioEn": [
+      "Florian was born in Bruxelles in 1982. He studied art in France for three years. Then he came back to Bruxelles to enter INSAS in the Director of photography section. He has made a graduation film as a director called TRISTESSE ANIMAL SAUVAGE. After school he worked for three years as a colorist until Claude Schmitz asked me to shoot his first film LE MALI (EN AFRIQUE) in 2014. Since then he workw as a cinematographer for various art house movies."
+    ],
+    "website": "https://www.florianberutti.com/",
+    "instagram": "https://www.instagram.com/florianberutti/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://pro.imdb.com/name/nm5191371/?rf=cons_nm_contact"
+      }
+    ],
+    "pos": "36% 38%",
+    "img": "img/florian-berutti-sbc-cinematographer.webp",
+    "og": "img/florian-berutti-sbc-cinematographer-og-1795429648964.jpg"
+  },
+  "categories": [
+    "FEATURED",
+    "FEATURE FILMS",
+    "SHORT FILMS",
+    "MUSIC VIDEOS"
+  ],
+  "clips": [
+    {
+      "title": "DOLOMITE & ASH trailer",
+      "sub": "Toma Selivanova\nDroog Drooga, Pinery",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9469/2d6d1b16-f84a-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5e412ff7-e91a-41f6-9ac5-a4965054d605-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3yNRPqwUJfuDWpjYDfP7noHn0f2GUloToI5V1-63b2k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YzhlN2JhMS1jMWVh/LTQ2NTAtODdhMS1l/NmZkZDM4NzNmYTkv/ZG9sb21pdGUucG5n?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 9469,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "NINO | Bande Annonce",
+      "sub": "Laurent Micheli\nHaut et Court",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10404/7775afcb-027a-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e422015b-c08b-4f9f-b1b7-6d722d95839d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/wGxEebEMa0VnUkWXtHiefzBpV1xtlotRiMO_Jp8PG44/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/YmY1ZTU2ZS05MTM1/LTQ0MTUtODU2Ni0z/NTFlNDZhOTQxOTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MDUtYS0xMS4wNS40/MC5wbmc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 10404,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Sainte-Marie-aux-Mines | bande annonce",
+      "sub": "Claude Schmitz\nWrong Men",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10401/fa306907-fd66-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff5f8f76-0877-4a4b-a530-7b3c9068cf67-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JQRrAAOCkmdPGPFBaydpWTSSZJ0kpPgcBRRVXJtu1xw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZGY2MzEyMS0yMmIw/LTQ4MjYtOGYyMC1j/OGRiOTM0NmYzMmYv/MTc3MDkwMjU2MTI0/My5qcGc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 10401,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Déserts - Feature film trailer",
+      "sub": "Faouzi Bensaïdi\nBarney Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7729/75bce1c0-56cd-11ee-ade3-028f723623ff.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fccec6c1-60a4-4bf8-a1a3-767612cad923-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KIt0C7gqlHkChuev_VOzPTDHOW945Y6D-KiI89CH32U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZWQzODBjYS00NWVk/LTQwOWEtYTg2YS04/MmIzMzEwZTIxNDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDkt/MTktYS0xMS4xNC4x/MS5wbmc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 7729,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Ailleurs Si J'y Suis - Trailer",
+      "sub": "François Pirot\nTarantula",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ad435146-5dbf-4d95-b76f-13710660c6da-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/DpOluVfFE91jeSvqMdqe_7LFUhAl7Z0rVAXwU1TDGGM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NzQwNzRjMS1mZDZh/LTQ2NzktOGQxZC02/NzRlMDM5NDYxNTgv/bHZkbGIyLWNvcHku/anBn?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 6918,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Lucie Perd Son Cheval - Trailer",
+      "sub": "Claude Schmitz\nParadies",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0ce200be-a025-4770-adf0-01963b924b64-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/q0KVKJIvCUEgIsHQxdXQAe4Gbp2mB25l16PgovqgjkI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NDEwN2ZhZi1jMTM1/LTRmOGQtOGQxNi00/MzU2Y2FlMzg4M2Mv/cm95YXVtZTEtMS40/MC4yLmpwZw?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 6933,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "Pompeï - Trailer",
+      "sub": "John Shank, Anna Falguères\nTarantula",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c0f1781f-1846-4d5b-a219-dc5a802fd6b4-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/lKeJeqlq_cc5z6ussS3deSMKVB3KcirV_ZACEuhwC0c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MzY5MzRlZS02OGRm/LTQxYjYtODFiMC1l/ZjlhMTVjZGQ5Nzkv/cG9tcGVpLXN0aWxs/LTE0LmpwZw?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 6937,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Braquer Poitiers - Trailer",
+      "sub": "Claude Schmitz\nLes films de l'autre Cougar",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/225ebefc-c494-467c-a212-657974ed97f0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fEfMaveC_mq-Fh1-0H19Y6-qlLPfGoWyR-emufJRrNQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/OGNhZjAwNi1lYjFl/LTQxMGUtYmQzYi1m/YjUzYmZhNzViYzAv/YnJhcXVlcnBvaXRp/ZXJzLTEuMTI1LjEt/Y29weS5wbmc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 6920,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "L'autre Laurens - trailer",
+      "sub": "Claude Schmitz\nChevalDeuxTrois, Wrong Men Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/92632b6b-f964-43e5-82cd-ee74a10a1947-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/L_AsKj5k152IKSH1nEFerQFeqRtsi13fG26k-aFx330/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ZWFhMGJkMy1jN2Fk/LTQ2NDEtYmExNy0z/YzUyNmZiMzdlZTUv/bC1hdXRyZS1sYXVy/ZW5zLWMtd3Jvbmdt/ZW4tY2hldmFsZGV1/eHRyb2lzLTEtMS5q/cGc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 7420,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Lachez les Chiens - Trailer",
+      "sub": "Manue Fleytoux\nChevalDeuxTrois",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a301fa0b-994a-40fb-b676-d46cc68855ea-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0C4Bq4Azbk14pXODXBjdoiuV25jGU2NkWfO-dECaF7Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/OTI5LTY0MTA1NWQz/NDhlNTM0LjMzNzAz/MzQxLWFjYjZjMDhl/OWRjOWNmOGM1ZDFm/ZThkZTM0OGIwNTlk/LmpwZw?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 6929
+    },
+    {
+      "title": "The Cow - Trailer",
+      "sub": "Toma Selivanova\nToma Selivanova",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f017d82f-07cf-42e0-9dc8-ce25f6089455-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/isAKuAqccSVZCkKMS6LlwZCn23ei2vH_nT5exsRg-6A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDQ0ZTZlZi0yNGQ4/LTQxMGItYTkxZS04/NDkxMDgzZjdlNDEv/dW50aXRsZWQtMS4z/Ni4xLmpwZw?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 6942
+    },
+    {
+      "title": "Premier Amour - Trailer",
+      "sub": "Julie Carrin\nLa HEAD",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/aa8f402e-422c-4599-a3c7-8e14eb1deac2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/LnG6z5PACRa5DIIf4eqMIRbmqm-y_vQODOR9MXT5huY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/M2ExZTI3Yi1jOTNk/LTRjNDQtODczOC02/Njg4YmRkMzc0MTgv/dW50aXRsZWQtMS4x/LjctY29weS5wbmc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 6938
+    },
+    {
+      "title": "Seul Le Corps Sombre - Trailer",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ce40f4ef-a9be-4501-9020-ec5327b9cf21-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/m36qV4fE8gL2rq_7Ui8IeVt4amtnPoqXhVXHrt2XImc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OWFlNjIxNy03MWJl/LTRjYTMtODFkYy0y/NDIzNDI4YjE1ZWUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjMtYS0xNy4xOS4w/Ny5wbmc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 6941
+    },
+    {
+      "title": "Les Doigts Dans La Confiture - Short Film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3d9dd690-0a92-4663-9ce8-47e544d25310-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/721zbItOAZH-ca1H0kJhjObjFQsMg--lhBCIE001FJ4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MDQyNGExMy1jNDYz/LTRmZTctYmEyZS1j/Mjk2ZDI2MWQ5YWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjMtYS0xNy4yMC4y/My5wbmc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 6932
+    },
+    {
+      "title": "Tristesse Animal Sauvage - short film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b5b3e2c9-bc97-4407-a8f7-8ad617bf9c94-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0c7615qiv37ZRnbhaq9cl1dSIVqRgiEaquIyaWi3XhE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NjkwZTJkNS03ZDRm/LTRmNzktYWExYi1j/YzUxZDVhZDhkOTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjMtYS0xNy4yMy40/NS5wbmc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 6944
+    },
+    {
+      "title": "Prope - Void",
+      "sub": "Damien Chapelle\nPrope",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/136534d2-54df-473e-ad7b-eb59ae6d37e4-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/FnFnfqpggaOMjZghK8bxEmcm2vcsw5sjeIflnZijpTI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NTY1NTc5Yy01NTIw/LTRlZmEtYTcwMy1j/NDI5MzY4MjIyM2Uv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjEtYS0xNi4yNy41/NC5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 6946
+    },
+    {
+      "title": "The Van Jets - Two Tides Of Ice",
+      "sub": "Marine Dricot\nChevalDeuxTrois",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2bb85202-ae46-475d-968b-27f1eb707e36-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Ncif_EF7cD7jhwatb2WRJp4HNe2SrGF0uWo7M3amxAo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/OGExNGQwZS01MjFk/LTQ3NGQtOTc1ZC1m/YjhhOWFmOGJlOGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjEtYS0xNi4yOS4w/NS5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 6945
+    },
+    {
+      "title": "School Is Cool - AK47",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f4844005-90bd-41e7-8725-544d4d6e84ad-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/E26Z2_Qdjr5CGdjWx61hEKH7qbpqEOm2zpUM6-6gl4U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YjQwODczMi0zOTE2/LTQxYWQtYTQzMS04/M2FjN2EwYzRjNmUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjEtYS0xNi4zMS4x/NS5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 6940
+    },
+    {
+      "title": "Odezenne - Cabriolet",
+      "sub": "Marine Dricot\nChevalDeuxTrois",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/04cadcb5-e596-41bb-b395-27a85e59412e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bRgOBxk9OqWJXOUFzFiLz_HtBA_TSPB_62GxDUtA2Xw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZDU4YThhMi04NDAy/LTRhNDQtYTdmOS0y/M2FmY2I3Y2QzMjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjMtYS0xOC4wNS40/My5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 6936
+    },
+    {
+      "title": "MX Sculpture",
+      "sub": "Xavier Mary\nBPS22",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b4f11e52-6032-47b2-94f1-f59a408aaa80-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GE5fJ9st_sDJOUAE2PFYHu9GEA3LlPGvLaYAiRgb4b4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/ZDgxOWU5NC1iZWRl/LTQ5YmMtODFmMi01/OGYwODI1NDg5ZDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MjMtYS0xNy4xNi40/OC5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 6935
+    },
+    {
+      "title": "Girls in Hawai - This Light",
+      "sub": "Claude Schmitz\nChevalDeuxTrois",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/698cf602-956b-4e5d-88b1-0be1ef6d5614-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ODE2F2_RAUAmNdEzKpquRRPDPj-7qp0fka9YtcBeYZw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/OTI3LTY0MTA1NjEy/YjZmNWU2LjQ1NjUy/OTA2LTllZjg5ZTg3/MzUwYzYyZTQxNjIx/MmY4ODM2N2NkZDIz/LmpwZw?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 6927
+    }
+  ]
+}
