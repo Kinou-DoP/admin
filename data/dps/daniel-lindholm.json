@@ -1,0 +1,491 @@
+{
+  "slug": "daniel-lindholm",
+  "name": "Daniel Lindholm, FSC",
+  "hue": 201,
+  "bundle": "https://kinou.slateapp.com/bundles/12bb53be-e74d-11f1-952e-02ffedfede17",
+  "open": 10665,
+  "overrides": {
+    "4512": {
+      "zoom": 1.53,
+      "zoomThumb": true
+    },
+    "4513": {
+      "zoom": 1.37,
+      "zoomThumb": true,
+      "title": "Destination - Riyadh Season"
+    },
+    "4514": {
+      "zoom": 1.65,
+      "zoomThumb": true
+    },
+    "4516": {
+      "title": "Lake Bodom "
+    },
+    "4517": {
+      "zoom": 1.38,
+      "zoomThumb": true
+    },
+    "4518": {
+      "title": "Through the supermarket in five easy pieces"
+    },
+    "4520": {
+      "title": "Black Sun"
+    },
+    "4525": {
+      "zoom": 1.34,
+      "title": "Power electronics - Changing the game"
+    },
+    "4527": {
+      "zoom": 1.35,
+      "zoomThumb": true
+    },
+    "4530": {
+      "zoom": 1.12,
+      "zoomThumb": true,
+      "title": "Gloria Magazine - Women Empowerment"
+    },
+    "4537": {
+      "zoom": 1.37,
+      "zoomThumb": true
+    },
+    "5507": {
+      "zoom": 1.37,
+      "zoomThumb": true
+    },
+    "5789": {
+      "zoom": 1.37,
+      "title": "The Twin"
+    },
+    "6220": {
+      "zoom": 1.54,
+      "zoomThumb": true
+    },
+    "6221": {
+      "zoom": 1.33
+    },
+    "6371": {
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "7458": {
+      "zoom": 1.35
+    },
+    "8974": {
+      "zoom": 1.37,
+      "title": "Subservience"
+    },
+    "9230": {
+      "zoom": 1.2
+    },
+    "9390": {
+      "zoom": 1.19,
+      "title": "IceBreaker"
+    },
+    "10064": {
+      "zoom": 1.39,
+      "title": "love & anarchy Helsinki Filmfestival"
+    },
+    "10160": {
+      "zoom": 2.06
+    },
+    "10331": {
+      "zoom": 1.16
+    },
+    "10521": {
+      "zoom": 1.19
+    },
+    "10665": {
+      "zoom": 1.38
+    }
+  },
+  "about": {
+    "bioEn": [
+      "Daniel Lindholm is a Finnish Swedish internationally awarded cinematographer. To name a few, he has won best Cinematography at The European Independent Film Festival ÉCU and Silver in Cinematography at London International awards LIA. His work is cinematic with clear aim for captivating and atmospheric imagery, still always focusing on the narrative. Daniel feels the interaction with people is essential in the film making process.",
+      "His credits include 7 feature films. The buzzed about Lake Bodom made a mark in the genre scene and the cinematography has been praised by The Hollywood Reporter, Variety and many more. Daniel has shot over 500 commercials all over the world. He is a member of the Finnish Society of Cinematographers, F.S.C. and has a Masters degree in Cinematography from Aalto University."
+    ],
+    "website": "https://daniellindholm.com/",
+    "instagram": "https://www.instagram.com/lindholmster/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm1730998/"
+      }
+    ],
+    "pos": "22% 32%",
+    "img": "img/daniel-lindholm.webp",
+    "og": "img/daniel-lindholm-og-1795445690524.jpg"
+  },
+  "categories": [
+    "FEATURED",
+    "NARRATIVE",
+    "COMMERCIAL",
+    "MUSIC VIDEO"
+  ],
+  "clips": [
+    {
+      "title": "IceBreaker - trailer",
+      "sub": "Pete Riski\nHelsinki Filmi",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9390/eb9fd2dc-dc9a-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bffcf718-4ff2-4556-a3ed-261a46fb92f9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/nkNEcbM5YhvYQa780BrqOKjP3GJo0uYSxmobTrJWN-Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MjU2ODcyNC1mODhm/LTRkYmYtODZkNi0x/Y2QzZjZhZjAwZjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDEt/MjctYS0xMC41MC4w/NS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9390,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Subservience - trailer",
+      "sub": "SK Dale\nMillennium Media",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8974/57b2b0bb-50a7-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6ca16355-bbdb-4ab1-b9de-7f78d0e03daf-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fB8beGSjiwigsV0HOHovZF656ey9nSJUUnPntD37oMc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/OGRkNTg4Ni1hNjIz/LTQ1YzAtYTg1Zi00/ZjA4NjY2Mzk2Nzcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDgt/MDItYS0xMC4xMy40/Ny5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 8974
+    },
+    {
+      "title": "The Twin - Feature Film Trailer",
+      "sub": "Taneli Mustonen\nDon Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5789/d5e1f722-1707-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3f417d22-a5da-4c82-a6a2-3fc62900bf32-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dvy-l9-ofqF58sUDIOF_jdRZDJySPIShSfzKR1ENqnE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/NTk5ZTg3MC1hMDY0/LTQwODctYjAxYy0z/ZTA1ZWJkYTczMmUv/MS1zbGF0ZS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 5789
+    },
+    {
+      "title": "Lake Bodom - Trailer",
+      "sub": "Taneli Mustonen\nSilar Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/881b5f48-fac9-474f-8d15-dda4af40c37f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zQqz18c-KnDmR_XpRlISbu_2CXtbVZdtDmyGmqV5lPU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwODY3OTk2MDQ1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTIzLWEtMTUuMzIu/NTAucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4516
+    },
+    {
+      "title": "Jinn - The Rise",
+      "sub": "Shahir Zag\nTomorrow Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4515/db8a4219-1707-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/34184a8d-420a-42ce-8d83-9ee062e56a97-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8yWil1A8uG09LscFW_7KS9dgrRWnAyJvUSZ7adG4tqg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YzliZTMxZS05MzVl/LTQ0NGYtYTk2Mi05/ZTBhY2IzN2UxNjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MzAtYS0xNS4zMC40/Ny5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4515
+    },
+    {
+      "title": "Black Sun - Teaser",
+      "sub": "Maria Ruotsala",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/24a993b0-d828-4ce5-a3f8-b784c80d678a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/G0yls7zIyYkZmmlozaTnrlRiylvcoayLTi6ZehwASNU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwODY3OTA3MTAy/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTIzLWEtMTUuMzEu/MDcucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4520
+    },
+    {
+      "title": "M X - Ihminen",
+      "sub": "Sakari Lerkkanen\nSlimfilms Studio",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b885c724-9fa5-4d8e-a4f4-f81beb445386-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/usNHm4eZpI6Oh5Jd-bAuIvrkww_x79e4iG0ExL53nsU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxNDYyOTUwMDEw/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTMwLWEtMTIuNDgu/NDYucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4519
+    },
+    {
+      "title": "Through the supermarket in five easy pieces - Teaser",
+      "sub": "Anna Maria Jóakimsdóttir-Hutri\nValve",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d019e9ba-f0fc-4674-892a-a8355133a289-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dzIR0gjNIZbhyM8RIlaE4KLiC2lnPmnm4keKvVjZrYo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxNDYzMTk0NDY1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTMwLWEtMTIuNDku/NTMucG5n?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4518
+    },
+    {
+      "title": "Pink Ribbon Foundation - This moment is ours",
+      "sub": "Sakari Lerkkanen\nDirectors Guild",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/95498c80-2d42-43d2-a713-83847e5d5d23-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8kwg5MtYBhW724vhTszN5hdlv-kivqi_7-OY6Eibw3U/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MzcxLTYzNDU0NGZk/YjE5NTczLjA5NDkz/MDMwLTIxMjE1YTAw/ZWFiYjVhZTk4MGRi/MWU5YjgyMzAxNjcw/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6371,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "Kone | The Shy Ones",
+      "sub": "Johannes Östergård\nMjölk",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10521/ac89e87b-0cdf-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b2c805a6-1161-4d46-a89c-dc4a99d4e95e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Wp6MNqvTpj343N0zxaEiE9oGuWGgFFimwm-q8H4fC20/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NGYyNTJhYy00Zjcz/LTQzNTYtOWQ5Ni01/ZjE4ZjY0MGQ0NWMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTgtYS0xNi4zMy4x/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10521,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Orca - Cloud is yours",
+      "sub": "Nalle Sjöblad\nSpark & Riot",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6220/075ebc98-39ee-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1e27c796-43e3-46ab-9cc2-ef6b0fc22b97-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Y_7-d10w-OG69LmRrVxxrtTcnMtxC5q9qfsU0_vWE-w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MjIwLTYyYmRhMGQ2/MjU1OWY2LjU0NDAx/NDMxLThkOTk5OTEx/MjhiYjM5NGI1YzJm/MDZhNWIxYzc3OWQx/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6220,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "CMI Bulletproof Santa",
+      "sub": "Jan Sederlöf\nPyry Nickström N2",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10331/e67770fb-d5de-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/09794609-4a6c-4aa4-a0cb-7f6eed4e9836-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/sbyxzGymPAzzr4wRmIpopOYWnXwWpMPR6YkQv05RveI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZWY5YzE3NC04YWNi/LTQ2M2UtYTEzMi03/MzFjZjRhZmY2OTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MTAtYS0xNi40MS4z/Ni5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10331,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Veikkaus Betting - Raise your game",
+      "sub": "Miika Vaso\nDirectors Guild",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10160/29e35ff2-a8e0-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fb62d942-12d4-4b1c-80d1-30f75fed025c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jLVsogNMnLB7Ubwb33fSOsNQieQIudGgC-fEKiQCM2A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MmM1ZjRjMS1jYzlk/LTQ5YzAtYTliMy02/MjcyZjhmZDgyZDIv/c2NyZWVuc2hvdC0y/MDI1LTEwLTA1LWF0/LTguMzIuMTAucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10160
+    },
+    {
+      "title": "love & anarchy Helsinki Filmfestival trailer 2025",
+      "sub": "Jan Sederlöf\nBreakfast Helsinki",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10064/3ba9ffc3-88e3-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/429128ec-aa80-4a40-894e-d9c304040ca1-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zw8p4XQV_D7jfWWkc3-P4xlH7CKkOPcTHeZrLLRotBo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/Yzk2YmJkNC0yMDli/LTQyYTUtYWE4My04/NTYxYjYyODEyNDAv/Mi5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10064,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Mitchum - just you",
+      "sub": "Sakari Lerkkanen\n&Friends",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9230/36939ba9-b0c9-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/190131f1-ad66-4603-8685-313ecec98d70-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/oeG6tC4_sKvP99BBOL-CGf6Fsdbs9TfWOhB5Fmi05f0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/N2FkZmIwMC0wZTU5/LTQ5ODktOTM5My01/MjMxOTg3YWI1OGMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMTIt/MDItYS0xNy4xOS4x/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 9230
+    },
+    {
+      "title": "Pavesini",
+      "sub": "Reynald Gresset\nBRW Filmland",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7458/bba220c1-39ee-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2a863b68-18a7-4324-a1db-f005cd35c512-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/41BHguEn6NuDwziJ6nOUqv5EF-MctWSZ84PNFfaaH6Y/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZTAyYzI0YS0zMjA0/LTQ2MmUtYTdjNS1k/MDdkZjEyMGMyYjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTAt/MTQtYS0xMS4zMi40/MS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7458
+    },
+    {
+      "title": "Helsinki Regional Transport - Best journeys are made together",
+      "sub": "Viivi Huuska\nMjölk",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4522/9ccf83cd-39ee-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4867dbdd-1df9-4d66-ad4c-cbd5131b12ba-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jlmLZ1qhlpvdaPhYXPE14mEsGnWyQDeDoe62R2MM3pY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxMzg5MzA4OTkz/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTI5LWEtMTYuMjEu/MDUucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4522
+    },
+    {
+      "title": "Aava Medical",
+      "sub": "Pekka Hara\nGrillifilms",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f7c3a3c5-8970-49f3-81a2-75e6b5e37cdc-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/SpLqegWzIbBHcp_wLyDSJ-SHIQrU1CQFxXxna8ANnuw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NTA3LTYxOGE0OTkz/ZDQ3MGUzLjI4NTk4/NjIxLTJmZmU3NjE1/YjJlYTNiNDFlN2Q0/MDJlNzMxNDE2MDgz/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5507
+    },
+    {
+      "title": "Mc Donald's - Get Golden Memories",
+      "sub": "Juho Konstig\nWoodpecker",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6908/2d64e7f1-cb7e-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d532d3f0-d9b4-4484-907d-7bd36e62c9e8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/SaaAiw48LnDfI646M7oZZjOjMho2yTPrKSxHJGEQotc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZjAyNjkzMC1jZTFl/LTQwZjktODJjMi03/ZDFjNDcxZTU4ZjAv/MTY3ODQ1NjcxODc3/Ny5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6908
+    },
+    {
+      "title": "Aspercreme Brawl",
+      "sub": "Nalle Sjöblad\nSpark & Riot",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1420cffc-447c-44cc-81b5-24157b4e34ce-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/CcQ4rMo2CxoM3nhxwd24OGrcw5U9imPfFWBP1nUfOqg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OGFkMjViZC1mN2I0/LTQ0YjUtYTVhOS05/YmExMmU5NDVlMjkv/c2NyZWVuc2hvdC0y/MDIyLTEyLTAyLWF0/LTEzLjM0LjI4LnBu/Zw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6523
+    },
+    {
+      "title": "Gloria Magazine - Women Empowerment (dir cut)",
+      "sub": "Anna Äärelä\nIvalo creative",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4530/2ee574dc-39ee-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9f984460-c5ec-4ac0-9db3-27af9a406ce4-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/nyG1KVXvfr01p3tMRo2N1MzfrMQPGhjWzQd-hhBz_xE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTMwLTVmNjQ4Zjli/NzdhNDUzLjY2MDY5/ODM3LTY0MTI3NDZh/MGEwZGZhMmQ2OTVj/YWZkNGE4MTQwMjZm/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4530
+    },
+    {
+      "title": "Jyväbroiler - Makuasiat",
+      "sub": "Sakari Lerkkanen\nDirectors Guild",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5117/5a3e878f-39ee-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/36743787-df6f-4036-bb37-be1e31634107-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_uqFE9ITklAQ736D_SjcSH5ebOgsTyC-PLeeP-XIuTA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MzZlMTc5ZC04NTQx/LTQ4MjQtYTg0NC03/NzNmNWY1ZWMyMzgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDYt/MTEtYS0xMi4xOC4z/MS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5117
+    },
+    {
+      "title": "Burger King - Plant based Whopper",
+      "sub": "Nalle Sjöblad\nDeja Vu",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6221/3ade33f4-cb7e-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0aa822e8-32b1-49e9-94df-5bdb989c1afb-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/OhaVl5Tf3PgLmT6UmFVVspILB-ZN38D3lK5eMyaXn5o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NjA1NTUwNi01ZjY5/LTQ5OTktODZhZC02/MDc3ODUzMDNkMjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MzAtYS0xNS4yMy40/OS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6221
+    },
+    {
+      "title": "Viking Line - Interruptions",
+      "sub": "Jappe Päivinen\nOtto Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/54d8ed3e-cd58-4b8a-a742-f36873e7062c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/V8sh_JVctDt6XFcHb2lYAQgAjM3ozcXP2q9diP_aRKQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTM3LTVmNjQ4Zjlk/ZTZiZGE2LjA5NDk1/MTM0LTdlY2EzYzdl/YjViZTdjZTdlOTI2/N2Q2N2Q0NjhjODk0/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4537
+    },
+    {
+      "title": "Olympic Stadium - Reborn",
+      "sub": "Taito Kawata\nCocoa",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c701c60f-7962-4c07-b750-a0e46069da89-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/xoaEToDd6Ib1AVUMUUEcWshdiEc3-G6WfCuzD1YlO3c/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxNDYxOTc3MzM1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTMwLWEtMTIuMzIu/MzMucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4535
+    },
+    {
+      "title": "Ignite - Your Dreams",
+      "sub": "Zag\nDeja Vu",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5766/89270bf9-39ee-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/60ad33a5-55d6-4678-aa44-74f0932991c5-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zx7Xv3zTzVDgLf9h6GFxV9t5hX9NSU6cZFYAF_iXElk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/Yzg5NDMxZS0wMjgw/LTRlOTQtYWRhZS05/MjI5MTFjMmI4NjUv/aWduaXRlNC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5766
+    },
+    {
+      "title": "Puma - Become Forever Faster",
+      "sub": "Christian Grüner\nStereo Films / Reus, Falaco, Aguero, Griezmann & The English",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/53477cb5-c312-4a9e-9235-b36e4820fc27-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/AMYz9FdYUaytsu-RIxx6pExJBqOg0PKI0saIL2PyF5I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxNDYyMDcxNjY1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTMwLWEtMTIuMzMu/NDkucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4532
+    },
+    {
+      "title": "Finnish hockey league - Each hold their own",
+      "sub": "Nalle Sjöblad\nLucy Loves Stories",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d3e5b275-2bd3-4b60-9613-adca38f039fe-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RTaUBSLo8uLs2FXBanW4frt-xvwhb-SPAEBpSVseomE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxNDYxNjEyMzYy/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTMwLWEtMTIuMjYu/MjUucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4531
+    },
+    {
+      "title": "Citycon - Stop bullying",
+      "sub": "Klaus Härö\nMjölk",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3d90b7a5-545c-456f-9e7b-e20eb1127af6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/hQBxk3dfmPh_VyiooeY2UoMyrFfZ03bC3xfixmmR0x0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTI3LTVmNzQ0OTAz/NDczMGU0LjgzNjg1/NzQ3LWQxMTNlMThh/Y2FlY2Q4MzJiNGIy/OTRhYzRhYTlmMWJk/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4527
+    },
+    {
+      "title": "ADGM",
+      "sub": "Samir Mallal\nTomorrow Film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cde308bd-5fa3-427c-b900-e163cc9a3857-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/yDMcBgiNv_untXBc91MaHx3fAgM5tR1ex5CHUzHH6CI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MGM1YmE1YS05MmI2/LTQ1ODktYWQ5Ny1j/YjcyYWJhNTc1Zjcv/YWRtZy0xNjkuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5138
+    },
+    {
+      "title": "Power electronics - Changing the game (long version)",
+      "sub": "Sakari Lerkkanen\nClock Work",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4525/a8b9332d-27fa-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/816e2ce3-324a-480e-b0d7-30ec529e8610-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-0InBpkLyAdCvlqiZwhO-cf8WvuAkMdDdB9HlTspLDk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NzUxYjdlOC01Mjdj/LTRkMzMtYmJhOC1m/ZGFlMDBlZjA2OTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDYt/MTEtYS0xNS41Ny41/MC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4525
+    },
+    {
+      "title": "Harvey Nichols - The Trial",
+      "sub": "Shahir Zag\nDeja Vu",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a60421a0-5a82-4f40-bf3a-cbfe74f22cf7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/o1FuzFsSH9rn9IjAotriiA9OihhRHV5zAi3KIYQtIbI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAwODY2OTg2Nzk2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTIzLWEtMTUuMTUu/NDMucG5n?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4524
+    },
+    {
+      "title": "Telia - Open Your World",
+      "sub": "Sakari Lerkkanen\nTBWA Helsinki",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3fcb09ed-dedc-4dac-9862-263706867916-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/kJ0oHnYx9rw1kjEJwa411K1qTYxPgACIWxGuIhCVDGU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTIzLTVmNjQ4Zjlk/Mjg4MGQ1LjEzOTg5/MzY3LTQ1NTQ3MGRi/YzI4NjM5ZmVlOTA4/NjgxZGQ3ZTc4Mzk4/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4523
+    },
+    {
+      "title": "Tuby - Viral Kids",
+      "sub": "Shahir Zag\nDeja Vu",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3e391b93-6bc6-479b-abb4-5b538042f9d8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/mMjf59rRnFXedJ6rNfA75XoZyD-HbXVAJtQZtlZ4QuU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTE3LTVmNjQ4Zjli/YzNlZTU0LjM1OTYx/NzkwLWQwMTU2NjZi/MWFmYjA3OTgzNDA5/MjFjOTkxYzlkODc1/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4517
+    },
+    {
+      "title": "Ikea - Kings & Queens",
+      "sub": "Virgil Ferragut\nBigfoot films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e428707b-82bd-4995-b3a2-399911bbe8a9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zrQokgiRKCo5_5I7O3Kc935aBBmRc2T8bnvDMiUOY6E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTE0LTVmNjQ4Zjlj/NGY2ZTgyLjIyNjc4/MDE5LTQ0ZGQ5OWM5/NGMwZjUxZjEyZWE4/OWVkNGRjMjAzZWNm/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4514,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Destination - Riyadh Season (dir cut)",
+      "sub": "Virgil Ferragut\nNojara Production",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5f6b859d-2827-4355-af02-ef51c1e0c275-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gAu90woUBVFseg3XBCzCpRlCYoAMLw8nWW_TU-Qxdec/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTEzLTVmNjQ4Zjlj/YmM2NmQxLjQwMzYz/NzA0LTgzNTVlYzA1/MmQzMzYxZWIyN2Q4/YjZjZjZkZjA5YWU4/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4513,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Centrepoint - Unleash Greed",
+      "sub": "Virgil Ferragut\nTruffle Film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/375e89ef-5eb6-4b8e-8e1a-5efdc240c39f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2zLx1kMRZEXCm7TX5fJEiEucDUEBvh-2w1r-42hBsEU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTEyLTVmNzQ0OGZl/ODkyOTY3LjEwOTI1/MjEwLWM5YzczM2Rh/ZWM3MWExMTU3YzFm/YzhmZDc0MzU0ZDBh/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4512
+    },
+    {
+      "title": "Anyma X Lisa - Bad Angel",
+      "sub": "Gianluigi Carella\nIncendie Films, SixTwentySix",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10665/5990fb90-3724-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b522da81-7746-4759-ab01-ee76fef627d9-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/k0NKWKHJn58pKTTnhVp_67AFRZil3gxRMIRPP1M3ysA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MWI2MzA0OC1mODgz/LTQzZjktODgwYS1l/YzVmNzUzZDRmYzkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDQt/MjEtYS0xNy4zNi4w/My5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10665,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Electric Litany - Sealight",
+      "sub": "Sakari Lerkkanen\nStef Steinmar & Lucie Lerkkanen",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/34fe4633-1c7b-443a-9915-b6cbf8a3d0d8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/4sCPbCgRKE7BOuaLXCt_Lx3DXcGZHdEG5TdCUjkugWQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAxNDU5NzE5MTQy/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA5/LTMwLWEtMTEuNTIu/MjAucG5n?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 4521
+    },
+    {
+      "title": "Jesper Jenset - High",
+      "sub": "Sakari Lerkkanen\nNice & Polite",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/204fea3c-748e-49b0-86e4-825493cae273-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/oOW5be6Q3WPSLvfyU0r6Eft5DbjtTLSFqqOlbYVmjfI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OTQyM2YzYi0yOTZl/LTQ1ZmMtYmI2Mi1k/NzdmYTM1ZGZhZGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTgtYS0xNi40Ny4z/Mi5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10522
+    },
+    {
+      "title": "M X - Ihminen",
+      "sub": "Sakari Lerkkanen\nStef Steimar & Lucie Lerkkanen",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4d90487b-a802-4dde-bd9b-68fb794a6f6b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/v-eW-f7zQd7hGD6GULTNouhC22aWjgdVyI8b2lmjnB4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MjY5Njk1YS1hMGVj/LTQwNTktOWQxYS00/M2ZlMGUzZDZjOTgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTgtYS0xNi40OC4x/Mi5wbmc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 10523
+    }
+  ]
+}
