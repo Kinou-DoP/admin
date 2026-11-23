@@ -1,0 +1,489 @@
+{
+  "slug": "olivier-gossot",
+  "name": "Olivier Gossot",
+  "hue": 56,
+  "bundle": "https://kinou.slateapp.com/bundles/49263f7b-e73f-11f1-952e-02ffedfede17",
+  "open": 10545,
+  "overrides": {
+    "1367": {
+      "zoom": 2.5,
+      "zoomThumb": true
+    },
+    "2405": {
+      "zoom": 1.56,
+      "zoomThumb": true,
+      "zoomPos": "68.9% 41.6%"
+    },
+    "3338": {
+      "zoom": 1.37,
+      "zoomThumb": true
+    },
+    "3589": {
+      "zoom": 1.38,
+      "zoomThumb": true
+    },
+    "3960": {
+      "zoom": 1.39,
+      "zoomThumb": true
+    },
+    "4071": {
+      "zoom": 1.34,
+      "zoomThumb": true
+    },
+    "6422": {
+      "zoom": 1.16,
+      "zoomThumb": true
+    },
+    "8566": {
+      "zoom": 1.14,
+      "zoomThumb": true
+    },
+    "9878": {
+      "zoom": 1.37
+    },
+    "10415": {
+      "zoom": 1.38
+    },
+    "10545": {
+      "zoom": 1.37
+    },
+    "10654": {
+      "zoom": 1.25
+    }
+  },
+  "about": {},
+  "categories": [
+    "FEATURED",
+    "NARRATIVE",
+    "COMMERCIAL",
+    "MUSIC VIDEOS"
+  ],
+  "clips": [
+    {
+      "title": "Lucy Grizzli Sophie | Bande Annonce",
+      "sub": "Anne Emond\nKO24",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10545/2e3de40a-123d-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8255c885-ee5a-48ec-891d-ab048a394b26-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Y-awkcRvnBlRY4al1PVJEfFyJODwKVLMncFtPcgg7Uo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/Mjg3YmUwYy00YzJi/LTQ5Y2MtOGEyZi03/NTU4ZjI2NTVmZDAv/MTFiLndlYnA?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10545,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "PARADISE | Bande Annonce",
+      "sub": "Jeremy Comte\nEntract Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10415/1c099862-0801-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff7dfcdf-c815-46f5-bcda-11954efdc057-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/PRkavVT8HcBHr6D-jDjGT1z2Oc3t9m9B6vQOkXLiiRI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWRhY2MyNC1mZGYx/LTRjN2EtYWU1ZS02/NTJjZGU4YjAzYTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NC4x/OC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10415,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Amour Apocalypse Bande Annonce",
+      "sub": "Anne Emond\nMetafilms",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9878/e7e87b74-cb7d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6336c8bb-8173-489d-9561-1273e2d916f0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3R3l6-sHF5ohZ-PmGoX7Sund4YMZCRGanXHCkVUPEqY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/Yzc2ODU2OC1jYjI1/LTQwZGEtYTU3NC0w/ZjRlMTMzOTMxZGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NS40/Ni5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9878,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Jeune Juliette | Feature film trailer",
+      "sub": "Anne Emond\nMetafilms",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ed4dd884-d9be-4f71-84a8-0f2b82674c44-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Ubfhsv-u05qgbAVfafAWr7NVuQ1DoaS_ugj010EpfgA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNDI0Njk0ODQz/L2pldW5lLWp1bGll/dHRlLTMxNi05Lmpw/Zw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4321,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "MOTHERS AND MONSTERS  a film by Edith Jorisch",
+      "sub": "Edith Jorisch\nClub Video",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ec4cabbc-a216-45d6-9a43-5965f279f799-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0h-qoTxYAgjLur_8_aNr2w42FDK7ZHXbj3cY9LsBol4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTY2LTY2MGQyNTQy/YTZmNjY3Ljk1Nzg1/NTA4LWY1OWU0ZmVl/OGYyZDJmY2ZiMzY4/MTQ0YjEzZGNhNzdk/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 8566
+    },
+    {
+      "title": "Cercueil, tabarnak! - Trailer",
+      "sub": "Loïc Darses\nMetafilms",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d419fed1-6576-4df1-aac1-3a7e47e8dc1c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1_dpUG_j8_TqqyIeM-R6pPQd_Vs1C7GwR4p5M2LChsE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MmJjMzUzMy1hZDRm/LTQ1NTMtOGE2Yy05/NTA5MWJiODY4ZjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xMi4yNS4x/OC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 6344
+    },
+    {
+      "title": "Regret | Short Film Trailer",
+      "sub": "Santiago Menghini\nNemesis Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cf3e9a47-5d95-4565-b391-c30f84cfe606-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/eVoWwhz3N4XXjvZLcx-B7fF7VeHaU9zNuWnPikcu3DE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NTA2MmQ5MC02MWUz/LTQyN2QtOGVhYy03/ODliMzgyOTFkMmIv/c2l0ZS5qcGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4175
+    },
+    {
+      "title": "Mahalia Melts in the Rain - Teaser",
+      "sub": "Carmine Pierre-Dufour, Emilie Mannering\nColonelle Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e973b8e2-c197-4a8d-a010-3630aebdd8f7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/FAgB04j9xx0p0jK-yf6nyRC1z0Do8Kf1efeBZ2RPsB8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MDcxLTVlNDNjYjEz/Nzc1ZjI3Ljc4MDcy/MjQzLTc0NTYzMGJm/YTJlNTdjMzFjOWFl/Yjg5NmZkOTk5MGJj/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 4071
+    },
+    {
+      "title": "Milk | Short Film Trailer",
+      "sub": "Santiago Menghini\nNEWTON’S CRADLE",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545401225-64409598_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2F_JmtoVBOtiHiExgW-7Cluk7CtZl_BOJ5Zu0_vF_Rg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTY0NDUwNDAy/L21pbGstMjE2LTku/anBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 1258
+    },
+    {
+      "title": "Oh What a Wonderful Feeling | Short Film Trailer",
+      "sub": "François Jaros\nLa boite à Fanny",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545400777-43823689_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/cFwriOrNsqR7ywOw4WD7xw7FwNpVS58Dw2ah0FRizMM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNzE0OTYz/L29oLXdoYXQtYS13/b25kZXJmdWwtZmVl/bGluZy0yMTYtOS5q/cGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 1245
+    },
+    {
+      "title": "Fauve | Short Film Trailer",
+      "sub": "Jeremy Comte\nAchromatic",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545843341-51158431_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/CFs1XQgyrOMkyuugJ084Fm4JrPazmODXJqrdLyTSu4A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNDA5OTQw/L2ZhdXZlMTYtOS5q/cGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2872,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "FEMININ FEMININ - serie trailer",
+      "sub": "Chloé Robichaud\nLez Spread the Word",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545841583-43823616_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/vM4wOlyjMNJM9kHf0GrzueReDw-H1f4C2Pb6VhAIUpY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNDUzMjg1/L2ZlbWluaW4tZmVt/aW5pbi0yLmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2843
+    },
+    {
+      "title": "Bleu Tonnerre | Short Film Trailer",
+      "sub": "Philippe-David Gagné & Jean-Marc Roy\nVoyelles Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545447237-43823581_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/888DufXMZzU19ZEXYsW5RS0bAy85LIGVXh-c15iwBbI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzMzM0MDc4/L2JsZXUtdG9ubmVy/cmUxNi05LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2353
+    },
+    {
+      "title": "Crème de Menthe | Short Film Trailer",
+      "sub": "Philippe-David Gagné & Jean-Marc Roy\nLa Boîte de Pickup",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545446947-44552376_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8KXOwfg1ELV33lEJkD1QcjDXDe9a-H3nAowaAyY7Fdg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzMzc3MDY1/L2NyZW1lLWRlLW1l/bnRoZS0yLmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2336
+    },
+    {
+      "title": "life's a bitch | Short Film",
+      "sub": "François Jaros\nLa boite à Fanny",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545409495-43823648_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/266fx1kVoW3JFYKGePqxPd8vHeEoiBpq2Bj8c-9lQr0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzODIwMTIw/L3RvdXRlcy1kZXMt/Y29ubmVzMTYtOS5q/cGc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 1526
+    },
+    {
+      "title": "Flots Gris | Short Film Trailer",
+      "sub": "Joëlle Desjardins Paquette\nColonelle Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545840368-44763822_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/oXMPZi16v5OWGdXkzrAfoSejQtJchyaf5seZ-3w_UvQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNDg5Njc5/L2Zsb3RzLWdyaXMu/anBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2817
+    },
+    {
+      "title": "L'Âge Adulte | Serie Teaser",
+      "sub": "François Jaros\nPixcom",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1559830997-996496180.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fdd077U0ueGzI-SU35R6qWBDqUDuDXx0jfEAC8si5EM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNTk5MzY4/L2wtYWdlLWFkdWx0/ZTE2LTkuanBn?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 3449
+    },
+    {
+      "title": "Bernard le Grand | Bernard the Great",
+      "sub": "Philippe Lupien & Marie-Hélène Viens\nLa boite à Fanny",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545449054-43823568_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/pVG5J0OzjFnVuToBwVoxTOIHuTyP-F1xy1VPi45JJcg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDQ5MDA3LzQz/ODIzNTY4X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 2405
+    },
+    {
+      "title": "maurice - bande annonce",
+      "sub": "François Jaros\nLa boite à Fanny",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404925-43823677_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dF7J8N_5y5n-Yq3n8pFJDWh3heHF5zQ8AWzI2DMVBQ4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDA0OTEyLzQz/ODIzNjc3X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 1367
+    },
+    {
+      "title": "Via Rail",
+      "sub": "Jeremy Comte\nColossale",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ec43781b-1a49-46b7-9771-8961b9a8f551-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/MA0KwFhzEEXzfFkfl3S-rqUX-Qd-_1B1ohV7xjrxL-o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/YzI0NmQ5YS1mZjU3/LTQxYWYtYTk0ZC1i/ODAzYzQ0NzYzMjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MjctYS0xMS4yMC4x/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5271,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Louis XIII - Solange Knowles",
+      "sub": "Mati Diop\nDivision",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ec5848f4-2f11-40d0-8cd8-6ca30ef56118-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/kVbRnLsfxmeZ55-XN9s4lvqWRpZL9MHoW1nhUZzBju0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OGU1MDFlNy04MTFh/LTRkZGUtOGI5Mi1l/MGFkMmIxZWJiNmQv/Y29waWUtZGUtMDgu/anBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5834,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Talk Away the Dark",
+      "sub": "VINCENT RENÉ-LORTIE",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b02b750a-6999-4adf-b5e9-d722ed90f052-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zYgGCz0AM8HFBUVSNhsv0lBEZChhOVIgrbPu7jkVhPQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MmUyMGJhOS05M2Rj/LTQzY2QtYjI1OC1l/ZTYyOTVkODFmYjgv/MTY5MTA2NzQzMzky/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7605,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "BELL | Is it still TV",
+      "sub": "Christopher Brown\nAnimals",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10654/af868aa2-2d19-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/015fd8da-e5e3-4cdb-bf6e-9d7713035290-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/kwfiZMp0Nyw59meVWdTjKZ1I6c1Omkp7jwznHGkX8Zw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MDRmNjY5Yy05NzA0/LTRjNDAtYjVhZi01/NjY3OWQ5YzY0ZTAv/YmVsbC1maWJlLTIt/MTY5LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10654
+    },
+    {
+      "title": "CNESST",
+      "sub": "François Jaros\n4zero1",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10653/53aa9933-2d19-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/38561c84-8cd9-4cf0-a7b3-faf8cb67e31f-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/SpnXWNa2lTj1Rcl4OM3xuZT0ai13q9A3s_vQ6gIPul4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDY1My02OWNiZWJm/MjkxY2YyOS4wODIy/NjIzMC1kZjYxYWE4/MzM1NjhlN2RhYWUx/MTE2ZDQwMGNkY2Q2/Ny5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10653
+    },
+    {
+      "title": "Intermarché - C'est fou ce qu'on peut faire avec 10%",
+      "sub": "Rudi Rosenberg\nDivision Paris",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7419/ca2679a6-cb7d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a1a7d191-9888-4cba-8527-2778b6deae5d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/IdZvLwJi_RVbpAVuUwUzJoCziz-A4aD1mF6ffKZC7x8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZDhmNThjYS1iMzY0/LTQyZjUtOWVmZi01/NTQxNThkNmM4NDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDYt/MTktYS0xNy4zNi41/OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7419
+    },
+    {
+      "title": "Recyc Québec",
+      "sub": "François Jaros\n4zero1",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8461e93a-9b25-4c23-8078-c96fb6d6ed56-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/yoyWsq0oYfR7D_jg-5EWwM_9KzKaknBFw1zofL91x6I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NWJjZjMzZC1kZmQ2/LTRjZDQtOGEzYS04/MjdhY2VhZjE1YjUv/dW50aXRsZWQtMS4x/LjYuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7418
+    },
+    {
+      "title": "Tennis Canada",
+      "sub": "Benny Nicks\n4zero1",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8dde3ae1-6c6a-4443-be0d-e80b65be94f2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/63LcyGiWXlAzU7rSMMW2aG9XDmQUpuq81rWLeST2U0A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MDY2OGU2NC01ODQz/LTQ1YjgtOGRjMS03/ZTUyMjhmMmE5NTQv/MTY4NzE4NDA5NzQ1/NC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 7417
+    },
+    {
+      "title": "Intermarché",
+      "sub": "Rudi Rosenberg\nDivision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6422/bdd7c786-2db0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/da1d5274-bc8d-4e17-8090-898c9a4dbedd-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3xy7LUC7Fww3N_orcNs67WiAHt_G78gGmxyqhqMO4e4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NDIyLTYzNWE1NTJi/MmZjYTU2LjQ2NTQy/NjA2LTYwODUwMDg1/MmFhZjE4ZTk1NTFm/ZWQ3MzAwZjNlMTg2/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6422
+    },
+    {
+      "title": "Flunch",
+      "sub": "Emilie Badenhorst\nCream",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5936/aae18d5c-42e2-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d1b98922-8123-409c-bdb2-ebe4f3da9efa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/M3KKG6Kf6lg60l4NpbV60Q7FT3qW04cWviZ3-Wc7_mk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OTM2LTYyNzBlNmRm/ZDJlNmM1LjM4OTQ4/NjkwLWFiN2E0YjYz/YjdkMzdiMTViZWNj/NjIyMmYzNTNjNGU2/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5936
+    },
+    {
+      "title": "PRODUITS LAITIERS DU QUEBEC",
+      "sub": "François Jaros\n4zero1",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d54a3c9b-7b9b-4d70-bdc2-9d958ed0ef29-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/5LBZL4ap-84h-XULOKelxAVFolbLKFTOWur66CKrH1s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZTBiYjBiYi0xMWYy/LTRkYjgtYmJhZS02/YWMxODY1NjQyYjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MDgtYS0xOC4xNC40/OC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5749
+    },
+    {
+      "title": "Yogourt",
+      "sub": "Maxime Giroux",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/179a3a35-c409-4a55-8e32-a024db21b4e6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Hqp7BnEU8FAnccBgkfGmhnhiNlLotFqKMl2jMBsMmNc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ODA4LTYwNDVmN2Ew/NDUzMjExLjkxMDc0/Njk2LTE1ZTJhN2Nj/OTFiMDc4MTAzNWEw/NTJlNDI2MDJhODg1/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4808
+    },
+    {
+      "title": "FIZZ",
+      "sub": "François Jaros",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8c36734d-7517-4b8b-a13a-0db6b38650b4-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2nWiQKzpl4fKDPetI4k8qXWTLODz7mgbDwi35BK4meo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ODA3LTYwNDVmNzEx/OTgzMTk1LjU0OTI5/Nzc1LWYyODFhZDVi/YTQ2NzgyMWFlZDQ0/MDZiODU5ODExZWJh/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4807
+    },
+    {
+      "title": "Fizz - Tailleur",
+      "sub": "François Jaros",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/99fdc392-f703-4a52-b713-b9b1c24bbbc5-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/qpaFV7VkZkQb0rZx_3poc07CEbDthy61JWv0xaC70o4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAyMTQ3ODQ2MzYw/L3VudGl0bGVkLTEu/My4xLXNoYXJwMy5q/cGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4599
+    },
+    {
+      "title": "Direct Assurance -Les Mythos -",
+      "sub": "Helmi\nInsurrection",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a71d8148-8fe5-4f9b-808e-c10bcbf64514-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8b069l0Scbp9qBWBTbIPTkc9aSq5kzQBhXZHlQV_aek/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNDI2NjUwODA3/L2RpcmVjdC1hc3N1/cmFuY2UxNi05Lmpw/Zw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4322
+    },
+    {
+      "title": "BDC | Man & Woman",
+      "sub": "Sébastien Duguay\n4zero1",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/48575a56-a6a3-4cc0-b4e7-1934bc2ea940-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Mj0etMNtpa0DH1KpCGVtjy6qQXOciJY2PSmTswp61uk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTc5NTk3NTQx/L2JkYzE2LTkuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4319
+    },
+    {
+      "title": "Goodhome",
+      "sub": "Ed McCulloch\nGang Life",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c7743276-a89e-4af4-8fa3-2cfa2d27d854-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/d18sGVxCYk6Fhj1BEh9U6EGpG9aQcQbn3jxvI9JrY6M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTc5ODA0OTE2/L2dvb2Rob21lLmpw/Zw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4236
+    },
+    {
+      "title": "La Redoute",
+      "sub": "Ed McCulloch\nGang Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9d1b569f-80e2-4f12-b6fc-687ddb66e2b5-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/HEwo3Y5r1HN1JtnaaUI_9lBAg-21NS8YeKGzmpTkstk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTYwLTVlMTMzMjc3/YTI2Mjg1LjM0MTAw/MzY2LWRmYjVmNmYy/MTliMjAzODMyNjkx/ZWUzNGEwNzM1MGFm/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3960
+    },
+    {
+      "title": "Yves Rocher",
+      "sub": "Ed McCulloch\nGang Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e7f5df97-c890-4fd8-8f3a-0e0cf1c7d911-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-0oLVndZYmbNRKZLLhWIquCo3rCoIpvTso0AvaPOnNE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MDM4NTRjYy00Zjhl/LTRlOTItYTE5NC1h/OTJlNzExMjI0YTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjktYS0xNy4zNS41/Mi5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3948
+    },
+    {
+      "title": "Aubainerie",
+      "sub": "Raphaël Ouellet\nLa Belle Façon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1561719246-aubainerie-30s-versionlongue-sanssuper-web-h264.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dkd8mLT7YANo6UqcgDTCmwy_eFFXMKCgrrmMCtNSr-Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/dWJhaW5lcmllLWNj/OTk1N2JkOTQyZDlh/YWZiYjYzOGNiNmY2/Y2VlYjAyLmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3589
+    },
+    {
+      "title": "OMO",
+      "sub": "Johan Stahl\nFamily Film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1556526680-unilever-manifesto-422hq.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/pOuptxFntARLDZ-Wg1wFcpMvLeaLpbTHySsD7wXxBd0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9v/bW8tYTMwMWRmZDdi/NjIxYzI3MGYyZjlk/NjNmMmQ2Njg5NmIu/anBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3338
+    },
+    {
+      "title": "Tourisme Montreal – “Huit | The Soul of the City”",
+      "sub": "Mathieu Grimard\nPilaar",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545459487-43823782_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/wVg7nYg90jNwRWBxJgHu9PilC65HOsW9qmq0njjPS0o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYyNjI3MTE1/L3RvdXJpc21lLW1v/bnRyZWFsMTYtOS5q/cGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 2658
+    },
+    {
+      "title": "\"World Poetry Day\" - Julien Meinl",
+      "sub": "Jeremy Comte\nMcCann Bucarest",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545456712-43823569_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/uwV0Wg04DOvVrR7whNsHxpYr5Bz2VrpnG4x4EnM-L9o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYyMTM4MzUz/L2p1bGl1cy1tZWlu/bC0xMTYtOS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 2610
+    },
+    {
+      "title": "Barreau du Québec",
+      "sub": "Jeremy Comte\nMorrison",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450348-835433486.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7K2I4UVTwun4D2F57TWdNZNah7lghGOCEksTtI3Rki8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYxNTU4ODM1/L2JhcnJlYXUtZHUt/cXVlYmVjLmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 2430
+    },
+    {
+      "title": "BDC | Man",
+      "sub": "Sébastien Duguay\n4zero1",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450122-61672652_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/g-oNrNHSBd4hWsUp1gxccSUx67cgtGNhiG1fsp_Sb6E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYxNzM4OTUx/L2JkYzE2LTkuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 2423
+    },
+    {
+      "title": "Royal Bank of Canada",
+      "sub": "Johan Stahl\nWilfrid Park",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545379313-963591408.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ucr-VMJX6nicPrz9DYmjE0clMu0qLMPJ0_fGRRZDX3g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzNDI2OTczMDIx/L3JveWFsLWJhbmst/b2YtY2FuYWRhLXYy/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 731
+    },
+    {
+      "title": "M83 - My Tears Are Becoming A Sea",
+      "sub": "Sacha Barbin & Ryan Doubiago\nDivision",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/81463bdc-7160-4f77-a9f3-d284988dc0ff-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3DStN5g1k0D1WbeUbqfkV47nIdjsQi9I3rLEoXotzDY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NzZkOGI3My1lMmEy/LTQzZDMtYWQ3MC02/OTFiMmNlMzAxYjAv/MjAuanBlZw?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 5627
+    },
+    {
+      "title": "Daniela Andrade \"Gallo Pinto\"",
+      "sub": "Jeremy Comte\nMartine Aimait les Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/28c1ecd1-b76c-4756-9ecb-7cdc028fe1bf-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/XrWJNzwB_b4yavzfHHhh5zaJm0yRMrShVMoGDdKVM9Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NWQ2ZTg3OC1mNmE4/LTQ5N2YtODBiMS1h/NzFlZjBmNzBlMTcv/c2l0ZS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 3833,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Abstrackt Keal Agram \"for No One\"",
+      "sub": "Romain Laurent\nSolab Pictures",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545455747-63992046_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/C0fDNs710ymaumAuZsuXymnJiwm8itpDSoMC9U2JDQU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTY0MDkzOTE1/L2Fic3RyYWNrdC1r/ZWFsLWFncmFtMTYt/OS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 2568
+    },
+    {
+      "title": "“Secret Sun – Cold Coast”",
+      "sub": "Hervé Baillargeon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545343633-43823714_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/PwEbkckl-0G-W49C1Tfz4mD2jpOBSloWVMQXPBY964w/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NGMxOTBiZS1jZmI4/LTRhNzgtOTljZC0y/OTE2OGZkNDAxZDAv/YTAwNi1jMDM4LTA0/MjNmdC4wMDAwNTIz/bHIuanBn?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 109
+    },
+    {
+      "title": "“Secret Sun – Passing Cars”",
+      "sub": "Hervé Baillargeon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545343636-43823716_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/X8yCyg-bjzzYegNoPq2Jh4LH30s_G7m4_UuxiWI1Kt8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NDlhZmNjYy03YTIw/LTQ0Y2MtYTc1OC03/NjdjM2Y3ODRjNjQv/dW50aXRsZWQyMi0x/LjEuMS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEOS",
+      "slate": 108
+    }
+  ]
+}
