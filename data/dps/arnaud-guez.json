@@ -9,14 +9,18 @@
       "title": "In Der Luft"
     },
     "10760": {
-      "title": "Je Suis Une Retrouvaille"
+      "title": "Je Suis Une Retrouvaille",
+      "zoom": 1.06,
+      "zoomThumb": true
     },
     "10761": {
       "title": "La Danse des Renards",
       "zoom": 1.2
     },
     "10762": {
-      "title": "Le Goût Framboise"
+      "title": "Le Goût Framboise",
+      "zoom": 1.37,
+      "zoomThumb": true
     },
     "10763": {
       "zoom": 1.34,
