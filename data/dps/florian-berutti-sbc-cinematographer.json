@@ -106,14 +106,29 @@
         "Fiction",
         "Feature Film",
         "narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection, International Film Festival Rotterdam 2026",
+        "awardsFrom": {
+          "4c7c789f30ba": "Official selection, International Film Festival Rotterdam 2026"
+        }
+      }
     },
     "10404": {
       "title": "Nino",
       "types": [
         "Feature Film",
         "narrative"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection, International Film Festival Rotterdam 2026\nOfficial selection • Critics' Picks, Tallinn Black Nights Film Festival 2025\nOfficial selection, Les Arcs Film Festival 2025\nOfficial selection • Sélection officielle, Palić Film Festival",
+        "awardsFrom": {
+          "833c008caad9": "Official selection, International Film Festival Rotterdam 2026",
+          "2ee83938bf8a": "Official selection • Critics' Picks, Tallinn Black Nights Film Festival 2025",
+          "68c39466026a": "Official selection, Les Arcs Film Festival 2025",
+          "ebda4cc35fb7": "Official selection • Sélection officielle, Palić Film Festival"
+        }
+      }
     }
   },
   "about": {
