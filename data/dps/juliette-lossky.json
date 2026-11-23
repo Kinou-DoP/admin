@@ -53,8 +53,10 @@
       "title": "Himalia"
     },
     "9499": {
-      "zoom": 1.25,
-      "title": "MSSS"
+      "zoom": 1.29,
+      "title": "MSSS",
+      "zoomPos": "48.4% 3.3%",
+      "zoomThumb": true
     },
     "9500": {
       "zoom": 1.36,
