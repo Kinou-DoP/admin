@@ -67,6 +67,7 @@
           "link": "https://kinou.slateapp.com/work/barbaque-feature-film-trailer-1",
           "title": "Barbaque (feature film trailer)",
           "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3b66768a-5a2e-4f3b-845e-58cbdd95dfd6-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10400/d16c7154-e732-11f1-952e-02ffedfede17.mp4",
           "img": "https://images.slatecdn.net/Seh2tLsWdUO3U0Hg8B-TOTJXc4uwXDsxbyYJo9Ajk2w/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQwMC02OTdiODFl/MjI2MTdhNC40MzE4/MTMwOS1kNDA4ZmM1/MGQ1NWVmZDZiODgx/ZGYyMGE5ODg2OTVj/Mi5qcGc.webp"
         }
       ]
@@ -321,13 +322,40 @@
       "slate": 10027
     },
     {
-      "title": "Ginette NY | Roc Pays Color 1",
-      "sub": "Manuel Moutier\nGinette NY",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10018/e39e077f-670e-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/069602b2-100b-400d-b746-7c6ff51b9323-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/n3l8HXjOg2LVVmybAj2mbWJTrJleyAX2-qO_oE6ffz8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NWMyYjZmZi1hOGI4/LTRlN2YtOWU0NC03/NGM3M2VkOWI4MmYv/MTc1MzE5NzQ5NTUx/NS5qcGc?v=1&format=webp",
+      "title": "BALMAIN x OPÉRA DE PARIS a film by James Bort copie",
+      "sub": "James Bort\nStory, James Bort Factory",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10007/9db646d8-670b-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/37611084-a312-49c4-94f8-3b0758cded14-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ZVGoHWs5azmDtZUjpLtI0ymq_u34Y3Kk8SBphfrz4l8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NmE3MDgxYy1hNDc5/LTQ4M2ItODQ5NC1l/NDQ5YTU0NTY4YzIv/MTc1MzE5NTg0NTc1/NS5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10018
+      "slate": 10007
+    },
+    {
+      "title": "Ginette NY | Sable Noir Pays 1",
+      "sub": "Manuel Moutier\nGinette NY",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10024/8474f3bd-6710-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bca8f9f4-6283-43b5-a385-1ebea1c385d7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/4wOfT857gXCQIDhkMd8wM_ZIMAuYxAHFY2ehbzY-gL4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZmYwODZkOS01NjQ4/LTQ2YjQtYWJiOC02/MWU3NDBiMzg2ODUv/MTc1MzE5ODA2OTc2/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10024
+    },
+    {
+      "title": "Ginette NY | Room Color Pays 2",
+      "sub": "Manuel Moutier\nGinette NY",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10019/af34c567-670e-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0b8d0795-3719-4f83-9b97-60aff5901547-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Wpx_0kcVFcUXf7Nq_4CQqdt8PG2YURdUqVmYYjC9CMA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OWE1MjY2OC03NWMw/LTQ5NmMtYWY4OS1h/ZjVmNzkwMjAwMzcv/MTc1MzE5NzMzMDU0/MS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10019
+    },
+    {
+      "title": "Ginette NY | Chapeau Pays 1",
+      "sub": "Manuel Moutier\nGinette NY",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10016/26184836-6710-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/77f8604e-3026-47b1-925f-88664ca63ef3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GQJSeJlSuVpHnJjCD1XU0Z_DU-IzliJnyQ-WNu1VAlU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OGNmNjhkZi01YmE1/LTRlOWUtYTllNS1m/NTRiN2FkNzk4NTgv/MTc1MzE5NzkyMzY0/NC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10016
     },
     {
       "title": "Chanel Horlogerie - Mademoiselle Privé - Lesage",
@@ -373,15 +401,6 @@
       "img": "https://images.slatecdn.net/1FJ7u45gQcTwxo88qAcCZzmEVwDMasVwJSorNBSV08E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDAwOC02ODc4Yjlk/ZThkNjU0MC44NTUz/NTI1Ni00MmUyMDg0/NDA1YmFiNmRkYTRm/MTg5ZTU3MmFjNzJl/Yy5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 10008
-    },
-    {
-      "title": "BALMAIN x OPÉRA DE PARIS a film by James Bort copie",
-      "sub": "James Bort\nStory, James Bort Factory",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10007/9db646d8-670b-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/37611084-a312-49c4-94f8-3b0758cded14-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/ZVGoHWs5azmDtZUjpLtI0ymq_u34Y3Kk8SBphfrz4l8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NmE3MDgxYy1hNDc5/LTQ4M2ItODQ5NC1l/NDQ5YTU0NTY4YzIv/MTc1MzE5NTg0NTc1/NS5qcGc?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 10007
     }
   ]
 }
