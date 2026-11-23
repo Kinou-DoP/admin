@@ -4,26 +4,8 @@
   "hue": 0,
   "bundle": "https://kinou.slateapp.com/bundles/712f0617-e751-11f1-952e-02ffedfede17",
   "overrides": {
-    "5828": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "5829": {
-      "types": [
-        "Music Video"
-      ]
-    },
     "5830": {
-      "title": "Amours D'occasion",
-      "types": [
-        "Serie"
-      ]
-    },
-    "5831": {
-      "types": [
-        "Music Video"
-      ]
+      "title": "Amours D'occasion"
     },
     "5833": {
       "zoom": 1.08,
@@ -39,21 +21,11 @@
       "title": "The Forest"
     },
     "6236": {
-      "title": "Killer Mike - Run ft. Dave Chappelle & Young Thug",
-      "types": [
-        "Music Video"
-      ]
-    },
-    "6304": {
-      "types": [
-        "Music Video"
-      ]
+      "title": "Killer Mike - Run ft. Dave Chappelle & Young Thug"
     },
     "6347": {
-      "types": [
-        "Music Video",
-        "Clip"
-      ]
+      "zoom": 1.32,
+      "zoomThumb": true
     },
     "6844": {
       "title": "Birks - Snowflakes"
@@ -61,112 +33,41 @@
     "6845": {
       "title": "Passenger Seat by Mayfly"
     },
-    "6996": {
-      "types": [
-        "Music Video"
-      ]
-    },
-    "7053": {
-      "types": [
-        "Music Video"
-      ]
-    },
     "7495": {
-      "title": "Joie de vivre",
-      "types": [
-        "Short Film"
-      ]
+      "title": "Joie de vivre"
     },
     "7496": {
-      "title": "Birks - Dare to dream",
-      "types": [
-        "Commercial"
-      ]
-    },
-    "7497": {
-      "types": [
-        "Music Video"
-      ]
-    },
-    "7499": {
-      "types": [
-        "Commercial"
-      ]
+      "title": "Birks - Dare to dream"
     },
     "7598": {
-      "title": "Rodéo",
-      "types": [
-        "Feature Film"
-      ]
+      "title": "Rodéo"
     },
     "7599": {
       "zoom": 1.54,
-      "zoomThumb": true,
-      "types": [
-        "Commercial"
-      ]
+      "zoomThumb": true
     },
     "7629": {
-      "title": "Apashe \"Revenge Day\"",
-      "types": [
-        "Music Video"
-      ]
+      "title": "Apashe \"Revenge Day\""
     },
     "7997": {
-      "title": "Human by Apashe ft. Wasiu",
-      "types": [
-        "Music Video"
-      ]
-    },
-    "8045": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "8046": {
-      "types": [
-        "Commercial"
-      ]
+      "title": "Human by Apashe ft. Wasiu"
     },
     "9085": {
       "zoom": 1.06,
-      "title": "Himalia",
-      "types": [
-        "Narrative"
-      ]
+      "title": "Himalia"
     },
     "9499": {
       "zoom": 1.29,
       "title": "MSSS",
       "zoomPos": "48.4% 3.3%",
-      "zoomThumb": true,
-      "types": [
-        "Prevention",
-        "Forest"
-      ]
+      "zoomThumb": true
     },
     "9500": {
       "zoom": 1.36,
-      "title": "Juliette Has A Gun",
-      "types": [
-        "Parfum"
-      ]
+      "title": "Juliette Has A Gun"
     },
     "9502": {
-      "zoom": 1.18,
-      "types": [
-        "Commercial"
-      ]
-    },
-    "10144": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "11003": {
-      "types": [
-        "Commercial"
-      ]
+      "zoom": 1.18
     }
   },
   "about": {
