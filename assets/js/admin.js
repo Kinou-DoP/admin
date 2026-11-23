@@ -93,9 +93,43 @@
   }
   function surname(name) { var w = name.split(",")[0].trim().split(/\s+/); return slugify(w[w.length - 1] || ""); }
 
+  // ---------- Enregistrements en cours (Gus 23/11) ----------
+  // Tout ce qui s'enregistre tout seul (notes, bandes, infos des films, prix, pages enregistrées tout de suite…) continue en
+  // arrière-plan quand on change de page dans l'admin ; un enregistrement prévu (« dans 1 s ») part tout de suite au changement
+  // de page (`flushSaves`) ; tant qu'il reste un enregistrement en cours ou prévu, fermer / recharger l'onglet demande
+  // confirmation (`beforeunload`). Pastille en bas à gauche (`#saving`) : « Enregistrement… », « Enregistré », « Pas enregistré ».
+  // `soon(clé, fn, ms)` remplace les setTimeout des enregistrements automatiques ; `track(promesse)` compte un enregistrement.
+  var saves = { n: 0, timers: {}, ok: 0, err: "" }, savesEl = null, savesHide = 0;
+  function savesUI() {
+    if (!savesEl) { savesEl = el("div", { id: "saving", "aria-live": "polite" }); savesEl.addEventListener("click", function () { saves.err = ""; savesUI(); }); document.body.appendChild(savesEl); }
+    var busy = savesPending();
+    clearTimeout(savesHide);
+    savesEl.className = busy ? "busy" : saves.err ? "err" : saves.ok ? "ok" : "";
+    savesEl.textContent = busy ? "Enregistrement…" : saves.err ? "Pas enregistré : " + saves.err : saves.ok ? "Enregistré" : "";
+    savesEl.title = saves.err ? "Cliquer pour fermer" : "";
+    if (!busy && saves.ok && !saves.err) savesHide = setTimeout(function () { saves.ok = 0; savesUI(); }, 2500);
+  }
+  function savesPending() { return saves.n > 0 || Object.keys(saves.timers).length > 0; }
+  function track(p, quiet) {
+    saves.n++; savesUI();
+    function end() { saves.n--; savesUI(); }
+    p.then(function () { if (!quiet) { saves.ok = 1; } end(); }, function (e) { if (!quiet) saves.err = String(e && e.message || e).slice(0, 140); end(); });
+    return p;
+  }
+  function soon(key, fn, ms) {
+    var o = saves.timers[key]; if (o) clearTimeout(o.t);
+    o = saves.timers[key] = { fn: fn };
+    o.t = setTimeout(function () { if (saves.timers[key] === o) delete saves.timers[key]; runSave(fn); }, ms);
+    savesUI();
+  }
+  function unsoon(key) { var o = saves.timers[key]; if (o) { clearTimeout(o.t); delete saves.timers[key]; savesUI(); } }
+  function runSave(fn) { var r; try { r = fn(); } catch (e) { saves.err = e.message; } if (r && r.then) track(r); else savesUI(); }
+  function flushSaves() { Object.keys(saves.timers).forEach(function (k) { var o = saves.timers[k]; clearTimeout(o.t); delete saves.timers[k]; runSave(o.fn); }); }
+
   // ---------- API GitHub ----------
   function gh(path, opts) {
     opts = opts || {};
+    if (opts.method && opts.method !== "GET" && !opts.untracked) { var o2 = Object.assign({}, opts, { untracked: true }); return track(gh(path, o2), true); }
     var headers = { Authorization: "Bearer " + token, Accept: opts.raw ? "application/vnd.github.raw+json" : "application/vnd.github+json" };
     if (opts.body) headers["Content-Type"] = "application/json";
     return fetch("https://api.github.com" + path, { method: opts.method || "GET", headers: headers, body: opts.body ? JSON.stringify(opts.body) : undefined, cache: "no-store" })
@@ -113,6 +147,7 @@
   // Si un autre commit arrive pendant ce temps (robot GitHub qui répond, autre personne qui publie : « Update is not a fast
   // forward », GitHub 422), on refait le commit par-dessus le nouveau dernier commit, 3 fois au plus (Gus 04/11).
   function commit(files, message, tries) {
+    if (tries === undefined) return track(commit(files, message, 0), true);
     tries = tries || 0;
     return commitOnce(files, message).catch(function (e) {
       if (tries >= 3 || !/GitHub 422/.test(e.message)) throw e;
@@ -468,7 +503,7 @@
     // Accès « website » (Gus 17/11) : seulement si la clé peut écrire dans le dépôt admin. Test sans effet : on enregistre un
     // fichier vide (blob jamais relié à un commit, toujours le même). Clé limitée au dépôt notes = festivals, sélections,
     // récupération et sorties seulement (rubrique website cachée) : c'est GitHub qui l'empêche, pas seulement l'admin.
-    var canW = gh("/repos/" + REPO + "/git/blobs", { method: "POST", body: { content: "", encoding: "utf-8" } }).then(function () { return true; }, function () { return false; });
+    var canW = gh("/repos/" + REPO + "/git/blobs", { method: "POST", untracked: true, body: { content: "", encoding: "utf-8" } }).then(function () { return true; }, function () { return false; });
     return Promise.all([gh("/user"), canW]).then(function (r) {
       user = r[0]; canWeb = r[1]; store(false, t);
       document.body.classList.toggle("readonly", !canWeb);
@@ -808,7 +843,7 @@
   // Notes internes d'une fiche (Gus 03/11) : jamais sur le site, et pas dans ce dépôt (public) : dépôt privé Kinou-DoP/notes,
   // un fichier par chef op (dps/<adresse>.md), lu à l'ouverture et enregistré tout seul 1,2 s après la frappe (sans « Publier »).
   // Clé GitHub sans accès à ce dépôt (ou dépôt absent) : message dans le bloc, le reste de la fiche marche normalement.
-  var NOTES_REPO = "Kinou-DoP/notes", notesFor = null, notesNode = null;
+  var NOTES_REPO = "Kinou-DoP/notes", notesFor = null, notesNode = null, notesPending = {};
   function b64enc(t) { return btoa(unescape(encodeURIComponent(t))); }
   function b64dec(b) { return decodeURIComponent(escape(atob(String(b).replace(/\s/g, "")))); }
   function notesBox(slug) {
@@ -817,7 +852,8 @@
     var path = "/repos/" + NOTES_REPO + "/contents/dps/" + slug + ".md", sha = null, saved = "", t = 0, busy = false, again = false;
     function grow() { ta.style.height = "auto"; ta.style.height = Math.max(ta.scrollHeight, 60) + "px"; }
     ta.disabled = true; st.textContent = "Chargement…";
-    gh(path, { allow404: true }).then(function (f) {
+    // Note de cette fiche encore en cours d'enregistrement (on a quitté puis rouvert la fiche) : on attend qu'il soit fini.
+    (notesPending[path] || Promise.resolve()).catch(function () {}).then(function () { return gh(path, { allow404: true }); }).then(function (f) {
       if (f) { sha = f.sha; saved = b64dec(f.content); return; }
       return gh("/repos/" + NOTES_REPO, { allow404: true }).then(function (r) { if (!r) throw new Error("absent"); });
     }).then(function () { ta.value = saved; ta.disabled = false; st.textContent = ""; requestAnimationFrame(grow); },
@@ -826,17 +862,20 @@
       return gh(path, { method: "PUT", body: { message: "Notes " + (state && state.name || slug) + " (admin, " + (user && user.login || "") + ")", content: b64enc(ta.value), sha: sha || undefined } });
     }
     function save() {
+      unsoon(path);
       if (busy) { again = true; return; }
       if (ta.value === saved) { st.textContent = "Enregistré"; return; }
       var v = ta.value; busy = true; st.textContent = "Enregistrement…";
-      put().catch(function () { // modifiée ailleurs entre-temps (autre personne, autre onglet) : on reprend sa version et on réessaie
+      var p = notesPending[path] = put().catch(function () { // modifiée ailleurs entre-temps (autre personne, autre onglet) : on reprend sa version et on réessaie
         return gh(path, { allow404: true }).then(function (f) { sha = f ? f.sha : null; return put(); });
       }).then(function (r) { sha = r.content.sha; saved = v; st.textContent = "Enregistré"; },
-        function (e) { st.textContent = "Pas enregistré : " + e.message; })
-        .then(function () { busy = false; if (again) { again = false; save(); } });
+        function (e) { st.textContent = "Pas enregistré : " + e.message; throw e; });
+      track(p);
+      p.catch(function () {}).then(function () { busy = false; if (notesPending[path] === p) delete notesPending[path]; if (again) { again = false; save(); } });
+      return p;
     }
-    ta.addEventListener("input", function () { grow(); st.textContent = "…"; clearTimeout(t); t = setTimeout(save, 1200); });
-    ta.addEventListener("blur", function () { clearTimeout(t); save(); });
+    ta.addEventListener("input", function () { grow(); st.textContent = "…"; soon(path, save, 1200); });
+    ta.addEventListener("blur", function () { save(); });
     return box;
   }
   // Page en ligne ou cachée sur le site (Gus 10/11) : `hidden` de l'entrée de data/dps/index.json (le site ne liste ni n'ouvre une
@@ -3097,7 +3136,7 @@
     return ch ? json(d) : null;
   }
   var awT = 0, awBusy = null;
-  function awardsSoon() { clearTimeout(awT); awT = setTimeout(awardsSync, 1500); }
+  function awardsSoon() { soon("awards", awardsSync, 1500); }
   function awardsSync() {
     if (!canWeb || !sel || awBusy) return awBusy;
     var ok = sel.found.filter(function (x) { return x.status === "ok" && x.title; });
@@ -4488,6 +4527,7 @@
     return gh("/repos/" + NOTES_REPO + "/contents/" + path, { allow404: true }).then(function (f) { if (!f) { delete nSha[path]; return null; } nSha[path] = f.sha; return b64dec(f.content); });
   }
   function nPut(path, text, msg, tries) {
+    if (tries === undefined) return track(nPut(path, text, msg, 0), true);
     return gh("/repos/" + NOTES_REPO + "/contents/" + path, { method: "PUT", body: { message: msg, content: b64enc(text), sha: nSha[path] || undefined } })
       .then(function (r) { nSha[path] = r.content.sha; }, function (e) {
         if ((tries || 0) >= 2 || !/GitHub (409|422)/.test(e.message)) throw e;
@@ -4495,6 +4535,7 @@
       });
   }
   function nEdit(path, fn, msg, tries) { // relit puis modifie (liste des bandes : plusieurs personnes)
+    if (tries === undefined) return track(nEdit(path, fn, msg, 0), true);
     return nGet(path).then(function (t) {
       var n = fn(t); if (n === null) return;
       return nPut(path, n, msg, 2).catch(function (e) { if ((tries || 0) >= 2 || !/GitHub (409|422)/.test(e.message)) throw e; return nEdit(path, fn, msg, (tries || 0) + 1); });
@@ -4657,7 +4698,7 @@
       Object.keys(patch).forEach(function (k) { if (patch[k] === undefined) delete f[k]; else f[k] = cl(patch[k]); });
       var e = {}; BIB_EK.forEach(function (k) { var a = f[k], b = f._orig[k]; if (JSON.stringify(a === undefined ? null : a) !== JSON.stringify(b === undefined ? null : b)) e[k] = a === undefined ? null : a; });
       f.libEdited = !!Object.keys(e).length; bibHay(f);
-      libQ.todo[f.key] = f.libEdited ? e : null; clearTimeout(libQ.t); libQ.t = setTimeout(libSaveEdits, 800);
+      libQ.todo[f.key] = f.libEdited ? e : null; soon("libEdits", libSaveEdits, 800);
     }
     function libSaveEdits() {
       if (!canWeb) return;
@@ -4665,13 +4706,13 @@
       var todo = libQ.todo, files = libQ.files.splice(0), keys = Object.keys(todo); libQ.todo = {};
       if (!keys.length && !files.length) return;
       libQ.busy = true; info.classList.add("saving");
-      commit([{ path: BIB_EDITS, edit: function (t) {
+      return commit([{ path: BIB_EDITS, edit: function (t) {
         var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {};
         keys.forEach(function (k) { if (todo[k]) o.films[k] = todo[k]; else delete o.films[k]; });
         return json(o);
       } }].concat(files), "Filmothèque : infos de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")").then(function () {
         libQ.busy = false; info.classList.remove("saving"); if (libQ.again) { libQ.again = false; libSaveEdits(); }
-      }, function (e) { libQ.busy = false; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving"); alert("Infos pas enregistrées : " + e.message); });
+      }, function (e) { libQ.busy = false; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving"); alert("Infos pas enregistrées : " + e.message); throw e; });
     }
     function libEdit(f) {
       var o = f._orig || {}, it = { key: f.key, full: f.full, video: f.video, images: f.images };
@@ -4688,9 +4729,9 @@
           if (!keep) { f._orig = {}; BIB_EK.forEach(function (k) { f._orig[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); }
           BIB_EK.forEach(function (k) { var v = k === "snip" && it._snipTmp ? it._snipSaved : it[k]; f[k] = v === undefined ? undefined : JSON.parse(JSON.stringify(v)); });
           f.dops = (f.dops || []).filter(Boolean); f.types = f.types || []; f.libEdited = !!e; bibHay(f);
-          libQ.todo[f.key] = e; clearTimeout(libQ.t); libQ.t = setTimeout(libSaveEdits, 1500);
+          libQ.todo[f.key] = e; soon("libEdits", libSaveEdits, 1500);
         },
-        onClose: function () { clearTimeout(libQ.t); libSaveEdits(); draw(); },
+        onClose: function () { unsoon("libEdits"); runSave(libSaveEdits); draw(); },
         reset: function () { BIB_EK.forEach(function (k) { f[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); f.dops = f.dops || []; f.types = f.types || []; f.libEdited = false; bibHay(f); libQ.todo[f.key] = null; }
       });
     }
@@ -4774,7 +4815,7 @@
     // ---------- Enregistrement automatique (Gus 22/11 : plus de bouton « Enregistrer », comme sur Slate) ----------
     var save = { t: 0, busy: false, again: false, files: [], state: "", meta: null, legacy: null };
     function keep() { try { localStorage.setItem(BAND_KEY, JSON.stringify(band, function (k, v) { return k.charAt(0) === "_" ? undefined : v; })); } catch (e) {} }
-    function changed() { keep(); clearTimeout(save.t); setState("wait"); save.t = setTimeout(saveBand, 1200); undoMark(); undoBtns(); }
+    function changed() { keep(); setState("wait"); soon("band", saveBand, 1200); undoMark(); undoBtns(); }
     // Annuler / Rétablir (Gus 22/11 : une bande vidée par erreur…) : instantanés de la bande, un par moment de calme (0,6 s).
     var undo = { l: [], i: -1, t: 0 };
     function snap() { return JSON.stringify(band, function (k, v) { return k.charAt(0) === "_" ? undefined : v; }); }
@@ -4785,7 +4826,7 @@
       if (s !== undo.l[undo.i]) { undo.l = undo.l.slice(0, undo.i + 1); undo.l.push(s); undo.i++; } // changement pas encore noté
       var j = undo.i + d; if (j < 0 || j >= undo.l.length) return;
       undo.i = j; var code = band.code, created = band.created; band = JSON.parse(undo.l[j]); band.code = code; band.created = created;
-      keep(); clearTimeout(save.t); setState("wait"); save.t = setTimeout(saveBand, 1200);
+      keep(); setState("wait"); soon("band", saveBand, 1200);
       drawBand(); if (data) draw();
     }
     function undoBtns() { // un changement pas encore noté compte déjà (sinon « Annuler » restait grisé une demi-seconde après chaque geste)
@@ -4827,7 +4868,7 @@
       var pub = { title: b.title.trim() || "Bande", description: (b.description || "").trim(), artists: artists, cols: b.cols, hide: b.hide, download: !!b.download, items: items, at: now };
       var files = save.files.splice(0);
       var by = user && user.login || "";
-      bandSeal(b.code, b.pw || "", b.expires, pub).then(function (s) {
+      return track(bandSeal(b.code, b.pw || "", b.expires, pub).then(function (s) {
         var cf = [{ path: BAND_PUB + s.id + ".json", text: s.text }].concat(files);
         if (save.legacy === b.code) { // ancienne bande en clair (19/11) : supprimée au passage
           cf.push({ path: BANDS + b.code + ".json", remove: true });
@@ -4855,8 +4896,9 @@
       }, function (e) {
         save.busy = false; if (isNew && !save.meta) { /* garde le code : réessai avec le même lien */ }
         save.files = files.concat(save.files); if (b === band) setState("err", "Pas enregistré : " + e.message);
-        clearTimeout(save.t); save.t = setTimeout(function () { saveBand(b); }, 8000); // nouvel essai tout seul
-      });
+        soon("band", function () { return saveBand(b); }, 8000); // nouvel essai tout seul
+        throw e;
+      }), true);
     }
     function flash(x) { if (!x) return; x.classList.remove("flash"); void x.offsetWidth; x.classList.add("flash"); }
 
@@ -4867,7 +4909,7 @@
       right.appendChild(el("div", { class: "btabs" }, [
         // Revenir de « Bandes existantes » = une nouvelle bande vide, comme en rechargeant la page (Gus 22/11) ; la bande en cours reste enregistrée.
         el("button", { type: "button", class: st.tab === "new" ? "on" : "", text: band.code && st.tab === "new" ? "Bande" : "Nouvelle bande", on: { click: function () {
-          if (st.tab !== "new") { if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); } band = bandNew(); save.meta = null; save.legacy = null; save.state = ""; keep(); undoReset(); if (data) draw(); }
+          if (st.tab !== "new") { if (save.busy || save.state === "wait") { unsoon("band"); saveBand(); } band = bandNew(); save.meta = null; save.legacy = null; save.state = ""; keep(); undoReset(); if (data) draw(); }
           st.tab = "new"; st.fromBundle = false; drawBand();
         } } }),
         el("button", { type: "button", class: st.tab === "old" ? "on" : "", text: "Bandes existantes", on: { click: function () { st.tab = "old"; st.fromBundle = false; drawBand(); } } }),
@@ -4920,7 +4962,7 @@
         el("button", { type: "button", class: "btn ghost", text: "Réglages", on: { click: settings } }),
         band.code ? el("a", { class: "btn ghost", href: bandURL(band.code), target: "_blank", rel: "noopener", text: "Voir ↗" }) : null,
         el("button", { type: "button", class: "btn primary", text: "+ Nouvelle bande", title: "La bande en cours reste enregistrée (Bandes existantes)", on: { click: function () {
-          if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); }
+          if (save.busy || save.state === "wait") { unsoon("band"); saveBand(); }
           band = bandNew(); save.meta = null; keep(); st.tab = "new"; undoReset(); drawBand(); if (data) draw();
         } } })]));
       foot.appendChild(el("div", { class: "bfrow2" }, [el("span", { class: "bsave" }),
@@ -4962,7 +5004,7 @@
     // modifier ou on en crée une nouvelle depuis le bundle (« ← Retour au bundle » l'y ajoute).
     var bun = null, bunQ = Promise.resolve(), bunT = 0, bunState = "";
     function bundlesList() { return nGet(BAND_NOTES + "bundles.json").then(function (t) { return t ? JSON.parse(t).bundles || [] : []; }); }
-    function bunChanged() { if (!bun.code && !bun.bands.length) return; clearTimeout(bunT); bunSt("wait"); bunT = setTimeout(bunSave, 1000); }
+    function bunChanged() { if (!bun.code && !bun.bands.length) return; bunSt("wait"); soon("bundle", bunSave, 1000); }
     function bunSt(x, msg) { bunState = x; var e = right.querySelector(".bsave"); if (e && st.tab === "bundle") { e.className = "bsave " + x; e.textContent = msg || { wait: "Modifications…", busy: "Enregistrement…", ok: "Enregistré", err: "Pas enregistré" }[x] || ""; } }
     function bunSave() {
       if (!canWeb || !bun) return;
@@ -4980,6 +5022,7 @@
           }, "Bundles : liste (admin, " + by + ")");
         }).then(function () { b.created = b.created || now; bunSt("ok"); if (isNew && st.tab === "bundle") drawBand(); }, function (e) { bunSt("err", "Pas enregistré : " + e.message); });
       });
+      return bunQ.then(function () { if (bunState === "err") throw new Error("bundle pas enregistré"); });
     }
     function drawBundles() {
       var q3 = el("input", { type: "search", class: "boldq", placeholder: "Chercher un bundle…", autocomplete: "off" });
@@ -5070,7 +5113,7 @@
           pq.addEventListener("input", pick); pick();
           ul.appendChild(el("div", { class: "bunadd" }, [pq, pl,
             el("button", { type: "button", class: "btn ghost", text: "+ Créer une bande dans ce bundle", on: { click: function () {
-              if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); }
+              if (save.busy || save.state === "wait") { unsoon("band"); saveBand(); }
               band = bandNew(); save.meta = null; save.legacy = null; save.state = ""; keep(); undoReset(); st.fromBundle = true; st.tab = "new"; drawBand(); if (data) draw();
             } } })]));
         }
@@ -5082,7 +5125,7 @@
       foot2.appendChild(el("div", { class: "bfrow2" }, [el("span", { class: "bsave" })])); bunSt(bunState);
     }
     function backToBundle() { // depuis une bande ouverte ou créée dans un bundle : elle y est ajoutée si elle n'y est pas encore
-      clearTimeout(save.t); if (band.items.some(function (x) { return x.section === undefined; })) saveBand();
+      unsoon("band"); if (band.items.some(function (x) { return x.section === undefined; })) saveBand();
       if (bun && band.code && bun.bands.indexOf(band.code) < 0) { bun.bands.push(band.code); bunChanged(); }
       st.fromBundle = false; st.tab = "bundle";
       setTimeout(drawBand, band.code && save.busy ? 1500 : 0); // laisse la bande finir son 1er enregistrement (liste à jour)
@@ -5093,7 +5136,7 @@
       });
     }
     function openBand(b) {
-      if (save.busy || save.state === "wait") { clearTimeout(save.t); saveBand(); } // la bande affichée garde ses derniers changements
+      if (save.busy || save.state === "wait") { unsoon("band"); saveBand(); } // la bande affichée garde ses derniers changements
       var p = b.legacy ? readFile(BANDS + b.code + ".json") : nGet(BAND_NOTES + b.code + ".json").then(function (t) { return t ? JSON.parse(t) : null; });
       p.then(function (d) {
         if (!d) return;
@@ -5586,7 +5629,7 @@
           function (e) { shrMsg.textContent = "Lien pas enregistré : " + e.message; });
       });
       shrCk.addEventListener("change", function () { shr.dl = shrCk.checked; if (shr.code) shrPublish().then(function () { shrMsg.textContent = shr.dl ? "Téléchargement autorisé sur ce lien." : "Téléchargement retiré de ce lien."; }, function (e) { shrMsg.textContent = "Pas enregistré : " + e.message; }); });
-      shr.again = function () { if (!shr.code) return; clearTimeout(shr.t); shr.t = setTimeout(function () { shrPublish().catch(function () {}); }, 2500); };
+      shr.again = function () { if (!shr.code) return; soon("share" + it.key, shrPublish, 2500); };
       euB = el("button", { type: "button", class: "blink bundo", text: "↶ Annuler", title: "Annuler (Ctrl / Cmd + Z)", on: { click: function () { eGo(-1); } } });
       erB = el("button", { type: "button", class: "blink bredo", text: "Rétablir ↷", title: "Rétablir (Maj + Ctrl / Cmd + Z)", on: { click: function () { eGo(1); } } });
       box.appendChild(el("div", { class: "bshare" }, [el("span", { class: "label", text: "Partager ce film seul" }), el("div", { class: "tlrow" }, [shrB, shrDl, shrMsg])]));
@@ -5727,9 +5770,14 @@
     if (!token) return;
     if (dirty && !window.confirm("Des modifications ne sont pas publiées. Quitter quand même (elles seront perdues) ?")) { history.replaceState(null, "", here || "#/"); return; }
     if (!dirty && formsDirty() && !window.confirm("Un formulaire ouvert n'est pas enregistré. Quitter quand même (les changements seront perdus) ?")) { history.replaceState(null, "", here || "#/"); return; }
-    dirty = false; here = location.hash; route();
+    dirty = false; here = location.hash; flushSaves(); route();
   });
-  window.addEventListener("beforeunload", function (e) { if (dirty || formsDirty()) { e.preventDefault(); e.returnValue = ""; } });
+  // Fermer / recharger l'onglet : modifications pas publiées, formulaire ouvert, ou enregistrement en cours / prévu (que l'on
+  // lance tout de suite) → le navigateur demande confirmation.
+  window.addEventListener("beforeunload", function (e) {
+    var wait = savesPending(); flushSaves();
+    if (dirty || formsDirty() || wait) { e.preventDefault(); e.returnValue = ""; }
+  });
 
   var saved = store(true);
   if (saved) login(saved).then(route, function () { store(false, null); showLogin("Token expiré ou révoqué : reconnectez-vous."); });

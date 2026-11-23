@@ -40,6 +40,12 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
 - Fiction et spotlight : la publication n'écrit que `reel`, `categories`, `overrides` (+ affiches), jamais les `films` du robot.
 - Annuler / Rétablir : instantanés de la page (`histInit`, `touch`) ; pages enregistrées tout de suite (festivals, récupération,
   sorties, sélections) : `immInit` / `immPush`.
+- **Enregistrements en arrière-plan** (toute l'admin) : un enregistrement automatique (notes, bandes, bundles, infos des films,
+  partage d'un film, prix) se programme avec `soon(clé, fn, ms)` (jamais un `setTimeout` à part) ; changer de page dans l'admin le
+  lance tout de suite (`flushSaves`) et il continue en fond ; `gh` (écritures), `commit`, `nPut`, `nEdit` sont comptés (`track`).
+  Tant qu'il reste un enregistrement en cours ou prévu, **fermer / recharger l'onglet demande confirmation** (`beforeunload`).
+  Pastille en bas à gauche (`#saving`) : « Enregistrement… », « Enregistré », « Pas enregistré : … » (clic = fermer). Les notes
+  d'une fiche rouverte attendent la fin de leur enregistrement avant d'être relues (`notesPending`).
 
 ## Pages (menu à gauche : website ▸, bibliothèque, sorties fiction, festivals ▸, récupération, historique)
 - **Accueil de l'admin** (`#/`, `showHello`) : « Hello la Dream Team ! » + petit mot par ordre d'importance (`helloNews` : sorties de

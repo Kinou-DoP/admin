@@ -1050,3 +1050,11 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .boff .blink { color: #ffd27a; }
 .bzoomw { margin-bottom: 18px; }
 .bzoomw .thumb { cursor: pointer; }
+
+/* Pastille des enregistrements en cours (toutes les pages, Gus 23/11) : en bas à gauche, discrète ; cachée quand il n'y a rien. */
+#saving { position: fixed; left: 16px; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); z-index: 60; max-width: min(520px, calc(100vw - 32px)); padding: 8px 14px; border-radius: 999px; background: rgba(20,20,20,.92); border: 1px solid var(--faint); color: var(--dim); font-family: var(--kinou-sans); font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; pointer-events: none; opacity: 0; transform: translateY(6px); transition: opacity .25s, transform .25s; }
+#saving.busy, #saving.ok, #saving.err { opacity: 1; transform: none; }
+#saving.busy::before, #saving.ok::before, #saving.err::before { content: "● "; }
+#saving.busy::before { animation: bblink .9s infinite; }
+#saving.ok { color: var(--ok); }
+#saving.err { color: var(--err); pointer-events: auto; cursor: pointer; text-transform: none; letter-spacing: .02em; }
