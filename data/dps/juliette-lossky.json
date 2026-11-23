@@ -1,0 +1,21 @@
+{
+  "slug": "juliette-lossky",
+  "name": "Juliette Lossky",
+  "hue": 0,
+  "overrides": {},
+  "about": {
+    "website": "https://www.juliettelossky.com/",
+    "instagram": "https://www.instagram.com/juliette.lossky/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm8148351/"
+      }
+    ],
+    "pos": "61% 24%",
+    "color": true,
+    "img": "img/juliette-lossky.webp",
+    "og": "img/juliette-lossky-og-1795446377400.jpg",
+    "ogColor": true
+  }
+}
