@@ -5,31 +5,60 @@
   "bundle": "https://kinou.slateapp.com/bundles/44ceeebb-e72e-11f1-952e-02ffedfede17",
   "overrides": {
     "1029": {
-      "title": "Parasol"
+      "title": "Parasol",
+      "types": [
+        "Feature Film"
+      ]
     },
     "1560": {
-      "title": "Les Pigeons Ca Chie Partout"
+      "title": "Les Pigeons Ca Chie Partout",
+      "types": [
+        "Short Film"
+      ]
     },
     "1660": {
-      "title": "Je me tue à le dire"
+      "title": "Je me tue à le dire",
+      "types": [
+        "Feature Film"
+      ]
     },
     "1685": {
-      "title": "Le Film de l'été"
+      "title": "Le Film de l'été",
+      "types": [
+        "Short Film"
+      ]
     },
     "1834": {
-      "title": "La Faveur des Moineaux"
+      "title": "La Faveur des Moineaux",
+      "types": [
+        "Short Film"
+      ]
     },
     "2007": {
-      "title": "Colour of the Trap"
+      "title": "Colour of the Trap",
+      "types": [
+        "Short Film"
+      ]
     },
     "2149": {
-      "title": "Dimanches"
+      "title": "Dimanches",
+      "types": [
+        "Short Film"
+      ]
     },
     "3881": {
-      "title": "Lola Vers la mer"
+      "title": "Lola Vers la mer",
+      "types": [
+        "Narrative"
+      ]
     },
     "3952": {
-      "title": "Matriochkas"
+      "title": "Matriochkas",
+      "types": [
+        "Short Film",
+        "Narrative",
+        "Fiction"
+      ]
     },
     "4662": {
       "title": "Je serai parmi les amandiers",
@@ -37,42 +66,87 @@
       "zoomThumb": true
     },
     "4790": {
-      "title": "La Trève"
+      "title": "La Trève",
+      "types": [
+        "Narrative",
+        "Fiction",
+        "Serie"
+      ]
     },
     "5765": {
-      "title": "Rien à Foutre"
+      "title": "Rien à Foutre",
+      "types": [
+        "Feature Film"
+      ]
     },
     "6249": {
-      "title": "Sans Soleil"
+      "title": "Sans Soleil",
+      "types": [
+        "Feature Film"
+      ]
     },
     "6292": {
-      "title": "Tout Le Monde AIme Jeanne"
+      "title": "Tout Le Monde AIme Jeanne",
+      "types": [
+        "Feature Film"
+      ]
     },
     "7103": {
-      "title": "Le Paradis"
+      "title": "Le Paradis",
+      "types": [
+        "Feature Film"
+      ]
     },
     "7331": {
-      "title": "Les algues vertes"
+      "title": "Les algues vertes",
+      "types": [
+        "Feature Film"
+      ]
+    },
+    "8396": {
+      "types": [
+        "Narrative"
+      ]
     },
     "8736": {
       "title": "Les Fantômes",
-      "zoom": 1.07
+      "zoom": 1.07,
+      "types": [
+        "Narrative"
+      ]
     },
     "10544": {
       "title": "Les Filles Du Ciel",
-      "zoom": 1.36
+      "zoom": 1.36,
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ]
     },
     "11186": {
-      "title": "Notre Salut"
+      "title": "Notre Salut",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "11201": {
       "title": "Les Silencieux",
-      "zoom": 1.14
+      "zoom": 1.14,
+      "types": [
+        "Short Film",
+        "narrative"
+      ]
     },
     "11580": {
       "title": "Rano",
       "zoom": 1.38,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     }
   },
   "about": {
