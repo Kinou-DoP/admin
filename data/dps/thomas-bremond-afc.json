@@ -1,0 +1,377 @@
+{
+  "slug": "thomas-bremond-afc",
+  "name": "Thomas Brémond, AFC",
+  "hue": 133,
+  "bundle": "https://kinou.slateapp.com/bundles/3364f372-e732-11f1-952e-02ffedfede17",
+  "open": 11556,
+  "overrides": {
+    "9869": {
+      "title": "En Place - S01",
+      "zoom": 1.19,
+      "zoomThumb": true,
+      "zoomPos": "6.3% 41.1%"
+    },
+    "9870": {
+      "zoom": 1.38,
+      "zoomThumb": true,
+      "title": "Nadia"
+    },
+    "9872": {
+      "title": "Prosper",
+      "zoom": 1.05,
+      "zoomThumb": true,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/prosper-extrait-1",
+          "title": "Prosper - Extrait 1",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/44234e66-3268-41e0-8e45-5197d7fcd5b3-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10001/c5e99bf2-670a-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/3tnl3vILdBOnLRvtikJV3s72lKbRadZs8LxnK76wGEI/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDAwMS02ODc4YjQ4/NGM0MDFkMy4zNTE5/Mzg2MC0yMjViYWNl/MjhkYzg2NDMwMmRj/MTBmZjIwMzhhNDkx/My5qcGc.webp",
+          "cols": {
+            "d": 3,
+            "m": 1
+          }
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/prosper-extrait-2",
+          "title": "Prosper - Extrait 2",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7f65a5c5-3c34-474d-9ff9-fc7bc95bf913-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10002/f2d40e4c-670a-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/lJXm_023B6sXRZTGhZPlAyKMsf4UqA0fLKB18jIQHfg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/YWQwYzI2MC1kNzc4/LTQ0ODktOGI0NS01/ZWRmMDIwZjJmMTIv/MTc1Mjc2MDE0MDgw/NS5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/prosper-extrait-3",
+          "title": "Prosper - Extrait 3",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/961994cd-d628-458c-9cea-5cc3f27256b2-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10003/9abc9ed2-6713-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/4NneIkIbS0VWJIK8DOCs2JDHP3vgOZHr2CXixcRLkYE/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDAwMy02ODc4YjQ4/NGNmNTA2Ny41NDk2/ODc2Mi0wYmFiYTNi/NWE3MjhjOTIyNjk4/YjFiODcyMzY2MzVk/Yy5qcGc.webp"
+        }
+      ]
+    },
+    "9874": {
+      "title": "Tout Simplement Noir",
+      "zoom": 1.36,
+      "zoomThumb": true
+    },
+    "9875": {
+      "zoom": 1.36,
+      "zoomThumb": true,
+      "title": "Wonder Boy | Olivier Rousteing, Né Sous X"
+    },
+    "9998": {
+      "title": "Barbaque",
+      "zoom": 1.37,
+      "zoomThumb": true,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/barbaque-feature-film-trailer-1",
+          "title": "Barbaque (feature film trailer)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3b66768a-5a2e-4f3b-845e-58cbdd95dfd6-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/Seh2tLsWdUO3U0Hg8B-TOTJXc4uwXDsxbyYJo9Ajk2w/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQwMC02OTdiODFl/MjI2MTdhNC40MzE4/MTMwOS1kNDA4ZmM1/MGQ1NWVmZDZiODgx/ZGYyMGE5ODg2OTVj/Mi5qcGc.webp"
+        }
+      ]
+    },
+    "9999": {
+      "title": "Bazigaga",
+      "zoom": 1.05,
+      "zoomThumb": true
+    },
+    "10000": {
+      "title": "Presque Legal",
+      "zoom": 1.04,
+      "zoomThumb": true,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/presque-legal-feature-film-trailer",
+          "title": "Presque Légal - Feature Film Trailer",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2396c7ea-86a9-42b4-8736-8550cbc7c39b-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9871/bf70e9db-6713-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/muLnp7JTy24yewbgvcASecv1vNolfhIlf-VwtGZH7_I/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZTY2YWEyMy01ZThi/LTQ4OTUtODU4YS1h/NTIzY2ZjNDU2ZmIv/MTc0OTU3MDAwNDQ0/My5qcGc.webp"
+        }
+      ]
+    },
+    "10004": {
+      "title": "Reste un peu",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/reste-un-peu-feature-film-trailer",
+          "title": "Reste un peu - feature film trailer",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d4881a6d-ef12-41f7-9fe1-d81314e9fcd3-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9873/c1cc900b-6711-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/uiYKWvciCBBHmzmTPs7cm2AGc3HK9SsE7ZEqsSaRnkU/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ODczLTY4NDg0YWU2/ZDlhMzY2LjE1ODc4/MTY1LWZmOTRkMzk0/YmFmNTg4NmQzNDFj/NThjOTZkNzU2NjVh/LmpwZw.webp"
+        }
+      ]
+    },
+    "10007": {
+      "zoom": 1.09,
+      "zoomThumb": true
+    },
+    "10011": {
+      "title": "Bulgari diva"
+    },
+    "10018": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/ginette-ny-table-pays-1",
+          "title": "Ginette NY | Table Pays 1",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b0e2f1e0-b5b5-4e75-87bb-633896774bbf-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10025/24adf1bc-670f-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/orfWjyHAXnlk1p1yQCFKqln1muVh1yqwvmWA_oOSc5k/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MjBkMzc3Yy0wZDQ4/LTQ1ZTItYTAyYi1k/NzZkYmQxNzRlMjYv/MTc1MzE5NzU1NzI5/Ny5qcGc.webp",
+          "cols": {
+            "d": 2,
+            "m": 1
+          }
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/ginette-ny-sable-noir-pays-1",
+          "title": "Ginette NY | Sable Noir Pays 1",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bca8f9f4-6283-43b5-a385-1ebea1c385d7-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10024/8474f3bd-6710-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/xbcEb0t3bFib2M3JOJ-s0tRvpyEnGGE1nj0d3O_gofc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZmYwODZkOS01NjQ4/LTQ2YjQtYWJiOC02/MWU3NDBiMzg2ODUv/MTc1MzE5ODA2OTc2/Mi5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/ginette-ny-route-pays-1",
+          "title": "Ginette NY | Route Pays 1",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b3261f8b-080a-4d63-a92b-70eccc9c1f4e-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10022/a1981161-670f-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/jgH5UK2z5KbQzZVvUAEtWc8s89xff_aestRmOsJmgvs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTNjYjc3Ny1lNzhm/LTQxODAtYjYzMy1j/MzNjZDFmNjE5NDQv/MTc1MzE5NzY5Mjk5/OC5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/ginette-ny-room-color-pays-2",
+          "title": "Ginette NY | Room Color Pays 2",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0b8d0795-3719-4f83-9b97-60aff5901547-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10019/af34c567-670e-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/_3SIZfNGA1XAuOrrF7TR5HEIn8mzGSQ8WgGeiPibbY4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OWE1MjY2OC03NWMw/LTQ5NmMtYWY4OS1h/ZjVmNzkwMjAwMzcv/MTc1MzE5NzMzMDU0/MS5qcGc.webp"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/ginette-ny-chapeau-pays-1",
+          "title": "Ginette NY | Chapeau Pays 1",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/77f8604e-3026-47b1-925f-88664ca63ef3-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10016/26184836-6710-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/lF1G7Gq0-_VjNxuJwWaxBrvvaGpe_YeRMF9xB8LMEqk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OGNmNjhkZi01YmE1/LTRlOWUtYTllNS1m/NTRiN2FkNzk4NTgv/MTc1MzE5NzkyMzY0/NC5qcGc.webp"
+        }
+      ],
+      "title": "Ginette NY | Roc Pays Color"
+    },
+    "11556": {
+      "title": "En Haut de la Pile",
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/en-haut-de-la-pile-stills",
+          "title": "En Haut de la Pile | Stills",
+          "stills": [
+            "https://images.slatecdn.net/mTdqmX5uWei5VtPw5X3uVD3Lz4nAy21Z-xmWUn15dek/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vZjUwOWYz/NWQtYzM3Zi00OWUy/LTgwOGYtNGM5Mzc5/N2NlZmMxL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMTEucG5n.webp",
+            "https://images.slatecdn.net/Jh9Ew9tMOmuN2BdA95pJkQmVfQ1LICqYr16LRzzFR4k/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vOTkzOTJh/MDktYWEyZS00ZmZi/LWFiYmUtODc1MjIz/MDdhNGEwL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMTQucG5n.webp",
+            "https://images.slatecdn.net/LKeR2T76nh5Sh0t20wli6aHYIGfSD6D7zuNGG1M1blE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMDk4ZGE1/MDUtMjMyYi00M2Ri/LWFlZWMtYjE5OTM1/OWE2ZTU5L2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMTYucG5n.webp",
+            "https://images.slatecdn.net/u5nrRCwt-o-FMuxT0zeAcIjw3SW9cw2_rUt36n1yCIA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vM2JhODQ5/YTEtMTk5Zi00Njk2/LWFmODctZjg5YWU0/NTBiYTdhL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMTgucG5n.webp",
+            "https://images.slatecdn.net/HoCW4uPoQY41ISHRZydb7Oiyo2xihblI0R5qEl0RGT4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vNjYyZTMz/NjMtYzU2ZC00ZTU5/LTkyNjktNWM0NDEx/ODE0NWE2L2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMjEucG5n.webp",
+            "https://images.slatecdn.net/ee0n7x8Ue5tW6bZSXIt5AoYm6bmICBPLu5GFEIS4r6A/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9pbGx1c3Ry/YXRpb24vMzFmMmFh/OTktMTkxMC00NmU0/LTk3ODctNWVhYjI4/NjBhZThjL2NhcHR1/cmUtZC1lY3Jhbi0y/MDI2LTExLTE4LWEt/MTUuMjUuMjIucG5n.webp"
+          ]
+        }
+      ],
+      "zoom": 1.37
+    }
+  },
+  "about": {
+    "instagram": "https://www.instagram.com/thomasbremond_/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm0117600/"
+      }
+    ],
+    "pos": "49% 48%",
+    "img": "img/thomas-bremond-afc.webp",
+    "og": "img/thomas-bremond-afc-og-1795434335142.jpg"
+  },
+  "categories": [
+    "FEATURED",
+    "FEATURE FILMS",
+    "SERIE",
+    "DOCUMENTARY",
+    "SHORT FILMS",
+    "COMMERCIAL"
+  ],
+  "clips": [
+    {
+      "title": "En Haut de la Pile • Bande Annonce",
+      "sub": "Louis Julien Petit\nGaumont",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11556/5d245c74-e35a-11f1-952e-02ffedfede17.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0e7eeecb-f393-4531-8339-bc1308dbbed9-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/tfdHB-uxbe6ZjUodb2JpOyhTAxayzRri-cglhpPUTXI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/Nzg2MGNjOS00ZjM1/LTQ3ODYtODRjMS05/ZjFlNDJlMTNjNWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTEt/MTgtYS0xNS4xNS4w/OC5wbmc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 11556,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Prosper - Feature Film Trailer",
+      "sub": "Yohann Gloaguen\nCapricci Films, Douze Doigts Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9872/3e8049d1-6711-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9e85b676-70b6-4bd2-857c-ba30f1e14c8a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1mNQk0taC3naq-QoQVMzWmzRYDSahzJyzsJJ20cUnlI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZWQ1MmFlYS1jZTRi/LTQ1NGUtOWVkMy1m/YzI3ZmNiYTVlNDkv/MTc0OTU3MDA1Nzg2/MS5qcGc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 9872,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Presque Legal - redux",
+      "sub": "Max Mauroux\nGaumont",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10000/4067ed0b-6713-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6659aaa4-650d-4603-8610-ba417f8e4fd1-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/uR8AuzUSVymgjoXyz8NuTM7KKy6WYF8WR1DCBLB0iGI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MTZiNDYwMy0wOGQw/LTQ2YjEtOGIyMy1m/NjZlZjBlYTZjNTUv/MTc1MzE5OTI0NTM1/Ni5qcGc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 10000,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Reste un peu - redux",
+      "sub": "Gad Elmaleh\nCanal +, KS2 Production, Vito Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10004/73557e78-6713-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d7bb0049-9cc3-4059-8d3a-97c28c282cb3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_lLV4ip6e6CXkKZtcJ4eavKolVYMjWdOoVwq3kVypVk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDAwNC02ODc4YjQ4/NGNmYzNlNC40Nzg5/MDEzNi0zOGQ1M2Jm/OGQ3Njc1NWRhYTNl/Y2NiZmQyMzQ0MjRl/Yy5qcGc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 10004,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Barbaque - redux",
+      "sub": "Fabrice Eboué\nCinéfrance Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9998/943a6111-6712-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1cae1ce0-683d-43dd-ab13-6e9bdc71acac-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/oYcaMHnefO4eYydlopysws8pm7eUNduVu3f3MjZZOGs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OGQxZTUzYS1kZWRl/LTRhZjQtYmE2ZC1m/NzY2YWY5YTVjZDgv/MTc1MzE5ODkzMzU1/Ny5qcGc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 9998,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Tout Simplement Noir - Feature Film Trailer",
+      "sub": "Jean-Pascal Zadi, John Wax\nGaumont, Canal +, C8 Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9874/6f4e9b58-6711-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6ca4357f-1b79-4ad3-b32f-c78060f71590-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/lmKShd3oygkPrAZv9dEGy4y2znpdl7-n1Hou4yYJlMU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YTAxMGEwZC04ZDUx/LTRjZGUtOWU2Mi04/NGYzNTU1NTZhNDcv/MTc1Mzk2MDYxNDE0/Mi5qcGc?v=1&format=webp",
+      "cat": "FEATURE FILMS",
+      "slate": 9874,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "En Place Saison 1 - Netflix Series Trailer",
+      "sub": "Jean-Pascal Zadi\nNetflix",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9869/a7c72639-6708-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d18e1c05-b9d3-42c8-99f7-5c68324094f7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2q5Y_pqRRNSmVX1v99t__m6gCKBSZDDOHtxB13Ivxhg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YzViNGVhYS0zZGM3/LTQ5ZWYtODYzNi00/MzZlNTAyZTVmODgv/MTc0OTU2OTkzMjIz/OC5qcGc?v=1&format=webp",
+      "cat": "SERIE",
+      "slate": 9869,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Wonder Boy | Olivier Rousteing, Né Sous X -  trailer",
+      "sub": "Anissa Bonnefont\nCanal+",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9875/14536a9b-6712-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/216dedcc-143e-4cd1-b6e3-bbe5b4c5b8d4-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KoaD7bRLjonYLmpG4aYm6BiVvEpviJDxqR6m4gAKSAU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NWI5YjkxOC1kOWZm/LTQwMzYtOWQ1MC00/ZTRiY2Y3NTg2NDQv/MTc1Mzk2MDgwNDgw/Ny5qcGc?v=1&format=webp",
+      "cat": "DOCUMENTARY",
+      "slate": 9875,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Nadia - Feature film documentary Trailer",
+      "sub": "Anissa Bonnefont\nFédération Studios",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9870/f08fdfc6-6711-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/42d2b25e-c82d-498b-908c-4242ee264c87-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/AHRauNW5A0bmhDOuuqmlvPnYOApLfRq_DRFf6olIyYw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ODcwLTY4NDg0YWU2/ZGIwMTQ0LjM3NjM5/NjMwLTIzMTI3MzUy/MjY2MDllNGI2NzFh/OTU2OTcwZmM4MzIx/LmpwZw?v=1&format=webp",
+      "cat": "DOCUMENTARY",
+      "slate": 9870,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Bazigaga - first minutes",
+      "sub": "Jo Ingabire Moys\nFulldawa Films, Kibibi Productions, White Boat Pictures",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9999/de825d07-6712-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7c85a404-0927-428c-9404-2791465251a3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/k7Bguvh7TxnVpkn_5m87khhoNuKUf0T40IWk6uNs_FU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MWEyZTVkNC0yMGIx/LTQ2NmItYTExOS1m/NjMyNmRjMTJjYTAv/MTc1MzE5OTE2MzE4/Mi5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 9999
+    },
+    {
+      "title": "Ginette NY - Dolce Farniente 25",
+      "sub": "Manuel Moutier\nGinette NY",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10027/f510aa02-6710-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/438668d9-4fa9-417c-aca7-1fc92919d292-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/CdSxTm3kYTDN5m1NhtR3Qk1-EQ-HIRaer0BTEuz9ky0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ODczMjAzOS1iZjFl/LTQ2NWEtYjFkMS04/MDM4ZTI2ZjhhYmQv/MTc1MzE5ODMxOTc5/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10027
+    },
+    {
+      "title": "Ginette NY | Roc Pays Color 1",
+      "sub": "Manuel Moutier\nGinette NY",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10018/e39e077f-670e-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/069602b2-100b-400d-b746-7c6ff51b9323-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/n3l8HXjOg2LVVmybAj2mbWJTrJleyAX2-qO_oE6ffz8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NWMyYjZmZi1hOGI4/LTRlN2YtOWU0NC03/NGM3M2VkOWI4MmYv/MTc1MzE5NzQ5NTUx/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10018
+    },
+    {
+      "title": "Chanel Horlogerie - Mademoiselle Privé - Lesage",
+      "sub": "Sebastien Spitz\nBelight",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10012/1f4075c7-670c-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/44660ba7-d13d-4011-b01c-8f67a6eda541-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/EiF38b4hMQMC-oY6A9lTZbjEtzeeoNEQYHTJaToVqyU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MzBjNGMzMC1lYmFm/LTQ0ODctYmM5Ni1h/Zjc2NTMzMmM3NTEv/MTc1MzE5NjE4NzMy/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10012
+    },
+    {
+      "title": "bulgari diva",
+      "sub": "Sebastien Spitz\nBelight",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10011/0b0df659-670e-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b47f6737-4e72-46bd-9a93-e57ed2bd60b8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1GPgEtjWoHEhR6brgmB8b5AkthA4dTfplOoZfLcB3xE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YmNmZWZkYi01N2Zi/LTRhNmUtODYwNC0z/YmJhYjIzZDhmZWYv/MTc1MzE5Njk5NzI5/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10011
+    },
+    {
+      "title": "Bulgari | Catene Vcourte",
+      "sub": "Sebastien Spitz\nBelight",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10010/8f7883e2-670d-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c74aaf5c-0f98-4e44-8f7e-5e87d69f5a79-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/fVzwFFS8sr3Y49Ni8TETl_VDelwFyJrOftQvDOJgUIE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZDAyY2RmNC03OTBh/LTRhOWEtYWMxOS01/YWI0Y2I0ZmFiOWIv/MTc1MzE5NjUxODEx/Ny5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10010
+    },
+    {
+      "title": "Bulgari BB Rome",
+      "sub": "Sebastien Spitz\nBelight",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10009/ec310df7-670b-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0dd476cd-cfb9-4301-8427-9095e4d27d10-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/mZ_KsirEPZ1Snkj5-JScg4VmCqeYTva7HJGBmj4APJU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDAwOS02ODc4YmVl/MWQyOWNkOC4yNjEw/ODIyMC0yMGMzNjk2/ZWFhZWViMWI3NDBk/Nzg1YzhlYTU5ZjQy/ZS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10009
+    },
+    {
+      "title": "COUTURE",
+      "sub": "Anissa Bonnefond\nBalmain",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10008/099f37bd-670b-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/78c5b972-7ed5-4b03-b18b-fc83230e82cb-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1FJ7u45gQcTwxo88qAcCZzmEVwDMasVwJSorNBSV08E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDAwOC02ODc4Yjlk/ZThkNjU0MC44NTUz/NTI1Ni00MmUyMDg0/NDA1YmFiNmRkYTRm/MTg5ZTU3MmFjNzJl/Yy5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10008
+    },
+    {
+      "title": "BALMAIN x OPÉRA DE PARIS a film by James Bort copie",
+      "sub": "James Bort\nStory, James Bort Factory",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10007/9db646d8-670b-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/37611084-a312-49c4-94f8-3b0758cded14-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ZVGoHWs5azmDtZUjpLtI0ymq_u34Y3Kk8SBphfrz4l8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NmE3MDgxYy1hNDc5/LTQ4M2ItODQ5NC1l/NDQ5YTU0NTY4YzIv/MTc1MzE5NTg0NTc1/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10007
+    }
+  ]
+}
