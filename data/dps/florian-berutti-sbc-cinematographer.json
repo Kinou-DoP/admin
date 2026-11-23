@@ -6,49 +6,114 @@
   "open": 10404,
   "overrides": {
     "6918": {
-      "title": "Ailleurs Si J'y Suis"
+      "title": "Ailleurs Si J'y Suis",
+      "types": [
+        "Feature Film"
+      ]
     },
     "6920": {
-      "title": "Braquer Poitiers "
+      "title": "Braquer Poitiers ",
+      "types": [
+        "Feature Film trailer"
+      ]
+    },
+    "6927": {
+      "types": [
+        "Music Video"
+      ]
     },
     "6929": {
-      "title": "Lachez les Chiens "
+      "title": "Lachez les Chiens ",
+      "types": [
+        "Short  Film Trailer"
+      ]
     },
     "6932": {
       "title": "Les Doigts Dans La Confiture"
     },
     "6933": {
-      "title": "Lucie Perd Son Cheval"
+      "title": "Lucie Perd Son Cheval",
+      "types": [
+        "Features"
+      ]
+    },
+    "6935": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "6936": {
+      "types": [
+        "Music Video"
+      ]
     },
     "6937": {
-      "title": "Pompeï"
+      "title": "Pompeï",
+      "types": [
+        "Feature Film trailer"
+      ]
     },
     "6938": {
-      "title": "Premier Amour"
+      "title": "Premier Amour",
+      "types": [
+        "Short  Film Trailer"
+      ]
     },
     "6941": {
       "title": "Seul Le Corps Sombre"
     },
     "6942": {
-      "title": "The Cow"
+      "title": "The Cow",
+      "types": [
+        "Short  Film Trailer"
+      ]
     },
     "6944": {
       "title": "Tristesse Animal Sauvage"
     },
+    "6945": {
+      "types": [
+        "Music Video"
+      ]
+    },
+    "6946": {
+      "types": [
+        "Music Video"
+      ]
+    },
     "7420": {
-      "title": "L'autre Laurens"
+      "title": "L'autre Laurens",
+      "types": [
+        "Feature Film"
+      ]
     },
     "7729": {
-      "title": "Déserts"
+      "title": "Déserts",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "9469": {
-      "title": "Dolomite & Ash"
+      "title": "Dolomite & Ash",
+      "types": [
+        "Feature Film"
+      ]
     },
     "10401": {
-      "title": "Sainte-Marie-aux-Mines"
+      "title": "Sainte-Marie-aux-Mines",
+      "types": [
+        "Fiction",
+        "Feature Film",
+        "narrative"
+      ]
     },
     "10404": {
-      "title": "Nino"
+      "title": "Nino",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     }
   },
   "about": {
