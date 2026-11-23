@@ -1058,3 +1058,6 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 #saving.busy::before { animation: bblink .9s infinite; }
 #saving.ok { color: var(--ok); }
 #saving.err { color: var(--err); pointer-events: auto; cursor: pointer; text-transform: none; letter-spacing: .02em; }
+.breplw { margin-top: 26px; }
+.brepl { margin-top: 10px; }
+.brepl .hint { margin: 6px 0 0; }

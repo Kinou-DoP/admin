@@ -99,6 +99,8 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   modifier, « + Créer une bande dans ce bundle » ; « ← Retour au bundle » ajoute la bande ouverte / créée (`backToBundle`) ; lien
   `SITE_VIEW/b/<code>` (page chiffrée `{ bundle: true, title, description, bands: [{ code }] }`, enregistrée toute seule, `bunSave`).
   « Bandes existantes » : **recherche** par nom (`drawOld`, `bandsList`).
+  **« ↻ Remplacer la vidéo »** (fenêtre d'un film) : lien Slate d'une vidéo → `full` / `video` (+ vignette si cochée), extrait choisi
+  et `thumbT` oubliés (ancien extrait dans l'historique), fenêtre rouverte ; depuis l'ordinateur : quand l'hébergement sera branché.
   **Ajouts** : un film lu sur Slate (un seul) ou une suite d'images (choisies puis enregistrées, titre deviné du nom des fichiers, clé
   `i<id>`) ouvrent ensuite la même fenêtre d'infos.
   Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement** (hébergement pas encore branché).

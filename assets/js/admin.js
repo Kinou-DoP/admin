@@ -4371,7 +4371,7 @@
   // a un), le fichier du dépôt public est illisible et son nom ne dit rien. L'original et la liste des bandes (avec les mots de
   // passe) sont dans le dépôt privé notes (bandes/<code>.json, bandes/index.json). Chiffrement : bandSeal (même code dans
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
-  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards"];
+  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards"];
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
   var bibCache = null, bibKey = null, edUndo = new WeakMap();
@@ -5580,6 +5580,26 @@
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]), exOut]),
         el("div", {}, [el("span", { class: "label", text: "Prix et sélections" }), aw])]));
+      // Remplacer la vidéo (Gus 23/11) : lien Slate d'une vidéo (page « work » ou shots.re) → nouveau film complet et extrait ;
+      // l'extrait choisi et l'image de vignette prise dans l'ancien film sont oubliés (ils ne correspondent plus). Depuis l'ordinateur :
+      // quand notre hébergement (Amazon) sera branché.
+      var rpIn = el("input", { type: "text", placeholder: "Lien Slate de la nouvelle vidéo (page d'une vidéo ou shots.re)" }), rpOut = el("p", { class: "hint" });
+      var rpImg = el("input", { type: "checkbox" }); rpImg.checked = true;
+      var rpGo = el("button", { type: "button", class: "btn", text: "Remplacer", on: { click: function () {
+        var v = rpIn.value.trim(); if (!v) return; rpGo.disabled = true; rpOut.textContent = "Lecture sur Slate" + slateWait("…");
+        importStills(v).then(function (d) {
+          if (!d.full && !d.video) throw new Error("ce lien ne contient pas de vidéo");
+          it.full = d.full || d.video; if (d.video) it.video = d.video; else delete it.video;
+          if (rpImg.checked && d.img) { if (it.img && it.img !== d.img) pushHist("img", it.img); it.img = d.img; }
+          if (it.snip) pushHist("snip", it.snip);
+          delete it.snip; delete it.thumbT; delete it.snipVideo; delete it._snipTmp; delete it._snipSaved;
+          it.edited = true; chg(); document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib); // la fenêtre se rouvre sur la nouvelle vidéo
+        }).catch(function (e) { rpGo.disabled = false; rpOut.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
+      } } });
+      rpIn.addEventListener("keydown", function (e) { if (e.key === "Enter") rpGo.click(); });
+      var rpBox = el("div", { class: "brepl", hidden: true }, [el("div", { class: "row" }, [el("div", { class: "grow" }, [rpIn]), rpGo]),
+        el("label", { class: "bck" }, [rpImg, " Prendre aussi sa vignette"]), el("p", { class: "hint", text: "Depuis l'ordinateur : dès que notre hébergement des vidéos (Amazon) sera branché." }), rpOut]);
+      box.appendChild(el("div", { class: "breplw" }, [el("button", { type: "button", class: "btn ghost", text: "↻ Remplacer la vidéo", on: { click: function () { rpBox.hidden = !rpBox.hidden; if (!rpBox.hidden) rpIn.focus(); } } }), rpBox]));
       // Vignette et extrait : deux onglets sous le film (Gus 22/11), vignette d'abord.
       var thumbPane = null, snipPane = null;
       if (player) {
