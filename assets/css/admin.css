@@ -1046,3 +1046,5 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .sortcfd a { color: var(--dim); font-size: 12px; } .sortcfd .btn { height: 28px; padding: 0 10px; }
 .bit.bunit { cursor: grab; }
 .bit.bunit.dragged { opacity: .25; }
+.boff { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--soft); }
+.boff .blink { color: #ffd27a; }

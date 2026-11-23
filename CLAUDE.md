@@ -81,7 +81,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   l'ordinateur**, **anciennes vignettes**) puis **Extrait** (poignées tout de suite : sans extrait, proposition de 5 s à partir de
   `thumbT` ou du début, `_snipTmp`, **rien n'est enregistré avant « Valider l'extrait »** (brouillon `_snipTmp` / `_snipSaved`, `snipOk` : jamais dans les sauvegardes, oublié en fermant) ; « Début de l'extrait ici » ; **mp4 de l'ordinateur** (boutons d'import `upBtn` : clic ou fichier glissé dessus)
   ≤ 20 Mo → `snipVideo` dans `data/bibli/vid/`, lu sur la page par `/api/media` ; **anciens extraits**). Historique `hist { img, snip }`
-  (8 derniers, pas sur la page publique). Fenêtre : **Annuler / Rétablir** (boutons, Ctrl / Cmd + Z hors champ de texte, `edUndo`).
+  (8 derniers, pas sur la page publique). Dans une bande : **« ★ En faire la vignette / l'extrait officiel du film »** en bas des onglets (`libPatch` : appliqué au film de la filmothèque, pour les prochaines bandes ; un extrait pas encore validé est validé d'abord). Fenêtre : **Annuler / Rétablir** (boutons, Ctrl / Cmd + Z hors champ de texte, `edUndo`).
   Bande : « Annuler » actif dès le geste (`undoBtns` compte le changement pas encore noté). Plus de marque orange des films modifiés ;
   rôle « Cinematographer » dans la liste.
   **Partager un film seul** (fenêtre d'un film, « 🔗 Copier le lien de ce film » + « Autoriser le téléchargement », Gus 23/11) : bande

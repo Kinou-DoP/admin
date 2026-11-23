@@ -368,3 +368,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
   Sources nommées (`sortSrc`) : TMDB, Wikidata, AlloCiné (recherche Claude) ; « Confirmer » aussi pour Wikidata.
 - 23/11 (bundles, Gus) : réordonner les bandes d'un bundle en les glissant (animation comme pour les films d'une bande).
 - 23/11 (Gus) : rôle « Underwater DoP » ajouté à la liste des crédits.
+- 23/11 (Gus) : dans les retouches d'une bande, « ★ En faire la vignette / l'extrait officiel du film » (appliqué au film de la filmothèque).

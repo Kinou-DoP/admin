@@ -4647,6 +4647,16 @@
     // Infos d'un film de la bibliothèque : même fenêtre que les retouches d'une bande ; enregistrées dans data/bibli/edits.json
     // (seulement ce qui diffère des pages), reprises par les films ajoutés ensuite aux bandes. Les pages du site ne changent pas.
     var libQ = { t: 0, busy: false, again: false, todo: {}, files: [] };
+    // Appliquer une retouche d'une bande au film de la filmothèque (Gus 23/11 : « en faire la vignette / l'extrait officiel ») :
+    // mêmes infos que la fenêtre du film (edits.json, seulement ce qui diffère des pages), reprises par les prochaines bandes.
+    function libPatch(f, patch) {
+      var cl = function (v) { return v === undefined ? undefined : JSON.parse(JSON.stringify(v)); };
+      if (!f._orig) { f._orig = {}; BIB_EK.forEach(function (k) { f._orig[k] = cl(f[k]); }); }
+      Object.keys(patch).forEach(function (k) { if (patch[k] === undefined) delete f[k]; else f[k] = cl(patch[k]); });
+      var e = {}; BIB_EK.forEach(function (k) { var a = f[k], b = f._orig[k]; if (JSON.stringify(a === undefined ? null : a) !== JSON.stringify(b === undefined ? null : b)) e[k] = a === undefined ? null : a; });
+      f.libEdited = !!Object.keys(e).length; bibHay(f);
+      libQ.todo[f.key] = f.libEdited ? e : null; clearTimeout(libQ.t); libQ.t = setTimeout(libSaveEdits, 800);
+    }
     function libSaveEdits() {
       if (!canWeb) return;
       if (libQ.busy) { libQ.again = true; return; }
@@ -5516,11 +5526,22 @@
       if (player) {
         // « Valider » en bas à droite (Gus 22/11) : la vignette = l'image affichée ; l'extrait réglé n'est enregistré qu'en validant.
         var valB = el("button", { type: "button", class: "btn primary", text: "Valider l'extrait", on: { click: function () { snipCommit(); valB.disabled = true; prevSnip(); } } });
+        // Dans une bande : faire de cette vignette / de cet extrait ceux du film dans la filmothèque (Gus 23/11).
+        var libF = !lib && filmOf(it.key), offOut = el("span", { class: "hint" });
+        function official(kind) {
+          if (!libF) return;
+          if (kind === "snip" && it._snipTmp) snipCommit(); // un extrait réglé mais pas encore validé : validé d'abord
+          if (kind === "img") libPatch(libF, { img: it.img, thumbT: it.thumbT });
+          else libPatch(libF, { snip: it.snip, snipVideo: it.snipVideo });
+          offOut.textContent = (kind === "img" ? "Vignette appliquée" : "Extrait appliqué") + " au film dans la filmothèque : les prochaines bandes l'utiliseront.";
+        }
+        var offImg = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire la vignette officielle du film", title: "Le film de la filmothèque prend cette vignette (pour toutes les prochaines bandes)", on: { click: function () { official("img"); } } })]) : null;
+        var offSnip = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire l'extrait officiel du film", title: "Le film de la filmothèque prend cet extrait (pour toutes les prochaines bandes)", on: { click: function () { official("snip"); } } })]) : null;
         thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [upBtn("⤒ Importer une image", imgUp, "image", doImg), imgUp, el("span", { class: "tlgrow" }), grabB]),
-          el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg]);
+          el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg, offImg]);
         snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine,
-          histSnipL, histSnip]);
-        box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout]));
+          histSnipL, histSnip, offSnip]);
+        box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
         setTab("thumb");
       }
       // Lien de partage de ce film seul (Gus 23/11, comme sur Slate) : une « bande » d'un seul film, centrée, même lien court chiffré
