@@ -84,7 +84,6 @@
       }
     ],
     "instagram": "https://www.instagram.com/olivierboonjing",
-    "color": true,
     "pos": "63% 59%",
     "bioEn": [
       "Olivier is a cinematographer who focuses mainly on narrative films, documentaries and the interplay between both.",
@@ -92,7 +91,8 @@
     ],
     "og": "img/olivier-boonjing-og-1795432853064.jpg",
     "ogColor": true,
-    "img": "img/olivier-boonjing.webp"
+    "img": "img/olivier-boonjing.webp",
+    "color": true
   },
   "categories": [
     "FEATURED",
