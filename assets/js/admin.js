@@ -5219,7 +5219,7 @@
           box.appendChild(el("button", { type: "button", class: "blink", text: "+ Ajouter un chef op ou un rôle", on: { click: function () { it.dops.push(""); draw(); var l = box.querySelectorAll(".bcrow input"); if (l.length) l[l.length - 2].focus(); } } }));
           var dn = document.getElementById("bibdopnames"); if (dn) dn.remove();
           if (data) document.body.appendChild(el("datalist", { id: "bibdopnames" }, data.sug.filter(function (x) { return x.type === "dop"; }).sort(function (a, b) { return b.n - a.n; }).map(function (x) { return el("option", { value: x.value }); })));
-          if (!document.getElementById("bibroles")) document.body.appendChild(el("datalist", { id: "bibroles" }, ["Cinematographer", "Camera operator", "B camera operator", "2nd unit DoP", "Additional photography", "Steadicam operator", "Gaffer", "Colorist"].map(function (r) { return el("option", { value: r }); })));
+          if (!document.getElementById("bibroles")) document.body.appendChild(el("datalist", { id: "bibroles" }, ["Cinematographer", "Camera operator", "B camera operator", "2nd unit DoP", "Underwater DoP", "Additional photography", "Steadicam operator", "Gaffer", "Colorist"].map(function (r) { return el("option", { value: r }); })));
         }
         draw(); return box;
       }
