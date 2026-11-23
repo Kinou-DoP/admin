@@ -53,7 +53,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   vidéo : extrait HD, recadrage, téléphone), **spotlight**, **fiction** (statut, genre, plateformes, date, affiche, cadrage scope,
   9 New releases au plus, passage automatique en New release le jour de la sortie, alerte « autre date trouvée »), **contact**
   (+ logo, mentions légales).
-- **Bibliothèque** (`#/bibli`, `showBibli`) : tous nos films (fiches, fiction, spotlight, accueil, imports `data/bibli/library.json`),
+- **Filmothèque** (appelée « bibliothèque » dans le code ; `#/bibli`, `showBibli`) : tous nos films (fiches, fiction, spotlight, accueil, imports `data/bibli/library.json`),
   **les plus récents en haut** (id Slate décroissant). Recherche avec suggestions dans cet ordre : chef op (étiquette orange), réal, prod,
   client, type de contenu, catégorie (jamais les films ; 4 par sorte) → filtres en étiquettes. Client / types de contenu / mots-clés :
   `data/bibli/meta.json`, écrit chaque nuit par le robot `bibli-meta.yml` (`tools/bibli-meta.mjs`, `readMeta` de `slate.mjs`, `main`).
@@ -84,6 +84,9 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   (8 derniers, pas sur la page publique). Fenêtre : **Annuler / Rétablir** (boutons, Ctrl / Cmd + Z hors champ de texte, `edUndo`).
   Bande : « Annuler » actif dès le geste (`undoBtns` compte le changement pas encore noté). Plus de marque orange des films modifiés ;
   rôle « Cinematographer » dans la liste.
+  **Partager un film seul** (fenêtre d'un film, « 🔗 Copier le lien de ce film » + « Autoriser le téléchargement », Gus 23/11) : bande
+  d'un seul film `{ single: true }`, même lien court chiffré `SITE_VIEW/b/<code>`, code par film dans notes `bandes/films.json`
+  (`{ <clé du film>: { code, download, title, at, by } }`), page republiée 2,5 s après chaque retouche du film (`shr`).
   **Ajouts** : un film lu sur Slate (un seul) ou une suite d'images (choisies puis enregistrées, titre deviné du nom des fichiers, clé
   `i<id>`) ouvrent ensuite la même fenêtre d'infos.
   Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement** (hébergement pas encore branché).

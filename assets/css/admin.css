@@ -1012,3 +1012,5 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .bupbtn { border: 1px dashed rgba(255,252,235,.45) !important; transition: background .15s, border-color .15s, transform .15s; }
 .bupbtn:hover { border-style: solid !important; }
 .bupbtn.over { background: rgba(255,154,61,.18) !important; border: 1px solid #ff9a3d !important; transform: scale(1.04); }
+.bshare { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--soft); }
+.bshare .hint { margin: 0; word-break: break-all; }

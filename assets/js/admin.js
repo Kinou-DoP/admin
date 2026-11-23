@@ -3173,8 +3173,8 @@
     }
     function openLink(xs, at) {
       if (bib) return linkForm(xs, at);
-      var w = el("p", { class: "hint seladd", text: "Chargement de la bibliothèque…" }); at.after(w);
-      bibLoad().then(function (b) { bib = b; w.remove(); linkForm(xs, at); }, function (e) { w.textContent = "Bibliothèque indisponible : " + e.message; });
+      var w = el("p", { class: "hint seladd", text: "Chargement de la filmothèque…" }); at.after(w);
+      bibLoad().then(function (b) { bib = b; w.remove(); linkForm(xs, at); }, function (e) { w.textContent = "Filmothèque indisponible : " + e.message; });
     }
     // Choisir un ou plusieurs films de la bibliothèque (ceux des fiches et de la page fiction : là où les prix s'affichent).
     function linkForm(xs, at) {
@@ -3200,7 +3200,7 @@
         var need = w.length <= 2 ? w.length : Math.ceil(w.length * 0.6);
         var l = films().map(function (f) { var h = " " + sortNrm(f.hay) + " ", sc = 0; w.forEach(function (v) { if (h.indexOf(" " + v) > -1) sc++; }); return { f: f, sc: sc }; })
           .filter(function (o) { return o.sc >= need; }).sort(function (a, b) { return b.sc - a.sc; }).map(function (o) { return o.f; });
-        if (!l.length) res.appendChild(el("p", { class: "hint", text: "Aucun film de la bibliothèque ne correspond." }));
+        if (!l.length) res.appendChild(el("p", { class: "hint", text: "Aucun film de la filmothèque ne correspond." }));
         l.slice(0, 10).forEach(function (f) {
           res.appendChild(el("button", { type: "button", class: "selpick" + (chosen[f.key] ? " on" : ""), on: { click: function () { choose(f, !chosen[f.key]); drawPick(); search(); } } },
             [el("strong", { text: (chosen[f.key] ? "✓ " : "") + f.title }), el("small", { text: [f.dir, f.dops.join(", "), where(f)].filter(Boolean).join(" · ") })]));
@@ -3214,7 +3214,7 @@
       var also = sibs.length ? el("label", { class: "rcag" }, [el("input", { type: "checkbox", class: "nodirty", checked: true }),
         "Relier aussi les " + sibs.length + " autre" + (sibs.length > 1 ? "s" : "") + " sélection" + (sibs.length > 1 ? "s" : "") + " ou prix de « " + (x0.title || "") + " »"]) : null;
       var form2 = el("article", { class: "fcard fedit seladd" }, [
-        el("label", { class: "field" }, [el("span", { class: "label", text: "Relier « " + label + " » à un ou plusieurs films de notre bibliothèque" }), q, res]),
+        el("label", { class: "field" }, [el("span", { class: "label", text: "Relier « " + label + " » à un ou plusieurs films de notre filmothèque" }), q, res]),
         el("p", { class: "hint", text: "Le prix ira sur ces films (fiche du chef op, page fiction), au lieu d'être rapproché par le titre." }),
         pick, also,
         el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "Enregistrer", on: { click: function (e) {
@@ -4474,7 +4474,7 @@
     var st = { q: "", chips: [], n: 60, sel: {}, sugI: -1, tab: "new", last: null };
     var wrap = el("div", { class: "bib" }), left = el("div", { class: "bibl" }), right = el("aside", { class: "bibr" });
     wrap.appendChild(left); wrap.appendChild(right); view.appendChild(wrap);
-    var head = el("div", { class: "bibhead" }, [el("h1", { text: "Bibliothèque" }), el("div", { class: "bibadd" }, [
+    var head = el("div", { class: "bibhead" }, [el("h1", { text: "Filmothèque" }), el("div", { class: "bibadd" }, [
       el("button", { type: "button", class: "btn primary", text: "+ Vidéo", on: { click: function () { importVideo(); } } }),
       el("button", { type: "button", class: "btn primary", text: "+ Images", on: { click: function () { importImages(); } } })])]);
     left.appendChild(head);
@@ -4589,7 +4589,7 @@
         var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {};
         keys.forEach(function (k) { if (todo[k]) o.films[k] = todo[k]; else delete o.films[k]; });
         return json(o);
-      } }].concat(files), "Bibliothèque : infos de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")").then(function () {
+      } }].concat(files), "Filmothèque : infos de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")").then(function () {
         libQ.busy = false; info.classList.remove("saving"); if (libQ.again) { libQ.again = false; libSaveEdits(); }
       }, function (e) { libQ.busy = false; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving"); alert("Infos pas enregistrées : " + e.message); });
     }
@@ -4909,7 +4909,7 @@
       function esnap() { var o = {}; ED_K.forEach(function (k) { var v = k === "snip" && it._snipTmp ? it._snipSaved : it[k]; if (v !== undefined) o[k] = v; }); return JSON.stringify(o); }
       if (!eu) { eu = { l: [esnap()], i: 0, t: 0 }; edUndo.set(it, eu); }
       function eMark() { clearTimeout(eu.t); eu.t = setTimeout(function () { var x = esnap(); if (x === eu.l[eu.i]) return; eu.l = eu.l.slice(0, eu.i + 1); eu.l.push(x); if (eu.l.length > 60) eu.l.shift(); eu.i = eu.l.length - 1; eBtns(); }, 500); eBtns(); }
-      function chg() { chg0(); eMark(); }
+      function chg() { chg0(); eMark(); if (shr && shr.again) shr.again(); }
       function eBtns() { var pend = esnap() !== eu.l[eu.i]; if (euB) { euB.disabled = eu.i <= 0 && !pend; erB.disabled = pend || eu.i >= eu.l.length - 1; } }
       function eGo(d) {
         clearTimeout(eu.t); var x = esnap(); if (x !== eu.l[eu.i]) { eu.l = eu.l.slice(0, eu.i + 1); eu.l.push(x); eu.i++; }
@@ -4917,7 +4917,7 @@
         var o = JSON.parse(eu.l[j]); ED_K.forEach(function (k) { if (o[k] === undefined) delete it[k]; else it[k] = o[k]; }); delete it._snipTmp; delete it._snipSaved;
         chg0(); document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib);
       }
-      var euB = null, erB = null;
+      var euB = null, erB = null, shr = null;
       function eKey(e) {
         if (!document.body.contains(box)) { document.removeEventListener("keydown", eKey, true); return; }
         if (!(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || (e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])"))) return;
@@ -5261,7 +5261,7 @@
       drawEx();
       var aw = el("textarea", { rows: 3, placeholder: "Une ligne par prix ou sélection (ex. Best Cinematography, Camerimage 2026)" }); aw.value = it.awards || "";
       aw.addEventListener("input", function () { it.awards = aw.value.trim(); if (!it.awards) delete it.awards; it.edited = true; chg(); });
-      box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans la bibliothèque (reprises dans les prochaines bandes, pas sur le site) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
+      box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans la filmothèque (reprises dans les prochaines bandes, pas sur le site) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [].concat(
           fld("Titre", function () { return it.title; }, function (v) { it.title = v; }),
@@ -5269,7 +5269,7 @@
           [el("span", { class: "label", text: "Prod" }), chipsIn("prod", function () { return bibProds(it); }, function (l) { it.prod = l.join(", "); })],
           [el("span", { class: "label", text: "Chefs op et rôles (rôle vide = cinematographer, crédité en premier)" }), credEd()],
           [el("span", { class: "label", text: "Types de contenu" }), chipsIn("type", function () { return (it.types || it.cats || []).slice(); }, function (l) { it.types = l; })],
-          [orig || lib ? el("button", { type: "button", class: "btn ghost", text: lib ? "Tout remettre comme sur les pages" : "Tout remettre comme dans la bibliothèque", on: { click: function () {
+          [orig || lib ? el("button", { type: "button", class: "btn ghost", text: lib ? "Tout remettre comme sur les pages" : "Tout remettre comme dans la filmothèque", on: { click: function () {
             if (lib) { lib.reset(); close(); return; } var keepKey = it.key; band.items[i] = bandItem(orig); band.items[i].key = keepKey; chg(); close();
           } } }) : null])),
         el("div", {}, [el("span", { class: "label", text: "Aperçu (survol = extrait)" }), pv, el("span", { class: "label", text: "Recadrage" }), zoom, zl, el("label", { class: "bck", title: "Comme la case de recadrage des pages : sinon seulement l'extrait" }, [thumbCk, " Recadrer aussi la vignette"]),
@@ -5291,8 +5291,38 @@
         box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout]));
         setTab("thumb");
       }
+      // Lien de partage de ce film seul (Gus 23/11, comme sur Slate) : une « bande » d'un seul film, centrée, même lien court chiffré
+      // (b/<code>) ; « Autoriser le téléchargement ». Code gardé par film dans le dépôt notes (bandes/films.json), jamais dans le public ;
+      // la page est remise à jour quand on retouche le film.
+      shr = { code: null, dl: false, t: 0 };
+      var shrB = el("button", { type: "button", class: "btn", text: "🔗 Copier le lien de ce film" }), shrMsg = el("span", { class: "hint" });
+      var shrCk = el("input", { type: "checkbox" }), shrDl = el("label", { class: "bck" }, [shrCk, " Autoriser le téléchargement"]);
+      nGet(BAND_NOTES + "films.json").then(function (t) { var m = t ? JSON.parse(t) : {}; var x = m[it.key]; if (x) { shr.code = x.code; shr.dl = !!x.download; shrCk.checked = shr.dl; shrMsg.textContent = "Lien : " + bandURL(x.code).replace(/^https?:\/\//, ""); } }, function () {});
+      function shrPublish() {
+        var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist") c[k] = it[k]; }); snipOk(it, c);
+        c.dops = (c.dops || []).filter(Boolean);
+        var pub = { single: true, title: c.title || "", artists: [], cols: 1, hide: {}, download: shr.dl, items: [c], at: new Date().toISOString() };
+        var by = user && user.login || "", code = shr.code;
+        return bandSeal(code, "", "", pub).then(function (x) {
+          return commit([{ path: BAND_PUB + x.id + ".json", text: x.text }].concat(files.splice(0)), "Film partagé : " + (c.title || "") + " (admin, " + by + ")");
+        }).then(function () {
+          return nEdit(BAND_NOTES + "films.json", function (t) { var m = t ? JSON.parse(t) : {}; var o = m[it.key] || {}; if (o.code === code && !!o.download === shr.dl) return null; m[it.key] = { code: code, download: shr.dl, title: c.title || "", at: new Date().toISOString(), by: by }; return json(m); }, "Films partagés (admin, " + by + ")");
+        });
+      }
+      shrB.addEventListener("click", function () {
+        if (!canWeb) { shrMsg.textContent = "Lecture seule."; return; }
+        var isNew = !shr.code; if (isNew) shr.code = bandCode();
+        var url = bandURL(shr.code), short = url.replace(/^https?:\/\//, "");
+        if (navigator.clipboard) navigator.clipboard.writeText(url).catch(function () {});
+        shrMsg.textContent = isNew ? "Création du lien… " + short : "Lien copié : " + short;
+        shrPublish().then(function () { shrMsg.textContent = "Lien copié : " + short; shrB.textContent = "✓ Lien copié"; setTimeout(function () { shrB.textContent = "🔗 Copier le lien de ce film"; }, 1800); },
+          function (e) { shrMsg.textContent = "Lien pas enregistré : " + e.message; });
+      });
+      shrCk.addEventListener("change", function () { shr.dl = shrCk.checked; if (shr.code) shrPublish().then(function () { shrMsg.textContent = shr.dl ? "Téléchargement autorisé sur ce lien." : "Téléchargement retiré de ce lien."; }, function (e) { shrMsg.textContent = "Pas enregistré : " + e.message; }); });
+      shr.again = function () { if (!shr.code) return; clearTimeout(shr.t); shr.t = setTimeout(function () { shrPublish().catch(function () {}); }, 2500); };
       euB = el("button", { type: "button", class: "blink bundo", text: "↶ Annuler", title: "Annuler (Ctrl / Cmd + Z)", on: { click: function () { eGo(-1); } } });
       erB = el("button", { type: "button", class: "blink bredo", text: "Rétablir ↷", title: "Rétablir (Maj + Ctrl / Cmd + Z)", on: { click: function () { eGo(1); } } });
+      box.appendChild(el("div", { class: "bshare" }, [el("span", { class: "label", text: "Partager ce film seul" }), el("div", { class: "tlrow" }, [shrB, shrDl, shrMsg])]));
       box.appendChild(el("div", { class: "fwbtns bedfoot" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } }), el("span", { class: "bur" }, [euB, erB])]));
       ov.appendChild(box); document.body.appendChild(ov); eBtns();
     }
@@ -5309,12 +5339,12 @@
         var l = t ? JSON.parse(t) : { items: [] }; l.items = l.items || [];
         items.forEach(function (it) { var c = Object.assign({}, it); delete c._files; l.items = l.items.filter(function (x) { return x.key !== c.key; }); l.items.push(c); });
         return json(l);
-      } }].concat(items.reduce(function (a, it) { return a.concat(it._files || []); }, [])), "Bibliothèque : " + items.length + " ajout" + (items.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")");
+      } }].concat(items.reduce(function (a, it) { return a.concat(it._files || []); }, [])), "Filmothèque : " + items.length + " ajout" + (items.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")");
     }
     function importVideo() {
       var link = el("input", { type: "text", placeholder: "Lien Slate : bundle, shots.re, page d'une vidéo ou de stills" }), out = el("p", { class: "hint" });
       var go = el("button", { type: "button", class: "btn primary", text: "Lire le lien", on: { click: function () {
-        if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter à la bibliothèque."; return; }
+        if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter à la filmothèque."; return; }
         var v = link.value.trim(); if (!v) return; go.disabled = true; out.textContent = "Lecture sur Slate" + slateWait("…");
         var isBundle = /\/bundles\//.test(v) || /^(https?:\/\/)?(shots|slt)\.re\//i.test(v);
         (isBundle ? importBundle(v).then(function (d) { return (d.clips || []).map(function (c) { return { slate: c.slate, title: c.title, sub: c.sub, video: c.video, full: c.full, img: c.img, cats: [c.cat].concat(c.types || []), dops: c.artists || (d.name ? [d.name] : []) }; }); })
@@ -5329,7 +5359,7 @@
               return it;
             });
             out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " lu" + (items.length > 1 ? "s" : "") + " : enregistrement…";
-            return libSave(items).then(function () { out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " ajouté" + (items.length > 1 ? "s" : "") + " à la bibliothèque."; go.disabled = false; return bibLoad(true); }).then(function (d) {
+            return libSave(items).then(function () { out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " ajouté" + (items.length > 1 ? "s" : "") + " à la filmothèque."; go.disabled = false; return bibLoad(true); }).then(function (d) {
               data = d; draw();
               // Un seul film : la fenêtre d'infos s'ouvre tout de suite (Gus 22/11 : même fenêtre qu'en cliquant sur un film).
               if (items.length === 1) { var f = filmOf(items[0].key); if (f) { mo.remove(); libEdit(f); } }
@@ -5372,7 +5402,7 @@
           .then(function () { out.textContent = files.length + " images prêtes (" + Math.round(files.reduce(function (a, c) { return a + c.size; }, 0) / 1e6) + " Mo)."; go.disabled = false; }, function (e) { out.textContent = e.message; });
       });
       var go = el("button", { type: "button", class: "btn primary", text: "Continuer", disabled: true, on: { click: function () {
-        if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter à la bibliothèque."; return; }
+        if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter à la filmothèque."; return; }
         if (!files.length) return;
         go.disabled = true; out.textContent = "Envoi des images…";
         var id = Date.now().toString(36), base = "data/bibli/img/" + id + "/", urls = files.map(function (c, i) { return rawURL(base + String(i + 1).padStart(3, "0") + ".webp"); });
