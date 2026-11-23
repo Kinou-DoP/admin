@@ -63,6 +63,10 @@
       }
     },
     "s6290": {
+      "dops": [
+        "Jacques Ballard",
+        "Manuel Dacosse"
+      ],
       "roles": {
         "Jacques Ballard": "Underwater DoP"
       }
