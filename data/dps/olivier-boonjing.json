@@ -1,0 +1,25 @@
+{
+  "slug": "olivier-boonjing",
+  "name": "Olivier Boonjing, SBC",
+  "hue": 0,
+  "overrides": {},
+  "about": {
+    "website": "https://www.olivierboonjing.com/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://pro.imdb.com/name/nm2553340/?q=olivier%20boonjing"
+      }
+    ],
+    "instagram": "https://www.instagram.com/olivierboonjing",
+    "color": true,
+    "pos": "52% 42%",
+    "bioEn": [
+      "Olivier is a cinematographer who focuses mainly on narrative films, documentaries and the interplay between both.",
+      "His work includes: Dimanches (Kodak Discovery award at Cannes Critic’s week 2011), Je me tue à le dire (Best Cinematography at BAFICI 2016), Parasol (Best Cinematography at Magrittes 2017), Le film de l’été (Prix Jean Vigo 2017), Matrioshkas (Best Short at Magrittes 2020), Lola vers la mer (Nominated for Best Foreign Film at Cesars 2020), La Trêve (Netflix),…"
+    ],
+    "img": "img/olivier-boonjing.webp",
+    "og": "img/olivier-boonjing-og-1795431925292.jpg",
+    "ogColor": true
+  }
+}
