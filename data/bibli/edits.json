@@ -57,7 +57,10 @@
       "dops": [
         "Jacques Ballard",
         "Pierre Cottereau"
-      ]
+      ],
+      "roles": {
+        "Jacques Ballard": "Underwater DoP"
+      }
     }
   }
 }
