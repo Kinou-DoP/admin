@@ -52,7 +52,16 @@
     },
     "8988": {
       "zoom": 1.37,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/a-toute-allure-dop-mood",
+          "title": "A Toute Allure - DOP Mood",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2ade6e54-e18c-4f82-b502-1ecb7b4c183c-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9749/058f910f-2110-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/9M69b3yaP8g5ZvDBq_LcJJQXAO7KtGlWh-33M1mWdtw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MDY4OTZiYS03M2Vj/LTRiNmQtOGJjNS05/MmM1NTdiMTljNzQv/YXRhLWRvcG1vb2Qu/cG5n.webp"
+        }
+      ]
     },
     "9024": {
       "zoom": 1.85,
@@ -66,7 +75,16 @@
     },
     "9749": {
       "zoom": 1.38,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/a-toute-allure-bande-annonce",
+          "title": "À Toute Allure - Bande-Annonce",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7d198c0b-e9e6-42f8-8c2d-89aef19c1edf-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8988/61c7eb4c-690b-11ef-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/m_SbdcRflESNfZoHyaknLlYiGyNVmNepz_d4KfOYK7g/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/OTg4LTY2ZDU3ZjBm/Y2Q0YzQyLjc3NTQ3/NTkzLTVkYWVjM2Ew/OGNkOTRjMjYyZWM0/MzUyM2VmMGUzZmQy/LmpwZw.webp"
+        }
+      ]
     }
   },
   "about": {
