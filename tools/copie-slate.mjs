@@ -109,7 +109,7 @@ async function taille(cle) {
 
 // Copie en flux d'un fichier ; vérifie la taille à l'arrivée (un envoi coupé est recopié au passage suivant).
 async function copie(f) {
-  var script = 'set -o pipefail; curl -sSfL --retry 3 -A "$UA" "$URL" | aws s3 cp - "s3://$BUCKET/$CLE" --only-show-errors' +
+  var script = 'set -o pipefail; curl -sSfL --retry 3 --connect-timeout 30 --speed-limit 100000 --speed-time 120 -A "$UA" "$URL" | aws s3 cp - "s3://$BUCKET/$CLE" --only-show-errors' +
     ' --storage-class INTELLIGENT_TIERING --content-type "$TYPE"' + (f.taille ? ' --expected-size "$TAILLE"' : "");
   for (var essai = 0; essai < 3; essai++) {
     var r = await new Promise((resolve) => {
