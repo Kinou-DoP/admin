@@ -4,7 +4,23 @@
   "hue": 357,
   "bundle": "https://kinou.slateapp.com/bundles/e2587eaf-e811-11f1-952e-02ffedfede17",
   "open": 11584,
-  "overrides": {},
+  "overrides": {
+    "11591": {
+      "zoom": 1.02
+    },
+    "11595": {
+      "zoom": 1.03,
+      "zoomThumb": true
+    },
+    "11607": {
+      "zoom": 1.1,
+      "zoomThumb": true
+    },
+    "11616": {
+      "zoom": 1.1,
+      "zoomThumb": true
+    }
+  },
   "about": {
     "bioEn": [
       "I’m a DOP based between Paris and London, I speak French, English and Italian.\nI love shooting on film and digital.",
