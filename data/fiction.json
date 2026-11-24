@@ -1302,12 +1302,13 @@
         "y": 82.7
       },
       "info": {
-        "awards": "Official selection, Festival du film francophone d'Angoulême 2026\nValois du public, Festival du film francophone d'Angoulême 2026\nMention spéciale d'interprétation (Mélissa Guers, Ava Baya, Gabrielle Cohen), Festival du film francophone d'Angoulême 2026\nOfficial selection • Discovery, Toronto International Film Festival 2026",
+        "awards": "Official selection, Festival du film francophone d'Angoulême 2026\nValois du public, Festival du film francophone d'Angoulême 2026\nMention spéciale d'interprétation (Mélissa Guers, Ava Baya, Gabrielle Cohen), Festival du film francophone d'Angoulême 2026\nOfficial selection • Discovery, Toronto International Film Festival 2026\nMention spéciale pour les actrices, Festival du Film Francophone d'Angoulême 2026",
         "awardsFrom": {
           "551e907cbc45": "Official selection, Festival du film francophone d'Angoulême 2026",
           "342f1d89ea42": "Valois du public, Festival du film francophone d'Angoulême 2026",
           "9eb8e5db6fb2": "Mention spéciale d'interprétation (Mélissa Guers, Ava Baya, Gabrielle Cohen), Festival du film francophone d'Angoulême 2026",
-          "fe74f3d84513": "Official selection • Discovery, Toronto International Film Festival 2026"
+          "fe74f3d84513": "Official selection • Discovery, Toronto International Film Festival 2026",
+          "935cec1e161b": "Mention spéciale pour les actrices, Festival du Film Francophone d'Angoulême 2026"
         }
       },
       "poster": "fiction/11188-mwm7wu1o.webp"
@@ -1480,10 +1481,12 @@
         "y": 48.3
       },
       "info": {
-        "awards": "Valois du scénario, Festival du film francophone d'Angoulême 2026\nValois des étudiants, Festival du film francophone d'Angoulême 2026",
+        "awards": "Valois du scénario, Festival du film francophone d'Angoulême 2026\nValois des étudiants, Festival du film francophone d'Angoulême 2026\nPrix du jury étudiant, Festival du Film Francophone d'Angoulême 2026\nOfficial selection • Compétition officielle, Festival du Film Francophone d'Angoulême 2026",
         "awardsFrom": {
           "6ea661122e1e": "Valois du scénario, Festival du film francophone d'Angoulême 2026",
-          "f9711d21663f": "Valois des étudiants, Festival du film francophone d'Angoulême 2026"
+          "f9711d21663f": "Valois des étudiants, Festival du film francophone d'Angoulême 2026",
+          "353584b328f1": "Prix du jury étudiant, Festival du Film Francophone d'Angoulême 2026",
+          "3b03be4eb757": "Official selection • Compétition officielle, Festival du Film Francophone d'Angoulême 2026"
         }
       },
       "poster": "fiction/11342-mwm7wu1o.webp"
