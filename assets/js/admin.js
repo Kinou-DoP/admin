@@ -4865,7 +4865,7 @@
       var now = new Date().toISOString(), artists = artistsOf(b);
       var items = b.items.map(function (x) { var c = {}; Object.keys(x).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist") c[k] = x[k]; }); return snipOk(x, c); }); // page publique : sans l'historique
       var srcItems = b.items.map(function (x) { var c = {}; Object.keys(x).forEach(function (k) { if (k.charAt(0) !== "_") c[k] = x[k]; }); return snipOk(x, c); });
-      var pub = { title: b.title.trim() || "Bande", description: (b.description || "").trim(), artists: artists, cols: b.cols, hide: b.hide, download: !!b.download, items: items, at: now };
+      var pub = { title: b.title.trim() || "Bande", description: (b.description || "").trim(), artists: artists, cols: b.cols, layout: b.layout || "grid", hide: b.hide, download: !!b.download, items: items, at: now };
       var files = save.files.splice(0);
       var by = user && user.login || "";
       return track(bandSeal(b.code, b.pw || "", b.expires, pub).then(function (s) {
@@ -5140,7 +5140,7 @@
       var p = b.legacy ? readFile(BANDS + b.code + ".json") : nGet(BAND_NOTES + b.code + ".json").then(function (t) { return t ? JSON.parse(t) : null; });
       p.then(function (d) {
         if (!d) return;
-        band = { code: d.code, title: d.title, description: d.description || "", artists: Array.isArray(d.artists) ? (b.legacy ? "" : d.artists.join(", ")) : (d.artists || ""), items: d.items || [], cols: d.cols || 3,
+        band = { code: d.code, title: d.title, description: d.description || "", artists: Array.isArray(d.artists) ? (b.legacy ? "" : d.artists.join(", ")) : (d.artists || ""), items: d.items || [], cols: d.cols || 3, layout: d.layout || "grid",
           hide: d.hide || {}, expires: d.expires || "", download: !!d.download, pw: b.legacy ? "" : (d.pw || ""), created: d.created };
         band.items.forEach(function (x) { if (x.section === undefined && !x.key) x.key = x.slate ? "s" + x.slate : "u" + (x.full || x.video || x.img || x.title); });
         save.meta = null; save.legacy = b.legacy ? b.code : null; save.state = ""; st.tab = "new"; undoReset(); drawBand(); if (data) draw();
@@ -5166,7 +5166,11 @@
       var desc = el("textarea", { rows: 4 }); desc.value = band.description || "";
       function ck(label, get, set) { var c = el("input", { type: "checkbox" }); c.checked = !!get(); c.addEventListener("change", function () { set(c.checked); changed(); }); return el("label", { class: "bck" }, [c, " " + label]); }
       var cols = el("div", { class: "bcols" });
-      function drawCols() { cols.textContent = ""; [1, 2, 3].forEach(function (n) { cols.appendChild(el("button", { type: "button", class: "btn" + (band.cols === n ? " primary" : ""), text: n + " colonne" + (n > 1 ? "s" : ""), on: { click: function () { band.cols = n; changed(); drawCols(); } } })); }); }
+      // Mise en page (Gus 24/11, comme sur Slate) : grille, ou « Plein écran » = le 1er film en grand en haut, son extrait qui joue.
+      function drawCols() { cols.textContent = "";
+        [["grid", "Grille"], ["bleed", "Plein écran en haut"]].forEach(function (l) { cols.appendChild(el("button", { type: "button", class: "btn" + ((band.layout || "grid") === l[0] ? " primary" : ""), text: l[1], on: { click: function () { band.layout = l[0]; changed(); drawCols(); } } })); });
+        cols.appendChild(el("span", { class: "bcolsep" }));
+        [1, 2, 3].forEach(function (n) { cols.appendChild(el("button", { type: "button", class: "btn" + (band.cols === n ? " primary" : ""), text: n + " colonne" + (n > 1 ? "s" : ""), on: { click: function () { band.cols = n; changed(); drawCols(); } } })); }); }
       drawCols();
       var exp = el("input", { type: "date", value: band.expires || "" });
       var pw = el("input", { type: "text", value: band.pw || "", placeholder: "Aucun", autocomplete: "off" });

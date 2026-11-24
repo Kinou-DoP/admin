@@ -1061,3 +1061,4 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .breplw { margin-top: 26px; }
 .brepl { margin-top: 10px; }
 .brepl .hint { margin: 6px 0 0; }
+.bcols { flex-wrap: wrap; } .bcolsep { flex-basis: 100%; height: 0; }
