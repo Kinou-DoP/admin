@@ -31,6 +31,16 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 - Adresse (slug) : proposée depuis le nom (minuscules, sans accents), définitive après publication ;
   les chefs op déjà listés sur le site gardent leur adresse actuelle.
 
+## Copie Slate → Amazon (robot `copie-slate.yml` + `tools/copie-slate.mjs`)
+- Copie en flux (sans disque) les fichiers de chaque média Slate (page publique `work/<id>.id`, `data-media`) : original,
+  versions web, extraits, vignette choisie → compartiment S3 `kinou-videos` (Stockholm, Intelligent-Tiering), **même chemin**
+  que sur le CloudFront de Slate (`d1ko11x0ybxl0h…/<chemin>` → `d3toxil6rvamjf.cloudfront.net/<chemin>`) + `slate/<id>.json`.
+- Accès Amazon **sans clé** (OIDC) : rôle `arn:aws:iam::919012714656:role/kinou-robot-copie`, réservé à `Kinou-DoP/admin` branche
+  `main` ; droits : déposer / lire / lister dans `kinou-videos`, pas d'effacement.
+- Lancement à la main (Actions → Run workflow) : numéros précis (`ids`) ou tous (1 → 13000, reprise automatique avant 6 h),
+  mode `tout` / `originaux` / `web`, case « vérification seule ». Déjà présent avec la même taille = sauté. Ne supprime rien.
+- La liste complète des médias (export Slate, avec clients et prods) reste dans le dépôt privé `notes`, jamais ici.
+
 ## Crédits Netlify
 - Une publication (commit qui ne touche que `data/`) **ne remet pas kinou-admin en ligne** : règle `ignore`
   du `netlify.toml`. Le site lit les données dans GitHub (`/api/data` du repo `site`, clé `GITHUB_DATA_TOKEN`).

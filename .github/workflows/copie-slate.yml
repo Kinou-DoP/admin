@@ -1,0 +1,68 @@
+# Copie des fichiers de Slate (originaux, versions web, extraits, vignettes) vers Amazon S3 (kinou-videos, Stockholm), en flux,
+# sans disque (tools/copie-slate.mjs). Accès Amazon SANS clé : GitHub se présente à Amazon (OIDC) et reçoit le rôle
+# kinou-robot-copie, réservé à ce dépôt et à sa branche main (déposer / lire / lister dans kinou-videos, rien d'autre).
+# Gratuit (dépôt public). Lancé à la main (Actions → « Copie Slate → Amazon » → Run workflow). Sans liste de numéros, il parcourt
+# tous les numéros Slate et passe la main à un nouveau passage avant la limite de 6 h. Relancer ne recopie que ce qui manque.
+name: Copie Slate → Amazon
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Numéros Slate (ex. 10666,108) ; vide = tous"
+        required: false
+        default: ""
+      mode:
+        description: "Quoi copier"
+        type: choice
+        options: [tout, originaux, web]
+        default: tout
+      verifier:
+        description: "Vérification seule (ne copie rien, liste ce qui manque)"
+        type: boolean
+        default: false
+      from:
+        description: "Premier numéro (reprise)"
+        required: false
+        default: "1"
+      to:
+        description: "Dernier numéro"
+        required: false
+        default: "13000"
+      conc:
+        description: "Copies en parallèle"
+        required: false
+        default: "6"
+permissions:
+  id-token: write
+  contents: read
+  actions: write
+concurrency: copie-slate
+jobs:
+  copie:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::919012714656:role/kinou-robot-copie
+          aws-region: eu-north-1
+      - id: copie
+        run: node tools/copie-slate.mjs
+        env:
+          IDS: ${{ inputs.ids }}
+          MODE: ${{ inputs.mode }}
+          VERIFIER: ${{ inputs.verifier }}
+          FROM: ${{ inputs.from }}
+          TO: ${{ inputs.to }}
+          CONC: ${{ inputs.conc }}
+      - name: Passage suivant
+        if: steps.copie.outputs.suite != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run copie-slate.yml --ref main -f mode="${{ inputs.mode }}" -f verifier="${{ inputs.verifier }}" \
+            -f from="${{ steps.copie.outputs.suite }}" -f to="${{ inputs.to }}" -f conc="${{ inputs.conc }}"
