@@ -176,9 +176,10 @@
       ],
       "zoom": 1.37,
       "info": {
-        "awards": "Official selection, Festival du film francophone d'Angoulême 2026",
+        "awards": "Official selection, Festival du film francophone d'Angoulême 2026\nPrix du public long métrage, Les Œillades, festival du film francophone d’Albi 2026",
         "awardsFrom": {
-          "e6198a7f0831": "Official selection, Festival du film francophone d'Angoulême 2026"
+          "e6198a7f0831": "Official selection, Festival du film francophone d'Angoulême 2026",
+          "mmwux3rcxile": "Prix du public long métrage, Les Œillades, festival du film francophone d’Albi 2026"
         }
       }
     }
