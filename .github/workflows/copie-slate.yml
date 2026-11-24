@@ -31,7 +31,7 @@ on:
       conc:
         description: "Copies en parallèle"
         required: false
-        default: "6"
+        default: "16"
 permissions:
   id-token: write
   contents: read

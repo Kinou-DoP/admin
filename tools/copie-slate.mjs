@@ -14,7 +14,7 @@
 // Ne supprime jamais rien (le rôle n'en a d'ailleurs pas le droit).
 //
 // Variables : IDS (liste « 108,10666 »), sinon FROM..TO ; MODE tout | originaux | web ; VERIFIER=1 (ne copie rien, liste ce qui
-// manque) ; CONC (copies en parallèle, 6) ; MINUTES (temps de travail avant de passer la main, 300).
+// manque) ; CONC (copies en parallèle, 6) ; MINUTES (temps de travail avant de passer la main, 240 : laisse le temps de finir un gros original).
 
 import { spawn } from "node:child_process";
 import { appendFileSync, writeFileSync } from "node:fs";
@@ -27,7 +27,7 @@ const MODE = process.env.MODE || "tout";
 const VERIFIER = process.env.VERIFIER === "1" || process.env.VERIFIER === "true";
 const CONC = Math.max(1, parseInt(process.env.CONC || "6", 10));
 const PAGES = 4; // pages Slate lues en parallèle (rester poli)
-const FIN = Date.now() + parseInt(process.env.MINUTES || "300", 10) * 60000;
+const FIN = Date.now() + parseInt(process.env.MINUTES || "240", 10) * 60000;
 const IDS = (process.env.IDS || "").split(/[\s,;]+/).map(Number).filter(Boolean);
 const FROM = parseInt(process.env.FROM || "1", 10), TO = parseInt(process.env.TO || "13000", 10);
 const liste = IDS.length ? IDS : Array.from({ length: Math.max(0, TO - FROM + 1) }, (_, i) => FROM + i);
