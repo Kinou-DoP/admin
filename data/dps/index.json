@@ -52,7 +52,8 @@
     },
     {
       "slug": "matteo-bonaddio",
-      "name": "Matteo Bonaddio"
+      "name": "Matteo Bonaddio",
+      "hidden": true
     },
     {
       "slug": "olivier-boonjing",
