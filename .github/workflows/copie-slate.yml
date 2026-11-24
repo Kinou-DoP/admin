@@ -54,6 +54,16 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::919012714656:role/kinou-robot-copie
           aws-region: eu-north-1
+      - name: Test d'accès à Slate (temporaire)
+        run: |
+          B="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+          for u in "https://kinou.slateapp.com/work/10666.id" "https://kinou.slateapp.com/work/un-current-r-l-e" "https://kinou.slateapp.com/showreel/view/6b05c574796d5" "https://shots.re/20ea7f"; do
+            a=$(curl -s -o /dev/null -w '%{http_code}' -A "Mozilla/5.0 (compatible; kinou-admin/1.0; +https://kinou.fr)" "$u")
+            b=$(curl -s -o /dev/null -w '%{http_code}' -A "$B" -H "Accept: text/html,application/xhtml+xml" -H "Accept-Language: fr-FR,fr;q=0.9,en;q=0.8" "$u")
+            c=$(curl -s -L -o /dev/null -w '%{http_code}' -A "$B" -H "Accept: text/html,application/xhtml+xml" -H "Accept-Language: fr-FR,fr;q=0.9" "$u")
+            echo "$u robot=$a navigateur=$b suivi=$c"
+          done
+          curl -s -o /dev/null -D - -A "$B" "https://kinou.slateapp.com/work/10666.id" | head -15
       - id: copie
         run: node tools/copie-slate.mjs
         env:
