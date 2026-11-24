@@ -115,7 +115,8 @@
           "37cd5c24dd4d": "Official selection, Calgary International Film Festival 2026",
           "0052fdff4df6": "Official selection • Compétition internationale, Tübingen | Stuttgart Festival international du film francophone 2026"
         }
-      }
+      },
+      "phoneX": 51
     },
     "10545": {
       "zoom": 1.37,
@@ -123,6 +124,11 @@
     },
     "10654": {
       "zoom": 1.25
+    },
+    "11633": {
+      "zoom": 1.3,
+      "zoomThumb": true,
+      "zoomPos": "50.6% 68.6%"
     }
   },
   "about": {
@@ -136,8 +142,7 @@
     ],
     "pos": "50% 26%",
     "bioEn": [
-      "Olivier is a Canadian and French cinematographer. He’s known for his work on films such as the critically acclaimed coming-of-age « Jeune Juliette » and many short films selected at Cannes, Sundance and the Academy Awards.",
-      "His background in cinema has a strong influence on his commercial body of work, through precise visual storytelling and mood shaping."
+      "Olivier is a French and Canadian cinematographer. He’s known for feature films such as Amour Apocalypse, Paradise and Jeune Juliette, as well as many short films selected at Cannes, Sundance and the Academy Awards."
     ],
     "img": "img/olivier-gossot.webp",
     "og": "img/olivier-gossot-og-1795439862079.jpg"
@@ -150,26 +155,15 @@
   ],
   "clips": [
     {
-      "title": "Lucy Grizzli Sophie | Bande Annonce",
-      "sub": "Anne Emond\nKO24",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10545/2e3de40a-123d-11f1-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8255c885-ee5a-48ec-891d-ab048a394b26-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/Y-awkcRvnBlRY4al1PVJEfFyJODwKVLMncFtPcgg7Uo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/Mjg3YmUwYy00YzJi/LTQ5Y2MtOGEyZi03/NTU4ZjI2NTVmZDAv/MTFiLndlYnA?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 10545,
-      "featured": true,
-      "featuredOrder": 1
-    },
-    {
       "title": "PARADISE | Bande Annonce",
       "sub": "Jeremy Comte\nEntract Film",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10415/1c099862-0801-11f1-9ce3-0215583debcb.mp4",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10415/adb14062-e823-11f1-952e-02ffedfede17.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff7dfcdf-c815-46f5-bcda-11954efdc057-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/PRkavVT8HcBHr6D-jDjGT1z2Oc3t9m9B6vQOkXLiiRI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWRhY2MyNC1mZGYx/LTRjN2EtYWU1ZS02/NTJjZGU4YjAzYTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NC4x/OC5wbmc?v=1&format=webp",
       "cat": "NARRATIVE",
       "slate": 10415,
       "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 1
     },
     {
       "title": "Amour Apocalypse Bande Annonce",
@@ -180,7 +174,7 @@
       "cat": "NARRATIVE",
       "slate": 9878,
       "featured": true,
-      "featuredOrder": 3
+      "featuredOrder": 2
     },
     {
       "title": "Jeune Juliette | Feature film trailer",
@@ -190,7 +184,7 @@
       "cat": "NARRATIVE",
       "slate": 4321,
       "featured": true,
-      "featuredOrder": 5
+      "featuredOrder": 4
     },
     {
       "title": "MOTHERS AND MONSTERS  a film by Edith Jorisch",
@@ -214,7 +208,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cf3e9a47-5d95-4565-b391-c30f84cfe606-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/eVoWwhz3N4XXjvZLcx-B7fF7VeHaU9zNuWnPikcu3DE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NTA2MmQ5MC02MWUz/LTQyN2QtOGVhYy03/ODliMzgyOTFkMmIv/c2l0ZS5qcGc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 4175
+      "slate": 4175,
+      "featured": true,
+      "featuredOrder": 8
     },
     {
       "title": "Mahalia Melts in the Rain - Teaser",
@@ -248,7 +244,7 @@
       "cat": "NARRATIVE",
       "slate": 2872,
       "featured": true,
-      "featuredOrder": 7
+      "featuredOrder": 6
     },
     {
       "title": "FEMININ FEMININ - serie trailer",
@@ -322,17 +318,7 @@
       "cat": "COMMERCIAL",
       "slate": 5271,
       "featured": true,
-      "featuredOrder": 6
-    },
-    {
-      "title": "Louis XIII - Solange Knowles",
-      "sub": "Mati Diop\nDivision",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ec5848f4-2f11-40d0-8cd8-6ca30ef56118-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/kVbRnLsfxmeZ55-XN9s4lvqWRpZL9MHoW1nhUZzBju0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OGU1MDFlNy04MTFh/LTRkZGUtOGI5Mi1l/MGFkMmIxZWJiNmQv/Y29waWUtZGUtMDgu/anBn?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 5834,
-      "featured": true,
-      "featuredOrder": 4
+      "featuredOrder": 5
     },
     {
       "title": "Talk Away the Dark",
@@ -345,13 +331,13 @@
       "featuredOrder": 9
     },
     {
-      "title": "BELL | Is it still TV",
-      "sub": "Christopher Brown\nAnimals",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10654/af868aa2-2d19-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/015fd8da-e5e3-4cdb-bf6e-9d7713035290-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/kwfiZMp0Nyw59meVWdTjKZ1I6c1Omkp7jwznHGkX8Zw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MDRmNjY5Yy05NzA0/LTRjNDAtYjVhZi01/NjY3OWQ5YzY0ZTAv/YmVsbC1maWJlLTIt/MTY5LmpwZw?v=1&format=webp",
+      "title": "Breakfast Club of Canada",
+      "sub": "Ivan Grbovic\nLes Enfants",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11633/62deea4a-e823-11f1-952e-02ffedfede17.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/24d9a5a2-4bbe-4087-9555-e739a84f66dc-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Lgtp6O5wRtcxNSA220InZCvgypFM-eARlbzh6ZloHi4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MWEyNzM1Mi1mYjg5/LTQ4MmItODZmNC04/NTMwMGZjMGI0ZTcv/MTc5NTUzNzM3OTEw/MC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 10654
+      "slate": 11633
     },
     {
       "title": "CNESST",
@@ -363,13 +349,23 @@
       "slate": 10653
     },
     {
-      "title": "Intermarché - C'est fou ce qu'on peut faire avec 10%",
-      "sub": "Rudi Rosenberg\nDivision Paris",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7419/ca2679a6-cb7d-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a1a7d191-9888-4cba-8527-2778b6deae5d-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/IdZvLwJi_RVbpAVuUwUzJoCziz-A4aD1mF6ffKZC7x8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZDhmNThjYS1iMzY0/LTQyZjUtOWVmZi01/NTQxNThkNmM4NDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDYt/MTktYS0xNy4zNi41/OC5wbmc?v=1&format=webp",
+      "title": "BELL | Is it still TV",
+      "sub": "Christopher Brown\nAnimals",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10654/af868aa2-2d19-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/015fd8da-e5e3-4cdb-bf6e-9d7713035290-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/kwfiZMp0Nyw59meVWdTjKZ1I6c1Omkp7jwznHGkX8Zw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MDRmNjY5Yy05NzA0/LTRjNDAtYjVhZi01/NjY3OWQ5YzY0ZTAv/YmVsbC1maWJlLTIt/MTY5LmpwZw?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 7419
+      "slate": 10654
+    },
+    {
+      "title": "Louis XIII - Solange Knowles",
+      "sub": "Mati Diop\nDivision",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ec5848f4-2f11-40d0-8cd8-6ca30ef56118-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/kVbRnLsfxmeZ55-XN9s4lvqWRpZL9MHoW1nhUZzBju0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OGU1MDFlNy04MTFh/LTRkZGUtOGI5Mi1l/MGFkMmIxZWJiNmQv/Y29waWUtZGUtMDgu/anBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5834,
+      "featured": true,
+      "featuredOrder": 3
     },
     {
       "title": "Recyc Québec",
@@ -397,37 +393,12 @@
       "slate": 6422
     },
     {
-      "title": "Flunch",
-      "sub": "Emilie Badenhorst\nCream",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5936/aae18d5c-42e2-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d1b98922-8123-409c-bdb2-ebe4f3da9efa-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/M3KKG6Kf6lg60l4NpbV60Q7FT3qW04cWviZ3-Wc7_mk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/OTM2LTYyNzBlNmRm/ZDJlNmM1LjM4OTQ4/NjkwLWFiN2E0YjYz/YjdkMzdiMTViZWNj/NjIyMmYzNTNjNGU2/LmpwZw?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 5936
-    },
-    {
       "title": "PRODUITS LAITIERS DU QUEBEC",
       "sub": "François Jaros\n4zero1",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/d54a3c9b-7b9b-4d70-bdc2-9d958ed0ef29-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/5LBZL4ap-84h-XULOKelxAVFolbLKFTOWur66CKrH1s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZTBiYjBiYi0xMWYy/LTRkYjgtYmJhZS02/YWMxODY1NjQyYjcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MDgtYS0xOC4xNC40/OC5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 5749
-    },
-    {
-      "title": "Yogourt",
-      "sub": "Maxime Giroux",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/179a3a35-c409-4a55-8e32-a024db21b4e6-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Hqp7BnEU8FAnccBgkfGmhnhiNlLotFqKMl2jMBsMmNc/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ODA4LTYwNDVmN2Ew/NDUzMjExLjkxMDc0/Njk2LTE1ZTJhN2Nj/OTFiMDc4MTAzNWEw/NTJlNDI2MDJhODg1/LmpwZw?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 4808
-    },
-    {
-      "title": "FIZZ",
-      "sub": "François Jaros",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8c36734d-7517-4b8b-a13a-0db6b38650b4-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/2nWiQKzpl4fKDPetI4k8qXWTLODz7mgbDwi35BK4meo/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ODA3LTYwNDVmNzEx/OTgzMTk1LjU0OTI5/Nzc1LWYyODFhZDVi/YTQ2NzgyMWFlZDQ0/MDZiODU5ODExZWJh/LmpwZw?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 4807
     },
     {
       "title": "Fizz - Tailleur",
@@ -454,22 +425,6 @@
       "slate": 4319
     },
     {
-      "title": "Goodhome",
-      "sub": "Ed McCulloch\nGang Life",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c7743276-a89e-4af4-8fa3-2cfa2d27d854-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/d18sGVxCYk6Fhj1BEh9U6EGpG9aQcQbn3jxvI9JrY6M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTc5ODA0OTE2/L2dvb2Rob21lLmpw/Zw?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 4236
-    },
-    {
-      "title": "La Redoute",
-      "sub": "Ed McCulloch\nGang Films",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9d1b569f-80e2-4f12-b6fc-687ddb66e2b5-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/HEwo3Y5r1HN1JtnaaUI_9lBAg-21NS8YeKGzmpTkstk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTYwLTVlMTMzMjc3/YTI2Mjg1LjM0MTAw/MzY2LWRmYjVmNmYy/MTliMjAzODMyNjkx/ZWUzNGEwNzM1MGFm/LmpwZw?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 3960
-    },
-    {
       "title": "Yves Rocher",
       "sub": "Ed McCulloch\nGang Films",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e7f5df97-c890-4fd8-8f3a-0e0cf1c7d911-1280x720.2500.mp4",
@@ -478,36 +433,12 @@
       "slate": 3948
     },
     {
-      "title": "Aubainerie",
-      "sub": "Raphaël Ouellet\nLa Belle Façon",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1561719246-aubainerie-30s-versionlongue-sanssuper-web-h264.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/dkd8mLT7YANo6UqcgDTCmwy_eFFXMKCgrrmMCtNSr-Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/dWJhaW5lcmllLWNj/OTk1N2JkOTQyZDlh/YWZiYjYzOGNiNmY2/Y2VlYjAyLmpwZw?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 3589
-    },
-    {
-      "title": "OMO",
-      "sub": "Johan Stahl\nFamily Film",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1556526680-unilever-manifesto-422hq.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/pOuptxFntARLDZ-Wg1wFcpMvLeaLpbTHySsD7wXxBd0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9v/bW8tYTMwMWRmZDdi/NjIxYzI3MGYyZjlk/NjNmMmQ2Njg5NmIu/anBn?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 3338
-    },
-    {
       "title": "Tourisme Montreal – “Huit | The Soul of the City”",
       "sub": "Mathieu Grimard\nPilaar",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545459487-43823782_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/wVg7nYg90jNwRWBxJgHu9PilC65HOsW9qmq0njjPS0o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYyNjI3MTE1/L3RvdXJpc21lLW1v/bnRyZWFsMTYtOS5q/cGc?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 2658
-    },
-    {
-      "title": "\"World Poetry Day\" - Julien Meinl",
-      "sub": "Jeremy Comte\nMcCann Bucarest",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545456712-43823569_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/uwV0Wg04DOvVrR7whNsHxpYr5Bz2VrpnG4x4EnM-L9o/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYyMTM4MzUz/L2p1bGl1cy1tZWlu/bC0xMTYtOS5qcGc?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 2610
     },
     {
       "title": "Barreau du Québec",
@@ -541,7 +472,7 @@
       "cat": "MUSIC VIDEOS",
       "slate": 3833,
       "featured": true,
-      "featuredOrder": 8
+      "featuredOrder": 7
     },
     {
       "title": "Abstrackt Keal Agram \"for No One\"",
