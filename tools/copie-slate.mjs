@@ -53,6 +53,7 @@ function decode(s) {
 
 // Page d'un média : null si Slate répond 404 (numéro inexistant ou supprimé).
 async function media(id) {
+  var derniere = "";
   for (var essai = 0; essai < 4; essai++) {
     try {
       var r = await fetch(ORIGIN + "/work/" + id + ".id", { headers: { "User-Agent": UA, "Accept": "text/html,*/*" } });
@@ -65,9 +66,9 @@ async function media(id) {
         if (m) return m;
       }
       return null;
-    } catch (e) { await pause(2000 * (essai + 1)); }
+    } catch (e) { derniere = String((e && (e.cause && e.cause.code || e.message)) || e); await pause(2000 * (essai + 1)); }
   }
-  throw new Error("page illisible");
+  throw new Error(derniere || "page illisible");
 }
 
 // Fichiers d'un média, selon MODE : [{ url, cle, taille, role }].
@@ -150,7 +151,7 @@ async function lecteur() {
   while (i < liste.length) {
     if (Date.now() > FIN || file.length >= CONC * 2) { if (Date.now() > FIN) { suite = suite == null ? liste[i] : Math.min(suite, liste[i]); return; } await pause(1000); continue; }
     var id = liste[i++], m;
-    try { m = await media(id); } catch (e) { stats.illisibles.push(id); continue; }
+    try { m = await media(id); } catch (e) { stats.illisibles.push(id + " (" + e.message + ")"); continue; }
     if (!m) { stats.absents++; continue; }
     stats.pages++;
     if (!VERIFIER) { try { await fiche(id, m, deja); } catch (e) { stats.erreurs.push(String(e.message)); } }
