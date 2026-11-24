@@ -5,7 +5,11 @@
 // Pour chaque média Slate (page publique kinou.slateapp.com/work/<id>.id, attribut data-media) : original (original_file),
 // versions web (streams), extraits (snippets), vignette choisie (thumbnail). Le chemin est gardé tel quel :
 //   https://d1ko11x0ybxl0h.cloudfront.net/<chemin>  →  s3://kinou-videos/<chemin>  →  https://<notre CloudFront>/<chemin>
-// + slate/<id>.json : la fiche Slate du média (titre, crédits, adresses), pour la suite.
+// Depuis le 24/11, Slate refuse ses PAGES aux machines de GitHub (403) mais pas ses FICHIERS : le robot part donc d'une LISTE
+// des fichiers (lue sur les pages depuis une autre machine), rangée dans le dépôt privé notes et déposée par son robot
+// (notes/.github/workflows/liste-copie.yml) dans un dossier au nom tiré au hasard du compartiment (`prive-…/liste.json`) :
+// ni le nom du dossier ni les adresses n'apparaissent ici ni dans les journaux (publics) d'Actions. Le robot trouve le dossier
+// en listant le compartiment (CloudFront, lui, ne sait pas lister). Sans liste : lecture des pages (ancienne méthode).
 // Un fichier déjà présent avec la même taille est sauté : relancer le robot ne recopie que ce qui manque ou a changé.
 // Ne supprime jamais rien (le rôle n'en a d'ailleurs pas le droit).
 //
@@ -79,8 +83,8 @@ function fichiers(m) {
     var cle = decodeURIComponent(new URL(f.remote_address).pathname).slice(1);
     if (!l.some((x) => x.cle === cle)) l.push({ url: f.remote_address, cle, taille: Number(f.size) || 0, role });
   }
-  // Image (illustration) : pas d'original_file, l'image elle-même est la vignette.
-  if (MODE !== "web") ajoute(m.original_file || (m.type === "illustration" ? m.thumbnail : null), "original");
+  // Image (illustration) : pas d'original_file, une galerie d'images (images[]) ; la 1re sert souvent de vignette.
+  if (MODE !== "web") { ajoute(m.original_file, "original"); (m.images || []).forEach((im, k) => ajoute(im, k ? "original-" + k : "original")); }
   if (MODE !== "originaux") {
     Object.values(m.streams || {}).forEach((s) => ajoute(s && s.file, "web"));
     Object.values(m.snippets || {}).forEach((s) => ajoute(s && s.file, "extrait"));
@@ -114,23 +118,37 @@ async function copie(f) {
       var err = ""; p.stderr.on("data", (d) => (err += d)); p.on("close", (code) => resolve({ code, err }));
     });
     if (r.code === 0 && (!f.taille || (await taille(f.cle)) === f.taille)) return true;
-    f.erreur = (r.err || "taille différente à l'arrivée").trim().slice(0, 200);
+    f.erreur = (r.err || "taille différente à l'arrivée").split(f.url).join("<adresse>").split(f.cle).join("<fichier>").trim().slice(0, 200);
     await pause(5000 * (essai + 1));
   }
   return false;
 }
 
-async function fiche(id, m, deja) {
-  var cle = "slate/" + id + ".json", corps = JSON.stringify(m);
-  if (deja.get(cle) === Buffer.byteLength(corps)) return;
-  var r = await run("aws", ["s3", "cp", "-", "s3://" + BUCKET + "/" + cle, "--only-show-errors", "--content-type", "application/json"], corps);
-  if (r.code !== 0) throw new Error("fiche " + id + " : " + r.err.trim());
-}
-
 const stats = { pages: 0, absents: 0, illisibles: [], aCopier: 0, copies: 0, octets: 0, sautes: 0, erreurs: [], manquants: [] };
 var suite = null; // premier numéro pas traité (passage suivant)
 
+// Liste déposée par le robot du dépôt notes : { medias: [{ id, fichiers: [{ role, cle, url, taille }] }] }.
+async function listePrivee() {
+  var r = await run("aws", ["s3api", "list-objects-v2", "--bucket", BUCKET, "--prefix", "prive-", "--delimiter", "/",
+    "--query", "CommonPrefixes[].Prefix", "--output", "json"]);
+  var dossiers = r.code === 0 ? JSON.parse(r.out || "null") || [] : [];
+  if (dossiers.length !== 1) return null;
+  r = await run("aws", ["s3", "cp", "s3://" + BUCKET + "/" + dossiers[0] + "liste.json", "-", "--only-show-errors"]);
+  if (r.code !== 0) return null;
+  var m = new Map();
+  JSON.parse(r.out).medias.forEach((x) => m.set(Number(x.id), x.fichiers));
+  return m;
+}
+const LISTE = await listePrivee();
 const deja = await existants();
+if (LISTE) console.log("Liste privée : " + LISTE.size + " médias.");
+else if (process.env.PAGES_SLATE !== "1") {
+  // Slate refuse ses pages à GitHub depuis le 24/11 : sans liste, on s'arrête en rouge au lieu de lire 13 000 pages refusées.
+  var msg = "Liste privée introuvable dans le compartiment (robot liste-copie du dépôt notes pas encore passé ?) : rien n'est copié.";
+  console.log("::error::" + msg);
+  if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, "## Copie Slate → Amazon\n- " + msg + "\n");
+  process.exit(1);
+} else console.log("Pas de liste privée : lecture des pages Slate (PAGES_SLATE=1).");
 console.log("Déjà dans " + BUCKET + " : " + deja.size + " fichiers. Médias à voir : " + liste.length + (VERIFIER ? " (vérification seule)" : ""));
 
 // File de copies, alimentée par la lecture des pages.
@@ -140,8 +158,8 @@ async function copieur() {
   while (lecture || file.length) {
     var f = file.shift();
     if (!f) { await pause(300); continue; }
-    if (await copie(f)) { stats.copies++; stats.octets += f.taille; console.log("✓ " + f.cle + " (" + go(f.taille) + ")"); }
-    else { stats.erreurs.push(f.id + " " + f.cle + " : " + f.erreur); console.log("✗ " + f.cle + " : " + f.erreur); }
+    if (await copie(f)) { stats.copies++; stats.octets += f.taille; console.log("✓ " + f.id + " " + f.role + " (" + go(f.taille) + ")"); }
+    else { stats.erreurs.push(f.id + " " + f.role + " : " + f.erreur); console.log("✗ " + f.id + " " + f.role + " : " + f.erreur); }
   }
 }
 const copieurs = VERIFIER ? [] : Array.from({ length: CONC }, copieur);
@@ -150,15 +168,21 @@ var i = 0;
 async function lecteur() {
   while (i < liste.length) {
     if (Date.now() > FIN || file.length >= CONC * 2) { if (Date.now() > FIN) { suite = suite == null ? liste[i] : Math.min(suite, liste[i]); return; } await pause(1000); continue; }
-    var id = liste[i++], m;
-    try { m = await media(id); } catch (e) { stats.illisibles.push(id + " (" + e.message + ")"); continue; }
-    if (!m) { stats.absents++; continue; }
+    var id = liste[i++], m, fs;
+    if (LISTE) {
+      if (!LISTE.has(id)) { stats.absents++; continue; }
+      fs = LISTE.get(id).filter((f) => MODE === "tout" || (MODE === "originaux" ? f.role.startsWith("original") : !f.role.startsWith("original")))
+        .map((f) => Object.assign({}, f));
+    } else {
+      try { m = await media(id); } catch (e) { stats.illisibles.push(id + " (" + e.message + ")"); continue; }
+      if (!m) { stats.absents++; continue; }
+      fs = fichiers(m);
+    }
     stats.pages++;
-    if (!VERIFIER) { try { await fiche(id, m, deja); } catch (e) { stats.erreurs.push(String(e.message)); } }
-    for (var f of fichiers(m)) {
+    for (var f of fs) {
       if (deja.has(f.cle) && (!f.taille || deja.get(f.cle) === f.taille)) { stats.sautes++; continue; }
       stats.aCopier++; f.id = id;
-      if (VERIFIER) stats.manquants.push(id + " " + f.role + " " + f.cle + " (" + go(f.taille) + ")");
+      if (VERIFIER) stats.manquants.push(id + " " + f.role + " (" + go(f.taille) + ")");
       else file.push(f);
     }
   }

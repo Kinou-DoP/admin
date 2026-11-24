@@ -32,9 +32,15 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
   les chefs op déjà listés sur le site gardent leur adresse actuelle.
 
 ## Copie Slate → Amazon (robot `copie-slate.yml` + `tools/copie-slate.mjs`)
-- Copie en flux (sans disque) les fichiers de chaque média Slate (page publique `work/<id>.id`, `data-media`) : original,
-  versions web, extraits, vignette choisie → compartiment S3 `kinou-videos` (Stockholm, Intelligent-Tiering), **même chemin**
-  que sur le CloudFront de Slate (`d1ko11x0ybxl0h…/<chemin>` → `d3toxil6rvamjf.cloudfront.net/<chemin>`) + `slate/<id>.json`.
+- Copie en flux (sans disque) les fichiers de chaque média Slate : original (toutes les images d'une galerie), versions web,
+  extraits, vignette choisie → compartiment S3 `kinou-videos` (Stockholm, Intelligent-Tiering), **même chemin** que sur le
+  CloudFront de Slate (`d1ko11x0ybxl0h…/<chemin>` → `d3toxil6rvamjf.cloudfront.net/<chemin>`).
+- Slate refuse ses **pages** aux machines de GitHub (403 depuis le 24/11) mais pas ses **fichiers** : le robot part d'une **liste
+  privée** (lue ailleurs, rangée dans le dépôt privé `notes`), déposée par un robot de `notes` dans `kinou-videos/prive-<hasard>/liste.json` ;
+  le robot la trouve en listant le compartiment. Sans liste : arrêt en rouge. Jamais d'adresse de fichier dans ce dépôt ni dans les
+  journaux d'Actions (publics) : seulement numéro, rôle, taille. Rien de sensible à une adresse devinable du compartiment
+  (notre CloudFront le rend lisible).
+- Test `test-slate-fichier.yml` (24/11) : lit 20 Mo d'un fichier Slate déjà public depuis GitHub (vérifie que les fichiers passent).
 - Accès Amazon **sans clé** (OIDC) : rôle `arn:aws:iam::919012714656:role/kinou-robot-copie`, réservé à `Kinou-DoP/admin` branche
   `main` ; droits : déposer / lire / lister dans `kinou-videos`, pas d'effacement.
 - Lancement à la main (Actions → Run workflow) : numéros précis (`ids`) ou tous (1 → 13000, reprise automatique avant 6 h),
