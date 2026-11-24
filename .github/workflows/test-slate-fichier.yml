@@ -1,0 +1,29 @@
+# Test (24/11) : les machines de GitHub peuvent-elles télécharger un FICHIER sur le CloudFront de Slate (serveur de fichiers),
+# alors que les PAGES de Slate leur répondent 403 ? Lit les 20 premiers Mo de la version web 1080 du film 10666 (adresse déjà
+# publique, sur la fiche andy-pml du site), sans rien garder (vers /dev/null). Rien n'est copié, aucun accès Amazon.
+# Lancé à la main (Actions → « Test fichier Slate » → Run workflow). Si le fichier est refusé aussi : on ne force pas.
+name: Test fichier Slate
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Page Slate et fichier Slate
+        env:
+          UA: "Mozilla/5.0 (compatible; kinou-admin/1.0; +https://kinou.fr)"
+          PAGE: https://kinou.slateapp.com/work/10666.id
+          FICHIER: https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f90c66ab-6796-448a-90d1-722c6a191301-0x1080.5000.mp4
+        run: |
+          p=$(curl -sS -o /dev/null -A "$UA" -w "%{http_code}" "$PAGE" || true)
+          f=$(curl -sS -o /dev/null -A "$UA" -r 0-20971519 -w "%{http_code} %{size_download} %{speed_download}" "$FICHIER" || true)
+          set -- $f
+          mo=$(awk "BEGIN{printf \"%.1f\", ${2:-0}/1e6}"); vit=$(awk "BEGIN{printf \"%.1f\", ${3:-0}/1e6}")
+          {
+            echo "## Test fichier Slate depuis GitHub"
+            echo "- Page work/10666 : réponse $p (403 = refusée)"
+            echo "- Fichier 1080 du film 10666 : réponse ${1:-?} (206 ou 200 = accepté), $mo Mo lus, $vit Mo/s"
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+          case "${1:-}" in 200|206) echo "Fichier accepté." ;; *) echo "::error::Fichier refusé par Slate depuis GitHub (${1:-aucune réponse})"; exit 1 ;; esac
