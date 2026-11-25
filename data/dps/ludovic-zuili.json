@@ -14,74 +14,147 @@
     "3063": {
       "zoom": 1.43,
       "zoomThumb": true,
-      "title": "Orange - Money"
+      "title": "Orange - Money",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3093": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3257": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4199": {
       "title": "Oppo - Night",
-      "zoom": 1.48
+      "zoom": 1.48,
+      "types": [
+        "Commercial"
+      ]
     },
     "4430": {
       "title": "Oppo - Warriors",
-      "zoom": 1.45
+      "zoom": 1.45,
+      "types": [
+        "Commercial"
+      ]
     },
     "5763": {
       "title": "Santé France - J'en Parle à",
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Commercial"
+      ]
     },
     "6088": {
-      "zoom": 1.27
+      "zoom": 1.27,
+      "types": [
+        "Commercial"
+      ]
     },
     "6126": {
-      "zoom": 1.14
+      "zoom": 1.14,
+      "types": [
+        "Commercial"
+      ]
     },
     "6309": {
-      "zoom": 1.48
+      "zoom": 1.48,
+      "types": [
+        "Commercial"
+      ]
     },
     "6884": {
-      "title": "Prime Video - Ligue 1"
+      "title": "Prime Video - Ligue 1",
+      "types": [
+        "Symphonie",
+        "Orchestra"
+      ]
     },
     "7443": {
       "zoom": 1.36,
       "zoomPos": "41.3% 0%"
     },
     "8078": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Music Video"
+      ]
     },
     "8876": {
-      "zoom": 1.09
+      "zoom": 1.09,
+      "types": [
+        "Music Video"
+      ]
     },
     "9291": {
       "zoom": 1.37,
-      "title": "Par Amour"
+      "title": "Par Amour",
+      "types": [
+        "Feature Film",
+        "Trailer"
+      ]
     },
     "9750": {
       "zoom": 1.36,
-      "title": "Carjackers"
+      "title": "Carjackers",
+      "types": [
+        "Feature Film"
+      ]
     },
     "9976": {
       "zoom": 1.22,
-      "title": "Feu! Chatterton - Allons Voir"
+      "title": "Feu! Chatterton - Allons Voir",
+      "types": [
+        "Music Video"
+      ]
     },
     "10221": {
-      "zoom": 1.27
+      "zoom": 1.27,
+      "types": [
+        "Commercial"
+      ]
     },
     "10303": {
       "zoom": 1.06,
-      "title": "N121 Bus de Nuit"
+      "title": "N121 Bus de Nuit",
+      "types": [
+        "Feature Film",
+        "Trailer",
+        "narrative",
+        "Feature Film trailer"
+      ]
     },
     "10389": {
-      "title": "Pegasus - Bar"
+      "title": "Pegasus - Bar",
+      "types": [
+        "Commercial"
+      ]
     },
     "10710": {
       "zoom": 1.39,
-      "title": "Drone"
+      "title": "Drone",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "11486": {
       "zoom": 1.35,
-      "title": "The blood island"
+      "title": "The blood island",
+      "types": [
+        "Commercial"
+      ]
     },
     "11549": {
-      "title": "Pegasus - Tennis"
+      "title": "Pegasus - Tennis",
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {
