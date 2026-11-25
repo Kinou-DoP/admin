@@ -193,7 +193,8 @@
     "NARRATIVE",
     "COMMERCIAL",
     "LUXE / FASHION",
-    "COMEDY"
+    "COMEDY",
+    "MUSIC VIDEO / ART"
   ],
   "clips": [
     {
@@ -630,26 +631,156 @@
       "cat": "COMEDY"
     },
     {
-      "title": "Prequel - SCH",
-      "sub": "Jean-Charles Charavin\nIncendie Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8876/2c13979f-52ae-11f0-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9ea0a38e-26cf-4573-897a-a8c18b2ca8d2-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Kqr6VW6NDfKjvvCT3OAIfCuaQBIla2bKwRzPBM3ONjI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZWUzZWRmMy02OGRh/LTQ0MDYtYjIwOC1m/ZDY0ZTUzODIwNWYv/c2NoLTEuMS4xNy5q/cGc?v=1&format=webp",
-      "cat": "",
-      "slate": 8876,
-      "featured": true,
-      "featuredOrder": 2
-    },
-    {
       "title": "FEU!CHATTERTON | ALLONS VOIR",
       "sub": "Jean Charles Charavin\nIncendie Films",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9976/c2844e23-c198-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/52c5b573-1d1b-4913-afed-dffa019f32c8-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Qk6mSn5woe8yn7H4Kl4Av2Fn2KZDEZYUo7O5V95h4MM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MmU0OTI0YS1jNjE4/LTRhYzYtOWJhYy00/YTJkMjg3MGRjZWQv/ZmMtMjMud2VicA?v=1&format=webp",
-      "cat": "",
+      "cat": "MUSIC VIDEO / ART",
       "slate": 9976,
       "featured": true,
       "featuredOrder": 4
+    },
+    {
+      "title": "Prequel - SCH",
+      "sub": "Jean-Charles Charavin\nIncendie Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8876/2c13979f-52ae-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9ea0a38e-26cf-4573-897a-a8c18b2ca8d2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Kqr6VW6NDfKjvvCT3OAIfCuaQBIla2bKwRzPBM3ONjI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZWUzZWRmMy02OGRh/LTQ0MDYtYjIwOC1m/ZDY0ZTUzODIwNWYv/c2NoLTEuMS4xNy5q/cGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO / ART",
+      "slate": 8876,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "ACID ARAB - HABAYTAK",
+      "sub": "Jean Charles Charavin\nIncendie Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/819cd3c0-7282-4f09-8e56-ac64454b4c71-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/TuQrYaITlMn8wyrMgOfulqMtdJR5Y7XbsEH2ujF90NM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MTllMGViZS00YWJk/LTRiZjMtYmIwNy03/MDQ5Y2QzYWFkNmYv/YWNpZC1hcmFiLTIt/MS4xLjcuanBn.webp",
+      "slate": 8049,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "THYLACINE - Bosphorus",
+      "sub": "Cécile Chabert\nIntuitive",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6807/fc80c817-12a6-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7dfbb407-8bbb-4467-879d-8e7c8a4100dc-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Ogq9Kfd06z_4H9gXqBje6woZ2NHxRpyJ-kwDygAiW8E/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NDJmOGMwYy1jZjYy/LTQ4MmYtYjE3YS1i/ZmNhYWI2YTRmMTcv/MTcxNTc2OTM2OTIx/Ni5qcGc.webp",
+      "slate": 6807,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Fakear - voyager",
+      "sub": "Ffi0oul\nFrenzy Paris",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6478/6bfb00e7-52ae-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/28ac6c7f-b1c8-4f1b-9eb0-fa1bae99d6e5-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/SgbFleZEx3Cn4rFgCRMtJ1arXX8s737gDOq74FlTN78/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZWNkOGExOC05NmQ3/LTRjMTktYjMxNS02/Yjk0MTBkOWRhNmMv/ZmZpMG91bC1mYWtl/YXItdm95YWdlci1z/dGlsbHMtMTYwLmpw/Zw.webp",
+      "slate": 6478,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Redcar \"La Chanson du Chevalier\"",
+      "sub": "Christine and the Queens\nLa Non Agence",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/96ad04b9-8035-487c-8aa7-5ae7271f956b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/On45lhuMEt2bGmGTioe3d3xUkoR6EnNQ6_k2QR7JLC0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MWJlMjQzZC1hN2Qx/LTQ4N2ItODEzMi0x/NzgzMzE3MWIyYjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMTAt/MTItYS0xMS40Ni4w/OC5wbmc.webp",
+      "slate": 6373,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Hey Hey My My \"High Life\"",
+      "sub": "Lucas Posson\nAllso",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/630aeeaa-db9e-4598-b70e-a379a514bb2f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/NtFw_myV5L25ptjrpDBVWOaoGCezyJ46FnXW3Rh2MNI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MzkyMTBhMS1iZTYw/LTQwYjgtYTU5NS0w/MWFmMTFlOWU2OGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjgtYS0xNi4yOS4z/NS5wbmc.webp",
+      "slate": 6348,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "POMME \"Nelly\"",
+      "sub": "Videodrome, Pomme\nASM Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/da60c77e-fb1f-4e11-b7fb-434293cdeb3f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jfsfl_La-6Dl8ejMvEz2i04pPUJnLrqpcYNjUMY7hgA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NzY2NTg3My0xYzNk/LTQzZmMtYTk3YS0x/YTUxYmQ5NmViM2Uv/bmVsbHktMS4xLjE4/LmpwZw.webp",
+      "slate": 6100,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Leslie Medina - Amours Imaginaires",
+      "sub": "Leslie Medina & Ludovic Zuili",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0ddf4bc7-dbe7-4dc5-85a5-ad30b200f698-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/C7FZeVwOOzj9IEFDP-Q88a9r9ADw5zcP15J-ToKnkuE/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NzEyLTYxZjNiOGQ0/Yzc5NjExLjIyNjYz/MjEzLTAzOGZhNzM1/NjhlODlhOGU3ZTA1/YzhmNWFjN2Y4ZDc2/LmpwZw.webp",
+      "slate": 5712,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Alexia Gredy - Drôle d'idée",
+      "sub": "Virgile Guinard\nVery Content",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4e96aad5-ff89-470a-a45d-66dce1f8db18-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/VitaqAD8bSg2V5riZ3ew5l1o4QEUrl4qVUUP3Aq0cRw/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NzExLTYxZjNiOGQ0/Yzg0OWQ5LjE1OTI4/OTA1LTU4MTUwNDEz/ZWFjZTdmMTczM2U1/N2YxMzBmMTRkNDA3/LmpwZw.webp",
+      "slate": 5711,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Pierre de Maere - Un Jour Je Marierai Un Ange",
+      "sub": "Edie Blanchard\nVery Content",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49aae09e-946d-4606-8d55-6f1a0f4a8cfe-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/FfBxyEpTBlRYQ_xbK5UICQxupfo702rU_PUoqGfOpbI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/N2QyYzE0NC1lYTQy/LTQwN2EtYmFiZi00/NDNiNmY2OGU1YTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMTEt/MTEtYS0xMC41NS4w/MS5wbmc.webp",
+      "slate": 5509,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Brarda \"Lumière\"",
+      "sub": "Maxime Ellies\nMardjenal",
+      "img": "https://images.slatecdn.net/UrK16Dx-GfFa6i4LtuBDi6Z3rl_X1msfzCC6KbUVZQY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/NzFjMTNjNS05NzVj/LTQ3ZTctODllYi0z/MmEzOTU4MjE4NDQv/MTcxNTc2OTE3MjA4/OS5qcGc.webp",
+      "slate": 5276,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Hervé \"Monde Meilleur\"",
+      "sub": "FfiOoul\nFrenzy",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5103/d75cbe88-52ad-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/eb3030ee-bd6f-4843-be59-ca873ed78913-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/LtmUVJRt9hyok1Zp7G9D9cPLpD1x-4Ohrt23Kx-39iM/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTAzLTYwYmRlNWRj/MjhhMzUxLjc1ODU3/NDU2LWYwNzYyMDY5/NWRkNzU1M2RkNjAx/NTMyODYyYTMxMThm/LmpwZw.webp",
+      "slate": 5103,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "The Hattori - The Wings",
+      "sub": "Carla Coste\nHiersoir",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2b29a3f8-b8a8-41f9-acff-273b04d42d37-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/O09lvYaTxrAhCaQPJZSXn9uiEFeX-sgqYzS9fH5B6KI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MGZjMTJkMC03MDY4/LTQ2YTUtYmU3Ny0w/N2RlNTA2NDk0MGUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjgtYS0xNy4xMy4z/NC5wbmc.webp",
+      "slate": 4881,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Fixpen Sill Ft. Lomepal \"Bye Bye\"",
+      "sub": "Roman Lagier, Ilya Chemetov\nStandard Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1569580827-master-fixpencil-ft-lomepal-190925-h264.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zTvYEOLLI3g6Cjvk8md9EZRAVK3IKF1Bk3ccHLyHcRU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgzODYzMTYyOTQy/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTAz/LTEwLWEtMTguNTgu/NTktMi5wbmc.webp",
+      "slate": 3734,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Yanis \"Crave\"",
+      "sub": "yanis",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1549375222-yanis-crave.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/IpaVL8f9Xgl18QDRPYKEk_K-VHc2drDdKXv3Db0snug/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTEyMTY1MzM0/L3lhbmlzLmpwZw.webp",
+      "slate": 3125,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Young Hish Ft. Brazy \"Fais les pleuvoir\"",
+      "sub": "Sophian Bouadjera\nFury Paris",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545848168-64677514_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/WAR9u4aQCDogoMQXLTX-VdXbkho1e3EglV21cRVBZSc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy95/b3VuZy1oaXNoLWZ0/LWJyYXp5LWZhaXMt/bGVzLXBsZXV2b2ly/LTFjNzFmZTNlMDIw/YWUxZjY0NDQyM2Rj/NDIxZTIzNjE3Lmpw/Zw.webp",
+      "slate": 2957,
+      "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Bonnie Banane feat. Waltaa \"Champs-Elysees\"",
+      "sub": "Helmi\nDivision Paris",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545846358-64677515_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2BIZOSkxIWWnIihAzhzTVM0c7fvPbaj8l3T8WhfTTFw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/b25uaWUtYmFuYW5l/LWZlYXQtd2FsdGFh/LWNoYW1wcy1lbHlz/ZWVzLTQ4OGIzMjgx/MDliMGVjYzg2NDAy/ZWFkZmQ2NmFjZWEx/LmpwZw.webp",
+      "slate": 2924,
+      "cat": "MUSIC VIDEO / ART"
     }
   ]
 }
