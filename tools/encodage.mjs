@@ -1,11 +1,14 @@
 // Robot d'encodage du video club (Gus 26/11) : fabrique chez Amazon les versions légères des films, à la demande de l'admin.
 // L'admin dépose une demande data/encode/<sorte>-<horodatage>.json = { jobs: [...], at, by } (sorte : « film » = long, « rapide »)
 // et relit le même fichier, où le robot écrit pour chaque demande `answer` (ou `error`) puis `doneAt`.
-//   film  { id, key: "depot/…" (master envoyé depuis l'ordinateur), at?: 0–1 (début de l'extrait, 2/3 par défaut), d?: 5 }
+//   film  { id, key: "depot/…" (master envoyé depuis l'ordinateur), at?: 0–1 (début de l'extrait, 2/3 par défaut), d?: 5,
+//           web?: true (remplacement d'une vidéo : version web seulement, la vignette et l'extrait du film sont gardés) }
 //         → version web 1080p H.264 (son AAC, lecture avant la fin du téléchargement), vignette WebP 800 / 1600,
 //           extrait 720p sans son → { full, video, img, img1600, snip: { s, d }, thumbT, dur, w, h }
 //   snip  { id, src (vidéo : notre CloudFront, Slate, ou mp4 du dépôt), s, d } → extrait 720p sans son → { video }
 //   thumb { id, src, t } → image du film à t, WebP 800 / 1600 → { img, img1600 }
+// Avancement (films) : `progress: { step: "lecture" | "web" | "extrait" | "vignette", pct }` écrit dans la demande (un commit au plus
+// par minute) ; l'admin l'affiche.
 // Tout est rangé sous nous/<id>/ dans kinou-videos et servi par notre CloudFront. Accès Amazon sans clé (rôle kinou-robot-copie,
 // OIDC, renouvelé par aws-cle.mjs). Les masters de depot/ ne sont jamais effacés (archive). Journaux sans adresse (dépôt public).
 // Variables : KINDS (sortes traitées, ex. « film » ou « rapide »).
@@ -27,15 +30,15 @@ const KINDS = String(process.env.KINDS || "film,rapide").split(",");
 const ID = /^[a-z0-9]{6,32}$/, KEY = /^depot\/[a-z0-9]{8,40}\/[\w.-]{1,120}$/;
 const SRC = /^https:\/\/(d3toxii6rvamjf|d1ko11x0ybxl0h)\.cloudfront\.net\/[\w\/.%-]+\.(mp4|mov|m4v)$|^https:\/\/raw\.githubusercontent\.com\/Kinou-DoP\/admin\/main\/data\/bibli\/vid\/[\w-]+\.mp4$/i;
 
-function run(cmd, args) {
+function run(cmd, args, onOut) {
   return new Promise((resolve) => {
     const p = spawn(cmd, args, { stdio: ["ignore", "pipe", "pipe"] }); let out = "", err = "";
-    p.stdout.on("data", (d) => (out += d)); p.stderr.on("data", (d) => { err += d; if (err.length > 20000) err = err.slice(-10000); });
+    p.stdout.on("data", (d) => { if (onOut) onOut(String(d)); else out += d; }); p.stderr.on("data", (d) => { err += d; if (err.length > 20000) err = err.slice(-10000); });
     p.on("close", (code) => resolve({ code, out, err }));
   });
 }
-async function must(cmd, args, what) {
-  const r = await run(cmd, args);
+async function must(cmd, args, what, onOut) {
+  const r = await run(cmd, args, onOut);
   if (r.code !== 0) throw new Error(what + " : échec (" + (r.err.trim().split("\n").pop() || r.code).slice(0, 200) + ")");
   return r;
 }
@@ -77,27 +80,30 @@ async function frames(src, t, dir) {
   return o;
 }
 
-async function film(j, dir) {
+async function film(j, dir, tell) {
   if (!KEY.test(j.key || "")) throw new Error("master introuvable");
-  const master = join(dir, "master");
+  const master = join(dir, "master"); tell("lecture", 0);
   await must("aws", ["s3", "cp", "s3://" + BUCKET + "/" + j.key, master, "--only-show-errors"], "lecture du master");
   const p = await probe(master);
   if (!p.dur) throw new Error("vidéo illisible");
   console.log("  master : " + Math.round(fs.statSync(master).size / 1e6) + " Mo, " + p.w + "×" + p.h + ", " + Math.round(p.dur) + " s");
-  const web = join(dir, "web.mp4"), t0 = Date.now();
-  await must("ffmpeg", ["-y", "-v", "error", "-i", master, "-map", "0:v:0", "-map", "0:a:0?",
+  const web = join(dir, "web.mp4"), t0 = Date.now(); tell("web", 0);
+  await must("ffmpeg", ["-y", "-v", "error", "-progress", "pipe:1", "-nostats", "-i", master, "-map", "0:v:0", "-map", "0:a:0?",
     "-vf", "scale='min(1920,iw)':'min(1080,ih)':force_original_aspect_ratio=decrease:force_divisible_by=2:flags=lanczos,format=yuv420p",
     "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-profile:v", "high", "-maxrate", "12M", "-bufsize", "24M",
-    "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-movflags", "+faststart", web], "version web");
+    "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-movflags", "+faststart", web], "version web",
+    (t) => { const m = t.match(/out_time_us=(\d+)/g); if (m) tell("web", Math.min(99, Math.round(+m[m.length - 1].split("=")[1] / 1e6 / p.dur * 100))); });
   console.log("  version web : " + Math.round(fs.statSync(web).size / 1e6) + " Mo en " + Math.round((Date.now() - t0) / 1000) + " s");
   const base = "nous/" + j.id + "/", a = {};
   a.full = await put(web, base + "web.mp4", "video/mp4");
+  if (j.web) return Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h }); // remplacement : vignette et extrait du film gardés
+  tell("extrait", 0);
   const at = j.at >= 0 && j.at < 1 ? j.at : 2 / 3, d = Math.max(0.5, Math.min(j.d || 5, 10, p.dur));
   const s = r3(Math.max(0, Math.min(p.dur * at, p.dur - d)));
   const ex = join(dir, "extrait.mp4");
   await snippet(web, s, d, ex);
   a.video = await put(ex, base + "extrait-" + Math.round(s * 1000) + ".mp4", "video/mp4");
-  a.snip = { s, d: r3(d) }; a.thumbT = r3(Math.min(p.dur - 0.05, s + Math.min(1, d / 2)));
+  a.snip = { s, d: r3(d) }; a.thumbT = r3(Math.min(p.dur - 0.05, s + Math.min(1, d / 2))); tell("vignette", 0);
   const im = await frames(web, a.thumbT, dir);
   a.img = await put(im[800], base + "vignette-800.webp", "image/webp");
   a.img1600 = await put(im[1600], base + "vignette-1600.webp", "image/webp");
@@ -137,13 +143,20 @@ if (fs.existsSync(DIR)) {
     const path = DIR + "/" + f;
     let d; try { d = JSON.parse(fs.readFileSync(path, "utf8")); } catch (e) { continue; }
     if (d.doneAt) continue;
-    if (f.startsWith("film-")) { d.startedAt = new Date().toISOString(); save(path, d, "Encodage : commencé"); }
+    if (f.startsWith("film-")) d.startedAt = new Date().toISOString();
     for (const j of d.jobs || []) {
       if (j.answer || j.error) continue;
       const dir = fs.mkdtempSync(join(tmpdir(), "enc-")), t0 = Date.now();
       try {
         if (!ID.test(j.id || "") || !WORK[j.kind]) throw new Error("demande inconnue");
-        j.answer = await WORK[j.kind](j, dir);
+        let last = 0, lastP = -100;
+        const tell = (step, pct) => { // avancement : un commit au plus par minute (ou à chaque nouvelle étape)
+          const ch = !j.progress || j.progress.step !== step;
+          if (!ch && (Date.now() - last < 60000 || pct - lastP < 5)) return;
+          j.progress = { step, pct }; last = Date.now(); lastP = pct; save(path, d, "Encodage : " + step + " " + pct + " %");
+        };
+        j.answer = await WORK[j.kind](j, dir, f.startsWith("film-") ? tell : () => {});
+        delete j.progress;
       } catch (e) { j.error = String(e.message || e); erreurs++; }
       fs.rmSync(dir, { recursive: true, force: true });
       console.log(j.kind + " " + (j.id || "?") + " : " + (j.error || "ok") + " (" + Math.round((Date.now() - t0) / 1000) + " s)");
