@@ -86,6 +86,15 @@
       "slate": 8219
     },
     {
+      "title": "BK | Réparation",
+      "sub": "Côme Ferré\nWanda Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10529/e039c25d-0d86-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e6878fde-4d38-4e15-abe0-492436fb9acf-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/U_65lIUQKLi1DBMugxe-8Q7IYkl_pYShUZUVNYc2EFM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/NjI5NzE0NS0zMzgy/LTQ1ODctYWIyYi1m/YjZkMGU1OTQxNzMv/MTc3MTUwMDYyNTky/Ni5qcGc.webp",
+      "slate": 10529,
+      "cat": "COMMERCIAL"
+    },
+    {
       "title": "Stade Toulousain",
       "sub": "Léo Grandperret\nLa Draft",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8765/43b50332-1c41-11ef-bfce-022353abf6f5.mp4",
@@ -95,6 +104,15 @@
       "slate": 8765,
       "featured": true,
       "featuredOrder": 2
+    },
+    {
+      "title": "BK | La Vente",
+      "sub": "Côme Ferré\nWanda Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10530/0bae6ed5-0d87-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c77f719d-f4ec-4b74-8153-6caf517fcbcd-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/pd-RXvpr--ecBuKfQkE2ddZGYd5t4buMVIeQUsgGnLw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ODU5ZmRjOS1jNTY0/LTQxMjAtOTk1Mi00/NjllYjY3MjNjOTcv/MTc3MTUwMDg2OTYx/Mi5qcGc.webp",
+      "slate": 10530,
+      "cat": "COMMERCIAL"
     },
     {
       "title": "Chanel cruise replica Shenzhen",
