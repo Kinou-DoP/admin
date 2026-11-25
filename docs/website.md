@@ -26,3 +26,6 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   video club, sinon celui de la page). Régler le recadrage d'une carte l'écrit tout de suite dans `edits.json` (`vcPatch` / `vcSave`,
   sans « Publier »). Bouton **« edit »** en bas à droite de chaque vignette (`vcEditBtn`) : la fenêtre du film du video club par-dessus
   la page (`showBibli({ key, done })`, mode « fenêtre seule »). Le titre reste propre à chaque page.
+- **Crédits** (Gus 25/11, même principe, sauf le titre) : la zone de crédits d'une carte montre les crédits du video club calculés
+  comme sur le site (`vcCredits`) et les y réécrit (`vcSetCredits` : réal, prod, chefs op, rôles gardés) ; lignes en plus (3e et
+  suivantes) gardées dans la page (`sub`, publiées avec « Publier »). « Rétablir » remet aussi les crédits du video club à ceux de la page.

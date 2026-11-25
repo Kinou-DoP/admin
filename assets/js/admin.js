@@ -177,7 +177,7 @@
   // Si un autre commit arrive pendant ce temps (robot GitHub qui répond, autre personne qui publie : « Update is not a fast
   // forward », GitHub 422), on refait le commit par-dessus le nouveau dernier commit, 3 fois au plus (Gus 04/11).
   function commit(files, message, tries) {
-    if (tries === undefined) return track(commit(files, message, 0), true);
+    if (tries === undefined) return track(imgWait().then(function () { return commit(files, message, 0); }), true);
     tries = tries || 0;
     return commitOnce(files, message).catch(function (e) {
       if (tries >= 3 || !/GitHub 422/.test(e.message)) throw e;
@@ -378,6 +378,30 @@
     return fetch(SITE + "/api/depot", { method: "POST", headers: { Authorization: "Bearer " + token, "Content-Type": "application/json" }, body: JSON.stringify(body) })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.error) throw new Error(d.error || "envoi refusé (" + r.status + ")"); return d; }, function () { throw new Error("envoi refusé (" + r.status + ")"); }); });
   }
+  // Images (stills, vignettes importées ou capturées, suites d'images ; Gus 25/11) : envoyées chez Amazon (depot/<dossier>/<nom>,
+  // en une fois, signé par /api/depot op « img ») au lieu du dépôt GitHub (raw.githubusercontent : cache 5 min, lent). imgPut rend tout
+  // de suite l'adresse définitive sur notre CloudFront (copie locale affichée en attendant : imgLocal) ; commit() attend la fin des
+  // envois en cours avant d'écrire les données qui les citent (imgWait). 3 essais, puis alerte.
+  var NOUS_CDN = "https://d3toxii6rvamjf.cloudfront.net/", imgUps = [];
+  function imgDir() { var a = new Uint8Array(20); crypto.getRandomValues(a); return [].map.call(a, function (x) { return "abcdefghijkmnpqrstuvwxyz23456789"[x % 32]; }).join(""); }
+  function imgPut(name, base64, preview, dir) {
+    var key = "depot/" + (dir || imgDir()) + "/" + name, url = NOUS_CDN + key, type = /\.png$/i.test(name) ? "image/png" : /\.jpe?g$/i.test(name) ? "image/jpeg" : "image/webp";
+    if (preview) imgLocal[url] = preview;
+    var bin = atob(base64), bytes = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    var body = new Blob([bytes], { type: type });
+    function once() {
+      return depot({ op: "img", key: key }).then(function (d) {
+        return fetch(d.url, { method: "PUT", body: body, headers: { "Content-Type": type, "Cache-Control": "public, max-age=31536000, immutable" } })
+          .then(function (r) { if (!r.ok) throw new Error("Amazon " + r.status); });
+      });
+    }
+    var p = track(once().catch(function () { return new Promise(function (r) { setTimeout(r, 1500); }).then(once); })
+      .catch(function () { return new Promise(function (r) { setTimeout(r, 4000); }).then(once); }), true);
+    imgUps.push(p);
+    p.then(function () { imgUps = imgUps.filter(function (x) { return x !== p; }); }, function (e) { imgUps = imgUps.filter(function (x) { return x !== p; }); alert("Image pas envoyée chez Amazon (" + name + ") : " + e.message); });
+    return url;
+  }
+  function imgWait() { return Promise.all(imgUps.map(function (p) { return p.catch(function () {}); })); }
   function upload(f, prog) {
     var sk = "kinou-up:" + f.name + ":" + f.size + ":" + f.lastModified, st = null, n = Math.max(1, Math.ceil(f.size / UP_PART)), etags = {}, urls = {}, live = {}, base = 0;
     function size(k) { return k < n ? UP_PART : f.size - (n - 1) * UP_PART; }
@@ -1720,8 +1744,56 @@
       var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {};
       keys.forEach(function (k) { o.films[k] = Object.assign({}, o.films[k], todo[k]); });
       return json(o);
-    } }], "Video club : recadrage de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")")
+    } }], "Video club : retouches de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")")
       .catch(function (e) { keys.forEach(function (k) { vcTodo[k] = Object.assign({}, todo[k], vcTodo[k]); }); alert("Recadrage pas enregistré : " + e.message); });
+  }
+  // Crédits (Gus 25/11 : même principe, sauf le titre) : réal, prod, chefs op et rôles vivent dans le video club (dir, prod, dops,
+  // roles). La carte montre les crédits tels que le site les affiche (même calcul que vcApply d'app.js) et les réécrit dans le video
+  // club quand on les change ; les lignes en plus (3e ligne et suivantes, hors chefs op et rôles) restent celles de la page (sub).
+  var VC_DOP = /^(?:co-)?dop\.?\s+/i;
+  function vcNm(n) { return String(n || "").split(",")[0].trim(); }
+  function vcCredits(c) {
+    var e = vcOf(c), multi = state === spot || state === fic, l = String(val(c, "sub") || "").split("\n").map(function (x) { return x.trim(); });
+    var plain = l.filter(function (x) { return x && !VC_DOP.test(x); }), was = [];
+    l.filter(function (x) { return VC_DOP.test(x); }).forEach(function (x) { was = was.concat(x.replace(VC_DOP, "").split(/\s*[,&]\s*/)); });
+    var lines = [e.dir !== undefined ? e.dir : plain[0] || "", e.prod !== undefined ? e.prod : plain[1] || ""], extra = plain.slice(2), rl = [];
+    if (multi) { if (!["dir", "prod"].some(function (k) { return e[k] !== undefined; })) return { text: val(c, "sub"), extra: extra, roleLines: rl }; }
+    else {
+      if (!["dir", "prod", "dops", "roles"].some(function (k) { return e[k] !== undefined; })) return { text: val(c, "sub"), extra: extra, roleLines: rl };
+      var me = bnrm(vcNm(state.name)), dops = (e.dops ? e.dops.slice() : [state.name].concat(was)).filter(Boolean), ro = {};
+      Object.keys(e.roles || {}).forEach(function (n) { if (e.roles[n]) ro[bnrm(vcNm(n))] = e.roles[n]; });
+      var main = dops.filter(function (n) { return !ro[bnrm(vcNm(n))]; }), oth = dops.filter(function (n) { return ro[bnrm(vcNm(n))]; });
+      if (ro[me]) { if (main.length) lines.push("DoP " + main.map(vcNm).join(" & ")); }
+      else { var co = main.filter(function (n) { return bnrm(vcNm(n)) !== me; }); if (co.length) lines.push("co-DoP " + co.map(vcNm).join(" & ")); }
+      oth.forEach(function (n) { var x = ro[bnrm(vcNm(n))] + " " + vcNm(n); rl.push({ line: x, name: n, role: ro[bnrm(vcNm(n))] }); lines.push(x); });
+    }
+    return { text: lines.concat(extra).filter(Boolean).join("\n"), extra: extra, roleLines: rl };
+  }
+  // Texte de la carte → video club (dir, prod ; fiches : chefs op et rôles) + lignes en plus dans la page.
+  function vcSetCredits(c, text) {
+    var cur = vcCredits(c), e = vcOf(c), multi = state === spot || state === fic, l = String(text || "").split("\n").map(function (x) { return x.trim(); });
+    var keptRoles = {}, dopLine = null, plain = [];
+    l.forEach(function (x) {
+      if (!x) return;
+      var r = cur.roleLines.filter(function (y) { return y.line === x; })[0];
+      if (r && !multi) { keptRoles[r.name] = r.role; return; }
+      if (VC_DOP.test(x) && !multi) { dopLine = x; return; }
+      plain.push(x);
+    });
+    var patch = { dir: plain[0] || "", prod: plain[1] || "" };
+    if (!multi) {
+      var names = dopLine ? dopLine.replace(VC_DOP, "").split(/\s*[,&]\s*/).filter(Boolean) : [], me = bnrm(vcNm(state.name));
+      // Chef op de la page : toujours crédité (rôle gardé s'il en avait un) ; « DoP X » quand il a un rôle, sinon « co-DoP X ».
+      var all = [state.name].concat(names.filter(function (n) { return bnrm(vcNm(n)) !== me; }));
+      Object.keys(keptRoles).forEach(function (n) { if (!all.some(function (x) { return bnrm(vcNm(x)) === bnrm(vcNm(n)); })) all.push(n); });
+      var meRole = Object.keys(e.roles || {}).filter(function (n) { return bnrm(vcNm(n)) === me && e.roles[n]; })[0];
+      if (meRole) keptRoles[meRole] = e.roles[meRole];
+      patch.dops = all; patch.roles = Object.keys(keptRoles).length ? keptRoles : undefined;
+    }
+    vcPatch(c.slate, patch);
+    var extra = plain.slice(2), base = String(val(c, "sub") || "").split("\n").map(function (x) { return x.trim(); }).filter(function (x) { return x && !VC_DOP.test(x); });
+    // Lignes en plus : gardées dans la page, derrière ses deux premières lignes (réal, prod) qui ne servent plus que de secours.
+    setOverride(c, "sub", [base[0] || patch.dir, base[1] || patch.prod].concat(extra).filter(Boolean).join("\n"));
   }
   // Bouton « edit » d'un film (Gus 26/11) : la fenêtre du video club (vignette, extrait, recadrage…), par-dessus la page.
   function vcEditBtn(c, after) {
@@ -1746,7 +1818,7 @@
     // (vidéo à « snipper » sur Slate, puis « Relire le bundle »). Gus 03/11.
     if (c.full || c.video) thumb.appendChild(el("span", { class: "snipmark" + (c.video ? " on" : ""), title: c.video ? "Snippet présent" : "Pas de snippet sur Slate" }));
     var title = el("input", { type: "text", value: val(c, "title") });
-    var sub = el("textarea", { rows: 2 }); sub.value = val(c, "sub");
+    var sub = el("textarea", { rows: 2, title: "Crédits : enregistrés dans le video club (valent pour tout le site) ; le titre reste propre à la page" }); sub.value = vcCredits(c).text;
     var hide = el("button", {}), reset = el("button", { text: "Rétablir" });
     function sync() {
       var o = state.overrides[c.slate] || {};
@@ -1798,9 +1870,9 @@
       setOverride(c, "extras", list.length ? list : undefined); setOverride(c, "stills"); setOverride(c, "stillsLink"); sync();
     }, "Lien Slate de stills ou d'une vidéo, à afficher sous le film");
     title.addEventListener("input", function () { setOverride(c, "title", title.value); sync(); });
-    sub.addEventListener("input", function () { setOverride(c, "sub", sub.value); sync(); });
+    sub.addEventListener("input", function () { vcSetCredits(c, sub.value); sync(); });
     hide.addEventListener("click", function () { setOverride(c, "hidden", (state.overrides[c.slate] || {}).hidden ? undefined : true); sync(); touch(); });
-    reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); touch(); });
+    reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); vcPatch(c.slate, { dir: undefined, prod: undefined, dops: undefined, roles: undefined }); title.value = c.title || ""; sub.value = vcCredits(c).text; sync(); touch(); });
     sync();
     // Projet en stills : le recadrage se règle sur l'extrait choisi pour le survol.
     var zvid = function () { var h = (state.overrides[c.slate] || {}).hover; return vcSnipOf(c) || (h && h.video); };
@@ -1811,7 +1883,7 @@
         function () { var cr = vcCrop(c); return cr ? cr.t : undefined; }, function (t) { vcSetCrop(c, "t", t); sync(); }, function () {});
     }
     var zoom = mkZoom();
-    thumb.appendChild(vcEditBtn(c, function () { paintThumb(); var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; sync(); }));
+    thumb.appendChild(vcEditBtn(c, function () { paintThumb(); var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; if (document.activeElement !== sub) sub.value = vcCredits(c).text; sync(); }));
     card.appendChild(thumb); card.appendChild(zoom);
     if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(awardsCtl(c));
@@ -6070,7 +6142,7 @@
       }
       function doImg(f) {
         if (!f) return; pout.textContent = "Préparation de l'image…";
-        compress(f).then(function (c) { var path = "data/bibli/img/b/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".webp"; files.push({ path: path, base64: c.base64 }); imgLocal[rawURL(path)] = c.preview; setImg(rawURL(path)); pout.textContent = "Vignette importée."; imgUp.value = ""; }, function (e) { pout.textContent = e.message; });
+        compress(f).then(function (c) { setImg(imgPut("vignette.webp", c.base64, c.preview)); pout.textContent = "Vignette importée."; imgUp.value = ""; }, function (e) { pout.textContent = e.message; });
       }
       function doVid(f) {
         if (!f) return;
@@ -6098,9 +6170,8 @@
             c.toBlob(function (bl) {
               var fr = new FileReader();
               fr.onload = function () {
-                var path = "data/bibli/img/b/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".webp";
-                files.push({ path: path, base64: fr.result.split(",")[1] }); imgLocal[rawURL(path)] = URL.createObjectURL(bl);
-                it.thumbT = Math.round(t * 1000) / 1000; setImg(rawURL(path));
+                var u = imgPut("vignette.webp", fr.result.split(",")[1], URL.createObjectURL(bl));
+                it.thumbT = Math.round(t * 1000) / 1000; setImg(u);
                 pout.textContent = "Vignette remplacée par l'image à " + fmtT(t) + ".";
               };
               fr.readAsDataURL(bl);
@@ -6132,7 +6203,7 @@
           if (x.stills && x.stills.length) exBox.appendChild(stillGrid(x));
         });
       }
-      // Stills de l'ordinateur (Gus 26/11) : cliquer ou glisser des images sur le bouton → réduites (WebP) dans data/bibli/img/ ;
+      // Stills de l'ordinateur (Gus 26/11) : cliquer ou glisser des images sur le bouton → réduites (WebP) et envoyées chez Amazon (imgPut) ;
       // rangées dans un groupe « Stills » sous le film ; l'ordre de toutes les images se change en les glissant.
       var stUp = el("input", { type: "file", accept: "image/*", multiple: true, hidden: true });
       stUp.addEventListener("change", function () { addStills([].slice.call(stUp.files)); stUp.value = ""; });
@@ -6141,9 +6212,9 @@
         if (!l.length) return; exOut.textContent = "Préparation de " + l.length + " image" + (l.length > 1 ? "s" : "") + "…";
         var g = (it.extras || []).filter(function (x) { return x.up && x.stills; })[0];
         if (!g) { g = { title: "Stills", stills: [], up: true }; (it.extras = it.extras || []).push(g); }
-        var id = Date.now().toString(36) + Math.random().toString(36).slice(2, 5), n = 0;
+        var dir = imgDir(), n = 0;
         l.reduce(function (p, f) { return p.then(function () { return compress(f).then(function (c) {
-          var path = "data/bibli/img/" + id + "/" + String(++n).padStart(3, "0") + ".webp"; files.push({ path: path, base64: c.base64 }); imgLocal[rawURL(path)] = c.preview; g.stills.push(rawURL(path));
+          g.stills.push(imgPut(String(++n).padStart(3, "0") + ".webp", c.base64, c.preview, dir));
         }); }); }, Promise.resolve()).then(function () { exOut.textContent = n + " image" + (n > 1 ? "s" : "") + " ajoutée" + (n > 1 ? "s" : "") + "."; it.edited = true; chg(); drawEx(); },
           function (e) { exOut.textContent = e.message; drawEx(); });
       }
@@ -6442,11 +6513,9 @@
         if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter au video club."; return; }
         if (!files.length) return;
         go.disabled = true; out.textContent = "Envoi des images…";
-        var id = Date.now().toString(36), base = "data/bibli/img/" + id + "/", urls = files.map(function (c, i) { return rawURL(base + String(i + 1).padStart(3, "0") + ".webp"); });
-        urls.forEach(function (u, i) { imgLocal[u] = files[i].preview; });
+        var id = Date.now().toString(36), dir = imgDir(), urls = files.map(function (c, i) { return imgPut(String(i + 1).padStart(3, "0") + ".webp", c.base64, c.preview, dir); });
         var guess = String(names[0] || "").replace(/\.[a-z0-9]+$/i, "").replace(/[\s_.-]*\d+$/, "").replace(/[_]+/g, " ").trim() || "Images";
-        var it = { key: "i" + id, kind: "images", title: guess, dops: [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "",
-          _files: files.map(function (c, i) { return { path: base + String(i + 1).padStart(3, "0") + ".webp", base64: c.base64 }; }) };
+        var it = { key: "i" + id, kind: "images", title: guess, dops: [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "" };
         libSave([it]).then(function () { delete it._files; return bibLoad(true); }).then(function (d) {
           data = d; draw(); var f = filmOf(it.key); out.textContent = "Création du lien de partage…";
           shareCreate(f ? [f] : []).catch(function () {}).then(function () { mo.remove(); if (f) libEdit(f); });

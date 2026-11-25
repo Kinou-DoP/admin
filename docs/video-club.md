@@ -82,3 +82,8 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   **Ajouts** : un film lu sur Slate (un seul) ou une suite d'images (choisies puis enregistrées, titre deviné du nom des fichiers, clé
   `i<id>`) ouvrent ensuite la même fenêtre d'infos.
   Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéos de l'ordinateur (envoi chez Amazon + encodage, voir « Encodage »).
+- **Images chez Amazon** (Gus 25/11) : `imgPut(nom, base64, aperçu, dossier)` envoie une image (stills de l'ordinateur, vignette
+  importée ou capturée, suite d'images) dans `kinou-videos/depot/<dossier>/` (adresse signée par `/api/depot` op `img`) et rend tout de
+  suite son adresse sur notre CloudFront ; `commit()` attend la fin des envois (`imgWait`). Plus rien n'est écrit dans `data/bibli/img/`
+  (anciennes images copiées chez Amazon par le robot `images-bibli.yml`, `main`).
+
