@@ -243,7 +243,8 @@
     "COMMERCIAL",
     "LUXE / FASHION",
     "COMEDY",
-    "MUSIC VIDEO / ART"
+    "MUSIC VIDEO / ART",
+    "DOCUMENTARY"
   ],
   "clips": [
     {
@@ -846,6 +847,48 @@
       "img": "https://images.slatecdn.net/E2TD8ma3EJUXslrOYGDdKYWGp2FEB_OnxvWWDgWHXUw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTEzMTY3Nzgy/L3lhbmlzLWVtYnJh/Y2UuanBn.webp",
       "slate": 144,
       "cat": "MUSIC VIDEO / ART"
+    },
+    {
+      "title": "Nose (2020) - Official Trailer",
+      "sub": "Clément Bauvais & Arthur de Kersauson\nMercenary Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9501/f9476c9a-fe6b-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4d4e2701-ae3b-41fa-aa2e-acdb8e62bc5b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3-abZ6T4Ivb6HKsdHrZvtcABtLu4Pps3meCeBcuCiQM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MzRmNzg0MC04Y2I0/LTQ4MTEtODg4Yy1h/YmFlNWRmNzdmYmIv/bm9zZS5wbmc.webp",
+      "slate": 9501,
+      "cat": "DOCUMENTARY"
+    },
+    {
+      "title": "Crois Pas qu'on Dort - Bande-annonce",
+      "sub": "Nick Walters\nSoldats\nco-DoP Alexandre Léglise, Yoann Suberviolle, Paloma Pineda",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8987/bcb1f30e-c19b-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4550097f-9b23-435c-959d-c4ccb01c2b55-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/rnM6lHqpBR-89VOMgM1GU3aCaG9zGzgntVJeLPIXJs8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/ZDU2MmUyZS0zZTE5/LTQ0MDUtOWEzMi0z/ZWI1MDA2MmZiMjUv/MTc5MTMwMTAzMzg4/Ny5qcGc?v=1&format=webp",
+      "slate": 8987,
+      "cat": "DOCUMENTARY"
+    },
+    {
+      "title": "Dezoom",
+      "sub": "såndl\nArte",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1559658379-y2mate.com-dezoom-une-serie-documentaire-de-simon-bouisson-et-ludovic-zuili-vw6xd3jyxhg-1080p.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/u9nT22FYgU7A_f5EiBLlU25TKl6sngG81t5kVvMyaeg/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZXpvb20tYjZkZmUw/NjA4Y2E0ZjY5NWZh/Y2M3MDRlMjAxMmJj/ZWEuanBn.webp",
+      "slate": 3442,
+      "cat": "DOCUMENTARY"
+    },
+    {
+      "title": "PRODUCT™",
+      "sub": "såndl\nLA BARONE and MEDIA356 for ARTE France",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545391319-43072898_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Xw6UF5VeM9-WTpiTQ1VKLF_i9Wkkt5EoAyvjFrhOoss/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTE0MTA0OTc4/L3Byb2R1Y3QuanBn.webp",
+      "slate": 1010,
+      "cat": "DOCUMENTARY"
+    },
+    {
+      "title": "Président",
+      "sub": "Julien Faure\nBlue Paris",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545391697-50975633_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7tIq2QtB-_Fzot4HSefLotfjNSLXn3i7AhN6JIofgXM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTEzNDYwMzAy/L3ByZXNpZGVudC5q/cGc.webp",
+      "slate": 1033,
+      "cat": "DOCUMENTARY"
     }
   ]
 }
