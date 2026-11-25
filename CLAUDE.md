@@ -22,6 +22,8 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   (robot `copie-slate.yml` sur `main`). L'admin joue chaque vidéo sur `d3toxil6rvamjf.cloudfront.net` au lieu de
   `d1ko11x0ybxl0h.cloudfront.net` (`notreCDN`, setter `src` des `<video>`), repli automatique sur Slate si le fichier manque
   (événement `error`). Les données gardent l'adresse Slate. Vignettes (images.slatecdn.net) et captures (`/api/media`) : encore Slate.
+- **Filmothèque complète** (25/11) : en plus des films des pages, tous les films de Slate (7 490) lus dans le dépôt privé
+  `notes` (`bibli/slate.json`, constante `BIB_SLATE`, avec la clé de la personne connectée) ; les infos des pages restent prioritaires.
 - **Lecture de Slate** : par les fonctions du site (`siteGet`) ; si elles ne répondent pas, par le **robot GitHub** (`askRobot` :
   demande dans `data/ask/<horodatage>.json`, workflow `slate-ask.yml` + `tools/ask.mjs` sur `main`, ~1 min ; `tools/slate.mjs` =
   copie de `netlify/functions/slate.mjs` du site, **à garder identiques**). Slate exige un User-Agent.

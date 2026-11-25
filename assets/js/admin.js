@@ -4386,6 +4386,7 @@
   // passe) sont dans le dépôt privé notes (bandes/<code>.json, bandes/index.json). Chiffrement : bandSeal (même code dans
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
   var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards"];
+  var BIB_SLATE = "bibli/slate.json"; // dépôt notes : tous les films de Slate (liste privée, 25/11)
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
   var bibCache = null, bibKey = null, edUndo = new WeakMap();
@@ -4421,7 +4422,10 @@
       return { z: +o.zoom, x: m ? +m[1] : 50, y: m ? +m[2] : 50, t: !!o.zoomThumb };
     }
     function raw(p) { return fetch(RAW_DATA + p, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
-    return Promise.all([loadIndex(), raw("fiction.json"), raw("spotlight.json"), raw("home.json"), readFile(BIB_LIB).catch(function () { return null; }), raw(BIB_META), readFile(BIB_EDITS).catch(function () { return null; })]).then(function (r) {
+    return Promise.all([loadIndex(), raw("fiction.json"), raw("spotlight.json"), raw("home.json"), readFile(BIB_LIB).catch(function () { return null; }), raw(BIB_META), readFile(BIB_EDITS).catch(function () { return null; }),
+      // Tous les films de Slate (Gus 25/11), y compris ceux qui ne sont sur aucune page : liste privée du dépôt notes
+      // (bibli/slate.json : titres, crédits, clients, adresses ; jamais dans ce dépôt public). Sans accès à notes : pages seules.
+      gh("/repos/" + NOTES_REPO + "/contents/" + BIB_SLATE, { raw: true, allow404: true }).then(function (t) { return t ? JSON.parse(t) : null; }).catch(function () { return null; })]).then(function (r) {
       var idx = r[0], lib = r[4], meta = (r[5] && r[5].films) || {}, edits = (r[6] && r[6].films) || {};
       ((lib && lib.items) || []).slice().reverse().forEach(function (it) { add(it, null); });
       return Promise.all((idx.dps || []).map(function (d) { return raw("dps/" + d.slug + ".json").then(function (f) { return [d, f]; }); })).then(function (fs) {
@@ -4443,6 +4447,8 @@
           });
         });
         ((r[3] && r[3].slides) || []).forEach(function (s) { add({ slate: s.slate, title: s.film, video: s.video, full: s.full, img: s.img, dops: (s.dps || []).map(function (x) { return x.name; }) }, null); });
+        // Puis tous les films de Slate : ne complète que ce que les pages n'ont pas (les infos des pages restent prioritaires).
+        ((r[7] && r[7].films) || []).forEach(function (f) { add(f, null); if (f.client && map["s" + f.slate] && !map["s" + f.slate].client) map["s" + f.slate].client = f.client; });
         // Infos de Slate (robot) : client, types de contenu, mots-clés (recherche libre seulement).
         order.forEach(function (f) {
           var m = f.slate && meta[f.slate]; if (!m) return;
