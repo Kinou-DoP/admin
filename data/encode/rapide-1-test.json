@@ -1,0 +1,8 @@
+{
+  "jobs": [
+    { "id": "testclaude01", "kind": "snip", "src": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2ade6e54-e18c-4f82-b502-1ecb7b4c183c-1280x720.2500.mp4", "s": 20, "d": 5 },
+    { "id": "testclaude01", "kind": "thumb", "src": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2ade6e54-e18c-4f82-b502-1ecb7b4c183c-1280x720.2500.mp4", "t": 22 }
+  ],
+  "at": "2026-11-26T00:00:00Z",
+  "by": "claude (essai)"
+}
