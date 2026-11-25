@@ -1164,9 +1164,12 @@
   // de FEATURED peut n'être dans aucun autre onglet). « Valider et publier » réécrit `categories` et `clips` de la fiche (les
   // corrections `overrides` restent attachées à chaque film par son id) puis publie : la page du site change tout de suite.
   var selOpen = null; // { slug, tab } : sélection à ouvrir en arrivant sur la fiche (clic dans les bundles / bandes de la filmothèque)
-  function selEditor(startTab) {
+  // cfg (accueil, spotlight, fiction, Gus 26/11) : { title, tab, items (films de la page), apply(ids, film) } : une seule liste, sans
+  // onglets ni filtre de chef op ; apply reçoit l'ordre (ids Slate) et film(id) = le film de la page ou du video club.
+  function selEditor(startTab, cfg) {
     if (typeof startTab !== "string") startTab = null;
-    var base = slate || { name: state.name, categories: ["FEATURED"], clips: [] }; // fiche sans films : « Créer une sélection »
+    var base = cfg ? { name: cfg.title, categories: [cfg.tab], clips: cfg.items.map(function (c) { return Object.assign({}, c, { cat: cfg.tab }); }) }
+      : slate || { name: state.name, categories: ["FEATURED"], clips: [] }; // fiche sans films : « Créer une sélection »
     var byId = {}, extra = {};
     base.clips.forEach(function (c) { if (!byId[c.slate]) byId[c.slate] = c; });
     function uniq(l) { var seen = {}; return l.filter(function (x) { if (seen[x]) return false; seen[x] = 1; return true; }); }
@@ -1176,7 +1179,7 @@
       return { name: name, ids: uniq(l.map(function (c) { return c.slate; })) };
     });
     var cur = Math.max(0, startTab ? tabs.map(function (t) { return t.name; }).indexOf(startTab) : 0), q = "", lib = null, changedSel = false;
-    function info(id) { var c = byId[id] || extra[id] || {}; return { title: val(c, "title") || c.title || "", sub: (val(c, "sub") || c.sub || "").split("\n").filter(Boolean).join(" · "), img: c.img }; }
+    function info(id) { var c = byId[id] || extra[id] || {}; return { title: (!cfg && val(c, "title")) || c.title || c.film || "", sub: ((!cfg && val(c, "sub")) || c.sub || [c.dir, c.prod].filter(Boolean).join("\n") || (c.dps || []).map(function (d) { return d.name || d; }).join(", ")).split("\n").filter(Boolean).join(" · "), img: c.img }; }
     var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox selbox" });
     function close(force) {
       if (!force && changedSel && !window.confirm("Fermer sans enregistrer les changements de la sélection ?")) return;
@@ -1193,6 +1196,7 @@
       tabs.forEach(function (t, i) {
         tabRow.appendChild(el("button", { type: "button", class: "chip" + (i === cur ? " on" : ""), text: t.name + " (" + t.ids.length + ")", on: { click: function () { cur = i; drawAll(); } } }));
       });
+      if (cfg) return; // une seule liste
       tabRow.appendChild(el("button", { type: "button", class: "btn ghost", text: "+ Onglet", on: { click: function () {
         var n = (window.prompt("Nom du nouvel onglet (ex. COMMERCIAL, MUSIC VIDEO) :") || "").trim().toUpperCase(); if (!n) return;
         if (tabs.some(function (t) { return t.name === n; })) return window.alert("L'onglet « " + n + " » existe déjà.");
@@ -1236,8 +1240,8 @@
     }
     // Liste de droite = le video club en petit (Gus 25/11) : filtres en étiquettes (chef op, réal, prod, client, type, catégorie ;
     // à l'ouverture : le chef op de la fiche), suggestions en tapant, mots libres, plus récents en haut ; clic sur l'image = aperçu.
-    var chips = rcBase(state.name || "") ? [{ type: "dop", value: rcBase(state.name || "") }] : [], chipsBox = el("div", { class: "bibchips selchips" }), sugBox = el("div", { class: "bibsug selsug", hidden: true });
-    function isDefault() { return chips.length === 1 && chips[0].type === "dop" && bnrm(chips[0].value) === bnrm(rcBase(state.name || "")); }
+    var chips = !cfg && rcBase(state.name || "") ? [{ type: "dop", value: rcBase(state.name || "") }] : [], chipsBox = el("div", { class: "bibchips selchips" }), sugBox = el("div", { class: "bibsug selsug", hidden: true });
+    function isDefault() { if (cfg) return !chips.length; return chips.length === 1 && chips[0].type === "dop" && bnrm(chips[0].value) === bnrm(rcBase(state.name || "")); }
     function drawSug() {
       sugBox.textContent = ""; var words = bnrm(q).split(" ").filter(Boolean), per = {};
       if (!lib || !words.length) { sugBox.hidden = true; return; }
@@ -1259,7 +1263,7 @@
       var withPage = isDefault() && !words.length; // à l'ouverture : les films du chef op + ceux de la page
       var list = lib.films.filter(function (f) { return f.slate && ((withPage && onPage[f.slate]) || (chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
       if (withPage) Object.keys(onPage).forEach(function (id) { id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
-      results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" + (list.length > 150 ? " · 150 premiers affichés" : "") }));
+      results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" + (list.length > 150 ? " · 150 premiers affichés" : "") }));
       list.slice(0, 150).forEach(function (f) {
         var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
         th.addEventListener("click", function () { selPreview(f); });
@@ -1288,6 +1292,7 @@
     }
     var ok = el("button", { type: "button", class: "btn primary", text: "Valider et publier" });
     ok.addEventListener("click", function () {
+      if (cfg) { changedSel = false; close(true); cfg.apply(tabs[0].ids.slice(), function (id) { return byId[id] || extra[id]; }); return; }
       var feat = (tabs.filter(function (t) { return t.name === "FEATURED"; })[0] || { ids: [] }).ids, clips = [];
       function clipFor(id) {
         var o = byId[id], c;
@@ -1306,7 +1311,7 @@
       if (state.open && !clips.some(function (c) { return c.slate === state.open; })) state.open = feat[0] || (clips[0] && clips[0].slate);
       curCat = null; touch(); close(true); render(); publish();
     });
-    box.appendChild(el("span", { class: "label", text: "Sélection de la page · " + (state.name || "") }));
+    box.appendChild(el("span", { class: "label", text: "Sélection de la page · " + (cfg ? cfg.title : state.name || "") }));
     box.appendChild(tabRow);
     box.appendChild(el("div", { class: "selgrid" }, [left, el("div", { class: "selsearch" }, [search, sugBox, chipsBox, results])]));
     box.appendChild(el("div", { class: "selfoot" }, [el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { close(); } } }), ok]));
@@ -1991,6 +1996,20 @@
     var k = slugify(name), e = index.dps.filter(function (d) { return slugify(d.name) === k; })[0];
     return e ? { name: e.name, slug: e.slug } : { name: name, slug: "" };
   }
+  // Film du video club → film de spotlight / fiction (même forme que ce qu'écrivait le robot depuis la bande Slate).
+  function pageFilm(f) {
+    var o = { slate: f.slate, title: f.title || "" }, sub = [f.dir, f.prod].filter(Boolean).join("\n");
+    if (sub) o.sub = sub; if (f.video) o.video = f.video; if (f.full) o.full = f.full; if (f.img) o.img = f.img;
+    o.cats = (f.types || []).slice(); o.artists = (f.dops || []).slice();
+    if (f.images && f.images.length && !f.video && !f.full) o.images = f.images.slice();
+    return o;
+  }
+  function pageSel(title, list, set, publishFn, renderFn) { // « Modifier la sélection » d'une page à liste unique (Gus 26/11)
+    selEditor(null, { title: title, tab: title.toUpperCase(), items: list, apply: function (ids, film) {
+      set(ids.map(function (id) { var o = list.filter(function (x) { return x.slate === id; })[0]; return o || film(id); }));
+      dirty = true; renderFn(); publishFn();
+    } });
+  }
   function slideOf(f) {
     var src = { film: f.film, song: f.song, legend: f.legend, dps: f.artists.map(dpOf) };
     var sl = { slate: f.slate, video: f.video, img: f.img, src: src };
@@ -2014,6 +2033,16 @@
     view.textContent = ""; editing = true; pagePublish = publishHome;
     histInit({ get: function () { return { data: home }; }, set: function (h) { home = JSON.parse(h.data); renderHome(); } });
     view.appendChild(el("h1", { text: "Page d'accueil" }));
+    view.appendChild(el("button", { type: "button", class: "btn primary selbtn", text: "Modifier la sélection", on: { click: function () {
+      pageSel("Accueil", (home.slides || []).map(function (sl) { return Object.assign({ title: sl.film }, sl); }), function (l) {
+        home.slides = l.map(function (x) {
+          if (x.src) { var y = Object.assign({}, x); delete y.title; delete y.cat; return y; }
+          var dps = (x.dops || []).map(dpOf), src = { film: x.title || "", song: "", legend: "", dps: dps };
+          var sl = { slate: x.slate, video: x.video, img: x.img, src: src, film: src.film, song: "", legend: "", dps: dps }; if (x.full) sl.full = x.full; return sl;
+        });
+        delete home.reel;
+      }, publishHome, renderHome);
+    } } }));
     view.appendChild(el("p", { class: "lead", text: "Les 10 premiers films d'une bande Slate défilent sur l'accueil, dans l'ordre de la bande." }));
     var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (kinou.slateapp.com/… ou shots.re/…)", value: home.reel || "" });
     var imp = el("button", { class: "btn primary", text: home.reel ? "Rafraîchir" : "Importer" }), st = el("p", { class: "hint" });
@@ -2273,6 +2302,9 @@
     state = spot; slate = spotSlate(); isNew = false; listed = true; // filmCard et setOverride travaillent sur state.overrides
     histInit({ get: function () { return { data: spot }; }, set: function (h) { spot = JSON.parse(h.data); renderSpot(); } });
     view.appendChild(el("h1", { text: "Spotlight" }));
+    view.appendChild(el("button", { type: "button", class: "btn primary selbtn", text: "Modifier la sélection", on: { click: function () {
+      pageSel("Spotlight", spot.films || [], function (l) { spot.films = l.map(function (f) { return f.cats ? f : pageFilm(f); }); delete spot.reel; delete spot.readError; }, publishSpot, renderSpot);
+    } } }));
     view.appendChild(el("p", { class: "lead", text: "Une bande Slate de films de tous les chefs op, sur la page Spotlight du site : onglet ALL (tous les films, dans l'ordre de la bande) puis un onglet par catégorie." }));
     // Bande Slate
     var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (shots.re/… ou kinou.slateapp.com/…)", value: spot.reel || "https://shots.re/206850" });
@@ -2332,6 +2364,7 @@
       var out = remote || {};
       sharedMerge(spot.overrides, out.overrides); awMerge(spot.overrides, out.overrides); // films reliés / prix changés ailleurs entre-temps
       out.reel = spot.reel; out.categories = spot.categories; out.overrides = spot.overrides;
+      if (!spot.reel) { delete out.reel; delete out.readError; out.films = spot.films || []; } // sélection faite dans l'admin (sans Slate)
       // « Relire la bande » avec le même lien : sans ce changement le fichier serait identique, le commit vide
       // et le robot GitHub (lancé seulement quand data/spotlight.json change) ne relirait pas la bande.
       if (justLink === true) out.readAsk = new Date().toISOString();
@@ -2345,7 +2378,7 @@
         status("Le robot a ajouté les films complets : le site est à jour.", "ok");
       });
       refreshSite("spotlight").catch(function () {});
-      if (justLink !== true) { flash = "Publié. Le robot relit la bande sur Slate (environ 1 minute)."; renderSpot(); }
+      if (justLink !== true) { flash = spot.reel ? "Publié. Le robot relit la bande sur Slate (environ 1 minute)." : "Publié. Le site est à jour."; renderSpot(); }
       else status("Lien publié.", "ok");
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); throw e; })
       .then(function (r) { publishBtn.disabled = false; return r; }, function (e) { publishBtn.disabled = false; throw e; });
@@ -2617,6 +2650,9 @@
     state = fic; slate = ficSlate(); isNew = false; listed = true; // filmCard et setOverride travaillent sur state.overrides
     histInit({ get: function () { return { data: fic, refs: Object.assign({}, pending) }; }, set: function (h) { fic = JSON.parse(h.data); pending = Object.assign({}, h.refs); renderFic(); } });
     view.appendChild(el("h1", { text: "Fiction" }));
+    view.appendChild(el("button", { type: "button", class: "btn primary selbtn", text: "Modifier la sélection", on: { click: function () {
+      pageSel("Fiction", fic.films || [], function (l) { fic.films = l.map(function (f) { return f.cats ? f : pageFilm(f); }); delete fic.reel; delete fic.readError; }, publishFic, renderFic);
+    } } }));
     view.appendChild(el("p", { class: "lead", text: "Une bande Slate des films de fiction. Pour chaque film : son onglet (New release, Coming soon, Past release), son genre et ses plateformes (affichés à la sélection), , sa date de sortie (affichée au survol dans New releases et Coming soon), son affiche et ses stills." }));
     var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (shots.re/… ou kinou.slateapp.com/…)", value: fic.reel || "" });
     var st = el("p", { class: "hint" });
@@ -2669,6 +2705,7 @@
       sharedMerge(fic.overrides, out.overrides); // films reliés : changé sur une fiche ou le spotlight entre-temps
       awMerge(fic.overrides, out.overrides); // prix ajoutés depuis « Nos sélections » entre-temps
       out.reel = fic.reel; out.overrides = fic.overrides;
+      if (!fic.reel) { delete out.reel; delete out.readError; out.films = fic.films || []; } // sélection faite dans l'admin (sans Slate)
       if (justLink === true) out.readAsk = new Date().toISOString(); // fichier changé même avec le même lien → le robot relit la bande
       files.push({ path: "data/fiction.json", text: json(out) });
       return commit(files, "Mise à jour de la page fiction (admin, " + user.login + ")").then(function (ref) { out._ref = ref; return out; });
@@ -2681,7 +2718,7 @@
         status("Le robot a ajouté les films complets : le site est à jour.", "ok");
       });
       refreshSite("fiction").catch(function () {});
-      if (justLink !== true) { flash = "Publié. Le robot relit la bande sur Slate (environ 1 minute)."; renderFic(); }
+      if (justLink !== true) { flash = fic.reel ? "Publié. Le robot relit la bande sur Slate (environ 1 minute)." : "Publié. Le site est à jour."; renderFic(); }
       else status("Lien publié.", "ok");
     }).catch(function (e) { status("Échec de la publication : " + e.message, "err"); throw e; })
       .then(function (r) { publishBtn.disabled = false; return r; }, function (e) { publishBtn.disabled = false; throw e; });
@@ -5268,6 +5305,12 @@
           var pb = el("div", { class: "bold" }); box.after(el("span", { class: "label bpages", text: "Pages du site · chefs op" }), pb);
           function prow() {
             pb.textContent = ""; var w = bnrm(q3.value);
+            [["Accueil", "#/home", ""], ["Spotlight", "#/spotlight", "spotlight/"], ["Fiction", "#/fiction", "fiction/"]].forEach(function (x) {
+              if (bnrm(x[0]).indexOf(w) < 0) return;
+              pb.appendChild(el("div", { class: "boldrow nothumb", title: "Ouvrir la page dans l'admin (« Modifier la sélection »)", on: { click: function (e) { if (!e.target.closest("a, button")) location.hash = x[1]; } } }, [
+                el("div", { class: "boldt" }, [el("strong", { text: "Page · " + x[0] }), el("small", { text: "page du site" })]),
+                el("div", { class: "fwbtns" }, [el("a", { class: "btn ghost", href: SITE_VIEW + "/" + x[2], target: "_blank", rel: "noopener", text: "↗", title: "Voir la page sur le site" })])]));
+            });
             (d.pages || []).filter(function (p) { return bnrm(p.name).indexOf(w) > -1; }).sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (p, i) {
               pb.appendChild(el("div", { class: "boldrow nothumb", style: "--i:" + Math.min(i, 20), title: "Modifier la sélection de la page", on: { click: function (e) { if (e.target.closest("a, button")) return; selOpen = { slug: p.slug }; location.hash = "#/dp/" + p.slug; } } }, [
                 el("div", { class: "boldt" }, [el("strong", { text: "Page · " + p.name }), el("small", { text: [p.tabs.length + " onglet" + (p.tabs.length > 1 ? "s" : ""), p.tabs.map(function (t) { return t.name; }).join(", "), p.hidden ? "cachée" : ""].filter(Boolean).join(" · ") })]),
