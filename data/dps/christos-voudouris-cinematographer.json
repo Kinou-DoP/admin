@@ -20,6 +20,14 @@
     "4482": {
       "title": "Love Is Strange"
     },
+    "4485": {
+      "zoom": 1.11,
+      "zoomThumb": true
+    },
+    "4487": {
+      "zoom": 1.08,
+      "zoomThumb": true
+    },
     "4488": {
       "zoom": 1.36,
       "zoomPos": "52.9% 84.3%",
@@ -41,13 +49,19 @@
       "title": "All The Fires the Fire"
     },
     "6456": {
-      "title": "Dangerous Liaisons"
+      "title": "Dangerous Liaisons",
+      "zoom": 1.08,
+      "zoomPos": "0% 100%"
     },
     "8243": {
       "title": "Rosalie "
     },
+    "10039": {
+      "zoom": 1.5
+    },
     "10296": {
-      "title": "Evil Dress"
+      "title": "Evil Dress",
+      "zoom": 1.28
     },
     "10706": {
       "title": "Casi Todo Bien",
@@ -56,7 +70,9 @@
         "awardsFrom": {
           "39638663ef44": "Official selection, Festival de Málaga"
         }
-      }
+      },
+      "zoom": 1.39,
+      "zoomPos": "54.7% 52%"
     }
   },
   "about": {
