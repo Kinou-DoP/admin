@@ -5119,7 +5119,8 @@
       navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à la bande", inLabel: "Dans la bande", has: inBand, add: function (x) { if (!inBand(x)) addKeys([x.key], band.items.length); } });
     }
     // Infos d'un film de la bibliothèque : même fenêtre que les retouches d'une bande ; enregistrées dans data/bibli/edits.json
-    // (seulement ce qui diffère des pages), reprises par les films ajoutés ensuite aux bandes. Les pages du site ne changent pas.
+    // (seulement ce qui diffère des pages), reprises par les films ajoutés ensuite aux bandes et appliquées aussi au site
+    // (fiches, spotlight, fiction, accueil : app.js du site lit edits.json, Gus 26/11 « le video club sert partout »).
     var libQ = { t: 0, busy: false, again: false, todo: {}, files: [] };
     // Appliquer une retouche d'une bande au film du video club (Gus 23/11 : « en faire la vignette / l'extrait officiel ») :
     // mêmes infos que la fenêtre du film (edits.json, seulement ce qui diffère des pages), reprises par les prochaines bandes.
@@ -6084,7 +6085,7 @@
       drawEx();
       var aw = el("textarea", { rows: 3, placeholder: "Une ligne par prix ou sélection (ex. Best Cinematography, Camerimage 2026)" }); aw.value = it.awards || "";
       aw.addEventListener("input", function () { it.awards = aw.value.trim(); if (!it.awards) delete it.awards; it.edited = true; chg(); });
-      box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (reprises dans les prochaines bandes, pas sur le site) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
+      box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (sur le site et dans les prochaines bandes) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [].concat(
           fld("Titre", function () { return it.title; }, function (v) { it.title = v; }),
@@ -6171,10 +6172,10 @@
           if (kind === "snip" && it._snipTmp) snipCommit(); // un extrait réglé mais pas encore validé : validé d'abord
           if (kind === "img") libPatch(libF, { img: it.img, thumbT: it.thumbT });
           else libPatch(libF, { snip: it.snip, snipVideo: it.snipVideo });
-          offOut.textContent = (kind === "img" ? "Vignette appliquée" : "Extrait appliqué") + " au film dans le video club : les prochaines bandes l'utiliseront.";
+          offOut.textContent = (kind === "img" ? "Vignette appliquée" : "Extrait appliqué") + " au film dans le video club : le site et les prochaines bandes l'utiliseront.";
         }
-        var offImg = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire la vignette officielle du film", title: "Le film du video club prend cette vignette (pour toutes les prochaines bandes)", on: { click: function () { official("img"); } } })]) : null;
-        var offSnip = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire l'extrait officiel du film", title: "Le film du video club prend cet extrait (pour toutes les prochaines bandes)", on: { click: function () { official("snip"); } } })]) : null;
+        var offImg = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire la vignette officielle du film", title: "Le film du video club prend cette vignette (sur le site et pour toutes les prochaines bandes)", on: { click: function () { official("img"); } } })]) : null;
+        var offSnip = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire l'extrait officiel du film", title: "Le film du video club prend cet extrait (sur le site et pour toutes les prochaines bandes)", on: { click: function () { official("snip"); } } })]) : null;
         thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [upBtn("⤒ Importer une image", imgUp, "image", doImg), imgUp, el("span", { class: "tlgrow" }), grabB]),
           el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg, offImg]);
         snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine,

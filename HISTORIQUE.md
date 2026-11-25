@@ -391,3 +391,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 (Gus) : « Remplacer la vidéo » depuis l'ordinateur (envoi chez Amazon + encodage par le robot).
 - 26/11 (Gus) : fenêtre d'import (infos + vignette / extrait pendant l'envoi, avancement envoi + encodage, plusieurs vidéos d'un projet avec les crédits de la 1re, liens « + Vidéo » / « + Images » ouvrables dans un autre onglet) ; « Remplacer la vidéo » garde vignette / extrait / temps (Valider les refait), vidéo glissée sur le bouton ; stills de l'ordinateur ajoutés par glisser-déposer, ordre en glissant.
 - 26/11 (Gus) : vignettes grises après un changement de vignette → copie locale affichée tant que l'image n'est pas en ligne (`imgLocal`).
+- 26/11 (Gus) : « le video club sert partout » : textes de la fenêtre d'un film (« sur le site et dans les prochaines bandes ») ; le site applique `edits.json` (vcApply d'app.js).

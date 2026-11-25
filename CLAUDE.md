@@ -115,7 +115,9 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   ou Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z) : instantanés de la bande (`undo*`), remis à zéro à chaque bande ouverte ou nouvelle. Anciennes bandes en clair (`data/bandes/`, 19/11) : listées, converties au premier changement.
   **Dans la liste** : clic sur l'image = lecteur (`bibPlay` → `navPlayer` : film complet, ‹ › / flèches = film d'avant / d'après dans la liste affichée, « + Ajouter à la bande » au milieu, Échap / clic à côté ; même lecteur dans « Modifier la sélection », « + » = onglet ouvert) ; clic ailleurs sur la ligne = **infos du
   film** (même fenêtre que les retouches, `editItem(-1, lib)`), enregistrées dans `data/bibli/edits.json` (seulement ce qui diffère des
-  pages, `bibApply`, `_orig`), reprises par les films ajoutés ensuite aux bandes, jamais sur le site ; ligne marquée ✎. **Crédits avec
+  pages, `bibApply`, `_orig`), reprises par les films ajoutés ensuite aux bandes **et sur le site** (Gus 26/11 : le site lit `edits.json` et applique vignette,
+  extrait léger `snip.v` / mp4 `snipVideo`, film, titre, crédits, stills / vidéos dessous par-dessus les fiches, spotlight, fiction,
+  accueil ; `vcApply` d'`app.js`) ; ligne marquée ✎. **Crédits avec
   rôle** : `dops` + `roles { nom: rôle }` (rôle vide = cinematographer, crédité en premier ; ex. « Camera operator »), dans les infos
   et les retouches ; case à cocher et « + » plus grands. **Réal, prod, types de contenu en blocs** (`chipsIn` : suggestions des noms
   déjà connus de la même sorte, clic / Entrée / virgule = bloc, clic sur un bloc = le modifier ; enregistrés séparés par « , » ; plusieurs
