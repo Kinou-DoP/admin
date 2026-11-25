@@ -18,6 +18,10 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   modifications non publiées, `saveDraft`).
 - `SITE` = `SITE_VIEW` = https://kinou-4tv.pages.dev (fonctions Cloudflare du site : lecture de Slate ; « Voir sur le site ») ;
   `SITE_PAGES` = beta GitHub Pages (pages d'aperçu des liens) ; `RAW_DATA` = données sur raw.githubusercontent.com.
+- **Vidéos depuis Amazon** (25/11) : tous les fichiers de Slate sont copiés dans notre compartiment `kinou-videos` au même chemin
+  (robot `copie-slate.yml` sur `main`). L'admin joue chaque vidéo sur `d3toxil6rvamjf.cloudfront.net` au lieu de
+  `d1ko11x0ybxl0h.cloudfront.net` (`notreCDN`, setter `src` des `<video>`), repli automatique sur Slate si le fichier manque
+  (événement `error`). Les données gardent l'adresse Slate. Vignettes (images.slatecdn.net) et captures (`/api/media`) : encore Slate.
 - **Lecture de Slate** : par les fonctions du site (`siteGet`) ; si elles ne répondent pas, par le **robot GitHub** (`askRobot` :
   demande dans `data/ask/<horodatage>.json`, workflow `slate-ask.yml` + `tools/ask.mjs` sur `main`, ~1 min ; `tools/slate.mjs` =
   copie de `netlify/functions/slate.mjs` du site, **à garder identiques**). Slate exige un User-Agent.

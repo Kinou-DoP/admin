@@ -44,10 +44,24 @@
   window.addEventListener("hashchange", function () { checkVersion(); });
 
   // ---------- Outils ----------
+  // Vidéos jouées depuis NOTRE hébergement Amazon (copie de tout Slate le 25/11, au même chemin que sur le CloudFront de Slate) :
+  // seul le début de l'adresse change. Les données gardent l'adresse Slate (rien à republier). Fichier absent chez nous (film
+  // ajouté sur Slate depuis la copie) : repli automatique sur Slate. Les captures d'image passent toujours par /api/media du site.
+  var SLATE_CDN = "https://d1ko11x0ybxl0h.cloudfront.net/", NOTRE_CDN = "https://d3toxil6rvamjf.cloudfront.net/";
+  function notreCDN(u) { return typeof u === "string" && u.indexOf(SLATE_CDN) === 0 ? NOTRE_CDN + u.slice(SLATE_CDN.length) : u; }
+  var srcMedia = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, "src");
+  Object.defineProperty(HTMLMediaElement.prototype, "src", { configurable: true, enumerable: srcMedia.enumerable, get: srcMedia.get,
+    set: function (u) { delete this.dataset.repliSlate; srcMedia.set.call(this, notreCDN(u)); } });
+  document.addEventListener("error", function (ev) {
+    var v = ev.target, u = v instanceof HTMLMediaElement && v.getAttribute("src");
+    if (!u || u.indexOf(NOTRE_CDN) !== 0 || v.dataset.repliSlate) return;
+    v.dataset.repliSlate = "1"; srcMedia.set.call(v, SLATE_CDN + u.slice(NOTRE_CDN.length)); // repli : Slate
+  }, true);
   function el(tag, attrs, kids) {
     var e = document.createElement(tag);
     for (var k in attrs || {}) {
       if (k === "text") e.textContent = attrs[k];
+      else if (k === "src" && e instanceof HTMLMediaElement) { if (attrs[k]) e.src = attrs[k]; } // → notreCDN (ci-dessus)
       else if (k === "on") for (var ev in attrs.on) e.addEventListener(ev, attrs.on[ev]);
       else if (attrs[k] !== undefined && attrs[k] !== null && attrs[k] !== false) e.setAttribute(k, attrs[k] === true ? "" : attrs[k]);
     }
