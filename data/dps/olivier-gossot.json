@@ -364,9 +364,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b02b750a-6999-4adf-b5e9-d722ed90f052-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/zYgGCz0AM8HFBUVSNhsv0lBEZChhOVIgrbPu7jkVhPQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MmUyMGJhOS05M2Rj/LTQzY2QtYjI1OC1l/ZTYyOTVkODFmYjgv/MTY5MTA2NzQzMzky/NS5qcGc?v=1&format=webp",
       "cat": "COMMERCIAL",
-      "slate": 7605,
-      "featured": true,
-      "featuredOrder": 9
+      "slate": 7605
     },
     {
       "title": "BELL | Is it still TV",
@@ -491,7 +489,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/81463bdc-7160-4f77-a9f3-d284988dc0ff-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/3DStN5g1k0D1WbeUbqfkV47nIdjsQi9I3rLEoXotzDY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NzZkOGI3My1lMmEy/LTQzZDMtYWQ3MC02/OTFiMmNlMzAxYjAv/MjAuanBlZw?v=1&format=webp",
       "cat": "MUSIC VIDEOS",
-      "slate": 5627
+      "slate": 5627,
+      "featured": true,
+      "featuredOrder": 9
     },
     {
       "title": "Daniela Andrade \"Gallo Pinto\"",
