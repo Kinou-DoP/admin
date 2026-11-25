@@ -60,6 +60,7 @@
     var v = ev.target, u = v instanceof HTMLMediaElement && v.getAttribute("src");
     if (!u || u.indexOf(NOTRE_CDN) !== 0 || v.dataset.repliSlate) return;
     if (++cdnReplis >= 2 && !cdnOk) cdnPanne = true;
+    ev.stopImmediatePropagation(); // l'échec chez nous ne compte pas comme une erreur de la vidéo
     v.dataset.repliSlate = "1"; srcMedia.set.call(v, SLATE_CDN + u.slice(NOTRE_CDN.length)); // repli : Slate
     if (v.autoplay || v.veutJouer) { var p = jouerMedia.call(v); if (p && p.catch) p.catch(function () {}); }
   }, true);
