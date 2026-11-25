@@ -51,11 +51,17 @@
   function notreCDN(u) { return typeof u === "string" && u.indexOf(SLATE_CDN) === 0 ? NOTRE_CDN + u.slice(SLATE_CDN.length) : u; }
   var srcMedia = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, "src");
   Object.defineProperty(HTMLMediaElement.prototype, "src", { configurable: true, enumerable: srcMedia.enumerable, get: srcMedia.get,
-    set: function (u) { delete this.dataset.repliSlate; srcMedia.set.call(this, notreCDN(u)); } });
+    set: function (u) { delete this.dataset.repliSlate; srcMedia.set.call(this, cdnPanne ? u : notreCDN(u)); } });
+  // Lecture demandée (play) : relancée après le repli. Notre CloudFront muet (2 replis, rien lu chez nous) : Slate pour la suite.
+  var jouerMedia = HTMLMediaElement.prototype.play, cdnOk = false, cdnReplis = 0, cdnPanne = false;
+  HTMLMediaElement.prototype.play = function () { this.veutJouer = true; return jouerMedia.apply(this, arguments); };
+  document.addEventListener("loadeddata", function (ev) { var u = ev.target.getAttribute && ev.target.getAttribute("src"); if (u && u.indexOf(NOTRE_CDN) === 0) cdnOk = true; }, true);
   document.addEventListener("error", function (ev) {
     var v = ev.target, u = v instanceof HTMLMediaElement && v.getAttribute("src");
     if (!u || u.indexOf(NOTRE_CDN) !== 0 || v.dataset.repliSlate) return;
+    if (++cdnReplis >= 2 && !cdnOk) cdnPanne = true;
     v.dataset.repliSlate = "1"; srcMedia.set.call(v, SLATE_CDN + u.slice(NOTRE_CDN.length)); // repli : Slate
+    if (v.autoplay || v.veutJouer) { var p = jouerMedia.call(v); if (p && p.catch) p.catch(function () {}); }
   }, true);
   function el(tag, attrs, kids) {
     var e = document.createElement(tag);
