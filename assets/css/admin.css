@@ -1062,3 +1062,25 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .brepl { margin-top: 10px; }
 .brepl .hint { margin: 6px 0 0; }
 .bcols { flex-wrap: wrap; } .bcolsep { flex-basis: 100%; height: 0; }
+
+/* « Modifier la sélection » d'une page de chef op (Gus 25/11) */
+.selbtn { margin: 4px 0 14px; }
+.bmbox.selbox { max-width: 1240px; }
+.seltabs { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 14px 0 6px; }
+.seltools { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 10px; }
+.seltools .label { margin: 0 8px 0 0; }
+.selgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 16px; }
+.selleft, .selres { max-height: 62vh; overflow-y: auto; }
+.selitem { display: flex; align-items: center; gap: 10px; padding: 6px 4px; border-bottom: 1px solid var(--faint); }
+.selitem[draggable=true] { cursor: grab; }
+.selitem.drag { opacity: .4; }
+.selitem.over { box-shadow: inset 0 2px 0 #fff; }
+.selitem .btn { padding: 4px 9px; min-width: 0; }
+.selnum { width: 22px; text-align: right; opacity: .5; font-size: 12px; }
+.selth { flex: 0 0 96px; height: 54px; background: #222 center / cover no-repeat; }
+.seltxt { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.seltxt b, .seltxt small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.seltxt small { opacity: .6; }
+.selfoot { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+@media (max-width: 800px) { .selgrid { grid-template-columns: 1fr; } }
+.label.bpages { display: block; margin: 22px 0 6px; }

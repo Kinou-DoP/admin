@@ -57,7 +57,12 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
 - **Accueil de l'admin** (`#/`, `showHello`) : « Hello la Dream Team ! » + petit mot par ordre d'importance (`helloNews` : sorties de
   la semaine, dates de fiction trouvées / bandes-annonces, prix trouvés ces 3 derniers jours, « à vérifier » s'ils ne sont pas confirmés).
 - **Website** : **cinematographers** (`#/dops`, liste + tableau de bord d'avancement `data/progress.json`), **fiche d'un chef op**
-  (`#/dp/<slug>`, `showDP`) : bundle Slate (« Relire le bundle » ; un snippet absent sur Slate mais présent dans la fiche est gardé),
+  (`#/dp/<slug>`, `showDP`) : **« Modifier la sélection »** (`selEditor`, Gus 25/11 : la page ne lit plus Slate) = fenêtre des onglets
+  (ajouter, renommer, avancer / reculer, supprimer) et des films de chaque onglet (glisser ou ↑ ↓, retirer ×, ajouter « + » depuis la
+  filmothèque : recherche dans `bibLoad`, sans recherche = films de la page) ; FEATURED = ordre du showreel (`featured`,
+  `featuredOrder` ; un film de FEATURED peut n'être dans aucun autre onglet : `cat: ""`) ; « Valider et publier » réécrit `categories`
+  + `clips` puis publie (site à jour en ~10 s) ; les `overrides` restent attachés à chaque film. « Réimporter depuis Slate » (option,
+  demande confirmation : remplace la sélection ; un snippet absent sur Slate mais présent dans la fiche est gardé),
   films par onglet (titre, crédits, masquer, recadrage, cadrage téléphone, liens Slate de stills / vidéos sous le film avec colonnes,
   extrait au survol, infos du film, **prix & sélections**, présentation vidéo + stills), bouton **« Compléter les infos des films
   (robot) »** (onglets fiction, 2nd unit, cam op ; champs vides seulement, marqués « à vérifier »), en ligne / caché, genre, notes
@@ -100,6 +105,9 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   d'un seul film `{ single: true }`, même lien court chiffré `SITE_VIEW/b/<code>`, code par film dans notes `bandes/films.json`
   (`{ <clé du film>: { code, download, title, at, by } }`), page republiée 2,5 s après chaque retouche du film (`shr`).
   Lien de partage **créé dès l'ajout** d'un film ou d'images (`shareCreate` : un commit pour tous, puis `films.json`).
+  **Pages du site dans la filmothèque** (Gus 25/11) : « Bundles » liste aussi chaque page de chef op (« Page · Nom », `bibCache.pages`)
+  et « Bandes existantes » chacun de ses onglets (« Nom · ONGLET ») ; clic = la fiche s'ouvre sur « Modifier la sélection » à cet
+  onglet (`selOpen`), ↗ = la page sur le site ; pas de lien à envoyer (une seule source : la fiche).
   **Bundles** (3e onglet discret du panneau, Gus 23/11) : bandes de bandes ; liste avec recherche (notes `bandes/bundles.json`),
   « + Nouveau bundle », ajouter une bande existante (liste avec recherche), ordre en glissant (`bunDrag`, même animation que les films d'une bande) ou ↑, retirer ×, clic sur une bande = l'ouvrir pour la
   modifier, « + Créer une bande dans ce bundle » ; « ← Retour au bundle » ajoute la bande ouverte / créée (`backToBundle`) ; lien

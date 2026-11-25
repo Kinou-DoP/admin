@@ -858,6 +858,7 @@
       slate = state.clips ? { name: state.name, categories: state.categories || [], clips: state.clips } : null;
       curCat = null;
       render();
+      if (selOpen && selOpen.slug === slug) { var t0 = selOpen.tab; selOpen = null; selEditor(t0); }
     }).catch(function (e) { view.textContent = ""; view.appendChild(el("p", { class: "status err", text: e.message })); });
   }
 
@@ -941,7 +942,7 @@
     view.appendChild(el("div", { class: "dp-head" }, [el("h1", { text: state.name || "Nouveau chef op" }), isNew ? null : progressCtl()]));
     view.appendChild(onlineCtl());
     view.appendChild(genderCtl());
-    view.appendChild(el("p", { class: "lead", text: isNew ? "Nouvelle fiche — collez le lien du bundle Slate pour commencer." : (state.bundle ? "Films synchronisés avec Slate." : "Fiche sans bundle Slate : les films sont figés.") }));
+    view.appendChild(el("p", { class: "lead", text: isNew ? "Nouvelle fiche — collez le lien du bundle Slate pour commencer." : "Sélection de la page : « Modifier la sélection » (Slate n'est plus lu ; « Réimporter depuis Slate » en option)." }));
     var nk = origSlug || (!isNew && state.slug); // une fois par fiche ouverte (render est rappelé à chaque changement)
     if (nk) { if (notesFor !== nk) { notesFor = nk; notesNode = notesBox(nk); } view.appendChild(notesNode); }
     view.appendChild(bundleSection());
@@ -958,8 +959,9 @@
   function bundleSection() {
     var input = el("input", { type: "url", class: "nodirty", placeholder: "https://shots.re/… ou https://kinou.slateapp.com/bundles/…", value: state.bundle || "" });
     var st = el("p", { class: "hint" });
-    var imp = el("button", { class: "btn", text: state.bundle ? "Relire le bundle" : "Importer" });
+    var imp = el("button", { class: "btn", text: state.bundle ? "Réimporter depuis Slate" : "Importer" });
     imp.addEventListener("click", function () {
+      if (slate && slate.clips && slate.clips.length && !window.confirm("Réimporter depuis Slate remplace la sélection de la page (onglets, films, ordre) par celle du bundle Slate. Les corrections des films sont gardées. Continuer ?")) return;
       imp.disabled = true; st.textContent = "Lecture du bundle sur Slate" + slateWait(" (environ 5 s)…");
       importBundle(input.value).then(function (d) {
         // Chef op déjà dans la liste du site (même nom) : on garde son adresse actuelle,
@@ -1124,6 +1126,7 @@
       tabs.appendChild(b);
     });
     sec.appendChild(tabs);
+    if (pagePublish === publish) sec.insertBefore(el("button", { type: "button", class: "btn primary selbtn", text: "Modifier la sélection", on: { click: selEditor } }), tabs);
     if (pagePublish === publish && state.slug) sec.insertBefore(infoRobotCtl(), tabs);
     // Fiche d'un chef op : interrupteur de l'onglet ouvert → présentation « vidéo + stills » sur le site (`showcase`) : par projet la
     // vidéo en grand, titre et crédits à côté, les 6 premiers stills (liens de stills ajoutés sous le film) autour.
@@ -1148,8 +1151,137 @@
     var grid = el("div", { class: "films" });
     list.forEach(function (c) { grid.appendChild(filmCard(c)); });
     sec.appendChild(grid);
-    sec.appendChild(el("p", { class: "hint", text: "L'ordre et les catégories viennent de Slate. Les corrections de titre et de crédits restent attachées au film même s'il change de place sur Slate." }));
+    sec.appendChild(el("p", { class: "hint", text: pagePublish === publish ? "Onglets, films et ordre : « Modifier la sélection » (la page ne lit plus Slate). Les corrections de titre et de crédits restent attachées au film." : "L'ordre et les catégories viennent de Slate. Les corrections de titre et de crédits restent attachées au film même s'il change de place sur Slate." }));
     return sec;
+  }
+
+  // « Modifier la sélection » (Gus 25/11) : onglets de la page et films de chaque onglet, sans Slate. Films ajoutés depuis la
+  // filmothèque (bibLoad : tous nos films, Slate compris) ; glisser ou ↑ ↓ pour l'ordre ; FEATURED = ordre du showreel (un film
+  // de FEATURED peut n'être dans aucun autre onglet). « Valider et publier » réécrit `categories` et `clips` de la fiche (les
+  // corrections `overrides` restent attachées à chaque film par son id) puis publie : la page du site change tout de suite.
+  var selOpen = null; // { slug, tab } : sélection à ouvrir en arrivant sur la fiche (clic dans les bundles / bandes de la filmothèque)
+  function selEditor(startTab) {
+    if (typeof startTab !== "string") startTab = null;
+    if (!slate) slate = { name: state.name, categories: ["FEATURED"], clips: [] };
+    var byId = {}, extra = {};
+    slate.clips.forEach(function (c) { if (!byId[c.slate]) byId[c.slate] = c; });
+    function uniq(l) { var seen = {}; return l.filter(function (x) { if (seen[x]) return false; seen[x] = 1; return true; }); }
+    var tabs = slate.categories.map(function (name) {
+      var l = name === "FEATURED" ? slate.clips.filter(function (c) { return c.featured; }).sort(function (a, b) { return a.featuredOrder - b.featuredOrder; })
+        : slate.clips.filter(function (c) { return c.cat === name; });
+      return { name: name, ids: uniq(l.map(function (c) { return c.slate; })) };
+    });
+    var cur = Math.max(0, startTab ? tabs.map(function (t) { return t.name; }).indexOf(startTab) : 0), q = "", lib = null, changedSel = false;
+    function info(id) { var c = byId[id] || extra[id] || {}; return { title: val(c, "title") || c.title || "", sub: (val(c, "sub") || c.sub || "").split("\n").filter(Boolean).join(" · "), img: c.img }; }
+    var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox selbox" });
+    function close(force) {
+      if (!force && changedSel && !window.confirm("Fermer sans enregistrer les changements de la sélection ?")) return;
+      ov.classList.add("out"); setTimeout(function () { ov.remove(); }, 160); document.removeEventListener("keydown", esc);
+    }
+    function esc(e) { if (e.key === "Escape") close(); }
+    document.addEventListener("keydown", esc);
+    ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+    var tabRow = el("div", { class: "seltabs" }), left = el("div", { class: "selleft" }), right = el("div", { class: "selright" });
+    var search = el("input", { type: "text", placeholder: "Chercher dans le video club : titre, chef op, réal, prod, client…" }), results = el("div", { class: "selres" });
+    function ch() { changedSel = true; }
+    function drawTabs() {
+      tabRow.textContent = "";
+      tabs.forEach(function (t, i) {
+        tabRow.appendChild(el("button", { type: "button", class: "chip" + (i === cur ? " on" : ""), text: t.name + " (" + t.ids.length + ")", on: { click: function () { cur = i; drawAll(); } } }));
+      });
+      tabRow.appendChild(el("button", { type: "button", class: "btn ghost", text: "+ Onglet", on: { click: function () {
+        var n = (window.prompt("Nom du nouvel onglet (ex. COMMERCIAL, MUSIC VIDEO) :") || "").trim().toUpperCase(); if (!n) return;
+        if (tabs.some(function (t) { return t.name === n; })) return window.alert("L'onglet « " + n + " » existe déjà.");
+        tabs.push({ name: n, ids: [] }); cur = tabs.length - 1; ch(); drawAll();
+      } } }));
+      var t = tabs[cur]; if (!t) return;
+      var tools = el("div", { class: "seltools" }, [el("span", { class: "label", text: "Onglet « " + t.name + " »" })]);
+      if (cur > 0) tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "← Avancer", on: { click: function () { tabs.splice(cur - 1, 0, tabs.splice(cur, 1)[0]); cur--; ch(); drawAll(); } } }));
+      if (cur < tabs.length - 1) tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "Reculer →", on: { click: function () { tabs.splice(cur + 1, 0, tabs.splice(cur, 1)[0]); cur++; ch(); drawAll(); } } }));
+      if (t.name !== "FEATURED") tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "Renommer", on: { click: function () {
+        var n = (window.prompt("Nouveau nom de l'onglet :", t.name) || "").trim().toUpperCase(); if (!n || n === t.name) return;
+        if (tabs.some(function (x) { return x.name === n; })) return window.alert("L'onglet « " + n + " » existe déjà.");
+        if (state.showcase) state.showcase = state.showcase.map(function (c) { return c === t.name ? n : c; });
+        t.name = n; ch(); drawAll();
+      } } }));
+      tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "Supprimer l'onglet", on: { click: function () {
+        if (t.ids.length && !window.confirm("Supprimer l'onglet « " + t.name + " » et ses " + t.ids.length + " films de la page ?")) return;
+        tabs.splice(cur, 1); cur = Math.max(0, cur - 1); ch(); drawAll();
+      } } }));
+      tabRow.appendChild(tools);
+    }
+    var dragI = -1;
+    function drawLeft() {
+      left.textContent = ""; var t = tabs[cur];
+      if (!t) { left.appendChild(el("p", { class: "empty", text: "Aucun onglet : « + Onglet » pour commencer." })); return; }
+      if (!t.ids.length) left.appendChild(el("p", { class: "empty", text: "Onglet vide : ajoutez des films avec « + » à droite." }));
+      t.ids.forEach(function (id, i) {
+        var f = info(id), th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
+        var row = el("div", { class: "selitem", draggable: "true" }, [el("span", { class: "selnum", text: String(i + 1) }), th,
+          el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }), el("small", { text: f.sub })]),
+          el("button", { type: "button", class: "btn ghost", text: "↑", title: "Monter", on: { click: function () { if (i) { t.ids.splice(i - 1, 0, t.ids.splice(i, 1)[0]); ch(); drawLeft(); } } } }),
+          el("button", { type: "button", class: "btn ghost", text: "↓", title: "Descendre", on: { click: function () { if (i < t.ids.length - 1) { t.ids.splice(i + 1, 0, t.ids.splice(i, 1)[0]); ch(); drawLeft(); } } } }),
+          el("button", { type: "button", class: "btn ghost", text: "×", title: "Retirer de l'onglet", on: { click: function () { t.ids.splice(i, 1); ch(); drawAll(); } } })]);
+        row.addEventListener("dragstart", function (e) { dragI = i; row.classList.add("drag"); e.dataTransfer.effectAllowed = "move"; });
+        row.addEventListener("dragend", function () { row.classList.remove("drag"); dragI = -1; });
+        row.addEventListener("dragover", function (e) { if (dragI > -1) { e.preventDefault(); row.classList.add("over"); } });
+        row.addEventListener("dragleave", function () { row.classList.remove("over"); });
+        row.addEventListener("drop", function (e) { e.preventDefault(); row.classList.remove("over"); if (dragI < 0 || dragI === i) return; t.ids.splice(i, 0, t.ids.splice(dragI, 1)[0]); dragI = -1; ch(); drawLeft(); });
+        left.appendChild(row);
+      });
+    }
+    function drawRight() {
+      results.textContent = ""; var t = tabs[cur];
+      if (!lib) { results.appendChild(el("p", { class: "empty", text: "Chargement du video club…" })); return; }
+      var words = bnrm(q).split(" ").filter(Boolean), list;
+      if (!words.length) { // sans recherche : les films de cette page (pour composer FEATURED ou un nouvel onglet)
+        var page = uniq(slate.clips.map(function (c) { return c.slate; }).concat(Object.keys(extra).map(Number)));
+        list = page.map(function (id) { return lib.byS[id] || { slate: id, title: info(id).title, img: info(id).img }; });
+        results.appendChild(el("p", { class: "hint", text: "Films de cette page. Cherchez pour en ajouter d'autres." }));
+      } else list = lib.films.filter(function (f) { return f.slate && words.every(function (w) { return f._s.indexOf(w) > -1; }); }).slice(0, 60);
+      list.forEach(function (f) {
+        var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
+        results.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
+          el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") })]),
+          el("button", { type: "button", class: "btn" + (inTab ? " ghost" : ""), text: inTab ? "✓" : "+", title: inTab ? "Déjà dans l'onglet" : "Ajouter à la fin de l'onglet", on: { click: function () {
+            if (!t || inTab) return;
+            if (!byId[f.slate] && !extra[f.slate]) extra[f.slate] = f;
+            t.ids.push(f.slate); ch(); drawAll();
+          } } })]));
+      });
+      if (words.length && !list.length) results.appendChild(el("p", { class: "empty", text: "Aucun film trouvé." }));
+    }
+    function drawAll() { drawTabs(); drawLeft(); drawRight(); }
+    search.addEventListener("input", function () { q = search.value; drawRight(); });
+    var ok = el("button", { type: "button", class: "btn primary", text: "Valider et publier" });
+    ok.addEventListener("click", function () {
+      var feat = (tabs.filter(function (t) { return t.name === "FEATURED"; })[0] || { ids: [] }).ids, clips = [];
+      function clipFor(id) {
+        var o = byId[id], c;
+        if (o) { c = JSON.parse(JSON.stringify(o)); delete c.featured; delete c.featuredOrder; return c; }
+        var f = extra[id], me = bnrm(rcBase(state.name || "")), co = (f.dops || []).filter(function (d) { return bnrm(rcBase(d)) !== me; });
+        c = { title: f.title || "" }; var sub = [f.dir, f.prod].filter(Boolean); if (co.length) sub.push("co-DoP " + co.join(", "));
+        if (sub.length) c.sub = sub.join("\n"); if (f.video) c.video = f.video; if (f.full) c.full = f.full; if (f.img) c.img = f.img;
+        if (f.images && f.images.length && !f.video && !f.full) c.stills = f.images.slice();
+        c.slate = id; return c;
+      }
+      tabs.forEach(function (t) { if (t.name !== "FEATURED") t.ids.forEach(function (id) { var c = clipFor(id); c.cat = t.name; clips.push(c); }); });
+      feat.forEach(function (id) { if (!clips.some(function (c) { return c.slate === id; })) { var c = clipFor(id); c.cat = ""; clips.push(c); } });
+      clips.forEach(function (c) { var k = feat.indexOf(c.slate); if (k > -1) { c.featured = true; c.featuredOrder = k + 1; } });
+      slate = { name: slate.name || state.name, categories: tabs.map(function (t) { return t.name; }), clips: clips };
+      if (state.showcase) { state.showcase = state.showcase.filter(function (c) { return slate.categories.indexOf(c) > -1; }); if (!state.showcase.length) delete state.showcase; }
+      if (state.open && !clips.some(function (c) { return c.slate === state.open; })) state.open = feat[0] || (clips[0] && clips[0].slate);
+      curCat = null; touch(); close(true); render(); publish();
+    });
+    box.appendChild(el("span", { class: "label", text: "Sélection de la page · " + (state.name || "") }));
+    box.appendChild(tabRow);
+    box.appendChild(el("div", { class: "selgrid" }, [left, el("div", {}, [search, results])]));
+    box.appendChild(el("div", { class: "selfoot" }, [el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { close(); } } }), ok]));
+    ov.appendChild(box); document.body.appendChild(ov); drawAll(); search.focus();
+    bibLoad().then(function (d) {
+      var byS = {}; d.films.forEach(function (f) { if (f.slate && !byS[f.slate]) byS[f.slate] = f; f._s = bnrm([f.title, f.dir, f.prod, f.client, (f.dops || []).join(" "), (f.types || []).join(" "), f.slate].join(" ")); });
+      lib = { films: d.films, byS: byS }; drawRight();
+    }, function (e) { results.textContent = ""; results.appendChild(el("p", { class: "empty", text: "Video club illisible : " + e.message })); });
   }
 
   // Recadrage d'un extrait (zoom 100 à 250 % ; 4:3 et bandes noires épaisses) pour enlever les bandes noires, avec aperçu :
@@ -4406,7 +4538,7 @@
   function bnrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ł/g, "l").replace(/\s+/g, " ").trim(); }
   function bibLoad(force) {
     if (bibCache && !force) return Promise.resolve(bibCache);
-    var map = {}, order = [];
+    var map = {}, order = [], pages = [];
     function add(f, from) {
       var k = f.slate ? "s" + f.slate : f.key || "u" + (f.full || f.video || f.img || f.title); // imports d'images : leur clé « i… »
       var o = map[k];
@@ -4444,6 +4576,12 @@
         fs.forEach(function (x) {
           var d = x[0], f = x[1]; if (!f) return;
           var ov = f.overrides || {};
+          // Page du site = bundle de la filmothèque, chaque onglet = une bande (Gus 25/11) : liste pour « Bundles » / « Bandes existantes ».
+          pages.push({ slug: d.slug, name: d.name, hidden: !!d.hidden, tabs: (f.categories || []).map(function (cat) {
+            var l = (f.clips || []).filter(function (c) { return cat === "FEATURED" ? c.featured : c.cat === cat; });
+            if (cat === "FEATURED") l.sort(function (a, b) { return a.featuredOrder - b.featuredOrder; });
+            return { name: cat, n: l.length, img: l[0] && l[0].img };
+          }) });
           (f.clips || []).forEach(function (c) {
             var o = ov[c.slate] || {}, s = subOf(o.sub !== undefined ? o.sub : c.sub);
             add({ slate: c.slate, title: o.title || c.title, dir: s.dir, prod: s.prod, dops: [d.name].concat(s.dops), cats: [c.cat], types: o.types || [],
@@ -4481,7 +4619,7 @@
           bibDirs(f).forEach(function (d) { put("dir", d); });
           bibProds(f).forEach(function (x) { put("prod", x); }); put("client", f.client); f.types.forEach(function (c) { put("type", c); }); f.cats.forEach(function (c) { put("cat", c); });
         });
-        bibCache = { films: order, sug: Object.keys(sug).map(function (k) { return sug[k]; }), lib: lib || { items: [] } };
+        bibCache = { films: order, sug: Object.keys(sug).map(function (k) { return sug[k]; }), lib: lib || { items: [] }, pages: pages };
         return bibCache;
       });
     });
@@ -5025,7 +5163,22 @@
                 b.legacy ? null : el("button", { type: "button", class: "btn ghost", text: "×", title: "Supprimer cette bande (le lien ne marchera plus)", on: { click: function () { delBand(b); } } })])]));
           });
         }
-        q2.addEventListener("input", function () { st.oldQ = q2.value; rows(); });
+        q2.addEventListener("input", function () { st.oldQ = q2.value; rows(); prow(); });
+        // Onglets des pages du site (Gus 25/11) : une bande par onglet, ouverte dans « Modifier la sélection » de la fiche.
+        var pb = el("div", { class: "bold" }), pd = null; box.after(el("span", { class: "label bpages", text: "Pages du site · onglets" }), pb);
+        function prow() {
+          if (!pd) return; pb.textContent = ""; var w = bnrm(q2.value); var k = 0;
+          (pd.pages || []).slice().sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (p) {
+            p.tabs.forEach(function (t) {
+              if (bnrm(p.name + " " + t.name).indexOf(w) < 0) return;
+              var th = el("div", { class: "bithumb" }); if (t.img) th.appendChild(el("i", { style: 'background-image:url("' + t.img + '")' }));
+              pb.appendChild(el("div", { class: "boldrow", style: "--i:" + Math.min(k++, 20), title: "Modifier cet onglet de la page", on: { click: function (e) { if (e.target.closest("a, button")) return; selOpen = { slug: p.slug, tab: t.name }; location.hash = "#/dp/" + p.slug; } } }, [th,
+                el("div", { class: "boldt" }, [el("strong", { text: p.name + " · " + t.name }), el("small", { text: t.n + " film" + (t.n > 1 ? "s" : "") + " · page du site" })]),
+                el("div", { class: "fwbtns" }, [el("a", { class: "btn ghost", href: SITE_VIEW + "/" + p.slug + "/" + t.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""), target: "_blank", rel: "noopener", text: "↗", title: "Voir l'onglet sur le site" })])]));
+            });
+          });
+        }
+        bibLoad().then(function (d) { pd = d; prow(); });
         rows(); q2.focus();
       }, function (e) { box.textContent = "Indisponible : " + e.message + " (la clé doit avoir accès au dépôt notes)"; });
     }
@@ -5076,6 +5229,20 @@
           });
         }
         q3.addEventListener("input", rows); rows();
+        // Pages du site (Gus 25/11) : chaque page de chef op est un bundle (un onglet = une bande), modifiable ici ou dans sa fiche ;
+        // le site change dès la publication. Pas de lien à envoyer (la page du site existe déjà).
+        bibLoad().then(function (d) {
+          var pb = el("div", { class: "bold" }); box.after(el("span", { class: "label bpages", text: "Pages du site · chefs op" }), pb);
+          function prow() {
+            pb.textContent = ""; var w = bnrm(q3.value);
+            (d.pages || []).filter(function (p) { return bnrm(p.name).indexOf(w) > -1; }).sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (p, i) {
+              pb.appendChild(el("div", { class: "boldrow nothumb", style: "--i:" + Math.min(i, 20), title: "Modifier la sélection de la page", on: { click: function (e) { if (e.target.closest("a, button")) return; selOpen = { slug: p.slug }; location.hash = "#/dp/" + p.slug; } } }, [
+                el("div", { class: "boldt" }, [el("strong", { text: "Page · " + p.name }), el("small", { text: [p.tabs.length + " onglet" + (p.tabs.length > 1 ? "s" : ""), p.tabs.map(function (t) { return t.name; }).join(", "), p.hidden ? "cachée" : ""].filter(Boolean).join(" · ") })]),
+                el("div", { class: "fwbtns" }, [el("a", { class: "btn ghost", href: SITE_VIEW + "/" + p.slug + "/", target: "_blank", rel: "noopener", text: "↗", title: "Voir la page sur le site" })])]));
+            });
+          }
+          q3.addEventListener("input", prow); prow();
+        });
       }, function (e) { box.textContent = "Indisponible : " + e.message; });
     }
     function delBundle(b) {
