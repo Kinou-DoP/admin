@@ -1157,7 +1157,7 @@
   // getP / setP : position du cadre, "X% Y%" (absent = centre) ; le site s'en sert comme transform-origin / background-position.
   // getT / setT (optionnels) : case « aussi sur la vignette » (sinon seul l'extrait est recadré).
   var zoomStopOther = null; // un seul extrait joue à la fois : lancer un aperçu arrête le précédent
-  // tch (facultatif) : appelé à chaque changement à la place de tch() (fenêtre d'un film de la filmothèque).
+  // tch (facultatif) : appelé à chaque changement à la place de tch() (fenêtre d'un film du video club).
   function zoomCtl(thumb, video, get, set, getP, setP, getT, setT, tch) {
     tch = tch || touch;
     var range = el("input", { type: "range", min: "100", max: "250", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
@@ -3240,8 +3240,8 @@
     }
     function openLink(xs, at) {
       if (bib) return linkForm(xs, at);
-      var w = el("p", { class: "hint seladd", text: "Chargement de la filmothèque…" }); at.after(w);
-      bibLoad().then(function (b) { bib = b; w.remove(); linkForm(xs, at); }, function (e) { w.textContent = "Filmothèque indisponible : " + e.message; });
+      var w = el("p", { class: "hint seladd", text: "Chargement du video club…" }); at.after(w);
+      bibLoad().then(function (b) { bib = b; w.remove(); linkForm(xs, at); }, function (e) { w.textContent = "Video club indisponible : " + e.message; });
     }
     // Choisir un ou plusieurs films de la bibliothèque (ceux des fiches et de la page fiction : là où les prix s'affichent).
     function linkForm(xs, at) {
@@ -3267,7 +3267,7 @@
         var need = w.length <= 2 ? w.length : Math.ceil(w.length * 0.6);
         var l = films().map(function (f) { var h = " " + sortNrm(f.hay) + " ", sc = 0; w.forEach(function (v) { if (h.indexOf(" " + v) > -1) sc++; }); return { f: f, sc: sc }; })
           .filter(function (o) { return o.sc >= need; }).sort(function (a, b) { return b.sc - a.sc; }).map(function (o) { return o.f; });
-        if (!l.length) res.appendChild(el("p", { class: "hint", text: "Aucun film de la filmothèque ne correspond." }));
+        if (!l.length) res.appendChild(el("p", { class: "hint", text: "Aucun film du video club ne correspond." }));
         l.slice(0, 10).forEach(function (f) {
           res.appendChild(el("button", { type: "button", class: "selpick" + (chosen[f.key] ? " on" : ""), on: { click: function () { choose(f, !chosen[f.key]); drawPick(); search(); } } },
             [el("strong", { text: (chosen[f.key] ? "✓ " : "") + f.title }), el("small", { text: [f.dir, f.dops.join(", "), where(f)].filter(Boolean).join(" · ") })]));
@@ -3281,7 +3281,7 @@
       var also = sibs.length ? el("label", { class: "rcag" }, [el("input", { type: "checkbox", class: "nodirty", checked: true }),
         "Relier aussi les " + sibs.length + " autre" + (sibs.length > 1 ? "s" : "") + " sélection" + (sibs.length > 1 ? "s" : "") + " ou prix de « " + (x0.title || "") + " »"]) : null;
       var form2 = el("article", { class: "fcard fedit seladd" }, [
-        el("label", { class: "field" }, [el("span", { class: "label", text: "Relier « " + label + " » à un ou plusieurs films de notre filmothèque" }), q, res]),
+        el("label", { class: "field" }, [el("span", { class: "label", text: "Relier « " + label + " » à un ou plusieurs films de notre video club" }), q, res]),
         el("p", { class: "hint", text: "Le prix ira sur ces films (fiche du chef op, page fiction), au lieu d'être rapproché par le titre." }),
         pick, also,
         el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "Enregistrer", on: { click: function (e) {
@@ -4617,7 +4617,7 @@
     var st = { q: "", chips: [], n: 60, sel: {}, sugI: -1, tab: "new", last: null };
     var wrap = el("div", { class: "bib" }), left = el("div", { class: "bibl" }), right = el("aside", { class: "bibr" });
     wrap.appendChild(left); wrap.appendChild(right); view.appendChild(wrap);
-    var head = el("div", { class: "bibhead" }, [el("h1", { text: "Filmothèque" }), el("div", { class: "bibadd" }, [
+    var head = el("div", { class: "bibhead" }, [el("h1", { text: "Video club" }), el("div", { class: "bibadd" }, [
       el("button", { type: "button", class: "btn primary", text: "+ Vidéo", on: { click: function () { importVideo(); } } }),
       el("button", { type: "button", class: "btn primary", text: "+ Images", on: { click: function () { importImages(); } } })])]);
     left.appendChild(head);
@@ -4722,7 +4722,7 @@
     // Infos d'un film de la bibliothèque : même fenêtre que les retouches d'une bande ; enregistrées dans data/bibli/edits.json
     // (seulement ce qui diffère des pages), reprises par les films ajoutés ensuite aux bandes. Les pages du site ne changent pas.
     var libQ = { t: 0, busy: false, again: false, todo: {}, files: [] };
-    // Appliquer une retouche d'une bande au film de la filmothèque (Gus 23/11 : « en faire la vignette / l'extrait officiel ») :
+    // Appliquer une retouche d'une bande au film du video club (Gus 23/11 : « en faire la vignette / l'extrait officiel ») :
     // mêmes infos que la fenêtre du film (edits.json, seulement ce qui diffère des pages), reprises par les prochaines bandes.
     function libPatch(f, patch) {
       var cl = function (v) { return v === undefined ? undefined : JSON.parse(JSON.stringify(v)); };
@@ -4742,7 +4742,7 @@
         var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {};
         keys.forEach(function (k) { if (todo[k]) o.films[k] = todo[k]; else delete o.films[k]; });
         return json(o);
-      } }].concat(files), "Filmothèque : infos de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")").then(function () {
+      } }].concat(files), "Video club : infos de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")").then(function () {
         libQ.busy = false; info.classList.remove("saving"); if (libQ.again) { libQ.again = false; libSaveEdits(); }
       }, function (e) { libQ.busy = false; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving"); alert("Infos pas enregistrées : " + e.message); throw e; });
     }
@@ -5598,7 +5598,7 @@
       drawEx();
       var aw = el("textarea", { rows: 3, placeholder: "Une ligne par prix ou sélection (ex. Best Cinematography, Camerimage 2026)" }); aw.value = it.awards || "";
       aw.addEventListener("input", function () { it.awards = aw.value.trim(); if (!it.awards) delete it.awards; it.edited = true; chg(); });
-      box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans la filmothèque (reprises dans les prochaines bandes, pas sur le site) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
+      box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (reprises dans les prochaines bandes, pas sur le site) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [].concat(
           fld("Titre", function () { return it.title; }, function (v) { it.title = v; }),
@@ -5606,7 +5606,7 @@
           [el("span", { class: "label", text: "Prod" }), chipsIn("prod", function () { return bibProds(it); }, function (l) { it.prod = l.join(", "); })],
           [el("span", { class: "label", text: "Chefs op et rôles (rôle vide = cinematographer, crédité en premier)" }), credEd()],
           [el("span", { class: "label", text: "Types de contenu" }), chipsIn("type", function () { return (it.types || it.cats || []).slice(); }, function (l) { it.types = l; })],
-          [orig || lib ? el("button", { type: "button", class: "btn ghost", text: lib ? "Tout remettre comme sur les pages" : "Tout remettre comme dans la filmothèque", on: { click: function () {
+          [orig || lib ? el("button", { type: "button", class: "btn ghost", text: lib ? "Tout remettre comme sur les pages" : "Tout remettre comme dans le video club", on: { click: function () {
             if (lib) { lib.reset(); close(); return; } var keepKey = it.key; band.items[i] = bandItem(orig); band.items[i].key = keepKey; chg(); close();
           } } }) : null])),
         el("div", {}, [el("span", { class: "label", text: "Aperçu et recadrage (survol = extrait ; cliquer ou bouger le curseur pour régler)" }), zwrap,
@@ -5641,17 +5641,17 @@
       if (player) {
         // « Valider » en bas à droite (Gus 22/11) : la vignette = l'image affichée ; l'extrait réglé n'est enregistré qu'en validant.
         var valB = el("button", { type: "button", class: "btn primary", text: "Valider l'extrait", on: { click: function () { snipCommit(); valB.disabled = true; prevSnip(); } } });
-        // Dans une bande : faire de cette vignette / de cet extrait ceux du film dans la filmothèque (Gus 23/11).
+        // Dans une bande : faire de cette vignette / de cet extrait ceux du film dans le video club (Gus 23/11).
         var libF = !lib && filmOf(it.key), offOut = el("span", { class: "hint" });
         function official(kind) {
           if (!libF) return;
           if (kind === "snip" && it._snipTmp) snipCommit(); // un extrait réglé mais pas encore validé : validé d'abord
           if (kind === "img") libPatch(libF, { img: it.img, thumbT: it.thumbT });
           else libPatch(libF, { snip: it.snip, snipVideo: it.snipVideo });
-          offOut.textContent = (kind === "img" ? "Vignette appliquée" : "Extrait appliqué") + " au film dans la filmothèque : les prochaines bandes l'utiliseront.";
+          offOut.textContent = (kind === "img" ? "Vignette appliquée" : "Extrait appliqué") + " au film dans le video club : les prochaines bandes l'utiliseront.";
         }
-        var offImg = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire la vignette officielle du film", title: "Le film de la filmothèque prend cette vignette (pour toutes les prochaines bandes)", on: { click: function () { official("img"); } } })]) : null;
-        var offSnip = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire l'extrait officiel du film", title: "Le film de la filmothèque prend cet extrait (pour toutes les prochaines bandes)", on: { click: function () { official("snip"); } } })]) : null;
+        var offImg = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire la vignette officielle du film", title: "Le film du video club prend cette vignette (pour toutes les prochaines bandes)", on: { click: function () { official("img"); } } })]) : null;
+        var offSnip = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire l'extrait officiel du film", title: "Le film du video club prend cet extrait (pour toutes les prochaines bandes)", on: { click: function () { official("snip"); } } })]) : null;
         thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [upBtn("⤒ Importer une image", imgUp, "image", doImg), imgUp, el("span", { class: "tlgrow" }), grabB]),
           el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg, offImg]);
         snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine,
@@ -5705,12 +5705,12 @@
         var l = t ? JSON.parse(t) : { items: [] }; l.items = l.items || [];
         items.forEach(function (it) { var c = Object.assign({}, it); delete c._files; l.items = l.items.filter(function (x) { return x.key !== c.key; }); l.items.push(c); });
         return json(l);
-      } }].concat(items.reduce(function (a, it) { return a.concat(it._files || []); }, [])), "Filmothèque : " + items.length + " ajout" + (items.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")");
+      } }].concat(items.reduce(function (a, it) { return a.concat(it._files || []); }, [])), "Video club : " + items.length + " ajout" + (items.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")");
     }
     function importVideo() {
       var link = el("input", { type: "text", placeholder: "Lien Slate : bundle, shots.re, page d'une vidéo ou de stills" }), out = el("p", { class: "hint" });
       var go = el("button", { type: "button", class: "btn primary", text: "Lire le lien", on: { click: function () {
-        if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter à la filmothèque."; return; }
+        if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter au video club."; return; }
         var v = link.value.trim(); if (!v) return; go.disabled = true; out.textContent = "Lecture sur Slate" + slateWait("…");
         var isBundle = /\/bundles\//.test(v) || /^(https?:\/\/)?(shots|slt)\.re\//i.test(v);
         (isBundle ? importBundle(v).then(function (d) { return (d.clips || []).map(function (c) { return { slate: c.slate, title: c.title, sub: c.sub, video: c.video, full: c.full, img: c.img, cats: [c.cat].concat(c.types || []), dops: c.artists || (d.name ? [d.name] : []) }; }); })
@@ -5725,7 +5725,7 @@
               return it;
             });
             out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " lu" + (items.length > 1 ? "s" : "") + " : enregistrement…";
-            return libSave(items).then(function () { out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " ajouté" + (items.length > 1 ? "s" : "") + " à la filmothèque."; go.disabled = false; return bibLoad(true); }).then(function (d) {
+            return libSave(items).then(function () { out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " ajouté" + (items.length > 1 ? "s" : "") + " au video club."; go.disabled = false; return bibLoad(true); }).then(function (d) {
               data = d; draw();
               // Un seul film : la fenêtre d'infos s'ouvre tout de suite (Gus 22/11 : même fenêtre qu'en cliquant sur un film).
               // Lien de partage créé tout de suite pour chaque film ajouté (Gus 23/11).
@@ -5772,7 +5772,7 @@
           .then(function () { out.textContent = files.length + " images prêtes (" + Math.round(files.reduce(function (a, c) { return a + c.size; }, 0) / 1e6) + " Mo)."; go.disabled = false; }, function (e) { out.textContent = e.message; });
       });
       var go = el("button", { type: "button", class: "btn primary", text: "Continuer", disabled: true, on: { click: function () {
-        if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter à la filmothèque."; return; }
+        if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter au video club."; return; }
         if (!files.length) return;
         go.disabled = true; out.textContent = "Envoi des images…";
         var id = Date.now().toString(36), base = "data/bibli/img/" + id + "/", urls = files.map(function (c, i) { return rawURL(base + String(i + 1).padStart(3, "0") + ".webp"); });

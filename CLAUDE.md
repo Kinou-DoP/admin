@@ -53,7 +53,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   Pastille en bas à gauche (`#saving`) : « Enregistrement… », « Enregistré », « Pas enregistré : … » (clic = fermer). Les notes
   d'une fiche rouverte attendent la fin de leur enregistrement avant d'être relues (`notesPending`).
 
-## Pages (menu à gauche : website ▸, bibliothèque, sorties fiction, festivals ▸, récupération, historique)
+## Pages (menu à gauche : website ▸, video club, sorties fiction, festivals ▸, récupération, historique)
 - **Accueil de l'admin** (`#/`, `showHello`) : « Hello la Dream Team ! » + petit mot par ordre d'importance (`helloNews` : sorties de
   la semaine, dates de fiction trouvées / bandes-annonces, prix trouvés ces 3 derniers jours, « à vérifier » s'ils ne sont pas confirmés).
 - **Website** : **cinematographers** (`#/dops`, liste + tableau de bord d'avancement `data/progress.json`), **fiche d'un chef op**
@@ -65,7 +65,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   vidéo : extrait HD, recadrage, téléphone), **spotlight**, **fiction** (statut, genre, plateformes, date, affiche, cadrage scope,
   9 New releases au plus, passage automatique en New release le jour de la sortie, alerte « autre date trouvée »), **contact**
   (+ logo, mentions légales).
-- **Filmothèque** (appelée « bibliothèque » dans le code ; `#/bibli`, `showBibli`) : tous nos films (fiches, fiction, spotlight, accueil, imports `data/bibli/library.json`),
+- **Video club** (ancienne « filmothèque », appelée « bibliothèque » dans le code ; `#/bibli`, `showBibli`) : tous nos films (fiches, fiction, spotlight, accueil, imports `data/bibli/library.json`),
   **les plus récents en haut** (id Slate décroissant). Recherche avec suggestions dans cet ordre : chef op (étiquette orange), réal, prod,
   client, type de contenu, catégorie (jamais les films ; 4 par sorte) → filtres en étiquettes. Client / types de contenu / mots-clés :
   `data/bibli/meta.json`, écrit chaque nuit par le robot `bibli-meta.yml` (`tools/bibli-meta.mjs`, `readMeta` de `slate.mjs`, `main`).

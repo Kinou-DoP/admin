@@ -375,3 +375,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 24/11 (Gus) : réglage de mise en page d'une bande « Grille » / « Plein écran en haut » (Full Bleed de Slate).
 - 25/11 : accueil de l'admin : **prix trouvés ces 3 derniers jours** (au lieu du jour même : les robots passent souvent le soir, Gus ne les
   voyait plus le lendemain matin), plus récents d'abord, « à vérifier » tant qu'ils ne sont pas confirmés.
+- 25/11/2026 : la « filmothèque » s'appelle « video club » partout dans l'admin (menu, titre, messages, commits) ; code inchangé (`bibli`, `#/bibli`) (Gus).
