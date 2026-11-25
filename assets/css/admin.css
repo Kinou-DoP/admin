@@ -1084,3 +1084,9 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .selfoot { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
 @media (max-width: 800px) { .selgrid { grid-template-columns: 1fr; } }
 .label.bpages { display: block; margin: 22px 0 6px; }
+.selme { margin: -8px 0 10px; }
+.selres .selth { cursor: zoom-in; }
+.selprev { align-items: center; z-index: 40; }
+.selprevbox { width: min(1100px, 100%); }
+.selprevbox video { width: 100%; max-height: 75vh; background: #000; }
+.selprevbox p { opacity: .7; margin-top: 8px; }

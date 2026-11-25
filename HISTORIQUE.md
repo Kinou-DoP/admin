@@ -379,3 +379,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 25/11 : « Modifier la sélection » sur les fiches des chefs op (onglets et films sans Slate, ajout depuis le video club, publié tout de suite) ; « Relire le bundle » devient « Réimporter depuis Slate » (option) ; pages et onglets des chefs op listés dans Bundles / Bandes existantes du video club (Gus).
 - 25/11 : fiche sans films : bouton « Créer une sélection » (même fenêtre que « Modifier la sélection ») (Gus).
 - 25/11 : « Modifier la sélection » : sans recherche, la liste de droite montre tous les films du video club avec ce chef op (plus récents en haut), pas seulement ceux de la page (Gus).
+- 25/11 : « Modifier la sélection » : filtre « Chef op » actif (la recherche reste dans ses films, × pour tout le video club) ; clic sur une vignette = aperçu du film (Gus). À faire : filtres et fenêtre d'infos comme le video club.

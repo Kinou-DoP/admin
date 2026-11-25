@@ -1244,9 +1244,13 @@
         list = lib.films.filter(function (f) { return f.slate && (onPage[f.slate] || (me && (f.dops || []).some(function (d) { return bnrm(rcBase(d)) === me; }))); });
         Object.keys(onPage).forEach(function (id) { id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img }); }); // film de la page absent du video club
         results.appendChild(el("p", { class: "hint", text: list.length + " films du video club avec " + (rcBase(state.name || "") || "ce chef op") + " (et ceux de la page), les plus récents en haut. Cherchez pour en ajouter d'autres." }));
-      } else list = lib.films.filter(function (f) { return f.slate && words.every(function (w) { return f._s.indexOf(w) > -1; }); }).slice(0, 60);
+      } else { // recherche : dans les films du chef op tant que le filtre « Chef op » est actif (Gus 25/11)
+        var me2 = bnrm(rcBase(state.name || ""));
+        list = lib.films.filter(function (f) { return f.slate && words.every(function (w) { return f._s.indexOf(w) > -1; }) && (!onlyMe || !me2 || (f.dops || []).some(function (d) { return bnrm(rcBase(d)) === me2; })); }).slice(0, 80);
+      }
       list.forEach(function (f) {
-        var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
+        var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
+        th.addEventListener("click", function () { selPreview(f); });
         results.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
           el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") })]),
           el("button", { type: "button", class: "btn" + (inTab ? " ghost" : ""), text: inTab ? "✓" : "+", title: inTab ? "Déjà dans l'onglet" : "Ajouter à la fin de l'onglet", on: { click: function () {
@@ -1259,6 +1263,17 @@
     }
     function drawAll() { drawTabs(); drawLeft(); drawRight(); }
     search.addEventListener("input", function () { q = search.value; drawRight(); });
+    // Filtre « Chef op » (actif à l'ouverture) : la recherche reste dans ses films ; × = chercher dans tout le video club.
+    var onlyMe = true, chip = el("button", { type: "button", class: "chip on selme", text: "Chef op : " + (rcBase(state.name || "") || "?") + "  ×", title: "Retirer le filtre : chercher dans tout le video club", on: { click: function () {
+      onlyMe = !onlyMe; chip.classList.toggle("on", onlyMe); chip.textContent = onlyMe ? "Chef op : " + (rcBase(state.name || "") || "?") + "  ×" : "+ Filtre chef op : " + (rcBase(state.name || "") || "?"); drawRight(); } } });
+    function selPreview(f) { // aperçu : film complet (ou extrait), Échap / clic à côté pour fermer
+      var src = f.full || f.video; if (!src) return;
+      var o = el("div", { class: "bmodal selprev" }), v = el("video", { controls: true, autoplay: true, playsinline: true });
+      v.src = src; o.appendChild(el("div", { class: "selprevbox" }, [v, el("p", { text: [f.title, (f.dops || []).join(", "), f.dir, f.prod].filter(Boolean).join(" · ") })]));
+      function shut(e) { if (e && e.type === "keydown" && e.key !== "Escape") return; if (e && e.stopPropagation) e.stopPropagation(); v.pause(); o.remove(); document.removeEventListener("keydown", shut, true); }
+      o.addEventListener("click", function (e) { if (e.target === o) shut(); }); document.addEventListener("keydown", shut, true);
+      document.body.appendChild(o);
+    }
     var ok = el("button", { type: "button", class: "btn primary", text: "Valider et publier" });
     ok.addEventListener("click", function () {
       var feat = (tabs.filter(function (t) { return t.name === "FEATURED"; })[0] || { ids: [] }).ids, clips = [];
@@ -1281,7 +1296,7 @@
     });
     box.appendChild(el("span", { class: "label", text: "Sélection de la page · " + (state.name || "") }));
     box.appendChild(tabRow);
-    box.appendChild(el("div", { class: "selgrid" }, [left, el("div", {}, [search, results])]));
+    box.appendChild(el("div", { class: "selgrid" }, [left, el("div", {}, [search, chip, results])]));
     box.appendChild(el("div", { class: "selfoot" }, [el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { close(); } } }), ok]));
     ov.appendChild(box); document.body.appendChild(ov); drawAll(); search.focus();
     bibLoad().then(function (d) {
