@@ -6,7 +6,7 @@
 // Déjà faite = sautée (relancer ne refait que ce qui manque). Rien n'est supprimé. Journaux sans adresses (dépôt public).
 // Variables : CONC (en parallèle, 16), MINUTES (temps de travail, 300), MAX (nombre d'images au plus, pour un essai).
 import { spawn } from "node:child_process";
-import { appendFileSync, writeFileSync, mkdtempSync, rmSync } from "node:fs";
+import { appendFileSync, writeFileSync, mkdtempSync, rmSync, readFileSync, readdirSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -49,6 +49,29 @@ const nom = (cle, w) => "thumbs/" + cle.replace(/\.[a-z0-9]+$/i, "") + "-" + w +
 const tout = await liste(), deja = await faites();
 let file = tout.filter((c) => W.some((w) => !deja.has(nom(c, w))));
 console.log("Images : " + tout.length + " ; déjà faites : " + (tout.length - file.length) + " ; à faire : " + file.length + (MAX ? " (essai : " + MAX + " au plus)" : ""));
+// D'abord les images affichées par le site (fiches, accueil, spotlight, fiction, video club : data/ de ce dépôt) : sans elles, le
+// site charge l'image de Slate (PNG jusqu'à 2 Mo) après un essai raté chez nous (Gus 25/11 : vignettes très lentes).
+function duSite() {
+  const vus = new Set(), fichiers = [];
+  const lire = (d) => { if (!existsSync(d)) return; for (const n of readdirSync(d, { withFileTypes: true })) { const c = join(d, n.name);
+    if (n.isDirectory()) { if (!/^(img|encode|ask|b)$/.test(n.name)) lire(c); } else if (n.name.endsWith(".json")) fichiers.push(c); } };
+  lire("data");
+  for (const f of fichiers) {
+    const txt = readFileSync(f, "utf8"), re = /https:\/\/images\.slatecdn\.net\/[^/"]+\/([^"]+)/g; let m;
+    while ((m = re.exec(txt))) {
+      const b = m[1].split(/[?#]/)[0].split("/").filter((x) => !x.includes(":")).join("").replace(/\.[a-z0-9]+$/i, "");
+      try {
+        const o = Buffer.from(b.replace(/-/g, "+").replace(/_/g, "/"), "base64").toString();
+        const k = /(kinou\/production\/.+)\.[a-z0-9]+$/i.exec(decodeURIComponent(new URL(o).pathname));
+        if (k) vus.add(k[1]);
+      } catch (e) {}
+    }
+  }
+  return vus;
+}
+const site = duSite(), sansExt = (c) => c.replace(/\.[a-z0-9]+$/i, "");
+file.sort((a, b) => (site.has(sansExt(b)) ? 1 : 0) - (site.has(sansExt(a)) ? 1 : 0));
+console.log("Images du site à faire en premier : " + file.filter((c) => site.has(sansExt(c))).length);
 if (MAX) file = file.slice(0, MAX);
 const stats = { faites: 0, erreurs: [], octets: 0 };
 let i = 0, suite = false;

@@ -123,17 +123,27 @@ async function thumb(j, dir) {
 }
 const WORK = { film, snip, thumb };
 
-// Enregistrement d'une demande (réponse ou « commencé ») : un commit, refait par-dessus les commits arrivés entre-temps.
+// Enregistrement d'une demande (réponse, avancement) : un commit par-dessus la dernière version de main. On repart toujours de
+// main (fetch + reset) et on réécrit le fichier depuis la mémoire : jamais de rebase qui reste coincé (bug du 25/11 : identité git
+// manquante → commit raté → rebase à moitié fait → plus aucune réponse enregistrée, film « en cours d'encodage » pour toujours).
+const GIT_ENV = Object.assign({}, process.env, { GIT_AUTHOR_NAME: "kinou-robot", GIT_COMMITTER_NAME: "kinou-robot",
+  GIT_AUTHOR_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com", GIT_COMMITTER_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com" });
+const git = (args, quiet) => execSync("git " + args, { stdio: quiet ? "ignore" : "inherit", env: GIT_ENV });
+let pasEnregistre = 0;
 function save(path, d, msg) {
-  fs.writeFileSync(path, JSON.stringify(d, null, 2) + "\n");
-  try {
-    execSync("git add " + JSON.stringify(path) + " && git -c user.name=kinou-robot -c user.email=41898282+github-actions[bot]@users.noreply.github.com commit -q -m " + JSON.stringify(msg), { stdio: "inherit" });
-    for (let i = 0; i < 5; i++) {
-      try { execSync("git pull -q --rebase origin main && git push -q origin HEAD:main", { stdio: "inherit" }); return; }
-      catch (e) { execSync("sleep " + (2 + i * 2)); }
-    }
-    console.log("  enregistrement impossible (sera refait au prochain passage)");
-  } catch (e) { console.log("  rien à enregistrer"); }
+  const txt = JSON.stringify(d, null, 2) + "\n";
+  for (let i = 0; i < 6; i++) {
+    try {
+      try { git("rebase --abort", true); } catch (e) {}
+      git("fetch -q origin main"); git("reset -q --hard origin/main");
+      fs.mkdirSync(DIR, { recursive: true }); fs.writeFileSync(path, txt);
+      git("add " + JSON.stringify(path));
+      try { git("diff --cached --quiet", true); return true; } catch (e) {} // rien de changé
+      git("commit -q -m " + JSON.stringify(msg)); git("push -q origin HEAD:main"); return true;
+    } catch (e) { execSync("sleep " + (2 + i * 2)); }
+  }
+  console.log("  enregistrement impossible"); pasEnregistre++;
+  return false;
 }
 
 if (fs.existsSync(DIR)) {
@@ -164,5 +174,5 @@ if (fs.existsSync(DIR)) {
     d.doneAt = new Date().toISOString();
     save(path, d, "Encodage : " + (d.jobs || []).length + " fait" + ((d.jobs || []).length > 1 ? "s" : ""));
   }
-  if (erreurs) process.exitCode = 1;
+  if (erreurs || pasEnregistre) process.exitCode = 1;
 }
