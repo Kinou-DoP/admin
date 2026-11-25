@@ -1,0 +1,162 @@
+{
+  "slug": "ludovic-zuili-cinematographer",
+  "name": "Ludovic Zuili",
+  "hue": 148,
+  "bundle": "https://kinou.slateapp.com/bundles/b5790752-e8be-11f1-952e-02ffedfede17",
+  "open": 11486,
+  "overrides": {
+    "6088": {
+      "zoom": 1.27
+    },
+    "6126": {
+      "zoom": 1.14
+    },
+    "8876": {
+      "zoom": 1.09
+    },
+    "9291": {
+      "zoom": 1.37,
+      "title": "Par Amour"
+    },
+    "9750": {
+      "zoom": 1.36,
+      "title": "Carjackers"
+    },
+    "9976": {
+      "zoom": 1.22,
+      "title": "Feu! Chatterton - Allons Voir"
+    },
+    "10303": {
+      "zoom": 1.06,
+      "title": "N121 Bus de Nuit"
+    },
+    "10710": {
+      "zoom": 1.39,
+      "title": "Drone"
+    },
+    "11486": {
+      "zoom": 1.35,
+      "title": "The blood island"
+    }
+  },
+  "about": {
+    "bioEn": [
+      "Ludovic was born in Paris. Fascinated with cinema since he was a teenager, he first chose filmmaking and photography. With Simon Bouisson, they form a duo named såndle and, together they directed few projects as : Tokyo Reverse (France TV), Product and Dezoom (Arte)... Meanwhile, Ludovic is also a photograph, he works for magazines (Purple, Néon...), brands (Adidas, Lacoste...), and he also proposes a photographic journal project called ARAW! for A Roll A Week on which he posts one analogue film per week for three and a half years wich led to one exhibition per year and a collaboration with FAST magazine. Five years ago, Ludovic decided to go 100 % back to his first love : cinematography. He missed the technical aspect and the sets experiences of being a director of photography. He has worked on the TV show “Stalk” of Simon Buisson, on the feature “Abdelinho” of Hicham Ayouch and on several commercials and music videos."
+    ],
+    "website": "http://ludoviczuili.com/",
+    "instagram": "https://www.instagram.com/ludoviczuili/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm6172313/"
+      }
+    ],
+    "pos": "49% 48%",
+    "img": "img/ludovic-zuili-cinematographer.webp",
+    "og": "img/ludovic-zuili-cinematographer-og-1795604333214.jpg"
+  },
+  "categories": [
+    "FEATURED"
+  ],
+  "clips": [
+    {
+      "title": "The blood island • Trailer",
+      "sub": "Basile Monnot\nDependant Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11486/66c89fab-d6c0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8c8e035e-1894-4794-9ac0-76caefeba90d-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/rPl_kYfXzhX55myCL_jiFRmLeaAC5ufYHpQYWrJacrA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MWJjMTY2Zi0yZGM0/LTRmODQtYmJhMy05/MzMwMWZiNzBjZTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTEt/MDItYS0xNC4yMS4w/OS5wbmc?v=1&format=webp",
+      "cat": "",
+      "slate": 11486,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Prequel - SCH",
+      "sub": "Jean-Charles Charavin\nIncendie Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8876/2c13979f-52ae-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9ea0a38e-26cf-4573-897a-a8c18b2ca8d2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Kqr6VW6NDfKjvvCT3OAIfCuaQBIla2bKwRzPBM3ONjI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZWUzZWRmMy02OGRh/LTQ0MDYtYjIwOC1m/ZDY0ZTUzODIwNWYv/c2NoLTEuMS4xNy5q/cGc?v=1&format=webp",
+      "cat": "",
+      "slate": 8876,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "Drone | Bande Annonce",
+      "sub": "Simon Bouisson\nHaut & Court",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10710/914fd2a6-3e36-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0729800c-fd8c-4bb3-b2e7-c9a2e0b0f11e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/csS1PhiHo56IVLKYg2sa0eCQ1vdou6w3B90TMaxxIMg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZjliNWNmMi00ZWFi/LTQ4MzgtOWFiNS1h/NTRlMDEyZGEwZTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MDYtYS0xNi4yOS4z/NC5wbmc?v=1&format=webp",
+      "cat": "",
+      "slate": 10710,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "FEU!CHATTERTON | ALLONS VOIR",
+      "sub": "Jean Charles Charavin\nIncendie Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9976/c2844e23-c198-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/52c5b573-1d1b-4913-afed-dffa019f32c8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Qk6mSn5woe8yn7H4Kl4Av2Fn2KZDEZYUo7O5V95h4MM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/MmU0OTI0YS1jNjE4/LTRhYzYtOWJhYy00/YTJkMjg3MGRjZWQv/ZmMtMjMud2VicA?v=1&format=webp",
+      "cat": "",
+      "slate": 9976,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Kenzo",
+      "sub": "Clément Bauvais & Arthur de Kersauson\nMercenary Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6126/d3baa56c-12a5-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/27dd71b7-bd70-4545-9c26-2c6478f80e67-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/YmnfPQWRPfW7VUVfzQI_UvKNYbtAVXthXO2TdJZEayw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/OWU0MGM5ZS0zYmNi/LTQxMDctODc1OS03/OWJkZmE4NjIxYjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjgtYS0xMi41NS4x/Ny5wbmc?v=1&format=webp",
+      "cat": "",
+      "slate": 6126,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "N121 Bus de Nuit | Trailer",
+      "sub": "Morade Aissaoui\nRipley Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10303/228a3f51-caec-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/db5e3f0c-48e0-4477-9b83-f264e26ba3e6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_bylRDJ0zP7VxjVBBc3DY50_a45HRY2Iwksrt_cXvgE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MjAxMzM0ZS1kNTU5/LTQwMGMtYjRjNi0w/NDFiMmYxMjMwZGUv/dmlnbmV0dGUtbjEy/MS5wbmc?v=1&format=webp",
+      "cat": "",
+      "slate": 10303,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Lancôme",
+      "sub": "Audrey Mascina\nvelvet agency",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6088/747df8d6-12a5-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7bd04cdd-c47c-4b09-bf4f-a3eb411cabe3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/60O7zE3pZoPp_SjFcbTAnH2nxEuhY2gpgTWGk1I9wgI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YTdjYzc1NS00YmZh/LTRmMGUtODFkMi01/ZDJmNzg2ZTE5NTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjItYS0xNi4wNi4w/NC5wbmc?v=1&format=webp",
+      "cat": "",
+      "slate": 6088,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "Carjackers | Trailer",
+      "sub": "Kamel Guemra\nGaumont",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9750/0a19f674-fde4-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7660c825-aadc-4353-ac5f-ec92879b0321-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gyjPOhePkaFBwR1G4BAAD3xB51gzvA6vOZk8chlbu8s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZGMzZDNiMy0yMzRj/LTRhNWItYjI2OS1l/NzJjYTNiMjY0MTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MDItYS0xMS4yMS4y/Ny5wbmc?v=1&format=webp",
+      "cat": "",
+      "slate": 9750,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "PAR AMOUR",
+      "sub": "Elise Otzenberger\nMamma Roman & Solab Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9291/c9172f7a-bd5a-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/16f4bda2-9b57-44ae-9a2a-8bd8f0d67daa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bL4lWc5ZaysXDxM5IXJDRinyksmFvTvZfzmMPmfCqao/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YmU4ZmMzNC1kYWI2/LTQ0NDEtYThkMi0y/MjllYjczNzcxYTEv/cGFyLWFtb3VyLTI5/LmpwZw?v=1&format=webp",
+      "cat": "",
+      "slate": 9291,
+      "featured": true,
+      "featuredOrder": 9
+    }
+  ]
+}
