@@ -14,6 +14,13 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::919012714656:role/kinou-robot-copie
           aws-region: eu-north-1
+      - name: Quelle adresse existe ?
+        run: |
+          for h in d3toxil6rvamjf d3toxii6rvamjf d3toxi1l6rvamjf d3tox1l6rvamjf d3toxi16rvamjf d3toxll6rvamjf d3toxiI6rvamjf; do
+            h=$(echo "$h" | tr 'A-Z' 'a-z'); ip=$(getent hosts "$h.cloudfront.net" | head -1 | cut -d' ' -f1)
+            echo "$h.cloudfront.net -> ${ip:-introuvable}"
+            if [ -n "$ip" ]; then curl -sS -o /dev/null -r 0-1023 -w "   vidéo 10666 : %{http_code} %{size_download} octets\n" "https://$h.cloudfront.net/kinou/production/clips/f90c66ab-6796-448a-90d1-722c6a191301-0x1080.5000.mp4"; fi
+          done
       - name: Notre CloudFront, le compartiment, Slate
         run: |
           for k in kinou/production/clips/f90c66ab-6796-448a-90d1-722c6a191301-0x1080.5000.mp4 kinou/production/clips/1f91878c-a900-434d-85aa-0fb964459e35-0x1080.5000.mp4; do
