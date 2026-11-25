@@ -1,0 +1,25 @@
+# Test (25/11) : notre CloudFront (d3toxil6rvamjf) sert-il les fichiers copiés ? Compare avec le compartiment (le fichier y est-il ?)
+# et avec le CloudFront de Slate. Adresses de films déjà publics (fiche andy-pml du site). Ne copie rien, ne modifie rien.
+name: Test CloudFront
+on: workflow_dispatch
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::919012714656:role/kinou-robot-copie
+          aws-region: eu-north-1
+      - name: Notre CloudFront, le compartiment, Slate
+        run: |
+          for k in kinou/production/clips/f90c66ab-6796-448a-90d1-722c6a191301-0x1080.5000.mp4 kinou/production/clips/1f91878c-a900-434d-85aa-0fb964459e35-0x1080.5000.mp4; do
+            echo "== $k"
+            echo "-- compartiment :"; aws s3api head-object --bucket kinou-videos --key "$k" --query '[ContentLength,ContentType,StorageClass]' --output text || true
+            echo "-- notre CloudFront :"; curl -sS -o /dev/null -r 0-1023 -D - "https://d3toxil6rvamjf.cloudfront.net/$k" | grep -iE "^HTTP|x-cache|content-type|content-length|server|x-amz" || true
+            curl -sS -r 0-300 "https://d3toxil6rvamjf.cloudfront.net/$k" | head -c 300 | tr -cd '[:print:]\n'; echo
+            echo "-- Slate :"; curl -sS -o /dev/null -r 0-1023 -w "%{http_code}\n" "https://d1ko11x0ybxl0h.cloudfront.net/$k"
+          done
