@@ -65,8 +65,16 @@
     v.dataset.repliSlate = "1"; srcMedia.set.call(v, SLATE_CDN + u.slice(NOTRE_CDN.length)); // repli : Slate
     if (v.autoplay || v.veutJouer) { var p = jouerMedia.call(v); if (p && p.catch) p.catch(function () {}); }
   }, true);
+  // Images pas encore en ligne (Gus 26/11 : vignettes grises) : une image importée ou capturée est enregistrée dans le dépôt quelques
+  // secondes plus tard, et raw.githubusercontent garde jusqu'à 5 min le « pas trouvé » demandé avant. En attendant, on affiche la copie
+  // locale (imgLocal[adresse] = blob) partout où l'adresse apparaît dans un style (el) ou une image de fond (imgShow).
+  var imgLocal = {};
+  function imgShow(u) { return (u && imgLocal[u]) || u; }
+  function imgStyle(st) { return typeof st === "string" && st.indexOf("url(") > -1 ? st.replace(/url\("([^"]+)"\)/g, function (m, u) { return 'url("' + imgShow(u) + '")'; }) : st; }
   function el(tag, attrs, kids) {
     var e = document.createElement(tag);
+    if (attrs && attrs.style) attrs.style = imgStyle(attrs.style);
+    if (attrs && attrs.src && tag === "img") attrs.src = imgShow(attrs.src);
     for (var k in attrs || {}) {
       if (k === "text") e.textContent = attrs[k];
       else if (k === "src" && e instanceof HTMLMediaElement) { if (attrs[k]) e.src = attrs[k]; } // → notreCDN (ci-dessus)
@@ -1356,7 +1364,7 @@
       if (!t) { left.appendChild(el("p", { class: "empty", text: "Aucun onglet : « + Onglet » pour commencer." })); return; }
       if (!t.ids.length) left.appendChild(el("p", { class: "empty", text: "Onglet vide : ajoutez des films avec « + » à droite." }));
       t.ids.forEach(function (id, i) {
-        var f = info(id), th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
+        var f = info(id), th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
         var row = el("div", { class: "selitem selmove" + (popRow === i ? " pop" : ""), title: "Glisser pour changer l'ordre, ou sur un onglet pour l'y mettre" }, [el("span", { class: "selnum", text: String(i + 1) }), th,
           el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }), el("small", { text: f.sub })]),
           el("button", { type: "button", class: "btn ghost", text: "↑", title: "Monter", on: { click: function () { if (i) { t.ids.splice(i - 1, 0, t.ids.splice(i, 1)[0]); ch(); drawLeft(); } } } }),
@@ -1401,7 +1409,7 @@
       results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" }));
       shownR = list.slice(0, maxR);
       shownR.forEach(function (f) {
-        var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
+        var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
         th.addEventListener("click", function () { selPreview(f); });
         results.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
           el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") })]),
@@ -4948,7 +4956,7 @@
   function bibFly(ev, imgs, n) {
     var fly = el("div", { class: "bfly" }), cards = [], x = ev.clientX, y = ev.clientY;
     imgs.slice(0, 3).forEach(function (u, i) {
-      var c = el("div", { class: "bflyc" }); if (u) c.style.backgroundImage = 'url("' + u + '")';
+      var c = el("div", { class: "bflyc" }); if (u) c.style.backgroundImage = 'url("' + imgShow(u) + '")';
       cards.push({ e: c, x: x, y: y, vx: 0, vy: 0, k: .22 - i * .05, r: [0, -7, 6][i] }); fly.insertBefore(c, fly.firstChild);
     });
     if (n > 1) fly.appendChild(el("span", { class: "bflyn", text: String(n) }));
@@ -5073,7 +5081,7 @@
       if (l.length > st.n) list.appendChild(el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + (l.length - st.n) + ")", on: { click: function () { st.n += 120; draw(); } } }));
     }
     function row(f, i) {
-      var th = el("div", { class: "bthumb" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
+      var th = el("div", { class: "bthumb" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
       if (f.images && !f.video && !f.full) th.appendChild(el("span", { class: "bimgs", text: f.images.length + " images" }));
       var v = null;
       th.addEventListener("mouseenter", function () { if (!f.video || v || document.body.classList.contains("bdragging")) return; v = el("video", { muted: true, autoplay: true, loop: true, playsinline: true }); v.muted = true; v.src = f.video; th.appendChild(v); });
@@ -5750,8 +5758,8 @@
       pv.appendChild(pin); pv.appendChild(pmeta);
       var pvid = null;
       function prevImg() {
-        pin.style.backgroundImage = it.img ? 'url("' + it.img + '")' : "";
-        if (typeof zth !== "undefined" && zth) zth.style.backgroundImage = it.img ? 'url("' + it.img + '")' : "";
+        pin.style.backgroundImage = it.img ? 'url("' + imgShow(it.img) + '")' : "";
+        if (typeof zth !== "undefined" && zth) zth.style.backgroundImage = it.img ? 'url("' + imgShow(it.img) + '")' : "";
         // Recadrage : l'extrait toujours ; la vignette seulement si « vignette aussi » (t), comme sur les pages.
         var c = it.crop || { z: 1, x: 50, y: 50 }, all = !it.crop || it.crop.t !== false;
         pin.style.transform = all ? "scale(" + c.z + ")" : ""; pin.style.transformOrigin = c.x + "% " + c.y + "%";
@@ -5976,7 +5984,7 @@
       }
       function doImg(f) {
         if (!f) return; pout.textContent = "Préparation de l'image…";
-        compress(f).then(function (c) { var path = "data/bibli/img/b/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".webp"; files.push({ path: path, base64: c.base64 }); setImg(rawURL(path)); pout.textContent = "Vignette importée."; imgUp.value = ""; }, function (e) { pout.textContent = e.message; });
+        compress(f).then(function (c) { var path = "data/bibli/img/b/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".webp"; files.push({ path: path, base64: c.base64 }); imgLocal[rawURL(path)] = c.preview; setImg(rawURL(path)); pout.textContent = "Vignette importée."; imgUp.value = ""; }, function (e) { pout.textContent = e.message; });
       }
       function doVid(f) {
         if (!f) return;
@@ -6005,7 +6013,7 @@
               var fr = new FileReader();
               fr.onload = function () {
                 var path = "data/bibli/img/b/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + ".webp";
-                files.push({ path: path, base64: fr.result.split(",")[1] });
+                files.push({ path: path, base64: fr.result.split(",")[1] }); imgLocal[rawURL(path)] = URL.createObjectURL(bl);
                 it.thumbT = Math.round(t * 1000) / 1000; setImg(rawURL(path));
                 pout.textContent = "Vignette remplacée par l'image à " + fmtT(t) + ".";
               };
@@ -6049,7 +6057,7 @@
         if (!g) { g = { title: "Stills", stills: [], up: true }; (it.extras = it.extras || []).push(g); }
         var id = Date.now().toString(36) + Math.random().toString(36).slice(2, 5), n = 0;
         l.reduce(function (p, f) { return p.then(function () { return compress(f).then(function (c) {
-          var path = "data/bibli/img/" + id + "/" + String(++n).padStart(3, "0") + ".webp"; files.push({ path: path, base64: c.base64 }); g.stills.push(rawURL(path));
+          var path = "data/bibli/img/" + id + "/" + String(++n).padStart(3, "0") + ".webp"; files.push({ path: path, base64: c.base64 }); imgLocal[rawURL(path)] = c.preview; g.stills.push(rawURL(path));
         }); }); }, Promise.resolve()).then(function () { exOut.textContent = n + " image" + (n > 1 ? "s" : "") + " ajoutée" + (n > 1 ? "s" : "") + "."; it.edited = true; chg(); drawEx(); },
           function (e) { exOut.textContent = e.message; drawEx(); });
       }
@@ -6349,6 +6357,7 @@
         if (!files.length) return;
         go.disabled = true; out.textContent = "Envoi des images…";
         var id = Date.now().toString(36), base = "data/bibli/img/" + id + "/", urls = files.map(function (c, i) { return rawURL(base + String(i + 1).padStart(3, "0") + ".webp"); });
+        urls.forEach(function (u, i) { imgLocal[u] = files[i].preview; });
         var guess = String(names[0] || "").replace(/\.[a-z0-9]+$/i, "").replace(/[\s_.-]*\d+$/, "").replace(/[_]+/g, " ").trim() || "Images";
         var it = { key: "i" + id, kind: "images", title: guess, dops: [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "",
           _files: files.map(function (c, i) { return { path: base + String(i + 1).padStart(3, "0") + ".webp", base64: c.base64 }; }) };

@@ -44,6 +44,9 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   en rouvrant la fenêtre). **Stills de l'ordinateur** sous le film (« ⤒ Ajouter des stills », clic ou glisser plusieurs images) →
   `data/bibli/img/<id>/`, groupe `extras` `{ title: "Stills", stills, up: true }` ; images de chaque groupe réordonnées en glissant
   (`stillGrid`), × pour retirer.
+- **Images pas encore en ligne** (Gus 26/11, vignettes grises) : une image importée / capturée n'est sur raw.githubusercontent qu'après
+  son enregistrement (et raw garde ~5 min un « pas trouvé ») : `imgLocal[adresse]` = copie locale (blob), affichée à sa place par
+  `el()` (styles `url("…")`, `<img src>`) et `imgShow()` jusqu'au rechargement de la page.
 - **Filmothèque complète** (25/11) : en plus des films des pages, tous les films de Slate (7 490) lus dans le dépôt privé
   `notes` (`bibli/slate.json`, constante `BIB_SLATE`, avec la clé de la personne connectée) ; les infos des pages restent prioritaires.
 - **Lecture de Slate** : par les fonctions du site (`siteGet`) ; si elles ne répondent pas, par le **robot GitHub** (`askRobot` :
