@@ -4,14 +4,21 @@
   "hue": 0,
   "bundle": "https://kinou.slateapp.com/bundles/1b919168-e8ef-11f1-952e-02ffedfede17",
   "overrides": {
+    "6664": {
+      "zoom": 1.44
+    },
     "8219": {
       "title": "5 balles"
     },
     "8478": {
-      "title": "5 balles"
+      "title": "5 balles",
+      "zoom": 1.21
     },
     "8580": {
       "title": "Thanks For The Milk"
+    },
+    "8765": {
+      "zoom": 1.33
     }
   },
   "about": {
