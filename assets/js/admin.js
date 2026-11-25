@@ -47,7 +47,7 @@
   // Vidéos jouées depuis NOTRE hébergement Amazon (copie de tout Slate le 25/11, au même chemin que sur le CloudFront de Slate) :
   // seul le début de l'adresse change. Les données gardent l'adresse Slate (rien à republier). Fichier absent chez nous (film
   // ajouté sur Slate depuis la copie) : repli automatique sur Slate. Les captures d'image passent toujours par /api/media du site.
-  var SLATE_CDN = "https://d1ko11x0ybxl0h.cloudfront.net/", NOTRE_CDN = "https://d3toxil6rvamjf.cloudfront.net/";
+  var SLATE_CDN = "https://d1ko11x0ybxl0h.cloudfront.net/", NOTRE_CDN = "https://d3toxii6rvamjf.cloudfront.net/";
   function notreCDN(u) { return typeof u === "string" && u.indexOf(SLATE_CDN) === 0 ? NOTRE_CDN + u.slice(SLATE_CDN.length) : u; }
   var srcMedia = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, "src");
   Object.defineProperty(HTMLMediaElement.prototype, "src", { configurable: true, enumerable: srcMedia.enumerable, get: srcMedia.get,

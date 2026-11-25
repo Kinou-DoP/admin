@@ -19,7 +19,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
 - `SITE` = `SITE_VIEW` = https://kinou-4tv.pages.dev (fonctions Cloudflare du site : lecture de Slate ; « Voir sur le site ») ;
   `SITE_PAGES` = beta GitHub Pages (pages d'aperçu des liens) ; `RAW_DATA` = données sur raw.githubusercontent.com.
 - **Vidéos depuis Amazon** (25/11) : tous les fichiers de Slate sont copiés dans notre compartiment `kinou-videos` au même chemin
-  (robot `copie-slate.yml` sur `main`). L'admin joue chaque vidéo sur `d3toxil6rvamjf.cloudfront.net` au lieu de
+  (robot `copie-slate.yml` sur `main`). L'admin joue chaque vidéo sur `d3toxii6rvamjf.cloudfront.net` au lieu de
   `d1ko11x0ybxl0h.cloudfront.net` (`notreCDN`, setter `src` des `<video>`), repli automatique sur Slate si le fichier manque
   (événement `error`). Les données gardent l'adresse Slate. Vignettes (images.slatecdn.net) et captures (`/api/media`) : encore Slate.
 - **Filmothèque complète** (25/11) : en plus des films des pages, tous les films de Slate (7 490) lus dans le dépôt privé
