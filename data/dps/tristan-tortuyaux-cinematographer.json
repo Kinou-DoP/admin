@@ -1,0 +1,226 @@
+{
+  "slug": "tristan-tortuyaux-cinematographer",
+  "name": "Tristan Tortuyaux",
+  "hue": 305,
+  "bundle": "https://kinou.slateapp.com/bundles/3e41d2b2-e8f3-11f1-952e-02ffedfede17",
+  "open": 10323,
+  "overrides": {
+    "4635": {
+      "title": "Menina"
+    },
+    "4636": {
+      "title": "Versus"
+    },
+    "4637": {
+      "title": "Deux Gouttes d'Eau"
+    },
+    "4638": {
+      "title": "Les Bracelets Rouges"
+    },
+    "4639": {
+      "title": "Terremère"
+    },
+    "4640": {
+      "title": "Brahim"
+    },
+    "5111": {
+      "title": "Les Saisons Sauvages"
+    },
+    "5116": {
+      "title": "Girlsquad "
+    },
+    "6513": {
+      "title": "Les Bracelets Rouges - S03"
+    },
+    "6780": {
+      "title": "L'ami qui n'existe pas"
+    },
+    "7102": {
+      "title": "Le Principal"
+    },
+    "7577": {
+      "title": "La Voie Royale"
+    },
+    "10075": {
+      "title": "Surface"
+    },
+    "10213": {
+      "title": "Cette nuit-là"
+    },
+    "10323": {
+      "title": "Belphégor"
+    }
+  },
+  "about": {
+    "bioEn": [
+      "Tristan Tortuyaux is a french cinematographer based in Paris."
+    ],
+    "instagram": "https://www.instagram.com/tristan_tortuyaux/",
+    "website": "https://www.tristantortuyaux.com/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm2059988/"
+      }
+    ],
+    "pos": "18% 36%",
+    "img": "img/tristan-tortuyaux-cinematographer.webp",
+    "og": "img/tristan-tortuyaux-cinematographer-og-1795627374102.jpg"
+  },
+  "categories": [
+    "FEATURED",
+    "FEATURE FILM",
+    "TV SERIE / DRAMA",
+    "SHORT FILMS"
+  ],
+  "clips": [
+    {
+      "title": "La voie royale",
+      "sub": "Frédéric Mermoud\nTabo Tabo Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1ce1604a-7822-402e-84d0-479af6f16d3a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ZY-W95kuGcU9Ez2EpbQTWymaNuzGA7LImylBMUIjaBk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MWI1ZjA0Mi1iZDRm/LTRiMTEtYjEwMy1j/NzZkMzRiOGM2NTIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDct/MTMtYS0xNy4xNy4y/MS5wbmc?v=1&format=webp",
+      "cat": "FEATURE FILM",
+      "slate": 7577,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Le Principal - bande-annonce",
+      "sub": "Chad Chenouga\nWhy Not Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5de24476-a366-4a54-af01-4c7e95c69bbc-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_ZPzVB03592A2FdZS1hxXVyvkj-QiGjX4W7p06oc4Dw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ZDA2OTZiNi1lMDYx/LTRkZTEtODc3YS0y/ODU5M2NlY2NkMjQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDUt/MDgtYS0xNS40OS40/My5wbmc?v=1&format=webp",
+      "cat": "FEATURE FILM",
+      "slate": 7102,
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Pourris Gâtés",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/49d62738-127b-4280-b1b6-beebadce22f6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-gFGXLGGHWiZW50QP-2Yzm2bOfdrhA7uFM3z_F_q4uY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YTg5MzQxNi1hMWQ0/LTQ1OTEtOWQ1Yy02/ZjI2NmY5ODQ1OTUv/OTYwMGY4ODYzZWZj/YjZkYy5wbmc?v=1&format=webp",
+      "cat": "FEATURE FILM",
+      "slate": 6522,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Versus - Trailer",
+      "sub": "François Valla\nPlayground Films & Wide Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e6a9af1c-b3d7-4da7-b6e6-adc9a076c29b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/pQmpWGBoD3VMTdU3Mjhe95xFa0EaZrRn5Wj3Qzl4zGs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/YjA1NWFhYS1kNWZl/LTRkMTMtYjFjYi1l/MGE4NzI5NGQ1MDQv/Y2Y4MjViN2UzOTIz/MjdiMy5qcGc?v=1&format=webp",
+      "cat": "FEATURE FILM",
+      "slate": 4636,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "Menina - Trailer",
+      "sub": "Cristina Pinheiro\nEasy Tiger",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8d9e9ac3-5c7e-4ecc-a622-3f71c405b003-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/nvVK2qcRLtNXoBhtZV--1s32jRDZss58zB5hZFVQjd4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/YTRjMzUzOS01ZGQ1/LTQyOTEtYmM2ZS0w/MDYwYzNmZDZjMWQv/YzQ2Mjc0ZDRlMTQ5/NWY4OS5qcGc?v=1&format=webp",
+      "cat": "FEATURE FILM",
+      "slate": 4635,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Belphégor | Trailer",
+      "sub": "Jeremy Mainguy\nPathe Série",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10323/15941485-cfa7-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/36a9174e-948e-484f-9d62-a3b7a82f42bc-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/U1HgiWgVOo8jaXjz9fOoPq-0tL-wrYI0eC6SFzzqyxM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NjFkYjg4NS01YWQx/LTQ4OGEtYmUxMC02/MWUyYWU2NjIwMjIv/YmVscGhlZ29yLXN0/aWxscy0wMDA4NjQx/My5wbmc?v=1&format=webp",
+      "cat": "TV SERIE / DRAMA",
+      "slate": 10323,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Cette nuit-là | bande annonce",
+      "sub": "Myriam Vinocour\nMam Fictions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10213/7af3d203-baff-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c7247044-8139-4ee0-aa36-60b9c3d15ca0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/XEidX5CFUThgvxIofsZkuGxfRDFla-YYmW2vst6czvM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MjRhOTVjMS0xOThi/LTQ0YjQtYmRiNy1j/ZDNkNTZjNDBkMDYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTEt/MDYtYS0xMS41Ny4w/NC5wbmc?v=1&format=webp",
+      "cat": "TV SERIE / DRAMA",
+      "slate": 10213,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Surface - Extrait",
+      "sub": "Slimane-Baptiste Berhoun\nFrance Télévision",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10075/bf43a937-8d68-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9851c1d4-19c4-425e-af21-dd60bc963eb3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bYp8tkJLDEsaEKEJuObijIKON-u4n7HFI_E2I0JA1Ks/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MDc2MjEwNC1jMzA2/LTRkY2ItOTk2ZC0w/ZGQ1NDRjYmU0Yjkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDQtYS0xMS4yNy4x/Mi5wbmc?v=1&format=webp",
+      "cat": "TV SERIE / DRAMA",
+      "slate": 10075,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "L'ami qui n'existe pas - DOP mood",
+      "sub": "Nicolas Cuche\nJERICO TV",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8de9d71f-6f2e-4593-af7f-53b70b4b267f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/AxFBEvbu2jdn0O7gcWkWf9Ph_o8gBouD6x7mOJqctwk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/Yzg5MjViNy02NmZj/LTRkMTYtYjliMy0w/ZmY3NWY3YmIzYjQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MDktYS0xMS4wNy4w/Ny5wbmc?v=1&format=webp",
+      "cat": "TV SERIE / DRAMA",
+      "slate": 6780,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Les Bracelets Rouges - S03 - Trailer",
+      "sub": "Nicolas Cuche\nVema Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/654cc45f-604a-489e-ae6b-1340073aa0fa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bMfC0jyp3ZuJ80qQtaaHILW80KgfohauMKY0ARJqsug/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZTZhOTI3My04OGRi/LTQ2NTAtYWVmOS1i/YmI0MTM5YTQzODcv/NDExOWVhNDg0YzU3/ZDI0YS5qcGc?v=1&format=webp",
+      "cat": "TV SERIE / DRAMA",
+      "slate": 6513
+    },
+    {
+      "title": "Girlsquad - Trailer",
+      "sub": "Zoe Cauwet\nKelija",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dd60e58d-7eee-47a8-a60f-b91b1c108f4d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/rTdIM8POZXA2rCbFhKdN4WNGA1IUJeiX9qtBiWTQA_g/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/M2U3MDM2My1hM2Fl/LTRhMmEtYTA5Yi03/MjZkNDRkMTM0MjMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDYt/MTAtYS0xNi4xNy4x/My5wbmc?v=1&format=webp",
+      "cat": "TV SERIE / DRAMA",
+      "slate": 5116
+    },
+    {
+      "title": "Les Bracelets Rouges - Trailer",
+      "sub": "Nicolas Cuche\nVema Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e3dd9edb-525c-44c5-947b-55702ca96c9a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/L09Mv97BeymmhQlzzK4GwVJeUB5EXOqajZWryw91qmI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/ZWYyOThiYy05Mzcx/LTRmNjEtYTYxNi0z/ZTg1ZjM0ZTNhNDkv/ZGQwMDRiZmJmYjY0/NmJjYi5qcGc?v=1&format=webp",
+      "cat": "TV SERIE / DRAMA",
+      "slate": 4638
+    },
+    {
+      "title": "Deux Gouttes d'Eau - Trailer",
+      "sub": "Nicolas Cuche\nVema Production & France 2",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e17840a6-2b83-4854-b458-f2ef61bbade6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dwr613iYosoD2gbap4e-4Y1uct_nKc-IV1R0XrKe-5k/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/Yjk1Njc3NS1iNGZi/LTQ4NGQtYTRkYS1h/OGNhZDgxNDEzZGMv/OGYxMTkyMzM0MTQ5/ZTM0YS5qcGc?v=1&format=webp",
+      "cat": "TV SERIE / DRAMA",
+      "slate": 4637
+    },
+    {
+      "title": "Les Saisons Sauvages - Short Film Teaser",
+      "sub": "Nathalie Giraud\nOffshore",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/083a04e5-fef2-4708-9ee9-22799e0dc169-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/uHaMOmhCSd5c52xSYl1g1ibLEBFi06jenl4a43WBt_M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/N2YyY2ZjYi0wMjBh/LTQ2ZGQtOTFhYS1i/YTVmZWFmZjRjNGIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDYt/MTAtYS0xMi41OS4x/Ny5wbmc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 5111
+    },
+    {
+      "title": "Terremère - Montage",
+      "sub": "Aliou Sow\nEasy Tiger",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/53e7ff76-4b1f-4b71-b955-78a99c364815-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-CEgNsXbP8sbJyOPplqjLrsK2Mj6JGLRYnugqjWWVA8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OTZkM2ZjZS1kMWVm/LTQxY2QtODViNi03/OWM5MDQyMTRjZGUv/NTQxOTcwNjNkYzdi/NzFlZC5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 4639
+    },
+    {
+      "title": "Brahim - Trailer",
+      "sub": "Julien Herisson\nEasy Tiger",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/331aa9ab-2670-4633-b2cd-553a78e6bd20-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/uQWab7lDwAoMgRLzihK3yReDKClyJEII0gPpQTwtvCU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/Zjc2OWRlNi0wYzVl/LTQwN2ItYmFiNy1h/MGIzZGQwZDdkMTcv/OWI5YjRiZjRjZTZm/MTc5MS5qcGc?v=1&format=webp",
+      "cat": "SHORT FILMS",
+      "slate": 4640
+    }
+  ]
+}
