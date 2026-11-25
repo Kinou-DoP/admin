@@ -5,7 +5,18 @@
   "bundle": "https://kinou.slateapp.com/bundles/ee6ce9ea-e8f9-11f1-952e-02ffedfede17",
   "open": 11521,
   "overrides": {},
-  "about": {},
+  "about": {
+    "pos": "54% 25%",
+    "instagram": "https://www.instagram.com/julienteissier/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/fr/name/nm5863264/"
+      }
+    ],
+    "img": "img/julien-teissier-cinematographer.webp",
+    "og": "img/julien-teissier-cinematographer-og-1795629639292.jpg"
+  },
   "categories": [
     "FEATURED",
     "BEAUTY / FASHION"
