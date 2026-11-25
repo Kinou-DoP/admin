@@ -50,7 +50,13 @@
       "title": "Evil Dress"
     },
     "10706": {
-      "title": "Casi Todo Bien"
+      "title": "Casi Todo Bien",
+      "info": {
+        "awards": "Official selection, Festival de Málaga",
+        "awardsFrom": {
+          "39638663ef44": "Official selection, Festival de Málaga"
+        }
+      }
     }
   },
   "about": {
