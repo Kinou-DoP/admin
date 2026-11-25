@@ -88,7 +88,65 @@
         "img": [
           "https://images.slatecdn.net/oYcaMHnefO4eYydlopysws8pm7eUNduVu3f3MjZZOGs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OGQxZTUzYS1kZWRl/LTRhZjQtYmE2ZC1m/NzY2YWY5YTVjZDgv/MTc1MzE5ODkzMzU1/Ny5qcGc?v=1&format=webp"
         ]
-      }
+      },
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/barbaque-feature-film-trailer-1",
+          "title": "Barbaque (feature film trailer)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3b66768a-5a2e-4f3b-845e-58cbdd95dfd6-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10400/d16c7154-e732-11f1-952e-02ffedfede17.mp4",
+          "img": "https://images.slatecdn.net/Seh2tLsWdUO3U0Hg8B-TOTJXc4uwXDsxbyYJo9Ajk2w/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQwMC02OTdiODFl/MjI2MTdhNC40MzE4/MTMwOS1kNDA4ZmM1/MGQ1NWVmZDZiODgx/ZGYyMGE5ODg2OTVj/Mi5qcGc.webp"
+        },
+        {
+          "title": "Stills",
+          "stills": [
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/001.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/002.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/003.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/004.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/005.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/006.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/007.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/008.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/009.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/010.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/011.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/012.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/013.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/014.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/015.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/016.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/017.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/018.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/019.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/020.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/021.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/022.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/023.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/024.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/025.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/026.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/027.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/028.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/029.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/030.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/031.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/032.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/033.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/034.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/035.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/036.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/037.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/038.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/039.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/040.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/041.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/042.webp",
+            "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/043.webp"
+          ],
+          "up": true
+        }
+      ]
     },
     "s10010": {
       "img": "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/b/mwwc5hpfwrwo.webp",
