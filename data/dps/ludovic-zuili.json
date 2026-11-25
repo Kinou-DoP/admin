@@ -43,6 +43,10 @@
         "Commercial"
       ]
     },
+    "4645": {
+      "zoom": 1.1,
+      "zoomThumb": true
+    },
     "5763": {
       "title": "Santé France - J'en Parle à",
       "zoom": 1.35,
@@ -68,6 +72,9 @@
         "Commercial"
       ]
     },
+    "6320": {
+      "title": "Volkswagen"
+    },
     "6884": {
       "title": "Prime Video - Ligue 1",
       "types": [
@@ -78,6 +85,9 @@
     "7443": {
       "zoom": 1.36,
       "zoomPos": "41.3% 0%"
+    },
+    "8054": {
+      "title": "Free Reef Noël"
     },
     "8078": {
       "zoom": 1.35,
@@ -112,6 +122,9 @@
       "types": [
         "Music Video"
       ]
+    },
+    "10048": {
+      "title": "Free - Reef"
     },
     "10221": {
       "zoom": 1.27,
