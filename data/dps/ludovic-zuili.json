@@ -14,147 +14,74 @@
     "3063": {
       "zoom": 1.43,
       "zoomThumb": true,
-      "title": "Orange - Money",
-      "types": [
-        "Commercial"
-      ]
-    },
-    "3093": {
-      "types": [
-        "Commercial"
-      ]
-    },
-    "3257": {
-      "types": [
-        "Commercial"
-      ]
+      "title": "Orange - Money"
     },
     "4199": {
       "title": "Oppo - Night",
-      "zoom": 1.48,
-      "types": [
-        "Commercial"
-      ]
+      "zoom": 1.48
     },
     "4430": {
       "title": "Oppo - Warriors",
-      "zoom": 1.45,
-      "types": [
-        "Commercial"
-      ]
+      "zoom": 1.45
     },
     "5763": {
       "title": "Santé France - J'en Parle à",
-      "zoom": 1.35,
-      "types": [
-        "Commercial"
-      ]
+      "zoom": 1.35
     },
     "6088": {
-      "zoom": 1.27,
-      "types": [
-        "Commercial"
-      ]
+      "zoom": 1.27
     },
     "6126": {
-      "zoom": 1.14,
-      "types": [
-        "Commercial"
-      ]
+      "zoom": 1.14
     },
     "6309": {
-      "zoom": 1.48,
-      "types": [
-        "Commercial"
-      ]
+      "zoom": 1.48
     },
     "6884": {
-      "title": "Prime Video - Ligue 1",
-      "types": [
-        "Symphonie",
-        "Orchestra"
-      ]
+      "title": "Prime Video - Ligue 1"
     },
     "7443": {
       "zoom": 1.36,
       "zoomPos": "41.3% 0%"
     },
     "8078": {
-      "zoom": 1.35,
-      "types": [
-        "Music Video"
-      ]
+      "zoom": 1.35
     },
     "8876": {
-      "zoom": 1.09,
-      "types": [
-        "Music Video"
-      ]
+      "zoom": 1.09
     },
     "9291": {
       "zoom": 1.37,
-      "title": "Par Amour",
-      "types": [
-        "Feature Film",
-        "Trailer"
-      ]
+      "title": "Par Amour"
     },
     "9750": {
       "zoom": 1.36,
-      "title": "Carjackers",
-      "types": [
-        "Feature Film"
-      ]
+      "title": "Carjackers"
     },
     "9976": {
       "zoom": 1.22,
-      "title": "Feu! Chatterton - Allons Voir",
-      "types": [
-        "Music Video"
-      ]
+      "title": "Feu! Chatterton - Allons Voir"
     },
     "10221": {
-      "zoom": 1.27,
-      "types": [
-        "Commercial"
-      ]
+      "zoom": 1.27
     },
     "10303": {
       "zoom": 1.06,
-      "title": "N121 Bus de Nuit",
-      "types": [
-        "Feature Film",
-        "Trailer",
-        "narrative",
-        "Feature Film trailer"
-      ]
+      "title": "N121 Bus de Nuit"
     },
     "10389": {
-      "title": "Pegasus - Bar",
-      "types": [
-        "Commercial"
-      ]
+      "title": "Pegasus - Bar"
     },
     "10710": {
       "zoom": 1.39,
-      "title": "Drone",
-      "types": [
-        "Feature Film",
-        "narrative"
-      ]
+      "title": "Drone"
     },
     "11486": {
       "zoom": 1.35,
-      "title": "The blood island",
-      "types": [
-        "Commercial"
-      ]
+      "title": "The blood island"
     },
     "11549": {
-      "title": "Pegasus - Tennis",
-      "types": [
-        "Commercial"
-      ]
+      "title": "Pegasus - Tennis"
     }
   },
   "about": {
@@ -391,14 +318,6 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1556536008-vogue-madison-60s-st-avec-generique-h264.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/WDaUvtKhhOGxFc_XnglyPe4q1Cv0WYqhiwBGU7HfBFQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTAyNzMxODMx/L3ZvZ3VlLmpwZw.webp",
       "slate": 3340,
-      "cat": "FASHION / BEAUTY / LUXE"
-    },
-    {
-      "title": "Cartier",
-      "sub": "Camille Marotte\nMint Productions",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1554298570-cartier-dircut.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/AGykhtOxMIr7uRlvuNtv9QADcVdbda-T4i8chRrH03Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTAzMzM3ODcz/L2NhcnRpZXIuanBn.webp",
-      "slate": 3304,
       "cat": "FASHION / BEAUTY / LUXE"
     },
     {
