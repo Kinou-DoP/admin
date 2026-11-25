@@ -1,0 +1,29 @@
+# Images du video club envoyées avant le 25/11 (data/bibli/img/, sur raw.githubusercontent : cache 5 min, lent) : copiées chez Amazon
+# sous nous/bibli-img/ (même chemin), servies par notre CloudFront avec un cache d'un an ; le site les y prend (GitHub en secours).
+# Les nouvelles images partent directement chez Amazon depuis l'admin (imgPut) ; ce robot ne sert qu'aux anciennes (et à une image
+# encore écrite ici par une ancienne version de l'admin). Accès Amazon sans clé (rôle kinou-robot-copie, branche main). Gratuit.
+name: Images du video club chez Amazon
+on:
+  push:
+    branches: [main]
+    paths: ["data/bibli/img/**"]
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
+concurrency: images-bibli
+jobs:
+  copie:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::919012714656:role/kinou-robot-copie
+          aws-region: eu-north-1
+      - name: Copie (ne renvoie que ce qui manque)
+        run: |
+          aws s3 sync data/bibli/img "s3://kinou-videos/nous/bibli-img/" --only-show-errors --size-only \
+            --exclude "*" --include "*.webp" --content-type image/webp --cache-control "public, max-age=31536000, immutable"
+          echo "Images : $(find data/bibli/img -name '*.webp' | wc -l)" >> "$GITHUB_STEP_SUMMARY"
