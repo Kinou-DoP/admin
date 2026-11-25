@@ -5,11 +5,43 @@
   "bundle": "https://kinou.slateapp.com/bundles/b5790752-e8be-11f1-952e-02ffedfede17",
   "open": 11486,
   "overrides": {
+    "1173": {
+      "title": "Motorola "
+    },
+    "1974": {
+      "title": "Du Pareil Au Même - Kids Revenge"
+    },
+    "3063": {
+      "zoom": 1.43,
+      "zoomThumb": true,
+      "title": "Orange - Money"
+    },
+    "4199": {
+      "title": "Oppo - Night",
+      "zoom": 1.48
+    },
+    "4430": {
+      "title": "Oppo - Warriors",
+      "zoom": 1.45
+    },
+    "5763": {
+      "title": "Santé France - J'en Parle à",
+      "zoom": 1.35
+    },
     "6088": {
       "zoom": 1.27
     },
     "6126": {
       "zoom": 1.14
+    },
+    "6309": {
+      "zoom": 1.48
+    },
+    "6884": {
+      "title": "Prime Video - Ligue 1"
+    },
+    "8078": {
+      "zoom": 1.35
     },
     "8876": {
       "zoom": 1.09
@@ -26,9 +58,15 @@
       "zoom": 1.22,
       "title": "Feu! Chatterton - Allons Voir"
     },
+    "10221": {
+      "zoom": 1.27
+    },
     "10303": {
       "zoom": 1.06,
       "title": "N121 Bus de Nuit"
+    },
+    "10389": {
+      "title": "Pegasus - Bar"
     },
     "10710": {
       "zoom": 1.39,
@@ -37,6 +75,9 @@
     "11486": {
       "zoom": 1.35,
       "title": "The blood island"
+    },
+    "11549": {
+      "title": "Pegasus - Tennis"
     }
   },
   "about": {
@@ -56,19 +97,157 @@
     "og": "img/ludovic-zuili-cinematographer-og-1795604333214.jpg"
   },
   "categories": [
-    "FEATURED"
+    "FEATURED",
+    "COMMERCIAL"
   ],
   "clips": [
+    {
+      "title": "Pegasus | Tennis",
+      "sub": "Adrien Wagner\nSoldats",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11549/c182380d-dd31-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fb6dc87b-f32d-44e3-a9be-b6f854e4452b-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/UpAZbSnQyoR0Ygeh1oreJeyMucf-PddlMLFnnYr8y-Q/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZjFkM2Q4Ny1kY2Ux/LTRiMmQtYWNkMC0y/MzI4NTFkOWVhNjYv/MTc5NDMzNDA5NDIx/Mi5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 11549
+    },
     {
       "title": "The blood island • Trailer",
       "sub": "Basile Monnot\nDependant Production",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11486/66c89fab-d6c0-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8c8e035e-1894-4794-9ac0-76caefeba90d-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/rPl_kYfXzhX55myCL_jiFRmLeaAC5ufYHpQYWrJacrA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MWJjMTY2Zi0yZGM0/LTRmODQtYmJhMy05/MzMwMWZiNzBjZTYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTEt/MDItYS0xNC4yMS4w/OS5wbmc?v=1&format=webp",
-      "cat": "",
+      "cat": "COMMERCIAL",
       "slate": 11486,
       "featured": true,
       "featuredOrder": 1
+    },
+    {
+      "title": "Pegasus | Film 1",
+      "sub": "Adrien Wagner\nSoldats",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10389/14de61c5-fb7c-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/489a8e83-c2da-4645-9859-d0d3db03f450-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/XpGFlfyEShDfhtNBv6x5vQ308qjKFD8yYMPt_PGFR8M/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MGVmZTMxYy1kNWZl/LTQ1MDEtOWQ5MS0w/MWI2YTFlODY4MGYv/cGVnYXN1czEuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10389
+    },
+    {
+      "title": "Adapt",
+      "sub": "Sovage",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10221/9f73c5d2-bfb1-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a0f728b4-cfd4-406b-8316-091defceac7f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ANW72M8KMFrSKW8niDdI7zz4MwLzZdgnmNEM2YcOdw8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZjVmMjYyYi04Y2Y3/LTQ5NjUtYWY5ZS04/YjdhMzQwMTI0N2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTEt/MTItYS0xMS4yNS4w/NC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10221
+    },
+    {
+      "title": "Cruel Pancake Campaign",
+      "sub": "Ludovic Zuili, Hugo Philip",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8078/3987964b-bfbc-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f11f91e4-cfe4-4223-8f49-6910cd12d1bd-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/IBzB8qIzkddjxWUPNHqBkCAyU2vO9nJH-Io1bIFT5g8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MmU3NWMyNy0zZDM3/LTRkMWMtOWZhZS02/NGMwOTI4NDQxMzQv/Y3BrLXN0aWxsczEu/anBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 8078
+    },
+    {
+      "title": "Prime Video Ligue 1",
+      "sub": "Lucas Posson\nAllso",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6884/4e1bf656-bfbc-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6335d4d7-a05e-4685-9bbb-7a3f02626dd0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KFxRUEJsJ4aLDVFFgW7DzCwCc9rhygdTjHp7-tgNzxk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YTQ3NDg4MS05ZTYz/LTQxMDEtYTA4MS1j/OTY0ZTc4NGEwMWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDMt/MDItYS0xMS4wNC4y/Mi5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6884
+    },
+    {
+      "title": "Liberdad - Credibom",
+      "sub": "Pedro Jarnac Freitas\nBom-Bom",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6309/ec1c395f-fde3-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2232dfa2-abcb-48a5-bdf0-e188391345d9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/aNeHqBL8WZHabd0ouyJIkqHXLlAFnorr43LetyBfnEQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YzM5NTA3ZS0xZmYz/LTRiZjYtYWI2Zi0w/NDU5M2RmMjE3ZTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MDYtYS0xNi40NC4w/OS5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 6309
+    },
+    {
+      "title": "Santé France - \"J'en Parle à\" - Director's Cut",
+      "sub": "Sidney Van Wichelen\nPlayers Paris",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5763/d7086bb6-c198-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a291aee0-f3e6-4361-b440-263c49204f24-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/hlidESw1nCExa5G6cHe_rqsPugDUaq74pxUwlhROVD8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/YTFlZWZkMC03OWVh/LTQ1ZWItOWJjOC1j/MjU4Nzk2NDAzZjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTAtYS0xNi40My41/NS5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 5763
+    },
+    {
+      "title": "Oppo x Warriors",
+      "sub": "Camille Marotte\nSweetshop Shanghai",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4430/254eadaf-bfbc-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b92c4464-15a6-454c-a9c4-45594220f85e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gsFc6E-Tf9mN7ggtFkS7_jDndDemKpUQT9T9pYPJbkg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/ZGY1YzAxNS05MTkx/LTRiN2YtODg3OC1j/MTNhNDVlYmZjMGUv/b3Bwby5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4430
+    },
+    {
+      "title": "Oppo",
+      "sub": "Camille Marotte\nThe Sweet Shop",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4199/516f944f-175a-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ef8956b4-465d-4b4d-b6c5-5f110e6882c6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Onq-_ncI1hGem2RK-qvM0VkPSA2QYFdCm6-D9JdRjJw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MTk5LTVlY2Q0MWNi/NmY4OGQyLjUxNDk3/NDQxLTU5MzkyMzhj/MWMzMGViY2Q3NjE3/NGNhOWI4MDU4ZDVk/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 4199
+    },
+    {
+      "title": "Adidas - Ultraboost Reboosted",
+      "sub": "Remi Besse\nStandard Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1552397411-190311-adidas-dircut.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/SxuaE4fpp6kl7lphx_kHzpizPvx8oF4z2wseXIzoI48/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1NTExMTQ3MDA4/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA3/LTIzLWEtMTUuMzIu/MTctMi5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3257
+    },
+    {
+      "title": "Fondation Recherche Cardio-Vasculaire",
+      "sub": "Julien Rocher\nWanda Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1548260748-170922-frcv-45s-web-vi.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/HF4lNpgQQz-X5dGrPQ8Hl5MRWfag7uVuzKS-BeubN4E/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTAyOTg0NDQ0/L2ZvbmRhdGlvbi1y/ZWNoZXJjaGUtY2Fy/ZGlvLXZhc2N1bGFp/cmUuanBn?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3093
+    },
+    {
+      "title": "Orange Money",
+      "sub": "Lucas Posson\nChouette Prod",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1547132133-1mn15s-new-version-01.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1g5dga00WSEIUzCogPq3UQVmO_LE1PnrjCYYcZSh7P0/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9v/cmFuZ2UtbW9uZXkt/MS05MTAzYzhjNmFh/NGJjNmQyNmE2ZmI2/YzhmMGY3OTY5Zi5q/cGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 3063
+    },
+    {
+      "title": "Du Pareil Au Même | Kids Revenge",
+      "sub": "Marc Cortès\nHercules",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545429232-45861279_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/HnLTmSC-_cGKAYQi3DgaPApDictFiRbcDjcZ71qPO84/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MmM1OGIxOC02OWJh/LTQyMTYtODNmOC01/MTQ0NTg0N2EzZjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDQt/MTktYS0xNC41Ni4y/Ny5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 1974
+    },
+    {
+      "title": "Motorola \"The Response\"",
+      "sub": "Lucas Posson\nSovage",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545397478-49240224_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/nIldOyKRWfg8FVNTSC80On28RCRQXXkjqSun8pJV9NQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1Mzk3NDU3LzQ5/MjQwMjI0X2xhcmdl/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 1173
+    },
+    {
+      "title": "osezlesauvage",
+      "sub": "benjamin hoffman and jean-baptiste gauvin\nasterias",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e475af94-bc6b-4b8d-b91f-f100f4f6f00a-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/9JD2x3WtQgn3MD3T3SQdvzVxk56WpZixTfBqpLeZMdk/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NjRhNjM2NS02M2Vi/LTRiM2ItOTllNC1m/ZjQxNzAyYzZmYTIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNS4xOC4x/My5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 1099
+    },
+    {
+      "title": "Start Something Commercial",
+      "sub": "Thibaut Grevet\nFrenzy Paris",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545365441-42480156_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/vDOXhGqKTpba3eyrTA-6J4uCAweOEwqhXMIM0Oj4-_s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTA0Mjg3Nzgx/L3N0YXJydC5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 520
     },
     {
       "title": "Prequel - SCH",
