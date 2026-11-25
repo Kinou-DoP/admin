@@ -5,7 +5,7 @@ Interface d'administration de kinou.fr et données du site (`data/`).
 - Ouvrir l'admin : adresse Netlify de ce repo, se connecter avec son token GitHub personnel
   (instructions affichées à l'écran de connexion).
 - Test en local : `python3 -m http.server 8766` puis http://localhost:8766.
-- Détails techniques : voir `CLAUDE.md`.
+- Détails techniques : voir `CLAUDE.md` et les notes par sujet dans `docs/`.
 
 ## À faire plus tard
 - Quand la beta sera fusionnée dans le site officiel : passer la constante `SITE` de `assets/js/admin.js`

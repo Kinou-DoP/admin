@@ -1,0 +1,23 @@
+# Pages « website » : fiches des chefs op, sélection, home, spotlight, fiction, contact (admin)
+
+Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles générales : `CLAUDE.md`.
+
+- **Website** : **cinematographers** (`#/dops`, liste + tableau de bord d'avancement `data/progress.json`), **fiche d'un chef op**
+  (`#/dp/<slug>`, `showDP`) : **« Modifier la sélection »** (`selEditor`, Gus 25/11 : la page ne lit plus Slate) = fenêtre des onglets
+  (ajouter, renommer, avancer / reculer, supprimer ; **glisser un onglet** pour le déplacer) et des films de chaque onglet (**glisser comme dans les bandes du video club**, `filmDrag` / `tabDrag` + `bibFly` : effet ressort, trait de dépôt ; **déposé sur un autre onglet**, le film y passe — FEATURED : ajouté sans quitter son onglet ; ou ↑ ↓, retirer ×, ajouter « + » depuis la
+  video club en petit : filtres en étiquettes comme le video club (`bibMatch`, suggestions `bibCache.sug` en tapant ; à l'ouverture, filtre « Chef op » de la fiche + films de la page), mots libres, plus récents en haut, 150 puis « Afficher plus » ; clic sur l'image = aperçu `selPreview` (film, crédits, client, types, date)) ; FEATURED = ordre du showreel (`featured`,
+  `featuredOrder` ; un film de FEATURED peut n'être dans aucun autre onglet : `cat: ""`) ; fiche sans films : bouton « Créer une sélection » (même fenêtre, onglet FEATURED vide) ; « Valider et publier » réécrit `categories`
+  + `clips` puis publie (site à jour en ~10 s) ; les `overrides` restent attachés à chaque film. « Réimporter depuis Slate » (option,
+  demande confirmation : remplace la sélection ; un snippet absent sur Slate mais présent dans la fiche est gardé),
+  films par onglet (titre, crédits, masquer, recadrage, cadrage téléphone, liens Slate de stills / vidéos sous le film avec colonnes,
+  extrait au survol, infos du film, **prix & sélections**, présentation vidéo + stills), bouton **« Compléter les infos des films
+  (robot) »** (onglets fiction, 2nd unit, cam op ; champs vides seulement, marqués « à vérifier »), en ligne / caché, genre, notes
+  internes (dépôt notes), about (bio, liens, portrait + cadrage, CV), adresse (slug). **Home page**, **spotlight**, **fiction** : bouton **« Modifier la sélection »** (`pageSel` → `selEditor(null, cfg)` : une seule liste, ordre, ajout depuis le video club (`pageFilm` ; spotlight et fiction : film ajouté **en haut**, `cfg.top`), « Valider et publier » retire le lien `reel`, plus de Slate) ; listées aussi dans « Bundles » du video club. **Home page** (`showHome` : bande Slate, éditeur
+  vidéo : extrait HD, recadrage, téléphone), **spotlight**, **fiction** (statut, genre, plateformes, date, affiche, cadrage scope,
+  9 New releases au plus, passage automatique en New release le jour de la sortie, alerte « autre date trouvée »), **contact**
+  (+ logo, mentions légales).
+- **Film ajouté à une page** (sélection, 26/11) : le robot `link-films.mjs` (après la publication) lui recopie ce qui a déjà été saisi pour ce film sur les autres pages (`info`, `extras`, `stills`) — seulement ce qui manque. Le robot `fill-home.mjs` ne lit plus Slate (débranché le 26/11, sauf `SLATE=1`).
+- Fiction et spotlight : avec une bande Slate (`reel`), la publication n'écrit que `reel`, `categories`, `overrides` (+ affiches), jamais les `films` du robot ; **sans `reel`** (sélection faite dans l'admin, « Modifier la sélection », 26/11), elle écrit aussi `films` et le robot n'y touche plus (il ne relit Slate que s'il y a un `reel`). Accueil : pareil, `slides` sans `reel`.
+- Avant de publier une fiche, l'admin relit la version en ligne et garde ce que les robots ont écrit (`robotFrom` : `images`,
+  `ratios`, `types`, `full`), les lignes de prix (`awMerge`) et ce que les autres pages ont changé entre-temps (`sharedMerge`,
+  fusion à trois). Après publication, `afterRobot` attend le robot (2 min au plus) et reprend ses films complets.

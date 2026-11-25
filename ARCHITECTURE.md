@@ -40,6 +40,6 @@ Les pages festivals, sélections, sorties, récupération, notes et prénoms lis
 - Tester : servir le dossier (`python3 -m http.server`) et simuler l'API GitHub (Playwright, `page.route('https://api.github.com/**')`)
   pour ne rien écrire pour de vrai.
 - **Bandeau « Nouvelle version »** : recharger. **« GitHub 409 / 422 »** à la publication : quelqu'un a publié en même temps ;
-  l'admin réessaie seul, sinon republier. **« Lecture seule »** : la clé n'a pas le droit d'écrire dans ce dépôt (voir CLAUDE.md,
+  l'admin réessaie seul, sinon republier. **« Lecture seule »** : la clé n'a pas le droit d'écrire dans ce dépôt (voir docs/hebergement.md,
   « Ajouter une personne »). **Import Slate lent** (~1 min) : passage par le robot (onglet Actions du dépôt, workflow slate-ask).
 - Si le robot n'arrive pas à enregistrer : dépôt → Settings → Actions → General → Workflow permissions → « Read and write ».

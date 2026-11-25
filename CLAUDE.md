@@ -4,166 +4,32 @@ Interface d'administration de kinou (site des chefs op + outils internes de l'é
 HTML / CSS / JS vanilla (`index.html`, `assets/js/admin.js`, `assets/css/admin.css`), aucune dépendance. On parle à Gus en français,
 en le tutoyant, simplement.
 
-**À lire aussi** : `ARCHITECTURE.md` (carte du code) ; `HISTORIQUE.md` (pourquoi les choses sont comme ça, demandes de Gus datées) ;
-le CLAUDE.md du dépôt `site` (format des données et affichage) ; dans le dépôt privé `notes` : son CLAUDE.md (robots, données
-internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichier (fonctionnement), une ligne datée en bas de
-`HISTORIQUE.md`, `ARCHITECTURE.md` si la structure change.
+## Notes par tâche (ne lire que celle de ta tâche, et seulement le passage utile)
+- `docs/video-club.md` : video club (`#/bibli`), bandes, bundles, partage d'un film, retouches, encodage et envoi des vidéos chez
+  Amazon, vidéos jouées depuis notre CloudFront, images pas encore en ligne, filmothèque complète.
+- `docs/website.md` : fiches des chefs op, « Modifier la sélection », home page, spotlight, fiction, contact ; règles de publication
+  propres à ces pages (robots `link-films`, `fill-home`, films du robot).
+- `docs/outils-internes.md` : accueil de l'admin, sorties fiction, festivals et nos sélections (prix → site), récupération, historique.
+- `docs/hebergement.md` : branches, `SITE` / `SITE_VIEW`, lecture de Slate (fonctions du site, robot `askRobot`), connexion et droits,
+  détail de la publication (`commit`, Annuler / Rétablir, enregistrements en arrière-plan).
+- `ARCHITECTURE.md` : carte du code. `HISTORIQUE.md` : pourquoi c'est comme ça (chercher le mot-clé plutôt que tout lire).
+  Format des données du site : `docs/donnees.md` du dépôt `site`.
+- **À chaque changement** : la note de tâche concernée, une ligne datée en bas de `HISTORIQUE.md`, `ARCHITECTURE.md` si la structure
+  change ; ce fichier seulement si une règle générale change.
 
-## Branches, hébergement
-- **Code sur `beta`** (dans une nouvelle session : `git checkout beta`) : publié sur GitHub Pages https://kinou-dop.github.io/admin/
-  ~1 min après un push. **Données sur `main`** (`data/`, constante `BRANCH`), écrites par l'admin via l'API GitHub (un commit par
-  publication). `main` contient aussi les robots (`.github/workflows/`, `tools/`). L'ancienne admin Netlify n'est plus utilisée.
-- À chaque modification de `admin.js` ou `admin.css` : mettre à jour `?v=` dans `index.html`. L'admin compare son `?v=` à celui en
-  ligne (`checkVersion`) : bandeau « Nouvelle version » et publication bloquée tant qu'on n'a pas rechargé (« Recharger » garde les
-  modifications non publiées, `saveDraft`).
-- `SITE` = `SITE_VIEW` = https://kinou-4tv.pages.dev (fonctions Cloudflare du site : lecture de Slate ; « Voir sur le site ») ;
-  `SITE_PAGES` = beta GitHub Pages (pages d'aperçu des liens) ; `RAW_DATA` = données sur raw.githubusercontent.com.
-- **Vidéos depuis Amazon** (25/11) : tous les fichiers de Slate sont copiés dans notre compartiment `kinou-videos` au même chemin
-  (robot `copie-slate.yml` sur `main`). L'admin joue chaque vidéo sur `d3toxii6rvamjf.cloudfront.net` au lieu de
-  `d1ko11x0ybxl0h.cloudfront.net` (`notreCDN`, setter `src` des `<video>`), repli automatique sur Slate si le fichier manque
-  (événement `error`). Les données gardent l'adresse Slate. Vignettes (images.slatecdn.net) et captures (`/api/media`) : encore Slate.
-- **Encodage** (Gus 26/11) : « + Vidéo » → « Depuis l'ordinateur » → « Envoyer et encoder » : le fichier (10 Go au plus) part
-  directement chez Amazon (`upload` : morceaux de 16 Mo, 3 à la fois, réessais, reprise si on choisit de nouveau le même fichier ;
-  adresses signées par `/api/depot` du site, clé de dépôt rangée dans Cloudflare) dans `kinou-videos/depot/`. Le film entre tout de
-  suite dans `library.json` (clé `e<id>`, `enc: { path, id }`, « Encodage en cours… ») avec une demande `data/encode/film-….json`
-  (`encFile`) ; robot **`encodage.yml`** + `tools/encodage.mjs` (`main`, ffmpeg, accès Amazon sans clé) : version web 1080p H.264,
-  vignettes WebP 800 / 1600, extrait 720p sans son de 5 s **aux 2/3 du film**, sous `nous/<id>/` ; `encCheck` (ouverture du video club
-  puis toutes les 20 s) recopie la réponse dans le film (`full`, `video`, `img`, `img1600`, `snip { s, d, v }`, `thumbT`, `dur`, `w`, `h`).
-  **Extrait léger** : « Valider l'extrait » demande au robot (`rapide-….json`, `encAsk` / `encWait`) le passage en 720p sans son →
-  `snip.v`, joué par les bandes à la place du film complet. Deux files (films longs / rapide). Demandes : `snip`, `thumb`, `film`.
-  **Fenêtre d'import** (`importFilms`, Gus 26/11) : « + Vidéo » → une ou plusieurs vidéos (bouton ou fichiers glissés) → chaque vidéo
-  entre tout de suite au video club (`enc.sending` pendant l'envoi) et la fenêtre d'infos du film s'ouvre (`libEdit(f, { local, head,
-  credits })`) : vignette / extrait réglables sur la vidéo de l'ordinateur (`lib.local`, blob) pendant l'envoi ; en haut un onglet par
-  vidéo + avancement (envoi en %, puis robot : `progress { step, pct }` écrit dans la demande, `encWait(…, onPoll)`). Envois l'un
-  après l'autre ; une vidéo sans crédits reprend ceux de la 1re ; à la fin, version web (`encCheck`), vignette / extrait choisis à la
-  main gardés (extrait léger refait, `libPatch`). « + Vidéo » / « + Images » sont des liens `#/bibli/video`, `#/bibli/images`
-  (Cmd + clic = autre onglet, plusieurs envois à la fois ; `bibOpen`).
-  **« ↻ Remplacer la vidéo »** (bouton : clic = choix lien Slate / ordinateur ; une vidéo glissée dessus = envoi direct ; `rpUp` /
-  `rpWait`) : demande `web: true` (version web seulement) ; **vignette, extrait et leurs temps gardés** (`thumbT`, `snip`) ; « Valider »
-  les refait dans la nouvelle vidéo (`snipStale` : `snip.vf` = vidéo d'où vient l'extrait léger). `it.enc` = encodage en cours (repris
-  en rouvrant la fenêtre). **Stills de l'ordinateur** sous le film (« ⤒ Ajouter des stills », clic ou glisser plusieurs images) →
-  `data/bibli/img/<id>/`, groupe `extras` `{ title: "Stills", stills, up: true }` ; images de chaque groupe réordonnées en glissant
-  (`stillGrid`), × pour retirer.
-- **Images pas encore en ligne** (Gus 26/11, vignettes grises) : une image importée / capturée n'est sur raw.githubusercontent qu'après
-  son enregistrement (et raw garde ~5 min un « pas trouvé ») : `imgLocal[adresse]` = copie locale (blob), affichée à sa place par
-  `el()` (styles `url("…")`, `<img src>`) et `imgShow()` jusqu'au rechargement de la page.
-- **Filmothèque complète** (25/11) : en plus des films des pages, tous les films de Slate (7 490) lus dans le dépôt privé
-  `notes` (`bibli/slate.json`, constante `BIB_SLATE`, avec la clé de la personne connectée) ; les infos des pages restent prioritaires.
-- **Lecture de Slate** : par les fonctions du site (`siteGet`) ; si elles ne répondent pas, par le **robot GitHub** (`askRobot` :
-  demande dans `data/ask/<horodatage>.json`, workflow `slate-ask.yml` + `tools/ask.mjs` sur `main`, ~1 min ; `tools/slate.mjs` =
-  copie de `netlify/functions/slate.mjs` du site, **à garder identiques**). Slate exige un User-Agent.
-
-## Connexion et droits
-- Clé GitHub « fine-grained » par personne (Resource owner Kinou-DoP, dépôts `admin`, `site`, `notes`, Contents : Read and write, sans
-  expiration), gardée dans le navigateur, jamais dans le dépôt. Le **prénom** est demandé à la 1re connexion d'une clé et lié à son
-  empreinte (`notes/equipe/noms.json`) : il signe les commits « (admin, Prénom) » et l'historique.
-- Clé sans droit d'écriture sur ce dépôt (`canWeb` faux) : rubrique website **en lecture seule** ; festivals, sélections,
-  récupération, sorties, notes internes restent utilisables (dépôt notes).
-- Ajouter une personne : l'inviter dans l'organisation Kinou-DoP, rôle **Write** sur `admin`, `site` et `notes`, puis elle crée sa clé
-  (approbation éventuelle : organisation → Settings → Personal access tokens → Pending requests).
-
-## Publication (règles importantes)
-- `commit(files, message)` : un seul commit pour plusieurs fichiers ; réessaie seul (3 fois) si un autre commit passe entre-temps.
-  Un fichier `{ path, edit }` est **relu dans le dernier commit** puis modifié (ex. `dps/index.json` : seule l'entrée du chef op change).
-- Avant de publier une fiche, l'admin relit la version en ligne et garde ce que les robots ont écrit (`robotFrom` : `images`,
-  `ratios`, `types`, `full`), les lignes de prix (`awMerge`) et ce que les autres pages ont changé entre-temps (`sharedMerge`,
-  fusion à trois). Après publication, `afterRobot` attend le robot (2 min au plus) et reprend ses films complets.
-- **Film ajouté à une page** (sélection, 26/11) : le robot `link-films.mjs` (après la publication) lui recopie ce qui a déjà été saisi pour ce film sur les autres pages (`info`, `extras`, `stills`) — seulement ce qui manque. Le robot `fill-home.mjs` ne lit plus Slate (débranché le 26/11, sauf `SLATE=1`).
-- Fiction et spotlight : avec une bande Slate (`reel`), la publication n'écrit que `reel`, `categories`, `overrides` (+ affiches), jamais les `films` du robot ; **sans `reel`** (sélection faite dans l'admin, « Modifier la sélection », 26/11), elle écrit aussi `films` et le robot n'y touche plus (il ne relit Slate que s'il y a un `reel`). Accueil : pareil, `slides` sans `reel`.
-- Annuler / Rétablir : instantanés de la page (`histInit`, `touch`) ; pages enregistrées tout de suite (festivals, récupération,
-  sorties, sélections) : `immInit` / `immPush`.
-- **Enregistrements en arrière-plan** (toute l'admin) : un enregistrement automatique (notes, bandes, bundles, infos des films,
-  partage d'un film, prix) se programme avec `soon(clé, fn, ms)` (jamais un `setTimeout` à part) ; changer de page dans l'admin le
-  lance tout de suite (`flushSaves`) et il continue en fond ; `gh` (écritures), `commit`, `nPut`, `nEdit` sont comptés (`track`).
-  Tant qu'il reste un enregistrement en cours ou prévu, **fermer / recharger l'onglet demande confirmation** (`beforeunload`).
-  Pastille en bas à gauche (`#saving`, au-dessus de la barre « Publier » quand elle est là) : « Enregistrement… », « Enregistré », « Pas enregistré : … » (clic = fermer). Les notes
-  d'une fiche rouverte attendent la fin de leur enregistrement avant d'être relues (`notesPending`).
-
-## Pages (menu à gauche : website ▸, video club, sorties fiction, festivals ▸, récupération, historique)
-- **Accueil de l'admin** (`#/`, `showHello`) : « Hello la Dream Team ! » + petit mot par ordre d'importance (`helloNews` : sorties de
-  la semaine, dates de fiction trouvées / bandes-annonces, prix trouvés ces 3 derniers jours, « à vérifier » s'ils ne sont pas confirmés).
-- **Website** : **cinematographers** (`#/dops`, liste + tableau de bord d'avancement `data/progress.json`), **fiche d'un chef op**
-  (`#/dp/<slug>`, `showDP`) : **« Modifier la sélection »** (`selEditor`, Gus 25/11 : la page ne lit plus Slate) = fenêtre des onglets
-  (ajouter, renommer, avancer / reculer, supprimer ; **glisser un onglet** pour le déplacer) et des films de chaque onglet (**glisser comme dans les bandes du video club**, `filmDrag` / `tabDrag` + `bibFly` : effet ressort, trait de dépôt ; **déposé sur un autre onglet**, le film y passe — FEATURED : ajouté sans quitter son onglet ; ou ↑ ↓, retirer ×, ajouter « + » depuis la
-  video club en petit : filtres en étiquettes comme le video club (`bibMatch`, suggestions `bibCache.sug` en tapant ; à l'ouverture, filtre « Chef op » de la fiche + films de la page), mots libres, plus récents en haut, 150 puis « Afficher plus » ; clic sur l'image = aperçu `selPreview` (film, crédits, client, types, date)) ; FEATURED = ordre du showreel (`featured`,
-  `featuredOrder` ; un film de FEATURED peut n'être dans aucun autre onglet : `cat: ""`) ; fiche sans films : bouton « Créer une sélection » (même fenêtre, onglet FEATURED vide) ; « Valider et publier » réécrit `categories`
-  + `clips` puis publie (site à jour en ~10 s) ; les `overrides` restent attachés à chaque film. « Réimporter depuis Slate » (option,
-  demande confirmation : remplace la sélection ; un snippet absent sur Slate mais présent dans la fiche est gardé),
-  films par onglet (titre, crédits, masquer, recadrage, cadrage téléphone, liens Slate de stills / vidéos sous le film avec colonnes,
-  extrait au survol, infos du film, **prix & sélections**, présentation vidéo + stills), bouton **« Compléter les infos des films
-  (robot) »** (onglets fiction, 2nd unit, cam op ; champs vides seulement, marqués « à vérifier »), en ligne / caché, genre, notes
-  internes (dépôt notes), about (bio, liens, portrait + cadrage, CV), adresse (slug). **Home page**, **spotlight**, **fiction** : bouton **« Modifier la sélection »** (`pageSel` → `selEditor(null, cfg)` : une seule liste, ordre, ajout depuis le video club (`pageFilm` ; spotlight et fiction : film ajouté **en haut**, `cfg.top`), « Valider et publier » retire le lien `reel`, plus de Slate) ; listées aussi dans « Bundles » du video club. **Home page** (`showHome` : bande Slate, éditeur
-  vidéo : extrait HD, recadrage, téléphone), **spotlight**, **fiction** (statut, genre, plateformes, date, affiche, cadrage scope,
-  9 New releases au plus, passage automatique en New release le jour de la sortie, alerte « autre date trouvée »), **contact**
-  (+ logo, mentions légales).
-- **Video club** (ancienne « filmothèque », appelée « bibliothèque » dans le code ; `#/bibli`, `showBibli`) : tous nos films (fiches, fiction, spotlight, accueil, imports `data/bibli/library.json`),
-  **les plus récents en haut** (id Slate décroissant). Recherche avec suggestions dans cet ordre : chef op (étiquette orange), réal, prod,
-  client, type de contenu, catégorie (jamais les films ; 4 par sorte) → filtres en étiquettes. Client / types de contenu / mots-clés :
-  `data/bibli/meta.json`, écrit chaque nuit par le robot `bibli-meta.yml` (`tools/bibli-meta.mjs`, `readMeta` de `slate.mjs`, `main`).
-  **Bandes** (panneau de droite) : en arrivant, toujours une nouvelle bande vide ; on glisse les films n'importe où dans la colonne
-  (film qui suit la souris avec effet ressort, paquet d'images pour plusieurs films cochés ; Maj + clic = plage), « + », réordonner en
-  glissant ; boutons en bas (+ Section, Réglages, Voir, + Nouvelle bande) ; **enregistrement automatique** 1,2 s après chaque changement
-  (`changed` → `saveBand`, nouvel essai seul en cas d'échec). ✎ sur un film = **retouches pour cette bande seulement** (`editItem` :
-  titre, crédits, chefs op, types, vignette = image du film capturée par `/api/media` du site ou still, extrait `snip {s, d}` =
-  début et fin choisis dans le film complet (0,5 à 10 s : la poignée tirée s'arrête à la limite, l'autre ne bouge pas), lecteur image par image (raccourcis écoutés partout dans la fenêtre sauf champs de texte : flèches ← → = image par image, vidéo arrêtée, Maj = 1 s ; espace = lecture, en boucle entre début et fin s'il y a un extrait ; frise du film (vignette) ; extrait : **une seule frise sur tout le film** avec poignées début / fin (Gus 26/11 : plus de frise de détail de 30 s qui se recentrait) : image figée pendant le réglage, extrait en boucle dès qu'on lâche), recadrage `crop {z,x,y,t}` (**même réglage que les fiches** : `zoomCtl` avec `tch`, cadre rouge sur l'extrait qui défile pendant le réglage, « Aussi sur la vignette » ; repris de la page du film : `zoom`, `zoomPos`, `zoomThumb` → `t` = vignette aussi, `cropOf` ; case « Recadrer aussi la vignette » ; la retouche ne vaut que pour la bande), stills et vidéos sous le film `extras`, prix `awards`). Les films de
-  la bande sont des copies (prix et extras des fiches repris). Réglages : mise en page **Grille / Plein écran en haut** (`layout`), nom, chefs op (vide = détectés : nos chefs op des films, le
-  plus présent d'abord), description, crédits / types / prix cachés, colonnes, expiration, mot de passe, téléchargement.
-  **Lien** `SITE_VIEW/b/<code>` (9 caractères au hasard, `bandCode`) ; page publique **chiffrée** `data/b/<empreinte>.json` (`bandSeal` :
-  PBKDF2-SHA256 150 000 tours du code → nom du fichier + clé AES-GCM ; mot de passe → clé tirée de code + mot de passe), original et liste
-  (avec les mots de passe) dans le dépôt **notes** `bandes/<code>.json` + `bandes/index.json` (`nGet` / `nPut` / `nEdit`). « Bandes
-  existantes » (revenir à l'onglet de la bande = nouvelle bande vide) : clic sur la ligne = ouvrir (seulement le nom de la bande), voir ↗, supprimer ×. **Annuler / Rétablir** (boutons en bas
-  ou Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z) : instantanés de la bande (`undo*`), remis à zéro à chaque bande ouverte ou nouvelle. Anciennes bandes en clair (`data/bandes/`, 19/11) : listées, converties au premier changement.
-  **Dans la liste** : clic sur l'image = lecteur (`bibPlay` → `navPlayer` : film complet, ‹ › / flèches = film d'avant / d'après dans la liste affichée, « + Ajouter à la bande » au milieu, Échap / clic à côté ; même lecteur dans « Modifier la sélection », « + » = onglet ouvert) ; clic ailleurs sur la ligne = **infos du
-  film** (même fenêtre que les retouches, `editItem(-1, lib)`), enregistrées dans `data/bibli/edits.json` (seulement ce qui diffère des
-  pages, `bibApply`, `_orig`), reprises par les films ajoutés ensuite aux bandes **et sur le site** (Gus 26/11 : le site lit `edits.json` et applique vignette,
-  extrait léger `snip.v` / mp4 `snipVideo`, film, titre, crédits, stills / vidéos dessous par-dessus les fiches, spotlight, fiction,
-  accueil ; `vcApply` d'`app.js`) ; ligne marquée ✎. **Crédits avec
-  rôle** : `dops` + `roles { nom: rôle }` (rôle vide = cinematographer, crédité en premier ; ex. « Camera operator »), dans les infos
-  et les retouches ; case à cocher et « + » plus grands. **Réal, prod, types de contenu en blocs** (`chipsIn` : suggestions des noms
-  déjà connus de la même sorte, clic / Entrée / virgule = bloc, clic sur un bloc = le modifier ; enregistrés séparés par « , » ; plusieurs
-  prods = plusieurs suggestions et filtres, `bibProds`). Sous le film : onglets **Vignette** (« Valider cette image » en bas à droite = image du film capturée → `thumbT`, stills du film et de dessous, **image de
-  l'ordinateur**, **anciennes vignettes**) puis **Extrait** (poignées tout de suite : sans extrait, proposition de 5 s à partir de
-  `thumbT` ou du début, `_snipTmp`, **rien n'est enregistré avant « Valider l'extrait »** (brouillon `_snipTmp` / `_snipSaved`, `snipOk` : jamais dans les sauvegardes, oublié en fermant) ; « Début de l'extrait ici » ; **mp4 de l'ordinateur** (boutons d'import `upBtn` : clic ou fichier glissé dessus)
-  ≤ 20 Mo → `snipVideo` dans `data/bibli/vid/`, lu sur la page par `/api/media` ; **anciens extraits**). Historique `hist { img, snip }`
-  (8 derniers, pas sur la page publique). Dans une bande : **« ★ En faire la vignette / l'extrait officiel du film »** en bas des onglets (`libPatch` : appliqué au film de la filmothèque, pour les prochaines bandes ; un extrait pas encore validé est validé d'abord). Fenêtre : **Annuler / Rétablir** (boutons, Ctrl / Cmd + Z hors champ de texte, `edUndo`).
-  Bande : « Annuler » actif dès le geste (`undoBtns` compte le changement pas encore noté). Plus de marque orange des films modifiés ;
-  rôle « Cinematographer » dans la liste.
-  **Partager un film seul** (fenêtre d'un film, « 🔗 Copier le lien de ce film » + « Autoriser le téléchargement », Gus 23/11) : bande
-  d'un seul film `{ single: true }`, même lien court chiffré `SITE_VIEW/b/<code>`, code par film dans notes `bandes/films.json`
-  (`{ <clé du film>: { code, download, title, at, by } }`), page republiée 2,5 s après chaque retouche du film (`shr`).
-  Lien de partage **créé dès l'ajout** d'un film ou d'images (`shareCreate` : un commit pour tous, puis `films.json`).
-  **Pages du site dans la filmothèque** (Gus 25/11) : « Bundles » liste aussi chaque page de chef op (« Page · Nom », `bibCache.pages`)
-  et « Bandes existantes » chacun de ses onglets (« Nom · ONGLET ») ; clic = la fiche s'ouvre sur « Modifier la sélection » à cet
-  onglet (`selOpen`), ↗ = la page sur le site ; pas de lien à envoyer (une seule source : la fiche).
-  **Bundles** (3e onglet discret du panneau, Gus 23/11) : bandes de bandes ; liste avec recherche (notes `bandes/bundles.json`),
-  « + Nouveau bundle », ajouter une bande existante (liste avec recherche), ordre en glissant (`bunDrag`, même animation que les films d'une bande) ou ↑, retirer ×, clic sur une bande = l'ouvrir pour la
-  modifier, « + Créer une bande dans ce bundle » ; « ← Retour au bundle » ajoute la bande ouverte / créée (`backToBundle`) ; lien
-  `SITE_VIEW/b/<code>` (page chiffrée `{ bundle: true, title, description, bands: [{ code }] }`, enregistrée toute seule, `bunSave`).
-  « Bandes existantes » : **recherche** par nom (`drawOld`, `bandsList`).
-  **« ↻ Remplacer la vidéo »** (fenêtre d'un film) : lien Slate ou vidéo de l'ordinateur (voir « Encodage » plus haut) ; vignette,
-  extrait et leurs temps gardés.
-  **Ajouts** : un film lu sur Slate (un seul) ou une suite d'images (choisies puis enregistrées, titre deviné du nom des fichiers, clé
-  `i<id>`) ouvrent ensuite la même fenêtre d'infos.
-  Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéos de l'ordinateur (envoi chez Amazon + encodage, voir « Encodage »).
-- **Sorties fiction** (`#/sorties`) : calendrier mois / semaine (page fiction + `notes/sorties/sorties.json` + films sans date de
-  `projets.json`), bandes-annonces à voir (pastille), confirmer / masquer / ajouter une sortie. **Dates qui ne s'accordent pas** (Gus
-  23/11, `sortConflicts`) : sources TMDB / Wikidata / AlloCiné (Claude) différentes, ou date confirmée (`human`) contredite par un robot
-  → pastille + encadré « Date de sortie à vérifier » : « C'est cette date » / « Utiliser cette date » (date confirmée, autres dates
-  retenues dans `seenDates`), « Garder la nôtre » ; une nouvelle date fait revenir l'alerte. Calendrier : date confirmée seule.
-  Page fiction : `ficAlerts` compare toutes les sources, `datesSeen` = dates refusées (« Garder la nôtre »).
-- **Festivals** : **dates** (`#/festivals`, `notes/festivals/festivals.json` ; ce que l'équipe a saisi n'est jamais modifié par le
-  robot, désaccords = triangle orange) et **nos sélections** (`#/selections`, `notes/festivals/selections.json` : à vérifier ✓ / ✗,
-  onglets « Toutes nos sélections » / « Récent », écartées en deux groupes « Pas nous » et « Doublons » (`dupOf` = version gardée,
-  « Pas un doublon ») ; les prix confirmés vont tout seuls dans `info.awards` des films sur le site, `awardsSync`). **Prix sans film sur
-  le site** (Gus 22/11) : triangle orange « ! » quand la trouvaille ne retrouve aucun film des fiches ni de la page fiction (`placed`,
-  même rapprochement par le titre qu'`awardsSync`), catégorie **« Sans lien »**, bouton **« Relier à un film »** (`linkForm` : un ou
-  plusieurs films de la bibliothèque, autres trouvailles du même film reliées aussi) → `links: [{ page, slate, title }]` dans la
-  trouvaille ; une trouvaille reliée ne va **que** sur ces films (`awFor`). `awApply` n'ajoute pas une ligne déjà écrite **à la main**
-  autrement (`awSameText` : même année, même festival, sélection ↔ sélection, prix ↔ même nom de prix) et ne retire pas une ligne
-  dont le texte est aussi celui d'une autre trouvaille confirmée (doublon écarté).
-- **Récupération** (`#/recup`, `notes/projets/projets.json`) : statut de récupération par film, à relancer, par production, mails.
-- **Historique** : derniers commits des données (admin et notes) avec qui / quand / quoi.
-- Taper une lettre hors d'un champ écrit dans la recherche de la page (`input.find`).
+## L'essentiel
+- **Code sur `beta`** (`git checkout beta` avant tout), en ligne ~1 min après un push sur https://kinou-dop.github.io/admin/.
+  **Données sur `main`** (`data/`), écrites par l'admin via l'API GitHub ; `main` contient aussi les robots (`.github/workflows/`,
+  `tools/`, dont copie Slate → Amazon, encodage, vignettes).
+- À chaque modification de `admin.js` ou `admin.css` : mettre à jour `?v=` dans `index.html` (l'admin bloque la publication tant
+  qu'on n'a pas rechargé la nouvelle version).
+- **`admin.js` fait ~550 Ko : ne jamais le lire en entier** : chercher la fonction (grep) puis lire 50 à 150 lignes autour.
+- Publication : un seul commit par publication (`commit`), relu sur la dernière version ; **ne jamais écraser ce que les robots ou
+  les autres pages ont écrit** (`robotFrom`, `awMerge`, `sharedMerge`) ; enregistrements automatiques par `soon(clé, fn, ms)`.
+- Menu de l'admin : website ▸, video club, sorties fiction, festivals ▸, récupération, historique. Taper une lettre hors d'un
+  champ écrit dans la recherche de la page (`input.find`).
+- Données internes (bandes originales, mots de passe, notes, projets, `bibli/slate.json`) : dépôt privé `notes`, lues avec la clé
+  de la personne connectée.
 
 ## Règles
 - Dépôt **public** : aucune donnée privée ici (mails, contacts, notes, projets → dépôt privé `notes`), jamais de clé ni de secret.
