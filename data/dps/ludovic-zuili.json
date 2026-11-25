@@ -178,7 +178,8 @@
   "categories": [
     "FEATURED",
     "COMMERCIAL",
-    "LUXE / FASHION"
+    "LUXE / FASHION",
+    "COMEDY"
   ],
   "clips": [
     {
@@ -409,6 +410,109 @@
       "img": "https://images.slatecdn.net/CrKFMhEVA9O4UBM8i5CAUBik259JUKyLKjzhTsVnGJc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NWJjMjM0OS02Njcx/LTRlMGMtOGZmOC1l/YTlhMjgyZmE0MmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNC41OS4y/OS5wbmc.webp",
       "slate": 496,
       "cat": "LUXE / FASHION"
+    },
+    {
+      "title": "REEF - Roaming Bab",
+      "sub": "Hafid F. Benamar\nSovage",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10711/3c793f31-3f16-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2244a6aa-1dfb-483c-96b9-60fb0dbdc685-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/7m7DjhRJGG7l0aFS6EgpiMK1Kwe0TK7FmtncTeJAuH8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NTE5MDI2Ny0zMDA1/LTQ4ZTAtYTUxZC01/ZjhlMWJmMmQxNzUv/MTc3Njk0OTk2ODA1/My5qcGc.webp",
+      "slate": 10711,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "Free - Reef (All Videos)",
+      "sub": "Hafid F. Benamar\nAllso",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10048/cc22dcef-d5d7-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/eeace2ef-0eff-485b-8518-e4d4c7c161f8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/VXRqI4OE4R3gCmUAIcZ28z1f3ZxZinaow_zl2ZmG33o/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDA0OC02OGIwN2Jj/Mjk3ODM4NC4wMTQz/NzIzNy02ODY4ODBi/OGExYjRjZjcyN2Fl/ODE5MjBjZTNjOGVj/MC5qcGc.webp",
+      "slate": 10048,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "Free Reef Noël 2023",
+      "sub": "Hafid F. Benamar\nSovage",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8054/fc4f578f-dd2e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9b91fb42-08b3-47d8-a960-dbc33f6e6cb9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/djJXtPslj6DMMAd0kja5nO7E2eW6pCw-LtKeFxh8UOk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZWIxZjcwMy1mN2Uw/LTQyNzAtODU1OS05/NTI4YmJjMjIwODMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjMtYS0xNy4wMC4w/OC5wbmc.webp",
+      "slate": 8054,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "KFC - Le décompte",
+      "sub": "Hafid F. Benamar\nAllso",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7fd1cd56-0290-4ca2-9606-ffe0d29d9e50-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/pCYeJ2_Epn5wP_-r07RC2-Af2uI_nSbKO6xfYixwwcM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MDZkMzljOS1kZTJh/LTRhMjYtOTA0OS03/MzJjMGY1YWVmYzcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MTUtYS0xMi4yNi4x/Ny5wbmc.webp",
+      "slate": 6804,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "Optic 2000",
+      "sub": "Yacine Saadi\nObvious Film",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff8030b0-c66f-463f-bc39-2156bdbcec15-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UONIrqHm_FJg1cYsaonmXoPfo-CvJMs-hiHPBXy1Bb8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NDZmMWQ1MS03OTIy/LTQyN2YtOTVkOC0x/Njk1NmJmYmM1YTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MTUtYS0xMi4xOC40/OC5wbmc.webp",
+      "slate": 6802,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "Volkswagen - Être mécanicien, ça ne s'improvise pas",
+      "sub": "Marc Cortès\nAllso",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6320/2190aba9-fddf-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9f20e22d-d68b-448d-ac08-c9d6165fa09f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1XiJZx0LWDPEYrNH1NIE1BAdD1bxOxV6Mmg_awHHlEw/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MzIwLTYzMWVmN2Qz/YjUyZjE2LjQwMzUx/MzQ1LTcyYWQzOTIx/MTFhMzM3MTUzN2Jk/ZTVhMDMxNzkwNWJi/LmpwZw.webp",
+      "slate": 6320,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "Free - Un jour peut-être Reef fera mieux que Free",
+      "sub": "Hafid F. Benamar\nSovage",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6296/d2f4f6db-dd2e-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f60165b1-285f-49e8-9600-8427135b62cb-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/d-jRQXEf-L_RnAAhjpsT6TQrQVmkclsxE75KFaO9Dyw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/MDI1MjYyZi05NjRh/LTQ3MzYtYTc4Ny1h/NjlmYWNiNDg0OTgv/MTY2MTc2MTYxNDMy/Ni5qcGc.webp",
+      "slate": 6296,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "Santé France - \"J'en Parle à\" - Director's Cut",
+      "sub": "Sidney Van Wichelen\nPlayers Paris",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5763/d7086bb6-c198-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a291aee0-f3e6-4361-b440-263c49204f24-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/hlidESw1nCExa5G6cHe_rqsPugDUaq74pxUwlhROVD8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/YTFlZWZkMC03OWVh/LTQ1ZWItOWJjOC1j/MjU4Nzk2NDAzZjAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDIt/MTAtYS0xNi40My41/NS5qcGc?v=1&format=webp",
+      "cat": "COMEDY",
+      "slate": 5763
+    },
+    {
+      "title": "Nissan",
+      "sub": "Sovage",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4645/1d8ad400-fddf-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/29da9adc-76ff-4654-9a23-de7c72f84f5b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Dr_xdnNjKf0SMdv_IwmKpQQo7DXua95mXxpBt3F8vcc/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NjQ1LTVmYWU2ODNi/YjBlMTIzLjMzMjQ4/NzgzLWU2YmM2ZDBl/ZWU0Mjg4MDRhMTMz/MjhlNDI2ODA4N2E4/LmpwZw.webp",
+      "slate": 4645,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "Adidas",
+      "sub": "Lucas Posson\nSovage",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1549280876-00-adidas-confo-040219-h264.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/CAIUu8iqAatwFAUAuVd4o8TUVYIlAbpUR3mSP_Tk4-o/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/ZGlkYXMtZGNiNmZh/YThlZDE1OTQ4YTgy/MjhiNWU1ODExN2U5/OGQuanBn.webp",
+      "slate": 3119,
+      "cat": "COMEDY"
+    },
+    {
+      "title": "Du Pareil Au Même | Kids Revenge",
+      "sub": "Marc Cortès\nHercules",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545429232-45861279_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/HnLTmSC-_cGKAYQi3DgaPApDictFiRbcDjcZ71qPO84/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/MmM1OGIxOC02OWJh/LTQyMTYtODNmOC01/MTQ0NTg0N2EzZjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDQt/MTktYS0xNC41Ni4y/Ny5wbmc?v=1&format=webp",
+      "cat": "COMEDY",
+      "slate": 1974
+    },
+    {
+      "title": "JEANPOD",
+      "sub": "Ludovic Zuili & Raphael Cioffi\nStorner Prod",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545415151-57582303_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/FNSjB3aer58QLkOYQOUiE1FS3z-xnwRKSfVyF5WRv68/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9q/ZWFucG9kLTNjODY5/NDdjOTA5YjU2NzIx/M2VjNjlhMDhlODkw/ZmQ2LmpwZw.webp",
+      "slate": 1644,
+      "cat": "COMEDY"
     },
     {
       "title": "Prequel - SCH",
