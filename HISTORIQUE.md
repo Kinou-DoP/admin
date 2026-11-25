@@ -378,3 +378,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 25/11/2026 : la « filmothèque » s'appelle « video club » partout dans l'admin (menu, titre, messages, commits) ; code inchangé (`bibli`, `#/bibli`) (Gus).
 - 25/11 : « Modifier la sélection » sur les fiches des chefs op (onglets et films sans Slate, ajout depuis le video club, publié tout de suite) ; « Relire le bundle » devient « Réimporter depuis Slate » (option) ; pages et onglets des chefs op listés dans Bundles / Bandes existantes du video club (Gus).
 - 25/11 : fiche sans films : bouton « Créer une sélection » (même fenêtre que « Modifier la sélection ») (Gus).
+- 25/11 : « Modifier la sélection » : sans recherche, la liste de droite montre tous les films du video club avec ce chef op (plus récents en haut), pas seulement ceux de la page (Gus).

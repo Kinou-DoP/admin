@@ -1238,10 +1238,12 @@
       results.textContent = ""; var t = tabs[cur];
       if (!lib) { results.appendChild(el("p", { class: "empty", text: "Chargement du video club…" })); return; }
       var words = bnrm(q).split(" ").filter(Boolean), list;
-      if (!words.length) { // sans recherche : les films de cette page (pour composer FEATURED ou un nouvel onglet)
-        var page = uniq(base.clips.map(function (c) { return c.slate; }).concat(Object.keys(extra).map(Number)));
-        list = page.map(function (id) { return lib.byS[id] || { slate: id, title: info(id).title, img: info(id).img }; });
-        results.appendChild(el("p", { class: "hint", text: "Films de cette page. Cherchez pour en ajouter d'autres." }));
+      if (!words.length) { // sans recherche (Gus 25/11) : tous les films du video club avec ce chef op + ceux de la page, plus récents en haut
+        var me = bnrm(rcBase(state.name || "")), onPage = {};
+        base.clips.forEach(function (c) { onPage[c.slate] = 1; }); Object.keys(extra).forEach(function (k) { onPage[k] = 1; });
+        list = lib.films.filter(function (f) { return f.slate && (onPage[f.slate] || (me && (f.dops || []).some(function (d) { return bnrm(rcBase(d)) === me; }))); });
+        Object.keys(onPage).forEach(function (id) { id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img }); }); // film de la page absent du video club
+        results.appendChild(el("p", { class: "hint", text: list.length + " films du video club avec " + (rcBase(state.name || "") || "ce chef op") + " (et ceux de la page), les plus récents en haut. Cherchez pour en ajouter d'autres." }));
       } else list = lib.films.filter(function (f) { return f.slate && words.every(function (w) { return f._s.indexOf(w) > -1; }); }).slice(0, 60);
       list.forEach(function (f) {
         var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
