@@ -135,11 +135,11 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   modifier, « + Créer une bande dans ce bundle » ; « ← Retour au bundle » ajoute la bande ouverte / créée (`backToBundle`) ; lien
   `SITE_VIEW/b/<code>` (page chiffrée `{ bundle: true, title, description, bands: [{ code }] }`, enregistrée toute seule, `bunSave`).
   « Bandes existantes » : **recherche** par nom (`drawOld`, `bandsList`).
-  **« ↻ Remplacer la vidéo »** (fenêtre d'un film) : lien Slate d'une vidéo → `full` / `video` (+ vignette si cochée), extrait choisi
-  et `thumbT` oubliés (ancien extrait dans l'historique), fenêtre rouverte ; depuis l'ordinateur : quand l'hébergement sera branché.
+  **« ↻ Remplacer la vidéo »** (fenêtre d'un film) : lien Slate ou vidéo de l'ordinateur (voir « Encodage » plus haut) ; vignette,
+  extrait et leurs temps gardés.
   **Ajouts** : un film lu sur Slate (un seul) ou une suite d'images (choisies puis enregistrées, titre deviné du nom des fichiers, clé
   `i<id>`) ouvrent ensuite la même fenêtre d'infos.
-  Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéo de l'ordinateur **vérifiée seulement** (hébergement pas encore branché).
+  Imports : lien Slate, suites d'images (`data/bibli/img/`), vidéos de l'ordinateur (envoi chez Amazon + encodage, voir « Encodage »).
 - **Sorties fiction** (`#/sorties`) : calendrier mois / semaine (page fiction + `notes/sorties/sorties.json` + films sans date de
   `projets.json`), bandes-annonces à voir (pastille), confirmer / masquer / ajouter une sortie. **Dates qui ne s'accordent pas** (Gus
   23/11, `sortConflicts`) : sources TMDB / Wikidata / AlloCiné (Claude) différentes, ou date confirmée (`human`) contredite par un robot
