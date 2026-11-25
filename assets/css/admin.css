@@ -1094,3 +1094,9 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .bibchips.selchips { margin: 0 0 8px; }
 .selprevbox h3 { margin: 12px 0 4px; }
 .selprevbox .selprevm { opacity: .5; font-size: 13px; }
+.selitem.selmove { cursor: grab; user-select: none; }
+.selitem.dragged, .seltab.dragged { opacity: .3; }
+.selitem.pop, .seltab.pop { animation: bpop .45s cubic-bezier(.2,1.4,.4,1) both; }
+.seltab.drop { outline: 2px solid var(--kinou-fg); outline-offset: 2px; transform: scale(1.08); transition: transform .15s; }
+.bphv { display: inline-block; width: 4px; height: 26px; margin: 0 2px; vertical-align: middle; background: var(--kinou-fg); border-radius: 2px; box-shadow: 0 0 14px rgba(255,252,235,.6); }
+.seltab { touch-action: none; }

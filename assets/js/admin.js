@@ -1194,7 +1194,9 @@
     function drawTabs() {
       tabRow.textContent = "";
       tabs.forEach(function (t, i) {
-        tabRow.appendChild(el("button", { type: "button", class: "chip" + (i === cur ? " on" : ""), text: t.name + " (" + t.ids.length + ")", on: { click: function () { cur = i; drawAll(); } } }));
+        var chipT = el("button", { type: "button", class: "chip seltab" + (i === cur ? " on" : "") + (popTab === i ? " pop" : ""), "data-i": String(i), title: cfg ? "" : "Cliquer pour ouvrir, glisser pour changer l'ordre (on peut aussi y déposer un film)", text: t.name + " (" + t.ids.length + ")", on: { click: function () { if (Date.now() - dragAt < 300) return; cur = i; drawAll(); } } });
+        if (!cfg) chipT.addEventListener("pointerdown", function (e) { tabDrag(e, i, chipT); });
+        tabRow.appendChild(chipT);
       });
       if (cfg) return; // une seule liste
       tabRow.appendChild(el("button", { type: "button", class: "btn ghost", text: "+ Onglet", on: { click: function () {
@@ -1218,23 +1220,77 @@
       } } }));
       tabRow.appendChild(tools);
     }
-    var dragI = -1;
+    // Glisser comme dans les bandes du video club (Gus 26/11) : le film suit la souris avec l'effet ressort (bibFly), un trait montre
+    // la place ; déposé sur un autre onglet, il y passe (FEATURED : il y est ajouté sans quitter son onglet, et inversement).
+    var dragAt = 0, popTab = -1, popRow = -1;
+    function filmDrag(e, i, row, img) {
+      if (e.button !== 0 || e.pointerType === "touch" || e.target.closest("button")) return;
+      var t = tabs[cur], sx = e.clientX, sy = e.clientY, fly = null, ph = null, at = i, over = null;
+      function rows() { return [].filter.call(left.children, function (x) { return x.classList.contains("selitem") && x !== row; }); }
+      function mv(ev) {
+        if (!fly) { if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return; fly = bibFly(ev, [img], 1); row.classList.add("dragged"); document.body.classList.add("bdragging"); }
+        ev.preventDefault(); fly.move(ev);
+        var hit = document.elementFromPoint(ev.clientX, ev.clientY), chip = hit && hit.closest(".seltab");
+        if (over && over !== chip) over.classList.remove("drop");
+        over = chip && +chip.dataset.i !== cur ? chip : null;
+        if (over) { over.classList.add("drop"); if (ph) { ph.remove(); ph = null; } return; }
+        var rs = rows(); at = rs.length;
+        for (var k = 0; k < rs.length; k++) { var r = rs[k].getBoundingClientRect(); if (ev.clientY < r.top + r.height / 2) { at = k; break; } }
+        if (!ph) ph = el("div", { class: "bph" });
+        var ref = rs[at] || (rs.length ? rs[rs.length - 1].nextSibling : row.nextSibling);
+        if (ph.nextSibling !== ref) left.insertBefore(ph, ref);
+      }
+      function up() {
+        removeEventListener("pointermove", mv); removeEventListener("pointerup", up);
+        if (!fly) return;
+        dragAt = Date.now(); document.body.classList.remove("bdragging"); row.classList.remove("dragged");
+        if (over) {
+          var j = +over.dataset.i, dest = tabs[j], id = t.ids[i]; fly.end(over.getBoundingClientRect()); over.classList.remove("drop");
+          if (dest.ids.indexOf(id) < 0) dest.ids.push(id);
+          if (t.name !== "FEATURED" && dest.name !== "FEATURED") t.ids.splice(i, 1);
+          popTab = j; ch(); drawAll(); popTab = -1; return;
+        }
+        fly.end(ph ? ph.getBoundingClientRect() : null); if (ph) ph.remove();
+        if (at === i) return;
+        t.ids.splice(at, 0, t.ids.splice(i, 1)[0]); popRow = at; ch(); drawLeft(); popRow = -1;
+      }
+      addEventListener("pointermove", mv); addEventListener("pointerup", up);
+    }
+    function tabDrag(e, i, chip) {
+      if (e.button !== 0 || e.pointerType === "touch") return;
+      var sx = e.clientX, sy = e.clientY, fly = null, ph = null, at = i, t = tabs[i], f0 = t.ids[0] ? info(t.ids[0]) : {};
+      function chips() { return [].filter.call(tabRow.querySelectorAll(".seltab"), function (x) { return x !== chip; }); }
+      function mv(ev) {
+        if (!fly) { if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return; fly = bibFly(ev, [f0.img || ""], 1); chip.classList.add("dragged"); document.body.classList.add("bdragging"); }
+        ev.preventDefault(); fly.move(ev);
+        var cs = chips(); at = cs.length;
+        for (var k = 0; k < cs.length; k++) { var r = cs[k].getBoundingClientRect(); if (ev.clientY < r.bottom && ev.clientX < r.left + r.width / 2) { at = k; break; } }
+        if (!ph) ph = el("span", { class: "bphv" });
+        var ref = cs[at] || (cs.length ? cs[cs.length - 1].nextSibling : chip.nextSibling);
+        if (ph.nextSibling !== ref) tabRow.insertBefore(ph, ref);
+      }
+      function up() {
+        removeEventListener("pointermove", mv); removeEventListener("pointerup", up);
+        if (!fly) return;
+        dragAt = Date.now(); document.body.classList.remove("bdragging"); chip.classList.remove("dragged");
+        fly.end(ph ? ph.getBoundingClientRect() : null); if (ph) ph.remove();
+        if (at === i) return;
+        var curT = tabs[cur]; tabs.splice(at, 0, tabs.splice(i, 1)[0]); cur = tabs.indexOf(curT); popTab = at; ch(); drawAll(); popTab = -1;
+      }
+      addEventListener("pointermove", mv); addEventListener("pointerup", up);
+    }
     function drawLeft() {
       left.textContent = ""; var t = tabs[cur];
       if (!t) { left.appendChild(el("p", { class: "empty", text: "Aucun onglet : « + Onglet » pour commencer." })); return; }
       if (!t.ids.length) left.appendChild(el("p", { class: "empty", text: "Onglet vide : ajoutez des films avec « + » à droite." }));
       t.ids.forEach(function (id, i) {
         var f = info(id), th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
-        var row = el("div", { class: "selitem", draggable: "true" }, [el("span", { class: "selnum", text: String(i + 1) }), th,
+        var row = el("div", { class: "selitem selmove" + (popRow === i ? " pop" : ""), title: "Glisser pour changer l'ordre, ou sur un onglet pour l'y mettre" }, [el("span", { class: "selnum", text: String(i + 1) }), th,
           el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }), el("small", { text: f.sub })]),
           el("button", { type: "button", class: "btn ghost", text: "↑", title: "Monter", on: { click: function () { if (i) { t.ids.splice(i - 1, 0, t.ids.splice(i, 1)[0]); ch(); drawLeft(); } } } }),
           el("button", { type: "button", class: "btn ghost", text: "↓", title: "Descendre", on: { click: function () { if (i < t.ids.length - 1) { t.ids.splice(i + 1, 0, t.ids.splice(i, 1)[0]); ch(); drawLeft(); } } } }),
           el("button", { type: "button", class: "btn ghost", text: "×", title: "Retirer de l'onglet", on: { click: function () { t.ids.splice(i, 1); ch(); drawAll(); } } })]);
-        row.addEventListener("dragstart", function (e) { dragI = i; row.classList.add("drag"); e.dataTransfer.effectAllowed = "move"; });
-        row.addEventListener("dragend", function () { row.classList.remove("drag"); dragI = -1; });
-        row.addEventListener("dragover", function (e) { if (dragI > -1) { e.preventDefault(); row.classList.add("over"); } });
-        row.addEventListener("dragleave", function () { row.classList.remove("over"); });
-        row.addEventListener("drop", function (e) { e.preventDefault(); row.classList.remove("over"); if (dragI < 0 || dragI === i) return; t.ids.splice(i, 0, t.ids.splice(dragI, 1)[0]); dragI = -1; ch(); drawLeft(); });
+        row.addEventListener("pointerdown", function (e) { filmDrag(e, i, row, f.img || ""); });
         left.appendChild(row);
       });
     }
@@ -5611,7 +5667,7 @@
       });
       pv.addEventListener("pointerup", function () { if (dragC) { dragC = null; chg(); } });
       // Lecteur du film (Gus 22/11) : image par image avec les flèches (Maj = 1 s), pour la vignette et pour l'extrait.
-      // Extrait = un début et une fin (0,5 à 10 s) : poignées sur la frise de détail (30 s autour de l'extrait) ; pendant qu'on
+      // Extrait = un début et une fin (0,5 à 10 s) : poignées sur une frise de tout le film (Gus 26/11) ; pendant qu'on
       // bouge une poignée la vidéo montre l'image sans bouger, dès qu'on lâche (ou 0,7 s après la dernière flèche) l'extrait joue en boucle.
       var player = null, pout = el("p", { class: "hint" }), tools = el("div", { class: "tltools" }), tl = null;
       var src = it.full || it.video;
@@ -5625,12 +5681,14 @@
         var time = el("span", { class: "tlt" }), playB = el("button", { type: "button", class: "btn ghost", text: "▶", title: "Lecture / pause (espace)" });
         tl = el("div", { class: "tl" }, [over, det, dLab]);
         var clamp = function (t) { return Math.max(0, Math.min(dur || 0, t)); };
-        var win = function () { var c = it.snip ? it.snip.s + it.snip.d / 2 : player.currentTime, a = Math.max(0, Math.min(Math.max(0, dur - WIN), c - WIN / 2)); return [a, Math.min(dur, a + WIN)]; };
+        // Une seule frise pour l'extrait, sur tout le film (Gus 26/11 : la frise de détail de 30 s se recentrait et donnait un effet de
+        // zoom / dézoom en bougeant une poignée). Précision : flèches image par image. La frise du haut ne sert plus qu'à la vignette.
+        var win = function () { return [0, dur]; };
         var pc = function (t, a, b) { return Math.max(0, Math.min(100, (t - a) / (b - a || 1) * 100)) + "%"; };
         var draw = function () {
           if (!dur) return; var t = player.currentTime, w = win();
           oPh.style.left = pc(t, 0, dur); time.textContent = fmtF(t) + " / " + fmtF(dur);
-          det.hidden = dLab.hidden = !it.snip || ptab !== "snip"; oReg.hidden = !it.snip || ptab !== "snip";
+          det.hidden = dLab.hidden = !it.snip || ptab !== "snip"; oReg.hidden = true; over.hidden = !det.hidden;
           if (it.snip) {
             var s = it.snip.s, e = s + it.snip.d;
             oReg.style.left = pc(s, 0, dur); oReg.style.width = Math.max(.4, it.snip.d / dur * 100) + "%";
