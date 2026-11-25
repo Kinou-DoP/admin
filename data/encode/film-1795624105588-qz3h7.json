@@ -5,13 +5,16 @@
       "kind": "film",
       "key": "depot/upgxpjnrrmxmafuz8fd6/Benedicta_MASTER_LucieBourdeu_HIERSOIR.mov",
       "web": true,
-      "progress": {
-        "step": "web",
-        "pct": 0
+      "answer": {
+        "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwwc8b5ga5zmay/web.mp4",
+        "dur": 39.317,
+        "w": 1920,
+        "h": 1080
       }
     }
   ],
   "at": "2026-11-25T16:28:25.588Z",
   "by": "Gurvan",
-  "startedAt": "2026-11-25T19:09:21.452Z"
+  "startedAt": "2026-11-25T19:09:21.452Z",
+  "doneAt": "2026-11-25T19:10:22.296Z"
 }
