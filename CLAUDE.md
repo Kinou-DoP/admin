@@ -22,6 +22,15 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   (robot `copie-slate.yml` sur `main`). L'admin joue chaque vidéo sur `d3toxii6rvamjf.cloudfront.net` au lieu de
   `d1ko11x0ybxl0h.cloudfront.net` (`notreCDN`, setter `src` des `<video>`), repli automatique sur Slate si le fichier manque
   (événement `error`). Les données gardent l'adresse Slate. Vignettes (images.slatecdn.net) et captures (`/api/media`) : encore Slate.
+- **Encodage** (Gus 26/11) : « + Vidéo » → « Depuis l'ordinateur » → « Envoyer et encoder » : le fichier (10 Go au plus) part
+  directement chez Amazon (`upload` : morceaux de 16 Mo, 3 à la fois, réessais, reprise si on choisit de nouveau le même fichier ;
+  adresses signées par `/api/depot` du site, clé de dépôt rangée dans Cloudflare) dans `kinou-videos/depot/`. Le film entre tout de
+  suite dans `library.json` (clé `e<id>`, `enc: { path, id }`, « Encodage en cours… ») avec une demande `data/encode/film-….json`
+  (`encFile`) ; robot **`encodage.yml`** + `tools/encodage.mjs` (`main`, ffmpeg, accès Amazon sans clé) : version web 1080p H.264,
+  vignettes WebP 800 / 1600, extrait 720p sans son de 5 s **aux 2/3 du film**, sous `nous/<id>/` ; `encCheck` (ouverture du video club
+  puis toutes les 20 s) recopie la réponse dans le film (`full`, `video`, `img`, `img1600`, `snip { s, d, v }`, `thumbT`, `dur`, `w`, `h`).
+  **Extrait léger** : « Valider l'extrait » demande au robot (`rapide-….json`, `encAsk` / `encWait`) le passage en 720p sans son →
+  `snip.v`, joué par les bandes à la place du film complet. Deux files (films longs / rapide). Demandes : `snip`, `thumb`, `film`.
 - **Filmothèque complète** (25/11) : en plus des films des pages, tous les films de Slate (7 490) lus dans le dépôt privé
   `notes` (`bibli/slate.json`, constante `BIB_SLATE`, avec la clé de la personne connectée) ; les infos des pages restent prioritaires.
 - **Lecture de Slate** : par les fonctions du site (`siteGet`) ; si elles ne répondent pas, par le **robot GitHub** (`askRobot` :

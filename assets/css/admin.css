@@ -1111,3 +1111,7 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .bpnav > :last-child { order: 4; }
 .bpmeta { opacity: .6; }
 body:has(#bar:not([hidden])) #saving { bottom: calc(env(safe-area-inset-bottom, 0px) + 92px); } /* au-dessus de « Publier » (Gus 26/11) */
+
+/* Video club : film envoyé depuis l'ordinateur, encodage en cours ; barre d'envoi (Gus 26/11) */
+.brow .bt small.benc { display: block; color: #d9822b; }
+progress.bupprog { display: block; width: 100%; height: 6px; margin: 10px 0 4px; accent-color: #d9822b; }

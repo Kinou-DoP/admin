@@ -360,6 +360,76 @@
       })();
     }, fail);
   }
+  // ---------- Envoi chez Amazon et encodage (Gus 26/11) ----------
+  // Envoi d'un fichier de l'ordinateur directement dans notre compartiment Amazon (dossier depot/), en morceaux de 16 Mo (3 à la
+  // fois) : la fonction /api/depot du site signe les adresses d'envoi (clé de dépôt rangée dans Cloudflare, jamais ici). Coupure :
+  // chaque morceau est réessayé ; page rechargée : le même fichier choisi de nouveau reprend où il en était (localStorage).
+  var UP_PART = 16 * 1024 * 1024;
+  function depot(body) {
+    return fetch(SITE + "/api/depot", { method: "POST", headers: { Authorization: "Bearer " + token, "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.error) throw new Error(d.error || "envoi refusé (" + r.status + ")"); return d; }, function () { throw new Error("envoi refusé (" + r.status + ")"); }); });
+  }
+  function upload(f, prog) {
+    var sk = "kinou-up:" + f.name + ":" + f.size + ":" + f.lastModified, st = null, n = Math.max(1, Math.ceil(f.size / UP_PART)), etags = {}, urls = {}, live = {}, base = 0;
+    function size(k) { return k < n ? UP_PART : f.size - (n - 1) * UP_PART; }
+    function report() { var s = base; Object.keys(live).forEach(function (k) { s += live[k]; }); if (prog) prog(Math.min(1, s / f.size)); }
+    try { st = JSON.parse(localStorage.getItem(sk) || "null"); } catch (e) {}
+    var begin = st ? depot({ op: "list", key: st.key, uploadId: st.uploadId }).then(function (d) {
+      (d.parts || []).forEach(function (p) { if (p.size === size(p.n)) { etags[p.n] = p.etag; base += p.size; } }); return st;
+    }, function () { etags = {}; base = 0; return null; }) : Promise.resolve(null);
+    return track(begin.then(function (s) {
+      return s || depot({ op: "start", name: f.name, size: f.size }).then(function (d) { var x = { key: d.key, uploadId: d.uploadId }; try { localStorage.setItem(sk, JSON.stringify(x)); } catch (e) {} return x; });
+    }).then(function (s) {
+      st = s; report();
+      var todo = []; for (var k = 1; k <= n; k++) if (!etags[k]) todo.push(k);
+      function url(k) { // adresses d'envoi demandées 20 par 20, au fur et à mesure
+        if (urls[k]) return Promise.resolve(urls[k]);
+        var ask = todo.filter(function (x) { return x >= k && !urls[x] && !etags[x]; }).slice(0, 20);
+        return depot({ op: "parts", key: st.key, uploadId: st.uploadId, numbers: ask }).then(function (d) { Object.assign(urls, d.urls); return urls[k]; });
+      }
+      function send(k, tries) {
+        return url(k).then(function (u) {
+          return new Promise(function (ok, ko) {
+            var x = new XMLHttpRequest(); x.open("PUT", u);
+            x.upload.onprogress = function (e) { live[k] = e.loaded; report(); };
+            x.onload = function () { delete live[k]; if (x.status === 200 && x.getResponseHeader("ETag")) { etags[k] = x.getResponseHeader("ETag"); base += size(k); report(); ok(); } else ko(new Error("Amazon a refusé un morceau (" + x.status + ")")); };
+            x.onerror = function () { delete live[k]; report(); ko(new Error("connexion coupée")); };
+            x.send(f.slice((k - 1) * UP_PART, (k - 1) * UP_PART + size(k)));
+          });
+        }).catch(function (e) {
+          if (tries >= 6) throw e;
+          if (/40[03]/.test(e.message)) delete urls[k]; // adresse expirée : une nouvelle
+          return new Promise(function (r) { setTimeout(r, 2000 * (tries + 1)); }).then(function () { return send(k, tries + 1); });
+        });
+      }
+      var i = 0;
+      function worker() { if (i >= todo.length) return Promise.resolve(); var k = todo[i++]; return send(k, 0).then(worker); }
+      return Promise.all([worker(), worker(), worker()]);
+    }).then(function () {
+      return depot({ op: "complete", key: st.key, uploadId: st.uploadId, parts: Object.keys(etags).map(function (k) { return { n: +k, etag: etags[k] }; }) });
+    }).then(function (d) { try { localStorage.removeItem(sk); } catch (e) {} return d.key; }), true);
+  }
+  // Demande au robot d'encodage (data/encode/<film|rapide>-….json, workflow encodage.yml) ; encWait relit le fichier jusqu'à la réponse.
+  function encId() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+  function encFile(kind, jobs) {
+    var path = "data/encode/" + kind + "-" + Date.now() + "-" + Math.random().toString(36).slice(2, 7) + ".json";
+    return { path: path, text: json({ jobs: jobs, at: new Date().toISOString(), by: user && user.login || "" }) };
+  }
+  function encAsk(kind, jobs) {
+    var f = encFile(kind, jobs);
+    return commit([f], "Encodage : demande (admin, " + (user && user.login || "") + ")").then(function () { return f.path; });
+  }
+  function encWait(path, every, max) {
+    var t0 = Date.now();
+    return new Promise(function (ok, ko) {
+      (function poll() {
+        setTimeout(function () {
+          if (Date.now() - t0 > (max || 900000)) return ko(new Error("le robot d'encodage n'a pas répondu"));
+          readFile(path).then(function (d) { if (d && d.doneAt) ok(d.jobs || []); else poll(); }, poll);
+        }, every || 6000);
+      })();
+    });
+  }
   function importBundle(link) {
     var id = bundleId(link);
     if (!id) return Promise.reject(new Error("Lien non reconnu : collez un lien shots.re/… ou kinou.slateapp.com/bundles/…"));
@@ -4707,6 +4777,8 @@
       if (!o.extras && f.extras && f.extras.length) o.extras = f.extras; // stills et vidéos sous le film (lecteur)
       if (!o.awards && f.awards) o.awards = f.awards; // prix et sélections (une ligne chacun)
       if (!o.crop && f.crop) o.crop = f.crop; // recadrage réglé sur la page (point de départ dans les bandes)
+      if (!o.snip && f.snip) o.snip = f.snip; // extrait d'un film envoyé depuis l'ordinateur (encodage, { s, d, v })
+      if (f.enc && !o.full) o.enc = f.enc; // film envoyé depuis l'ordinateur, encodage pas encore terminé
       (f.dops || []).forEach(function (d) { d = rcBase(d); if (d && !o.dops.some(function (x) { return bnrm(x) === bnrm(d); })) o.dops.push(d); });
       (f.cats || []).forEach(function (c) { c = String(c || "").trim(); if (c && !/^featured$/i.test(c) && !o.cats.some(function (x) { return bnrm(x) === bnrm(c); })) o.cats.push(c); });
       (f.types || []).forEach(function (c) { c = String(c || "").trim(); if (c && !o.types.some(function (x) { return bnrm(x) === bnrm(c); })) o.types.push(c); });
@@ -4923,7 +4995,35 @@
     var info = el("p", { class: "hint bibinfo", text: "Chargement de tous nos films…" }), list = el("div", { class: "biblist" });
     left.appendChild(el("div", { class: "bibsearch" }, [q, sugBox])); left.appendChild(chipsBox); left.appendChild(info); left.appendChild(list);
     var data = null;
-    bibLoad().then(function (d) { data = d; draw(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
+    bibLoad().then(function (d) { data = d; draw(); encCheck(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
+    // Films envoyés depuis l'ordinateur : dès que le robot a fini, le film reçoit sa version web, sa vignette et son extrait
+    // (library.json) ; vérifié à l'ouverture du video club puis toutes les 20 s tant qu'un encodage est en cours.
+    var encT = 0;
+    function encCheck() {
+      clearTimeout(encT); if (!canWeb) return;
+      readFile(BIB_LIB).then(function (l) {
+        var wait = ((l && l.items) || []).filter(function (x) { return x.enc && !x.enc.error && !x.full; });
+        if (!wait.length) return;
+        var paths = wait.map(function (x) { return x.enc.path; }).filter(function (p, k, a) { return a.indexOf(p) === k; });
+        return Promise.all(paths.map(function (p) { return readFile(p).catch(function () { return null; }); })).then(function (rs) {
+          var res = {}; rs.forEach(function (d) { if (d && d.doneAt) (d.jobs || []).forEach(function (j) { res[j.id] = j; }); });
+          var done = wait.filter(function (x) { return res[x.enc.id]; });
+          if (done.length) return commit([{ path: BIB_LIB, edit: function (t) {
+            var L = t ? JSON.parse(t) : { items: [] };
+            (L.items || []).forEach(function (x) {
+              var j = x.enc && res[x.enc.id]; if (!j || x.full) return;
+              if (j.error || !j.answer) { x.enc.error = j.error || "pas de réponse"; return; }
+              var a = j.answer; x.full = a.full; x.video = a.video; x.img = a.img; x.img1600 = a.img1600; x.thumbT = a.thumbT;
+              x.snip = { s: a.snip.s, d: a.snip.d, v: a.video }; x.dur = a.dur; x.w = a.w; x.h = a.h; delete x.enc;
+            });
+            return json(L);
+          } }], "Video club : encodage terminé (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) { if (location.hash === "#/bibli") { data = d; draw(); } });
+        });
+      }).catch(function () {}).then(function () {
+        if (location.hash !== "#/bibli" || !data) return;
+        if ((data.films || []).some(function (x) { return x.enc && !x.enc.error; })) encT = setTimeout(encCheck, 20000);
+      });
+    }
     q.addEventListener("input", function () { st.q = q.value; st.n = 60; st.sugI = -1; suggest(); draw(); });
     q.addEventListener("keydown", function (e) {
       var items = sugBox.querySelectorAll("button");
@@ -4985,7 +5085,8 @@
       var add = el("button", { type: "button", class: "btn ghost badd", text: inBand(f) ? "✓" : "+", title: "Ajouter à la bande", on: { click: function (e) { e.stopPropagation(); addKeys([f.key], band.items.length, th); } } });
       var r = el("div", { class: "brow" + (st.sel[f.key] ? " sel" : "") + (inBand(f) ? " inband" : "") }, [
         el("span", { class: "bnum", text: String(i + 1) }), cb, th,
-        el("div", { class: "bt" }, [el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); }))]),
+        el("div", { class: "bt" }, [el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
+          f.enc ? el("small", { class: "benc", text: f.enc.error ? "Encodage raté : " + f.enc.error : "Encodage en cours…" }) : null]),
         el("div", { class: "bc" }, f.dops.map(function (d) { var r = (f.roles || {})[d]; return r ? el("span", { class: "brole" }, [lnk("dop", d), el("small", { text: r })]) : lnk("dop", d); })),
         el("div", { class: "bc" }, f.cats.slice(0, 2).map(function (c) { return lnk("cat", c); }).concat(f.types.filter(function (t) { return !f.cats.some(function (c) { return bnrm(c) === bnrm(t); }); }).slice(0, 3).map(function (c) { return lnk("type", c); }))),
         el("div", { class: "bc" }, bibProds(f).map(function (x) { return lnk("prod", x); }).concat(f.client ? [lnk("client", f.client)] : [])),
@@ -5650,7 +5751,7 @@
       }
       function prevMeta() { pmeta.textContent = ""; pmeta.appendChild(el("strong", { text: it.title || "" })); pmeta.appendChild(el("span", { text: (it.types || it.cats || []).join(" · ") })); }
       pv.addEventListener("mouseenter", function () {
-        var own = it.snipVideo, src = own || (it.snip ? it.full : it.video); if (!src || pvid) return;
+        var own = it.snipVideo || (it.snip && it.snip.v), src = own || (it.snip ? it.full : it.video); if (!src || pvid) return;
         pvid = el("video", { muted: true, playsinline: true, autoplay: true, loop: !!own || !it.snip }); pvid.muted = true;
         pvid.src = src + (!own && it.snip ? "#t=" + it.snip.s : "");
         if (!own && it.snip) pvid.addEventListener("timeupdate", function () { if (pvid && pvid.currentTime > it.snip.s + it.snip.d) pvid.currentTime = it.snip.s; });
@@ -5823,7 +5924,18 @@
       function snipCommit() { // extrait validé : l'ancien va dans l'historique, le nouveau est enregistré
         delete it._snipTmp; delete it._snipSaved; var x = it.snip ? JSON.stringify(it.snip) : null;
         if (lastSnip && lastSnip !== x) pushHist("snip", JSON.parse(lastSnip));
-        lastSnip = x; it.edited = true; chg(); drawSnip(); drawHist();
+        lastSnip = x; it.edited = true; chg(); drawSnip(); drawHist(); snipLight();
+      }
+      // Extrait léger (Gus 26/11) : le robot d'encodage découpe le passage validé en petite vidéo 720p sans son (~1–2 Mo), rangée
+      // chez Amazon → snip.v, que jouent les bandes (au lieu du film complet lu à partir du début de l'extrait).
+      function snipLight() {
+        var sn = it.snip, from = it.full;
+        if (!canWeb || !sn || sn.v || it.snipVideo || !from) return;
+        var id = encId(), s0 = sn.s, d0 = sn.d;
+        encAsk("rapide", [{ id: id, kind: "snip", src: from, s: s0, d: d0 }]).then(function (p) { return encWait(p, 5000, 600000); }).then(function (jobs) {
+          var j = jobs[0] || {}; if (!j.answer) throw new Error(j.error || "pas de réponse");
+          if (it.snip && it.snip.s === s0 && it.snip.d === d0 && !it.snip.v) { it.snip.v = j.answer.video; it.edited = true; chg(); }
+        }).catch(function (e) { if (window.console) console.warn("Extrait léger pas fait : " + e.message); });
       }
       var histImgL = el("span", { class: "label", text: "Anciennes vignettes" }), histImg = el("div", { class: "bthumbs" });
       var histSnipL = el("span", { class: "label", text: "Anciens extraits" }), histSnip = el("div", { class: "bhsnip" });
@@ -5832,7 +5944,7 @@
         histImg.textContent = ""; (h.img || []).forEach(function (u) { histImg.appendChild(el("button", { type: "button", style: 'background-image:url("' + u + '")', title: "Reprendre cette ancienne vignette", on: { click: function () { setImg(u); } } })); });
         histImg.hidden = histImgL.hidden = !(h.img || []).length;
         histSnip.textContent = ""; (h.snip || []).forEach(function (x) { histSnip.appendChild(el("button", { type: "button", class: "bcc", text: fmtF(x.s) + " → " + fmtF(x.s + x.d), title: "Reprendre cet ancien extrait", on: { click: function () {
-          snipDraft(); it.snip = { s: x.s, d: x.d }; prevSnip(); drawSnip(); if (tl) { act = "in"; seek(x.s); playSnip(); draw(); }
+          snipDraft(); it.snip = x.v ? { s: x.s, d: x.d, v: x.v } : { s: x.s, d: x.d }; prevSnip(); drawSnip(); if (tl) { act = "in"; seek(x.s); playSnip(); draw(); }
         } } })); });
         histSnip.hidden = histSnipL.hidden = !(h.snip || []).length;
       }
@@ -6059,7 +6171,9 @@
             });
           }).catch(function (e) { go.disabled = false; out.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
       } } });
-      // Fichier depuis l'ordinateur : vérifié ici (poids, durée, taille, lisible par les navigateurs) ; l'envoi attend l'hébergement.
+      // Fichier depuis l'ordinateur (Gus 26/11) : vérifié ici (poids, durée, taille), envoyé chez Amazon (upload), puis encodé par le
+      // robot (version web 1080p, vignettes, extrait 720p de 5 s aux 2/3 du film) ; le film apparaît tout de suite dans la liste
+      // (« Encodage en cours… ») et se complète tout seul (encCheck).
       var fin = el("input", { type: "file", accept: "video/*" }), chk = el("div", { class: "bchk" });
       fin.addEventListener("change", function () {
         var f = fin.files[0]; chk.textContent = ""; if (!f) return;
@@ -6076,8 +6190,31 @@
           c.getContext("2d").drawImage(vid, 0, 0, c.width, c.height); chk.appendChild(c); done();
         });
         vid.addEventListener("error", function () { lines.push("Pas lisible par les navigateurs (ProRes, HEVC… ?) : le robot d'encodage le convertira."); done(); });
-        function done() { chk.insertBefore(el("p", { class: "hint" }, lines.map(function (t, i) { return el("span", {}, [i ? el("br") : null, t]); })), chk.firstChild);
-          chk.appendChild(el("p", { class: "hint", text: "Envoi des vidéos depuis l'ordinateur : pas encore branché (il faut d'abord l'hébergement des vidéos, étude « remplacer Slate »). Pour l'instant : vérification seulement." })); }
+        function done() {
+          chk.insertBefore(el("p", { class: "hint" }, lines.map(function (t, i) { return el("span", {}, [i ? el("br") : null, t]); })), chk.firstChild);
+          if (f.size > 10e9) return;
+          var bar = el("progress", { max: 1, value: 0, class: "bupprog", hidden: true }), msg = el("p", { class: "hint" });
+          var send = el("button", { type: "button", class: "btn primary", text: "Envoyer et encoder", on: { click: function () {
+            if (!canWeb) { msg.textContent = "Lecture seule : cette clé ne peut pas ajouter au video club."; return; }
+            send.disabled = true; fin.disabled = true; bar.hidden = false; msg.textContent = "Envoi chez Amazon…";
+            var t0 = Date.now();
+            upload(f, function (p) {
+              bar.value = p; var el2 = (Date.now() - t0) / 1000, left = p > .02 ? el2 * (1 - p) / p : 0;
+              msg.textContent = "Envoi chez Amazon : " + Math.floor(p * 100) + " %" + (left > 5 ? " · encore ≈ " + (left > 90 ? Math.round(left / 60) + " min" : Math.round(left) + " s") : "") + " (garde cette page ouverte)";
+            }).then(function (key) {
+              msg.textContent = "Envoyé. Demande d'encodage…";
+              var id = encId(), rq = encFile("film", [{ id: id, kind: "film", key: key }]);
+              var title = f.name.replace(/\.[a-z0-9]+$/i, "").replace(/[_]+/g, " ").replace(/\s+/g, " ").trim() || "Vidéo";
+              var it = { key: "e" + id, kind: "video", title: title, dops: [], cats: [], src: "upload", enc: { path: rq.path, id: id }, size: f.size,
+                at: new Date().toISOString(), by: user && user.login || "", _files: [rq] };
+              return libSave([it]).then(function () { return bibLoad(true); }).then(function (d) {
+                data = d; draw(); encCheck();
+                msg.textContent = "C'est parti : le robot encode le film (quelques minutes, plus pour un long film). Il est déjà dans la liste (« Encodage en cours… ») et se complètera tout seul. Tu peux fermer cette fenêtre.";
+              });
+            }).catch(function (e) { send.disabled = false; fin.disabled = false; msg.textContent = "Envoi interrompu : " + e.message + ". Choisis de nouveau le même fichier : l'envoi reprendra où il en était."; });
+          } } });
+          chk.appendChild(el("div", { class: "fwbtns" }, [send])); chk.appendChild(bar); chk.appendChild(msg);
+        }
         vid.src = url;
       });
       var mo = modal("Ajouter une vidéo", [el("span", { class: "label", text: "Depuis Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [link]), go]), out,
