@@ -34,7 +34,7 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
 ## Copie Slate → Amazon (robot `copie-slate.yml` + `tools/copie-slate.mjs`)
 - Copie en flux (sans disque) les fichiers de chaque média Slate : original (toutes les images d'une galerie), versions web,
   extraits, vignette choisie → compartiment S3 `kinou-videos` (Stockholm, Intelligent-Tiering), **même chemin** que sur le
-  CloudFront de Slate (`d1ko11x0ybxl0h…/<chemin>` → `d3toxil6rvamjf.cloudfront.net/<chemin>`).
+  CloudFront de Slate (`d1ko11x0ybxl0h…/<chemin>` → `d3toxii6rvamjf.cloudfront.net/<chemin>`).
 - Slate refuse ses **pages** aux machines de GitHub (403 depuis le 24/11) mais pas ses **fichiers** : le robot part d'une **liste
   privée** (lue ailleurs, rangée dans le dépôt privé `notes`), déposée par un robot de `notes` dans `kinou-videos/prive-<hasard>/liste.json` ;
   le robot la trouve en listant le compartiment. Sans liste : arrêt en rouge. Jamais d'adresse de fichier dans ce dépôt ni dans les
