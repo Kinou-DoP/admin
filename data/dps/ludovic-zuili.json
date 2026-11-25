@@ -5,11 +5,26 @@
   "bundle": "https://kinou.slateapp.com/bundles/b5790752-e8be-11f1-952e-02ffedfede17",
   "open": 11486,
   "overrides": {
+    "144": {
+      "title": "Yanis - Embrace"
+    },
     "1173": {
       "title": "Motorola "
     },
     "1974": {
       "title": "Du Pareil Au Même - Kids Revenge"
+    },
+    "2426": {
+      "zoom": 1.2,
+      "zoomThumb": true,
+      "title": "BB Brunes - Éclair Éclair"
+    },
+    "2924": {
+      "title": "Bonnie Banane feat. Waltaa - Champs-Elysees"
+    },
+    "2957": {
+      "zoom": 1.52,
+      "title": "Young Hish Ft. Brazy - Fais les pleuvoir"
     },
     "3063": {
       "zoom": 1.43,
@@ -29,6 +44,9 @@
         "Commercial"
       ]
     },
+    "3734": {
+      "title": "Fixpen Sill Ft. Lomepal -Bye Bye"
+    },
     "4199": {
       "title": "Oppo - Night",
       "zoom": 1.48,
@@ -47,6 +65,17 @@
       "zoom": 1.1,
       "zoomThumb": true
     },
+    "5103": {
+      "title": "Hervé - Monde Meilleur"
+    },
+    "5276": {
+      "title": "Brarda - Lumière",
+      "zoom": 1.05
+    },
+    "5711": {
+      "zoom": 1.52,
+      "zoomThumb": true
+    },
     "5763": {
       "title": "Santé France - J'en Parle à",
       "zoom": 1.35,
@@ -59,6 +88,9 @@
       "types": [
         "Commercial"
       ]
+    },
+    "6100": {
+      "title": "Pomme - Nelly"
     },
     "6126": {
       "zoom": 1.14,
@@ -75,6 +107,15 @@
     "6320": {
       "title": "Volkswagen"
     },
+    "6348": {
+      "title": "Hey Hey My My - High Life"
+    },
+    "6373": {
+      "title": "Redcar - La Chanson du Chevalier"
+    },
+    "6807": {
+      "title": "Thylacine - Bosphorus"
+    },
     "6884": {
       "title": "Prime Video - Ligue 1",
       "types": [
@@ -85,6 +126,9 @@
     "7443": {
       "zoom": 1.36,
       "zoomPos": "41.3% 0%"
+    },
+    "8049": {
+      "title": "Acud Arav - Habaytak"
     },
     "8054": {
       "title": "Free Reef Noël"
