@@ -1,0 +1,43 @@
+# Vignettes réduites chez nous (tools/vignettes.mjs) : chaque image copiée de Slate dans kinou-videos → 2 versions WebP (800, 1600 px)
+# sous thumbs/. Accès Amazon sans clé (rôle kinou-robot-copie, branche main). Lancé à la main ; relancer ne refait que ce qui manque.
+name: Vignettes réduites
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Nombre d'images au plus (essai) ; vide = toutes"
+        required: false
+        default: ""
+permissions:
+  id-token: write
+  contents: read
+  actions: write
+concurrency: vignettes
+jobs:
+  vignettes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: ImageMagick (WebP)
+        run: |
+          convert -version | head -2 || true
+          if ! convert -list format | grep -qi "^ *WEBP"; then sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick webp; fi
+          convert -list format | grep -i webp
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::919012714656:role/kinou-robot-copie
+          aws-region: eu-north-1
+      - id: v
+        run: node tools/vignettes.mjs
+        env:
+          AWS_ROLE_COPIE: arn:aws:iam::919012714656:role/kinou-robot-copie
+          MAX: ${{ inputs.max }}
+      - name: Passage suivant
+        if: ${{ !cancelled() && steps.v.outputs.suite != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run vignettes.yml --ref main
