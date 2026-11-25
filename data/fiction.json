@@ -698,12 +698,14 @@
         "y": 39.7
       },
       "info": {
-        "awards": "Official selection, International Film Festival Rotterdam 2026\nOfficial selection • Critics' Picks, Tallinn Black Nights Film Festival 2025\nOfficial selection, Les Arcs Film Festival 2025\nOfficial selection • Sélection officielle, Palić Film Festival",
+        "awards": "Official selection, International Film Festival Rotterdam 2026\nOfficial selection • Critics' Picks, Tallinn Black Nights Film Festival 2025\nOfficial selection, Les Arcs Film Festival 2025\nOfficial selection • Sélection officielle, Palić Film Festival\nOfficial selection, RamDam Festival 2026\nOfficial selection • Compétition Choix des critiques, Tallinn Black Nights Film Festival 2025",
         "awardsFrom": {
           "833c008caad9": "Official selection, International Film Festival Rotterdam 2026",
           "2ee83938bf8a": "Official selection • Critics' Picks, Tallinn Black Nights Film Festival 2025",
           "68c39466026a": "Official selection, Les Arcs Film Festival 2025",
-          "ebda4cc35fb7": "Official selection • Sélection officielle, Palić Film Festival"
+          "ebda4cc35fb7": "Official selection • Sélection officielle, Palić Film Festival",
+          "9ae9752383b1": "Official selection, RamDam Festival 2026",
+          "8ac6a5c8fd48": "Official selection • Compétition Choix des critiques, Tallinn Black Nights Film Festival 2025"
         }
       }
     },
