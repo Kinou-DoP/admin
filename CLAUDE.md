@@ -31,6 +31,9 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   puis toutes les 20 s) recopie la réponse dans le film (`full`, `video`, `img`, `img1600`, `snip { s, d, v }`, `thumbT`, `dur`, `w`, `h`).
   **Extrait léger** : « Valider l'extrait » demande au robot (`rapide-….json`, `encAsk` / `encWait`) le passage en 720p sans son →
   `snip.v`, joué par les bandes à la place du film complet. Deux files (films longs / rapide). Demandes : `snip`, `thumb`, `film`.
+  **« ↻ Remplacer la vidéo » → « ⤒ Depuis l'ordinateur »** (fenêtre d'un film, `rpUp` / `rpWait`) : même envoi + encodage ; `it.enc`
+  (encodage en cours, repris en rouvrant la fenêtre) ; à la fin : nouveaux `full`, `video`, `snip { s, d, v }`, `thumbT` (+ vignette si
+  « Prendre aussi sa vignette »), anciens extrait / vignette dans l'historique, fenêtre rouverte.
 - **Filmothèque complète** (25/11) : en plus des films des pages, tous les films de Slate (7 490) lus dans le dépôt privé
   `notes` (`bibli/slate.json`, constante `BIB_SLATE`, avec la clé de la personne connectée) ; les infos des pages restent prioritaires.
 - **Lecture de Slate** : par les fonctions du site (`siteGet`) ; si elles ne répondent pas, par le **robot GitHub** (`askRobot` :

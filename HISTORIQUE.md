@@ -388,3 +388,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 : aperçu d'un film (video club, « Modifier la sélection ») : ‹ › pour le film d'avant / d'après de la recherche, « + » pour l'ajouter à la bande / l'onglet ; pastille « Enregistrement » au-dessus de « Publier » (Gus).
 - 26/11 : « Modifier la sélection » : bouton « Afficher plus » (150 de plus à chaque clic) en bas de la liste de droite (Gus).
 - 26/11 (Gus) : encodage dans le video club : envoi des vidéos de l'ordinateur chez Amazon + robot `encodage.yml` (version web 1080p, vignettes WebP, extrait 720p de 5 s aux 2/3 du film) ; « Valider l'extrait » = extrait léger 720p sans son fait par le robot (`snip.v`). Snippets choisis à la main, 720p partout sauf l'accueil (1080p, pas de snippet).
+- 26/11 (Gus) : « Remplacer la vidéo » depuis l'ordinateur (envoi chez Amazon + encodage par le robot).

@@ -410,6 +410,7 @@
     }).then(function (d) { try { localStorage.removeItem(sk); } catch (e) {} return d.key; }), true);
   }
   // Demande au robot d'encodage (data/encode/<film|rapide>-….json, workflow encodage.yml) ; encWait relit le fichier jusqu'à la réponse.
+  var encBusy = {}; // encodages déjà attendus dans cette page (par id)
   function encId() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
   function encFile(kind, jobs) {
     var path = "data/encode/" + kind + "-" + Date.now() + "-" + Math.random().toString(36).slice(2, 7) + ".json";
@@ -4726,7 +4727,7 @@
   // a un), le fichier du dépôt public est illisible et son nom ne dit rien. L'original et la liste des bandes (avec les mots de
   // passe) sont dans le dépôt privé notes (bandes/<code>.json, bandes/index.json). Chiffrement : bandSeal (même code dans
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
-  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards"];
+  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc"];
   var BIB_SLATE = "bibli/slate.json"; // dépôt notes : tous les films de Slate (liste privée, 25/11)
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
@@ -6068,8 +6069,46 @@
         }).catch(function (e) { rpGo.disabled = false; rpOut.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
       } } });
       rpIn.addEventListener("keydown", function (e) { if (e.key === "Enter") rpGo.click(); });
+      // Depuis l'ordinateur (Gus 26/11) : la vidéo part chez Amazon (upload), le robot l'encode (version web 1080p, vignette, extrait
+      // 720p aux 2/3) ; le film garde l'ancienne vidéo jusqu'à la fin (it.enc = encodage en cours, repris si on rouvre la fenêtre).
+      var rpFile = el("input", { type: "file", accept: "video/*", hidden: true }), rpBar = el("progress", { max: 1, value: 0, class: "bupprog", hidden: true });
+      rpFile.addEventListener("change", function () { rpUp(rpFile.files[0]); rpFile.value = ""; });
+      function rpUp(f) {
+        if (!f) return;
+        if (!canWeb) { rpOut.textContent = "Lecture seule : cette clé ne peut rien envoyer."; return; }
+        if (f.size > 10e9) { rpOut.textContent = "Plus de 10 Go : trop lourd pour le robot d'encodage."; return; }
+        rpBar.hidden = false; rpBar.value = 0; rpOut.textContent = "Envoi chez Amazon…"; var t0 = Date.now();
+        upload(f, function (p) {
+          rpBar.value = p; var sec = (Date.now() - t0) / 1000, left = p > .02 ? sec * (1 - p) / p : 0;
+          rpOut.textContent = "Envoi : " + Math.floor(p * 100) + " %" + (left > 5 ? " · encore ≈ " + (left > 90 ? Math.round(left / 60) + " min" : Math.round(left) + " s") : "") + " (garde l'admin ouverte)";
+        }).then(function (key) {
+          var id = encId();
+          return encAsk("film", [{ id: id, kind: "film", key: key }]).then(function (path) {
+            it.enc = { path: path, id: id, img: rpImg.checked }; it.edited = true; chg(); rpBar.hidden = true;
+            rpOut.textContent = "Envoyé. Encodage en cours (quelques minutes) : la vidéo sera remplacée toute seule. Tu peux fermer cette fenêtre, garde l'admin ouverte.";
+            rpWait();
+          });
+        }).catch(function (e) { rpBar.hidden = true; rpOut.textContent = "Envoi interrompu : " + e.message + ". Rechoisis le même fichier : l'envoi reprendra où il en était."; });
+      }
+      function rpWait() {
+        var e = it.enc; if (!e || e.error || encBusy[e.id]) return; encBusy[e.id] = 1;
+        encWait(e.path, 15000, 4 * 3600000).then(function (jobs) {
+          delete encBusy[e.id];
+          if (!it.enc || it.enc.id !== e.id) return;
+          var j = jobs.filter(function (x) { return x.id === e.id; })[0] || {};
+          if (!j.answer) { it.enc.error = j.error || "pas de réponse"; chg(); rpOut.textContent = "Encodage raté : " + it.enc.error; return; }
+          var a = j.answer;
+          if (it.snip) pushHist("snip", it.snip);
+          if (e.img && a.img) { if (it.img && it.img !== a.img) pushHist("img", it.img); it.img = a.img; }
+          it.full = a.full; it.video = a.video; it.snip = { s: a.snip.s, d: a.snip.d, v: a.video }; it.thumbT = a.thumbT;
+          delete it.snipVideo; delete it._snipTmp; delete it._snipSaved; delete it.enc; it.edited = true; chg();
+          if (document.body.contains(ov)) { document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib); } // la fenêtre se rouvre sur la nouvelle vidéo
+        }, function (err) { delete encBusy[e.id]; rpOut.textContent = "Encodage : " + err.message; });
+      }
       var rpBox = el("div", { class: "brepl", hidden: true }, [el("div", { class: "row" }, [el("div", { class: "grow" }, [rpIn]), rpGo]),
-        el("label", { class: "bck" }, [rpImg, " Prendre aussi sa vignette"]), el("p", { class: "hint", text: "Depuis l'ordinateur : dès que notre hébergement des vidéos (Amazon) sera branché." }), rpOut]);
+        el("label", { class: "bck" }, [rpImg, " Prendre aussi sa vignette"]),
+        el("div", { class: "tlrow" }, [upBtn("⤒ Depuis l'ordinateur", rpFile, "video", rpUp), rpFile]), rpBar, rpOut]);
+      if (it.enc && !it.enc.error) { rpBox.hidden = false; rpOut.textContent = "Nouvelle vidéo : encodage en cours… (la fenêtre se met à jour toute seule)"; rpWait(); }
       box.appendChild(el("div", { class: "breplw" }, [el("button", { type: "button", class: "btn ghost", text: "↻ Remplacer la vidéo", on: { click: function () { rpBox.hidden = !rpBox.hidden; if (!rpBox.hidden) rpIn.focus(); } } }), rpBox]));
       // Vignette et extrait : deux onglets sous le film (Gus 22/11), vignette d'abord.
       var thumbPane = null, snipPane = null;
