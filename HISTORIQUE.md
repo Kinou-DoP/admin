@@ -394,3 +394,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 (Gus) : « le video club sert partout » : textes de la fenêtre d'un film (« sur le site et dans les prochaines bandes ») ; le site applique `edits.json` (vcApply d'app.js).
 - 26/11 (chef d'orchestre) : CLAUDE.md allégé pour économiser l'abonnement Claude (relu à chaque message) : le détail est déplacé
   tel quel dans des notes par sujet `docs/` (à lire seulement pour la tâche concernée) ; CLAUDE.md garde l'essentiel et les règles.
+- 25/11 — « Modifier la sélection » : les imports du video club sans id Slate (stills, vidéos de l'ordinateur) sont cherchables et ajoutables (id = clé du video club, `sid`). Robots (main) : encodage (réponses jamais enregistrées : identité git, rebase coincé) et vignettes réduites (images du site d'abord).

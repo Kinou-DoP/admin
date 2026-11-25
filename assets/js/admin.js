@@ -1251,6 +1251,9 @@
     var base = cfg ? { name: cfg.title, categories: [cfg.tab], clips: cfg.items.map(function (c) { return Object.assign({}, c, { cat: cfg.tab }); }) }
       : slate || { name: state.name, categories: ["FEATURED"], clips: [] }; // fiche sans films : « Créer une sélection »
     var byId = {}, extra = {};
+    // Id d'un film : son id Slate, ou sa clé du video club pour les imports sans Slate (stills « i… », vidéos de l'ordinateur « e… »),
+    // qui peuvent ainsi entrer dans une page (Gus 25/11 : un projet de stills importé était introuvable ici).
+    function sid(f) { return f.slate || f.key; }
     base.clips.forEach(function (c) { if (!byId[c.slate]) byId[c.slate] = c; });
     function uniq(l) { var seen = {}; return l.filter(function (x) { if (seen[x]) return false; seen[x] = 1; return true; }); }
     var tabs = base.categories.map(function (name) {
@@ -1392,9 +1395,9 @@
     }
     var shownR = [], maxR = 150, lastKey = "";
     function addFilm(f) {
-      var t = tabs[cur]; if (!t || t.ids.indexOf(f.slate) > -1) return;
-      if (!byId[f.slate] && !extra[f.slate]) extra[f.slate] = f;
-      if (cfg && cfg.top) t.ids.unshift(f.slate); else t.ids.push(f.slate); ch(); drawAll();
+      var id = sid(f), t = tabs[cur]; if (!id || !t || t.ids.indexOf(id) > -1) return;
+      if (!byId[id] && !extra[id]) extra[id] = f;
+      if (cfg && cfg.top) t.ids.unshift(id); else t.ids.push(id); ch(); drawAll();
     }
     function drawRight() {
       results.textContent = ""; chipsBox.textContent = ""; var t = tabs[cur];
@@ -1403,13 +1406,13 @@
       var words = bnrm(q).split(" ").filter(Boolean), onPage = {};
       base.clips.forEach(function (c) { onPage[c.slate] = 1; }); Object.keys(extra).forEach(function (k) { onPage[k] = 1; });
       var withPage = isDefault() && !words.length; // à l'ouverture : les films du chef op + ceux de la page
-      var list = lib.films.filter(function (f) { return f.slate && ((withPage && onPage[f.slate]) || (chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
-      if (withPage) Object.keys(onPage).forEach(function (id) { id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
+      var list = lib.films.filter(function (f) { return sid(f) && ((withPage && onPage[sid(f)]) || (chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
+      if (withPage) Object.keys(onPage).forEach(function (id) { if (/^\d+$/.test(id)) id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
       var key = JSON.stringify([q, chips]); if (key !== lastKey) { lastKey = key; maxR = 150; } // nouvelle recherche : 150 d'abord
       results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" }));
       shownR = list.slice(0, maxR);
       shownR.forEach(function (f) {
-        var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
+        var inTab = t && t.ids.indexOf(sid(f)) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
         th.addEventListener("click", function () { selPreview(f); });
         results.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
           el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") })]),
@@ -1425,7 +1428,7 @@
     search.addEventListener("blur", function () { setTimeout(function () { sugBox.hidden = true; }, 150); });
     function selPreview(f) { // aperçu avec ‹ › dans la liste de droite et « + » = ajouter à l'onglet ouvert (Gus 26/11)
       var l = shownR.indexOf(f) > -1 ? shownR : [f];
-      navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à « " + (tabs[cur] ? tabs[cur].name : "") + " »", inLabel: "Dans l'onglet", has: function (x) { var t = tabs[cur]; return t && t.ids.indexOf(x.slate) > -1; }, add: function (x) { addFilm(x); } });
+      navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à « " + (tabs[cur] ? tabs[cur].name : "") + " »", inLabel: "Dans l'onglet", has: function (x) { var t = tabs[cur]; return t && t.ids.indexOf(sid(x)) > -1; }, add: function (x) { addFilm(x); } });
     }
     var ok = el("button", { type: "button", class: "btn primary", text: "Valider et publier" });
     ok.addEventListener("click", function () {
@@ -1454,7 +1457,7 @@
     box.appendChild(el("div", { class: "selfoot" }, [el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { close(); } } }), ok]));
     ov.appendChild(box); document.body.appendChild(ov); drawAll(); search.focus();
     bibLoad().then(function (d) {
-      var byS = {}; d.films.forEach(function (f) { if (f.slate && !byS[f.slate]) byS[f.slate] = f; });
+      var byS = {}; d.films.forEach(function (f) { var id = sid(f); if (id && !byS[id]) byS[id] = f; });
       lib = { films: d.films, byS: byS, sug: d.sug }; drawRight();
     }, function (e) { results.textContent = ""; results.appendChild(el("p", { class: "empty", text: "Video club illisible : " + e.message })); });
   }
@@ -4779,6 +4782,7 @@
     if (bibCache && !force) return Promise.resolve(bibCache);
     var map = {}, order = [], pages = [];
     function add(f, from) {
+      if (f.slate && !/^\d+$/.test(f.slate)) f = Object.assign({}, f, { key: f.slate, slate: null }); // import du video club placé dans une page
       var k = f.slate ? "s" + f.slate : f.key || "u" + (f.full || f.video || f.img || f.title); // imports d'images : leur clé « i… »
       var o = map[k];
       if (!o) { o = map[k] = { key: k, slate: f.slate || null, title: "", dir: "", prod: "", dops: [], cats: [], types: [], video: "", full: "", img: "", images: null, pages: [], at: "" }; order.push(o); }
