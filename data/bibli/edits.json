@@ -80,6 +80,15 @@
       "roles": {
         "Jacques Ballard": "Underwater DoP"
       }
+    },
+    "s9998": {
+      "img": "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/b/mwwc2dkl83kd.webp",
+      "thumbT": 162.326,
+      "hist": {
+        "img": [
+          "https://images.slatecdn.net/oYcaMHnefO4eYydlopysws8pm7eUNduVu3f3MjZZOGs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/OGQxZTUzYS1kZWRl/LTRhZjQtYmE2ZC1m/NzY2YWY5YTVjZDgv/MTc1MzE5ODkzMzU1/Ny5qcGc?v=1&format=webp"
+        ]
+      }
     }
   }
 }
