@@ -17,7 +17,20 @@
 // manque) ; CONC (copies en parallèle, 6) ; MINUTES (temps de travail avant de passer la main, 240 : laisse le temps de finir un gros original).
 
 import { spawn } from "node:child_process";
-import { appendFileSync, writeFileSync } from "node:fs";
+import { appendFileSync, writeFileSync, mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+
+// Accès Amazon renouvelé tout seul (l'accès OIDC ne dure qu'une heure ; le 1er passage du 24/11 a échoué après 1 h) :
+// l'outil aws passe par tools/aws-cle.mjs (credential_process), rappelé avant chaque fin d'accès, même en plein envoi.
+if (process.env.ACTIONS_ID_TOKEN_REQUEST_URL && process.env.AWS_ROLE_COPIE) {
+  const dossier = mkdtempSync(join(tmpdir(), "aws-"));
+  writeFileSync(join(dossier, "config"), "[profile robot]\nregion = " + (process.env.AWS_REGION || "eu-north-1") +
+    "\ncredential_process = node " + join(process.cwd(), "tools", "aws-cle.mjs") + "\n");
+  ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_SESSION_TOKEN"].forEach((k) => delete process.env[k]);
+  process.env.AWS_CONFIG_FILE = join(dossier, "config");
+  process.env.AWS_PROFILE = "robot";
+}
 
 const BUCKET = process.env.BUCKET || "kinou-videos";
 const ORIGIN = "https://kinou.slateapp.com";
@@ -153,20 +166,22 @@ console.log("Déjà dans " + BUCKET + " : " + deja.size + " fichiers. Médias à
 
 // File de copies, alimentée par la lecture des pages.
 const file = [];
-var lecture = true;
+var lecture = true, echecsDeSuite = 0, arret = null; // arrêt d'urgence : pas de passage suivant, robot en rouge
 async function copieur() {
   while (lecture || file.length) {
     var f = file.shift();
     if (!f) { await pause(300); continue; }
     if (await copie(f)) { stats.copies++; stats.octets += f.taille; console.log("✓ " + f.id + " " + f.role + " (" + go(f.taille) + ")"); }
-    else { stats.erreurs.push(f.id + " " + f.role + " : " + f.erreur); console.log("✗ " + f.id + " " + f.role + " : " + f.erreur); }
+    else { stats.erreurs.push(f.id + " " + f.role + " : " + f.erreur); console.log("✗ " + f.id + " " + f.role + " : " + f.erreur);
+      if (++echecsDeSuite >= 30 && !arret) { arret = "30 échecs d'affilée (dernier : " + f.erreur + ")"; file.length = 0; } continue; }
+    echecsDeSuite = 0;
   }
 }
 const copieurs = VERIFIER ? [] : Array.from({ length: CONC }, copieur);
 
 var i = 0;
 async function lecteur() {
-  while (i < liste.length) {
+  while (i < liste.length && !arret) {
     if (Date.now() > FIN || file.length >= CONC * 2) { if (Date.now() > FIN) { suite = suite == null ? liste[i] : Math.min(suite, liste[i]); return; } await pause(1000); continue; }
     var id = liste[i++], m, fs;
     if (LISTE) {
@@ -191,13 +206,15 @@ await Promise.all(Array.from({ length: PAGES }, lecteur));
 lecture = false;
 await Promise.all(copieurs);
 if (suite != null && IDS.length) suite = null; // liste fixe : pas de reprise automatique
+if (arret) suite = null;
 
 const res = [
   "## Copie Slate → Amazon (" + (VERIFIER ? "vérification" : "copie") + ", mode " + MODE + ")",
   "- Médias lus : " + stats.pages + " (numéros inexistants : " + stats.absents + ", pages illisibles : " + stats.illisibles.length + ")",
   "- Fichiers déjà présents : " + stats.sautes + " ; " + (VERIFIER ? "manquants : " + stats.aCopier : "copiés : " + stats.copies + " / " + stats.aCopier + " (" + go(stats.octets) + ")"),
   "- Erreurs : " + stats.erreurs.length,
-  suite != null ? "- Temps écoulé : reprise au numéro " + suite + " (passage suivant lancé tout seul)" : "- Terminé pour cette liste.",
+  ...(arret ? ["- **Arrêt d'urgence** : " + arret + ". Pas de passage suivant : à regarder avant de relancer."] : []),
+  suite != null ? "- Temps écoulé : reprise au numéro " + suite + " (passage suivant lancé tout seul)" : arret ? "- Arrêté." : "- Terminé pour cette liste.",
 ];
 if (stats.illisibles.length) res.push("", "Pages illisibles : " + stats.illisibles.join(", "));
 if (stats.erreurs.length) res.push("", "### Erreurs", ...stats.erreurs.slice(0, 100).map((e) => "- " + e));
@@ -206,4 +223,5 @@ console.log(res.join("\n"));
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, res.join("\n") + "\n");
 if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, "suite=" + (suite == null ? "" : suite) + "\n");
 writeFileSync("copie-resultat.json", JSON.stringify({ suite, stats: Object.assign({}, stats, { manquants: stats.manquants.length }) }));
-process.exit(stats.erreurs.length && !stats.copies && !VERIFIER ? 1 : 0);
+// En rouge dès qu'il y a une erreur (le passage suivant est quand même lancé, sauf arrêt d'urgence) : plus de faux « réussi ».
+process.exit(stats.erreurs.length || arret ? 1 : 0);

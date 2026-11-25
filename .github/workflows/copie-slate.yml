@@ -57,6 +57,7 @@ jobs:
       - id: copie
         run: node tools/copie-slate.mjs
         env:
+          AWS_ROLE_COPIE: arn:aws:iam::919012714656:role/kinou-robot-copie
           IDS: ${{ inputs.ids }}
           MODE: ${{ inputs.mode }}
           VERIFIER: ${{ inputs.verifier }}
@@ -64,7 +65,7 @@ jobs:
           TO: ${{ inputs.to }}
           CONC: ${{ inputs.conc }}
       - name: Passage suivant
-        if: steps.copie.outputs.suite != ''
+        if: ${{ !cancelled() && steps.copie.outputs.suite != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

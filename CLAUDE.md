@@ -40,6 +40,8 @@ Stack : HTML/CSS/JS vanilla, aucune dépendance npm. Hébergement : Netlify (dé
   le robot la trouve en listant le compartiment. Sans liste : arrêt en rouge. Jamais d'adresse de fichier dans ce dépôt ni dans les
   journaux d'Actions (publics) : seulement numéro, rôle, taille. Rien de sensible à une adresse devinable du compartiment
   (notre CloudFront le rend lisible).
+- L'accès OIDC ne dure qu'une heure : l'outil aws le renouvelle tout seul via `tools/aws-cle.mjs` (credential_process), même
+  en plein envoi. 30 échecs d'affilée = arrêt d'urgence (pas de passage suivant). Une erreur = passage en rouge.
 - Test `test-slate-fichier.yml` (24/11) : lit 20 Mo d'un fichier Slate déjà public depuis GitHub (vérifie que les fichiers passent).
 - Accès Amazon **sans clé** (OIDC) : rôle `arn:aws:iam::919012714656:role/kinou-robot-copie`, réservé à `Kinou-DoP/admin` branche
   `main` ; droits : déposer / lire / lister dans `kinou-videos`, pas d'effacement.
