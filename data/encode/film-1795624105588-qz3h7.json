@@ -4,9 +4,14 @@
       "id": "mwwc8b5ga5zmay",
       "kind": "film",
       "key": "depot/upgxpjnrrmxmafuz8fd6/Benedicta_MASTER_LucieBourdeu_HIERSOIR.mov",
-      "web": true
+      "web": true,
+      "progress": {
+        "step": "lecture",
+        "pct": 0
+      }
     }
   ],
   "at": "2026-11-25T16:28:25.588Z",
-  "by": "Gurvan"
+  "by": "Gurvan",
+  "startedAt": "2026-11-25T19:09:21.452Z"
 }
