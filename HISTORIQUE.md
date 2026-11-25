@@ -385,3 +385,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 : spotlight / fiction : films ajoutés en haut de la sélection ; film ajouté à une page complété par le robot (stills, vidéos, infos des autres pages : SDM de Julien Lascar rattrapé) ; robot fill-home débranché de Slate (Gus).
 - 26/11 : « Modifier la sélection » : films et onglets glissés comme dans les bandes du video club (effet ressort), film déposé sur un autre onglet ; extrait : une seule frise sur tout le film (plus d'effet zoom / dézoom) (Gus).
 - 26/11 : « Modifier la sélection » : onglets affichés correctement (pastilles) ; en les glissant, plus d'image qui suit la souris (seulement pour les films) (Gus).
+- 26/11 : aperçu d'un film (video club, « Modifier la sélection ») : ‹ › pour le film d'avant / d'après de la recherche, « + » pour l'ajouter à la bande / l'onglet ; pastille « Enregistrement » au-dessus de « Publier » (Gus).

@@ -1105,3 +1105,9 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .chip.seltab.dragged { opacity: .35; border-style: dashed; }
 .chip.seltab { border: 1px solid rgba(255,252,235,.22); border-radius: 18px; }
 .chip.seltab.on { border-color: var(--kinou-fg); }
+.bpnav { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 14px; }
+.bpnav > .btn.ghost:first-child, .bpnav > .btn.ghost:last-child { font-size: 22px; padding: 2px 16px; }
+.bpnav .bpcount { opacity: .45; font-size: 12px; order: 3; }
+.bpnav > :last-child { order: 4; }
+.bpmeta { opacity: .6; }
+body:has(#bar:not([hidden])) #saving { bottom: calc(env(safe-area-inset-bottom, 0px) + 92px); } /* au-dessus de « Publier » (Gus 26/11) */

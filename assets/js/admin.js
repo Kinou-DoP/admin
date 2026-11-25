@@ -1310,6 +1310,12 @@
       });
       sugBox.hidden = !hits.length;
     }
+    var shownR = [];
+    function addFilm(f) {
+      var t = tabs[cur]; if (!t || t.ids.indexOf(f.slate) > -1) return;
+      if (!byId[f.slate] && !extra[f.slate]) extra[f.slate] = f;
+      if (cfg && cfg.top) t.ids.unshift(f.slate); else t.ids.push(f.slate); ch(); drawAll();
+    }
     function drawRight() {
       results.textContent = ""; chipsBox.textContent = ""; var t = tabs[cur];
       chips.forEach(function (c, i) { chipsBox.appendChild(el("button", { type: "button", class: "bchip", title: "Retirer ce filtre", on: { click: function () { chips.splice(i, 1); drawRight(); } } }, [el("span", { class: "bst t-" + c.type, text: BIB_T[c.type] }), c.value + " ×"])); });
@@ -1320,15 +1326,14 @@
       var list = lib.films.filter(function (f) { return f.slate && ((withPage && onPage[f.slate]) || (chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
       if (withPage) Object.keys(onPage).forEach(function (id) { id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
       results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" + (list.length > 150 ? " · 150 premiers affichés" : "") }));
-      list.slice(0, 150).forEach(function (f) {
+      shownR = list.slice(0, 150);
+      shownR.forEach(function (f) {
         var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
         th.addEventListener("click", function () { selPreview(f); });
         results.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
           el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") })]),
           el("button", { type: "button", class: "btn" + (inTab ? " ghost" : ""), text: inTab ? "✓" : "+", title: inTab ? "Déjà dans l'onglet" : cfg && cfg.top ? "Ajouter en haut" : "Ajouter à la fin de l'onglet", on: { click: function () {
-            if (!t || inTab) return;
-            if (!byId[f.slate] && !extra[f.slate]) extra[f.slate] = f;
-            if (cfg && cfg.top) t.ids.unshift(f.slate); else t.ids.push(f.slate); ch(); drawAll();
+            if (!t || inTab) return; addFilm(f);
           } } })]));
       });
       if (!list.length) results.appendChild(el("p", { class: "empty", text: "Aucun film trouvé" + (chips.length ? " avec ces filtres (× pour en retirer)." : ".") }));
@@ -1336,15 +1341,9 @@
     function drawAll() { drawTabs(); drawLeft(); drawRight(); }
     search.addEventListener("input", function () { q = search.value; drawRight(); drawSug(); });
     search.addEventListener("blur", function () { setTimeout(function () { sugBox.hidden = true; }, 150); });
-    function selPreview(f) { // aperçu : film complet (ou extrait), Échap / clic à côté pour fermer
-      var src = f.full || f.video; if (!src) return;
-      var o = el("div", { class: "bmodal selprev" }), v = el("video", { controls: true, autoplay: true, playsinline: true });
-      v.src = src; o.appendChild(el("div", { class: "selprevbox" }, [v, el("h3", { text: f.title || "" }),
-        el("p", { text: [f.dir ? "Directed by " + f.dir : "", f.prod, (f.dops || []).length ? "DoP " + f.dops.join(" & ") : ""].filter(Boolean).join(" · ") }),
-        el("p", { class: "selprevm", text: [f.client ? "Client : " + f.client : "", (f.types || []).join(", "), (f.cats || []).join(", "), f.at ? String(f.at).slice(0, 10) : "", f.slate ? "Slate " + f.slate : ""].filter(Boolean).join(" · ") })]));
-      function shut(e) { if (e && e.type === "keydown" && e.key !== "Escape") return; if (e && e.stopPropagation) e.stopPropagation(); v.pause(); o.remove(); document.removeEventListener("keydown", shut, true); }
-      o.addEventListener("click", function (e) { if (e.target === o) shut(); }); document.addEventListener("keydown", shut, true);
-      document.body.appendChild(o);
+    function selPreview(f) { // aperçu avec ‹ › dans la liste de droite et « + » = ajouter à l'onglet ouvert (Gus 26/11)
+      var l = shownR.indexOf(f) > -1 ? shownR : [f];
+      navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à « " + (tabs[cur] ? tabs[cur].name : "") + " »", inLabel: "Dans l'onglet", has: function (x) { var t = tabs[cur]; return t && t.ids.indexOf(x.slate) > -1; }, add: function (x) { addFilm(x); } });
     }
     var ok = el("button", { type: "button", class: "btn primary", text: "Valider et publier" });
     ok.addEventListener("click", function () {
@@ -4661,6 +4660,38 @@
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
   var bibCache = null, bibKey = null, edUndo = new WeakMap();
   document.addEventListener("keydown", function (e) { if (bibKey) bibKey(e); });
+  // Aperçu d'un film avec navigation (Gus 26/11) : ‹ › = film d'avant / d'après dans la liste affichée (flèches du clavier aussi),
+  // « + » au milieu = ajouter à la bande active (video club) ou à l'onglet ouvert (« Modifier la sélection »). Échap / clic à côté.
+  // o = { add(f), has(f), addLabel }
+  function navPlayer(list, i, o) {
+    list = list && list.length ? list : []; i = Math.max(0, Math.min(list.length - 1, i || 0));
+    var ov = el("div", { class: "bmodal bplayer" }), v = null;
+    function close() { if (v) v.pause(); ov.classList.add("out"); setTimeout(function () { ov.remove(); }, 160); document.removeEventListener("keydown", key, true); }
+    function key(e) {
+      if (e.key === "Escape") { e.stopPropagation(); close(); return; }
+      if ((e.key === "ArrowLeft" || e.key === "ArrowRight") && !(e.target && e.target.matches && e.target.matches("input, textarea"))) { e.preventDefault(); e.stopPropagation(); go(e.key === "ArrowLeft" ? -1 : 1); }
+    }
+    function go(d) { var j = i + d; if (j < 0 || j >= list.length) return; i = j; draw(); }
+    function draw() {
+      if (v) v.pause(); ov.textContent = "";
+      var f = list[i], src = f.full || f.video; v = src ? el("video", { controls: true, autoplay: true, playsinline: true, poster: f.img || null }) : null; if (v) v.src = src;
+      var dops = f.dops || [], ro = f.roles || {}, main = dops.filter(function (d) { return !ro[d]; }), oth = dops.filter(function (d) { return ro[d]; });
+      var cred = [f.dir ? "Directed by " + f.dir : "", f.prod, main.length ? "DoP " + main.join(" & ") : ""].concat(oth.map(function (d) { return ro[d] + " " + d; })).filter(Boolean);
+      var meta = [f.client ? "Client : " + f.client : "", (f.types || []).join(", "), f.at ? String(f.at).slice(0, 10) : ""].filter(Boolean).join(" · ");
+      var gal = (f.images || []).length && !src ? el("div", { class: "bimggrid" }, f.images.map(function (u) { return el("img", { src: u, loading: "lazy" }); })) : null;
+      var has = o && o.has && o.has(f), addB = o && o.add ? el("button", { type: "button", class: "btn" + (has ? " ghost" : " primary"), text: has ? "✓ " + (o.inLabel || "Déjà ajouté") : "+ " + (o.addLabel || "Ajouter"), disabled: has ? true : null, on: { click: function () { o.add(f, addB); draw(); } } }) : null;
+      var nav = el("div", { class: "bpnav" }, [
+        el("button", { type: "button", class: "btn ghost", text: "‹", title: "Film d'avant (←)", disabled: i ? null : true, on: { click: function () { go(-1); } } }),
+        addB || el("span"), el("span", { class: "bpcount", text: (i + 1) + " / " + list.length }),
+        el("button", { type: "button", class: "btn ghost", text: "›", title: "Film d'après (→)", disabled: i < list.length - 1 ? null : true, on: { click: function () { go(1); } } })]);
+      ov.appendChild(el("div", { class: "bpwrap" }, [el("div", { class: "bpbox" }, [el("div", { class: "bphead" }, [el("strong", { text: f.title || "" }),
+        el("button", { type: "button", class: "bx", text: "×", title: "Fermer", on: { click: close } })]), v || gal || el("div", { class: "bthumb", style: 'background-image:url("' + (f.img || "") + '")' }),
+        el("p", { class: "hint", text: cred.join(" · ") }), meta ? el("p", { class: "hint bpmeta", text: meta }) : null, nav])]));
+    }
+    document.addEventListener("keydown", key, true);
+    ov.addEventListener("click", function (e) { if (e.target === ov || e.target.classList.contains("bpwrap")) close(); });
+    draw(); document.body.appendChild(ov);
+  }
   function bnrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ł/g, "l").replace(/\s+/g, " ").trim(); }
   function bibLoad(force) {
     if (bibCache && !force) return Promise.resolve(bibCache);
@@ -4968,20 +4999,9 @@
       return r;
     }
     // Lecteur simple de la bibliothèque : le film complet avec le son ; clic à côté, croix ou Échap = fermer.
-    function bibPlay(f) {
-      var src = f.full || f.video, ov = el("div", { class: "bmodal bplayer" });
-      var v = src ? el("video", { controls: true, autoplay: true, playsinline: true, poster: f.img || null }) : null; if (v) v.src = src;
-      var ro = f.roles || {}, main = f.dops.filter(function (d) { return !ro[d]; }), oth = f.dops.filter(function (d) { return ro[d]; });
-      var cred = [f.dir ? "Directed by " + f.dir : "", f.prod, main.length ? "DoP " + main.join(" & ") : ""].concat(oth.map(function (d) { return ro[d] + " " + d; })).filter(Boolean);
-      function close() { if (v) v.pause(); ov.classList.add("out"); setTimeout(function () { ov.remove(); }, 160); document.removeEventListener("keydown", esc, true); }
-      function esc(e) { if (e.key === "Escape") { e.stopPropagation(); close(); } }
-      document.addEventListener("keydown", esc, true);
-      ov.addEventListener("click", function (e) { if (e.target === ov || e.target.classList.contains("bpwrap")) close(); });
-      var gal = (f.images || []).length && !src ? el("div", { class: "bimggrid" }, f.images.map(function (u) { return el("img", { src: u, loading: "lazy" }); })) : null;
-      ov.appendChild(el("div", { class: "bpwrap" }, [el("div", { class: "bpbox" }, [el("div", { class: "bphead" }, [el("strong", { text: f.title || "" }),
-        el("button", { type: "button", class: "bx", text: "×", title: "Fermer", on: { click: close } })]), v || gal || el("div", { class: "bthumb", style: 'background-image:url("' + (f.img || "") + '")' }),
-        el("p", { class: "hint", text: cred.join(" · ") })])]));
-      document.body.appendChild(ov);
+    function bibPlay(f) { // aperçu avec ‹ › dans la liste affichée et « + » = ajouter à la bande (Gus 26/11)
+      var l = st.shown && st.shown.indexOf(f) > -1 ? st.shown : [f];
+      navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à la bande", inLabel: "Dans la bande", has: inBand, add: function (x) { if (!inBand(x)) addKeys([x.key], band.items.length); } });
     }
     // Infos d'un film de la bibliothèque : même fenêtre que les retouches d'une bande ; enregistrées dans data/bibli/edits.json
     // (seulement ce qui diffère des pages), reprises par les films ajoutés ensuite aux bandes. Les pages du site ne changent pas.

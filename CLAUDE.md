@@ -51,7 +51,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   partage d'un film, prix) se programme avec `soon(clé, fn, ms)` (jamais un `setTimeout` à part) ; changer de page dans l'admin le
   lance tout de suite (`flushSaves`) et il continue en fond ; `gh` (écritures), `commit`, `nPut`, `nEdit` sont comptés (`track`).
   Tant qu'il reste un enregistrement en cours ou prévu, **fermer / recharger l'onglet demande confirmation** (`beforeunload`).
-  Pastille en bas à gauche (`#saving`) : « Enregistrement… », « Enregistré », « Pas enregistré : … » (clic = fermer). Les notes
+  Pastille en bas à gauche (`#saving`, au-dessus de la barre « Publier » quand elle est là) : « Enregistrement… », « Enregistré », « Pas enregistré : … » (clic = fermer). Les notes
   d'une fiche rouverte attendent la fin de leur enregistrement avant d'être relues (`notesPending`).
 
 ## Pages (menu à gauche : website ▸, video club, sorties fiction, festivals ▸, récupération, historique)
@@ -88,7 +88,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   (avec les mots de passe) dans le dépôt **notes** `bandes/<code>.json` + `bandes/index.json` (`nGet` / `nPut` / `nEdit`). « Bandes
   existantes » (revenir à l'onglet de la bande = nouvelle bande vide) : clic sur la ligne = ouvrir (seulement le nom de la bande), voir ↗, supprimer ×. **Annuler / Rétablir** (boutons en bas
   ou Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z) : instantanés de la bande (`undo*`), remis à zéro à chaque bande ouverte ou nouvelle. Anciennes bandes en clair (`data/bandes/`, 19/11) : listées, converties au premier changement.
-  **Dans la liste** : clic sur l'image = lecteur (`bibPlay`, film complet, Échap / clic à côté) ; clic ailleurs sur la ligne = **infos du
+  **Dans la liste** : clic sur l'image = lecteur (`bibPlay` → `navPlayer` : film complet, ‹ › / flèches = film d'avant / d'après dans la liste affichée, « + Ajouter à la bande » au milieu, Échap / clic à côté ; même lecteur dans « Modifier la sélection », « + » = onglet ouvert) ; clic ailleurs sur la ligne = **infos du
   film** (même fenêtre que les retouches, `editItem(-1, lib)`), enregistrées dans `data/bibli/edits.json` (seulement ce qui diffère des
   pages, `bibApply`, `_orig`), reprises par les films ajoutés ensuite aux bandes, jamais sur le site ; ligne marquée ✎. **Crédits avec
   rôle** : `dops` + `roles { nom: rôle }` (rôle vide = cinematographer, crédité en premier ; ex. « Camera operator »), dans les infos
