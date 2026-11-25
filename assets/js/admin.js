@@ -4272,9 +4272,14 @@
       var tn = ((r[0] && r[0].trailers) || []).filter(function (t) { return !t.seen; });
       if (tn.length) lines.push(el("a", { href: "#/sorties", class: "hn hn2" }, [el("span", { class: "hnk", text: tn.length > 1 ? tn.length + " nouvelles bandes-annonces" : "Nouvelle bande-annonce" }),
         tn.slice(0, 4).map(function (t) { return t.title + (t.name ? " : " + t.name : ""); }).join("  —  ") + (tn.length > 4 ? "  …" : "")]));
-      var pz = ((r[2] && r[2].found) || []).filter(function (x) { return x.kind === "prize" && x.status !== "no" && x.foundAt && sortIso(new Date(x.foundAt)) === td; });
-      if (pz.length) lines.push(el("a", { href: "#/selections", class: "hn hn3" }, [el("span", { class: "hnk", text: pz.length > 1 ? pz.length + " prix trouvés aujourd'hui" : "Prix trouvé aujourd'hui" }),
-        pz.slice(0, 4).map(function (x) { return x.title + " : " + (x.prize || "prix") + (x.festName ? ", " + x.festName : "") + (x.edition ? " " + x.edition : "") + ((x.dops || []).length ? " (" + x.dops.map(rcBase).join(", ") + ")" : ""); }).join("  —  ") + (pz.length > 4 ? "  …" : "")]));
+      // Prix trouvés ces 3 derniers jours (Gus 25/11 : les robots passent souvent le soir, « prix du jour » ne se voyait plus le
+      // lendemain matin) ; les plus récents d'abord, « à vérifier » tant qu'ils ne sont pas confirmés.
+      var d3 = sortIso(new Date(t.getFullYear(), t.getMonth(), t.getDate() - 2));
+      var pz = ((r[2] && r[2].found) || []).filter(function (x) { return x.kind === "prize" && x.status !== "no" && x.foundAt && sortIso(new Date(x.foundAt)) >= d3; })
+        .sort(function (x, y) { return String(y.foundAt).localeCompare(String(x.foundAt)); });
+      var allToday = pz.every(function (x) { return sortIso(new Date(x.foundAt)) === td; });
+      if (pz.length) lines.push(el("a", { href: "#/selections", class: "hn hn3" }, [el("span", { class: "hnk", text: (pz.length > 1 ? pz.length + " prix trouvés" : "Prix trouvé") + (allToday ? " aujourd'hui" : " ces derniers jours") }),
+        pz.slice(0, 4).map(function (x) { return x.title + " : " + (x.prize || "prix") + (x.festName ? ", " + x.festName : "") + (x.edition ? " " + x.edition : "") + ((x.dops || []).length ? " (" + x.dops.map(rcBase).join(", ") + ")" : "") + (x.status === "new" ? " · à vérifier" : ""); }).join("  —  ") + (pz.length > 4 ? "  …" : "")]));
       lines.forEach(function (l) { box.appendChild(l); });
     });
   }

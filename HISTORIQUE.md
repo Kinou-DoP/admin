@@ -373,3 +373,5 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 23/11/2026 : enregistrements en arrière-plan dans toute l'admin (Gus : une note tapée puis page quittée trop vite n'était pas enregistrée). Changer de page lance tout de suite les enregistrements prévus, qui continuent en fond ; fermer ou recharger l'onglet pendant un enregistrement demande confirmation ; pastille « Enregistrement… / Enregistré / Pas enregistré » en bas à gauche (`soon`, `track`, `flushSaves`, `#saving`).
 - 23/11 (Gus) : « Remplacer la vidéo » dans la fenêtre d'un film (par un lien Slate ; depuis l'ordinateur quand Amazon sera branché).
 - 24/11 (Gus) : réglage de mise en page d'une bande « Grille » / « Plein écran en haut » (Full Bleed de Slate).
+- 25/11 : accueil de l'admin : **prix trouvés ces 3 derniers jours** (au lieu du jour même : les robots passent souvent le soir, Gus ne les
+  voyait plus le lendemain matin), plus récents d'abord, « à vérifier » tant qu'ils ne sont pas confirmés.

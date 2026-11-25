@@ -55,7 +55,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
 
 ## Pages (menu à gauche : website ▸, bibliothèque, sorties fiction, festivals ▸, récupération, historique)
 - **Accueil de l'admin** (`#/`, `showHello`) : « Hello la Dream Team ! » + petit mot par ordre d'importance (`helloNews` : sorties de
-  la semaine, dates de fiction trouvées / bandes-annonces, prix du jour).
+  la semaine, dates de fiction trouvées / bandes-annonces, prix trouvés ces 3 derniers jours, « à vérifier » s'ils ne sont pas confirmés).
 - **Website** : **cinematographers** (`#/dops`, liste + tableau de bord d'avancement `data/progress.json`), **fiche d'un chef op**
   (`#/dp/<slug>`, `showDP`) : bundle Slate (« Relire le bundle » ; un snippet absent sur Slate mais présent dans la fiche est gardé),
   films par onglet (titre, crédits, masquer, recadrage, cadrage téléphone, liens Slate de stills / vidéos sous le film avec colonnes,
