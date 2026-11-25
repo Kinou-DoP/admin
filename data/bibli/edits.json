@@ -123,6 +123,15 @@
         "path": "data/encode/film-1795624105588-qz3h7.json",
         "id": "mwwc8b5ga5zmay"
       }
+    },
+    "s9869": {
+      "img": "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/b/mwwccnzuu7qt.webp",
+      "thumbT": 88.398,
+      "hist": {
+        "img": [
+          "https://images.slatecdn.net/2q5Y_pqRRNSmVX1v99t__m6gCKBSZDDOHtxB13Ivxhg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YzViNGVhYS0zZGM3/LTQ5ZWYtODYzNi00/MzZlNTAyZTVmODgv/MTc0OTU2OTkzMjIz/OC5qcGc?v=1&format=webp"
+        ]
+      }
     }
   }
 }
