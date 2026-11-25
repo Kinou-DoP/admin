@@ -14,74 +14,147 @@
     "3063": {
       "zoom": 1.43,
       "zoomThumb": true,
-      "title": "Orange - Money"
+      "title": "Orange - Money",
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3093": {
+      "types": [
+        "Commercial"
+      ]
+    },
+    "3257": {
+      "types": [
+        "Commercial"
+      ]
     },
     "4199": {
       "title": "Oppo - Night",
-      "zoom": 1.48
+      "zoom": 1.48,
+      "types": [
+        "Commercial"
+      ]
     },
     "4430": {
       "title": "Oppo - Warriors",
-      "zoom": 1.45
+      "zoom": 1.45,
+      "types": [
+        "Commercial"
+      ]
     },
     "5763": {
       "title": "Santé France - J'en Parle à",
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Commercial"
+      ]
     },
     "6088": {
-      "zoom": 1.27
+      "zoom": 1.27,
+      "types": [
+        "Commercial"
+      ]
     },
     "6126": {
-      "zoom": 1.14
+      "zoom": 1.14,
+      "types": [
+        "Commercial"
+      ]
     },
     "6309": {
-      "zoom": 1.48
+      "zoom": 1.48,
+      "types": [
+        "Commercial"
+      ]
     },
     "6884": {
-      "title": "Prime Video - Ligue 1"
+      "title": "Prime Video - Ligue 1",
+      "types": [
+        "Symphonie",
+        "Orchestra"
+      ]
     },
     "7443": {
       "zoom": 1.36,
       "zoomPos": "41.3% 0%"
     },
     "8078": {
-      "zoom": 1.35
+      "zoom": 1.35,
+      "types": [
+        "Music Video"
+      ]
     },
     "8876": {
-      "zoom": 1.09
+      "zoom": 1.09,
+      "types": [
+        "Music Video"
+      ]
     },
     "9291": {
       "zoom": 1.37,
-      "title": "Par Amour"
+      "title": "Par Amour",
+      "types": [
+        "Feature Film",
+        "Trailer"
+      ]
     },
     "9750": {
       "zoom": 1.36,
-      "title": "Carjackers"
+      "title": "Carjackers",
+      "types": [
+        "Feature Film"
+      ]
     },
     "9976": {
       "zoom": 1.22,
-      "title": "Feu! Chatterton - Allons Voir"
+      "title": "Feu! Chatterton - Allons Voir",
+      "types": [
+        "Music Video"
+      ]
     },
     "10221": {
-      "zoom": 1.27
+      "zoom": 1.27,
+      "types": [
+        "Commercial"
+      ]
     },
     "10303": {
       "zoom": 1.06,
-      "title": "N121 Bus de Nuit"
+      "title": "N121 Bus de Nuit",
+      "types": [
+        "Feature Film",
+        "Trailer",
+        "narrative",
+        "Feature Film trailer"
+      ]
     },
     "10389": {
-      "title": "Pegasus - Bar"
+      "title": "Pegasus - Bar",
+      "types": [
+        "Commercial"
+      ]
     },
     "10710": {
       "zoom": 1.39,
-      "title": "Drone"
+      "title": "Drone",
+      "types": [
+        "Feature Film",
+        "narrative"
+      ]
     },
     "11486": {
       "zoom": 1.35,
-      "title": "The blood island"
+      "title": "The blood island",
+      "types": [
+        "Commercial"
+      ]
     },
     "11549": {
-      "title": "Pegasus - Tennis"
+      "title": "Pegasus - Tennis",
+      "types": [
+        "Commercial"
+      ]
     }
   },
   "about": {
@@ -105,7 +178,7 @@
   "categories": [
     "FEATURED",
     "COMMERCIAL",
-    "FASHION / BEAUTY / LUXE"
+    "LUXE / FASHION"
   ],
   "clips": [
     {
@@ -263,7 +336,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/67e68ad9-4207-4e8b-a189-cfe4f333cb73-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/9tGyMsg4bR-noYjbztHfdj133vIHftNhUBEEczgUIsc/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NTYwLTYzOTZmOGFi/MTdiNzgyLjQxOTE1/NTg1LWMzZmZjNzFh/YWM3OTJlM2UyNjA0/ZDc2OTc3MDQxZjMw/LmpwZw.webp",
       "slate": 6560,
-      "cat": "FASHION / BEAUTY / LUXE"
+      "cat": "LUXE / FASHION"
     },
     {
       "title": "Kenzo",
@@ -271,7 +344,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6126/d3baa56c-12a5-11ef-bfce-022353abf6f5.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/27dd71b7-bd70-4545-9c26-2c6478f80e67-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/YmnfPQWRPfW7VUVfzQI_UvKNYbtAVXthXO2TdJZEayw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/OWU0MGM5ZS0zYmNi/LTQxMDctODc1OS03/OWJkZmE4NjIxYjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjgtYS0xMi41NS4x/Ny5wbmc?v=1&format=webp",
-      "cat": "FASHION / BEAUTY / LUXE",
+      "cat": "LUXE / FASHION",
       "slate": 6126,
       "featured": true,
       "featuredOrder": 5
@@ -282,7 +355,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6088/747df8d6-12a5-11ef-bfce-022353abf6f5.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7bd04cdd-c47c-4b09-bf4f-a3eb411cabe3-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/60O7zE3pZoPp_SjFcbTAnH2nxEuhY2gpgTWGk1I9wgI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YTdjYzc1NS00YmZh/LTRmMGUtODFkMi01/ZDJmNzg2ZTE5NTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjItYS0xNi4wNi4w/NC5wbmc?v=1&format=webp",
-      "cat": "FASHION / BEAUTY / LUXE",
+      "cat": "LUXE / FASHION",
       "slate": 6088,
       "featured": true,
       "featuredOrder": 7
@@ -294,7 +367,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/859a6db0-8a14-4172-add2-b654d7279ab1-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/gfP7jJBzzSwFe5r4NfefnFN5V7uzWIFt9D-z4gZgc28/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YjkyMmEzNi0zYjVk/LTRiOTQtOTYyOC1h/Y2JkNzcwN2IyYTcv/ZGlvci0xMS5qcGc.webp",
       "slate": 5452,
-      "cat": "FASHION / BEAUTY / LUXE"
+      "cat": "LUXE / FASHION"
     },
     {
       "title": "Cruel Pancake Campaign",
@@ -302,7 +375,7 @@
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8078/3987964b-bfbc-11f0-9ce3-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f11f91e4-cfe4-4223-8f49-6910cd12d1bd-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/IBzB8qIzkddjxWUPNHqBkCAyU2vO9nJH-Io1bIFT5g8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MmU3NWMyNy0zZDM3/LTRkMWMtOWZhZS02/NGMwOTI4NDQxMzQv/Y3BrLXN0aWxsczEu/anBn?v=1&format=webp",
-      "cat": "FASHION / BEAUTY / LUXE",
+      "cat": "LUXE / FASHION",
       "slate": 8078
     },
     {
@@ -310,7 +383,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/821c35ca-42bd-4dcd-b023-8741fa1ca65c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/8Z_Y5y5hKFskuSqQsYjXzlReyJddgVo2yIIuqznCP4Y/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ODgyLTYwNzQxZGJi/YzlmOTU2LjM0NDQz/OTA5LWE4MDAxNDRj/YzMzZjkyZjE5YjU2/M2Q5ZTJlNTIyZTgw/LmpwZw.webp",
       "slate": 4882,
-      "cat": "FASHION / BEAUTY / LUXE"
+      "cat": "LUXE / FASHION"
     },
     {
       "title": "Vogue",
@@ -318,7 +391,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1556536008-vogue-madison-60s-st-avec-generique-h264.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/WDaUvtKhhOGxFc_XnglyPe4q1Cv0WYqhiwBGU7HfBFQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MTAyNzMxODMx/L3ZvZ3VlLmpwZw.webp",
       "slate": 3340,
-      "cat": "FASHION / BEAUTY / LUXE"
+      "cat": "LUXE / FASHION"
     },
     {
       "title": "Dior - Natalie Portman",
@@ -327,7 +400,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a7d6b82f-f90f-4fb7-b1f5-abc196d1a366-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Sw2i1hJa4gQzVvCDdu0ZiO6lhZCXvR-aFI5y6QAe3Xo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NWVjMjIyYy1mYjFk/LTQ3NzctYTNiOC04/NzE1MjExM2U4NDAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDYt/MjYtYS0xNy40OC4y/Ny5wbmc.webp",
       "slate": 7443,
-      "cat": "FASHION / BEAUTY / LUXE"
+      "cat": "LUXE / FASHION"
     },
     {
       "title": "supermarket paris - ss18",
@@ -335,7 +408,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8c3521be-494f-4574-ad8a-8cf4b11c9dc7-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/CrKFMhEVA9O4UBM8i5CAUBik259JUKyLKjzhTsVnGJc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/NWJjMjM0OS02Njcx/LTRlMGMtOGZmOC1l/YTlhMjgyZmE0MmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNC41OS4y/OS5wbmc.webp",
       "slate": 496,
-      "cat": "FASHION / BEAUTY / LUXE"
+      "cat": "LUXE / FASHION"
     },
     {
       "title": "Prequel - SCH",
