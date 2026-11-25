@@ -1,5 +1,5 @@
 {
-  "slug": "ludovic-zuili-cinematographer",
+  "slug": "ludovic-zuili",
   "name": "Ludovic Zuili",
   "hue": 148,
   "bundle": "https://kinou.slateapp.com/bundles/b5790752-e8be-11f1-952e-02ffedfede17",
@@ -100,7 +100,8 @@
   },
   "categories": [
     "FEATURED",
-    "COMMERCIAL"
+    "COMMERCIAL",
+    "FASHION / BEAUTY / LUXE"
   ],
   "clips": [
     {
@@ -252,6 +253,71 @@
       "slate": 520
     },
     {
+      "title": "Cruel Pancake Campaign",
+      "sub": "Ludovic Zuili, Hugo Philip",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8078/3987964b-bfbc-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f11f91e4-cfe4-4223-8f49-6910cd12d1bd-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/IBzB8qIzkddjxWUPNHqBkCAyU2vO9nJH-Io1bIFT5g8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MmU3NWMyNy0zZDM3/LTRkMWMtOWZhZS02/NGMwOTI4NDQxMzQv/Y3BrLXN0aWxsczEu/anBn?v=1&format=webp",
+      "cat": "FASHION / BEAUTY / LUXE",
+      "slate": 8078
+    },
+    {
+      "title": "Dior - Natalie Portman",
+      "sub": "Melinda Triana\nMercenary Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7443/812f2400-bfbc-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a7d6b82f-f90f-4fb7-b1f5-abc196d1a366-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Sw2i1hJa4gQzVvCDdu0ZiO6lhZCXvR-aFI5y6QAe3Xo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NWVjMjIyYy1mYjFk/LTQ3NzctYTNiOC04/NzE1MjExM2U4NDAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDYt/MjYtYS0xNy40OC4y/Ny5wbmc.webp",
+      "slate": 7443,
+      "cat": "FASHION / BEAUTY / LUXE"
+    },
+    {
+      "title": "Gris Dior - Ana Girardot",
+      "sub": "Ana Girardot\nChapeaux Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6560/ad446efb-12a5-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/67e68ad9-4207-4e8b-a189-cfe4f333cb73-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/9tGyMsg4bR-noYjbztHfdj133vIHftNhUBEEczgUIsc/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NTYwLTYzOTZmOGFi/MTdiNzgyLjQxOTE1/NTg1LWMzZmZjNzFh/YWM3OTJlM2UyNjA0/ZDc2OTc3MDQxZjMw/LmpwZw.webp",
+      "slate": 6560,
+      "cat": "FASHION / BEAUTY / LUXE"
+    },
+    {
+      "title": "Kenzo",
+      "sub": "Clément Bauvais & Arthur de Kersauson\nMercenary Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6126/d3baa56c-12a5-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/27dd71b7-bd70-4545-9c26-2c6478f80e67-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/YmnfPQWRPfW7VUVfzQI_UvKNYbtAVXthXO2TdJZEayw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/OWU0MGM5ZS0zYmNi/LTQxMDctODc1OS03/OWJkZmE4NjIxYjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjgtYS0xMi41NS4x/Ny5wbmc?v=1&format=webp",
+      "cat": "FASHION / BEAUTY / LUXE",
+      "slate": 6126,
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "Lancôme",
+      "sub": "Audrey Mascina\nvelvet agency",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6088/747df8d6-12a5-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7bd04cdd-c47c-4b09-bf4f-a3eb411cabe3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/60O7zE3pZoPp_SjFcbTAnH2nxEuhY2gpgTWGk1I9wgI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YTdjYzc1NS00YmZh/LTRmMGUtODFkMi01/ZDJmNzg2ZTE5NTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjItYS0xNi4wNi4w/NC5wbmc?v=1&format=webp",
+      "cat": "FASHION / BEAUTY / LUXE",
+      "slate": 6088,
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "Dior - The Melody Of Scents",
+      "sub": "Clément Beauvais\nMercenary",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5452/2c4a88df-175a-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/859a6db0-8a14-4172-add2-b654d7279ab1-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gfP7jJBzzSwFe5r4NfefnFN5V7uzWIFt9D-z4gZgc28/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/YjkyMmEzNi0zYjVk/LTRiOTQtOTYyOC1h/Y2JkNzcwN2IyYTcv/ZGlvci0xMS5qcGc.webp",
+      "slate": 5452,
+      "cat": "FASHION / BEAUTY / LUXE"
+    },
+    {
+      "title": "Lacoste - Five Players Chains",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/821c35ca-42bd-4dcd-b023-8741fa1ca65c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8Z_Y5y5hKFskuSqQsYjXzlReyJddgVo2yIIuqznCP4Y/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ODgyLTYwNzQxZGJi/YzlmOTU2LjM0NDQz/OTA5LWE4MDAxNDRj/YzMzZjkyZjE5YjU2/M2Q5ZTJlNTIyZTgw/LmpwZw.webp",
+      "slate": 4882,
+      "cat": "FASHION / BEAUTY / LUXE"
+    },
+    {
       "title": "Prequel - SCH",
       "sub": "Jean-Charles Charavin\nIncendie Films",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8876/2c13979f-52ae-11f0-bfce-022353abf6f5.mp4",
@@ -285,17 +351,6 @@
       "featuredOrder": 4
     },
     {
-      "title": "Kenzo",
-      "sub": "Clément Bauvais & Arthur de Kersauson\nMercenary Production",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6126/d3baa56c-12a5-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/27dd71b7-bd70-4545-9c26-2c6478f80e67-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/YmnfPQWRPfW7VUVfzQI_UvKNYbtAVXthXO2TdJZEayw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/OWU0MGM5ZS0zYmNi/LTQxMDctODc1OS03/OWJkZmE4NjIxYjgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjgtYS0xMi41NS4x/Ny5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 6126,
-      "featured": true,
-      "featuredOrder": 5
-    },
-    {
       "title": "N121 Bus de Nuit | Trailer",
       "sub": "Morade Aissaoui\nRipley Films",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10303/228a3f51-caec-11f0-9ce3-0215583debcb.mp4",
@@ -305,17 +360,6 @@
       "slate": 10303,
       "featured": true,
       "featuredOrder": 6
-    },
-    {
-      "title": "Lancôme",
-      "sub": "Audrey Mascina\nvelvet agency",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6088/747df8d6-12a5-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7bd04cdd-c47c-4b09-bf4f-a3eb411cabe3-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/60O7zE3pZoPp_SjFcbTAnH2nxEuhY2gpgTWGk1I9wgI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YTdjYzc1NS00YmZh/LTRmMGUtODFkMi01/ZDJmNzg2ZTE5NTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjItYS0xNi4wNi4w/NC5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 6088,
-      "featured": true,
-      "featuredOrder": 7
     },
     {
       "title": "Carjackers | Trailer",
