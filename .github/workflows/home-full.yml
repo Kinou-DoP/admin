@@ -22,6 +22,7 @@ jobs:
       # Films reliés (même id Slate sur une fiche, la fiction, le spotlight) : infos et stills / vidéos changés recopiés sur les autres pages.
       - run: CHANGED="$(git diff --name-only HEAD~1 HEAD || true)" node tools/link-films.mjs
       # Publication : fiches modifiées par ce commit ; lancement manuel : toutes les fiches.
+      # Lecture de Slate débranchée le 26/11 (Slate bloque GitHub) : fill-home.mjs s'arrête tout de suite sauf SLATE=1.
       - run: CHANGED="$(git diff --name-only HEAD~1 HEAD || true)" node tools/fill-home.mjs
         env:
           ALL: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}

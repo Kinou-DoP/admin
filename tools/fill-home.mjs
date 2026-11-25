@@ -8,6 +8,10 @@
 import fs from "fs";
 
 const FILE = "data/home.json", DPS = "data/dps", ORIGIN = "https://kinou.slateapp.com";
+// Débranché le 26/11 (Gus) : Slate refuse ses pages aux machines de GitHub depuis le 24/11 (403), et les pages ne dépendent plus de
+// Slate (sélections faites dans l'admin, fichiers copiés chez nous). Le robot ne lit donc plus Slate, sauf SLATE=1 (si un jour
+// Slate le laisse passer à nouveau). Les films reliés (link-films.mjs) continuent, eux, après chaque publication.
+if (process.env.SLATE !== "1") { console.log("Lecture de Slate débranchée (Slate bloque GitHub depuis le 24/11) : rien à faire."); process.exit(0); }
 
 function decode(s) {
   return s.replace(/&(#x?[0-9a-f]+|quot|amp|lt|gt|apos);/gi, function (m, e) {

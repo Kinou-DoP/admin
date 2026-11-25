@@ -94,6 +94,32 @@ for (const [id, list] of Object.entries(wants)) {
     console.log(`Film ${id} : ${from[0]} → ${f}`);
   }
 }
+// Film arrivé sur une page (Gus 26/11 : ajouté par « Modifier la sélection ») : il reprend ce qui a déjà été saisi pour ce film
+// sur les autres pages (infos, stills / vidéos dessous), seulement ce qui lui manque. NEW_ALL=1 : tous les films des fichiers
+// donnés (rattrapage ponctuel, sans risque : rien n'est écrasé).
+let arrived = 0;
+for (const f of ALL ? [] : changed) {
+  const now = cache[f] || (cache[f] = read(f)); if (!now) continue;
+  const was = process.env.NEW_ALL ? new Set() : idsOf(before(f));
+  for (const id of idsOf(now)) {
+    if (was.has(id)) continue;
+    const src = {}, info = {};
+    for (const g of files) {
+      if (g === f) continue;
+      const d = cache[g] || (cache[g] = read(g)), o = pick(((d || {}).overrides || {})[id]);
+      for (const [k, v] of Object.entries(o.info || {})) if (info[k] === undefined && v !== undefined && v !== "") info[k] = v;
+      for (const k of SHARED) if (k !== "info" && src[k] === undefined && o[k] !== undefined && !(Array.isArray(o[k]) && !o[k].length)) src[k] = o[k];
+    }
+    now.overrides = now.overrides || {};
+    const cur = now.overrides[id] || {}, o = Object.assign({}, cur); let ch = false;
+    for (const [k, v] of Object.entries(src)) if (cur[k] === undefined || (Array.isArray(cur[k]) && !cur[k].length)) { o[k] = v; ch = true; }
+    const ci = Object.assign({}, cur.info || {});
+    for (const [k, v] of Object.entries(info)) if (ci[k] === undefined || ci[k] === "") { ci[k] = v; ch = true; }
+    if (Object.keys(ci).length) o.info = ci;
+    if (ch) { now.overrides[id] = o; now._dirty = true; arrived++; console.log(`Film ${id} arrivé sur ${f} : infos des autres pages reprises.`); }
+  }
+}
+if (arrived) console.log(`Films arrivés complétés : ${arrived}.`);
 for (const [f, d] of Object.entries(cache)) {
   if (!d || !d._dirty) continue;
   delete d._dirty;
