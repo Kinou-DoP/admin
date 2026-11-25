@@ -60,7 +60,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   (`#/dp/<slug>`, `showDP`) : **« Modifier la sélection »** (`selEditor`, Gus 25/11 : la page ne lit plus Slate) = fenêtre des onglets
   (ajouter, renommer, avancer / reculer, supprimer) et des films de chaque onglet (glisser ou ↑ ↓, retirer ×, ajouter « + » depuis la
   filmothèque : recherche dans `bibLoad`, sans recherche = films de la page) ; FEATURED = ordre du showreel (`featured`,
-  `featuredOrder` ; un film de FEATURED peut n'être dans aucun autre onglet : `cat: ""`) ; « Valider et publier » réécrit `categories`
+  `featuredOrder` ; un film de FEATURED peut n'être dans aucun autre onglet : `cat: ""`) ; fiche sans films : bouton « Créer une sélection » (même fenêtre, onglet FEATURED vide) ; « Valider et publier » réécrit `categories`
   + `clips` puis publie (site à jour en ~10 s) ; les `overrides` restent attachés à chaque film. « Réimporter depuis Slate » (option,
   demande confirmation : remplace la sélection ; un snippet absent sur Slate mais présent dans la fiche est gardé),
   films par onglet (titre, crédits, masquer, recadrage, cadrage téléphone, liens Slate de stills / vidéos sous le film avec colonnes,

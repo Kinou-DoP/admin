@@ -1115,7 +1115,11 @@
   }
   function filmsSection() {
     var sec = el("section", {}, [el("h2", { text: "Films" })]);
-    if (!slate) { sec.appendChild(el("p", { class: "empty", text: "Importez le bundle Slate pour voir les films." })); return sec; }
+    if (!slate) {
+      sec.appendChild(el("p", { class: "empty", text: "Pas encore de films sur cette page." }));
+      if (pagePublish === publish) sec.appendChild(el("button", { type: "button", class: "btn primary selbtn", text: "Créer une sélection", on: { click: function () { selEditor(); } } }));
+      return sec;
+    }
     // ALL (admin seulement) : tous les films de toutes les catégories, chacun une seule fois.
     var cats = ["ALL"].concat(slate.categories);
     if (!curCat || cats.indexOf(curCat) < 0) curCat = "ALL";
@@ -1162,13 +1166,13 @@
   var selOpen = null; // { slug, tab } : sélection à ouvrir en arrivant sur la fiche (clic dans les bundles / bandes de la filmothèque)
   function selEditor(startTab) {
     if (typeof startTab !== "string") startTab = null;
-    if (!slate) slate = { name: state.name, categories: ["FEATURED"], clips: [] };
+    var base = slate || { name: state.name, categories: ["FEATURED"], clips: [] }; // fiche sans films : « Créer une sélection »
     var byId = {}, extra = {};
-    slate.clips.forEach(function (c) { if (!byId[c.slate]) byId[c.slate] = c; });
+    base.clips.forEach(function (c) { if (!byId[c.slate]) byId[c.slate] = c; });
     function uniq(l) { var seen = {}; return l.filter(function (x) { if (seen[x]) return false; seen[x] = 1; return true; }); }
-    var tabs = slate.categories.map(function (name) {
-      var l = name === "FEATURED" ? slate.clips.filter(function (c) { return c.featured; }).sort(function (a, b) { return a.featuredOrder - b.featuredOrder; })
-        : slate.clips.filter(function (c) { return c.cat === name; });
+    var tabs = base.categories.map(function (name) {
+      var l = name === "FEATURED" ? base.clips.filter(function (c) { return c.featured; }).sort(function (a, b) { return a.featuredOrder - b.featuredOrder; })
+        : base.clips.filter(function (c) { return c.cat === name; });
       return { name: name, ids: uniq(l.map(function (c) { return c.slate; })) };
     });
     var cur = Math.max(0, startTab ? tabs.map(function (t) { return t.name; }).indexOf(startTab) : 0), q = "", lib = null, changedSel = false;
@@ -1235,7 +1239,7 @@
       if (!lib) { results.appendChild(el("p", { class: "empty", text: "Chargement du video club…" })); return; }
       var words = bnrm(q).split(" ").filter(Boolean), list;
       if (!words.length) { // sans recherche : les films de cette page (pour composer FEATURED ou un nouvel onglet)
-        var page = uniq(slate.clips.map(function (c) { return c.slate; }).concat(Object.keys(extra).map(Number)));
+        var page = uniq(base.clips.map(function (c) { return c.slate; }).concat(Object.keys(extra).map(Number)));
         list = page.map(function (id) { return lib.byS[id] || { slate: id, title: info(id).title, img: info(id).img }; });
         results.appendChild(el("p", { class: "hint", text: "Films de cette page. Cherchez pour en ajouter d'autres." }));
       } else list = lib.films.filter(function (f) { return f.slate && words.every(function (w) { return f._s.indexOf(w) > -1; }); }).slice(0, 60);
@@ -1268,7 +1272,7 @@
       tabs.forEach(function (t) { if (t.name !== "FEATURED") t.ids.forEach(function (id) { var c = clipFor(id); c.cat = t.name; clips.push(c); }); });
       feat.forEach(function (id) { if (!clips.some(function (c) { return c.slate === id; })) { var c = clipFor(id); c.cat = ""; clips.push(c); } });
       clips.forEach(function (c) { var k = feat.indexOf(c.slate); if (k > -1) { c.featured = true; c.featuredOrder = k + 1; } });
-      slate = { name: slate.name || state.name, categories: tabs.map(function (t) { return t.name; }), clips: clips };
+      slate = { name: base.name || state.name, categories: tabs.map(function (t) { return t.name; }), clips: clips };
       if (state.showcase) { state.showcase = state.showcase.filter(function (c) { return slate.categories.indexOf(c) > -1; }); if (!state.showcase.length) delete state.showcase; }
       if (state.open && !clips.some(function (c) { return c.slate === state.open; })) state.open = feat[0] || (clips[0] && clips[0].slate);
       curCat = null; touch(); close(true); render(); publish();
