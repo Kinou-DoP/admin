@@ -930,7 +930,7 @@
     bar.hidden = true;
     view.textContent = "";
     view.appendChild(el("p", { class: "status", text: "Chargement…" }));
-    Promise.all([index ? index : loadIndex(), slug ? readFile("data/dps/" + slug + ".json") : null, loadProgress().catch(function () { progress = {}; })]).then(function (r) {
+    Promise.all([index ? index : loadIndex(), slug ? readFile("data/dps/" + slug + ".json") : null, loadProgress().catch(function () { progress = {}; }), vcLoad()]).then(function (r) {
       var entry = slug && index.dps.filter(function (d) { return d.slug === slug; })[0];
       isNew = !r[1]; listed = !!entry; pending = {}; origSlug = listed || !isNew ? slug : null; // adresse actuelle
       state = r[1] || { slug: slug || "", name: entry ? entry.name : "", hue: 0, overrides: {}, about: {} };
@@ -1685,10 +1685,61 @@
     });
   }
 
+  // Une seule source pour la vignette, l'extrait et le recadrage d'un film (Gus 25/11) : le video club (data/bibli/edits.json).
+  // Les fiches (et spotlight, fiction) les lisent et les écrivent là ; le site les applique par-dessus les pages. Le titre reste
+  // propre à chaque page. vcFilms = edits.json lu à l'ouverture de la page ; vcKey = clé du film (« s<id Slate> » ou clé d'un import).
+  var vcFilms = {}, vcTodo = {};
+  function vcLoad() { return readFile(BIB_EDITS).then(function (o) { vcFilms = (o && o.films) || {}; }, function () { vcFilms = {}; }); }
+  function vcKey(id) { return /^\d+$/.test(String(id)) ? "s" + id : String(id); }
+  function vcOf(c) { return vcFilms[vcKey(c.slate)] || {}; }
+  function vcImg(c) { var e = vcOf(c); return e.img || c.img; }
+  function vcSnipOf(c) { var e = vcOf(c); return e.snipVideo || (e.snip && e.snip.v) || (typeof e.video === "string" && e.video) || c.video; }
+  // Recadrage : celui du video club ({ z, x, y, t } ; null = aucun), sinon celui de la page (overrides zoom, zoomPos, zoomThumb).
+  function vcCrop(c) {
+    var e = vcOf(c); if (e.crop !== undefined) return e.crop;
+    var o = state.overrides[c.slate] || {}; if (!(+o.zoom > 1)) return null;
+    var m = String(o.zoomPos || "").match(/(-?[\d.]+)%\s+(-?[\d.]+)%/);
+    return { z: +o.zoom, x: m ? +m[1] : 50, y: m ? +m[2] : 50, t: !!o.zoomThumb };
+  }
+  function vcSetCrop(c, k, v) {
+    var cr = Object.assign({ z: 1, x: 50, y: 50, t: false }, vcCrop(c) || {});
+    if (k === "z") cr.z = v || 1;
+    else if (k === "pos") { var m = String(v || "").match(/(-?[\d.]+)%\s+(-?[\d.]+)%/); cr.x = m ? +m[1] : 50; cr.y = m ? +m[2] : 50; }
+    else cr.t = !!v;
+    vcPatch(c.slate, { crop: cr.z > 1 ? cr : null });
+  }
+  function vcPatch(id, fields) {
+    var k = vcKey(id), e = vcFilms[k] = Object.assign({}, vcFilms[k]);
+    Object.keys(fields).forEach(function (f) { e[f] = fields[f]; });
+    vcTodo[k] = Object.assign(vcTodo[k] || {}, fields); bibCache = null; soon("vcPatch", vcSave, 1200);
+  }
+  function vcSave() {
+    var todo = vcTodo, keys = Object.keys(todo); vcTodo = {};
+    if (!keys.length || !canWeb) return;
+    return commit([{ path: BIB_EDITS, edit: function (t) {
+      var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {};
+      keys.forEach(function (k) { o.films[k] = Object.assign({}, o.films[k], todo[k]); });
+      return json(o);
+    } }], "Video club : recadrage de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")")
+      .catch(function (e) { keys.forEach(function (k) { vcTodo[k] = Object.assign({}, todo[k], vcTodo[k]); }); alert("Recadrage pas enregistré : " + e.message); });
+  }
+  // Bouton « edit » d'un film (Gus 26/11) : la fenêtre du video club (vignette, extrait, recadrage…), par-dessus la page.
+  function vcEditBtn(c, after) {
+    return el("button", { type: "button", class: "vcedit", text: "edit", title: "Vignette, extrait, recadrage… (fenêtre du video club : vaut pour tout le site)", on: { pointerdown: function (e) { e.stopPropagation(); }, click: function (e) {
+      e.stopPropagation(); flushSaves();
+      showBibli({ key: vcKey(c.slate), done: function (f) {
+        // Valeurs de la fenêtre reprises tout de suite (enregistrées dans edits.json par la fenêtre elle-même).
+        if (f) { var x = vcFilms[vcKey(c.slate)] = Object.assign({}, vcFilms[vcKey(c.slate)]); ["img", "crop", "snip", "snipVideo", "video", "full"].forEach(function (k) { if (f[k] !== undefined) x[k] = f[k]; }); }
+        after();
+      } });
+    } } });
+  }
+
   function filmCard(c) {
     var card = el("div", { class: "film" });
     var thumb = el("div", { class: "thumb" });
-    if (c.img) thumb.style.backgroundImage = 'url("' + c.img + '")';
+    function paintThumb() { var u = vcImg(c); thumb.style.backgroundImage = u ? 'url("' + imgShow(u) + '")' : ""; }
+    paintThumb();
     var chips = el("div", { class: "chips" });
     thumb.appendChild(chips);
     // Snippet Slate (extrait d'aperçu) : petite pastille en haut à droite, pleine = extrait présent, vide = pas encore d'extrait
@@ -1752,10 +1803,15 @@
     reset.addEventListener("click", function () { setOverride(c, "title"); setOverride(c, "sub"); title.value = c.title || ""; sub.value = c.sub || ""; sync(); touch(); });
     sync();
     // Projet en stills : le recadrage se règle sur l'extrait choisi pour le survol.
-    var zvid = c.video || function () { var h = (state.overrides[c.slate] || {}).hover; return h && h.video; };
-    var zoom = state === fic ? scopeCtl(c, thumb, zvid) : zoomCtl(thumb, zvid, function () { return (state.overrides[c.slate] || {}).zoom; }, function (z) { setOverride(c, "zoom", z); sync(); },
-      function () { return (state.overrides[c.slate] || {}).zoomPos; }, function (p) { setOverride(c, "zoomPos", p); sync(); },
-      function () { return (state.overrides[c.slate] || {}).zoomThumb; }, function (t) { setOverride(c, "zoomThumb", t); sync(); });
+    var zvid = function () { var h = (state.overrides[c.slate] || {}).hover; return vcSnipOf(c) || (h && h.video); };
+    // Recadrage : celui du video club (même réglage partout : fiches, video club, site), enregistré tout de suite dans edits.json.
+    function mkZoom() {
+      return state === fic ? scopeCtl(c, thumb, zvid) : zoomCtl(thumb, zvid, function () { var cr = vcCrop(c); return cr ? cr.z : undefined; }, function (z) { vcSetCrop(c, "z", z); sync(); },
+        function () { var cr = vcCrop(c); return cr ? cr.x + "% " + cr.y + "%" : undefined; }, function (p) { vcSetCrop(c, "pos", p); sync(); },
+        function () { var cr = vcCrop(c); return cr ? cr.t : undefined; }, function (t) { vcSetCrop(c, "t", t); sync(); }, function () {});
+    }
+    var zoom = mkZoom();
+    thumb.appendChild(vcEditBtn(c, function () { paintThumb(); var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; sync(); }));
     card.appendChild(thumb); card.appendChild(zoom);
     if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(awardsCtl(c));
@@ -4991,15 +5047,16 @@
     };
   }
 
-  function showBibli() {
-    bar.hidden = true; editing = false; view.textContent = "";
-    document.body.classList.add("bibpage");
+  // emb (Gus 25/11, bouton « edit » d'une fiche) : { key, done(film) } = seulement la fenêtre d'un film du video club, ouverte
+  // par-dessus la page en cours (rien n'est affiché du video club ; mêmes enregistrements dans edits.json).
+  function showBibli(emb) {
+    if (!emb) { bar.hidden = true; editing = false; view.textContent = ""; document.body.classList.add("bibpage"); }
     // En arrivant : toujours une nouvelle bande vide (Gus 22/11), sauf une bande pas encore enregistrée (enregistrement raté).
     var band; try { band = JSON.parse(localStorage.getItem(BAND_KEY) || "null"); } catch (e) {}
     if (!band || !band.items || band.code || !band.items.length) band = bandNew();
     var st = { q: "", chips: [], n: 60, sel: {}, sugI: -1, tab: "new", last: null };
     var wrap = el("div", { class: "bib" }), left = el("div", { class: "bibl" }), right = el("aside", { class: "bibr" });
-    wrap.appendChild(left); wrap.appendChild(right); view.appendChild(wrap);
+    wrap.appendChild(left); wrap.appendChild(right); if (!emb) view.appendChild(wrap);
     var head = el("div", { class: "bibhead" }, [el("h1", { text: "Video club" }), el("div", { class: "bibadd" }, [
       // Liens (Gus 26/11) : Cmd / Ctrl + clic ou clic molette = la fenêtre d'import dans un autre onglet (plusieurs envois à la fois).
       el("a", { class: "btn primary", href: "#/bibli/video", text: "+ Vidéo", on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); importVideo(); } } }),
@@ -5010,13 +5067,37 @@
     var info = el("p", { class: "hint bibinfo", text: "Chargement de tous nos films…" }), list = el("div", { class: "biblist" });
     left.appendChild(el("div", { class: "bibsearch" }, [q, sugBox])); left.appendChild(chipsBox); left.appendChild(info); left.appendChild(list);
     var data = null;
-    var openNext = bibOpen; bibOpen = null;
-    bibLoad().then(function (d) { data = d; draw(); encCheck(); if (openNext === "video") importVideo(); else if (openNext === "images") importImages(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
+    var openNext = emb ? null : bibOpen; if (!emb) bibOpen = null;
+    if (emb) { bibLoad(true).then(function (d) { data = d; var f = filmOf(emb.key); if (!f) { alert("Film introuvable dans le video club."); emb.done(null); return; } libEdit(f); }, function (e) { alert("Video club indisponible : " + e.message); emb.done(null); }); }
+    else bibLoad().then(function (d) { data = d; draw(); encCheck(); if (openNext === "video") importVideo(); else if (openNext === "images") importImages(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
     // Films envoyés depuis l'ordinateur : dès que le robot a fini, le film reçoit sa version web, sa vignette et son extrait
     // (library.json) ; vérifié à l'ouverture du video club puis toutes les 20 s tant qu'un encodage est en cours.
     var encT = 0;
+    // Vidéos remplacées (« ↻ Remplacer la vidéo », edits.json : `enc`) : la nouvelle version est reprise ici aussi, sans attendre
+    // qu'on rouvre la fenêtre du film (Gus 25/11 : film resté « encodage en cours » des heures après la fin du robot).
+    function encCheckEdits() {
+      return readFile(BIB_EDITS).then(function (o) {
+        var fl = (o && o.films) || {}, keys = Object.keys(fl).filter(function (k) { var e = fl[k].enc; return e && e.path && !e.error && !e.sending; });
+        if (!keys.length) return;
+        var paths = keys.map(function (k) { return fl[k].enc.path; }).filter(function (p, k, a) { return a.indexOf(p) === k; });
+        return Promise.all(paths.map(function (p) { return readFile(p).catch(function () { return null; }); })).then(function (rs) {
+          var res = {}; rs.forEach(function (d) { if (d && d.doneAt) (d.jobs || []).forEach(function (j) { res[j.id] = j; }); });
+          if (!keys.some(function (k) { return res[fl[k].enc.id]; })) return;
+          return commit([{ path: BIB_EDITS, edit: function (t) {
+            var O = t ? JSON.parse(t) : { films: {} }, n = 0; O.films = O.films || {};
+            Object.keys(O.films).forEach(function (k) {
+              var x = O.films[k], j = x.enc && res[x.enc.id]; if (!j) return; n++;
+              if (j.error || !j.answer) { x.enc.error = j.error || "pas de réponse"; return; }
+              x.full = j.answer.full; delete x.enc;
+            });
+            return n ? json(O) : null;
+          } }], "Video club : vidéo remplacée prête (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) { if (location.hash === "#/bibli") { data = d; draw(); } });
+        });
+      }).catch(function () {});
+    }
     function encCheck() {
       clearTimeout(encT); if (!canWeb) return Promise.resolve();
+      encCheckEdits();
       return readFile(BIB_LIB).then(function (l) {
         var wait = ((l && l.items) || []).filter(function (x) { return x.enc && !x.enc.error && !x.enc.sending && !x.full; });
         if (!wait.length) return;
@@ -5169,7 +5250,7 @@
           f.dops = (f.dops || []).filter(Boolean); f.types = f.types || []; f.libEdited = !!e; bibHay(f);
           libQ.todo[f.key] = e; soon("libEdits", libSaveEdits, 1500);
         },
-        onClose: function () { unsoon("libEdits"); runSave(libSaveEdits); draw(); },
+        onClose: function () { unsoon("libEdits"); runSave(libSaveEdits); if (emb) emb.done(f); else draw(); },
         reset: function () { BIB_EK.forEach(function (k) { f[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); f.dops = f.dops || []; f.types = f.types || []; f.libEdited = false; bibHay(f); libQ.todo[f.key] = null; }
       };
       // Plusieurs vidéos d'un même projet (Gus 26/11) : une vidéo sans crédits reprend ceux de la 1re.
@@ -5274,7 +5355,7 @@
       var u = right.querySelector(".bundo"), r = right.querySelector(".bredo"), pend = snap() !== undo.l[undo.i];
       if (u) u.disabled = undo.i <= 0 && !pend; if (r) r.disabled = pend || undo.i >= undo.l.length - 1;
     }
-    bibKey = function (e) { // Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z (hors champs de texte)
+    if (!emb) bibKey = function (e) { // Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z (hors champs de texte)
       if (!document.body.classList.contains("bibpage") || !(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || e.target.closest("input, textarea") || document.querySelector(".bmodal")) return;
       e.preventDefault(); undoGo(e.shiftKey ? 1 : -1);
     };
@@ -6092,7 +6173,7 @@
       box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (sur le site et dans les prochaines bandes) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [].concat(
-          fld("Titre", function () { return it.title; }, function (v) { it.title = v; }),
+          fld(lib ? "Titre (bandes seulement : chaque page du site garde le sien)" : "Titre", function () { return it.title; }, function (v) { it.title = v; }),
           [el("span", { class: "label", text: "Réal" }), chipsIn("dir", function () { return bibDirs(it); }, function (l) { it.dir = l.join(", "); })],
           [el("span", { class: "label", text: "Prod" }), chipsIn("prod", function () { return bibProds(it); }, function (l) { it.prod = l.join(", "); })],
           [el("span", { class: "label", text: "Chefs op et rôles (rôle vide = cinematographer, crédité en premier)" }), credEd()],

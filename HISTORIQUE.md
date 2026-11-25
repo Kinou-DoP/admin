@@ -395,3 +395,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 (chef d'orchestre) : CLAUDE.md allégé pour économiser l'abonnement Claude (relu à chaque message) : le détail est déplacé
   tel quel dans des notes par sujet `docs/` (à lire seulement pour la tâche concernée) ; CLAUDE.md garde l'essentiel et les règles.
 - 25/11 — « Modifier la sélection » : les imports du video club sans id Slate (stills, vidéos de l'ordinateur) sont cherchables et ajoutables (id = clé du video club, `sid`). Robots (main) : encodage (réponses jamais enregistrées : identité git, rebase coincé) et vignettes réduites (images du site d'abord).
+- 25/11 — Une seule source (Gus) : vignette, extrait et recadrage des cartes des fiches lus et écrits dans edits.json ; bouton « edit » = fenêtre du video club par-dessus la page ; vidéo remplacée reprise à l'ouverture du video club (`encCheckEdits`).

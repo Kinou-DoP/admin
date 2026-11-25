@@ -25,7 +25,7 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   **« ↻ Remplacer la vidéo »** (bouton : clic = choix lien Slate / ordinateur ; une vidéo glissée dessus = envoi direct ; `rpUp` /
   `rpWait`) : demande `web: true` (version web seulement) ; **vignette, extrait et leurs temps gardés** (`thumbT`, `snip`) ; « Valider »
   les refait dans la nouvelle vidéo (`snipStale` : `snip.vf` = vidéo d'où vient l'extrait léger). `it.enc` = encodage en cours (repris
-  en rouvrant la fenêtre). **Stills de l'ordinateur** sous le film (« ⤒ Ajouter des stills », clic ou glisser plusieurs images) →
+  en rouvrant la fenêtre ; aussi repris à l'ouverture du video club, `encCheckEdits`, Gus 25/11). **Stills de l'ordinateur** sous le film (« ⤒ Ajouter des stills », clic ou glisser plusieurs images) →
   `data/bibli/img/<id>/`, groupe `extras` `{ title: "Stills", stills, up: true }` ; images de chaque groupe réordonnées en glissant
   (`stillGrid`), × pour retirer.
 - **Images pas encore en ligne** (Gus 26/11, vignettes grises) : une image importée / capturée n'est sur raw.githubusercontent qu'après

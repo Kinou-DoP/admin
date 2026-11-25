@@ -21,3 +21,8 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
 - Avant de publier une fiche, l'admin relit la version en ligne et garde ce que les robots ont écrit (`robotFrom` : `images`,
   `ratios`, `types`, `full`), les lignes de prix (`awMerge`) et ce que les autres pages ont changé entre-temps (`sharedMerge`,
   fusion à trois). Après publication, `afterRobot` attend le robot (2 min au plus) et reprend ses films complets.
+- **Une seule source pour vignette, extrait, recadrage** (Gus 25/11) : les cartes des films (fiches, spotlight, fiction) lisent
+  `data/bibli/edits.json` à l'ouverture (`vcLoad`, `vcFilms`) : vignette `vcImg`, extrait `vcSnipOf`, recadrage `vcCrop` (celui du
+  video club, sinon celui de la page). Régler le recadrage d'une carte l'écrit tout de suite dans `edits.json` (`vcPatch` / `vcSave`,
+  sans « Publier »). Bouton **« edit »** en bas à droite de chaque vignette (`vcEditBtn`) : la fenêtre du film du video club par-dessus
+  la page (`showBibli({ key, done })`, mode « fenêtre seule »). Le titre reste propre à chaque page.
