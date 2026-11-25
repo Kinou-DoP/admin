@@ -42,13 +42,26 @@
       "title": "La Voie Royale"
     },
     "10075": {
-      "title": "Surface"
+      "title": "Surface",
+      "info": {
+        "awards": "Official selection • Première mondiale (projection et rencontre), Canneseries 2025",
+        "awardsFrom": {
+          "8777ef27ff9a": "Official selection • Première mondiale (projection et rencontre), Canneseries 2025"
+        }
+      }
     },
     "10213": {
       "title": "Cette nuit-là"
     },
     "10323": {
-      "title": "Belphégor"
+      "title": "Belphégor",
+      "info": {
+        "awards": "Official selection • Series, The American French Film Festival 2026\nOfficial selection • Fictions événements (hors compétition), Festival de la fiction de La Rochelle 2025",
+        "awardsFrom": {
+          "f4aa130d09de": "Official selection • Series, The American French Film Festival 2026",
+          "b1cdf3c20225": "Official selection • Fictions événements (hors compétition), Festival de la fiction de La Rochelle 2025"
+        }
+      }
     }
   },
   "about": {
