@@ -1,32 +1,22 @@
-# Test (25/11) : notre CloudFront (d3toxii6rvamjf) sert-il les fichiers copiés ? Compare avec le compartiment (le fichier y est-il ?)
-# et avec le CloudFront de Slate. Adresses de films déjà publics (fiche andy-pml du site). Ne copie rien, ne modifie rien.
+# Test (25/11) : vitesse des extraits (snippets du 1er film FEATURED de chefs op, adresses publiques des fiches) sur notre
+# CloudFront (d3toxii6rvamjf) et celui de Slate : 1re demande (froide) puis 2e (en mémoire), en-têtes de cache. Ne modifie rien.
 name: Test CloudFront
 on: workflow_dispatch
 permissions:
-  id-token: write
   contents: read
 jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::919012714656:role/kinou-robot-copie
-          aws-region: eu-north-1
-      - name: Quelle adresse existe ?
+      - name: Vitesse des extraits
         run: |
-          for h in d3toxii6rvamjf d3toxii6rvamjf d3toxi1l6rvamjf d3tox1l6rvamjf d3toxi16rvamjf d3toxll6rvamjf d3toxiI6rvamjf; do
-            h=$(echo "$h" | tr 'A-Z' 'a-z'); ip=$(getent hosts "$h.cloudfront.net" | head -1 | cut -d' ' -f1)
-            echo "$h.cloudfront.net -> ${ip:-introuvable}"
-            if [ -n "$ip" ]; then curl -sS -o /dev/null -r 0-1023 -w "   vidéo 10666 : %{http_code} %{size_download} octets\n" "https://$h.cloudfront.net/kinou/production/clips/f90c66ab-6796-448a-90d1-722c6a191301-0x1080.5000.mp4"; fi
-          done
-      - name: Notre CloudFront, le compartiment, Slate
-        run: |
-          for k in kinou/production/clips/f90c66ab-6796-448a-90d1-722c6a191301-0x1080.5000.mp4 kinou/production/clips/1f91878c-a900-434d-85aa-0fb964459e35-0x1080.5000.mp4; do
-            echo "== $k"
-            echo "-- compartiment :"; aws s3api head-object --bucket kinou-videos --key "$k" --query '[ContentLength,ContentType,StorageClass]' --output text || true
-            echo "-- notre CloudFront :"; curl -sS -o /dev/null -r 0-1023 -D - "https://d3toxii6rvamjf.cloudfront.net/$k" | grep -iE "^HTTP|x-cache|content-type|content-length|server|x-amz" || true
-            curl -sS -r 0-300 "https://d3toxii6rvamjf.cloudfront.net/$k" | head -c 300 | tr -cd '[:print:]\n'; echo
-            echo "-- Slate :"; curl -sS -o /dev/null -r 0-1023 -w "%{http_code}\n" "https://d1ko11x0ybxl0h.cloudfront.net/$k"
+          F='%{http_code} début %{time_starttransfer}s total %{time_total}s %{size_download}o'
+          for k in kinou/production/clips/11004/0ae1be11-6eeb-11f1-a349-0215583debcb.mp4 kinou/production/clips/10696/8fa217ca-cdf9-11f1-a349-0215583debcb.mp4 kinou/production/clips/10391/7c3cee06-fb7e-11f0-9ce3-0215583debcb.mp4 kinou/production/clips/8959/90ac6f2d-cefc-11f1-a349-0215583debcb.mp4 kinou/production/clips/5244/e1d3c0df-d3ae-11f1-a349-0215583debcb.mp4 kinou/production/clips/11340/dd6be064-c3bb-11f1-a349-0215583debcb.mp4 kinou/production/clips/11008/8cb2c4bd-70bb-11f1-a349-0215583debcb.mp4 kinou/production/clips/9231/4b9cbb9f-b19d-11ef-bfce-022353abf6f5.mp4; do
+            echo "== ${k: -45}"
+            for h in d3toxii6rvamjf d1ko11x0ybxl0h; do
+              a=$(curl -s -o /dev/null -w "$F" "https://$h.cloudfront.net/$k"); b=$(curl -s -o /dev/null -w "$F" "https://$h.cloudfront.net/$k")
+              hd=$(curl -sI "https://$h.cloudfront.net/$k" | grep -iE "^(x-cache|cache-control|age|content-type):" | tr -d '\r' | tr '\n' ' ')
+              echo "  $h  1re: $a | 2e: $b"; echo "     $hd"
+            done
           done
