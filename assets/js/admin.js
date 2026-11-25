@@ -1269,10 +1269,10 @@
         th.addEventListener("click", function () { selPreview(f); });
         results.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
           el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") })]),
-          el("button", { type: "button", class: "btn" + (inTab ? " ghost" : ""), text: inTab ? "✓" : "+", title: inTab ? "Déjà dans l'onglet" : "Ajouter à la fin de l'onglet", on: { click: function () {
+          el("button", { type: "button", class: "btn" + (inTab ? " ghost" : ""), text: inTab ? "✓" : "+", title: inTab ? "Déjà dans l'onglet" : cfg && cfg.top ? "Ajouter en haut" : "Ajouter à la fin de l'onglet", on: { click: function () {
             if (!t || inTab) return;
             if (!byId[f.slate] && !extra[f.slate]) extra[f.slate] = f;
-            t.ids.push(f.slate); ch(); drawAll();
+            if (cfg && cfg.top) t.ids.unshift(f.slate); else t.ids.push(f.slate); ch(); drawAll();
           } } })]));
       });
       if (!list.length) results.appendChild(el("p", { class: "empty", text: "Aucun film trouvé" + (chips.length ? " avec ces filtres (× pour en retirer)." : ".") }));
@@ -2004,8 +2004,8 @@
     if (f.images && f.images.length && !f.video && !f.full) o.images = f.images.slice();
     return o;
   }
-  function pageSel(title, list, set, publishFn, renderFn) { // « Modifier la sélection » d'une page à liste unique (Gus 26/11)
-    selEditor(null, { title: title, tab: title.toUpperCase(), items: list, apply: function (ids, film) {
+  function pageSel(title, list, set, publishFn, renderFn, top) { // « Modifier la sélection » d'une page à liste unique (Gus 26/11)
+    selEditor(null, { title: title, tab: title.toUpperCase(), items: list, top: !!top, apply: function (ids, film) {
       set(ids.map(function (id) { var o = list.filter(function (x) { return x.slate === id; })[0]; return o || film(id); }));
       dirty = true; renderFn(); publishFn();
     } });
@@ -2303,7 +2303,7 @@
     histInit({ get: function () { return { data: spot }; }, set: function (h) { spot = JSON.parse(h.data); renderSpot(); } });
     view.appendChild(el("h1", { text: "Spotlight" }));
     view.appendChild(el("button", { type: "button", class: "btn primary selbtn", text: "Modifier la sélection", on: { click: function () {
-      pageSel("Spotlight", spot.films || [], function (l) { spot.films = l.map(function (f) { return f.cats ? f : pageFilm(f); }); delete spot.reel; delete spot.readError; }, publishSpot, renderSpot);
+      pageSel("Spotlight", spot.films || [], function (l) { spot.films = l.map(function (f) { return f.cats ? f : pageFilm(f); }); delete spot.reel; delete spot.readError; }, publishSpot, renderSpot, true); // films ajoutés en haut (Gus 26/11)
     } } }));
     view.appendChild(el("p", { class: "lead", text: "Une bande Slate de films de tous les chefs op, sur la page Spotlight du site : onglet ALL (tous les films, dans l'ordre de la bande) puis un onglet par catégorie." }));
     // Bande Slate
@@ -2651,7 +2651,7 @@
     histInit({ get: function () { return { data: fic, refs: Object.assign({}, pending) }; }, set: function (h) { fic = JSON.parse(h.data); pending = Object.assign({}, h.refs); renderFic(); } });
     view.appendChild(el("h1", { text: "Fiction" }));
     view.appendChild(el("button", { type: "button", class: "btn primary selbtn", text: "Modifier la sélection", on: { click: function () {
-      pageSel("Fiction", fic.films || [], function (l) { fic.films = l.map(function (f) { return f.cats ? f : pageFilm(f); }); delete fic.reel; delete fic.readError; }, publishFic, renderFic);
+      pageSel("Fiction", fic.films || [], function (l) { fic.films = l.map(function (f) { return f.cats ? f : pageFilm(f); }); delete fic.reel; delete fic.readError; }, publishFic, renderFic, true);
     } } }));
     view.appendChild(el("p", { class: "lead", text: "Une bande Slate des films de fiction. Pour chaque film : son onglet (New release, Coming soon, Past release), son genre et ses plateformes (affichés à la sélection), , sa date de sortie (affichée au survol dans New releases et Coming soon), son affiche et ses stills." }));
     var input = el("input", { type: "url", class: "nodirty", placeholder: "Lien de la bande Slate (shots.re/… ou kinou.slateapp.com/…)", value: fic.reel || "" });

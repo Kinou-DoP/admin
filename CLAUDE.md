@@ -43,6 +43,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
 - Avant de publier une fiche, l'admin relit la version en ligne et garde ce que les robots ont écrit (`robotFrom` : `images`,
   `ratios`, `types`, `full`), les lignes de prix (`awMerge`) et ce que les autres pages ont changé entre-temps (`sharedMerge`,
   fusion à trois). Après publication, `afterRobot` attend le robot (2 min au plus) et reprend ses films complets.
+- **Film ajouté à une page** (sélection, 26/11) : le robot `link-films.mjs` (après la publication) lui recopie ce qui a déjà été saisi pour ce film sur les autres pages (`info`, `extras`, `stills`) — seulement ce qui manque. Le robot `fill-home.mjs` ne lit plus Slate (débranché le 26/11, sauf `SLATE=1`).
 - Fiction et spotlight : avec une bande Slate (`reel`), la publication n'écrit que `reel`, `categories`, `overrides` (+ affiches), jamais les `films` du robot ; **sans `reel`** (sélection faite dans l'admin, « Modifier la sélection », 26/11), elle écrit aussi `films` et le robot n'y touche plus (il ne relit Slate que s'il y a un `reel`). Accueil : pareil, `slides` sans `reel`.
 - Annuler / Rétablir : instantanés de la page (`histInit`, `touch`) ; pages enregistrées tout de suite (festivals, récupération,
   sorties, sélections) : `immInit` / `immPush`.
@@ -66,7 +67,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   films par onglet (titre, crédits, masquer, recadrage, cadrage téléphone, liens Slate de stills / vidéos sous le film avec colonnes,
   extrait au survol, infos du film, **prix & sélections**, présentation vidéo + stills), bouton **« Compléter les infos des films
   (robot) »** (onglets fiction, 2nd unit, cam op ; champs vides seulement, marqués « à vérifier »), en ligne / caché, genre, notes
-  internes (dépôt notes), about (bio, liens, portrait + cadrage, CV), adresse (slug). **Home page**, **spotlight**, **fiction** : bouton **« Modifier la sélection »** (`pageSel` → `selEditor(null, cfg)` : une seule liste, ordre, ajout depuis le video club (`pageFilm`), « Valider et publier » retire le lien `reel`, plus de Slate) ; listées aussi dans « Bundles » du video club. **Home page** (`showHome` : bande Slate, éditeur
+  internes (dépôt notes), about (bio, liens, portrait + cadrage, CV), adresse (slug). **Home page**, **spotlight**, **fiction** : bouton **« Modifier la sélection »** (`pageSel` → `selEditor(null, cfg)` : une seule liste, ordre, ajout depuis le video club (`pageFilm` ; spotlight et fiction : film ajouté **en haut**, `cfg.top`), « Valider et publier » retire le lien `reel`, plus de Slate) ; listées aussi dans « Bundles » du video club. **Home page** (`showHome` : bande Slate, éditeur
   vidéo : extrait HD, recadrage, téléphone), **spotlight**, **fiction** (statut, genre, plateformes, date, affiche, cadrage scope,
   9 New releases au plus, passage automatique en New release le jour de la sortie, alerte « autre date trouvée »), **contact**
   (+ logo, mentions légales).
