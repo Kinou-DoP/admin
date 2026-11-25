@@ -225,6 +225,9 @@
       "prod": "Braquage Production",
       "dops": [
         "Maëva Vo Dinh"
+      ],
+      "types": [
+        "narrative"
       ]
     }
   }
