@@ -1310,7 +1310,7 @@
       });
       sugBox.hidden = !hits.length;
     }
-    var shownR = [];
+    var shownR = [], maxR = 150, lastKey = "";
     function addFilm(f) {
       var t = tabs[cur]; if (!t || t.ids.indexOf(f.slate) > -1) return;
       if (!byId[f.slate] && !extra[f.slate]) extra[f.slate] = f;
@@ -1325,8 +1325,9 @@
       var withPage = isDefault() && !words.length; // à l'ouverture : les films du chef op + ceux de la page
       var list = lib.films.filter(function (f) { return f.slate && ((withPage && onPage[f.slate]) || (chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
       if (withPage) Object.keys(onPage).forEach(function (id) { id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
-      results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" + (list.length > 150 ? " · 150 premiers affichés" : "") }));
-      shownR = list.slice(0, 150);
+      var key = JSON.stringify([q, chips]); if (key !== lastKey) { lastKey = key; maxR = 150; } // nouvelle recherche : 150 d'abord
+      results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" }));
+      shownR = list.slice(0, maxR);
       shownR.forEach(function (f) {
         var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
         th.addEventListener("click", function () { selPreview(f); });
@@ -1336,6 +1337,7 @@
             if (!t || inTab) return; addFilm(f);
           } } })]));
       });
+      if (list.length > maxR) results.appendChild(el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + (list.length - maxR) + ")", on: { click: function () { var y = results.scrollTop; maxR += 150; drawRight(); results.scrollTop = y; } } })); // Gus 26/11
       if (!list.length) results.appendChild(el("p", { class: "empty", text: "Aucun film trouvé" + (chips.length ? " avec ces filtres (× pour en retirer)." : ".") }));
     }
     function drawAll() { drawTabs(); drawLeft(); drawRight(); }
