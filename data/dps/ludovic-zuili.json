@@ -192,7 +192,8 @@
     "FEATURED",
     "COMMERCIAL",
     "LUXE / FASHION",
-    "COMEDY"
+    "COMEDY",
+    "NARRATIVE"
   ],
   "clips": [
     {
@@ -528,6 +529,107 @@
       "cat": "COMEDY"
     },
     {
+      "title": "Drone | Bande Annonce",
+      "sub": "Simon Bouisson\nHaut & Court",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10710/914fd2a6-3e36-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0729800c-fd8c-4bb3-b2e7-c9a2e0b0f11e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/csS1PhiHo56IVLKYg2sa0eCQ1vdou6w3B90TMaxxIMg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZjliNWNmMi00ZWFi/LTQ4MzgtOWFiNS1h/NTRlMDEyZGEwZTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MDYtYS0xNi4yOS4z/NC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10710,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "N121 Bus de Nuit | Trailer",
+      "sub": "Morade Aissaoui\nRipley Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10303/228a3f51-caec-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/db5e3f0c-48e0-4477-9b83-f264e26ba3e6-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_bylRDJ0zP7VxjVBBc3DY50_a45HRY2Iwksrt_cXvgE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MjAxMzM0ZS1kNTU5/LTQwMGMtYjRjNi0w/NDFiMmYxMjMwZGUv/dmlnbmV0dGUtbjEy/MS5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10303,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Carjackers | Trailer",
+      "sub": "Kamel Guemra\nGaumont",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9750/0a19f674-fde4-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7660c825-aadc-4353-ac5f-ec92879b0321-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gyjPOhePkaFBwR1G4BAAD3xB51gzvA6vOZk8chlbu8s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZGMzZDNiMy0yMzRj/LTRhNWItYjI2OS1l/NzJjYTNiMjY0MTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MDItYS0xMS4yMS4y/Ny5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9750,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "Carla - Her taxi driver helps her escape her violent boyfriend",
+      "sub": "Kamel Guemra\nFull Players",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9503/828c9eb9-fe67-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/493ecd35-be43-4d1d-9e8d-5827b03610bf-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/TzT074h0G7R3Yp2P6Epy-33Oqq4f37USyoo_aVsPWD8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZjUyODA2ZC0xMTBi/LTQ2Y2YtYjkzNi1h/YWExYmI1MWVmNmQv/Y2FybGEucG5n.webp",
+      "slate": 9503,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "PAR AMOUR",
+      "sub": "Elise Otzenberger\nMamma Roman & Solab Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9291/c9172f7a-bd5a-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/16f4bda2-9b57-44ae-9a2a-8bd8f0d67daa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bL4lWc5ZaysXDxM5IXJDRinyksmFvTvZfzmMPmfCqao/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YmU4ZmMzNC1kYWI2/LTQ0NDEtYThkMi0y/MjllYjczNzcxYTEv/cGFyLWFtb3VyLTI5/LmpwZw?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9291,
+      "featured": true,
+      "featuredOrder": 9
+    },
+    {
+      "title": "Abdelinho",
+      "sub": "Hicham Ayouch\nPrésident Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a3912179-1294-4910-975b-5c3b28b5ad8b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/iLIjoqeFuOHtnOlTOBMyN_Ejlvpgxtd7dnpdIWpqlCY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/N2ZhMDEzMy05Yjdm/LTQ5NGMtOGM2ZS1i/ZGU0YjQwZGRiMzEv/NjM3MjEwODMzMTIw/ZS0xLjYyLjEtMS42/Mi4xLmpwZw.webp",
+      "slate": 7580,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "Stalk - Season 2 (trailer)",
+      "sub": "Simon Bouisson\nSilex Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/45852196-9dc0-4276-be60-76e5a2836808-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/nxRsiYAjlCWOQSyvAr85Jg0fZ6wFrcPIsjYYnfwflsw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ODA2NTE3Ny0wNGEx/LTQ0MmQtOTMyZC04/N2QxYzdlOTkwN2Iv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMTAt/MDYtYS0xMS4xMy4w/NC5wbmc.webp",
+      "slate": 5449,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "Stalk - Season 1 (trailer)",
+      "sub": "Simon Bouisson\nSilex Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fe7b7b03-488b-4bb0-b08c-4b2f1744819f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Fu4uaEy0ZACI6f0tyxXzADgiqiV7GdyHhcOLJkPUoyU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/ZmM5ZDFkZS01YzNl/LTQ5M2MtOTYyOS1k/N2M5YzBiOWY4NmQv/c3RhbGstZTA0LTQ2/LmpwZw.webp",
+      "slate": 4174,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "République | Trailer",
+      "sub": "Simon Bouisson\nResistance Films, Cinétévé Expérience, France.tv",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2f8f4494-ce02-4fc4-b464-368e1962b3b0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/joIYhwEki5wC63etdr4mTlbyUNEBQ1W-zjpS020uE6E/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTgzOTQ1NTA3MzI0/L3JlcHVibGlxdWUt/ZGV1eGllbWUtcGFy/dGllLW1ldHJvLjAw/LTEwLTExLTAxLnN0/aWxsMDA1LmpwZw.webp",
+      "slate": 3937,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "OUR BABY I TRAILER",
+      "sub": "simon bouisson",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545392461-42873532_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/o2CzJ9_bvyI-p200xomHK7q0YpIIrKkWk4fFdw4wLn0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MDM3NDk3MjY3/L291ci1iYWJ5Lmpw/Zw.webp",
+      "slate": 1071,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "Trailer",
+      "sub": "simon bouisson\nResistance Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545357274-42476681_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/1rPF6TJnrHfVxI5tmrm7WuJNuvXmxjSXaqspwOtrTp8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MDMwMjIxNzc2/L3dlaS1vci1kaWUu/anBn.webp",
+      "slate": 320,
+      "cat": "NARRATIVE"
+    },
+    {
       "title": "Prequel - SCH",
       "sub": "Jean-Charles Charavin\nIncendie Films",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8876/2c13979f-52ae-11f0-bfce-022353abf6f5.mp4",
@@ -539,17 +641,6 @@
       "featuredOrder": 2
     },
     {
-      "title": "Drone | Bande Annonce",
-      "sub": "Simon Bouisson\nHaut & Court",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10710/914fd2a6-3e36-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0729800c-fd8c-4bb3-b2e7-c9a2e0b0f11e-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/csS1PhiHo56IVLKYg2sa0eCQ1vdou6w3B90TMaxxIMg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/ZjliNWNmMi00ZWFi/LTQ4MzgtOWFiNS1h/NTRlMDEyZGEwZTEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMTAt/MDYtYS0xNi4yOS4z/NC5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 10710,
-      "featured": true,
-      "featuredOrder": 3
-    },
-    {
       "title": "FEU!CHATTERTON | ALLONS VOIR",
       "sub": "Jean Charles Charavin\nIncendie Films",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9976/c2844e23-c198-11f1-a349-0215583debcb.mp4",
@@ -559,39 +650,6 @@
       "slate": 9976,
       "featured": true,
       "featuredOrder": 4
-    },
-    {
-      "title": "N121 Bus de Nuit | Trailer",
-      "sub": "Morade Aissaoui\nRipley Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10303/228a3f51-caec-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/db5e3f0c-48e0-4477-9b83-f264e26ba3e6-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/_bylRDJ0zP7VxjVBBc3DY50_a45HRY2Iwksrt_cXvgE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MjAxMzM0ZS1kNTU5/LTQwMGMtYjRjNi0w/NDFiMmYxMjMwZGUv/dmlnbmV0dGUtbjEy/MS5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 10303,
-      "featured": true,
-      "featuredOrder": 6
-    },
-    {
-      "title": "Carjackers | Trailer",
-      "sub": "Kamel Guemra\nGaumont",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9750/0a19f674-fde4-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7660c825-aadc-4353-ac5f-ec92879b0321-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/gyjPOhePkaFBwR1G4BAAD3xB51gzvA6vOZk8chlbu8s/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZGMzZDNiMy0yMzRj/LTRhNWItYjI2OS1l/NzJjYTNiMjY0MTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTIt/MDItYS0xMS4yMS4y/Ny5wbmc?v=1&format=webp",
-      "cat": "",
-      "slate": 9750,
-      "featured": true,
-      "featuredOrder": 8
-    },
-    {
-      "title": "PAR AMOUR",
-      "sub": "Elise Otzenberger\nMamma Roman & Solab Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9291/c9172f7a-bd5a-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/16f4bda2-9b57-44ae-9a2a-8bd8f0d67daa-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/bL4lWc5ZaysXDxM5IXJDRinyksmFvTvZfzmMPmfCqao/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/YmU4ZmMzNC1kYWI2/LTQ0NDEtYThkMi0y/MjllYjczNzcxYTEv/cGFyLWFtb3VyLTI5/LmpwZw?v=1&format=webp",
-      "cat": "",
-      "slate": 9291,
-      "featured": true,
-      "featuredOrder": 9
     }
   ]
 }
