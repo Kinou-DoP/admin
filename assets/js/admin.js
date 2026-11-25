@@ -1261,7 +1261,7 @@
       var sx = e.clientX, sy = e.clientY, fly = null, ph = null, at = i, t = tabs[i], f0 = t.ids[0] ? info(t.ids[0]) : {};
       function chips() { return [].filter.call(tabRow.querySelectorAll(".seltab"), function (x) { return x !== chip; }); }
       function mv(ev) {
-        if (!fly) { if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return; fly = bibFly(ev, [f0.img || ""], 1); chip.classList.add("dragged"); document.body.classList.add("bdragging"); }
+        if (!fly) { if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return; fly = { move: function () {}, end: function () {} }; /* onglets : pas d'image qui suit la souris (Gus 26/11) */ chip.classList.add("dragged"); document.body.classList.add("bdragging"); }
         ev.preventDefault(); fly.move(ev);
         var cs = chips(); at = cs.length;
         for (var k = 0; k < cs.length; k++) { var r = cs[k].getBoundingClientRect(); if (ev.clientY < r.bottom && ev.clientX < r.left + r.width / 2) { at = k; break; } }

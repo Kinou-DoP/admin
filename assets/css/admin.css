@@ -1100,3 +1100,8 @@ input.boldq:focus { border-color: var(--kinou-fg); }
 .seltab.drop { outline: 2px solid var(--kinou-fg); outline-offset: 2px; transform: scale(1.08); transition: transform .15s; }
 .bphv { display: inline-block; width: 4px; height: 26px; margin: 0 2px; vertical-align: middle; background: var(--kinou-fg); border-radius: 2px; box-shadow: 0 0 14px rgba(255,252,235,.6); }
 .seltab { touch-action: none; }
+.chip.seltab { height: auto; padding: 7px 13px; font-family: var(--kinou-sans); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; line-height: 1.2; white-space: nowrap; cursor: grab; }
+.chip.seltab.on { cursor: pointer; }
+.chip.seltab.dragged { opacity: .35; border-style: dashed; }
+.chip.seltab { border: 1px solid rgba(255,252,235,.22); border-radius: 18px; }
+.chip.seltab.on { border-color: var(--kinou-fg); }
