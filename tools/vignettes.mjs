@@ -4,7 +4,7 @@
 // rangées sous `thumbs/<chemin de l'image sans extension>-<largeur>.webp` → https://d3toxii6rvamjf.cloudfront.net/thumbs/…
 // Le site (thumb() d'app.js) retrouve le chemin de l'image dans l'adresse signée de Slate (base64) et prend la nôtre, Slate en secours.
 // Déjà faite = sautée (relancer ne refait que ce qui manque). Rien n'est supprimé. Journaux sans adresses (dépôt public).
-// Variables : CONC (en parallèle, 8), MINUTES (temps de travail, 300), MAX (nombre d'images au plus, pour un essai).
+// Variables : CONC (en parallèle, 16), MINUTES (temps de travail, 300), MAX (nombre d'images au plus, pour un essai).
 import { spawn } from "node:child_process";
 import { appendFileSync, writeFileSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -19,7 +19,7 @@ if (process.env.ACTIONS_ID_TOKEN_REQUEST_URL && process.env.AWS_ROLE_COPIE) { //
   process.env.AWS_PROFILE = "robot";
 }
 const BUCKET = process.env.BUCKET || "kinou-videos", W = [800, 1600];
-const CONC = Math.max(1, parseInt(process.env.CONC || "8", 10)), FIN = Date.now() + parseInt(process.env.MINUTES || "300", 10) * 60000;
+const CONC = Math.max(1, parseInt(process.env.CONC || "16", 10)), FIN = Date.now() + parseInt(process.env.MINUTES || "300", 10) * 60000;
 const MAX = parseInt(process.env.MAX || "0", 10);
 const IMG = /\.(jpe?g|png|webp|gif|tiff?)$/i;
 
@@ -48,8 +48,8 @@ const nom = (cle, w) => "thumbs/" + cle.replace(/\.[a-z0-9]+$/i, "") + "-" + w +
 
 const tout = await liste(), deja = await faites();
 let file = tout.filter((c) => W.some((w) => !deja.has(nom(c, w))));
+console.log("Images : " + tout.length + " ; déjà faites : " + (tout.length - file.length) + " ; à faire : " + file.length + (MAX ? " (essai : " + MAX + " au plus)" : ""));
 if (MAX) file = file.slice(0, MAX);
-console.log("Images : " + tout.length + " ; déjà faites : " + (tout.length - file.length) + " ; à faire : " + file.length);
 const stats = { faites: 0, erreurs: [], octets: 0 };
 let i = 0, suite = false;
 async function ouvrier() {
