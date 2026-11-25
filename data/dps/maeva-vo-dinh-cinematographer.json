@@ -5,7 +5,12 @@
   "bundle": "https://kinou.slateapp.com/bundles/1b919168-e8ef-11f1-952e-02ffedfede17",
   "overrides": {
     "6664": {
-      "zoom": 1.44
+      "zoom": 1.44,
+      "zoomThumb": true
+    },
+    "7414": {
+      "zoom": 1.17,
+      "zoomPos": "0% 0%"
     },
     "8219": {
       "title": "5 balles"
