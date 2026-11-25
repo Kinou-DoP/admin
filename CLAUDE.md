@@ -59,7 +59,7 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
 - **Website** : **cinematographers** (`#/dops`, liste + tableau de bord d'avancement `data/progress.json`), **fiche d'un chef op**
   (`#/dp/<slug>`, `showDP`) : **« Modifier la sélection »** (`selEditor`, Gus 25/11 : la page ne lit plus Slate) = fenêtre des onglets
   (ajouter, renommer, avancer / reculer, supprimer) et des films de chaque onglet (glisser ou ↑ ↓, retirer ×, ajouter « + » depuis la
-  video club : recherche dans `bibLoad` ; sans recherche = tous les films du video club avec ce chef op (`dops`) + ceux de la page, plus récents en haut) ; FEATURED = ordre du showreel (`featured`,
+  video club en petit : filtres en étiquettes comme le video club (`bibMatch`, suggestions `bibCache.sug` en tapant ; à l'ouverture, filtre « Chef op » de la fiche + films de la page), mots libres, plus récents en haut, 150 au plus ; clic sur l'image = aperçu `selPreview` (film, crédits, client, types, date)) ; FEATURED = ordre du showreel (`featured`,
   `featuredOrder` ; un film de FEATURED peut n'être dans aucun autre onglet : `cat: ""`) ; fiche sans films : bouton « Créer une sélection » (même fenêtre, onglet FEATURED vide) ; « Valider et publier » réécrit `categories`
   + `clips` puis publie (site à jour en ~10 s) ; les `overrides` restent attachés à chaque film. « Réimporter depuis Slate » (option,
   demande confirmation : remplace la sélection ; un snippet absent sur Slate mais présent dans la fiche est gardé),

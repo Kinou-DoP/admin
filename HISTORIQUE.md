@@ -380,3 +380,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 25/11 : fiche sans films : bouton « Créer une sélection » (même fenêtre que « Modifier la sélection ») (Gus).
 - 25/11 : « Modifier la sélection » : sans recherche, la liste de droite montre tous les films du video club avec ce chef op (plus récents en haut), pas seulement ceux de la page (Gus).
 - 25/11 : « Modifier la sélection » : filtre « Chef op » actif (la recherche reste dans ses films, × pour tout le video club) ; clic sur une vignette = aperçu du film (Gus). À faire : filtres et fenêtre d'infos comme le video club.
+- 26/11 : « Modifier la sélection » : liste de droite comme le video club (filtres en étiquettes avec suggestions, chef op de la fiche à l'ouverture), aperçu avec crédits, client, types, date (Gus).

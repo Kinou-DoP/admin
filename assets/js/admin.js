@@ -1234,21 +1234,33 @@
         left.appendChild(row);
       });
     }
+    // Liste de droite = le video club en petit (Gus 25/11) : filtres en étiquettes (chef op, réal, prod, client, type, catégorie ;
+    // à l'ouverture : le chef op de la fiche), suggestions en tapant, mots libres, plus récents en haut ; clic sur l'image = aperçu.
+    var chips = rcBase(state.name || "") ? [{ type: "dop", value: rcBase(state.name || "") }] : [], chipsBox = el("div", { class: "bibchips selchips" }), sugBox = el("div", { class: "bibsug selsug", hidden: true });
+    function isDefault() { return chips.length === 1 && chips[0].type === "dop" && bnrm(chips[0].value) === bnrm(rcBase(state.name || "")); }
+    function drawSug() {
+      sugBox.textContent = ""; var words = bnrm(q).split(" ").filter(Boolean), per = {};
+      if (!lib || !words.length) { sugBox.hidden = true; return; }
+      var hits = lib.sug.filter(function (s) { var n = bnrm(s.value); return words.every(function (w) { return n.indexOf(w) > -1; }) && !chips.some(function (c) { return c.type === s.type && bnrm(c.value) === bnrm(s.value); }); })
+        .sort(function (x, y) { var px = bnrm(x.value).indexOf(words[0]) === 0 ? 0 : 1, py = bnrm(y.value).indexOf(words[0]) === 0 ? 0 : 1; return BIB_ORDER.indexOf(x.type) - BIB_ORDER.indexOf(y.type) || px - py || y.n - x.n; })
+        .filter(function (s) { per[s.type] = (per[s.type] || 0) + 1; return per[s.type] <= 3; }).slice(0, 10);
+      hits.forEach(function (s) {
+        sugBox.appendChild(el("button", { type: "button", on: { mousedown: function (e) { e.preventDefault(); }, click: function () { chips.push({ type: s.type, value: s.value }); search.value = q = ""; sugBox.hidden = true; drawRight(); search.focus(); } } },
+          [el("span", { class: "bst t-" + s.type, text: BIB_T[s.type] }), el("span", { text: s.value }), el("span", { class: "bsn", text: s.n + " film" + (s.n > 1 ? "s" : "") })]));
+      });
+      sugBox.hidden = !hits.length;
+    }
     function drawRight() {
-      results.textContent = ""; var t = tabs[cur];
+      results.textContent = ""; chipsBox.textContent = ""; var t = tabs[cur];
+      chips.forEach(function (c, i) { chipsBox.appendChild(el("button", { type: "button", class: "bchip", title: "Retirer ce filtre", on: { click: function () { chips.splice(i, 1); drawRight(); } } }, [el("span", { class: "bst t-" + c.type, text: BIB_T[c.type] }), c.value + " ×"])); });
       if (!lib) { results.appendChild(el("p", { class: "empty", text: "Chargement du video club…" })); return; }
-      var words = bnrm(q).split(" ").filter(Boolean), list;
-      if (!words.length) { // sans recherche (Gus 25/11) : tous les films du video club avec ce chef op + ceux de la page, plus récents en haut
-        var me = bnrm(rcBase(state.name || "")), onPage = {};
-        base.clips.forEach(function (c) { onPage[c.slate] = 1; }); Object.keys(extra).forEach(function (k) { onPage[k] = 1; });
-        list = lib.films.filter(function (f) { return f.slate && (onPage[f.slate] || (me && (f.dops || []).some(function (d) { return bnrm(rcBase(d)) === me; }))); });
-        Object.keys(onPage).forEach(function (id) { id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img }); }); // film de la page absent du video club
-        results.appendChild(el("p", { class: "hint", text: list.length + " films du video club avec " + (rcBase(state.name || "") || "ce chef op") + " (et ceux de la page), les plus récents en haut. Cherchez pour en ajouter d'autres." }));
-      } else { // recherche : dans les films du chef op tant que le filtre « Chef op » est actif (Gus 25/11)
-        var me2 = bnrm(rcBase(state.name || ""));
-        list = lib.films.filter(function (f) { return f.slate && words.every(function (w) { return f._s.indexOf(w) > -1; }) && (!onlyMe || !me2 || (f.dops || []).some(function (d) { return bnrm(rcBase(d)) === me2; })); }).slice(0, 80);
-      }
-      list.forEach(function (f) {
+      var words = bnrm(q).split(" ").filter(Boolean), onPage = {};
+      base.clips.forEach(function (c) { onPage[c.slate] = 1; }); Object.keys(extra).forEach(function (k) { onPage[k] = 1; });
+      var withPage = isDefault() && !words.length; // à l'ouverture : les films du chef op + ceux de la page
+      var list = lib.films.filter(function (f) { return f.slate && ((withPage && onPage[f.slate]) || (chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
+      if (withPage) Object.keys(onPage).forEach(function (id) { id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
+      results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" + (list.length > 150 ? " · 150 premiers affichés" : "") }));
+      list.slice(0, 150).forEach(function (f) {
         var inTab = t && t.ids.indexOf(f.slate) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + f.img + '")';
         th.addEventListener("click", function () { selPreview(f); });
         results.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
@@ -1259,17 +1271,17 @@
             t.ids.push(f.slate); ch(); drawAll();
           } } })]));
       });
-      if (words.length && !list.length) results.appendChild(el("p", { class: "empty", text: "Aucun film trouvé." }));
+      if (!list.length) results.appendChild(el("p", { class: "empty", text: "Aucun film trouvé" + (chips.length ? " avec ces filtres (× pour en retirer)." : ".") }));
     }
     function drawAll() { drawTabs(); drawLeft(); drawRight(); }
-    search.addEventListener("input", function () { q = search.value; drawRight(); });
-    // Filtre « Chef op » (actif à l'ouverture) : la recherche reste dans ses films ; × = chercher dans tout le video club.
-    var onlyMe = true, chip = el("button", { type: "button", class: "chip on selme", text: "Chef op : " + (rcBase(state.name || "") || "?") + "  ×", title: "Retirer le filtre : chercher dans tout le video club", on: { click: function () {
-      onlyMe = !onlyMe; chip.classList.toggle("on", onlyMe); chip.textContent = onlyMe ? "Chef op : " + (rcBase(state.name || "") || "?") + "  ×" : "+ Filtre chef op : " + (rcBase(state.name || "") || "?"); drawRight(); } } });
+    search.addEventListener("input", function () { q = search.value; drawRight(); drawSug(); });
+    search.addEventListener("blur", function () { setTimeout(function () { sugBox.hidden = true; }, 150); });
     function selPreview(f) { // aperçu : film complet (ou extrait), Échap / clic à côté pour fermer
       var src = f.full || f.video; if (!src) return;
       var o = el("div", { class: "bmodal selprev" }), v = el("video", { controls: true, autoplay: true, playsinline: true });
-      v.src = src; o.appendChild(el("div", { class: "selprevbox" }, [v, el("p", { text: [f.title, (f.dops || []).join(", "), f.dir, f.prod].filter(Boolean).join(" · ") })]));
+      v.src = src; o.appendChild(el("div", { class: "selprevbox" }, [v, el("h3", { text: f.title || "" }),
+        el("p", { text: [f.dir ? "Directed by " + f.dir : "", f.prod, (f.dops || []).length ? "DoP " + f.dops.join(" & ") : ""].filter(Boolean).join(" · ") }),
+        el("p", { class: "selprevm", text: [f.client ? "Client : " + f.client : "", (f.types || []).join(", "), (f.cats || []).join(", "), f.at ? String(f.at).slice(0, 10) : "", f.slate ? "Slate " + f.slate : ""].filter(Boolean).join(" · ") })]));
       function shut(e) { if (e && e.type === "keydown" && e.key !== "Escape") return; if (e && e.stopPropagation) e.stopPropagation(); v.pause(); o.remove(); document.removeEventListener("keydown", shut, true); }
       o.addEventListener("click", function (e) { if (e.target === o) shut(); }); document.addEventListener("keydown", shut, true);
       document.body.appendChild(o);
@@ -1296,12 +1308,12 @@
     });
     box.appendChild(el("span", { class: "label", text: "Sélection de la page · " + (state.name || "") }));
     box.appendChild(tabRow);
-    box.appendChild(el("div", { class: "selgrid" }, [left, el("div", {}, [search, chip, results])]));
+    box.appendChild(el("div", { class: "selgrid" }, [left, el("div", { class: "selsearch" }, [search, sugBox, chipsBox, results])]));
     box.appendChild(el("div", { class: "selfoot" }, [el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { close(); } } }), ok]));
     ov.appendChild(box); document.body.appendChild(ov); drawAll(); search.focus();
     bibLoad().then(function (d) {
-      var byS = {}; d.films.forEach(function (f) { if (f.slate && !byS[f.slate]) byS[f.slate] = f; f._s = bnrm([f.title, f.dir, f.prod, f.client, (f.dops || []).join(" "), (f.types || []).join(" "), f.slate].join(" ")); });
-      lib = { films: d.films, byS: byS }; drawRight();
+      var byS = {}; d.films.forEach(function (f) { if (f.slate && !byS[f.slate]) byS[f.slate] = f; });
+      lib = { films: d.films, byS: byS, sug: d.sug }; drawRight();
     }, function (e) { results.textContent = ""; results.appendChild(el("p", { class: "empty", text: "Video club illisible : " + e.message })); });
   }
 
