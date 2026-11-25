@@ -31,9 +31,19 @@ internes), `FEUILLE-DE-ROUTE.md`, `etudes/`. **À chaque changement** : ce fichi
   puis toutes les 20 s) recopie la réponse dans le film (`full`, `video`, `img`, `img1600`, `snip { s, d, v }`, `thumbT`, `dur`, `w`, `h`).
   **Extrait léger** : « Valider l'extrait » demande au robot (`rapide-….json`, `encAsk` / `encWait`) le passage en 720p sans son →
   `snip.v`, joué par les bandes à la place du film complet. Deux files (films longs / rapide). Demandes : `snip`, `thumb`, `film`.
-  **« ↻ Remplacer la vidéo » → « ⤒ Depuis l'ordinateur »** (fenêtre d'un film, `rpUp` / `rpWait`) : même envoi + encodage ; `it.enc`
-  (encodage en cours, repris en rouvrant la fenêtre) ; à la fin : nouveaux `full`, `video`, `snip { s, d, v }`, `thumbT` (+ vignette si
-  « Prendre aussi sa vignette »), anciens extrait / vignette dans l'historique, fenêtre rouverte.
+  **Fenêtre d'import** (`importFilms`, Gus 26/11) : « + Vidéo » → une ou plusieurs vidéos (bouton ou fichiers glissés) → chaque vidéo
+  entre tout de suite au video club (`enc.sending` pendant l'envoi) et la fenêtre d'infos du film s'ouvre (`libEdit(f, { local, head,
+  credits })`) : vignette / extrait réglables sur la vidéo de l'ordinateur (`lib.local`, blob) pendant l'envoi ; en haut un onglet par
+  vidéo + avancement (envoi en %, puis robot : `progress { step, pct }` écrit dans la demande, `encWait(…, onPoll)`). Envois l'un
+  après l'autre ; une vidéo sans crédits reprend ceux de la 1re ; à la fin, version web (`encCheck`), vignette / extrait choisis à la
+  main gardés (extrait léger refait, `libPatch`). « + Vidéo » / « + Images » sont des liens `#/bibli/video`, `#/bibli/images`
+  (Cmd + clic = autre onglet, plusieurs envois à la fois ; `bibOpen`).
+  **« ↻ Remplacer la vidéo »** (bouton : clic = choix lien Slate / ordinateur ; une vidéo glissée dessus = envoi direct ; `rpUp` /
+  `rpWait`) : demande `web: true` (version web seulement) ; **vignette, extrait et leurs temps gardés** (`thumbT`, `snip`) ; « Valider »
+  les refait dans la nouvelle vidéo (`snipStale` : `snip.vf` = vidéo d'où vient l'extrait léger). `it.enc` = encodage en cours (repris
+  en rouvrant la fenêtre). **Stills de l'ordinateur** sous le film (« ⤒ Ajouter des stills », clic ou glisser plusieurs images) →
+  `data/bibli/img/<id>/`, groupe `extras` `{ title: "Stills", stills, up: true }` ; images de chaque groupe réordonnées en glissant
+  (`stillGrid`), × pour retirer.
 - **Filmothèque complète** (25/11) : en plus des films des pages, tous les films de Slate (7 490) lus dans le dépôt privé
   `notes` (`bibli/slate.json`, constante `BIB_SLATE`, avec la clé de la personne connectée) ; les infos des pages restent prioritaires.
 - **Lecture de Slate** : par les fonctions du site (`siteGet`) ; si elles ne répondent pas, par le **robot GitHub** (`askRobot` :

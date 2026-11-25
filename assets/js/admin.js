@@ -59,6 +59,7 @@
   document.addEventListener("error", function (ev) {
     var v = ev.target, u = v instanceof HTMLMediaElement && v.getAttribute("src");
     if (!u || u.indexOf(NOTRE_CDN) !== 0 || v.dataset.repliSlate) return;
+    if (u.indexOf(NOTRE_CDN + "nous/") === 0) return; // nos vidéos encodées (envoyées depuis l'ordinateur) : pas de copie chez Slate
     if (++cdnReplis >= 2 && !cdnOk) cdnPanne = true;
     ev.stopImmediatePropagation(); // l'échec chez nous ne compte pas comme une erreur de la vidéo
     v.dataset.repliSlate = "1"; srcMedia.set.call(v, SLATE_CDN + u.slice(NOTRE_CDN.length)); // repli : Slate
@@ -420,13 +421,13 @@
     var f = encFile(kind, jobs);
     return commit([f], "Encodage : demande (admin, " + (user && user.login || "") + ")").then(function () { return f.path; });
   }
-  function encWait(path, every, max) {
+  function encWait(path, every, max, onPoll) { // onPoll(demande) à chaque lecture (avancement du robot)
     var t0 = Date.now();
     return new Promise(function (ok, ko) {
       (function poll() {
         setTimeout(function () {
           if (Date.now() - t0 > (max || 900000)) return ko(new Error("le robot d'encodage n'a pas répondu"));
-          readFile(path).then(function (d) { if (d && d.doneAt) ok(d.jobs || []); else poll(); }, poll);
+          readFile(path).then(function (d) { if (d && d.doneAt) ok(d.jobs || []); else { if (d && onPoll) onPoll(d); poll(); } }, poll);
         }, every || 6000);
       })();
     });
@@ -4988,22 +4989,24 @@
     var wrap = el("div", { class: "bib" }), left = el("div", { class: "bibl" }), right = el("aside", { class: "bibr" });
     wrap.appendChild(left); wrap.appendChild(right); view.appendChild(wrap);
     var head = el("div", { class: "bibhead" }, [el("h1", { text: "Video club" }), el("div", { class: "bibadd" }, [
-      el("button", { type: "button", class: "btn primary", text: "+ Vidéo", on: { click: function () { importVideo(); } } }),
-      el("button", { type: "button", class: "btn primary", text: "+ Images", on: { click: function () { importImages(); } } })])]);
+      // Liens (Gus 26/11) : Cmd / Ctrl + clic ou clic molette = la fenêtre d'import dans un autre onglet (plusieurs envois à la fois).
+      el("a", { class: "btn primary", href: "#/bibli/video", text: "+ Vidéo", on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); importVideo(); } } }),
+      el("a", { class: "btn primary", href: "#/bibli/images", text: "+ Images", on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); importImages(); } } })])]);
     left.appendChild(head);
     var q = el("input", { type: "search", class: "find bibq", placeholder: "Chercher : chef op, réal, prod, client, type de contenu, catégorie, titre…", autocomplete: "off" });
     var sugBox = el("div", { class: "bibsug", hidden: true }), chipsBox = el("div", { class: "bibchips" });
     var info = el("p", { class: "hint bibinfo", text: "Chargement de tous nos films…" }), list = el("div", { class: "biblist" });
     left.appendChild(el("div", { class: "bibsearch" }, [q, sugBox])); left.appendChild(chipsBox); left.appendChild(info); left.appendChild(list);
     var data = null;
-    bibLoad().then(function (d) { data = d; draw(); encCheck(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
+    var openNext = bibOpen; bibOpen = null;
+    bibLoad().then(function (d) { data = d; draw(); encCheck(); if (openNext === "video") importVideo(); else if (openNext === "images") importImages(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
     // Films envoyés depuis l'ordinateur : dès que le robot a fini, le film reçoit sa version web, sa vignette et son extrait
     // (library.json) ; vérifié à l'ouverture du video club puis toutes les 20 s tant qu'un encodage est en cours.
     var encT = 0;
     function encCheck() {
-      clearTimeout(encT); if (!canWeb) return;
-      readFile(BIB_LIB).then(function (l) {
-        var wait = ((l && l.items) || []).filter(function (x) { return x.enc && !x.enc.error && !x.full; });
+      clearTimeout(encT); if (!canWeb) return Promise.resolve();
+      return readFile(BIB_LIB).then(function (l) {
+        var wait = ((l && l.items) || []).filter(function (x) { return x.enc && !x.enc.error && !x.enc.sending && !x.full; });
         if (!wait.length) return;
         var paths = wait.map(function (x) { return x.enc.path; }).filter(function (p, k, a) { return a.indexOf(p) === k; });
         return Promise.all(paths.map(function (p) { return readFile(p).catch(function () { return null; }); })).then(function (rs) {
@@ -5015,7 +5018,7 @@
               var j = x.enc && res[x.enc.id]; if (!j || x.full) return;
               if (j.error || !j.answer) { x.enc.error = j.error || "pas de réponse"; return; }
               var a = j.answer; x.full = a.full; x.video = a.video; x.img = a.img; x.img1600 = a.img1600; x.thumbT = a.thumbT;
-              x.snip = { s: a.snip.s, d: a.snip.d, v: a.video }; x.dur = a.dur; x.w = a.w; x.h = a.h; delete x.enc;
+              x.snip = { s: a.snip.s, d: a.snip.d, v: a.video, vf: a.full }; x.dur = a.dur; x.w = a.w; x.h = a.h; delete x.enc;
             });
             return json(L);
           } }], "Video club : encodage terminé (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) { if (location.hash === "#/bibli") { data = d; draw(); } });
@@ -5087,7 +5090,7 @@
       var r = el("div", { class: "brow" + (st.sel[f.key] ? " sel" : "") + (inBand(f) ? " inband" : "") }, [
         el("span", { class: "bnum", text: String(i + 1) }), cb, th,
         el("div", { class: "bt" }, [el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
-          f.enc ? el("small", { class: "benc", text: f.enc.error ? "Encodage raté : " + f.enc.error : "Encodage en cours…" }) : null]),
+          f.enc ? el("small", { class: "benc", text: f.enc.error ? "Encodage raté : " + f.enc.error : f.enc.sending ? "Envoi en cours (ou interrompu)…" : "Encodage en cours…" }) : null]),
         el("div", { class: "bc" }, f.dops.map(function (d) { var r = (f.roles || {})[d]; return r ? el("span", { class: "brole" }, [lnk("dop", d), el("small", { text: r })]) : lnk("dop", d); })),
         el("div", { class: "bc" }, f.cats.slice(0, 2).map(function (c) { return lnk("cat", c); }).concat(f.types.filter(function (t) { return !f.cats.some(function (c) { return bnrm(c) === bnrm(t); }); }).slice(0, 3).map(function (c) { return lnk("type", c); }))),
         el("div", { class: "bc" }, bibProds(f).map(function (x) { return lnk("prod", x); }).concat(f.client ? [lnk("client", f.client)] : [])),
@@ -5134,16 +5137,18 @@
         libQ.busy = false; info.classList.remove("saving"); if (libQ.again) { libQ.again = false; libSaveEdits(); }
       }, function (e) { libQ.busy = false; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving"); alert("Infos pas enregistrées : " + e.message); throw e; });
     }
-    function libEdit(f) {
+    function libEdit(f, opt) { // opt (import) : { local: vidéo de l'ordinateur, head: onglets + avancement, credits: crédits à reprendre }
+      opt = opt || {};
       var o = f._orig || {}, it = { key: f.key, full: f.full, video: f.video, images: f.images };
       BIB_EK.forEach(function (k) { if (f[k] !== undefined) it[k] = JSON.parse(JSON.stringify(f[k])); });
+      var cr = opt.credits, empty = !it.dir && !it.prod && !(it.dops || []).filter(Boolean).length;
       var base = {}; BIB_EK.forEach(function (k) { base[k] = f._orig ? o[k] : f[k]; });
       function diff() { // ce qui diffère des pages
         var e = {}; BIB_EK.forEach(function (k) { var a = k === "snip" && it._snipTmp ? it._snipSaved : it[k], b = base[k]; if (JSON.stringify(a === undefined ? null : a) !== JSON.stringify(b === undefined ? null : b)) e[k] = a === undefined ? null : a; });
         Object.keys(e).forEach(function (k) { if (e[k] === null && (k === "snip" || k === "crop" || k === "roles" || k === "awards" || k === "extras")) e[k] = null; });
         return Object.keys(e).length ? e : null;
       }
-      editItem(-1, { it: it, orig: { img: base.img, images: f.images }, files: libQ.files,
+      var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
         onChange: function () {
           var e = diff(), keep = f._orig;
           if (!keep) { f._orig = {}; BIB_EK.forEach(function (k) { f._orig[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); }
@@ -5153,7 +5158,10 @@
         },
         onClose: function () { unsoon("libEdits"); runSave(libSaveEdits); draw(); },
         reset: function () { BIB_EK.forEach(function (k) { f[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); f.dops = f.dops || []; f.types = f.types || []; f.libEdited = false; bibHay(f); libQ.todo[f.key] = null; }
-      });
+      };
+      // Plusieurs vidéos d'un même projet (Gus 26/11) : une vidéo sans crédits reprend ceux de la 1re.
+      if (cr && empty) { ["dir", "prod", "dops", "roles", "types"].forEach(function (k) { if (cr[k] !== undefined) it[k] = JSON.parse(JSON.stringify(cr[k])); }); L.onChange(); }
+      editItem(-1, L);
     }
     // Liens de films partagés seuls (Gus 23/11) : payload d'une « bande » d'un seul film ; création groupée à l'ajout de films.
     function sharePayload(it, dl) {
@@ -5794,7 +5802,8 @@
       // Extrait = un début et une fin (0,5 à 10 s) : poignées sur une frise de tout le film (Gus 26/11) ; pendant qu'on
       // bouge une poignée la vidéo montre l'image sans bouger, dès qu'on lâche (ou 0,7 s après la dernière flèche) l'extrait joue en boucle.
       var player = null, pout = el("p", { class: "hint" }), tools = el("div", { class: "tltools" }), tl = null;
-      var src = it.full || it.video;
+      var src = it.full || it.video || (lib && lib.local) || ""; // lib.local : la vidéo de l'ordinateur, pendant l'envoi / l'encodage
+      var full = it.full || (lib && lib.local) || "";
       function fmtF(t) { t = Math.max(0, t || 0); var m = Math.floor(t / 60), s = t - m * 60; return m + ":" + (s < 10 ? "0" : "") + s.toFixed(2).replace(".", ","); }
       if (src) {
         player = el("video", { playsinline: true, preload: "auto", muted: true }); player.muted = true; player.src = src;
@@ -5885,11 +5894,11 @@
           el("button", { type: "button", class: "btn ghost", text: "1 image ▶", title: "Image suivante (→, Maj + → = 1 s)", on: { click: function (e) { e.currentTarget.blur(); onKey({ key: "ArrowRight", target: player, preventDefault: function () {}, stopPropagation: function () {} }); } } }),
           time]));
         var grabB = el("button", { type: "button", class: "btn primary", text: "Valider cette image", title: "L'image affichée devient la vignette", on: { click: grab } });
-        var snipB = it.full ? el("button", { type: "button", class: "btn ghost", text: "Début de l'extrait ici", title: "Place le début sur l'image affichée (même durée)", on: { click: function () {
+        var snipB = full ? el("button", { type: "button", class: "btn ghost", text: "Début de l'extrait ici", title: "Place le début sur l'image affichée (même durée)", on: { click: function () {
             snipDraft(); var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "new"); prevSnip(); draw(); playSnip(); drawSnip();
           } } }) : null;
         var tabB = {}, ptabs = el("div", { class: "btabs ptabs" }, [["thumb", "Vignette"], ["snip", "Extrait"]].map(function (t) { return tabB[t[0]] = el("button", { type: "button", text: t[1], on: { click: function () { setTab(t[0]); } } }); }));
-        if (!it.full) tabB.snip.hidden = true;
+        if (!full) tabB.snip.hidden = true;
         var setTab = function (t) {
           ptab = t; act = "play"; tabB.thumb.classList.toggle("on", t === "thumb"); tabB.snip.classList.toggle("on", t === "snip");
           if (thumbPane) thumbPane.hidden = t !== "thumb"; if (snipPane) snipPane.hidden = t !== "snip";
@@ -5905,7 +5914,7 @@
       var snipLine = el("p", { class: "hint" });
       function prevSnip() { if (pvid) { pvid.remove(); pvid = null; } }
       function drawSnip() {
-        snipLine.textContent = ""; if (typeof valB !== "undefined" && valB) valB.disabled = !it._snipTmp;
+        snipLine.textContent = ""; if (typeof valB !== "undefined" && valB) valB.disabled = !it._snipTmp && !snipStale();
         if (it.snipVideo) snipLine.appendChild(el("span", {}, ["Extrait importé de l'ordinateur · ", el("button", { type: "button", class: "blink", text: "le retirer", on: { click: function () { delete it.snipVideo; chg(); prevSnip(); drawSnip(); } } })]));
         else if (it._snipTmp) snipLine.textContent = "Extrait pas encore enregistré : « Valider l'extrait » pour le garder (sinon il est oublié en fermant).";
         else if (it.snip) snipLine.appendChild(el("span", {}, [el("button", { type: "button", class: "blink", text: "Revenir à l'extrait d'origine", on: { click: function () { snipDiscard(); pushHist("snip", it.snip); delete it.snip; lastSnip = null; act = "play"; chg(); drawSnip(); drawHist(); if (tl) { loopOn = false; draw(); } } } })]));
@@ -5929,14 +5938,17 @@
       }
       // Extrait léger (Gus 26/11) : le robot d'encodage découpe le passage validé en petite vidéo 720p sans son (~1–2 Mo), rangée
       // chez Amazon → snip.v, que jouent les bandes (au lieu du film complet lu à partir du début de l'extrait).
+      // Extrait léger à refaire : jamais fait, ou fait dans une autre vidéo (vidéo remplacée, Gus 26/11).
+      function snipStale() { return !!(it.snip && it.full && !it.snipVideo && (!it.snip.v || (it.snip.vf && it.snip.vf !== it.full))); }
       function snipLight() {
         var sn = it.snip, from = it.full;
-        if (!canWeb || !sn || sn.v || it.snipVideo || !from) return;
+        if (!canWeb || !sn || it.snipVideo || !from || !snipStale()) return;
+        pout.textContent = "Extrait léger en préparation par le robot (≈ 1 min)…";
         var id = encId(), s0 = sn.s, d0 = sn.d;
         encAsk("rapide", [{ id: id, kind: "snip", src: from, s: s0, d: d0 }]).then(function (p) { return encWait(p, 5000, 600000); }).then(function (jobs) {
           var j = jobs[0] || {}; if (!j.answer) throw new Error(j.error || "pas de réponse");
-          if (it.snip && it.snip.s === s0 && it.snip.d === d0 && !it.snip.v) { it.snip.v = j.answer.video; it.edited = true; chg(); }
-        }).catch(function (e) { if (window.console) console.warn("Extrait léger pas fait : " + e.message); });
+          if (it.snip && it.snip.s === s0 && it.snip.d === d0 && it.full === from) { it.snip.v = j.answer.video; it.snip.vf = from; it.edited = true; chg(); if (pout.isConnected) pout.textContent = "Extrait léger prêt (720p) : c'est lui que jouent les bandes."; }
+        }).catch(function (e) { if (pout.isConnected) pout.textContent = "Extrait léger pas fait : " + e.message; });
       }
       var histImgL = el("span", { class: "label", text: "Anciennes vignettes" }), histImg = el("div", { class: "bthumbs" });
       var histSnipL = el("span", { class: "label", text: "Anciens extraits" }), histSnip = el("div", { class: "bhsnip" });
@@ -5954,12 +5966,12 @@
       imgUp.addEventListener("change", function () { doImg(imgUp.files[0]); });
       vidUp.addEventListener("change", function () { doVid(vidUp.files[0]); });
       // Boutons d'import (Gus 22/11) : un clic ouvre le choix du fichier ; on peut aussi y lâcher un fichier glissé depuis l'ordinateur.
-      function upBtn(label, input, kind, onFile) {
+      function upBtn(label, input, kind, onFile, multi) { // multi : tous les fichiers lâchés (sinon le 1er)
         var b = el("button", { type: "button", class: "btn bupbtn", title: "Cliquer ou glisser un fichier ici" }, [label]);
-        b.addEventListener("click", function () { input.click(); });
+        b.onclick = function () { input.click(); };
         ["dragenter", "dragover"].forEach(function (ev) { b.addEventListener(ev, function (e) { if (!e.dataTransfer || [].indexOf.call(e.dataTransfer.types, "Files") < 0) return; e.preventDefault(); b.classList.add("over"); }); });
         b.addEventListener("dragleave", function () { b.classList.remove("over"); });
-        b.addEventListener("drop", function (e) { e.preventDefault(); b.classList.remove("over"); var f = [].filter.call(e.dataTransfer.files, function (x) { return x.type.indexOf(kind) === 0; })[0]; if (f) onFile(f); else pout.textContent = kind === "image" ? "Ce n'est pas une image." : "Ce n'est pas une vidéo."; });
+        b.addEventListener("drop", function (e) { e.preventDefault(); b.classList.remove("over"); var fl = [].filter.call(e.dataTransfer.files, function (x) { return x.type.indexOf(kind) === 0; }), f = fl[0]; if (f) onFile(multi ? fl : f); else pout.textContent = kind === "image" ? "Ce n'est pas une image." : "Ce n'est pas une vidéo."; });
         return b;
       }
       function doImg(f) {
@@ -6002,7 +6014,7 @@
           } catch (e) { pout.textContent = "Capture impossible : " + e.message; }
         });
         v.addEventListener("error", function () { if (!done) pout.textContent = "Capture impossible (la fonction /api/media du site ne répond pas)."; done = true; });
-        v.src = SITE + "/api/media?u=" + encodeURIComponent(src);
+        v.src = /^blob:/.test(src) ? src : SITE + "/api/media?u=" + encodeURIComponent(src);
       }
       // Vignettes possibles : vignette d'origine + stills du film
       var thumbs = el("div", { class: "bthumbs" });
@@ -6023,7 +6035,37 @@
           exBox.appendChild(el("div", { class: "bit bex" }, [th, el("span", { class: "bitt" }, [x.title || x.link || "", el("small", { text: x.stills ? x.stills.length + " images" : "vidéo" })]),
             el("button", { type: "button", class: "bx", text: "↑", title: "Monter", disabled: j ? null : true, on: { click: function () { var a = it.extras.splice(j, 1)[0]; it.extras.splice(j - 1, 0, a); chg(); drawEx(); } } }),
             el("button", { type: "button", class: "bx", text: "×", title: "Retirer de cette bande", on: { click: function () { it.extras.splice(j, 1); if (!it.extras.length) delete it.extras; chg(); drawEx(); } } })]));
+          if (x.stills && x.stills.length) exBox.appendChild(stillGrid(x));
         });
+      }
+      // Stills de l'ordinateur (Gus 26/11) : cliquer ou glisser des images sur le bouton → réduites (WebP) dans data/bibli/img/ ;
+      // rangées dans un groupe « Stills » sous le film ; l'ordre de toutes les images se change en les glissant.
+      var stUp = el("input", { type: "file", accept: "image/*", multiple: true, hidden: true });
+      stUp.addEventListener("change", function () { addStills([].slice.call(stUp.files)); stUp.value = ""; });
+      function addStills(l) {
+        l = l.filter(function (f) { return /^image\//.test(f.type); }).sort(function (a, b) { return a.name.localeCompare(b.name, undefined, { numeric: true }); });
+        if (!l.length) return; exOut.textContent = "Préparation de " + l.length + " image" + (l.length > 1 ? "s" : "") + "…";
+        var g = (it.extras || []).filter(function (x) { return x.up && x.stills; })[0];
+        if (!g) { g = { title: "Stills", stills: [], up: true }; (it.extras = it.extras || []).push(g); }
+        var id = Date.now().toString(36) + Math.random().toString(36).slice(2, 5), n = 0;
+        l.reduce(function (p, f) { return p.then(function () { return compress(f).then(function (c) {
+          var path = "data/bibli/img/" + id + "/" + String(++n).padStart(3, "0") + ".webp"; files.push({ path: path, base64: c.base64 }); g.stills.push(rawURL(path));
+        }); }); }, Promise.resolve()).then(function () { exOut.textContent = n + " image" + (n > 1 ? "s" : "") + " ajoutée" + (n > 1 ? "s" : "") + "."; it.edited = true; chg(); drawEx(); },
+          function (e) { exOut.textContent = e.message; drawEx(); });
+      }
+      function stillGrid(x) { // images d'un groupe : glisser pour changer l'ordre, × pour retirer
+        var g = el("div", { class: "bstgrid" }), from = -1;
+        x.stills.forEach(function (u, k) {
+          var c = el("div", { class: "bst", draggable: "true", style: 'background-image:url("' + u + '")', title: "Glisser pour changer l'ordre" }, [
+            el("button", { type: "button", class: "bx", text: "×", title: "Retirer cette image", on: { click: function () { x.stills.splice(k, 1); it.edited = true; chg(); drawEx(); } } })]);
+          c.addEventListener("dragstart", function (e) { from = k; e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", "st"); c.classList.add("drag"); });
+          c.addEventListener("dragend", function () { c.classList.remove("drag"); });
+          c.addEventListener("dragover", function (e) { if (from < 0) return; e.preventDefault(); c.classList.add("over"); });
+          c.addEventListener("dragleave", function () { c.classList.remove("over"); });
+          c.addEventListener("drop", function (e) { if (from < 0) return; e.preventDefault(); var a = x.stills.splice(from, 1)[0]; x.stills.splice(k, 0, a); from = -1; it.edited = true; chg(); drawEx(); });
+          g.appendChild(c);
+        });
+        return g;
       }
       var exGo = el("button", { type: "button", class: "btn", text: "Ajouter", on: { click: function () {
         var v = exIn.value.trim(); if (!v) return; exGo.disabled = true; exOut.textContent = "Lecture sur Slate" + slateWait("…");
@@ -6050,21 +6092,19 @@
           player ? null : upBtn("⤒ Importer une image", imgUp, "image", doImg), player ? null : imgUp,
           player ? null : histImgL, player ? null : histImg])]));
       box.appendChild(el("div", { class: "bmgrid" }, [
-        el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]), exOut]),
+        el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]),
+          el("div", { class: "tlrow" }, [upBtn("⤒ Ajouter des stills de l'ordinateur", stUp, "image", addStills, true), stUp]), exOut]),
         el("div", {}, [el("span", { class: "label", text: "Prix et sélections" }), aw])]));
       // Remplacer la vidéo (Gus 23/11) : lien Slate d'une vidéo (page « work » ou shots.re) → nouveau film complet et extrait ;
       // l'extrait choisi et l'image de vignette prise dans l'ancien film sont oubliés (ils ne correspondent plus). Depuis l'ordinateur :
       // quand notre hébergement (Amazon) sera branché.
       var rpIn = el("input", { type: "text", placeholder: "Lien Slate de la nouvelle vidéo (page d'une vidéo ou shots.re)" }), rpOut = el("p", { class: "hint" });
-      var rpImg = el("input", { type: "checkbox" }); rpImg.checked = true;
       var rpGo = el("button", { type: "button", class: "btn", text: "Remplacer", on: { click: function () {
         var v = rpIn.value.trim(); if (!v) return; rpGo.disabled = true; rpOut.textContent = "Lecture sur Slate" + slateWait("…");
         importStills(v).then(function (d) {
           if (!d.full && !d.video) throw new Error("ce lien ne contient pas de vidéo");
-          it.full = d.full || d.video; if (d.video) it.video = d.video; else delete it.video;
-          if (rpImg.checked && d.img) { if (it.img && it.img !== d.img) pushHist("img", it.img); it.img = d.img; }
-          if (it.snip) pushHist("snip", it.snip);
-          delete it.snip; delete it.thumbT; delete it.snipVideo; delete it._snipTmp; delete it._snipSaved;
+          // Vignette, extrait et leurs temps gardés (Gus 26/11) : « Valider » les refait dans la nouvelle vidéo.
+          it.full = d.full || d.video; if (!it.video && d.video) it.video = d.video; delete it._snipTmp; delete it._snipSaved;
           it.edited = true; chg(); document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib); // la fenêtre se rouvre sur la nouvelle vidéo
         }).catch(function (e) { rpGo.disabled = false; rpOut.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
       } } });
@@ -6083,8 +6123,8 @@
           rpOut.textContent = "Envoi : " + Math.floor(p * 100) + " %" + (left > 5 ? " · encore ≈ " + (left > 90 ? Math.round(left / 60) + " min" : Math.round(left) + " s") : "") + " (garde l'admin ouverte)";
         }).then(function (key) {
           var id = encId();
-          return encAsk("film", [{ id: id, kind: "film", key: key }]).then(function (path) {
-            it.enc = { path: path, id: id, img: rpImg.checked }; it.edited = true; chg(); rpBar.hidden = true;
+          return encAsk("film", [{ id: id, kind: "film", key: key, web: true }]).then(function (path) {
+            it.enc = { path: path, id: id }; it.edited = true; chg(); rpBar.hidden = true;
             rpOut.textContent = "Envoyé. Encodage en cours (quelques minutes) : la vidéo sera remplacée toute seule. Tu peux fermer cette fenêtre, garde l'admin ouverte.";
             rpWait();
           });
@@ -6097,19 +6137,20 @@
           if (!it.enc || it.enc.id !== e.id) return;
           var j = jobs.filter(function (x) { return x.id === e.id; })[0] || {};
           if (!j.answer) { it.enc.error = j.error || "pas de réponse"; chg(); rpOut.textContent = "Encodage raté : " + it.enc.error; return; }
-          var a = j.answer;
-          if (it.snip) pushHist("snip", it.snip);
-          if (e.img && a.img) { if (it.img && it.img !== a.img) pushHist("img", it.img); it.img = a.img; }
-          it.full = a.full; it.video = a.video; it.snip = { s: a.snip.s, d: a.snip.d, v: a.video }; it.thumbT = a.thumbT;
-          delete it.snipVideo; delete it._snipTmp; delete it._snipSaved; delete it.enc; it.edited = true; chg();
+          // Vignette, extrait et leurs temps gardés (Gus 26/11) : « Valider » les refait dans la nouvelle vidéo.
+          it.full = j.answer.full; delete it._snipTmp; delete it._snipSaved; delete it.enc; it.edited = true; chg();
           if (document.body.contains(ov)) { document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib); } // la fenêtre se rouvre sur la nouvelle vidéo
         }, function (err) { delete encBusy[e.id]; rpOut.textContent = "Encodage : " + err.message; });
       }
       var rpBox = el("div", { class: "brepl", hidden: true }, [el("div", { class: "row" }, [el("div", { class: "grow" }, [rpIn]), rpGo]),
-        el("label", { class: "bck" }, [rpImg, " Prendre aussi sa vignette"]),
-        el("div", { class: "tlrow" }, [upBtn("⤒ Depuis l'ordinateur", rpFile, "video", rpUp), rpFile]), rpBar, rpOut]);
+        el("div", { class: "tlrow" }, [upBtn("⤒ Depuis l'ordinateur", rpFile, "video", rpUp), rpFile]),
+        el("p", { class: "hint", text: "La vignette et l'extrait actuels sont gardés (mêmes temps) : « Valider » dans Vignette / Extrait les refait dans la nouvelle vidéo." }), rpBar, rpOut]);
       if (it.enc && !it.enc.error) { rpBox.hidden = false; rpOut.textContent = "Nouvelle vidéo : encodage en cours… (la fenêtre se met à jour toute seule)"; rpWait(); }
-      box.appendChild(el("div", { class: "breplw" }, [el("button", { type: "button", class: "btn ghost", text: "↻ Remplacer la vidéo", on: { click: function () { rpBox.hidden = !rpBox.hidden; if (!rpBox.hidden) rpIn.focus(); } } }), rpBox]));
+      // Le bouton accepte aussi une vidéo glissée depuis l'ordinateur (Gus 26/11).
+      var rpB = upBtn("↻ Remplacer la vidéo", rpFile, "video", function (f) { rpBox.hidden = false; rpUp(f); });
+      rpB.className = "btn ghost bupbtn"; rpB.title = "Cliquer pour les choix, ou glisser une vidéo de l'ordinateur ici";
+      rpB.onclick = function (e) { e.stopImmediatePropagation(); rpBox.hidden = !rpBox.hidden; if (!rpBox.hidden) rpIn.focus(); };
+      box.appendChild(el("div", { class: "breplw" }, [rpB, rpBox]));
       // Vignette et extrait : deux onglets sous le film (Gus 22/11), vignette d'abord.
       var thumbPane = null, snipPane = null;
       if (player) {
@@ -6164,6 +6205,7 @@
       erB = el("button", { type: "button", class: "blink bredo", text: "Rétablir ↷", title: "Rétablir (Maj + Ctrl / Cmd + Z)", on: { click: function () { eGo(1); } } });
       box.appendChild(el("div", { class: "bshare" }, [el("span", { class: "label", text: "Partager ce film seul" }), el("div", { class: "tlrow" }, [shrB, shrDl, shrMsg])]));
       box.appendChild(el("div", { class: "fwbtns bedfoot" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } }), el("span", { class: "bur" }, [euB, erB])]));
+      if (lib && lib.head) box.insertBefore(lib.head, box.firstChild); // import : onglets des vidéos + avancement de l'envoi / l'encodage
       ov.appendChild(box); document.body.appendChild(ov); eBtns();
     }
 
@@ -6210,54 +6252,86 @@
             });
           }).catch(function (e) { go.disabled = false; out.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
       } } });
-      // Fichier depuis l'ordinateur (Gus 26/11) : vérifié ici (poids, durée, taille), envoyé chez Amazon (upload), puis encodé par le
-      // robot (version web 1080p, vignettes, extrait 720p de 5 s aux 2/3 du film) ; le film apparaît tout de suite dans la liste
-      // (« Encodage en cours… ») et se complète tout seul (encCheck).
-      var fin = el("input", { type: "file", accept: "video/*" }), chk = el("div", { class: "bchk" });
-      fin.addEventListener("change", function () {
-        var f = fin.files[0]; chk.textContent = ""; if (!f) return;
-        var lines = [f.name + " · " + (f.size / 1e9 >= 1 ? (f.size / 1e9).toFixed(2) + " Go" : Math.round(f.size / 1e6) + " Mo")];
-        if (f.size > 10e9) lines.push("✗ Plus de 10 Go : trop lourd pour le robot d'encodage.");
-        else if (f.size > 2e9) lines.push("! Plus de 2 Go (votre limite habituelle).");
-        var vid = el("video", { muted: true, playsinline: true, preload: "metadata" }), url = URL.createObjectURL(f);
-        vid.addEventListener("loadedmetadata", function () {
-          lines.push("Durée " + Math.floor(vid.duration / 60) + " min " + String(Math.round(vid.duration % 60)).padStart(2, "0") + " · " + vid.videoWidth + " × " + vid.videoHeight + " · débit moyen ≈ " + (f.size * 8 / vid.duration / 1e6).toFixed(1) + " Mb/s");
-          vid.currentTime = Math.min(3, vid.duration / 3);
-        });
-        vid.addEventListener("seeked", function () {
-          var c = document.createElement("canvas"); c.width = 320; c.height = Math.round(320 * vid.videoHeight / vid.videoWidth) || 180;
-          c.getContext("2d").drawImage(vid, 0, 0, c.width, c.height); chk.appendChild(c); done();
-        });
-        vid.addEventListener("error", function () { lines.push("Pas lisible par les navigateurs (ProRes, HEVC… ?) : le robot d'encodage le convertira."); done(); });
-        function done() {
-          chk.insertBefore(el("p", { class: "hint" }, lines.map(function (t, i) { return el("span", {}, [i ? el("br") : null, t]); })), chk.firstChild);
-          if (f.size > 10e9) return;
-          var bar = el("progress", { max: 1, value: 0, class: "bupprog", hidden: true }), msg = el("p", { class: "hint" });
-          var send = el("button", { type: "button", class: "btn primary", text: "Envoyer et encoder", on: { click: function () {
-            if (!canWeb) { msg.textContent = "Lecture seule : cette clé ne peut pas ajouter au video club."; return; }
-            send.disabled = true; fin.disabled = true; bar.hidden = false; msg.textContent = "Envoi chez Amazon…";
-            var t0 = Date.now();
-            upload(f, function (p) {
-              bar.value = p; var el2 = (Date.now() - t0) / 1000, left = p > .02 ? el2 * (1 - p) / p : 0;
-              msg.textContent = "Envoi chez Amazon : " + Math.floor(p * 100) + " %" + (left > 5 ? " · encore ≈ " + (left > 90 ? Math.round(left / 60) + " min" : Math.round(left) + " s") : "") + " (garde cette page ouverte)";
-            }).then(function (key) {
-              msg.textContent = "Envoyé. Demande d'encodage…";
-              var id = encId(), rq = encFile("film", [{ id: id, kind: "film", key: key }]);
-              var title = f.name.replace(/\.[a-z0-9]+$/i, "").replace(/[_]+/g, " ").replace(/\s+/g, " ").trim() || "Vidéo";
-              var it = { key: "e" + id, kind: "video", title: title, dops: [], cats: [], src: "upload", enc: { path: rq.path, id: id }, size: f.size,
-                at: new Date().toISOString(), by: user && user.login || "", _files: [rq] };
-              return libSave([it]).then(function () { return bibLoad(true); }).then(function (d) {
-                data = d; draw(); encCheck();
-                msg.textContent = "C'est parti : le robot encode le film (quelques minutes, plus pour un long film). Il est déjà dans la liste (« Encodage en cours… ») et se complètera tout seul. Tu peux fermer cette fenêtre.";
-              });
-            }).catch(function (e) { send.disabled = false; fin.disabled = false; msg.textContent = "Envoi interrompu : " + e.message + ". Choisis de nouveau le même fichier : l'envoi reprendra où il en était."; });
-          } } });
-          chk.appendChild(el("div", { class: "fwbtns" }, [send])); chk.appendChild(bar); chk.appendChild(msg);
-        }
-        vid.src = url;
-      });
+      // Depuis l'ordinateur (Gus 26/11) : une ou plusieurs vidéos d'un même projet → fenêtre d'import (importFilms).
+      var fin = el("input", { type: "file", accept: "video/*", multiple: true, hidden: true });
+      fin.addEventListener("change", function () { var l = [].slice.call(fin.files); if (!l.length) return; mo.remove(); importFilms(l); });
+      var finB = el("button", { type: "button", class: "btn primary bupbtn", text: "⤒ Choisir ou glisser une ou plusieurs vidéos", on: { click: function () { fin.click(); } } });
+      ["dragenter", "dragover"].forEach(function (ev) { finB.addEventListener(ev, function (e) { e.preventDefault(); finB.classList.add("over"); }); });
+      finB.addEventListener("dragleave", function () { finB.classList.remove("over"); });
+      finB.addEventListener("drop", function (e) { e.preventDefault(); var l = [].filter.call(e.dataTransfer.files, function (x) { return /^video\//.test(x.type) || /\.(mov|mxf|mp4|m4v|avi|mkv)$/i.test(x.name); }); if (!l.length) return; mo.remove(); importFilms(l); });
+      var chk = el("p", { class: "hint", text: "Plusieurs vidéos d'un même projet : elles gardent les crédits de la 1re (titre, vignette et extrait propres à chacune), et entrent une par une dans le video club. 10 Go au plus par vidéo." });
       var mo = modal("Ajouter une vidéo", [el("span", { class: "label", text: "Depuis Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [link]), go]), out,
-        el("span", { class: "label", text: "Depuis l'ordinateur" }), fin, chk]);
+        el("span", { class: "label", text: "Depuis l'ordinateur" }), finB, fin, chk]);
+    }
+    // Fenêtre d'import de vidéos de l'ordinateur (Gus 26/11) : chaque vidéo entre tout de suite dans le video club (« Encodage en
+    // cours… ») et la fenêtre d'infos du film s'ouvre (titre, crédits, vignette, extrait réglés sur la vidéo de l'ordinateur pendant
+    // l'envoi), avec en haut un onglet par vidéo et l'avancement : envoi (ici), puis encodage (robot, `progress`). Les vidéos sont
+    // envoyées l'une après l'autre ; à la fin de l'encodage, le film reçoit sa version web ; une vignette / un extrait choisis à la main
+    // sont gardés (l'extrait léger est alors refait par le robot). Garder l'onglet ouvert pendant l'envoi (l'encodage, lui, continue seul).
+    function importFilms(fl) {
+      if (!canWeb) { alert("Lecture seule : cette clé ne peut pas ajouter au video club."); return; }
+      var big = fl.filter(function (f) { return f.size > 10e9; }); fl = fl.filter(function (f) { return f.size <= 10e9; });
+      if (big.length) alert("Plus de 10 Go, pas envoyé : " + big.map(function (f) { return f.name; }).join(", "));
+      if (!fl.length) return;
+      var now = new Date().toISOString(), by = user && user.login || "", cur = 0;
+      var g = fl.map(function (file, k) {
+        var id = encId(), path = "data/encode/film-" + Date.now() + "-" + k + Math.random().toString(36).slice(2, 6) + ".json";
+        var title = file.name.replace(/\.[a-z0-9]+$/i, "").replace(/[_]+/g, " ").replace(/\s+/g, " ").trim() || "Vidéo";
+        return { file: file, id: id, path: path, local: URL.createObjectURL(file), up: 0, step: "attente",
+          it: { key: "e" + id, kind: "video", title: title, dops: [], cats: [], src: "upload", enc: { path: path, id: id, sending: true }, size: file.size, at: now, by: by } };
+      });
+      var hd = el("div", { class: "bimphead" }), tabs = el("div", { class: "btabs bimptabs" }), stat = el("p", { class: "bimpstat" }), bar = el("progress", { max: 1, value: 0, class: "bupprog" });
+      hd.appendChild(tabs); hd.appendChild(stat); hd.appendChild(bar);
+      var STEP = { attente: "en attente d'envoi", envoi: "envoi", demande: "demande au robot", file: "en attente du robot", lecture: "le robot lit la vidéo", web: "encodage de la version web",
+        extrait: "fabrication de l'extrait", vignette: "fabrication de la vignette", fini: "prête", erreur: "erreur" };
+      function label(x) { var f = filmOf(x.it.key); return (f && f.title) || x.it.title; }
+      function paint() {
+        if (!hd.isConnected && g.every(function (x) { return x.step === "fini" || x.step === "erreur"; })) return;
+        tabs.textContent = "";
+        if (g.length > 1) g.forEach(function (x, k) { tabs.appendChild(el("button", { type: "button", class: k === cur ? "on" : "", on: { click: function () { openTab(k); } } }, [label(x), el("small", { text: " · " + pct(x) })])); });
+        var x = g[cur]; stat.textContent = (g.length > 1 ? "Vidéo " + (cur + 1) + " / " + g.length + " : " : "") + STEP[x.step] + (x.step === "envoi" || x.step === "web" ? " " + pct(x) : "") + (x.err ? " (" + x.err + ")" : "")
+          + (x.step === "envoi" || x.step === "attente" ? " · garde cette page ouverte" : x.step !== "fini" && x.step !== "erreur" ? " · tu peux fermer la fenêtre, le robot continue" : "");
+        bar.value = x.step === "envoi" ? x.up : x.step === "web" ? x.pct / 100 : x.step === "fini" ? 1 : 0; bar.hidden = x.step === "fini";
+      }
+      function pct(x) { return x.step === "envoi" ? Math.floor(x.up * 100) + " %" : x.step === "web" ? (x.pct || 0) + " %" : x.step === "fini" ? "✓" : x.step === "erreur" ? "!" : "…"; }
+      var tick = setInterval(function () { paint(); if (!hd.isConnected && g.every(function (x) { return x.step === "fini" || x.step === "erreur"; })) clearInterval(tick); }, 1000);
+      function credits() { var f = filmOf(g[0].it.key) || {}; var c = {}; ["dir", "prod", "dops", "roles", "types"].forEach(function (k) { if (f[k] !== undefined) c[k] = f[k]; }); return c; }
+      function openTab(k) {
+        var m = hd.closest(".bmodal"); if (m) m.dispatchEvent(new MouseEvent("click", { bubbles: true })); // ferme (et enregistre) la vidéo affichée
+        cur = k; paint();
+        setTimeout(function () { var f = filmOf(g[k].it.key); if (f) libEdit(f, { local: g[k].step === "fini" ? null : g[k].local, head: hd, credits: k ? credits() : null }); }, m ? 200 : 0);
+      }
+      function finish(x, jobs) { // encodage fini : le film reçoit sa version web (encCheck) ; vignette / extrait choisis à la main gardés
+        var j = (jobs || []).filter(function (y) { return y.id === x.id; })[0] || {};
+        if (!j.answer) { x.step = "erreur"; x.err = j.error || "pas de réponse"; paint(); return; }
+        x.step = "fini"; paint();
+        encCheck().then(function () {
+          var f = filmOf(x.it.key); if (!f) return;
+          if (f.snip && f.full && !f.snipVideo && (!f.snip.v || f.snip.vf !== f.full)) { // extrait choisi pendant l'envoi : extrait léger refait
+            var sid = encId(), sn = { s: f.snip.s, d: f.snip.d };
+            encAsk("rapide", [{ id: sid, kind: "snip", src: f.full, s: sn.s, d: sn.d }]).then(function (p) { return encWait(p, 5000, 600000); }).then(function (js) {
+              var a = (js[0] || {}).answer; if (a) libPatch(filmOf(x.it.key), { snip: { s: sn.s, d: sn.d, v: a.video, vf: f.full } });
+            }).catch(function () {});
+          }
+          var m = hd.closest(".bmodal"); if (m && g[cur] === x) openTab(cur); // fenêtre ouverte sur cette vidéo : rouverte sur la version web
+        });
+      }
+      function watch(x) {
+        encWait(x.path, 8000, 6 * 3600000, function (d) { var j = (d.jobs || [])[0] || {}; if (j.progress) { x.step = j.progress.step; x.pct = j.progress.pct; } else if (d.startedAt) x.step = "lecture"; paint(); })
+          .then(function (jobs) { finish(x, jobs); }, function (e) { x.step = "erreur"; x.err = e.message; paint(); });
+      }
+      function next(k) {
+        if (k >= g.length) return; var x = g[k]; x.step = "envoi"; paint();
+        upload(x.file, function (p) { x.up = p; }).then(function (key) {
+          x.step = "demande"; paint();
+          return commit([{ path: x.path, text: json({ jobs: [{ id: x.id, kind: "film", key: key }], at: new Date().toISOString(), by: by }) },
+            { path: BIB_LIB, edit: function (t) { var L = t ? JSON.parse(t) : { items: [] }; (L.items || []).forEach(function (y) { if (y.key === x.it.key && y.enc) delete y.enc.sending; }); return json(L); } }],
+            "Encodage : demande (admin, " + by + ")");
+        }).then(function () { x.step = "file"; paint(); watch(x); }, function (e) { x.step = "erreur"; x.err = "envoi interrompu : " + e.message + " (rechoisis le même fichier pour reprendre)"; paint(); })
+          .then(function () { next(k + 1); });
+      }
+      libSave(g.map(function (x) { return x.it; })).then(function () { return bibLoad(true); }).then(function (d) { data = d; draw(); openTab(0); next(0); },
+        function (e) { alert("Pas enregistré : " + e.message); });
     }
     // Suite d'images (Gus 22/11) : on choisit les images, elles sont enregistrées, puis la même fenêtre d'infos s'ouvre (titre,
     // crédits, vignette…). Images réduites dans le navigateur (WebP) → data/bibli/img/<id>/.
@@ -6288,8 +6362,10 @@
     undoReset(); drawBand();
   }
 
+  var bibOpen = null; // #/bibli/video, #/bibli/images : video club + fenêtre d'import (lien ouvert dans un autre onglet)
   function route() {
-    var h = location.hash;
+    var h = location.hash, bo = /^#\/bibli\/(video|images)$/.exec(h);
+    if (bo) { bibOpen = bo[1]; h = "#/bibli"; try { history.replaceState(null, "", "#/bibli"); } catch (e) {} }
     document.getElementById("back").hidden = !token || !/^#\/(dp\/|new)/.test(h);
     var page = /^#\/(home|spotlight|fiction|press|contact|festivals|selections|sorties|recup|bibli)$/.test(h) ? h.slice(2) : /^#\/(dops|dp\/.*|new)$/.test(h) ? "cinematographers" : "hello";
     side.hidden = !token;
