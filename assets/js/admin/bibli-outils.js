@@ -66,7 +66,7 @@
         el("button", { type: "button", class: "btn ghost", text: "›", title: "Film d'après (→)", disabled: i < list.length - 1 ? null : true, on: { click: function () { go(1); } } })]);
       ov.appendChild(el("div", { class: "bpwrap" }, [el("div", { class: "bpbox" }, [el("div", { class: "bphead" }, [el("strong", { text: f.title || "" }),
         el("button", { type: "button", class: "bx", text: "×", title: "Fermer", on: { click: close } })]), v || gal || el("div", { class: "bthumb", style: 'background-image:url("' + (f.img || "") + '")' }),
-        el("p", { class: "hint", text: cred.join(" · ") }), meta ? el("p", { class: "hint bpmeta", text: meta }) : null, tabsRow, nav])]));
+        el("p", { class: "hint", text: cred.join(" · ") }), meta ? el("p", { class: "hint bpmeta", text: meta }) : null, nav])]));
     }
     document.addEventListener("keydown", key, true);
     ov.addEventListener("click", function (e) { if (e.target === ov || e.target.classList.contains("bpwrap")) close(); });

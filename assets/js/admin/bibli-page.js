@@ -914,29 +914,34 @@
         var FR = 1 / 25, seqOn = false, seqI = 0, dur = 0, act = "play", loopOn = false, kT = 0, WIN = 30, ptab = "thumb"; // onglet : vignette | extrait (Gus 22/11)
         var oReg = el("i", { class: "tlreg" }), oPh = el("i", { class: "tlph" }), over = el("div", { class: "tlo", title: "Tout le film : cliquez ou glissez" }, [oReg, oPh]);
         var dReg = el("i", { class: "tlreg" }), dPh = el("i", { class: "tlph" }), hIn = el("b", { class: "tlh in", title: "Début de l'extrait" }), hOut = el("b", { class: "tlh out", title: "Fin de l'extrait" });
-        var blkLayer = el("div", { class: "tlblks" }), blkKey = "";
-        var dLab = el("div", { class: "tllab" }), det = el("div", { class: "tld" }, [blkLayer, dReg, dPh, hIn, hOut]);
+        var blkLayer = el("div", { class: "tlblks" }), blkKey = "", endL = el("i", { class: "tlend l", title: "Début du film" }), endR = el("i", { class: "tlend r", title: "Fin du film" });
+        var dLab = el("div", { class: "tllab" }), det = el("div", { class: "tld" }, [blkLayer, endL, endR, dReg, dPh, hIn, hOut]);
         var time = el("span", { class: "tlt" }), playB = el("button", { type: "button", class: "btn ghost", text: "▶", title: "Lecture / pause (espace)" });
         tl = el("div", { class: "tl" }, [over, det, dLab]);
         var clamp = function (t) { return Math.max(0, Math.min(dur || 0, t)); };
         // Une seule frise pour l'extrait, sur tout le film (Gus 26/11 : la frise de détail de 30 s se recentrait et donnait un effet de
         // zoom / dézoom en bougeant une poignée). Précision : flèches image par image. La frise du haut ne sert plus qu'à la vignette.
-        var win = function () { return [0, dur]; };
+        // Zoom de la frise (Gus 26/11) : Option (Alt sous Windows) + molette, centré sur la souris ; repères aux extrémités du film (traits vifs : le début et la fin sont visibles).
+        var zwin = null;
+        var win = function () { return zwin || [0, dur]; };
         var pc = function (t, a, b) { return Math.max(0, Math.min(100, (t - a) / (b - a || 1) * 100)) + "%"; };
         var draw = function () {
           if (!dur) return; var t = player.currentTime, w = win();
           oPh.style.left = pc(t, 0, dur); time.textContent = fmtF(t) + " / " + fmtF(dur);
           det.hidden = dLab.hidden = !it.snip || ptab !== "snip"; oReg.hidden = true; over.hidden = !det.hidden;
           var bk = JSON.stringify([parts(), bi, dur]); // les blocs du montage, en repères sur la frise (l'orange = celui qu'on modifie)
-          if (bk !== blkKey) { blkKey = bk; blkLayer.textContent = ""; (parts() || []).forEach(function (b, n) { blkLayer.appendChild(el("i", { class: "tlblk" + (n === bi ? " on" : ""), title: "Bloc " + (n + 1), style: "left:" + pc(b.s, 0, dur) + ";width:" + Math.max(.4, b.d / dur * 100) + "%" })); }); }
+          bk += JSON.stringify(zwin);
+          if (bk !== blkKey) { blkKey = bk; blkLayer.textContent = ""; (parts() || []).forEach(function (b, n) { blkLayer.appendChild(el("i", { class: "tlblk" + (n === bi ? " on" : ""), title: "Bloc " + (n + 1), style: "left:" + pc(b.s, w[0], w[1]) + ";width:" + Math.max(.4, b.d / (w[1] - w[0]) * 100) + "%" })); }); }
+          endL.hidden = w[0] > 0; endR.hidden = w[1] < dur - .001; // repères : début / fin du film visibles ou non
           if (it.snip) {
             var A = actB(), s = A.s, e = s + A.d;
             oReg.style.left = pc(s, 0, dur); oReg.style.width = Math.max(.4, A.d / dur * 100) + "%";
             dReg.style.left = pc(s, w[0], w[1]); dReg.style.width = (A.d / (w[1] - w[0]) * 100) + "%";
             hIn.style.left = pc(s, w[0], w[1]); hOut.style.left = pc(e, w[0], w[1]); dPh.style.left = pc(t, w[0], w[1]);
             dPh.hidden = t < w[0] || t > w[1];
+            hIn.hidden = s < w[0] || s > w[1]; hOut.hidden = e < w[0] || e > w[1]; // poignées hors de la partie affichée : masquées
             hIn.classList.toggle("on", act === "in"); hOut.classList.toggle("on", act === "out");
-            dLab.textContent = (parts() ? (bi >= 0 ? "Bloc " + (bi + 1) + " (en modification) : " : "Sélection : ") : "Extrait : ") + fmtF(s) + " → " + fmtF(e) + " (" + A.d.toFixed(1).replace(".", ",") + " s" + (parts() ? ", montage " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD : "") + ")" + " · I / O : début / fin ici" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image") + " · espace : lire la boucle";
+            dLab.textContent = (parts() ? (bi >= 0 ? "Bloc " + (bi + 1) + " (en modification) : " : "Sélection : ") : "Extrait : ") + fmtF(s) + " → " + fmtF(e) + " (" + A.d.toFixed(1).replace(".", ",") + " s" + (parts() ? ", montage " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD : "") + ")" + " · I / O : début / fin ici" + (zwin ? " · zoom × " + (dur / (zwin[1] - zwin[0])).toFixed(1).replace(".", ",") : "") + " · Option / Alt + molette = zoom" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image") + " · espace : lire la boucle";
           }
         };
         // Lecture à l'envers (Gus 26/11) : Z ou J ; K = pause ; L = lecture normale ; espace = pause puis lecture dans le bon sens. Le navigateur ne sait pas lire à
@@ -1006,6 +1011,13 @@
         var tAt = function (e, box, a, b) { var r = box.getBoundingClientRect(); return a + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (b - a); };
         drag(over, function (e) { act = "play"; seek(tAt(e, over, 0, dur)); });
         drag(det, function (e) { act = "play"; var w = win(); seek(tAt(e, det, w[0], w[1])); });
+        det.addEventListener("wheel", function (e) {
+          if (!e.altKey || !dur) return; e.preventDefault(); e.stopPropagation();
+          var w = win(), W = w[1] - w[0], tm = tAt(e, det, w[0], w[1]), f = Math.exp(Math.max(-300, Math.min(300, e.deltaY)) * 0.004), nW = Math.max(Math.min(1, dur), Math.min(dur, W * f));
+          if (nW >= dur - .001) zwin = null;
+          else { var a = tm - (tm - w[0]) * (nW / W), b2 = a + nW; if (a < 0) { b2 -= a; a = 0; } if (b2 > dur) { a -= b2 - dur; b2 = dur; } zwin = [Math.max(0, a), Math.min(dur, b2)]; }
+          draw();
+        }, { passive: false });
         var hw = null;
         [[hIn, "in"], [hOut, "out"]].forEach(function (h) {
           drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; snipMark(); prevSnip(); playSnip(); drawSnip(); });

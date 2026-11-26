@@ -417,3 +417,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Entrée = ajouter le bloc ; aperçu d'un film : ajouter / retirer de la bande sans relancer la vidéo.
 - 26/11 — Montage : blocs visibles sur la frise, ▶ d'un bloc ne le sélectionne plus, 2e clic = désélection, « + Nouvelle sélection ».
 - 26/11 — « Modifier la sélection » : aperçu d'un film avec boutons discrets par onglet (ajouter / retirer sans changer l'onglet ouvert) et « + » pour créer un onglet ; « − Retirer de l'onglet ».
+- 26/11 — Zoom de la frise (Option + molette), repères début / fin du film ; onglets de l'aperçu en haut, arrondis.

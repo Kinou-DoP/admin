@@ -1208,7 +1208,10 @@ input.bcn { width: 90px; }
 .tlblk { position: absolute; top: 0; bottom: 0; background: rgba(255,255,255,.2); border-left: 1px solid rgba(255,255,255,.5); border-right: 1px solid rgba(255,255,255,.5); }
 .tlblk.on { background: rgba(217,130,43,.5); border-color: #d9822b; }
 
-/* Aperçu d'un film : onglets du chef op, discrets (Gus 26/11) */
-.bptabs { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0 4px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
-.bptabs button { padding: 2px 8px; border: 1px solid var(--faint); background: none; color: var(--dim); font: inherit; cursor: pointer; }
-.bptabs button:hover { color: var(--kinou-fg); border-color: var(--dim); } .bptabs button.on { color: #6fd08c; border-color: #6fd08c; } .bptabs .bpnew { padding: 2px 9px; }
+/* Aperçu d'un film : onglets du chef op, en haut de la vidéo, boutons arrondis (Gus 26/11) */
+.bptabs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 4px 0 12px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.bptabs button { padding: 7px 16px; border: 1px solid var(--faint); border-radius: 999px; background: var(--soft); color: var(--kinou-fg); font: 600 11px/1 var(--kinou-sans); letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: background .15s, border-color .15s, color .15s; }
+.bptabs button:hover { border-color: var(--kinou-fg); } .bptabs button.on { color: #6fd08c; border-color: #6fd08c; background: rgba(90,200,120,.12); } .bptabs .bpnew { padding: 7px 14px; font-size: 14px; }
+.tlend { position: absolute; top: -3px; bottom: -3px; width: 4px; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.6); pointer-events: none; z-index: 2; } .tlend.l { left: 0; } .tlend.r { right: 0; }
+.tlend[hidden] { display: none; }
+.tlh[hidden] { display: none; }
