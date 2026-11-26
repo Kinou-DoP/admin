@@ -623,7 +623,14 @@
       ],
       "types": [
         "Music Video"
-      ]
+      ],
+      "pend": {
+        "thumb": {
+          "path": "data/encode/rapide-1795698221959-wotbs.json",
+          "id": "mwxkcvpjxbi791",
+          "t": 3.33
+        }
+      }
     }
   }
 }
