@@ -647,6 +647,44 @@
       ],
       "types": [
         "Music Video"
+      ],
+      "extras": [
+        {
+          "title": "Camille Lellouche - J'ai pas dit (Clip Officiel) Master 422HQ 1920x1080",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/extrait-114987.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/vignette-800.webp",
+          "key": "emwxgq59g3y3nbm"
+        },
+        {
+          "title": "Camille Lellouche - Je me souviens (Clip Officiel) Master 422HQ 1920x1080",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/extrait-139947.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/vignette-800.webp",
+          "key": "emwxgq59h49hbuq"
+        },
+        {
+          "title": "Camille Lellouche - Minuit (Clip Officiel) Master 422HQ 1920x1080",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/extrait-119013.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/vignette-800.webp",
+          "key": "emwxgq59hr9ay73"
+        },
+        {
+          "title": "Camille Lellouche • Prince de ma ville",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/extrait-100987.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/vignette-800.webp",
+          "key": "emwxgq59i1rcn44"
+        },
+        {
+          "title": "Camille Lellouche - Nuit d'automne (Clip Officiel) Master 422HQ 1920x1080",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/extrait-128560.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/vignette-800.webp",
+          "key": "emwxgq59ikke41n",
+          "self": true
+        }
       ]
     }
   }
