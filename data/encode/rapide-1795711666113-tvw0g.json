@@ -1,0 +1,27 @@
+{
+  "jobs": [
+    {
+      "id": "mwxsd1a9np0xsi",
+      "kind": "snip",
+      "src": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4",
+      "s": 30.953,
+      "d": 1.883,
+      "parts": [
+        {
+          "s": 30.953,
+          "d": 1.883
+        },
+        {
+          "s": 86.722,
+          "d": 3.078
+        },
+        {
+          "s": 84.313,
+          "d": 2.405
+        }
+      ]
+    }
+  ],
+  "at": "2026-11-26T16:47:46.113Z",
+  "by": "Gurvan"
+}
