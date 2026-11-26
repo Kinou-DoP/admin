@@ -62,7 +62,8 @@
   },
   "categories": [
     "FEATURED",
-    "BEAUTY / FASHION"
+    "BEAUTY / FASHION",
+    "AUTOMOTIVE"
   ],
   "clips": [
     {
@@ -330,6 +331,51 @@
       "slate": 8441
     },
     {
+      "title": "VVS Cars",
+      "sub": "Romain Fior",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10582/8d4f9a12-1e37-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/87b031f0-09a9-4250-927d-109b432c529e-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/GV0qHjkYDnopj2zEiH-PvkedcXJVcTiCwUM7SPlETDY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU4Mi02OWIyZjRj/YWVjOWY1OS42NzUz/ODgzMy00MTVmNjUz/MmFjN2E2NThkYWM2/MjQxMzU0ZjVkOTNi/Zi5qcGc?v=1&format=webp",
+      "cat": "AUTOMOTIVE",
+      "slate": 10582,
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "MINI - CLUBMAN EDITION CANONBURY - OPEN MORE DOORS TO COOL FAMILIES",
+      "sub": "Julien Teissier\nCURRENTS, Paul Perrault & Eliott Fournie",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8523/e56ced9b-f0cd-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/c7c01a5a-b4e5-4d44-b99f-233f9e092631-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/51-3GmqOQjqm1nb_GMgMyR5AW9oSNt173Na6vcNaofw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/Nzc0YjZkYi0xNjgx/LTQyZjEtYjU5Yy1l/Y2NlMDI1ZDlhNzYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDQt/MDItYS0xMC40Ny4z/Ni5wbmc.webp",
+      "slate": 8523,
+      "cat": "AUTOMOTIVE"
+    },
+    {
+      "title": "VVS Cars",
+      "sub": "Romain Fior",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10580/303785ca-1e37-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e5e897c8-43a5-4b5f-89b0-789f235e0eca-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/rgebvtLqOQwWbImZGkQ6t04HdMkwag1PHtx94wENryc/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU4MC02OWIyZjM1/Yzg0NWIwMy45OTM5/NTAwMy1mZTU2NWEz/NmZiYWRkN2M0NzI0/NzM3MDc4NTRiODI2/OC5qcGc.webp",
+      "slate": 10580,
+      "cat": "AUTOMOTIVE"
+    },
+    {
+      "title": "MINI COUNTRYMAN - Edition Longstone - TVC",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8458/34674205-ec28-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4d133e03-6ce7-4164-b1a8-4aa48dc6e075-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ksHp0tfs52Yw9OLxblV0-aJedOJGrWrO5jchV7T6gvU/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDU4LTY2MDE2ZTRh/MmEyNzM0LjQxNTQy/ODMyLWFlMjc0N2Iy/NmY3MTE2NTc0NzEz/YmY1Yjg3MDBjOGI0/LmpwZw.webp",
+      "slate": 8458,
+      "cat": "AUTOMOTIVE"
+    },
+    {
+      "title": "MINI MASHUP",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8443/408b3ea4-ec2a-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/bb923930-bbcb-4db5-b355-6f1ea266f7ab-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/IsMxWsy-JAYvp9ex8IwNhCEqgGAniPDOschNfMQ23D0/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDQzLTY2MDE2ZTJh/OTM5ZGQ5LjYxNzYy/MTU0LWY2NTliM2Q5/OGFkY2U5OWQ0NmIy/YTAyNjc1ZjYzYmM3/LmpwZw.webp",
+      "slate": 8443,
+      "cat": "AUTOMOTIVE"
+    },
+    {
       "title": "Antonioli • Anima Noir",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11521/3dd2e6ee-dc6b-11f1-a349-0215583debcb.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2710ae7b-a9ee-4402-90f5-1b9b53b59353-0x1080.5000.mp4",
@@ -338,17 +384,6 @@
       "slate": 11521,
       "featured": true,
       "featuredOrder": 1
-    },
-    {
-      "title": "VVS Cars",
-      "sub": "Romain Fior",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10582/8d4f9a12-1e37-11f1-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/87b031f0-09a9-4250-927d-109b432c529e-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/GV0qHjkYDnopj2zEiH-PvkedcXJVcTiCwUM7SPlETDY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDU4Mi02OWIyZjRj/YWVjOWY1OS42NzUz/ODgzMy00MTVmNjUz/MmFjN2E2NThkYWM2/MjQxMzU0ZjVkOTNi/Zi5qcGc?v=1&format=webp",
-      "cat": "",
-      "slate": 10582,
-      "featured": true,
-      "featuredOrder": 3
     },
     {
       "title": "DANCE OR DIE x KEVIN BAGO  NATHALIE DE LOPEZ",
