@@ -418,14 +418,16 @@
     },
     "emwxgq59h49hbuq": {
       "title": "Camille Lellouche • Je me souviens",
-      "dir": "Séraphin Maroy",
-      "prod": "Fauve Film",
-      "dops": [
-        "Chris Alessi"
-      ],
       "types": [
         "Music Video"
-      ]
+      ],
+      "pend": {
+        "thumb": {
+          "path": "data/encode/rapide-1795700360172-d266s.json",
+          "id": "mwxlmpkc6w8m51",
+          "t": 129.998
+        }
+      }
     },
     "emwxgq59i1rcn44": {
       "title": "Camille Lellouche • Prince de ma ville",
