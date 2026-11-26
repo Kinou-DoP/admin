@@ -421,12 +421,12 @@
       "types": [
         "Music Video"
       ],
-      "pend": {
-        "thumb": {
-          "path": "data/encode/rapide-1795700360172-d266s.json",
-          "id": "mwxlmpkc6w8m51",
-          "t": 129.998
-        }
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxlmpkc6w8m51/vignette-129998-800.webp",
+      "thumbT": 129.998,
+      "hist": {
+        "img": [
+          "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/vignette-800.webp"
+        ]
       }
     },
     "emwxgq59i1rcn44": {
