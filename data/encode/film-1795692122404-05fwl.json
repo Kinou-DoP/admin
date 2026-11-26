@@ -4,13 +4,24 @@
       "id": "mwxgq59g3y3nbm",
       "kind": "film",
       "key": "depot/92vp3x6drrt3nat2xm39/Camille-Lellouche-J-ai-pas-dit-Clip-Officiel-_Master_422HQ_1920x1080.mov",
-      "progress": {
-        "step": "vignette",
-        "pct": 0
+      "answer": {
+        "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/web.mp4",
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/extrait-114987.mp4",
+        "snip": {
+          "s": 114.987,
+          "d": 5
+        },
+        "thumbT": 115.987,
+        "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/vignette-800.webp",
+        "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/vignette-1600.webp",
+        "dur": 172.48,
+        "w": 1920,
+        "h": 1080
       }
     }
   ],
   "at": "2026-11-26T11:25:07.971Z",
   "by": "Gurvan",
-  "startedAt": "2026-11-26T11:46:41.777Z"
+  "startedAt": "2026-11-26T11:46:41.777Z",
+  "doneAt": "2026-11-26T11:51:55.449Z"
 }
