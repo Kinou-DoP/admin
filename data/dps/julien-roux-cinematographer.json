@@ -1,0 +1,26 @@
+{
+  "slug": "julien-roux-cinematographer",
+  "name": "Julien Roux",
+  "hue": 0,
+  "overrides": {},
+  "about": {
+    "bioEn": [
+      "Julien Roux is a french cinematographer based in Paris.",
+      "He started his professional career as an camera assistant, working with several cinematographers such as Pierre Cottereau, Alexis Kavyrchine, Arnaud Potier, Vincent Mathias or Pierre Aïm.",
+      "At the same time he did the photography of a lot of short films, including \"L'accordeur\" which won the Cesar of Best Short film in 2012 and for which he earned the Lutin prize of best cinematography.",
+      "His various professional background allows him to be totally adaptable to any project: feature films, tv drama or commercials."
+    ],
+    "instagram": "https://www.instagram.com/julxour/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://pro.imdb.com/name/nm1545398/"
+      }
+    ],
+    "pos": "38% 59%",
+    "color": true,
+    "img": "img/julien-roux-cinematographer.webp",
+    "og": "img/julien-roux-cinematographer-og-1795711837794.jpg",
+    "ogColor": true
+  }
+}
