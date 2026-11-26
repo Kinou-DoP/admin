@@ -801,6 +801,12 @@
         "img": [
           "https://images.slatecdn.net/qaMB5kjlrYNFCvQ0RNg6I4BT1hS97oI6uwivHxlGl5E/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/OTkzMTViOC1lYzY2/LTRhYWYtOTViYi0x/ZDI1NDI1ZmI3YjMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDIt/MDItYS0xMC4yMS40/NC5wbmc.webp"
         ]
+      },
+      "crop": {
+        "z": 1.18,
+        "x": 50,
+        "y": 50,
+        "t": false
       }
     }
   }
