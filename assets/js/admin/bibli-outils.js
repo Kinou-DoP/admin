@@ -12,7 +12,7 @@
   // a un), le fichier du dépôt public est illisible et son nom ne dit rien. L'original et la liste des bandes (avec les mots de
   // passe) sont dans le dépôt privé notes (bandes/<code>.json, bandes/index.json). Chiffrement : bandSeal (même code dans
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
-  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "images", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc", "pend", "client", "cshow", "versions", "vsel", "vbase", "vname", "scrop", "ipos", "ihide", "grp", "gi"];
+  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "images", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc", "pend", "client", "cshow", "hidden", "versions", "vsel", "vbase", "vname", "scrop", "ipos", "ihide", "grp", "gi"];
   var BIB_SLATE = "bibli/slate.json"; // dépôt notes : tous les films de Slate (liste privée, 25/11)
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
@@ -158,6 +158,7 @@
         });
         // Infos retouchées dans la bibliothèque (edits.json) par-dessus celles des pages ; _orig garde celles des pages.
         order.forEach(function (f) { if (edits[f.key]) bibApply(f, edits[f.key]); });
+        order = order.filter(function (f) { return !f.hidden; }); // films masqués (supprimés d'ici ; ils restent sur les pages du site)
         bibGroups(order);
         // Les plus récents en haut (Gus 22/11) : imports sans id Slate (images) d'abord, puis id Slate décroissant (= ordre d'ajout sur Slate).
         order.sort(function (a, b) { return (b.slate ? 0 : 1) - (a.slate ? 0 : 1) || (b.slate || 0) - (a.slate || 0) || String(b.at).localeCompare(String(a.at)); });

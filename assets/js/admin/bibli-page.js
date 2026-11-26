@@ -226,7 +226,7 @@
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
         meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by, slate: f.slate, grpN: grpCount(f), mkey: f.mkey, key: f.key },
-        montage: function () { openMontage(f); }, canDelete: function () { return !!(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
+        montage: function () { openMontage(f); }, canDelete: function () { return !!canWeb; }, isSlate: function () { return !(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
         onChange: function () {
           // Vidéos d'un même import : ordre commun à toutes (Gus 26/11). Glisser une ligne change l'ordre du lot entier ; masquer ne casse pas le lien.
           // Lignes ajoutées / retirées / ajoutées à la main : lien rompu pour ce film (lignes sans `auto`, enregistrées dans edits.json).
@@ -1611,7 +1611,7 @@
       if (lib && lib.canDelete && lib.canDelete()) {
         var delOut = el("span", { class: "hint" });
         box.appendChild(el("div", { class: "bdanger" }, [el("span", { class: "label", text: "Zone rouge" }),
-          el("button", { type: "button", class: "btn bdelb", text: lib.meta && lib.meta.size && !(it.images && it.images.length) ? "Supprimer cette vidéo du video club" : "Supprimer du video club", on: { click: function () {
+          el("button", { type: "button", class: "btn bdelb", text: lib.isSlate && lib.isSlate() ? "Masquer du video club (film de Slate)" : lib.meta && lib.meta.size && !(it.images && it.images.length) ? "Supprimer cette vidéo du video club" : "Supprimer du video club", on: { click: function () {
             if (!confirm("Supprimer « " + (it.title || "ce film") + " » du video club ?\n\nSeulement celui-ci : les autres vidéos importées avec lui restent. Son lien de partage ne marchera plus. Les fichiers chez Amazon ne sont pas effacés.")) return;
             delOut.textContent = "Suppression…"; this.disabled = true;
             lib.del().then(function () { close(); }, function (e) { delOut.textContent = "Pas supprimé : " + e.message; });
@@ -1732,8 +1732,12 @@
       return Promise.all([readFile(BIB_LIB), readFile(BIB_EDITS).catch(function () { return null; }), nGet(BAND_NOTES + "films.json").catch(function () { return null; })]).then(function (r) {
         var lib = r[0] || { items: [] }, ed = (r[1] && r[1].films) || {}, shares = r[2] ? JSON.parse(r[2]) : {}, codes = keys.map(function (k) { return (shares[k] || {}).code; }).filter(Boolean);
         var gone = (lib.items || []).filter(function (x) { return keys.indexOf(x.key) > -1; }).map(function (x) { return { item: x, edit: ed[x.key] || null, share: shares[x.key] || null, at: now, by: by }; });
+        // Films de Slate / des pages (pas dans library.json) : on ne les efface pas, on les MASQUE du video club (edits.json : hidden) ; restaurables 30 jours, puis ils restent masqués.
+        var inLib = {}; (lib.items || []).forEach(function (x) { inLib[x.key] = 1; }); var hide = fl.filter(function (f) { return !inLib[f.key]; });
+        hide.forEach(function (f) { gone.push({ item: { key: f.key, slate: f.slate || null, title: f.title || "", img: f.img || "", hiddenOnly: true }, edit: ed[f.key] || null, share: null, at: now, by: by }); });
+        var hideKeys = hide.map(function (f) { return f.key; });
         return commit([{ path: BIB_LIB, edit: function (x) { if (!x) return null; var l = JSON.parse(x); l.items = (l.items || []).filter(function (y) { return keys.indexOf(y.key) < 0; }); return json(l); } },
-          { path: BIB_EDITS, edit: function (x) { if (!x) return null; var o = JSON.parse(x); if (o.films) keys.forEach(function (k) { delete o.films[k]; }); return json(o); } },
+          { path: BIB_EDITS, edit: function (x) { var o = x ? JSON.parse(x) : { films: {} }; o.films = o.films || {}; keys.forEach(function (k) { if (hideKeys.indexOf(k) > -1) o.films[k] = Object.assign({}, o.films[k], { hidden: true }); else delete o.films[k]; }); return json(o); } },
           { path: BIB_TRASH, edit: function (x) { var o = x ? JSON.parse(x) : { items: [] }; o.items = (o.items || []).filter(function (y) { return keys.indexOf(y.item.key) < 0; }).concat(gone); return json(o); } }],
           "Video club : " + keys.length + " film" + (keys.length > 1 ? "s mis" : " mis") + " à la corbeille (admin, " + by + ")").then(function () { return codes; });
       }).then(function (codes) {
@@ -1775,8 +1779,8 @@
       }
       function restore(x, btn) {
         btn.disabled = true; btn.textContent = "…";
-        commit([{ path: BIB_LIB, edit: function (t) { var l = t ? JSON.parse(t) : { items: [] }; l.items = (l.items || []).filter(function (y) { return y.key !== x.item.key; }); l.items.push(x.item); return json(l); } },
-          { path: BIB_EDITS, edit: function (t) { if (!x.edit) return null; var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {}; o.films[x.item.key] = x.edit; return json(o); } },
+        commit([{ path: BIB_LIB, edit: function (t) { if (x.item.hiddenOnly) return null; var l = t ? JSON.parse(t) : { items: [] }; l.items = (l.items || []).filter(function (y) { return y.key !== x.item.key; }); l.items.push(x.item); return json(l); } },
+          { path: BIB_EDITS, edit: function (t) { if (!x.edit && !x.item.hiddenOnly) return null; var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {}; if (x.edit) o.films[x.item.key] = x.edit; else delete o.films[x.item.key]; return json(o); } },
           { path: BIB_TRASH, edit: function (t) { if (!t) return null; var o = JSON.parse(t); o.items = (o.items || []).filter(function (y) { return !(y.item.key === x.item.key && y.at === x.at); }); return json(o); } }],
           "Video club : film restauré (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) {
           adopt(d); draw(); var f = filmOf(x.item.key); if (f && x.share) shareCreate([f]).catch(function () {}); return reload();
@@ -1790,10 +1794,10 @@
     // Supprimer la sélection cochée dans la liste (Gus 26/11) : seulement les films importés ; ceux de Slate / des pages ne se suppriment pas d'ici.
     function deleteSelection() {
       var fl = Object.keys(st.sel).map(filmOf).filter(Boolean), inLib = {}; ((data.lib && data.lib.items) || []).forEach(function (x) { inLib[x.key] = 1; });
-      var ok = fl.filter(function (f) { return inLib[f.key]; }), skip = fl.length - ok.length;
-      if (!ok.length) { alert("Ces films viennent de Slate ou des pages du site : ils ne se suppriment pas d'ici (seulement les films importés dans le video club)."); return; }
+      var ok = fl, hide = fl.filter(function (f) { return !inLib[f.key]; }).length;
+      if (!ok.length) return;
       var names = ok.slice(0, 6).map(function (f) { return "• " + (f.title || f.key); }).join("\n") + (ok.length > 6 ? "\n• … et " + (ok.length - 6) + " autre" + (ok.length - 6 > 1 ? "s" : "") : "");
-      if (!confirm("Supprimer " + ok.length + " film" + (ok.length > 1 ? "s" : "") + " du video club ?\n\n" + names + (skip ? "\n\n(" + skip + " film" + (skip > 1 ? "s" : "") + " de Slate ou des pages " + (skip > 1 ? "ne sont pas supprimés" : "n'est pas supprimé") + ".)" : "") + "\n\nIls vont à la corbeille (restaurables pendant 30 jours). Leurs liens de partage ne marcheront plus. Les autres vidéos importées avec eux restent. Les fichiers chez Amazon ne sont pas effacés.")) return;
+      if (!confirm("Supprimer " + ok.length + " film" + (ok.length > 1 ? "s" : "") + " du video club ?\n\n" + names + (hide ? "\n\n" + hide + " film" + (hide > 1 ? "s" : "") + " vien" + (hide > 1 ? "nent" : "t") + " de Slate : " + (hide > 1 ? "ils sont masqués" : "il est masqué") + " du video club (" + (hide > 1 ? "ils restent" : "il reste") + " sur les pages du site où " + (hide > 1 ? "ils sont utilisés" : "il est utilisé") + ")." : "") + "\n\nIls vont à la corbeille (restaurables pendant 30 jours). Les liens de partage des films importés ne marcheront plus. Les autres vidéos importées avec eux restent. Les fichiers chez Amazon ne sont pas effacés.")) return;
       info.textContent = "Suppression…";
       libDeleteMany(ok).then(function () { draw(); }, function (e) { alert("Pas supprimé : " + e.message); draw(); });
     }

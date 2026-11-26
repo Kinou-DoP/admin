@@ -1251,3 +1251,14 @@ input.bcn { width: 90px; }
 .bver { display: flex; align-items: center; gap: 12px; padding: 6px 0; border-top: 1px solid rgba(255,252,235,.08); } .bver:first-of-type { border-top: 0; }
 .bver.on { background: rgba(111,208,140,.07); } .bver input.bvname { flex: 0 1 220px; margin: 0 !important; } .bver .bvst { flex: 1; margin: 0; } .bver .bx { position: static; opacity: 1; }
 .bvers .tlrow { margin-top: 10px; }
+
+/* Fenêtre de montage : règle, curseur qui suit la souris, onglets de source, blocs déjà pris (Gus 26/11) */
+.hruler { position: relative; height: 20px; cursor: col-resize; background: rgba(255,252,235,.05); border: 1px solid var(--faint); border-bottom: 0; user-select: none; touch-action: none; }
+.hrt { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,252,235,.25); } .hrt span { position: absolute; top: 3px; left: 4px; font-size: 10px; color: var(--dim); white-space: nowrap; }
+.hcur { position: absolute; top: 0; bottom: 0; width: 1px; background: #ffb36b; pointer-events: none; z-index: 5; } .hcur[hidden] { display: none; }
+.hcurt { position: absolute; top: -20px; left: 4px; padding: 1px 5px; background: #ffb36b; color: #000; font-size: 10px; font-weight: 600; white-space: nowrap; }
+.hdtrack .hcur { top: -4px; bottom: -4px; } .hdblks { position: absolute; inset: 0; pointer-events: none; }
+.hdreg.blk { background: rgba(255,59,48,.28); } .hdtime { margin-left: 14px; color: #ffb36b; }
+.hsrc { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; } .hsrc .btn.on { border-color: #ffb36b; color: #ffb36b; } .hmlab { display: block; margin-top: 16px; }
+.hbempty { padding: 14px; margin: 0; }
+.hdtrack { height: 40px; } .hbwrap { margin-top: 4px; }

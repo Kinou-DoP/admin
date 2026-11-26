@@ -426,3 +426,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Video club : « Supprimer la sélection (n) » dans la liste (films importés cochés, confirmation, un seul enregistrement : `libDeleteMany`).
 - 26/11 — Corbeille du video club (30 jours, restaurer, oublier).
 - 26/11 — Phase 2 : « edit moi si tu peux ! », versions Encodage / Edit n, version affichée choisie, nouveau projet depuis un edit (job post).
+- 26/11 — Suppression = masquer pour les films de Slate ; fenêtre de montage refaite (blocs comme les extraits, curseur sur les frises).
