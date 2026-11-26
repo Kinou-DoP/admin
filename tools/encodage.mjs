@@ -95,10 +95,10 @@ async function film(j, dir, tell) {
     (t) => { const m = t.match(/out_time_us=(\d+)/g); if (m) tell("web", Math.min(99, Math.round(+m[m.length - 1].split("=")[1] / 1e6 / p.dur * 100))); });
   console.log("  version web : " + Math.round(fs.statSync(web).size / 1e6) + " Mo en " + Math.round((Date.now() - t0) / 1000) + " s");
   const base = "nous/" + j.id + "/", a = {};
-  a.full = await put(web, base + "web.mp4", "video/mp4");
-  if (j.web) return Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h }); // remplacement : vignette et extrait du film gardés
+  a.full = await put(web, base + "web.mp4", "video/mp4"); a.ws = fs.statSync(web).size; // poids de la version web (octets), pour l'affichage « original → web »
+  if (j.web) return Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h, os: fs.statSync(master).size }); // remplacement : vignette et extrait du film gardés
   tell("extrait", 0);
-  const at = j.at >= 0 && j.at < 1 ? j.at : 2 / 3, d = Math.max(0.5, Math.min(j.d || 5, 10, p.dur));
+  const at = j.at >= 0 && j.at < 1 ? j.at : 2 / 3, d = Math.max(0.5, Math.min(j.d || 5, 30, p.dur));
   const s = r3(Math.max(0, Math.min(p.dur * at, p.dur - d)));
   const ex = join(dir, "extrait.mp4");
   await snippet(web, s, d, ex);
@@ -107,14 +107,26 @@ async function film(j, dir, tell) {
   const im = await frames(web, a.thumbT, dir);
   a.img = await put(im[800], base + "vignette-800.webp", "image/webp");
   a.img1600 = await put(im[1600], base + "vignette-1600.webp", "image/webp");
-  Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h });
+  Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h, os: fs.statSync(master).size });
   return a;
 }
 async function snip(j, dir) {
-  const src = await source(j.src), s = Math.max(0, +j.s || 0), d = Math.max(0.5, Math.min(+j.d || 5, 10));
+  const src = await source(j.src);
+  // Montage (Gus 26/11) : `parts: [{ s, d }, …]` = plusieurs blocs bout à bout (30 s au total au plus, 8 blocs au plus) ; sinon un seul bloc s, d.
+  let parts = Array.isArray(j.parts) && j.parts.length > 1 ? j.parts.slice(0, 8).map((x) => ({ s: Math.max(0, +x.s || 0), d: Math.max(0.5, Math.min(+x.d || 5, 30)) })) : null;
+  if (parts) { let tot = 0; parts = parts.filter((x) => (tot += x.d) <= 30.001); if (parts.length < 2) parts = null; }
   const ex = join(dir, "extrait.mp4");
-  await snippet(src, s, d, ex);
-  return { video: await put(ex, "nous/" + j.id + "/extrait-" + Math.round(s * 1000) + ".mp4", "video/mp4"), snip: { s: r3(s), d: r3(d) } };
+  if (!parts) {
+    const s = Math.max(0, +j.s || 0), d = Math.max(0.5, Math.min(+j.d || 5, 30));
+    await snippet(src, s, d, ex);
+    return { video: await put(ex, "nous/" + j.id + "/extrait-" + Math.round(s * 1000) + ".mp4", "video/mp4"), snip: { s: r3(s), d: r3(d) } };
+  }
+  const files = [];
+  for (let i = 0; i < parts.length; i++) { const f = join(dir, "part" + i + ".mp4"); await snippet(src, parts[i].s, parts[i].d, f); files.push(f); }
+  fs.writeFileSync(join(dir, "liste.txt"), files.map((f) => "file '" + f + "'").join("\n") + "\n");
+  await must("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", join(dir, "liste.txt"), "-c", "copy", "-movflags", "+faststart", ex], "montage");
+  const tag = parts.map((x) => Math.round(x.s * 1000) + "-" + Math.round(x.d * 1000)).join("_").slice(0, 80);
+  return { video: await put(ex, "nous/" + j.id + "/montage-" + tag + ".mp4", "video/mp4"), snip: { s: r3(parts[0].s), d: r3(parts[0].d), parts: parts.map((x) => ({ s: r3(x.s), d: r3(x.d) })) } };
 }
 async function thumb(j, dir) {
   const src = await source(j.src), t = Math.max(0, +j.t || 0), im = await frames(src, t, dir);
