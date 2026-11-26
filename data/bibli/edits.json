@@ -1134,6 +1134,12 @@
           "pj": "null",
           "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ed9c579-772e-4569-bc13-bf5f432981c8-1280x720.2500.mp4"
         }
+      },
+      "crop": {
+        "z": 1.09,
+        "x": 50,
+        "y": 50,
+        "t": false
       }
     }
   }
