@@ -142,4 +142,12 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
 - **Entrée** dans l'onglet Extrait = « + Ajouter ce bloc ». **Aperçu d'un film** (`navPlayer`) : « + Ajouter à la bande » devient « − Retirer de la bande » (`o.remove`) sans redessiner (la vidéo ne repart plus) ; le « + » de la liste devient « − ».
 - **Zoom de la frise** (montage, Gus 26/11) : Option (Alt sous Windows) + molette sur la frise de l'extrait, centré sur la souris (`zwin`) ; deux repères blancs (début / fin du film) visibles seulement quand ils sont dans la partie affichée ; « zoom × N » dans le texte de la frise. Aperçu d'un film : boutons d'onglets en haut, arrondis (`.bptabs`).
 - **Bouton « edit » d'une fiche plus rapide** (Gus 26/11) : `bibLoad` ne lit plus qu'une fois à la fois (`bibPend`) ; la page d'un chef op le lance en avance (`vcLoad`) ; « edit » réutilise le video club en mémoire (plus de relecture forcée) et `vcPatch` le met à jour sur place au lieu de le jeter ; le bouton affiche « … » pendant l'ouverture. Montage : un clic dans un endroit vide de la fenêtre désélectionne le bloc.
+- **Bout à bout** (Gus 26/11, phase 1) : bouton « ▦ Créer un bout à bout » dans la fenêtre d'une vidéo liée (`montage.js`, `montageWin`) : tous les films liés (encodés) en blocs, frise
+  proportionnelle à la durée, glisser pour réordonner (`hReorder`), réglage début / fin du bloc choisi sur la frise de sa vidéo, I / O, S (couper), Suppr, espace. On monte sur les versions web
+  (« Encodage 1 », pas de lag). Export : demande `film-….json` avec un job `edit` (`quality: original` = masters `mkey` de library.json, sinon versions web) ; le robot (`edit` dans
+  `tools/encodage.mjs`) coupe et encode chaque morceau en 1080p + son (mêmes réglages) puis les colle ; le résultat suit la chaîne d'un film (version web, extrait, vignettes) =
+  nouveau projet `e<id>` (`src: "montage"`, crédits et client du 1er film). **Limite : 10 Go d'originaux** (somme des `size` des sources) ; au-delà, l'option « originaux » est grisée avec
+  « utiliser la version compressée ». `mkey` (clé du master) est écrit à l'import (et a été rempli pour les films déjà importés). Phase 2 (à faire) : « edit moi si tu peux » sur toute vidéo,
+  versions « Encodage 1 » / « Edit n » renommables, choix de la version affichée par le site, « créer un nouveau projet avec cet edit ».
+- **Frise des blocs de l'extrait** : horizontale, largeur de chaque bloc = sa durée, glisser pour réordonner. Fenêtre d'edit plus large (1500 px).
 

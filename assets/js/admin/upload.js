@@ -242,6 +242,26 @@
       else if (onFilm && has(e, "text/x-kinou-film")) { e.preventDefault(); onFilm(e.dataTransfer.getData("text/x-kinou-film"), at); }
     });
   }
+  // Réordonner en glissant, à l'horizontale (frise de blocs, Gus 26/11) : les enfants `.hb` de `bar` ; les autres se décalent pendant le geste ; onMove(de, vers).
+  function hReorder(bar, onMove) {
+    bar.addEventListener("pointerdown", function (e) {
+      var el0 = e.target.closest && e.target.closest(".hb"); if (!el0 || el0.parentNode !== bar || e.target.closest("button") || e.button) return;
+      var items = [].slice.call(bar.children).filter(function (x) { return x.classList.contains("hb"); }), from = items.indexOf(el0), sx = e.clientX, moved = false, to = from, rects = items.map(function (x) { return x.getBoundingClientRect(); });
+      try { el0.setPointerCapture(e.pointerId); } catch (x) {}
+      function mv(ev) {
+        var dx = ev.clientX - sx; if (!moved && Math.abs(dx) < 5) return; moved = true; el0.classList.add("hbdrag"); el0.style.transform = "translateX(" + dx + "px)";
+        var cx = rects[from].left + rects[from].width / 2 + dx; to = from;
+        for (var k = 0; k < rects.length; k++) { var c = rects[k].left + rects[k].width / 2; if (k < from && cx < c) { to = k; break; } if (k > from && cx > c) to = k; }
+        items.forEach(function (x, k) { if (k === from) return; var sh = 0; if (from < to && k > from && k <= to) sh = -rects[from].width; else if (from > to && k < from && k >= to) sh = rects[from].width; x.style.transform = sh ? "translateX(" + sh + "px)" : ""; });
+      }
+      function up() {
+        el0.removeEventListener("pointermove", mv); el0.removeEventListener("pointerup", up); el0.removeEventListener("pointercancel", up);
+        items.forEach(function (x) { x.style.transform = ""; x.classList.remove("hbdrag"); });
+        if (moved) { bar._dragged = true; setTimeout(function () { bar._dragged = false; }, 60); if (to !== from) onMove(from, to); }
+      }
+      el0.addEventListener("pointermove", mv); el0.addEventListener("pointerup", up); el0.addEventListener("pointercancel", up);
+    });
+  }
   // Recherche dans le video club (Gus 26/11) : fenêtre au centre, mêmes suggestions et filtres que le video club (chef op, réal, prod, client,
   // type, catégorie) ; clic = ajouter (la fenêtre reste ouverte pour en ajouter plusieurs), ou glisser un film vers la liste derrière.
   // Se ferme avec « Fermer », Échap ou un clic sur le fond.

@@ -222,7 +222,7 @@
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
         meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by, slate: f.slate, grpN: grpCount(f) },
-        canDelete: function () { return !!(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
+        montage: function () { openMontage(f); }, canDelete: function () { return !!(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
         onChange: function () {
           // Vidéos d'un même import : ordre commun à toutes (Gus 26/11). Glisser une ligne change l'ordre du lot entier ; masquer ne casse pas le lien.
           // Lignes ajoutées / retirées / ajoutées à la main : lien rompu pour ce film (lignes sans `auto`, enregistrées dans edits.json).
@@ -779,7 +779,7 @@
       // Montage : un clic dans un endroit vide de la fenêtre désélectionne le bloc en cours de modification (Gus 26/11), comme un 2e clic sur le bloc.
       box.addEventListener("click", function (e) {
         if (typeof parts !== "function" || !parts() || bi < 0 || !e.isTrusted) return;
-        if (e.target.closest && e.target.closest(".bblk, .bblks, button, input, textarea, select, a, video, label, .tl, .bthumbs, .bhsnip, .bchipin")) return;
+        if (e.target.closest && e.target.closest(".bblk, .bblks, .hb, .bblkbar, button, input, textarea, select, a, video, label, .tl, .bthumbs, .bhsnip, .bchipin")) return;
         bi = -1; delete it._sel; act = "in"; drawBlocks(); if (typeof draw === "function" && tl) { draw(); if (player) seek(selB().s); }
       });
       function fld(label, get, set, ph) {
@@ -1083,27 +1083,32 @@
       var addB = null;
       function sync() { var p = parts(); if (p) it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true; }
       function drawBlocks() {
-        blocksBox.textContent = ""; var p = parts(); if (addB) { addB.textContent = bi >= 0 ? "+ Nouvelle sélection" : "+ Ajouter ce bloc"; addB.title = bi >= 0 ? "Quitte la modification du bloc : les poignées règlent une nouvelle sélection, après le dernier bloc (ou clique à nouveau le bloc)" : "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante"; }; if (!p) return;
-        blocksBox.appendChild(el("span", { class: "label", text: "Montage : " + p.length + " bloc" + (p.length > 1 ? "s" : "") + " · " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD + " · glisse ⠿ pour changer l'ordre · clique un bloc pour le modifier (un 2e clic le désélectionne)" }));
+        blocksBox.textContent = ""; var p = parts(); if (addB) { addB.textContent = bi >= 0 ? "+ Nouvelle sélection" : "+ Ajouter ce bloc"; addB.title = bi >= 0 ? "Quitte la modification du bloc : les poignées règlent une nouvelle sélection, après le dernier bloc (ou clique à nouveau le bloc)" : "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante"; } if (!p) return;
+        blocksBox.appendChild(el("span", { class: "label", text: "Montage : " + p.length + " bloc" + (p.length > 1 ? "s" : "") + " · " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD + " · glisse un bloc pour changer l'ordre · clique pour le modifier (un 2e clic le désélectionne)" }));
+        // Frise : un bloc par morceau, sa largeur = sa durée (un seul bloc = toute la largeur ; un 2e deux fois plus long = deux tiers).
+        var bar = el("div", { class: "bblkbar" }), tot = totalD() || 1;
         p.forEach(function (b, i) {
-          var w = el("div", { class: "bblk" + (i === bi ? " on" : ""), "data-xi": String(i), title: "Cliquer pour régler ce bloc avec les poignées ou I / O" });
-          w.appendChild(xGrip(w, i)); w.appendChild(el("b", { text: String(i + 1) })); w.appendChild(el("span", { text: fmtF(b.s) + " → " + fmtF(b.s + b.d) + " · " + b.d.toFixed(1).replace(".", ",") + " s" }));
-          w.appendChild(el("button", { type: "button", class: "bx", text: "▶", title: "Voir ce bloc", on: { click: function (e) { e.stopPropagation(); playRange(b); } } }));
-          w.appendChild(el("button", { type: "button", class: "bx", text: "×", title: "Retirer ce bloc", on: { click: function (e) {
-            e.stopPropagation(); snipDraft(); var gone = p.splice(i, 1)[0];
-            if (!p.length) { it.snip = { s: gone.s, d: gone.d }; delete it._sel; bi = -1; } else { sync(); bi = bi === i ? -1 : bi > i ? bi - 1 : bi; }
-            it.edited = true; snipMark(); drawBlocks(); drawSnip(); draw();
-          } } }));
+          var w = el("div", { class: "hb" + (i === bi ? " on" : ""), style: "flex:0 0 " + b.d / tot * 100 + "%", title: fmtF(b.s) + " → " + fmtF(b.s + b.d) + " · " + b.d.toFixed(1).replace(".", ",") + " s · clique pour le régler" }, [
+            el("b", { text: String(i + 1) }), el("small", { text: b.d.toFixed(1).replace(".", ",") + " s" }),
+            el("button", { type: "button", class: "hbp", text: "▶", title: "Voir ce bloc", on: { click: function (e) { e.stopPropagation(); playRange(b); } } }),
+            el("button", { type: "button", class: "hbx", text: "×", title: "Retirer ce bloc", on: { click: function (e) {
+              e.stopPropagation(); snipDraft(); var gone = p.splice(i, 1)[0];
+              if (!p.length) { it.snip = { s: gone.s, d: gone.d }; delete it._sel; bi = -1; } else { sync(); bi = bi === i ? -1 : bi > i ? bi - 1 : bi; }
+              it.edited = true; snipMark(); drawBlocks(); drawSnip(); draw();
+            } } })]);
+          w.style.setProperty("--hue", (i * 47 + 20) % 360);
           w.addEventListener("click", function () { // un clic sélectionne le bloc ; un autre clic dessus le désélectionne (retour à la sélection)
+            if (bar._dragged) return;
             if (bi === i) { bi = -1; delete it._sel; act = "in"; drawBlocks(); draw(); if (player) seek(selB().s); return; }
             bi = i; act = "in"; drawBlocks(); draw(); if (player) seek(p[i].s);
           });
-          blocksBox.appendChild(w);
+          bar.appendChild(w);
         });
+        hReorder(bar, function (from, to) {
+          snipDraft(); var cur = bi >= 0 ? p[bi] : null, x = p.splice(from, 1)[0]; p.splice(to, 0, x); bi = cur ? p.indexOf(cur) : -1; sync(); snipMark(); drawBlocks(); drawSnip(); draw();
+        });
+        blocksBox.appendChild(bar);
       }
-      xDropZone(blocksBox, function (from, to) {
-        var p = parts(); if (!p) return; snipDraft(); var cur = bi >= 0 ? p[bi] : null, x = p.splice(from, 1)[0]; p.splice(to, 0, x); bi = cur ? p.indexOf(cur) : -1; sync(); snipMark(); drawBlocks(); drawSnip(); draw();
-      });
       function addBlock() {
         if (!player || !dur) return; snipDraft(); var t = Math.max(0, Math.min(player.currentTime, dur - MIND));
         if (!it.snip) { it.snip = { s: t, d: Math.round(Math.min(5, dur - t) * 1000) / 1000 }; act = "in"; snipMark(); drawSnip(); draw(); return; }
@@ -1400,7 +1405,9 @@
         else if (m.ws) l.push("Version web : " + fsz(m.ws));
         if (m.w) l.push(m.w + "×" + m.h); if (m.dur) l.push(Math.floor(m.dur / 60) + " min " + String(Math.round(m.dur % 60)).padStart(2, "0") + " s");
         var ip = el("p", { class: "hint binfo" }); if (m.grpN > 1) { ip.appendChild(linkIcon(m.grpN)); ip.appendChild(document.createTextNode(" Liée à " + (m.grpN - 1) + " autre" + (m.grpN > 2 ? "s" : "") + " vidéo" + (m.grpN > 2 ? "s" : "") + " (importées ensemble) · ")); }
-        ip.appendChild(document.createTextNode(l.join(" · "))); return ip;
+        ip.appendChild(document.createTextNode(l.join(" · ")));
+        if (m.grpN > 1 && lib && lib.montage) ip.appendChild(el("button", { type: "button", class: "btn ghost bmontb", text: "▦ Créer un bout à bout", title: "Assembler les vidéos liées (fenêtre de montage, export 1080p avec le son)", on: { click: lib.montage } }));
+        return ip;
       }
       box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (sur le site et dans les prochaines bandes) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [
@@ -1660,6 +1667,11 @@
         bibGroups(data.films);
       });
     }
+    // Bout à bout des vidéos liées (Gus 26/11) : fenêtre de montage (montage.js) ; le nouveau projet apparaît dans le video club à la fin de l'encodage.
+    function openMontage(f) {
+      var ms = data.films.filter(function (x) { return x.grp && x.grp === f.grp; }).sort(function (a, b) { return (a.gi || 0) - (b.gi || 0); });
+      var base = String(f.title || "").replace(/ - .*$/, ""); montageWin(ms, { name: "Bout à bout — " + (f.client && base.toLowerCase().indexOf(String(f.client).toLowerCase()) < 0 ? f.client + " " : "") + base, onCreated: function () { bibLoad(true).then(function (d) { adopt(d); draw(); encCheck(); }); } });
+    }
     // Ordre commun des vidéos d'un même import : `gi` de chaque film du lot (library.json), recalculé pour tous.
     function grpOrder(g, ks) {
       var all = data.films.filter(function (x) { return x.grp === g; }).sort(function (a, b) { return (a.gi || 0) - (b.gi || 0); }).map(function (x) { return x.key; }), left = ks.slice(), set = {};
@@ -1805,7 +1817,7 @@
         upload(x.file, function (p) { x.up = p; }).then(function (key) {
           x.step = "demande"; paint();
           return savedLib.then(function () { return commit([{ path: x.path, text: json({ jobs: [{ id: x.id, kind: "film", key: key }], at: new Date().toISOString(), by: by }) },
-            { path: BIB_LIB, edit: function (t) { var L = t ? JSON.parse(t) : { items: [] }; (L.items || []).forEach(function (y) { if (y.key === x.it.key && y.enc) delete y.enc.sending; }); return json(L); } }],
+            { path: BIB_LIB, edit: function (t) { var L = t ? JSON.parse(t) : { items: [] }; (L.items || []).forEach(function (y) { if (y.key === x.it.key) { y.mkey = key; if (y.enc) delete y.enc.sending; } }); return json(L); } }],
             "Encodage : demande (admin, " + by + ")"); });
         }).then(function () { x.step = "file"; paint(); watch(x); }, function (e) { x.step = "erreur"; x.err = "envoi interrompu : " + e.message + " (rechoisis le même fichier pour reprendre)"; paint(); })
           .then(function () { next(k + 1); });

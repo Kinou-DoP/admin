@@ -88,13 +88,13 @@
       var k = f.slate ? "s" + f.slate : f.key || "u" + (f.full || f.video || f.img || f.title); // imports d'images : leur clé « i… »
       var o = map[k];
       if (!o) { o = map[k] = { key: k, slate: f.slate || null, title: "", dir: "", prod: "", dops: [], cats: [], types: [], video: "", full: "", img: "", images: null, pages: [], at: "" }; order.push(o); }
-      ["title", "dir", "prod", "video", "full", "img", "at", "link"].forEach(function (x) { if (!o[x] && f[x]) o[x] = f[x]; });
+      ["title", "dir", "prod", "video", "full", "img", "at", "link", "client"].forEach(function (x) { if (!o[x] && f[x]) o[x] = f[x]; });
       if (!o.images && f.images && f.images.length) o.images = f.images;
       if (!o.extras && f.extras && f.extras.length) o.extras = f.extras; // stills et vidéos sous le film (lecteur)
       if (!o.awards && f.awards) o.awards = f.awards; // prix et sélections (une ligne chacun)
       if (!o.crop && f.crop) o.crop = f.crop; // recadrage réglé sur la page (point de départ dans les bandes)
       if (!o.snip && f.snip) o.snip = f.snip; // extrait d'un film envoyé depuis l'ordinateur (encodage, { s, d, v })
-      ['size', 'ws', 'os', 'dur', 'w', 'h', 'by'].forEach(function (x) { if (f[x] !== undefined && o[x] === undefined) o[x] = f[x]; }); // fichier : poids, durée, taille, qui l'a importé
+      ['size', 'ws', 'os', 'dur', 'w', 'h', 'by', 'mkey', 'montage', 'src'].forEach(function (x) { if (f[x] !== undefined && o[x] === undefined) o[x] = f[x]; }); // fichier : poids, durée, taille, qui l'a importé
       if (f.grp && !o.grp) { o.grp = f.grp; o.gi = f.gi || 0; } // vidéos importées ensemble
       if (f.enc && !o.full) o.enc = f.enc; // film envoyé depuis l'ordinateur, encodage pas encore terminé
       (f.dops || []).forEach(function (d) { d = rcBase(d); if (d && !o.dops.some(function (x) { return bnrm(x) === bnrm(d); })) o.dops.push(d); });

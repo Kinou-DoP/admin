@@ -1216,3 +1216,25 @@ input.bcn { width: 90px; }
 .tlend[hidden] { display: none; }
 .tlh[hidden] { display: none; }
 .blinkic { display: inline-flex; align-items: center; margin-left: 6px; color: #ffb36b; vertical-align: -1px; } .binfo .blinkic { margin: 0 2px 0 0; }
+
+/* Fenêtre d'edit plus large (Gus 26/11) */
+.bmbox.bedit { max-width: min(1500px, 96vw); }
+/* Frise de blocs : largeur proportionnelle à la durée, glisser pour réordonner (montage de l'extrait et bout à bout) */
+.bblkbar, .hbar { display: flex; height: 46px; border: 1px solid var(--faint); background: #060606; position: relative; user-select: none; }
+.hb { position: relative; min-width: 16px; display: flex; align-items: center; gap: 6px; padding: 0 8px; overflow: hidden; white-space: nowrap; cursor: grab; touch-action: none;
+  background: hsl(var(--hue, 30) 35% 22%); border-right: 2px solid #000; font-size: 12px; transition: transform .15s ease, background .15s; }
+.hb b { color: #ffb36b; } .hb small { margin-left: auto; color: var(--dim); } .hb span { overflow: hidden; text-overflow: ellipsis; }
+.hb.on { outline: 2px solid #d9822b; outline-offset: -2px; background: hsl(var(--hue, 30) 45% 30%); } .hb.hbdrag { transition: none; z-index: 3; opacity: .85; cursor: grabbing; }
+.hb .hbx, .hb .hbp { flex: none; padding: 0 5px; border: 0; background: rgba(0,0,0,.45); color: var(--kinou-fg); font-size: 12px; line-height: 18px; cursor: pointer; } .hb .hbx:hover { background: #ff3b30; }
+.hbwrap { position: relative; margin-top: 8px; } .hbph { position: absolute; top: -4px; bottom: -4px; width: 2px; background: #fff; pointer-events: none; z-index: 4; }
+/* Fenêtre de montage */
+.bmont { z-index: 45; } .bmontbox { max-width: min(1500px, 97vw); padding: 22px 26px; }
+.hhead { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; } .hhead input { flex: 1; margin: 0 !important; font-size: 18px; }
+.hmain { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr); gap: 26px; margin-bottom: 8px; }
+.hvid video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; } .hctl { display: flex; gap: 10px; margin-top: 8px; }
+.hexp { display: flex; flex-direction: column; gap: 8px; } .hexp .bck.off { opacity: .45; }
+.hdet { margin-top: 14px; } .hdtrack { position: relative; height: 30px; background: repeating-linear-gradient(90deg, rgba(255,252,235,.08) 0 1px, transparent 1px 3.33%), rgba(255,252,235,.05); cursor: pointer; touch-action: none; }
+.hdreg { position: absolute; top: 0; bottom: 0; background: rgba(217,130,43,.35); pointer-events: none; } .hdph { position: absolute; top: -3px; bottom: -3px; width: 2px; background: #fff; pointer-events: none; }
+.hdh { position: absolute; top: -4px; bottom: -4px; width: 10px; margin-left: -5px; background: #ff3b30; cursor: ew-resize; border-radius: 2px; }
+.hdlab { margin-top: 6px; font-size: 12px; color: var(--dim); } .hpool { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; } .bmontb { margin-left: 10px; }
+.bedit .bplay > video { display: block; max-height: 52vh; width: auto; max-width: 100%; margin: 0 auto; background: #000; } /* fenêtre plus large : la vidéo reste raisonnable, les frises prennent toute la largeur */

@@ -421,3 +421,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Bouton « edit » des fiches plus rapide (chargement en avance, cache réutilisé) ; clic dans le vide = désélection du bloc.
 - 26/11 — Logo « lien » sur les vidéos liées (liste du video club, fenêtre d'un film : `linkIcon`, `grpCount`).
 - 26/11 — Recadrage : le cadre rouge reste tant qu'on ne clique pas ailleurs (`outside`), commandes plus recréées après « edit ».
+- 26/11 — Bout à bout (montage.js + job edit du robot, limite 10 Go), frise horizontale proportionnelle des blocs, fenêtre d'edit plus large.
