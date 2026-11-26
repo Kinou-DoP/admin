@@ -1178,6 +1178,16 @@
       "snip": {
         "s": 2.198,
         "d": 23.334
+      },
+      "pend": {
+        "snip": {
+          "path": "data/encode/rapide-1795709312755-53bh3.json",
+          "id": "mwxqylf7xwf9f3",
+          "s": 2.198,
+          "d": 23.334,
+          "pj": "null",
+          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545346985-37532578_web.1280x720.2500.mp4"
+        }
       }
     }
   }
