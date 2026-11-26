@@ -30,4 +30,5 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   comme sur le site (`vcCredits`) et les y réécrit (`vcSetCredits` : réal, prod, chefs op, rôles gardés) ; lignes en plus (3e et
   suivantes) gardées dans la page (`sub`, publiées avec « Publier »). « Rétablir » remet aussi les crédits du video club à ceux de la page.
 - **Aperçu d'un film dans « Modifier la sélection »** (Gus 26/11) : `navPlayer` avec `o.tabs` = boutons discrets « + / ✓ onglet » pour chaque onglet du chef op (ajouter / retirer sans changer l'onglet ouvert, `togTab`) et « + » = créer un onglet avec ce film ; le bouton du bas devient « − Retirer de l'onglet » (`o.remove`). Le son coupé (`sonCoupe`, admin.js) s'applique aussi à cet aperçu.
+- **Recadrage (cadre rouge)** (Gus 26/11) : `zoomCtl` garde le cadre affiché tant qu'on ne clique pas en dehors de la vidéo / des commandes / du cadre (`outside`, écouteur `pointerdown` du document) ; avant, il dépendait du focus du curseur (un clic sur la vidéo hors du cadre le fermait). Après la fenêtre « edit », les commandes sont relues (`_apply`) au lieu d'être recréées (écouteurs en double).
 

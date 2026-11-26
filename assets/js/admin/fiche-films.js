@@ -295,8 +295,16 @@
   function zoomCtl(thumb, video, get, set, getP, setP, getT, setT, tch) {
     tch = tch || touch;
     var range = el("input", { type: "range", min: "100", max: "250", step: "1", class: "nodirty", value: String(Math.round((get() || 1) * 100)) });
-    var lab = el("span", { class: "zval" }), v = null, adjusting = false, drag = null;
+    var lab = el("span", { class: "zval" }), v = null, adjusting = false, drag = null, rootEl = null, armed = false;
     var center = el("button", { class: "zcenter", text: "Recentrer" });
+    // Le cadre rouge reste affiché tant qu'on ne clique pas ailleurs (Gus 26/11) : cliquer sur la vidéo, le curseur ou le cadre ne le ferme pas ; un clic
+    // en dehors (hors vidéo, hors commandes) le ferme. (Avant, il dépendait du focus du curseur : un clic sur la vidéo hors du cadre le fermait.)
+    function outside(e) {
+      if (!adjusting) { document.removeEventListener("pointerdown", outside, true); armed = false; return; }
+      var t = e.target; if (drag || (rootEl && rootEl.contains(t)) || thumb.contains(t) || frame.contains(t)) return;
+      document.removeEventListener("pointerdown", outside, true); armed = false; adjusting = false; apply(); stop();
+    }
+    function arm() { if (armed) return; armed = true; document.addEventListener("pointerdown", outside, true); }
     // Pendant le réglage : l'extrait entier, et un cadre rouge fin = la partie gardée (taille de la vignette),
     // qu'on déplace en cliquant-glissant (ou au doigt).
     var frame = el("i", { class: "zframe" });
@@ -326,9 +334,9 @@
       var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
     }
     function stop() { if (v && !adjusting) { v.remove(); v = null; } }
-    range.addEventListener("pointerdown", function () { adjusting = true; play(); apply(); });
+    range.addEventListener("pointerdown", function () { adjusting = true; arm(); play(); apply(); });
     range.addEventListener("input", function () {
-      adjusting = true;
+      adjusting = true; arm();
       var z0 = get() || 1, z = parseInt(range.value, 10) / 100, p = pos();
       set(z > 1 ? z : undefined);
       // Le cadre grandit ou rétrécit autour de son centre (pas autour de sa position enregistrée).
@@ -339,7 +347,6 @@
       }
       play(); apply(); tch();
     });
-    range.addEventListener("blur", function () { if (drag) return; adjusting = false; apply(); stop(); });
     // Déplacement du cadre : le décalage en pixels devient une position de 0 à 100 % (bords compris).
     frame.addEventListener("pointerdown", function (e) {
       var z = get() || 1; if (z <= 1) return;
@@ -360,15 +367,17 @@
     thumb.addEventListener("mouseenter", play);
     thumb.addEventListener("mouseleave", stop);
     // Clic sur l'image : réglage (extrait entier + cadre rouge), comme en touchant le curseur.
-    thumb.addEventListener("pointerdown", function () { if (adjusting) return; adjusting = true; play(); apply(); setTimeout(function () { range.focus({ preventScroll: true }); }); });
+    thumb.addEventListener("pointerdown", function () { if (adjusting) return; adjusting = true; arm(); play(); apply(); setTimeout(function () { range.focus({ preventScroll: true }); }); });
     apply();
     var box = el("div", { class: "zoom" }, [lab, range, center]);
-    box._show = function () { adjusting = true; play(); apply(); range.focus({ preventScroll: true }); };
+    box._show = function () { adjusting = true; arm(); play(); apply(); range.focus({ preventScroll: true }); };
+    box._apply = function () { if (!adjusting) range.value = String(Math.round((get() || 1) * 100)); apply(); }; // relit le réglage (fenêtre « edit » fermée) sans recréer les commandes
+    rootEl = box;
     if (!setT) return box;
     var cb = el("input", { type: "checkbox", class: "nodirty" }); cb.checked = !!getT();
     // Case cochée ou décochée : extrait arrêté, la vignette (recadrée ou non) se voit tout de suite.
     cb.addEventListener("change", function () { setT(cb.checked || undefined); halt(); tch(); });
-    return el("div", {}, [box, el("label", { class: "zthumb" }, [cb, "Aussi sur la vignette"])]);
+    var wrap = el("div", {}, [box, el("label", { class: "zthumb" }, [cb, "Aussi sur la vignette"])]); wrap._apply = box._apply; rootEl = wrap; return wrap;
   }
 
   // Fiction : cadrage cinémascope (2,39:1) d'un film en 16:9, réglé à part pour la vignette (thumbCrop) et pour l'extrait
@@ -719,7 +728,7 @@
     }
     var zoom = mkZoom();
     // Bouton « edit » (Gus 26/11) : sous la vidéo, sur fond blanc, collé à droite de la ligne de recadrage.
-    var editB = vcEditBtn(c, function () { paintThumb(); var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; zoomIn(zoom).appendChild(editB); if (document.activeElement !== sub) sub.value = vcCredits(c).text; sync(); });
+    var editB = vcEditBtn(c, function () { paintThumb(); if (zoom._apply) zoom._apply(); else { var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; zoomIn(zoom).appendChild(editB); } if (document.activeElement !== sub) sub.value = vcCredits(c).text; sync(); });
     function zoomIn(z) { return z.classList.contains("zoom") ? z : z.querySelector(".zoom") || z; } // le bouton va dans la ligne « Recadrage », pas dans la case « aussi sur la vignette »
     zoomIn(zoom).appendChild(editB);
     card.appendChild(thumb); card.appendChild(zoom);
