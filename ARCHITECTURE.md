@@ -6,7 +6,8 @@ Vue d'ensemble des trois dépôts : `ARCHITECTURE.md` du dépôt `site`. Ici : l
 | Fichier | Branche | Rôle |
 |---|---|---|
 | `index.html` | `beta` | squelette (connexion, menu de gauche, `#view`, barre du bas) ; `?v=` = version des JS / CSS |
-| `assets/js/admin.js` | `beta` | toute l'interface (~4 500 lignes, une IIFE, routeur par `#/…`) |
+| `assets/js/admin.js` + `assets/js/admin/*.js` | `beta` | toute l'interface, découpée par thème (portée globale partagée, chargés dans l'ordre de `index.html`, routeur par `#/…`) |
+| `tools/maj-version.sh` | `beta` | met à jour `?v=` dans `index.html` après une modification du JS / CSS |
 | `assets/css/admin.css` | `beta` | tout le style |
 | `data/` | `main` | **les données du site** (fiches, accueil, spotlight, fiction, contact, bandes, bibliothèque, avancement) |
 | `.github/workflows/home-full.yml` + `tools/fill-home.mjs`, `tools/link-films.mjs` | `main` | robot après chaque publication : films complets manquants, images des projets en images, types de contenu, infos partagées entre pages d'un même film |
@@ -14,7 +15,22 @@ Vue d'ensemble des trois dépôts : `ARCHITECTURE.md` du dépôt `site`. Ici : l
 | `.github/workflows/slate-ask.yml` + `tools/ask.mjs`, `tools/slate.mjs` | `main` | robot qui lit Slate quand les fonctions du site ne répondent pas (`data/ask/`) |
 | `_headers`, `netlify.toml` | `main` | réglages de l'ancienne admin Netlify (plus utilisée) |
 
-## `admin.js`, par sections (titres `// ---------- … ----------` dans le code)
+## Fichiers JS (dans l'ordre de chargement)
+| Fichier | Contenu |
+|---|---|
+| `admin.js` | noyau : réglages (`SITE`…), version, outils (`el`, `status`), enregistrements en cours, API GitHub, API du site |
+| `admin/upload.js` | envoi Amazon, encodage, `importBundle`, `importStills`, `relinkAll`, `extrasCtl` |
+| `admin/connexion-liste.js` | `login`, prénom, `showList`, avancement des fiches |
+| `admin/fiche-base.js` | Annuler / Rétablir, `showDP`, notes, `render`, identité, `infoRobotCtl` |
+| `admin/fiche-films.js` | `filmsSection`, `selEditor`, `zoomCtl`, `scopeCtl`, `phoneCtl`, `vc*`, `filmCard` |
+| `admin/fiche-about-publier.js` | about, portrait, CV, `publish` / `doPublish`, `sharePage` |
+| `admin/accueil-spotlight.js` · `fiction.js` · `contact.js` | pages du site : home, spotlight, fiction, contact |
+| `admin/festivals.js` · `selections.js` · `sorties.js` · `recup.js` | pages internes (festivals, sélections + prix, sorties fiction, récupération) |
+| `admin/admin-divers.js` | accueil de l'admin (`showHello`), historique, navigation latérale |
+| `admin/bibli-outils.js` · `bibli-page.js` | video club : données, bandes chiffrées, glisser · `showBibli` |
+| `admin/routeur.js` | `route`, garde-fous de sortie, démarrage (toujours en dernier) |
+
+## Détail par sections (titres `// ---------- … ----------` dans le code)
 1. **Outils** : `el` (fabrique un élément), `status` (message en bas), `slugify`, `bundleId`, `shortLink`.
 2. **API GitHub** : `gh` (appel avec la clé), `readFile`, `commit` (un commit pour plusieurs fichiers, `edit` = relu au dernier
    commit, réessaie si conflit), `json`.

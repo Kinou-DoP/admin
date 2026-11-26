@@ -5,7 +5,7 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
 - **Code sur `beta`** (dans une nouvelle session : `git checkout beta`) : publié sur GitHub Pages https://kinou-dop.github.io/admin/
   ~1 min après un push. **Données sur `main`** (`data/`, constante `BRANCH`), écrites par l'admin via l'API GitHub (un commit par
   publication). `main` contient aussi les robots (`.github/workflows/`, `tools/`). L'ancienne admin Netlify n'est plus utilisée.
-- À chaque modification de `admin.js` ou `admin.css` : mettre à jour `?v=` dans `index.html`. L'admin compare son `?v=` à celui en
+- À chaque modification du JS ou de `admin.css` : `sh tools/maj-version.sh` (met `?v=` à jour dans `index.html`). L'admin compare son `?v=` à celui en
   ligne (`checkVersion`) : bandeau « Nouvelle version » et publication bloquée tant qu'on n'a pas rechargé (« Recharger » garde les
   modifications non publiées, `saveDraft`).
 - `SITE` = `SITE_VIEW` = https://kinou-4tv.pages.dev (fonctions Cloudflare du site : lecture de Slate ; « Voir sur le site ») ;
