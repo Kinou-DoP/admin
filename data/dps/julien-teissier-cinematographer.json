@@ -245,7 +245,7 @@
       "cat": "COMMERCIAL",
       "slate": 10615,
       "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 3
     },
     {
       "title": "Les Jeunesses en mouvement - Palais de Tokyo - Restitution Cours Charles Peguy",
@@ -291,7 +291,7 @@
       "cat": "COMMERCIAL",
       "slate": 8462,
       "featured": true,
-      "featuredOrder": 6
+      "featuredOrder": 7
     },
     {
       "title": "VOGUE x JORDAN",
@@ -357,7 +357,7 @@
       "cat": "BEAUTY / FASHION",
       "slate": 10552,
       "featured": true,
-      "featuredOrder": 4
+      "featuredOrder": 6
     },
     {
       "title": "LOUIS VUITTON WOMEN’S FW24 x ZENDAYA & JENNIFER CONNELLY",
@@ -376,7 +376,7 @@
       "cat": "BEAUTY / FASHION",
       "slate": 10615,
       "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 3
     },
     {
       "title": "Tory Burch | Essence of Dreams Divine Moon - Fragrance Campaign",
@@ -384,7 +384,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8b9787d8-6dee-4aea-815c-a6ea4154a56c-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/5tEPpKxMKgv7owk17SUHRtzto6c8oP0JIslg298v9Vg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YzEyZDllNi1iNTU5/LTRkODMtOTcxNS02/MTI3N2YwOTEyZGYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDMt/MzEtYS0xMy41Ni4w/OC5wbmc?v=1&format=webp",
       "cat": "BEAUTY / FASHION",
-      "slate": 10651
+      "slate": 10651,
+      "featured": true,
+      "featuredOrder": 2
     },
     {
       "title": "ODISSI FW24",
@@ -404,7 +406,7 @@
       "cat": "BEAUTY / FASHION",
       "slate": 8462,
       "featured": true,
-      "featuredOrder": 6
+      "featuredOrder": 7
     },
     {
       "title": "GQ_NICOLAS HUCHARD",
@@ -422,7 +424,7 @@
       "cat": "BEAUTY / FASHION",
       "slate": 8456,
       "featured": true,
-      "featuredOrder": 7
+      "featuredOrder": 9
     },
     {
       "title": "Balmain FW23 - Teaser",
@@ -593,7 +595,7 @@
       "cat": "AUTOMOTIVE",
       "slate": 10582,
       "featured": true,
-      "featuredOrder": 3
+      "featuredOrder": 4
     },
     {
       "title": "MINI - CLUBMAN EDITION CANONBURY - OPEN MORE DOORS TO COOL FAMILIES",
