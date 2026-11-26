@@ -370,7 +370,15 @@
     },
     "emwxgq59g3y3nbm": {
       "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/web.mp4",
-      "enc": null
+      "enc": null,
+      "dir": "Séraphin Maroy",
+      "prod": "Fauve Film",
+      "dops": [
+        "Chris Alessi"
+      ],
+      "types": [
+        "Music Video"
+      ]
     },
     "s11554": {
       "extras": [
@@ -411,7 +419,15 @@
     },
     "emwxgq59h49hbuq": {
       "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/web.mp4",
-      "enc": null
+      "enc": null,
+      "dir": "Séraphin Maroy",
+      "prod": "Fauve Film",
+      "dops": [
+        "Chris Alessi"
+      ],
+      "types": [
+        "Music Video"
+      ]
     },
     "emwxgq59i1rcn44": {
       "title": "Camille Lellouche • Prince de ma ville",
@@ -574,6 +590,26 @@
         "y": 50,
         "t": false
       }
+    },
+    "emwxgq59hr9ay73": {
+      "dir": "Séraphin Maroy",
+      "prod": "Fauve Film",
+      "dops": [
+        "Chris Alessi"
+      ],
+      "types": [
+        "Music Video"
+      ]
+    },
+    "emwxgq59ikke41n": {
+      "dir": "Séraphin Maroy",
+      "prod": "Fauve Film",
+      "dops": [
+        "Chris Alessi"
+      ],
+      "types": [
+        "Music Video"
+      ]
     }
   }
 }
