@@ -1173,6 +1173,12 @@
           "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545423788-l-27ore-cc-81al-summer-splash.1280x720.2500.mp4"
         }
       }
+    },
+    "s120": {
+      "snip": {
+        "s": 2.198,
+        "d": 23.334
+      }
     }
   }
 }
