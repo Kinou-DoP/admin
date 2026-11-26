@@ -783,23 +783,15 @@
       "img": "https://d3toxii6rvamjf.cloudfront.net/depot/2b4nrmkvvsgyy3pdpdxq/vignette.webp",
       "snip": {
         "s": 0.883,
-        "d": 1.437
+        "d": 1.437,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxorcdsfjvmv1/extrait-883.mp4",
+        "vf": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5834b945-67c1-498c-94b8-2a5bcf54729a-1280x720.2500.mp4"
       },
       "thumbT": 2.17,
       "hist": {
         "img": [
           "https://images.slatecdn.net/79krD8ijPPjtqi5G1D-8hzgfryU7kItRquwmxyQPuP0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/MTdhNzQxOC1jZmEy/LTQ1OWQtYjA0MC1h/YTFiMzMwYzU1YzUv/MTY4MjM0NDM3OTU2/OS5qcGc.webp"
         ]
-      },
-      "pend": {
-        "snip": {
-          "path": "data/encode/rapide-1795705615216-p35o2.json",
-          "id": "mwxorcdsfjvmv1",
-          "s": 0.883,
-          "d": 1.437,
-          "pj": "null",
-          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5834b945-67c1-498c-94b8-2a5bcf54729a-1280x720.2500.mp4"
-        }
       }
     }
   }
