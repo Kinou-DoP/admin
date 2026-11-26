@@ -1109,6 +1109,16 @@
         "img": [
           "https://images.slatecdn.net/xfixq1RjL3Mz04XeC_vyx0U1XeYgEWCsUpFh1pIEboQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NzYyOWQyNi01ZjMz/LTQ5MTMtYjI3ZC0z/OGEzYjA2NTc3NWEv/MTc1MDg0NTgwMTYy/My5qcGc.webp"
         ]
+      },
+      "pend": {
+        "snip": {
+          "path": "data/encode/rapide-1795709178858-rtr1n.json",
+          "id": "mwxqvq3u5dcu37",
+          "s": 9.992,
+          "d": 30,
+          "pj": "null",
+          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/877709f0-3323-4482-a597-7176a82a52c5-1280x720.2500.mp4"
+        }
       }
     }
   }
