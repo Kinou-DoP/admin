@@ -280,7 +280,7 @@
       if (sl.zoom > 1) sum.push("recadrage " + Math.round(sl.zoom * 100) + " %");
       if (sl.phoneX !== undefined) sum.push("cadrage téléphone");
       var edit = el("button", { type: "button", class: "btn", text: "Éditer la vidéo" });
-      edit.addEventListener("click", function () { hstop(); var again = function () { card.replaceWith(slideCard(sl)); }; if (sl.full) homeMontage(sl, setO, D, again); else videoEditor(sl, setO, D, media, again); }); // film complet connu : on arrive directement dans le montage
+      edit.addEventListener("click", function () { hstop(); var again = function () { card.replaceWith(slideCard(sl)); }; if (sl.full) homeMontage(sl, setO, D, again); else alert("Le film complet est en cours de récupération (environ une minute après la publication). Réessaie dans un instant, après avoir rechargé la page."); }); // film complet connu : on arrive directement dans le montage
       card.appendChild(el("div", { class: "vsum" }, [edit, el("span", { class: "zval", text: sum.join(" · ") })]));
     }
     card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
