@@ -928,7 +928,9 @@
             "s": 84.313,
             "d": 2.405
           }
-        ]
+        ],
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxsd1a9np0xsi/montage-30953-1883_86722-3078_84313-2405.mp4",
+        "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4"
       },
       "thumbT": 95.845,
       "hist": {
@@ -943,16 +945,6 @@
             "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4"
           }
         ]
-      },
-      "pend": {
-        "snip": {
-          "path": "data/encode/rapide-1795711666113-tvw0g.json",
-          "id": "mwxsd1a9np0xsi",
-          "s": 30.953,
-          "d": 1.883,
-          "pj": "[{\"s\":30.953,\"d\":1.883},{\"s\":86.722,\"d\":3.078},{\"s\":84.313,\"d\":2.405}]",
-          "from": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4"
-        }
       }
     },
     "emwxgq59ikke41n": {
