@@ -154,7 +154,7 @@
       "slate": 4644,
       "cat": "COMMERCIAL",
       "featured": true,
-      "featuredOrder": 5
+      "featuredOrder": 6
     },
     {
       "title": "L'Oréal Men Expert - Hugh Laurie",
@@ -237,7 +237,7 @@
       "slate": 120,
       "cat": "COMMERCIAL",
       "featured": true,
-      "featuredOrder": 1
+      "featuredOrder": 8
     },
     {
       "title": "DESSANGE",
@@ -246,7 +246,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/48dc3cff-3606-4b68-b28f-fecd66b4a655-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/2ADyKaF1gpVS9nj0y8yDXhVEdjY-s_WNYETYbMoHm-Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/OWI3NWU4MS1iNjNm/LTRkZjItYTc5Ny1i/YjQ2ZGIxMmRjNTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMTEt/MTMtYS0xNy4wOC4z/NC5wbmc.webp",
       "slate": 9153,
-      "cat": "HAIR"
+      "cat": "HAIR",
+      "featured": true,
+      "featuredOrder": 4
     },
     {
       "title": "John Frieda | Barcelona",
@@ -456,7 +458,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dbecc02b-d4c7-40e9-a5f7-083d7fc73d78-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/9iGXfMpF5R8TgqH1SNbVai5j7Y3slFz9lcHwJ3ff9P4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZDBjNzJkYy0yYmE0/LTRmYWEtYTI5YS00/Mzk2MTg4YTRmYTUv/MTc5MzYzMzU4Njc3/Ny5qcGc.webp",
       "slate": 11490,
-      "cat": "SKINCARE / MAKEUP"
+      "cat": "SKINCARE / MAKEUP",
+      "featured": true,
+      "featuredOrder": 9
     },
     {
       "title": "Garnier • Ambre Solaire",
@@ -492,7 +496,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/877709f0-3323-4482-a597-7176a82a52c5-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/xfixq1RjL3Mz04XeC_vyx0U1XeYgEWCsUpFh1pIEboQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/NzYyOWQyNi01ZjMz/LTQ5MTMtYjI3ZC0z/OGEzYjA2NTc3NWEv/MTc1MDg0NTgwMTYy/My5qcGc.webp",
       "slate": 9964,
-      "cat": "SKINCARE / MAKEUP"
+      "cat": "SKINCARE / MAKEUP",
+      "featured": true,
+      "featuredOrder": 3
     },
     {
       "title": "Lakme - Rouge Bloom",
@@ -512,7 +518,7 @@
       "slate": 9860,
       "cat": "SKINCARE / MAKEUP",
       "featured": true,
-      "featuredOrder": 3
+      "featuredOrder": 1
     },
     {
       "title": "LA ROCHE POSAY EFFACLAR DUO - PAS ENCORE SORTI",
@@ -680,7 +686,7 @@
       "slate": 1862,
       "cat": "SKINCARE / MAKEUP",
       "featured": true,
-      "featuredOrder": 6
+      "featuredOrder": 7
     },
     {
       "title": "ID Magazine - A-Z of Beauty",
@@ -870,7 +876,7 @@
       "slate": 4742,
       "cat": "",
       "featured": true,
-      "featuredOrder": 4
+      "featuredOrder": 5
     }
   ]
 }
