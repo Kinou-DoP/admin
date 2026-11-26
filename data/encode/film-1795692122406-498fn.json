@@ -4,13 +4,24 @@
       "id": "mwxgq59i1rcn44",
       "kind": "film",
       "key": "depot/ykgvfxpfmkmdf4hh6iea/Camille-Lellouche-Prince-de-ma-ville-Clip-Officiel-_Master_422HQ_1920x1080.mov",
-      "progress": {
-        "step": "vignette",
-        "pct": 0
+      "answer": {
+        "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/web.mp4",
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/extrait-100987.mp4",
+        "snip": {
+          "s": 100.987,
+          "d": 5
+        },
+        "thumbT": 101.987,
+        "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/vignette-800.webp",
+        "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/vignette-1600.webp",
+        "dur": 151.48,
+        "w": 1920,
+        "h": 1080
       }
     }
   ],
   "at": "2026-11-26T11:36:59.718Z",
   "by": "Gurvan",
-  "startedAt": "2026-11-26T12:02:53.213Z"
+  "startedAt": "2026-11-26T12:02:53.213Z",
+  "doneAt": "2026-11-26T12:06:46.067Z"
 }
