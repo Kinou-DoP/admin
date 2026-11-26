@@ -333,7 +333,8 @@
       if (u) u.disabled = undo.i <= 0 && !pend; if (r) r.disabled = pend || undo.i >= undo.l.length - 1;
     }
     if (!emb) bibKey = function (e) { // Ctrl / Cmd + Z, Maj + Ctrl / Cmd + Z (hors champs de texte)
-      if (!document.body.classList.contains("bibpage") || !(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || e.target.closest("input, textarea") || document.querySelector(".bmodal")) return;
+      var inField = e.target.closest && e.target.closest("input, textarea"); // la barre de recherche vide (focus automatique à l'arrivée) ne bloque plus Annuler / Rétablir
+      if (!document.body.classList.contains("bibpage") || !(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || (inField && !(inField === q && !q.value)) || document.querySelector(".bmodal")) return;
       e.preventDefault(); undoGo(e.shiftKey ? 1 : -1);
     };
     function setState(s, msg) {
