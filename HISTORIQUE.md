@@ -411,3 +411,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Fiches : la liste d'une carte (vidéos d'un lot) suit le video club (titres, ordre) tant que l'ordre n'a pas été changé sur la page (overrides[id].extrasOrd).
 - 26/11 — Capture de vignette : essais instantanés (blob, /api/media, CORS direct) avant le robot.
 - 26/11 — Montage d'extrait (blocs, I / O, poignées qui se poussent, 30 s), suppression d'un film / bande / bundle, client + date + poids dans les infos, à faire plus tard (README).
+- 26/11 — Montage : sélection séparée des blocs, Ctrl+Z du montage ; client affiché avant le titre (site, bandes, fiches, liste).

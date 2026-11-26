@@ -128,4 +128,9 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   fichiers Amazon gardés) ; boutons « Supprimer cette bande » (réglages) et « Supprimer ce bundle » (panneau), × des listes en rouge au survol.
 - **Infos du film** : Client (modifiable, edits.json), date (celle de Slate, `meta.json`, sinon date d'import), poids de l'original (`size`) et de la version web
   (`ws`, écrit par le robot), taille, durée.
+- **Montage, mise à jour 26/11** : la sélection (poignées, I / O) est séparée des blocs ; « + Ajouter ce bloc » la range dans la liste (`snip.parts`), seuls les blocs
+  de la liste comptent à la validation (un seul bloc = extrait simple) ; cliquer un bloc = le modifier (« ✓ Retour à la sélection »). Ctrl / Cmd + Z défait d'abord
+  les gestes du montage (`snipUndo`, `su`) sans rouvrir la fenêtre. Tant que le robot n'a pas fait le mp4 (`snip.v`), l'aperçu lit les blocs bout à bout.
+- **Client** : `client` (proposé depuis Slate, `meta.json`) + `cshow` (case « afficher avant le titre ») dans edits.json ; site, bandes et liens partagés affichent
+  « Client | Titre » seulement si `cshow` (`dtitle`) ; champ « Client » sur les cartes des fiches (`vcPatch`) ; liste du video club : client au-dessus du titre.
 

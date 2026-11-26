@@ -151,7 +151,7 @@
       var add = el("button", { type: "button", class: "btn ghost badd", text: inBand(f) ? "✓" : "+", title: "Ajouter à la bande", on: { click: function (e) { e.stopPropagation(); addKeys([f.key], band.items.length, th); } } });
       var r = el("div", { class: "brow" + (st.sel[f.key] ? " sel" : "") + (inBand(f) ? " inband" : "") }, [
         el("span", { class: "bnum", text: String(i + 1) }), cb, th,
-        el("div", { class: "bt" }, [el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
+        el("div", { class: "bt" }, [f.client ? el("small", { class: "bclient", text: f.client }) : null, el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
           f.pend && !f.enc ? el("small", { class: "benc run", text: "⟳ " + [f.pend.thumb ? "Vignette" : "", f.pend.snip ? "Extrait" : ""].filter(Boolean).join(" et ") + " en cours d'encodage…" }) : f.enc ? el("small", { class: "benc" + (f.enc.error ? " err" : " run"), text: f.enc.error ? "⚠ Encodage raté : " + f.enc.error : f.enc.sending ? "↑ Envoi en cours (ou interrompu)…" : "⟳ Encodage en cours (quelques minutes)…" }) : null]),
         el("div", { class: "bc" }, f.dops.map(function (d) { var r = (f.roles || {})[d]; return r ? el("span", { class: "brole" }, [lnk("dop", d), el("small", { text: r })]) : lnk("dop", d); })),
         el("div", { class: "bc" }, f.cats.slice(0, 2).map(function (c) { return lnk("cat", c); }).concat(f.types.filter(function (t) { return !f.cats.some(function (c) { return bnrm(c) === bnrm(t); }); }).slice(0, 3).map(function (c) { return lnk("type", c); }))),
@@ -252,6 +252,7 @@
     function sharePayload(it, dl) {
       var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist" && k !== "pend" && k !== "pages" && k !== "hay" && k !== "libEdited") c[k] = it[k]; }); snipOk(it, c);
       c.dops = (c.dops || []).filter(Boolean);
+      if (!(c.cshow && c.client)) delete c.client; delete c.cshow; // le client ne part que s'il est affiché
       if (c.extras) { c.extras = c.extras.filter(function (x) { return !xHidden(x, "club") && !x.self; }).map(function (x) { x = Object.assign({}, x); delete x.hide; return x; }); if (!c.extras.length) delete c.extras; }
       return { single: true, title: c.title || "", artists: [], cols: 1, hide: {}, download: !!dl, items: [c], at: new Date().toISOString() };
     }
@@ -764,7 +765,7 @@
       function eKey(e) {
         if (!document.body.contains(box)) { document.removeEventListener("keydown", eKey, true); return; }
         if (!(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || (e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])"))) return;
-        e.preventDefault(); e.stopPropagation(); eGo(e.shiftKey ? 1 : -1);
+        e.preventDefault(); e.stopPropagation(); if (snipUndo(e.shiftKey ? 1 : -1)) return; eGo(e.shiftKey ? 1 : -1);
       }
       document.addEventListener("keydown", eKey, true);
       var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox bedit" });
@@ -853,7 +854,8 @@
         var own = it.snipVideo || (it.snip && it.snip.v), src = own || (it.snip ? it.full : it.video); if (!src || pvid) return;
         pvid = el("video", { muted: true, playsinline: true, autoplay: true, loop: !!own || !it.snip }); pvid.muted = true;
         pvid.src = src + (!own && it.snip ? "#t=" + it.snip.s : "");
-        if (!own && it.snip) pvid.addEventListener("timeupdate", function () { if (pvid && pvid.currentTime > it.snip.s + it.snip.d) pvid.currentTime = it.snip.s; });
+        if (!own && it.snip) { var PP = it.snip.parts && it.snip.parts.length > 1 ? it.snip.parts : [{ s: it.snip.s, d: it.snip.d }], pi0 = 0; // montage pas encore fabriqué : blocs bout à bout
+          pvid.addEventListener("timeupdate", function () { if (pvid && pvid.currentTime >= PP[pi0].s + PP[pi0].d) { pi0 = (pi0 + 1) % PP.length; pvid.currentTime = PP[pi0].s; } }); }
         pin.appendChild(pvid); prevImg();
       });
       pv.addEventListener("mouseleave", function () { if (pvid) { pvid.remove(); pvid = null; } });
@@ -891,11 +893,17 @@
       // Lecteur du film (Gus 22/11) : image par image avec les flèches (Maj = 1 s), pour la vignette et pour l'extrait.
       // Extrait = un début et une fin (0,5 à 10 s) : poignées sur une frise de tout le film (Gus 26/11) ; pendant qu'on
       // bouge une poignée la vidéo montre l'image sans bouger, dès qu'on lâche (ou 0,7 s après la dernière flèche) l'extrait joue en boucle.
-      var MIND = .5, MAXD = 30, bi = 0; // blocs de l'extrait : 0,5 s au moins, 30 s au total
-      function parts() { return it.snip && it.snip.parts && it.snip.parts.length > 1 ? it.snip.parts : null; }
-      function actB() { var p = parts(); return p ? p[Math.min(bi, p.length - 1)] : it.snip; }
-      function totalD() { var p = parts(); return p ? p.reduce(function (a, b) { return a + b.d; }, 0) : it.snip ? it.snip.d : 0; }
-      function maxFor() { var p = parts(); return MAXD - (p ? totalD() - actB().d : 0); }
+      // Extrait en montage (Gus 26/11) : la SÉLECTION (poignées, I / O) est réglée à part ; « + Ajouter ce bloc » la range dans la liste du montage (it.snip.parts).
+      // Seuls les blocs de la liste comptent à la validation. `bi` = -1 : poignées sur la sélection ; ≥ 0 : poignées sur ce bloc de la liste (modification).
+      var MIND = .5, MAXD = 30, bi = -1;
+      function parts() { return it.snip && it.snip.parts && it.snip.parts.length ? it.snip.parts : null; }
+      function selB() {
+        if (it._sel) return it._sel; var p = parts(), last = p && p[p.length - 1], s0 = last ? Math.min(last.s + last.d, Math.max(0, (typeof dur === "number" && dur ? dur : 1e9) - MIND)) : 0;
+        return (it._sel = { s: s0, d: 5 });
+      }
+      function actB() { var p = parts(); if (!p) return it.snip; return bi >= 0 && p[bi] ? p[bi] : selB(); }
+      function totalD() { var p = parts(); return p ? p.reduce(function (a, b) { return a + b.d; }, 0) : 0; }
+      function maxFor() { var p = parts(); return p ? MAXD - totalD() + (bi >= 0 && p[bi] ? p[bi].d : 0) : MAXD; }
       var player = null, pout = el("p", { class: "hint" }), tools = el("div", { class: "tltools" }), tl = null;
       var src = it.full || it.video || (lib && lib.local) || ""; // lib.local : la vidéo de l'ordinateur, pendant l'envoi / l'encodage
       var full = it.full || (lib && lib.local) || "";
@@ -924,7 +932,7 @@
             hIn.style.left = pc(s, w[0], w[1]); hOut.style.left = pc(e, w[0], w[1]); dPh.style.left = pc(t, w[0], w[1]);
             dPh.hidden = t < w[0] || t > w[1];
             hIn.classList.toggle("on", act === "in"); hOut.classList.toggle("on", act === "out");
-            dLab.textContent = (parts() ? "Bloc " + (bi + 1) + " / " + parts().length + " : " : "Extrait : ") + fmtF(s) + " → " + fmtF(e) + " (" + A.d.toFixed(1).replace(".", ",") + " s" + (parts() ? ", montage " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD : "") + ")" + " · I / O : début / fin ici" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image") + " · espace : lire la boucle";
+            dLab.textContent = (parts() ? (bi >= 0 ? "Bloc " + (bi + 1) + " (en modification) : " : "Sélection : ") : "Extrait : ") + fmtF(s) + " → " + fmtF(e) + " (" + A.d.toFixed(1).replace(".", ",") + " s" + (parts() ? ", montage " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD : "") + ")" + " · I / O : début / fin ici" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image") + " · espace : lire la boucle";
           }
         };
         var seek = function (t) { loopOn = false; seqOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
@@ -938,7 +946,7 @@
           else if (which === "out") { e = Math.min(dur, s + mx, e); if (e < s + MIND) { s = Math.max(0, e - MIND); e = Math.max(e, s + MIND); } }
           else { s = Math.max(0, Math.min(s, dur - MIND)); e = Math.min(dur, Math.max(s + MIND, Math.min(e, s + mx))); }
           s = Math.max(0, s); var d = Math.round((Math.min(dur, e) - s) * 1000) / 1000, p = parts();
-          if (p) { p[bi] = { s: s, d: d }; it.snip = { s: p[0].s, d: p[0].d, parts: p }; } else it.snip = { s: s, d: d };
+          if (p && bi >= 0 && p[bi]) { p[bi] = { s: s, d: d }; it.snip = { s: p[0].s, d: p[0].d, parts: p }; } else if (p) it._sel = { s: s, d: d }; else it.snip = { s: s, d: d };
           it.edited = true;
         };
         var moveHandle = function (which, t) { snipDraft(); var A = actB(), s = A.s, e = s + A.d; if (which === "in") setSnip(t, e, "in"); else setSnip(s, t, "out"); A = actB(); seek(which === "in" ? A.s : A.s + A.d); };
@@ -977,7 +985,7 @@
         drag(det, function (e) { act = "play"; var w = win(); seek(tAt(e, det, w[0], w[1])); });
         var hw = null;
         [[hIn, "in"], [hOut, "out"]].forEach(function (h) {
-          drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; prevSnip(); playSnip(); drawSnip(); });
+          drag(h[0], function (e) { act = h[1]; if (!hw) hw = win(); moveHandle(h[1], tAt(e, det, hw[0], hw[1])); }, function () { hw = null; snipMark(); prevSnip(); playSnip(); drawSnip(); });
         });
         // Raccourcis valables où que soit le clic dans la fenêtre (Gus 22/11) : écoutés avant tout le reste (capture), sauf dans un
         // champ de texte. Espace = lecture / pause ; flèches = image par image (la vidéo s'arrête, pas de reprise toute seule).
@@ -990,12 +998,12 @@
             if (!it.snip) it.snip = { s: tt, d: Math.round(Math.min(5, dur - tt) * 1000) / 1000 };
             var A2 = actB(); act = /i/i.test(e.key) ? "in" : "out";
             if (act === "in") setSnip(tt, A2.s + A2.d, "in"); else setSnip(A2.s, tt, "out");
-            prevSnip(); draw(); drawSnip(); return;
+            snipMark(); prevSnip(); draw(); drawSnip(); return;
           }
           if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
           e.preventDefault(); e.stopPropagation(); var st2 = (e.shiftKey ? 1 : FR) * (e.key === "ArrowLeft" ? -1 : 1);
           if (act === "play" || !it.snip || ptab !== "snip") seek(player.currentTime + st2);
-          else { moveHandle(act, (act === "in" ? actB().s : actB().s + actB().d) + st2); clearTimeout(kT); kT = setTimeout(function () { prevSnip(); drawSnip(); }, 300); }
+          else { moveHandle(act, (act === "in" ? actB().s : actB().s + actB().d) + st2); clearTimeout(kT); kT = setTimeout(function () { snipMark(); prevSnip(); drawSnip(); }, 300); }
         };
         document.addEventListener("keydown", onKey, true);
         tools.appendChild(el("div", { class: "tlrow" }, [
@@ -1005,7 +1013,7 @@
           time]));
         var grabB = el("button", { type: "button", class: "btn primary", text: "Valider cette image", title: "L'image affichée devient la vignette", on: { click: grab } });
         var snipB = full ? el("button", { type: "button", class: "btn ghost", text: "Début de l'extrait ici", title: "Place le début sur l'image affichée (même durée)", on: { click: function () {
-            snipDraft(); var s = player.currentTime, d = it.snip ? actB().d : 5; act = "in"; if (!it.snip) it.snip = { s: s, d: Math.min(d, Math.max(MIND, dur - s)) }; setSnip(s, s + d, "new"); prevSnip(); draw(); playSnip(); drawSnip();
+            snipDraft(); var s = player.currentTime, d = it.snip ? actB().d : 5; act = "in"; if (!it.snip) it.snip = { s: s, d: Math.min(d, Math.max(MIND, dur - s)) }; setSnip(s, s + d, "new"); snipMark(); prevSnip(); draw(); playSnip(); drawSnip();
           } } }) : null;
         var tabB = {}, ptabs = el("div", { class: "btabs ptabs" }, [["thumb", "Vignette"], ["snip", "Extrait"]].map(function (t) { return tabB[t[0]] = el("button", { type: "button", text: t[1], on: { click: function () { setTab(t[0]); } } }); }));
         if (!full) tabB.snip.hidden = true;
@@ -1024,32 +1032,36 @@
       var snipLine = el("p", { class: "hint" }), blocksBox = el("div", { class: "bblks" });
       // Montage (Gus 26/11) : plusieurs blocs de l'extrait, bout à bout. « + Ajouter un bloc » en crée un à l'image affichée (réglable ensuite avec les
       // poignées ou I / O) ; le bloc réglé est surligné ; on les déplace en glissant ⠿, on en modifie un en cliquant dessus.
+      var addB = null;
       function sync() { var p = parts(); if (p) it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true; }
       function drawBlocks() {
-        blocksBox.textContent = ""; var p = parts(); if (!p) return;
-        blocksBox.appendChild(el("span", { class: "label", text: "Montage : " + p.length + " blocs · " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD + " · glisse ⠿ pour changer l'ordre" }));
+        blocksBox.textContent = ""; var p = parts(); if (addB) addB.textContent = bi >= 0 ? "✓ Retour à la sélection" : "+ Ajouter ce bloc"; if (!p) return;
+        blocksBox.appendChild(el("span", { class: "label", text: "Montage : " + p.length + " bloc" + (p.length > 1 ? "s" : "") + " · " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD + " · glisse ⠿ pour changer l'ordre, clique un bloc pour le modifier" }));
         p.forEach(function (b, i) {
           var w = el("div", { class: "bblk" + (i === bi ? " on" : ""), "data-xi": String(i), title: "Cliquer pour régler ce bloc avec les poignées ou I / O" });
           w.appendChild(xGrip(w, i)); w.appendChild(el("b", { text: String(i + 1) })); w.appendChild(el("span", { text: fmtF(b.s) + " → " + fmtF(b.s + b.d) + " · " + b.d.toFixed(1).replace(".", ",") + " s" }));
           w.appendChild(el("button", { type: "button", class: "bx", text: "▶", title: "Voir ce bloc", on: { click: function (e) { e.stopPropagation(); bi = i; act = "in"; drawBlocks(); draw(); playSnip(); } } }));
           w.appendChild(el("button", { type: "button", class: "bx", text: "×", title: "Retirer ce bloc", on: { click: function (e) {
-            e.stopPropagation(); snipDraft(); p.splice(i, 1); if (p.length === 1) it.snip = { s: p[0].s, d: p[0].d }; else sync();
-            bi = Math.max(0, Math.min(bi - (i <= bi ? 1 : 0), p.length - 1)); it.edited = true; drawBlocks(); drawSnip(); draw();
+            e.stopPropagation(); snipDraft(); var gone = p.splice(i, 1)[0];
+            if (!p.length) { it.snip = { s: gone.s, d: gone.d }; delete it._sel; bi = -1; } else { sync(); bi = bi === i ? -1 : bi > i ? bi - 1 : bi; }
+            it.edited = true; snipMark(); drawBlocks(); drawSnip(); draw();
           } } }));
           w.addEventListener("click", function () { bi = i; act = "in"; drawBlocks(); draw(); if (player) seek(p[i].s); });
           blocksBox.appendChild(w);
         });
       }
       xDropZone(blocksBox, function (from, to) {
-        var p = parts(); if (!p) return; snipDraft(); var cur = p[bi], x = p.splice(from, 1)[0]; p.splice(to, 0, x); bi = p.indexOf(cur); sync(); drawBlocks(); drawSnip(); draw();
+        var p = parts(); if (!p) return; snipDraft(); var cur = bi >= 0 ? p[bi] : null, x = p.splice(from, 1)[0]; p.splice(to, 0, x); bi = cur ? p.indexOf(cur) : -1; sync(); snipMark(); drawBlocks(); drawSnip(); draw();
       });
       function addBlock() {
         if (!player || !dur) return; snipDraft(); var t = Math.max(0, Math.min(player.currentTime, dur - MIND));
-        if (!it.snip) { it.snip = { s: t, d: Math.round(Math.min(5, dur - t) * 1000) / 1000 }; act = "in"; drawSnip(); draw(); return; }
-        var p = parts() || [{ s: it.snip.s, d: it.snip.d }], tot = p.reduce(function (a, b) { return a + b.d; }, 0);
-        if (tot + MIND > MAXD) { pout.className = "hint berr"; pout.textContent = "Montage plein : " + MAXD + " s au plus en tout."; return; }
-        p.push({ s: t, d: Math.round(Math.min(5, dur - t, MAXD - tot) * 1000) / 1000 }); bi = p.length - 1; it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true; act = "in";
-        drawBlocks(); drawSnip(); draw(); playSnip();
+        if (!it.snip) { it.snip = { s: t, d: Math.round(Math.min(5, dur - t) * 1000) / 1000 }; act = "in"; snipMark(); drawSnip(); draw(); return; }
+        if (bi >= 0) { bi = -1; drawBlocks(); draw(); return; } // fin de la modification d'un bloc : retour à la sélection
+        var p = parts(), sel = p ? selB() : it.snip, tot = p ? totalD() : 0;
+        if (tot + sel.d > MAXD + .001) { pout.className = "hint berr"; pout.textContent = "Montage plein : " + MAXD + " s au plus en tout (réduis la sélection ou retire un bloc)."; return; }
+        p = p || []; p.push({ s: sel.s, d: sel.d }); it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true;
+        var ns = Math.min(sel.s + sel.d, Math.max(0, dur - MIND)); it._sel = { s: ns, d: Math.round(Math.max(MIND, Math.min(5, dur - ns, MAXD - totalD())) * 1000) / 1000 }; // la sélection suivante part juste après
+        act = "in"; pout.textContent = ""; snipMark(); drawBlocks(); drawSnip(); draw(); seek(it._sel.s);
       }
       function playSeq() { if (!player || !it.snip) return; if (!parts()) { playSnip(); return; } loopOn = false; seqOn = true; seqI = 0; player.currentTime = parts()[0].s; player.play().catch(function () {}); }
       function prevSnip() { if (pvid) { pvid.remove(); pvid = null; } }
@@ -1069,10 +1081,21 @@
       function setImg(u) { if (it.img && it.img !== u) pushHist("img", it.img); it.img = u; it.edited = true; prevImg(); chg(); drawThumbs(); drawHist(); }
       var lastSnip = it.snip ? JSON.stringify(it.snip) : null;
       // Brouillon de l'extrait : réglé à la souris / aux flèches sans rien enregistrer ; « Valider l'extrait » l'enregistre.
-      function snipDraft() { if (it._snipTmp) return; it._snipSaved = it.snip ? JSON.parse(JSON.stringify(it.snip)) : undefined; it._snipTmp = true; }
-      function snipDiscard() { if (!it._snipTmp) return; bi = 0; if (it._snipSaved) it.snip = it._snipSaved; else delete it.snip; delete it._snipTmp; delete it._snipSaved; if (typeof draw === "function" && tl) draw(); }
+      // Annuler / Rétablir du montage (Gus 26/11) : Ctrl / Cmd + Z défait d'abord les gestes de l'extrait en cours de réglage (blocs, poignées, I / O),
+      // sans rouvrir la fenêtre ; quand il n'y a plus rien, il défait le reste de la fenêtre.
+      var su = { l: [], i: -1 };
+      function snipState() { return JSON.stringify([it.snip || null, it._sel || null, bi]); }
+      function snipMark() { var x = snipState(); if (x === su.l[su.i]) return; su.l = su.l.slice(0, su.i + 1); su.l.push(x); su.i = su.l.length - 1; if (su.l.length > 80) { su.l.shift(); su.i--; } }
+      function snipUndo(d) {
+        if (!it._snipTmp && !su.l.length) return false; var j = su.i + d; if (j < 0 || j >= su.l.length) return false;
+        su.i = j; var o = JSON.parse(su.l[j]); if (o[0]) it.snip = o[0]; else delete it.snip; if (o[1]) it._sel = o[1]; else delete it._sel; bi = o[2];
+        it.edited = true; prevSnip(); drawBlocks(); drawSnip(); if (tl) draw(); return true;
+      }
+      function snipDraft() { if (it._snipTmp) return; it._snipSaved = it.snip ? JSON.parse(JSON.stringify(it.snip)) : undefined; it._snipTmp = true; snipMark(); }
+      function snipDiscard() { if (!it._snipTmp) return; bi = -1; delete it._sel; if (it._snipSaved) it.snip = it._snipSaved; else delete it.snip; delete it._snipTmp; delete it._snipSaved; if (typeof draw === "function" && tl) draw(); }
       function snipCommit() { // extrait validé : l'ancien va dans l'historique, le nouveau est enregistré
-        delete it._snipTmp; delete it._snipSaved; var x = it.snip ? JSON.stringify(it.snip) : null;
+        var p0 = parts(); if (p0 && p0.length === 1) it.snip = { s: p0[0].s, d: p0[0].d }; // un seul bloc = extrait simple
+        delete it._sel; bi = -1; su = { l: [], i: -1 }; delete it._snipTmp; delete it._snipSaved; var x = it.snip ? JSON.stringify(it.snip) : null;
         if (lastSnip && lastSnip !== x) pushHist("snip", JSON.parse(lastSnip));
         lastSnip = x; it.edited = true; chg(); drawSnip(); drawHist(); snipLight();
       }
@@ -1310,6 +1333,14 @@
       var aw = el("textarea", { rows: 3, placeholder: "Une ligne par prix ou sélection (ex. Best Cinematography, Camerimage 2026)" }); aw.value = it.awards || "";
       aw.addEventListener("input", function () { it.awards = aw.value.trim(); if (!it.awards) delete it.awards; it.edited = true; chg(); });
       // Infos du fichier (Gus 26/11) : date (celle de Slate pour les films de Slate, sinon l'import), poids de l'original et de la version web.
+      // Client (Gus 26/11) : proposé depuis Slate ; la case l'affiche avant le titre (« McDo | Big Mac ») sur le site, dans les bandes et les liens partagés.
+      function clientFld() {
+        var inp = el("input", { type: "text", value: it.client || "", placeholder: "Ex. McDo" }), ck = el("input", { type: "checkbox" }); ck.checked = !!it.cshow;
+        function upd() { var v = inp.value.trim(); if (v) it.client = v; else { delete it.client; delete it.cshow; ck.checked = false; } it.edited = true; chg(); prevMeta(); }
+        inp.addEventListener("input", upd);
+        ck.addEventListener("change", function () { if (ck.checked) { if (!inp.value.trim()) { ck.checked = false; return; } it.client = inp.value.trim(); it.cshow = true; } else delete it.cshow; it.edited = true; chg(); });
+        return [el("span", { class: "label", text: "Client" }), inp, el("label", { class: "bck" }, [ck, " Afficher avant le titre (« " + (it.client || "Client") + " | " + (it.title || "Titre") + " ») sur le site et dans les bandes"])];
+      }
       function fsz(n) { return n >= 1e9 ? (n / 1e9).toFixed(1).replace(".", ",") + " Go" : Math.max(1, Math.round(n / 1e6)) + " Mo"; }
       function infoFile(m) {
         m = m || {}; var l = [];
@@ -1327,7 +1358,7 @@
           [el("span", { class: "label", text: "Prod" }), chipsIn("prod", function () { return bibProds(it); }, function (l) { it.prod = l.join(", "); })],
           [el("span", { class: "label", text: "Chefs op et rôles (rôle vide = cinematographer, crédité en premier)" }), credEd()],
           [el("span", { class: "label", text: "Types de contenu" }), chipsIn("type", function () { return (it.types || it.cats || []).slice(); }, function (l) { it.types = l; })],
-          lib ? fld("Client", function () { return it.client; }, function (v) { if (String(v).trim()) it.client = v; else delete it.client; }) : [],
+          lib ? clientFld() : [],
           lib ? [infoFile(lib.meta)] : [],
           [orig || lib ? el("button", { type: "button", class: "btn ghost", text: lib ? "Tout remettre comme sur les pages" : "Tout remettre comme dans le video club", on: { click: function () {
             if (lib) { lib.reset(); close(); return; } var keepKey = it.key; band.items[i] = bandItem(orig); band.items[i].key = keepKey; chg(); close();
@@ -1414,7 +1445,7 @@
         var offSnip = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire l'extrait officiel du film", title: "Le film du video club prend cet extrait (sur le site et pour toutes les prochaines bandes)", on: { click: function () { official("snip"); } } })]) : null;
         thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [upBtn("⤒ Importer une image", imgUp, "image", doImg), imgUp, el("span", { class: "tlgrow" }), grabB]),
           el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg, offImg]);
-        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, el("button", { type: "button", class: "btn ghost", text: "+ Ajouter un bloc", title: "Ajoute un bloc à l'extrait (montage) : réglé ensuite avec les poignées ou I / O", on: { click: addBlock } }), el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire les blocs bout à bout", on: { click: playSeq } }), upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine, blocksBox,
+        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, (addB = el("button", { type: "button", class: "btn ghost", text: "+ Ajouter ce bloc", title: "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante", on: { click: addBlock } })), el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire les blocs bout à bout", on: { click: playSeq } }), upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine, blocksBox,
           histSnipL, histSnip, offSnip]);
         box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
         setTab("thumb");

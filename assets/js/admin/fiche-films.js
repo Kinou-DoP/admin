@@ -696,7 +696,10 @@
     card.appendChild(thumb); card.appendChild(zoom);
     if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(awardsCtl(c));
-    card.appendChild(title); card.appendChild(sub);
+    // Client (Gus 26/11) : enregistré dans le video club comme les crédits ; affiché avant le titre sur le site (« McDo | Big Mac »).
+    var cli = el("input", { type: "text", class: "nodirty bcli", placeholder: "Client (affiché avant le titre)", value: vcOf(c).cshow ? vcOf(c).client || "" : "", title: "Client : « McDo | Big Mac » sur le site et dans les bandes. Vide = pas de client affiché." });
+    cli.addEventListener("change", function () { var v = cli.value.trim(); vcPatch(c.slate, v ? { client: v, cshow: true } : { cshow: false }); });
+    card.appendChild(cli); card.appendChild(title); card.appendChild(sub);
     if (state === fic) card.appendChild(ficCtl(c));
     card.appendChild(infoCtl(c));
     card.appendChild(el("div", { class: "acts" }, [hide, reset]));

@@ -1202,3 +1202,5 @@ input.bcn { width: 90px; }
 .bdelside { margin-top: 14px; align-self: flex-start; }
 .fwbtns .btn.ghost[title^="Supprimer"]:hover { color: #ff7b72; border-color: #ff3b30; }
 .binfo { margin: 10px 0 0; }
+.brow .bt small.bclient { display: block; margin-bottom: 2px; color: #ffb36b; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.film input.bcli { font-size: 12px; margin-bottom: 4px; }
