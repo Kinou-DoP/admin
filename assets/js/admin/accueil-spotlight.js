@@ -108,13 +108,13 @@
     var back = el("button", { type: "button", class: "zcenter", text: "Revenir à l'extrait Slate" });
     var t = fmtT, scrub = false, want = null;
     // Montage de l'extrait (Gus 27/11) : plusieurs blocs de la vidéo, durée EXACTE d'un projet, cadrage téléphone propre à chaque bloc (sl.parts = [{ s, d, x }]).
-    var mont = el("button", { type: "button", class: "btn ghost" });
+    var mont = el("button", { type: "button", class: "btn primary montbtn" });
     mont.addEventListener("click", function () {
       mont.disabled = true; var old = mont.textContent; mont.textContent = "Chargement de la vidéo…";
       var tv = el("video", { preload: "metadata", muted: true }), fin = function () { mont.disabled = false; label(); };
       tv.addEventListener("loadedmetadata", function () {
         var dur = tv.duration || 0; tv.removeAttribute("src"); fin(); if (!dur) { alert("Durée de la vidéo illisible."); return; }
-        if (zoomStopOther) zoomStopOther(); close();
+        if (v) v.pause(); // la vidéo de l'éditeur s'arrête pendant le montage
         var parts0 = sl.parts && sl.parts.length ? sl.parts : [{ s: Math.min(sl.start || 0, Math.max(0, dur - D)), d: Math.min(D, dur), x: sl.phoneX }];
         montageWin([{ key: "home" + sl.slate, title: sl.film || "Film", full: sl.full, dur: dur }], { mode: "home", exact: D, parts: parts0, phoneX: sl.phoneX, zoom: sl.zoom, phoneZoom: sl.phoneZoom, zoomPos: sl.zoomPos, name: sl.film,
           onSave: function (parts, zz) { if (zz) { setO("zoom", zz.zoom > 1 ? Math.round(zz.zoom * 100) / 100 : undefined); setO("phoneZoom", zz.phoneZoom === undefined ? undefined : Math.round(zz.phoneZoom * 100) / 100); } setO("parts", parts.length > 1 ? parts : undefined); setO("start", parts[0].s); if (parts.length === 1) setO("phoneX", parts[0].x === 50 ? undefined : parts[0].x); touch(); label(); } });
@@ -159,10 +159,11 @@
     range.addEventListener("pointerup", release);
     range.addEventListener("pointercancel", release);
     back.addEventListener("click", function () { setO("start", undefined); setO("parts", undefined); label(); touch(); if (v) v.currentTime = 0; });
-    box.appendChild(el("p", { class: "hint", text: "Choisissez le début : le passage de " + String(D).replace(".", ",") + " s qui suit est lu sur l'accueil, en qualité du film complet, sans le son." }));
+    box.appendChild(mont);
+    box.appendChild(el("p", { class: "hint", text: "Ou, plus simple pour un seul passage : choisissez le début : le passage de " + String(D).replace(".", ",") + " s qui suit est lu sur l'accueil, en qualité du film complet, sans le son." }));
     box.appendChild(stage);
     box.appendChild(el("div", { class: "zoom" }, [lab, range]));
-    box.appendChild(back); box.appendChild(mont);
+    box.appendChild(back);
     label();
     wrap.appendChild(box);
     wrap._open = function () { if (box.hidden) btn.click(); };

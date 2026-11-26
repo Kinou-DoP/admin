@@ -29,6 +29,7 @@ var TL_RATES = [1, 2, 4]; // vitesses des touches E (avant) et Z / J (arrière) 
 function hueFor(n) { return (n * 83 + 15) % 360; } // couleur propre à chaque bloc (même teinte dans la frise des blocs et sur la frise de la source)
 function montageWin(films, opt) {
   opt = opt || {}; var EX = opt.mode === "home" ? (+opt.exact || 10) : 0;
+  var SNIP = opt.mode === "snip", MAXT = SNIP ? (+opt.max || 30) : 0; // extrait d'une vidéo du video club : jusqu'à MAXT secondes (pas de durée exacte), sans le son
   var pool = films.filter(function (f) { return f.full && f.dur; }), uid = 0;
   if (!pool.length) { alert("Aucune vidéo encodée à assembler pour l'instant."); return; }
   var blocks = opt.parts && opt.parts.length ? opt.parts.map(function (p) { return { id: ++uid, f: pool[0], s: p.s, d: p.d, x: p.x, hue: hueFor(uid) }; }) : pool.map(function (f) { return { id: ++uid, f: f, s: 0, d: f.dur }; });
@@ -54,17 +55,28 @@ function montageWin(films, opt) {
   function applyZoom() { vid.style.transform = zm > 1 ? "scale(" + zm + ")" : ""; vid.style.transformOrigin = zpos[0] * 100 + "% " + zpos[1] * 100 + "%"; drawPhone(); }
   function phoneX(b) { return !b ? (opt.phoneX === undefined ? 50 : opt.phoneX) : b.x === undefined ? (opt.phoneX === undefined ? 50 : opt.phoneX) : b.x; }
   function drawPhoneScreen() { // écran de téléphone : ce que verra le téléphone (bloc en lecture ou choisi), avec son cadrage et son zoom
-    if (!EX || !vid.videoWidth) return; var b = sel >= 0 ? blocks[sel] : mode === "seq" ? blocks[cur] : null, cx = phoneCv.getContext("2d"), vw = vid.videoWidth, vh = vid.videoHeight, z = zph;
+    if (!EX || !vid.videoWidth) return; var b = mode === "seq" && playing ? blocks[cur] : sel >= 0 ? blocks[sel] : mode === "seq" ? blocks[cur] : null, cx = phoneCv.getContext("2d"), vw = vid.videoWidth, vh = vid.videoHeight, z = zph;
     var w0 = vh * PHONE_A, x0 = Math.max(0, (vw - w0)) * phoneX(b) / 100, sw = w0 / z, sh = vh / z, sx = x0 + w0 * (zpos[0] - zpos[0] / z), sy = vh * (zpos[1] - zpos[1] / z);
     try { cx.drawImage(vid, sx, sy, sw, sh, 0, 0, phoneCv.width, phoneCv.height); } catch (e) {}
   }
   var pband = el("i", { class: "hphone", title: "Cadrage téléphone de ce bloc : glisse" }); pband.hidden = true;
+  if (EX || SNIP) vid.muted = true; // extrait de l'accueil : sans le son (comme sur le site) ; bout à bout et edit gardent le son
   var bar = el("div", { class: "hbar" }), ruler = el("div", { class: "hruler" }), ph = el("i", { class: "hbph" }), wrap = el("div", { class: "hbwrap" }, [ruler, bar, ph]);
   var det = el("div", { class: "hdet" }), info = el("p", { class: "hint" }), exp = el("div", { class: "hexp" }), srcTabs = el("div", { class: "hsrc" });
+  // Annuler / rétablir (Cmd / Ctrl + Z, Maj + Cmd / Ctrl + Z ou Y, boutons ↶ ↷) : photo des blocs avant chaque changement.
+  var hist = [], redoS = [];
+  function cap() { return { sel: sel, blocks: blocks.map(function (b) { return { id: b.id, f: b.f, s: b.s, d: b.d, x: b.x, hue: b.hue }; }) }; }
+  function snap() { hist.push(cap()); if (hist.length > 100) hist.shift(); redoS = []; undoBtns(); }
+  function restore(st) { blocks = st.blocks.map(function (b) { return { id: b.id, f: b.f, s: b.s, d: b.d, x: b.x, hue: b.hue }; }); sel = st.sel < blocks.length ? st.sel : -1; loopI = -1; cur = clamp(cur, 0, Math.max(0, blocks.length - 1)); if (sel >= 0) { src = blocks[sel].f; load(src, blocks[sel].s, false); } drawBar(); undoBtns(); }
+  function undo() { if (!hist.length) return; pause(); redoS.push(cap()); restore(hist.pop()); }
+  function redo() { if (!redoS.length) return; pause(); hist.push(cap()); restore(redoS.pop()); }
+  var undoB = el("button", { type: "button", class: "btn ghost", text: "↶", title: "Annuler (Cmd / Ctrl + Z)", on: { click: undo } }), redoB = el("button", { type: "button", class: "btn ghost", text: "↷", title: "Rétablir (Maj + Cmd / Ctrl + Z)", on: { click: redo } });
+  function undoBtns() { undoB.disabled = !hist.length; redoB.disabled = !redoS.length; }
+  var loopI = -1; // bloc lu en boucle (▶ d'un bloc de la frise du bas)
   function total() { return blocks.reduce(function (a, b) { return a + b.d; }, 0); }
   function before(i) { var t = 0; for (var k = 0; k < i; k++) t += blocks[k].d; return t; }
   // Sélection : celle du bloc en modification, sinon la sélection libre de la vidéo source.
-  function room() { return EX ? r3(EX - (total() - (sel >= 0 && blocks[sel] ? blocks[sel].d : 0))) : 1e9; } // durée que la sélection active peut encore prendre
+  function room() { var L = EX || MAXT; return L ? r3(L - (total() - (sel >= 0 && blocks[sel] ? blocks[sel].d : 0))) : 1e9; } // durée que la sélection active peut encore prendre
   function selFree() { return selMem[src.key] || (selMem[src.key] = { s: 0, d: r3(Math.min(5, src.dur)) }); }
   function act() { return sel >= 0 && blocks[sel] ? blocks[sel] : selFree(); }
   // ---------- lecture ----------
@@ -81,7 +93,7 @@ function montageWin(films, opt) {
     if (loaded !== src.full && !(blocks[cur] && loaded === blocks[cur].f.full)) return; pause(); setSpd(n || 1); revOn = true; var t0 = performance.now(), from = vid.currentTime;
     (function step() { if (!revOn || !ov.isConnected) return; var t = from - (performance.now() - t0) / 1000 * TL_RATES[lvl - 1]; if (t <= 0) { vid.currentTime = 0; stopRev(); return; } if (!vid.seeking) vid.currentTime = t; revRaf = requestAnimationFrame(step); })();
   }
-  function playSrc() { stopRev(); mode = "src"; playing = true; var t = loaded === src.full ? vid.currentTime : act().s; load(src, t, true); ph.hidden = true; }
+  function playSrc() { stopRev(); loopI = -1; mode = "src"; playing = true; var t = loaded === src.full ? vid.currentTime : act().s; load(src, t, true); ph.hidden = true; }
   function playSeq(from) {
     if (!blocks.length) return; stopRev(); mode = "seq"; playing = true; cur = from === undefined ? (mode === "seq" && loaded ? cur : 0) : from; cur = clamp(cur, 0, blocks.length - 1);
     var b = blocks[cur]; if (loaded === b.f.full && vid.currentTime >= b.s && vid.currentTime < b.s + b.d - .05) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } else load(b.f, b.s, true);
@@ -94,7 +106,7 @@ function montageWin(films, opt) {
     if (!ov.isConnected) return;
     if (playing && mode === "seq" && blocks[cur]) {
       var b = blocks[cur];
-      if (loaded === b.f.full && vid.currentTime >= b.s + b.d - .03) { if (cur + 1 < blocks.length) { cur++; load(blocks[cur].f, blocks[cur].s, true); } else { pause(); cur = 0; load(blocks[0].f, blocks[0].s, false); } }
+      if (loaded === b.f.full && vid.currentTime >= b.s + b.d - .03) { if (loopI === cur) { vid.currentTime = b.s; } else if (cur + 1 < blocks.length) { cur++; load(blocks[cur].f, blocks[cur].s, true); } else { pause(); cur = 0; load(blocks[0].f, blocks[0].s, false); } }
     }
     drawCursor(); requestAnimationFrame(tick);
   }
@@ -102,12 +114,14 @@ function montageWin(films, opt) {
   function drawPhone() {
     var b = phoneBlock(); pband.hidden = !b; if (!b) return;
     var x = phoneX(b), a = PHONE_A, z = zph, left0 = x / 100 * (1 - a / VID_A), w0 = a / VID_A;
-    pband.style.left = (left0 + w0 * (zpos[0] - zpos[0] / z)) * 100 + "%"; pband.style.width = w0 / z * 100 + "%";
-    pband.style.top = zpos[1] * (1 - 1 / z) * 100 + "%"; pband.style.height = 100 / z + "%"; pband.style.bottom = "auto";
+    // zone vue par le téléphone dans la vidéo (fractions de l'image) puis, comme l'image est agrandie par le zoom ordinateur, son emplacement à l'écran
+    var L = left0 + w0 * (zpos[0] - zpos[0] / z), W = w0 / z, T = zpos[1] * (1 - 1 / z), H = 1 / z, m = zm;
+    pband.style.left = (zpos[0] + (L - zpos[0]) * m) * 100 + "%"; pband.style.width = W * m * 100 + "%";
+    pband.style.top = (zpos[1] + (T - zpos[1]) * m) * 100 + "%"; pband.style.height = H * m * 100 + "%"; pband.style.bottom = "auto";
   }
   pband.addEventListener("pointerdown", function (e) {
     var b = phoneBlock(); if (!b) return; e.preventDefault(); pband.setPointerCapture(e.pointerId);
-    var x0 = e.clientX, p0 = phoneX(b), w = pband.parentNode.getBoundingClientRect().width;
+    var x0 = e.clientX, p0 = phoneX(b), w = pband.parentNode.getBoundingClientRect().width * zm;
     function mv(ev) { b.x = Math.round(clamp(p0 + (ev.clientX - x0) / w * VID_A / (VID_A - PHONE_A) * 100, 0, 100) * 10) / 10; drawPhone(); }
     function up() { pband.removeEventListener("pointermove", mv); pband.removeEventListener("pointerup", up); }
     pband.addEventListener("pointermove", mv); pband.addEventListener("pointerup", up);
@@ -124,32 +138,36 @@ function montageWin(films, opt) {
     blocks.forEach(function (b, i) {
       var w = el("div", { class: "hb" + (i === sel ? " on" : ""), style: "flex:0 0 " + b.d / tot * 100 + "%", title: (b.f.title || "") + " · " + fmt(b.s) + " → " + fmt(b.s + b.d) + " · clique pour le modifier" }, [
         el("b", { text: String(i + 1) }), el("span", { text: (b.f.title || "").replace(/^.*? - /, "") }), el("small", { text: b.d.toFixed(1).replace(".", ",") + " s" }),
-        el("button", { type: "button", class: "hbp", text: "▶", title: "Voir ce bloc", on: { click: function (e) { e.stopPropagation(); playSeq(i); } } }),
+        el("button", { type: "button", class: "hbp", text: "▶", title: "Voir ce bloc en boucle", on: { click: function (e) { e.stopPropagation(); loopI = i; playSeq(i); } } }),
         el("button", { type: "button", class: "hbx", text: "×", title: "Retirer ce bloc", on: { click: function (e) { e.stopPropagation(); removeAt(i); } } })]);
       w.style.setProperty("--hue", b.hue);
-      w.addEventListener("click", function () { if (bar._dragged) return; selectBlock(i === sel ? -1 : i); });
+      w.addEventListener("click", function () {
+        if (bar._dragged) return; loopI = -1;
+        if (i === sel && !(loaded === b.f.full && Math.abs(vid.currentTime - b.s) < .06)) { pause(); mode = "src"; load(b.f, b.s, false); return; } // curseur ailleurs : retour au début du bloc ; déjà au début : désélection
+        selectBlock(i === sel ? -1 : i);
+      });
       bar.appendChild(w);
     });
     if (!blocks.length) bar.appendChild(el("span", { class: "hint hbempty", text: "Aucun bloc : règle une sélection sur la vidéo ci-dessus puis « + Ajouter ce bloc »." }));
     drawRuler(); info.textContent = blocks.length + " bloc" + (blocks.length > 1 ? "s" : "") + " · durée du montage " + fmt(total()) + " · I / O : début / fin de la sélection · Entrée : ajouter le bloc · S : couper le bloc choisi · Suppr : retirer · espace : lecture · E : avant (1 à 3 appuis = plus vite) · Z ou J : arrière (idem) · K : pause · L : lecture";
     drawDet(); drawExp(); drawAdd();
   }
-  hReorder(bar, function (from, to) { var cb = sel >= 0 ? blocks[sel] : null, x = blocks.splice(from, 1)[0]; blocks.splice(to, 0, x); sel = cb ? blocks.indexOf(cb) : -1; drawBar(); });
+  hReorder(bar, function (from, to) { snap(); var cb = sel >= 0 ? blocks[sel] : null, x = blocks.splice(from, 1)[0]; blocks.splice(to, 0, x); sel = cb ? blocks.indexOf(cb) : -1; drawBar(); });
   function drawRuler() { // règle du montage : graduations toutes les 5 s (ou 10 / 30 / 60 s si long) ; le curseur de la souris y est affiché, cliquer-glisser balade le montage
     ruler.textContent = ""; var tot = total(); if (!tot) return; var step = tot > 600 ? 60 : tot > 240 ? 30 : tot > 90 ? 10 : 5;
     for (var t = step; t < tot; t += step) ruler.appendChild(el("i", { class: "hrt", style: "left:" + t / tot * 100 + "%" }, [el("span", { text: fmt(t).replace(/,\d+$/, "") })]));
   }
   function selectBlock(i) { sel = i; if (i >= 0) { src = blocks[i].f; drawBar(); load(src, blocks[i].s, false); } else { drawBar(); load(src, selFree().s, false); } }
-  function removeAt(i) { blocks.splice(i, 1); if (sel === i) sel = -1; else if (sel > i) sel--; cur = clamp(cur, 0, Math.max(0, blocks.length - 1)); drawBar(); }
+  function removeAt(i) { snap(); loopI = -1; blocks.splice(i, 1); if (sel === i) sel = -1; else if (sel > i) sel--; cur = clamp(cur, 0, Math.max(0, blocks.length - 1)); drawBar(); }
   function addBlock() { // « + Ajouter ce bloc » : la sélection devient un bloc du montage ; la suivante démarre juste après
     if (sel >= 0) { selectBlock(-1); return; }
-    var s = selFree(); if (EX) { var rest = r3(EX - total()); if (rest < MIND) { alert("Le montage fait déjà " + EX + " s : raccourcis un bloc (poignées) pour faire de la place."); return; } s.d = r3(Math.min(s.d, rest)); }
+    snap(); var s = selFree(); if (EX || MAXT) { var rest = r3((EX || MAXT) - total()); if (rest < MIND) { hist.pop(); alert("Le montage fait déjà " + (EX || MAXT) + " s : raccourcis un bloc (poignées) pour faire de la place."); return; } s.d = r3(Math.min(s.d, rest)); }
     blocks.push({ id: ++uid, f: src, s: r3(s.s), d: r3(s.d), x: opt.phoneX, hue: hueFor(uid + 1) });
     var ns = Math.min(s.s + s.d, Math.max(0, src.dur - MIND)); selMem[src.key] = { s: r3(ns), d: r3(Math.max(MIND, Math.min(5, src.dur - ns))) };
     drawBar(); load(src, selMem[src.key].s, false);
   }
   function splitHere() { // coupe le bloc choisi en deux à l'image affichée
-    var b = sel >= 0 ? blocks[sel] : null, t = vid.currentTime; if (!b || loaded !== b.f.full || t < b.s + .2 || t > b.s + b.d - .2) return;
+    var b = sel >= 0 ? blocks[sel] : null, t = vid.currentTime; if (!b || loaded !== b.f.full || t < b.s + .2 || t > b.s + b.d - .2) return; snap();
     var n = { id: ++uid, f: b.f, s: r3(t), d: r3(b.s + b.d - t), x: b.x, hue: hueFor(uid + 1) }; b.d = r3(t - b.s); blocks.splice(sel + 1, 0, n); drawBar();
   }
   // ---------- vidéo source : frise entière, sélection (début / fin glissables), curseur ----------
@@ -174,12 +192,12 @@ function montageWin(films, opt) {
   function drawAdd() {
     srcTabs.textContent = "";
     if (pool.length > 1) pool.forEach(function (f) { srcTabs.appendChild(el("button", { type: "button", class: "btn ghost" + (f === src ? " on" : ""), text: (f.title || f.key).replace(/^.*? - /, "").slice(0, 36), title: f.title, on: { click: function () { sel = -1; src = f; drawBar(); load(f, selFree().s, false); } } })); });
-    srcTabs.appendChild(el("button", { type: "button", class: "btn primary", text: sel >= 0 ? "+ Nouvelle sélection" : "+ Ajouter ce bloc", title: sel >= 0 ? "Quitte la modification du bloc (ou clique à nouveau le bloc)" : "Range la sélection dans le montage (Entrée)", on: { click: addBlock } }));
+    srcTabs.appendChild(el("button", { type: "button", class: sel >= 0 ? "btn orange" : "btn primary", text: sel >= 0 ? "+ Nouvelle sélection" : "+ Ajouter ce bloc", title: sel >= 0 ? "Quitte la modification du bloc (ou clique à nouveau le bloc)" : "Range la sélection dans le montage (Entrée)", on: { click: addBlock } }));
   }
   function tOf(e, track, a, b) { var r = track.getBoundingClientRect(); return a + clamp((e.clientX - r.left) / r.width, 0, 1) * (b - a); }
   function dragH(h, which) {
     h.addEventListener("pointerdown", function (e) {
-      e.preventDefault(); e.stopPropagation(); h.setPointerCapture(e.pointerId); pause(); mode = "src";
+      e.preventDefault(); e.stopPropagation(); h.setPointerCapture(e.pointerId); pause(); mode = "src"; if (sel >= 0) snap();
       function mv(ev) {
         if (EX && sel < 0 && room() < MIND) return; // montage plein : raccourcir un bloc d'abord
         var a = act(), t = tOf(ev, dTrack, zwin()[0], zwin()[1]), end = a.s + a.d;
@@ -223,15 +241,23 @@ function montageWin(films, opt) {
     exp.appendChild(el("span", { class: "label", text: "Extrait de l'accueil" }));
     exp.appendChild(el("p", { class: ok ? "hint bok" : "hint berr", text: ok ? "✔ " + fr(tot) + " s : pile la durée d'un projet de l'accueil." : (diff > 0 ? "Il manque " + fr(diff) + " s" : "Il y a " + fr(-diff) + " s de trop") + " (durée voulue : " + fr(EX) + " s)." }));
     var fill = el("button", { type: "button", class: "btn ghost", text: "Compléter avec le dernier bloc", title: "Rallonge (ou raccourcit) le dernier bloc pour tomber pile sur " + fr(EX) + " s", disabled: ok || !blocks.length ? true : null, on: { click: function () {
-      var b = blocks[blocks.length - 1], d = r3(b.d + diff); if (d < MIND || b.s + d > b.f.dur + .001) { alert(diff > 0 ? "Le dernier bloc va déjà jusqu'à la fin de la vidéo : prends plutôt une sélection de plus." : "Le dernier bloc deviendrait trop court."); return; } b.d = d; drawBar(); } } });
+      var b = blocks[blocks.length - 1], d = r3(b.d + diff); if (d < MIND || b.s + d > b.f.dur + .001) { alert(diff > 0 ? "Le dernier bloc va déjà jusqu'à la fin de la vidéo : prends plutôt une sélection de plus." : "Le dernier bloc deviendrait trop court."); return; } snap(); b.d = d; drawBar(); } } });
     var save = el("button", { type: "button", class: "btn primary", text: "Enregistrer pour l'accueil", disabled: ok ? null : true, on: { click: function () {
       var parts = blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d), x: b.x === undefined ? (opt.phoneX === undefined ? 50 : opt.phoneX) : b.x }; });
       if (opt.onSave) opt.onSave(parts, { zoom: zm, phoneZoom: split ? zph : undefined }); close(); } } });
     exp.appendChild(fill); exp.appendChild(save);
     exp.appendChild(el("p", { class: "hint", text: "Cadrage téléphone : clique un bloc, puis glisse la bande rouge sur la vidéo. Chaque bloc a le sien." }));
   }
+  function drawExpSnip() {
+    exp.textContent = ""; var tot = total(), ok = tot > 0 && tot <= MAXT + .01, fr = function (x) { return x.toFixed(1).replace(".", ","); };
+    exp.appendChild(el("span", { class: "label", text: "Extrait de la vidéo" }));
+    exp.appendChild(el("p", { class: ok ? "hint bok" : "hint berr", text: tot ? fr(tot) + " s sur " + MAXT + " s au plus" + (ok ? "" : " : trop long") : "Aucun bloc." }));
+    exp.appendChild(el("button", { type: "button", class: "btn primary", text: "Valider l'extrait", disabled: ok ? null : true, on: { click: function () {
+      var parts = blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d) }; }); if (opt.onSave) opt.onSave(parts); close(); } } }));
+    exp.appendChild(el("p", { class: "hint", text: "L'extrait est lu en boucle sur le site et dans les bandes, sans le son." }));
+  }
   function drawExp() {
-    if (EX) { drawExpHome(); return; }
+    if (EX) { drawExpHome(); return; } if (SNIP) { drawExpSnip(); return; }
     exp.textContent = ""; var sr = sources(), sum = sr.reduce(function (a, f) { return a + (f.size || 0); }, 0), hasM = sr.every(function (f) { return f.mkey && f.size; }), over = sum > MONT_MAX;
     var canOrig = hasM && !over; if (!canOrig) quality = "web";
     var rO = el("input", { type: "radio", name: "mq", disabled: canOrig ? null : true }), rW = el("input", { type: "radio", name: "mq" });
@@ -269,7 +295,7 @@ function montageWin(films, opt) {
     var k = e.key;
     if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && !box.contains(e.target)) e.target.blur(); // champ de recherche du dessous
     if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && box.contains(e.target)) { if (k === "Enter" || k === "Escape") { e.stopImmediatePropagation(); e.target.blur(); } else e.stopImmediatePropagation(); return; }
-    if ((e.ctrlKey || e.metaKey) && /^[zZ]$/.test(k)) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); return; } // pas d'annulation de la fenêtre du dessous
+    if ((e.ctrlKey || e.metaKey) && /^[zZyY]$/.test(k)) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (/^[yY]$/.test(k) || e.shiftKey) redo(); else undo(); return; } // annuler / rétablir ici (et pas dans la fenêtre du dessous)
     if (/^[zZjJ]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) startRev(revOn ? Math.min(3, lvl + 1) : 1); return; }
     if (/^[eE]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (e.repeat) return; if (playing && !revOn) setSpd(Math.min(3, lvl + 1)); else { stopRev(); setSpd(0); if (mode === "seq") playSeq(); else playSrc(); setSpd(1); } return; }
     if (/^[kK]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pause(); return; }
@@ -280,7 +306,7 @@ function montageWin(films, opt) {
     if ((k === "Delete" || k === "Backspace") && sel >= 0) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); removeAt(sel); return; }
     if (/^[sS]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); splitHere(); return; }
     if (/^[iIoO]$/.test(k) && !e.ctrlKey && !e.metaKey) {
-      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full || (EX && sel < 0 && room() < MIND)) return; var t = vid.currentTime, a = act(), end = a.s + a.d;
+      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full || (EX && sel < 0 && room() < MIND)) return; var t = vid.currentTime, a = act(), end = a.s + a.d; if (sel >= 0) snap();
       if (/i/i.test(k)) { a.s = r3(clamp(t, 0, src.dur - MIND)); a.d = r3(Math.max(MIND, (t > end - MIND ? Math.min(src.dur, t + 1) : end) - a.s)); }
       else { a.d = r3(Math.max(MIND, Math.min(src.dur, t) - a.s)); if (t < a.s + MIND) { a.s = r3(Math.max(0, t - MIND)); a.d = MIND; } }
       if (a.d > room()) a.d = r3(Math.max(MIND, room()));
@@ -295,12 +321,12 @@ function montageWin(films, opt) {
     if (sel < 0 || e.target.closest("button, input, select, label, .hb, .hdtrack, .hdh, .hphone, video, canvas, .tlnav, .hbwrap, .hmphone")) return; selectBlock(-1);
   });
   // ---------- assemblage de la fenêtre ----------
-  box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : EX ? "Extrait de l'accueil" : "Bout à bout" }), nameI, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
+  box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : EX ? "Extrait de l'accueil" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), nameI, undoB, redoB, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
   box.appendChild(el("div", { class: "hmain" }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [EX ? zbox : "", el("div", { class: EX ? "hvrow" : "" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), el("div", { class: "hctl" }, [
     el("button", { type: "button", class: "btn ghost", text: "▶ / ❚❚ Source", title: "Lire la vidéo source (espace)", on: { click: function () { if (playing && mode === "src") pause(); else playSrc(); } } }),
-    el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else playSeq(0); } } }),
+    el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else { loopI = -1; playSeq(0); } } } }),
     el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } })])]), exp]));
   box.appendChild(det); box.appendChild(el("span", { class: "label hmlab", text: "Montage · glisse un bloc pour changer l'ordre, clique-glisse sur la règle pour balader la lecture" })); box.appendChild(wrap); box.appendChild(info);
   ov.appendChild(box); document.body.appendChild(ov);
-  drawZoom(); applyZoom(); drawBar(); load(src, act().s, false); tick();
+  undoBtns(); drawZoom(); applyZoom(); drawBar(); load(src, act().s, false); tick();
 }
