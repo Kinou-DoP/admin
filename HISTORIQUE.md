@@ -408,3 +408,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Lot de vidéos : un film dont les lignes ont les mêmes vidéos que le lot (même réglées à la main avant) reste lié (`bibGroups`, onChange) ; ordre du lot repris de la fenêtre de Prince de ma ville.
 - 26/11 — Enregistrements : commits de la page en file (`commitQ`), 6 essais, et infos du video club réessayées 2 fois seules avant l'alerte (GitHub 422 « Reference cannot be updated »).
 - 26/11 — Cartes des pages de chefs op : les vidéos du même import s'affichent sous le film (`vcGroupRows`), avec poignée et œil ; toucher au réglage crée la liste propre à la page (overrides[id].extras).
+- 26/11 — Fiches : la liste d'une carte (vidéos d'un lot) suit le video club (titres, ordre) tant que l'ordre n'a pas été changé sur la page (overrides[id].extrasOrd).
