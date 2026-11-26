@@ -1162,6 +1162,16 @@
       "snip": {
         "s": 1.466,
         "d": 30
+      },
+      "pend": {
+        "snip": {
+          "path": "data/encode/rapide-1795709294007-frqx1.json",
+          "id": "mwxqy6yf8sgb1l",
+          "s": 1.466,
+          "d": 30,
+          "pj": "null",
+          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545423788-l-27ore-cc-81al-summer-splash.1280x720.2500.mp4"
+        }
       }
     }
   }
