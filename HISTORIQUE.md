@@ -422,3 +422,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Logo « lien » sur les vidéos liées (liste du video club, fenêtre d'un film : `linkIcon`, `grpCount`).
 - 26/11 — Recadrage : le cadre rouge reste tant qu'on ne clique pas ailleurs (`outside`), commandes plus recréées après « edit ».
 - 26/11 — Bout à bout (montage.js + job edit du robot, limite 10 Go), frise horizontale proportionnelle des blocs, fenêtre d'edit plus large.
+- 26/11 — Bouton « Créer un bout à bout » en haut de la fenêtre d'une vidéo liée + logo lien cliquable dans la liste.

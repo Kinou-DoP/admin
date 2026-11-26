@@ -1238,3 +1238,5 @@ input.bcn { width: 90px; }
 .hdh { position: absolute; top: -4px; bottom: -4px; width: 10px; margin-left: -5px; background: #ff3b30; cursor: ew-resize; border-radius: 2px; }
 .hdlab { margin-top: 6px; font-size: 12px; color: var(--dim); } .hpool { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; } .bmontb { margin-left: 10px; }
 .bedit .bplay > video { display: block; max-height: 52vh; width: auto; max-width: 100%; margin: 0 auto; background: #000; } /* fenêtre plus large : la vidéo reste raisonnable, les frises prennent toute la largeur */
+.bmontbar { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; padding: 10px 14px; border: 1px solid rgba(217,130,43,.5); background: rgba(217,130,43,.08); font-size: 13px; } .bmontbar .blinkic { margin: 0; }
+.blinkic.clk { cursor: pointer; } .blinkic.clk:hover { color: #fff; }

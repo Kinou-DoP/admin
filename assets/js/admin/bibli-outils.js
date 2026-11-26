@@ -194,11 +194,11 @@
     });
   }
   // Petit logo « lien » (Gus 26/11) : vidéos importées ensemble = liées. Liste du video club et fenêtre d'un film.
-  function linkIcon(n) {
+  function linkIcon(n, onClick) {
     var x = document.createElementNS("http://www.w3.org/2000/svg", "svg"); x.setAttribute("viewBox", "0 0 24 24"); x.setAttribute("width", "13"); x.setAttribute("height", "13");
     x.setAttribute("fill", "none"); x.setAttribute("stroke", "currentColor"); x.setAttribute("stroke-width", "2"); x.setAttribute("stroke-linecap", "round"); x.setAttribute("stroke-linejoin", "round");
     x.innerHTML = '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>';
-    var w = document.createElement("span"); w.className = "blinkic"; w.title = "Liée à " + (n - 1) + " autre" + (n > 2 ? "s" : "") + " vidéo" + (n > 2 ? "s" : "") + " (importées ensemble)"; w.appendChild(x); return w;
+    var w = document.createElement("span"); w.className = "blinkic"; w.title = "Liée à " + (n - 1) + " autre" + (n > 2 ? "s" : "") + " vidéo" + (n > 2 ? "s" : "") + " (importées ensemble)"; w.appendChild(x); if (onClick) { w.classList.add("clk"); w.title += " · cliquer : créer un bout à bout"; w.addEventListener("click", onClick); } return w;
   }
   function grpCount(f) { return f.grp && bibCache ? bibCache.films.filter(function (x) { return x.grp === f.grp; }).length : 0; }
   function bibHay(f) { f.hay = bnrm([f.title, f.dir, f.prod, f.client, f.dops.join(" "), f.cats.join(" "), f.types.join(" "), (f.tags || []).join(" ")].join(" ")); }

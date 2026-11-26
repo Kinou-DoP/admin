@@ -151,7 +151,7 @@
       var add = el("button", { type: "button", class: "btn ghost badd", text: inBand(f) ? "−" : "+", title: inBand(f) ? "Retirer de la bande" : "Ajouter à la bande", on: { click: function (e) { e.stopPropagation(); if (inBand(f)) removeKey(f.key); else addKeys([f.key], band.items.length, th); } } });
       var r = el("div", { class: "brow" + (st.sel[f.key] ? " sel" : "") + (inBand(f) ? " inband" : "") }, [
         el("span", { class: "bnum", text: String(i + 1) }), cb, th,
-        el("div", { class: "bt" }, [f.client ? el("small", { class: "bclient", text: f.client }) : null, el("strong", {}, [f.title || "(sans titre)", grpCount(f) > 1 ? linkIcon(grpCount(f)) : null]), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
+        el("div", { class: "bt" }, [f.client ? el("small", { class: "bclient", text: f.client }) : null, el("strong", {}, [f.title || "(sans titre)", grpCount(f) > 1 ? linkIcon(grpCount(f), function (e) { e.stopPropagation(); openMontage(f); }) : null]), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
           f.pend && !f.enc ? el("small", { class: "benc run", text: "⟳ " + [f.pend.thumb ? "Vignette" : "", f.pend.snip ? "Extrait" : ""].filter(Boolean).join(" et ") + " en cours d'encodage…" }) : f.enc ? el("small", { class: "benc" + (f.enc.error ? " err" : " run"), text: f.enc.error ? "⚠ Encodage raté : " + f.enc.error : f.enc.sending ? "↑ Envoi en cours (ou interrompu)…" : "⟳ Encodage en cours (quelques minutes)…" }) : null]),
         el("div", { class: "bc" }, f.dops.map(function (d) { var r = (f.roles || {})[d]; return r ? el("span", { class: "brole" }, [lnk("dop", d), el("small", { text: r })]) : lnk("dop", d); })),
         el("div", { class: "bc" }, f.cats.slice(0, 2).map(function (c) { return lnk("cat", c); }).concat(f.types.filter(function (t) { return !f.cats.some(function (c) { return bnrm(c) === bnrm(t); }); }).slice(0, 3).map(function (c) { return lnk("type", c); }))),
@@ -1409,6 +1409,9 @@
         if (m.grpN > 1 && lib && lib.montage) ip.appendChild(el("button", { type: "button", class: "btn ghost bmontb", text: "▦ Créer un bout à bout", title: "Assembler les vidéos liées (fenêtre de montage, export 1080p avec le son)", on: { click: lib.montage } }));
         return ip;
       }
+      // Bouton bien visible en haut de la fenêtre pour les vidéos liées (Gus 26/11 : on ne le voyait pas dans les infos).
+      if (lib && lib.meta && lib.meta.grpN > 1 && lib.montage) box.appendChild(el("div", { class: "bmontbar" }, [linkIcon(lib.meta.grpN), el("span", { text: "Liée à " + (lib.meta.grpN - 1) + " autre" + (lib.meta.grpN > 2 ? "s" : "") + " vidéo" + (lib.meta.grpN > 2 ? "s" : "") }),
+        el("button", { type: "button", class: "btn primary", text: "▦ Créer un bout à bout", title: "Assembler les vidéos liées : fenêtre de montage, export 1080p avec le son", on: { click: lib.montage } })]));
       box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (sur le site et dans les prochaines bandes) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [].concat(
