@@ -151,7 +151,7 @@
       var add = el("button", { type: "button", class: "btn ghost badd", text: inBand(f) ? "−" : "+", title: inBand(f) ? "Retirer de la bande" : "Ajouter à la bande", on: { click: function (e) { e.stopPropagation(); if (inBand(f)) removeKey(f.key); else addKeys([f.key], band.items.length, th); } } });
       var r = el("div", { class: "brow" + (st.sel[f.key] ? " sel" : "") + (inBand(f) ? " inband" : "") }, [
         el("span", { class: "bnum", text: String(i + 1) }), cb, th,
-        el("div", { class: "bt" }, [f.client ? el("small", { class: "bclient", text: f.client }) : null, el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
+        el("div", { class: "bt" }, [f.client ? el("small", { class: "bclient", text: f.client }) : null, el("strong", {}, [f.title || "(sans titre)", grpCount(f) > 1 ? linkIcon(grpCount(f)) : null]), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
           f.pend && !f.enc ? el("small", { class: "benc run", text: "⟳ " + [f.pend.thumb ? "Vignette" : "", f.pend.snip ? "Extrait" : ""].filter(Boolean).join(" et ") + " en cours d'encodage…" }) : f.enc ? el("small", { class: "benc" + (f.enc.error ? " err" : " run"), text: f.enc.error ? "⚠ Encodage raté : " + f.enc.error : f.enc.sending ? "↑ Envoi en cours (ou interrompu)…" : "⟳ Encodage en cours (quelques minutes)…" }) : null]),
         el("div", { class: "bc" }, f.dops.map(function (d) { var r = (f.roles || {})[d]; return r ? el("span", { class: "brole" }, [lnk("dop", d), el("small", { text: r })]) : lnk("dop", d); })),
         el("div", { class: "bc" }, f.cats.slice(0, 2).map(function (c) { return lnk("cat", c); }).concat(f.types.filter(function (t) { return !f.cats.some(function (c) { return bnrm(c) === bnrm(t); }); }).slice(0, 3).map(function (c) { return lnk("type", c); }))),
@@ -221,7 +221,7 @@
         return Object.keys(e).length ? e : null;
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
-        meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by, slate: f.slate },
+        meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by, slate: f.slate, grpN: grpCount(f) },
         canDelete: function () { return !!(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
         onChange: function () {
           // Vidéos d'un même import : ordre commun à toutes (Gus 26/11). Glisser une ligne change l'ordre du lot entier ; masquer ne casse pas le lien.
@@ -1399,7 +1399,8 @@
         if (m.size) l.push("Fichier d'origine : " + fsz(m.size) + (m.ws ? " → version web " + fsz(m.ws) + " (" + Math.round((1 - m.ws / m.size) * 100) + " % de moins)" : (m.os ? "" : " → version web en préparation")));
         else if (m.ws) l.push("Version web : " + fsz(m.ws));
         if (m.w) l.push(m.w + "×" + m.h); if (m.dur) l.push(Math.floor(m.dur / 60) + " min " + String(Math.round(m.dur % 60)).padStart(2, "0") + " s");
-        return el("p", { class: "hint binfo", text: l.join(" · ") });
+        var ip = el("p", { class: "hint binfo" }); if (m.grpN > 1) { ip.appendChild(linkIcon(m.grpN)); ip.appendChild(document.createTextNode(" Liée à " + (m.grpN - 1) + " autre" + (m.grpN > 2 ? "s" : "") + " vidéo" + (m.grpN > 2 ? "s" : "") + " (importées ensemble) · ")); }
+        ip.appendChild(document.createTextNode(l.join(" · "))); return ip;
       }
       box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (sur le site et dans les prochaines bandes) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [

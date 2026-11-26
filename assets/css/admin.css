@@ -1215,3 +1215,4 @@ input.bcn { width: 90px; }
 .tlend { position: absolute; top: -3px; bottom: -3px; width: 4px; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.6); pointer-events: none; z-index: 2; } .tlend.l { left: 0; } .tlend.r { right: 0; }
 .tlend[hidden] { display: none; }
 .tlh[hidden] { display: none; }
+.blinkic { display: inline-flex; align-items: center; margin-left: 6px; color: #ffb36b; vertical-align: -1px; } .binfo .blinkic { margin: 0 2px 0 0; }
