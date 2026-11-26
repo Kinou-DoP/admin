@@ -316,6 +316,13 @@
       ]
     },
     "s8443": {
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxfr62eqelpvk/vignette-14556-800.webp",
+      "thumbT": 14.556,
+      "hist": {
+        "img": [
+          "https://images.slatecdn.net/IsMxWsy-JAYvp9ex8IwNhCEqgGAniPDOschNfMQ23D0/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDQzLTY2MDE2ZTJh/OTM5ZGQ5LjYxNzYy/MTU0LWY2NTliM2Q5/OGFkY2U5OWQ0NmIy/YTAyNjc1ZjYzYmM3/LmpwZw.webp"
+        ]
+      },
       "crop": {
         "z": 1.44,
         "x": 50,
