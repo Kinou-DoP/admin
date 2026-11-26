@@ -935,7 +935,23 @@
             dLab.textContent = (parts() ? (bi >= 0 ? "Bloc " + (bi + 1) + " (en modification) : " : "Sélection : ") : "Extrait : ") + fmtF(s) + " → " + fmtF(e) + " (" + A.d.toFixed(1).replace(".", ",") + " s" + (parts() ? ", montage " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD : "") + ")" + " · I / O : début / fin ici" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image") + " · espace : lire la boucle";
           }
         };
-        var seek = function (t) { loopOn = false; seqOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
+        // Lecture à l'envers (Gus 26/11) : Z ou J ; K = pause ; L = lecture normale ; espace = pause puis lecture dans le bon sens. Le navigateur ne sait pas lire à
+        // l'envers : on recule l'image à chaque rafraîchissement (dans un montage / une sélection, on reboucle sur la fin du bloc réglé).
+        var revOn = false, revRaf = 0;
+        var stopRev = function () { revOn = false; cancelAnimationFrame(revRaf); };
+        var startRev = function () {
+          if (!dur) return; stopRev(); loopOn = false; seqOn = false; player.pause(); revOn = true;
+          var t0 = performance.now(), from = player.currentTime, A0 = it.snip && ptab === "snip" ? actB() : null, inB = !!A0 && from >= A0.s && from <= A0.s + A0.d + .05;
+          (function step() {
+            if (!revOn || !player.isConnected) return;
+            var t = from - (performance.now() - t0) / 1000;
+            if (inB && t < A0.s) { from = A0.s + A0.d; t0 = performance.now(); t = from; }
+            else if (t <= 0) { player.currentTime = 0; draw(); stopRev(); return; }
+            if (!player.seeking) player.currentTime = t;
+            draw(); revRaf = requestAnimationFrame(step);
+          })();
+        };
+        var seek = function (t) { stopRev(); loopOn = false; seqOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
         var playSnip = function () { if (!it.snip) return; seqOn = false; loopOn = true; player.currentTime = actB().s; player.play().catch(function () {}); };
         // Extrait : jusqu'à 30 s au total (Gus 26/11, avant 10 s), 0,5 s au moins par bloc. Les poignées se poussent : tirer le début vers la droite jusqu'à
         // la fin la pousse devant lui (on avance dans le film) ; tirer la fin vers la gauche pousse le début ; tirer dans l'autre sens s'arrête à la limite.
@@ -953,7 +969,7 @@
         player.addEventListener("loadedmetadata", function () { dur = player.duration || 0; if (ptab === "snip") setTab("snip"); else if (it.thumbT !== undefined) player.currentTime = it.thumbT; draw(); });
         player.addEventListener("timeupdate", draw);
         player.addEventListener("seeked", draw);
-        player.addEventListener("play", function () { playB.textContent = "❚❚"; });
+        player.addEventListener("play", function () { stopRev(); playB.textContent = "❚❚"; });
         player.addEventListener("pause", function () { playB.textContent = "▶"; });
         (function tick() { // boucle de l'extrait + mesure de la cadence (image par image exact)
           if (dur && !player.isConnected) return; // fenêtre fermée
@@ -967,6 +983,7 @@
         if (player.requestVideoFrameCallback) { var lastMT = null; var fcb = function (now, m) { if (lastMT !== null) { var d = m.mediaTime - lastMT; if (d > .015 && d < .05) FR = d; } lastMT = m.mediaTime; if (player.isConnected) player.requestVideoFrameCallback(fcb); }; player.requestVideoFrameCallback(fcb); }
         // Lecture : s'il y a un extrait, toujours en boucle entre le début et la fin (Gus 22/11) ; sinon le film.
         var toggle = function () {
+          if (revOn) { stopRev(); return; } // espace pendant la lecture à l'envers : pause
           if (!player.paused) { player.pause(); return; }
           if (it.snip && ptab === "snip") { var t = player.currentTime, A1 = actB(); seqOn = false; loopOn = true; if (t < A1.s || t >= A1.s + A1.d - .05) player.currentTime = A1.s; player.play().catch(function () {}); }
           else { loopOn = false; player.play().catch(function () {}); }
@@ -993,6 +1010,11 @@
           if (!document.body.contains(box)) { document.removeEventListener("keydown", onKey, true); return; }
           if (e.target && e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])")) return;
           if (e.key === " ") { e.preventDefault(); e.stopPropagation(); if (document.activeElement && document.activeElement.blur && box.contains(document.activeElement)) document.activeElement.blur(); if (!e.repeat) toggle(); return; }
+          if (/^[zjkl]$/i.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) { // Z / J : à l'envers, K : pause, L : lecture
+            e.preventDefault(); e.stopPropagation(); if (e.repeat) return; var kk = e.key.toLowerCase();
+            if (kk === "k") { stopRev(); player.pause(); } else if (kk === "l") { stopRev(); if (player.paused) toggle(); } else startRev();
+            return;
+          }
           if ((e.key === "i" || e.key === "o" || e.key === "I" || e.key === "O") && !e.ctrlKey && !e.metaKey && !e.altKey && ptab === "snip" && !it.snipVideo) { // I / O : début / fin de l'extrait ici (Gus 26/11)
             e.preventDefault(); e.stopPropagation(); if (e.repeat) return; var tt = player.currentTime; snipDraft();
             if (!it.snip) it.snip = { s: tt, d: Math.round(Math.min(5, dur - tt) * 1000) / 1000 };
@@ -1448,7 +1470,7 @@
           el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg, offImg]);
         snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, (addB = el("button", { type: "button", class: "btn ghost", text: "+ Ajouter ce bloc", title: "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante", on: { click: addBlock } })), el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire les blocs bout à bout", on: { click: playSeq } }), upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine, blocksBox,
           histSnipL, histSnip, offSnip]);
-        box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
+        box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s) · espace = lecture / pause · Z ou J = à l'envers, K = pause, L = lecture · I / O = début / fin de l'extrait" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
         setTab("thumb");
       }
       // Lien de partage de ce film seul (Gus 23/11, comme sur Slate) : une « bande » d'un seul film, centrée, même lien court chiffré

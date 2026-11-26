@@ -413,3 +413,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Montage d'extrait (blocs, I / O, poignées qui se poussent, 30 s), suppression d'un film / bande / bundle, client + date + poids dans les infos, à faire plus tard (README).
 - 26/11 — Montage : sélection séparée des blocs, Ctrl+Z du montage ; client affiché avant le titre (site, bandes, fiches, liste).
 - 26/11 — I / O exacts, client affiché par défaut (meta.json), date Slate = `at`, survol de la liste et aperçu de recadrage = dernier extrait.
+- 26/11 — Lecture à l'envers (Z/J, K, L), son coupé partout, client sans doublon (Ubisoft | Ubisoft → Ubisoft).

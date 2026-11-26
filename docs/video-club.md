@@ -138,4 +138,5 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   s'affiche sur le site, les bandes et les liens partagés, sauf case décochée (`cshow: false` dans edits.json) ; le site lit `meta.json` (`vcClient`) et edits.json ; la carte des
   fiches a un champ Client prérempli. **Date Slate** : `at` de `bibli/slate.json` (7 490 films) / `date` de `meta.json` (2 091). Survol de la liste = extrait le plus récent
   (`snipVideo`, `snip.v`) ; l'aperçu de recadrage lit le montage entier (`snip.v`).
+- **Lecture à l'envers** (fenêtre d'un film, Gus 26/11) : Z ou J = à l'envers (`startRev` : on recule `currentTime` à chaque image, le navigateur ne sait pas lire à l'envers ; reboucle sur le bloc réglé), K = pause, L = lecture, espace = pause puis lecture normale. **Son coupé partout** (admin.js, app.js, b/) : couper le son d'une vidéo avec commandes coupe les autres jusqu'à ce qu'on le remette ou qu'on recharge (`sonCoupe`). `dtitle` : pas de « | » si titre vide ou identique au client.
 

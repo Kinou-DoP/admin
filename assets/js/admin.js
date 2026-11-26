@@ -66,6 +66,16 @@
   // Lecture demandée (play) : relancée après le repli. Notre CloudFront muet (2 replis, rien lu chez nous) : Slate pour la suite.
   var jouerMedia = HTMLMediaElement.prototype.play, cdnOk = false, cdnReplis = 0, cdnPanne = false;
   HTMLMediaElement.prototype.play = function () { this.veutJouer = true; return jouerMedia.apply(this, arguments); };
+  // Son coupé partout (Gus 26/11) : couper le son d'une vidéo avec ses commandes coupe toutes les autres (déjà là ou à venir) jusqu'à ce qu'on le remette ou qu'on
+  // recharge la page. Seules les vidéos « avec commandes » (celles qu'on écoute) déclenchent ; les aperçus restent muets.
+  var sonCoupe = false, coupeParNous = new WeakSet();
+  function coupeSon(o) { if (o && !o.muted) { o.muted = true; coupeParNous.add(o); } }
+  document.addEventListener("volumechange", function (ev) {
+    var v = ev.target; if (!(v instanceof HTMLMediaElement) || !v.controls) return;
+    var m = !!v.muted || v.volume === 0; if (m === sonCoupe) return; sonCoupe = m;
+    [].forEach.call(document.querySelectorAll("video"), function (o) { if (o === v) return; if (m) coupeSon(o); else if (coupeParNous.has(o)) { o.muted = false; coupeParNous.delete(o); } });
+  }, true);
+  ["loadstart", "play"].forEach(function (n) { document.addEventListener(n, function (ev) { if (sonCoupe && ev.target instanceof HTMLMediaElement && ev.target.controls) coupeSon(ev.target); }, true); });
   document.addEventListener("loadeddata", function (ev) { var u = ev.target.getAttribute && ev.target.getAttribute("src"); if (u && u.indexOf(NOTRE_CDN) === 0) cdnOk = true; }, true);
   document.addEventListener("error", function (ev) {
     var v = ev.target, u = v instanceof HTMLMediaElement && v.getAttribute("src");
