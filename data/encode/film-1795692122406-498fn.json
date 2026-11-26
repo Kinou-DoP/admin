@@ -3,9 +3,14 @@
     {
       "id": "mwxgq59i1rcn44",
       "kind": "film",
-      "key": "depot/ykgvfxpfmkmdf4hh6iea/Camille-Lellouche-Prince-de-ma-ville-Clip-Officiel-_Master_422HQ_1920x1080.mov"
+      "key": "depot/ykgvfxpfmkmdf4hh6iea/Camille-Lellouche-Prince-de-ma-ville-Clip-Officiel-_Master_422HQ_1920x1080.mov",
+      "progress": {
+        "step": "lecture",
+        "pct": 0
+      }
     }
   ],
   "at": "2026-11-26T11:36:59.718Z",
-  "by": "Gurvan"
+  "by": "Gurvan",
+  "startedAt": "2026-11-26T12:02:53.213Z"
 }
