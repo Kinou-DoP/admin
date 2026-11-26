@@ -17,11 +17,20 @@
     "8443": {
       "title": "Mini"
     },
+    "8444": {
+      "title": "Peso"
+    },
     "8446": {
       "title": "Balmain"
     },
+    "8447": {
+      "title": "Ocelot"
+    },
     "8448": {
       "title": "Dassault"
+    },
+    "8449": {
+      "title": "Salve"
     },
     "8450": {
       "title": "Aya Nakamura ft. Damso - Dégaine"
@@ -76,6 +85,9 @@
     "8470": {
       "title": "Niki Niki - Pink Sorrows"
     },
+    "8471": {
+      "title": "Masculine"
+    },
     "8472": {
       "title": "Bigflo & Oli - Les Promesses"
     },
@@ -103,6 +115,9 @@
     "8527": {
       "title": "Moonlight - Temper"
     },
+    "8529": {
+      "title": "Peso"
+    },
     "8538": {
       "zoom": 1.32,
       "title": "Anthony Garçon"
@@ -110,6 +125,9 @@
     "8541": {
       "zoom": 1.36,
       "zoomThumb": true
+    },
+    "8563": {
+      "title": "Eleven Twelve"
     },
     "9196": {
       "zoom": 1.09,
@@ -120,6 +138,9 @@
       "zoomPos": "50.9% 0%",
       "zoomThumb": true,
       "title": "Just Another Tuesday"
+    },
+    "9478": {
+      "title": "El Rio"
     },
     "10594": {
       "title": "Boucheron"
@@ -188,12 +209,10 @@
       "cat": "NARRATIVE"
     },
     {
-      "title": "PESO - short film",
-      "sub": "LUCHINO GATTI\nDACP x OFFWALL",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8529/78140edd-f0d2-11ee-83d2-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e1690350-a2de-48a8-90f2-3dfef599bba1-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/iCPCnSjBs6nYFq-klpGAGm1739n0w479TGGYFfQ5O_c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NjgzOTFlNy05YmYz/LTRkYjItYTg4NC00/YWQyOGU2ZjhjNjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDQt/MDItYS0xMS4xMS4z/NS5wbmc.webp",
-      "slate": 8529,
+      "title": "TRAILER PESO  LUCHINO GATTI",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/42efdd78-9852-4039-9ca9-45ba923f0cec-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/uzl0vYw56XNg-MwDjTZBjlu1UrrEI0XK_r1dI40rivA/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDQ0LTY2MDE2ZTQ3/YTA3M2I0LjYyMDEy/MzYwLTQ2N2E4YmUw/MGU4N2NkZWQ4NWJk/ZTY1MGI2YmI2MTI5/LmpwZw.webp",
+      "slate": 8444,
       "cat": "NARRATIVE"
     },
     {
@@ -219,13 +238,6 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0fcc8540-cd22-40c7-9857-efbeef5a3737-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/gS60xnG9SQceMXNQ0MO6Lpmto19yO0jkFX3EZPyhRXw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MTgyNTU5Yy1kYTFk/LTQyN2YtYmY4Zi01/NmIzNzRjNjlhNjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MjctYS0xMi41MC40/OS5wbmc.webp",
       "slate": 8447,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "TRAILER PESO  LUCHINO GATTI",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/42efdd78-9852-4039-9ca9-45ba923f0cec-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/uzl0vYw56XNg-MwDjTZBjlu1UrrEI0XK_r1dI40rivA/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDQ0LTY2MDE2ZTQ3/YTA3M2I0LjYyMDEy/MzYwLTQ2N2E4YmUw/MGU4N2NkZWQ4NWJk/ZTY1MGI2YmI2MTI5/LmpwZw.webp",
-      "slate": 8444,
       "cat": "NARRATIVE"
     },
     {
