@@ -540,12 +540,32 @@
       "cat": "MUSIC VIDEO"
     },
     {
+      "title": "DANCE OR DIE x KEVIN BAGO  NATHALIE DE LOPEZ",
+      "sub": "Nathalie de Lopez\nShadow Lab",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8442/e9c46084-ec3f-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cb412d56-7718-43ec-8612-c2c5c7f412de-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/pM9hXeqwwY6J09s__DOwqOcySDWgIe06VRTEOdahuiU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MmM3NDBiMS00MzU5/LTQxNWYtOTI5My1h/M2QxNWFmNDQ3YjIv/MTcxMTUzNDk3NzAw/MS5qcGc?v=1&format=webp",
+      "cat": "MUSIC VIDEO",
+      "slate": 8442,
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
       "title": "MOONLIGHT - TEMPER",
       "sub": "Jeremie Levypon\nMatiere Premiere",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8527/9b1b5b6d-f0d0-11ee-83d2-022353abf6f5.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/30f6b6e8-003d-49dd-93b7-b233d5beadd2-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/GOJUC4o3cKjyqLp4PVjm0CGMeofRwK2TSligQQJ4RLE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/OGNlODM4Ny0xMTBl/LTRlMWUtYWUzYS02/OWY1MmQ0NjE0YzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDQt/MDItYS0xMS4wMy4z/MC5wbmc.webp",
       "slate": 8527,
+      "cat": "MUSIC VIDEO"
+    },
+    {
+      "title": "Nasatya",
+      "sub": "Cyril Masson",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8460/ef664dd3-ec27-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f36e71d7-a9c4-4d07-8b30-db652b596246-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/xnab5rkAEnC6hJfNabWDidfwIy3Sr9ujOpCN18x-dlU/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDYwLTY2MDE2ZTBh/OWFkMjA3LjAxODgy/NzMwLWE5ZTY3MmQ2/MTYwOWQ3MzEwZTcx/ZmFiODEyMmE0YjRj/LmpwZw.webp",
+      "slate": 8460,
       "cat": "MUSIC VIDEO"
     },
     {
@@ -632,15 +652,6 @@
       "cat": "MUSIC VIDEO"
     },
     {
-      "title": "Nasatya",
-      "sub": "Cyril Masson",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8460/ef664dd3-ec27-11ee-83d2-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/f36e71d7-a9c4-4d07-8b30-db652b596246-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/xnab5rkAEnC6hJfNabWDidfwIy3Sr9ujOpCN18x-dlU/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDYwLTY2MDE2ZTBh/OWFkMjA3LjAxODgy/NzMwLWE5ZTY3MmQ2/MTYwOWQ3MzEwZTcx/ZmFiODEyMmE0YjRj/LmpwZw.webp",
-      "slate": 8460,
-      "cat": "MUSIC VIDEO"
-    },
-    {
       "title": "GAMBI - MACINTOSH  BLEU DESERT",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8459/cbb59723-ec41-11ee-83d2-022353abf6f5.mp4",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4c2ecd07-13fc-47f8-b342-bd39e845770c-1280x720.2500.mp4",
@@ -674,17 +685,6 @@
       "slate": 11521,
       "featured": true,
       "featuredOrder": 1
-    },
-    {
-      "title": "DANCE OR DIE x KEVIN BAGO  NATHALIE DE LOPEZ",
-      "sub": "Nathalie de Lopez\nShadow Lab",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8442/e9c46084-ec3f-11ee-83d2-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/cb412d56-7718-43ec-8612-c2c5c7f412de-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/pM9hXeqwwY6J09s__DOwqOcySDWgIe06VRTEOdahuiU/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MmM3NDBiMS00MzU5/LTQxNWYtOTI5My1h/M2QxNWFmNDQ3YjIv/MTcxMTUzNDk3NzAw/MS5qcGc?v=1&format=webp",
-      "cat": "",
-      "slate": 8442,
-      "featured": true,
-      "featuredOrder": 8
     }
   ]
 }
