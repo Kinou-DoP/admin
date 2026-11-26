@@ -86,4 +86,8 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   importée ou capturée, suite d'images) dans `kinou-videos/depot/<dossier>/` (adresse signée par `/api/depot` op `img`) et rend tout de
   suite son adresse sur notre CloudFront ; `commit()` attend la fin des envois (`imgWait`). Plus rien n'est écrit dans `data/bibli/img/`
   (anciennes images copiées chez Amazon par le robot `images-bibli.yml`, `main`).
-
+- **Vignette depuis la vidéo** (Gus 26/11) : « Valider cette image » sur une vidéo de l'ordinateur (blob) = capture directe (canvas) ; sur une
+  vidéo en ligne = demande `thumb` au robot (`grabRobot`, file « rapide », ≈ 1 min, vignettes 800 / 1600) car notre CloudFront n'envoie pas
+  de CORS et `/api/media` (Netlify) est souvent figé. **Avancement des imports** : pastilles Envoi / Encodage / Prête (`.bstep`), bandeau vert
+  à la fin, onglets colorés ; images : barre de progression (préparation puis envoi). **Images d'une suite d'images** : `images` fait partie
+  de `BIB_EK` (enregistré dans edits.json) et se réordonne en glissant dans la fenêtre du film (`stillGrid(it, "images")`).

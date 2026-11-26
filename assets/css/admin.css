@@ -1129,3 +1129,17 @@ progress.bupprog { display: block; width: 100%; height: 6px; margin: 10px 0 4px;
 .bst .bx { position: absolute; top: 2px; right: 2px; padding: 0 5px; line-height: 16px; font-size: 12px; background: rgba(0,0,0,.6); opacity: 0; }
 .bst:hover .bx { opacity: 1; }
 .bupbtn.over { outline: 2px dashed #d9822b; }
+
+/* Avancement des imports (Gus 26/11 : « pas clair quand c'est en cours d'encodage et quand c'est fini ») */
+.bsteps { display: flex; gap: 6px; margin: 0 0 8px; }
+.bstep { flex: 1; padding: 5px 8px; border-radius: 3px; background: var(--soft); color: var(--dim); font-size: 12px; text-align: center; }
+.bstep.on { background: rgba(217,130,43,.18); color: #d9822b; animation: bpulse 1.4s ease-in-out infinite; }
+.bstep.done { background: rgba(90,200,120,.16); color: #6fd08c; }
+.bstep.err { background: rgba(230,80,70,.2); color: #ff7b72; }
+.bimptabs button.bst-ok { color: #6fd08c; } .bimptabs button.bst-err { color: #ff7b72; } .bimptabs button.bst-run { color: #d9822b; }
+.bimptabs button.on { outline: 1px solid currentColor; }
+.bbanner { margin: 10px 0 0; padding: 8px 10px; border-radius: 3px; background: rgba(90,200,120,.16); color: #6fd08c; font-size: 13px; }
+.bok { color: #6fd08c; } .berr { color: #ff7b72; } .bwait { color: #d9822b; }
+.brow .bt small.benc.err { color: #ff7b72; } .brow .bt small.benc.run { animation: bpulse 1.4s ease-in-out infinite; }
+.btn.busy { opacity: .55; cursor: progress; }
+@keyframes bpulse { 50% { opacity: .55; } }

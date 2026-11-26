@@ -137,7 +137,7 @@
       var r = el("div", { class: "brow" + (st.sel[f.key] ? " sel" : "") + (inBand(f) ? " inband" : "") }, [
         el("span", { class: "bnum", text: String(i + 1) }), cb, th,
         el("div", { class: "bt" }, [el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
-          f.enc ? el("small", { class: "benc", text: f.enc.error ? "Encodage raté : " + f.enc.error : f.enc.sending ? "Envoi en cours (ou interrompu)…" : "Encodage en cours…" }) : null]),
+          f.enc ? el("small", { class: "benc" + (f.enc.error ? " err" : " run"), text: f.enc.error ? "⚠ Encodage raté : " + f.enc.error : f.enc.sending ? "↑ Envoi en cours (ou interrompu)…" : "⟳ Encodage en cours (quelques minutes)…" }) : null]),
         el("div", { class: "bc" }, f.dops.map(function (d) { var r = (f.roles || {})[d]; return r ? el("span", { class: "brole" }, [lnk("dop", d), el("small", { text: r })]) : lnk("dop", d); })),
         el("div", { class: "bc" }, f.cats.slice(0, 2).map(function (c) { return lnk("cat", c); }).concat(f.types.filter(function (t) { return !f.cats.some(function (c) { return bnrm(c) === bnrm(t); }); }).slice(0, 3).map(function (c) { return lnk("type", c); }))),
         el("div", { class: "bc" }, bibProds(f).map(function (x) { return lnk("prod", x); }).concat(f.client ? [lnk("client", f.client)] : [])),
@@ -1038,10 +1038,27 @@
         };
         fr.readAsDataURL(f);
       }
-      // Capture d'une image du film : la vidéo de Slate n'autorise pas la copie d'image ; on la relit par la fonction /api/media du site.
+      // Capture d'une image du film. Vidéo de l'ordinateur (blob, pendant l'envoi) : dessinée directement dans le navigateur.
+      // Vidéo en ligne (notre CloudFront ou Slate) : le navigateur n'a pas le droit de copier l'image (pas d'en-tête CORS) et la
+      // fonction /api/media du site (Netlify) est souvent figée ; c'est donc le robot d'encodage qui sort l'image du film (demande
+      // « thumb », ≈ 1 min) → vignettes WebP 800 / 1600 chez Amazon (Gus 26/11 : « la vignette depuis la vidéo ne marche pas »).
+      function grabDone(u, t) { it.thumbT = Math.round(t * 1000) / 1000; setImg(u); pout.textContent = "✓ Vignette remplacée par l'image à " + fmtT(t) + "."; pout.className = "hint bok"; }
+      function grabBusy(on) { if (typeof grabB !== "undefined" && grabB) { grabB.disabled = on; grabB.classList.toggle("busy", on); } }
+      function grabRobot(t) {
+        if (!canWeb) { pout.textContent = "Lecture seule : cette clé ne peut pas demander de capture."; return; }
+        if (!/\.(mp4|mov|m4v)$/i.test(src)) { pout.textContent = "Capture impossible : adresse de vidéo non reconnue."; return; }
+        grabBusy(true); pout.className = "hint bwait"; pout.textContent = "Capture en cours chez le robot (≈ 1 min) : tu peux continuer, la vignette changera toute seule…";
+        var id = encId(), from = src;
+        encAsk("rapide", [{ id: id, kind: "thumb", src: from, t: Math.round(t * 1000) / 1000 }]).then(function (path) { return encWait(path, 5000, 600000); }).then(function (jobs) {
+          var j = jobs[0] || {}; if (!j.answer) throw new Error(j.error || "pas de réponse");
+          grabBusy(false); grabDone(j.answer.img, t);
+        }).catch(function (e) { grabBusy(false); pout.className = "hint berr"; pout.textContent = "Capture pas faite : " + e.message; });
+      }
       function grab() {
-        if (!player) return; var t = player.currentTime; pout.textContent = "Capture de l'image…";
-        var v = el("video", { muted: true, playsinline: true, preload: "auto" }); v.crossOrigin = "anonymous"; v.muted = true;
+        if (!player) return; var t = player.currentTime;
+        if (!/^blob:/.test(src)) { grabRobot(t); return; }
+        pout.className = "hint bwait"; pout.textContent = "Capture de l'image…";
+        var v = el("video", { muted: true, playsinline: true, preload: "auto" }); v.muted = true;
         var done = false;
         v.addEventListener("loadedmetadata", function () { v.currentTime = t; });
         v.addEventListener("seeked", function () {
@@ -1051,17 +1068,13 @@
             c.getContext("2d").drawImage(v, 0, 0, c.width, c.height);
             c.toBlob(function (bl) {
               var fr = new FileReader();
-              fr.onload = function () {
-                var u = imgPut("vignette.webp", fr.result.split(",")[1], URL.createObjectURL(bl));
-                it.thumbT = Math.round(t * 1000) / 1000; setImg(u);
-                pout.textContent = "Vignette remplacée par l'image à " + fmtT(t) + ".";
-              };
+              fr.onload = function () { grabDone(imgPut("vignette.webp", fr.result.split(",")[1], URL.createObjectURL(bl)), t); };
               fr.readAsDataURL(bl);
             }, "image/webp", .85);
-          } catch (e) { pout.textContent = "Capture impossible : " + e.message; }
+          } catch (e) { pout.className = "hint berr"; pout.textContent = "Capture impossible : " + e.message; }
         });
-        v.addEventListener("error", function () { if (!done) pout.textContent = "Capture impossible (la fonction /api/media du site ne répond pas)."; done = true; });
-        v.src = /^blob:/.test(src) ? src : SITE + "/api/media?u=" + encodeURIComponent(src);
+        v.addEventListener("error", function () { if (!done) { pout.className = "hint berr"; pout.textContent = "Capture impossible : cette vidéo ne se lit pas dans le navigateur."; } done = true; });
+        v.src = src;
       }
       // Vignettes possibles : vignette d'origine + stills du film
       var thumbs = el("div", { class: "bthumbs" });
@@ -1077,6 +1090,11 @@
       var exBox = el("div", { class: "bexs" }), exIn = el("input", { type: "text", placeholder: "Lien Slate (page de stills ou d'une vidéo, shots.re)" }), exOut = el("p", { class: "hint" });
       function drawEx() {
         exBox.textContent = "";
+        // Suite d'images (sans film) : ses images dans l'ordre, à déplacer en glissant (Gus 26/11).
+        if (!it.full && !it.video && it.images && it.images.length) {
+          exBox.appendChild(el("span", { class: "label", text: "Images du projet (" + it.images.length + ") · glisser pour changer l'ordre, × pour retirer" }));
+          exBox.appendChild(stillGrid(it, "images"));
+        }
         (it.extras || []).forEach(function (x, j) {
           var th = el("div", { class: "bithumb" }), u = x.img || (x.stills && x.stills[0]); if (u) th.appendChild(el("i", { style: 'background-image:url("' + u + '")' }));
           exBox.appendChild(el("div", { class: "bit bex" }, [th, el("span", { class: "bitt" }, [x.title || x.link || "", el("small", { text: x.stills ? x.stills.length + " images" : "vidéo" })]),
@@ -1100,16 +1118,16 @@
         }); }); }, Promise.resolve()).then(function () { exOut.textContent = n + " image" + (n > 1 ? "s" : "") + " ajoutée" + (n > 1 ? "s" : "") + "."; it.edited = true; chg(); drawEx(); },
           function (e) { exOut.textContent = e.message; drawEx(); });
       }
-      function stillGrid(x) { // images d'un groupe : glisser pour changer l'ordre, × pour retirer
-        var g = el("div", { class: "bstgrid" }), from = -1;
-        x.stills.forEach(function (u, k) {
+      function stillGrid(x, key) { // images d'un groupe (x[key], « stills » par défaut) : glisser pour changer l'ordre, × pour retirer
+        key = key || "stills"; var g = el("div", { class: "bstgrid" }), from = -1, arr = x[key];
+        arr.forEach(function (u, k) {
           var c = el("div", { class: "bst", draggable: "true", style: 'background-image:url("' + u + '")', title: "Glisser pour changer l'ordre" }, [
-            el("button", { type: "button", class: "bx", text: "×", title: "Retirer cette image", on: { click: function () { x.stills.splice(k, 1); it.edited = true; chg(); drawEx(); } } })]);
+            el("button", { type: "button", class: "bx", text: "×", title: "Retirer cette image", on: { click: function () { arr.splice(k, 1); it.edited = true; chg(); drawEx(); drawThumbs(); } } })]);
           c.addEventListener("dragstart", function (e) { from = k; e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", "st"); c.classList.add("drag"); });
           c.addEventListener("dragend", function () { c.classList.remove("drag"); });
           c.addEventListener("dragover", function (e) { if (from < 0) return; e.preventDefault(); c.classList.add("over"); });
           c.addEventListener("dragleave", function () { c.classList.remove("over"); });
-          c.addEventListener("drop", function (e) { if (from < 0) return; e.preventDefault(); var a = x.stills.splice(from, 1)[0]; x.stills.splice(k, 0, a); from = -1; it.edited = true; chg(); drawEx(); });
+          c.addEventListener("drop", function (e) { if (from < 0) return; e.preventDefault(); var a = arr.splice(from, 1)[0]; arr.splice(k, 0, a); from = -1; it.edited = true; chg(); drawEx(); drawThumbs(); });
           g.appendChild(c);
         });
         return g;
@@ -1332,13 +1350,25 @@
       var STEP = { attente: "en attente d'envoi", envoi: "envoi", demande: "demande au robot", file: "en attente du robot", lecture: "le robot lit la vidéo", web: "encodage de la version web",
         extrait: "fabrication de l'extrait", vignette: "fabrication de la vignette", fini: "prête", erreur: "erreur" };
       function label(x) { var f = filmOf(x.it.key); return (f && f.title) || x.it.title; }
+      // État d'une vidéo en 3 temps : Envoi → Encodage → Prête (pastilles colorées), + message, + bandeau vert quand c'est fini.
+      var PH = ["Envoi", "Encodage", "Prête"], steps = el("div", { class: "bsteps" }), banner = el("p", { class: "bbanner", hidden: true });
+      hd.insertBefore(steps, stat); hd.appendChild(banner);
+      function phase(x) { return x.step === "fini" ? 3 : x.step === "erreur" ? (x.up >= 1 ? 1 : 0) : (x.step === "attente" || x.step === "envoi" || x.step === "demande") ? 0 : 1; }
+      function icon(x) { return x.step === "fini" ? "✓" : x.step === "erreur" ? "!" : x.step === "attente" ? "…" : phase(x) === 0 ? "↑" : "⟳"; }
       function paint() {
         if (!hd.isConnected && g.every(function (x) { return x.step === "fini" || x.step === "erreur"; })) return;
         tabs.textContent = "";
-        if (g.length > 1) g.forEach(function (x, k) { tabs.appendChild(el("button", { type: "button", class: k === cur ? "on" : "", on: { click: function () { openTab(k); } } }, [label(x), el("small", { text: " · " + pct(x) })])); });
-        var x = g[cur]; stat.textContent = (g.length > 1 ? "Vidéo " + (cur + 1) + " / " + g.length + " : " : "") + STEP[x.step] + (x.step === "envoi" || x.step === "web" ? " " + pct(x) : "") + (x.err ? " (" + x.err + ")" : "")
-          + (x.step === "envoi" || x.step === "attente" ? " · garde cette page ouverte" : x.step !== "fini" && x.step !== "erreur" ? " · tu peux fermer la fenêtre, le robot continue" : "");
+        if (g.length > 1) g.forEach(function (x, k) { tabs.appendChild(el("button", { type: "button", class: (k === cur ? "on " : "") + "bst-" + (x.step === "fini" ? "ok" : x.step === "erreur" ? "err" : "run"), on: { click: function () { openTab(k); } } }, [icon(x) + " " + label(x), el("small", { text: " · " + pct(x) })])); });
+        var x = g[cur], ph = phase(x), bad = x.step === "erreur";
+        steps.textContent = ""; PH.forEach(function (n, i) { steps.appendChild(el("span", { class: "bstep " + (bad && i === ph ? "err" : i < ph || ph === 3 ? "done" : i === ph ? "on" : "") , text: (i < ph || ph === 3 ? "✓ " : bad && i === ph ? "! " : "") + n })); });
+        stat.className = "bimpstat" + (bad ? " berr" : x.step === "fini" ? " bok" : "");
+        stat.textContent = (g.length > 1 ? "Vidéo " + (cur + 1) + " / " + g.length + " : " : "") + STEP[x.step] + (x.step === "envoi" || x.step === "web" ? " " + pct(x) : "") + (x.err ? " (" + x.err + ")" : "")
+          + (x.step === "envoi" || x.step === "attente" ? " · garde cette page ouverte" : x.step !== "fini" && x.step !== "erreur" ? " · tu peux fermer la fenêtre, le robot continue (quelques minutes)" : "");
         bar.value = x.step === "envoi" ? x.up : x.step === "web" ? x.pct / 100 : x.step === "fini" ? 1 : 0; bar.hidden = x.step === "fini";
+        if (x.step !== "envoi" && x.step !== "web" && x.step !== "fini") bar.removeAttribute("value"); else bar.value = x.step === "envoi" ? x.up : x.step === "web" ? x.pct / 100 : 1; // barre « en attente » animée
+        var left = g.filter(function (y) { return y.step !== "fini" && y.step !== "erreur"; }).length;
+        banner.hidden = x.step !== "fini" && !(g.length > 1 && !left);
+        banner.textContent = g.length > 1 && !left ? "✓ Les " + g.length + " vidéos sont prêtes dans le video club." : "✓ Vidéo prête : version web, vignette et extrait sont dans le video club.";
       }
       function pct(x) { return x.step === "envoi" ? Math.floor(x.up * 100) + " %" : x.step === "web" ? (x.pct || 0) + " %" : x.step === "fini" ? "✓" : x.step === "erreur" ? "!" : "…"; }
       var tick = setInterval(function () { paint(); if (!hd.isConnected && g.every(function (x) { return x.step === "fini" || x.step === "erreur"; })) clearInterval(tick); }, 1000);
@@ -1383,27 +1413,29 @@
     // Suite d'images (Gus 22/11) : on choisit les images, elles sont enregistrées, puis la même fenêtre d'infos s'ouvre (titre,
     // crédits, vignette…). Images réduites dans le navigateur (WebP) → data/bibli/img/<id>/.
     function importImages() {
-      var fin = el("input", { type: "file", accept: "image/*", multiple: true }), grid = el("div", { class: "bimggrid" }), out = el("p", { class: "hint" }), files = [], names = [];
+      var fin = el("input", { type: "file", accept: "image/*", multiple: true }), grid = el("div", { class: "bimggrid" }), out = el("p", { class: "hint" }), bar = el("progress", { max: 1, value: 0, class: "bupprog", hidden: true }), files = [], names = [];
       fin.addEventListener("change", function () {
         var l = Array.from(fin.files).sort(function (a, b) { return a.name.localeCompare(b.name, undefined, { numeric: true }); });
         names = l.map(function (f) { return f.name; }); files = []; grid.textContent = ""; go.disabled = true;
-        out.textContent = "Préparation de " + l.length + " images…";
-        l.reduce(function (p, f) { return p.then(function () { return compress(f).then(function (c) { files.push(c); grid.appendChild(el("img", { src: c.preview })); }); }); }, Promise.resolve())
-          .then(function () { out.textContent = files.length + " images prêtes (" + Math.round(files.reduce(function (a, c) { return a + c.size; }, 0) / 1e6) + " Mo)."; go.disabled = false; }, function (e) { out.textContent = e.message; });
+        out.className = "hint bwait"; bar.hidden = false; bar.max = l.length; bar.value = 0;
+        out.textContent = "Préparation des images : 0 / " + l.length + "…";
+        l.reduce(function (p, f) { return p.then(function () { return compress(f).then(function (c) { files.push(c); grid.appendChild(el("img", { src: c.preview })); bar.value = files.length; out.textContent = "Préparation des images : " + files.length + " / " + l.length + "…"; }); }); }, Promise.resolve())
+          .then(function () { bar.hidden = true; out.className = "hint bok"; out.textContent = "✓ " + files.length + " images prêtes (" + Math.round(files.reduce(function (a, c) { return a + c.size; }, 0) / 1e6) + " Mo) · glisse-les pour changer l'ordre après « Continuer »."; go.disabled = false; }, function (e) { bar.hidden = true; out.className = "hint berr"; out.textContent = e.message; });
       });
       var go = el("button", { type: "button", class: "btn primary", text: "Continuer", disabled: true, on: { click: function () {
         if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter au video club."; return; }
         if (!files.length) return;
-        go.disabled = true; out.textContent = "Envoi des images…";
+        go.disabled = true; out.className = "hint bwait"; out.textContent = "Envoi des images chez Amazon…"; bar.hidden = false; bar.max = files.length; bar.value = 0;
         var id = Date.now().toString(36), dir = imgDir(), urls = files.map(function (c, i) { return imgPut(String(i + 1).padStart(3, "0") + ".webp", c.base64, c.preview, dir); });
+        var tickI = setInterval(function () { var left = Math.min(files.length, imgUps.length); bar.value = files.length - left; out.textContent = "Envoi des images chez Amazon : " + (files.length - left) + " / " + files.length + "…"; }, 400);
         var guess = String(names[0] || "").replace(/\.[a-z0-9]+$/i, "").replace(/[\s_.-]*\d+$/, "").replace(/[_]+/g, " ").trim() || "Images";
         var it = { key: "i" + id, kind: "images", title: guess, dops: [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "" };
         libSave([it]).then(function () { delete it._files; return bibLoad(true); }).then(function (d) {
-          data = d; draw(); var f = filmOf(it.key); out.textContent = "Création du lien de partage…";
+          clearInterval(tickI); bar.value = bar.max; data = d; draw(); var f = filmOf(it.key); out.textContent = "✓ " + files.length + " images enregistrées · création du lien de partage…";
           shareCreate(f ? [f] : []).catch(function () {}).then(function () { mo.remove(); if (f) libEdit(f); });
-        }, function (e) { go.disabled = false; out.textContent = "Pas enregistré : " + e.message; });
+        }, function (e) { clearInterval(tickI); bar.hidden = true; go.disabled = false; out.className = "hint berr"; out.textContent = "Pas enregistré : " + e.message; });
       } } });
-      var mo = modal("Ajouter une suite d'images", [el("span", { class: "label", text: "Images (dans l'ordre des noms de fichiers) ; titre, crédits et vignette juste après" }), fin, grid, out, el("div", { class: "fwbtns" }, [go])]);
+      var mo = modal("Ajouter une suite d'images", [el("span", { class: "label", text: "Images (dans l'ordre des noms de fichiers) ; titre, crédits et vignette juste après" }), fin, grid, bar, out, el("div", { class: "fwbtns" }, [go])]);
     }
     undoReset(); drawBand();
   }
