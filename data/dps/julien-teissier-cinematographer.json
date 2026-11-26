@@ -5,44 +5,114 @@
   "bundle": "https://kinou.slateapp.com/bundles/ee6ce9ea-e8f9-11f1-952e-02ffedfede17",
   "open": 11521,
   "overrides": {
+    "8441": {
+      "title": "Louis Vuitton x Women's Day"
+    },
+    "8443": {
+      "title": "Mini"
+    },
+    "8446": {
+      "title": "Balmain"
+    },
+    "8448": {
+      "title": "Dassault"
+    },
+    "8451": {
+      "title": "Louis Vuitton x Bradley Cooper "
+    },
     "8452": {
       "zoom": 1.13,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Vogue x Mutaz Barshim"
+    },
+    "8453": {
+      "title": "GQ x Nicolas Huchard"
+    },
+    "8454": {
+      "title": "Avengers Campus x Disneyland Paris"
+    },
+    "8455": {
+      "title": "Balmain"
+    },
+    "8456": {
+      "title": "GQ - Aya Nakamura"
+    },
+    "8457": {
+      "title": "Vogue x Jordan"
+    },
+    "8458": {
+      "title": "Mini Countryman"
+    },
+    "8462": {
+      "title": "Balmain"
     },
     "8469": {
       "zoom": 1.36,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Paulette_n48"
     },
     "8485": {
       "zoom": 2.15,
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Harper's bazaar x Chanel"
+    },
+    "8486": {
+      "title": "Dior Christmas Jewels"
+    },
+    "8487": {
+      "title": "Louis Vuitton x Zendaya"
+    },
+    "8523": {
+      "title": "Mini x Canonbury"
     },
     "8524": {
-      "zoom": 1.36
+      "zoom": 1.36,
+      "title": "YSL - Halloween"
+    },
+    "8526": {
+      "title": "Gor Tex x Adidas"
     },
     "8538": {
-      "zoom": 1.32
+      "zoom": 1.32,
+      "title": "Anthony Garçon"
     },
     "8541": {
       "zoom": 1.36,
       "zoomThumb": true
     },
     "9196": {
-      "zoom": 1.09
+      "zoom": 1.09,
+      "title": "Odissi"
     },
     "9371": {
       "zoom": 1.14,
       "zoomPos": "50.9% 0%",
-      "zoomThumb": true
+      "zoomThumb": true,
+      "title": "Just Another Tuesday"
+    },
+    "10594": {
+      "title": "Boucheron"
+    },
+    "10596": {
+      "title": "L'Oréal - Infallible Powder"
+    },
+    "10600": {
+      "title": "Bourjois - Little Round Pot Blush"
     },
     "10651": {
-      "zoom": 1.33
+      "zoom": 1.33,
+      "title": "Tory Burch - Essence of Dreams Divine Moon x Fragrance Campaign"
     },
     "10652": {
-      "zoom": 1.34
+      "zoom": 1.34,
+      "title": "Tory Burch - Essence of Dreams x Fragrance Collection"
+    },
+    "10918": {
+      "title": "Printemps x Spread the Love"
     },
     "10919": {
-      "zoom": 1.1
+      "zoom": 1.1,
+      "title": "Gunther - L'île des Vents"
     },
     "11521": {
       "sub": "Eva VIK\nS7NDROM"
