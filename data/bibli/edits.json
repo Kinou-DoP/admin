@@ -811,6 +811,10 @@
     },
     "s5600": {
       "img": "https://d3toxii6rvamjf.cloudfront.net/depot/jc2qf99m7yaqrnpe78fu/vignette.webp",
+      "snip": {
+        "s": 6.755,
+        "d": 1.609
+      },
       "thumbT": 8.379,
       "hist": {
         "img": [
