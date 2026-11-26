@@ -797,6 +797,10 @@
     },
     "s7173": {
       "img": "https://d3toxii6rvamjf.cloudfront.net/depot/2b4nrmkvvsgyy3pdpdxq/vignette.webp",
+      "snip": {
+        "s": 0.883,
+        "d": 1.437
+      },
       "thumbT": 2.17,
       "hist": {
         "img": [
