@@ -242,26 +242,51 @@
       else if (onFilm && has(e, "text/x-kinou-film")) { e.preventDefault(); onFilm(e.dataTransfer.getData("text/x-kinou-film"), at); }
     });
   }
-  // Recherche dans le video club (Gus 26/11) : panneau à droite, on tape, on clique un film pour l'ajouter ou on le glisse à sa place
-  // dans la liste. pick(film) ; le panneau reste ouvert pour en ajouter plusieurs.
+  // Recherche dans le video club (Gus 26/11) : fenêtre au centre, mêmes suggestions et filtres que le video club (chef op, réal, prod, client,
+  // type, catégorie) ; clic = ajouter (la fenêtre reste ouverte pour en ajouter plusieurs), ou glisser un film vers la liste derrière.
+  // Se ferme avec « Fermer », Échap ou un clic sur le fond.
   function bibPicker(title, pick) {
-    var old = document.querySelector(".bpickp"); if (old) old.remove();
-    var inp = el("input", { type: "text", placeholder: "Titre, réal, prod, chef op…" }), list = el("div", { class: "bpl" }), info = el("p", { class: "hint", text: "Chargement du video club…" });
-    var box = el("div", { class: "bpickp" }, [el("div", { class: "bph" }, [el("span", { class: "label", text: title || "Rechercher dans le video club" }), el("button", { type: "button", class: "xbtn", text: "×", title: "Fermer", on: { click: function () { box.remove(); } } })]), inp, info, list]);
-    document.body.appendChild(box);
-    function draw(d) {
-      var words = bnrm(inp.value).split(/\s+/).filter(Boolean), l = d.films.filter(function (f) { return words.every(function (w) { return f.hay.indexOf(w) > -1; }); }).slice(0, 40);
-      list.textContent = ""; info.textContent = l.length ? (words.length ? "" : "Les plus récents · ") + "clique pour ajouter, ou glisse vers la liste" : "Aucun film";
+    var old = document.querySelector(".bpickm"); if (old) old.remove();
+    var chips = [], inp = el("input", { type: "search", class: "find", placeholder: "Chef op, réal, prod, client, type, catégorie, titre…", autocomplete: "off" }), sugBox = el("div", { class: "bibsug", hidden: true }), chipsBox = el("div", { class: "bibchips" });
+    var list = el("div", { class: "bpl" }), info = el("p", { class: "hint", text: "Chargement du video club…" }), data = null, si = -1;
+    var ov = el("div", { class: "bmodal bpickm" }), box = el("div", { class: "bmbox" }, [el("span", { class: "label", text: title || "Rechercher dans le video club" }), el("div", { class: "bpwrap2" }, [inp, sugBox]), chipsBox, info, list,
+      el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })])]);
+    function close() { document.removeEventListener("keydown", esc, true); ov.remove(); }
+    function esc(e) { if (e.key === "Escape") { e.stopPropagation(); close(); } }
+    document.addEventListener("keydown", esc, true);
+    ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+    ov.appendChild(box); document.body.appendChild(ov);
+    function shown() { var words = bnrm(inp.value).split(/\s+/).filter(Boolean); return data.films.filter(function (f) { return chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); }); }
+    function suggest() {
+      sugBox.textContent = ""; si = -1; var v = bnrm(inp.value); if (!data || !v) { sugBox.hidden = true; return; }
+      var words = v.split(/\s+/), per = {};
+      var hits = data.sug.filter(function (x) { var n = bnrm(x.value); return words.every(function (w) { return n.indexOf(w) > -1; }) && !chips.some(function (c) { return c.type === x.type && bnrm(c.value) === bnrm(x.value); }); })
+        .sort(function (a, b) { return BIB_ORDER.indexOf(a.type) - BIB_ORDER.indexOf(b.type) || b.n - a.n; }).filter(function (x) { per[x.type] = (per[x.type] || 0) + 1; return per[x.type] <= 4; }).slice(0, 12);
+      hits.forEach(function (x) { sugBox.appendChild(el("button", { type: "button", on: { mousedown: function (e) { e.preventDefault(); }, click: function () { chips.push({ type: x.type, value: x.value }); inp.value = ""; sugBox.hidden = true; draw(); inp.focus(); } } },
+        [el("span", { class: "bst t-" + x.type, text: BIB_T[x.type] }), el("span", { text: x.value }), el("span", { class: "bsn", text: x.n + " film" + (x.n > 1 ? "s" : "") })])); });
+      sugBox.hidden = !hits.length;
+    }
+    function draw() {
+      chipsBox.textContent = ""; chips.forEach(function (c, i) { chipsBox.appendChild(el("button", { type: "button", class: "bchip", title: "Retirer ce filtre", on: { click: function () { chips.splice(i, 1); draw(); } } }, [el("span", { class: "bst t-" + c.type, text: BIB_T[c.type] }), c.value + " ×"])); });
+      if (!data) return; var all = shown(), l = all.slice(0, 60);
+      list.textContent = ""; info.textContent = all.length ? all.length + " film" + (all.length > 1 ? "s" : "") + " · clique pour ajouter, ou glisse vers la liste" : "Aucun film";
       l.forEach(function (f) {
         var th = el("i", { class: "bpth" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
-        var r = el("div", { class: "bpr", draggable: "true", title: "Cliquer pour ajouter · glisser pour placer" }, [th, el("span", { class: "bpt" }, [f.title || "(sans titre)", el("small", { text: [f.dir, f.dops.join(" & ")].filter(Boolean).join(" · ") })])]);
+        var r = el("div", { class: "bpr", draggable: "true", title: "Cliquer pour ajouter · glisser pour placer" }, [th, el("span", { class: "bpt" }, [f.title || "(sans titre)", el("small", { text: [bibDirs(f).join(", "), f.dops.join(" & ")].filter(Boolean).join(" · ") })])]);
         r.addEventListener("click", function () { pick(f); r.classList.add("bpdone"); });
         r.addEventListener("dragstart", function (e) { e.dataTransfer.effectAllowed = "copy"; e.dataTransfer.setData("text/x-kinou-film", f.key); });
         list.appendChild(r);
       });
     }
-    bibLoad().then(function (d) { draw(d); inp.addEventListener("input", function () { draw(d); }); inp.focus(); }, function (e) { info.textContent = "Video club indisponible : " + e.message; });
-    return box;
+    inp.addEventListener("input", function () { suggest(); draw(); });
+    inp.addEventListener("keydown", function (e) {
+      var b = sugBox.querySelectorAll("button");
+      if ((e.key === "ArrowDown" || e.key === "ArrowUp") && b.length) { e.preventDefault(); si = (si + (e.key === "ArrowDown" ? 1 : -1) + b.length) % b.length; b.forEach(function (x, k) { x.classList.toggle("on", k === si); }); }
+      else if (e.key === "Enter" && si > -1 && b[si]) { e.preventDefault(); b[si].click(); }
+      else if (e.key === "Backspace" && !inp.value && chips.length) { chips.pop(); draw(); }
+    });
+    bibLoad().then(function (d) { data = d; draw(); inp.focus(); }, function (e) { info.textContent = "Video club indisponible : " + e.message; });
+    return ov;
   }
   function extrasCtl(get, set, label, ctx) {
     var box = el("div", { class: "extras" }), openLay = -1; // réglage de colonnes ouvert (reste ouvert après un choix)
@@ -319,10 +344,11 @@
         lay.appendChild(el("p", { class: "hint", text: own ? "Les vidéos suivantes suivent ce réglage, jusqu'à des stills ou une vidéo qui a le sien." : eff ? "Suit le réglage d'une vidéo au-dessus (" + eff.d + " col. ordinateur, " + eff.m + " col. téléphone). Choisir ici = nouveau réglage à partir de cette vidéo." : "Par défaut : en grand, une par ligne." }));
         if (own) lay.appendChild(el("button", { type: "button", class: "btn ghost", text: "Retirer ce réglage", on: { click: function () { delete x.cols; save(list); } } }));
       }
+      var eye = ctx ? el("button", { type: "button", class: "xbtn xeye" + (xHidden(x, ctx) ? " on" : ""), text: xHidden(x, ctx) ? "⊘" : "◉", title: xHidden(x, ctx) ? "Masquée sur cette page : cliquer pour la montrer de nouveau (visible ailleurs)" : "Masquer sur cette page seulement (visible ailleurs)", on: { click: function () { xToggleHide(x, ctx); save(list); } } }) : null;
       var tag = el("span", { class: "xkind", text: kind(x) });
       if (!x.stills && !x.full && !x.video) tag.title = "Pas d'extrait sur Slate : le film complet est ajouté par le robot GitHub environ 1 min après la publication.";
       if (x.img || (x.stills && x.stills[0])) tag.style.backgroundImage = 'url("' + (x.img || x.stills[0]) + '")';
-      var rowEl = el("div", { class: "xrow", "data-xi": String(i) }, [el("div", { class: "xline" }, [xGrip(null, i), tag, input, lbtn || "", up, down, del]), lay || "", st]);
+      var rowEl = el("div", { class: "xrow" + (ctx && xHidden(x, ctx) ? " xhid" : ""), "data-xi": String(i) }, [el("div", { class: "xline" }, [xGrip(null, i), tag, input, lbtn || "", eye || "", up, down, del]), lay || "", st]);
       rowEl.querySelector(".xgrip").replaceWith(xGrip(rowEl, i));
       return rowEl;
     }

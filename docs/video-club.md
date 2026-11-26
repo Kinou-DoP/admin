@@ -110,4 +110,12 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   l'encodage, chacune reçoit les autres en lignes `auto` sous elle (masquables).
 - **Fenêtres** : un clic-glissé qui finit sur le fond ne ferme plus rien (règle globale en tête d'`admin.js`, `clDown` / `clUp`).
 - **Bouton « edit »** des cartes : sous la vidéo, blanc, collé à droite de la ligne de recadrage (`.zoom .vcedit`).
+- **Vidéos importées ensemble = liées** (Gus 26/11) : `grp` + `gi` (rang) dans library.json ; `bibGroups` (bibli-outils.js) donne à chacune, à chaque lecture,
+  toutes celles du lot sous elle dans le même ordre (sa propre ligne `self`, visible dans la fenêtre seulement) ; lignes `auto` jusqu'à une modification
+  à la main (alors sans `auto`, enregistrées dans edits.json). Le site fait pareil (`vcGroup` d'app.js, lit library.json). Un film du lot ajouté plus tard à
+  la page d'un chef op montre donc ses frères.
+- **Sous le film** : images du projet = un élément comme les autres (poignée, œil, `ipos` = place parmi les lignes, `ihide` = lieux où elles sont
+  masquées). Œil aussi sur les cartes des pages (`extrasCtl(…, ctx)`) et dans les retouches d'une bande (lieu « band »). Recherche = fenêtre au centre
+  avec les mêmes suggestions / filtres que le video club (`bibPicker`). Ligne d'ajout : 🔍 | lien | +.
+- Classe `.bst` = étiquette de suggestion ; les cellules de stills sont `.bstl` (le conflit agrandissait les suggestions du video club).
 

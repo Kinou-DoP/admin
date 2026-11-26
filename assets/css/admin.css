@@ -944,7 +944,8 @@ body.bdragging, body.bdragging * { cursor: grabbing !important; user-select: non
 .bplay { margin-top: 26px; }
 .bplay video { display: block; width: 100%; max-height: 52vh; background: #000; margin-bottom: 10px; }
 .bexs { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
-.bit.bex { grid-template-columns: 72px 1fr 22px 22px; cursor: default; }
+.bit.bex { display: flex; align-items: center; gap: 8px; cursor: default; }
+.bit.bex .bithumb { flex: none; width: 72px; } .bit.bex .bitt { flex: 1; } .bit.bex .bx { flex: none; position: static; opacity: 1; }
 .bx[disabled] { opacity: .2; cursor: default; }
 .bfoot .btn { padding: 8px 10px; }
 .blinkline { font-size: 12px; }
@@ -1124,10 +1125,10 @@ progress.bupprog { display: block; width: 100%; height: 6px; margin: 10px 0 4px;
 .bimptabs button small { opacity: .6; }
 .bimpstat { margin: 0; font-size: 13px; }
 .bstgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 6px; margin: 6px 0 12px; }
-.bst { position: relative; aspect-ratio: 16 / 9; background: #111 center / cover no-repeat; border-radius: 3px; cursor: grab; }
-.bst.drag { opacity: .35; } .bst.over { outline: 2px solid #d9822b; }
-.bst .bx { position: absolute; top: 2px; right: 2px; padding: 0 5px; line-height: 16px; font-size: 12px; background: rgba(0,0,0,.6); opacity: 0; }
-.bst:hover .bx { opacity: 1; }
+.bstl { position: relative; aspect-ratio: 16 / 9; background: #111 center / cover no-repeat; border-radius: 3px; cursor: grab; }
+.bstl.drag { opacity: .35; } .bstl.over { outline: 2px solid #d9822b; }
+.bstl .bx { position: absolute; top: 2px; right: 2px; padding: 0 5px; line-height: 16px; font-size: 12px; background: rgba(0,0,0,.6); opacity: 0; }
+.bstl:hover .bx { opacity: 1; }
 .bupbtn.over { outline: 2px dashed #d9822b; }
 
 /* Avancement des imports (Gus 26/11 : « pas clair quand c'est en cours d'encodage et quand c'est fini ») */
@@ -1145,8 +1146,8 @@ progress.bupprog { display: block; width: 100%; height: 6px; margin: 10px 0 4px;
 @keyframes bpulse { 50% { opacity: .55; } }
 
 /* Recadrage des stills (Gus 26/11) : cellules recadrées, bouton ▣, fenêtre de recadrage */
-.bst { overflow: hidden; aspect-ratio: 16 / 9; background: #111; }
-.bst .bsi, .bcrop .bsi, .bsc .bsi { position: absolute; inset: 0; background: center / cover no-repeat; pointer-events: none; }
+.bstl { overflow: hidden; aspect-ratio: 16 / 9; background: #111; }
+.bstl .bsi, .bcrop .bsi, .bsc .bsi { position: absolute; inset: 0; background: center / cover no-repeat; pointer-events: none; }
 .bexh { display: flex; align-items: center; gap: 8px; } .bexh .label { flex: 1; }
 .bx.bcropb { opacity: 1; position: static; font-size: 13px; } .bx.bcropb.on { color: #d9822b; }
 .bcropw { z-index: 50; } .bcropw .bmbox { width: min(640px, 100%); }
@@ -1175,9 +1176,15 @@ input.bcn { width: 90px; }
 .bit.bex.xhid { opacity: .45; }
 .bx.bhide { opacity: 1; position: static; font-size: 13px; } .bx.bhide.on { color: #ff7b72; }
 .extras .xbtn.xfind { width: auto; padding: 0 8px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
-.bpickp { position: fixed; z-index: 60; top: 70px; right: 16px; width: min(360px, calc(100vw - 32px)); max-height: calc(100vh - 100px); display: flex; flex-direction: column; gap: 8px; padding: 14px; background: #101010; border: 1px solid var(--faint); box-shadow: 0 12px 40px rgba(0,0,0,.6); }
-.bpickp .bph { display: flex; align-items: center; justify-content: space-between; } .bpickp .bph .xbtn { width: 24px; height: 24px; border: 0; background: none; color: var(--dim); font-size: 18px; cursor: pointer; }
-.bpickp input { width: 100%; } .bpickp .bpl { overflow-y: auto; display: flex; flex-direction: column; gap: 4px; }
+.bpickm { z-index: 55; } .bpickm .bmbox { width: min(720px, 100%); }
+.bpwrap2 { position: relative; } .bpwrap2 input { width: 100% !important; }
+.bpl { max-height: 52vh; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; margin-top: 8px; }
 .bpr { display: flex; align-items: center; gap: 10px; padding: 4px; cursor: pointer; } .bpr:hover { background: var(--soft); } .bpr.bpdone { opacity: .45; }
 .bpr .bpth { flex: none; width: 64px; aspect-ratio: 16 / 9; background: #1a1a1a center / cover no-repeat; }
 .bpr .bpt { font-size: 13px; line-height: 1.3; min-width: 0; } .bpr .bpt small { display: block; color: var(--dim); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Ligne d'ajout sous le film : 🔍 | lien | + ; bouton « stills de l'ordinateur » sur toute la largeur */
+.exrow { display: flex; align-items: center; gap: 8px; } .exrow .grow { flex: 1; min-width: 0; }
+.btn.bplus { flex: none; min-width: 38px; padding-left: 10px; padding-right: 10px; font-size: 16px; line-height: 1; }
+.bexs ~ .tlrow .bupbtn, .tlrow .bupbtn { flex: 1 1 100%; width: 100%; text-align: center; }
+.extras .xbtn.xeye.on { color: #ff7b72; } .extras .xrow.xhid .xline > :not(.xbtn):not(.xgrip) { opacity: .45; }

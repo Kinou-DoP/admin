@@ -652,7 +652,7 @@
     // Sous le film dans le lecteur : stills et autres vidéos (liens Slate), enregistrés avec la fiche.
     var extras = extrasCtl(function () { return state.overrides[c.slate] || {}; }, function (list) {
       setOverride(c, "extras", list.length ? list : undefined); setOverride(c, "stills"); setOverride(c, "stillsLink"); sync();
-    }, "Lien Slate de stills ou d'une vidéo, à afficher sous le film");
+    }, "Lien Slate de stills ou d'une vidéo, ou lien d'une de nos bandes, à afficher sous le film", state === fic ? "fiction" : state === spot ? "spotlight" : state.slug);
     title.addEventListener("input", function () { setOverride(c, "title", title.value); sync(); });
     sub.addEventListener("input", function () { vcSetCredits(c, sub.value); sync(); });
     hide.addEventListener("click", function () { setOverride(c, "hidden", (state.overrides[c.slate] || {}).hidden ? undefined : true); sync(); touch(); });
@@ -668,8 +668,9 @@
     }
     var zoom = mkZoom();
     // Bouton « edit » (Gus 26/11) : sous la vidéo, sur fond blanc, collé à droite de la ligne de recadrage.
-    var editB = vcEditBtn(c, function () { paintThumb(); var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; zoom.appendChild(editB); if (document.activeElement !== sub) sub.value = vcCredits(c).text; sync(); });
-    zoom.appendChild(editB);
+    var editB = vcEditBtn(c, function () { paintThumb(); var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; zoomIn(zoom).appendChild(editB); if (document.activeElement !== sub) sub.value = vcCredits(c).text; sync(); });
+    function zoomIn(z) { return z.classList.contains("zoom") ? z : z.querySelector(".zoom") || z; } // le bouton va dans la ligne « Recadrage », pas dans la case « aussi sur la vignette »
+    zoomIn(zoom).appendChild(editB);
     card.appendChild(thumb); card.appendChild(zoom);
     if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(awardsCtl(c));

@@ -218,6 +218,7 @@
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
         onChange: function () {
+          if (it.extras && base.extras && JSON.stringify(it.extras) !== JSON.stringify(base.extras)) it.extras.forEach(function (x) { delete x.auto; }); // lignes modifiées à la main : plus recalculées
           var e = diff(), keep = f._orig;
           if (!keep) { f._orig = {}; BIB_EK.forEach(function (k) { f._orig[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); }
           BIB_EK.forEach(function (k) { var v = k === "snip" && it._snipTmp ? it._snipSaved : it[k]; f[k] = v === undefined ? undefined : JSON.parse(JSON.stringify(v)); });
@@ -235,7 +236,7 @@
     function sharePayload(it, dl) {
       var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist" && k !== "pend" && k !== "pages" && k !== "hay" && k !== "libEdited") c[k] = it[k]; }); snipOk(it, c);
       c.dops = (c.dops || []).filter(Boolean);
-      if (c.extras) { c.extras = c.extras.filter(function (x) { return !xHidden(x, "club"); }).map(function (x) { x = Object.assign({}, x); delete x.hide; return x; }); if (!c.extras.length) delete c.extras; }
+      if (c.extras) { c.extras = c.extras.filter(function (x) { return !xHidden(x, "club") && !x.self; }).map(function (x) { x = Object.assign({}, x); delete x.hide; return x; }); if (!c.extras.length) delete c.extras; }
       return { single: true, title: c.title || "", artists: [], cols: 1, hide: {}, download: !!dl, items: [c], at: new Date().toISOString() };
     }
     function shareCreate(fl) { // un lien pour chaque film qui n'en a pas encore : un commit (pages chiffrées) + la liste des codes (notes)
@@ -801,13 +802,14 @@
         function mark() { it.edited = true; chg(); }
         function draw() {
           box.textContent = ""; it.dops = it.dops || [];
-          it.dops.forEach(function (n, j) {
+          (it.dops.length ? it.dops.slice() : [""]).forEach(function (n, j) { // aucune ligne : une case vide à remplir d'emblée (rien n'est enregistré tant qu'elle est vide)
+            if (j >= it.dops.length) { var ghost = true; }
             var ni = el("input", { type: "text", value: n, placeholder: "Nom", list: "bibdopnames" }), ri = el("input", { type: "text", value: (it.roles || {})[n] || "", placeholder: "Cinematographer", list: "bibroles" });
-            ni.addEventListener("input", function () { var old = it.dops[j], r = it.roles && it.roles[old]; if (r) delete it.roles[old]; it.dops[j] = ni.value.trim(); if (r && it.dops[j]) it.roles[it.dops[j]] = r; mark(); });
-            ri.addEventListener("input", function () { var v = ri.value.trim(), k = it.dops[j]; it.roles = it.roles || {}; if (v && !/^(cinematographer|dop|d\.?o\.?p\.?|director of photography|chef op[ée]rat(eur|rice))$/i.test(v)) it.roles[k] = v; else delete it.roles[k]; if (!Object.keys(it.roles).length) delete it.roles; mark(); });
-            box.appendChild(el("div", { class: "bcrow" }, [ni, ri, el("button", { type: "button", class: "bx", text: "×", title: "Retirer", on: { click: function () { if (it.roles) delete it.roles[it.dops[j]]; it.dops.splice(j, 1); mark(); draw(); } } })]));
+            ni.addEventListener("input", function () { if (j >= it.dops.length) it.dops[j] = ""; var old = it.dops[j], r = it.roles && it.roles[old]; if (r) delete it.roles[old]; it.dops[j] = ni.value.trim(); if (r && it.dops[j]) it.roles[it.dops[j]] = r; mark(); });
+            ri.addEventListener("input", function () { if (j >= it.dops.length) it.dops[j] = ""; var v = ri.value.trim(), k = it.dops[j]; it.roles = it.roles || {}; if (v && !/^(cinematographer|dop|d\.?o\.?p\.?|director of photography|chef op[ée]rat(eur|rice))$/i.test(v)) it.roles[k] = v; else delete it.roles[k]; if (!Object.keys(it.roles).length) delete it.roles; mark(); });
+            box.appendChild(el("div", { class: "bcrow" }, [ni, ri, el("button", { type: "button", class: "bx", text: "×", title: "Retirer", on: { click: function () { if (j >= it.dops.length) return; if (it.roles) delete it.roles[it.dops[j]]; it.dops.splice(j, 1); mark(); draw(); } } })]));
           });
-          box.appendChild(el("button", { type: "button", class: "blink", text: "+ Ajouter un chef op ou un rôle", on: { click: function () { it.dops.push(""); draw(); var l = box.querySelectorAll(".bcrow input"); if (l.length) l[l.length - 2].focus(); } } }));
+          box.appendChild(el("button", { type: "button", class: "blink", text: "+ Ajouter un chef op ou un rôle", on: { click: function () { if (!it.dops.length) it.dops.push(""); it.dops.push(""); draw(); var l = box.querySelectorAll(".bcrow input"); if (l.length) l[l.length - 2].focus(); } } }));
           var dn = document.getElementById("bibdopnames"); if (dn) dn.remove();
           if (data) document.body.appendChild(el("datalist", { id: "bibdopnames" }, data.sug.filter(function (x) { return x.type === "dop"; }).sort(function (a, b) { return b.n - a.n; }).map(function (x) { return el("option", { value: x.value }); })));
           if (!document.getElementById("bibroles")) document.body.appendChild(el("datalist", { id: "bibroles" }, ["Cinematographer", "Camera operator", "B camera operator", "2nd unit DoP", "Underwater DoP", "Additional photography", "Steadicam operator", "Gaffer", "Colorist"].map(function (r) { return el("option", { value: r }); })));
@@ -1131,29 +1133,52 @@
       if (lib && it.pend) { if (it.pend.thumb) grabWait(it.pend.thumb); else if (it.pend.snip) snipWait(it.pend.snip); } // fenêtre rouverte pendant une demande au robot
       // Sous le film (comme sur les pages des chefs op) : galeries de stills et autres vidéos, liens Slate « work » ou shots.re.
       var exBox = el("div", { class: "bexs" }), exIn = el("input", { type: "text", placeholder: "Lien Slate (stills, vidéo, shots.re) ou lien d'une de nos bandes / d'un film partagé" }), exOut = el("p", { class: "hint" });
+      // Tout ce qui est « sous le film » dans un seul ordre : les images du projet (si le projet n'a pas de film) puis les lignes `extras` ; les
+      // images se placent entre les lignes avec `ipos`. Chaque élément a une poignée ⠿ (déplacer) et un œil (masquer ici seulement).
+      var HC = lib ? CTX : "band", HCN = lib ? CTXN : "cette bande";
+      function hasImgs() { return !it.full && !it.video && it.images && it.images.length; }
+      function combined() {
+        var l = (it.extras || []).map(function (x, j) { return { k: "x", j: j }; });
+        if (hasImgs()) l.splice(Math.max(0, Math.min(it.ipos || 0, l.length)), 0, { k: "img" });
+        return l;
+      }
+      function eyeBtn(hid, toggle) {
+        return el("button", { type: "button", class: "bx bhide" + (hid ? " on" : ""), text: hid ? "⊘" : "◉", title: hid ? "Masqué ici (" + HCN + ") : cliquer pour le montrer de nouveau. Il reste visible ailleurs." : "Masquer ici (" + HCN + ") seulement : il reste visible ailleurs", on: { click: toggle } });
+      }
       function drawEx() {
         exBox.textContent = "";
-        // Suite d'images (sans film) : ses images dans l'ordre, à déplacer en glissant (Gus 26/11).
-        if (!it.full && !it.video && it.images && it.images.length) {
-          exBox.appendChild(el("div", { class: "bexh" }, [el("span", { class: "label", text: "Images du projet (" + it.images.length + ") · glisser pour changer l'ordre, × pour retirer" }),
-            cropBtn(it.images, "Recadrer les images du projet", function () { return it.scrop; }, function (c) { if (c) it.scrop = c; else delete it.scrop; })]));
-          exBox.appendChild(stillGrid(it, "images", it.scrop));
-        }
-        (it.extras || []).forEach(function (x, j) {
-          var th = el("div", { class: "bithumb" }), u = x.img || (x.stills && x.stills[0]); if (u) th.appendChild(el("i", { style: 'background-image:url("' + imgShow(u) + '")' }));
-          var hid = lib && xHidden(x, CTX), w = el("div", { class: "bxw", "data-xi": String(j) });
-          w.appendChild(el("div", { class: "bit bex" + (hid ? " xhid" : "") }, [xGrip(w, j), th, el("span", { class: "bitt" }, [x.title || x.link || "", el("small", { text: (x.stills ? x.stills.length + " images" : "vidéo") + (hid ? " · masquée ici" : "") })]),
-            x.stills && x.stills.length ? cropBtn(x.stills, "Recadrer : " + (x.title || "stills"), function () { return x.crop; }, function (c) { if (c) x.crop = c; else delete x.crop; }) : null,
-            lib ? el("button", { type: "button", class: "bx bhide" + (hid ? " on" : ""), text: hid ? "⊘" : "◉", title: hid ? "Masquée ici (" + CTXN + ") : cliquer pour la montrer de nouveau. Elle reste visible ailleurs." : "Masquer ici (" + CTXN + ") seulement : elle reste visible ailleurs", on: { click: function () { xToggleHide(x, CTX); it.edited = true; chg(); drawEx(); } } }) : null,
-            el("button", { type: "button", class: "bx", text: "↑", title: "Monter", disabled: j ? null : true, on: { click: function () { var a = it.extras.splice(j, 1)[0]; it.extras.splice(j - 1, 0, a); chg(); drawEx(); } } }),
+        var all = combined();
+        all.forEach(function (c, n) {
+          var w = el("div", { class: "bxw", "data-xi": String(n) });
+          if (c.k === "img") { // images du projet
+            var hi = (it.ihide || []).indexOf(HC) > -1;
+            w.appendChild(el("div", { class: "bit bex" + (hi ? " xhid" : "") }, [xGrip(w, n), el("div", { class: "bithumb" }, [el("i", { style: 'background-image:url("' + imgShow(it.img || it.images[0]) + '")' })]),
+              el("span", { class: "bitt" }, ["Images du projet", el("small", { text: it.images.length + " images" + (hi ? " · masquées ici" : "") })]),
+              cropBtn(it.images, "Recadrer les images du projet", function () { return it.scrop; }, function (cc) { if (cc) it.scrop = cc; else delete it.scrop; }),
+              eyeBtn(hi, function () { var l = (it.ihide || []).slice(), i = l.indexOf(HC); if (i > -1) l.splice(i, 1); else l.push(HC); if (l.length) it.ihide = l; else delete it.ihide; it.edited = true; chg(); drawEx(); })]));
+            w.appendChild(stillGrid(it, "images", it.scrop));
+            exBox.appendChild(w); return;
+          }
+          var x = it.extras[c.j], j = c.j, th = el("div", { class: "bithumb" }), u = x.img || (x.stills && x.stills[0]); if (u) th.appendChild(el("i", { style: 'background-image:url("' + imgShow(u) + '")' }));
+          var hid = xHidden(x, HC);
+          w.appendChild(el("div", { class: "bit bex" + (hid || x.self ? " xhid" : "") }, [xGrip(w, n), th, el("span", { class: "bitt" }, [x.title || x.link || "", el("small", { text: (x.stills ? x.stills.length + " images" : "vidéo") + (x.self ? " · cette vidéo (pas montrée sous elle)" : "") + (hid ? " · masquée ici" : "") })]),
+            x.stills && x.stills.length ? cropBtn(x.stills, "Recadrer : " + (x.title || "stills"), function () { return x.crop; }, function (cc) { if (cc) x.crop = cc; else delete x.crop; }) : null,
+            eyeBtn(hid, function () { xToggleHide(x, HC); it.edited = true; chg(); drawEx(); }),
             el("button", { type: "button", class: "bx", text: "×", title: lib ? "Supprimer partout (pour la cacher seulement ici : ◉)" : "Retirer de cette bande", on: { click: function () { it.extras.splice(j, 1); if (!it.extras.length) delete it.extras; chg(); drawEx(); } } })]));
           if (x.stills && x.stills.length) w.appendChild(stillGrid(x, "stills", x.crop));
           exBox.appendChild(w);
         });
       }
-      // Lignes déplaçables (poignée ⠿) et films déposés depuis la recherche.
-      xDropZone(exBox, function (from, to) { var a = it.extras.splice(from, 1)[0]; it.extras.splice(to, 0, a); it.edited = true; chg(); drawEx(); }, function (key, at) {
-        var f = filmByKey(key); if (!f) return; it.extras = it.extras || []; it.extras.splice(at, 0, extraFromFilm(f)); it.edited = true; chg(); drawEx();
+      // Lignes déplaçables (poignée ⠿, y compris les images du projet) et films déposés depuis la recherche.
+      function reorder(newAll) { // newAll : liste combinée dans le nouvel ordre
+        var ex = it.extras || [], out = [], pos = 0;
+        newAll.forEach(function (c, n) { if (c.k === "img") pos = n; else out.push(ex[c.j]); });
+        it.extras = out; if (hasImgs()) { if (pos) it.ipos = pos; else delete it.ipos; } if (!out.length) delete it.extras;
+        it.edited = true; chg(); drawEx();
+      }
+      xDropZone(exBox, function (from, to) { var l = combined(); l.splice(to, 0, l.splice(from, 1)[0]); reorder(l); }, function (key, at) {
+        var f = filmByKey(key); if (!f) return; var l = combined(), ex = it.extras = it.extras || []; ex.push(extraFromFilm(f));
+        l.splice(at, 0, { k: "x", j: ex.length - 1 }); reorder(l);
       });
       // Stills de l'ordinateur (Gus 26/11) : cliquer ou glisser des images sur le bouton → réduites (WebP) et envoyées chez Amazon (imgPut) ;
       // rangées dans un groupe « Stills » sous le film ; l'ordre de toutes les images se change en les glissant.
@@ -1173,7 +1198,7 @@
       function stillGrid(x, key, crop) { // images d'un groupe (x[key], « stills » par défaut) : glisser pour changer l'ordre, × pour retirer ; crop : recadrage montré
         key = key || "stills"; var g = el("div", { class: "bstgrid" }), from = -1, arr = x[key];
         arr.forEach(function (u, k) {
-          var c = el("div", { class: "bst", draggable: "true", title: "Glisser pour changer l'ordre" }, [el("i", { class: "bsi", style: 'background-image:url("' + imgShow(u) + '")' }),
+          var c = el("div", { class: "bstl", draggable: "true", title: "Glisser pour changer l'ordre" }, [el("i", { class: "bsi", style: 'background-image:url("' + imgShow(u) + '")' }),
             el("button", { type: "button", class: "bx", text: "×", title: "Retirer cette image", on: { click: function () { arr.splice(k, 1); it.edited = true; chg(); drawEx(); drawThumbs(); } } })]);
           var nc = scNorm(crop); if (scFor(nc, u)) scCell(c, nc, u);
           c.addEventListener("dragstart", function (e) { from = k; e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", "st"); c.classList.add("drag"); });
@@ -1191,12 +1216,12 @@
           cropWin(title, urls, get(), function (c) { set(c); it.edited = true; chg(); drawEx(); });
         } } });
       }
-      var exGo = el("button", { type: "button", class: "btn", text: "Ajouter", on: { click: function () {
+      var exGo = el("button", { type: "button", class: "btn bplus", title: "Ajouter ce lien sous le film", text: "+", on: { click: function () {
         var v = exIn.value.trim(); if (!v) return; exGo.disabled = true; exOut.textContent = (ourCode(v) ? "Lecture du lien" : "Lecture sur Slate") + slateWait("…");
         extrasFromLink(v).then(function (ns) { (it.extras = it.extras || []); ns.forEach(function (n) { it.extras.push(n); }); it.edited = true; exIn.value = ""; exOut.textContent = ns.length > 1 ? ns.length + " films ajoutés." : ""; exGo.disabled = false; chg(); drawEx(); },
           function (e) { exGo.disabled = false; exOut.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
       } } });
-      var exFind = el("button", { type: "button", class: "btn ghost", text: "🔍 Rechercher", title: "Chercher un film dans le video club et l'ajouter sous ce film", on: { click: function () {
+      var exFind = el("button", { type: "button", class: "btn ghost bplus", text: "🔍", title: "Chercher un film dans le video club et l'ajouter sous ce film", on: { click: function () {
         bibPicker("Ajouter sous le film", function (f) { it.extras = it.extras || []; it.extras.push(extraFromFilm(f)); it.edited = true; chg(); drawEx(); });
       } } });
       exIn.addEventListener("keydown", function (e) { if (e.key === "Enter") exGo.click(); });
@@ -1219,7 +1244,7 @@
           player ? null : upBtn("⤒ Importer une image", imgUp, "image", doImg), player ? null : imgUp,
           player ? null : histImgL, player ? null : histImg])]));
       box.appendChild(el("div", { class: "bmgrid" }, [
-        el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo, exFind]),
+        el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row exrow" }, [exFind, el("div", { class: "grow" }, [exIn]), exGo]),
           el("div", { class: "tlrow" }, [upBtn("⤒ Ajouter des stills de l'ordinateur", stUp, "image", addStills, true), stUp]), exOut]),
         el("div", {}, [el("span", { class: "label", text: "Prix et sélections" }), aw])]));
       // Remplacer la vidéo (Gus 23/11) : lien Slate d'une vidéo (page « work » ou shots.re) → nouveau film complet et extrait ;
@@ -1498,11 +1523,12 @@
       if (big.length) alert("Plus de 10 Go, pas envoyé : " + big.map(function (f) { return f.name; }).join(", "));
       if (!fl.length) return;
       var now = new Date().toISOString(), by = user && user.login || "", cur = 0;
+      var grp = fl.length > 1 ? "g" + Date.now().toString(36) : null; // vidéos importées ensemble = liées
       var g = fl.map(function (file, k) {
         var id = encId(), path = "data/encode/film-" + Date.now() + "-" + k + Math.random().toString(36).slice(2, 6) + ".json";
         var title = file.name.replace(/\.[a-z0-9]+$/i, "").replace(/[_]+/g, " ").replace(/\s+/g, " ").trim() || "Vidéo";
         return { file: file, id: id, path: path, local: URL.createObjectURL(file), up: 0, step: "attente",
-          it: { key: "e" + id, kind: "video", title: title, dops: [], cats: [], src: "upload", enc: { path: path, id: id, sending: true }, size: file.size, at: now, by: by } };
+          it: { key: "e" + id, kind: "video", title: title, dops: [], cats: [], src: "upload", grp: grp || undefined, gi: grp ? k : undefined, enc: { path: path, id: id, sending: true }, size: file.size, at: now, by: by } };
       });
       var hd = el("div", { class: "bimphead" }), tabs = el("div", { class: "btabs bimptabs" }), stat = el("p", { class: "bimpstat" }), bar = el("progress", { max: 1, value: 0, class: "bupprog" });
       hd.appendChild(tabs); hd.appendChild(stat); hd.appendChild(bar);
@@ -1549,13 +1575,7 @@
               var a = (js[0] || {}).answer; if (a) libPatch(filmOf(x.it.key), { snip: { s: sn.s, d: sn.d, v: a.video, vf: f.full } });
             }).catch(function () {});
           }
-          // Plusieurs vidéos importées ensemble : sous chacune, les autres (lignes « auto », masquables ; Gus 26/11).
-          var ready = g.filter(function (y) { return y.step === "fini" && filmOf(y.it.key) && filmOf(y.it.key).full; });
-          if (g.length > 1 && ready.length > 1) ready.forEach(function (y) {
-            var fy = filmOf(y.it.key); if ((fy.extras || []).some(function (e) { return !e.auto; })) return; // déjà réglé à la main
-            var ex = ready.filter(function (z) { return z !== y; }).map(function (z) { var n = extraFromFilm(filmOf(z.it.key)); n.auto = true; return n; });
-            libPatch(fy, { extras: ex });
-          });
+          var ready = g.filter(function (y) { return y.step === "fini"; });
           var m = hd.closest(".bmodal"); if (m && (g[cur] === x || ready.length > 1)) openTab(cur); // fenêtre ouverte : rouverte (version web, lignes sous le film)
         });
       }

@@ -12,7 +12,7 @@
   // a un), le fichier du dépôt public est illisible et son nom ne dit rien. L'original et la liste des bandes (avec les mots de
   // passe) sont dans le dépôt privé notes (bandes/<code>.json, bandes/index.json). Chiffrement : bandSeal (même code dans
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
-  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "images", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc", "pend", "scrop"];
+  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "images", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc", "pend", "scrop", "ipos", "ihide", "grp", "gi"];
   var BIB_SLATE = "bibli/slate.json"; // dépôt notes : tous les films de Slate (liste privée, 25/11)
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
@@ -65,6 +65,7 @@
       if (!o.awards && f.awards) o.awards = f.awards; // prix et sélections (une ligne chacun)
       if (!o.crop && f.crop) o.crop = f.crop; // recadrage réglé sur la page (point de départ dans les bandes)
       if (!o.snip && f.snip) o.snip = f.snip; // extrait d'un film envoyé depuis l'ordinateur (encodage, { s, d, v })
+      if (f.grp && !o.grp) { o.grp = f.grp; o.gi = f.gi || 0; } // vidéos importées ensemble
       if (f.enc && !o.full) o.enc = f.enc; // film envoyé depuis l'ordinateur, encodage pas encore terminé
       (f.dops || []).forEach(function (d) { d = rcBase(d); if (d && !o.dops.some(function (x) { return bnrm(x) === bnrm(d); })) o.dops.push(d); });
       (f.cats || []).forEach(function (c) { c = String(c || "").trim(); if (c && !/^featured$/i.test(c) && !o.cats.some(function (x) { return bnrm(x) === bnrm(c); })) o.cats.push(c); });
@@ -126,6 +127,7 @@
         });
         // Infos retouchées dans la bibliothèque (edits.json) par-dessus celles des pages ; _orig garde celles des pages.
         order.forEach(function (f) { if (edits[f.key]) bibApply(f, edits[f.key]); });
+        bibGroups(order);
         // Les plus récents en haut (Gus 22/11) : imports sans id Slate (images) d'abord, puis id Slate décroissant (= ordre d'ajout sur Slate).
         order.sort(function (a, b) { return (b.slate ? 0 : 1) - (a.slate ? 0 : 1) || (b.slate || 0) - (a.slate || 0) || String(b.at).localeCompare(String(a.at)); });
         // Index des suggestions : chef op, réal, prod, client, type de contenu, catégorie (pas les films, Gus 22/11).
@@ -139,6 +141,21 @@
         });
         bibCache = { films: order, sug: Object.keys(sug).map(function (k) { return sug[k]; }), lib: lib || { items: [] }, pages: pages };
         return bibCache;
+      });
+    });
+  }
+  // Vidéos importées ensemble (Gus 26/11) : chacune montre sous elle toutes celles du lot, dans le même ordre pour toutes ; sa propre ligne est
+  // marquée `self` (visible dans la fenêtre d'infos, pas montrée sur le site). Recalculé à chaque lecture (titres et vignettes à jour) tant que
+  // les lignes n'ont pas été modifiées à la main (lignes `auto`).
+  function bibGroups(order) {
+    var gs = {}; order.forEach(function (f) { if (f.grp) (gs[f.grp] = gs[f.grp] || []).push(f); });
+    Object.keys(gs).forEach(function (g) {
+      var ms = gs[g].sort(function (a, b) { return (a.gi || 0) - (b.gi || 0); }); if (ms.length < 2) return;
+      ms.forEach(function (m) {
+        if ((m.extras || []).some(function (e) { return !e.auto; })) return; // réglé à la main
+        var ex = ms.map(function (z) { var n = extraFromFilm(z); n.auto = true; if (z === m) n.self = true; return n; }).filter(function (n) { return n.full || n.video || n.self; });
+        if (ex.length < 2) return;
+        m.extras = ex; if (m._orig) m._orig.extras = JSON.parse(JSON.stringify(ex));
       });
     });
   }
@@ -171,13 +188,15 @@
   }
   function bandItem(f) { // copie d'un film dans la bande : la bande ne dépend plus de la bibliothèque (retouches propres à la bande)
     var o = { key: f.key, slate: f.slate, title: f.title, dir: f.dir, prod: f.prod, dops: f.dops.slice(), cats: f.cats.slice(), types: (f.types || []).slice(), video: f.video, full: f.full, img: f.img };
-    if (f.images && f.images.length) o.images = f.images.slice();
-    if (f.extras && f.extras.length) o.extras = JSON.parse(JSON.stringify(f.extras)).filter(function (x) { return !xHidden(x, "club"); }).map(function (x) { delete x.hide; return x; }); // lignes masquées dans le video club : pas dans les bandes
+    if (f.images && f.images.length && (f.ihide || []).indexOf("club") < 0) o.images = f.images.slice();
+    if (f.extras && f.extras.length) o.extras = JSON.parse(JSON.stringify(f.extras)).filter(function (x) { return !xHidden(x, "club") && !x.self; }).map(function (x) { delete x.hide; return x; }); // lignes masquées dans le video club : pas dans les bandes
     if (f.awards) o.awards = f.awards;
     if (f.crop) o.crop = Object.assign({}, f.crop);
     if (f.snip) o.snip = Object.assign({}, f.snip);
     if (f.snipVideo) o.snipVideo = f.snipVideo;
     if (f.thumbT !== undefined) o.thumbT = f.thumbT;
+    if (f.scrop) o.scrop = JSON.parse(JSON.stringify(f.scrop));
+    if (f.ipos) o.ipos = f.ipos;
     if (f.hist) o.hist = JSON.parse(JSON.stringify(f.hist));
     if (f.roles) o.roles = Object.assign({}, f.roles);
     Object.keys(o).forEach(function (k) { if (o[k] === "" || o[k] === null || o[k] === undefined || (Array.isArray(o[k]) && !o[k].length)) delete o[k]; });
