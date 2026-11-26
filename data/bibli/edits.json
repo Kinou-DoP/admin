@@ -1131,23 +1131,15 @@
       "img": "https://d3toxii6rvamjf.cloudfront.net/depot/6k4ec6uh8myvzfgnva28/vignette.webp",
       "snip": {
         "s": 10.679,
-        "d": 26.098
+        "d": 26.098,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxqwx82waijj1/extrait-10679.mp4",
+        "vf": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ed9c579-772e-4569-bc13-bf5f432981c8-1280x720.2500.mp4"
       },
       "thumbT": 9.017,
       "hist": {
         "img": [
           "https://images.slatecdn.net/4Ge8s5pChqTeiDv7JVDLS-4z9C4dcBgqYIxHV6EX4zE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/OGEyNmIyMS1jZjc5/LTRmNmYtOWJjZC01/ZDkxMTcyMjQ2ODUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDEt/MTMtYS0xNi4wOC41/NS5qcGc.webp"
         ]
-      },
-      "pend": {
-        "snip": {
-          "path": "data/encode/rapide-1795709234738-eo4vv.json",
-          "id": "mwxqwx82waijj1",
-          "s": 10.679,
-          "d": 26.098,
-          "pj": "null",
-          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ed9c579-772e-4569-bc13-bf5f432981c8-1280x720.2500.mp4"
-        }
       },
       "crop": {
         "z": 1.09,
