@@ -48,9 +48,67 @@
   },
   "categories": [
     "FEATURED",
+    "NARRATIVE",
     "HAIR"
   ],
   "clips": [
+    {
+      "title": "Anthracite - Trailer",
+      "sub": "Julius Berg\nAnthracite Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10382/0e7323d6-f7b3-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85c87c46-a99b-40a7-afe8-2f8eb11d8965-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UslHW0Bf-VHiIH2LEi1Mc6HyPnQnO70vFfcevHlSINY/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDM4Mi02OTcyNTQx/ZTQxOGYxMi42NDAz/ODUyMy01YmE5Y2Ez/YzE1NzhjNDQ4MDBk/N2MyMmNmNjkxYzcx/Ny5qcGc.webp",
+      "slate": 10382,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "Noël Joyeux - bande-annonce",
+      "sub": "Clément Michel\nGaumont",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/af3f4767-4752-4724-8f4f-ee81d3b0fdb0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/_lw-Ywa3k9sf2CeqzOQtBRlgJdWKwnSd47Cqslxthgo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NzM5MWNjYi1hNTk3/LTRjZjktYWRjNi0x/MWVhNDU1NWM2ODIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDYtYS0xOC4yMS40/Ny5wbmc.webp",
+      "slate": 7972,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "Menteur - Feature Film Trailer",
+      "sub": "Olivier Baroux\nGaumont",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/074b8187-e8cf-4002-a6d0-5ec7185b46c0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/9XaFvZfOEedWonTNOvefVLeXdXejwYH72Qf286Hj__8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZGRjMDhkNS03YTBh/LTRiMzktODRhNC05/YmYyNGQxM2VkYjkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MDctYS0xNC41Mi4x/Ni5wbmc.webp",
+      "slate": 6077,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "Operation Endgame | Feature Film Trailer",
+      "sub": "Fouad Mikati\nInfinity Media",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0b4174b6-a37a-4c61-a943-0f1479726b91-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/EyC5P9fDXdaDltptjn0Dt2LsiaFHbt25Sf2A_qoQzkw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZjUyOTExMi00N2Qx/LTQ0NWMtOWJmOC03/NDIyOTlmODkyYmQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTQtYS0xNS4xNC41/OS5wbmc.webp",
+      "slate": 4368,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "L'italien | Feature Film Trailer",
+      "sub": "Olivier Baroux\nEskwad",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/39ab2199-75d4-4bcb-bc89-02a4727dad31-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/okNEZNscti_K32tCYQbgfMFjQyvq7BFKMTLpd-x3F8I/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NWQ1MDRjMC02Y2Iy/LTRhZTYtOTZlZS0w/YmFlNmZiMzdjYmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTQtYS0xNS4xOS41/Mi5wbmc.webp",
+      "slate": 4367,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "Les Tuche | Feature Film Trailer",
+      "sub": "Olivier Baroux\nPathé & Eskwad",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1fe07516-5cb9-404d-bf9d-db8422d25efc-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UDQDidWZ7xi971V_Ub3AtUqwZ_6kbw68G5qBJcj5TW0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MjJiZWNmYi04MDVi/LTRiY2QtYWEzMy1m/NTE2ZDExMzcxZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTQtYS0xNS4xMi4x/Ni5wbmc.webp",
+      "slate": 4366,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "Ce soir, je dors chez toi | Feature Film Trailer",
+      "sub": "Olivier Baroux\nEskwad",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/77aca273-12e4-4b85-b29a-c0d8749cd739-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/uK5KcnpAcSTTED_VHJI9BUG2hhZNUbh75VhEnelH0Xo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YTFhNTdhYy0yOWRm/LTRkM2ItOGU4NC1i/Y2YyYTBiMzAxOTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTQtYS0xNS4yNC41/MS5wbmc.webp",
+      "slate": 4365,
+      "cat": "NARRATIVE"
+    },
     {
       "title": "DESSANGE",
       "sub": "Salim Boujtita\nEddy Production",
