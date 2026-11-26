@@ -22,5 +22,317 @@
     "img": "img/julien-roux-cinematographer.webp",
     "og": "img/julien-roux-cinematographer-og-1795711837794.jpg",
     "ogColor": true
-  }
+  },
+  "categories": [
+    "FEATURED",
+    "FEATURE FILM",
+    "SERIE",
+    "SHORT FILM",
+    "COMMERCIAL"
+  ],
+  "clips": [
+    {
+      "title": "Tout va Super",
+      "sub": "Patrick Cassir\nAtelier de Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10852/3e35232c-d9d6-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9d6963d4-e088-45c7-91c4-a78b6a6abeda-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/BEIoI2nB2L6uucPkLvcXh5Oy-IellF5dgUjuLIOfihw/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OThiOTEyYS01Zjcx/LTQ4YjQtOTk2NS02/Yjc5M2FmMzhlYTQv/Yy1hdGVsaWVyLWRl/LXByb2R1Y3Rpb24t/dGYxLWZpbG1zLXBy/b2R1Y3Rpb24tZC5h/LmMucC0yMDI1LTEt/MS0yLXNjYWxlZC5q/cGc?v=1&format=webp",
+      "slate": 10852,
+      "cat": "FEATURE FILM",
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Police Flash 80",
+      "sub": "Jean-Baptiste Saurel\nNolita Cinema, Pathé Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10436/4f42586f-0827-11f1-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/182a9f88-e832-49d1-99b3-455bc35e31d8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/KubWML4mzpQID1FG6EZEBRPjHrI1itiHeQIofSLUhVI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YzkzYTYzZC0xYTEx/LTRhMDMtYjA2Ny0w/MWZjMTM0NDU3YmEv/cGY4MC5wbmc?v=1&format=webp",
+      "slate": 10436,
+      "cat": "FEATURE FILM",
+      "featured": true,
+      "featuredOrder": 3
+    },
+    {
+      "title": "Youssef Salem a du Succès - Bande-annonce",
+      "sub": "Baya Kasmi\nDomino Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6d5e8dca-d646-4b2a-b7be-97427c2f5668-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/EV3G-UjgFVBeq-OFGmRMiOLqUWiwIokCNT3Afckx-dI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/OGNhMTUxYy05Njcz/LTRhOWQtYTlkNy03/YTJmNDI1NGM1ZmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDEt/MDQtYS0xNi40Ni40/NS5wbmc.webp",
+      "slate": 6667,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Vacances - Trailer",
+      "sub": "Béatrice de Stael & Léo Wolfenstein\nTabo Tabo Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b7fc9a9b-b3d5-4aee-9a60-d3275da54973-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/NtTCTE4SfegFJBt5jt5F1G3e7CPXhUWY__obmxPlqcw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MThlYzk0Yy0yNjg5/LTQ5YjctODQ3YS0z/NmRhNWU1MGYyZmYv/dmFjYW5jZXMtdGFi/by1jLWkubWF0aGll/LmpwZw.webp",
+      "slate": 6267,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Les Petits Flocons | Feature Film Trailer",
+      "sub": "Joséphine De Meaux\nDomino Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1547804280-les-petits-flocons-bande-annonce-2019-gregoire-ludig-comedie.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/DWZBV9BeupiKVw_ph0p7--m0764Rt_aFskUVMy25OHE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTYxOTkwMzg0NDU2/L2xwZi1zdGlsbHMt/MS42LjEuanBn.webp",
+      "slate": 3073,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Tristesse Club | Feature Film Trailer",
+      "sub": "Vincent Mariette\nKazak Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545843061-6468962_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/GAApS2F7bhDvfGsynunCp2JKlOXNKgIIez-7sbODnfI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MjAxNDY4MDc0/LzI3LmpwZw.webp",
+      "slate": 2866,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Don Juan & Sganarelle - Feature Film Trailer",
+      "sub": "Vincent Macaigne\nIconoclast",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545843061-26350342_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/LLeQ2adoEgDdPs9yodsWfZk_n5zeAI5pGBqCHbXX8Nw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/M2M1YmU4YS02NTc5/LTRlMTMtYjgzNi0x/ZGQ3NTMyNjA3MzEv/NDk4NS01ZWNlMWNh/ODcwYTllLmpwZw.webp",
+      "slate": 2865,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Five | Feature Film Trailer",
+      "sub": "Igor Gotesman\nLes Films du Kiosque",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545842871-27859955_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/XDetPv32YEnw7uFGNhjHNJ-ntvYZd2tksjZpefgIozU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NmViZTk2Yi04NmVk/LTRjZTItOTU5Ny04/YTliMzEyYmY0NzEv/aW1hZ2UuanBn.webp",
+      "slate": 2862,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Le Petit Locataire | Feature Film Trailer",
+      "sub": "Nadège Loiseau\nLes Films du Worso",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545838655-37788247_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/qZObIdSWHtD9eR8csDXa3H99kDrqULV9Fi8BMnhMsPw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkyMjk5NTUzOTU3/LzEuanBn.webp",
+      "slate": 2778,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Marche Ou Crève | Feature Film Trailer",
+      "sub": "Margaux Bonhomme\nAvenue B Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545405359-63142723_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/IzxMMxL0Ck4zwZ9lxiC88h6dhazy2ECm41rStrIom3g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/N2E5Mjc1Ni03Zjk2/LTRkNjAtOTIyYS05/Y2M3NmU0ZTY5ZjMv/bWFyY2hlLW91LWNy/ZXZlLTMuanBn.webp",
+      "slate": 1375,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Numéro Une | Trailer",
+      "sub": "Tonie Marshall\nTabo Tabo Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff3e28bc-1b8b-4628-b32a-aad22aafa68d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/v2Tzn7-ZV3Ar7so6HT2pHKdKZhonL_kzd7nVP_5pViY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/NmYzOGZjZi05MTk0/LTRkYTAtYWNiOS1h/NDQ2ODkxMDgxMDkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xMi4xMS4y/NC5wbmc.webp",
+      "slate": 1294,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Teaser",
+      "sub": "Laurent Tuel\nKelija",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545362534-41923047_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UzSdPXSK8ORXUIfJh67njMdffEjntLGKVO1iJA1bsiE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy90/ZWFzZXItNi1lYzkx/MWEyN2EwMTNhMDEx/NDJiNTc2ZGFiMmFj/M2QxNS5qcGc.webp",
+      "slate": 458,
+      "cat": "FEATURE FILM"
+    },
+    {
+      "title": "Young Millionnaires",
+      "sub": "Tania Gotesman, Theo & Momo\nFive Dogs",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10041/ac3bed58-6c65-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ef3e949a-e27a-4d48-b471-0ee9deb5687b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/U7qOXTYoZjztGub4Z1PYcvj-iRBXpUlNIs6SUpZX2xs/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/MTBiNjI5Yi0yNjI0/LTRiNDItYmM2YS1j/YTlmZTViN2MxZDUv/MzM3NDQ4MzY0Y2Ux/YWY0ZjlhYWJkOTRi/MjgwMzdhYmIuanBn?v=1&format=webp",
+      "slate": 10041,
+      "cat": "SERIE",
+      "featured": true,
+      "featuredOrder": 4
+    },
+    {
+      "title": "Fiasco - trailer",
+      "sub": "Igor Gotesman\nFive Dogs",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8573/4a322403-f1d4-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/25da2dfa-580b-469b-9816-1eb9642e4bba-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/qVuA8rEZRA1xpRsQGMcdJT7keNtRtOzBqliSW0oDGLI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MWMyM2FhMy05YjI0/LTQwNzQtYjg1Mi03/MjNiMDU0YWE2NDgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDQt/MDMtYS0xOC4wMS4z/MS5wbmc.webp",
+      "slate": 8573,
+      "cat": "SERIE",
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "Salade Grecque",
+      "sub": "Cédric Klapisch, Lola Doillon, Antoine Garceau\nCe Qui Me Meut\nco-DoP Alexis Kavyrchine",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6777/e186cc4e-e36f-11f1-952e-02ffedfede17.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ef4b298-b83e-492f-9ac4-509d4e3e90fa-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Z__P3o6jJ5lDzG2jcXlpRzuPeAOo5tOP1MxbcgPUIuE/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/N2E3Y2M4OS04ZGU5/LTQyNDYtOWJjMS1m/MGZmNjhjNTY2ZmEv/NjAzLTAyMzEzODdy/ZWMuanBn?v=1&format=webp",
+      "slate": 6777,
+      "cat": "SERIE",
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "Family Business - Saison 3 (bande-annonce)",
+      "sub": "Igor Gotesman\nLes Films du Kiosque, Netflix",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/17159468-7ac2-4228-a457-dd8c59cc1f1f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/CslLA0k0SD8bbawr9HjSQ5zuZNbKdmabW9n6Rph-Uwg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/OTE0YTQ5OC03NDdk/LTQ2N2ItYjU1OS1j/MTU0YTgwZjMzNDQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDct/MjctYS0xOC4yMi40/OC5qcGc.webp",
+      "slate": 5543,
+      "cat": "SERIE",
+      "featured": true,
+      "featuredOrder": 8
+    },
+    {
+      "title": "La Flamme - Serie Trailer",
+      "sub": "Jonathan Cohen & Jeremie Galan\nEntre 2 et 4 Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8754fdba-a9f0-419d-8091-89601fdd9482-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/YuYQaVD-KmGLUNLop6sA7_Yjm9ZxtQVZvHm_r48lwVc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NjAzMTk3NTQ5OTg1/L3h2bWQ0NDRhYjYy/LWZjZTAtMTFlYS1h/MzM5LTQ0MDkyZjhl/ZDU0NS5qcGc.webp",
+      "slate": 4419,
+      "cat": "SERIE"
+    },
+    {
+      "title": "Family Business - Season 2 Trailer",
+      "sub": "Igor Gotesman\nLes Films du Kiosque",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e5722f42-3a64-47df-bbba-627b6f516a7d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/A7xVCrQ5QjDL4P-Fmd4PYUxDuAL7q6YhHjkmYMaa9zY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ODRmMmExZC01MjYx/LTRjMGItOGVmNy1j/MDFjZDQ0YzI3ZGMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDMt/MDktYS0xMi4xNy4x/OS5wbmc.webp",
+      "slate": 4418,
+      "cat": "SERIE"
+    },
+    {
+      "title": "Family Business | Netflix Serie Trailer",
+      "sub": "Igor Gotesman\nLes Films du Kiosque",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1559138496-family-business-igor-gotesman-netflix.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/sLZyWxYif97xCTSfjec_WDB8uXYQDGFESo1XoT3DQow/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/YW1pbHktYnVzaW5l/c3MtbmV0ZmxpeC1z/ZXJpZS10cmFpbGVy/LWI2YzgzZGE3YWMy/NTIxZjIyNTQ5OTNk/MmY0NGMwNzhjLmpw/Zw.webp",
+      "slate": 3431,
+      "cat": "SERIE"
+    },
+    {
+      "title": "À Fleur de Boule",
+      "sub": "Patrick Cassir",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fc50b8f7-c43a-474b-a59a-4fc4976ad71d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/SkmfxebcyMdMEoFXefgW8mMDdapya_wOqsPz1YH7WZ8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NDAyOWU0Ny0xZjE0/LTQwOWYtOWY3ZC03/OTRmNTZiZTVmY2Qv/YS1mbGV1ci1kZS1i/b3VsZS1zdGlsbHMt/MTMuanBn.webp",
+      "slate": 4564,
+      "cat": "SHORT FILM"
+    },
+    {
+      "title": "J'Aime Beaucoup Ta Mère [Bande-Annonce]",
+      "sub": "Four & War\nKare Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545416456-jbtm-four-26war-b.a..1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/rtigY3Xodtfql_6Rap0j8JY_PrTfXpDDES_XS_HgkoQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MjA0NDI3NzEz/LzMzLmpwZw.webp",
+      "slate": 1688,
+      "cat": "SHORT FILM"
+    },
+    {
+      "title": "L'accordeur / Teaser",
+      "sub": "Olivier Treiner",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545407865-6468460_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/4ehAe_lSpTx3eRzZV-OrmtXyWNMOciNEQb11yjE0vig/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MjA1MzY0MjIz/LzM1LmpwZw.webp",
+      "slate": 1501,
+      "cat": "SHORT FILM"
+    },
+    {
+      "title": "Soir de Fête | Short Film Teaser",
+      "sub": "David Robert\nFilmo",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545375438-soir-de-fa-cc-83-c2-aate-28english-subtitles-29.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/OFV0Ykoj_rbw32PGc6gHLVoJ6vA1dwAg1bwdGrla1zQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MjA0MDY4ODM5/LzMyLmpwZw.webp",
+      "slate": 649,
+      "cat": "SHORT FILM"
+    },
+    {
+      "title": "Coach - Short Film Teaser",
+      "sub": "Ben Adler\nFluxus Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545365840-coach-2015-french-short-film.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/idY00NFHmk2k2jgVdMZv5H3e8oE9AM6lUF0yBl6aMtY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MjAzODgwMDU3/LzMwLmpwZw.webp",
+      "slate": 554,
+      "cat": "SHORT FILM"
+    },
+    {
+      "title": "La Bifle | Short Film Trailer",
+      "sub": "Jean-Baptiste Saurel\nKazak Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545365804-6468459_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/zB0DvYmE__yfONG9xAar7f8K1d86V1aYZESsdYxExNE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/N2Y2YWQxZS05Yjdm/LTQ0ODktOWZlNy00/YTNiMjkwNTE3NjQv/aW1hZ2UtYmlnLWZj/NWI4NTNhZGQzZjMy/NTBkNzY0MGJkMmFk/MzVlNGNmLmpwZw.webp",
+      "slate": 550,
+      "cat": "SHORT FILM"
+    },
+    {
+      "title": "Aquabike | Short Film Trailer",
+      "sub": "Jean-Baptiste Saurel\nKazak Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545365747-trailer_aquabike_def.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/jVDJE0t1-_OwYHmv90JSumXxcFi_pLUePs5ap3RqPys/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTUzNTI0Mjk3Njcz/L2FxdWFiaWtlMTkt/MTktOTA1LmpwZw.webp",
+      "slate": 544,
+      "cat": "SHORT FILM"
+    },
+    {
+      "title": "Grand Frais - Kad Merad",
+      "sub": "Jean-Baptiste Saurel\nBig Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10837/d3706789-4de0-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/577e0fcf-489c-4924-984b-a5b44b67dbc5-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Xt7PrjxvcDXm1eDMwHTFpIS1qCJ9cbrrgjVshzdPiF8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/NTE4NDA2OC03MTk2/LTQzMTUtYTBmZC00/MzczMjU5N2U3ZDUv/MTc3ODU3NjI4MDQz/Ni5qcGc?v=1&format=webp",
+      "slate": 10837,
+      "cat": "COMMERCIAL",
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "MAE",
+      "sub": "Paul Marques Duarte\nDigital Born Producers",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8763/1a5aa1b2-1c25-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/74b1298f-2e3d-46ff-bda9-1fe093832653-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/QiEraYoQznib0TLDw94J4tIOQ12z8jKuGw2GVMSdDQ8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ZmM0MzA3MC01YmIz/LTQ4YjUtOTE1NS0x/ZjU2NDI0OTE2MWUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDUt/MjctYS0xNC4yNy40/MS5wbmc.webp",
+      "slate": 8763,
+      "cat": "COMMERCIAL",
+      "featured": true,
+      "featuredOrder": 5
+    },
+    {
+      "title": "L'Enfant Bleu",
+      "sub": "Dario Fau\nObvious",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/db68a327-e68a-4ec9-ab0e-1d93bea0f062-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/tIcD-iIeJs-U9E9ZZ-RGaeC6XJ0YxYISClnXLspwtoo/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NTQ4LTYxOWNiOTM1/OWM1YmI5LjQ2OTk3/MjM5LWEwZjNmYTMz/MDExNTZhZDIyMmZl/YjQ4ZWJjMGRlNjhm/LmpwZw.webp",
+      "slate": 5548,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Burger Quiz - Ifoune 12 | Manu Payet",
+      "sub": "Alain Chabat\nR&G Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1568990399-y2mate.com-le-nouvel-ifoune-12-presente-par-manu-payet-say-hello-to-the-future-burger-quiz-lhygvjx6dsi-1080p.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/m-upDu9uPiXtsfFJ8IDZJRJprahvxuhUClXK9d1tLKQ/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/NzI4LTVkODRlNGJm/YjM5YzU0LjY2ODgz/NDA4LTFhMmFjYWI2/NWRhZWE5NmU4YzI1/OTdhNmRjNTk0MjM4/LmpwZw.webp",
+      "slate": 3728,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "'Nutella - Good Mood'",
+      "sub": "Laurent Tuel\nGeneral Pop",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1546608647-nutella-good-mood-presentation-tv.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bK-C9053S96WARms9YhV9uboduEElwSqJHsFTo0pjEE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9u/dXRlbGxhLWdvb2Qt/bW9vZC1mZWEwM2Q3/NWNmNzdhNzgzNTU4/NjUwYmYzOGUzMGVi/Yy5qcGc.webp",
+      "slate": 3029,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Citroen Wild Rubis",
+      "sub": "Laurent Nivalle\nLe Rendez-Vous à Paris",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545432405-citroen-wild-rubis-co-232c48f.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dbWJO9TR_j1R3sz7iOoZY7Wio9Mx0-yX0TYQHwb4j4w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MjA2NzkzMjI3/LzQxLmpwZw.webp",
+      "slate": 2063,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Haribo",
+      "sub": "Elsa & Hippolyte\nLes Improductibles",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545425321-42250826_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/bk7S_U9gn20IhMQtq2dmqKAWJkqzT_auisys3LUiaqQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MjA2NjQ4MDMx/LzQwLmpwZw.webp",
+      "slate": 1887,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Ibis | La Sieste",
+      "sub": "Jean-Baptiste Saurel\nBig Productions",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545419550-6468615_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/d81KORmQB2g-L-2EO6z7sOofT6cU6j0bwC10ZulFJu4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9p/YmlzLWxhLXNpZXN0/ZS03NjYyNmE1NmVl/OTk5NTlmZTdkMTkw/OWZmM2U0NGYwYi5q/cGc.webp",
+      "slate": 1760,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "BNP",
+      "sub": "Elsa & Hippolyte\nLes Improductibles",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545356365-42635981_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Ub4uybqgd3H2Y_B2u4Dam6qbOhDKt2LOyWyc4WFE_VM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk2MjA2MzgwNTMz/LzM5LmpwZw.webp",
+      "slate": 287,
+      "cat": "COMMERCIAL"
+    }
+  ]
 }
