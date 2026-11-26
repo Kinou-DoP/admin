@@ -37,6 +37,7 @@ async function liste() {
   if (r.code !== 0) throw new Error("liste privée illisible");
   const cles = new Set();
   JSON.parse(r.out).medias.forEach((m) => m.fichiers.forEach((f) => { if (IMG.test(f.cle)) cles.add(f.cle); }));
+  if (existsSync("tools/copie-liste.json")) JSON.parse(readFileSync("tools/copie-liste.json", "utf8")).forEach((f) => { if (IMG.test(f.cle)) cles.add(f.cle); }); // fichiers ajoutés depuis (robot copie-liste)
   return [...cles];
 }
 async function faites() {
