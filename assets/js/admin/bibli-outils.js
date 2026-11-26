@@ -65,7 +65,7 @@
         addB || el("span"), el("span", { class: "bpcount", text: (i + 1) + " / " + list.length }),
         el("button", { type: "button", class: "btn ghost", text: "›", title: "Film d'après (→)", disabled: i < list.length - 1 ? null : true, on: { click: function () { go(1); } } })]);
       ov.appendChild(el("div", { class: "bpwrap" }, [el("div", { class: "bpbox" }, [el("div", { class: "bphead" }, [el("strong", { text: f.title || "" }),
-        el("button", { type: "button", class: "bx", text: "×", title: "Fermer", on: { click: close } })]), v || gal || el("div", { class: "bthumb", style: 'background-image:url("' + (f.img || "") + '")' }),
+        el("button", { type: "button", class: "bx", text: "×", title: "Fermer", on: { click: close } })]), tabsRow, v || gal || el("div", { class: "bthumb", style: 'background-image:url("' + (f.img || "") + '")' }),
         el("p", { class: "hint", text: cred.join(" · ") }), meta ? el("p", { class: "hint bpmeta", text: meta }) : null, nav])]));
     }
     document.addEventListener("keydown", key, true);
