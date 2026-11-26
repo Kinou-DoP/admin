@@ -190,7 +190,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6d5e8dca-d646-4b2a-b7be-97427c2f5668-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/EV3G-UjgFVBeq-OFGmRMiOLqUWiwIokCNT3Afckx-dI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/OGNhMTUxYy05Njcz/LTRhOWQtYTlkNy03/YTJmNDI1NGM1ZmEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMDEt/MDQtYS0xNi40Ni40/NS5wbmc.webp",
       "slate": 6667,
-      "cat": "FEATURE FILM"
+      "cat": "FEATURE FILM",
+      "featured": true,
+      "featuredOrder": 7
     },
     {
       "title": "Vacances - Trailer",
@@ -295,7 +297,7 @@
       "slate": 6777,
       "cat": "SERIE",
       "featured": true,
-      "featuredOrder": 7
+      "featuredOrder": 8
     },
     {
       "title": "Family Business - Saison 3 (bande-annonce)",
@@ -305,7 +307,7 @@
       "slate": 5543,
       "cat": "SERIE",
       "featured": true,
-      "featuredOrder": 8
+      "featuredOrder": 9
     },
     {
       "title": "La Flamme - Serie Trailer",
