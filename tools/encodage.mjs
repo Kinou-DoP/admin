@@ -160,6 +160,15 @@ async function edit(j, dir, tell) {
   console.log("  montage : " + parts.length + " morceaux, " + Math.round(p.dur) + " s, " + Math.round(fs.statSync(web).size / 1e6) + " Mo");
   return afterWeb(j, dir, tell, web, p, 0);
 }
+// « Créer un nouveau projet avec cet edit » (Gus 26/11) : prend une version web déjà fabriquée (adresse nous/…/web.mp4), la copie sans réencoder et fait l'extrait et les
+// vignettes d'un film normal.
+async function post(j, dir, tell) {
+  if (!SRC.test(j.src || "")) throw new Error("adresse de vidéo refusée");
+  const web = join(dir, "web.mp4"); tell("lecture", 0);
+  await must("ffmpeg", ["-y", "-v", "error", "-i", await source(j.src), "-c", "copy", "-movflags", "+faststart", web], "copie de la vidéo");
+  const p = await probe(web); if (!p.dur) throw new Error("vidéo illisible");
+  return afterWeb(j, dir, tell, web, p, 0);
+}
 async function snip(j, dir) {
   const src = await source(j.src);
   // Montage (Gus 26/11) : `parts: [{ s, d }, …]` = plusieurs blocs bout à bout (30 s au total au plus, 8 blocs au plus) ; sinon un seul bloc s, d.
@@ -183,7 +192,7 @@ async function thumb(j, dir) {
   const base = "nous/" + j.id + "/vignette-" + Math.round(t * 1000);
   return { img: await put(im[800], base + "-800.webp", "image/webp"), img1600: await put(im[1600], base + "-1600.webp", "image/webp"), thumbT: r3(t) };
 }
-const WORK = { film, edit, snip, thumb };
+const WORK = { film, edit, post, snip, thumb };
 
 // Enregistrement d'une demande (réponse, avancement) : un commit par-dessus la dernière version de main. On repart toujours de
 // main (fetch + reset) et on réécrit le fichier depuis la mémoire : jamais de rebase qui reste coincé (bug du 25/11 : identité git
