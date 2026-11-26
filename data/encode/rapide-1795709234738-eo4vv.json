@@ -5,9 +5,17 @@
       "kind": "snip",
       "src": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/7ed9c579-772e-4569-bc13-bf5f432981c8-1280x720.2500.mp4",
       "s": 10.679,
-      "d": 26.098
+      "d": 26.098,
+      "answer": {
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxqwx82waijj1/extrait-10679.mp4",
+        "snip": {
+          "s": 10.679,
+          "d": 26.098
+        }
+      }
     }
   ],
   "at": "2026-11-26T16:07:14.738Z",
-  "by": "John"
+  "by": "John",
+  "doneAt": "2026-11-26T16:10:24.100Z"
 }
