@@ -118,4 +118,4 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   masquées). Œil aussi sur les cartes des pages (`extrasCtl(…, ctx)`) et dans les retouches d'une bande (lieu « band »). Recherche = fenêtre au centre
   avec les mêmes suggestions / filtres que le video club (`bibPicker`). Ligne d'ajout : 🔍 | lien | +.
 - Classe `.bst` = étiquette de suggestion ; les cellules de stills sont `.bstl` (le conflit agrandissait les suggestions du video club).
-
+- **Ordre commun du lot** (Gus 26/11) : glisser une ligne dans la fenêtre d'un film du lot change `gi` de tous les films du lot (`grpOrder`, library.json) : même ordre partout ; masquer (œil) garde le lien (`hide` repris par `bibGroups` et `vcGroup`) ; ajouter / retirer une ligne le rompt pour ce film.

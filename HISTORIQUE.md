@@ -404,3 +404,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Import groupé = vidéos liées (`grp`), œil partout (pages, bandes), images du projet déplaçables, recherche au centre avec filtres, case chef op vide d'emblée, suggestions du video club réparées (`.bst`).
 - 26/11 — Video club : la barre de recherche a le focus à l'arrivée.
 - 26/11 — Video club : Ctrl / Cmd + Z (bande) ne marchait plus à cause du focus automatique de la recherche (champ = ignoré) ; ignoré seulement si la barre contient du texte.
+- 26/11 — Vidéos d'un même import : ordre commun (glisser change l'ordre pour tout le lot), masquages gardés au recalcul.

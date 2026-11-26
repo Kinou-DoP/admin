@@ -219,7 +219,14 @@
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
         onChange: function () {
-          if (it.extras && base.extras && JSON.stringify(it.extras) !== JSON.stringify(base.extras)) it.extras.forEach(function (x) { delete x.auto; }); // lignes modifiées à la main : plus recalculées
+          // Vidéos d'un même import : ordre commun à toutes (Gus 26/11). Glisser une ligne change l'ordre du lot entier ; masquer ne casse pas le lien.
+          // Lignes ajoutées / retirées / ajoutées à la main : lien rompu pour ce film (lignes sans `auto`, enregistrées dans edits.json).
+          if (it.extras && base.extras && JSON.stringify(it.extras) !== JSON.stringify(base.extras)) {
+            var kk = function (l) { return l.map(function (x) { return x.key || ""; }); }, kb = kk(base.extras), ki = kk(it.extras);
+            var linked = f.grp && it.extras.every(function (x) { return x.auto; }) && kb.slice().sort().join() === ki.slice().sort().join();
+            if (!linked) it.extras.forEach(function (x) { delete x.auto; });
+            else if (kb.join() !== ki.join()) { grpOrder(f.grp, ki); base.extras = JSON.parse(JSON.stringify(it.extras)).map(function (x) { delete x.hide; return x; }); }
+          }
           var e = diff(), keep = f._orig;
           if (!keep) { f._orig = {}; BIB_EK.forEach(function (k) { f._orig[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); }
           BIB_EK.forEach(function (k) { var v = k === "snip" && it._snipTmp ? it._snipSaved : it[k]; f[k] = v === undefined ? undefined : JSON.parse(JSON.stringify(v)); });
@@ -1458,6 +1465,19 @@
       ov.appendChild(box); document.body.appendChild(ov); return ov;
     }
     // Film pas encore enregistré mais déjà utilisable (Gus 26/11 : la fenêtre des crédits s'ouvre tout de suite à l'import, pendant l'envoi).
+    // Ordre commun des vidéos d'un même import : `gi` de chaque film du lot (library.json), recalculé pour tous.
+    function grpOrder(g, ks) {
+      var all = data.films.filter(function (x) { return x.grp === g; }).sort(function (a, b) { return (a.gi || 0) - (b.gi || 0); }).map(function (x) { return x.key; }), left = ks.slice(), set = {};
+      ks.forEach(function (k) { set[k] = 1; });
+      var out = all.map(function (k) { return set[k] ? left.shift() : k; });
+      out.forEach(function (k, i) { var m = filmOf(k); if (m) m.gi = i; });
+      bibGroups(data.films); // les autres films du lot prennent le nouvel ordre tout de suite
+      grpPend = out; soon("grpord", function () {
+        var o = grpPend; grpPend = null; if (!o || !canWeb) return;
+        return commit([{ path: BIB_LIB, edit: function (t) { var l = t ? JSON.parse(t) : { items: [] }; (l.items || []).forEach(function (x) { var i = o.indexOf(x.key); if (i > -1) x.gi = i; }); return json(l); } }], "Video club : ordre des vidéos d'un même import (admin, " + (user && user.login || "") + ")");
+      }, 800);
+    }
+    var grpPend = null;
     function localFilm(it) {
       var f = Object.assign({ slate: null, title: "", dir: "", prod: "", dops: [], cats: [], types: [], video: "", full: "", img: "", images: null, pages: [], at: "" }, JSON.parse(JSON.stringify(it)));
       f.dops = f.dops || []; f.cats = f.cats || []; f.types = f.types || []; bibHay(f); return f;
