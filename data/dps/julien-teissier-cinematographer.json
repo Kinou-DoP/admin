@@ -166,7 +166,8 @@
     "COMMERCIAL",
     "BEAUTY / FASHION",
     "AUTOMOTIVE",
-    "MUSIC VIDEO"
+    "MUSIC VIDEO",
+    "NARRATIVE"
   ],
   "clips": [
     {
@@ -706,6 +707,64 @@
       "img": "https://images.slatecdn.net/-_NT4SOYAJep6VGxpGkUWLof7qWs6zRAmjiMRW4fepE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MTIwNGIwYi1kYzA5/LTQ5MDMtYjhhZC02/YWRjMmNkYmE1NTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MjctYS0xNS4wMC4x/NS5wbmc.webp",
       "slate": 8440,
       "cat": "MUSIC VIDEO"
+    },
+    {
+      "title": "El Rio (short film)",
+      "sub": "Hugo Lopez\nInstant Films",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/fca144c8-dfda-4321-a8de-5aa9fdab2609-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/O2SIpA3pfM9WtoKXjRv3bK7IL0KGiIkxoUaEsX4b-mE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/Nzc1MWNiNS0xMDQ1/LTQ0ZDAtOWRlNS1j/NGJiZmY4YTVhMzMv/MTc0MDc2NTI1NDA1/Ni5qcGc.webp",
+      "slate": 9478,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "ELEVEN TWELVE - short film",
+      "sub": "Cyril Masson\nBlack Deer Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8563/4c8fb558-f0ff-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5da0a8d6-28ec-4901-a902-49341ed71cb3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/5araNVliY0c583wjkVx5Vysrs0b6o-plNpMVZDQjjNA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MGE5Nzk5Yy1hYTZh/LTQwNDctYTAzYy01/OTE1MzI3YWFlMTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDQt/MDItYS0xNi4zMi4w/MS5wbmc.webp",
+      "slate": 8563,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "PESO - short film",
+      "sub": "LUCHINO GATTI\nDACP x OFFWALL",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8529/78140edd-f0d2-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e1690350-a2de-48a8-90f2-3dfef599bba1-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/iCPCnSjBs6nYFq-klpGAGm1739n0w479TGGYFfQ5O_c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NjgzOTFlNy05YmYz/LTRkYjItYTg4NC00/YWQyOGU2ZjhjNjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDQt/MDItYS0xMS4xMS4z/NS5wbmc.webp",
+      "slate": 8529,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "masculine____trailer (Original)",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8471/95045d15-eb63-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/13f2fae3-3599-4830-a556-025c950e28c5-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0e_GTdlWqropuQFP6gc62j2wZU_uBgpb_Pty3Uyg5nI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/NWJlYTM5OC0wNWJi/LTQyYjgtYmVjMi02/NWJjNzQ4YTgzM2Iv/MTcxMTQ1MjMyMDE3/Mi5qcGc.webp",
+      "slate": 8471,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "SALVE  TRAILER",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8449/95ca9ac5-ec2f-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/70d00481-2260-4c1b-bf38-487924ed174b-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/678HInEN4kmH9-LqgKCqazjoWGr8AWE4_oEHopx6Ows/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/OTVkMDg5OS1iNjZl/LTQ5NWItYWIwMi04/MmRiZGU4MGE5ZjEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MjctYS0xMi40OC4w/OS5wbmc.webp",
+      "slate": 8449,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "OCELOT - TRAILER",
+      "sub": "Bernardo De Jeurissen Réalisation\nSalve Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8447/17ac25c4-ec30-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0fcc8540-cd22-40c7-9857-efbeef5a3737-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/gS60xnG9SQceMXNQ0MO6Lpmto19yO0jkFX3EZPyhRXw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/MTgyNTU5Yy1kYTFk/LTQyN2YtYmY4Zi01/NmIzNzRjNjlhNjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MjctYS0xMi41MC40/OS5wbmc.webp",
+      "slate": 8447,
+      "cat": "NARRATIVE"
+    },
+    {
+      "title": "TRAILER PESO  LUCHINO GATTI",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/42efdd78-9852-4039-9ca9-45ba923f0cec-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/uzl0vYw56XNg-MwDjTZBjlu1UrrEI0XK_r1dI40rivA/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDQ0LTY2MDE2ZTQ3/YTA3M2I0LjYyMDEy/MzYwLTQ2N2E4YmUw/MGU4N2NkZWQ4NWJk/ZTY1MGI2YmI2MTI5/LmpwZw.webp",
+      "slate": 8444,
+      "cat": "NARRATIVE"
     },
     {
       "title": "Antonioli • Anima Noir",
