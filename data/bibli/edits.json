@@ -177,7 +177,11 @@
       }
     },
     "s11631": {
-      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwwc8b5ga5zmay/web.mp4"
+      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwwc8b5ga5zmay/web.mp4",
+      "snip": {
+        "s": 16.147,
+        "d": 10
+      }
     },
     "s9869": {
       "img": "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/b/mwwccnzuu7qt.webp",
