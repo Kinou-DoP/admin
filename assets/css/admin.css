@@ -1240,3 +1240,8 @@ input.bcn { width: 90px; }
 .bedit .bplay > video { display: block; max-height: 52vh; width: auto; max-width: 100%; margin: 0 auto; background: #000; } /* fenêtre plus large : la vidéo reste raisonnable, les frises prennent toute la largeur */
 .bmontbar { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; padding: 10px 14px; border: 1px solid rgba(217,130,43,.5); background: rgba(217,130,43,.08); font-size: 13px; } .bmontbar .blinkic { margin: 0; }
 .blinkic.clk { cursor: pointer; } .blinkic.clk:hover { color: #fff; }
+
+/* Corbeille du video club (Gus 26/11) : petit logo en bas à gauche */
+.btrash { position: fixed; z-index: 12; left: 16px; bottom: 60px; display: inline-flex; align-items: center; gap: 6px; padding: 8px 11px; border: 1px solid var(--faint); background: #0b0b0b; color: var(--dim); font-size: 16px; line-height: 1; cursor: pointer; }
+.btrash:hover { color: var(--kinou-fg); border-color: var(--dim); } .btrash b { font-size: 11px; letter-spacing: .08em; color: #ffb36b; } .btrash b:empty { display: none; }
+.btrashm .bmbox { max-width: 760px; } .btrashl { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; max-height: 56vh; overflow-y: auto; } .btrashl .bpr { cursor: default; } .btrashl .bpr .bpt { flex: 1; }

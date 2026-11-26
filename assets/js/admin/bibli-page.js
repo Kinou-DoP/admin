@@ -4,6 +4,7 @@
   // emb (Gus 25/11, bouton « edit » d'une fiche) : { key, done(film) } = seulement la fenêtre d'un film du video club, ouverte
   // par-dessus la page en cours (rien n'est affiché du video club ; mêmes enregistrements dans edits.json).
   function showBibli(emb) {
+    var trashBtn = null, trashN = 0; // corbeille (bouton en bas à gauche de la page)
     var CTX = (emb && emb.ctx) || "club", CTXN = CTX === "club" ? "video club et bandes" : CTX === "fiction" ? "page fiction" : CTX === "spotlight" ? "page spotlight" : "cette page de chef op";
     function filmByKey(k) { return data && data.films.filter(function (x) { return x.key === k; })[0]; }
     if (!emb) { bar.hidden = true; editing = false; view.textContent = ""; document.body.classList.add("bibpage"); }
@@ -13,6 +14,7 @@
     var st = { q: "", chips: [], n: 60, sel: {}, sugI: -1, tab: "new", last: null };
     var wrap = el("div", { class: "bib" }), left = el("div", { class: "bibl" }), right = el("aside", { class: "bibr" });
     wrap.appendChild(left); wrap.appendChild(right); if (!emb) view.appendChild(wrap);
+    if (!emb) { trashBtn = el("button", { type: "button", class: "btrash", title: "Corbeille : films supprimés, restaurables 30 jours", on: { click: trashOpen } }, [el("span", { text: "🗑" }), el("b")]); view.appendChild(trashBtn); setTimeout(trashRefresh, 800); }
     var head = el("div", { class: "bibhead" }, [el("h1", { text: "Video club" }), el("div", { class: "bibadd" }, [
       // Liens (Gus 26/11) : Cmd / Ctrl + clic ou clic molette = la fenêtre d'import dans un autre onglet (plusieurs envois à la fois).
       el("a", { class: "btn primary", href: "#/bibli/video", text: "+ Vidéo", on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); importVideo(); } } }),
@@ -1656,23 +1658,72 @@
     // Supprimer un film importé du video club (Gus 26/11) : sa fiche (library.json), ses retouches (edits.json) et son lien de partage ; les autres vidéos
     // importées avec lui ne sont pas touchées. Rien n'est effacé chez Amazon (le robot n'a pas le droit d'effacer).
     function libDelete(f) { return libDeleteMany([f]); }
-    // Plusieurs films d'un coup (liste du video club, sélection cochée) : un seul enregistrement pour les fiches et les retouches, puis les liens de partage.
+    // Corbeille (Gus 26/11) : un film supprimé part dans data/bibli/trash.json avec sa fiche, ses retouches et son lien de partage ; restaurable 30 jours, ensuite
+    // la corbeille l'oublie. Les fichiers chez Amazon ne sont JAMAIS effacés par l'admin (le robot n'a pas le droit d'effacer) : pour libérer la place il faudrait
+    // une règle de cycle de vie S3 ou un droit d'effacement dans AWS.
+    var BIB_TRASH = "data/bibli/trash.json", TRASH_DAYS = 30;
+    function libDelete(f) { return libDeleteMany([f]); }
+    // Plusieurs films d'un coup (liste du video club, sélection cochée) : un seul enregistrement pour les fiches, les retouches et la corbeille, puis les liens de partage.
     function libDeleteMany(fl) {
-      var by = user && user.login || "", keys = fl.map(function (f) { return f.key; });
+      var by = user && user.login || "", keys = fl.map(function (f) { return f.key; }), now = new Date().toISOString();
       keys.forEach(function (k) { delete libQ.todo[k]; }); unsoon("libEdits");
-      return nGet(BAND_NOTES + "films.json").catch(function () { return null; }).then(function (t) {
-        var m = t ? JSON.parse(t) : {}, codes = keys.map(function (k) { return (m[k] || {}).code; }).filter(Boolean);
+      return Promise.all([readFile(BIB_LIB), readFile(BIB_EDITS).catch(function () { return null; }), nGet(BAND_NOTES + "films.json").catch(function () { return null; })]).then(function (r) {
+        var lib = r[0] || { items: [] }, ed = (r[1] && r[1].films) || {}, shares = r[2] ? JSON.parse(r[2]) : {}, codes = keys.map(function (k) { return (shares[k] || {}).code; }).filter(Boolean);
+        var gone = (lib.items || []).filter(function (x) { return keys.indexOf(x.key) > -1; }).map(function (x) { return { item: x, edit: ed[x.key] || null, share: shares[x.key] || null, at: now, by: by }; });
         return commit([{ path: BIB_LIB, edit: function (x) { if (!x) return null; var l = JSON.parse(x); l.items = (l.items || []).filter(function (y) { return keys.indexOf(y.key) < 0; }); return json(l); } },
-          { path: BIB_EDITS, edit: function (x) { if (!x) return null; var o = JSON.parse(x); if (o.films) keys.forEach(function (k) { delete o.films[k]; }); return json(o); } }],
-          "Video club : " + keys.length + " film" + (keys.length > 1 ? "s supprimés" : " supprimé") + " (admin, " + by + ")").then(function () { return codes; });
+          { path: BIB_EDITS, edit: function (x) { if (!x) return null; var o = JSON.parse(x); if (o.films) keys.forEach(function (k) { delete o.films[k]; }); return json(o); } },
+          { path: BIB_TRASH, edit: function (x) { var o = x ? JSON.parse(x) : { items: [] }; o.items = (o.items || []).filter(function (y) { return keys.indexOf(y.item.key) < 0; }).concat(gone); return json(o); } }],
+          "Video club : " + keys.length + " film" + (keys.length > 1 ? "s mis" : " mis") + " à la corbeille (admin, " + by + ")").then(function () { return codes; });
       }).then(function (codes) {
         if (!codes.length) return;
         return Promise.all(codes.map(bandKeys)).then(function (ks) { return commit(ks.map(function (k) { return { path: BAND_PUB + k.id + ".json", remove: true }; }), "Liens de films supprimés (admin, " + by + ")").catch(function () {}); })
           .then(function () { return nEdit(BAND_NOTES + "films.json", function (t) { var m = t ? JSON.parse(t) : {}; keys.forEach(function (k) { delete m[k]; }); return json(m); }, "Films partagés : suppression (admin, " + by + ")"); }).catch(function () {});
       }).then(function () {
         data.films = data.films.filter(function (x) { return keys.indexOf(x.key) < 0; }); if (data.lib) data.lib.items = (data.lib.items || []).filter(function (x) { return keys.indexOf(x.key) < 0; });
-        keys.forEach(function (k) { delete st.sel[k]; }); bibGroups(data.films);
+        keys.forEach(function (k) { delete st.sel[k]; }); bibGroups(data.films); trashRefresh();
       });
+    }
+    // Petite corbeille en bas à gauche de la page video club : nombre de films, liste (restaurer / supprimer pour de bon), oubli automatique après 30 jours.
+    function trashRefresh() {
+      if (!trashBtn || !trashBtn.isConnected) return;
+      return readFile(BIB_TRASH).catch(function () { return null; }).then(function (o) {
+        var l = (o && o.items) || [], old = l.filter(function (x) { return Date.now() - Date.parse(x.at) > TRASH_DAYS * 864e5; });
+        trashN = l.length - old.length; trashBtn.querySelector("b").textContent = trashN ? String(trashN) : ""; trashBtn.classList.toggle("full", trashN > 0);
+        if (old.length && canWeb) commit([{ path: BIB_TRASH, edit: function (x) { if (!x) return null; var t = JSON.parse(x); t.items = (t.items || []).filter(function (y) { return Date.now() - Date.parse(y.at) <= TRASH_DAYS * 864e5; }); return json(t); } }], "Corbeille : films de plus de " + TRASH_DAYS + " jours oubliés (admin)").catch(function () {});
+      });
+    }
+    function trashOpen() {
+      var ov = el("div", { class: "bmodal btrashm" }), box = el("div", { class: "bmbox" }), list = el("div", { class: "btrashl" });
+      function close() { ov.remove(); }
+      function drawT(o) {
+        list.textContent = ""; var l = ((o && o.items) || []).filter(function (x) { return Date.now() - Date.parse(x.at) <= TRASH_DAYS * 864e5; }).sort(function (a, b) { return String(b.at).localeCompare(String(a.at)); });
+        if (!l.length) { list.appendChild(el("p", { class: "hint", text: "La corbeille est vide." })); return; }
+        l.forEach(function (x) {
+          var left = Math.max(0, Math.ceil(TRASH_DAYS - (Date.now() - Date.parse(x.at)) / 864e5));
+          var th = el("i", { class: "bpth" }); if (x.item.img) th.style.backgroundImage = 'url("' + imgShow(x.item.img) + '")';
+          list.appendChild(el("div", { class: "bpr" }, [th, el("span", { class: "bpt" }, [x.item.title || x.item.key, el("small", { text: "Supprimé le " + fdate(String(x.at).slice(0, 10)) + (x.by ? " par " + x.by : "") + " · oublié dans " + left + " jour" + (left > 1 ? "s" : "") })]),
+            el("button", { type: "button", class: "btn ghost", text: "Restaurer", on: { click: function () { restore(x, this); } } }),
+            el("button", { type: "button", class: "btn ghost bdelb", text: "Supprimer pour de bon", title: "Retire de la corbeille (les fichiers chez Amazon ne sont pas effacés)", on: { click: function () { forget([x]); } } })]));
+        });
+      }
+      function reload() { return readFile(BIB_TRASH).catch(function () { return null; }).then(function (o) { drawT(o); trashRefresh(); return o; }); }
+      function forget(xs) {
+        if (!confirm("Supprimer " + (xs.length > 1 ? "ces " + xs.length + " films" : "« " + (xs[0].item.title || "ce film") + " »") + " pour de bon ? Ils ne pourront plus être restaurés. Les fichiers chez Amazon ne sont pas effacés.")) return;
+        commit([{ path: BIB_TRASH, edit: function (t) { if (!t) return null; var o = JSON.parse(t); o.items = (o.items || []).filter(function (y) { return !xs.some(function (z) { return z.item.key === y.item.key && z.at === y.at; }); }); return json(o); } }], "Corbeille : suppression définitive (admin, " + (user && user.login || "") + ")").then(reload, function (e) { alert("Pas supprimé : " + e.message); });
+      }
+      function restore(x, btn) {
+        btn.disabled = true; btn.textContent = "…";
+        commit([{ path: BIB_LIB, edit: function (t) { var l = t ? JSON.parse(t) : { items: [] }; l.items = (l.items || []).filter(function (y) { return y.key !== x.item.key; }); l.items.push(x.item); return json(l); } },
+          { path: BIB_EDITS, edit: function (t) { if (!x.edit) return null; var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {}; o.films[x.item.key] = x.edit; return json(o); } },
+          { path: BIB_TRASH, edit: function (t) { if (!t) return null; var o = JSON.parse(t); o.items = (o.items || []).filter(function (y) { return !(y.item.key === x.item.key && y.at === x.at); }); return json(o); } }],
+          "Video club : film restauré (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) {
+          adopt(d); draw(); var f = filmOf(x.item.key); if (f && x.share) shareCreate([f]).catch(function () {}); return reload();
+        }, function (e) { btn.disabled = false; btn.textContent = "Restaurer"; alert("Pas restauré : " + e.message); });
+      }
+      box.appendChild(el("span", { class: "label", text: "Corbeille · les films y restent " + TRASH_DAYS + " jours avant d'être oubliés" })); box.appendChild(list);
+      box.appendChild(el("p", { class: "hint", text: "Les vidéos et images déjà envoyées chez Amazon restent là-bas : la corbeille ne retire que les fiches du video club." }));
+      box.appendChild(el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
+      ov.addEventListener("click", function (e) { if (e.target === ov) close(); }); ov.appendChild(box); document.body.appendChild(ov); list.appendChild(el("p", { class: "hint", text: "Chargement…" })); reload();
     }
     // Supprimer la sélection cochée dans la liste (Gus 26/11) : seulement les films importés ; ceux de Slate / des pages ne se suppriment pas d'ici.
     function deleteSelection() {
@@ -1680,7 +1731,7 @@
       var ok = fl.filter(function (f) { return inLib[f.key]; }), skip = fl.length - ok.length;
       if (!ok.length) { alert("Ces films viennent de Slate ou des pages du site : ils ne se suppriment pas d'ici (seulement les films importés dans le video club)."); return; }
       var names = ok.slice(0, 6).map(function (f) { return "• " + (f.title || f.key); }).join("\n") + (ok.length > 6 ? "\n• … et " + (ok.length - 6) + " autre" + (ok.length - 6 > 1 ? "s" : "") : "");
-      if (!confirm("Supprimer " + ok.length + " film" + (ok.length > 1 ? "s" : "") + " du video club ?\n\n" + names + (skip ? "\n\n(" + skip + " film" + (skip > 1 ? "s" : "") + " de Slate ou des pages " + (skip > 1 ? "ne sont pas supprimés" : "n'est pas supprimé") + ".)" : "") + "\n\nLes liens de partage de ces films ne marcheront plus. Les autres vidéos importées avec eux restent. Les fichiers chez Amazon ne sont pas effacés.")) return;
+      if (!confirm("Supprimer " + ok.length + " film" + (ok.length > 1 ? "s" : "") + " du video club ?\n\n" + names + (skip ? "\n\n(" + skip + " film" + (skip > 1 ? "s" : "") + " de Slate ou des pages " + (skip > 1 ? "ne sont pas supprimés" : "n'est pas supprimé") + ".)" : "") + "\n\nIls vont à la corbeille (restaurables pendant 30 jours). Leurs liens de partage ne marcheront plus. Les autres vidéos importées avec eux restent. Les fichiers chez Amazon ne sont pas effacés.")) return;
       info.textContent = "Suppression…";
       libDeleteMany(ok).then(function () { draw(); }, function (e) { alert("Pas supprimé : " + e.message); draw(); });
     }

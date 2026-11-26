@@ -151,4 +151,5 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   versions « Encodage 1 » / « Edit n » renommables, choix de la version affichée par le site, « créer un nouveau projet avec cet edit ».
 - **Frise des blocs de l'extrait** : horizontale, largeur de chaque bloc = sa durée, glisser pour réordonner. Fenêtre d'edit plus large (1500 px).
 - **Suppression en nombre** (Gus 26/11) : cocher des films dans la liste → « Supprimer la sélection (n) » (`deleteSelection`, `libDeleteMany` : un commit pour library.json + edits.json, puis les liens de partage) ; seulement les films importés (ceux de Slate / des pages sont ignorés, dit dans la confirmation).
+- **Corbeille** (Gus 26/11) : supprimer un film importé (fenêtre ou « Supprimer la sélection ») = `libDeleteMany` : fiche, retouches et lien de partage vont dans `data/bibli/trash.json` (restaurable 30 jours : `trashOpen`, logo 🗑 en bas à gauche de la page) ; au-delà, la corbeille les oublie (`trashRefresh`). **Les fichiers chez Amazon ne sont jamais effacés** (le robot n'a pas le droit d'effacer) : pour libérer la place, règle de cycle de vie S3 ou droit d'effacement à donner dans AWS.
 
