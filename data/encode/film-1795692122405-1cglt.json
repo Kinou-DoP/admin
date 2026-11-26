@@ -3,9 +3,14 @@
     {
       "id": "mwxgq59h49hbuq",
       "kind": "film",
-      "key": "depot/8nem5tqrs4grkb3w37vc/Camille-Lellouche-Je-me-souviens-Clip-Officiel-_Master_422HQ_1920x1080.mov"
+      "key": "depot/8nem5tqrs4grkb3w37vc/Camille-Lellouche-Je-me-souviens-Clip-Officiel-_Master_422HQ_1920x1080.mov",
+      "progress": {
+        "step": "lecture",
+        "pct": 0
+      }
     }
   ],
   "at": "2026-11-26T11:28:20.426Z",
-  "by": "Gurvan"
+  "by": "Gurvan",
+  "startedAt": "2026-11-26T11:37:46.909Z"
 }
