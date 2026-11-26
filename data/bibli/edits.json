@@ -208,6 +208,20 @@
           "img": "https://images.slatecdn.net/0TfpOWenu0Fn0jGKaKfzOz01uXiQGGwp3TWinQ8k4Fk/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQwMi02OTdjODFk/NDZhOTRmOC43Mjk5/MjgyMC0xNDQ2NWFh/ZTE0OTExNWFjMTMw/Yzc4NWJhOWQxOTU3/NC5qcGc.webp",
           "key": "s10402",
           "link": "https://kinou-4tv.pages.dev/b/7pej9hzja"
+        },
+        {
+          "title": "Stills",
+          "stills": [
+            "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/001.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/002.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/003.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/004.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/005.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/006.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/007.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/008.webp"
+          ],
+          "up": true
         }
       ]
     },
