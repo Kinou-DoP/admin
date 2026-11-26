@@ -843,16 +843,23 @@
       "crop": null
     },
     "s10382": {
+      "img": "https://d3toxii6rvamjf.cloudfront.net/depot/6heayckmu68sugajg639/vignette.webp",
       "snip": {
         "s": 56.671,
         "d": 19.943,
         "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxp8joo9bcah4/extrait-56671.mp4",
         "vf": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85c87c46-a99b-40a7-afe8-2f8eb11d8965-1280x720.2500.mp4"
       },
+      "thumbT": 63.79,
+      "hist": {
+        "img": [
+          "https://images.slatecdn.net/UslHW0Bf-VHiIH2LEi1Mc6HyPnQnO70vFfcevHlSINY/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDM4Mi02OTcyNTQx/ZTQxOGYxMi42NDAz/ODUyMy01YmE5Y2Ez/YzE1NzhjNDQ4MDBk/N2MyMmNmNjkxYzcx/Ny5qcGc.webp"
+        ]
+      },
       "crop": {
         "z": 1.41,
-        "x": 41.8,
-        "y": 60.1,
+        "x": 51.2,
+        "y": 60.9,
         "t": true
       }
     }
