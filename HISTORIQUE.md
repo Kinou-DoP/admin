@@ -410,3 +410,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Cartes des pages de chefs op : les vidéos du même import s'affichent sous le film (`vcGroupRows`), avec poignée et œil ; toucher au réglage crée la liste propre à la page (overrides[id].extras).
 - 26/11 — Fiches : la liste d'une carte (vidéos d'un lot) suit le video club (titres, ordre) tant que l'ordre n'a pas été changé sur la page (overrides[id].extrasOrd).
 - 26/11 — Capture de vignette : essais instantanés (blob, /api/media, CORS direct) avant le robot.
+- 26/11 — Montage d'extrait (blocs, I / O, poignées qui se poussent, 30 s), suppression d'un film / bande / bundle, client + date + poids dans les infos, à faire plus tard (README).

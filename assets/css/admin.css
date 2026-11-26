@@ -1188,3 +1188,17 @@ input.bcn { width: 90px; }
 .btn.bplus { flex: none; min-width: 38px; padding-left: 10px; padding-right: 10px; font-size: 16px; line-height: 1; }
 .bexs ~ .tlrow .bupbtn, .tlrow .bupbtn { flex: 1 1 100%; width: 100%; text-align: center; }
 .extras .xbtn.xeye.on { color: #ff7b72; } .extras .xrow.xhid .xline > :not(.xbtn):not(.xgrip) { opacity: .45; }
+
+/* Montage de l'extrait : blocs bout à bout (Gus 26/11) */
+.bblks { display: flex; flex-direction: column; gap: 4px; margin: 8px 0 12px; }
+.bblk { display: flex; align-items: center; gap: 10px; padding: 6px 8px; background: var(--soft); cursor: pointer; font-size: 13px; }
+.bblk.on { outline: 1px solid #d9822b; background: rgba(217,130,43,.12); } .bblk b { width: 18px; color: #ffb36b; } .bblk span:not(.xgrip) { flex: 1; }
+.bblk .bx { position: static; opacity: 1; flex: none; } .bblk.xdrag { opacity: .35; } .bblk.xover { box-shadow: 0 -2px 0 #d9822b; } .bblk.xoverend { box-shadow: 0 2px 0 #d9822b; }
+
+/* Zone rouge : suppression (Gus 26/11) */
+.bdanger { margin: 18px 0 6px; padding: 12px 14px; border: 1px solid #ff3b30; background: rgba(255,59,48,.07); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.bdanger .label { margin: 0; color: #ff7b72; }
+.btn.bdelb { background: none; color: #ff7b72; border: 1px solid #ff3b30; } .btn.bdelb:hover { background: #ff3b30; color: #fff; }
+.bdelside { margin-top: 14px; align-self: flex-start; }
+.fwbtns .btn.ghost[title^="Supprimer"]:hover { color: #ff7b72; border-color: #ff3b30; }
+.binfo { margin: 10px 0 0; }

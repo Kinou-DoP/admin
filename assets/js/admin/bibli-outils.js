@@ -12,7 +12,7 @@
   // a un), le fichier du dépôt public est illisible et son nom ne dit rien. L'original et la liste des bandes (avec les mots de
   // passe) sont dans le dépôt privé notes (bandes/<code>.json, bandes/index.json). Chiffrement : bandSeal (même code dans
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
-  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "images", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc", "pend", "scrop", "ipos", "ihide", "grp", "gi"];
+  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "images", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc", "pend", "client", "scrop", "ipos", "ihide", "grp", "gi"];
   var BIB_SLATE = "bibli/slate.json"; // dépôt notes : tous les films de Slate (liste privée, 25/11)
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
@@ -65,6 +65,7 @@
       if (!o.awards && f.awards) o.awards = f.awards; // prix et sélections (une ligne chacun)
       if (!o.crop && f.crop) o.crop = f.crop; // recadrage réglé sur la page (point de départ dans les bandes)
       if (!o.snip && f.snip) o.snip = f.snip; // extrait d'un film envoyé depuis l'ordinateur (encodage, { s, d, v })
+      ['size', 'ws', 'os', 'dur', 'w', 'h', 'by'].forEach(function (x) { if (f[x] !== undefined && o[x] === undefined) o[x] = f[x]; }); // fichier : poids, durée, taille, qui l'a importé
       if (f.grp && !o.grp) { o.grp = f.grp; o.gi = f.gi || 0; } // vidéos importées ensemble
       if (f.enc && !o.full) o.enc = f.enc; // film envoyé depuis l'ordinateur, encodage pas encore terminé
       (f.dops || []).forEach(function (d) { d = rcBase(d); if (d && !o.dops.some(function (x) { return bnrm(x) === bnrm(d); })) o.dops.push(d); });
@@ -122,6 +123,7 @@
         order.forEach(function (f) {
           var m = f.slate && meta[f.slate]; if (!m) return;
           if (m.client) f.client = m.client;
+          if (m.date) f.date = m.date; // date sur Slate
           add({ slate: f.slate, types: m.types || [] }, null);
           f.tags = m.tags || [];
         });

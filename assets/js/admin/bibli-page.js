@@ -52,7 +52,7 @@
                 if (r.answer && w === "thumb") {
                   if (x.img && x.img !== r.answer.img) { x.hist = x.hist || {}; x.hist.img = [x.img].concat((x.hist.img || []).filter(function (u) { return u !== x.img; })).slice(0, 8); }
                   x.img = r.answer.img; x.thumbT = q.t;
-                } else if (r.answer && w === "snip" && x.snip && x.snip.s === q.s && x.snip.d === q.d) { x.snip.v = r.answer.video; x.snip.vf = q.from; }
+                } else if (r.answer && w === "snip" && x.snip && x.snip.s === q.s && x.snip.d === q.d && JSON.stringify(x.snip.parts || null) === (q.pj || "null")) { x.snip.v = r.answer.video; x.snip.vf = q.from; }
                 delete x.pend[w];
               });
               if (x.pend && !Object.keys(x.pend).length) delete x.pend;
@@ -79,7 +79,7 @@
               var j = x.enc && res[x.enc.id]; if (!j || x.full) return;
               if (j.error || !j.answer) { x.enc.error = j.error || "pas de réponse"; return; }
               var a = j.answer; x.full = a.full; x.video = a.video; x.img = a.img; x.img1600 = a.img1600; x.thumbT = a.thumbT;
-              x.snip = { s: a.snip.s, d: a.snip.d, v: a.video, vf: a.full }; x.dur = a.dur; x.w = a.w; x.h = a.h; delete x.enc;
+              x.snip = { s: a.snip.s, d: a.snip.d, v: a.video, vf: a.full }; x.dur = a.dur; x.w = a.w; x.h = a.h; if (a.ws) x.ws = a.ws; if (a.os) x.os = a.os; delete x.enc;
             });
             return json(L);
           } }], "Video club : encodage terminé (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) { if (location.hash === "#/bibli") { adopt(d); draw(); } });
@@ -221,6 +221,8 @@
         return Object.keys(e).length ? e : null;
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
+        meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by },
+        canDelete: function () { return !!(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
         onChange: function () {
           // Vidéos d'un même import : ordre commun à toutes (Gus 26/11). Glisser une ligne change l'ordre du lot entier ; masquer ne casse pas le lien.
           // Lignes ajoutées / retirées / ajoutées à la main : lien rompu pour ce film (lignes sans `auto`, enregistrées dans edits.json).
@@ -609,6 +611,7 @@
       right.appendChild(title);
       var ul = el("div", { class: "bitems" }, [el("p", { class: "hint", text: "Chargement…" })]); right.appendChild(ul);
       var foot2 = el("div", { class: "bfoot" }); right.appendChild(foot2);
+      if (bun.code) right.appendChild(el("button", { type: "button", class: "btn bdelb bdelside", text: "Supprimer ce bundle", title: "Son lien ne marchera plus (ses bandes restent)", on: { click: function () { delBundle(bun); } } }));
       bandsList().then(function (all) {
         var by = {}; all.forEach(function (b) { by[b.code] = b; });
         var dragAt = 0;
@@ -732,7 +735,8 @@
         el("div", {}, [el("span", { class: "label", text: "Présentation" }), cols, el("span", { class: "label", text: "Date d'expiration (la page affiche « plus disponible » après)" }), exp,
           el("span", { class: "label", text: "Mot de passe (vide = aucun ; la page est chiffrée avec)" }), pw,
           ck("Autoriser le téléchargement", function () { return band.download; }, function (v) { band.download = v; })])]));
-      box.appendChild(el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } })]));
+      box.appendChild(el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } }),
+        band.code && !band.legacy ? el("button", { type: "button", class: "btn bdelb", text: "Supprimer cette bande", title: "Le lien ne marchera plus", on: { click: function () { ov.remove(); delBand({ code: band.code, title: band.title }); } } }) : null]));
       ov.appendChild(box); document.body.appendChild(ov);
     }
 
@@ -887,13 +891,18 @@
       // Lecteur du film (Gus 22/11) : image par image avec les flèches (Maj = 1 s), pour la vignette et pour l'extrait.
       // Extrait = un début et une fin (0,5 à 10 s) : poignées sur une frise de tout le film (Gus 26/11) ; pendant qu'on
       // bouge une poignée la vidéo montre l'image sans bouger, dès qu'on lâche (ou 0,7 s après la dernière flèche) l'extrait joue en boucle.
+      var MIND = .5, MAXD = 30, bi = 0; // blocs de l'extrait : 0,5 s au moins, 30 s au total
+      function parts() { return it.snip && it.snip.parts && it.snip.parts.length > 1 ? it.snip.parts : null; }
+      function actB() { var p = parts(); return p ? p[Math.min(bi, p.length - 1)] : it.snip; }
+      function totalD() { var p = parts(); return p ? p.reduce(function (a, b) { return a + b.d; }, 0) : it.snip ? it.snip.d : 0; }
+      function maxFor() { var p = parts(); return MAXD - (p ? totalD() - actB().d : 0); }
       var player = null, pout = el("p", { class: "hint" }), tools = el("div", { class: "tltools" }), tl = null;
       var src = it.full || it.video || (lib && lib.local) || ""; // lib.local : la vidéo de l'ordinateur, pendant l'envoi / l'encodage
       var full = it.full || (lib && lib.local) || "";
       function fmtF(t) { t = Math.max(0, t || 0); var m = Math.floor(t / 60), s = t - m * 60; return m + ":" + (s < 10 ? "0" : "") + s.toFixed(2).replace(".", ","); }
       if (src) {
         player = el("video", { playsinline: true, preload: "auto", muted: true }); player.muted = true; player.src = src;
-        var FR = 1 / 25, dur = 0, act = "play", loopOn = false, kT = 0, WIN = 30, ptab = "thumb"; // onglet : vignette | extrait (Gus 22/11)
+        var FR = 1 / 25, seqOn = false, seqI = 0, dur = 0, act = "play", loopOn = false, kT = 0, WIN = 30, ptab = "thumb"; // onglet : vignette | extrait (Gus 22/11)
         var oReg = el("i", { class: "tlreg" }), oPh = el("i", { class: "tlph" }), over = el("div", { class: "tlo", title: "Tout le film : cliquez ou glissez" }, [oReg, oPh]);
         var dReg = el("i", { class: "tlreg" }), dPh = el("i", { class: "tlph" }), hIn = el("b", { class: "tlh in", title: "Début de l'extrait" }), hOut = el("b", { class: "tlh out", title: "Fin de l'extrait" });
         var dLab = el("div", { class: "tllab" }), det = el("div", { class: "tld" }, [dReg, dPh, hIn, hOut]);
@@ -909,25 +918,30 @@
           oPh.style.left = pc(t, 0, dur); time.textContent = fmtF(t) + " / " + fmtF(dur);
           det.hidden = dLab.hidden = !it.snip || ptab !== "snip"; oReg.hidden = true; over.hidden = !det.hidden;
           if (it.snip) {
-            var s = it.snip.s, e = s + it.snip.d;
-            oReg.style.left = pc(s, 0, dur); oReg.style.width = Math.max(.4, it.snip.d / dur * 100) + "%";
-            dReg.style.left = pc(s, w[0], w[1]); dReg.style.width = (it.snip.d / (w[1] - w[0]) * 100) + "%";
+            var A = actB(), s = A.s, e = s + A.d;
+            oReg.style.left = pc(s, 0, dur); oReg.style.width = Math.max(.4, A.d / dur * 100) + "%";
+            dReg.style.left = pc(s, w[0], w[1]); dReg.style.width = (A.d / (w[1] - w[0]) * 100) + "%";
             hIn.style.left = pc(s, w[0], w[1]); hOut.style.left = pc(e, w[0], w[1]); dPh.style.left = pc(t, w[0], w[1]);
             dPh.hidden = t < w[0] || t > w[1];
             hIn.classList.toggle("on", act === "in"); hOut.classList.toggle("on", act === "out");
-            dLab.textContent = "Extrait : " + fmtF(s) + " → " + fmtF(e) + " (" + it.snip.d.toFixed(1).replace(".", ",") + " s)" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image") + " · espace : lire la boucle";
+            dLab.textContent = (parts() ? "Bloc " + (bi + 1) + " / " + parts().length + " : " : "Extrait : ") + fmtF(s) + " → " + fmtF(e) + " (" + A.d.toFixed(1).replace(".", ",") + " s" + (parts() ? ", montage " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD : "") + ")" + " · I / O : début / fin ici" + (act === "play" ? "" : " · flèches : " + (act === "in" ? "début" : "fin") + " image par image") + " · espace : lire la boucle";
           }
         };
-        var seek = function (t) { loopOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
-        var playSnip = function () { if (!it.snip) return; loopOn = true; player.currentTime = it.snip.s; player.play().catch(function () {}); };
-        var setSnip = function (s, e, which) { // 0,5 s au moins, 10 s au plus : la poignée tirée s'arrête, l'autre ne bouge pas (Gus 22/11)
-          s = Math.round(s * 1000) / 1000; e = Math.round(e * 1000) / 1000;
-          if (which === "in") s = Math.max(0, e - 10, Math.min(s, e - .5));
-          else if (which === "out") e = Math.min(dur, s + 10, Math.max(e, s + .5));
-          else { s = Math.max(0, Math.min(s, dur - .5)); e = Math.min(dur, Math.max(s + .5, Math.min(e, s + 10))); }
-          it.snip = { s: Math.max(0, s), d: Math.round((Math.min(dur, e) - Math.max(0, s)) * 1000) / 1000 }; it.edited = true;
+        var seek = function (t) { loopOn = false; seqOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
+        var playSnip = function () { if (!it.snip) return; seqOn = false; loopOn = true; player.currentTime = actB().s; player.play().catch(function () {}); };
+        // Extrait : jusqu'à 30 s au total (Gus 26/11, avant 10 s), 0,5 s au moins par bloc. Les poignées se poussent : tirer le début vers la droite jusqu'à
+        // la fin la pousse devant lui (on avance dans le film) ; tirer la fin vers la gauche pousse le début ; tirer dans l'autre sens s'arrête à la limite.
+        // Montage : plusieurs blocs bout à bout (it.snip.parts) ; `bi` = bloc réglé par les poignées.
+        var setSnip = function (s, e, which) {
+          s = Math.round(s * 1000) / 1000; e = Math.round(e * 1000) / 1000; var mx = maxFor();
+          if (which === "in") { s = Math.max(0, e - mx, s); if (s > e - MIND) { e = Math.min(dur, s + MIND); s = Math.min(s, e - MIND); } }
+          else if (which === "out") { e = Math.min(dur, s + mx, e); if (e < s + MIND) { s = Math.max(0, e - MIND); e = Math.max(e, s + MIND); } }
+          else { s = Math.max(0, Math.min(s, dur - MIND)); e = Math.min(dur, Math.max(s + MIND, Math.min(e, s + mx))); }
+          s = Math.max(0, s); var d = Math.round((Math.min(dur, e) - s) * 1000) / 1000, p = parts();
+          if (p) { p[bi] = { s: s, d: d }; it.snip = { s: p[0].s, d: p[0].d, parts: p }; } else it.snip = { s: s, d: d };
+          it.edited = true;
         };
-        var moveHandle = function (which, t) { snipDraft(); var s = it.snip.s, e = s + it.snip.d; if (which === "in") setSnip(t, e, "in"); else setSnip(s, t, "out"); seek(which === "in" ? it.snip.s : it.snip.s + it.snip.d); };
+        var moveHandle = function (which, t) { snipDraft(); var A = actB(), s = A.s, e = s + A.d; if (which === "in") setSnip(t, e, "in"); else setSnip(s, t, "out"); A = actB(); seek(which === "in" ? A.s : A.s + A.d); };
         player.addEventListener("loadedmetadata", function () { dur = player.duration || 0; if (ptab === "snip") setTab("snip"); else if (it.thumbT !== undefined) player.currentTime = it.thumbT; draw(); });
         player.addEventListener("timeupdate", draw);
         player.addEventListener("seeked", draw);
@@ -935,7 +949,10 @@
         player.addEventListener("pause", function () { playB.textContent = "▶"; });
         (function tick() { // boucle de l'extrait + mesure de la cadence (image par image exact)
           if (dur && !player.isConnected) return; // fenêtre fermée
-          if (loopOn && it.snip && !player.paused && (player.currentTime >= it.snip.s + it.snip.d || player.currentTime < it.snip.s - .1)) player.currentTime = it.snip.s;
+          if (seqOn && parts() && !player.paused) { // montage : les blocs bout à bout, en boucle
+            var B = parts()[seqI] || parts()[0];
+            if (player.currentTime >= B.s + B.d - .03 || player.currentTime < B.s - .3) { seqI = (seqI + 1) % parts().length; player.currentTime = parts()[seqI].s; }
+          } else if (loopOn && it.snip && !player.paused) { var A0 = actB(); if (player.currentTime >= A0.s + A0.d || player.currentTime < A0.s - .1) player.currentTime = A0.s; }
           if (!player.paused) draw();
           requestAnimationFrame(tick);
         })();
@@ -943,7 +960,7 @@
         // Lecture : s'il y a un extrait, toujours en boucle entre le début et la fin (Gus 22/11) ; sinon le film.
         var toggle = function () {
           if (!player.paused) { player.pause(); return; }
-          if (it.snip && ptab === "snip") { var t = player.currentTime; loopOn = true; if (t < it.snip.s || t >= it.snip.s + it.snip.d - .05) player.currentTime = it.snip.s; player.play().catch(function () {}); }
+          if (it.snip && ptab === "snip") { var t = player.currentTime, A1 = actB(); seqOn = false; loopOn = true; if (t < A1.s || t >= A1.s + A1.d - .05) player.currentTime = A1.s; player.play().catch(function () {}); }
           else { loopOn = false; player.play().catch(function () {}); }
         };
         playB.addEventListener("click", function () { toggle(); playB.blur(); });
@@ -968,10 +985,17 @@
           if (!document.body.contains(box)) { document.removeEventListener("keydown", onKey, true); return; }
           if (e.target && e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])")) return;
           if (e.key === " ") { e.preventDefault(); e.stopPropagation(); if (document.activeElement && document.activeElement.blur && box.contains(document.activeElement)) document.activeElement.blur(); if (!e.repeat) toggle(); return; }
+          if ((e.key === "i" || e.key === "o" || e.key === "I" || e.key === "O") && !e.ctrlKey && !e.metaKey && !e.altKey && ptab === "snip" && !it.snipVideo) { // I / O : début / fin de l'extrait ici (Gus 26/11)
+            e.preventDefault(); e.stopPropagation(); if (e.repeat) return; var tt = player.currentTime; snipDraft();
+            if (!it.snip) it.snip = { s: tt, d: Math.round(Math.min(5, dur - tt) * 1000) / 1000 };
+            var A2 = actB(); act = /i/i.test(e.key) ? "in" : "out";
+            if (act === "in") setSnip(tt, A2.s + A2.d, "in"); else setSnip(A2.s, tt, "out");
+            prevSnip(); draw(); drawSnip(); return;
+          }
           if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
           e.preventDefault(); e.stopPropagation(); var st2 = (e.shiftKey ? 1 : FR) * (e.key === "ArrowLeft" ? -1 : 1);
           if (act === "play" || !it.snip || ptab !== "snip") seek(player.currentTime + st2);
-          else { moveHandle(act, (act === "in" ? it.snip.s : it.snip.s + it.snip.d) + st2); clearTimeout(kT); kT = setTimeout(function () { prevSnip(); drawSnip(); }, 300); }
+          else { moveHandle(act, (act === "in" ? actB().s : actB().s + actB().d) + st2); clearTimeout(kT); kT = setTimeout(function () { prevSnip(); drawSnip(); }, 300); }
         };
         document.addEventListener("keydown", onKey, true);
         tools.appendChild(el("div", { class: "tlrow" }, [
@@ -981,7 +1005,7 @@
           time]));
         var grabB = el("button", { type: "button", class: "btn primary", text: "Valider cette image", title: "L'image affichée devient la vignette", on: { click: grab } });
         var snipB = full ? el("button", { type: "button", class: "btn ghost", text: "Début de l'extrait ici", title: "Place le début sur l'image affichée (même durée)", on: { click: function () {
-            snipDraft(); var s = player.currentTime, d = it.snip ? it.snip.d : 5; act = "in"; setSnip(s, s + d, "new"); prevSnip(); draw(); playSnip(); drawSnip();
+            snipDraft(); var s = player.currentTime, d = it.snip ? actB().d : 5; act = "in"; if (!it.snip) it.snip = { s: s, d: Math.min(d, Math.max(MIND, dur - s)) }; setSnip(s, s + d, "new"); prevSnip(); draw(); playSnip(); drawSnip();
           } } }) : null;
         var tabB = {}, ptabs = el("div", { class: "btabs ptabs" }, [["thumb", "Vignette"], ["snip", "Extrait"]].map(function (t) { return tabB[t[0]] = el("button", { type: "button", text: t[1], on: { click: function () { setTab(t[0]); } } }); }));
         if (!full) tabB.snip.hidden = true;
@@ -992,15 +1016,45 @@
           else if (dur && !it.snipVideo) {
             // Extrait : les poignées tout de suite (Gus 22/11) ; sans extrait choisi, il part de l'image de la vignette (ou du début du film).
             if (!it.snip) { snipDraft(); var s0 = it.thumbT !== undefined ? Math.min(it.thumbT, Math.max(0, dur - .5)) : 0; it.snip = { s: s0, d: Math.round(Math.min(5, dur - s0) * 1000) / 1000 }; }
-            act = "in"; seek(it.snip.s); playSnip();
+            act = "in"; seek(actB().s); playSnip();
           }
           draw(); drawSnip();
         };
       }
-      var snipLine = el("p", { class: "hint" });
+      var snipLine = el("p", { class: "hint" }), blocksBox = el("div", { class: "bblks" });
+      // Montage (Gus 26/11) : plusieurs blocs de l'extrait, bout à bout. « + Ajouter un bloc » en crée un à l'image affichée (réglable ensuite avec les
+      // poignées ou I / O) ; le bloc réglé est surligné ; on les déplace en glissant ⠿, on en modifie un en cliquant dessus.
+      function sync() { var p = parts(); if (p) it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true; }
+      function drawBlocks() {
+        blocksBox.textContent = ""; var p = parts(); if (!p) return;
+        blocksBox.appendChild(el("span", { class: "label", text: "Montage : " + p.length + " blocs · " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD + " · glisse ⠿ pour changer l'ordre" }));
+        p.forEach(function (b, i) {
+          var w = el("div", { class: "bblk" + (i === bi ? " on" : ""), "data-xi": String(i), title: "Cliquer pour régler ce bloc avec les poignées ou I / O" });
+          w.appendChild(xGrip(w, i)); w.appendChild(el("b", { text: String(i + 1) })); w.appendChild(el("span", { text: fmtF(b.s) + " → " + fmtF(b.s + b.d) + " · " + b.d.toFixed(1).replace(".", ",") + " s" }));
+          w.appendChild(el("button", { type: "button", class: "bx", text: "▶", title: "Voir ce bloc", on: { click: function (e) { e.stopPropagation(); bi = i; act = "in"; drawBlocks(); draw(); playSnip(); } } }));
+          w.appendChild(el("button", { type: "button", class: "bx", text: "×", title: "Retirer ce bloc", on: { click: function (e) {
+            e.stopPropagation(); snipDraft(); p.splice(i, 1); if (p.length === 1) it.snip = { s: p[0].s, d: p[0].d }; else sync();
+            bi = Math.max(0, Math.min(bi - (i <= bi ? 1 : 0), p.length - 1)); it.edited = true; drawBlocks(); drawSnip(); draw();
+          } } }));
+          w.addEventListener("click", function () { bi = i; act = "in"; drawBlocks(); draw(); if (player) seek(p[i].s); });
+          blocksBox.appendChild(w);
+        });
+      }
+      xDropZone(blocksBox, function (from, to) {
+        var p = parts(); if (!p) return; snipDraft(); var cur = p[bi], x = p.splice(from, 1)[0]; p.splice(to, 0, x); bi = p.indexOf(cur); sync(); drawBlocks(); drawSnip(); draw();
+      });
+      function addBlock() {
+        if (!player || !dur) return; snipDraft(); var t = Math.max(0, Math.min(player.currentTime, dur - MIND));
+        if (!it.snip) { it.snip = { s: t, d: Math.round(Math.min(5, dur - t) * 1000) / 1000 }; act = "in"; drawSnip(); draw(); return; }
+        var p = parts() || [{ s: it.snip.s, d: it.snip.d }], tot = p.reduce(function (a, b) { return a + b.d; }, 0);
+        if (tot + MIND > MAXD) { pout.className = "hint berr"; pout.textContent = "Montage plein : " + MAXD + " s au plus en tout."; return; }
+        p.push({ s: t, d: Math.round(Math.min(5, dur - t, MAXD - tot) * 1000) / 1000 }); bi = p.length - 1; it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true; act = "in";
+        drawBlocks(); drawSnip(); draw(); playSnip();
+      }
+      function playSeq() { if (!player || !it.snip) return; if (!parts()) { playSnip(); return; } loopOn = false; seqOn = true; seqI = 0; player.currentTime = parts()[0].s; player.play().catch(function () {}); }
       function prevSnip() { if (pvid) { pvid.remove(); pvid = null; } }
       function drawSnip() {
-        snipLine.textContent = ""; if (typeof valB !== "undefined" && valB) valB.disabled = !it._snipTmp && !snipStale();
+        drawBlocks(); snipLine.textContent = ""; if (typeof valB !== "undefined" && valB) valB.disabled = !it._snipTmp && !snipStale();
         if (it.snipVideo) snipLine.appendChild(el("span", {}, ["Extrait importé de l'ordinateur · ", el("button", { type: "button", class: "blink", text: "le retirer", on: { click: function () { delete it.snipVideo; chg(); prevSnip(); drawSnip(); } } })]));
         else if (it._snipTmp) snipLine.textContent = "Extrait pas encore enregistré : « Valider l'extrait » pour le garder (sinon il est oublié en fermant).";
         else if (it.snip) snipLine.appendChild(el("span", {}, [el("button", { type: "button", class: "blink", text: "Revenir à l'extrait d'origine", on: { click: function () { snipDiscard(); pushHist("snip", it.snip); delete it.snip; lastSnip = null; act = "play"; chg(); drawSnip(); drawHist(); if (tl) { loopOn = false; draw(); } } } })]));
@@ -1016,7 +1070,7 @@
       var lastSnip = it.snip ? JSON.stringify(it.snip) : null;
       // Brouillon de l'extrait : réglé à la souris / aux flèches sans rien enregistrer ; « Valider l'extrait » l'enregistre.
       function snipDraft() { if (it._snipTmp) return; it._snipSaved = it.snip ? JSON.parse(JSON.stringify(it.snip)) : undefined; it._snipTmp = true; }
-      function snipDiscard() { if (!it._snipTmp) return; if (it._snipSaved) it.snip = it._snipSaved; else delete it.snip; delete it._snipTmp; delete it._snipSaved; if (typeof draw === "function" && tl) draw(); }
+      function snipDiscard() { if (!it._snipTmp) return; bi = 0; if (it._snipSaved) it.snip = it._snipSaved; else delete it.snip; delete it._snipTmp; delete it._snipSaved; if (typeof draw === "function" && tl) draw(); }
       function snipCommit() { // extrait validé : l'ancien va dans l'historique, le nouveau est enregistré
         delete it._snipTmp; delete it._snipSaved; var x = it.snip ? JSON.stringify(it.snip) : null;
         if (lastSnip && lastSnip !== x) pushHist("snip", JSON.parse(lastSnip));
@@ -1029,16 +1083,16 @@
       function snipLight() {
         var sn = it.snip, from = it.full;
         if (!canWeb || !sn || it.snipVideo || !from || !snipStale()) return;
-        var id = encId(), s0 = sn.s, d0 = sn.d;
+        var id = encId(), s0 = sn.s, d0 = sn.d, pj = JSON.stringify(sn.parts || null);
         pout.className = "hint bwait"; pout.textContent = "Demande au robot…";
-        encAsk("rapide", [{ id: id, kind: "snip", src: from, s: s0, d: d0 }]).then(function (path) {
-          var q = { path: path, id: id, s: s0, d: d0, from: from }; pendSet("snip", q); snipWait(q);
+        encAsk("rapide", [{ id: id, kind: "snip", src: from, s: s0, d: d0, parts: sn.parts }]).then(function (path) {
+          var q = { path: path, id: id, s: s0, d: d0, pj: pj, from: from }; pendSet("snip", q); snipWait(q);
         }).catch(function (e) { if (pout.isConnected) { pout.className = "hint berr"; pout.textContent = "Extrait léger pas fait : " + e.message; } });
       }
       function snipWait(q) {
         pout.className = "hint bwait"; pout.textContent = "⟳ Extrait en cours d'encodage (≈ 1 min) : tu peux fermer cette fenêtre ou changer de page, il s'appliquera tout seul.";
         pendWatch("snip", q, function (a) {
-          if (it.snip && it.snip.s === q.s && it.snip.d === q.d && it.full === q.from) { it.snip.v = a.video; it.snip.vf = q.from; it.edited = true; chg(); if (pout.isConnected) { pout.className = "hint bok"; pout.textContent = "✓ Extrait léger prêt (720p) : c'est lui que jouent les bandes."; } }
+          if (it.snip && it.snip.s === q.s && it.snip.d === q.d && JSON.stringify(it.snip.parts || null) === q.pj && it.full === q.from) { it.snip.v = a.video; it.snip.vf = q.from; it.edited = true; chg(); if (pout.isConnected) { pout.className = "hint bok"; pout.textContent = "✓ Extrait léger prêt (720p) : c'est lui que jouent les bandes."; } }
         }, function (e) { if (pout.isConnected) { pout.className = "hint berr"; pout.textContent = "Extrait léger pas fait : " + e.message; } });
       }
       var histImgL = el("span", { class: "label", text: "Anciennes vignettes" }), histImg = el("div", { class: "bthumbs" });
@@ -1048,7 +1102,7 @@
         histImg.textContent = ""; (h.img || []).forEach(function (u) { histImg.appendChild(el("button", { type: "button", style: 'background-image:url("' + u + '")', title: "Reprendre cette ancienne vignette", on: { click: function () { setImg(u); } } })); });
         histImg.hidden = histImgL.hidden = !(h.img || []).length;
         histSnip.textContent = ""; (h.snip || []).forEach(function (x) { histSnip.appendChild(el("button", { type: "button", class: "bcc", text: fmtF(x.s) + " → " + fmtF(x.s + x.d), title: "Reprendre cet ancien extrait", on: { click: function () {
-          snipDraft(); it.snip = x.v ? { s: x.s, d: x.d, v: x.v } : { s: x.s, d: x.d }; prevSnip(); drawSnip(); if (tl) { act = "in"; seek(x.s); playSnip(); draw(); }
+          snipDraft(); it.snip = { s: x.s, d: x.d }; if (x.parts) it.snip.parts = JSON.parse(JSON.stringify(x.parts)); if (x.v) it.snip.v = x.v; bi = 0; prevSnip(); drawSnip(); if (tl) { act = "in"; seek(x.s); playSnip(); draw(); }
         } } })); });
         histSnip.hidden = histSnipL.hidden = !(h.snip || []).length;
       }
@@ -1255,6 +1309,16 @@
       drawEx();
       var aw = el("textarea", { rows: 3, placeholder: "Une ligne par prix ou sélection (ex. Best Cinematography, Camerimage 2026)" }); aw.value = it.awards || "";
       aw.addEventListener("input", function () { it.awards = aw.value.trim(); if (!it.awards) delete it.awards; it.edited = true; chg(); });
+      // Infos du fichier (Gus 26/11) : date (celle de Slate pour les films de Slate, sinon l'import), poids de l'original et de la version web.
+      function fsz(n) { return n >= 1e9 ? (n / 1e9).toFixed(1).replace(".", ",") + " Go" : Math.max(1, Math.round(n / 1e6)) + " Mo"; }
+      function infoFile(m) {
+        m = m || {}; var l = [];
+        if (m.date) l.push("Date sur Slate : " + fdate(m.date)); else if (m.at) l.push("Importé le " + fdate(String(m.at).slice(0, 10)) + (m.by ? " par " + m.by : ""));
+        if (m.size) l.push("Fichier d'origine : " + fsz(m.size) + (m.ws ? " → version web " + fsz(m.ws) + " (" + Math.round((1 - m.ws / m.size) * 100) + " % de moins)" : (m.os ? "" : " → version web en préparation")));
+        else if (m.ws) l.push("Version web : " + fsz(m.ws));
+        if (m.w) l.push(m.w + "×" + m.h); if (m.dur) l.push(Math.floor(m.dur / 60) + " min " + String(Math.round(m.dur % 60)).padStart(2, "0") + " s");
+        return el("p", { class: "hint binfo", text: l.join(" · ") });
+      }
       box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (sur le site et dans les prochaines bandes) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [].concat(
@@ -1263,6 +1327,8 @@
           [el("span", { class: "label", text: "Prod" }), chipsIn("prod", function () { return bibProds(it); }, function (l) { it.prod = l.join(", "); })],
           [el("span", { class: "label", text: "Chefs op et rôles (rôle vide = cinematographer, crédité en premier)" }), credEd()],
           [el("span", { class: "label", text: "Types de contenu" }), chipsIn("type", function () { return (it.types || it.cats || []).slice(); }, function (l) { it.types = l; })],
+          lib ? fld("Client", function () { return it.client; }, function (v) { if (String(v).trim()) it.client = v; else delete it.client; }) : [],
+          lib ? [infoFile(lib.meta)] : [],
           [orig || lib ? el("button", { type: "button", class: "btn ghost", text: lib ? "Tout remettre comme sur les pages" : "Tout remettre comme dans le video club", on: { click: function () {
             if (lib) { lib.reset(); close(); return; } var keepKey = it.key; band.items[i] = bandItem(orig); band.items[i].key = keepKey; chg(); close();
           } } }) : null])),
@@ -1348,7 +1414,7 @@
         var offSnip = libF ? el("div", { class: "boff" }, [el("button", { type: "button", class: "blink", text: "★ En faire l'extrait officiel du film", title: "Le film du video club prend cet extrait (sur le site et pour toutes les prochaines bandes)", on: { click: function () { official("snip"); } } })]) : null;
         thumbPane = el("div", { class: "ppane" }, [el("div", { class: "tlrow" }, [upBtn("⤒ Importer une image", imgUp, "image", doImg), imgUp, el("span", { class: "tlgrow" }), grabB]),
           el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg, offImg]);
-        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine,
+        snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, el("button", { type: "button", class: "btn ghost", text: "+ Ajouter un bloc", title: "Ajoute un bloc à l'extrait (montage) : réglé ensuite avec les poignées ou I / O", on: { click: addBlock } }), el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire les blocs bout à bout", on: { click: playSeq } }), upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine, blocksBox,
           histSnipL, histSnip, offSnip]);
         box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s), espace = lecture" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
         setTab("thumb");
@@ -1383,6 +1449,16 @@
       euB = el("button", { type: "button", class: "blink bundo", text: "↶ Annuler", title: "Annuler (Ctrl / Cmd + Z)", on: { click: function () { eGo(-1); } } });
       erB = el("button", { type: "button", class: "blink bredo", text: "Rétablir ↷", title: "Rétablir (Maj + Ctrl / Cmd + Z)", on: { click: function () { eGo(1); } } });
       box.appendChild(el("div", { class: "bshare" }, [el("span", { class: "label", text: "Partager ce film seul" }), el("div", { class: "tlrow" }, [shrB, shrDl, shrMsg])]));
+      // Zone rouge (Gus 26/11) : supprimer ce film du video club (films importés seulement ; seulement celui-ci, pas les autres vidéos importées avec lui).
+      if (lib && lib.canDelete && lib.canDelete()) {
+        var delOut = el("span", { class: "hint" });
+        box.appendChild(el("div", { class: "bdanger" }, [el("span", { class: "label", text: "Zone rouge" }),
+          el("button", { type: "button", class: "btn bdelb", text: lib.meta && lib.meta.size && !(it.images && it.images.length) ? "Supprimer cette vidéo du video club" : "Supprimer du video club", on: { click: function () {
+            if (!confirm("Supprimer « " + (it.title || "ce film") + " » du video club ?\n\nSeulement celui-ci : les autres vidéos importées avec lui restent. Son lien de partage ne marchera plus. Les fichiers chez Amazon ne sont pas effacés.")) return;
+            delOut.textContent = "Suppression…"; this.disabled = true;
+            lib.del().then(function () { close(); }, function (e) { delOut.textContent = "Pas supprimé : " + e.message; });
+          } } }), delOut]));
+      }
       box.appendChild(el("div", { class: "fwbtns bedfoot" }, [el("button", { type: "button", class: "btn primary", text: "OK", on: { click: close } }), el("span", { class: "bur" }, [euB, erB])]));
       if (lib && lib.head) box.insertBefore(lib.head, box.firstChild); // import : onglets des vidéos + avancement de l'envoi / l'encodage
       ov.appendChild(box); document.body.appendChild(ov); eBtns();
@@ -1483,6 +1559,24 @@
       ov.appendChild(box); document.body.appendChild(ov); return ov;
     }
     // Film pas encore enregistré mais déjà utilisable (Gus 26/11 : la fenêtre des crédits s'ouvre tout de suite à l'import, pendant l'envoi).
+    // Supprimer un film importé du video club (Gus 26/11) : sa fiche (library.json), ses retouches (edits.json) et son lien de partage ; les autres vidéos
+    // importées avec lui ne sont pas touchées. Rien n'est effacé chez Amazon (le robot n'a pas le droit d'effacer).
+    function libDelete(f) {
+      var by = user && user.login || "", code = null;
+      delete libQ.todo[f.key]; unsoon("libEdits");
+      return nGet(BAND_NOTES + "films.json").catch(function () { return null; }).then(function (t) {
+        code = ((t ? JSON.parse(t) : {})[f.key] || {}).code;
+        return commit([{ path: BIB_LIB, edit: function (x) { if (!x) return null; var l = JSON.parse(x); l.items = (l.items || []).filter(function (y) { return y.key !== f.key; }); return json(l); } },
+          { path: BIB_EDITS, edit: function (x) { if (!x) return null; var o = JSON.parse(x); if (o.films) delete o.films[f.key]; return json(o); } }], "Video club : film supprimé (admin, " + by + ")");
+      }).then(function () {
+        if (!code) return;
+        return bandKeys(code).then(function (k) { return commit([{ path: BAND_PUB + k.id + ".json", remove: true }], "Lien de film supprimé (admin, " + by + ")").catch(function () {}); })
+          .then(function () { return nEdit(BAND_NOTES + "films.json", function (t) { var m = t ? JSON.parse(t) : {}; delete m[f.key]; return json(m); }, "Films partagés : suppression (admin, " + by + ")"); }).catch(function () {});
+      }).then(function () {
+        data.films = data.films.filter(function (x) { return x.key !== f.key; }); if (data.lib) data.lib.items = (data.lib.items || []).filter(function (x) { return x.key !== f.key; });
+        bibGroups(data.films);
+      });
+    }
     // Ordre commun des vidéos d'un même import : `gi` de chaque film du lot (library.json), recalculé pour tous.
     function grpOrder(g, ks) {
       var all = data.films.filter(function (x) { return x.grp === g; }).sort(function (a, b) { return (a.gi || 0) - (b.gi || 0); }).map(function (x) { return x.key; }), left = ks.slice(), set = {};
@@ -1610,9 +1704,9 @@
         encCheck().then(function () {
           var f = filmOf(x.it.key); if (!f) return;
           if (f.snip && f.full && !f.snipVideo && (!f.snip.v || f.snip.vf !== f.full)) { // extrait choisi pendant l'envoi : extrait léger refait
-            var sid = encId(), sn = { s: f.snip.s, d: f.snip.d };
-            encAsk("rapide", [{ id: sid, kind: "snip", src: f.full, s: sn.s, d: sn.d }]).then(function (p) { return encWait(p, 5000, 600000); }).then(function (js) {
-              var a = (js[0] || {}).answer; if (a) libPatch(filmOf(x.it.key), { snip: { s: sn.s, d: sn.d, v: a.video, vf: f.full } });
+            var sid = encId(), sn = { s: f.snip.s, d: f.snip.d, parts: f.snip.parts };
+            encAsk("rapide", [{ id: sid, kind: "snip", src: f.full, s: sn.s, d: sn.d, parts: sn.parts }]).then(function (p) { return encWait(p, 5000, 600000); }).then(function (js) {
+              var a = (js[0] || {}).answer; if (a) libPatch(filmOf(x.it.key), { snip: Object.assign({ s: sn.s, d: sn.d, v: a.video, vf: f.full }, sn.parts ? { parts: sn.parts } : {}) });
             }).catch(function () {});
           }
           var ready = g.filter(function (y) { return y.step === "fini"; });
