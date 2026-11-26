@@ -850,9 +850,9 @@
         "vf": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85c87c46-a99b-40a7-afe8-2f8eb11d8965-1280x720.2500.mp4"
       },
       "crop": {
-        "z": 1.43,
-        "x": 57.4,
-        "y": 45.1,
+        "z": 1.41,
+        "x": 41.8,
+        "y": 60.1,
         "t": true
       }
     }
