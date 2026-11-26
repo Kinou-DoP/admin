@@ -1086,6 +1086,16 @@
       "snip": {
         "s": 6.15,
         "d": 30
+      },
+      "pend": {
+        "snip": {
+          "path": "data/encode/rapide-1795709126381-vj4rj.json",
+          "id": "mwxqulm5s8vdff",
+          "s": 6.15,
+          "d": 30,
+          "pj": "null",
+          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545431233-41586432_web.1280x720.2500.mp4"
+        }
       }
     }
   }
