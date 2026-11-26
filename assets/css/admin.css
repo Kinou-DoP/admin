@@ -1207,3 +1207,8 @@ input.bcn { width: 90px; }
 .tlblks { position: absolute; inset: 0; pointer-events: none; }
 .tlblk { position: absolute; top: 0; bottom: 0; background: rgba(255,255,255,.2); border-left: 1px solid rgba(255,255,255,.5); border-right: 1px solid rgba(255,255,255,.5); }
 .tlblk.on { background: rgba(217,130,43,.5); border-color: #d9822b; }
+
+/* Aperçu d'un film : onglets du chef op, discrets (Gus 26/11) */
+.bptabs { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0 4px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+.bptabs button { padding: 2px 8px; border: 1px solid var(--faint); background: none; color: var(--dim); font: inherit; cursor: pointer; }
+.bptabs button:hover { color: var(--kinou-fg); border-color: var(--dim); } .bptabs button.on { color: #6fd08c; border-color: #6fd08c; } .bptabs .bpnew { padding: 2px 9px; }

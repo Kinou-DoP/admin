@@ -43,10 +43,22 @@
         addB = el("button", { type: "button", class: "btn" });
         var paintB = function () {
           var h = !!(o.has && o.has(f)); addB.className = "btn" + (h ? " ghost" : " primary");
-          addB.textContent = h ? (o.remove ? "− Retirer de la bande" : "✓ " + (o.inLabel || "Déjà ajouté")) : "+ " + (o.addLabel || "Ajouter"); addB.disabled = h && !o.remove ? true : null;
+          addB.textContent = h ? (o.remove ? "− " + (o.removeLabel || "Retirer de la bande") : "✓ " + (o.inLabel || "Déjà ajouté")) : "+ " + (o.addLabel || "Ajouter"); addB.disabled = h && !o.remove ? true : null;
         };
+        addB.repaint = function () { paintB(); };
         addB.addEventListener("click", function () { if (o.has && o.has(f)) { if (o.remove) o.remove(f); } else o.add(f, addB); paintB(); });
         paintB();
+      }
+      // Onglets (Gus 26/11) : petits boutons « onglet » (ajouter / retirer) et « + » (créer un onglet avec ce film), sans quitter l'aperçu ni relancer la vidéo.
+      var tabsRow = null;
+      if (o && o.tabs) {
+        tabsRow = el("div", { class: "bptabs" });
+        var drawT = function () {
+          tabsRow.textContent = ""; tabsRow.appendChild(el("span", { text: "Onglets" }));
+          o.tabs.list(f).forEach(function (t, k) { tabsRow.appendChild(el("button", { type: "button", class: t.on ? "on" : "", title: (t.on ? "Retirer de « " : "Ajouter à « ") + t.name + " »", text: (t.on ? "✓ " : "+ ") + t.name, on: { click: function () { o.tabs.toggle(k, f); drawT(); if (addB && addB.repaint) addB.repaint(); } } })); });
+          tabsRow.appendChild(el("button", { type: "button", class: "bpnew", title: "Créer un onglet avec ce film", text: "+", on: { click: function () { if (o.tabs.create(f)) drawT(); } } }));
+        };
+        drawT();
       }
       var nav = el("div", { class: "bpnav" }, [
         el("button", { type: "button", class: "btn ghost", text: "‹", title: "Film d'avant (←)", disabled: i ? null : true, on: { click: function () { go(-1); } } }),
@@ -54,7 +66,7 @@
         el("button", { type: "button", class: "btn ghost", text: "›", title: "Film d'après (→)", disabled: i < list.length - 1 ? null : true, on: { click: function () { go(1); } } })]);
       ov.appendChild(el("div", { class: "bpwrap" }, [el("div", { class: "bpbox" }, [el("div", { class: "bphead" }, [el("strong", { text: f.title || "" }),
         el("button", { type: "button", class: "bx", text: "×", title: "Fermer", on: { click: close } })]), v || gal || el("div", { class: "bthumb", style: 'background-image:url("' + (f.img || "") + '")' }),
-        el("p", { class: "hint", text: cred.join(" · ") }), meta ? el("p", { class: "hint bpmeta", text: meta }) : null, nav])]));
+        el("p", { class: "hint", text: cred.join(" · ") }), meta ? el("p", { class: "hint bpmeta", text: meta }) : null, tabsRow, nav])]));
     }
     document.addEventListener("keydown", key, true);
     ov.addEventListener("click", function (e) { if (e.target === ov || e.target.classList.contains("bpwrap")) close(); });

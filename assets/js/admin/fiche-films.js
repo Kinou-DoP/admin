@@ -236,7 +236,23 @@
     search.addEventListener("blur", function () { setTimeout(function () { sugBox.hidden = true; }, 150); });
     function selPreview(f) { // aperçu avec ‹ › dans la liste de droite et « + » = ajouter à l'onglet ouvert (Gus 26/11)
       var l = shownR.indexOf(f) > -1 ? shownR : [f];
-      navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à « " + (tabs[cur] ? tabs[cur].name : "") + " »", inLabel: "Dans l'onglet", has: function (x) { var t = tabs[cur]; return t && t.ids.indexOf(sid(x)) > -1; }, add: function (x) { addFilm(x); } });
+      navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à « " + (tabs[cur] ? tabs[cur].name : "") + " »", inLabel: "Dans l'onglet", has: function (x) { var t = tabs[cur]; return t && t.ids.indexOf(sid(x)) > -1; }, add: function (x) { addFilm(x); },
+        removeLabel: "Retirer de l'onglet", remove: function (x) { togTab(cur, x); },
+        // Discret, au-dessus des boutons (Gus 26/11) : un bouton par onglet de ce chef op pour y ajouter / retirer le film sans changer l'onglet ouvert, et « + » pour créer un onglet d'ici.
+        tabs: cfg ? null : {
+          list: function (x) { return tabs.map(function (t) { return { name: t.name, on: t.ids.indexOf(sid(x)) > -1 }; }); },
+          toggle: function (i, x) { togTab(i, x); },
+          create: function (x) {
+            var n = (window.prompt("Nom du nouvel onglet (ex. COMMERCIAL, MUSIC VIDEO) :") || "").trim().toUpperCase(); if (!n) return false;
+            if (tabs.some(function (t) { return t.name === n; })) { window.alert("L'onglet « " + n + " » existe déjà."); return false; }
+            var id = sid(x); if (!byId[id] && !extra[id]) extra[id] = x; tabs.push({ name: n, ids: id ? [id] : [] }); ch(); drawAll(); return true; // l'onglet ouvert ne change pas
+          } } });
+    }
+    // Ajouter ce film à l'onglet i, ou l'en retirer (sans changer l'onglet ouvert).
+    function togTab(i, f) {
+      var t = tabs[i], id = sid(f); if (!t || !id) return; var k = t.ids.indexOf(id);
+      if (k > -1) t.ids.splice(k, 1); else { if (!byId[id] && !extra[id]) extra[id] = f; if (cfg && cfg.top) t.ids.unshift(id); else t.ids.push(id); }
+      ch(); drawAll();
     }
     var ok = el("button", { type: "button", class: "btn primary", text: "Valider et publier" });
     ok.addEventListener("click", function () {

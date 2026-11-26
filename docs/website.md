@@ -29,3 +29,5 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
 - **Crédits** (Gus 25/11, même principe, sauf le titre) : la zone de crédits d'une carte montre les crédits du video club calculés
   comme sur le site (`vcCredits`) et les y réécrit (`vcSetCredits` : réal, prod, chefs op, rôles gardés) ; lignes en plus (3e et
   suivantes) gardées dans la page (`sub`, publiées avec « Publier »). « Rétablir » remet aussi les crédits du video club à ceux de la page.
+- **Aperçu d'un film dans « Modifier la sélection »** (Gus 26/11) : `navPlayer` avec `o.tabs` = boutons discrets « + / ✓ onglet » pour chaque onglet du chef op (ajouter / retirer sans changer l'onglet ouvert, `togTab`) et « + » = créer un onglet avec ce film ; le bouton du bas devient « − Retirer de l'onglet » (`o.remove`). Le son coupé (`sonCoupe`, admin.js) s'applique aussi à cet aperçu.
+
