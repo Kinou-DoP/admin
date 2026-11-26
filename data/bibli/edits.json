@@ -91,6 +91,13 @@
       },
       "extras": [
         {
+          "link": "https://kinou.slateapp.com/work/barbaque-feature-film-trailer-1",
+          "title": "Barbaque (feature film trailer)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3b66768a-5a2e-4f3b-845e-58cbdd95dfd6-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10400/d16c7154-e732-11f1-952e-02ffedfede17.mp4",
+          "img": "https://images.slatecdn.net/Seh2tLsWdUO3U0Hg8B-TOTJXc4uwXDsxbyYJo9Ajk2w/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQwMC02OTdiODFl/MjI2MTdhNC40MzE4/MTMwOS1kNDA4ZmM1/MGQ1NWVmZDZiODgx/ZGYyMGE5ODg2OTVj/Mi5qcGc.webp"
+        },
+        {
           "title": "Stills",
           "stills": [
             "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/001.webp",
@@ -138,13 +145,6 @@
             "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdtgagxd8/043.webp"
           ],
           "up": true
-        },
-        {
-          "link": "https://kinou.slateapp.com/work/barbaque-feature-film-trailer-1",
-          "title": "Barbaque (feature film trailer)",
-          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3b66768a-5a2e-4f3b-845e-58cbdd95dfd6-1280x720.2500.mp4",
-          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10400/d16c7154-e732-11f1-952e-02ffedfede17.mp4",
-          "img": "https://images.slatecdn.net/Seh2tLsWdUO3U0Hg8B-TOTJXc4uwXDsxbyYJo9Ajk2w/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQwMC02OTdiODFl/MjI2MTdhNC40MzE4/MTMwOS1kNDA4ZmM1/MGQ1NWVmZDZiODgx/ZGYyMGE5ODg2OTVj/Mi5qcGc.webp"
         }
       ]
     },
