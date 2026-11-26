@@ -418,3 +418,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Montage : blocs visibles sur la frise, ▶ d'un bloc ne le sélectionne plus, 2e clic = désélection, « + Nouvelle sélection ».
 - 26/11 — « Modifier la sélection » : aperçu d'un film avec boutons discrets par onglet (ajouter / retirer sans changer l'onglet ouvert) et « + » pour créer un onglet ; « − Retirer de l'onglet ».
 - 26/11 — Zoom de la frise (Option + molette), repères début / fin du film ; onglets de l'aperçu en haut, arrondis.
+- 26/11 — Bouton « edit » des fiches plus rapide (chargement en avance, cache réutilisé) ; clic dans le vide = désélection du bloc.

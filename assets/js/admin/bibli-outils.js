@@ -73,7 +73,14 @@
     draw(); document.body.appendChild(ov);
   }
   function bnrm(t) { return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/ł/g, "l").replace(/\s+/g, " ").trim(); }
+  // Une seule lecture à la fois (Gus 26/11 : le bouton « edit » d'une fiche mettait du temps) : la page d'un chef op la lance en avance, le bouton « edit » la réutilise.
+  var bibPend = null;
   function bibLoad(force) {
+    if (bibCache && !force) return Promise.resolve(bibCache);
+    if (bibPend && !force) return bibPend;
+    var p = bibLoadRaw(force), clr = function () { if (bibPend === p) bibPend = null; }; bibPend = p; p.then(clr, clr); return p;
+  }
+  function bibLoadRaw(force) {
     if (bibCache && !force) return Promise.resolve(bibCache);
     var map = {}, order = [], pages = [];
     function add(f, from) {

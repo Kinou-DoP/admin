@@ -24,7 +24,7 @@
     left.appendChild(el("div", { class: "bibsearch" }, [q, sugBox])); left.appendChild(chipsBox); left.appendChild(info); left.appendChild(list);
     var data = null;
     var openNext = emb ? null : bibOpen; if (!emb) bibOpen = null;
-    if (emb) { bibLoad(true).then(function (d) { adopt(d); var f = filmOf(emb.key); if (!f) { alert("Film introuvable dans le video club."); emb.done(null); return; } libEdit(f); }, function (e) { alert("Video club indisponible : " + e.message); emb.done(null); }); }
+    if (emb) { bibLoad().then(function (d) { adopt(d); var f = filmOf(emb.key); if (!f) { alert("Film introuvable dans le video club."); emb.done(null); return; } libEdit(f); if (emb.opened) emb.opened(); }, function (e) { alert("Video club indisponible : " + e.message); emb.done(null); }); }
     else bibLoad().then(function (d) { adopt(d); draw(); encCheck(); if (openNext === "video") importVideo(); else if (openNext === "images") importImages(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
     // Films envoyés depuis l'ordinateur : dès que le robot a fini, le film reçoit sa version web, sa vignette et son extrait
     // (library.json) ; vérifié à l'ouverture du video club puis toutes les 20 s tant qu'un encodage est en cours.
@@ -776,6 +776,12 @@
         ov.classList.add("out"); setTimeout(function () { ov.remove(); }, 160); if (lib) lib.onClose(); else drawBand();
       }
       ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+      // Montage : un clic dans un endroit vide de la fenêtre désélectionne le bloc en cours de modification (Gus 26/11), comme un 2e clic sur le bloc.
+      box.addEventListener("click", function (e) {
+        if (typeof parts !== "function" || !parts() || bi < 0 || !e.isTrusted) return;
+        if (e.target.closest && e.target.closest(".bblk, .bblks, button, input, textarea, select, a, video, label, .tl, .bthumbs, .bhsnip, .bchipin")) return;
+        bi = -1; delete it._sel; act = "in"; drawBlocks(); if (typeof draw === "function" && tl) { draw(); if (player) seek(selB().s); }
+      });
       function fld(label, get, set, ph) {
         var x = el("input", { type: "text", value: get() || "", placeholder: ph || "" });
         x.addEventListener("input", function () { set(x.value); it.edited = true; chg(); prevMeta(); });

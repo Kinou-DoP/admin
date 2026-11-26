@@ -517,6 +517,10 @@
   function vcMeta(c) { var m = vcMetaF[String(c.slate)]; return m && m.client || ""; }
   var vcLib = {}; // library.json (video club) : sert aux vidéos d'un même import
   function vcLoad() {
+    var pr = vcLoad0(); pr.then(function () { setTimeout(function () { bibLoad().catch(function () {}); }, 600); }); // le video club se charge en avance : « edit » s'ouvre tout de suite
+    return pr;
+  }
+  function vcLoad0() {
     return Promise.all([readFile(BIB_EDITS).then(function (o) { vcFilms = (o && o.films) || {}; }, function () { vcFilms = {}; }),
       readFile("data/bibli/meta.json").then(function (o) { vcMetaF = (o && o.films) || {}; }, function () { vcMetaF = {}; }),
       readFile(BIB_LIB).then(function (l) { vcLib = {}; ((l && l.items) || []).forEach(function (it) { vcLib[it.key] = it; }); }, function () { vcLib = {}; })]);
@@ -551,7 +555,12 @@
   function vcPatch(id, fields) {
     var k = vcKey(id), e = vcFilms[k] = Object.assign({}, vcFilms[k]);
     Object.keys(fields).forEach(function (f) { e[f] = fields[f]; });
-    vcTodo[k] = Object.assign(vcTodo[k] || {}, fields); bibCache = null; soon("vcPatch", vcSave, 1200);
+    vcTodo[k] = Object.assign(vcTodo[k] || {}, fields); soon("vcPatch", vcSave, 1200);
+    // Le video club en mémoire est mis à jour sur place (avant, on le jetait : le bouton « edit » suivant devait tout relire, Gus 26/11).
+    if (bibCache) {
+      var bf = bibCache.films.filter(function (x) { return x.key === k; })[0];
+      if (bf && Object.keys(fields).every(function (x) { return fields[x] !== undefined && BIB_EK.indexOf(x) > -1; })) { bibApply(bf, fields); bibHay(bf); } else bibCache = null;
+    }
   }
   function vcSave() {
     var todo = vcTodo, keys = Object.keys(todo); vcTodo = {};
@@ -615,10 +624,11 @@
   function vcEditBtn(c, after) {
     return el("button", { type: "button", class: "vcedit", text: "edit", title: "Vignette, extrait, recadrage… (fenêtre du video club : vaut pour tout le site)", on: { pointerdown: function (e) { e.stopPropagation(); }, click: function (e) {
       e.stopPropagation(); flushSaves();
-      showBibli({ key: vcKey(c.slate), ctx: state === fic ? "fiction" : state === spot ? "spotlight" : (state && state.slug) || "club", done: function (f) {
+      var btn = e.currentTarget, lab0 = btn.textContent; btn.textContent = "…"; btn.disabled = true; var back = function () { btn.textContent = lab0; btn.disabled = false; }; // retour visuel pendant l'ouverture
+      showBibli({ key: vcKey(c.slate), opened: back, ctx: state === fic ? "fiction" : state === spot ? "spotlight" : (state && state.slug) || "club", done: function (f) {
         // Valeurs de la fenêtre reprises tout de suite (enregistrées dans edits.json par la fenêtre elle-même).
         if (f) { var x = vcFilms[vcKey(c.slate)] = Object.assign({}, vcFilms[vcKey(c.slate)]); ["img", "crop", "snip", "snipVideo", "video", "full"].forEach(function (k) { if (f[k] !== undefined) x[k] = f[k]; }); }
-        after();
+        back(); after();
       } });
     } } });
   }
