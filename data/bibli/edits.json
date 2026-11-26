@@ -1161,17 +1161,9 @@
     "s120": {
       "snip": {
         "s": 2.198,
-        "d": 23.334
-      },
-      "pend": {
-        "snip": {
-          "path": "data/encode/rapide-1795709312755-53bh3.json",
-          "id": "mwxqylf7xwf9f3",
-          "s": 2.198,
-          "d": 23.334,
-          "pj": "null",
-          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545346985-37532578_web.1280x720.2500.mp4"
-        }
+        "d": 23.334,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxqylf7xwf9f3/extrait-2198.mp4",
+        "vf": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545346985-37532578_web.1280x720.2500.mp4"
       }
     },
     "s11490": {
