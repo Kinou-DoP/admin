@@ -914,7 +914,8 @@
         var FR = 1 / 25, seqOn = false, seqI = 0, dur = 0, act = "play", loopOn = false, kT = 0, WIN = 30, ptab = "thumb"; // onglet : vignette | extrait (Gus 22/11)
         var oReg = el("i", { class: "tlreg" }), oPh = el("i", { class: "tlph" }), over = el("div", { class: "tlo", title: "Tout le film : cliquez ou glissez" }, [oReg, oPh]);
         var dReg = el("i", { class: "tlreg" }), dPh = el("i", { class: "tlph" }), hIn = el("b", { class: "tlh in", title: "Début de l'extrait" }), hOut = el("b", { class: "tlh out", title: "Fin de l'extrait" });
-        var dLab = el("div", { class: "tllab" }), det = el("div", { class: "tld" }, [dReg, dPh, hIn, hOut]);
+        var blkLayer = el("div", { class: "tlblks" }), blkKey = "";
+        var dLab = el("div", { class: "tllab" }), det = el("div", { class: "tld" }, [blkLayer, dReg, dPh, hIn, hOut]);
         var time = el("span", { class: "tlt" }), playB = el("button", { type: "button", class: "btn ghost", text: "▶", title: "Lecture / pause (espace)" });
         tl = el("div", { class: "tl" }, [over, det, dLab]);
         var clamp = function (t) { return Math.max(0, Math.min(dur || 0, t)); };
@@ -926,6 +927,8 @@
           if (!dur) return; var t = player.currentTime, w = win();
           oPh.style.left = pc(t, 0, dur); time.textContent = fmtF(t) + " / " + fmtF(dur);
           det.hidden = dLab.hidden = !it.snip || ptab !== "snip"; oReg.hidden = true; over.hidden = !det.hidden;
+          var bk = JSON.stringify([parts(), bi, dur]); // les blocs du montage, en repères sur la frise (l'orange = celui qu'on modifie)
+          if (bk !== blkKey) { blkKey = bk; blkLayer.textContent = ""; (parts() || []).forEach(function (b, n) { blkLayer.appendChild(el("i", { class: "tlblk" + (n === bi ? " on" : ""), title: "Bloc " + (n + 1), style: "left:" + pc(b.s, 0, dur) + ";width:" + Math.max(.4, b.d / dur * 100) + "%" })); }); }
           if (it.snip) {
             var A = actB(), s = A.s, e = s + A.d;
             oReg.style.left = pc(s, 0, dur); oReg.style.width = Math.max(.4, A.d / dur * 100) + "%";
@@ -952,8 +955,10 @@
             draw(); revRaf = requestAnimationFrame(step);
           })();
         };
-        var seek = function (t) { stopRev(); loopOn = false; seqOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
-        var playSnip = function () { if (!it.snip) return; seqOn = false; loopOn = true; player.currentTime = actB().s; player.play().catch(function () {}); };
+        var seek = function (t) { stopRev(); rangeOv = null; loopOn = false; seqOn = false; player.pause(); player.currentTime = clamp(t); draw(); };
+        var rangeOv = null; // lecture d'un bloc de la liste (▶) sans le sélectionner
+        var playSnip = function () { if (!it.snip) return; rangeOv = null; seqOn = false; loopOn = true; player.currentTime = actB().s; player.play().catch(function () {}); };
+        var playRange = function (b) { stopRev(); seqOn = false; rangeOv = { s: b.s, d: b.d }; loopOn = true; player.currentTime = b.s; player.play().catch(function () {}); };
         // Extrait : jusqu'à 30 s au total (Gus 26/11, avant 10 s), 0,5 s au moins par bloc. Les poignées se poussent : tirer le début vers la droite jusqu'à
         // la fin la pousse devant lui (on avance dans le film) ; tirer la fin vers la gauche pousse le début ; tirer dans l'autre sens s'arrête à la limite.
         // Montage : plusieurs blocs bout à bout (it.snip.parts) ; `bi` = bloc réglé par les poignées.
@@ -977,7 +982,7 @@
           if (seqOn && parts() && !player.paused) { // montage : les blocs bout à bout, en boucle
             var B = parts()[seqI] || parts()[0];
             if (player.currentTime >= B.s + B.d - .03 || player.currentTime < B.s - .3) { seqI = (seqI + 1) % parts().length; player.currentTime = parts()[seqI].s; }
-          } else if (loopOn && it.snip && !player.paused) { var A0 = actB(); if (player.currentTime >= A0.s + A0.d || player.currentTime < A0.s - .1) player.currentTime = A0.s; }
+          } else if (loopOn && it.snip && !player.paused) { var A0 = rangeOv || actB(); if (player.currentTime >= A0.s + A0.d || player.currentTime < A0.s - .1) player.currentTime = A0.s; }
           if (!player.paused) draw();
           requestAnimationFrame(tick);
         })();
@@ -986,7 +991,7 @@
         var toggle = function () {
           if (revOn) { stopRev(); return; } // espace pendant la lecture à l'envers : pause
           if (!player.paused) { player.pause(); return; }
-          if (it.snip && ptab === "snip") { var t = player.currentTime, A1 = actB(); seqOn = false; loopOn = true; if (t < A1.s || t >= A1.s + A1.d - .05) player.currentTime = A1.s; player.play().catch(function () {}); }
+          if (it.snip && ptab === "snip") { var t = player.currentTime, A1 = rangeOv || actB(); seqOn = false; loopOn = true; if (t < A1.s || t >= A1.s + A1.d - .05) player.currentTime = A1.s; player.play().catch(function () {}); }
           else { loopOn = false; player.play().catch(function () {}); }
         };
         playB.addEventListener("click", function () { toggle(); playB.blur(); });
@@ -1060,18 +1065,21 @@
       var addB = null;
       function sync() { var p = parts(); if (p) it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true; }
       function drawBlocks() {
-        blocksBox.textContent = ""; var p = parts(); if (addB) addB.textContent = bi >= 0 ? "✓ Retour à la sélection" : "+ Ajouter ce bloc"; if (!p) return;
-        blocksBox.appendChild(el("span", { class: "label", text: "Montage : " + p.length + " bloc" + (p.length > 1 ? "s" : "") + " · " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD + " · glisse ⠿ pour changer l'ordre, clique un bloc pour le modifier" }));
+        blocksBox.textContent = ""; var p = parts(); if (addB) addB.textContent = bi >= 0 ? "+ Nouvelle sélection" : "+ Ajouter ce bloc"; addB.title = bi >= 0 ? "Quitte la modification du bloc : les poignées règlent une nouvelle sélection, après le dernier bloc (ou clique à nouveau le bloc)" : "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante"; if (!p) return;
+        blocksBox.appendChild(el("span", { class: "label", text: "Montage : " + p.length + " bloc" + (p.length > 1 ? "s" : "") + " · " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD + " · glisse ⠿ pour changer l'ordre · clique un bloc pour le modifier (un 2e clic le désélectionne)" }));
         p.forEach(function (b, i) {
           var w = el("div", { class: "bblk" + (i === bi ? " on" : ""), "data-xi": String(i), title: "Cliquer pour régler ce bloc avec les poignées ou I / O" });
           w.appendChild(xGrip(w, i)); w.appendChild(el("b", { text: String(i + 1) })); w.appendChild(el("span", { text: fmtF(b.s) + " → " + fmtF(b.s + b.d) + " · " + b.d.toFixed(1).replace(".", ",") + " s" }));
-          w.appendChild(el("button", { type: "button", class: "bx", text: "▶", title: "Voir ce bloc", on: { click: function (e) { e.stopPropagation(); bi = i; act = "in"; drawBlocks(); draw(); playSnip(); } } }));
+          w.appendChild(el("button", { type: "button", class: "bx", text: "▶", title: "Voir ce bloc", on: { click: function (e) { e.stopPropagation(); playRange(b); } } }));
           w.appendChild(el("button", { type: "button", class: "bx", text: "×", title: "Retirer ce bloc", on: { click: function (e) {
             e.stopPropagation(); snipDraft(); var gone = p.splice(i, 1)[0];
             if (!p.length) { it.snip = { s: gone.s, d: gone.d }; delete it._sel; bi = -1; } else { sync(); bi = bi === i ? -1 : bi > i ? bi - 1 : bi; }
             it.edited = true; snipMark(); drawBlocks(); drawSnip(); draw();
           } } }));
-          w.addEventListener("click", function () { bi = i; act = "in"; drawBlocks(); draw(); if (player) seek(p[i].s); });
+          w.addEventListener("click", function () { // un clic sélectionne le bloc ; un autre clic dessus le désélectionne (retour à la sélection)
+            if (bi === i) { bi = -1; delete it._sel; act = "in"; drawBlocks(); draw(); if (player) seek(selB().s); return; }
+            bi = i; act = "in"; drawBlocks(); draw(); if (player) seek(p[i].s);
+          });
           blocksBox.appendChild(w);
         });
       }
@@ -1081,7 +1089,7 @@
       function addBlock() {
         if (!player || !dur) return; snipDraft(); var t = Math.max(0, Math.min(player.currentTime, dur - MIND));
         if (!it.snip) { it.snip = { s: t, d: Math.round(Math.min(5, dur - t) * 1000) / 1000 }; act = "in"; snipMark(); drawSnip(); draw(); return; }
-        if (bi >= 0) { bi = -1; drawBlocks(); draw(); return; } // fin de la modification d'un bloc : retour à la sélection
+        if (bi >= 0) { bi = -1; delete it._sel; act = "in"; drawBlocks(); draw(); seek(selB().s); return; } // fin de la modification d'un bloc : nouvelle sélection après le dernier bloc
         var p = parts(), sel = p ? selB() : it.snip, tot = p ? totalD() : 0;
         if (tot + sel.d > MAXD + .001) { pout.className = "hint berr"; pout.textContent = "Montage plein : " + MAXD + " s au plus en tout (réduis la sélection ou retire un bloc)."; return; }
         p = p || []; p.push({ s: sel.s, d: sel.d }); it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true;

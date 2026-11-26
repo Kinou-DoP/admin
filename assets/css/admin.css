@@ -1204,3 +1204,6 @@ input.bcn { width: 90px; }
 .binfo { margin: 10px 0 0; }
 .brow .bt small.bclient { display: block; margin-bottom: 2px; color: #ffb36b; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 .film input.bcli { font-size: 12px; margin-bottom: 4px; }
+.tlblks { position: absolute; inset: 0; pointer-events: none; }
+.tlblk { position: absolute; top: 0; bottom: 0; background: rgba(255,255,255,.2); border-left: 1px solid rgba(255,255,255,.5); border-right: 1px solid rgba(255,255,255,.5); }
+.tlblk.on { background: rgba(217,130,43,.5); border-color: #d9822b; }

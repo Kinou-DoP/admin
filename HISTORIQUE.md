@@ -415,3 +415,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — I / O exacts, client affiché par défaut (meta.json), date Slate = `at`, survol de la liste et aperçu de recadrage = dernier extrait.
 - 26/11 — Lecture à l'envers (Z/J, K, L), son coupé partout, client sans doublon (Ubisoft | Ubisoft → Ubisoft).
 - 26/11 — Entrée = ajouter le bloc ; aperçu d'un film : ajouter / retirer de la bande sans relancer la vidéo.
+- 26/11 — Montage : blocs visibles sur la frise, ▶ d'un bloc ne le sélectionne plus, 2e clic = désélection, « + Nouvelle sélection ».
