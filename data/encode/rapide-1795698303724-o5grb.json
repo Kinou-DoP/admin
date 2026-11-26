@@ -4,9 +4,15 @@
       "id": "mwxkemsshe6dgq",
       "kind": "thumb",
       "src": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4",
-      "t": 95.845
+      "t": 95.845,
+      "answer": {
+        "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxkemsshe6dgq/vignette-95845-800.webp",
+        "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxkemsshe6dgq/vignette-95845-1600.webp",
+        "thumbT": 95.845
+      }
     }
   ],
   "at": "2026-11-26T13:05:03.724Z",
-  "by": "Gurvan"
+  "by": "Gurvan",
+  "doneAt": "2026-11-26T13:05:52.077Z"
 }
