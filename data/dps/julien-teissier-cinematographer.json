@@ -5,8 +5,14 @@
   "bundle": "https://kinou.slateapp.com/bundles/ee6ce9ea-e8f9-11f1-952e-02ffedfede17",
   "open": 11521,
   "overrides": {
+    "8440": {
+      "title": "Prudence - Here and Now"
+    },
     "8441": {
       "title": "Louis Vuitton x Women's Day"
+    },
+    "8442": {
+      "title": "Dance or Die x Kevin Bago"
     },
     "8443": {
       "title": "Mini"
@@ -16,6 +22,9 @@
     },
     "8448": {
       "title": "Dassault"
+    },
+    "8450": {
+      "title": "Aya Nakamura ft. Damso - Dégaine"
     },
     "8451": {
       "title": "Louis Vuitton x Bradley Cooper "
@@ -43,13 +52,32 @@
     "8458": {
       "title": "Mini Countryman"
     },
+    "8459": {
+      "title": "Gambi - Macintosh",
+      "sub": "B"
+    },
+    "8461": {
+      "title": "Riles - 1000 Reasons (live session)"
+    },
     "8462": {
       "title": "Balmain"
+    },
+    "8467": {
+      "title": "UssaR - 6 milliards"
+    },
+    "8468": {
+      "title": "Jahyanai - Laria (live session)"
     },
     "8469": {
       "zoom": 1.36,
       "zoomThumb": true,
       "title": "Paulette_n48"
+    },
+    "8470": {
+      "title": "Niki Niki - Pink Sorrows"
+    },
+    "8472": {
+      "title": "Bigflo & Oli - Les Promesses"
     },
     "8485": {
       "zoom": 2.15,
@@ -71,6 +99,9 @@
     },
     "8526": {
       "title": "Gor Tex x Adidas"
+    },
+    "8527": {
+      "title": "Moonlight - Temper"
     },
     "8538": {
       "zoom": 1.32,
