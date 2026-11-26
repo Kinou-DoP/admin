@@ -2,7 +2,32 @@
   "slug": "arnaud-stefani-cinematographer",
   "name": "Arnaud Stefani",
   "hue": 0,
-  "overrides": {},
+  "overrides": {
+    "1431": {
+      "title": "L'Oréal Préférence"
+    },
+    "1879": {
+      "title": "L'Oréal Prodigy Color"
+    },
+    "3981": {
+      "title": "L'Oréal Preference"
+    },
+    "3986": {
+      "title": "Gliss Supreme Leigth"
+    },
+    "4833": {
+      "title": "L'Oréal Feria"
+    },
+    "7922": {
+      "title": "L'Oréal - Extraordinary"
+    },
+    "9153": {
+      "title": "Dessange"
+    },
+    "11632": {
+      "title": "Pantene"
+    }
+  },
   "about": {
     "bioEn": [
       "Arnaud Stefani is a French  director of photography widely recognized for his modern approach to beauty commercials.",
