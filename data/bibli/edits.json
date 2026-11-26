@@ -200,7 +200,16 @@
         "img": [
           "https://images.slatecdn.net/2q5Y_pqRRNSmVX1v99t__m6gCKBSZDDOHtxB13Ivxhg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YzViNGVhYS0zZGM3/LTQ5ZWYtODYzNi00/MzZlNTAyZTVmODgv/MTc0OTU2OTkzMjIz/OC5qcGc?v=1&format=webp"
         ]
-      }
+      },
+      "extras": [
+        {
+          "title": "En Place (extrait débat)",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3086eeed-286f-4c91-a134-179ee86d06c2-1280x720.2500.mp4",
+          "img": "https://images.slatecdn.net/0TfpOWenu0Fn0jGKaKfzOz01uXiQGGwp3TWinQ8k4Fk/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDQwMi02OTdjODFk/NDZhOTRmOC43Mjk5/MjgyMC0xNDQ2NWFh/ZTE0OTExNWFjMTMw/Yzc4NWJhOWQxOTU3/NC5qcGc.webp",
+          "key": "s10402",
+          "link": "https://kinou-4tv.pages.dev/b/7pej9hzja"
+        }
+      ]
     },
     "s10000": {
       "img": "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/b/mwwcuz4fb4iz.webp",
