@@ -1065,7 +1065,7 @@
       var addB = null;
       function sync() { var p = parts(); if (p) it.snip = { s: p[0].s, d: p[0].d, parts: p }; it.edited = true; }
       function drawBlocks() {
-        blocksBox.textContent = ""; var p = parts(); if (addB) addB.textContent = bi >= 0 ? "+ Nouvelle sélection" : "+ Ajouter ce bloc"; addB.title = bi >= 0 ? "Quitte la modification du bloc : les poignées règlent une nouvelle sélection, après le dernier bloc (ou clique à nouveau le bloc)" : "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante"; if (!p) return;
+        blocksBox.textContent = ""; var p = parts(); if (addB) { addB.textContent = bi >= 0 ? "+ Nouvelle sélection" : "+ Ajouter ce bloc"; addB.title = bi >= 0 ? "Quitte la modification du bloc : les poignées règlent une nouvelle sélection, après le dernier bloc (ou clique à nouveau le bloc)" : "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante"; }; if (!p) return;
         blocksBox.appendChild(el("span", { class: "label", text: "Montage : " + p.length + " bloc" + (p.length > 1 ? "s" : "") + " · " + totalD().toFixed(1).replace(".", ",") + " s sur " + MAXD + " · glisse ⠿ pour changer l'ordre · clique un bloc pour le modifier (un 2e clic le désélectionne)" }));
         p.forEach(function (b, i) {
           var w = el("div", { class: "bblk" + (i === bi ? " on" : ""), "data-xi": String(i), title: "Cliquer pour régler ce bloc avec les poignées ou I / O" });
