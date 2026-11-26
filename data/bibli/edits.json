@@ -768,23 +768,15 @@
     "s8059": {
       "snip": {
         "s": 3.232,
-        "d": 30
+        "d": 30,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxoq7v2gx4k47/extrait-3232.mp4",
+        "vf": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8fc40745-317d-4cba-b0d4-75a506ca92ce-1280x720.2500.mp4"
       },
       "crop": {
         "z": 1.18,
         "x": 0,
         "y": 100,
         "t": false
-      },
-      "pend": {
-        "snip": {
-          "path": "data/encode/rapide-1795705562702-e5x4n.json",
-          "id": "mwxoq7v2gx4k47",
-          "s": 3.232,
-          "d": 30,
-          "pj": "null",
-          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8fc40745-317d-4cba-b0d4-75a506ca92ce-1280x720.2500.mp4"
-        }
       }
     },
     "s7173": {
