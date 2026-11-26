@@ -22,8 +22,8 @@
     left.appendChild(el("div", { class: "bibsearch" }, [q, sugBox])); left.appendChild(chipsBox); left.appendChild(info); left.appendChild(list);
     var data = null;
     var openNext = emb ? null : bibOpen; if (!emb) bibOpen = null;
-    if (emb) { bibLoad(true).then(function (d) { data = d; var f = filmOf(emb.key); if (!f) { alert("Film introuvable dans le video club."); emb.done(null); return; } libEdit(f); }, function (e) { alert("Video club indisponible : " + e.message); emb.done(null); }); }
-    else bibLoad().then(function (d) { data = d; draw(); encCheck(); if (openNext === "video") importVideo(); else if (openNext === "images") importImages(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
+    if (emb) { bibLoad(true).then(function (d) { adopt(d); var f = filmOf(emb.key); if (!f) { alert("Film introuvable dans le video club."); emb.done(null); return; } libEdit(f); }, function (e) { alert("Video club indisponible : " + e.message); emb.done(null); }); }
+    else bibLoad().then(function (d) { adopt(d); draw(); encCheck(); if (openNext === "video") importVideo(); else if (openNext === "images") importImages(); }, function (e) { info.textContent = "Indisponible : " + e.message; });
     // Films envoyés depuis l'ordinateur : dès que le robot a fini, le film reçoit sa version web, sa vignette et son extrait
     // (library.json) ; vérifié à l'ouverture du video club puis toutes les 20 s tant qu'un encodage est en cours.
     var encT = 0;
@@ -31,24 +31,36 @@
     // qu'on rouvre la fenêtre du film (Gus 25/11 : film resté « encodage en cours » des heures après la fin du robot).
     function encCheckEdits() {
       return readFile(BIB_EDITS).then(function (o) {
-        var fl = (o && o.films) || {}, keys = Object.keys(fl).filter(function (k) { var e = fl[k].enc; return e && e.path && !e.error && !e.sending; });
+        var fl = (o && o.films) || {}, keys = Object.keys(fl).filter(function (k) { var e = fl[k].enc; return e && e.path && !e.error && !e.sending || fl[k].pend; });
         if (!keys.length) return;
-        var paths = keys.map(function (k) { return fl[k].enc.path; }).filter(function (p, k, a) { return a.indexOf(p) === k; });
+        var paths = [];
+        keys.forEach(function (k) { var x = fl[k]; if (x.enc && x.enc.path) paths.push(x.enc.path); if (x.pend) Object.keys(x.pend).forEach(function (w) { if (x.pend[w] && x.pend[w].path) paths.push(x.pend[w].path); }); });
+        paths = paths.filter(function (p, k, a) { return a.indexOf(p) === k; });
         return Promise.all(paths.map(function (p) { return readFile(p).catch(function () { return null; }); })).then(function (rs) {
           var res = {}; rs.forEach(function (d) { if (d && d.doneAt) (d.jobs || []).forEach(function (j) { res[j.id] = j; }); });
-          if (!keys.some(function (k) { return res[fl[k].enc.id]; })) return;
+          var any = keys.some(function (k) { var x = fl[k]; return (x.enc && res[x.enc.id]) || (x.pend && Object.keys(x.pend).some(function (w) { return x.pend[w] && res[x.pend[w].id]; })); });
+          if (!any) return;
           return commit([{ path: BIB_EDITS, edit: function (t) {
             var O = t ? JSON.parse(t) : { films: {} }, n = 0; O.films = O.films || {};
             Object.keys(O.films).forEach(function (k) {
-              var x = O.films[k], j = x.enc && res[x.enc.id]; if (!j) return; n++;
-              if (j.error || !j.answer) { x.enc.error = j.error || "pas de réponse"; return; }
-              x.full = j.answer.full; delete x.enc;
+              var x = O.films[k], j = x.enc && res[x.enc.id];
+              if (j) { n++; if (j.error || !j.answer) x.enc.error = j.error || "pas de réponse"; else { x.full = j.answer.full; delete x.enc; } }
+              Object.keys(x.pend || {}).forEach(function (w) { // vignette / extrait demandés au robot : appliqués ici si la fenêtre du film n'est plus là pour le faire
+                var q = x.pend[w], r = q && res[q.id]; if (!r) return; n++;
+                if (r.answer && w === "thumb") {
+                  if (x.img && x.img !== r.answer.img) { x.hist = x.hist || {}; x.hist.img = [x.img].concat((x.hist.img || []).filter(function (u) { return u !== x.img; })).slice(0, 8); }
+                  x.img = r.answer.img; x.thumbT = q.t;
+                } else if (r.answer && w === "snip" && x.snip && x.snip.s === q.s && x.snip.d === q.d) { x.snip.v = r.answer.video; x.snip.vf = q.from; }
+                delete x.pend[w];
+              });
+              if (x.pend && !Object.keys(x.pend).length) delete x.pend;
             });
             return n ? json(O) : null;
-          } }], "Video club : vidéo remplacée prête (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) { if (location.hash === "#/bibli") { data = d; draw(); } });
+          } }], "Video club : vidéo, vignette ou extrait prêt (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) { if (location.hash === "#/bibli") { adopt(d); draw(); } });
         });
       }).catch(function () {});
     }
+    function x_pend() { return (data.films || []).some(function (x) { return x.pend; }); }
     function encCheck() {
       clearTimeout(encT); if (!canWeb) return Promise.resolve();
       encCheckEdits();
@@ -68,11 +80,11 @@
               x.snip = { s: a.snip.s, d: a.snip.d, v: a.video, vf: a.full }; x.dur = a.dur; x.w = a.w; x.h = a.h; delete x.enc;
             });
             return json(L);
-          } }], "Video club : encodage terminé (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) { if (location.hash === "#/bibli") { data = d; draw(); } });
+          } }], "Video club : encodage terminé (admin, " + (user && user.login || "") + ")").then(function () { return bibLoad(true); }).then(function (d) { if (location.hash === "#/bibli") { adopt(d); draw(); } });
         });
       }).catch(function () {}).then(function () {
         if (location.hash !== "#/bibli" || !data) return;
-        if ((data.films || []).some(function (x) { return x.enc && !x.enc.error; })) encT = setTimeout(encCheck, 20000);
+        if ((data.films || []).some(function (x) { return (x.enc && !x.enc.error) || x.pend; })) encT = setTimeout(encCheck, x_pend() ? 6000 : 20000);
       });
     }
     q.addEventListener("input", function () { st.q = q.value; st.n = 60; st.sugI = -1; suggest(); draw(); });
@@ -137,7 +149,7 @@
       var r = el("div", { class: "brow" + (st.sel[f.key] ? " sel" : "") + (inBand(f) ? " inband" : "") }, [
         el("span", { class: "bnum", text: String(i + 1) }), cb, th,
         el("div", { class: "bt" }, [el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
-          f.enc ? el("small", { class: "benc" + (f.enc.error ? " err" : " run"), text: f.enc.error ? "⚠ Encodage raté : " + f.enc.error : f.enc.sending ? "↑ Envoi en cours (ou interrompu)…" : "⟳ Encodage en cours (quelques minutes)…" }) : null]),
+          f.pend && !f.enc ? el("small", { class: "benc run", text: "⟳ " + [f.pend.thumb ? "Vignette" : "", f.pend.snip ? "Extrait" : ""].filter(Boolean).join(" et ") + " en cours d'encodage…" }) : f.enc ? el("small", { class: "benc" + (f.enc.error ? " err" : " run"), text: f.enc.error ? "⚠ Encodage raté : " + f.enc.error : f.enc.sending ? "↑ Envoi en cours (ou interrompu)…" : "⟳ Encodage en cours (quelques minutes)…" }) : null]),
         el("div", { class: "bc" }, f.dops.map(function (d) { var r = (f.roles || {})[d]; return r ? el("span", { class: "brole" }, [lnk("dop", d), el("small", { text: r })]) : lnk("dop", d); })),
         el("div", { class: "bc" }, f.cats.slice(0, 2).map(function (c) { return lnk("cat", c); }).concat(f.types.filter(function (t) { return !f.cats.some(function (c) { return bnrm(c) === bnrm(t); }); }).slice(0, 3).map(function (c) { return lnk("type", c); }))),
         el("div", { class: "bc" }, bibProds(f).map(function (x) { return lnk("prod", x); }).concat(f.client ? [lnk("client", f.client)] : [])),
@@ -160,7 +172,13 @@
     // Infos d'un film de la bibliothèque : même fenêtre que les retouches d'une bande ; enregistrées dans data/bibli/edits.json
     // (seulement ce qui diffère des pages), reprises par les films ajoutés ensuite aux bandes et appliquées aussi au site
     // (fiches, spotlight, fiction, accueil : app.js du site lit edits.json, Gus 26/11 « le video club sert partout »).
-    var libQ = { t: 0, busy: false, again: false, todo: {}, files: [] };
+    var libQ = { t: 0, busy: false, again: false, todo: {}, sent: {}, files: [] };
+    // Données du video club relues (fin d'un encodage…) : les retouches pas encore enregistrées (en attente `todo`, ou en cours d'envoi
+    // `sent`) sont remises par-dessus, sinon la fenêtre rouverte montrerait d'anciens crédits et les écraserait au prochain changement.
+    function adopt(d) {
+      data = d;
+      [libQ.sent, libQ.todo].forEach(function (m) { Object.keys(m || {}).forEach(function (k) { var f = filmOf(k), e = m[k]; if (f && e) { bibApply(f, e); bibHay(f); } }); });
+    }
     // Appliquer une retouche d'une bande au film du video club (Gus 23/11 : « en faire la vignette / l'extrait officiel ») :
     // mêmes infos que la fenêtre du film (edits.json, seulement ce qui diffère des pages), reprises par les prochaines bandes.
     function libPatch(f, patch) {
@@ -174,7 +192,7 @@
     function libSaveEdits() {
       if (!canWeb) return;
       if (libQ.busy) { libQ.again = true; return; }
-      var todo = libQ.todo, files = libQ.files.splice(0), keys = Object.keys(todo); libQ.todo = {};
+      var todo = libQ.todo, files = libQ.files.splice(0), keys = Object.keys(todo); libQ.todo = {}; libQ.sent = todo;
       if (!keys.length && !files.length) return;
       libQ.busy = true; info.classList.add("saving");
       return commit([{ path: BIB_EDITS, edit: function (t) {
@@ -182,8 +200,8 @@
         keys.forEach(function (k) { if (todo[k]) o.films[k] = todo[k]; else delete o.films[k]; });
         return json(o);
       } }].concat(files), "Video club : infos de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")").then(function () {
-        libQ.busy = false; info.classList.remove("saving"); if (libQ.again) { libQ.again = false; libSaveEdits(); }
-      }, function (e) { libQ.busy = false; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving"); alert("Infos pas enregistrées : " + e.message); throw e; });
+        libQ.busy = false; libQ.sent = {}; info.classList.remove("saving"); if (libQ.again) { libQ.again = false; libSaveEdits(); }
+      }, function (e) { libQ.busy = false; libQ.sent = {}; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving"); alert("Infos pas enregistrées : " + e.message); throw e; });
     }
     function libEdit(f, opt) { // opt (import) : { local: vidéo de l'ordinateur, head: onglets + avancement, credits: crédits à reprendre }
       opt = opt || {};
@@ -213,7 +231,7 @@
     }
     // Liens de films partagés seuls (Gus 23/11) : payload d'une « bande » d'un seul film ; création groupée à l'ajout de films.
     function sharePayload(it, dl) {
-      var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist" && k !== "pages" && k !== "hay" && k !== "libEdited") c[k] = it[k]; }); snipOk(it, c);
+      var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist" && k !== "pend" && k !== "pages" && k !== "hay" && k !== "libEdited") c[k] = it[k]; }); snipOk(it, c);
       c.dops = (c.dops || []).filter(Boolean);
       return { single: true, title: c.title || "", artists: [], cols: 1, hide: {}, download: !!dl, items: [c], at: new Date().toISOString() };
     }
@@ -991,12 +1009,17 @@
       function snipLight() {
         var sn = it.snip, from = it.full;
         if (!canWeb || !sn || it.snipVideo || !from || !snipStale()) return;
-        pout.textContent = "Extrait léger en préparation par le robot (≈ 1 min)…";
         var id = encId(), s0 = sn.s, d0 = sn.d;
-        encAsk("rapide", [{ id: id, kind: "snip", src: from, s: s0, d: d0 }]).then(function (p) { return encWait(p, 5000, 600000); }).then(function (jobs) {
-          var j = jobs[0] || {}; if (!j.answer) throw new Error(j.error || "pas de réponse");
-          if (it.snip && it.snip.s === s0 && it.snip.d === d0 && it.full === from) { it.snip.v = j.answer.video; it.snip.vf = from; it.edited = true; chg(); if (pout.isConnected) pout.textContent = "Extrait léger prêt (720p) : c'est lui que jouent les bandes."; }
-        }).catch(function (e) { if (pout.isConnected) pout.textContent = "Extrait léger pas fait : " + e.message; });
+        pout.className = "hint bwait"; pout.textContent = "Demande au robot…";
+        encAsk("rapide", [{ id: id, kind: "snip", src: from, s: s0, d: d0 }]).then(function (path) {
+          var q = { path: path, id: id, s: s0, d: d0, from: from }; pendSet("snip", q); snipWait(q);
+        }).catch(function (e) { if (pout.isConnected) { pout.className = "hint berr"; pout.textContent = "Extrait léger pas fait : " + e.message; } });
+      }
+      function snipWait(q) {
+        pout.className = "hint bwait"; pout.textContent = "⟳ Extrait en cours d'encodage (≈ 1 min) : tu peux fermer cette fenêtre ou changer de page, il s'appliquera tout seul.";
+        pendWatch("snip", q, function (a) {
+          if (it.snip && it.snip.s === q.s && it.snip.d === q.d && it.full === q.from) { it.snip.v = a.video; it.snip.vf = q.from; it.edited = true; chg(); if (pout.isConnected) { pout.className = "hint bok"; pout.textContent = "✓ Extrait léger prêt (720p) : c'est lui que jouent les bandes."; } }
+        }, function (e) { if (pout.isConnected) { pout.className = "hint berr"; pout.textContent = "Extrait léger pas fait : " + e.message; } });
       }
       var histImgL = el("span", { class: "label", text: "Anciennes vignettes" }), histImg = el("div", { class: "bthumbs" });
       var histSnipL = el("span", { class: "label", text: "Anciens extraits" }), histSnip = el("div", { class: "bhsnip" });
@@ -1040,19 +1063,35 @@
       }
       // Capture d'une image du film. Vidéo de l'ordinateur (blob, pendant l'envoi) : dessinée directement dans le navigateur.
       // Vidéo en ligne (notre CloudFront ou Slate) : le navigateur n'a pas le droit de copier l'image (pas d'en-tête CORS) et la
-      // fonction /api/media du site (Netlify) est souvent figée ; c'est donc le robot d'encodage qui sort l'image du film (demande
+      // fonction /api/media du site (Cloudflare) reçoit un 403 de notre CloudFront ; c'est donc le robot d'encodage qui sort l'image du film (demande
       // « thumb », ≈ 1 min) → vignettes WebP 800 / 1600 chez Amazon (Gus 26/11 : « la vignette depuis la vidéo ne marche pas »).
       function grabDone(u, t) { it.thumbT = Math.round(t * 1000) / 1000; setImg(u); pout.textContent = "✓ Vignette remplacée par l'image à " + fmtT(t) + "."; pout.className = "hint bok"; }
       function grabBusy(on) { if (typeof grabB !== "undefined" && grabB) { grabB.disabled = on; grabB.classList.toggle("busy", on); } }
+      // Demandes au robot (vignette, extrait léger) : gardées dans le film (`pend`, edits.json) pour survivre à la fermeture de la fenêtre et au
+      // rechargement de la page ; reprises par encCheckEdits (liste du video club) ou par la fenêtre rouverte (pendWatch). Seulement pour
+      // les films du video club (`lib`) ; dans une bande, la demande n'est suivie que fenêtre ouverte.
+      function pendSet(w, q) { if (!lib) return; it.pend = Object.assign({}, it.pend || {}); it.pend[w] = q; it.edited = true; chg(); }
+      function pendDone(w, id) { if (!lib) return true; if (!it.pend || !it.pend[w] || it.pend[w].id !== id) return false; it.pend = Object.assign({}, it.pend); delete it.pend[w]; if (!Object.keys(it.pend).length) delete it.pend; chg(); return true; }
+      function pendWatch(w, q, ok, ko) {
+        return encWait(q.path, 3000, 900000).then(function (jobs) {
+          var j = jobs.filter(function (y) { return y.id === q.id; })[0] || {};
+          if (lib && !(it.pend && it.pend[w] && it.pend[w].id === q.id)) return; // déjà appliquée ailleurs
+          if (!j.answer) { pendDone(w, q.id); ko(new Error(j.error || "pas de réponse")); return; }
+          pendDone(w, q.id); ok(j.answer);
+        }, function (e) { ko(e); });
+      }
       function grabRobot(t) {
         if (!canWeb) { pout.textContent = "Lecture seule : cette clé ne peut pas demander de capture."; return; }
         if (!/\.(mp4|mov|m4v)$/i.test(src)) { pout.textContent = "Capture impossible : adresse de vidéo non reconnue."; return; }
-        grabBusy(true); pout.className = "hint bwait"; pout.textContent = "Capture en cours chez le robot (≈ 1 min) : tu peux continuer, la vignette changera toute seule…";
-        var id = encId(), from = src;
-        encAsk("rapide", [{ id: id, kind: "thumb", src: from, t: Math.round(t * 1000) / 1000 }]).then(function (path) { return encWait(path, 5000, 600000); }).then(function (jobs) {
-          var j = jobs[0] || {}; if (!j.answer) throw new Error(j.error || "pas de réponse");
-          grabBusy(false); grabDone(j.answer.img, t);
+        t = Math.round(t * 1000) / 1000; grabBusy(true); pout.className = "hint bwait"; pout.textContent = "Demande au robot…";
+        var id = encId();
+        encAsk("rapide", [{ id: id, kind: "thumb", src: src, t: t }]).then(function (path) {
+          var q = { path: path, id: id, t: t }; pendSet("thumb", q); grabWait(q);
         }).catch(function (e) { grabBusy(false); pout.className = "hint berr"; pout.textContent = "Capture pas faite : " + e.message; });
+      }
+      function grabWait(q) {
+        grabBusy(true); pout.className = "hint bwait"; pout.textContent = "⟳ Vignette en cours d'encodage (≈ 1 min) à " + fmtT(q.t) + " : tu peux fermer cette fenêtre ou changer de page, elle s'appliquera toute seule.";
+        pendWatch("thumb", q, function (a) { grabBusy(false); grabDone(a.img, q.t); }, function (e) { grabBusy(false); pout.className = "hint berr"; pout.textContent = "Capture pas faite : " + e.message; });
       }
       function grab() {
         if (!player) return; var t = player.currentTime;
@@ -1086,21 +1125,24 @@
         l.forEach(function (u) { thumbs.appendChild(el("button", { type: "button", class: u === it.img ? "on" : "", style: 'background-image:url("' + u + '")', title: "Prendre comme vignette", on: { click: function () { setImg(u); } } })); });
       }
       drawThumbs(); prevImg(); prevMeta(); zlab(); drawSnip(); drawHist();
+      if (lib && it.pend) { if (it.pend.thumb) grabWait(it.pend.thumb); else if (it.pend.snip) snipWait(it.pend.snip); } // fenêtre rouverte pendant une demande au robot
       // Sous le film (comme sur les pages des chefs op) : galeries de stills et autres vidéos, liens Slate « work » ou shots.re.
       var exBox = el("div", { class: "bexs" }), exIn = el("input", { type: "text", placeholder: "Lien Slate (page de stills ou d'une vidéo, shots.re)" }), exOut = el("p", { class: "hint" });
       function drawEx() {
         exBox.textContent = "";
         // Suite d'images (sans film) : ses images dans l'ordre, à déplacer en glissant (Gus 26/11).
         if (!it.full && !it.video && it.images && it.images.length) {
-          exBox.appendChild(el("span", { class: "label", text: "Images du projet (" + it.images.length + ") · glisser pour changer l'ordre, × pour retirer" }));
-          exBox.appendChild(stillGrid(it, "images"));
+          exBox.appendChild(el("div", { class: "bexh" }, [el("span", { class: "label", text: "Images du projet (" + it.images.length + ") · glisser pour changer l'ordre, × pour retirer" }),
+            cropBtn(it.images, "Recadrer les images du projet", function () { return it.scrop; }, function (c) { if (c) it.scrop = c; else delete it.scrop; })]));
+          exBox.appendChild(stillGrid(it, "images", it.scrop));
         }
         (it.extras || []).forEach(function (x, j) {
           var th = el("div", { class: "bithumb" }), u = x.img || (x.stills && x.stills[0]); if (u) th.appendChild(el("i", { style: 'background-image:url("' + u + '")' }));
           exBox.appendChild(el("div", { class: "bit bex" }, [th, el("span", { class: "bitt" }, [x.title || x.link || "", el("small", { text: x.stills ? x.stills.length + " images" : "vidéo" })]),
+            x.stills && x.stills.length ? cropBtn(x.stills, "Recadrer : " + (x.title || "stills"), function () { return x.crop; }, function (c) { if (c) x.crop = c; else delete x.crop; }) : null,
             el("button", { type: "button", class: "bx", text: "↑", title: "Monter", disabled: j ? null : true, on: { click: function () { var a = it.extras.splice(j, 1)[0]; it.extras.splice(j - 1, 0, a); chg(); drawEx(); } } }),
             el("button", { type: "button", class: "bx", text: "×", title: "Retirer de cette bande", on: { click: function () { it.extras.splice(j, 1); if (!it.extras.length) delete it.extras; chg(); drawEx(); } } })]));
-          if (x.stills && x.stills.length) exBox.appendChild(stillGrid(x));
+          if (x.stills && x.stills.length) exBox.appendChild(stillGrid(x, "stills", x.crop));
         });
       }
       // Stills de l'ordinateur (Gus 26/11) : cliquer ou glisser des images sur le bouton → réduites (WebP) et envoyées chez Amazon (imgPut) ;
@@ -1118,11 +1160,12 @@
         }); }); }, Promise.resolve()).then(function () { exOut.textContent = n + " image" + (n > 1 ? "s" : "") + " ajoutée" + (n > 1 ? "s" : "") + "."; it.edited = true; chg(); drawEx(); },
           function (e) { exOut.textContent = e.message; drawEx(); });
       }
-      function stillGrid(x, key) { // images d'un groupe (x[key], « stills » par défaut) : glisser pour changer l'ordre, × pour retirer
+      function stillGrid(x, key, crop) { // images d'un groupe (x[key], « stills » par défaut) : glisser pour changer l'ordre, × pour retirer ; crop : recadrage montré
         key = key || "stills"; var g = el("div", { class: "bstgrid" }), from = -1, arr = x[key];
         arr.forEach(function (u, k) {
-          var c = el("div", { class: "bst", draggable: "true", style: 'background-image:url("' + u + '")', title: "Glisser pour changer l'ordre" }, [
+          var c = el("div", { class: "bst", draggable: "true", title: "Glisser pour changer l'ordre" }, [el("i", { class: "bsi", style: 'background-image:url("' + imgShow(u) + '")' }),
             el("button", { type: "button", class: "bx", text: "×", title: "Retirer cette image", on: { click: function () { arr.splice(k, 1); it.edited = true; chg(); drawEx(); drawThumbs(); } } })]);
+          var sc = scNorm(crop); if (sc) { c.style.aspectRatio = String(sc.ar); scLayer(c.firstChild, sc); }
           c.addEventListener("dragstart", function (e) { from = k; e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", "st"); c.classList.add("drag"); });
           c.addEventListener("dragend", function () { c.classList.remove("drag"); });
           c.addEventListener("dragover", function (e) { if (from < 0) return; e.preventDefault(); c.classList.add("over"); });
@@ -1131,6 +1174,12 @@
           g.appendChild(c);
         });
         return g;
+      }
+      function cropBtn(urls, title, get, set) { // petit carré « recadrer » : ouvre la fenêtre de recadrage de ces images
+        var cur = scNorm(get());
+        return el("button", { type: "button", class: "bx bcropb" + (cur ? " on" : ""), text: "▣", title: scLabel(cur) + " : recadrer toutes les images", on: { click: function () {
+          cropWin(title, urls, get(), function (c) { set(c); it.edited = true; chg(); drawEx(); });
+        } } });
       }
       var exGo = el("button", { type: "button", class: "btn", text: "Ajouter", on: { click: function () {
         var v = exIn.value.trim(); if (!v) return; exGo.disabled = true; exOut.textContent = "Lecture sur Slate" + slateWait("…");
@@ -1275,6 +1324,59 @@
     }
 
     // ---------- Imports ----------
+    // Recadrage des stills (Gus 26/11) : un cadre (rapport largeur / hauteur au choix, zoom, point de cadrage) commun à toutes les
+    // images d'un groupe : { ar, z, x, y } (`it.scrop` pour les images du projet, `extras[i].crop` pour un groupe sous le film). Même CSS
+    // que sur le site (calque `i` : image en cover + zoom depuis le point x % y %), pour voir ici exactement ce qu'on aura là-bas.
+    var SC_AR = [["16:9", 16 / 9], ["3:2", 3 / 2], ["4:3", 4 / 3], ["1:1", 1], ["2,39:1", 2.39], ["9:16", 9 / 16]];
+    function scNorm(c) { return c && c.ar > 0 ? { ar: Math.round(c.ar * 1000) / 1000, z: Math.max(1, +c.z || 1), x: c.x === undefined ? 50 : +c.x, y: c.y === undefined ? 50 : +c.y } : null; }
+    function scLayer(i, c) { // applique le recadrage c (ou rien) à un calque image
+      c = scNorm(c); i.style.transform = c && c.z > 1 ? "scale(" + c.z + ")" : ""; i.style.transformOrigin = c ? c.x + "% " + c.y + "%" : ""; i.style.backgroundPosition = c ? c.x + "% " + c.y + "%" : "";
+    }
+    function scLabel(c) { c = scNorm(c); if (!c) return "Recadrer"; var r = SC_AR.filter(function (a) { return Math.abs(a[1] - c.ar) < .01; })[0]; return "Recadrage " + (r ? r[0] : c.ar.toFixed(2).replace(".", ",") + ":1") + (c.z > 1 ? " · " + Math.round(c.z * 100) + " %" : ""); }
+    function cropWin(title, urls, cur, done) { // cur : recadrage actuel ou null ; done(c | null) à « Appliquer » / « Retirer »
+      var c = scNorm(cur) || { ar: 16 / 9, z: 1, x: 50, y: 50 }, k = 0;
+      var ov = el("div", { class: "bmodal bcropw" }), frame = el("div", { class: "bcrop" }), li = el("i", { class: "bsi" }), cnt = el("span", { class: "hint" });
+      frame.appendChild(li);
+      var strip = el("div", { class: "bcropstrip" }), arRow = el("div", { class: "btabs" }), zr = el("input", { type: "range", min: "100", max: "300", step: "1" }), zl = el("span", { class: "hint" });
+      var wI = el("input", { type: "number", min: "1", step: "any", class: "bcn" }), hI = el("input", { type: "number", min: "1", step: "any", class: "bcn" });
+      var imgR = 0; // rapport de l'image affichée (pour le glisser)
+      function paint() {
+        frame.style.aspectRatio = String(c.ar); frame.style.setProperty("--ar", c.ar); li.style.backgroundImage = 'url("' + imgShow(urls[k]) + '")'; scLayer(li, c);
+        cnt.textContent = (k + 1) + " / " + urls.length; zr.value = String(Math.round(c.z * 100)); zl.textContent = Math.round(c.z * 100) + " %" + (c.z > 1 || imgR ? " · glisse l'image pour choisir le cadrage" : "");
+        arRow.querySelectorAll("button").forEach(function (b, i) { b.classList.toggle("on", i < SC_AR.length ? Math.abs(SC_AR[i][1] - c.ar) < .01 : false); });
+        wI.value = String(Math.round(c.ar * 1000) / 1000); hI.value = "1";
+        strip.querySelectorAll(".bsc").forEach(function (b, i) { b.style.aspectRatio = String(c.ar); b.classList.toggle("on", i === k); scLayer(b.firstChild, c); });
+        var im = new Image(); im.onload = function () { imgR = im.naturalWidth / im.naturalHeight; }; im.src = imgShow(urls[k]);
+      }
+      SC_AR.forEach(function (a) { arRow.appendChild(el("button", { type: "button", text: a[0], on: { click: function () { c.ar = a[1]; paint(); } } })); });
+      arRow.appendChild(el("button", { type: "button", text: "Comme l'image", title: "Rapport de l'image affichée", on: { click: function () { if (imgR) { c.ar = Math.round(imgR * 1000) / 1000; paint(); } } } }));
+      function free() { var w = +wI.value, h = +hI.value; if (w > 0 && h > 0) { c.ar = Math.max(.2, Math.min(5, w / h)); paint(); } }
+      wI.addEventListener("change", free); hI.addEventListener("change", free);
+      zr.addEventListener("input", function () { c.z = +zr.value / 100; paint(); });
+      urls.slice(0, 60).forEach(function (u, i) { strip.appendChild(el("button", { type: "button", class: "bsc", title: "Voir cette image", on: { click: function () { k = i; paint(); } } }, [el("i", { class: "bsi", style: 'background-image:url("' + imgShow(u) + '")' })])); });
+      // glisser l'image : x / y bougent comme le contenu (déplacement total = débordement du « cover » + zoom)
+      var dr = null;
+      frame.addEventListener("pointerdown", function (e) { e.preventDefault(); frame.setPointerCapture(e.pointerId); var r = frame.getBoundingClientRect(); dr = { px: e.clientX, py: e.clientY, x: c.x, y: c.y, w: r.width, h: r.height }; });
+      frame.addEventListener("pointermove", function (e) {
+        if (!dr || !imgR) return; var ir = imgR, bw = dr.w, bh = dr.h, cw = ir >= bw / bh ? bh * ir : bw, ch = ir >= bw / bh ? bh : bw / ir;
+        var sx = (cw - bw) + (c.z - 1) * bw, sy = (ch - bh) + (c.z - 1) * bh;
+        if (sx > 1) c.x = Math.round(Math.max(0, Math.min(100, dr.x - (e.clientX - dr.px) / sx * 100))); if (sy > 1) c.y = Math.round(Math.max(0, Math.min(100, dr.y - (e.clientY - dr.py) / sy * 100)));
+        paint();
+      });
+      frame.addEventListener("pointerup", function () { dr = null; });
+      var prev = el("button", { type: "button", class: "btn ghost", text: "◀", on: { click: function () { k = (k + urls.length - 1) % urls.length; paint(); } } });
+      var next = el("button", { type: "button", class: "btn ghost", text: "▶", on: { click: function () { k = (k + 1) % urls.length; paint(); } } });
+      var box = el("div", { class: "bmbox" }, [el("span", { class: "label", text: title }),
+        el("p", { class: "hint", text: "Le cadre vaut pour toutes les images du groupe (bandes noires, format différent de 16:9…)." }), frame,
+        el("div", { class: "row" }, [prev, cnt, next]), el("span", { class: "label", text: "Forme du cadre" }), arRow,
+        el("div", { class: "row" }, [wI, el("span", { text: " : " }), hI, el("span", { class: "hint", text: "  rapport libre (largeur : hauteur)" })]),
+        el("span", { class: "label", text: "Zoom" }), el("div", { class: "row" }, [zr, zl]), el("span", { class: "label", text: "Résultat sur toutes les images" }), strip,
+        el("div", { class: "fwbtns" }, [
+          el("button", { type: "button", class: "btn primary", text: "Appliquer", on: { click: function () { ov.remove(); done(c.ar === 16 / 9 && c.z <= 1 && c.x === 50 && c.y === 50 ? null : scNorm(c)); } } }),
+          el("button", { type: "button", class: "btn ghost", text: "Retirer le recadrage", on: { click: function () { ov.remove(); done(null); } } }),
+          el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { ov.remove(); } } })])]);
+      ov.appendChild(box); ov.addEventListener("click", function (e) { if (e.target === ov) ov.remove(); }); document.body.appendChild(ov); paint();
+    }
     function modal(title, kids) {
       var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox small" }, [el("span", { class: "label", text: title })].concat(kids));
       ov.addEventListener("click", function (e) { if (e.target === ov) ov.remove(); });
@@ -1307,7 +1409,7 @@
             });
             out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " lu" + (items.length > 1 ? "s" : "") + " : enregistrement…";
             return libSave(items).then(function () { out.textContent = items.length + " film" + (items.length > 1 ? "s" : "") + " ajouté" + (items.length > 1 ? "s" : "") + " au video club."; go.disabled = false; return bibLoad(true); }).then(function (d) {
-              data = d; draw();
+              adopt(d); draw();
               // Un seul film : la fenêtre d'infos s'ouvre tout de suite (Gus 22/11 : même fenêtre qu'en cliquant sur un film).
               // Lien de partage créé tout de suite pour chaque film ajouté (Gus 23/11).
               var added = items.map(function (x) { return filmOf(x.key); }).filter(Boolean);
@@ -1407,7 +1509,7 @@
         }).then(function () { x.step = "file"; paint(); watch(x); }, function (e) { x.step = "erreur"; x.err = "envoi interrompu : " + e.message + " (rechoisis le même fichier pour reprendre)"; paint(); })
           .then(function () { next(k + 1); });
       }
-      libSave(g.map(function (x) { return x.it; })).then(function () { return bibLoad(true); }).then(function (d) { data = d; draw(); openTab(0); next(0); },
+      libSave(g.map(function (x) { return x.it; })).then(function () { return bibLoad(true); }).then(function (d) { adopt(d); draw(); openTab(0); next(0); },
         function (e) { alert("Pas enregistré : " + e.message); });
     }
     // Suite d'images (Gus 22/11) : on choisit les images, elles sont enregistrées, puis la même fenêtre d'infos s'ouvre (titre,
@@ -1431,7 +1533,7 @@
         var guess = String(names[0] || "").replace(/\.[a-z0-9]+$/i, "").replace(/[\s_.-]*\d+$/, "").replace(/[_]+/g, " ").trim() || "Images";
         var it = { key: "i" + id, kind: "images", title: guess, dops: [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "" };
         libSave([it]).then(function () { delete it._files; return bibLoad(true); }).then(function (d) {
-          clearInterval(tickI); bar.value = bar.max; data = d; draw(); var f = filmOf(it.key); out.textContent = "✓ " + files.length + " images enregistrées · création du lien de partage…";
+          clearInterval(tickI); bar.value = bar.max; adopt(d); draw(); var f = filmOf(it.key); out.textContent = "✓ " + files.length + " images enregistrées · création du lien de partage…";
           shareCreate(f ? [f] : []).catch(function () {}).then(function () { mo.remove(); if (f) libEdit(f); });
         }, function (e) { clearInterval(tickI); bar.hidden = true; go.disabled = false; out.className = "hint berr"; out.textContent = "Pas enregistré : " + e.message; });
       } } });

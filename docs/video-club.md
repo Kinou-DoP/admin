@@ -88,6 +88,14 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   (anciennes images copiées chez Amazon par le robot `images-bibli.yml`, `main`).
 - **Vignette depuis la vidéo** (Gus 26/11) : « Valider cette image » sur une vidéo de l'ordinateur (blob) = capture directe (canvas) ; sur une
   vidéo en ligne = demande `thumb` au robot (`grabRobot`, file « rapide », ≈ 1 min, vignettes 800 / 1600) car notre CloudFront n'envoie pas
-  de CORS et `/api/media` (Netlify) est souvent figé. **Avancement des imports** : pastilles Envoi / Encodage / Prête (`.bstep`), bandeau vert
+  de CORS, et `/api/media` (fonction Cloudflare du site) reçoit un 403 de notre CloudFront (vérifié 26/11). **Avancement des imports** : pastilles Envoi / Encodage / Prête (`.bstep`), bandeau vert
   à la fin, onglets colorés ; images : barre de progression (préparation puis envoi). **Images d'une suite d'images** : `images` fait partie
   de `BIB_EK` (enregistré dans edits.json) et se réordonne en glissant dans la fenêtre du film (`stillGrid(it, "images")`).
+- **Demandes au robot qui survivent à la fenêtre** (Gus 26/11) : vignette prise dans la vidéo et extrait léger notent leur demande dans le film
+  (`pend: { thumb | snip: { path, id, … } }` dans edits.json, clé de `BIB_EK`). `pendWatch` (fenêtre ouverte ou fermée tant que l'admin reste
+  ouverte) ou `encCheckEdits` (ouverture du video club, puis toutes les 6 s tant qu'un `pend` existe) appliquent la réponse et effacent `pend` ;
+  fenêtre rouverte = reprise de l'attente. Liste du video club : « ⟳ Vignette / Extrait en cours d'encodage… ».
+- **Données relues pendant une retouche** : `adopt(d)` remet par-dessus les films relus les retouches pas encore enregistrées (`libQ.todo`) ou en
+  cours d'envoi (`libQ.sent`) : sinon, à la fin d'un encodage, la fenêtre rouverte montrait d'anciens crédits et les réécrivait.
+- **Recadrage des stills** (`cropWin`, bouton ▣) : `{ ar, z, x, y }` (forme du cadre libre, zoom, point de cadrage) commun à un groupe d'images :
+  `it.scrop` (images du projet) ou `extras[i].crop` (stills sous un film). Même rendu sur le site (`cropOf`, `.pgal button.cr`, `.plcr`).

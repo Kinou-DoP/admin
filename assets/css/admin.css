@@ -1143,3 +1143,14 @@ progress.bupprog { display: block; width: 100%; height: 6px; margin: 10px 0 4px;
 .brow .bt small.benc.err { color: #ff7b72; } .brow .bt small.benc.run { animation: bpulse 1.4s ease-in-out infinite; }
 .btn.busy { opacity: .55; cursor: progress; }
 @keyframes bpulse { 50% { opacity: .55; } }
+
+/* Recadrage des stills (Gus 26/11) : cellules recadrées, bouton ▣, fenêtre de recadrage */
+.bst { overflow: hidden; aspect-ratio: 16 / 9; background: #111; }
+.bst .bsi, .bcrop .bsi, .bsc .bsi { position: absolute; inset: 0; background: center / cover no-repeat; pointer-events: none; }
+.bexh { display: flex; align-items: center; gap: 8px; } .bexh .label { flex: 1; }
+.bx.bcropb { opacity: 1; position: static; font-size: 13px; } .bx.bcropb.on { color: #d9822b; }
+.bcropw { z-index: 50; } .bcropw .bmbox { width: min(640px, 100%); }
+.bcrop { position: relative; width: min(100%, calc(60vh * var(--ar, 1.78))); margin: 8px auto; overflow: hidden; background: #000; cursor: grab; touch-action: none; outline: 1px solid var(--faint); }
+.bcropstrip { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 4px; max-height: 24vh; overflow-y: auto; margin: 6px 0 12px; }
+.bsc { position: relative; padding: 0; border: 0; overflow: hidden; background: #111; cursor: pointer; opacity: .7; } .bsc.on { opacity: 1; outline: 2px solid #d9822b; }
+input.bcn { width: 90px; }

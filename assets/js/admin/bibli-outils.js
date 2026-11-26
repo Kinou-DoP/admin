@@ -12,7 +12,7 @@
   // a un), le fichier du dépôt public est illisible et son nom ne dit rien. L'original et la liste des bandes (avec les mots de
   // passe) sont dans le dépôt privé notes (bandes/<code>.json, bandes/index.json). Chiffrement : bandSeal (même code dans
   // b/index.html du site). Anciennes bandes (19/11, data/bandes/, en clair) : lues encore, converties au premier changement.
-  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "images", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc"];
+  var BIB_EDITS = "data/bibli/edits.json", BIB_EK = ["title", "dir", "prod", "dops", "roles", "types", "full", "video", "images", "img", "snip", "snipVideo", "thumbT", "hist", "crop", "extras", "awards", "enc", "pend", "scrop"];
   var BIB_SLATE = "bibli/slate.json"; // dépôt notes : tous les films de Slate (liste privée, 25/11)
   var BIB_LIB = "data/bibli/library.json", BIB_META = "bibli/meta.json", BANDS = "data/bandes/", BAND_PUB = "data/b/", BAND_KEY = "kinou-bande-draft";
   var BAND_NOTES = "bandes/", BAND_SALT = "kinou-bande-v1", BAND_IT = 150000;
