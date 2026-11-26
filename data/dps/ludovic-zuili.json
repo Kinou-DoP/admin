@@ -192,7 +192,13 @@
         "Trailer",
         "narrative",
         "Feature Film trailer"
-      ]
+      ],
+      "info": {
+        "awards": "Official selection • Perspectives du cinéma français, Arras Film Festival 2025",
+        "awardsFrom": {
+          "b3283d648a35": "Official selection • Perspectives du cinéma français, Arras Film Festival 2025"
+        }
+      }
     },
     "10389": {
       "title": "Pegasus - Bar",
