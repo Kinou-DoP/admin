@@ -1157,6 +1157,12 @@
           "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c1b60d7-42d6-4be3-a7f4-ac780f776e99-1280x720.2500.mp4"
         }
       }
+    },
+    "s1862": {
+      "snip": {
+        "s": 1.466,
+        "d": 30
+      }
     }
   }
 }
