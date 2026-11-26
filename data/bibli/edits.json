@@ -442,10 +442,40 @@
         "Music Video"
       ],
       "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxk8c1vighyux/vignette-104699-800.webp",
+      "snip": {
+        "s": 39.143,
+        "d": 1.733,
+        "parts": [
+          {
+            "s": 39.143,
+            "d": 1.733
+          },
+          {
+            "s": 95.197,
+            "d": 1.974
+          },
+          {
+            "s": 28.953,
+            "d": 4.194
+          },
+          {
+            "s": 103.673,
+            "d": 1.691
+          }
+        ]
+      },
       "thumbT": 104.699,
       "hist": {
         "img": [
           "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/vignette-800.webp"
+        ],
+        "snip": [
+          {
+            "s": 100.987,
+            "d": 5,
+            "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/extrait-100987.mp4",
+            "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/web.mp4"
+          }
         ]
       },
       "crop": {
