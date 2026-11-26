@@ -15,14 +15,35 @@
     "3986": {
       "title": "Gliss Supreme Leigth"
     },
+    "4365": {
+      "title": "Ce soir, je dors chez toi"
+    },
+    "4366": {
+      "title": "Les Tuche"
+    },
+    "4367": {
+      "title": "L'italien"
+    },
+    "4368": {
+      "title": "Operation Endgame"
+    },
     "4833": {
       "title": "L'Oréal Feria"
+    },
+    "6077": {
+      "title": "Menteur"
     },
     "7922": {
       "title": "L'Oréal - Extraordinary"
     },
+    "7972": {
+      "title": "Noël Joyeux"
+    },
     "9153": {
       "title": "Dessange"
+    },
+    "10382": {
+      "title": "Anthracite"
     },
     "11632": {
       "title": "Pantene"
@@ -307,6 +328,15 @@
       "img": "https://images.slatecdn.net/AnkFFcVg525RWjIb8DU-Neltue6wa-Bft6EGndkps3w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/b3JlYWwtcHJlZmVy/ZW5jZS0yMGE0YWZk/OTc1YTA0MmI5Nzhk/NGZiMGZlYzQ4M2Q0/Yi5qcGc.webp",
       "slate": 1431,
       "cat": "HAIR"
+    },
+    {
+      "title": "Showreel Arnaud Stefani",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2a59da5-944c-49a3-9a4a-01371030dd96-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/T7fmy0CjpytIZW9ueWxTVGrMT9yT01MLBzJ3-RVx_QQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/OTI4NTY0OC1jMzY0/LTQ4ZTMtOWYyMy0y/YmE5M2MzODFjYzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTUtYS0xMC4zNS4y/Ni5wbmc.webp",
+      "slate": 6099,
+      "cat": "",
+      "featured": true,
+      "featuredOrder": 1
     }
   ]
 }
