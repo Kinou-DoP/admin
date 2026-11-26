@@ -31,13 +31,13 @@ function montageWin(films, opt) {
   var pool = films.filter(function (f) { return f.full && f.dur; }), uid = 0;
   if (!pool.length) { alert("Aucune vidéo encodée à assembler pour l'instant."); return; }
   var blocks = opt.parts && opt.parts.length ? opt.parts.map(function (p) { return { id: ++uid, f: pool[0], s: p.s, d: p.d, x: p.x }; }) : pool.map(function (f) { return { id: ++uid, f: f, s: 0, d: f.dur }; });
-  var sel = -1, src = blocks[0].f, selMem = {}, mode = "src", playing = false, cur = 0, loaded = "", quality = "original";
+  var sel = EX ? 0 : -1, src = blocks[0].f, selMem = {}, mode = "src", playing = false, cur = 0, loaded = "", quality = "original";
   var MIND = .2, zw = null, revOn = false, revRaf = 0; // zw : partie visible de la frise de la source (zoom Option + molette) ; revOn : lecture à l'envers
   function zwin() { return zw || [0, src.dur]; }
   function pcz(t) { var w = zwin(); return (t - w[0]) / (w[1] - w[0]) * 100; }
   var r3 = function (x) { return Math.round(x * 1000) / 1000; }, clamp = function (x, a, b) { return Math.max(a, Math.min(b, x)); };
   var fmt = function (t) { t = Math.max(0, t || 0); var m = Math.floor(t / 60), s = t - m * 60; return m + ":" + (s < 10 ? "0" : "") + s.toFixed(2).replace(".", ","); };
-  var ov = el("div", { class: "bmodal bmont" }), box = el("div", { class: "bmbox bmontbox" });
+  var ov = el("div", { class: "bmodal bmont" + (EX ? " bmhome" : "") }), box = el("div", { class: "bmbox bmontbox" });
   var vid = el("video", { playsinline: true, preload: "auto" }), nameI = el("input", { type: "text", value: opt.name || "Bout à bout — " + (pool[0].title || "").slice(0, 40), placeholder: "Nom du montage" });
   var pband = el("i", { class: "hphone", title: "Cadrage téléphone de ce bloc : glisse" }); pband.hidden = true;
   var bar = el("div", { class: "hbar" }), ruler = el("div", { class: "hruler" }), ph = el("i", { class: "hbph" }), wrap = el("div", { class: "hbwrap" }, [ruler, bar, ph]);
@@ -160,6 +160,7 @@ function montageWin(films, opt) {
     h.addEventListener("pointerdown", function (e) {
       e.preventDefault(); e.stopPropagation(); h.setPointerCapture(e.pointerId); pause(); mode = "src";
       function mv(ev) {
+        if (EX && sel < 0 && room() < MIND) return; // montage plein : raccourcir un bloc d'abord
         var a = act(), t = tOf(ev, dTrack, zwin()[0], zwin()[1]), end = a.s + a.d;
         if (which === "in") { t = Math.min(t, end - MIND); a.s = r3(Math.max(0, t)); a.d = r3(end - a.s); if (a.d > room()) { a.d = room(); a.s = r3(end - a.d); } } else { t = Math.max(t, a.s + MIND); a.d = r3(Math.min(src.dur, t) - a.s); if (a.d > room()) a.d = room(); }
         load(src, which === "in" ? a.s : a.s + a.d - .05, false); drawDet(); if (sel >= 0) drawBarSoft();
@@ -258,7 +259,7 @@ function montageWin(films, opt) {
     if ((k === "Delete" || k === "Backspace") && sel >= 0) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); removeAt(sel); return; }
     if (/^[sS]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); splitHere(); return; }
     if (/^[iIoO]$/.test(k) && !e.ctrlKey && !e.metaKey) {
-      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full) return; var t = vid.currentTime, a = act(), end = a.s + a.d;
+      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full || (EX && sel < 0 && room() < MIND)) return; var t = vid.currentTime, a = act(), end = a.s + a.d;
       if (/i/i.test(k)) { a.s = r3(clamp(t, 0, src.dur - MIND)); a.d = r3(Math.max(MIND, (t > end - MIND ? Math.min(src.dur, t + 1) : end) - a.s)); }
       else { a.d = r3(Math.max(MIND, Math.min(src.dur, t) - a.s)); if (t < a.s + MIND) { a.s = r3(Math.max(0, t - MIND)); a.d = MIND; } }
       if (a.d > room()) a.d = r3(Math.max(MIND, room()));
@@ -277,5 +278,5 @@ function montageWin(films, opt) {
     el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } })])]), exp]));
   box.appendChild(det); box.appendChild(el("span", { class: "label hmlab", text: "Montage · glisse un bloc pour changer l'ordre, clique-glisse sur la règle pour balader la lecture" })); box.appendChild(wrap); box.appendChild(info);
   ov.appendChild(box); document.body.appendChild(ov);
-  drawBar(); load(src, selFree().s, false); tick();
+  drawBar(); load(src, act().s, false); tick();
 }

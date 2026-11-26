@@ -1274,3 +1274,4 @@ input.bcn { width: 90px; }
 .hvw { position: relative; line-height: 0; }
 .hvw .hphone { position: absolute; top: 0; bottom: 0; border: 1px solid #ff3b30; box-shadow: 0 0 0 9999px rgba(0,0,0,.45); cursor: ew-resize; touch-action: none; z-index: 2; }
 .hvw { overflow: hidden; } .bok { color: #7ddc8a; }
+.bmodal.bmont.bmhome { z-index: 1100; } /* montage ouvert depuis l'éditeur de vidéo de l'accueil (z-index 1000) */
