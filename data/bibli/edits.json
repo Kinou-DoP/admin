@@ -314,6 +314,14 @@
       "dops": [
         "Julien Teissier"
       ]
+    },
+    "s8443": {
+      "crop": {
+        "z": 1.44,
+        "x": 50,
+        "y": 50,
+        "t": false
+      }
     }
   }
 }
