@@ -293,7 +293,8 @@
     function save(list) { set(list); touch(); draw(); }
     function kind(x) { return x.stills ? "Stills · " + x.stills.length : x.full || x.video ? "Vidéo" : "Vidéo · à publier"; }
     function row(x, i, list) {
-      var input = el("input", { type: "url", class: "stills nodirty", placeholder: label, value: x ? x.link || "" : "" });
+      var input = el("input", { type: "url", class: "stills nodirty", placeholder: label, value: x ? x.link || x.title || "" : "" });
+      if (x && !x.link && x.key) { input.readOnly = true; input.title = "Vidéo du video club (pas de lien) : on peut la déplacer, la masquer ou la retirer"; }
       var st = el("p", { class: "hint" });
       function load(force) {
         var v = input.value.trim();

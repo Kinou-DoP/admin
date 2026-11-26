@@ -497,7 +497,20 @@
   // Les fiches (et spotlight, fiction) les lisent et les écrivent là ; le site les applique par-dessus les pages. Le titre reste
   // propre à chaque page. vcFilms = edits.json lu à l'ouverture de la page ; vcKey = clé du film (« s<id Slate> » ou clé d'un import).
   var vcFilms = {}, vcTodo = {};
-  function vcLoad() { return readFile(BIB_EDITS).then(function (o) { vcFilms = (o && o.films) || {}; }, function () { vcFilms = {}; }); }
+  var vcLib = {}; // library.json (video club) : sert aux vidéos d'un même import
+  function vcLoad() {
+    return Promise.all([readFile(BIB_EDITS).then(function (o) { vcFilms = (o && o.films) || {}; }, function () { vcFilms = {}; }),
+      readFile(BIB_LIB).then(function (l) { vcLib = {}; ((l && l.items) || []).forEach(function (it) { vcLib[it.key] = it; }); }, function () { vcLib = {}; })]);
+  }
+  // Vidéos importées ensemble avec ce film (Gus 26/11) : le site les montre sous lui ; ici on les montre aussi (lignes de la carte), dans l'ordre du lot.
+  // Dès qu'on y touche (ordre, masquer), la carte garde sa propre liste (overrides[id].extras) : propre à cette page.
+  function vcGroupRows(c) {
+    var me = vcLib[vcKey(c.slate)]; if (!me || !me.grp) return null;
+    var ms = Object.keys(vcLib).map(function (k) { return vcLib[k]; }).filter(function (x) { return x.grp === me.grp && x.key !== me.key; }).sort(function (a, b) { return (a.gi || 0) - (b.gi || 0); });
+    var ce = vcOf(c).extras || [];
+    var rows = ms.map(function (m) { var n = extraFromFilm(Object.assign({}, m, vcFilms[m.key] || {})); n.auto = true; var h = ce.filter(function (x) { return x.key === m.key; })[0]; if (h && h.hide) n.hide = h.hide.slice(); return n; }).filter(function (n) { return n.full || n.video; });
+    return rows.length ? rows : null;
+  }
   function vcKey(id) { return /^\d+$/.test(String(id)) ? "s" + id : String(id); }
   function vcOf(c) { return vcFilms[vcKey(c.slate)] || {}; }
   function vcImg(c) { var e = vcOf(c); return e.img || c.img; }
@@ -650,7 +663,7 @@
       hoverBox = el("div", { class: "hover" }, [el("label", { class: "hcheck" }, [hcheck, " Extrait vidéo au survol"]), hrow]);
     }
     // Sous le film dans le lecteur : stills et autres vidéos (liens Slate), enregistrés avec la fiche.
-    var extras = extrasCtl(function () { return state.overrides[c.slate] || {}; }, function (list) {
+    var extras = extrasCtl(function () { var o = state.overrides[c.slate] || {}; if (o.extras) return o; var g = vcGroupRows(c); return g ? { extras: g } : o; }, function (list) {
       setOverride(c, "extras", list.length ? list : undefined); setOverride(c, "stills"); setOverride(c, "stillsLink"); sync();
     }, "Lien Slate de stills ou d'une vidéo, ou lien d'une de nos bandes, à afficher sous le film", state === fic ? "fiction" : state === spot ? "spotlight" : state.slug);
     title.addEventListener("input", function () { setOverride(c, "title", title.value); sync(); });
