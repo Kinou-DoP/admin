@@ -4,13 +4,14 @@
 // - Frise : un bloc par morceau, largeur proportionnelle à sa durée, glisser pour réordonner ; le bloc choisi se règle sur la frise de sa vidéo (début / fin),
 //   touches I / O (début / fin à l'image affichée), S (couper en deux à l'image affichée), Suppr (retirer le morceau), espace (lecture), ← → (image par image, Maj = 1 s).
 // - Limite de 10 Go d'originaux (facture Amazon) : au-delà, message « utiliser la version compressée ».
+// opt.mode === "version" (« edit moi si tu peux », Gus 26/11) : montage d'UNE vidéo → une nouvelle version « Edit n » de cette vidéo (opt.onVersion(version)), pas un projet ; opt.parts = morceaux de départ.
 // films : [{ key, title, full (version web), dur, size (octets de l'original), mkey (clé du master), dir, prod, dops, types, client }] ; opt : { name, onCreated(item) }.
 var MONT_MAX = 10e9;
 function montageWin(films, opt) {
   opt = opt || {};
   var pool = films.filter(function (f) { return f.full && f.dur; }), uid = 0;
   if (!pool.length) { alert("Aucune vidéo encodée à assembler pour l'instant."); return; }
-  var blocks = pool.map(function (f) { return { id: ++uid, f: f, s: 0, d: f.dur }; }), sel = 0, cur = 0, playing = false, seqT = 0, loadedSrc = "", quality = "original";
+  var blocks = (opt.parts && opt.parts.length ? opt.parts.map(function (p) { return { id: ++uid, f: pool[0], s: p.s, d: p.d }; }) : pool.map(function (f) { return { id: ++uid, f: f, s: 0, d: f.dur }; })), sel = 0, cur = 0, playing = false, seqT = 0, loadedSrc = "", quality = "original";
   var r3 = function (x) { return Math.round(x * 1000) / 1000; }, fmt = function (t) { t = Math.max(0, t || 0); var m = Math.floor(t / 60), s = t - m * 60; return m + ":" + (s < 10 ? "0" : "") + s.toFixed(2).replace(".", ","); };
   var ov = el("div", { class: "bmodal bmont" }), box = el("div", { class: "bmbox bmontbox" });
   var vid = el("video", { playsinline: true, preload: "auto" }), nameI = el("input", { type: "text", value: opt.name || "Bout à bout — " + (pool[0].client ? pool[0].client + " " : "") + (pool[0].title || "").slice(0, 40), placeholder: "Nom du montage" });
@@ -102,10 +103,19 @@ function montageWin(films, opt) {
     exp.appendChild(el("label", { class: "bck" }, [rW, " Depuis les versions compressées (plus rapide, qualité des versions web)"]));
     if (over) exp.appendChild(el("p", { class: "hint berr", text: "Plus de 10 Go d'originaux (" + gb(sum) + ") : utiliser la version compressée (la limite évite une facture Amazon plus élevée)." }));
     exp.appendChild(el("p", { class: "hint", text: "Sortie : 1080p avec le son. Le robot met environ autant de temps que la durée du montage ; le nouveau projet apparaît dans le video club (« encodage en cours ») et se renomme comme les autres." }));
-    var go = el("button", { type: "button", class: "btn primary", text: "Exporter le montage", on: { click: function () { doExport(go); } } }); exp.appendChild(go);
+    var go = el("button", { type: "button", class: "btn primary", text: opt.mode === "version" ? "Exporter comme nouvelle version" : "Exporter le montage", on: { click: function () { doExport(go); } } }); exp.appendChild(go);
   }
   function doExport(btn) {
     var name = nameI.value.trim() || "Montage"; btn.disabled = true; btn.textContent = "Envoi au robot…";
+    if (opt.mode === "version") { // nouvelle version de la même vidéo : le robot refait seulement le fichier (pas d'extrait ni de vignette), la demande est suivie dans la fiche
+      var q0 = quality, id0 = encId(), by0 = user && user.login || "", parts0 = blocks.map(function (b) { var p = { s: r3(b.s), d: r3(b.d) }; if (q0 === "original") p.key = b.f.mkey; else p.src = b.f.full; return p; });
+      var req0 = encFile("film", [{ id: id0, kind: "edit", quality: q0, web: true, parts: parts0 }]);
+      commit([req0], "Edit : export (admin, " + by0 + ")").then(function () {
+        ov.remove(); document.removeEventListener("keydown", onKey, true);
+        if (opt.onVersion) opt.onVersion({ id: "v" + id0, name: name, parts: blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d) }; }), quality: q0, enc: { path: req0.path, id: id0 }, at: new Date().toISOString(), by: by0 });
+      }, function (e) { btn.disabled = false; btn.textContent = "Exporter comme nouvelle version"; alert("Pas envoyé : " + e.message); });
+      return;
+    }
     var q = quality, id = encId(), by = user && user.login || "", f0 = blocks[0].f, parts = blocks.map(function (b) { var p = { s: r3(b.s), d: r3(b.d) }; if (q === "original") p.key = b.f.mkey; else p.src = b.f.full; return p; });
     var req = encFile("film", [{ id: id, kind: "edit", quality: q, parts: parts }]);
     var item = { key: "e" + id, kind: "video", title: name, dir: f0.dir || "", prod: f0.prod || "", dops: (f0.dops || []).slice(), types: (f0.types || []).slice(), cats: [], src: "montage", at: new Date().toISOString(), by: by,
@@ -142,7 +152,7 @@ function montageWin(films, opt) {
   function close() { pause(); document.removeEventListener("keydown", onKey, true); ov.remove(); }
   ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
   // ---------- assemblage de la fenêtre ----------
-  box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: "Bout à bout" }), nameI, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
+  box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : "Bout à bout" }), nameI, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
   box.appendChild(el("div", { class: "hmain" }, [el("div", { class: "hvid" }, [vid, el("div", { class: "hctl" }, [
     el("button", { type: "button", class: "btn ghost", text: "▶ / ❚❚", title: "Lecture du montage (espace)", on: { click: function () { if (playing) pause(); else play(); } } }),
     el("button", { type: "button", class: "btn ghost", text: "✂ Couper ici (S)", on: { click: splitHere } })])]), exp]));

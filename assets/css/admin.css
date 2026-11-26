@@ -1245,3 +1245,9 @@ input.bcn { width: 90px; }
 .btrash { position: fixed; z-index: 12; left: 16px; bottom: 60px; display: inline-flex; align-items: center; gap: 6px; padding: 8px 11px; border: 1px solid var(--faint); background: #0b0b0b; color: var(--dim); font-size: 16px; line-height: 1; cursor: pointer; }
 .btrash:hover { color: var(--kinou-fg); border-color: var(--dim); } .btrash b { font-size: 11px; letter-spacing: .08em; color: #ffb36b; } .btrash b:empty { display: none; }
 .btrashm .bmbox { max-width: 760px; } .btrashl { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; max-height: 56vh; overflow-y: auto; } .btrashl .bpr { cursor: default; } .btrashl .bpr .bpt { flex: 1; }
+
+/* Versions d'une vidéo : Encodage 1, Edit 1… (Gus 26/11, phase 2) */
+.bvers { margin: 18px 0; padding: 14px 16px; border: 1px solid var(--faint); background: rgba(255,252,235,.03); }
+.bver { display: flex; align-items: center; gap: 12px; padding: 6px 0; border-top: 1px solid rgba(255,252,235,.08); } .bver:first-of-type { border-top: 0; }
+.bver.on { background: rgba(111,208,140,.07); } .bver input.bvname { flex: 0 1 220px; margin: 0 !important; } .bver .bvst { flex: 1; margin: 0; } .bver .bx { position: static; opacity: 1; }
+.bvers .tlrow { margin-top: 10px; }

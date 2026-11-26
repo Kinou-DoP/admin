@@ -152,4 +152,10 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
 - **Frise des blocs de l'extrait** : horizontale, largeur de chaque bloc = sa durée, glisser pour réordonner. Fenêtre d'edit plus large (1500 px).
 - **Suppression en nombre** (Gus 26/11) : cocher des films dans la liste → « Supprimer la sélection (n) » (`deleteSelection`, `libDeleteMany` : un commit pour library.json + edits.json, puis les liens de partage) ; seulement les films importés (ceux de Slate / des pages sont ignorés, dit dans la confirmation).
 - **Corbeille** (Gus 26/11) : supprimer un film importé (fenêtre ou « Supprimer la sélection ») = `libDeleteMany` : fiche, retouches et lien de partage vont dans `data/bibli/trash.json` (restaurable 30 jours : `trashOpen`, logo 🗑 en bas à gauche de la page) ; au-delà, la corbeille les oublie (`trashRefresh`). **Les fichiers chez Amazon ne sont jamais effacés** (le robot n'a pas le droit d'effacer) : pour libérer la place, règle de cycle de vie S3 ou droit d'effacement à donner dans AWS.
+- **Phase 2 : « edit moi si tu peux ! » et versions** (Gus 26/11) : sous l'aperçu d'une vidéo, bloc « Versions » : « Encodage 1 » (`it.vname`, la vidéo encodée à l'import) et les « Edit n »
+  (`it.versions` dans edits.json : `{ id, name, parts, quality, full, ws, dur, w, h, enc? }`). Le bouton ouvre `montageWin` en mode `version` (une seule vidéo, découpe / réordre / retirer
+  le générique) ; l'export envoie un job `edit` avec `web: true` (le robot ne refait que le fichier) ; suivi dans la fenêtre (12 s) ou par `encCheckEdits`. La case choisit la version
+  affichée : `it.full` prend le fichier de l'edit (`vbase` garde l'Encodage 1, `vsel` = version choisie) ; l'extrait léger reste (`snip.vf` suit). Noms renommables ; « Modifier » rouvre le
+  montage avec les mêmes morceaux (nouvelle version) ; « Nouveau projet » = job `post` du robot (copie la version web, extrait et vignettes) + fiche `e<id>` (`src: "montage"`) ; × supprime la
+  version (le fichier reste chez Amazon). Montage depuis les originaux (`mkey`, 10 Go au plus) ou depuis les versions compressées.
 

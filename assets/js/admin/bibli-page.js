@@ -35,19 +35,20 @@
     // qu'on rouvre la fenêtre du film (Gus 25/11 : film resté « encodage en cours » des heures après la fin du robot).
     function encCheckEdits() {
       return readFile(BIB_EDITS).then(function (o) {
-        var fl = (o && o.films) || {}, keys = Object.keys(fl).filter(function (k) { var e = fl[k].enc; return e && e.path && !e.error && !e.sending || fl[k].pend; });
+        var fl = (o && o.films) || {}, vp = function (x) { return (x.versions || []).filter(function (v) { return v.enc && v.enc.path && !v.enc.error; }); }, keys = Object.keys(fl).filter(function (k) { var e = fl[k].enc; return e && e.path && !e.error && !e.sending || fl[k].pend || vp(fl[k]).length; });
         if (!keys.length) return;
         var paths = [];
-        keys.forEach(function (k) { var x = fl[k]; if (x.enc && x.enc.path) paths.push(x.enc.path); if (x.pend) Object.keys(x.pend).forEach(function (w) { if (x.pend[w] && x.pend[w].path) paths.push(x.pend[w].path); }); });
+        keys.forEach(function (k) { var x = fl[k]; vp(x).forEach(function (v) { paths.push(v.enc.path); }); if (x.enc && x.enc.path) paths.push(x.enc.path); if (x.pend) Object.keys(x.pend).forEach(function (w) { if (x.pend[w] && x.pend[w].path) paths.push(x.pend[w].path); }); });
         paths = paths.filter(function (p, k, a) { return a.indexOf(p) === k; });
         return Promise.all(paths.map(function (p) { return readFile(p).catch(function () { return null; }); })).then(function (rs) {
           var res = {}; rs.forEach(function (d) { if (d && d.doneAt) (d.jobs || []).forEach(function (j) { res[j.id] = j; }); });
-          var any = keys.some(function (k) { var x = fl[k]; return (x.enc && res[x.enc.id]) || (x.pend && Object.keys(x.pend).some(function (w) { return x.pend[w] && res[x.pend[w].id]; })); });
+          var any = keys.some(function (k) { var x = fl[k]; return (x.enc && res[x.enc.id]) || vp(x).some(function (v) { return res[v.enc.id]; }) || (x.pend && Object.keys(x.pend).some(function (w) { return x.pend[w] && res[x.pend[w].id]; })); });
           if (!any) return;
           return commit([{ path: BIB_EDITS, edit: function (t) {
             var O = t ? JSON.parse(t) : { films: {} }, n = 0; O.films = O.films || {};
             Object.keys(O.films).forEach(function (k) {
               var x = O.films[k], j = x.enc && res[x.enc.id];
+              (x.versions || []).forEach(function (v) { var r = v.enc && res[v.enc.id]; if (!r) return; n++; if (r.answer) { v.full = r.answer.full; v.ws = r.answer.ws; v.dur = r.answer.dur; v.w = r.answer.w; v.h = r.answer.h; delete v.enc; } else v.enc.error = r.error || "pas de réponse"; }); // versions « Edit » prêtes
               if (j) { n++; if (j.error || !j.answer) x.enc.error = j.error || "pas de réponse"; else { x.full = j.answer.full; delete x.enc; } }
               Object.keys(x.pend || {}).forEach(function (w) { // vignette / extrait demandés au robot : appliqués ici si la fenêtre du film n'est plus là pour le faire
                 var q = x.pend[w], r = q && res[q.id]; if (!r) return; n++;
@@ -88,7 +89,7 @@
         });
       }).catch(function () {}).then(function () {
         if (location.hash !== "#/bibli" || !data) return;
-        if ((data.films || []).some(function (x) { return (x.enc && !x.enc.error) || x.pend; })) encT = setTimeout(encCheck, x_pend() ? 6000 : 20000);
+        if ((data.films || []).some(function (x) { return (x.enc && !x.enc.error) || x.pend || (x.versions || []).some(function (v) { return v.enc && !v.enc.error; }); })) encT = setTimeout(encCheck, x_pend() ? 6000 : 20000);
       });
     }
     if (!emb && !openNext) setTimeout(function () { q.focus(); }, 50); // on tape directement, sans cliquer sur la barre (Gus 26/11)
@@ -224,7 +225,7 @@
         return Object.keys(e).length ? e : null;
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
-        meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by, slate: f.slate, grpN: grpCount(f) },
+        meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by, slate: f.slate, grpN: grpCount(f), mkey: f.mkey, key: f.key },
         montage: function () { openMontage(f); }, canDelete: function () { return !!(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
         onChange: function () {
           // Vidéos d'un même import : ordre commun à toutes (Gus 26/11). Glisser une ligne change l'ordre du lot entier ; masquer ne casse pas le lien.
@@ -766,6 +767,7 @@
         chg0(); document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib);
       }
       var euB = null, erB = null, shr = null;
+      function reopen() { document.removeEventListener("keydown", eKey, true); ov.remove(); editItem(i, lib); } // rouvre la fenêtre (version affichée changée)
       function eKey(e) {
         if (!document.body.contains(box)) { document.removeEventListener("keydown", eKey, true); return; }
         if (!(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== "z" || (e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])"))) return;
@@ -1513,6 +1515,66 @@
         snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, (addB = el("button", { type: "button", class: "btn ghost", text: "+ Ajouter ce bloc", title: "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante", on: { click: addBlock } })), el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire les blocs bout à bout", on: { click: playSeq } }), upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine, blocksBox,
           histSnipL, histSnip, offSnip]);
         box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s) · espace = lecture / pause · Z ou J = à l'envers, K = pause, L = lecture · I / O = début / fin de l'extrait · Entrée = ajouter le bloc" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
+        // Versions de la vidéo (Gus 26/11, phase 2) : « Encodage 1 » (la vidéo encodée à l'import) et les « Edit n » faits avec « edit moi si tu peux ! » ; la case choisit celle
+        // que le site et les bandes affichent (le fichier original reste chez Amazon). Un edit peut devenir un nouveau projet.
+        if (lib) {
+          var verBox = el("div", { class: "bvers" }), verT = 0;
+          var nextEditN = function () { var n = 0; (it.versions || []).forEach(function (v) { var m = /^Edit (\d+)$/.exec(v.name); if (m) n = Math.max(n, +m[1]); }); return n + 1; };
+          var fmtDur = function (d) { return Math.floor(d / 60) + " min " + String(Math.round(d % 60)).padStart(2, "0") + " s"; };
+          var openEdit = function (parts) {
+            var m = lib.meta || {}, base = { key: it.key, title: it.title, full: it.vbase || it.full, dur: m.dur || (player && player.duration) || 0, size: m.size, mkey: m.mkey, dir: it.dir, prod: it.prod, dops: it.dops, types: it.types, client: it.client };
+            if (!base.dur) { alert("Durée de la vidéo inconnue : rouvre la fenêtre quand la vidéo est chargée."); return; }
+            montageWin([base], { mode: "version", parts: parts, name: "Edit " + nextEditN(), onVersion: function (v) { it.versions = (it.versions || []).concat([v]); it.edited = true; chg(); drawVers(); } });
+          };
+          var pickVersion = function (id) { // id : version choisie, ou « » = Encodage 1
+            var v = id && (it.versions || []).filter(function (x) { return x.id === id; })[0]; if (id && (!v || !v.full)) return;
+            if (id) { it.vbase = it.vbase || it.full; it.full = v.full; it.vsel = id; } else if (it.vbase) { it.full = it.vbase; delete it.vbase; delete it.vsel; }
+            if (it.snip && it.snip.v) it.snip.vf = it.full; // l'extrait léger reste valable : il ne vient pas de cette version
+            it.edited = true; chg(); reopen();
+          };
+          var newProject = function (v) {
+            if (!v.full || !confirm("Créer un nouveau projet du video club avec « " + v.name + " » ?\n\nIl apparaît dans le video club (encodage en cours quelques minutes), avec ses propres vignettes, extraits et crédits ; cette vidéo reste comme elle est.")) return;
+            var nid = encId(), by = user && user.login || "", req = encFile("film", [{ id: nid, kind: "post", src: v.full }]);
+            var item = { key: "e" + nid, kind: "video", title: (it.title || "") + " — " + v.name, dir: it.dir || "", prod: it.prod || "", dops: (it.dops || []).slice(), types: (it.types || []).slice(), cats: [], src: "montage", at: new Date().toISOString(), by: by, enc: { path: req.path, id: nid }, montage: { from: [it.key], version: v.id, parts: v.parts } };
+            if (it.client) item.client = it.client;
+            commit([req, { path: BIB_LIB, edit: function (t) { var L = t ? JSON.parse(t) : { items: [] }; L.items = (L.items || []).filter(function (x) { return x.key !== item.key; }); L.items.push(item); return json(L); } }], "Edit : nouveau projet (admin, " + by + ")")
+              .then(function () { alert("Nouveau projet « " + item.title + " » envoyé au robot : il apparaît dans le video club (⟳ encodage en cours)."); return bibLoad(true); }).then(function (d) { adopt(d); draw(); encCheck(); }, function (e) { alert("Pas créé : " + e.message); });
+          };
+          var delVersion = function (v) {
+            if (!confirm("Supprimer la version « " + v.name + " » ? (le fichier reste chez Amazon, il n'est pas effacé)")) return;
+            var was = it.vsel === v.id; it.versions = (it.versions || []).filter(function (x) { return x.id !== v.id; }); if (!it.versions.length) delete it.versions;
+            if (was) { it.full = it.vbase || it.full; delete it.vbase; delete it.vsel; if (it.snip && it.snip.v) it.snip.vf = it.full; }
+            it.edited = true; chg(); if (was) reopen(); else drawVers();
+          };
+          var drawVers = function () {
+            verBox.textContent = ""; clearTimeout(verT);
+            verBox.appendChild(el("span", { class: "label", text: "Versions de la vidéo · la case choisit celle que le site et les bandes affichent" }));
+            var row = function (id, name, onName, state, btns, can) {
+              var r = el("input", { type: "radio", name: "vsel", disabled: can ? null : true }); r.checked = (it.vsel || "") === id; r.addEventListener("change", function () { pickVersion(id); });
+              var ni = el("input", { type: "text", value: name, class: "bvname" }); ni.addEventListener("input", function () { onName(ni.value.trim() || name); it.edited = true; chg(); });
+              return el("div", { class: "bver" + ((it.vsel || "") === id ? " on" : "") }, [r, ni, el("span", { class: "hint bvst", text: state })].concat(btns || []));
+            };
+            var m = lib.meta || {};
+            verBox.appendChild(row("", it.vname || "Encodage 1", function (n) { it.vname = n; }, "Vidéo encodée à l'import · 1080p" + (m.ws ? " · " + fsz(m.ws) : ""), [], true));
+            (it.versions || []).forEach(function (v) {
+              var pend = v.enc && !v.enc.error, bad = v.enc && v.enc.error;
+              verBox.appendChild(row(v.id, v.name, function (n) { v.name = n; }, bad ? "⚠ raté : " + v.enc.error : pend ? "⟳ encodage en cours…" : (v.dur ? fmtDur(v.dur) : "") + (v.ws ? " · " + fsz(v.ws) : "") + (v.quality === "web" ? " · depuis la version compressée" : " · depuis l'original"), [
+                el("button", { type: "button", class: "btn ghost", text: "✎ Modifier", title: "Rouvre le montage avec ces morceaux (crée une nouvelle version)", on: { click: function () { openEdit(v.parts); } } }),
+                el("button", { type: "button", class: "btn ghost", text: "Nouveau projet", title: "Créer un nouveau projet du video club avec cet edit", disabled: v.full ? null : true, on: { click: function () { newProject(v); } } }),
+                el("button", { type: "button", class: "bx", text: "×", title: "Supprimer cette version", on: { click: function () { delVersion(v); } } })], !!v.full));
+            });
+            verBox.appendChild(el("div", { class: "tlrow" }, [el("button", { type: "button", class: "btn primary", text: "✂ edit moi si tu peux !", title: "Couper, réordonner, retirer le générique : fenêtre de montage, export 1080p avec le son", on: { click: function () { openEdit(null); } } })]));
+            var pending = (it.versions || []).filter(function (v) { return v.enc && !v.enc.error; });
+            if (pending.length) verT = setTimeout(function () { // suivi du robot tant que la fenêtre est ouverte
+              if (!ov.isConnected) return;
+              Promise.all(pending.map(function (v) { return readFile(v.enc.path).catch(function () { return null; }).then(function (d) {
+                if (!d || !d.doneAt) return false; var j = (d.jobs || []).filter(function (y) { return y.id === v.enc.id; })[0]; if (!j) return false;
+                if (j.answer) { v.full = j.answer.full; v.ws = j.answer.ws; v.dur = j.answer.dur; v.w = j.answer.w; v.h = j.answer.h; delete v.enc; } else v.enc.error = j.error || "pas de réponse"; return true;
+              }); })).then(function (r) { if (r.some(Boolean)) { it.edited = true; chg(); } if (ov.isConnected) drawVers(); });
+            }, 12000);
+          };
+          drawVers(); box.appendChild(verBox);
+        }
         setTab("thumb");
       }
       // Lien de partage de ce film seul (Gus 23/11, comme sur Slate) : une « bande » d'un seul film, centrée, même lien court chiffré
