@@ -164,3 +164,5 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
 
 
 - **Vitesses et navigation de frise** (Gus 27/11, montage et fenêtre d'edit) : E = lecture avant, appuis répétés = ×2 puis ×4 (3 niveaux, `TL_RATES`) ; Z / J = idem en arrière ; K pause, L normale. Frise zoomée : petite barre `tlnav` dessous (`tlNav` dans `montage.js`, la poignée se tire), Cmd / Ctrl + molette déplace la partie affichée. Les touches sont prises par la fenêtre ouverte même si le champ de recherche du dessous a le focus (on le défocalise).
+
+- **Bundle Slate → bundle video club** (Gus 27/11) : bouton dans « Ajouter une vidéo » : lit le bundle Slate (comme l'import ordinaire : films ajoutés), puis crée une bande par onglet (`saveBand`) et un bundle les regroupant (`bunSave`) : `clubBundle` (`bibli-page.js`). C'est la seule lecture de Slate à garder ; le reste n'en dépend plus.

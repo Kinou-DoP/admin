@@ -1837,9 +1837,34 @@
         return json(l);
       } }].concat(items.reduce(function (a, it) { return a.concat(it._files || []); }, [])), "Video club : " + items.length + " ajout" + (items.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")");
     }
+    // Bundle Slate → bundle du video club (Gus 26/11) : les films entrent dans le video club (comme un import ordinaire), puis une bande par onglet
+    // du bundle Slate, et un bundle qui les regroupe (même lien de partage que les autres bundles). Plus rien ne dépend de Slate ensuite.
+    function clubBundle(d, items) {
+      var groups = [], byCat = {};
+      (d.clips || []).forEach(function (c) {
+        var f = filmOf(c.slate ? "s" + c.slate : "u" + (c.full || c.video || c.img)); if (!f) return;
+        var name = String(c.cat || "").trim() || "Films"; if (!byCat[name]) { byCat[name] = { name: name, items: [] }; groups.push(byCat[name]); }
+        if (!byCat[name].items.some(function (x) { return x.key === f.key; })) byCat[name].items.push(bandItem(f));
+      });
+      if (!groups.length) return Promise.reject(new Error("aucun film dans ce bundle"));
+      if (save.busy || save.state === "wait") { unsoon("band"); saveBand(); }
+      var codes = [], chain = Promise.resolve();
+      groups.forEach(function (g) {
+        chain = chain.then(function () {
+          var b = bandNew(); b.title = g.name === g.name.toUpperCase() ? g.name.charAt(0) + g.name.slice(1).toLowerCase() : g.name; // « COMMERCIAL » → « Commercial »
+          b.items = g.items; return Promise.resolve(saveBand(b)).then(function () { codes.push(b.code); });
+        });
+      });
+      return chain.then(function () {
+        bun = { code: null, title: d.name || "Bundle Slate", description: "", bands: codes }; return bunSave();
+      }).then(function () { return { bands: codes.length, films: groups.reduce(function (a, g) { return a + g.items.length; }, 0), code: bun.code }; });
+    }
     function importVideo() {
       var link = el("input", { type: "text", placeholder: "Lien Slate : bundle, shots.re, page d'une vidéo ou de stills" }), out = el("p", { class: "hint" });
+      var bd = null, asBundle = false;
+      var goB = el("button", { type: "button", class: "btn ghost", text: "Bundle Slate → bundle video club", title: "Lit le bundle, ajoute ses films au video club, crée une bande par onglet et un bundle qui les regroupe", on: { click: function () { asBundle = true; go.click(); } } });
       var go = el("button", { type: "button", class: "btn primary", text: "Lire le lien", on: { click: function () {
+        var wantB = asBundle; asBundle = false; bd = null;
         if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter au video club."; return; }
         var v = link.value.trim(); if (!v) return; go.disabled = true; out.textContent = "Lecture sur Slate" + slateWait("…");
         if (ourCode(v)) { // lien de nos bandes / d'un film partagé : ces films sont déjà dans le video club
@@ -1848,7 +1873,7 @@
           return;
         }
         var isBundle = /\/bundles\//.test(v) || /^(https?:\/\/)?(shots|slt)\.re\//i.test(v);
-        (isBundle ? importBundle(v).then(function (d) { return (d.clips || []).map(function (c) { return { slate: c.slate, title: c.title, sub: c.sub, video: c.video, full: c.full, img: c.img, cats: [c.cat].concat(c.types || []), dops: c.artists || (d.name ? [d.name] : []) }; }); })
+        (isBundle ? importBundle(v).then(function (d) { bd = d; return (d.clips || []).map(function (c) { return { slate: c.slate, title: c.title, sub: c.sub, video: c.video, full: c.full, img: c.img, cats: [c.cat].concat(c.types || []), dops: c.artists || (d.name ? [d.name] : []) }; }); })
           : importStills(v).then(function (d) { return [{ title: d.title, video: d.video, full: d.full, img: d.img || (d.stills && d.stills[0]), images: d.stills }]; }))
           .then(function (l) {
             var now = new Date().toISOString(), seen = {};
@@ -1866,6 +1891,7 @@
               // Lien de partage créé tout de suite pour chaque film ajouté (Gus 23/11).
               var added = items.map(function (x) { return filmOf(x.key); }).filter(Boolean);
               shareCreate(added).catch(function () {}).then(function () {
+                if (wantB && bd) { out.textContent = "Création des bandes et du bundle…"; return clubBundle(bd, items).then(function (r) { out.textContent = "Bundle video club créé : " + r.bands + " bande" + (r.bands > 1 ? "s" : "") + ", " + r.films + " film" + (r.films > 1 ? "s" : "") + " (voir « Bundles »). Plus rien ne dépend de Slate pour ce bundle."; }, function (e) { out.textContent = "Films ajoutés, mais bundle pas créé : " + e.message; }); }
                 if (items.length === 1 && added[0]) { mo.remove(); libEdit(added[0]); }
               });
             });
@@ -1879,7 +1905,7 @@
       finB.addEventListener("dragleave", function () { finB.classList.remove("over"); });
       finB.addEventListener("drop", function (e) { e.preventDefault(); var l = [].filter.call(e.dataTransfer.files, function (x) { return /^video\//.test(x.type) || /\.(mov|mxf|mp4|m4v|avi|mkv)$/i.test(x.name); }); if (!l.length) return; mo.remove(); importFilms(l); });
       var chk = el("p", { class: "hint", text: "Plusieurs vidéos d'un même projet : elles gardent les crédits de la 1re (titre, vignette et extrait propres à chacune), et entrent une par une dans le video club. 10 Go au plus par vidéo." });
-      var mo = modal("Ajouter une vidéo", [el("span", { class: "label", text: "Depuis Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [link]), go]), out,
+      var mo = modal("Ajouter une vidéo", [el("span", { class: "label", text: "Depuis Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [link]), go, goB]), out,
         el("span", { class: "label", text: "Depuis l'ordinateur" }), finB, fin, chk]);
     }
     // Fenêtre d'import de vidéos de l'ordinateur (Gus 26/11) : chaque vidéo entre tout de suite dans le video club (« Encodage en
