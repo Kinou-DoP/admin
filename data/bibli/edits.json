@@ -613,12 +613,12 @@
       "types": [
         "Music Video"
       ],
-      "pend": {
-        "thumb": {
-          "path": "data/encode/rapide-1795698303724-o5grb.json",
-          "id": "mwxkemsshe6dgq",
-          "t": 95.845
-        }
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxkemsshe6dgq/vignette-95845-800.webp",
+      "thumbT": 95.845,
+      "hist": {
+        "img": [
+          "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/vignette-800.webp"
+        ]
       }
     },
     "emwxgq59ikke41n": {
