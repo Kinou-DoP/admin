@@ -218,7 +218,14 @@
             "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/004.webp",
             "https://d3toxii6rvamjf.cloudfront.net/depot/x79mbreqr72imbfu2ym9/006.webp"
           ],
-          "up": true
+          "up": true,
+          "crop": {
+            "w": 1,
+            "h": 0.9620816175694225,
+            "l": 0,
+            "t": 0.018239890191109703,
+            "ar": 2.016
+          }
         }
       ]
     },
