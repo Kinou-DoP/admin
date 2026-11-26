@@ -1208,6 +1208,16 @@
       "snip": {
         "s": 18.105,
         "d": 9.953
+      },
+      "pend": {
+        "snip": {
+          "path": "data/encode/rapide-1795709340515-kiydo.json",
+          "id": "mwxqz6ubha6yz0",
+          "s": 18.105,
+          "d": 9.953,
+          "pj": "null",
+          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dbecc02b-d4c7-40e9-a5f7-083d7fc73d78-0x1080.5000.mp4"
+        }
       }
     }
   }
