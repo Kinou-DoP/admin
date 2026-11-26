@@ -1167,7 +1167,7 @@
       }
     },
     "s11402": {
-      "img": "https://d3toxii6rvamjf.cloudfront.net/depot/6wmpu4nectqa3rr6tth8/001.webp",
+      "img": "https://d3toxii6rvamjf.cloudfront.net/depot/6wmpu4nectqa3rr6tth8/003.webp",
       "hist": {
         "img": [
           "https://d3toxii6rvamjf.cloudfront.net/depot/6wmpu4nectqa3rr6tth8/001.webp",
@@ -1178,7 +1178,7 @@
         "z": 1.32,
         "x": 50,
         "y": 50,
-        "t": false
+        "t": true
       },
       "extras": [
         {
