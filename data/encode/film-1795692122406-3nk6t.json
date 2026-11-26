@@ -3,9 +3,14 @@
     {
       "id": "mwxgq59ikke41n",
       "kind": "film",
-      "key": "depot/jkkp3twzjbsvbss9zycq/Camille-Lellouche-Nuit-d-automne-Clip-Officiel-_Master_422HQ_1920x1080.mov"
+      "key": "depot/jkkp3twzjbsvbss9zycq/Camille-Lellouche-Nuit-d-automne-Clip-Officiel-_Master_422HQ_1920x1080.mov",
+      "progress": {
+        "step": "lecture",
+        "pct": 0
+      }
     }
   ],
   "at": "2026-11-26T11:34:21.733Z",
-  "by": "Gurvan"
+  "by": "Gurvan",
+  "startedAt": "2026-11-26T11:57:22.913Z"
 }
