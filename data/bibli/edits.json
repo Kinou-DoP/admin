@@ -237,7 +237,28 @@
           "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/b/mwwcdwbwctme.webp",
           "https://images.slatecdn.net/uR8AuzUSVymgjoXyz8NuTM7KKy6WYF8WR1DCBLB0iGI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/MTZiNDYwMy0wOGQw/LTQ2YjEtOGIyMy1m/NjZlZjBlYTZjNTUv/MTc1MzE5OTI0NTM1/Ni5qcGc?v=1&format=webp"
         ]
-      }
+      },
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/presque-legal-feature-film-trailer",
+          "title": "Presque Légal - Feature Film Trailer",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2396c7ea-86a9-42b4-8736-8550cbc7c39b-1280x720.2500.mp4",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9871/bf70e9db-6713-11f0-bfce-022353abf6f5.mp4",
+          "img": "https://images.slatecdn.net/muLnp7JTy24yewbgvcASecv1vNolfhIlf-VwtGZH7_I/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/ZTY2YWEyMy01ZThi/LTQ4OTUtODU4YS1h/NTIzY2ZjNDU2ZmIv/MTc0OTU3MDAwNDQ0/My5qcGc.webp"
+        },
+        {
+          "title": "Stills",
+          "stills": [
+            "https://d3toxii6rvamjf.cloudfront.net/depot/wh9tgex4z6kidq2qyzgt/001.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/wh9tgex4z6kidq2qyzgt/002.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/wh9tgex4z6kidq2qyzgt/003.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/wh9tgex4z6kidq2qyzgt/004.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/wh9tgex4z6kidq2qyzgt/005.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/wh9tgex4z6kidq2qyzgt/006.webp"
+          ],
+          "up": true
+        }
+      ]
     },
     "s9872": {
       "img": "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/b/mwwcjnsa8237.webp",
