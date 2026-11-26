@@ -1,0 +1,33 @@
+# Copie d'une courte liste de fichiers de Slate vers Amazon (kinou-videos) : films ajoutés sur Slate après l'export du 24/11.
+# La liste est dans tools/copie-liste.json : [{ "url": adresse chez Slate, "cle": chemin chez nous }]. Déjà là = sauté. Lancé à la main.
+name: Copie d'une liste Slate → Amazon
+on:
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
+concurrency: copie-liste
+jobs:
+  copie:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::919012714656:role/kinou-robot-copie
+          aws-region: eu-north-1
+      - name: Copie
+        run: |
+          ok=0; deja=0; ko=0
+          python3 - <<'PY' > /tmp/liste.tsv
+          import json
+          for f in json.load(open('tools/copie-liste.json')): print(f['url'] + '\t' + f['cle'])
+          PY
+          while IFS=$'\t' read -r url cle; do
+            if aws s3api head-object --bucket kinou-videos --key "$cle" >/dev/null 2>&1; then deja=$((deja+1)); continue; fi
+            case "$cle" in *.mp4) type=video/mp4;; *.png) type=image/png;; *.webp) type=image/webp;; *) type=image/jpeg;; esac
+            if curl -fsSL -A "Mozilla/5.0" "$url" | aws s3 cp - "s3://kinou-videos/$cle" --storage-class INTELLIGENT_TIERING --content-type "$type" --only-show-errors; then ok=$((ok+1)); else ko=$((ko+1)); echo "échec : fichier n° $((ok+deja+ko))"; fi
+          done < /tmp/liste.tsv
+          echo "## Copie : $ok copiés, $deja déjà là, $ko en échec" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "$ko" = 0 ]
