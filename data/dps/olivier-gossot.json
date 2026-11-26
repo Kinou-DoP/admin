@@ -3,7 +3,7 @@
   "name": "Olivier Gossot",
   "hue": 56,
   "bundle": "https://kinou.slateapp.com/bundles/49263f7b-e73f-11f1-952e-02ffedfede17",
-  "open": 10545,
+  "open": 10415,
   "overrides": {
     "1245": {
       "title": "Oh What a Wonderful Feeling"
@@ -157,6 +157,28 @@
   ],
   "clips": [
     {
+      "title": "PARADISE | Bande Annonce",
+      "sub": "Jeremy Comte\nEntract Film",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10415/5c0bb0f3-e825-11f1-952e-02ffedfede17.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff7dfcdf-c815-46f5-bcda-11954efdc057-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/PRkavVT8HcBHr6D-jDjGT1z2Oc3t9m9B6vQOkXLiiRI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWRhY2MyNC1mZGYx/LTRjN2EtYWU1ZS02/NTJjZGU4YjAzYTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NC4x/OC5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 10415,
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
+      "title": "Amour Apocalypse Bande Annonce",
+      "sub": "Anne Emond\nMetafilms",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9878/e7e87b74-cb7d-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6336c8bb-8173-489d-9561-1273e2d916f0-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/3R3l6-sHF5ohZ-PmGoX7Sund4YMZCRGanXHCkVUPEqY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/Yzc2ODU2OC1jYjI1/LTQwZGEtYTU3NC0w/ZjRlMTMzOTMxZGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NS40/Ni5wbmc?v=1&format=webp",
+      "cat": "NARRATIVE",
+      "slate": 9878,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
       "title": "Lucy Grizzli Sophie | Stills",
       "sub": "Anne Emond\nKO24",
       "img": "https://images.slatecdn.net/iLUFRaqxHGqH3vA__dn4YCABjltumkq0Z3eBLEzeZM8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NDA3ZGY1OC1kN2Mx/LTQwY2MtYWZkNS1h/OWE0NTY1M2RkZDgv/MTFiLndlYnA?v=1&format=webp",
@@ -187,26 +209,14 @@
       "slate": 10546
     },
     {
-      "title": "PARADISE | Bande Annonce",
-      "sub": "Jeremy Comte\nEntract Film",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10415/5c0bb0f3-e825-11f1-952e-02ffedfede17.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/ff7dfcdf-c815-46f5-bcda-11954efdc057-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/PRkavVT8HcBHr6D-jDjGT1z2Oc3t9m9B6vQOkXLiiRI/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/MWRhY2MyNC1mZGYx/LTRjN2EtYWU1ZS02/NTJjZGU4YjAzYTkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NC4x/OC5wbmc?v=1&format=webp",
+      "title": "Fauve | Short Film Trailer",
+      "sub": "Jeremy Comte\nAchromatic",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545843341-51158431_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/CFs1XQgyrOMkyuugJ084Fm4JrPazmODXJqrdLyTSu4A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNDA5OTQw/L2ZhdXZlMTYtOS5q/cGc?v=1&format=webp",
       "cat": "NARRATIVE",
-      "slate": 10415,
+      "slate": 2872,
       "featured": true,
-      "featuredOrder": 1
-    },
-    {
-      "title": "Amour Apocalypse Bande Annonce",
-      "sub": "Anne Emond\nMetafilms",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9878/e7e87b74-cb7d-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/6336c8bb-8173-489d-9561-1273e2d916f0-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/3R3l6-sHF5ohZ-PmGoX7Sund4YMZCRGanXHCkVUPEqY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/Yzc2ODU2OC1jYjI1/LTQwZGEtYTU3NC0w/ZjRlMTMzOTMxZGQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDIt/MTItYS0xMS41NS40/Ni5wbmc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 9878,
-      "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 6
     },
     {
       "title": "Jeune Juliette | Feature film trailer",
@@ -269,24 +279,6 @@
       "slate": 1245
     },
     {
-      "title": "Fauve | Short Film Trailer",
-      "sub": "Jeremy Comte\nAchromatic",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545843341-51158431_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/CFs1XQgyrOMkyuugJ084Fm4JrPazmODXJqrdLyTSu4A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNDA5OTQw/L2ZhdXZlMTYtOS5q/cGc?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 2872,
-      "featured": true,
-      "featuredOrder": 6
-    },
-    {
-      "title": "FEMININ FEMININ - serie trailer",
-      "sub": "Chloé Robichaud\nLez Spread the Word",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545841583-43823616_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/vM4wOlyjMNJM9kHf0GrzueReDw-H1f4C2Pb6VhAIUpY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNDUzMjg1/L2ZlbWluaW4tZmVt/aW5pbi0yLmpwZw?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 2843
-    },
-    {
       "title": "Bleu Tonnerre | Short Film Trailer",
       "sub": "Philippe-David Gagné & Jean-Marc Roy\nVoyelles Films",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545447237-43823581_web.1280x720.2500.mp4",
@@ -325,22 +317,6 @@
       "img": "https://images.slatecdn.net/fdd077U0ueGzI-SU35R6qWBDqUDuDXx0jfEAC8si5EM/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkzMTYzNTk5MzY4/L2wtYWdlLWFkdWx0/ZTE2LTkuanBn?v=1&format=webp",
       "cat": "NARRATIVE",
       "slate": 3449
-    },
-    {
-      "title": "Bernard le Grand | Bernard the Great",
-      "sub": "Philippe Lupien & Marie-Hélène Viens\nLa boite à Fanny",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545449054-43823568_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/pVG5J0OzjFnVuToBwVoxTOIHuTyP-F1xy1VPi45JJcg/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDQ5MDA3LzQz/ODIzNTY4X2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 2405
-    },
-    {
-      "title": "maurice - bande annonce",
-      "sub": "François Jaros\nLa boite à Fanny",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545404925-43823677_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/dF7J8N_5y5n-Yq3n8pFJDWh3heHF5zQ8AWzI2DMVBQ4/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDA0OTEyLzQz/ODIzNjc3X2xhcmdl/LmpwZw?v=1&format=webp",
-      "cat": "NARRATIVE",
-      "slate": 1367
     },
     {
       "title": "Via Rail",
