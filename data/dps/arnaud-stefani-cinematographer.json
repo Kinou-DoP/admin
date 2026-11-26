@@ -73,7 +73,8 @@
   "categories": [
     "FEATURED",
     "NARRATIVE",
-    "HAIR"
+    "HAIR",
+    "SKIN"
   ],
   "clips": [
     {
@@ -338,6 +339,16 @@
       "img": "https://images.slatecdn.net/AnkFFcVg525RWjIb8DU-Neltue6wa-Bft6EGndkps3w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/b3JlYWwtcHJlZmVy/ZW5jZS0yMGE0YWZk/OTc1YTA0MmI5Nzhk/NGZiMGZlYzQ4M2Q0/Yi5qcGc.webp",
       "slate": 1431,
       "cat": "HAIR"
+    },
+    {
+      "title": "Zadig & Voltaire",
+      "sub": "Emmanuel Giraud\nPsycho",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545346985-37532578_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RLSdGLZ48BttsfhZYBZ5W9-dt01VZAUecuqTNRWNquE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy96/YWRpZy12b2x0YWly/ZS1lOGQyNjJkZTlk/MjE2NWEwZDZlYmIz/YmFiYzg4ZjhiZS5q/cGc.webp",
+      "slate": 120,
+      "cat": "",
+      "featured": true,
+      "featuredOrder": 1
     }
   ]
 }
