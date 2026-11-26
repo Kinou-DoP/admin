@@ -1145,17 +1145,9 @@
     "s4644": {
       "snip": {
         "s": 3.194,
-        "d": 28.779
-      },
-      "pend": {
-        "snip": {
-          "path": "data/encode/rapide-1795709274039-z40i3.json",
-          "id": "mwxqxrjrylbn2b",
-          "s": 3.194,
-          "d": 28.779,
-          "pj": "null",
-          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c1b60d7-42d6-4be3-a7f4-ac780f776e99-1280x720.2500.mp4"
-        }
+        "d": 28.779,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxqxrjrylbn2b/extrait-3194.mp4",
+        "vf": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c1b60d7-42d6-4be3-a7f4-ac780f776e99-1280x720.2500.mp4"
       }
     },
     "s1862": {
