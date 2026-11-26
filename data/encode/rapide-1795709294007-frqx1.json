@@ -5,9 +5,17 @@
       "kind": "snip",
       "src": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545423788-l-27ore-cc-81al-summer-splash.1280x720.2500.mp4",
       "s": 1.466,
-      "d": 30
+      "d": 30,
+      "answer": {
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxqy6yf8sgb1l/extrait-1466.mp4",
+        "snip": {
+          "s": 1.466,
+          "d": 30
+        }
+      }
     }
   ],
   "at": "2026-11-26T16:08:14.007Z",
-  "by": "John"
+  "by": "John",
+  "doneAt": "2026-11-26T16:11:14.776Z"
 }
