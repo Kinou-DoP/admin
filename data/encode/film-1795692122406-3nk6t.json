@@ -4,13 +4,24 @@
       "id": "mwxgq59ikke41n",
       "kind": "film",
       "key": "depot/jkkp3twzjbsvbss9zycq/Camille-Lellouche-Nuit-d-automne-Clip-Officiel-_Master_422HQ_1920x1080.mov",
-      "progress": {
-        "step": "vignette",
-        "pct": 0
+      "answer": {
+        "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/web.mp4",
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/extrait-128560.mp4",
+        "snip": {
+          "s": 128.56,
+          "d": 5
+        },
+        "thumbT": 129.56,
+        "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/vignette-800.webp",
+        "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/vignette-1600.webp",
+        "dur": 192.84,
+        "w": 1920,
+        "h": 1080
       }
     }
   ],
   "at": "2026-11-26T11:34:21.733Z",
   "by": "Gurvan",
-  "startedAt": "2026-11-26T11:57:22.913Z"
+  "startedAt": "2026-11-26T11:57:22.913Z",
+  "doneAt": "2026-11-26T12:02:51.671Z"
 }
