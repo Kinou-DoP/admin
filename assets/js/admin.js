@@ -65,6 +65,10 @@
     set: function (u) { delete this.dataset.repliSlate; srcMedia.set.call(this, cdnPanne ? u : notreCDN(u)); } });
   // Lecture demandée (play) : relancée après le repli. Notre CloudFront muet (2 replis, rien lu chez nous) : Slate pour la suite.
   var jouerMedia = HTMLMediaElement.prototype.play, cdnOk = false, cdnReplis = 0, cdnPanne = false;
+  // Source des vidéos (Gus 27/11, data/source.json : { video: "nous" | "slate" }) : réglée dans la liste des chefs op ; « slate » = tout lire chez Slate (panne chez nous).
+  var srcVideo = "nous";
+  function setSource(v) { srcVideo = v === "slate" ? "slate" : "nous"; cdnPanne = srcVideo === "slate"; window.KINOU_SLATE = cdnPanne; }
+  try { fetch("https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/source.json?t=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.video) setSource(d.video); }).catch(function () {}); } catch (e) {}
   HTMLMediaElement.prototype.play = function () { this.veutJouer = true; return jouerMedia.apply(this, arguments); };
   // Son coupé partout (Gus 26/11) : couper le son d'une vidéo avec ses commandes coupe toutes les autres (déjà là ou à venir) jusqu'à ce qu'on le remette ou qu'on
   // recharge la page. Seules les vidéos « avec commandes » (celles qu'on écoute) déclenchent ; les aperçus restent muets.

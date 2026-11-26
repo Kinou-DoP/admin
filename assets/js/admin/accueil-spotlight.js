@@ -34,7 +34,7 @@
     var prev = (home.slides || []).filter(function (x) { return x.slate === f.slate; })[0];
     if (f.full) sl.full = f.full; else if (prev && prev.full) sl.full = prev.full;
     var o = home.overrides[f.slate] || {};
-    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "parts", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
   }
   function showHome() {
@@ -107,10 +107,27 @@
     var lab = el("span", { class: "zval" });
     var back = el("button", { type: "button", class: "zcenter", text: "Revenir à l'extrait Slate" });
     var t = fmtT, scrub = false, want = null;
+    // Montage de l'extrait (Gus 27/11) : plusieurs blocs de la vidéo, durée EXACTE d'un projet, cadrage téléphone propre à chaque bloc (sl.parts = [{ s, d, x }]).
+    var mont = el("button", { type: "button", class: "btn ghost" });
+    mont.addEventListener("click", function () {
+      mont.disabled = true; var old = mont.textContent; mont.textContent = "Chargement de la vidéo…";
+      var tv = el("video", { preload: "metadata", muted: true }), fin = function () { mont.disabled = false; label(); };
+      tv.addEventListener("loadedmetadata", function () {
+        var dur = tv.duration || 0; tv.removeAttribute("src"); fin(); if (!dur) { alert("Durée de la vidéo illisible."); return; }
+        if (zoomStopOther) zoomStopOther(); close();
+        var parts0 = sl.parts && sl.parts.length ? sl.parts : [{ s: Math.min(sl.start || 0, Math.max(0, dur - D)), d: Math.min(D, dur), x: sl.phoneX }];
+        montageWin([{ key: "home" + sl.slate, title: sl.film || "Film", full: sl.full, dur: dur }], { mode: "home", exact: D, parts: parts0, phoneX: sl.phoneX, name: sl.film,
+          onSave: function (parts) { setO("parts", parts.length > 1 ? parts : undefined); setO("start", parts[0].s); if (parts.length === 1) setO("phoneX", parts[0].x === 50 ? undefined : parts[0].x); touch(); label(); } });
+      });
+      tv.addEventListener("error", function () { fin(); alert("La vidéo ne se lit pas : montage impossible."); });
+      tv.src = sl.full; mont.textContent = old;
+    });
     function label() {
-      lab.textContent = sl.start !== undefined ? t(sl.start) + " → " + t(sl.start + D) : "Extrait Slate";
+      var np = sl.parts && sl.parts.length > 1 ? sl.parts.length : 0;
+      lab.textContent = np ? "Montage de " + np + " blocs" : sl.start !== undefined ? t(sl.start) + " → " + t(sl.start + D) : "Extrait Slate";
       back.hidden = sl.start === undefined;
-      btn.textContent = sl.start !== undefined ? "Extrait HD : " + t(sl.start) + " → " + t(sl.start + D) : "Extrait HD";
+      btn.textContent = np ? "Extrait HD : montage de " + np + " blocs" : sl.start !== undefined ? "Extrait HD : " + t(sl.start) + " → " + t(sl.start + D) : "Extrait HD";
+      mont.textContent = np ? "✂ Modifier le montage (" + np + " blocs, " + String(D).replace(".", ",") + " s)" : "✂ Montage de l'extrait (plusieurs blocs, " + String(D).replace(".", ",") + " s pile)";
     }
     function close() { box.hidden = true; if (v) { v.remove(); v = null; } }
     btn.addEventListener("click", function () {
@@ -136,16 +153,16 @@
     range.addEventListener("pointerdown", hold);
     range.addEventListener("input", function () {
       var a = Math.round(parseFloat(range.value) * 10) / 10;
-      hold(); setO("start", a); label(); touch(); seek(a);
+      hold(); setO("start", a); if (sl.parts) setO("parts", undefined); label(); touch(); seek(a);
     });
     range.addEventListener("change", release);
     range.addEventListener("pointerup", release);
     range.addEventListener("pointercancel", release);
-    back.addEventListener("click", function () { setO("start", undefined); label(); touch(); if (v) v.currentTime = 0; });
+    back.addEventListener("click", function () { setO("start", undefined); setO("parts", undefined); label(); touch(); if (v) v.currentTime = 0; });
     box.appendChild(el("p", { class: "hint", text: "Choisissez le début : le passage de " + String(D).replace(".", ",") + " s qui suit est lu sur l'accueil, en qualité du film complet, sans le son." }));
     box.appendChild(stage);
     box.appendChild(el("div", { class: "zoom" }, [lab, range]));
-    box.appendChild(back);
+    box.appendChild(back); box.appendChild(mont);
     label();
     wrap.appendChild(box);
     wrap._open = function () { if (box.hidden) btn.click(); };
@@ -233,7 +250,7 @@
     reset.hidden = !home.overrides[sl.slate];
     reset.addEventListener("click", function () {
       delete home.overrides[sl.slate];
-      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = sl.src[k]; });
+      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "parts", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = sl.src[k]; });
       card.replaceWith(slideCard(sl)); touch();
     });
     card.appendChild(thumb);

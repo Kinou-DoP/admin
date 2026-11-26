@@ -138,6 +138,16 @@
         el("div", {}, [el("h1", { text: "Chefs opérateurs" }), el("p", { class: "lead", text: index.dps.length + " sur le site · " + Object.keys(files).filter(function (f) { return /\.json$/.test(f) && f !== "index.json"; }).length + " fiches publiées" })]),
         el("a", { class: "btn primary", href: "#/new", text: "+ Ajouter un chef op" })
       ]));
+      // Source des vidéos (Gus 27/11) : en haut à gauche ; Slate = secours en cas de panne chez nous (site + admin), Cloudflare plus tard.
+      var srcSel = el("select", { class: "srcsel", title: "D'où le site et l'admin lisent les vidéos et les images" }, [
+        el("option", { value: "nous", text: "Video club (Amazon)" }), el("option", { value: "slate", text: "Slate (secours)" }), el("option", { value: "cf", text: "Cloudflare (bientôt)", disabled: true })]);
+      srcSel.value = srcVideo; var srcNote = el("span", { class: "hint", text: canWeb ? "" : "lecture seule" }); srcSel.disabled = !canWeb;
+      srcSel.addEventListener("change", function () {
+        var v = srcSel.value; srcNote.textContent = "Enregistrement…";
+        commit([{ path: "data/source.json", text: json({ video: v, at: new Date().toISOString(), by: user && user.login || "" }) }], "Source des vidéos : " + (v === "slate" ? "Slate" : "video club") + " (admin, " + (user && user.login || "") + ")")
+          .then(function () { setSource(v); srcNote.textContent = "Enregistré : le site lira les vidéos " + (v === "slate" ? "chez Slate" : "chez nous") + " (compter 5 minutes)."; }, function (e) { srcSel.value = srcVideo; srcNote.textContent = "Pas enregistré : " + e.message; });
+      });
+      view.insertBefore(el("div", { class: "srcrow" }, [el("label", { class: "label", text: "Source vidéo" }), srcSel, srcNote]), view.firstChild);
       view.appendChild(progressBoard(entries, function (k) { want = k; filter(); }));
       view.appendChild(find); view.appendChild(none); view.appendChild(ul);
       if (window.matchMedia("(hover: hover)").matches) find.focus({ preventScroll: true });

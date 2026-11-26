@@ -1268,3 +1268,9 @@ input.bcn { width: 90px; }
 .tlnav i { position: absolute; top: 1px; bottom: 1px; min-width: 18px; border-radius: 5px; background: rgba(255,252,235,.55); cursor: grab; box-shadow: 0 0 0 1px rgba(0,0,0,.35) inset; }
 .tlnav i:hover, .tlnav i:active { background: rgba(255,252,235,.8); }
 .tlnav i:active { cursor: grabbing; }
+.srcrow { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; }
+.srcrow .label { margin: 0; } .srcsel { background: rgba(255,252,235,.06); color: inherit; border: 1px solid rgba(255,252,235,.2); border-radius: 8px; padding: 6px 10px; font: inherit; }
+/* Montage de l'extrait de l'accueil : cadrage téléphone de chaque bloc */
+.hvw { position: relative; line-height: 0; }
+.hvw .hphone { position: absolute; top: 0; bottom: 0; border: 1px solid #ff3b30; box-shadow: 0 0 0 9999px rgba(0,0,0,.45); cursor: ew-resize; touch-action: none; z-index: 2; }
+.hvw { overflow: hidden; } .bok { color: #7ddc8a; }
