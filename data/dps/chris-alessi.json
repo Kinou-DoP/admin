@@ -108,6 +108,96 @@
       "types": [
         "Music Video"
       ]
+    },
+    "emwxgq59h49hbuq": {
+      "extras": [
+        {
+          "title": "Camille Lellouche • J'ai pas dit",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/extrait-114987.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/vignette-800.webp",
+          "key": "emwxgq59g3y3nbm",
+          "auto": true
+        },
+        {
+          "title": "Camille Lellouche • Nuit d'automne",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/extrait-128560.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/vignette-800.webp",
+          "key": "emwxgq59ikke41n",
+          "auto": true,
+          "hide": [
+            "chris-alessi"
+          ]
+        },
+        {
+          "title": "Camille Lellouche • Minuit",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/extrait-119013.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/vignette-800.webp",
+          "key": "emwxgq59hr9ay73",
+          "auto": true,
+          "hide": [
+            "chris-alessi"
+          ]
+        },
+        {
+          "title": "Camille Lellouche • Prince de ma ville",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/extrait-100987.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/vignette-800.webp",
+          "key": "emwxgq59i1rcn44",
+          "auto": true,
+          "hide": [
+            "chris-alessi"
+          ]
+        }
+      ]
+    },
+    "emwxgq59g3y3nbm": {
+      "extras": [
+        {
+          "title": "Camille Lellouche • Je me souviens",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/extrait-139947.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/vignette-800.webp",
+          "key": "emwxgq59h49hbuq",
+          "auto": true
+        },
+        {
+          "title": "Camille Lellouche • Nuit d'automne",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/extrait-128560.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/vignette-800.webp",
+          "key": "emwxgq59ikke41n",
+          "auto": true,
+          "hide": [
+            "chris-alessi"
+          ]
+        },
+        {
+          "title": "Camille Lellouche • Minuit",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/extrait-119013.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/vignette-800.webp",
+          "key": "emwxgq59hr9ay73",
+          "auto": true,
+          "hide": [
+            "chris-alessi"
+          ]
+        },
+        {
+          "title": "Camille Lellouche • Prince de ma ville",
+          "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/web.mp4",
+          "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/extrait-100987.mp4",
+          "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59i1rcn44/vignette-800.webp",
+          "key": "emwxgq59i1rcn44",
+          "auto": true,
+          "hide": [
+            "chris-alessi"
+          ]
+        }
+      ]
     }
   },
   "about": {
