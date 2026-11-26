@@ -63,7 +63,8 @@
   "categories": [
     "FEATURED",
     "BEAUTY / FASHION",
-    "AUTOMOTIVE"
+    "AUTOMOTIVE",
+    "COMMERCIAL"
   ],
   "clips": [
     {
@@ -374,6 +375,80 @@
       "img": "https://images.slatecdn.net/IsMxWsy-JAYvp9ex8IwNhCEqgGAniPDOschNfMQ23D0/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDQzLTY2MDE2ZTJh/OTM5ZGQ5LjYxNzYy/MTU0LWY2NTliM2Q5/OGFkY2U5OWQ0NmIy/YTAyNjc1ZjYzYmM3/LmpwZw.webp",
       "slate": 8443,
       "cat": "AUTOMOTIVE"
+    },
+    {
+      "title": "Evertalk - Marina Fois",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10650/2f29f126-2cf7-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1aee66fd-2508-4826-9451-37cfbc41f394-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/ENzlTX2skHD-KpBrmHKFB2JDDd5y34x1C48y0cFsCfM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/ZWVkZjJjYS0wNGNk/LTRlMDQtODQ3Yy1m/NDJkNzQxMGIxNDUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjYtMDMt/MzEtYS0xMy40NS4y/Ni5wbmc.webp",
+      "slate": 10650,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Esquire France with Charles Leclerc",
+      "sub": "Éva Vik",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10615/71ddbb8b-2860-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/78806de7-9b6b-49e9-94b9-532660bd00d2-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/Q9133mCBoWGWh3TmlT-oCz0LsnywcutN4EvKeLcr7Ng/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/Njg0NDA1MS1lMGMy/LTQ5NjAtYjk3Mi0w/YmNhYzYwYjlhMzUv/MTc3NDQ1Mjk3NTgy/Ny5qcGc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10615,
+      "featured": true,
+      "featuredOrder": 2
+    },
+    {
+      "title": "The Guardian Labs x Google",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8834/5d4ef036-2e16-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/507ebc0c-e6a1-4e73-a520-5a1dedb26ea7-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/7gkJGePFXp8nviUh8bkaRvLWv_PozelHNqhHJNhLRg0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/YmE5YzhkYS1jNDVm/LTQ3ZDUtODFjMi04/M2YxMjI5MTdmY2Qv/MTcxODc4NTc3NDUz/NC5qcGc.webp",
+      "slate": 8834,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "GOR TEX x ADIDAS",
+      "sub": "Nathalie de Lopez\nSIHAM GOUY MENAA",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8526/d1980ee4-f0cf-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3e36d8db-2258-4288-b116-f312f8c6ec52-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/D_MFUGNIN9MOiOCujzGp1lR1XKz83pvUSBvVpHX276I/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/NzBhYWNkMC04ZmE0/LTRkMGUtYjhkNi0w/MzM3MDEwMzU5ZjYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDQt/MDItYS0xMC41OS4w/OC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 8526
+    },
+    {
+      "title": "BALMAIN - BEAUTY D.C.",
+      "sub": "Akatre\nOcurens",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8462/8ed48461-ec40-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/aa76dcb2-54b7-488d-90ce-7d731b366ae9-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RrTEcB9BGzisHQvn7C5SRhtFFr2G-gvVcj0TZ5Xg-FY/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDYyLTY2MDE2ZTBh/N2NlNmUxLjAzMTg5/NzQ1LWQ0ZTA0ZmI3/N2IxMDQyMTQzYjlk/N2NjNjQzZDk0ZDU1/LmpwZw?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 8462,
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
+      "title": "VOGUE x JORDAN",
+      "sub": "Thibault Della Gaspera",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8457/1634d4dc-ec28-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/08a687a9-f449-4f77-809a-8947caded834-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/XrwWTLrXew4WbxX15kKt4Ja8OTVTlDUFlr5cZvsMax4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/M2QxZWI5Yi00Yjkw/LTQ0NDQtYTkyNC0x/YTM1YWI5NmU4MDcv/MTcxMTUzNjcyNzcz/OC5qcGc.webp",
+      "slate": 8457,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "AVENGERS CAMPUS - DISNEYLAND PARIS",
+      "sub": "Julie Rohart\nDisney",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8454/b5fb63c2-ec28-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8f356064-9adf-4a6f-a3de-2fdc4ee5267f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/aC9U6fsr_nzAaflMDXSpNf2Ymm-dACHUFBgzoPJ72tE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/NWQ3ZGEzMy05ZGQy/LTRmODQtOGE2NS1l/NGExNGFiNGQzNWYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDMt/MjctYS0xNS4xNC4w/NC5wbmc.webp",
+      "slate": 8454,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "DASSAULT",
+      "sub": "Julien Teissier",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8448/e07a5e2a-ec29-11ee-83d2-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2bcdaf39-e6a7-4af1-99dd-7353fddd8d8e-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/AblyEtu0RnXwpDxQLNKKEWEhUljYbE1AAmkbD0cEBDw/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDQ4LTY2MDE2ZTRh/MmU0OTc1LjI5ODY5/MDEyLTJhOTYxZjQ4/MTM2OTNkNjRmNWI0/YjhiMjQ5YzM5NzQx/LmpwZw.webp",
+      "slate": 8448,
+      "cat": "COMMERCIAL"
     },
     {
       "title": "Antonioli • Anima Noir",
