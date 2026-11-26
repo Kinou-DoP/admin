@@ -112,13 +112,23 @@
       "dops": [],
       "cats": [],
       "src": "upload",
-      "enc": {
-        "path": "data/encode/film-1795692122406-3nk6t.json",
-        "id": "mwxgq59ikke41n"
-      },
       "size": 4382835364,
       "at": "2026-11-26T11:22:02.404Z",
-      "by": "Gurvan"
+      "by": "Gurvan",
+      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/web.mp4",
+      "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/extrait-128560.mp4",
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/vignette-800.webp",
+      "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/vignette-1600.webp",
+      "thumbT": 129.56,
+      "snip": {
+        "s": 128.56,
+        "d": 5,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/extrait-128560.mp4",
+        "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59ikke41n/web.mp4"
+      },
+      "dur": 192.84,
+      "w": 1920,
+      "h": 1080
     },
     {
       "key": "emwxgq59i1rcn44",
