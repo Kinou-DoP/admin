@@ -426,6 +426,16 @@
           "img": "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/b/mwwco35qn5la.webp",
           "key": "s10016",
           "link": "https://kinou-4tv.pages.dev/b/pus6m5iry"
+        },
+        {
+          "title": "Stills",
+          "stills": [
+            "https://d3toxii6rvamjf.cloudfront.net/depot/vvrkf6mrtv35c9eqqnd8/001.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/vvrkf6mrtv35c9eqqnd8/002.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/vvrkf6mrtv35c9eqqnd8/003.webp",
+            "https://d3toxii6rvamjf.cloudfront.net/depot/vvrkf6mrtv35c9eqqnd8/004.webp"
+          ],
+          "up": true
         }
       ]
     },
