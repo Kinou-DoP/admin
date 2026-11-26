@@ -329,6 +329,15 @@
         "y": 50,
         "t": true
       }
+    },
+    "s8523": {
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxfs1xu5qy60a/vignette-30841-800.webp",
+      "thumbT": 30.841,
+      "hist": {
+        "img": [
+          "https://images.slatecdn.net/51-3GmqOQjqm1nb_GMgMyR5AW9oSNt173Na6vcNaofw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/Nzc0YjZkYi0xNjgx/LTQyZjEtYjU5Yy1l/Y2NlMDI1ZDlhNzYv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDQt/MDItYS0xMC40Ny4z/Ni5wbmc.webp"
+        ]
+      }
     }
   }
 }
