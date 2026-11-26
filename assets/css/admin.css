@@ -1154,3 +1154,13 @@ progress.bupprog { display: block; width: 100%; height: 6px; margin: 10px 0 4px;
 .bcropstrip { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 4px; max-height: 24vh; overflow-y: auto; margin: 6px 0 12px; }
 .bsc { position: relative; padding: 0; border: 0; overflow: hidden; background: #111; cursor: pointer; opacity: .7; } .bsc.on { opacity: 1; outline: 2px solid #d9822b; }
 input.bcn { width: 90px; }
+
+/* Recadrage : rectangle rouge déformable sur l'image (Gus 26/11) */
+.bcst { position: relative; display: block; width: fit-content; max-width: 100%; margin: 8px auto; overflow: hidden; line-height: 0; touch-action: none; user-select: none; background: #000; }
+.bcst img { display: block; max-width: 100%; max-height: 52vh; pointer-events: none; }
+.bcr { position: absolute; box-sizing: border-box; border: 2px solid #ff3b30; box-shadow: 0 0 0 9999px rgba(0,0,0,.6); cursor: move; }
+.bcg { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(rgba(255,59,48,.35) 0 0) 33.3% 0 / 1px 100% no-repeat, linear-gradient(rgba(255,59,48,.35) 0 0) 66.6% 0 / 1px 100% no-repeat, linear-gradient(rgba(255,59,48,.35) 0 0) 0 33.3% / 100% 1px no-repeat, linear-gradient(rgba(255,59,48,.35) 0 0) 0 66.6% / 100% 1px no-repeat; }
+.bch { position: absolute; width: 14px; height: 14px; background: #ff3b30; border-radius: 2px; }
+.bch.nw { left: 0; top: 0; cursor: nwse-resize; } .bch.ne { right: 0; top: 0; cursor: nesw-resize; } .bch.se { right: 0; bottom: 0; cursor: nwse-resize; } .bch.sw { left: 0; bottom: 0; cursor: nesw-resize; }
+.bch.n { left: calc(50% - 7px); top: 0; cursor: ns-resize; } .bch.s { left: calc(50% - 7px); bottom: 0; cursor: ns-resize; } .bch.w { top: calc(50% - 7px); left: 0; cursor: ew-resize; } .bch.e { top: calc(50% - 7px); right: 0; cursor: ew-resize; }
+.bcck { display: block; margin: 6px 0; font-size: 13px; cursor: pointer; }

@@ -97,5 +97,8 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   fenêtre rouverte = reprise de l'attente. Liste du video club : « ⟳ Vignette / Extrait en cours d'encodage… ».
 - **Données relues pendant une retouche** : `adopt(d)` remet par-dessus les films relus les retouches pas encore enregistrées (`libQ.todo`) ou en
   cours d'envoi (`libQ.sent`) : sinon, à la fin d'un encodage, la fenêtre rouverte montrait d'anciens crédits et les réécrivait.
-- **Recadrage des stills** (`cropWin`, bouton ▣) : `{ ar, z, x, y }` (forme du cadre libre, zoom, point de cadrage) commun à un groupe d'images :
-  `it.scrop` (images du projet) ou `extras[i].crop` (stills sous un film). Même rendu sur le site (`cropOf`, `.pgal button.cr`, `.plcr`).
+- **Recadrage des stills** (`cropWin`, bouton ▣, Gus 26/11) : rectangle rouge déformable sur l'image → `{ l, t, w, h, ar, per? }` (fractions de l'image ;
+  `per[adresse]` = cadre propre à une image) commun à un groupe : `it.scrop` (images du projet) ou `extras[i].crop` (stills sous un film). Ancien format
+  `{ ar, z, x, y }` encore lu. Même rendu sur le site (`cropOf`, `.pgal button.cr`, `.plcr`).
+- **Import : fenêtre des crédits tout de suite** : vidéos (`importFilms`) et images (`importImages`) créent le film en local (`localFilm`), ouvrent
+  `libEdit` aussitôt et enregistrent / envoient derrière (la demande d'encodage attend `savedLib`) ; bandeau d'avancement en haut de la fenêtre.

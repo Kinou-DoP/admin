@@ -1165,7 +1165,7 @@
         arr.forEach(function (u, k) {
           var c = el("div", { class: "bst", draggable: "true", title: "Glisser pour changer l'ordre" }, [el("i", { class: "bsi", style: 'background-image:url("' + imgShow(u) + '")' }),
             el("button", { type: "button", class: "bx", text: "×", title: "Retirer cette image", on: { click: function () { arr.splice(k, 1); it.edited = true; chg(); drawEx(); drawThumbs(); } } })]);
-          var sc = scNorm(crop); if (sc) { c.style.aspectRatio = String(sc.ar); scLayer(c.firstChild, sc); }
+          var nc = scNorm(crop); if (scFor(nc, u)) scCell(c, nc, u);
           c.addEventListener("dragstart", function (e) { from = k; e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", "st"); c.classList.add("drag"); });
           c.addEventListener("dragend", function () { c.classList.remove("drag"); });
           c.addEventListener("dragover", function (e) { if (from < 0) return; e.preventDefault(); c.classList.add("over"); });
@@ -1324,64 +1324,103 @@
     }
 
     // ---------- Imports ----------
-    // Recadrage des stills (Gus 26/11) : un cadre (rapport largeur / hauteur au choix, zoom, point de cadrage) commun à toutes les
-    // images d'un groupe : { ar, z, x, y } (`it.scrop` pour les images du projet, `extras[i].crop` pour un groupe sous le film). Même CSS
-    // que sur le site (calque `i` : image en cover + zoom depuis le point x % y %), pour voir ici exactement ce qu'on aura là-bas.
+    // Recadrage des stills (Gus 26/11) : un rectangle posé sur l'image (déformable à volonté), commun à toutes les images d'un groupe :
+    // { l, t, w, h, ar, per? } = position et taille du rectangle en fraction de l'image, `ar` = forme du cadre affiché (largeur / hauteur
+    // en pixels), `per` = { adresse de l'image : { l, t, w, h, ar } } pour les images qui ont leur propre recadrage. Groupe sous un film :
+    // `extras[i].crop` ; images du projet : `it.scrop`. Ancien format { ar, z, x, y } (zoom) encore lu. Même rendu sur le site.
     var SC_AR = [["16:9", 16 / 9], ["3:2", 3 / 2], ["4:3", 4 / 3], ["1:1", 1], ["2,39:1", 2.39], ["9:16", 9 / 16]];
-    function scNorm(c) { return c && c.ar > 0 ? { ar: Math.round(c.ar * 1000) / 1000, z: Math.max(1, +c.z || 1), x: c.x === undefined ? 50 : +c.x, y: c.y === undefined ? 50 : +c.y } : null; }
-    function scLayer(i, c) { // applique le recadrage c (ou rien) à un calque image
-      c = scNorm(c); i.style.transform = c && c.z > 1 ? "scale(" + c.z + ")" : ""; i.style.transformOrigin = c ? c.x + "% " + c.y + "%" : ""; i.style.backgroundPosition = c ? c.x + "% " + c.y + "%" : "";
+    function scBase(c) { return c && (c.w > 0 || c.ar > 0) ? c : null; }
+    function scNorm(c) {
+      if (!c) return null; var o = {};
+      if (c.w > 0 && c.h > 0) { o.w = Math.max(.02, Math.min(1, +c.w)); o.h = Math.max(.02, Math.min(1, +c.h)); o.l = Math.max(0, Math.min(1 - o.w, +c.l || 0)); o.t = Math.max(0, Math.min(1 - o.h, +c.t || 0)); o.ar = Math.round(Math.max(.2, Math.min(6, +c.ar || 16 / 9)) * 1000) / 1000; }
+      else if (c.ar > 0) { o.ar = +c.ar; o.z = Math.max(1, +c.z || 1); o.x = c.x === undefined ? 50 : +c.x; o.y = c.y === undefined ? 50 : +c.y; }
+      var per = {}; Object.keys(c.per || {}).forEach(function (u) { var q = scNorm(Object.assign({}, c.per[u], { per: null })); if (q && q.w) per[u] = q; });
+      if (Object.keys(per).length) o.per = per;
+      return Object.keys(o).length ? o : null;
     }
-    function scLabel(c) { c = scNorm(c); if (!c) return "Recadrer"; var r = SC_AR.filter(function (a) { return Math.abs(a[1] - c.ar) < .01; })[0]; return "Recadrage " + (r ? r[0] : c.ar.toFixed(2).replace(".", ",") + ":1") + (c.z > 1 ? " · " + Math.round(c.z * 100) + " %" : ""); }
+    function scFor(c, u) { return (c && c.per && c.per[u]) || scBase(c); } // recadrage de l'image u (le sien, sinon celui du groupe)
+    function scLayer(i, c) { // applique un recadrage (ou rien) à un calque image
+      i.style.transform = ""; i.style.transformOrigin = ""; i.style.backgroundSize = ""; i.style.backgroundPosition = "";
+      if (!c) return;
+      if (c.w > 0) { i.style.backgroundSize = 100 / c.w + "% " + 100 / c.h + "%"; i.style.backgroundPosition = (c.w < 1 ? c.l / (1 - c.w) * 100 : 0) + "% " + (c.h < 1 ? c.t / (1 - c.h) * 100 : 0) + "%"; }
+      else if (c.ar > 0) { if (c.z > 1) i.style.transform = "scale(" + c.z + ")"; i.style.transformOrigin = c.x + "% " + c.y + "%"; i.style.backgroundPosition = c.x + "% " + c.y + "%"; }
+    }
+    function scCell(cell, c, u) { var q = scFor(c, u); cell.style.aspectRatio = q ? String(q.ar) : ""; scLayer(cell.firstChild, q); }
+    function scLabel(c) { c = scNorm(c); if (!c) return "Recadrer"; var n = Object.keys(c.per || {}).length, b = scBase(c); return "Recadrage" + (b ? " " + (b.ar.toFixed(2).replace(".", ",")) + ":1" : "") + (n ? " · " + n + " image" + (n > 1 ? "s" : "") + " à part" : ""); }
     function cropWin(title, urls, cur, done) { // cur : recadrage actuel ou null ; done(c | null) à « Appliquer » / « Retirer »
-      var c = scNorm(cur) || { ar: 16 / 9, z: 1, x: 50, y: 50 }, k = 0;
-      var ov = el("div", { class: "bmodal bcropw" }), frame = el("div", { class: "bcrop" }), li = el("i", { class: "bsi" }), cnt = el("span", { class: "hint" });
-      frame.appendChild(li);
-      var strip = el("div", { class: "bcropstrip" }), arRow = el("div", { class: "btabs" }), zr = el("input", { type: "range", min: "100", max: "300", step: "1" }), zl = el("span", { class: "hint" });
-      var wI = el("input", { type: "number", min: "1", step: "any", class: "bcn" }), hI = el("input", { type: "number", min: "1", step: "any", class: "bcn" });
-      var imgR = 0; // rapport de l'image affichée (pour le glisser)
-      function paint() {
-        frame.style.aspectRatio = String(c.ar); frame.style.setProperty("--ar", c.ar); li.style.backgroundImage = 'url("' + imgShow(urls[k]) + '")'; scLayer(li, c);
-        cnt.textContent = (k + 1) + " / " + urls.length; zr.value = String(Math.round(c.z * 100)); zl.textContent = Math.round(c.z * 100) + " %" + (c.z > 1 || imgR ? " · glisse l'image pour choisir le cadrage" : "");
-        arRow.querySelectorAll("button").forEach(function (b, i) { b.classList.toggle("on", i < SC_AR.length ? Math.abs(SC_AR[i][1] - c.ar) < .01 : false); });
-        wI.value = String(Math.round(c.ar * 1000) / 1000); hI.value = "1";
-        strip.querySelectorAll(".bsc").forEach(function (b, i) { b.style.aspectRatio = String(c.ar); b.classList.toggle("on", i === k); scLayer(b.firstChild, c); });
-        var im = new Image(); im.onload = function () { imgR = im.naturalWidth / im.naturalHeight; }; im.src = imgShow(urls[k]);
+      var gc = scNorm(cur) || {}, per = {}, k = 0, ratios = {}, keep = false;
+      Object.keys(gc.per || {}).forEach(function (u) { per[u] = gc.per[u]; }); delete gc.per; if (!(gc.w > 0)) gc = gc.ar > 0 ? gc : null; // groupe : null = pas de cadre commun
+      var ov = el("div", { class: "bmodal bcropw" }), stage = el("div", { class: "bcst" }), im = el("img", { draggable: false }), rc = el("div", { class: "bcr" }), cnt = el("span", { class: "hint" });
+      var HS = ["nw", "n", "ne", "e", "se", "s", "sw", "w"], hs = HS.map(function (m) { return el("b", { class: "bch " + m, "data-m": m }); });
+      rc.appendChild(el("i", { class: "bcg" })); hs.forEach(function (h) { rc.appendChild(h); }); stage.appendChild(im); stage.appendChild(rc);
+      var strip = el("div", { class: "bcropstrip" }), arRow = el("div", { class: "btabs" }), msg = el("p", { class: "hint" });
+      var ownCk = el("input", { type: "checkbox" }), keepCk = el("input", { type: "checkbox" });
+      function u() { return urls[k]; }
+      function ir() { return ratios[u()] || 16 / 9; }
+      function legacy(c) { var r = ir(), fw = Math.min(1, c.ar / r) / c.z, fh = Math.min(1, r / c.ar) / c.z; return { l: (1 - fw) * c.x / 100, t: (1 - fh) * c.y / 100, w: fw, h: fh, ar: c.ar }; }
+      function full() { return { l: 0, t: 0, w: 1, h: 1, ar: ir() }; }
+      function rect() { var o = per[u()]; if (o) return o; var b = scBase(gc); return b ? (b.w > 0 ? b : legacy(b)) : full(); } // rectangle montré / modifié
+      function setRect(r) { // enregistre le rectangle dans l'image (cadre à part) ou le groupe, en recalculant la forme du cadre
+        r = scNorm(Object.assign({}, r, { ar: r.w / r.h * ir() })); if (per[u()] || ownCk.checked) per[u()] = r; else gc = r;
       }
-      SC_AR.forEach(function (a) { arRow.appendChild(el("button", { type: "button", text: a[0], on: { click: function () { c.ar = a[1]; paint(); } } })); });
-      arRow.appendChild(el("button", { type: "button", text: "Comme l'image", title: "Rapport de l'image affichée", on: { click: function () { if (imgR) { c.ar = Math.round(imgR * 1000) / 1000; paint(); } } } }));
-      function free() { var w = +wI.value, h = +hI.value; if (w > 0 && h > 0) { c.ar = Math.max(.2, Math.min(5, w / h)); paint(); } }
-      wI.addEventListener("change", free); hI.addEventListener("change", free);
-      zr.addEventListener("input", function () { c.z = +zr.value / 100; paint(); });
-      urls.slice(0, 60).forEach(function (u, i) { strip.appendChild(el("button", { type: "button", class: "bsc", title: "Voir cette image", on: { click: function () { k = i; paint(); } } }, [el("i", { class: "bsi", style: 'background-image:url("' + imgShow(u) + '")' })])); });
-      // glisser l'image : x / y bougent comme le contenu (déplacement total = débordement du « cover » + zoom)
+      function paint() {
+        var r = rect(); im.src = imgShow(u()); rc.style.left = r.l * 100 + "%"; rc.style.top = r.t * 100 + "%"; rc.style.width = r.w * 100 + "%"; rc.style.height = r.h * 100 + "%";
+        cnt.textContent = (k + 1) + " / " + urls.length; ownCk.checked = !!per[u()];
+        msg.textContent = per[u()] ? "Cette image a son propre cadre." : "Ce cadre vaut pour toutes les images du groupe sans cadre à part.";
+        paintStrip();
+      }
+      function paintStrip() { strip.querySelectorAll(".bsc").forEach(function (b, i) { b.classList.toggle("on", i === k); scCell(b, Object.assign({}, scBase(gc) || {}, { per: per }), urls[i]); if (!scFor(Object.assign({}, scBase(gc) || {}, { per: per }), urls[i])) b.style.aspectRatio = "16 / 9"; }); }
+      function load(i, then) { var x = new Image(); x.onload = function () { ratios[urls[i]] = x.naturalWidth / x.naturalHeight; if (then) then(); }; x.onerror = function () { if (then) then(); }; x.src = imgShow(urls[i]); }
+      function go(i) { k = (i + urls.length) % urls.length; if (ratios[u()]) paint(); else load(k, paint); }
+      im.addEventListener("load", function () { if (!ratios[u()] && im.naturalWidth) { ratios[u()] = im.naturalWidth / im.naturalHeight; paint(); } });
+      // Rectangle : glisser un côté ou un coin pour le déformer, l'intérieur pour le déplacer ; « Garder la forme » verrouille le rapport.
       var dr = null;
-      frame.addEventListener("pointerdown", function (e) { e.preventDefault(); frame.setPointerCapture(e.pointerId); var r = frame.getBoundingClientRect(); dr = { px: e.clientX, py: e.clientY, x: c.x, y: c.y, w: r.width, h: r.height }; });
-      frame.addEventListener("pointermove", function (e) {
-        if (!dr || !imgR) return; var ir = imgR, bw = dr.w, bh = dr.h, cw = ir >= bw / bh ? bh * ir : bw, ch = ir >= bw / bh ? bh : bw / ir;
-        var sx = (cw - bw) + (c.z - 1) * bw, sy = (ch - bh) + (c.z - 1) * bh;
-        if (sx > 1) c.x = Math.round(Math.max(0, Math.min(100, dr.x - (e.clientX - dr.px) / sx * 100))); if (sy > 1) c.y = Math.round(Math.max(0, Math.min(100, dr.y - (e.clientY - dr.py) / sy * 100)));
-        paint();
+      rc.addEventListener("pointerdown", function (e) { e.preventDefault(); e.stopPropagation(); rc.setPointerCapture(e.pointerId); var b = im.getBoundingClientRect(); dr = { m: e.target.dataset.m || "move", px: e.clientX, py: e.clientY, r: Object.assign({}, rect()), W: b.width, H: b.height }; });
+      rc.addEventListener("pointermove", function (e) {
+        if (!dr) return; var dx = (e.clientX - dr.px) / dr.W, dy = (e.clientY - dr.py) / dr.H, o = dr.r, m = dr.m, MIN = .03, L = o.l, T = o.t, R = o.l + o.w, B = o.t + o.h;
+        if (m === "move") { L = Math.max(0, Math.min(1 - o.w, o.l + dx)); T = Math.max(0, Math.min(1 - o.h, o.t + dy)); R = L + o.w; B = T + o.h; }
+        else {
+          if (m.indexOf("w") > -1) L = Math.max(0, Math.min(R - MIN, o.l + dx)); if (m.indexOf("e") > -1) R = Math.min(1, Math.max(L + MIN, o.l + o.w + dx));
+          if (m.indexOf("n") > -1) T = Math.max(0, Math.min(B - MIN, o.t + dy)); if (m.indexOf("s") > -1) B = Math.min(1, Math.max(T + MIN, o.t + o.h + dy));
+          if (keepCk.checked && m.length === 2) { // coin avec la forme verrouillée : la hauteur suit la largeur
+            var ar = o.w / o.h, w = R - L, h = w / ar;
+            if (m.indexOf("n") > -1) T = Math.max(0, B - h); else B = Math.min(1, T + h);
+            if (T === 0 || B === 1) { h = B - T; w = h * ar; if (m.indexOf("w") > -1) L = R - w; else R = L + w; }
+          }
+        }
+        setRect({ l: L, t: T, w: R - L, h: B - T }); paint();
       });
-      frame.addEventListener("pointerup", function () { dr = null; });
-      var prev = el("button", { type: "button", class: "btn ghost", text: "◀", on: { click: function () { k = (k + urls.length - 1) % urls.length; paint(); } } });
-      var next = el("button", { type: "button", class: "btn ghost", text: "▶", on: { click: function () { k = (k + 1) % urls.length; paint(); } } });
+      rc.addEventListener("pointerup", function () { dr = null; });
+      // Formes toutes faites : le plus grand cadre de cette forme dans l'image, centré sur le cadre actuel.
+      function shape(ratio) { var r = rect(), I = ir(), w = Math.min(1, ratio / I), h = w * I / ratio; if (h > 1) { h = 1; w = ratio / I; } var cx = r.l + r.w / 2, cy = r.t + r.h / 2; setRect({ l: Math.max(0, Math.min(1 - w, cx - w / 2)), t: Math.max(0, Math.min(1 - h, cy - h / 2)), w: w, h: h }); paint(); }
+      SC_AR.forEach(function (a) { arRow.appendChild(el("button", { type: "button", text: a[0], on: { click: function () { shape(a[1]); } } })); });
+      arRow.appendChild(el("button", { type: "button", text: "Image entière", on: { click: function () { setRect({ l: 0, t: 0, w: 1, h: 1 }); paint(); } } }));
+      ownCk.addEventListener("change", function () { if (ownCk.checked) per[u()] = scNorm(Object.assign({}, rect(), { ar: rect().w / rect().h * ir() })); else delete per[u()]; paint(); });
+      urls.slice(0, 80).forEach(function (x, i) { strip.appendChild(el("button", { type: "button", class: "bsc", title: "Voir cette image", on: { click: function () { go(i); } } }, [el("i", { class: "bsi", style: 'background-image:url("' + imgShow(x) + '")' })])); });
+      var result = function () { var c = scBase(gc) ? Object.assign({}, gc) : {}; if (Object.keys(per).length) c.per = per; return scNorm(c); };
       var box = el("div", { class: "bmbox" }, [el("span", { class: "label", text: title }),
-        el("p", { class: "hint", text: "Le cadre vaut pour toutes les images du groupe (bandes noires, format différent de 16:9…)." }), frame,
-        el("div", { class: "row" }, [prev, cnt, next]), el("span", { class: "label", text: "Forme du cadre" }), arRow,
-        el("div", { class: "row" }, [wI, el("span", { text: " : " }), hI, el("span", { class: "hint", text: "  rapport libre (largeur : hauteur)" })]),
-        el("span", { class: "label", text: "Zoom" }), el("div", { class: "row" }, [zr, zl]), el("span", { class: "label", text: "Résultat sur toutes les images" }), strip,
+        el("p", { class: "hint", text: "Le rectangle rouge montre ce qui sera visible : glisse un côté ou un coin pour le déformer, l'intérieur pour le déplacer." }), stage,
+        el("div", { class: "row" }, [el("button", { type: "button", class: "btn ghost", text: "◀", on: { click: function () { go(k - 1); } } }), cnt, el("button", { type: "button", class: "btn ghost", text: "▶", on: { click: function () { go(k + 1); } } })]),
+        el("span", { class: "label", text: "Formes toutes faites" }), arRow,
+        el("label", { class: "bcck" }, [keepCk, " Garder la forme en tirant un coin"]),
+        el("label", { class: "bcck" }, [ownCk, " Cadre à part pour cette image seulement"]), msg,
+        el("span", { class: "label", text: "Résultat sur toutes les images" }), strip,
         el("div", { class: "fwbtns" }, [
-          el("button", { type: "button", class: "btn primary", text: "Appliquer", on: { click: function () { ov.remove(); done(c.ar === 16 / 9 && c.z <= 1 && c.x === 50 && c.y === 50 ? null : scNorm(c)); } } }),
-          el("button", { type: "button", class: "btn ghost", text: "Retirer le recadrage", on: { click: function () { ov.remove(); done(null); } } }),
+          el("button", { type: "button", class: "btn primary", text: "Appliquer", on: { click: function () { ov.remove(); done(result()); } } }),
+          el("button", { type: "button", class: "btn ghost", text: "Retirer tout recadrage", on: { click: function () { ov.remove(); done(null); } } }),
           el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { ov.remove(); } } })])]);
-      ov.appendChild(box); ov.addEventListener("click", function (e) { if (e.target === ov) ov.remove(); }); document.body.appendChild(ov); paint();
+      ov.appendChild(box); ov.addEventListener("click", function (e) { if (e.target === ov) ov.remove(); }); document.body.appendChild(ov); go(0);
     }
     function modal(title, kids) {
       var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox small" }, [el("span", { class: "label", text: title })].concat(kids));
       ov.addEventListener("click", function (e) { if (e.target === ov) ov.remove(); });
       box.appendChild(el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: function () { ov.remove(); } } })]));
       ov.appendChild(box); document.body.appendChild(ov); return ov;
+    }
+    // Film pas encore enregistré mais déjà utilisable (Gus 26/11 : la fenêtre des crédits s'ouvre tout de suite à l'import, pendant l'envoi).
+    function localFilm(it) {
+      var f = Object.assign({ slate: null, title: "", dir: "", prod: "", dops: [], cats: [], types: [], video: "", full: "", img: "", images: null, pages: [], at: "" }, JSON.parse(JSON.stringify(it)));
+      f.dops = f.dops || []; f.cats = f.cats || []; f.types = f.types || []; bibHay(f); return f;
     }
     function libSave(items, msgEl) {
       return commit([{ path: BIB_LIB, edit: function (t) {
@@ -1503,14 +1542,18 @@
         if (k >= g.length) return; var x = g[k]; x.step = "envoi"; paint();
         upload(x.file, function (p) { x.up = p; }).then(function (key) {
           x.step = "demande"; paint();
-          return commit([{ path: x.path, text: json({ jobs: [{ id: x.id, kind: "film", key: key }], at: new Date().toISOString(), by: by }) },
+          return savedLib.then(function () { return commit([{ path: x.path, text: json({ jobs: [{ id: x.id, kind: "film", key: key }], at: new Date().toISOString(), by: by }) },
             { path: BIB_LIB, edit: function (t) { var L = t ? JSON.parse(t) : { items: [] }; (L.items || []).forEach(function (y) { if (y.key === x.it.key && y.enc) delete y.enc.sending; }); return json(L); } }],
-            "Encodage : demande (admin, " + by + ")");
+            "Encodage : demande (admin, " + by + ")"); });
         }).then(function () { x.step = "file"; paint(); watch(x); }, function (e) { x.step = "erreur"; x.err = "envoi interrompu : " + e.message + " (rechoisis le même fichier pour reprendre)"; paint(); })
           .then(function () { next(k + 1); });
       }
-      libSave(g.map(function (x) { return x.it; })).then(function () { return bibLoad(true); }).then(function (d) { adopt(d); draw(); openTab(0); next(0); },
-        function (e) { alert("Pas enregistré : " + e.message); });
+      // Fenêtre d'infos tout de suite (films locaux), enregistrement dans le video club en arrière-plan ; la demande d'encodage attend cet enregistrement.
+      g.forEach(function (x) { data.films.unshift(localFilm(x.it)); }); draw();
+      var savedLib = libSave(g.map(function (x) { return x.it; }));
+      savedLib.then(function () { return bibLoad(true); }).then(function (d) { adopt(d); draw(); }, function () {});
+      savedLib.catch(function (e) { alert("Pas enregistré : " + e.message); });
+      openTab(0); next(0);
     }
     // Suite d'images (Gus 22/11) : on choisit les images, elles sont enregistrées, puis la même fenêtre d'infos s'ouvre (titre,
     // crédits, vignette…). Images réduites dans le navigateur (WebP) → data/bibli/img/<id>/.
@@ -1532,10 +1575,22 @@
         var tickI = setInterval(function () { var left = Math.min(files.length, imgUps.length); bar.value = files.length - left; out.textContent = "Envoi des images chez Amazon : " + (files.length - left) + " / " + files.length + "…"; }, 400);
         var guess = String(names[0] || "").replace(/\.[a-z0-9]+$/i, "").replace(/[\s_.-]*\d+$/, "").replace(/[_]+/g, " ").trim() || "Images";
         var it = { key: "i" + id, kind: "images", title: guess, dops: [], cats: ["Stills"], images: urls, img: urls[0], src: "upload", at: new Date().toISOString(), by: user && user.login || "" };
-        libSave([it]).then(function () { delete it._files; return bibLoad(true); }).then(function (d) {
-          clearInterval(tickI); bar.value = bar.max; adopt(d); draw(); var f = filmOf(it.key); out.textContent = "✓ " + files.length + " images enregistrées · création du lien de partage…";
-          shareCreate(f ? [f] : []).catch(function () {}).then(function () { mo.remove(); if (f) libEdit(f); });
-        }, function (e) { clearInterval(tickI); bar.hidden = true; go.disabled = false; out.className = "hint berr"; out.textContent = "Pas enregistré : " + e.message; });
+        // Fenêtre des crédits tout de suite (Gus 26/11) : le film existe déjà en local, l'envoi et l'enregistrement continuent derrière ;
+        // un bandeau en haut de la fenêtre montre l'avancement.
+        var f0 = localFilm(it); data.films.unshift(f0); draw();
+        var hd = el("div", { class: "bimphead" }), hs = el("p", { class: "bimpstat bwait" }), hb = el("progress", { max: files.length, value: 0, class: "bupprog" }), hbn = el("p", { class: "bbanner", hidden: true });
+        hd.appendChild(hs); hd.appendChild(hb); hd.appendChild(hbn);
+        var finished = false, tickH = setInterval(function () {
+          if (finished) return; var left = Math.min(files.length, imgUps.length); hb.value = files.length - left;
+          hs.textContent = "↑ Envoi des images : " + (files.length - left) + " / " + files.length + " · tu peux déjà remplir les crédits, garde cette page ouverte";
+        }, 300);
+        clearInterval(tickI); mo.remove(); libEdit(f0, { head: hd });
+        libSave([it]).then(function () { delete it._files; return imgWait(); }).then(function () { return bibLoad(true); }).then(function (d) {
+          adopt(d); draw(); var f = filmOf(it.key);
+          return shareCreate(f ? [f] : []).catch(function () {});
+        }).then(function () {
+          finished = true; clearInterval(tickH); hb.hidden = true; hs.hidden = true; hbn.hidden = false; hbn.textContent = "✓ " + files.length + " images envoyées et enregistrées dans le video club.";
+        }, function (e) { finished = true; clearInterval(tickH); hb.hidden = true; hs.className = "bimpstat berr"; hs.textContent = "Pas enregistré : " + e.message; });
       } } });
       var mo = modal("Ajouter une suite d'images", [el("span", { class: "label", text: "Images (dans l'ordre des noms de fichiers) ; titre, crédits et vignette juste après" }), fin, grid, bar, out, el("div", { class: "fwbtns" }, [go])]);
     }
