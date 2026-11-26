@@ -436,7 +436,14 @@
       ],
       "types": [
         "Music Video"
-      ]
+      ],
+      "pend": {
+        "thumb": {
+          "path": "data/encode/rapide-1795698009859-l7564.json",
+          "id": "mwxk8c1vighyux",
+          "t": 104.699
+        }
+      }
     },
     "s8475": {
       "crop": {
