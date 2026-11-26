@@ -187,12 +187,19 @@
   // Un seul commit pour tous les fichiers : [{ path, text } | { path, base64 } | { path, remove: true }]
   // Si un autre commit arrive pendant ce temps (robot GitHub qui répond, autre personne qui publie : « Update is not a fast
   // forward », GitHub 422), on refait le commit par-dessus le nouveau dernier commit, 3 fois au plus (Gus 04/11).
+  // Les commits de cette page partent un par un (file `commitQ`) : plusieurs enregistrements en même temps (infos du film, lien de partage,
+  // ordre du lot, encodage…) se marchaient dessus (GitHub 422 « Reference cannot be updated », Gus 26/11). 6 essais, délais variables.
+  var commitQ = Promise.resolve();
   function commit(files, message, tries) {
-    if (tries === undefined) return track(imgWait().then(function () { return commit(files, message, 0); }), true);
+    if (tries === undefined) {
+      var run = commitQ.then(function () { return imgWait(); }).then(function () { return commit(files, message, 0); });
+      commitQ = run.catch(function () {});
+      return track(run, true);
+    }
     tries = tries || 0;
     return commitOnce(files, message).catch(function (e) {
-      if (tries >= 3 || !/GitHub 422/.test(e.message)) throw e;
-      return new Promise(function (r) { setTimeout(r, 1200 + tries * 800); }).then(function () { return commit(files, message, tries + 1); });
+      if (tries >= 6 || !/GitHub 422/.test(e.message)) throw e;
+      return new Promise(function (r) { setTimeout(r, 900 + tries * 700 + Math.random() * 500); }).then(function () { return commit(files, message, tries + 1); });
     });
   }
   function commitOnce(files, message) {

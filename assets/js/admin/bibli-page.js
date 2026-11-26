@@ -203,8 +203,11 @@
         keys.forEach(function (k) { if (todo[k]) o.films[k] = todo[k]; else delete o.films[k]; });
         return json(o);
       } }].concat(files), "Video club : infos de " + keys.length + " film" + (keys.length > 1 ? "s" : "") + " (admin, " + (user && user.login || "") + ")").then(function () {
-        libQ.busy = false; libQ.sent = {}; info.classList.remove("saving"); if (libQ.again) { libQ.again = false; libSaveEdits(); }
-      }, function (e) { libQ.busy = false; libQ.sent = {}; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving"); alert("Infos pas enregistrées : " + e.message); throw e; });
+        libQ.busy = false; libQ.sent = {}; libQ.fail = 0; info.classList.remove("saving"); if (libQ.again) { libQ.again = false; libSaveEdits(); }
+      }, function (e) { libQ.busy = false; libQ.sent = {}; keys.forEach(function (k) { if (!(k in libQ.todo)) libQ.todo[k] = todo[k]; }); libQ.files = files.concat(libQ.files); info.classList.remove("saving");
+        // Échec (souvent un autre commit en même temps) : on réessaie tout seul 2 fois avant de déranger (Gus 26/11) ; rien n'est perdu, tout reste en attente.
+        if ((libQ.fail = (libQ.fail || 0) + 1) <= 2) { soon("libEdits", libSaveEdits, 2500 * libQ.fail); return; }
+        libQ.fail = 0; alert("Infos pas enregistrées : " + e.message + "\n\nRien n'est perdu : les changements sont gardés, ils partiront au prochain changement."); throw e; });
     }
     function libEdit(f, opt) { // opt (import) : { local: vidéo de l'ordinateur, head: onglets + avancement, credits: crédits à reprendre }
       opt = opt || {};
