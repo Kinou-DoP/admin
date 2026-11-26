@@ -374,10 +374,36 @@
         "Music Video"
       ],
       "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxlnybtc0wej3/vignette-143487-800.webp",
+      "snip": {
+        "s": 109.284,
+        "d": 2.375,
+        "parts": [
+          {
+            "s": 109.284,
+            "d": 2.375
+          },
+          {
+            "s": 127.925,
+            "d": 1.173
+          },
+          {
+            "s": 165.562,
+            "d": 2.432
+          }
+        ]
+      },
       "thumbT": 143.487,
       "hist": {
         "img": [
           "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/vignette-800.webp"
+        ],
+        "snip": [
+          {
+            "s": 114.987,
+            "d": 5,
+            "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/extrait-114987.mp4",
+            "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59g3y3nbm/web.mp4"
+          }
         ]
       }
     },
