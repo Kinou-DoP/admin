@@ -89,6 +89,7 @@
         if ((data.films || []).some(function (x) { return (x.enc && !x.enc.error) || x.pend; })) encT = setTimeout(encCheck, x_pend() ? 6000 : 20000);
       });
     }
+    if (!emb && !openNext) setTimeout(function () { q.focus(); }, 50); // on tape directement, sans cliquer sur la barre (Gus 26/11)
     q.addEventListener("input", function () { st.q = q.value; st.n = 60; st.sugI = -1; suggest(); draw(); });
     q.addEventListener("keydown", function (e) {
       var items = sugBox.querySelectorAll("button");

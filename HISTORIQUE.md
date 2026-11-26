@@ -402,3 +402,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Recadrage des stills en rectangle rouge déformable (+ cadre à part par image, `per`) ; import vidéo / images : fenêtre des crédits ouverte tout de suite (`localFilm`).
 - 26/11 — Lignes sous le film : glisser-déposer, recherche, liens de nos bandes, masquer par lieu (`hide`) ; vidéos importées ensemble = lignes `auto` ; clic-glissé ne ferme plus les fenêtres ; bouton edit sous la vidéo.
 - 26/11 — Import groupé = vidéos liées (`grp`), œil partout (pages, bandes), images du projet déplaçables, recherche au centre avec filtres, case chef op vide d'emblée, suggestions du video club réparées (`.bst`).
+- 26/11 — Video club : la barre de recherche a le focus à l'arrivée.
