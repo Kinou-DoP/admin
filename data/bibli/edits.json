@@ -852,6 +852,16 @@
         "x": 57.4,
         "y": 45.1,
         "t": true
+      },
+      "pend": {
+        "snip": {
+          "path": "data/encode/rapide-1795706417832-5nvs9.json",
+          "id": "mwxp8joo9bcah4",
+          "s": 56.671,
+          "d": 19.943,
+          "pj": "null",
+          "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85c87c46-a99b-40a7-afe8-2f8eb11d8965-1280x720.2500.mp4"
+        }
       }
     }
   }
