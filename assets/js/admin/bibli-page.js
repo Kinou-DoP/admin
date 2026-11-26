@@ -138,7 +138,7 @@
       var th = el("div", { class: "bthumb" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
       if (f.images && !f.video && !f.full) th.appendChild(el("span", { class: "bimgs", text: f.images.length + " images" }));
       var v = null;
-      th.addEventListener("mouseenter", function () { if (!f.video || v || document.body.classList.contains("bdragging")) return; v = el("video", { muted: true, autoplay: true, loop: true, playsinline: true }); v.muted = true; v.src = f.video; th.appendChild(v); });
+      th.addEventListener("mouseenter", function () { var hs = f.snipVideo || (f.snip && f.snip.v) || f.video; if (!hs || v || document.body.classList.contains("bdragging")) return; v = el("video", { muted: true, autoplay: true, loop: true, playsinline: true }); v.muted = true; v.src = hs; th.appendChild(v); }); // l'extrait le plus récent (montage, extrait importé), pas l'ancien
       th.addEventListener("mouseleave", function () { if (v) { v.remove(); v = null; } });
       var cb = el("input", { type: "checkbox" }); cb.checked = !!st.sel[f.key];
       cb.addEventListener("click", function (e) { // Maj + clic : toute la plage depuis la dernière case cochée
@@ -221,7 +221,7 @@
         return Object.keys(e).length ? e : null;
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
-        meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by },
+        meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by, slate: f.slate },
         canDelete: function () { return !!(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
         onChange: function () {
           // Vidéos d'un même import : ordre commun à toutes (Gus 26/11). Glisser une ligne change l'ordre du lot entier ; masquer ne casse pas le lien.
@@ -252,7 +252,7 @@
     function sharePayload(it, dl) {
       var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist" && k !== "pend" && k !== "pages" && k !== "hay" && k !== "libEdited") c[k] = it[k]; }); snipOk(it, c);
       c.dops = (c.dops || []).filter(Boolean);
-      if (!(c.cshow && c.client)) delete c.client; delete c.cshow; // le client ne part que s'il est affiché
+      if (!(c.client && c.cshow !== false)) delete c.client; delete c.cshow; // le client ne part que s'il est affiché
       if (c.extras) { c.extras = c.extras.filter(function (x) { return !xHidden(x, "club") && !x.self; }).map(function (x) { x = Object.assign({}, x); delete x.hide; return x; }); if (!c.extras.length) delete c.extras; }
       return { single: true, title: c.title || "", artists: [], cols: 1, hide: {}, download: !!dl, items: [c], at: new Date().toISOString() };
     }
@@ -863,7 +863,7 @@
       // cadre rouge (partie gardée) à faire glisser ; « Aussi sur la vignette » montre tout de suite la vignette recadrée ou non.
       var zth = el("div", { class: "thumb" });
       var cropP = function () { return it.crop && (it.crop.x !== 50 || it.crop.y !== 50) ? it.crop.x + "% " + it.crop.y + "%" : undefined; };
-      var zctl = zoomCtl(zth, function () { return it.snipVideo || (it.snip && it.full ? { src: it.full, start: it.snip.s, end: it.snip.s + it.snip.d } : it.video || it.full); },
+      var zctl = zoomCtl(zth, function () { return it.snipVideo || (it.snip && it.snip.v && (!it.snip.vf || it.snip.vf === it.full) ? it.snip.v : it.snip && it.full ? { src: it.full, start: it.snip.s, end: it.snip.s + it.snip.d } : it.video || it.full); },
         function () { return it.crop ? it.crop.z : undefined; },
         function (z) { if (!z || z <= 1) delete it.crop; else it.crop = { z: Math.round(z * 100) / 100, x: it.crop ? it.crop.x : 50, y: it.crop ? it.crop.y : 50, t: it.crop ? it.crop.t !== false : false }; prevImg(); },
         cropP,
@@ -996,8 +996,9 @@
           if ((e.key === "i" || e.key === "o" || e.key === "I" || e.key === "O") && !e.ctrlKey && !e.metaKey && !e.altKey && ptab === "snip" && !it.snipVideo) { // I / O : début / fin de l'extrait ici (Gus 26/11)
             e.preventDefault(); e.stopPropagation(); if (e.repeat) return; var tt = player.currentTime; snipDraft();
             if (!it.snip) it.snip = { s: tt, d: Math.round(Math.min(5, dur - tt) * 1000) / 1000 };
-            var A2 = actB(); act = /i/i.test(e.key) ? "in" : "out";
-            if (act === "in") setSnip(tt, A2.s + A2.d, "in"); else setSnip(A2.s, tt, "out");
+            var A2 = actB(), mx2 = maxFor(), e0 = A2.s + A2.d; act = /i/i.test(e.key) ? "in" : "out";
+            // Le point posé tombe toujours sur l'image voulue (Gus 26/11) : si la durée dépasse la limite ou si l'autre point gêne, c'est l'AUTRE point qui s'adapte.
+            if (act === "in") setSnip(tt, tt > e0 - MIND ? tt + MIND : Math.min(e0, tt + mx2), "new"); else setSnip(tt < A2.s + MIND ? Math.max(0, tt - MIND) : Math.max(A2.s, tt - mx2), tt, "new");
             snipMark(); prevSnip(); draw(); drawSnip(); return;
           }
           if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
@@ -1335,16 +1336,16 @@
       // Infos du fichier (Gus 26/11) : date (celle de Slate pour les films de Slate, sinon l'import), poids de l'original et de la version web.
       // Client (Gus 26/11) : proposé depuis Slate ; la case l'affiche avant le titre (« McDo | Big Mac ») sur le site, dans les bandes et les liens partagés.
       function clientFld() {
-        var inp = el("input", { type: "text", value: it.client || "", placeholder: "Ex. McDo" }), ck = el("input", { type: "checkbox" }); ck.checked = !!it.cshow;
-        function upd() { var v = inp.value.trim(); if (v) it.client = v; else { delete it.client; delete it.cshow; ck.checked = false; } it.edited = true; chg(); prevMeta(); }
+        var inp = el("input", { type: "text", value: it.client || "", placeholder: "Ex. McDo" }), ck = el("input", { type: "checkbox" }); ck.checked = it.cshow !== false;
+        function upd() { var v = inp.value.trim(); if (v) it.client = v; else delete it.client; it.edited = true; chg(); prevMeta(); }
         inp.addEventListener("input", upd);
-        ck.addEventListener("change", function () { if (ck.checked) { if (!inp.value.trim()) { ck.checked = false; return; } it.client = inp.value.trim(); it.cshow = true; } else delete it.cshow; it.edited = true; chg(); });
-        return [el("span", { class: "label", text: "Client" }), inp, el("label", { class: "bck" }, [ck, " Afficher avant le titre (« " + (it.client || "Client") + " | " + (it.title || "Titre") + " ») sur le site et dans les bandes"])];
+        ck.addEventListener("change", function () { if (ck.checked) delete it.cshow; else it.cshow = false; it.edited = true; chg(); });
+        return [el("span", { class: "label", text: "Client" }), inp, el("label", { class: "bck" }, [ck, " Afficher avant le titre sur le site et dans les bandes (« Client | Titre »)"])];
       }
       function fsz(n) { return n >= 1e9 ? (n / 1e9).toFixed(1).replace(".", ",") + " Go" : Math.max(1, Math.round(n / 1e6)) + " Mo"; }
       function infoFile(m) {
         m = m || {}; var l = [];
-        if (m.date) l.push("Date sur Slate : " + fdate(m.date)); else if (m.at) l.push("Importé le " + fdate(String(m.at).slice(0, 10)) + (m.by ? " par " + m.by : ""));
+        if (m.slate && (m.date || m.at)) l.push("Date sur Slate : " + fdate(m.date || String(m.at).slice(0, 10))); else if (m.at) l.push("Importé le " + fdate(String(m.at).slice(0, 10)) + (m.by ? " par " + m.by : ""));
         if (m.size) l.push("Fichier d'origine : " + fsz(m.size) + (m.ws ? " → version web " + fsz(m.ws) + " (" + Math.round((1 - m.ws / m.size) * 100) + " % de moins)" : (m.os ? "" : " → version web en préparation")));
         else if (m.ws) l.push("Version web : " + fsz(m.ws));
         if (m.w) l.push(m.w + "×" + m.h); if (m.dur) l.push(Math.floor(m.dur / 60) + " min " + String(Math.round(m.dur % 60)).padStart(2, "0") + " s");

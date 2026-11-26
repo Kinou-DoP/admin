@@ -133,4 +133,9 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   les gestes du montage (`snipUndo`, `su`) sans rouvrir la fenêtre. Tant que le robot n'a pas fait le mp4 (`snip.v`), l'aperçu lit les blocs bout à bout.
 - **Client** : `client` (proposé depuis Slate, `meta.json`) + `cshow` (case « afficher avant le titre ») dans edits.json ; site, bandes et liens partagés affichent
   « Client | Titre » seulement si `cshow` (`dtitle`) ; champ « Client » sur les cartes des fiches (`vcPatch`) ; liste du video club : client au-dessus du titre.
+- **I / O** : le point posé tombe toujours sur l'image affichée ; si la durée dépasse 30 s (ou si l'autre point gêne), c'est l'autre point qui s'adapte.
+- **Client affiché par défaut** (Gus 26/11) : dès qu'un film a un client (Slate : `bibli/slate.json` du dépôt notes, 2 797 films ; `meta.json` public : les films des pages), « Client | Titre »
+  s'affiche sur le site, les bandes et les liens partagés, sauf case décochée (`cshow: false` dans edits.json) ; le site lit `meta.json` (`vcClient`) et edits.json ; la carte des
+  fiches a un champ Client prérempli. **Date Slate** : `at` de `bibli/slate.json` (7 490 films) / `date` de `meta.json` (2 091). Survol de la liste = extrait le plus récent
+  (`snipVideo`, `snip.v`) ; l'aperçu de recadrage lit le montage entier (`snip.v`).
 

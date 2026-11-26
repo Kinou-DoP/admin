@@ -200,7 +200,7 @@
     if (f.snip) o.snip = Object.assign({}, f.snip);
     if (f.snipVideo) o.snipVideo = f.snipVideo;
     if (f.thumbT !== undefined) o.thumbT = f.thumbT;
-    if (f.cshow && f.client) o.client = f.client; // client affiché avant le titre
+    if (f.client && f.cshow !== false) o.client = f.client; // client affiché avant le titre (sauf case décochée)
     if (f.scrop) o.scrop = JSON.parse(JSON.stringify(f.scrop));
     if (f.ipos) o.ipos = f.ipos;
     if (f.hist) o.hist = JSON.parse(JSON.stringify(f.hist));

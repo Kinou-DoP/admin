@@ -497,9 +497,12 @@
   // Les fiches (et spotlight, fiction) les lisent et les écrivent là ; le site les applique par-dessus les pages. Le titre reste
   // propre à chaque page. vcFilms = edits.json lu à l'ouverture de la page ; vcKey = clé du film (« s<id Slate> » ou clé d'un import).
   var vcFilms = {}, vcTodo = {};
+  var vcMetaF = {}; // meta.json (robot) : client de chaque film des pages
+  function vcMeta(c) { var m = vcMetaF[String(c.slate)]; return m && m.client || ""; }
   var vcLib = {}; // library.json (video club) : sert aux vidéos d'un même import
   function vcLoad() {
     return Promise.all([readFile(BIB_EDITS).then(function (o) { vcFilms = (o && o.films) || {}; }, function () { vcFilms = {}; }),
+      readFile("data/bibli/meta.json").then(function (o) { vcMetaF = (o && o.films) || {}; }, function () { vcMetaF = {}; }),
       readFile(BIB_LIB).then(function (l) { vcLib = {}; ((l && l.items) || []).forEach(function (it) { vcLib[it.key] = it; }); }, function () { vcLib = {}; })]);
   }
   // Vidéos importées ensemble avec ce film (Gus 26/11) : le site les montre sous lui ; ici on les montre aussi (lignes de la carte), dans l'ordre du lot.
@@ -697,8 +700,8 @@
     if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(awardsCtl(c));
     // Client (Gus 26/11) : enregistré dans le video club comme les crédits ; affiché avant le titre sur le site (« McDo | Big Mac »).
-    var cli = el("input", { type: "text", class: "nodirty bcli", placeholder: "Client (affiché avant le titre)", value: vcOf(c).cshow ? vcOf(c).client || "" : "", title: "Client : « McDo | Big Mac » sur le site et dans les bandes. Vide = pas de client affiché." });
-    cli.addEventListener("change", function () { var v = cli.value.trim(); vcPatch(c.slate, v ? { client: v, cshow: true } : { cshow: false }); });
+    var cli = el("input", { type: "text", class: "nodirty bcli", placeholder: "Client (affiché avant le titre)", value: vcOf(c).cshow === false ? "" : vcOf(c).client || vcMeta(c) || "", title: "Client : « McDo | Big Mac » sur le site et dans les bandes. Vide = pas de client affiché." });
+    cli.addEventListener("change", function () { var v = cli.value.trim(); vcPatch(c.slate, v ? { client: v, cshow: true } : { cshow: false }); }); // « cshow: false » = client caché (sinon affiché dès qu'il existe)
     card.appendChild(cli); card.appendChild(title); card.appendChild(sub);
     if (state === fic) card.appendChild(ficCtl(c));
     card.appendChild(infoCtl(c));
