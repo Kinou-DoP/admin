@@ -4,6 +4,8 @@
   // emb (Gus 25/11, bouton « edit » d'une fiche) : { key, done(film) } = seulement la fenêtre d'un film du video club, ouverte
   // par-dessus la page en cours (rien n'est affiché du video club ; mêmes enregistrements dans edits.json).
   function showBibli(emb) {
+    var CTX = (emb && emb.ctx) || "club", CTXN = CTX === "club" ? "video club et bandes" : CTX === "fiction" ? "page fiction" : CTX === "spotlight" ? "page spotlight" : "cette page de chef op";
+    function filmByKey(k) { return data && data.films.filter(function (x) { return x.key === k; })[0]; }
     if (!emb) { bar.hidden = true; editing = false; view.textContent = ""; document.body.classList.add("bibpage"); }
     // En arrivant : toujours une nouvelle bande vide (Gus 22/11), sauf une bande pas encore enregistrée (enregistrement raté).
     var band; try { band = JSON.parse(localStorage.getItem(BAND_KEY) || "null"); } catch (e) {}
@@ -233,6 +235,7 @@
     function sharePayload(it, dl) {
       var c = {}; Object.keys(it).forEach(function (k) { if (k.charAt(0) !== "_" && k !== "key" && k !== "hist" && k !== "pend" && k !== "pages" && k !== "hay" && k !== "libEdited") c[k] = it[k]; }); snipOk(it, c);
       c.dops = (c.dops || []).filter(Boolean);
+      if (c.extras) { c.extras = c.extras.filter(function (x) { return !xHidden(x, "club"); }).map(function (x) { x = Object.assign({}, x); delete x.hide; return x; }); if (!c.extras.length) delete c.extras; }
       return { single: true, title: c.title || "", artists: [], cols: 1, hide: {}, download: !!dl, items: [c], at: new Date().toISOString() };
     }
     function shareCreate(fl) { // un lien pour chaque film qui n'en a pas encore : un commit (pages chiffrées) + la liste des codes (notes)
@@ -1127,7 +1130,7 @@
       drawThumbs(); prevImg(); prevMeta(); zlab(); drawSnip(); drawHist();
       if (lib && it.pend) { if (it.pend.thumb) grabWait(it.pend.thumb); else if (it.pend.snip) snipWait(it.pend.snip); } // fenêtre rouverte pendant une demande au robot
       // Sous le film (comme sur les pages des chefs op) : galeries de stills et autres vidéos, liens Slate « work » ou shots.re.
-      var exBox = el("div", { class: "bexs" }), exIn = el("input", { type: "text", placeholder: "Lien Slate (page de stills ou d'une vidéo, shots.re)" }), exOut = el("p", { class: "hint" });
+      var exBox = el("div", { class: "bexs" }), exIn = el("input", { type: "text", placeholder: "Lien Slate (stills, vidéo, shots.re) ou lien d'une de nos bandes / d'un film partagé" }), exOut = el("p", { class: "hint" });
       function drawEx() {
         exBox.textContent = "";
         // Suite d'images (sans film) : ses images dans l'ordre, à déplacer en glissant (Gus 26/11).
@@ -1137,14 +1140,21 @@
           exBox.appendChild(stillGrid(it, "images", it.scrop));
         }
         (it.extras || []).forEach(function (x, j) {
-          var th = el("div", { class: "bithumb" }), u = x.img || (x.stills && x.stills[0]); if (u) th.appendChild(el("i", { style: 'background-image:url("' + u + '")' }));
-          exBox.appendChild(el("div", { class: "bit bex" }, [th, el("span", { class: "bitt" }, [x.title || x.link || "", el("small", { text: x.stills ? x.stills.length + " images" : "vidéo" })]),
+          var th = el("div", { class: "bithumb" }), u = x.img || (x.stills && x.stills[0]); if (u) th.appendChild(el("i", { style: 'background-image:url("' + imgShow(u) + '")' }));
+          var hid = lib && xHidden(x, CTX), w = el("div", { class: "bxw", "data-xi": String(j) });
+          w.appendChild(el("div", { class: "bit bex" + (hid ? " xhid" : "") }, [xGrip(w, j), th, el("span", { class: "bitt" }, [x.title || x.link || "", el("small", { text: (x.stills ? x.stills.length + " images" : "vidéo") + (hid ? " · masquée ici" : "") })]),
             x.stills && x.stills.length ? cropBtn(x.stills, "Recadrer : " + (x.title || "stills"), function () { return x.crop; }, function (c) { if (c) x.crop = c; else delete x.crop; }) : null,
+            lib ? el("button", { type: "button", class: "bx bhide" + (hid ? " on" : ""), text: hid ? "⊘" : "◉", title: hid ? "Masquée ici (" + CTXN + ") : cliquer pour la montrer de nouveau. Elle reste visible ailleurs." : "Masquer ici (" + CTXN + ") seulement : elle reste visible ailleurs", on: { click: function () { xToggleHide(x, CTX); it.edited = true; chg(); drawEx(); } } }) : null,
             el("button", { type: "button", class: "bx", text: "↑", title: "Monter", disabled: j ? null : true, on: { click: function () { var a = it.extras.splice(j, 1)[0]; it.extras.splice(j - 1, 0, a); chg(); drawEx(); } } }),
-            el("button", { type: "button", class: "bx", text: "×", title: "Retirer de cette bande", on: { click: function () { it.extras.splice(j, 1); if (!it.extras.length) delete it.extras; chg(); drawEx(); } } })]));
-          if (x.stills && x.stills.length) exBox.appendChild(stillGrid(x, "stills", x.crop));
+            el("button", { type: "button", class: "bx", text: "×", title: lib ? "Supprimer partout (pour la cacher seulement ici : ◉)" : "Retirer de cette bande", on: { click: function () { it.extras.splice(j, 1); if (!it.extras.length) delete it.extras; chg(); drawEx(); } } })]));
+          if (x.stills && x.stills.length) w.appendChild(stillGrid(x, "stills", x.crop));
+          exBox.appendChild(w);
         });
       }
+      // Lignes déplaçables (poignée ⠿) et films déposés depuis la recherche.
+      xDropZone(exBox, function (from, to) { var a = it.extras.splice(from, 1)[0]; it.extras.splice(to, 0, a); it.edited = true; chg(); drawEx(); }, function (key, at) {
+        var f = filmByKey(key); if (!f) return; it.extras = it.extras || []; it.extras.splice(at, 0, extraFromFilm(f)); it.edited = true; chg(); drawEx();
+      });
       // Stills de l'ordinateur (Gus 26/11) : cliquer ou glisser des images sur le bouton → réduites (WebP) et envoyées chez Amazon (imgPut) ;
       // rangées dans un groupe « Stills » sous le film ; l'ordre de toutes les images se change en les glissant.
       var stUp = el("input", { type: "file", accept: "image/*", multiple: true, hidden: true });
@@ -1182,9 +1192,12 @@
         } } });
       }
       var exGo = el("button", { type: "button", class: "btn", text: "Ajouter", on: { click: function () {
-        var v = exIn.value.trim(); if (!v) return; exGo.disabled = true; exOut.textContent = "Lecture sur Slate" + slateWait("…");
-        importStills(v).then(function (d) { (it.extras = it.extras || []).push(extraOf(d)); it.edited = true; exIn.value = ""; exOut.textContent = ""; exGo.disabled = false; chg(); drawEx(); },
+        var v = exIn.value.trim(); if (!v) return; exGo.disabled = true; exOut.textContent = (ourCode(v) ? "Lecture du lien" : "Lecture sur Slate") + slateWait("…");
+        extrasFromLink(v).then(function (ns) { (it.extras = it.extras || []); ns.forEach(function (n) { it.extras.push(n); }); it.edited = true; exIn.value = ""; exOut.textContent = ns.length > 1 ? ns.length + " films ajoutés." : ""; exGo.disabled = false; chg(); drawEx(); },
           function (e) { exGo.disabled = false; exOut.textContent = "Lecture impossible : " + (e.message || "Slate ne répond pas"); });
+      } } });
+      var exFind = el("button", { type: "button", class: "btn ghost", text: "🔍 Rechercher", title: "Chercher un film dans le video club et l'ajouter sous ce film", on: { click: function () {
+        bibPicker("Ajouter sous le film", function (f) { it.extras = it.extras || []; it.extras.push(extraFromFilm(f)); it.edited = true; chg(); drawEx(); });
       } } });
       exIn.addEventListener("keydown", function (e) { if (e.key === "Enter") exGo.click(); });
       drawEx();
@@ -1206,7 +1219,7 @@
           player ? null : upBtn("⤒ Importer une image", imgUp, "image", doImg), player ? null : imgUp,
           player ? null : histImgL, player ? null : histImg])]));
       box.appendChild(el("div", { class: "bmgrid" }, [
-        el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo]),
+        el("div", {}, [el("span", { class: "label", text: "Sous le film : stills et autres vidéos" }), exBox, el("div", { class: "row" }, [el("div", { class: "grow" }, [exIn]), exGo, exFind]),
           el("div", { class: "tlrow" }, [upBtn("⤒ Ajouter des stills de l'ordinateur", stUp, "image", addStills, true), stUp]), exOut]),
         el("div", {}, [el("span", { class: "label", text: "Prix et sélections" }), aw])]));
       // Remplacer la vidéo (Gus 23/11) : lien Slate d'une vidéo (page « work » ou shots.re) → nouveau film complet et extrait ;
@@ -1434,6 +1447,11 @@
       var go = el("button", { type: "button", class: "btn primary", text: "Lire le lien", on: { click: function () {
         if (!canWeb) { out.textContent = "Lecture seule : cette clé ne peut pas ajouter au video club."; return; }
         var v = link.value.trim(); if (!v) return; go.disabled = true; out.textContent = "Lecture sur Slate" + slateWait("…");
+        if (ourCode(v)) { // lien de nos bandes / d'un film partagé : ces films sont déjà dans le video club
+          ourLinkFilms(v).then(function (l) { go.disabled = false; var f = l.length === 1 && filmOf(l[0].key); if (f) { mo.remove(); libEdit(f); } else out.textContent = "Ces films sont déjà dans le video club" + (l.length > 1 ? " (" + l.length + " films)" : "") + " : cherche-les dans la liste."; },
+            function (e) { go.disabled = false; out.textContent = e.message; });
+          return;
+        }
         var isBundle = /\/bundles\//.test(v) || /^(https?:\/\/)?(shots|slt)\.re\//i.test(v);
         (isBundle ? importBundle(v).then(function (d) { return (d.clips || []).map(function (c) { return { slate: c.slate, title: c.title, sub: c.sub, video: c.video, full: c.full, img: c.img, cats: [c.cat].concat(c.types || []), dops: c.artists || (d.name ? [d.name] : []) }; }); })
           : importStills(v).then(function (d) { return [{ title: d.title, video: d.video, full: d.full, img: d.img || (d.stills && d.stills[0]), images: d.stills }]; }))
@@ -1531,7 +1549,14 @@
               var a = (js[0] || {}).answer; if (a) libPatch(filmOf(x.it.key), { snip: { s: sn.s, d: sn.d, v: a.video, vf: f.full } });
             }).catch(function () {});
           }
-          var m = hd.closest(".bmodal"); if (m && g[cur] === x) openTab(cur); // fenêtre ouverte sur cette vidéo : rouverte sur la version web
+          // Plusieurs vidéos importées ensemble : sous chacune, les autres (lignes « auto », masquables ; Gus 26/11).
+          var ready = g.filter(function (y) { return y.step === "fini" && filmOf(y.it.key) && filmOf(y.it.key).full; });
+          if (g.length > 1 && ready.length > 1) ready.forEach(function (y) {
+            var fy = filmOf(y.it.key); if ((fy.extras || []).some(function (e) { return !e.auto; })) return; // déjà réglé à la main
+            var ex = ready.filter(function (z) { return z !== y; }).map(function (z) { var n = extraFromFilm(filmOf(z.it.key)); n.auto = true; return n; });
+            libPatch(fy, { extras: ex });
+          });
+          var m = hd.closest(".bmodal"); if (m && (g[cur] === x || ready.length > 1)) openTab(cur); // fenêtre ouverte : rouverte (version web, lignes sous le film)
         });
       }
       function watch(x) {

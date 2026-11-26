@@ -172,7 +172,7 @@
   function bandItem(f) { // copie d'un film dans la bande : la bande ne dépend plus de la bibliothèque (retouches propres à la bande)
     var o = { key: f.key, slate: f.slate, title: f.title, dir: f.dir, prod: f.prod, dops: f.dops.slice(), cats: f.cats.slice(), types: (f.types || []).slice(), video: f.video, full: f.full, img: f.img };
     if (f.images && f.images.length) o.images = f.images.slice();
-    if (f.extras && f.extras.length) o.extras = JSON.parse(JSON.stringify(f.extras));
+    if (f.extras && f.extras.length) o.extras = JSON.parse(JSON.stringify(f.extras)).filter(function (x) { return !xHidden(x, "club"); }).map(function (x) { delete x.hide; return x; }); // lignes masquées dans le video club : pas dans les bandes
     if (f.awards) o.awards = f.awards;
     if (f.crop) o.crop = Object.assign({}, f.crop);
     if (f.snip) o.snip = Object.assign({}, f.snip);

@@ -183,7 +183,87 @@
     for (var j = i; j >= 0; j--) { var y = list[j]; if (!y || y.stills) return null; if (y.cols) return { d: y.cols.d || 1, m: y.cols.m || 1 }; }
     return null;
   }
-  function extrasCtl(get, set, label) {
+  // Film du video club (ou d'une bande) → ligne « sous le film » (Gus 26/11 : ajouter par recherche ou par lien de nos bandes).
+  function extraFromFilm(f) {
+    var vid = f.snipVideo || (f.snip && f.snip.v) || f.video || "";
+    var n = (f.images && f.images.length && !f.full && !vid) ? { title: f.title, stills: f.images.slice() } : { title: f.title, full: f.full, video: vid, img: f.img };
+    n.key = f.key; if (f.extras && !n.stills) { /* les lignes sous ce film ne suivent pas */ }
+    Object.keys(n).forEach(function (k) { if (n[k] === undefined || n[k] === "" || n[k] === null) delete n[k]; });
+    return n;
+  }
+  // Lien d'une de nos bandes ou d'un film partagé (…/b/<code>) → films. Un film seul est retrouvé par son code (notes/bandes/films.json),
+  // une bande par son fichier (notes/bandes/<code>.json). Renvoie null si ce n'est pas un lien de chez nous.
+  function ourCode(link) { var m = /\/b\/\??([a-z0-9]{9})(?![a-z0-9])/i.exec(String(link || "")); return m && !/shots\.re|slt\.re|slateapp/i.test(link) ? m[1].toLowerCase() : null; }
+  function ourLinkFilms(link) {
+    var code = ourCode(link); if (!code) return null;
+    return nGet(BAND_NOTES + "films.json").then(function (t) {
+      var m = t ? JSON.parse(t) : {}, key = Object.keys(m).filter(function (k) { return m[k].code === code; })[0];
+      if (key) return bibLoad().then(function (d) { var f = d.films.filter(function (x) { return x.key === key; })[0]; if (!f) throw new Error("Ce film n'est plus dans le video club"); return [f]; });
+      return nGet(BAND_NOTES + code + ".json").then(function (t2) {
+        if (!t2) throw new Error("Lien inconnu : ni un film partagé ni une bande du video club");
+        var b = JSON.parse(t2); return (b.items || []).filter(function (i) { return i.section === undefined; });
+      });
+    });
+  }
+  // Lien collé sous un film : Slate / shots.re, ou lien de nos bandes → liste de lignes.
+  function extrasFromLink(link) {
+    var o = ourLinkFilms(link);
+    if (o) return o.then(function (l) { if (!l.length) throw new Error("Rien dans ce lien"); return l.map(function (f) { var n = extraFromFilm(f); n.link = link.trim(); return n; }); });
+    return importStills(link).then(function (d) { return [extraOf(d)]; });
+  }
+  // Masquer au cas par cas (Gus 26/11) : `hide: [lieu, …]` sur une ligne ; lieux : « club » (video club et bandes), « fiction »,
+  // « spotlight », ou l'adresse d'un chef op. Une ligne masquée ici reste visible ailleurs.
+  function xHidden(x, ctx) { return !!(x && x.hide && x.hide.indexOf(ctx) > -1); }
+  function xToggleHide(x, ctx) {
+    var l = (x.hide || []).slice(), i = l.indexOf(ctx); if (i > -1) l.splice(i, 1); else l.push(ctx);
+    if (l.length) x.hide = l; else delete x.hide;
+  }
+  // Glisser-déposer des lignes « sous le film » : poignée ⠿ (déplacer), et films déposés depuis la recherche. Les lignes portent data-xi.
+  function xGrip(row, i) {
+    var g = el("span", { class: "xgrip", draggable: "true", title: "Glisser pour changer l'ordre", text: "⠿" });
+    g.addEventListener("dragstart", function (e) { e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/x-kinou-row", String(i)); try { e.dataTransfer.setDragImage(row, 12, 12); } catch (x) {} row.classList.add("xdrag"); });
+    g.addEventListener("dragend", function () { row.classList.remove("xdrag"); });
+    return g;
+  }
+  function xDropZone(box, onMove, onFilm) {
+    function pos(e) { // numéro de la ligne avant laquelle on dépose (nombre de lignes = à la fin)
+      var rows = [].filter.call(box.children, function (c) { return c.dataset && c.dataset.xi !== undefined; });
+      box.querySelectorAll(".xover").forEach(function (r) { r.classList.remove("xover"); });
+      for (var k = 0; k < rows.length; k++) { var r = rows[k].getBoundingClientRect(); if (e.clientY < r.top + r.height / 2) { rows[k].classList.add("xover"); return +rows[k].dataset.xi; } }
+      if (rows.length) rows[rows.length - 1].classList.add("xoverend");
+      return rows.length;
+    }
+    function has(e, t) { return e.dataTransfer && [].indexOf.call(e.dataTransfer.types, t) > -1; }
+    box.addEventListener("dragover", function (e) { if (has(e, "text/x-kinou-row") || (onFilm && has(e, "text/x-kinou-film"))) { e.preventDefault(); pos(e); } });
+    box.addEventListener("dragleave", function (e) { if (!box.contains(e.relatedTarget)) box.querySelectorAll(".xover,.xoverend").forEach(function (r) { r.classList.remove("xover", "xoverend"); }); });
+    box.addEventListener("drop", function (e) {
+      var at = pos(e); box.querySelectorAll(".xover,.xoverend").forEach(function (r) { r.classList.remove("xover", "xoverend"); });
+      if (has(e, "text/x-kinou-row")) { e.preventDefault(); var from = +e.dataTransfer.getData("text/x-kinou-row"); if (from !== at && from + 1 !== at) onMove(from, at > from ? at - 1 : at); }
+      else if (onFilm && has(e, "text/x-kinou-film")) { e.preventDefault(); onFilm(e.dataTransfer.getData("text/x-kinou-film"), at); }
+    });
+  }
+  // Recherche dans le video club (Gus 26/11) : panneau à droite, on tape, on clique un film pour l'ajouter ou on le glisse à sa place
+  // dans la liste. pick(film) ; le panneau reste ouvert pour en ajouter plusieurs.
+  function bibPicker(title, pick) {
+    var old = document.querySelector(".bpickp"); if (old) old.remove();
+    var inp = el("input", { type: "text", placeholder: "Titre, réal, prod, chef op…" }), list = el("div", { class: "bpl" }), info = el("p", { class: "hint", text: "Chargement du video club…" });
+    var box = el("div", { class: "bpickp" }, [el("div", { class: "bph" }, [el("span", { class: "label", text: title || "Rechercher dans le video club" }), el("button", { type: "button", class: "xbtn", text: "×", title: "Fermer", on: { click: function () { box.remove(); } } })]), inp, info, list]);
+    document.body.appendChild(box);
+    function draw(d) {
+      var words = bnrm(inp.value).split(/\s+/).filter(Boolean), l = d.films.filter(function (f) { return words.every(function (w) { return f.hay.indexOf(w) > -1; }); }).slice(0, 40);
+      list.textContent = ""; info.textContent = l.length ? (words.length ? "" : "Les plus récents · ") + "clique pour ajouter, ou glisse vers la liste" : "Aucun film";
+      l.forEach(function (f) {
+        var th = el("i", { class: "bpth" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
+        var r = el("div", { class: "bpr", draggable: "true", title: "Cliquer pour ajouter · glisser pour placer" }, [th, el("span", { class: "bpt" }, [f.title || "(sans titre)", el("small", { text: [f.dir, f.dops.join(" & ")].filter(Boolean).join(" · ") })])]);
+        r.addEventListener("click", function () { pick(f); r.classList.add("bpdone"); });
+        r.addEventListener("dragstart", function (e) { e.dataTransfer.effectAllowed = "copy"; e.dataTransfer.setData("text/x-kinou-film", f.key); });
+        list.appendChild(r);
+      });
+    }
+    bibLoad().then(function (d) { draw(d); inp.addEventListener("input", function () { draw(d); }); inp.focus(); }, function (e) { info.textContent = "Video club indisponible : " + e.message; });
+    return box;
+  }
+  function extrasCtl(get, set, label, ctx) {
     var box = el("div", { class: "extras" }), openLay = -1; // réglage de colonnes ouvert (reste ouvert après un choix)
     function save(list) { set(list); touch(); draw(); }
     function kind(x) { return x.stills ? "Stills · " + x.stills.length : x.full || x.video ? "Vidéo" : "Vidéo · à publier"; }
@@ -196,16 +276,21 @@
         if (x && !force && v === x.link) return; // Entrée : relit toujours Slate
         if (input._busy === v) return; // Entrée déclenche aussi « change »
         input._busy = v; st.textContent = "Lecture du lien" + slateWait("…");
-        importStills(v).then(function (d) {
-          var n = extraOf(d);
+        extrasFromLink(v).then(function (ns) {
+          var n = ns[0];
           if (x && x.cols && !n.stills) n.cols = x.cols; // mise en page gardée quand on relit le lien
-          if (x) list[i] = n; else list.push(n);
+          if (x) list.splice.apply(list, [i, 1].concat(ns.map(function (y, k) { return k ? y : n; }))); else ns.forEach(function (y) { list.push(y); });
           save(list);
         }, function (e) { input._busy = null; st.textContent = e.message; });
       }
       input.addEventListener("change", function () { load(false); });
       input.addEventListener("keydown", function (e) { if (e.key === "Enter") load(true); });
-      if (!x) return el("div", { class: "xrow add" }, [el("div", { class: "xline" }, [input]), st]);
+      if (!x) {
+        var find = el("button", { type: "button", class: "xbtn xfind", title: "Chercher un film dans le video club et l'ajouter", text: "🔍 Rechercher", on: { click: function () {
+          bibPicker("Ajouter sous le film", function (f) { list.push(extraFromFilm(f)); save(list); });
+        } } });
+        return el("div", { class: "xrow add" }, [el("div", { class: "xline" }, [input, find]), st]);
+      }
       function move(k) { var j = i + k; if (j < 0 || j >= list.length) return; list.splice(j, 0, list.splice(i, 1)[0]); save(list); }
       var up = el("button", { type: "button", class: "xbtn", title: "Monter", text: "↑", on: { click: function () { move(-1); } } });
       var down = el("button", { type: "button", class: "xbtn", title: "Descendre", text: "↓", on: { click: function () { move(1); } } });
@@ -237,7 +322,9 @@
       var tag = el("span", { class: "xkind", text: kind(x) });
       if (!x.stills && !x.full && !x.video) tag.title = "Pas d'extrait sur Slate : le film complet est ajouté par le robot GitHub environ 1 min après la publication.";
       if (x.img || (x.stills && x.stills[0])) tag.style.backgroundImage = 'url("' + (x.img || x.stills[0]) + '")';
-      return el("div", { class: "xrow" }, [el("div", { class: "xline" }, [tag, input, lbtn || "", up, down, del]), lay || "", st]);
+      var rowEl = el("div", { class: "xrow", "data-xi": String(i) }, [el("div", { class: "xline" }, [xGrip(null, i), tag, input, lbtn || "", up, down, del]), lay || "", st]);
+      rowEl.querySelector(".xgrip").replaceWith(xGrip(rowEl, i));
+      return rowEl;
     }
     function draw() {
       box.textContent = "";
@@ -245,6 +332,9 @@
       list.forEach(function (x, i) { box.appendChild(row(x, i, list)); });
       box.appendChild(row(null, list.length, list));
     }
+    xDropZone(box, function (from, to) { var l = extrasOf(get()); l.splice(to, 0, l.splice(from, 1)[0]); save(l); }, function (key, at) {
+      bibLoad().then(function (d) { var f = d.films.filter(function (y) { return y.key === key; })[0]; if (!f) return; var l = extrasOf(get()); l.splice(at, 0, extraFromFilm(f)); save(l); });
+    });
     draw();
     return box;
   }

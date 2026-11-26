@@ -583,7 +583,7 @@
   function vcEditBtn(c, after) {
     return el("button", { type: "button", class: "vcedit", text: "edit", title: "Vignette, extrait, recadrage… (fenêtre du video club : vaut pour tout le site)", on: { pointerdown: function (e) { e.stopPropagation(); }, click: function (e) {
       e.stopPropagation(); flushSaves();
-      showBibli({ key: vcKey(c.slate), done: function (f) {
+      showBibli({ key: vcKey(c.slate), ctx: state === fic ? "fiction" : state === spot ? "spotlight" : (state && state.slug) || "club", done: function (f) {
         // Valeurs de la fenêtre reprises tout de suite (enregistrées dans edits.json par la fenêtre elle-même).
         if (f) { var x = vcFilms[vcKey(c.slate)] = Object.assign({}, vcFilms[vcKey(c.slate)]); ["img", "crop", "snip", "snipVideo", "video", "full"].forEach(function (k) { if (f[k] !== undefined) x[k] = f[k]; }); }
         after();
@@ -667,7 +667,9 @@
         function () { var cr = vcCrop(c); return cr ? cr.t : undefined; }, function (t) { vcSetCrop(c, "t", t); sync(); }, function () {});
     }
     var zoom = mkZoom();
-    thumb.appendChild(vcEditBtn(c, function () { paintThumb(); var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; if (document.activeElement !== sub) sub.value = vcCredits(c).text; sync(); }));
+    // Bouton « edit » (Gus 26/11) : sous la vidéo, sur fond blanc, collé à droite de la ligne de recadrage.
+    var editB = vcEditBtn(c, function () { paintThumb(); var z2 = mkZoom(); zoom.replaceWith(z2); zoom = z2; zoom.appendChild(editB); if (document.activeElement !== sub) sub.value = vcCredits(c).text; sync(); });
+    zoom.appendChild(editB);
     card.appendChild(thumb); card.appendChild(zoom);
     if (state !== spot && state !== fic && (bgFilm() || {}).slate === c.slate) card.appendChild(filmPhoneCtl(c)); // 1er film FEATURED seulement (fiches)
     card.appendChild(awardsCtl(c));

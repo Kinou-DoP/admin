@@ -45,6 +45,16 @@
   window.addEventListener("hashchange", function () { checkVersion(); });
 
   // ---------- Outils ----------
+  // Fenêtres (Gus 26/11) : un clic-glissé (appui dans la fenêtre, relâché sur le fond, ou l'inverse) ne ferme plus rien ; seul un vrai clic
+  // sur le fond le fait. Les fonds de fenêtre sont des éléments en position fixe : si l'appui et le relâchement ne sont pas sur le même
+  // élément, le clic est supprimé avant que la fenêtre le voie.
+  var clDown = null, clUp = null;
+  document.addEventListener("pointerdown", function (e) { clDown = clUp = e.target; }, true);
+  document.addEventListener("pointerup", function (e) { clUp = e.target; }, true);
+  document.addEventListener("click", function (e) {
+    if (!e.isTrusted || !clDown || clDown === clUp || e.target.nodeType !== 1) return;
+    if (getComputedStyle(e.target).position === "fixed") { e.stopPropagation(); e.preventDefault(); }
+  }, true);
   // Vidéos jouées depuis NOTRE hébergement Amazon (copie de tout Slate le 25/11, au même chemin que sur le CloudFront de Slate) :
   // seul le début de l'adresse change. Les données gardent l'adresse Slate (rien à republier). Fichier absent chez nous (film
   // ajouté sur Slate depuis la copie) : repli automatique sur Slate. Les captures d'image passent toujours par /api/media du site.

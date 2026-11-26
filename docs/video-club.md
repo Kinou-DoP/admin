@@ -102,3 +102,12 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   `{ ar, z, x, y }` encore lu. Même rendu sur le site (`cropOf`, `.pgal button.cr`, `.plcr`).
 - **Import : fenêtre des crédits tout de suite** : vidéos (`importFilms`) et images (`importImages`) créent le film en local (`localFilm`), ouvrent
   `libEdit` aussitôt et enregistrent / envoient derrière (la demande d'encodage attend `savedLib`) ; bandeau d'avancement en haut de la fenêtre.
+- **Lignes sous le film** (Gus 26/11) : poignée ⠿ pour les déplacer en glissant (`xGrip`, `xDropZone` d'`upload.js` ; fenêtre du video club **et** cartes des
+  pages de chefs op / fiction / spotlight, `extrasCtl`) ; **recherche** 🔍 (`bibPicker`, panneau à droite : clic = ajouter, glisser = placer) ; liens de
+  **nos** bandes / films partagés (`…/b/<code>`) acceptés à côté des liens Slate (`extrasFromLink`, `ourLinkFilms` : notes `bandes/films.json` ou
+  `bandes/<code>.json`). **Masquer au cas par cas** : `extras[i].hide = [lieux]` (« club » = video club et bandes, « fiction », « spotlight », adresse d'un chef
+  op ; `showBibli({ ctx })`, bouton ◉ / ⊘) ; le site filtre dans `vcApply` (`d.slug`) ; × = supprimer partout. **Import de plusieurs vidéos** : à la fin de
+  l'encodage, chacune reçoit les autres en lignes `auto` sous elle (masquables).
+- **Fenêtres** : un clic-glissé qui finit sur le fond ne ferme plus rien (règle globale en tête d'`admin.js`, `clDown` / `clUp`).
+- **Bouton « edit »** des cartes : sous la vidéo, blanc, collé à droite de la ligne de recadrage (`.zoom .vcedit`).
+
