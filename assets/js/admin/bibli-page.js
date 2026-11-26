@@ -92,7 +92,7 @@
         if ((data.films || []).some(function (x) { return (x.enc && !x.enc.error) || x.pend || (x.versions || []).some(function (v) { return v.enc && !v.enc.error; }); })) encT = setTimeout(encCheck, x_pend() ? 6000 : 20000);
       });
     }
-    if (!emb && !openNext) setTimeout(function () { q.focus(); }, 50); // on tape directement, sans cliquer sur la barre (Gus 26/11)
+    if (!emb && !openNext && !(window.matchMedia && matchMedia("(max-width: 700px), (pointer: coarse)").matches)) setTimeout(function () { q.focus(); }, 50); // (pas sur téléphone : le clavier s'ouvrirait) // on tape directement, sans cliquer sur la barre (Gus 26/11)
     q.addEventListener("input", function () { st.q = q.value; st.n = 60; st.sugI = -1; suggest(); draw(); });
     q.addEventListener("keydown", function (e) {
       var items = sugBox.querySelectorAll("button");
@@ -928,7 +928,8 @@
         var blkLayer = el("div", { class: "tlblks" }), blkKey = "", endL = el("i", { class: "tlend l", title: "Début du film" }), endR = el("i", { class: "tlend r", title: "Fin du film" });
         var dLab = el("div", { class: "tllab" }), det = el("div", { class: "tld" }, [blkLayer, endL, endR, dReg, dPh, hIn, hOut]);
         var time = el("span", { class: "tlt" }), playB = el("button", { type: "button", class: "btn ghost", text: "▶", title: "Lecture / pause (espace)" });
-        tl = el("div", { class: "tl" }, [over, det, dLab]);
+        var nav = tlNav(function () { return zwin; }, function (w) { zwin = w; draw(); }, function () { return dur; });
+        tl = el("div", { class: "tl" }, [over, det, nav.el, dLab]);
         var clamp = function (t) { return Math.max(0, Math.min(dur || 0, t)); };
         // Une seule frise pour l'extrait, sur tout le film (Gus 26/11 : la frise de détail de 30 s se recentrait et donnait un effet de
         // zoom / dézoom en bougeant une poignée). Précision : flèches image par image. La frise du haut ne sert plus qu'à la vignette.
@@ -938,7 +939,7 @@
         var pc = function (t, a, b) { return Math.max(0, Math.min(100, (t - a) / (b - a || 1) * 100)) + "%"; };
         var draw = function () {
           if (!dur) return; var t = player.currentTime, w = win();
-          oPh.style.left = pc(t, 0, dur); time.textContent = fmtF(t) + " / " + fmtF(dur);
+          oPh.style.left = pc(t, 0, dur); time.textContent = fmtF(t) + " / " + fmtF(dur) + (lvl ? "  " + (revOn ? "◀◀ ×" : "▶▶ ×") + TL_RATES[lvl - 1] : ""); nav.draw();
           det.hidden = dLab.hidden = !it.snip || ptab !== "snip"; oReg.hidden = true; over.hidden = !det.hidden;
           var bk = JSON.stringify([parts(), bi, dur]); // les blocs du montage, en repères sur la frise (l'orange = celui qu'on modifie)
           bk += JSON.stringify(zwin);
@@ -957,14 +958,15 @@
         };
         // Lecture à l'envers (Gus 26/11) : Z ou J ; K = pause ; L = lecture normale ; espace = pause puis lecture dans le bon sens. Le navigateur ne sait pas lire à
         // l'envers : on recule l'image à chaque rafraîchissement (dans un montage / une sélection, on reboucle sur la fin du bloc réglé).
-        var revOn = false, revRaf = 0;
+        var revOn = false, revRaf = 0, lvl = 0; // lvl : vitesse (0 normale, 1 à 3 = TL_RATES, Gus 26/11 : E avant, Z / J arrière, appuis répétés = plus vite)
+        var setSpd = function (n) { lvl = n; player.defaultPlaybackRate = player.playbackRate = TL_RATES[n - 1] || 1; };
         var stopRev = function () { revOn = false; cancelAnimationFrame(revRaf); };
-        var startRev = function () {
-          if (!dur) return; stopRev(); loopOn = false; seqOn = false; player.pause(); revOn = true;
+        var startRev = function (n) {
+          if (!dur) return; stopRev(); loopOn = false; seqOn = false; player.pause(); revOn = true; setSpd(n || 1);
           var t0 = performance.now(), from = player.currentTime, A0 = it.snip && ptab === "snip" ? actB() : null, inB = !!A0 && from >= A0.s && from <= A0.s + A0.d + .05;
           (function step() {
             if (!revOn || !player.isConnected) return;
-            var t = from - (performance.now() - t0) / 1000;
+            var t = from - (performance.now() - t0) / 1000 * TL_RATES[lvl - 1];
             if (inB && t < A0.s) { from = A0.s + A0.d; t0 = performance.now(); t = from; }
             else if (t <= 0) { player.currentTime = 0; draw(); stopRev(); return; }
             if (!player.seeking) player.currentTime = t;
@@ -992,7 +994,7 @@
         player.addEventListener("timeupdate", draw);
         player.addEventListener("seeked", draw);
         player.addEventListener("play", function () { stopRev(); playB.textContent = "❚❚"; });
-        player.addEventListener("pause", function () { playB.textContent = "▶"; });
+        player.addEventListener("pause", function () { playB.textContent = "▶"; if (!revOn) setSpd(0); });
         (function tick() { // boucle de l'extrait + mesure de la cadence (image par image exact)
           if (dur && !player.isConnected) return; // fenêtre fermée
           if (seqOn && parts() && !player.paused) { // montage : les blocs bout à bout, en boucle
@@ -1023,6 +1025,7 @@
         drag(over, function (e) { act = "play"; seek(tAt(e, over, 0, dur)); });
         drag(det, function (e) { act = "play"; var w = win(); seek(tAt(e, det, w[0], w[1])); });
         det.addEventListener("wheel", function (e) {
+          if ((e.metaKey || e.ctrlKey) && !e.altKey && dur) { e.preventDefault(); e.stopPropagation(); nav.pan(e); draw(); return; } // Cmd / Ctrl + molette : se déplacer dans la frise zoomée
           if (!e.altKey || !dur) return; e.preventDefault(); e.stopPropagation();
           var w = win(), W = w[1] - w[0], tm = tAt(e, det, w[0], w[1]), f = Math.exp(Math.max(-300, Math.min(300, e.deltaY)) * 0.004), nW = Math.max(Math.min(1, dur), Math.min(dur, W * f));
           if (nW >= dur - .001) zwin = null;
@@ -1037,12 +1040,16 @@
         // champ de texte. Espace = lecture / pause ; flèches = image par image (la vidéo s'arrête, pas de reprise toute seule).
         var onKey = function (e) {
           if (!document.body.contains(box)) { document.removeEventListener("keydown", onKey, true); return; }
-          if (e.target && e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])")) return;
+          if (e.target && e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])") && box.contains(e.target)) return;
+          if (e.target && e.target.blur && e.target.matches && e.target.matches("input, textarea") && !box.contains(e.target)) e.target.blur(); // le champ de recherche du dessous ne doit pas prendre les lettres
           if (e.key === " ") { e.preventDefault(); e.stopPropagation(); if (document.activeElement && document.activeElement.blur && box.contains(document.activeElement)) document.activeElement.blur(); if (!e.repeat) toggle(); return; }
           if (e.key === "Enter" && ptab === "snip" && !it.snipVideo && it.snip && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); if (!e.repeat) addBlock(); return; } // Entrée : ajouter la sélection comme bloc (Gus 26/11)
-          if (/^[zjkl]$/i.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) { // Z / J : à l'envers, K : pause, L : lecture
+          if (/^[ezjkl]$/i.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) { // E : avant, Z / J : à l'envers (appuis répétés : plus vite, 3 au plus), K : pause, L : lecture
             e.preventDefault(); e.stopPropagation(); if (e.repeat) return; var kk = e.key.toLowerCase();
-            if (kk === "k") { stopRev(); player.pause(); } else if (kk === "l") { stopRev(); if (player.paused) toggle(); } else startRev();
+            if (kk === "k") { stopRev(); player.pause(); setSpd(0); }
+            else if (kk === "l") { stopRev(); setSpd(0); if (player.paused) toggle(); }
+            else if (kk === "e") { if (!player.paused && !revOn) setSpd(Math.min(3, lvl + 1)); else { stopRev(); setSpd(0); if (player.paused) toggle(); setSpd(1); } }
+            else startRev(revOn ? Math.min(3, lvl + 1) : 1);
             return;
           }
           if ((e.key === "i" || e.key === "o" || e.key === "I" || e.key === "O") && !e.ctrlKey && !e.metaKey && !e.altKey && ptab === "snip" && !it.snipVideo) { // I / O : début / fin de l'extrait ici (Gus 26/11)

@@ -550,7 +550,7 @@
   // Recadrage : celui du video club ({ z, x, y, t } ; null = aucun), sinon celui de la page (overrides zoom, zoomPos, zoomThumb).
   function vcCrop(c) {
     var e = vcOf(c); if (e.crop !== undefined) return e.crop;
-    var o = state.overrides[c.slate] || {}; if (!(+o.zoom > 1)) return null;
+    var o = state.overrides[c.slate] || {}; if (!(+o.zoom > 1)) return c.crop && +c.crop.z > 1 ? c.crop : null;
     var m = String(o.zoomPos || "").match(/(-?[\d.]+)%\s+(-?[\d.]+)%/);
     return { z: +o.zoom, x: m ? +m[1] : 50, y: m ? +m[2] : 50, t: !!o.zoomThumb };
   }

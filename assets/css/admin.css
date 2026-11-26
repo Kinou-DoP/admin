@@ -1262,3 +1262,9 @@ input.bcn { width: 90px; }
 .hsrc { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; } .hsrc .btn.on { border-color: #ffb36b; color: #ffb36b; } .hmlab { display: block; margin-top: 16px; }
 .hbempty { padding: 14px; margin: 0; }
 .hdtrack { height: 40px; } .hbwrap { margin-top: 4px; }
+/* Navigation d'une frise zoomée (montage + fenêtre d'edit) : la poignée montre la partie affichée, on la tire pour se déplacer */
+.tlnav { position: relative; height: 12px; margin-top: 5px; border-radius: 6px; background: rgba(255,252,235,.08); cursor: pointer; touch-action: none; }
+.tlnav[hidden] { display: none; }
+.tlnav i { position: absolute; top: 1px; bottom: 1px; min-width: 18px; border-radius: 5px; background: rgba(255,252,235,.55); cursor: grab; box-shadow: 0 0 0 1px rgba(0,0,0,.35) inset; }
+.tlnav i:hover, .tlnav i:active { background: rgba(255,252,235,.8); }
+.tlnav i:active { cursor: grabbing; }

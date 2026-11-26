@@ -8,6 +8,22 @@
 // opt.mode === "version" : montage d'UNE vidéo → une nouvelle version « Edit n » (opt.onVersion(version)) ; opt.parts = morceaux de départ ; opt.name ; opt.onCreated(item) (projet).
 // films : [{ key, title, full (version web), dur, size (octets de l'original), mkey (clé du master), dir, prod, dops, types, client }].
 var MONT_MAX = 10e9;
+// Navigation d'une frise zoomée (partagée avec la fenêtre d'edit) : petite barre sous la frise dont la poignée montre la partie affichée ; on la tire pour se déplacer.
+// get() -> [début, fin] ou null (pas de zoom), set([début, fin] ou null), dur() -> durée totale.
+function tlNav(get, set, dur) {
+  var th = el("i", { title: "Partie affichée : tire pour te déplacer dans la frise" }), nv = el("div", { class: "tlnav", hidden: true }, [th]);
+  function draw() { var w = get(), D = dur(); nv.hidden = !w || !D; if (nv.hidden) return; th.style.left = w[0] / D * 100 + "%"; th.style.width = (w[1] - w[0]) / D * 100 + "%"; }
+  function move(a) { var w = get(), D = dur(); if (!w) return; var sp = w[1] - w[0]; a = Math.max(0, Math.min(D - sp, a)); set([a, a + sp]); }
+  nv.addEventListener("pointerdown", function (e) {
+    var w = get(), D = dur(); if (!w || e.button) return; e.preventDefault(); e.stopPropagation(); var r = nv.getBoundingClientRect(), x0 = e.clientX, a0 = w[0];
+    if (e.target !== th) { a0 = (e.clientX - r.left) / r.width * D - (w[1] - w[0]) / 2; move(a0); }
+    try { nv.setPointerCapture(e.pointerId); } catch (x) {}
+    function mv(ev) { move(a0 + (ev.clientX - x0) / r.width * D); } function up() { nv.removeEventListener("pointermove", mv); nv.removeEventListener("pointerup", up); }
+    nv.addEventListener("pointermove", mv); nv.addEventListener("pointerup", up);
+  });
+  return { el: nv, draw: draw, pan: function (e) { var w = get(); if (!w) return false; var d = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY; move(w[0] + d / 600 * (w[1] - w[0])); return true; } };
+}
+var TL_RATES = [1, 2, 4]; // vitesses des touches E (avant) et Z / J (arrière) : 1 appui = normal, 2 = ×2, 3 = ×4 (pas plus)
 function montageWin(films, opt) {
   opt = opt || {};
   var pool = films.filter(function (f) { return f.full && f.dur; }), uid = 0;
@@ -33,12 +49,14 @@ function montageWin(films, opt) {
     function go() { vid.currentTime = clamp(t, 0, f.dur - .04); if (andPlay) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
     if (loaded !== f.full) { loaded = f.full; vid.src = f.full; vid.addEventListener("loadedmetadata", function w() { vid.removeEventListener("loadedmetadata", w); go(); }); } else go();
   }
+  var lvl = 0; // vitesse de lecture : 0 = normale, 1..3 = TL_RATES
+  function setSpd(n) { lvl = n; vid.defaultPlaybackRate = vid.playbackRate = TL_RATES[n - 1] || 1; }
   function stopRev() { revOn = false; cancelAnimationFrame(revRaf); }
-  function pause() { stopRev(); playing = false; vid.pause(); }
+  function pause() { stopRev(); setSpd(0); playing = false; vid.pause(); }
   // Lecture à l'envers (Z / J) : le navigateur ne sait pas, on recule l'image à chaque rafraîchissement.
-  function startRev() {
-    if (loaded !== src.full && !(blocks[cur] && loaded === blocks[cur].f.full)) return; pause(); revOn = true; var t0 = performance.now(), from = vid.currentTime;
-    (function step() { if (!revOn || !ov.isConnected) return; var t = from - (performance.now() - t0) / 1000; if (t <= 0) { vid.currentTime = 0; stopRev(); return; } if (!vid.seeking) vid.currentTime = t; revRaf = requestAnimationFrame(step); })();
+  function startRev(n) {
+    if (loaded !== src.full && !(blocks[cur] && loaded === blocks[cur].f.full)) return; pause(); setSpd(n || 1); revOn = true; var t0 = performance.now(), from = vid.currentTime;
+    (function step() { if (!revOn || !ov.isConnected) return; var t = from - (performance.now() - t0) / 1000 * TL_RATES[lvl - 1]; if (t <= 0) { vid.currentTime = 0; stopRev(); return; } if (!vid.seeking) vid.currentTime = t; revRaf = requestAnimationFrame(step); })();
   }
   function playSrc() { stopRev(); mode = "src"; playing = true; var t = loaded === src.full ? vid.currentTime : act().s; load(src, t, true); ph.hidden = true; }
   function playSeq(from) {
@@ -60,7 +78,7 @@ function montageWin(films, opt) {
   function drawCursor() { // repères de lecture : sur la frise de la source, et sur la règle du montage (mode montage)
     var pp = pcz(vid.currentTime); dPh.hidden = loaded !== src.full || mode === "seq" && blocks[cur] && blocks[cur].f !== src || pp < 0 || pp > 100; if (!dPh.hidden) dPh.style.left = pp + "%";
     var b = blocks[cur]; ph.hidden = !(mode === "seq" && b && loaded === b.f.full); if (!ph.hidden) ph.style.left = (before(cur) + clamp(vid.currentTime - b.s, 0, b.d)) / total() * 100 + "%";
-    tcur.textContent = (loaded === src.full ? fmt(vid.currentTime) : "") + (mode === "seq" && b ? " · montage " + fmt(before(cur) + clamp(vid.currentTime - b.s, 0, b.d)) + " / " + fmt(total()) : "");
+    tcur.textContent = (lvl ? (revOn ? "◀◀ ×" : "▶▶ ×") + TL_RATES[lvl - 1] + " · " : "") + (loaded === src.full ? fmt(vid.currentTime) : "") + (mode === "seq" && b ? " · montage " + fmt(before(cur) + clamp(vid.currentTime - b.s, 0, b.d)) + " / " + fmt(total()) : "");
   }
   // ---------- frise des blocs du montage ----------
   function drawBar() {
@@ -75,7 +93,7 @@ function montageWin(films, opt) {
       bar.appendChild(w);
     });
     if (!blocks.length) bar.appendChild(el("span", { class: "hint hbempty", text: "Aucun bloc : règle une sélection sur la vidéo ci-dessus puis « + Ajouter ce bloc »." }));
-    drawRuler(); info.textContent = blocks.length + " bloc" + (blocks.length > 1 ? "s" : "") + " · durée du montage " + fmt(total()) + " · I / O : début / fin de la sélection · Entrée : ajouter le bloc · S : couper le bloc choisi · Suppr : retirer · espace : lecture · J ou Z : à l'envers · K : pause · L : lecture";
+    drawRuler(); info.textContent = blocks.length + " bloc" + (blocks.length > 1 ? "s" : "") + " · durée du montage " + fmt(total()) + " · I / O : début / fin de la sélection · Entrée : ajouter le bloc · S : couper le bloc choisi · Suppr : retirer · espace : lecture · E : avant (1 à 3 appuis = plus vite) · Z ou J : arrière (idem) · K : pause · L : lecture";
     drawDet(); drawExp(); drawAdd();
   }
   hReorder(bar, function (from, to) { var cb = sel >= 0 ? blocks[sel] : null, x = blocks.splice(from, 1)[0]; blocks.splice(to, 0, x); sel = cb ? blocks.indexOf(cb) : -1; drawBar(); });
@@ -99,7 +117,8 @@ function montageWin(films, opt) {
   var dTrack = el("div", { class: "hdtrack" }), dReg = el("i", { class: "hdreg" }), dIn = el("b", { class: "hdh in", title: "Début" }), dOut = el("b", { class: "hdh out", title: "Fin" }), dPh = el("i", { class: "hdph" }), dLab = el("div", { class: "hdlab" });
   var dBlk = el("div", { class: "hdblks" }), tcur = el("span", { class: "hdtime" }), endL = el("i", { class: "tlend l", title: "Début de la vidéo" }), endR = el("i", { class: "tlend r", title: "Fin de la vidéo" });
   dTrack.appendChild(dBlk); dTrack.appendChild(endL); dTrack.appendChild(endR); dTrack.appendChild(dReg); dTrack.appendChild(dPh); dTrack.appendChild(dIn); dTrack.appendChild(dOut);
-  det.appendChild(srcTabs); det.appendChild(dTrack); det.appendChild(dLab);
+  var nav = tlNav(function () { return zw; }, function (w) { zw = w; drawDet(); }, function () { return src.dur; });
+  det.appendChild(srcTabs); det.appendChild(dTrack); det.appendChild(nav.el); det.appendChild(dLab);
   function seg(el0, s0, d0) { var l = clamp(pcz(s0), 0, 100), r = clamp(pcz(s0 + d0), 0, 100); el0.hidden = r <= l; el0.style.left = l + "%"; el0.style.width = Math.max(0, r - l) + "%"; }
   var zsrc = null;
   function drawDet() {
@@ -110,7 +129,7 @@ function montageWin(films, opt) {
     dIn.style.left = pcz(a.s) + "%"; dOut.style.left = pcz(a.s + a.d) + "%"; dIn.hidden = a.s < w[0] || a.s > w[1]; dOut.hidden = a.s + a.d < w[0] || a.s + a.d > w[1];
     endL.hidden = w[0] > 0; endR.hidden = w[1] < D - .001; // traits vifs : le début / la fin de la vidéo sont visibles (pas zoomé au maximum de ce côté)
     dLab.textContent = (src.title || "") + " · " + (sel >= 0 ? "bloc " + (sel + 1) + " (en modification)" : "sélection") + " : " + fmt(a.s) + " → " + fmt(a.s + a.d) + " (" + a.d.toFixed(1).replace(".", ",") + " s) sur " + fmt(D) + (zw ? " · zoom × " + (D / (w[1] - w[0])).toFixed(1).replace(".", ",") : "") + " · Option / Alt + molette = zoom";
-    dLab.appendChild(tcur);
+    dLab.appendChild(tcur); nav.draw();
   }
   function drawAdd() {
     srcTabs.textContent = "";
@@ -147,7 +166,8 @@ function montageWin(films, opt) {
   }
   hoverCursor(dTrack, function (e) { return tOf(e, dTrack, zwin()[0], zwin()[1]); });
   scrubber(dTrack, function (e) { mode = "src"; load(src, tOf(e, dTrack, zwin()[0], zwin()[1]), false); }, function (e) { return e.target.closest(".hdh"); });
-  dTrack.addEventListener("wheel", function (e) { // Option / Alt + molette : zoom autour de la souris
+  dTrack.addEventListener("wheel", function (e) { // Option / Alt + molette : zoom autour de la souris ; Cmd / Ctrl + molette : déplacement dans la frise zoomée
+    if ((e.metaKey || e.ctrlKey) && !e.altKey) { e.preventDefault(); e.stopPropagation(); nav.pan(e); return; }
     if (!e.altKey) return; e.preventDefault(); e.stopPropagation(); var D = src.dur, w = zwin(), r = dTrack.getBoundingClientRect(), t = w[0] + clamp((e.clientX - r.left) / r.width, 0, 1) * (w[1] - w[0]);
     var span = clamp((w[1] - w[0]) * Math.exp((e.deltaY || e.deltaX) * .002), Math.min(1, D), D), f = (t - w[0]) / (w[1] - w[0]), a = clamp(t - f * span, 0, D - span);
     zw = span >= D - .001 ? null : [a, a + span]; drawDet();
@@ -193,11 +213,13 @@ function montageWin(films, opt) {
   function onKey(e) {
     if (!ov.isConnected) { window.removeEventListener("keydown", onKey, true); return; }
     var k = e.key;
-    if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea")) { if (k === "Enter" || k === "Escape") { e.stopImmediatePropagation(); e.target.blur(); } else e.stopImmediatePropagation(); return; }
+    if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && !box.contains(e.target)) e.target.blur(); // champ de recherche du dessous
+    if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && box.contains(e.target)) { if (k === "Enter" || k === "Escape") { e.stopImmediatePropagation(); e.target.blur(); } else e.stopImmediatePropagation(); return; }
     if ((e.ctrlKey || e.metaKey) && /^[zZ]$/.test(k)) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); return; } // pas d'annulation de la fenêtre du dessous
-    if (/^[zZjJ]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) { if (revOn) stopRev(); else startRev(); } return; }
+    if (/^[zZjJ]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) startRev(revOn ? Math.min(3, lvl + 1) : 1); return; }
+    if (/^[eE]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (e.repeat) return; if (playing && !revOn) setSpd(Math.min(3, lvl + 1)); else { stopRev(); setSpd(0); if (mode === "seq") playSeq(); else playSrc(); setSpd(1); } return; }
     if (/^[kK]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pause(); return; }
-    if (/^[lL]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!playing) { if (mode === "seq") playSeq(); else playSrc(); } return; }
+    if (/^[lL]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); setSpd(0); if (!playing || revOn) { if (mode === "seq") playSeq(); else playSrc(); } return; }
     if (k === "Escape") { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); close(); return; }
     if (k === " ") {  stopRev(); e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (playing) pause(); else if (mode === "seq") playSeq(); else playSrc(); return; }
     if (k === "Enter" && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) addBlock(); return; }
