@@ -94,9 +94,13 @@ async function film(j, dir, tell) {
     "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-movflags", "+faststart", web], "version web",
     (t) => { const m = t.match(/out_time_us=(\d+)/g); if (m) tell("web", Math.min(99, Math.round(+m[m.length - 1].split("=")[1] / 1e6 / p.dur * 100))); });
   console.log("  version web : " + Math.round(fs.statSync(web).size / 1e6) + " Mo en " + Math.round((Date.now() - t0) / 1000) + " s");
+  return afterWeb(j, dir, tell, web, p, fs.statSync(master).size);
+}
+// Suite commune d'un film encodé et d'un montage : dépôt de la version web, extrait de 5 s, vignettes.
+async function afterWeb(j, dir, tell, web, p, os) {
   const base = "nous/" + j.id + "/", a = {};
   a.full = await put(web, base + "web.mp4", "video/mp4"); a.ws = fs.statSync(web).size; // poids de la version web (octets), pour l'affichage « original → web »
-  if (j.web) return Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h, os: fs.statSync(master).size }); // remplacement : vignette et extrait du film gardés
+  if (j.web) return Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h, os }); // remplacement : vignette et extrait du film gardés
   tell("extrait", 0);
   const at = j.at >= 0 && j.at < 1 ? j.at : 2 / 3, d = Math.max(0.5, Math.min(j.d || 5, 30, p.dur));
   const s = r3(Math.max(0, Math.min(p.dur * at, p.dur - d)));
@@ -107,8 +111,54 @@ async function film(j, dir, tell) {
   const im = await frames(web, a.thumbT, dir);
   a.img = await put(im[800], base + "vignette-800.webp", "image/webp");
   a.img1600 = await put(im[1600], base + "vignette-1600.webp", "image/webp");
-  Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h, os: fs.statSync(master).size });
+  Object.assign(a, { dur: r3(p.dur), w: p.w, h: p.h });
+  if (os) a.os = os;
   return a;
+}
+async function hasAudio(file) { const r = await run("ffprobe", ["-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_type", "-of", "csv=p=0", file]); return r.code === 0 && /audio/.test(r.out); }
+// Montage / bout à bout (Gus 26/11) : parts = [{ key | src, s, d }, …] bout à bout, en 1080p avec le son. quality « original » : on coupe dans les masters (clé depot/…, un
+// seul master sur le disque à la fois, effacé après usage) ; « web » : on coupe dans les versions web (adresse nous/…/web.mp4, lues à distance). Tous les morceaux sont
+// encodés avec les mêmes réglages puis collés sans réencodage ; le résultat est un film comme les autres (version web, extrait, vignettes).
+async function edit(j, dir, tell) {
+  const parts = Array.isArray(j.parts) ? j.parts : [], orig = j.quality !== "web";
+  if (!parts.length || parts.length > 60) throw new Error("montage vide ou trop long");
+  let total = 0;
+  for (const x of parts) {
+    if (!(+x.d >= 0.2) || !(+x.s >= 0)) throw new Error("morceau invalide");
+    if (orig ? !KEY.test(x.key || "") : !SRC.test(x.src || "")) throw new Error(orig ? "master introuvable" : "adresse de vidéo refusée");
+    total += +x.d;
+  }
+  if (total > 7200) throw new Error("montage de plus de 2 h");
+  const segs = new Array(parts.length), groups = new Map();
+  parts.forEach((x, i) => { const k = orig ? x.key : x.src; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(i); });
+  let done = 0, fps = 0, n = 0; tell("lecture", 0);
+  for (const [k, idx] of groups) {
+    let file = k;
+    if (orig) { file = join(dir, "master" + (n++)); await must("aws", ["s3", "cp", "s3://" + BUCKET + "/" + k, file, "--only-show-errors"], "lecture du master"); }
+    else file = await source(k);
+    const pr = await probe(file); if (!pr.dur) throw new Error("vidéo illisible");
+    const au = await hasAudio(file);
+    if (!fps) { const r = await run("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=r_frame_rate", "-of", "csv=p=0", file]); const m = /(\d+)\/(\d+)/.exec(r.out || ""); fps = m && +m[2] ? Math.min(60, Math.max(12, Math.round(+m[1] / +m[2]))) : 25; }
+    for (const i of idx) {
+      const x = parts[i], s = Math.max(0, Math.min(+x.s, pr.dur - 0.2)), d = Math.min(+x.d, pr.dur - s), out = join(dir, "seg" + i + ".mp4");
+      const args = ["-y", "-v", "error", "-ss", String(s), "-t", String(d), "-i", file];
+      if (!au) args.push("-f", "lavfi", "-t", String(d), "-i", "anullsrc=r=48000:cl=stereo");
+      args.push("-map", "0:v:0", "-map", au ? "0:a:0" : "1:a:0",
+        "-vf", "scale=1920:1080:force_original_aspect_ratio=decrease:flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,setsar=1,fps=" + fps + ",format=yuv420p",
+        "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-profile:v", "high", "-maxrate", "12M", "-bufsize", "24M", "-g", String(fps),
+        "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2", "-shortest", out);
+      await must("ffmpeg", args, "morceau " + (i + 1));
+      segs[i] = out; done += d; tell("web", Math.min(99, Math.round(done / total * 100)));
+    }
+    if (orig) fs.rmSync(file, { force: true });
+  }
+  fs.writeFileSync(join(dir, "liste.txt"), segs.map((f) => "file '" + f + "'").join("\n") + "\n");
+  const web = join(dir, "web.mp4");
+  await must("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", join(dir, "liste.txt"), "-c", "copy", "-movflags", "+faststart", web], "assemblage");
+  segs.forEach((f) => fs.rmSync(f, { force: true }));
+  const p = await probe(web); if (!p.dur) throw new Error("montage illisible");
+  console.log("  montage : " + parts.length + " morceaux, " + Math.round(p.dur) + " s, " + Math.round(fs.statSync(web).size / 1e6) + " Mo");
+  return afterWeb(j, dir, tell, web, p, 0);
 }
 async function snip(j, dir) {
   const src = await source(j.src);
@@ -133,7 +183,7 @@ async function thumb(j, dir) {
   const base = "nous/" + j.id + "/vignette-" + Math.round(t * 1000);
   return { img: await put(im[800], base + "-800.webp", "image/webp"), img1600: await put(im[1600], base + "-1600.webp", "image/webp"), thumbT: r3(t) };
 }
-const WORK = { film, snip, thumb };
+const WORK = { film, edit, snip, thumb };
 
 // Enregistrement d'une demande (réponse, avancement) : un commit par-dessus la dernière version de main. On repart toujours de
 // main (fetch + reset) et on réécrit le fichier depuis la mémoire : jamais de rebase qui reste coincé (bug du 25/11 : identité git
