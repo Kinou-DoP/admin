@@ -148,7 +148,7 @@
       });
       cb.addEventListener("change", function () { if (cb.checked) st.sel[f.key] = 1; else delete st.sel[f.key]; st.last = f; draw(); });
       function lnk(type, v) { return el("button", { type: "button", class: "blink", text: v, title: "Filtrer : " + BIB_T[type] + " " + v, on: { click: function (e) { e.stopPropagation(); st.chips.push({ type: type, value: v }); draw(); } } }); }
-      var add = el("button", { type: "button", class: "btn ghost badd", text: inBand(f) ? "✓" : "+", title: "Ajouter à la bande", on: { click: function (e) { e.stopPropagation(); addKeys([f.key], band.items.length, th); } } });
+      var add = el("button", { type: "button", class: "btn ghost badd", text: inBand(f) ? "−" : "+", title: inBand(f) ? "Retirer de la bande" : "Ajouter à la bande", on: { click: function (e) { e.stopPropagation(); if (inBand(f)) removeKey(f.key); else addKeys([f.key], band.items.length, th); } } });
       var r = el("div", { class: "brow" + (st.sel[f.key] ? " sel" : "") + (inBand(f) ? " inband" : "") }, [
         el("span", { class: "bnum", text: String(i + 1) }), cb, th,
         el("div", { class: "bt" }, [f.client ? el("small", { class: "bclient", text: f.client }) : null, el("strong", { text: f.title || "(sans titre)" }), el("small", {}, f.pages.map(function (p, j) { return el("span", {}, [j ? " · " : "", p.name]); })),
@@ -170,7 +170,7 @@
     // Lecteur simple de la bibliothèque : le film complet avec le son ; clic à côté, croix ou Échap = fermer.
     function bibPlay(f) { // aperçu avec ‹ › dans la liste affichée et « + » = ajouter à la bande (Gus 26/11)
       var l = st.shown && st.shown.indexOf(f) > -1 ? st.shown : [f];
-      navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à la bande", inLabel: "Dans la bande", has: inBand, add: function (x) { if (!inBand(x)) addKeys([x.key], band.items.length); } });
+      navPlayer(l, l.indexOf(f), { addLabel: "Ajouter à la bande", inLabel: "Dans la bande", has: inBand, add: function (x) { if (!inBand(x)) addKeys([x.key], band.items.length); }, remove: function (x) { removeKey(x.key); } });
     }
     // Infos d'un film de la bibliothèque : même fenêtre que les retouches d'une bande ; enregistrées dans data/bibli/edits.json
     // (seulement ce qui diffère des pages), reprises par les films ajoutés ensuite aux bandes et appliquées aussi au site
@@ -464,6 +464,7 @@
       right.appendChild(ul);
       foot = el("div", { class: "bfoot" }); right.appendChild(foot); drawFoot();
     }
+    function removeKey(k) { var j = band.items.findIndex(function (x) { return x.key === k; }); if (j > -1) { band.items.splice(j, 1); changed(); drawBand(); if (data) draw(); } }
     function remove(i, li) {
       li.classList.add("out");
       setTimeout(function () { band.items.splice(i, 1); changed(); drawBand(); if (data) draw(); }, 180);
@@ -1010,6 +1011,7 @@
           if (!document.body.contains(box)) { document.removeEventListener("keydown", onKey, true); return; }
           if (e.target && e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])")) return;
           if (e.key === " ") { e.preventDefault(); e.stopPropagation(); if (document.activeElement && document.activeElement.blur && box.contains(document.activeElement)) document.activeElement.blur(); if (!e.repeat) toggle(); return; }
+          if (e.key === "Enter" && ptab === "snip" && !it.snipVideo && it.snip && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); if (!e.repeat) addBlock(); return; } // Entrée : ajouter la sélection comme bloc (Gus 26/11)
           if (/^[zjkl]$/i.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) { // Z / J : à l'envers, K : pause, L : lecture
             e.preventDefault(); e.stopPropagation(); if (e.repeat) return; var kk = e.key.toLowerCase();
             if (kk === "k") { stopRev(); player.pause(); } else if (kk === "l") { stopRev(); if (player.paused) toggle(); } else startRev();
@@ -1470,7 +1472,7 @@
           el("span", { class: "label", text: "Ou une image du film" }), thumbs, histImgL, histImg, offImg]);
         snipPane = el("div", { class: "ppane", hidden: true }, [el("div", { class: "tlrow" }, [snipB, (addB = el("button", { type: "button", class: "btn ghost", text: "+ Ajouter ce bloc", title: "Range la sélection (poignées, I / O) dans le montage ; tu règles ensuite la suivante", on: { click: addBlock } })), el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire les blocs bout à bout", on: { click: playSeq } }), upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp, el("span", { class: "tlgrow" }), valB]), snipLine, blocksBox,
           histSnipL, histSnip, offSnip]);
-        box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s) · espace = lecture / pause · Z ou J = à l'envers, K = pause, L = lecture · I / O = début / fin de l'extrait" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
+        box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s) · espace = lecture / pause · Z ou J = à l'envers, K = pause, L = lecture · I / O = début / fin de l'extrait · Entrée = ajouter le bloc" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
         setTab("thumb");
       }
       // Lien de partage de ce film seul (Gus 23/11, comme sur Slate) : une « bande » d'un seul film, centrée, même lien court chiffré

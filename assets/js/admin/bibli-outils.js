@@ -37,7 +37,17 @@
       var cred = [f.dir ? "Directed by " + f.dir : "", f.prod, main.length ? "DoP " + main.join(" & ") : ""].concat(oth.map(function (d) { return ro[d] + " " + d; })).filter(Boolean);
       var meta = [f.client ? "Client : " + f.client : "", (f.types || []).join(", "), f.at ? String(f.at).slice(0, 10) : ""].filter(Boolean).join(" · ");
       var gal = (f.images || []).length && !src ? el("div", { class: "bimggrid" }, f.images.map(function (u) { return el("img", { src: u, loading: "lazy" }); })) : null;
-      var has = o && o.has && o.has(f), addB = o && o.add ? el("button", { type: "button", class: "btn" + (has ? " ghost" : " primary"), text: has ? "✓ " + (o.inLabel || "Déjà ajouté") : "+ " + (o.addLabel || "Ajouter"), disabled: has ? true : null, on: { click: function () { o.add(f, addB); draw(); } } }) : null;
+      // « + Ajouter à la bande » devient « − Retirer de la bande » (Gus 26/11) ; seul le bouton change : la vidéo ne repart plus (avant, tout était redessiné).
+      var addB = null;
+      if (o && o.add) {
+        addB = el("button", { type: "button", class: "btn" });
+        var paintB = function () {
+          var h = !!(o.has && o.has(f)); addB.className = "btn" + (h ? " ghost" : " primary");
+          addB.textContent = h ? (o.remove ? "− Retirer de la bande" : "✓ " + (o.inLabel || "Déjà ajouté")) : "+ " + (o.addLabel || "Ajouter"); addB.disabled = h && !o.remove ? true : null;
+        };
+        addB.addEventListener("click", function () { if (o.has && o.has(f)) { if (o.remove) o.remove(f); } else o.add(f, addB); paintB(); });
+        paintB();
+      }
       var nav = el("div", { class: "bpnav" }, [
         el("button", { type: "button", class: "btn ghost", text: "‹", title: "Film d'avant (←)", disabled: i ? null : true, on: { click: function () { go(-1); } } }),
         addB || el("span"), el("span", { class: "bpcount", text: (i + 1) + " / " + list.length }),
