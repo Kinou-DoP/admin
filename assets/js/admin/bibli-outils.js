@@ -152,10 +152,12 @@
     Object.keys(gs).forEach(function (g) {
       var ms = gs[g].sort(function (a, b) { return (a.gi || 0) - (b.gi || 0); }); if (ms.length < 2) return;
       ms.forEach(function (m) {
-        if ((m.extras || []).some(function (e) { return !e.auto; })) return; // réglé à la main
         var prev = {}; (m.extras || []).forEach(function (e) { if (e.key) prev[e.key] = e; });
         var ex = ms.map(function (z) { var n = extraFromFilm(z); n.auto = true; if (z === m) n.self = true; if (prev[z.key] && prev[z.key].hide) n.hide = prev[z.key].hide.slice(); return n; }).filter(function (n) { return n.full || n.video || n.self; }); // « masqué ici » gardé
         if (ex.length < 2) return;
+        // Lignes réglées à la main (ajoutées, retirées, ou à vous) : gardées. Mêmes films que le lot (même si l'ordre diffère) : lien repris, ordre du lot.
+        var cur = m.extras || [];
+        if (cur.length && !(cur.every(function (e) { return e.key; }) && cur.map(function (e) { return e.key; }).sort().join() === ex.map(function (n) { return n.key; }).sort().join())) return;
         m.extras = ex; if (m._orig) m._orig.extras = JSON.parse(JSON.stringify(ex.map(function (n) { var c = Object.assign({}, n); delete c.hide; return c; })));
       });
     });

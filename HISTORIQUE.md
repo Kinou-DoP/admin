@@ -405,3 +405,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Video club : la barre de recherche a le focus à l'arrivée.
 - 26/11 — Video club : Ctrl / Cmd + Z (bande) ne marchait plus à cause du focus automatique de la recherche (champ = ignoré) ; ignoré seulement si la barre contient du texte.
 - 26/11 — Vidéos d'un même import : ordre commun (glisser change l'ordre pour tout le lot), masquages gardés au recalcul.
+- 26/11 — Lot de vidéos : un film dont les lignes ont les mêmes vidéos que le lot (même réglées à la main avant) reste lié (`bibGroups`, onChange) ; ordre du lot repris de la fenêtre de Prince de ma ville.

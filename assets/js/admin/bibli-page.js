@@ -223,9 +223,12 @@
           // Lignes ajoutées / retirées / ajoutées à la main : lien rompu pour ce film (lignes sans `auto`, enregistrées dans edits.json).
           if (it.extras && base.extras && JSON.stringify(it.extras) !== JSON.stringify(base.extras)) {
             var kk = function (l) { return l.map(function (x) { return x.key || ""; }); }, kb = kk(base.extras), ki = kk(it.extras);
-            var linked = f.grp && it.extras.every(function (x) { return x.auto; }) && kb.slice().sort().join() === ki.slice().sort().join();
+            var linked = f.grp && it.extras.every(function (x) { return x.key; }) && kb.slice().sort().join() === ki.slice().sort().join();
             if (!linked) it.extras.forEach(function (x) { delete x.auto; });
-            else if (kb.join() !== ki.join()) { grpOrder(f.grp, ki); base.extras = JSON.parse(JSON.stringify(it.extras)).map(function (x) { delete x.hide; return x; }); }
+            else {
+              it.extras.forEach(function (x) { x.auto = true; });
+              if (kb.join() !== ki.join()) { grpOrder(f.grp, ki); base.extras = JSON.parse(JSON.stringify(it.extras)).map(function (x) { delete x.hide; return x; }); }
+            }
           }
           var e = diff(), keep = f._orig;
           if (!keep) { f._orig = {}; BIB_EK.forEach(function (k) { f._orig[k] = base[k] === undefined ? undefined : JSON.parse(JSON.stringify(base[k])); }); }
