@@ -912,10 +912,36 @@
         "Music Video"
       ],
       "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxkemsshe6dgq/vignette-95845-800.webp",
+      "snip": {
+        "s": 30.953,
+        "d": 1.883,
+        "parts": [
+          {
+            "s": 30.953,
+            "d": 1.883
+          },
+          {
+            "s": 86.722,
+            "d": 3.078
+          },
+          {
+            "s": 84.313,
+            "d": 2.405
+          }
+        ]
+      },
       "thumbT": 95.845,
       "hist": {
         "img": [
           "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/vignette-800.webp"
+        ],
+        "snip": [
+          {
+            "s": 119.013,
+            "d": 5,
+            "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/extrait-119013.mp4",
+            "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4"
+          }
         ]
       }
     },
