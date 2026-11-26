@@ -150,4 +150,5 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   « utiliser la version compressée ». `mkey` (clé du master) est écrit à l'import (et a été rempli pour les films déjà importés). Phase 2 (à faire) : « edit moi si tu peux » sur toute vidéo,
   versions « Encodage 1 » / « Edit n » renommables, choix de la version affichée par le site, « créer un nouveau projet avec cet edit ».
 - **Frise des blocs de l'extrait** : horizontale, largeur de chaque bloc = sa durée, glisser pour réordonner. Fenêtre d'edit plus large (1500 px).
+- **Suppression en nombre** (Gus 26/11) : cocher des films dans la liste → « Supprimer la sélection (n) » (`deleteSelection`, `libDeleteMany` : un commit pour library.json + edits.json, puis les liens de partage) ; seulement les films importés (ceux de Slate / des pages sont ignorés, dit dans la confirmation).
 

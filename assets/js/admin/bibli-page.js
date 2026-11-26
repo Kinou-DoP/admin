@@ -129,6 +129,7 @@
       if (nSel) {
         info.appendChild(el("button", { type: "button", class: "btn ghost bselb", text: "Ajouter la sélection à la bande (" + nSel + ")", on: { click: function () { addKeys(Object.keys(st.sel), band.items.length, info); } } }));
         info.appendChild(el("button", { type: "button", class: "btn ghost", text: "Tout désélectionner", on: { click: function () { st.sel = {}; draw(); } } }));
+        if (canWeb) info.appendChild(el("button", { type: "button", class: "btn ghost bdelb", text: "Supprimer la sélection (" + nSel + ")", title: "Supprime du video club les films importés cochés (confirmation avant)", on: { click: deleteSelection } }));
       }
       list.textContent = "";
       l.slice(0, st.n).forEach(function (f, i) { list.appendChild(row(f, i)); });
@@ -1654,21 +1655,34 @@
     // Film pas encore enregistré mais déjà utilisable (Gus 26/11 : la fenêtre des crédits s'ouvre tout de suite à l'import, pendant l'envoi).
     // Supprimer un film importé du video club (Gus 26/11) : sa fiche (library.json), ses retouches (edits.json) et son lien de partage ; les autres vidéos
     // importées avec lui ne sont pas touchées. Rien n'est effacé chez Amazon (le robot n'a pas le droit d'effacer).
-    function libDelete(f) {
-      var by = user && user.login || "", code = null;
-      delete libQ.todo[f.key]; unsoon("libEdits");
+    function libDelete(f) { return libDeleteMany([f]); }
+    // Plusieurs films d'un coup (liste du video club, sélection cochée) : un seul enregistrement pour les fiches et les retouches, puis les liens de partage.
+    function libDeleteMany(fl) {
+      var by = user && user.login || "", keys = fl.map(function (f) { return f.key; });
+      keys.forEach(function (k) { delete libQ.todo[k]; }); unsoon("libEdits");
       return nGet(BAND_NOTES + "films.json").catch(function () { return null; }).then(function (t) {
-        code = ((t ? JSON.parse(t) : {})[f.key] || {}).code;
-        return commit([{ path: BIB_LIB, edit: function (x) { if (!x) return null; var l = JSON.parse(x); l.items = (l.items || []).filter(function (y) { return y.key !== f.key; }); return json(l); } },
-          { path: BIB_EDITS, edit: function (x) { if (!x) return null; var o = JSON.parse(x); if (o.films) delete o.films[f.key]; return json(o); } }], "Video club : film supprimé (admin, " + by + ")");
+        var m = t ? JSON.parse(t) : {}, codes = keys.map(function (k) { return (m[k] || {}).code; }).filter(Boolean);
+        return commit([{ path: BIB_LIB, edit: function (x) { if (!x) return null; var l = JSON.parse(x); l.items = (l.items || []).filter(function (y) { return keys.indexOf(y.key) < 0; }); return json(l); } },
+          { path: BIB_EDITS, edit: function (x) { if (!x) return null; var o = JSON.parse(x); if (o.films) keys.forEach(function (k) { delete o.films[k]; }); return json(o); } }],
+          "Video club : " + keys.length + " film" + (keys.length > 1 ? "s supprimés" : " supprimé") + " (admin, " + by + ")").then(function () { return codes; });
+      }).then(function (codes) {
+        if (!codes.length) return;
+        return Promise.all(codes.map(bandKeys)).then(function (ks) { return commit(ks.map(function (k) { return { path: BAND_PUB + k.id + ".json", remove: true }; }), "Liens de films supprimés (admin, " + by + ")").catch(function () {}); })
+          .then(function () { return nEdit(BAND_NOTES + "films.json", function (t) { var m = t ? JSON.parse(t) : {}; keys.forEach(function (k) { delete m[k]; }); return json(m); }, "Films partagés : suppression (admin, " + by + ")"); }).catch(function () {});
       }).then(function () {
-        if (!code) return;
-        return bandKeys(code).then(function (k) { return commit([{ path: BAND_PUB + k.id + ".json", remove: true }], "Lien de film supprimé (admin, " + by + ")").catch(function () {}); })
-          .then(function () { return nEdit(BAND_NOTES + "films.json", function (t) { var m = t ? JSON.parse(t) : {}; delete m[f.key]; return json(m); }, "Films partagés : suppression (admin, " + by + ")"); }).catch(function () {});
-      }).then(function () {
-        data.films = data.films.filter(function (x) { return x.key !== f.key; }); if (data.lib) data.lib.items = (data.lib.items || []).filter(function (x) { return x.key !== f.key; });
-        bibGroups(data.films);
+        data.films = data.films.filter(function (x) { return keys.indexOf(x.key) < 0; }); if (data.lib) data.lib.items = (data.lib.items || []).filter(function (x) { return keys.indexOf(x.key) < 0; });
+        keys.forEach(function (k) { delete st.sel[k]; }); bibGroups(data.films);
       });
+    }
+    // Supprimer la sélection cochée dans la liste (Gus 26/11) : seulement les films importés ; ceux de Slate / des pages ne se suppriment pas d'ici.
+    function deleteSelection() {
+      var fl = Object.keys(st.sel).map(filmOf).filter(Boolean), inLib = {}; ((data.lib && data.lib.items) || []).forEach(function (x) { inLib[x.key] = 1; });
+      var ok = fl.filter(function (f) { return inLib[f.key]; }), skip = fl.length - ok.length;
+      if (!ok.length) { alert("Ces films viennent de Slate ou des pages du site : ils ne se suppriment pas d'ici (seulement les films importés dans le video club)."); return; }
+      var names = ok.slice(0, 6).map(function (f) { return "• " + (f.title || f.key); }).join("\n") + (ok.length > 6 ? "\n• … et " + (ok.length - 6) + " autre" + (ok.length - 6 > 1 ? "s" : "") : "");
+      if (!confirm("Supprimer " + ok.length + " film" + (ok.length > 1 ? "s" : "") + " du video club ?\n\n" + names + (skip ? "\n\n(" + skip + " film" + (skip > 1 ? "s" : "") + " de Slate ou des pages " + (skip > 1 ? "ne sont pas supprimés" : "n'est pas supprimé") + ".)" : "") + "\n\nLes liens de partage de ces films ne marcheront plus. Les autres vidéos importées avec eux restent. Les fichiers chez Amazon ne sont pas effacés.")) return;
+      info.textContent = "Suppression…";
+      libDeleteMany(ok).then(function () { draw(); }, function (e) { alert("Pas supprimé : " + e.message); draw(); });
     }
     // Bout à bout des vidéos liées (Gus 26/11) : fenêtre de montage (montage.js) ; le nouveau projet apparaît dans le video club à la fin de l'encodage.
     function openMontage(f) {
