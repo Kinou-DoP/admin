@@ -370,14 +370,16 @@
     },
     "emwxgq59g3y3nbm": {
       "title": "Camille Lellouche • J'ai pas dit",
-      "dir": "Séraphin Maroy",
-      "prod": "Fauve Film",
-      "dops": [
-        "Chris Alessi"
-      ],
       "types": [
         "Music Video"
-      ]
+      ],
+      "pend": {
+        "thumb": {
+          "path": "data/encode/rapide-1795700418185-f2ibn.json",
+          "id": "mwxlnybtc0wej3",
+          "t": 143.487
+        }
+      }
     },
     "s11554": {
       "extras": [
