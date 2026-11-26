@@ -340,11 +340,18 @@
       }
     },
     "s8458": {
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxftb772szcfk/vignette-18656-800.webp",
+      "thumbT": 18.656,
+      "hist": {
+        "img": [
+          "https://images.slatecdn.net/ksHp0tfs52Yw9OLxblV0-aJedOJGrWrO5jchV7T6gvU/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NDU4LTY2MDE2ZTRh/MmEyNzM0LjQxNTQy/ODMyLWFlMjc0N2Iy/NmY3MTE2NTc0NzEz/YmY1Yjg3MDBjOGI0/LmpwZw.webp"
+        ]
+      },
       "crop": {
         "z": 1.26,
         "x": 50,
         "y": 50,
-        "t": false
+        "t": true
       }
     }
   }
