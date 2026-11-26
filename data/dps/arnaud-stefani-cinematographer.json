@@ -52,12 +52,28 @@
   ],
   "clips": [
     {
-      "title": "PANTENE",
-      "sub": "Audrey Mascina\nThe Gang House SL",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11632/714d484c-e820-11f1-952e-02ffedfede17.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/034347fa-9cb7-491a-bfa9-d5def3c92a54-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/CdoD0ERg-yZdRRRQoqiZ3h6A1f-J2aQN17B5MWEzaIg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NThlZGE4NS0yNjIy/LTQxN2ItODNmZS1h/MjhlYWFlY2U3OGIv/MTc5NTUzNjEyMDY0/My5qcGc.webp",
-      "slate": 11632,
+      "title": "DESSANGE",
+      "sub": "Salim Boujtita\nEddy Production",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9153/3ca53676-961c-11ef-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/48dc3cff-3606-4b68-b28f-fecd66b4a655-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/2ADyKaF1gpVS9nj0y8yDXhVEdjY-s_WNYETYbMoHm-Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/OWI3NWU4MS1iNjNm/LTRkZjItYTc5Ny1i/YjQ2ZGIxMmRjNTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMTEt/MTMtYS0xNy4wOC4z/NC5wbmc.webp",
+      "slate": 9153,
+      "cat": "HAIR"
+    },
+    {
+      "title": "John Frieda | Barcelona",
+      "sub": "Jean-Pierre Philippot\nTempesta",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450384-31884991_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Ms3mpfZteTWsBmUum0d7gXZtNY5OpynXsEPqYXFJ83w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkwNDAxMzcwNDU1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA1/LTI1LWEtMTIuMDku/MjYtMi5wbmc.webp",
+      "slate": 2431,
+      "cat": "HAIR"
+    },
+    {
+      "title": "Fructis - hairdance",
+      "sub": "Jean-Pierre Philippot\nTempesta",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8fc40745-317d-4cba-b0d4-75a506ca92ce-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/QwHoUzVmb5y23CvgTKUOpeIzM2wNYOdWB4CLEnTMcBI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YzljNTVjZi02NDZi/LTQzZGUtOTIxZS0w/NDE2OGNlMmNhZTgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjQtYS0xNC40Ni4w/Ny5wbmc.webp",
+      "slate": 8059,
       "cat": "HAIR"
     },
     {
@@ -67,15 +83,6 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/df911c93-4207-410a-8832-e3b525a5b47c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FOkmzhiQNfTyWfc2iur3Lctm8O2VoHufeFD5DVf2sIo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YzM1ODEyZi05ZTdl/LTRmOTItYjY4Ny01/YTlkMzNhM2JkYTIv/MTc2Nzg4NDQ2MjAy/Ny5qcGc.webp",
       "slate": 10358,
-      "cat": "HAIR"
-    },
-    {
-      "title": "DESSANGE",
-      "sub": "Salim Boujtita\nEddy Production",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9153/3ca53676-961c-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/48dc3cff-3606-4b68-b28f-fecd66b4a655-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/2ADyKaF1gpVS9nj0y8yDXhVEdjY-s_WNYETYbMoHm-Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/OWI3NWU4MS1iNjNm/LTRkZjItYTc5Ny1i/YjQ2ZGIxMmRjNTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMTEt/MTMtYS0xNy4wOC4z/NC5wbmc.webp",
-      "slate": 9153,
       "cat": "HAIR"
     },
     {
@@ -97,11 +104,12 @@
       "cat": "HAIR"
     },
     {
-      "title": "Fructis - hairdance",
-      "sub": "Jean-Pierre Philippot\nTempesta",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8fc40745-317d-4cba-b0d4-75a506ca92ce-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/QwHoUzVmb5y23CvgTKUOpeIzM2wNYOdWB4CLEnTMcBI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YzljNTVjZi02NDZi/LTQzZGUtOTIxZS0w/NDE2OGNlMmNhZTgv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MjQtYS0xNC40Ni4w/Ny5wbmc.webp",
-      "slate": 8059,
+      "title": "PANTENE",
+      "sub": "Audrey Mascina\nThe Gang House SL",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11632/714d484c-e820-11f1-952e-02ffedfede17.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/034347fa-9cb7-491a-bfa9-d5def3c92a54-0x1080.5000.mp4",
+      "img": "https://images.slatecdn.net/CdoD0ERg-yZdRRRQoqiZ3h6A1f-J2aQN17B5MWEzaIg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy81/NThlZGE4NS0yNjIy/LTQxN2ItODNmZS1h/MjhlYWFlY2U3OGIv/MTc5NTUzNjEyMDY0/My5qcGc.webp",
+      "slate": 11632,
       "cat": "HAIR"
     },
     {
@@ -110,6 +118,14 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2b7e11ce-ed98-443b-ace1-965c7a78de47-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/AKC7SVEoMn0tpt3SJ68UqqDAiaQcT9y1quTPMsujXVg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/OTRjYjVmMy02ZWZl/LTQwN2ItYjIzZS02/ZjBlNWFkMWQ1ZGMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTAt/MjctYS0xNS4xMC41/Mi5wbmc.webp",
       "slate": 7922,
+      "cat": "HAIR"
+    },
+    {
+      "title": "Garnier Fructis",
+      "sub": "Jean-Pierre Philippot\nTempesta",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4f95562b-bccd-49e3-bbf1-1950e3ce6b36-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/sE1xlqQbArp_WYOZJY6UflQhy2_9WhtDsmEsk2pbLjU/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTg0LTVlMjZjOTcy/Y2VhMDUyLjI0Mzcy/OTk4LWVjN2UxMWVk/MWZhZjNjYjg2OTdi/ZTIxZWFkYzZjNDcz/LmpwZw.webp",
+      "slate": 3984,
       "cat": "HAIR"
     },
     {
@@ -177,21 +193,6 @@
       "cat": "HAIR"
     },
     {
-      "title": "Garnier Fructis",
-      "sub": "Jean-Pierre Philippot\nTempesta",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4f95562b-bccd-49e3-bbf1-1950e3ce6b36-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/sE1xlqQbArp_WYOZJY6UflQhy2_9WhtDsmEsk2pbLjU/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTg0LTVlMjZjOTcy/Y2VhMDUyLjI0Mzcy/OTk4LWVjN2UxMWVk/MWZhZjNjYjg2OTdi/ZTIxZWFkYzZjNDcz/LmpwZw.webp",
-      "slate": 3984,
-      "cat": "HAIR"
-    },
-    {
-      "title": "L'Oréal Preference DC",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0e1e579b-e828-4fc6-a4a2-c9b02258b16d-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/4TZSZoh9QCpajgv-N_N95fzButZe1bXxDKKpSqEggQs/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTgxLTVlMjZjOTcy/YzQ0MjA3LjAyNTIx/NDI5LWNiMjYxMDJj/MjgwYjI3ZmM2M2Jm/Mzk0NDhiZjk2ZmQ5/LmpwZw.webp",
-      "slate": 3981,
-      "cat": "HAIR"
-    },
-    {
       "title": "Garnier Freshmix",
       "sub": "Cécile Boisrond\nBoogie Films",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1562678202-ud-delicatesse-avoine-rsa-30s-va-v2-fl180829.1280x720.2500.mp4",
@@ -221,14 +222,6 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545836268-mood_ultrdoux_jpp_60sec.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/-mfMHMjsRkMl-8vG9ojme-uF9LHIRfwnztDD0XDXWqs/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9n/YXJuaWVyLXVsdHJh/ZG91eC1tb29kLWM3/ZDA2YjNlMzgyM2Rh/Y2QyZjEwMTg2ZjRj/MTQ5YmNkLmpwZw.webp",
       "slate": 2722,
-      "cat": "HAIR"
-    },
-    {
-      "title": "John Frieda | Barcelona",
-      "sub": "Jean-Pierre Philippot\nTempesta",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545450384-31884991_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Ms3mpfZteTWsBmUum0d7gXZtNY5OpynXsEPqYXFJ83w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkwNDAxMzcwNDU1/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA1/LTI1LWEtMTIuMDku/MjYtMi5wbmc.webp",
-      "slate": 2431,
       "cat": "HAIR"
     },
     {
