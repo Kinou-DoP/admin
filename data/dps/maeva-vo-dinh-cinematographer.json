@@ -58,7 +58,7 @@
       "cat": "NARRATIVE",
       "slate": 9327,
       "featured": true,
-      "featuredOrder": 1
+      "featuredOrder": 2
     },
     {
       "title": "THANKS FOR THE MILK - SHORT FILM TRAILER",
@@ -102,7 +102,7 @@
       "cat": "COMMERCIAL",
       "slate": 8765,
       "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 3
     },
     {
       "title": "Chanel cruise replica Shenzhen",
@@ -121,7 +121,7 @@
       "cat": "COMMERCIAL",
       "slate": 8581,
       "featured": true,
-      "featuredOrder": 3
+      "featuredOrder": 4
     },
     {
       "title": "Parions Sport",
@@ -131,7 +131,7 @@
       "cat": "COMMERCIAL",
       "slate": 6664,
       "featured": true,
-      "featuredOrder": 4
+      "featuredOrder": 5
     },
     {
       "title": "Chanel cruise replica Shenzhen",
@@ -142,7 +142,7 @@
       "cat": "COMMERCIAL",
       "slate": 8146,
       "featured": true,
-      "featuredOrder": 5
+      "featuredOrder": 6
     },
     {
       "title": "Deezer - La Relève",
@@ -152,7 +152,7 @@
       "cat": "COMMERCIAL",
       "slate": 7414,
       "featured": true,
-      "featuredOrder": 6
+      "featuredOrder": 7
     },
     {
       "title": "NRJ Mobile",
@@ -187,7 +187,7 @@
       "cat": "COMMERCIAL",
       "slate": 6280,
       "featured": true,
-      "featuredOrder": 8
+      "featuredOrder": 9
     },
     {
       "title": "Vinted",
@@ -341,6 +341,32 @@
       "slate": 6287
     },
     {
+      "title": "Les Rieuses",
+      "sub": "Lou Zidi\nBraquage Production",
+      "img": "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/007.webp",
+      "stills": [
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/001.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/002.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/003.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/004.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/005.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/006.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/007.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/008.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/009.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/010.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/011.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/012.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/013.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/014.webp",
+        "https://raw.githubusercontent.com/Kinou-DoP/admin/main/data/bibli/img/mwwdai8o/015.webp"
+      ],
+      "slate": "imwwdai8o",
+      "cat": "",
+      "featured": true,
+      "featuredOrder": 1
+    },
+    {
       "title": "5h30, rue de Paris - Extrait",
       "sub": "Alexandre Brisa\n7PM Films & Jumpcut",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/b56b00b3-245b-4e7f-ad0c-8ae0777d5cdd-1280x720.2500.mp4",
@@ -348,7 +374,7 @@
       "cat": "",
       "slate": 8480,
       "featured": true,
-      "featuredOrder": 7
+      "featuredOrder": 8
     },
     {
       "title": "5 balles - extrait",
@@ -359,7 +385,7 @@
       "cat": "",
       "slate": 8478,
       "featured": true,
-      "featuredOrder": 9
+      "featuredOrder": 10
     }
   ]
 }
