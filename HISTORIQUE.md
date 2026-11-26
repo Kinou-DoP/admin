@@ -427,3 +427,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 26/11 — Corbeille du video club (30 jours, restaurer, oublier).
 - 26/11 — Phase 2 : « edit moi si tu peux ! », versions Encodage / Edit n, version affichée choisie, nouveau projet depuis un edit (job post).
 - 26/11 — Suppression = masquer pour les films de Slate ; fenêtre de montage refaite (blocs comme les extraits, curseur sur les frises).
+- 26/11 : montage — zoom Option/Alt + molette sur la frise de la source (autour de la souris, traits de début/fin de vidéo), raccourcis Z/J (à l'envers), K (pause), L (lecture), Entrée (ajoute le bloc) ; clavier capté sur window pour ne plus être avalé par la fenêtre d'edit du dessous.

@@ -14,7 +14,9 @@ function montageWin(films, opt) {
   if (!pool.length) { alert("Aucune vidéo encodée à assembler pour l'instant."); return; }
   var blocks = opt.parts && opt.parts.length ? opt.parts.map(function (p) { return { id: ++uid, f: pool[0], s: p.s, d: p.d }; }) : pool.map(function (f) { return { id: ++uid, f: f, s: 0, d: f.dur }; });
   var sel = -1, src = blocks[0].f, selMem = {}, mode = "src", playing = false, cur = 0, loaded = "", quality = "original";
-  var MIND = .2;
+  var MIND = .2, zw = null, revOn = false, revRaf = 0; // zw : partie visible de la frise de la source (zoom Option + molette) ; revOn : lecture à l'envers
+  function zwin() { return zw || [0, src.dur]; }
+  function pcz(t) { var w = zwin(); return (t - w[0]) / (w[1] - w[0]) * 100; }
   var r3 = function (x) { return Math.round(x * 1000) / 1000; }, clamp = function (x, a, b) { return Math.max(a, Math.min(b, x)); };
   var fmt = function (t) { t = Math.max(0, t || 0); var m = Math.floor(t / 60), s = t - m * 60; return m + ":" + (s < 10 ? "0" : "") + s.toFixed(2).replace(".", ","); };
   var ov = el("div", { class: "bmodal bmont" }), box = el("div", { class: "bmbox bmontbox" });
@@ -31,10 +33,16 @@ function montageWin(films, opt) {
     function go() { vid.currentTime = clamp(t, 0, f.dur - .04); if (andPlay) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
     if (loaded !== f.full) { loaded = f.full; vid.src = f.full; vid.addEventListener("loadedmetadata", function w() { vid.removeEventListener("loadedmetadata", w); go(); }); } else go();
   }
-  function pause() { playing = false; vid.pause(); }
-  function playSrc() { mode = "src"; playing = true; var t = loaded === src.full ? vid.currentTime : act().s; load(src, t, true); ph.hidden = true; }
+  function stopRev() { revOn = false; cancelAnimationFrame(revRaf); }
+  function pause() { stopRev(); playing = false; vid.pause(); }
+  // Lecture à l'envers (Z / J) : le navigateur ne sait pas, on recule l'image à chaque rafraîchissement.
+  function startRev() {
+    if (loaded !== src.full && !(blocks[cur] && loaded === blocks[cur].f.full)) return; pause(); revOn = true; var t0 = performance.now(), from = vid.currentTime;
+    (function step() { if (!revOn || !ov.isConnected) return; var t = from - (performance.now() - t0) / 1000; if (t <= 0) { vid.currentTime = 0; stopRev(); return; } if (!vid.seeking) vid.currentTime = t; revRaf = requestAnimationFrame(step); })();
+  }
+  function playSrc() { stopRev(); mode = "src"; playing = true; var t = loaded === src.full ? vid.currentTime : act().s; load(src, t, true); ph.hidden = true; }
   function playSeq(from) {
-    if (!blocks.length) return; mode = "seq"; playing = true; cur = from === undefined ? (mode === "seq" && loaded ? cur : 0) : from; cur = clamp(cur, 0, blocks.length - 1);
+    if (!blocks.length) return; stopRev(); mode = "seq"; playing = true; cur = from === undefined ? (mode === "seq" && loaded ? cur : 0) : from; cur = clamp(cur, 0, blocks.length - 1);
     var b = blocks[cur]; if (loaded === b.f.full && vid.currentTime >= b.s && vid.currentTime < b.s + b.d - .05) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } else load(b.f, b.s, true);
   }
   function seekSeq(t) { // un instant du montage (règle) : on se place dans le bon bloc
@@ -50,7 +58,7 @@ function montageWin(films, opt) {
     drawCursor(); requestAnimationFrame(tick);
   }
   function drawCursor() { // repères de lecture : sur la frise de la source, et sur la règle du montage (mode montage)
-    var D = src.dur; dPh.hidden = loaded !== src.full || mode === "seq" && blocks[cur] && blocks[cur].f !== src; if (!dPh.hidden) dPh.style.left = clamp(vid.currentTime / D * 100, 0, 100) + "%";
+    var pp = pcz(vid.currentTime); dPh.hidden = loaded !== src.full || mode === "seq" && blocks[cur] && blocks[cur].f !== src || pp < 0 || pp > 100; if (!dPh.hidden) dPh.style.left = pp + "%";
     var b = blocks[cur]; ph.hidden = !(mode === "seq" && b && loaded === b.f.full); if (!ph.hidden) ph.style.left = (before(cur) + clamp(vid.currentTime - b.s, 0, b.d)) / total() * 100 + "%";
     tcur.textContent = (loaded === src.full ? fmt(vid.currentTime) : "") + (mode === "seq" && b ? " · montage " + fmt(before(cur) + clamp(vid.currentTime - b.s, 0, b.d)) + " / " + fmt(total()) : "");
   }
@@ -67,7 +75,7 @@ function montageWin(films, opt) {
       bar.appendChild(w);
     });
     if (!blocks.length) bar.appendChild(el("span", { class: "hint hbempty", text: "Aucun bloc : règle une sélection sur la vidéo ci-dessus puis « + Ajouter ce bloc »." }));
-    drawRuler(); info.textContent = blocks.length + " bloc" + (blocks.length > 1 ? "s" : "") + " · durée du montage " + fmt(total()) + " · I / O : début / fin de la sélection · Entrée : ajouter le bloc · S : couper le bloc choisi · Suppr : retirer · espace : lecture";
+    drawRuler(); info.textContent = blocks.length + " bloc" + (blocks.length > 1 ? "s" : "") + " · durée du montage " + fmt(total()) + " · I / O : début / fin de la sélection · Entrée : ajouter le bloc · S : couper le bloc choisi · Suppr : retirer · espace : lecture · J ou Z : à l'envers · K : pause · L : lecture";
     drawDet(); drawExp(); drawAdd();
   }
   hReorder(bar, function (from, to) { var cb = sel >= 0 ? blocks[sel] : null, x = blocks.splice(from, 1)[0]; blocks.splice(to, 0, x); sel = cb ? blocks.indexOf(cb) : -1; drawBar(); });
@@ -89,14 +97,19 @@ function montageWin(films, opt) {
   }
   // ---------- vidéo source : frise entière, sélection (début / fin glissables), curseur ----------
   var dTrack = el("div", { class: "hdtrack" }), dReg = el("i", { class: "hdreg" }), dIn = el("b", { class: "hdh in", title: "Début" }), dOut = el("b", { class: "hdh out", title: "Fin" }), dPh = el("i", { class: "hdph" }), dLab = el("div", { class: "hdlab" });
-  var dBlk = el("div", { class: "hdblks" }), tcur = el("span", { class: "hdtime" });
-  dTrack.appendChild(dBlk); dTrack.appendChild(dReg); dTrack.appendChild(dPh); dTrack.appendChild(dIn); dTrack.appendChild(dOut);
+  var dBlk = el("div", { class: "hdblks" }), tcur = el("span", { class: "hdtime" }), endL = el("i", { class: "tlend l", title: "Début de la vidéo" }), endR = el("i", { class: "tlend r", title: "Fin de la vidéo" });
+  dTrack.appendChild(dBlk); dTrack.appendChild(endL); dTrack.appendChild(endR); dTrack.appendChild(dReg); dTrack.appendChild(dPh); dTrack.appendChild(dIn); dTrack.appendChild(dOut);
   det.appendChild(srcTabs); det.appendChild(dTrack); det.appendChild(dLab);
+  function seg(el0, s0, d0) { var l = clamp(pcz(s0), 0, 100), r = clamp(pcz(s0 + d0), 0, 100); el0.hidden = r <= l; el0.style.left = l + "%"; el0.style.width = Math.max(0, r - l) + "%"; }
+  var zsrc = null;
   function drawDet() {
-    var D = src.dur, a = act(); dBlk.textContent = ""; // les parties déjà prises dans cette vidéo, en repères clairs
-    blocks.forEach(function (b, i) { if (b.f === src && i !== sel) dBlk.appendChild(el("i", { class: "tlblk", style: "left:" + b.s / D * 100 + "%;width:" + Math.max(.3, b.d / D * 100) + "%", title: "Bloc " + (i + 1) })); });
-    dReg.className = "hdreg" + (sel >= 0 ? " blk" : ""); dReg.style.left = a.s / D * 100 + "%"; dReg.style.width = a.d / D * 100 + "%"; dIn.style.left = a.s / D * 100 + "%"; dOut.style.left = (a.s + a.d) / D * 100 + "%";
-    dLab.textContent = (src.title || "") + " · " + (sel >= 0 ? "bloc " + (sel + 1) + " (en modification)" : "sélection") + " : " + fmt(a.s) + " → " + fmt(a.s + a.d) + " (" + a.d.toFixed(1).replace(".", ",") + " s) sur " + fmt(D);
+    if (zsrc !== src) { zsrc = src; zw = null; }
+    var D = src.dur, a = act(), w = zwin(); dBlk.textContent = ""; // les parties déjà prises dans cette vidéo, en repères clairs
+    blocks.forEach(function (b, i) { if (b.f === src && i !== sel) { var m = el("i", { class: "tlblk", title: "Bloc " + (i + 1) }); seg(m, b.s, b.d); dBlk.appendChild(m); } });
+    dReg.className = "hdreg" + (sel >= 0 ? " blk" : ""); seg(dReg, a.s, a.d);
+    dIn.style.left = pcz(a.s) + "%"; dOut.style.left = pcz(a.s + a.d) + "%"; dIn.hidden = a.s < w[0] || a.s > w[1]; dOut.hidden = a.s + a.d < w[0] || a.s + a.d > w[1];
+    endL.hidden = w[0] > 0; endR.hidden = w[1] < D - .001; // traits vifs : le début / la fin de la vidéo sont visibles (pas zoomé au maximum de ce côté)
+    dLab.textContent = (src.title || "") + " · " + (sel >= 0 ? "bloc " + (sel + 1) + " (en modification)" : "sélection") + " : " + fmt(a.s) + " → " + fmt(a.s + a.d) + " (" + a.d.toFixed(1).replace(".", ",") + " s) sur " + fmt(D) + (zw ? " · zoom × " + (D / (w[1] - w[0])).toFixed(1).replace(".", ",") : "") + " · Option / Alt + molette = zoom";
     dLab.appendChild(tcur);
   }
   function drawAdd() {
@@ -109,7 +122,7 @@ function montageWin(films, opt) {
     h.addEventListener("pointerdown", function (e) {
       e.preventDefault(); e.stopPropagation(); h.setPointerCapture(e.pointerId); pause(); mode = "src";
       function mv(ev) {
-        var a = act(), t = tOf(ev, dTrack, 0, src.dur), end = a.s + a.d;
+        var a = act(), t = tOf(ev, dTrack, zwin()[0], zwin()[1]), end = a.s + a.d;
         if (which === "in") { t = Math.min(t, end - MIND); a.s = r3(Math.max(0, t)); a.d = r3(end - a.s); } else { t = Math.max(t, a.s + MIND); a.d = r3(Math.min(src.dur, t) - a.s); }
         load(src, which === "in" ? a.s : a.s + a.d - .05, false); drawDet(); if (sel >= 0) drawBarSoft();
       }
@@ -132,8 +145,13 @@ function montageWin(films, opt) {
       track.addEventListener("pointermove", mv); track.addEventListener("pointerup", up);
     });
   }
-  hoverCursor(dTrack, function (e) { return tOf(e, dTrack, 0, src.dur); });
-  scrubber(dTrack, function (e) { mode = "src"; load(src, tOf(e, dTrack, 0, src.dur), false); }, function (e) { return e.target.closest(".hdh"); });
+  hoverCursor(dTrack, function (e) { return tOf(e, dTrack, zwin()[0], zwin()[1]); });
+  scrubber(dTrack, function (e) { mode = "src"; load(src, tOf(e, dTrack, zwin()[0], zwin()[1]), false); }, function (e) { return e.target.closest(".hdh"); });
+  dTrack.addEventListener("wheel", function (e) { // Option / Alt + molette : zoom autour de la souris
+    if (!e.altKey) return; e.preventDefault(); e.stopPropagation(); var D = src.dur, w = zwin(), r = dTrack.getBoundingClientRect(), t = w[0] + clamp((e.clientX - r.left) / r.width, 0, 1) * (w[1] - w[0]);
+    var span = clamp((w[1] - w[0]) * Math.exp((e.deltaY || e.deltaX) * .002), Math.min(1, D), D), f = (t - w[0]) / (w[1] - w[0]), a = clamp(t - f * span, 0, D - span);
+    zw = span >= D - .001 ? null : [a, a + span]; drawDet();
+  }, { passive: false });
   hoverCursor(wrap, function (e) { return tOf(e, wrap, 0, total()); }); // le curseur traverse la règle et la frise des blocs
   scrubber(ruler, function (e) { seekSeq(tOf(e, ruler, 0, total())); });
   // ---------- export ----------
@@ -159,7 +177,7 @@ function montageWin(films, opt) {
     if (opt.mode === "version") { // nouvelle version de la même vidéo : le robot ne refait que le fichier (pas d'extrait ni de vignette), la demande est suivie dans la fiche
       var reqV = encFile("film", [{ id: id, kind: "edit", quality: q, web: true, parts: parts }]);
       commit([reqV], "Edit : export (admin, " + by + ")").then(function () {
-        ov.remove(); document.removeEventListener("keydown", onKey, true);
+        ov.remove(); window.removeEventListener("keydown", onKey, true);
         if (opt.onVersion) opt.onVersion({ id: "v" + id, name: name, parts: blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d) }; }), quality: q, enc: { path: reqV.path, id: id }, at: new Date().toISOString(), by: by });
       }, fail);
       return;
@@ -169,28 +187,32 @@ function montageWin(films, opt) {
       enc: { path: req.path, id: id }, montage: { from: sources().map(function (f) { return f.key; }), quality: q, parts: blocks.map(function (b) { return { from: b.f.key, s: r3(b.s), d: r3(b.d) }; }) } };
     if (f0.client) item.client = f0.client;
     commit([req, { path: BIB_LIB, edit: function (t) { var L = t ? JSON.parse(t) : { items: [] }; L.items = (L.items || []).filter(function (x) { return x.key !== item.key; }); L.items.push(item); return json(L); } }], "Montage : export (admin, " + by + ")")
-      .then(function () { ov.remove(); document.removeEventListener("keydown", onKey, true); if (opt.onCreated) opt.onCreated(item); alert("Montage « " + name + " » envoyé au robot. Il apparaîtra dans le video club (⟳ encodage en cours) dans quelques minutes."); }, fail);
+      .then(function () { ov.remove(); window.removeEventListener("keydown", onKey, true); if (opt.onCreated) opt.onCreated(item); alert("Montage « " + name + " » envoyé au robot. Il apparaîtra dans le video club (⟳ encodage en cours) dans quelques minutes."); }, fail);
   }
   // ---------- clavier ----------
   function onKey(e) {
-    if (!ov.isConnected) { document.removeEventListener("keydown", onKey, true); return; }
-    if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea")) return;
+    if (!ov.isConnected) { window.removeEventListener("keydown", onKey, true); return; }
     var k = e.key;
-    if (k === "Escape") { e.preventDefault(); e.stopPropagation(); close(); return; }
-    if (k === " ") { e.preventDefault(); e.stopPropagation(); if (playing) pause(); else if (mode === "seq") playSeq(); else playSrc(); return; }
-    if (k === "Enter" && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); if (!e.repeat) addBlock(); return; }
-    if ((k === "Delete" || k === "Backspace") && sel >= 0) { e.preventDefault(); e.stopPropagation(); removeAt(sel); return; }
-    if (/^[sS]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); splitHere(); return; }
+    if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea")) { if (k === "Enter" || k === "Escape") { e.stopImmediatePropagation(); e.target.blur(); } else e.stopImmediatePropagation(); return; }
+    if ((e.ctrlKey || e.metaKey) && /^[zZ]$/.test(k)) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); return; } // pas d'annulation de la fenêtre du dessous
+    if (/^[zZjJ]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) { if (revOn) stopRev(); else startRev(); } return; }
+    if (/^[kK]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pause(); return; }
+    if (/^[lL]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!playing) { if (mode === "seq") playSeq(); else playSrc(); } return; }
+    if (k === "Escape") { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); close(); return; }
+    if (k === " ") {  stopRev(); e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (playing) pause(); else if (mode === "seq") playSeq(); else playSrc(); return; }
+    if (k === "Enter" && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) addBlock(); return; }
+    if ((k === "Delete" || k === "Backspace") && sel >= 0) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); removeAt(sel); return; }
+    if (/^[sS]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); splitHere(); return; }
     if (/^[iIoO]$/.test(k) && !e.ctrlKey && !e.metaKey) {
-      e.preventDefault(); e.stopPropagation(); if (loaded !== src.full) return; var t = vid.currentTime, a = act(), end = a.s + a.d;
+      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full) return; var t = vid.currentTime, a = act(), end = a.s + a.d;
       if (/i/i.test(k)) { a.s = r3(clamp(t, 0, src.dur - MIND)); a.d = r3(Math.max(MIND, (t > end - MIND ? Math.min(src.dur, t + 1) : end) - a.s)); }
       else { a.d = r3(Math.max(MIND, Math.min(src.dur, t) - a.s)); if (t < a.s + MIND) { a.s = r3(Math.max(0, t - MIND)); a.d = MIND; } }
       drawBar(); return;
     }
-    if (k === "ArrowLeft" || k === "ArrowRight") { e.preventDefault(); e.stopPropagation(); pause(); var st = (e.shiftKey ? 1 : 1 / 25) * (k === "ArrowLeft" ? -1 : 1); if (loaded === src.full) vid.currentTime = clamp(vid.currentTime + st, 0, src.dur); }
+    if (k === "ArrowLeft" || k === "ArrowRight") { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pause(); var st = (e.shiftKey ? 1 : 1 / 25) * (k === "ArrowLeft" ? -1 : 1); if (loaded === src.full) vid.currentTime = clamp(vid.currentTime + st, 0, src.dur); }
   }
-  document.addEventListener("keydown", onKey, true);
-  function close() { pause(); document.removeEventListener("keydown", onKey, true); ov.remove(); }
+  window.addEventListener("keydown", onKey, true);
+  function close() { pause(); window.removeEventListener("keydown", onKey, true); ov.remove(); }
   ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
   // ---------- assemblage de la fenêtre ----------
   box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : "Bout à bout" }), nameI, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
