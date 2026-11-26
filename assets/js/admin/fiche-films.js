@@ -474,7 +474,7 @@
     function zp() { var m = /^([\d.]+)% ([\d.]+)%$/.exec(o.get("zoomPos") || ""); return m ? [m[1] / 100, m[2] / 100] : [.5, .5]; }
     function px() { return o.get("phoneX") !== undefined ? o.get("phoneX") / 100 : .5; }
     function apply() {
-      var z = o.get("zoom") > 1 ? o.get("zoom") : 1, q = zp(), p = px(), a = PHONE_A;
+      var z = o.get("phoneZoom") !== undefined ? Math.max(1, o.get("phoneZoom")) : o.get("zoom") > 1 ? o.get("zoom") : 1, q = zp(), p = px(), a = PHONE_A; // zoom téléphone séparé (montage de l'accueil), sinon le même qu'ordinateur
       var x0 = q[0] * a * (1 - 1 / z), u0 = (x0 + (VID_A - a) * p) / VID_A;
       band.style.left = u0 * 100 + "%"; band.style.width = a / z / VID_A * 100 + "%";
       band.style.top = q[1] * (1 - 1 / z) * 100 + "%"; band.style.height = 100 / z + "%";

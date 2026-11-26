@@ -1275,3 +1275,9 @@ input.bcn { width: 90px; }
 .hvw .hphone { position: absolute; top: 0; bottom: 0; border: 1px solid #ff3b30; box-shadow: 0 0 0 9999px rgba(0,0,0,.45); cursor: ew-resize; touch-action: none; z-index: 2; }
 .hvw { overflow: hidden; } .bok { color: #7ddc8a; }
 .bmodal.bmont.bmhome { z-index: 1100; } /* montage ouvert depuis l'éditeur de vidéo de l'accueil (z-index 1000) */
+/* Montage de l'accueil : écran de téléphone à gauche, recadrage au-dessus */
+.hvhome .hvrow { display: flex; gap: 14px; align-items: flex-start; }
+.hvhome .hvrow .hvw { flex: 1; min-width: 0; }
+.hmphone { flex: none; width: 150px; height: auto; background: #000; border: 2px solid rgba(255,252,235,.35); border-radius: 14px; aspect-ratio: 9 / 17; }
+.hzoomrow { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin: 0 0 10px; }
+.hzl { display: flex; align-items: center; gap: 8px; font-size: 12px; } .hzl input[type=range] { width: 160px; }

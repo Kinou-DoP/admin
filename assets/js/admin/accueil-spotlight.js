@@ -34,7 +34,7 @@
     var prev = (home.slides || []).filter(function (x) { return x.slate === f.slate; })[0];
     if (f.full) sl.full = f.full; else if (prev && prev.full) sl.full = prev.full;
     var o = home.overrides[f.slate] || {};
-    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "parts", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "phoneZoom", "start", "parts", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
   }
   function showHome() {
@@ -116,8 +116,8 @@
         var dur = tv.duration || 0; tv.removeAttribute("src"); fin(); if (!dur) { alert("Durée de la vidéo illisible."); return; }
         if (zoomStopOther) zoomStopOther(); close();
         var parts0 = sl.parts && sl.parts.length ? sl.parts : [{ s: Math.min(sl.start || 0, Math.max(0, dur - D)), d: Math.min(D, dur), x: sl.phoneX }];
-        montageWin([{ key: "home" + sl.slate, title: sl.film || "Film", full: sl.full, dur: dur }], { mode: "home", exact: D, parts: parts0, phoneX: sl.phoneX, name: sl.film,
-          onSave: function (parts) { setO("parts", parts.length > 1 ? parts : undefined); setO("start", parts[0].s); if (parts.length === 1) setO("phoneX", parts[0].x === 50 ? undefined : parts[0].x); touch(); label(); } });
+        montageWin([{ key: "home" + sl.slate, title: sl.film || "Film", full: sl.full, dur: dur }], { mode: "home", exact: D, parts: parts0, phoneX: sl.phoneX, zoom: sl.zoom, phoneZoom: sl.phoneZoom, zoomPos: sl.zoomPos, name: sl.film,
+          onSave: function (parts, zz) { if (zz) { setO("zoom", zz.zoom > 1 ? Math.round(zz.zoom * 100) / 100 : undefined); setO("phoneZoom", zz.phoneZoom === undefined ? undefined : Math.round(zz.phoneZoom * 100) / 100); } setO("parts", parts.length > 1 ? parts : undefined); setO("start", parts[0].s); if (parts.length === 1) setO("phoneX", parts[0].x === 50 ? undefined : parts[0].x); touch(); label(); } });
       });
       tv.addEventListener("error", function () { fin(); alert("La vidéo ne se lit pas : montage impossible."); });
       tv.src = sl.full; mont.textContent = old;
@@ -250,7 +250,7 @@
     reset.hidden = !home.overrides[sl.slate];
     reset.addEventListener("click", function () {
       delete home.overrides[sl.slate];
-      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "start", "parts", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = sl.src[k]; });
+      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "phoneZoom", "start", "parts", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = sl.src[k]; });
       card.replaceWith(slideCard(sl)); touch();
     });
     card.appendChild(thumb);
