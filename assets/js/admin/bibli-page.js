@@ -1085,7 +1085,7 @@
       // Vidéo en ligne (notre CloudFront ou Slate) : le navigateur n'a pas le droit de copier l'image (pas d'en-tête CORS) et la
       // fonction /api/media du site (Cloudflare) reçoit un 403 de notre CloudFront ; c'est donc le robot d'encodage qui sort l'image du film (demande
       // « thumb », ≈ 1 min) → vignettes WebP 800 / 1600 chez Amazon (Gus 26/11 : « la vignette depuis la vidéo ne marche pas »).
-      function grabDone(u, t) { it.thumbT = Math.round(t * 1000) / 1000; setImg(u); pout.textContent = "✓ Vignette remplacée par l'image à " + fmtT(t) + "."; pout.className = "hint bok"; }
+      function grabDone(u, t) { grabBusy(false); it.thumbT = Math.round(t * 1000) / 1000; setImg(u); pout.textContent = "✓ Vignette remplacée par l'image à " + fmtT(t) + "."; pout.className = "hint bok"; }
       function grabBusy(on) { if (typeof grabB !== "undefined" && grabB) { grabB.disabled = on; grabB.classList.toggle("busy", on); } }
       // Demandes au robot (vignette, extrait léger) : gardées dans le film (`pend`, edits.json) pour survivre à la fermeture de la fenêtre et au
       // rechargement de la page ; reprises par encCheckEdits (liste du video club) ou par la fenêtre rouverte (pendWatch). Seulement pour
@@ -1113,27 +1113,39 @@
         grabBusy(true); pout.className = "hint bwait"; pout.textContent = "⟳ Vignette en cours d'encodage (≈ 1 min) à " + fmtT(q.t) + " : tu peux fermer cette fenêtre ou changer de page, elle s'appliquera toute seule.";
         pendWatch("thumb", q, function (a) { grabBusy(false); grabDone(a.img, q.t); }, function (e) { grabBusy(false); pout.className = "hint berr"; pout.textContent = "Capture pas faite : " + e.message; });
       }
-      function grab() {
-        if (!player) return; var t = player.currentTime;
-        if (!/^blob:/.test(src)) { grabRobot(t); return; }
-        pout.className = "hint bwait"; pout.textContent = "Capture de l'image…";
-        var v = el("video", { muted: true, playsinline: true, preload: "auto" }); v.muted = true;
-        var done = false;
-        v.addEventListener("loadedmetadata", function () { v.currentTime = t; });
+      // Capture instantanée (Gus 26/11 : « sur Slate c'était quasiment instantané ») : on essaie dans l'ordre
+      //  1. vidéo de l'ordinateur (blob) : directement ; 2. films copiés de Slate : par /api/media du site (autorisation CORS) ;
+      //  3. directement sur notre CloudFront (marche si CloudFront envoie l'autorisation CORS) ; 4. le robot (≈ 1 min, sans condition).
+      function capture(url, cors, fail) {
+        var v = el("video", { muted: true, playsinline: true, preload: "auto" }); v.muted = true; if (cors) v.crossOrigin = "anonymous";
+        var done = false, t0 = setTimeout(function () { if (!done) { done = true; v.removeAttribute("src"); v.load(); fail("trop long"); } }, 12000);
+        function bad(m) { if (done) return; done = true; clearTimeout(t0); fail(m); }
+        v.addEventListener("loadedmetadata", function () { v.currentTime = grabT; });
         v.addEventListener("seeked", function () {
-          if (done) return; done = true;
+          if (done) return; done = true; clearTimeout(t0);
           try {
             var w = Math.min(1600, v.videoWidth), c = document.createElement("canvas"); c.width = w; c.height = Math.round(w * v.videoHeight / v.videoWidth);
             c.getContext("2d").drawImage(v, 0, 0, c.width, c.height);
             c.toBlob(function (bl) {
+              if (!bl) { fail("image vide"); return; }
               var fr = new FileReader();
-              fr.onload = function () { grabDone(imgPut("vignette.webp", fr.result.split(",")[1], URL.createObjectURL(bl)), t); };
+              fr.onload = function () { grabDone(imgPut("vignette.webp", fr.result.split(",")[1], URL.createObjectURL(bl)), grabT); };
               fr.readAsDataURL(bl);
             }, "image/webp", .85);
-          } catch (e) { pout.className = "hint berr"; pout.textContent = "Capture impossible : " + e.message; }
+          } catch (e) { fail(e.message); }
         });
-        v.addEventListener("error", function () { if (!done) { pout.className = "hint berr"; pout.textContent = "Capture impossible : cette vidéo ne se lit pas dans le navigateur."; } done = true; });
-        v.src = src;
+        v.addEventListener("error", function () { bad("lecture impossible"); });
+        v.src = url;
+      }
+      var grabT = 0;
+      function grab() {
+        if (!player) return; grabT = player.currentTime; var t = grabT;
+        pout.className = "hint bwait"; pout.textContent = "Capture de l'image…"; grabBusy(true);
+        function off(m) { grabBusy(false); pout.className = "hint berr"; pout.textContent = "Capture impossible : " + m; }
+        if (/^blob:/.test(src)) { capture(src, false, off); return; }
+        function robot() { grabBusy(false); grabRobot(t); }
+        function direct() { capture(src, true, robot); }
+        if (/\/kinou\/production\//.test(src)) capture(SITE + "/api/media?u=" + encodeURIComponent(src), true, direct); else direct();
       }
       // Vignettes possibles : vignette d'origine + stills du film
       var thumbs = el("div", { class: "bthumbs" });

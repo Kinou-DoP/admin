@@ -119,3 +119,5 @@ Note de tâche : à lire seulement quand la tâche touche ce sujet. Règles gén
   avec les mêmes suggestions / filtres que le video club (`bibPicker`). Ligne d'ajout : 🔍 | lien | +.
 - Classe `.bst` = étiquette de suggestion ; les cellules de stills sont `.bstl` (le conflit agrandissait les suggestions du video club).
 - **Ordre commun du lot** (Gus 26/11) : glisser une ligne dans la fenêtre d'un film du lot change `gi` de tous les films du lot (`grpOrder`, library.json) : même ordre partout ; masquer (œil) garde le lien (`hide` repris par `bibGroups` et `vcGroup`) ; ajouter / retirer une ligne le rompt pour ce film.
+- **Capture de la vignette** (Gus 26/11) : vidéo de l'ordinateur → direct ; films copiés de Slate (`/kinou/production/`) → par `/api/media` du site (marche) ; sinon directement sur notre CloudFront si l'en-tête CORS y est (sinon erreur tout de suite) ; en dernier le robot (≈ 1 min). `/api/media` renvoie 403 pour les fichiers `nous/…` (CloudFront bloque la fonction Cloudflare sur ce chemin, vérifié 26/11) : pour une capture instantanée partout, ajouter une politique d'en-têtes CORS (`Access-Control-Allow-Origin: *`) à CloudFront.
+
