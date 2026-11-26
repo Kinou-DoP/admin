@@ -808,6 +808,15 @@
         "y": 100,
         "t": true
       }
+    },
+    "s5600": {
+      "img": "https://d3toxii6rvamjf.cloudfront.net/depot/jc2qf99m7yaqrnpe78fu/vignette.webp",
+      "thumbT": 8.379,
+      "hist": {
+        "img": [
+          "https://images.slatecdn.net/OVkkd-2uXo-6tfD2O1KVv75ErfT9jKqdupqWFDYk1bQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8w/ODhkZDMwMS00ZTY5/LTQ3N2QtYjRiMC04/MWJkN2I2ZTFmZTcv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMTIt/MDgtYS0xMS4xMi4x/MC5wbmc.webp"
+        ]
+      }
     }
   }
 }
