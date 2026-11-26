@@ -55,7 +55,7 @@
       "w": 1920,
       "h": 1080,
       "grp": "gcamille1",
-      "gi": 0
+      "gi": 1
     },
     {
       "key": "emwxgq59h49hbuq",
@@ -82,7 +82,7 @@
       "w": 1920,
       "h": 1080,
       "grp": "gcamille1",
-      "gi": 1
+      "gi": 2
     },
     {
       "key": "emwxgq59hr9ay73",
@@ -109,7 +109,7 @@
       "w": 1920,
       "h": 1080,
       "grp": "gcamille1",
-      "gi": 2
+      "gi": 4
     },
     {
       "key": "emwxgq59ikke41n",
@@ -136,7 +136,7 @@
       "w": 1920,
       "h": 1080,
       "grp": "gcamille1",
-      "gi": 3
+      "gi": 0
     },
     {
       "key": "emwxgq59i1rcn44",
@@ -163,7 +163,7 @@
       "w": 1920,
       "h": 1080,
       "grp": "gcamille1",
-      "gi": 4
+      "gi": 3
     }
   ]
 }
