@@ -1120,6 +1120,15 @@
           "from": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/877709f0-3323-4482-a597-7176a82a52c5-1280x720.2500.mp4"
         }
       }
+    },
+    "s4742": {
+      "img": "https://d3toxii6rvamjf.cloudfront.net/depot/6k4ec6uh8myvzfgnva28/vignette.webp",
+      "thumbT": 9.017,
+      "hist": {
+        "img": [
+          "https://images.slatecdn.net/4Ge8s5pChqTeiDv7JVDLS-4z9C4dcBgqYIxHV6EX4zE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/OGEyNmIyMS1jZjc5/LTRmNmYtOWJjZC01/ZDkxMTcyMjQ2ODUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDEt/MTMtYS0xNi4wOC41/NS5qcGc.webp"
+        ]
+      }
     }
   }
 }
