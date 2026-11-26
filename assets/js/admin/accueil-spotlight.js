@@ -109,19 +109,7 @@
     var t = fmtT, scrub = false, want = null;
     // Montage de l'extrait (Gus 27/11) : plusieurs blocs de la vidéo, durée EXACTE d'un projet, cadrage téléphone propre à chaque bloc (sl.parts = [{ s, d, x }]).
     var mont = el("button", { type: "button", class: "btn primary montbtn" });
-    mont.addEventListener("click", function () {
-      mont.disabled = true; var old = mont.textContent; mont.textContent = "Chargement de la vidéo…";
-      var tv = el("video", { preload: "metadata", muted: true }), fin = function () { mont.disabled = false; label(); };
-      tv.addEventListener("loadedmetadata", function () {
-        var dur = tv.duration || 0; tv.removeAttribute("src"); fin(); if (!dur) { alert("Durée de la vidéo illisible."); return; }
-        if (v) v.pause(); // la vidéo de l'éditeur s'arrête pendant le montage
-        var parts0 = sl.parts && sl.parts.length ? sl.parts : [{ s: Math.min(sl.start || 0, Math.max(0, dur - D)), d: Math.min(D, dur), x: sl.phoneX }];
-        montageWin([{ key: "home" + sl.slate, title: sl.film || "Film", full: sl.full, dur: dur }], { mode: "home", exact: D, parts: parts0, phoneX: sl.phoneX, zoom: sl.zoom, phoneZoom: sl.phoneZoom, zoomPos: sl.zoomPos, name: sl.film,
-          onSave: function (parts, zz) { if (zz) { setO("zoom", zz.zoom > 1 ? Math.round(zz.zoom * 100) / 100 : undefined); setO("phoneZoom", zz.phoneZoom === undefined ? undefined : Math.round(zz.phoneZoom * 100) / 100); } setO("parts", parts.length > 1 ? parts : undefined); setO("start", parts[0].s); if (parts.length === 1) setO("phoneX", parts[0].x === 50 ? undefined : parts[0].x); touch(); label(); } });
-      });
-      tv.addEventListener("error", function () { fin(); alert("La vidéo ne se lit pas : montage impossible."); });
-      tv.src = sl.full; mont.textContent = old;
-    });
+    mont.addEventListener("click", function () { mont.disabled = true; var old = mont.textContent; mont.textContent = "Chargement de la vidéo…"; homeMontage(sl, setO, D, function () { mont.disabled = false; mont.textContent = old; label(); }, function () { if (v) v.pause(); }); });
     function label() {
       var np = sl.parts && sl.parts.length > 1 ? sl.parts.length : 0;
       lab.textContent = np ? "Montage de " + np + " blocs" : sl.start !== undefined ? t(sl.start) + " → " + t(sl.start + D) : "Extrait Slate";
@@ -168,6 +156,23 @@
     wrap.appendChild(box);
     wrap._open = function () { if (box.hidden) btn.click(); };
     return wrap;
+  }
+  // Montage de l'extrait de l'accueil (Gus 27/11) : fenêtre `montageWin` en mode « home » ; ouverte directement par « Éditer la vidéo » (le recadrage et le cadrage
+  // téléphone se règlent dedans). done() : à la fermeture (enregistré ou non) ; before() : juste avant l'ouverture.
+  function homeMontage(sl, setO, D, done, before) {
+    var tv = el("video", { preload: "metadata", muted: true });
+    tv.addEventListener("loadedmetadata", function () {
+      var dur = tv.duration || 0; tv.removeAttribute("src"); if (!dur) { alert("Durée de la vidéo illisible."); done(); return; }
+      if (before) before();
+      var parts0 = sl.parts && sl.parts.length ? sl.parts : [{ s: Math.min(sl.start || 0, Math.max(0, dur - D)), d: Math.min(D, dur), x: sl.phoneX }];
+      montageWin([{ key: "home" + sl.slate, title: sl.film || "Film", full: sl.full, dur: dur }], { mode: "home", exact: D, parts: parts0, phoneX: sl.phoneX, zoom: sl.zoom, phoneZoom: sl.phoneZoom, zoomPos: sl.zoomPos, name: sl.film, onClose: done,
+        onSave: function (parts, zz) {
+          if (zz) { setO("zoom", zz.zoom > 1 ? Math.round(zz.zoom * 100) / 100 : undefined); setO("phoneZoom", zz.phoneZoom === undefined ? undefined : Math.round(zz.phoneZoom * 100) / 100);
+            if (zz.zoomPos) setO("zoomPos", zz.zoomPos[0] === 50 && zz.zoomPos[1] === 50 ? undefined : zz.zoomPos[0] + "% " + zz.zoomPos[1] + "%"); }
+          setO("parts", parts.length > 1 ? parts : undefined); setO("start", parts[0].s); if (parts.length === 1) setO("phoneX", parts[0].x === 50 ? undefined : parts[0].x); touch(); } });
+    });
+    tv.addEventListener("error", function () { alert("La vidéo ne se lit pas : montage impossible."); done(); });
+    tv.src = sl.full;
   }
   function fmtT(x) { var m = Math.floor(x / 60), s = (x - m * 60).toFixed(1); return m + ":" + (s < 10 ? "0" : "") + s.replace(".", ","); }
 
@@ -257,7 +262,7 @@
     card.appendChild(thumb);
     // Ce qui est lu sur l'accueil : le passage HD choisi (film complet, à partir de « start »), sinon l'extrait Slate.
     var D = (home.duration || 7000) / 1000;
-    function media() { return sl.full && sl.start !== undefined ? { src: sl.full, start: sl.start, end: sl.start + D } : sl.video; }
+    function media() { return sl.full && sl.start !== undefined ? { src: sl.full, start: sl.start, end: sl.start + D, parts: sl.parts && sl.parts.length > 1 ? sl.parts : undefined } : sl.video; }
     if (editable) {
       // Aperçu au survol : ce qui sera lu sur l'accueil (passage HD ou extrait Slate, recadré).
       var hv = null;
@@ -275,7 +280,7 @@
       if (sl.zoom > 1) sum.push("recadrage " + Math.round(sl.zoom * 100) + " %");
       if (sl.phoneX !== undefined) sum.push("cadrage téléphone");
       var edit = el("button", { type: "button", class: "btn", text: "Éditer la vidéo" });
-      edit.addEventListener("click", function () { hstop(); videoEditor(sl, setO, D, media, function () { card.replaceWith(slideCard(sl)); }); });
+      edit.addEventListener("click", function () { hstop(); var again = function () { card.replaceWith(slideCard(sl)); }; if (sl.full) homeMontage(sl, setO, D, again); else videoEditor(sl, setO, D, media, again); }); // film complet connu : on arrive directement dans le montage
       card.appendChild(el("div", { class: "vsum" }, [edit, el("span", { class: "zval", text: sum.join(" · ") })]));
     }
     card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);

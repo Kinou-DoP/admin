@@ -59,6 +59,12 @@ function montageWin(films, opt) {
     var w0 = vh * PHONE_A, x0 = Math.max(0, (vw - w0)) * phoneX(b) / 100, sw = w0 / z, sh = vh / z, sx = x0 + w0 * (zpos[0] - zpos[0] / z), sy = vh * (zpos[1] - zpos[1] / z);
     try { cx.drawImage(vid, sx, sy, sw, sh, 0, 0, phoneCv.width, phoneCv.height); } catch (e) {}
   }
+  vid.addEventListener("pointerdown", function (e) { // vidéo agrandie : on la fait glisser pour choisir la partie gardée (point de cadrage)
+    if (!EX || zm <= 1 || e.button) return; e.preventDefault(); var r = vid.parentNode.getBoundingClientRect(), x0 = e.clientX, y0 = e.clientY, p0 = zpos.slice(); try { vid.setPointerCapture(e.pointerId); } catch (x) {}
+    function mv(ev) { zpos = [clamp(p0[0] - (ev.clientX - x0) / r.width / (zm - 1), 0, 1), clamp(p0[1] - (ev.clientY - y0) / r.height / (zm - 1), 0, 1)]; applyZoom(); }
+    function up() { vid.removeEventListener("pointermove", mv); vid.removeEventListener("pointerup", up); }
+    vid.addEventListener("pointermove", mv); vid.addEventListener("pointerup", up);
+  });
   var pband = el("i", { class: "hphone", title: "Cadrage téléphone de ce bloc : glisse" }); pband.hidden = true;
   if (EX || SNIP) vid.muted = true; // extrait de l'accueil : sans le son (comme sur le site) ; bout à bout et edit gardent le son
   var bar = el("div", { class: "hbar" }), ruler = el("div", { class: "hruler" }), ph = el("i", { class: "hbph" }), wrap = el("div", { class: "hbwrap" }, [ruler, bar, ph]);
@@ -244,7 +250,7 @@ function montageWin(films, opt) {
       var b = blocks[blocks.length - 1], d = r3(b.d + diff); if (d < MIND || b.s + d > b.f.dur + .001) { alert(diff > 0 ? "Le dernier bloc va déjà jusqu'à la fin de la vidéo : prends plutôt une sélection de plus." : "Le dernier bloc deviendrait trop court."); return; } snap(); b.d = d; drawBar(); } } });
     var save = el("button", { type: "button", class: "btn primary", text: "Enregistrer pour l'accueil", disabled: ok ? null : true, on: { click: function () {
       var parts = blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d), x: b.x === undefined ? (opt.phoneX === undefined ? 50 : opt.phoneX) : b.x }; });
-      if (opt.onSave) opt.onSave(parts, { zoom: zm, phoneZoom: split ? zph : undefined }); close(); } } });
+      if (opt.onSave) opt.onSave(parts, { zoom: zm, phoneZoom: split ? zph : undefined, zoomPos: [Math.round(zpos[0] * 1000) / 10, Math.round(zpos[1] * 1000) / 10] }); close(); } } });
     exp.appendChild(fill); exp.appendChild(save);
     exp.appendChild(el("p", { class: "hint", text: "Cadrage téléphone : clique un bloc, puis glisse la bande rouge sur la vidéo. Chaque bloc a le sien." }));
   }
@@ -315,7 +321,7 @@ function montageWin(films, opt) {
     if (k === "ArrowLeft" || k === "ArrowRight") { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pause(); var st = (e.shiftKey ? 1 : 1 / 25) * (k === "ArrowLeft" ? -1 : 1); if (loaded === src.full) vid.currentTime = clamp(vid.currentTime + st, 0, src.dur); }
   }
   window.addEventListener("keydown", onKey, true);
-  function close() { pause(); window.removeEventListener("keydown", onKey, true); ov.remove(); }
+  function close() { pause(); window.removeEventListener("keydown", onKey, true); ov.remove(); if (opt.onClose) { var f = opt.onClose; opt.onClose = null; f(); } }
   ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
   box.addEventListener("click", function (e) { // clic dans le vide de la fenêtre : le bloc choisi est désélectionné
     if (sel < 0 || e.target.closest("button, input, select, label, .hb, .hdtrack, .hdh, .hphone, video, canvas, .tlnav, .hbwrap, .hmphone")) return; selectBlock(-1);

@@ -459,7 +459,11 @@
     var seg = typeof m === "object" && m;
     var v = el("video", { muted: true, loop: !seg, playsinline: true, autoplay: true, poster: poster, src: seg ? m.src + "#t=" + m.start : m });
     v.muted = true;
-    if (seg) v.addEventListener("timeupdate", function () { if (v.currentTime >= m.end || v.currentTime < m.start - .5) v.currentTime = m.start; });
+    if (seg && m.parts && m.parts.length > 1) { // montage (accueil) : les blocs l'un après l'autre, en boucle
+      var pi = 0, P = m.parts, step = function () { if (!v.isConnected && pi < 0) return; var q = P[pi]; if (!v.paused && v.currentTime >= q.s + q.d - .03) { pi = (pi + 1) % P.length; v.currentTime = P[pi].s; } };
+      v.addEventListener("timeupdate", step); (function raf() { if (!v.isConnected && v._seen) return; if (v.isConnected) v._seen = true; step(); requestAnimationFrame(raf); })();
+      v.addEventListener("loadedmetadata", function () { pi = 0; v.currentTime = P[0].s; });
+    } else if (seg) v.addEventListener("timeupdate", function () { if (v.currentTime >= m.end || v.currentTime < m.start - .5) v.currentTime = m.start; });
     return v;
   }
   // Cadrage sur téléphone (écran en hauteur) d'un extrait affiché en plein écran : on fait glisser la bande rouge
