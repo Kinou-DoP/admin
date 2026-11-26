@@ -2,7 +2,78 @@
   "slug": "julien-roux-cinematographer",
   "name": "Julien Roux",
   "hue": 0,
-  "overrides": {},
+  "overrides": {
+    "6777": {
+      "info": {
+        "year": "2023",
+        "episodes": "8",
+        "runtime": "50",
+        "platforms": "Prime Video, France 2",
+        "auto": [
+          "year",
+          "episodes",
+          "runtime",
+          "platforms",
+          "starring"
+        ],
+        "autoSrc": [
+          "https://www.unifrance.org/film/56322/salade-grecque",
+          "https://www.francetvpro.fr/contenu-de-presse/67198503",
+          "https://www.crew-united.com/de/Greek-Salad__319808.html"
+        ],
+        "starring": "Romain Duris, Kelly Reilly, Cécile de France, Aliocha Schneider, Megan Northam",
+        "ratio": "16:9",
+        "awards": "Les Éclats • Actress Revelation (Megan Northam), Series Mania 2023\nNominated, Best Series • 40 minutes, A.C.S. Awards (Association des Critiques de Séries) 2023\nNominated, Best Supporting Role in a TV Series • 40 minutes (Romain Duris), A.C.S. Awards (Association des Critiques de Séries) 2023\nNominated, Best Production, A.C.S. Awards (Association des Critiques de Séries) 2023\nNominated, Best Score (Loïc Dury), A.C.S. Awards (Association des Critiques de Séries) 2023",
+        "awardsFrom": {
+          "ab62c32e06c0": "Les Éclats • Actress Revelation (Megan Northam), Series Mania 2023",
+          "cee597a432ed": "Nominated, Best Series • 40 minutes, A.C.S. Awards (Association des Critiques de Séries) 2023",
+          "f8032a87cd04": "Nominated, Best Supporting Role in a TV Series • 40 minutes (Romain Duris), A.C.S. Awards (Association des Critiques de Séries) 2023",
+          "3ae623ad0162": "Nominated, Best Production, A.C.S. Awards (Association des Critiques de Séries) 2023",
+          "b47326ddbe5b": "Nominated, Best Score (Loïc Dury), A.C.S. Awards (Association des Critiques de Séries) 2023"
+        }
+      }
+    },
+    "10041": {
+      "extras": [
+        {
+          "link": "https://kinou.slateapp.com/work/young-millionnaires-extrait-01-netflix",
+          "title": "Young Millionnaires | Extrait 01 | Netflix",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10045/03aa83fa-7e74-11f0-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/DB9NzV6CMqU9KCYUkaTAitIx60rAGuQcK95MYVQ6BeQ/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/MmRhOTJmOC04NmI0/LTQ2YjYtOGZjYi0y/YjQ2MGRjOGRmYTQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDItYS0xMC40Mi40/OS5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/72504801-5e79-429c-852a-18ff40d95ea7-1280x720.2500.mp4"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/young-millionnaires-extrait-02-netflix",
+          "title": "Young Millionnaires | Extrait 02 | Netflix",
+          "img": "https://images.slatecdn.net/_SPvkPL79U7dtZLwXrjOjKX1MXpE4ZJqvrdkd3E6NPA/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/ZDdkM2Y0Mi04ZGI5/LTRlMzktYTBlNC00/NGQ1YmZiY2EwNWIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMDkt/MDItYS0xMC40Mi4w/MC5wbmc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0f5acf88-5a8b-4b27-9281-96e580a9ba62-1280x720.2500.mp4"
+        },
+        {
+          "link": "https://kinou.slateapp.com/work/young-millionnaires-extrait-03-netflix",
+          "title": "Young Millionnaires | Extrait 03 | Netflix",
+          "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10047/8680cf31-7e74-11f0-9ce3-0215583debcb.mp4",
+          "img": "https://images.slatecdn.net/e2SzLd-0bcRyW_QI88_x19UXF7rXIWx1gQfLSW2Uu4A/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/N2YyOWRhNS04NGYx/LTQ4MGYtYmU3YS0y/YWYwZDI3N2RiNWIv/MTc1NTc2OTg4ODI1/OC5qcGc?v=1&format=webp",
+          "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2cbf668-b0f0-4f93-a325-d9f9e17b5a4c-1280x720.2500.mp4"
+        }
+      ]
+    },
+    "10436": {
+      "info": {
+        "awards": "Official selection • Hors compétition • Séance de la présidente, Festival International du Film de Comédie de l'Alpe d'Huez 2026",
+        "awardsFrom": {
+          "f5830ef949b2": "Official selection • Hors compétition • Séance de la présidente, Festival International du Film de Comédie de l'Alpe d'Huez 2026"
+        }
+      }
+    },
+    "10852": {
+      "info": {
+        "awards": "Official selection • Compétition, Festival international du film de comédie de l'Alpe d'Huez 2026",
+        "awardsFrom": {
+          "baf80202dd92": "Official selection • Compétition, Festival international du film de comédie de l'Alpe d'Huez 2026"
+        }
+      }
+    }
+  },
   "about": {
     "bioEn": [
       "Julien Roux is a french cinematographer based in Paris.",
