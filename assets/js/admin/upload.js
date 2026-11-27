@@ -308,7 +308,7 @@
     bibLoad().then(function (d) { data = d; draw(); inp.focus(); }, function (e) { info.textContent = "Video club indisponible : " + e.message; });
     return ov;
   }
-  function extrasCtl(get, set, label, ctx) {
+  function extrasCtl(get, set, label, ctx, opt) {
     var box = el("div", { class: "extras" }), openLay = -1; // réglage de colonnes ouvert (reste ouvert après un choix)
     function save(list) { set(list); touch(); draw(); }
     function kind(x) { return x.stills ? "Stills · " + x.stills.length : x.full || x.video ? "Vidéo" : "Vidéo · à publier"; }
@@ -335,7 +335,7 @@
         var find = el("button", { type: "button", class: "xbtn xfind", title: "Chercher un film dans le video club et l'ajouter", text: "🔍 Rechercher", on: { click: function () {
           bibPicker("Ajouter sous le film", function (f) { list.push(extraFromFilm(f)); save(list); });
         } } });
-        return el("div", { class: "xrow add" }, [el("div", { class: "xline" }, [input, find]), st]);
+        return el("div", { class: "xrow add" }, [el("div", { class: "xline" }, [input, find, opt && opt.sim ? simPill(opt.sim, list, function (f) { list.push(extraFromFilm(f)); save(list); }) : ""]), st]);
       }
       function move(k) { var j = i + k; if (j < 0 || j >= list.length) return; list.splice(j, 0, list.splice(i, 1)[0]); save(list); }
       var up = el("button", { type: "button", class: "xbtn", title: "Monter", text: "↑", on: { click: function () { move(-1); } } });

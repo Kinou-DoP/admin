@@ -1,8 +1,8 @@
-// Fiche d'un chef op (films qui ressemblent, Gus 27/11) : un petit calcul dans le navigateur propose les films du video club qui
-// ressemblent à ceux de la fiche (même réal, même prod, même client, titre proche : au moins 2 critères sur le même film de la
-// fiche, fautes d'orthographe tolérées). Chiffre orange sur « Modifier la sélection » ; liste avec « + » et « Ignorer » en haut de
-// la fenêtre de sélection. Un film déjà sur la page (ou ajouté dans la fenêtre) n'est plus compté. « Ignorer » est partagé :
-// enregistré dans data/bibli/edits.json sous la clé « ~sim:<adresse de la fiche> » (jamais lue comme un film).
+// Fiche d'un chef op (films qui ressemblent, Gus 27/11) : sous chaque film, à côté de « 🔍 Rechercher » (là où on ajoute du contenu
+// sous le film), une pastille orange donne le nombre de films du video club qui ressemblent à CE film : au moins 2 critères sur 4
+// (réal, prod, client, titre proche ; fautes d'orthographe tolérées). Un clic ouvre la liste (« + » = l'ajouter sous le film,
+// « Ignorer » = ne plus le proposer pour ce chef op). Un film déjà sous le film, ou déjà sur la page, n'est pas compté.
+// « Ignorer » est partagé : enregistré dans data/bibli/edits.json sous la clé « ~sim:<adresse de la fiche> » (jamais lue comme un film).
 // (Portée globale partagée avec les autres fichiers de assets/js/ ; ordre de chargement : voir index.html.)
 
   var SIM_GEN = /^(film|films|production|productions|prod|studio|studios|pictures|cinema|court|spot|pub|trailer|teaser|clip|making|the|les|des|une|pour|avec|dans|sur|par|and|etc)$/;
@@ -44,14 +44,14 @@
   function simIgnored() { var e = vcFilms && vcFilms[SIM_KEY(state && state.slug)]; return (e && e.ids) || []; }
   // Films proposés. have(id) = ce film est déjà dans la page (ou dans la fenêtre de sélection) : il n'est jamais proposé.
   // Renvoie [{ f, why }] du plus ressemblant au moins ressemblant.
-  function simCands(d, have) {
+  function simCands(d, have, only) {
     var me = bnrm(rcBase(state && state.name || "")); if (!me || !d || !d.films) return [];
     var ign = {}; simIgnored().forEach(function (k) { ign[k] = 1; });
-    var refs = d.films.filter(function (f) { var id = f.slate || f.key; return id && have(id) && !f.hidden; }).map(function (f) { return { f: f, p: simProfile(f) }; });
+    var refs = d.films.filter(function (f) { var id = f.slate || f.key; return id && (only ? only === id || only === f.key : have(id)) && !f.hidden; }).map(function (f) { return { f: f, p: simProfile(f) }; });
     if (!refs.length) return [];
     var out = [];
     d.films.forEach(function (f) {
-      var id = f.slate || f.key; if (!id || have(id) || ign[id] || f.hidden || !f.title) return;
+      var id = f.slate || f.key; if (!id || have(id) || have(f.key) || ign[id] || f.hidden || !f.title) return;
       var dops = (f.dops || []).map(bnrm);
       if (dops.length && dops.indexOf(me) < 0) return; // déjà crédité à d'autres chefs op : pas lui
       var p = simProfile(f), best = null;
@@ -72,18 +72,42 @@
     e.ids = (e.ids || []).concat(ids.filter(function (x) { return (e.ids || []).indexOf(x) < 0; }));
     vcTodo[k] = Object.assign(vcTodo[k] || {}, { ids: e.ids }); soon("vcPatch", vcSave, 1200); // pas de rechargement du video club
   }
-  // Pastille orange sur le bouton « Modifier la sélection » (calcul différé : le video club se charge en arrière-plan).
-  function simBadge(btn) {
-    if (!slate || !state || !state.slug) return;
-    var have = {}; (slate.clips || []).forEach(function (c) { have[c.slate] = 1; });
-    var go = function () {
+  // Pastille d'un film (c = film de la carte) : list = lignes déjà sous le film (extras), add(f) = l'ajouter dessous.
+  var simQ = 0;
+  function simPill(c, list, add) {
+    var b = el("button", { type: "button", class: "simbadge", hidden: true }), cands = [];
+    var onPage = {}; ((slate && slate.clips) || []).forEach(function (x) { onPage[x.slate] = 1; onPage["s" + x.slate] = 1; });
+    var below = {}; (list || []).forEach(function (x) { if (x.key) below[x.key] = 1; });
+    var have = function (id) { return onPage[id] || below[id]; };
+    setTimeout(function () {
       bibLoad().then(function (d) {
-        if (!btn.isConnected) return;
-        var l = simCands(d, function (id) { return have[id]; }), b = btn.querySelector(".simbadge");
-        if (b) b.remove();
-        if (!l.length) return;
-        btn.appendChild(el("span", { class: "simbadge", title: l.length + " film" + (l.length > 1 ? "s" : "") + " qui ressemble" + (l.length > 1 ? "nt" : "") + " à ceux de la fiche : ouvrir pour les voir", text: String(l.length) }));
+        if (!b.isConnected && !b.parentNode) return;
+        cands = simCands(d, have, c.slate);
+        if (!cands.length) { b.hidden = true; return; }
+        b.hidden = false; b.textContent = String(cands.length);
+        b.title = cands.length + " film" + (cands.length > 1 ? "s" : "") + " de ce chef op qui ressemble" + (cands.length > 1 ? "nt" : "") + " à celui-ci : cliquer pour les voir";
       }, function () {});
-    };
-    setTimeout(go, 800);
+    }, 300 + (simQ++ % 60) * 50); // étalé : une fiche a des dizaines de films
+    b.addEventListener("click", function () {
+      var ov = el("div", { class: "bmodal bpickm" }), box = el("div", { class: "bmbox" }), listEl = el("div", { class: "simlist" });
+      function close() { document.removeEventListener("keydown", esc, true); ov.remove(); }
+      function esc(e) { if (e.key === "Escape") { e.stopPropagation(); close(); } }
+      document.addEventListener("keydown", esc, true); ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+      function draw() {
+        listEl.textContent = "";
+        if (!cands.length) listEl.appendChild(el("p", { class: "empty", text: "Plus aucun film à proposer." }));
+        cands.forEach(function (x) {
+          var f = x.f, th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
+          listEl.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
+            el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") }), el("small", { class: "simwhy", text: x.why })]),
+            el("button", { type: "button", class: "btn ghost", text: "Ignorer", title: "Ne plus proposer ce film pour ce chef op", on: { click: function () { simIgnore([f.slate || f.key]); cands = cands.filter(function (y) { return y !== x; }); upd(); } } }),
+            el("button", { type: "button", class: "btn", text: "+", title: "Ajouter sous le film", on: { click: function () { close(); add(f); } } })]));
+        });
+      }
+      function upd() { b.textContent = String(cands.length); b.hidden = !cands.length; draw(); }
+      box.appendChild(el("span", { class: "label", text: "Films qui ressemblent à « " + (c.title || "") + " »" })); box.appendChild(listEl);
+      box.appendChild(el("div", { class: "fwbtns" }, [el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
+      ov.appendChild(box); document.body.appendChild(ov); draw();
+    });
+    return b;
   }
