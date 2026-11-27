@@ -1356,3 +1356,13 @@ input.bcn { width: 90px; }
   .bmfit .hexp > .hint:not(.bok):not(.berr), .bmfit .hhist, .bmfit .hhlab { display: none; }
 }
 .bmfit .hctl { flex-wrap: wrap; row-gap: 2px; } .bmfit .hctl .btn { padding-left: 10px; padding-right: 10px; }
+/* boutons image par image, annuler / rétablir bien visibles */
+.hctl .hicon { padding: 8px 12px; color: var(--kinou-fg); } .hctl .hicon svg { display: block; } .hctl .hplay { min-width: 84px; }
+.hundo { font-size: 20px; line-height: 1; padding: 6px 12px; color: var(--kinou-fg); } .hundo:disabled { opacity: .3; }
+/* la vidéo (+ le téléphone) tient dans la colonne de gauche : taille calculée sur la place réellement libre (unités de conteneur) */
+@media (min-width: 901px), (orientation: landscape) {
+  .bmfit .hvid .hvrow { container-type: size; }
+  .bmfit .bmontbox .hvhome .hvrow .hvw { height: min(100cqh, calc((100cqw - 16px) / 2.3072)) !important; width: auto !important; max-width: none; aspect-ratio: 16 / 9; }
+  .bmfit .bmontbox .hvhome .hvrow .hmphone { height: min(100cqh, calc((100cqw - 16px) / 2.3072)) !important; width: auto !important; }
+  .bmfit .bmontbox .hvid:not(.hvhome) .hvrow .hvw { height: min(100cqh, calc(100cqw * 9 / 16)) !important; width: auto !important; max-width: none; }
+}

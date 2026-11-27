@@ -80,7 +80,7 @@ function montageWin(films, opt) {
   function restore(st) { blocks = st.blocks.map(function (b) { return { id: b.id, f: b.f, s: b.s, d: b.d, x: b.x, hue: b.hue }; }); sel = st.sel < blocks.length ? st.sel : -1; loopI = -1; cur = clamp(cur, 0, Math.max(0, blocks.length - 1)); if (sel >= 0) { src = blocks[sel].f; load(src, blocks[sel].s, false); } drawBar(); undoBtns(); }
   function undo() { if (!hist.length) return; pause(); redoS.push(cap()); restore(hist.pop()); }
   function redo() { if (!redoS.length) return; pause(); hist.push(cap()); restore(redoS.pop()); }
-  var undoB = el("button", { type: "button", class: "btn ghost", text: "↶", title: "Annuler (Cmd / Ctrl + Z)", on: { click: undo } }), redoB = el("button", { type: "button", class: "btn ghost", text: "↷", title: "Rétablir (Maj + Cmd / Ctrl + Z)", on: { click: redo } });
+  var undoB = el("button", { type: "button", class: "btn ghost hundo", text: "↶", title: "Annuler (Cmd / Ctrl + Z)", on: { click: undo } }), redoB = el("button", { type: "button", class: "btn ghost hundo", text: "↷", title: "Rétablir (Maj + Cmd / Ctrl + Z)", on: { click: redo } });
   function undoBtns() { undoB.disabled = !hist.length; redoB.disabled = !redoS.length; }
   var loopI = -1; // bloc lu en boucle (▶ d'un bloc de la frise du bas)
   function total() { return blocks.reduce(function (a, b) { return a + b.d; }, 0); }
@@ -391,12 +391,17 @@ function montageWin(films, opt) {
     if (sel < 0 || e.target.closest("button, input, select, label, .hb, .hdtrack, .hdh, .hphone, video, canvas, .tlnav, .hbwrap, .hmphone")) return; selectBlock(-1);
   });
   // ---------- assemblage de la fenêtre ----------
+  // Image par image : boutons ◀| et |▶ de chaque côté de la lecture (comme les flèches ← →).
+  function iconBtn(path, title, fn) { var b = el("button", { type: "button", class: "btn ghost hicon", title: title, on: { click: fn } }); b.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="' + path + '"/></svg>'; return b; }
+  function stepF(dir) { pause(); mode = "src"; if (loaded === src.full) vid.currentTime = clamp(sn(vid.currentTime + dir * FR) + FR * .25, 0, src.dur - .04); }
   // Accueil : pas d'en-tête, seulement « Fermer » en haut à droite (↶ ↷ avec les boutons de lecture) ; autres montages : en-tête avec le nom.
   var closeB = el("button", { type: "button", class: "btn ghost" + (EX ? " hmclose" : ""), text: "Fermer", on: { click: close } });
   if (EX) box.appendChild(closeB);
   else box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), nameI, undoB, redoB, closeB]));
   box.appendChild(el("div", { class: "hmain" + (EX ? " hmhome" : "") }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [el("div", { class: "hvrow" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), el("div", { class: "hctl" }, [
-    el("button", { type: "button", class: "btn ghost", text: "▶ / ❚❚ Source", title: "Lire la vidéo source (espace)", on: { click: function () { if (playing && mode === "src") pause(); else playSrc(); } } }),
+    iconBtn("M5 5h2v14H5zM20 5v14L9 12z", "Image précédente (←)", function () { stepF(-1); }),
+    el("button", { type: "button", class: "btn ghost hplay", text: "▶ / ❚❚", title: "Lire la vidéo source (espace)", on: { click: function () { if (playing && mode === "src") pause(); else playSrc(); } } }),
+    iconBtn("M17 5h2v14h-2zM4 5v14l11-7z", "Image suivante (→)", function () { stepF(1); }),
     el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else { loopI = -1; playSeq(0); } } } }),
     el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } }), EX ? undoB : "", EX ? redoB : ""])]), exp]));
   box.appendChild(det); box.appendChild(el("span", { class: "label hmlab", text: "Montage · glisse un bloc pour changer l'ordre, clique-glisse sur la règle pour balader la lecture" })); box.appendChild(wrap); box.appendChild(info);
