@@ -126,17 +126,25 @@ function montageWin(films, opt) {
     else if (EX || SNIP) { cur = 0; hop(blocks[0].f, blocks[0].s); } /* extrait : le montage tourne en boucle */
     else { pause(); cur = 0; load(blocks[0].f, blocks[0].s, false); }
   }
+  // Fin de bloc sans image en trop : quand l'avant-dernière (ou la dernière) image est affichée, on arrête la vidéo, on affiche explicitement la dernière image du bloc (déplacement
+  // à l'arrêt = image exacte), on la garde une image, puis on saute au bloc suivant. Rien n'est laissé au hasard de la lecture en continu.
+  var holdB = false;
+  function finishBlock(b, e, mt) {
+    holdB = true; vid.pause();
+    var go = function () { setTimeout(function () { holdB = false; if (playing && ov.isConnected) advance(); }, FR * 1000); };
+    if (mt < e - FR * .99) { vid.addEventListener("seeked", function w() { vid.removeEventListener("seeked", w); go(); }); vid.currentTime = Math.max(b.s, e - .001); } else go();
+  }
   if (vid.requestVideoFrameCallback) (function () {
     function onFrame(now, m) {
       if (ov.isConnected) vid.requestVideoFrameCallback(onFrame);
-      var b = blocks[cur]; if (!playing || mode !== "seq" || !b || loaded !== b.f.full) return;
-      if (m.mediaTime >= b.s + b.d - FR * 1.05 && m.mediaTime < b.s + b.d + 1) advance();
+      var b = blocks[cur]; if (!playing || mode !== "seq" || !b || loaded !== b.f.full || holdB) return;
+      var e = b.s + b.d; if (m.mediaTime >= e - FR * 2.05 && m.mediaTime < e + 1) finishBlock(b, e, m.mediaTime);
     }
     vid.requestVideoFrameCallback(onFrame);
   })();
   function tick() {
     if (!ov.isConnected) return;
-    if (playing && mode === "seq" && blocks[cur]) { var b = blocks[cur]; if (loaded === b.f.full && vid.currentTime >= b.s + b.d + .02) advance(); }
+    if (playing && mode === "seq" && blocks[cur]) { var b = blocks[cur]; if (loaded === b.f.full && !holdB && vid.currentTime >= b.s + b.d + .02) advance(); }
     drawCursor(); requestAnimationFrame(tick);
   }
   function phoneBlock() { return !EX ? null : sel >= 0 && !(mode === "seq" && playing) ? blocks[sel] : null; } // bande rouge : seulement pour régler un bloc (pas pendant le montage)

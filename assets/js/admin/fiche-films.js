@@ -459,9 +459,18 @@
     var seg = typeof m === "object" && m;
     var v = el("video", { muted: true, loop: !seg, playsinline: true, autoplay: true, poster: poster, src: seg ? m.src + "#t=" + m.start : m });
     v.muted = true;
-    if (seg && m.parts && m.parts.length > 1) { // montage (accueil) : les blocs l'un après l'autre, en boucle
-      var pi = 0, P = m.parts, step = function () { if (!v.isConnected && pi < 0) return; var q = P[pi]; if (!v.paused && v.currentTime >= q.s + q.d - .03) { pi = (pi + 1) % P.length; v.currentTime = P[pi].s; } };
-      v.addEventListener("timeupdate", step); (function raf() { if (!v.isConnected && v._seen) return; if (v.isConnected) v._seen = true; step(); requestAnimationFrame(raf); })();
+    if (seg && m.parts && m.parts.length > 1) { // montage (accueil) : les blocs l'un après l'autre, en boucle, sans image en trop (même principe que la fenêtre de montage)
+      var pi = 0, P = m.parts, FRm = 1 / 25, hold = false, FPSm = [24000 / 1001, 24, 25, 30000 / 1001, 30, 50, 60], lastM = null;
+      var jump = function () { pi = (pi + 1) % P.length; v.addEventListener("seeked", function w() { v.removeEventListener("seeked", w); hold = false; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }); v.currentTime = P[pi].s + FRm * .25; };
+      var fin = function (e, mt) { hold = true; v.pause(); var go = function () { setTimeout(function () { if (v.isConnected) jump(); else hold = false; }, FRm * 1000); };
+        if (mt < e - FRm * .99) { v.addEventListener("seeked", function w() { v.removeEventListener("seeked", w); go(); }); v.currentTime = Math.max(P[pi].s, e - .001); } else go(); };
+      var cbm = function (now, mm) {
+        if (lastM !== null) { var d = Math.abs(mm.mediaTime - lastM); if (d > .008 && d < .06) { var f = 1 / d, best = FPSm.reduce(function (x, c) { return Math.abs(c - f) < Math.abs(x - f) ? c : x; }, FPSm[0]); if (Math.abs(best - f) / best < .12) FRm = 1 / best; } } lastM = mm.mediaTime;
+        if (v.isConnected || !v._seen) { if (v.isConnected) v._seen = true; v.requestVideoFrameCallback(cbm); }
+        if (hold || v.paused) return; var q = P[pi], e = q.s + q.d; if (mm.mediaTime >= e - FRm * 2.05 && mm.mediaTime < e + 1) fin(e, mm.mediaTime);
+      };
+      if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(cbm);
+      v.addEventListener("timeupdate", function () { if (hold) return; var q = P[pi]; if (!v.paused && v.currentTime >= q.s + q.d + .03) { pi = (pi + 1) % P.length; v.currentTime = P[pi].s; } }); // secours
       v.addEventListener("loadedmetadata", function () { pi = 0; v.currentTime = P[0].s; });
     } else if (seg) v.addEventListener("timeupdate", function () { if (v.currentTime >= m.end || v.currentTime < m.start - .5) v.currentTime = m.start; });
     return v;
