@@ -222,12 +222,12 @@
       "gi": 2,
       "enc": {
         "path": "data/encode/film-1795786587429-20w4q.json",
-        "id": "mwz0yuxxiy3bmk",
-        "sending": true
+        "id": "mwz0yuxxiy3bmk"
       },
       "size": 20458584,
       "at": "2026-11-27T13:36:27.428Z",
-      "by": "John"
+      "by": "John",
+      "mkey": "depot/8wzudzex4n72iwedyvku/gregoryghul_video20.mp4"
     }
   ]
 }
