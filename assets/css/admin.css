@@ -1331,3 +1331,28 @@ input.bcn { width: 90px; }
 .bmfit .bmontbox > .hint { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 6px 0 0; }
 .bmfit .hzl { white-space: nowrap; } .bmfit .hzoomrow { margin: 0 0 8px; }
 .bmfit .bmontbox .hvid .hvw, .bmfit .bmontbox .hvhome .hvrow .hvw { width: auto !important; height: 100%; aspect-ratio: 16 / 9; }
+/* Montage de l'accueil sans en-tête : « Fermer » en haut à droite */
+.bmfit .bmontbox { position: relative; } .bmfit .hmclose { position: absolute; top: 12px; right: 16px; z-index: 8; }
+.bmfit .hmhome .hexp, .bmfit .hxhome { padding-top: 40px; }
+/* Téléphone (portrait) : colonne unique, la fenêtre défile — réglages en haut, puis téléphone + ordinateur, puis les deux frises */
+@media (max-width: 900px) and (orientation: portrait) {
+  .bmodal.bmont { padding: 8px; }
+  .bmfit .bmontbox { height: auto; max-height: calc(100vh - 16px); overflow-y: auto; padding: 12px; }
+  .bmfit .bmontbox > .hmain { flex: none; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+  .bmfit .hmain > .hexp { order: -1; overflow: visible; }
+  .bmfit .hvid { height: auto; }
+  .bmfit .hvid .hvrow { flex: none; height: auto; align-items: flex-start; justify-content: flex-start; }
+  .bmfit .bmontbox .hvid .hvw, .bmfit .bmontbox .hvhome .hvrow .hvw { flex: 1 1 0; min-width: 0; height: auto !important; max-width: none; }
+  .bmfit .bmontbox .hvid .hmphone, .bmfit .hmhome .hvid .hmphone { width: 28% !important; height: auto !important; max-width: 140px; }
+  .bmfit .hctl { flex-wrap: wrap; gap: 4px; }
+  .bmfit .hdlab, .bmfit .bmontbox > .hint { white-space: normal; }
+}
+/* Paysage sur téléphone (peu de hauteur) : colonnes côte à côte, la fenêtre défile pour atteindre les frises */
+@media (orientation: landscape) and (max-height: 560px) {
+  .bmodal.bmont { padding: 6px; }
+  .bmfit .bmontbox { height: auto; max-height: calc(100vh - 12px); overflow-y: auto; padding: 10px 14px; }
+  .bmfit .bmontbox > .hmain { flex: none; height: min(70vh, 250px); }
+  .bmfit .hmhome .hexp, .bmfit .hxhome { padding-top: 30px; } .bmfit .hmclose { top: 6px; }
+  .bmfit .hexp > .hint:not(.bok):not(.berr), .bmfit .hhist, .bmfit .hhlab { display: none; }
+}
+.bmfit .hctl { flex-wrap: wrap; row-gap: 2px; } .bmfit .hctl .btn { padding-left: 10px; padding-right: 10px; }

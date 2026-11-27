@@ -391,11 +391,14 @@ function montageWin(films, opt) {
     if (sel < 0 || e.target.closest("button, input, select, label, .hb, .hdtrack, .hdh, .hphone, video, canvas, .tlnav, .hbwrap, .hmphone")) return; selectBlock(-1);
   });
   // ---------- assemblage de la fenêtre ----------
-  box.appendChild(el("div", { class: "hhead" }, [EX ? el("span", { class: "tlgrow" }) : el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), EX ? "" : nameI, undoB, redoB, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
+  // Accueil : pas d'en-tête, seulement « Fermer » en haut à droite (↶ ↷ avec les boutons de lecture) ; autres montages : en-tête avec le nom.
+  var closeB = el("button", { type: "button", class: "btn ghost" + (EX ? " hmclose" : ""), text: "Fermer", on: { click: close } });
+  if (EX) box.appendChild(closeB);
+  else box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), nameI, undoB, redoB, closeB]));
   box.appendChild(el("div", { class: "hmain" + (EX ? " hmhome" : "") }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [el("div", { class: "hvrow" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), el("div", { class: "hctl" }, [
     el("button", { type: "button", class: "btn ghost", text: "▶ / ❚❚ Source", title: "Lire la vidéo source (espace)", on: { click: function () { if (playing && mode === "src") pause(); else playSrc(); } } }),
     el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else { loopI = -1; playSeq(0); } } } }),
-    el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } })])]), exp]));
+    el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } }), EX ? undoB : "", EX ? redoB : ""])]), exp]));
   box.appendChild(det); box.appendChild(el("span", { class: "label hmlab", text: "Montage · glisse un bloc pour changer l'ordre, clique-glisse sur la règle pour balader la lecture" })); box.appendChild(wrap); box.appendChild(info);
   ov.appendChild(box); document.body.appendChild(ov);
   undoBtns(); drawZoom(); applyZoom(); drawBar(); load(src, act().s, false); tick();
