@@ -192,7 +192,27 @@ async function thumb(j, dir) {
   const base = "nous/" + j.id + "/vignette-" + Math.round(t * 1000);
   return { img: await put(im[800], base + "-800.webp", "image/webp"), img1600: await put(im[1600], base + "-1600.webp", "image/webp"), thumbT: r3(t) };
 }
-const WORK = { film, edit, post, snip, thumb };
+// Extrait de l'accueil (Gus 27/11) : le montage (blocs [{ s, d }]) coupé en UN petit fichier, 1080p au plus, sans son, à l'image près, pour que la page d'accueil ne saute plus
+// dans le film complet (fluide même en connexion faible). Tous les blocs : mêmes réglages, collés sans réencodage ; une image clé toutes les 12 images (boucle et saut rapides).
+async function home(j, dir) {
+  const parts = Array.isArray(j.parts) ? j.parts.slice(0, 12).map((x) => ({ s: Math.max(0, +x.s || 0), d: +x.d || 0 })).filter((x) => x.d >= 0.04) : [];
+  if (!parts.length) throw new Error("montage vide");
+  let tot = 0; parts.forEach((x) => (tot += x.d)); if (tot > 40) throw new Error("montage de plus de 40 s");
+  const src = await source(j.src), files = [];
+  for (let i = 0; i < parts.length; i++) {
+    const f = join(dir, "bloc" + i + ".mp4");
+    await must("ffmpeg", ["-y", "-v", "error", "-ss", String(parts[i].s), "-i", src, "-t", String(parts[i].d), "-an", "-map", "0:v:0",
+      "-vf", "scale='min(1920,iw)':-2:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-g", "12", "-keyint_min", "6", "-movflags", "+faststart", f], "bloc " + (i + 1));
+    files.push(f);
+  }
+  fs.writeFileSync(join(dir, "liste.txt"), files.map((f) => "file '" + f + "'").join("\n") + "\n");
+  const out = join(dir, "accueil.mp4");
+  await must("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", join(dir, "liste.txt"), "-c", "copy", "-movflags", "+faststart", out], "assemblage");
+  const p = await probe(out); if (!p.dur) throw new Error("fichier illisible");
+  const tag = parts.map((x) => Math.round(x.s * 1000) + "-" + Math.round(x.d * 1000)).join("_").slice(0, 100);
+  return { video: await put(out, "nous/accueil/" + j.id + "/" + tag + ".mp4", "video/mp4"), dur: r3(p.dur), parts: parts.map((x) => ({ s: r3(x.s), d: r3(x.d) })), mo: r3(fs.statSync(out).size / 1e6) };
+}
+const WORK = { film, edit, post, snip, thumb, home };
 
 // Enregistrement d'une demande (réponse, avancement) : un commit par-dessus la dernière version de main. On repart toujours de
 // main (fetch + reset) et on réécrit le fichier depuis la mémoire : jamais de rebase qui reste coincé (bug du 25/11 : identité git
