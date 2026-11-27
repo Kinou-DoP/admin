@@ -3,6 +3,75 @@
   "name": "Martin Rit",
   "hue": 0,
   "overrides": {
+    "8275": {
+      "title": "Arrête avec tes Mensonges"
+    },
+    "8282": {
+      "title": "Le Prix du Passage"
+    },
+    "8283": {
+      "title": "La Troisième Guerre"
+    },
+    "8284": {
+      "title": "Noura Rêve"
+    },
+    "8307": {
+      "title": "Tombé du ciel"
+    },
+    "8311": {
+      "title": "Adieu Pan"
+    },
+    "8312": {
+      "title": "L'âge tendre"
+    },
+    "8313": {
+      "title": "La contre-allée"
+    },
+    "8314": {
+      "title": "Les ronds-points de l'hiver"
+    },
+    "8316": {
+      "title": "Marinaleda"
+    },
+    "8317": {
+      "title": "Pastorale"
+    },
+    "8318": {
+      "title": "Souvenir inoubliable d'un ami"
+    },
+    "8319": {
+      "title": "Un adieu"
+    },
+    "8320": {
+      "title": "Une habitude de jeune homme"
+    },
+    "8322": {
+      "title": "Callista"
+    },
+    "8323": {
+      "title": "Le repos des braves"
+    },
+    "8327": {
+      "title": "L’île au trésor"
+    },
+    "8330": {
+      "title": "Dirty Difficult Dangerous"
+    },
+    "8331": {
+      "title": "Vent du Nord"
+    },
+    "8332": {
+      "title": "Wallay"
+    },
+    "8340": {
+      "title": "Première Affaire"
+    },
+    "8348": {
+      "title": "Ceux qui rougissent"
+    },
+    "9562": {
+      "title": "Le Domaine"
+    },
     "11143": {
       "info": {
         "awards": "Official selection, Festival du film francophone d'Angoulême 2026\nValois de la mise en scène, Festival du film francophone d'Angoulême 2026\nValois de l'acteur (Diego Murgia), Festival du film francophone d'Angoulême 2026\nOfficial selection • Séances spéciales (hors compétition), Festival de Cannes • Semaine de la Critique 2026",
@@ -15,7 +84,25 @@
       }
     }
   },
-  "about": {},
+  "about": {
+    "bio": [
+      "Martin Rit est un directeur de la photographie français basé à Paris. Il a fait des études de philosophie à l’université d’Aix-en-Provence, et une formation en image à la Fémis. \nIl a travaillé sur une dizaine de longs-métrages, et des documentaires, comme L’île au Trésor de Guillaume Brac.\nSa première série, Ceux qui rougissent de Julien Gaspar Oliveri pour Arte remporte le prix de la meilleure série courte au festival Séries Mania 2024\nIl a aussi réalisé quelques courts-métrages, dont La leçon de guitare, nommé aux César."
+    ],
+    "bioEn": [
+      "Martin Rit is a French cinematographer based in Paris. He studied philosophy and graduated from La Fémis school where he studied cinematography. \nHe worked on several short and feature films, narratives and documentaries. \nHis first tv show, \"Those Who Blush » directed by Julien Gaspar Oliveri for Arte wins the award for Best Short Series at the 2024 Séries Mania Festival.\nHe also directed few short films as \"The Guitar Lesson » which was nominated for the César."
+    ],
+    "website": "http://www.martinrit.com/dop/accueil.html",
+    "instagram": "https://www.instagram.com/martinrittt/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm1262093/"
+      }
+    ],
+    "pos": "62% 40%",
+    "img": "img/martin-rit-cinematographer.webp",
+    "og": "img/martin-rit-cinematographer-og-1795780829715.jpg"
+  },
   "categories": [
     "FEATURED",
     "FEATURE FILM",
