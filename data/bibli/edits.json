@@ -1392,10 +1392,16 @@
     },
     "emwz0yuxx4b0zl1": {
       "title": "Garnier Ultra Doux",
-      "dir": "The Jacks"
+      "dir": "The Jacks",
+      "dops": [
+        "Arnaud Stefani"
+      ]
     },
     "emwz0yuxxiy3bmk": {
-      "title": "gregory ghul"
+      "title": "Gregory Ghul",
+      "dops": [
+        "Arnaud Stefani"
+      ]
     }
   }
 }
