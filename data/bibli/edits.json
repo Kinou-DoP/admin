@@ -1386,8 +1386,11 @@
     },
     "emwz0yuxwxipr04": {
       "title": "Garnier Fructis",
-      "img": "https://d3toxii6rvamjf.cloudfront.net/depot/u7w5b8e3bc9jinrkfdbt/vignette.webp",
-      "thumbT": 60.999
+      "dops": [
+        "Arnaud Stefani"
+      ],
+      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/web.mp4",
+      "enc": null
     },
     "emwz0yuxx4b0zl1": {
       "title": "Garnier Ultra Doux",
