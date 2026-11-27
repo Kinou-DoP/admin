@@ -276,12 +276,12 @@
     document.addEventListener("keydown", esc, true);
     ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
     ov.appendChild(box); document.body.appendChild(ov);
-    function shown() { var words = bnrm(inp.value).split(/\s+/).filter(Boolean); return data.films.filter(function (f) { return chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); }); }
+    function shown() { var words = bnrm(inp.value).split(/\s+/).filter(Boolean); return data.films.filter(function (f) { return bibChipsOk(f, chips) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); }); }
     function suggest() {
       sugBox.textContent = ""; si = -1; var v = bnrm(inp.value); if (!data || !v) { sugBox.hidden = true; return; }
       var words = v.split(/\s+/), per = {};
       var hits = data.sug.filter(function (x) { var n = bnrm(x.value); return words.every(function (w) { return n.indexOf(w) > -1; }) && !chips.some(function (c) { return c.type === x.type && bnrm(c.value) === bnrm(x.value); }); })
-        .sort(function (a, b) { return BIB_ORDER.indexOf(a.type) - BIB_ORDER.indexOf(b.type) || b.n - a.n; }).filter(function (x) { per[x.type] = (per[x.type] || 0) + 1; return per[x.type] <= 4; }).slice(0, 12);
+        .sort(function (a, b) { return BIB_ORDER.indexOf(a.type) - BIB_ORDER.indexOf(b.type) || b.n - a.n; }).filter(function (x) { per[x.type] = (per[x.type] || 0) + 1; return per[x.type] <= 4; }).slice(0, 24);
       hits.forEach(function (x) { sugBox.appendChild(el("button", { type: "button", on: { mousedown: function (e) { e.preventDefault(); }, click: function () { chips.push({ type: x.type, value: x.value }); inp.value = ""; sugBox.hidden = true; draw(); inp.focus(); } } },
         [el("span", { class: "bst t-" + x.type, text: BIB_T[x.type] }), el("span", { text: x.value }), el("span", { class: "bsn", text: x.n + " film" + (x.n > 1 ? "s" : "") })])); });
       sugBox.hidden = !hits.length;

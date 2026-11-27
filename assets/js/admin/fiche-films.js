@@ -251,7 +251,7 @@
       if (!lib || !words.length) { sugBox.hidden = true; return; }
       var hits = lib.sug.filter(function (s) { var n = bnrm(s.value); return words.every(function (w) { return n.indexOf(w) > -1; }) && !chips.some(function (c) { return c.type === s.type && bnrm(c.value) === bnrm(s.value); }); })
         .sort(function (x, y) { var px = bnrm(x.value).indexOf(words[0]) === 0 ? 0 : 1, py = bnrm(y.value).indexOf(words[0]) === 0 ? 0 : 1; return BIB_ORDER.indexOf(x.type) - BIB_ORDER.indexOf(y.type) || px - py || y.n - x.n; })
-        .filter(function (s) { per[s.type] = (per[s.type] || 0) + 1; return per[s.type] <= 3; }).slice(0, 10);
+        .filter(function (s) { per[s.type] = (per[s.type] || 0) + 1; return per[s.type] <= 3; }).slice(0, 18);
       hits.forEach(function (s) {
         sugBox.appendChild(el("button", { type: "button", on: { mousedown: function (e) { e.preventDefault(); }, click: function () { chips.push({ type: s.type, value: s.value }); search.value = q = ""; sugBox.hidden = true; drawRight(); search.focus(); } } },
           [el("span", { class: "bst t-" + s.type, text: BIB_T[s.type] }), el("span", { text: s.value }), el("span", { class: "bsn", text: s.n + " film" + (s.n > 1 ? "s" : "") })]));
@@ -271,7 +271,7 @@
       var words = bnrm(q).split(" ").filter(Boolean), onPage = {};
       base.clips.forEach(function (c) { onPage[c.slate] = 1; }); Object.keys(extra).forEach(function (k) { onPage[k] = 1; });
       var withPage = isDefault() && !words.length; // à l'ouverture : les films du chef op + ceux de la page
-      var list = lib.films.filter(function (f) { return sid(f) && ((withPage && onPage[sid(f)]) || (chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
+      var list = lib.films.filter(function (f) { return sid(f) && ((withPage && onPage[sid(f)]) || (bibChipsOk(f, chips) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
       if (withPage) Object.keys(onPage).forEach(function (id) { if (/^\d+$/.test(id)) id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
       var key = JSON.stringify([q, chips]); if (key !== lastKey) { lastKey = key; maxR = 150; } // nouvelle recherche : 150 d'abord
       results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" }));

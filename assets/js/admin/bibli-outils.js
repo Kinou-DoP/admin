@@ -224,6 +224,12 @@
     if (c.type === "cat") return f.cats.some(function (x) { return bnrm(x) === v; });
     return true;
   }
+  // Filtres du video club : plusieurs filtres de la même sorte (2 catégories, 2 types de contenu) = l'un OU l'autre (Gus 27/11) ;
+  // sortes différentes (réal + catégorie…) = les deux à la fois.
+  function bibChipsOk(f, chips) {
+    var by = {}; chips.forEach(function (c) { (by[c.type] = by[c.type] || []).push(c); });
+    return Object.keys(by).every(function (t) { return t === "cat" || t === "type" ? by[t].some(function (c) { return bibMatch(f, c); }) : by[t].every(function (c) { return bibMatch(f, c); }); });
+  }
   function bandNew() {
     var d = new Date();
     return { code: null, title: "Bande (" + d.getDate() + " " + MOISC[d.getMonth()] + " " + d.getFullYear() + ")", description: "", artists: "", items: [], cols: 3,

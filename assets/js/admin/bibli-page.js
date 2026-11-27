@@ -110,7 +110,7 @@
       // Toujours dans cet ordre : chef op, réal, prod, client, type de contenu, catégorie (Gus 22/11) ; 4 au plus par sorte.
       var hits = data.sug.filter(function (s) { var n = bnrm(s.value); return words.every(function (w) { return n.indexOf(w) > -1; }) && !st.chips.some(function (c) { return c.type === s.type && bnrm(c.value) === bnrm(s.value); }); })
         .sort(function (a, b) { var pa = bnrm(a.value).indexOf(words[0]) === 0 ? 0 : 1, pb = bnrm(b.value).indexOf(words[0]) === 0 ? 0 : 1; return BIB_ORDER.indexOf(a.type) - BIB_ORDER.indexOf(b.type) || pa - pb || b.n - a.n; })
-        .filter(function (s) { per[s.type] = (per[s.type] || 0) + 1; return per[s.type] <= 4; }).slice(0, 14);
+        .filter(function (s) { per[s.type] = (per[s.type] || 0) + 1; return per[s.type] <= 4; }).slice(0, 24);
       hits.forEach(function (s, i) {
         sugBox.appendChild(el("button", { type: "button", style: "--i:" + i, on: { mousedown: function (e) { e.preventDefault(); }, click: function () { st.chips.push({ type: s.type, value: s.value }); q.value = st.q = ""; sugBox.hidden = true; draw(); q.focus(); } } },
           [el("span", { class: "bst t-" + s.type, text: BIB_T[s.type] }), el("span", { text: s.value }), el("span", { class: "bsn", text: s.n + " film" + (s.n > 1 ? "s" : "") })]));
@@ -119,7 +119,7 @@
     }
     function shown() {
       var words = bnrm(st.q).split(/\s+/).filter(Boolean);
-      return data.films.filter(function (f) { return st.chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); });
+      return data.films.filter(function (f) { return bibChipsOk(f, st.chips) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); });
     }
     function draw() {
       chipsBox.textContent = "";
