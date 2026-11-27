@@ -8,6 +8,7 @@ Interface d'administration de kinou.fr et données du site (`data/`).
 - Détails techniques : voir `CLAUDE.md` et les notes par sujet dans `docs/`.
 
 ## À faire plus tard
+- Nettoyer l'ancien éditeur d'extrait de `assets/js/admin/bibli-page.js` (masqué depuis `montage.js`) : à faire à part, avec tests (détail dans `FEUILLE-DE-ROUTE.md` du dépôt notes).
 - Quand la beta sera fusionnée dans le site officiel : passer la constante `SITE` de `assets/js/admin.js` (noyau)
   de la beta à l'adresse officielle (kinou.fr).
 - Photo de survol de la liste des chefs op, choix des slides de l'accueil.
