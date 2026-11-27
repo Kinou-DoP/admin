@@ -3,9 +3,14 @@
     {
       "id": "mwz7ftajhyej68",
       "kind": "film",
-      "key": "depot/f4zzab43esvaemi5sx84/seeker_trailer_2026_1m03s_3996x2160p25_WEB.mp4"
+      "key": "depot/f4zzab43esvaemi5sx84/seeker_trailer_2026_1m03s_3996x2160p25_WEB.mp4",
+      "progress": {
+        "step": "lecture",
+        "pct": 0
+      }
     }
   ],
   "at": "2026-11-27T16:37:44.350Z",
-  "by": "Gurvan"
+  "by": "Gurvan",
+  "startedAt": "2026-11-27T16:38:20.290Z"
 }
