@@ -1524,8 +1524,9 @@
     },
     "emwz7ftajhyej68": {
       "title": "Seeker • Trailer",
-      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4",
-      "enc": null
+      "dops": [
+        "Ludovic Zuili"
+      ]
     }
   }
 }
