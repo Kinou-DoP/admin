@@ -462,3 +462,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 27/11 : crédits : sigles (AFC, SBC…) gardés dans les lignes de crédits des cartes (`vcShow`, `vcSep`) comme sur le site.
 - 27/11 : video club : « Délier cette vidéo » / « Tout délier » dans la barre des vidéos liées (importées ensemble) de la fenêtre d'un film (`unlinkFilms` : retire `grp` / `gi` de library.json et edits.json ; un lot réduit à une vidéo est dissous).
 - 27/11 : import de plusieurs vidéos : plus liées au départ ; case « Lier ces N vidéos entre elles » tout en haut de la fenêtre d'import (décochée ; la cocher lie, la décocher délie : `setLinked`).
+- 27/11 : montage : C coupe le bloc sous le curseur (choisi ou non, ou celui qui joue) ; fin de bloc : minuteur de précision en plus du rappel image par image (`armEnd`) dans la fenêtre de montage, l'aperçu de l'admin et le site : plus aucune image du plan d'après sur la vidéo d'essai (12 s de boucle).

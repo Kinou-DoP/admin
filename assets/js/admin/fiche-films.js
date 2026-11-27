@@ -469,6 +469,9 @@
         if (v.isConnected || !v._seen) { if (v.isConnected) v._seen = true; v.requestVideoFrameCallback(cbm); }
         if (hold || v.paused) return; var q = P[pi], e = q.s + q.d; if (mm.mediaTime >= e - FRm * 2.05 && mm.mediaTime < e + 1) fin(e, mm.mediaTime);
       };
+      var endTm = 0, armM = function () { clearTimeout(endTm); if (hold || v.paused || !v.isConnected) return; var q = P[pi], e = q.s + q.d, dt = (e - FRm * 1.5 - v.currentTime) / (v.playbackRate || 1); if (!(dt > 0)) return;
+        endTm = setTimeout(function () { if (!hold && !v.paused && P[pi] === q && v.currentTime < e) fin(e, v.currentTime); }, dt * 1000); }; // minuteur de précision (comme dans la fenêtre de montage)
+      ["playing", "seeked"].forEach(function (n) { v.addEventListener(n, armM); });
       if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(cbm);
       v.addEventListener("timeupdate", function () { if (hold) return; var q = P[pi]; if (!v.paused && v.currentTime >= q.s + q.d + .03) { pi = (pi + 1) % P.length; v.currentTime = P[pi].s; } }); // secours
       v.addEventListener("loadedmetadata", function () { pi = 0; v.currentTime = P[0].s; });

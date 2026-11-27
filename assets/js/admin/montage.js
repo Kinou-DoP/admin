@@ -142,6 +142,14 @@ function montageWin(films, opt) {
     var go = function () { setTimeout(function () { holdB = false; if (playing && ov.isConnected) advance(); }, FR * 1000); };
     if (mt < e - FR * .99) { vid.addEventListener("seeked", function w() { vid.removeEventListener("seeked", w); go(); }); vid.currentTime = Math.max(b.s, e - .001); } else go();
   }
+  // Deuxième filet : au démarrage de la lecture d'un bloc, un minuteur arrête la vidéo une image et demi avant la fin (précision de la milliseconde, sans dépendre du rythme des rappels).
+  var endT = 0;
+  function armEnd() {
+    clearTimeout(endT); var b = blocks[cur]; if (!playing || mode !== "seq" || !b || loaded !== b.f.full || holdB || vid.paused) return;
+    var e = b.s + b.d, rate = vid.playbackRate || 1, dt = (e - FR * 1.5 - vid.currentTime) / rate; if (!(dt > 0)) return;
+    endT = setTimeout(function () { var b2 = blocks[cur]; if (b2 === b && playing && mode === "seq" && !holdB && loaded === b.f.full && !vid.paused && vid.currentTime < e) finishBlock(b, e, vid.currentTime); }, dt * 1000);
+  }
+  ["playing", "seeked", "ratechange"].forEach(function (n) { vid.addEventListener(n, armEnd); });
   if (vid.requestVideoFrameCallback) (function () {
     function onFrame(now, m) {
       if (ov.isConnected) vid.requestVideoFrameCallback(onFrame);
@@ -212,9 +220,13 @@ function montageWin(films, opt) {
     var ns = Math.min(s.s + s.d, Math.max(0, src.dur - MIND)); selMem[src.key] = { s: r3(ns), d: r3(Math.max(MIND, Math.min(5, src.dur - ns))) };
     drawBar(); load(src, selMem[src.key].s, false);
   }
-  function splitHere() { // coupe le bloc choisi en deux à l'image affichée
-    var b = sel >= 0 ? blocks[sel] : null, t = sn(vid.currentTime); if (!b || loaded !== b.f.full || t < b.s + .2 || t > b.s + b.d - .2) return; snap();
-    var n = { id: ++uid, f: b.f, s: r3(t), d: r3(b.s + b.d - t), x: b.x, hue: hueFor(uid + 1) }; b.d = r3(t - b.s); blocks.splice(sel + 1, 0, n); drawBar();
+  function splitHere() { // coupe en deux, à l'image affichée, le bloc qui contient le curseur (choisi ou non ; en lecture du montage : celui qui joue)
+    var t = sn(vid.currentTime), m = FR * .9, i = -1;
+    function inside(k) { var b = blocks[k]; return b && loaded === b.f.full && t > b.s + m && t < b.s + b.d - m; }
+    if (sel >= 0 && inside(sel)) i = sel; else if (mode === "seq" && inside(cur)) i = cur; else for (var k = 0; k < blocks.length; k++) if (inside(k)) { i = k; break; }
+    if (i < 0) return; snap(); var b = blocks[i];
+    var n = { id: ++uid, f: b.f, s: r3(t), d: r3(b.s + b.d - t), x: b.x, hue: hueFor(uid + 1) }; b.d = r3(t - b.s); blocks.splice(i + 1, 0, n);
+    if (sel > i) sel++; if (cur > i) cur++; loopI = -1; drawBar();
   }
   // ---------- vidéo source : frise entière, sélection (début / fin glissables), curseur ----------
   var dTrack = el("div", { class: "hdtrack" }), dReg = el("i", { class: "hdreg" }), dIn = el("b", { class: "hdh in", title: "Début" }), dOut = el("b", { class: "hdh out", title: "Fin" }), dPh = el("i", { class: "hdph" }), dLab = el("div", { class: "hdlab" });
