@@ -85,15 +85,19 @@
     {
       "title": "Garnier Ultra Doux",
       "sub": "The Jacks",
-      "img": "https://d3toxii6rvamjf.cloudfront.net/depot/c566hckxa72du9epvrff/vignette.webp",
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxx4b0zl1/vignette-800.webp",
       "slate": "emwz0yuxx4b0zl1",
-      "cat": "HAIR"
+      "cat": "HAIR",
+      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxx4b0zl1/web.mp4",
+      "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxx4b0zl1/extrait-36507.mp4"
     },
     {
       "title": "Gregory Ghul",
-      "img": "https://d3toxii6rvamjf.cloudfront.net/depot/2gznh38rmtu6fq6vvz7y/vignette.webp",
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxxiy3bmk/vignette-800.webp",
       "slate": "emwz0yuxxiy3bmk",
-      "cat": "HAIR"
+      "cat": "HAIR",
+      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxxiy3bmk/web.mp4",
+      "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxxiy3bmk/extrait-5372.mp4"
     },
     {
       "title": "Garnier Fructis",
@@ -278,15 +282,6 @@
       "cat": "HAIR"
     },
     {
-      "title": "Rocket • Maybelline",
-      "sub": "Jean Pierre Philippot\nTempesta",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11491/be53de13-d6d5-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/522db088-c57b-4397-a858-12f667c609d9-0x1080.5000.mp4",
-      "img": "https://images.slatecdn.net/sYQwu2p-7L1CERk0lB045bgxixGcta0RGDUJi1Qh-uE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/NTQ2Njc0My01NTZm/LTQ0MzQtOGJhMC05/ZmFlOWYwOWYwNjcv/MTc5MzYzNDg3NDY1/My5qcGc.webp",
-      "slate": 11491,
-      "cat": "SKINCARE / MAKEUP"
-    },
-    {
       "title": "Big Eyes • Maybelline",
       "sub": "Jean Pierre Philippot\nTempesta",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/11490/c7a1d399-d6d2-11f1-a349-0215583debcb.mp4",
@@ -354,24 +349,6 @@
       "featuredOrder": 1
     },
     {
-      "title": "LA ROCHE POSAY EFFACLAR DUO - PAS ENCORE SORTI",
-      "sub": "Marthe Salier\nMirror Mirror",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8816/258d412f-2197-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e87c8eac-1adc-41d5-92dc-14600f76ac4b-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/mFVNC6_pROO3L-oOJuo2L7npxHoZUvqlXNacQw0Qnc8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/YzhiMjhmYS1mYTk3/LTQ5NDEtYTYyZC1h/MDg1Mzc3YmFhNjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDYt/MDMtYS0xMi40Ny41/OC5wbmc.webp",
-      "slate": 8816,
-      "cat": "SKINCARE / MAKEUP"
-    },
-    {
-      "title": "LA ROCHE POSAY LIPIKAR - PAS ENCORE SORTI",
-      "sub": "Marthe Salier\nMirror Mirror",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8815/d1a026a5-2196-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8f2a1b87-4b42-4dbb-b8e0-082382dc030a-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/q71GXEZP2uc4ChgPnq0Comja2Whv20G54G8rjPQPDgQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy84/ZDk1YmU2Ny0zZTFh/LTQ5ODEtYTJmZC1j/NjkxOTdhNjZjODkv/MTcxNzQwODk3MjI1/MC5qcGc.webp",
-      "slate": 8815,
-      "cat": "SKINCARE / MAKEUP"
-    },
-    {
       "title": "Lakme Fondation",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5d85cbe9-f684-4e3c-a860-37627c7e18b9-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/cTlqNmt1pv85FyoEZaeISvf053DKVCB9sKbYvzGgD0M/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/YzdlOGM5My0zNTZh/LTRjYWMtODc5YS1m/MzQ1YWQwNGYxNTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTIt/MTUtYS0xNy40Mi4y/NC5wbmc.webp",
@@ -388,22 +365,6 @@
       "cat": "SKINCARE / MAKEUP"
     },
     {
-      "title": "Yves Rocher",
-      "sub": "Arnaud Stefani\nMaul Production",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/656f5b0d-3ff9-4e29-a5f9-b1365824b24b-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/KQV64iU12hGoxAKQJY4N-WK6NNMXtGcU9ECkapWp_ao/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy80/MjA1LTVlY2U2NmFl/YmFmMDAxLjg2NjY4/NTk1LTcyYWFjZDZj/OGRlNDFmZDlhMTMw/MDFkYTkwM2JmYTVi/LmpwZw.webp",
-      "slate": 4205,
-      "cat": "SKINCARE / MAKEUP"
-    },
-    {
-      "title": "NIvea Urban Skin",
-      "sub": "Olivier Venturini\nHigh Noon",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2bd01bdb-b240-42f2-857f-49f328374dd3-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/NNxAefgchasS5JtPTrVr4--on-ia-lMOpQ66MPJFDfQ/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTkyLTVlMjcwNDA3/ZGQxZWE1Ljg2MTYw/ODE2LTEyMzVkMjAy/OTIwMjc3NTc5MDAz/YzI2ODMzN2UwYjZl/LmpwZw.webp",
-      "slate": 3992,
-      "cat": "SKINCARE / MAKEUP"
-    },
-    {
       "title": "Lancome Hydragen",
       "sub": "Nicolas Kantor\nProdigious",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/4dcba13d-1c38-46bd-8553-eb2467c90f84-1280x720.2500.mp4",
@@ -412,12 +373,11 @@
       "cat": "SKINCARE / MAKEUP"
     },
     {
-      "title": "Nivea Micellair Black",
-      "sub": "Olivier Venturini\nSoup Films",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3987/a9fee43d-d387-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/56ee4769-d2ab-4d52-991f-21e2f75ffe20-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/-eelZyEocUZgfzx2QS4gFZuHsl8eCJK_Fc5UyP-OQjo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MTg1MTI3OS1mYTk5/LTQxNzctYTdhYS04/NzEzZWNiMTNhMTgv/MTc5MzI3MTU0NzMy/Ny5qcGc.webp",
-      "slate": 3987,
+      "title": "NIvea Urban Skin",
+      "sub": "Olivier Venturini\nHigh Noon",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2bd01bdb-b240-42f2-857f-49f328374dd3-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/NNxAefgchasS5JtPTrVr4--on-ia-lMOpQ66MPJFDfQ/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTkyLTVlMjcwNDA3/ZGQxZWE1Ljg2MTYw/ODE2LTEyMzVkMjAy/OTIwMjc3NTc5MDAz/YzI2ODMzN2UwYjZl/LmpwZw.webp",
+      "slate": 3992,
       "cat": "SKINCARE / MAKEUP"
     },
     {
@@ -446,11 +406,21 @@
       "cat": "SKINCARE / MAKEUP"
     },
     {
-      "title": "Garnier Ambre Solaire Fructis",
-      "sub": "Bonasia & Narcidi\nBandits",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545836887-garnier_ambre_solaire_dc.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/8ry7l46XHd5clvv_k_ydj0jocUaXIMqKS8zkgRJ6e0c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1ODM2ODYyLzQ5/ODQwMjM0X2xhcmdl/LmpwZw.webp",
-      "slate": 2742,
+      "title": "La Roche Posay | Effaclar AZ Cream",
+      "sub": "Marthe Salier\nMirror Mirror",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/9856/593b0206-4099-11f0-bfce-022353abf6f5.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/5ad155f2-5fc3-4322-951f-0ab05bf6586c-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/8QwhkJC4D88ec9vtNZshFiORwjg6z92KZ90ssfgnq1c/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MTBjYzY1NC00NDlk/LTQ3M2QtYjliYS1i/MWFjZDRiNmE2OTcv/MTc0ODk2ODg3Mjk1/NC5qcGc.webp",
+      "slate": 9856,
+      "cat": "SKINCARE / MAKEUP"
+    },
+    {
+      "title": "Nivea Micellair Black",
+      "sub": "Olivier Venturini\nSoup Films",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/3987/a9fee43d-d387-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/56ee4769-d2ab-4d52-991f-21e2f75ffe20-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/-eelZyEocUZgfzx2QS4gFZuHsl8eCJK_Fc5UyP-OQjo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/MTg1MTI3OS1mYTk5/LTQxNzctYTdhYS04/NzEzZWNiMTNhMTgv/MTc5MzI3MTU0NzMy/Ny5qcGc.webp",
+      "slate": 3987,
       "cat": "SKINCARE / MAKEUP"
     },
     {
@@ -495,6 +465,14 @@
       "cat": "SKINCARE / MAKEUP"
     },
     {
+      "title": "Nivea (With Yasmin Le Bon)",
+      "sub": "Joe Roman\nSterntag Films GmbH",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545847359-yasmin-le-bon-7c-white-interview__70sec_dc_v08.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/0fIm0Ymwtnr_i8FvnvSe_8a-ZzvK09rIFss6EVMISWo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1ODQ3MzI5LzY0/NDE4ODYyX2xhcmdl/LmpwZw.webp",
+      "slate": 2946,
+      "cat": "SKINCARE / MAKEUP"
+    },
+    {
       "title": "L'Oréal Miss Pop",
       "sub": "Jean-Pierre Philippot\nTempesta",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1883/2cf188aa-d387-11f1-a349-0215583debcb.mp4",
@@ -522,23 +500,6 @@
       "featuredOrder": 5
     },
     {
-      "title": "ID Magazine - A-Z of Beauty",
-      "sub": "Daniel Sannwald\nSlowdance",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1756/c0de63d7-d6d3-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545419504-a-z-of-beauty-daniel-sannwald-slowdance.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/__feieZPhgrd4pr9Z2H-sv-S57kGy3tnUqcfJRSG7nI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9p/ZC1tYWdhemluZS1h/LXotb2YtYmVhdXR5/LWUyYTgwZjMxOTkx/MWJmOGI2ZTUyMmZj/ZGM4ZDQxOThhLmpw/Zw.webp",
-      "slate": 1756,
-      "cat": "SKINCARE / MAKEUP"
-    },
-    {
-      "title": "Lancôme - Blanc Expert",
-      "sub": "Julien Samson\nChug Films",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545417706-lanco-cc-82me-blanc-expert.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/YdmG799qlPQUa00RhITCKC7Fu5XXZOHBgDY8ggfWW_U/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/YW5jb21lLWJsYW5j/LWV4cGVydC1kY2U4/YjA2YjNiNTgzMjQy/Y2MzMzRmMmJkMGE5/MTZhYS5qcGc.webp",
-      "slate": 1742,
-      "cat": "SKINCARE / MAKEUP"
-    },
-    {
       "title": "L'Oréal Color Riche",
       "sub": "Jean-Pierre Philippot\nTempesta",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1511/079c6128-d388-11f1-a349-0215583debcb.mp4",
@@ -553,14 +514,6 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545408168-27389667_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/vtbv2K-BwmXZtelBNguEamOt0hNEfTpXxFX-pKsqehc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/aWx5LWNvbGxpbnMt/NGYyNjZkN2Q5ODE0/YmExOGY1NGMxZjQy/MWU4M2ZlZGYuanBn.webp",
       "slate": 1505,
-      "cat": "SKINCARE / MAKEUP"
-    },
-    {
-      "title": "L'Occitane",
-      "sub": "Arnaud Stefani\n1718",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545407249-63979618_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/DpnoLsjcvjdsK8XUXQ1kez2OrLlXswOmRhBT0MzdXqA/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/b2NjaXRhbmUtZDE2/ZTk4NGNiZjc3YTIy/NjUwMjI2MzNlNTcx/MWI0NmIuanBn.webp",
-      "slate": 1483,
       "cat": "SKINCARE / MAKEUP"
     },
     {
@@ -664,30 +617,6 @@
       "cat": "COMMERCIAL"
     },
     {
-      "title": "Continente",
-      "sub": "Cristiana Miranda\nPlayground",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/53dfe403-cd07-4030-aeaa-6d41b180a1c2-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/qic6qIczCndb3_YRlY9quD25m0K7H_X9VCzsO5zXG68/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjUzMGI3My0wNDA4/LTQxNjctYTFiNy1l/NzFkNWU2OGQwODEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNC41MC4w/Mi5wbmc.webp",
-      "slate": 3021,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "Gemo",
-      "sub": "Vincent Vesco\nPremière Heure",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545836766-54679392_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Pa826k7TX4z_ODIML5UkJzKpoUfsMVx0zVRs8TqNCUo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1ODM1OTMxLzU0/Njc5MzkyX2xhcmdl/LmpwZw.webp",
-      "slate": 2711,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "Lancome / Clive Owen",
-      "sub": "Frederic_Guelaff\n---",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545419815-6467893_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/haE-SPRef9M-jxnGJ8iFNFyfkXYB2LN5uUse2ivss1g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDE5NTUxLzY0/Njc4OTNfbGFyZ2Uu/anBn.webp",
-      "slate": 1761,
-      "cat": "COMMERCIAL"
-    },
-    {
       "title": "John Frieda",
       "sub": "Jean-Pierre Philippot\nTempesta",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545414924-43516539_web.1280x720.2500.mp4",
@@ -757,6 +686,15 @@
       "cat": "MUSIC VIDEO / ARTWORK"
     },
     {
+      "title": "ID Magazine - A-Z of Beauty",
+      "sub": "Daniel Sannwald\nSlowdance",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1756/c0de63d7-d6d3-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545419504-a-z-of-beauty-daniel-sannwald-slowdance.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/__feieZPhgrd4pr9Z2H-sv-S57kGy3tnUqcfJRSG7nI/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9p/ZC1tYWdhemluZS1h/LXotb2YtYmVhdXR5/LWUyYTgwZjMxOTkx/MWJmOGI2ZTUyMmZj/ZGM4ZDQxOThhLmpw/Zw.webp",
+      "slate": 1756,
+      "cat": "MUSIC VIDEO / ARTWORK"
+    },
+    {
       "title": "H-Burns \"Red\"",
       "sub": "Sophie Levy\nSo Films",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545428576-175150543.1280x720.2500.mp4",
@@ -765,25 +703,11 @@
       "cat": "MUSIC VIDEO / ARTWORK"
     },
     {
-      "title": "Hey Hey My My",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545423028-hey_hey_my_my_sophie_levy_sofilms.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/9cI5h8lM_j8wWWc-e4On_EbYCQvR70V3iQuvqMVXKas/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDIyOTg5LzY0/Njc4ODNfbGFyZ2Uu/anBn.webp",
-      "slate": 1842,
-      "cat": "MUSIC VIDEO / ARTWORK"
-    },
-    {
-      "title": "Hush Puppies",
-      "sub": "Stephane Manel\n---",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545420483-hushpuppies_stephane_manel-1.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/ChaRhKTjdrtxcTX3BgaqSktNNJaExKbumKMP-PUTGvY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDIwNDMxLzY0/NjgxNTBfbGFyZ2Uu/anBn.webp",
-      "slate": 1785,
-      "cat": "MUSIC VIDEO / ARTWORK"
-    },
-    {
-      "title": "I think",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545419959-demon_ithink.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/3miZ3lVHocCOouj2XO_L6EZ5FC-3BXxs74lt12V1DhE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDE5OTIwLzY0/Njc4NzhfbGFyZ2Uu/anBn.webp",
-      "slate": 1771,
+      "title": "Lancome / Clive Owen",
+      "sub": "Frederic_Guelaff\n---",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545419815-6467893_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/haE-SPRef9M-jxnGJ8iFNFyfkXYB2LN5uUse2ivss1g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDE5NTUxLzY0/Njc4OTNfbGFyZ2Uu/anBn.webp",
+      "slate": 1761,
       "cat": "MUSIC VIDEO / ARTWORK"
     },
     {
