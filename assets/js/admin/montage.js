@@ -281,6 +281,25 @@ function montageWin(films, opt) {
     var span = clamp((w[1] - w[0]) * Math.exp((e.deltaY || e.deltaX) * .002), Math.min(1, D), D), f = (t - w[0]) / (w[1] - w[0]), a = clamp(t - f * span, 0, D - span);
     zw = span >= D - .001 ? null : [a, a + span]; drawDet();
   }, { passive: false });
+  // Pincer à deux doigts sur la frise de la source (téléphone) : zoom autour des doigts ; ensuite la barre de navigation (poignée) sert à se déplacer.
+  (function () {
+    var pts = {}, pinch = null, ids = function () { return Object.keys(pts); };
+    det.addEventListener("pointerdown", function (e) {
+      if (e.pointerType !== "touch" || !e.target.closest(".hdtrack, .tlnav") || e.target.closest(".tlnav")) return; pts[e.pointerId] = e.clientX;
+      if (ids().length === 2) {
+        var k = ids(), r = dTrack.getBoundingClientRect(), w = zwin().slice(), mid = (pts[k[0]] + pts[k[1]]) / 2, fr = clamp((mid - r.left) / r.width, 0, 1);
+        pinch = { d0: Math.max(8, Math.abs(pts[k[0]] - pts[k[1]])), w0: w, t0: w[0] + fr * (w[1] - w[0]) }; pause(); e.stopImmediatePropagation(); e.preventDefault();
+      }
+    }, true);
+    det.addEventListener("pointermove", function (e) {
+      if (pts[e.pointerId] === undefined) return; pts[e.pointerId] = e.clientX; if (!pinch || ids().length < 2) return;
+      var k = ids(), r = dTrack.getBoundingClientRect(), d = Math.max(8, Math.abs(pts[k[0]] - pts[k[1]])), mid = (pts[k[0]] + pts[k[1]]) / 2, fr = clamp((mid - r.left) / r.width, 0, 1), D = src.dur;
+      var span = clamp((pinch.w0[1] - pinch.w0[0]) * pinch.d0 / d, Math.min(1, D), D), a = clamp(pinch.t0 - fr * span, 0, D - span);
+      zw = span >= D - .001 ? null : [a, a + span]; drawDet(); e.stopImmediatePropagation(); e.preventDefault();
+    }, true);
+    var end = function (e) { delete pts[e.pointerId]; if (ids().length < 2) pinch = null; };
+    det.addEventListener("pointerup", end, true); det.addEventListener("pointercancel", end, true);
+  })();
   hoverCursor(wrap, function (e) { return tOf(e, wrap, 0, total()); }); // le curseur traverse la règle et la frise des blocs
   scrubber(ruler, function (e) { seekSeq(tOf(e, ruler, 0, total())); });
   // ---------- export ----------

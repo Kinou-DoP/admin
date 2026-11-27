@@ -1354,10 +1354,10 @@ input.bcn { width: 90px; }
   .bmfit .bmontbox { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(210px, 1fr); grid-template-rows: minmax(0, 1fr) auto auto; column-gap: 12px; height: calc(100vh - 12px); max-height: none; overflow: hidden; padding: 8px 12px; }
   .bmfit .bmontbox > .hmain { display: contents; }
   .bmfit .hmain > .hvid { grid-column: 1; grid-row: 1; min-height: 0; height: 100%; }
-  .bmfit .hmain > .hrcol { grid-column: 2; grid-row: 1 / 4; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; padding-right: 2px; }
+  .bmfit .hmain > .hrcol { grid-column: 2; grid-row: 1; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; padding-right: 2px; }
   .bmfit .hrcol > * { flex: none; } .bmfit .hslot { display: block; margin-top: 8px; } .bmfit .hslot .hctl { margin: 0 0 6px; } .bmfit .hslot .hsrc { margin: 0; }
-  .bmfit .bmontbox > .hdet { grid-column: 1; grid-row: 2; padding: 10px 0 0; margin: 0; }
-  .bmfit .bmontbox > .hbwrap { grid-column: 1; grid-row: 3; margin-top: 4px; }
+  .bmfit .bmontbox > .hdet { grid-column: 1 / -1; grid-row: 2; padding: 10px 0 0; margin: 0; }
+  .bmfit .bmontbox > .hbwrap { grid-column: 1 / -1; grid-row: 3; margin-top: 4px; }
   .bmfit .bmontbox > .hmlab, .bmfit .bmontbox > .hint { display: none; }
   .bmfit .hdtrack { height: 40px; margin-top: 4px; } .bmfit .hdlab { min-height: 0; font-size: 10px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .bmfit .hmhome .hexp, .bmfit .hxhome { padding-top: 30px; } .bmfit .hmclose { top: 6px; }

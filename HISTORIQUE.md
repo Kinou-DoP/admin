@@ -452,3 +452,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 27/11 : montage : boutons ◀◀ (Z) et ▶▶ (E) à la suite de l'image par image (`revGo`, `fwdGo` partagés avec le clavier) ; téléphone en paysage : boutons de lecture et « Nouvelle sélection » déplacés dans la colonne de droite (`rcSlot`), l'image seule à gauche.
 - 27/11 : montage : couper un bloc = touche C (avant S), bouton ciseau seul.
 - 27/11 : montage de l'accueil sur téléphone : portrait = réglages, puis vidéo + boutons de lecture juste au-dessus de « Nouvelle sélection », puis les frises ; paysage = grille (vidéo + les deux frises à gauche sans défilement, boutons de lecture, « Nouvelle sélection » et réglages à droite qui défilent).
+- 27/11 : montage de l'accueil : paysage téléphone : frises sur toute la largeur ; pincer à deux doigts sur la frise de la source = zoom (autour des doigts), la barre de navigation sert à se déplacer.
