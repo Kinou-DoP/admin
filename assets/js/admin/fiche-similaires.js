@@ -97,12 +97,20 @@
         listEl.textContent = "";
         if (!cands.length) listEl.appendChild(el("p", { class: "empty", text: "Plus aucun film à proposer." }));
         cands.forEach(function (x) {
-          var f = x.f, th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
-          listEl.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
+          var f = x.f, th = el("div", { class: "selth", title: "Voir le film et ses crédits" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
+          th.addEventListener("click", function () { preview(f); });
+          listEl.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { class: "simtitle", text: f.title || "(sans titre)", on: { click: function () { preview(f); } } }),
             el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") }), el("small", { class: "simwhy", text: x.why })]),
             el("button", { type: "button", class: "btn ghost", text: "Ignorer", title: "Ne plus proposer ce film pour ce chef op", on: { click: function () { simIgnore([f.slate || f.key]); cands = cands.filter(function (y) { return y !== x; }); upd(); } } }),
             el("button", { type: "button", class: "btn", text: "+", title: "Ajouter sous le film", on: { click: function () { close(); add(f); } } })]));
         });
+      }
+      // Aperçu avec la vidéo et les crédits (navPlayer, comme dans le video club) ; « + » y ajoute le film sous celui de la fiche.
+      var added = {};
+      function preview(f) {
+        var l = cands.map(function (x) { return x.f; }), at = l.indexOf(f); if (at < 0) return;
+        navPlayer(l, at, { addLabel: "Ajouter sous le film", inLabel: "Ajouté sous le film", has: function (g) { return added[g.key || g.slate]; },
+          add: function (g) { added[g.key || g.slate] = 1; add(g); cands = cands.filter(function (y) { return y.f !== g; }); upd(); } });
       }
       function upd() { b.textContent = String(cands.length); b.hidden = !cands.length; draw(); }
       box.appendChild(el("span", { class: "label", text: "Films qui ressemblent à « " + (c.title || "") + " »" })); box.appendChild(listEl);

@@ -1406,3 +1406,4 @@ input.bcn { width: 90px; }
 .simlist { max-height: 60vh; overflow: auto; margin: 10px 0; }
 .simlist .selitem { display: flex; align-items: center; gap: 10px; padding: 6px 0; }
 .simwhy { display: block; color: #d9822b; }
+.simtitle { cursor: pointer; }

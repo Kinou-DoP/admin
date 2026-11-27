@@ -474,3 +474,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 2026-11-27 : fiches — films qui ressemblent (`fiche-similaires.js`) : pastille orange sous chaque film à côté de « Rechercher » (liste + / Ignorer), calcul dans le navigateur.
 - 2026-11-27 : films qui ressemblent — 2 critères sur 4 suffisent (client + titre proche aussi), plus d'obligation réal ou prod.
 - 2026-11-27 : films qui ressemblent — la pastille est sous chaque film (pas globale) ; elle compte les films proches de CE film.
+- 2026-11-27 : films qui ressemblent — clic sur la miniature ou le titre = aperçu (vidéo + crédits, ‹ ›, « + » pour ajouter) via navPlayer.
