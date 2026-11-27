@@ -18,7 +18,7 @@
       tabs.appendChild(b);
     });
     sec.appendChild(tabs);
-    if (pagePublish === publish) sec.insertBefore(el("button", { type: "button", class: "btn primary selbtn", text: "Modifier la sélection", on: { click: selEditor } }), tabs);
+    if (pagePublish === publish) { var mb = el("button", { type: "button", class: "btn primary selbtn", text: "Modifier la sélection", on: { click: function () { selEditor(null, null, true); } } }); sec.insertBefore(mb, tabs); simBadge(mb); }
     if (pagePublish === publish && state.slug) sec.insertBefore(infoRobotCtl(), tabs);
     // Fiche d'un chef op : interrupteur de l'onglet ouvert → présentation « vidéo + stills » sur le site (`showcase`) : par projet la
     // vidéo en grand, titre et crédits à côté, les 6 premiers stills (liens de stills ajoutés sous le film) autour.
@@ -54,7 +54,7 @@
   var selOpen = null; // { slug, tab } : sélection à ouvrir en arrivant sur la fiche (clic dans les bundles / bandes de la filmothèque)
   // cfg (accueil, spotlight, fiction, Gus 26/11) : { title, tab, items (films de la page), apply(ids, film) } : une seule liste, sans
   // onglets ni filtre de chef op ; apply reçoit l'ordre (ids Slate) et film(id) = le film de la page ou du video club.
-  function selEditor(startTab, cfg) {
+  function selEditor(startTab, cfg, showSim) {
     if (typeof startTab !== "string") startTab = null;
     var base = cfg ? { name: cfg.title, categories: [cfg.tab], clips: cfg.items.map(function (c) { return Object.assign({}, c, { cat: cfg.tab }); }) }
       : slate || { name: state.name, categories: ["FEATURED"], clips: [] }; // fiche sans films : « Créer une sélection »
@@ -264,6 +264,23 @@
       var list = lib.films.filter(function (f) { return sid(f) && ((withPage && onPage[sid(f)]) || (chips.every(function (c) { return bibMatch(f, c); }) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
       if (withPage) Object.keys(onPage).forEach(function (id) { if (/^\d+$/.test(id)) id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
       var key = JSON.stringify([q, chips]); if (key !== lastKey) { lastKey = key; maxR = 150; } // nouvelle recherche : 150 d'abord
+      if (!cfg && withPage) { // films qui ressemblent à ceux de la fiche (fiche-similaires.js)
+        var have = function (id) { return onPage[id] || tabs.some(function (x) { return x.ids.indexOf(id) > -1; }); }, sims = simCands(lib, have);
+        if (sims.length) {
+          var sbox = el("div", { class: "simbox" }, [el("div", { class: "simhead" }, [el("b", { text: "Films qui ressemblent à ceux de la fiche (" + sims.length + ")" }),
+            el("button", { type: "button", class: "btn ghost", text: "Tout ignorer", title: "Ne plus proposer ces films pour ce chef op", on: { click: function () { if (!window.confirm("Ne plus proposer ces " + sims.length + " films pour ce chef op ?")) return; simIgnore(sims.map(function (x) { return x.f.slate || x.f.key; })); drawRight(); } } })])]);
+          sims.slice(0, 60).forEach(function (s) {
+            var f = s.f, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
+            th.addEventListener("click", function () { selPreview(f); });
+            sbox.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
+              el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") }), el("small", { class: "simwhy", text: s.why })]),
+              el("button", { type: "button", class: "btn ghost", text: "Ignorer", title: "Ne plus proposer ce film pour ce chef op", on: { click: function () { simIgnore([f.slate || f.key]); drawRight(); } } }),
+              el("button", { type: "button", class: "btn", text: "+", title: "Ajouter à la fin de l'onglet", on: { click: function () { if (tabs[cur]) addFilm(f); } } })]));
+          });
+          if (sims.length > 60) sbox.appendChild(el("p", { class: "hint", text: (sims.length - 60) + " autres : ajoutez ou ignorez ceux-ci pour les voir." }));
+          results.appendChild(sbox);
+        }
+      }
       results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" }));
       shownR = list.slice(0, maxR);
       shownR.forEach(function (f) {

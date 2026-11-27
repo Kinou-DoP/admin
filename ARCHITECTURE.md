@@ -23,6 +23,7 @@ Vue d'ensemble des trois dépôts : `ARCHITECTURE.md` du dépôt `site`. Ici : l
 | `admin/connexion-liste.js` | `login`, prénom, `showList`, avancement des fiches |
 | `admin/fiche-base.js` | Annuler / Rétablir, `showDP`, notes, `render`, identité, `infoRobotCtl` |
 | `admin/fiche-films.js` | `filmsSection`, `selEditor`, `zoomCtl`, `scopeCtl`, `phoneCtl`, `vc*`, `filmCard` |
+| `admin/fiche-similaires.js` | films qui ressemblent à ceux d'une fiche : `simCands`, `simBadge` (pastille orange), `simIgnore` |
 | `admin/fiche-about-publier.js` | about, portrait, CV, `publish` / `doPublish`, `sharePage` |
 | `admin/accueil-spotlight.js` · `fiction.js` · `contact.js` | pages du site : home, spotlight, fiction, contact |
 | `admin/festivals.js` · `selections.js` · `sorties.js` · `recup.js` | pages internes (festivals, sélections + prix, sorties fiction, récupération) |
