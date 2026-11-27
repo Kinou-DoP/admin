@@ -693,6 +693,8 @@
           tv.addEventListener("error", function () { done(); alert("La vidéo ne se lit pas : montage impossible."); });
           tv.src = full0;
         } } });
+        // la vignette ouvre le recadrage au clic / au toucher : le ciseau garde ces gestes pour lui
+        ["pointerdown", "pointerup", "mousedown", "mouseup", "touchstart", "dblclick"].forEach(function (n) { cut.addEventListener(n, function (ev) { ev.stopPropagation(); }); });
         thumb.appendChild(cut);
       }
     }
