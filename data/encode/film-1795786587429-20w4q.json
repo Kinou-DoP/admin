@@ -4,13 +4,26 @@
       "id": "mwz0yuxxiy3bmk",
       "kind": "film",
       "key": "depot/8wzudzex4n72iwedyvku/gregoryghul_video20.mp4",
-      "progress": {
-        "step": "vignette",
-        "pct": 0
+      "answer": {
+        "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxxiy3bmk/web.mp4",
+        "ws": 14534456,
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxxiy3bmk/extrait-5372.mp4",
+        "snip": {
+          "s": 5.372,
+          "d": 5
+        },
+        "thumbT": 6.372,
+        "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxxiy3bmk/vignette-800.webp",
+        "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxxiy3bmk/vignette-1600.webp",
+        "dur": 10.372,
+        "w": 1920,
+        "h": 1080,
+        "os": 20458584
       }
     }
   ],
   "at": "2026-11-27T13:37:13.078Z",
   "by": "John",
-  "startedAt": "2026-11-27T13:41:47.449Z"
+  "startedAt": "2026-11-27T13:41:47.449Z",
+  "doneAt": "2026-11-27T13:42:39.730Z"
 }
