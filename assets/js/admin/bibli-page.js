@@ -226,7 +226,7 @@
       }
       var L = { it: it, orig: { img: base.img, images: f.images }, files: libQ.files, local: opt.local, head: opt.head,
         meta: { size: f.size, ws: f.ws, os: f.os, w: f.w, h: f.h, dur: f.dur, date: f.date, at: f.at, by: f.by, slate: f.slate, grpN: grpCount(f), mkey: f.mkey, key: f.key },
-        montage: function () { openMontage(f); }, canDelete: function () { return !!canWeb; }, isSlate: function () { return !(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
+        montage: function () { openMontage(f); }, unlink: function (all) { return unlinkFilms(f, all); }, canDelete: function () { return !!canWeb; }, isSlate: function () { return !(data && data.lib && (data.lib.items || []).some(function (x) { return x.key === f.key; })); }, del: function () { return libDelete(f); },
         onChange: function () {
           // Vidéos d'un même import : ordre commun à toutes (Gus 26/11). Glisser une ligne change l'ordre du lot entier ; masquer ne casse pas le lien.
           // Lignes ajoutées / retirées / ajoutées à la main : lien rompu pour ce film (lignes sans `auto`, enregistrées dans edits.json).
@@ -1447,8 +1447,21 @@
         return ip;
       }
       // Bouton bien visible en haut de la fenêtre pour les vidéos liées (Gus 26/11 : on ne le voyait pas dans les infos).
-      if (lib && lib.meta && lib.meta.grpN > 1 && lib.montage) box.appendChild(el("div", { class: "bmontbar" }, [linkIcon(lib.meta.grpN), el("span", { text: "Liée à " + (lib.meta.grpN - 1) + " autre" + (lib.meta.grpN > 2 ? "s" : "") + " vidéo" + (lib.meta.grpN > 2 ? "s" : "") }),
-        el("button", { type: "button", class: "btn primary", text: "▦ Créer un bout à bout", title: "Assembler les vidéos liées : fenêtre de montage, export 1080p avec le son", on: { click: lib.montage } })]));
+      if (lib && lib.meta && lib.meta.grpN > 1 && lib.montage) {
+        var lbar = el("div", { class: "bmontbar" }, [linkIcon(lib.meta.grpN), el("span", { text: "Liée à " + (lib.meta.grpN - 1) + " autre" + (lib.meta.grpN > 2 ? "s" : "") + " vidéo" + (lib.meta.grpN > 2 ? "s" : "") }),
+          el("button", { type: "button", class: "btn primary", text: "▦ Créer un bout à bout", title: "Assembler les vidéos liées : fenêtre de montage, export 1080p avec le son", on: { click: lib.montage } })]);
+        if (lib.unlink) {
+          var unl = function (all) {
+            var n = lib.meta.grpN, msg = all || n <= 2 ? "Délier les " + n + " vidéos de ce lot ?\n\nElles ne seront plus liées : chacune garde ses infos et ses extraits, mais plus d'ordre ni de crédits partagés, et plus de bout à bout depuis le lot."
+              : "Délier cette vidéo des " + (n - 1) + " autres ?\n\nLes autres restent liées entre elles. Cette vidéo garde ses infos et ses extraits.";
+            if (!confirm(msg)) return; lbar.classList.add("busy");
+            lib.unlink(all).then(function () { lbar.remove(); }, function (e) { lbar.classList.remove("busy"); alert("Pas délié : " + e.message); });
+          };
+          lbar.appendChild(el("button", { type: "button", class: "btn ghost", text: lib.meta.grpN > 2 ? "Délier cette vidéo" : "Délier", title: "Retire cette vidéo du lot importé ensemble", on: { click: function () { unl(false); } } }));
+          if (lib.meta.grpN > 2) lbar.appendChild(el("button", { type: "button", class: "btn ghost", text: "Tout délier", title: "Dissout le lot : plus aucune vidéo liée", on: { click: function () { unl(true); } } }));
+        }
+        box.appendChild(lbar);
+      }
       box.appendChild(el("span", { class: "label", text: lib ? "Infos du film dans le video club (sur le site et dans les prochaines bandes) · enregistrées toutes seules" : "Retouches pour cette bande seulement · enregistrées toutes seules" }));
       box.appendChild(el("div", { class: "bmgrid" }, [
         el("div", {}, [].concat(
@@ -1836,6 +1849,18 @@
       if (!confirm("Supprimer " + ok.length + " film" + (ok.length > 1 ? "s" : "") + " du video club ?\n\n" + names + (hide ? "\n\n" + hide + " film" + (hide > 1 ? "s" : "") + " vien" + (hide > 1 ? "nent" : "t") + " de Slate : " + (hide > 1 ? "ils sont masqués" : "il est masqué") + " du video club (" + (hide > 1 ? "ils restent" : "il reste") + " sur les pages du site où " + (hide > 1 ? "ils sont utilisés" : "il est utilisé") + ")." : "") + "\n\nIls vont à la corbeille (restaurables pendant 30 jours). Les liens de partage des films importés ne marcheront plus. Les autres vidéos importées avec eux restent. Les fichiers chez Amazon ne sont pas effacés.")) return;
       info.textContent = "Suppression…";
       libDeleteMany(ok).then(function () { draw(); }, function (e) { alert("Pas supprimé : " + e.message); draw(); });
+    }
+    // Délier des vidéos importées ensemble par erreur (Gus 27/11) : « cette vidéo » seulement (les autres restent liées entre elles) ou tout le lot. Un lot qui n'aurait plus
+    // qu'une vidéo est dissous. `grp` / `gi` sont retirés de library.json et d'edits.json ; le site cesse de les lier à la prochaine lecture des données.
+    function unlinkFilms(f, all) {
+      if (!canWeb || !f.grp) return Promise.resolve(false);
+      var mates = data.films.filter(function (x) { return x.grp === f.grp; }), keys = all || mates.length <= 2 ? mates.map(function (x) { return x.key; }) : [f.key], by = user && user.login || "";
+      return commit([
+        { path: BIB_LIB, edit: function (t) { var l = t ? JSON.parse(t) : { items: [] }; (l.items || []).forEach(function (x) { if (keys.indexOf(x.key) > -1) { delete x.grp; delete x.gi; } }); return json(l); } },
+        { path: BIB_EDITS, edit: function (t) { var o = t ? JSON.parse(t) : { films: {} }; o.films = o.films || {}; keys.forEach(function (k) { if (o.films[k]) { delete o.films[k].grp; delete o.films[k].gi; } }); return json(o); } }
+      ], "Video club : " + (keys.length > 1 ? "lot de vidéos délié" : "vidéo déliée") + " (admin, " + by + ")").then(function () {
+        keys.forEach(function (k) { var m = filmOf(k); if (m) { delete m.grp; delete m.gi; } }); bibGroups(data.films); bibCache = null; draw(); return true;
+      });
     }
     // Bout à bout des vidéos liées (Gus 26/11) : fenêtre de montage (montage.js) ; le nouveau projet apparaît dans le video club à la fin de l'encodage.
     function openMontage(f) {

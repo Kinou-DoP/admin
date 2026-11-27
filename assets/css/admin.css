@@ -1398,3 +1398,4 @@ input.bcn { width: 90px; }
 /* petit ciseau sous la pastille d'extrait (fiches des chefs op) : pas d'extrait -> ouvre le montage */
 .film .thumb .snipcut { position: absolute; z-index: 2; right: 5px; top: 24px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: rgba(0,0,0,.55); color: rgba(255,252,235,.9); font-size: 12px; line-height: 22px; cursor: pointer; }
 .film .thumb .snipcut:hover { background: rgba(217,130,43,.9); color: #000; }
+.bmontbar.busy { opacity: .5; pointer-events: none; }
