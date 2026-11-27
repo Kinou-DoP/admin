@@ -1296,3 +1296,4 @@ input.bcn { width: 90px; }
 .hdtrack .hdph::before { content: ""; position: absolute; top: -7px; left: -6px; border: 7px solid transparent; border-top-color: #fff; border-bottom-width: 0; filter: drop-shadow(0 0 1px rgba(0,0,0,.6)); }
 .hdtrack .hdh { z-index: 4; }
 .hdtrack { margin-top: 12px; }
+.hdtrack { height: 68px; } /* frise source plus haute : plus facile à zoomer à la souris */
