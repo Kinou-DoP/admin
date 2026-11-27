@@ -945,6 +945,12 @@
             "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59hr9ay73/web.mp4"
           }
         ]
+      },
+      "crop": {
+        "z": 1.12,
+        "x": 50,
+        "y": 3.8,
+        "t": false
       }
     },
     "emwxgq59ikke41n": {
