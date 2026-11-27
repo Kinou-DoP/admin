@@ -49,7 +49,7 @@ function montageWin(films, opt) {
     function slider(label, get, set) { var r = el("input", { type: "range", min: "1", max: "2.5", step: "0.01", value: String(get()) }), v = el("span", { class: "zval", text: "× " + get().toFixed(2).replace(".", ",") });
       r.addEventListener("input", function () { set(+r.value); v.textContent = "× " + (+r.value).toFixed(2).replace(".", ","); applyZoom(); }); return el("label", { class: "hzl" }, [el("span", { text: label }), r, v]); }
     if (split) { zbox.appendChild(slider("Ordinateur", function () { return zm; }, function (v) { zm = v; })); zbox.appendChild(slider("Téléphone", function () { return zph; }, function (v) { zph = v; })); }
-    else zbox.appendChild(slider("Recadrage (ordinateur et téléphone)", function () { return zm; }, function (v) { zm = zph = v; }));
+    else zbox.appendChild(slider("Recadrage", function () { return zm; }, function (v) { zm = zph = v; }));
     zbox.appendChild(el("button", { type: "button", class: "btn ghost", text: split ? "Rassembler" : "Séparer", title: split ? "Le même recadrage sur ordinateur et sur téléphone" : "Un recadrage différent sur ordinateur et sur téléphone", on: { click: function () { split = !split; if (!split) zph = zm; drawZoom(); applyZoom(); } } }));
   }
   function applyZoom() { vid.style.transform = zm > 1 ? "scale(" + zm + ")" : ""; vid.style.transformOrigin = zpos[0] * 100 + "% " + zpos[1] * 100 + "%"; drawPhone(); }
@@ -288,7 +288,7 @@ function montageWin(films, opt) {
   function gb(n) { return (n / 1e9).toFixed(1).replace(".", ",") + " Go"; }
   function drawExpHome() {
     exp.textContent = ""; var tot = total(), ok = Math.abs(tot - EX) < .06, diff = r3(EX - tot), fr = function (x) { return x.toFixed(1).replace(".", ","); };
-    exp.appendChild(el("span", { class: "label", text: "Extrait de l'accueil" })); exp.appendChild(zbox); // le curseur de recadrage juste sous le titre
+    exp.appendChild(nameI); nameI.classList.add("hxtitle"); exp.appendChild(zbox); // le curseur de recadrage juste sous le titre
     var nf = Math.round(Math.abs(diff) / FR), imgs = function (n) { return n + " image" + (n > 1 ? "s" : ""); };
     exp.appendChild(el("p", { class: ok ? "hint bok" : "hint berr", text: ok ? "✔ " + fr(tot) + " s : pile la durée d'un projet de l'accueil." : (diff > 0 ? "Il manque " + imgs(nf) : "Il y a " + imgs(nf) + " de trop") + " (" + fr(Math.abs(diff)) + " s ; durée voulue : " + fr(EX) + " s)." }));
     var fill = el("button", { type: "button", class: "btn ghost", text: "Compléter avec le dernier bloc", title: "Rallonge (ou raccourcit) le dernier bloc pour tomber pile sur " + fr(EX) + " s", disabled: ok || !blocks.length ? true : null, on: { click: function () {
@@ -391,8 +391,8 @@ function montageWin(films, opt) {
     if (sel < 0 || e.target.closest("button, input, select, label, .hb, .hdtrack, .hdh, .hphone, video, canvas, .tlnav, .hbwrap, .hmphone")) return; selectBlock(-1);
   });
   // ---------- assemblage de la fenêtre ----------
-  box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : EX ? "Extrait de l'accueil" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), nameI, undoB, redoB, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
-  box.appendChild(el("div", { class: "hmain" }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [el("div", { class: "hvrow" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), el("div", { class: "hctl" }, [
+  box.appendChild(el("div", { class: "hhead" }, [EX ? el("span", { class: "tlgrow" }) : el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), EX ? "" : nameI, undoB, redoB, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
+  box.appendChild(el("div", { class: "hmain" + (EX ? " hmhome" : "") }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [el("div", { class: "hvrow" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), el("div", { class: "hctl" }, [
     el("button", { type: "button", class: "btn ghost", text: "▶ / ❚❚ Source", title: "Lire la vidéo source (espace)", on: { click: function () { if (playing && mode === "src") pause(); else playSrc(); } } }),
     el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else { loopI = -1; playSeq(0); } } } }),
     el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } })])]), exp]));

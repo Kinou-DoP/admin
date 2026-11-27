@@ -1322,3 +1322,12 @@ input.bcn { width: 90px; }
 .bmfit .hexp .btn { padding-top: 12px; padding-bottom: 12px; }
 .bmfit .hdtrack { height: 58px; } .bmfit .hmlab { margin-top: 10px; }
 @media (max-height: 880px) { .bmfit .hexp > .hint:not(.bok):not(.berr) { display: none; } .bmfit .hexp .btn { padding-top: 9px; padding-bottom: 9px; } .bmfit .hhist { max-height: 70px; } }
+/* Montage de l'accueil : le titre du film est en haut de la colonne de droite ; l'en-tête ne garde que annuler / rétablir / fermer ; le retour vidéo prend toute la place */
+.bmfit .hmhome { grid-template-columns: minmax(0, 2.6fr) minmax(300px, 1fr); }
+.bmfit .hxhome { padding-top: 14px; } .bmfit .hxtitle { margin: 0 0 10px !important; font-size: 18px; width: 100%; box-sizing: border-box; }
+.bmfit .bmontbox > .hhead { margin-bottom: 8px; }
+.bmfit .hmhome .hvid .hvw { max-width: calc(100% - 200px); } .bmfit .hmhome .hvid .hmphone { width: auto; }
+.bmfit .hdlab { min-height: 1.5em; } .bmfit .hmlab { margin-top: 6px; } .bmfit .hdet { padding: 16px 0 2px; } .bmfit .hctl { margin-top: 2px; }
+.bmfit .bmontbox > .hint { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 6px 0 0; }
+.bmfit .hzl { white-space: nowrap; } .bmfit .hzoomrow { margin: 0 0 8px; }
+.bmfit .bmontbox .hvid .hvw, .bmfit .bmontbox .hvhome .hvrow .hvw { width: auto !important; height: 100%; aspect-ratio: 16 / 9; }
