@@ -186,12 +186,12 @@
       "gi": 0,
       "enc": {
         "path": "data/encode/film-1795786587428-0ltgg.json",
-        "id": "mwz0yuxwxipr04",
-        "sending": true
+        "id": "mwz0yuxwxipr04"
       },
       "size": 11450513,
       "at": "2026-11-27T13:36:27.428Z",
-      "by": "John"
+      "by": "John",
+      "mkey": "depot/pma4gps3e4xfv5hg4g77/angeliketgregorygarnierfructis.mp4"
     },
     {
       "key": "emwz0yuxx4b0zl1",
