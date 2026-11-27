@@ -53,10 +53,13 @@
     }
   },
   "about": {
-    "website": "Simon Roca is a French cinematographer based in Paris. He has notably worked on the films of Antonin Peretjatko: La Fille du 14 Juillet, La Loi de la Jungle and more recently La Piece Reportée which will be released in 2021 with Anaïs Demoustier, Philippe Katerine and Josiane Balasko.His work has been noticed for 9 Doigts by F.J. Ossang, Sophia-Antipolis by Virgil Vernier or even Curiosa by Lou Jeunet. In 2021, the release of Si le Vent Tombe by Nora Martirosyan, a feature film shot on the borders of Armenia and Azerbaijan starring Grégoire Colin (Official Selection and ACID Selection at Cannes Film Festival 2020) is scheduled. Also expected is the release of Kandisha by Alexandre Bustillo and Julien Maury, a horror film that focuses on a creature of Moroccan legend.",
+    "website": "",
     "pos": "60% 18%",
     "img": "img/simon-roca-cinematographer.webp",
-    "og": "img/simon-roca-cinematographer-og-1795774263519.jpg"
+    "og": "img/simon-roca-cinematographer-og-1795774263519.jpg",
+    "bioEn": [
+      "Simon Roca is a French cinematographer based in Paris. He has notably worked on the films of Antonin Peretjatko: La Fille du 14 Juillet, La Loi de la Jungle and more recently La Piece Reportée which will be released in 2021 with Anaïs Demoustier, Philippe Katerine and Josiane Balasko.His work has been noticed for 9 Doigts by F.J. Ossang, Sophia-Antipolis by Virgil Vernier or even Curiosa by Lou Jeunet. In 2021, the release of Si le Vent Tombe by Nora Martirosyan, a feature film shot on the borders of Armenia and Azerbaijan starring Grégoire Colin (Official Selection and ACID Selection at Cannes Film Festival 2020) is scheduled. Also expected is the release of Kandisha by Alexandre Bustillo and Julien Maury, a horror film that focuses on a creature of Moroccan legend."
+    ]
   },
   "categories": [
     "FEATURED",
