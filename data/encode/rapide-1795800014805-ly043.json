@@ -5,9 +5,17 @@
       "kind": "snip",
       "src": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/web.mp4",
       "s": 133.24,
-      "d": 20.24
+      "d": 20.24,
+      "answer": {
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz8ynklbm1xnp/extrait-133240.mp4",
+        "snip": {
+          "s": 133.24,
+          "d": 20.24
+        }
+      }
     }
   ],
   "at": "2026-11-27T17:20:14.805Z",
-  "by": "Gurvan"
+  "by": "Gurvan",
+  "doneAt": "2026-11-27T17:21:11.810Z"
 }
