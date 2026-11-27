@@ -689,10 +689,11 @@
         "narrative"
       ],
       "info": {
-        "awards": "Official selection, Festival européen du film fantastique de Strasbourg 2026\nOfficial selection • Court mais trash, Off-Courts 2026",
+        "awards": "Official selection, Festival européen du film fantastique de Strasbourg 2026\nOfficial selection • Court mais trash, Off-Courts 2026\nMeilleur court métrage made in France, Festival européen du film fantastique de Strasbourg 2026",
         "awardsFrom": {
           "e4dd877c56be": "Official selection, Festival européen du film fantastique de Strasbourg 2026",
-          "93dccada351a": "Official selection • Court mais trash, Off-Courts 2026"
+          "93dccada351a": "Official selection • Court mais trash, Off-Courts 2026",
+          "11790b2788d5": "Meilleur court métrage made in France, Festival européen du film fantastique de Strasbourg 2026"
         }
       }
     },
