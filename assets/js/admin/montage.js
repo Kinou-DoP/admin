@@ -91,7 +91,7 @@ function montageWin(films, opt) {
   function act() { return sel >= 0 && blocks[sel] ? blocks[sel] : selFree(); }
   // ---------- lecture ----------
   function load(f, t, andPlay) { // affiche la vidéo f à l'instant t
-    function go() { vid.currentTime = clamp(t, 0, f.dur - .04); if (andPlay) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
+    function go() { vid.currentTime = clamp(t + FR * .25, 0, f.dur - .04); /* + un quart d'image : on tombe à coup sûr sur l'image qui commence à t */ if (andPlay) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
     if (loaded !== f.full) { loaded = f.full; vid.src = f.full; vid.addEventListener("loadedmetadata", function w() { vid.removeEventListener("loadedmetadata", w); go(); }); } else go();
   }
   var lvl = 0; // vitesse de lecture : 0 = normale, 1..3 = TL_RATES
@@ -138,9 +138,9 @@ function montageWin(films, opt) {
   });
   function drawCursor() {
     drawPhone(); drawPhoneScreen(); // repères de lecture : sur la frise de la source, et sur la règle du montage (mode montage)
-    var pp = pcz(vid.currentTime); dPh.hidden = loaded !== src.full || mode === "seq" && blocks[cur] && blocks[cur].f !== src || pp < 0 || pp > 100; if (!dPh.hidden) dPh.style.left = pp + "%";
+    var pp = pcz(vid.paused ? sn(vid.currentTime) : vid.currentTime); dPh.hidden = loaded !== src.full || mode === "seq" && blocks[cur] && blocks[cur].f !== src || pp < 0 || pp > 100; if (!dPh.hidden) dPh.style.left = pp + "%";
     var b = blocks[cur]; ph.hidden = !(mode === "seq" && b && loaded === b.f.full); if (!ph.hidden) ph.style.left = (before(cur) + clamp(vid.currentTime - b.s, 0, b.d)) / total() * 100 + "%";
-    tcur.textContent = (lvl ? (revOn ? "◀◀ ×" : "▶▶ ×") + TL_RATES[lvl - 1] + " · " : "") + (loaded === src.full ? fmt(vid.currentTime) : "") + (mode === "seq" && b ? " · montage " + fmt(before(cur) + clamp(vid.currentTime - b.s, 0, b.d)) + " / " + fmt(total()) : "");
+    tcur.textContent = (lvl ? (revOn ? "◀◀ ×" : "▶▶ ×") + TL_RATES[lvl - 1] + " · " : "") + (loaded === src.full ? fmt(vid.paused ? sn(vid.currentTime) : vid.currentTime) : "") + (mode === "seq" && b ? " · montage " + fmt(before(cur) + clamp(vid.currentTime - b.s, 0, b.d)) + " / " + fmt(total()) : "");
   }
   // ---------- frise des blocs du montage ----------
   function drawBar() {
@@ -212,7 +212,7 @@ function montageWin(films, opt) {
         if (EX && sel < 0 && room() < MIND) return; // montage plein : raccourcir un bloc d'abord
         var a = act(), t = tOf(ev, dTrack, zwin()[0], zwin()[1]), end = a.s + a.d;
         if (which === "in") { t = Math.min(t, end - MIND); a.s = r3(Math.max(0, t)); a.d = r3(end - a.s); if (a.d > room()) { a.d = room(); a.s = r3(end - a.d); } } else { t = Math.max(t, a.s + MIND); a.d = r3(Math.min(src.dur, t) - a.s); if (a.d > room()) a.d = room(); }
-        load(src, which === "in" ? a.s : a.s + a.d - .05, false); drawDet(); if (sel >= 0) drawBarSoft();
+        load(src, which === "in" ? a.s : a.s + a.d - FR, false); /* sortie : on montre la dernière image du bloc */ drawDet(); if (sel >= 0) drawBarSoft();
       }
       function up() { h.removeEventListener("pointermove", mv); h.removeEventListener("pointerup", up); drawBar(); }
       h.addEventListener("pointermove", mv); h.addEventListener("pointerup", up);
@@ -318,7 +318,7 @@ function montageWin(films, opt) {
     if (/^[iIoO]$/.test(k) && !e.ctrlKey && !e.metaKey) {
       e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full || (EX && sel < 0 && room() < MIND)) return; var t = sn(vid.currentTime), a = act(), end = a.s + a.d; if (sel >= 0) snap();
       if (/i/i.test(k)) { a.s = r3(clamp(t, 0, src.dur - MIND)); a.d = r3(Math.max(MIND, (t > end - MIND ? Math.min(src.dur, t + 1) : end) - a.s)); }
-      else { a.d = r3(Math.max(MIND, Math.min(src.dur, t) - a.s)); if (t < a.s + MIND) { a.s = r3(Math.max(0, t - MIND)); a.d = MIND; } }
+      else { var e1 = Math.min(src.dur, t + FR); a.d = r3(Math.max(MIND, e1 - a.s)); if (e1 < a.s + MIND) { a.s = r3(Math.max(0, e1 - MIND)); a.d = MIND; } } // sortie : l'image sous le curseur est comprise (le bloc va jusqu'au trait de l'image d'après, comme dans un logiciel de montage)
       if (a.d > room()) a.d = r3(Math.max(MIND, room()));
       drawBar(); return;
     }
