@@ -168,9 +168,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/98f7cc06-9b2d-4a0d-851d-cb5b8835c5c4-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/lI99ATHyU4VOTfENvxm1EAgJJwxSHIfyfllYVoOBpBk/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/MjFhOTcwNC01YTFj/LTQ2YmUtODhiNC1j/NTAyNmEzOTRiYTAv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDIt/MjMtYS0xMS4zOS40/MC5wbmc.webp",
       "slate": 8331,
-      "cat": "FEATURE FILM",
-      "featured": true,
-      "featuredOrder": 5
+      "cat": "FEATURE FILM"
     },
     {
       "title": "Dirty Difficult Dangerous - bande-annonce",
@@ -232,7 +230,9 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/2f0fe76a-8d5e-4c14-ab57-674e3a375023-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/dWVChzaqolbQlKfRj-xuCjmmSp6yI6Wu0GoPXKKgb2A/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MDU5NjQxNS0xN2Q4/LTQxODUtODMzZS04/ZjkyYjQ2YWJmMmMv/MXVudGl0bGVkLTEu/MjguNy5qcGc.webp",
       "slate": 8284,
-      "cat": "FEATURE FILM"
+      "cat": "FEATURE FILM",
+      "featured": true,
+      "featuredOrder": 5
     },
     {
       "title": "La Troisième Guerre - Bande-Annonce",
