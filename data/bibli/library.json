@@ -184,14 +184,26 @@
       "src": "upload",
       "grp": "gmwz0yuxw",
       "gi": 0,
-      "enc": {
-        "path": "data/encode/film-1795786587428-0ltgg.json",
-        "id": "mwz0yuxwxipr04"
-      },
       "size": 11450513,
       "at": "2026-11-27T13:36:27.428Z",
       "by": "John",
-      "mkey": "depot/pma4gps3e4xfv5hg4g77/angeliketgregorygarnierfructis.mp4"
+      "mkey": "depot/pma4gps3e4xfv5hg4g77/angeliketgregorygarnierfructis.mp4",
+      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/web.mp4",
+      "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/extrait-47663.mp4",
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/vignette-800.webp",
+      "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/vignette-1600.webp",
+      "thumbT": 48.663,
+      "snip": {
+        "s": 47.663,
+        "d": 5,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/extrait-47663.mp4",
+        "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/web.mp4"
+      },
+      "dur": 71.494,
+      "w": 848,
+      "h": 480,
+      "ws": 16442883,
+      "os": 11450513
     },
     {
       "key": "emwz0yuxx4b0zl1",
