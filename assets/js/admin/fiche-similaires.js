@@ -61,7 +61,7 @@
         if (simAny(p.prod, r.p.prod, true)) w.push("même prod");
         if (p.client && r.p.client && simSame(p.client, r.p.client)) w.push("même client");
         if (simTitle(p, r.p)) w.push("titre proche");
-        if (w.length >= 2 && (w.indexOf("même réal") > -1 || w.indexOf("même prod") > -1) && (!best || w.length > best.w.length)) best = { w: w, r: r.f };
+        if (w.length >= 2 && (!best || w.length > best.w.length)) best = { w: w, r: r.f };
       });
       if (best) out.push({ f: f, n: best.w.length, why: best.w.join(" + ") + " · comme « " + (best.r.title || "") + " »" });
     });
