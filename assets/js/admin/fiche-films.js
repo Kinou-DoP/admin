@@ -81,7 +81,17 @@
     ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
     var tabRow = el("div", { class: "seltabs" }), left = el("div", { class: "selleft" }), right = el("div", { class: "selright" });
     var search = el("input", { type: "text", placeholder: "Chercher dans le video club : titre, chef op, réal, prod, client…" }), results = el("div", { class: "selres" });
-    function ch() { changedSel = true; }
+    // Brouillon de sécurité (Gus 27/11 : une sélection non publiée a été perdue) : chaque changement est gardé dans ce navigateur (localStorage) ; à la réouverture, s'il diffère de ce qui est
+    // publié, un bandeau propose de le reprendre. Ce qui est publié et identique au brouillon l'efface tout seul.
+    var DK = "kinou-seldraft:" + (cfg ? cfg.title : state.slug || state.name || "?");
+    function snapTabs() { return tabs.map(function (t) { return { name: t.name, ids: t.ids.slice() }; }); }
+    function saveDraft() {
+      try {
+        var ex = {}; Object.keys(extra).forEach(function (k) { var f = extra[k], o = {}; ["slate", "key", "title", "dir", "prod", "dops", "img", "video", "full", "images", "client", "cats", "types", "sub", "film"].forEach(function (a) { if (f[a] !== undefined) o[a] = f[a]; }); ex[k] = o; });
+        localStorage.setItem(DK, JSON.stringify({ at: Date.now(), by: user && user.login || "", tabs: snapTabs(), extra: ex }));
+      } catch (e) {}
+    }
+    function ch() { changedSel = true; saveDraft(); }
     function drawTabs() {
       tabRow.textContent = "";
       tabs.forEach(function (t, i) {
@@ -319,6 +329,16 @@
     box.appendChild(el("div", { class: "selgrid" }, [left, el("div", { class: "selsearch" }, [search, sugBox, chipsBox, results])]));
     box.appendChild(el("div", { class: "selfoot" }, [el("button", { type: "button", class: "btn ghost", text: "Annuler", on: { click: function () { close(); } } }), ok]));
     ov.appendChild(box); document.body.appendChild(ov); drawAll(); search.focus();
+    (function offerDraft() { // brouillon trouvé et différent de la sélection ouverte : on propose de le reprendre
+      var dr = null; try { dr = JSON.parse(localStorage.getItem(DK) || "null"); } catch (e) {} if (!dr || !dr.tabs) return;
+      if (JSON.stringify(dr.tabs) === JSON.stringify(snapTabs()) || !dr.tabs.some(function (t) { return t.ids.length; })) { try { localStorage.removeItem(DK); } catch (e) {} return; }
+      var n = dr.tabs.reduce(function (a, t) { return a + t.ids.length; }, 0), when = new Date(dr.at).toLocaleString("fr-FR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+      var bar = el("div", { class: "seldraft" }, [el("span", { text: "Sélection non publiée retrouvée (" + n + " film" + (n > 1 ? "s" : "") + ", " + when + (dr.by ? ", " + dr.by : "") + ")" }),
+        el("button", { type: "button", class: "btn primary", text: "Reprendre", on: { click: function () {
+          tabs = dr.tabs.map(function (t) { return { name: t.name, ids: t.ids.slice() }; }); Object.keys(dr.extra || {}).forEach(function (k) { if (!byId[k] && !extra[k]) extra[k] = dr.extra[k]; }); cur = 0; changedSel = true; bar.remove(); drawAll();
+        } } }), el("button", { type: "button", class: "btn ghost", text: "Oublier", on: { click: function () { try { localStorage.removeItem(DK); } catch (e) {} bar.remove(); } } })]);
+      box.insertBefore(bar, box.firstChild);
+    })();
     bibLoad().then(function (d) {
       var byS = {}; d.films.forEach(function (f) { var id = sid(f); if (id && !byS[id]) byS[id] = f; });
       lib = { films: d.films, byS: byS, sug: d.sug }; drawRight();

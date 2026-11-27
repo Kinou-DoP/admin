@@ -1400,3 +1400,4 @@ input.bcn { width: 90px; }
 .film .thumb .snipcut:hover { background: rgba(217,130,43,.9); color: #000; }
 .bmontbar.busy { opacity: .5; pointer-events: none; }
 .bimplink { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 13px; cursor: pointer; } .bimplink input { width: 16px; height: 16px; }
+.seldraft { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 10px 12px; margin: 0 0 12px; background: rgba(217,130,43,.16); border: 1px solid rgba(217,130,43,.55); font-size: 13px; } .seldraft span { flex: 1; min-width: 180px; }
