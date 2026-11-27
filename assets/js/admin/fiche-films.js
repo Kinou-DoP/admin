@@ -71,7 +71,14 @@
     });
     var featName = cfg ? "" : state.featuredName || ""; // nom affiché de l'onglet FEATURED (le code interne reste FEATURED), appliqué à la publication
     var cur = Math.max(0, startTab ? tabs.map(function (t) { return t.name; }).indexOf(startTab) : 0), q = "", lib = null, changedSel = false;
-    function info(id) { var c = byId[id] || extra[id] || {}; return { title: (!cfg && val(c, "title")) || c.title || c.film || "", sub: ((!cfg && val(c, "sub")) || c.sub || [c.dir, c.prod].filter(Boolean).join("\n") || (c.dps || []).map(function (d) { return d.name || d; }).join(", ")).split("\n").filter(Boolean).join(" · "), img: c.img }; }
+    // Vignette la plus récente : celle du video club (retouches comprises), sinon celle de la page (copie faite à l'ajout du film).
+    function latestImg(id, c) { var L = lib && lib.byS[id]; return (L && L.img) || (vcFilms[vcKey(id)] || {}).img || c.img; }
+    // Lecture d'un film de l'onglet (clic sur sa vignette) : lecteur du video club, ‹ › d'un film à l'autre.
+    function playTab(t, i) {
+      var l = t.ids.map(function (id) { var L = lib && lib.byS[id], c = byId[id] || extra[id] || {}; return L || Object.assign({}, c, { title: info(id).title, img: info(id).img }); });
+      navPlayer(l, i, {});
+    }
+    function info(id) { var c = byId[id] || extra[id] || {}; return { title: (!cfg && val(c, "title")) || c.title || c.film || "", sub: ((!cfg && val(c, "sub")) || c.sub || [c.dir, c.prod].filter(Boolean).join("\n") || (c.dps || []).map(function (d) { return d.name || d; }).join(", ")).split("\n").filter(Boolean).join(" · "), img: latestImg(id, c) }; }
     var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox selbox" });
     function close(force) {
       if (!force && changedSel && !window.confirm("Fermer sans enregistrer les changements de la sélection ?")) return;
@@ -134,13 +141,18 @@
     // Glisser comme dans les bandes du video club (Gus 26/11) : le film suit la souris avec l'effet ressort (bibFly), un trait montre
     // la place ; déposé sur un autre onglet, il y passe (FEATURED : il y est ajouté sans quitter son onglet, et inversement).
     var dragAt = 0, popTab = -1, popRow = -1;
+    // Pendant un glisser (téléphone surtout) : la liste défile quand le doigt approche de son bord haut ou bas.
+    function autoScroll(ev) {
+      [left, results].forEach(function (b) { var r = b.getBoundingClientRect(); if (ev.clientX < r.left || ev.clientX > r.right) return; if (ev.clientY < r.top + 40 && ev.clientY > r.top - 20) b.scrollTop -= 14; else if (ev.clientY > r.bottom - 40 && ev.clientY < r.bottom + 20) b.scrollTop += 14; });
+    }
     function filmDrag(e, i, row, img) {
-      if (e.button !== 0 || e.pointerType === "touch" || e.target.closest("button")) return;
+      if (e.button !== 0 || (e.pointerType === "touch" && !e.target.closest(".selgrip")) || e.target.closest("button")) return;
+      if (e.target.closest(".selgrip")) e.preventDefault();
       var t = tabs[cur], sx = e.clientX, sy = e.clientY, fly = null, ph = null, at = i, over = null;
       function rows() { return [].filter.call(left.children, function (x) { return x.classList.contains("selitem") && x !== row; }); }
       function mv(ev) {
         if (!fly) { if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return; fly = bibFly(ev, [img], 1); row.classList.add("dragged"); document.body.classList.add("bdragging"); }
-        ev.preventDefault(); fly.move(ev);
+        ev.preventDefault(); fly.move(ev); autoScroll(ev);
         var hit = document.elementFromPoint(ev.clientX, ev.clientY), chip = hit && hit.closest(".seltab");
         if (over && over !== chip) over.classList.remove("drop");
         over = chip && +chip.dataset.i !== cur ? chip : null;
@@ -152,7 +164,7 @@
         if (ph.nextSibling !== ref) left.insertBefore(ph, ref);
       }
       function up() {
-        removeEventListener("pointermove", mv); removeEventListener("pointerup", up);
+        removeEventListener("pointermove", mv); removeEventListener("pointerup", up); removeEventListener("pointercancel", up);
         if (!fly) return;
         dragAt = Date.now(); document.body.classList.remove("bdragging"); row.classList.remove("dragged");
         if (over) {
@@ -165,18 +177,19 @@
         if (at === i) return;
         t.ids.splice(at, 0, t.ids.splice(i, 1)[0]); popRow = at; ch(); drawLeft(); popRow = -1;
       }
-      addEventListener("pointermove", mv); addEventListener("pointerup", up);
+      addEventListener("pointermove", mv); addEventListener("pointerup", up); addEventListener("pointercancel", up);
     }
     // Glisser un film de la liste de droite (video club) vers la sélection (Gus 27/11, comme dans les bandes) : il suit la souris (bibFly), un trait montre la place dans l'onglet ouvert ;
     // déposé sur un onglet, il y est ajouté. Le « + » reste possible.
     function resDrag(e, f, row, img) {
-      if (e.button !== 0 || e.pointerType === "touch" || e.target.closest("button")) return;
+      if (e.button !== 0 || (e.pointerType === "touch" && !e.target.closest(".selgrip")) || e.target.closest("button")) return;
+      if (e.target.closest(".selgrip")) e.preventDefault();
       var t = tabs[cur], id = sid(f); if (!t || !id || t.ids.indexOf(id) > -1) return;
       var sx = e.clientX, sy = e.clientY, fly = null, ph = null, at = t.ids.length, over = null, inLeft = false;
       function rowsL() { return [].filter.call(left.children, function (x) { return x.classList.contains("selitem"); }); }
       function mv(ev) {
         if (!fly) { if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return; fly = bibFly(ev, [img], 1); row.classList.add("dragged"); document.body.classList.add("bdragging"); }
-        ev.preventDefault(); fly.move(ev);
+        ev.preventDefault(); fly.move(ev); autoScroll(ev);
         var hit = document.elementFromPoint(ev.clientX, ev.clientY), chip = hit && hit.closest(".seltab");
         if (over && over !== chip) over.classList.remove("drop");
         over = chip && +chip.dataset.i !== cur ? chip : null;
@@ -190,7 +203,7 @@
         if (ph.nextSibling !== ref || ph.parentNode !== left) left.insertBefore(ph, ref);
       }
       function up() {
-        removeEventListener("pointermove", mv); removeEventListener("pointerup", up);
+        removeEventListener("pointermove", mv); removeEventListener("pointerup", up); removeEventListener("pointercancel", up);
         if (!fly) return;
         dragAt = Date.now(); document.body.classList.remove("bdragging"); row.classList.remove("dragged");
         if (over) {
@@ -202,7 +215,7 @@
         if (!inLeft) return;
         if (!byId[id] && !extra[id]) extra[id] = f; t.ids.splice(at, 0, id); popRow = at; ch(); drawAll(); popRow = -1;
       }
-      addEventListener("pointermove", mv); addEventListener("pointerup", up);
+      addEventListener("pointermove", mv); addEventListener("pointerup", up); addEventListener("pointercancel", up);
     }
     function tabDrag(e, i, chip) {
       if (e.button !== 0 || e.pointerType === "touch") return;
@@ -218,22 +231,23 @@
         if (ph.nextSibling !== ref) tabRow.insertBefore(ph, ref);
       }
       function up() {
-        removeEventListener("pointermove", mv); removeEventListener("pointerup", up);
+        removeEventListener("pointermove", mv); removeEventListener("pointerup", up); removeEventListener("pointercancel", up);
         if (!fly) return;
         dragAt = Date.now(); document.body.classList.remove("bdragging"); chip.classList.remove("dragged");
         fly.end(ph ? ph.getBoundingClientRect() : null); if (ph) ph.remove();
         if (at === i) return;
         var curT = tabs[cur]; tabs.splice(at, 0, tabs.splice(i, 1)[0]); cur = tabs.indexOf(curT); popTab = at; ch(); drawAll(); popTab = -1;
       }
-      addEventListener("pointermove", mv); addEventListener("pointerup", up);
+      addEventListener("pointermove", mv); addEventListener("pointerup", up); addEventListener("pointercancel", up);
     }
     function drawLeft() {
       left.textContent = ""; var t = tabs[cur];
       if (!t) { left.appendChild(el("p", { class: "empty", text: "Aucun onglet : « + Onglet » pour commencer." })); return; }
       if (!t.ids.length) left.appendChild(el("p", { class: "empty", text: "Onglet vide : ajoutez des films avec « + » à droite." }));
       t.ids.forEach(function (id, i) {
-        var f = info(id), th = el("div", { class: "selth" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
-        var row = el("div", { class: "selitem selmove" + (popRow === i ? " pop" : ""), title: "Glisser pour changer l'ordre, ou sur un onglet pour l'y mettre" }, [el("span", { class: "selnum", text: String(i + 1) }), th,
+        var f = info(id), th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
+        th.addEventListener("click", function () { if (Date.now() - dragAt < 300) return; playTab(t, i); });
+        var row = el("div", { class: "selitem selmove" + (popRow === i ? " pop" : ""), title: "Glisser pour changer l'ordre, ou sur un onglet pour l'y mettre" }, [el("span", { class: "selgrip", title: "Prendre ici pour déplacer (téléphone)", text: "⠿" }), el("span", { class: "selnum", text: String(i + 1) }), th,
           el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }), el("small", { text: f.sub })]),
           el("button", { type: "button", class: "btn ghost", text: "↑", title: "Monter", on: { click: function () { if (i) { t.ids.splice(i - 1, 0, t.ids.splice(i, 1)[0]); ch(); drawLeft(); } } } }),
           el("button", { type: "button", class: "btn ghost", text: "↓", title: "Descendre", on: { click: function () { if (i < t.ids.length - 1) { t.ids.splice(i + 1, 0, t.ids.splice(i, 1)[0]); ch(); drawLeft(); } } } }),
@@ -279,7 +293,7 @@
       shownR.forEach(function (f) {
         var inTab = t && t.ids.indexOf(sid(f)) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
         th.addEventListener("click", function () { if (Date.now() - dragAt < 300) return; selPreview(f); });
-        var rrow = el("div", { class: "selitem" + (inTab ? "" : " selmove"), title: inTab ? "" : "Glisser vers la sélection à gauche (ou sur un onglet)" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
+        var rrow = el("div", { class: "selitem" + (inTab ? "" : " selmove"), title: inTab ? "" : "Glisser vers la sélection à gauche (ou sur un onglet)" }, [inTab ? null : el("span", { class: "selgrip", title: "Prendre ici pour déplacer (téléphone)", text: "⠿" }), th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
           el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") })]),
           el("button", { type: "button", class: "btn" + (inTab ? " ghost" : ""), text: inTab ? "✓" : "+", title: inTab ? "Déjà dans l'onglet" : cfg && cfg.top ? "Ajouter en haut" : "Ajouter à la fin de l'onglet", on: { click: function () {
             if (!t || inTab) return; addFilm(f);
@@ -352,7 +366,7 @@
     })();
     bibLoad().then(function (d) {
       var byS = {}; d.films.forEach(function (f) { var id = sid(f); if (id && !byS[id]) byS[id] = f; });
-      lib = { films: d.films, byS: byS, sug: d.sug }; drawRight();
+      lib = { films: d.films, byS: byS, sug: d.sug }; drawLeft(); drawRight();
     }, function (e) { results.textContent = ""; results.appendChild(el("p", { class: "empty", text: "Video club illisible : " + e.message })); });
   }
 
