@@ -1535,11 +1535,11 @@
       "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7z46qirijs9/vignette-3275-800.webp",
       "snip": {
         "s": 31.875,
-        "d": 1.75,
+        "d": 1.708,
         "parts": [
           {
             "s": 31.875,
-            "d": 1.75
+            "d": 1.708
           },
           {
             "s": 43.875,
@@ -1559,15 +1559,13 @@
           },
           {
             "s": 0.958,
-            "d": 1.917
+            "d": 1.875
           },
           {
-            "s": 2.875,
-            "d": 1.875
+            "s": 2.833,
+            "d": 1.917
           }
-        ],
-        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz89vugqqi7ap/montage-31875-1750_43875-750_49792-2250_52042-1375_20750-917_958-1917_2875-1875.mp4",
-        "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4"
+        ]
       },
       "thumbT": 3.275,
       "hist": {
@@ -1575,6 +1573,42 @@
           "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/vignette-800.webp"
         ],
         "snip": [
+          {
+            "s": 31.875,
+            "d": 1.75,
+            "parts": [
+              {
+                "s": 31.875,
+                "d": 1.75
+              },
+              {
+                "s": 43.875,
+                "d": 0.75
+              },
+              {
+                "s": 49.792,
+                "d": 2.25
+              },
+              {
+                "s": 52.042,
+                "d": 1.375
+              },
+              {
+                "s": 20.75,
+                "d": 0.917
+              },
+              {
+                "s": 0.958,
+                "d": 1.917
+              },
+              {
+                "s": 2.875,
+                "d": 1.875
+              }
+            ],
+            "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz89vugqqi7ap/montage-31875-1750_43875-750_49792-2250_52042-1375_20750-917_958-1917_2875-1875.mp4",
+            "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4"
+          },
           {
             "s": 42.222,
             "d": 5,
