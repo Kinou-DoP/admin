@@ -140,9 +140,12 @@
     }
     function row(f, i) {
       var th = el("div", { class: "bthumb" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
+      // Recadrage du film (fenêtre d'edit) : suivi par l'extrait au survol, et par la vignette si « vignette aussi » (comme sur le site, Gus 27/11)
+      var cr = f.crop && +f.crop.z > 1 ? f.crop : null;
+      if (cr && cr.t !== false) { th.style.backgroundSize = cr.z * 100 + "% auto"; th.style.backgroundPosition = (cr.x === undefined ? 50 : cr.x) + "% " + (cr.y === undefined ? 50 : cr.y) + "%"; }
       if (f.images && !f.video && !f.full) th.appendChild(el("span", { class: "bimgs", text: f.images.length + " images" }));
       var v = null;
-      th.addEventListener("mouseenter", function () { var hs = f.snipVideo || (f.snip && f.snip.v) || f.video; if (!hs || v || document.body.classList.contains("bdragging")) return; v = el("video", { muted: true, autoplay: true, loop: true, playsinline: true }); v.muted = true; v.src = hs; th.appendChild(v); }); // l'extrait le plus récent (montage, extrait importé), pas l'ancien
+      th.addEventListener("mouseenter", function () { var hs = f.snipVideo || (f.snip && f.snip.v) || f.video; if (!hs || v || document.body.classList.contains("bdragging")) return; v = el("video", { muted: true, autoplay: true, loop: true, playsinline: true }); v.muted = true; v.src = hs; if (cr) { v.style.transform = "scale(" + cr.z + ")"; v.style.transformOrigin = (cr.x === undefined ? 50 : cr.x) + "% " + (cr.y === undefined ? 50 : cr.y) + "%"; } th.appendChild(v); }); // l'extrait le plus récent (montage, extrait importé), pas l'ancien
       th.addEventListener("mouseleave", function () { if (v) { v.remove(); v = null; } });
       var cb = el("input", { type: "checkbox" }); cb.checked = !!st.sel[f.key];
       cb.addEventListener("click", function (e) { // Maj + clic : toute la plage depuis la dernière case cochée
