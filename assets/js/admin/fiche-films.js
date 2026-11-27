@@ -147,6 +147,43 @@
       }
       addEventListener("pointermove", mv); addEventListener("pointerup", up);
     }
+    // Glisser un film de la liste de droite (video club) vers la sélection (Gus 27/11, comme dans les bandes) : il suit la souris (bibFly), un trait montre la place dans l'onglet ouvert ;
+    // déposé sur un onglet, il y est ajouté. Le « + » reste possible.
+    function resDrag(e, f, row, img) {
+      if (e.button !== 0 || e.pointerType === "touch" || e.target.closest("button")) return;
+      var t = tabs[cur], id = sid(f); if (!t || !id || t.ids.indexOf(id) > -1) return;
+      var sx = e.clientX, sy = e.clientY, fly = null, ph = null, at = t.ids.length, over = null, inLeft = false;
+      function rowsL() { return [].filter.call(left.children, function (x) { return x.classList.contains("selitem"); }); }
+      function mv(ev) {
+        if (!fly) { if (Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return; fly = bibFly(ev, [img], 1); row.classList.add("dragged"); document.body.classList.add("bdragging"); }
+        ev.preventDefault(); fly.move(ev);
+        var hit = document.elementFromPoint(ev.clientX, ev.clientY), chip = hit && hit.closest(".seltab");
+        if (over && over !== chip) over.classList.remove("drop");
+        over = chip && +chip.dataset.i !== cur ? chip : null;
+        if (over) { over.classList.add("drop"); if (ph) { ph.remove(); ph = null; } inLeft = false; return; }
+        var lr = left.getBoundingClientRect(); inLeft = ev.clientX >= lr.left && ev.clientX <= lr.right && ev.clientY >= lr.top && ev.clientY <= lr.bottom;
+        if (!inLeft) { if (ph) { ph.remove(); ph = null; } return; }
+        var rs = rowsL(); at = rs.length;
+        for (var k = 0; k < rs.length; k++) { var r = rs[k].getBoundingClientRect(); if (ev.clientY < r.top + r.height / 2) { at = k; break; } }
+        if (!ph) ph = el("div", { class: "bph" });
+        var ref = rs[at] || (rs.length ? rs[rs.length - 1].nextSibling : null);
+        if (ph.nextSibling !== ref || ph.parentNode !== left) left.insertBefore(ph, ref);
+      }
+      function up() {
+        removeEventListener("pointermove", mv); removeEventListener("pointerup", up);
+        if (!fly) return;
+        dragAt = Date.now(); document.body.classList.remove("bdragging"); row.classList.remove("dragged");
+        if (over) {
+          var j = +over.dataset.i, dest = tabs[j]; fly.end(over.getBoundingClientRect()); over.classList.remove("drop");
+          if (dest && dest.ids.indexOf(id) < 0) { if (!byId[id] && !extra[id]) extra[id] = f; dest.ids.push(id); popTab = j; ch(); drawAll(); popTab = -1; }
+          return;
+        }
+        fly.end(inLeft && ph ? ph.getBoundingClientRect() : null); if (ph) ph.remove();
+        if (!inLeft) return;
+        if (!byId[id] && !extra[id]) extra[id] = f; t.ids.splice(at, 0, id); popRow = at; ch(); drawAll(); popRow = -1;
+      }
+      addEventListener("pointermove", mv); addEventListener("pointerup", up);
+    }
     function tabDrag(e, i, chip) {
       if (e.button !== 0 || e.pointerType === "touch") return;
       var sx = e.clientX, sy = e.clientY, fly = null, ph = null, at = i, t = tabs[i], f0 = t.ids[0] ? info(t.ids[0]) : {};
@@ -221,12 +258,14 @@
       shownR = list.slice(0, maxR);
       shownR.forEach(function (f) {
         var inTab = t && t.ids.indexOf(sid(f)) > -1, th = el("div", { class: "selth", title: "Voir le film" }); if (f.img) th.style.backgroundImage = 'url("' + imgShow(f.img) + '")';
-        th.addEventListener("click", function () { selPreview(f); });
-        results.appendChild(el("div", { class: "selitem" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
+        th.addEventListener("click", function () { if (Date.now() - dragAt < 300) return; selPreview(f); });
+        var rrow = el("div", { class: "selitem" + (inTab ? "" : " selmove"), title: inTab ? "" : "Glisser vers la sélection à gauche (ou sur un onglet)" }, [th, el("div", { class: "seltxt" }, [el("b", { text: f.title || "(sans titre)" }),
           el("small", { text: [(f.dops || []).join(", "), f.dir, f.prod, f.client].filter(Boolean).join(" · ") })]),
           el("button", { type: "button", class: "btn" + (inTab ? " ghost" : ""), text: inTab ? "✓" : "+", title: inTab ? "Déjà dans l'onglet" : cfg && cfg.top ? "Ajouter en haut" : "Ajouter à la fin de l'onglet", on: { click: function () {
             if (!t || inTab) return; addFilm(f);
-          } } })]));
+          } } })]);
+        rrow.addEventListener("pointerdown", function (e) { resDrag(e, f, rrow, f.img || ""); });
+        results.appendChild(rrow);
       });
       if (list.length > maxR) results.appendChild(el("button", { type: "button", class: "btn ghost rcmore", text: "Afficher plus (" + (list.length - maxR) + ")", on: { click: function () { var y = results.scrollTop; maxR += 150; drawRight(); results.scrollTop = y; } } })); // Gus 26/11
       if (!list.length) results.appendChild(el("p", { class: "empty", text: "Aucun film trouvé" + (chips.length ? " avec ces filtres (× pour en retirer)." : ".") }));
