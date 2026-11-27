@@ -1958,7 +1958,7 @@
       ["dragenter", "dragover"].forEach(function (ev) { finB.addEventListener(ev, function (e) { e.preventDefault(); finB.classList.add("over"); }); });
       finB.addEventListener("dragleave", function () { finB.classList.remove("over"); });
       finB.addEventListener("drop", function (e) { e.preventDefault(); var l = [].filter.call(e.dataTransfer.files, function (x) { return /^video\//.test(x.type) || /\.(mov|mxf|mp4|m4v|avi|mkv)$/i.test(x.name); }); if (!l.length) return; mo.remove(); importFilms(l); });
-      var chk = el("p", { class: "hint", text: "Plusieurs vidéos d'un même projet : elles gardent les crédits de la 1re (titre, vignette et extrait propres à chacune), et entrent une par une dans le video club. 10 Go au plus par vidéo." });
+      var chk = el("p", { class: "hint", text: "Plusieurs vidéos : elles entrent une par une dans le video club, indépendantes (crédits de la 1re repris). Une case en haut de la fenêtre permet de les lier entre elles. 10 Go au plus par vidéo." });
       var mo = modal("Ajouter une vidéo", [el("span", { class: "label", text: "Depuis Slate" }), el("div", { class: "row" }, [el("div", { class: "grow" }, [link]), go, goB]), out,
         el("span", { class: "label", text: "Depuis l'ordinateur" }), finB, fin, chk]);
     }
@@ -1973,7 +1973,7 @@
       if (big.length) alert("Plus de 10 Go, pas envoyé : " + big.map(function (f) { return f.name; }).join(", "));
       if (!fl.length) return;
       var now = new Date().toISOString(), by = user && user.login || "", cur = 0;
-      var grp = fl.length > 1 ? "g" + Date.now().toString(36) : null; // vidéos importées ensemble = liées
+      var grp = null; // plusieurs vidéos glissées ensemble : PAS liées au départ (Gus 27/11) ; la case en haut de la fenêtre les lie si on veut
       var g = fl.map(function (file, k) {
         var id = encId(), path = "data/encode/film-" + Date.now() + "-" + k + Math.random().toString(36).slice(2, 6) + ".json";
         var title = file.name.replace(/\.[a-z0-9]+$/i, "").replace(/[_]+/g, " ").replace(/\s+/g, " ").trim() || "Vidéo";
@@ -1988,6 +1988,21 @@
       // État d'une vidéo en 3 temps : Envoi → Encodage → Prête (pastilles colorées), + message, + bandeau vert quand c'est fini.
       var PH = ["Envoi", "Encodage", "Prête"], steps = el("div", { class: "bsteps" }), banner = el("p", { class: "bbanner", hidden: true });
       hd.insertBefore(steps, stat); hd.appendChild(banner);
+      // Case « Lier ces vidéos » (tout en haut de la fenêtre, décochée) : lier = ordre et crédits partagés, une sous l'autre sur le site, bout à bout ; décocher défait le lien.
+      function setLinked(on) {
+        var gid = on ? "g" + Date.now().toString(36) : null;
+        g.forEach(function (x, k) { x.it.grp = gid || undefined; x.it.gi = gid ? k : undefined; var m = filmOf(x.it.key); if (m) { if (gid) { m.grp = gid; m.gi = k; } else { delete m.grp; delete m.gi; } } });
+        bibGroups(data.films); bibCache = null; draw();
+        savedLib.then(function () {
+          return commit([{ path: BIB_LIB, edit: function (t) { var L = t ? JSON.parse(t) : { items: [] }; (L.items || []).forEach(function (y) { g.forEach(function (x, k) { if (y.key === x.it.key) { if (gid) { y.grp = gid; y.gi = k; } else { delete y.grp; delete y.gi; } } }); }); return json(L); } }],
+            "Video club : " + g.length + " vidéos " + (on ? "liées" : "déliées") + " (admin, " + by + ")");
+        }).then(function () { return bibLoad(true); }).then(function (d) { adopt(d); draw(); }, function (e) { alert("Lien pas enregistré : " + e.message); });
+      }
+      if (g.length > 1) {
+        var lk = el("input", { type: "checkbox" });
+        lk.addEventListener("change", function () { setLinked(lk.checked); });
+        hd.insertBefore(el("label", { class: "bimplink", title: "Vidéos liées : même ordre et mêmes crédits partout, l'une sous l'autre sur le site, bout à bout possible" }, [lk, " Lier ces " + g.length + " vidéos entre elles"]), hd.firstChild);
+      }
       function phase(x) { return x.step === "fini" ? 3 : x.step === "erreur" ? (x.up >= 1 ? 1 : 0) : (x.step === "attente" || x.step === "envoi" || x.step === "demande") ? 0 : 1; }
       function icon(x) { return x.step === "fini" ? "✓" : x.step === "erreur" ? "!" : x.step === "attente" ? "…" : phase(x) === 0 ? "↑" : "⟳"; }
       function paint() {
