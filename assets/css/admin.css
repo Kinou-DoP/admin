@@ -1339,7 +1339,8 @@ input.bcn { width: 90px; }
   .bmodal.bmont { padding: 8px; }
   .bmfit .bmontbox { height: auto; max-height: calc(100vh - 16px); overflow-y: auto; padding: 12px; }
   .bmfit .bmontbox > .hmain { flex: none; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
-  .bmfit .hmain > .hexp { order: -1; overflow: visible; }
+  .bmfit .hmain > .hrcol { order: -1; display: block; } .bmfit .hmain .hexp { overflow: visible; }
+  .bmfit .hslot { display: none; }
   .bmfit .hvid { height: auto; }
   .bmfit .hvid .hvrow { flex: none; height: auto; align-items: flex-start; justify-content: flex-start; }
   .bmfit .bmontbox .hvid .hvw, .bmfit .bmontbox .hvhome .hvrow .hvw { flex: 1 1 0; min-width: 0; height: auto !important; max-width: none; }
@@ -1350,11 +1351,20 @@ input.bcn { width: 90px; }
 /* Paysage sur téléphone (peu de hauteur) : colonnes côte à côte, la fenêtre défile pour atteindre les frises */
 @media (orientation: landscape) and (max-height: 560px) {
   .bmodal.bmont { padding: 6px; }
-  .bmfit .bmontbox { height: auto; max-height: calc(100vh - 12px); overflow-y: auto; padding: 10px 14px; }
-  .bmfit .bmontbox > .hmain { flex: none; height: min(70vh, 250px); }
+  .bmfit .bmontbox { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(210px, 1fr); grid-template-rows: minmax(0, 1fr) auto auto; column-gap: 12px; height: calc(100vh - 12px); max-height: none; overflow: hidden; padding: 8px 12px; }
+  .bmfit .bmontbox > .hmain { display: contents; }
+  .bmfit .hmain > .hvid { grid-column: 1; grid-row: 1; min-height: 0; height: 100%; }
+  .bmfit .hmain > .hrcol { grid-column: 2; grid-row: 1 / 4; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; padding-right: 2px; }
+  .bmfit .hrcol > * { flex: none; } .bmfit .hslot { display: block; margin-top: 8px; } .bmfit .hslot .hctl { margin: 0 0 6px; } .bmfit .hslot .hsrc { margin: 0; }
+  .bmfit .bmontbox > .hdet { grid-column: 1; grid-row: 2; padding: 10px 0 0; margin: 0; }
+  .bmfit .bmontbox > .hbwrap { grid-column: 1; grid-row: 3; margin-top: 4px; }
+  .bmfit .bmontbox > .hmlab, .bmfit .bmontbox > .hint { display: none; }
+  .bmfit .hdtrack { height: 40px; margin-top: 4px; } .bmfit .hdlab { min-height: 0; font-size: 10px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .bmfit .hmhome .hexp, .bmfit .hxhome { padding-top: 30px; } .bmfit .hmclose { top: 6px; }
-  .bmfit .hexp > .hint:not(.bok):not(.berr), .bmfit .hhist, .bmfit .hhlab { display: none; }
+  .bmfit .hexp { overflow: visible; } .bmfit .hexp > .hint:not(.bok):not(.berr), .bmfit .hhist, .bmfit .hhlab { display: none; }
+  .bmfit .hbar { min-height: 34px; }
 }
+
 .bmfit .hctl { flex-wrap: wrap; row-gap: 2px; } .bmfit .hctl .btn { padding-left: 10px; padding-right: 10px; }
 /* boutons image par image, annuler / rétablir bien visibles */
 .hctl .hicon { padding: 8px 12px; color: var(--kinou-fg); } .hctl .hicon svg { display: block; } .hctl .hplay { min-width: 84px; }
@@ -1373,4 +1383,7 @@ input.bcn { width: 90px; }
   .bmfit .hslot .hctl { margin: 0 0 6px; } .bmfit .hslot .hsrc { margin: 0; }
   .bmfit .hexp { overflow: visible; }
   .bmfit .bmontbox > .hmain { height: min(74vh, 310px); }
+}
+@media (orientation: landscape) and (max-height: 560px) {
+  .bmfit .hrcol { padding-top: 30px; } .bmfit .hslot { order: -1; margin: 0 0 8px; } .bmfit .hmhome .hexp, .bmfit .hxhome { padding-top: 0; }
 }
