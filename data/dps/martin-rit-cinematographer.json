@@ -2,7 +2,19 @@
   "slug": "martin-rit-cinematographer",
   "name": "Martin Rit",
   "hue": 0,
-  "overrides": {},
+  "overrides": {
+    "11143": {
+      "info": {
+        "awards": "Official selection, Festival du film francophone d'Angoulême 2026\nValois de la mise en scène, Festival du film francophone d'Angoulême 2026\nValois de l'acteur (Diego Murgia), Festival du film francophone d'Angoulême 2026\nOfficial selection • Séances spéciales (hors compétition), Festival de Cannes • Semaine de la Critique 2026",
+        "awardsFrom": {
+          "6cec44995b62": "Official selection, Festival du film francophone d'Angoulême 2026",
+          "da78bd78cb7a": "Valois de la mise en scène, Festival du film francophone d'Angoulême 2026",
+          "c3b06d738301": "Valois de l'acteur (Diego Murgia), Festival du film francophone d'Angoulême 2026",
+          "aa7fea3e6b66": "Official selection • Séances spéciales (hors compétition), Festival de Cannes • Semaine de la Critique 2026"
+        }
+      }
+    }
+  },
   "about": {},
   "categories": [
     "FEATURED",
