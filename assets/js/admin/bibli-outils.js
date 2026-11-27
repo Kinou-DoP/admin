@@ -104,7 +104,7 @@
     }
     function subOf(sub) { // « Réal\nProd\nco-DoP Nom » -> { dir, prod, dops }
       var l = String(sub || "").split("\n").map(function (x) { return x.trim(); }).filter(Boolean), r = { dir: "", prod: "", dops: [] };
-      l = l.filter(function (x) { var m = /^(?:co-)?dop\s+(.+)$/i.exec(x); if (m) { r.dops = r.dops.concat(m[1].split(/\s*[,&]\s*/)); return false; } return true; });
+      l = l.filter(function (x) { var m = /^(?:co-)?dop\s+(.+)$/i.exec(x); if (m) { r.dops = r.dops.concat(m[1].split(/\s*&\s*|\s*,\s*(?![A-Z]{2,5}\b)/)); return false; } return true; });
       r.dir = l[0] || ""; r.prod = l[1] || ""; return r;
     }
     // Recadrage d'une page (overrides : zoom, zoomPos « x% y% », zoomThumb) → { z, x, y, t } des bandes (Gus 22/11) ;

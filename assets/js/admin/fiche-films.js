@@ -599,10 +599,13 @@
   // club quand on les change ; les lignes en plus (3e ligne et suivantes, hors chefs op et rôles) restent celles de la page (sub).
   var VC_DOP = /^(?:co-)?dop\.?\s+/i;
   function vcNm(n) { return String(n || "").split(",")[0].trim(); }
+  // Nom tel qu'il s'affiche dans les crédits, avec son sigle (AFC, SBC…) quand le chef op a une page (Gus 27/11) ; vcSep : « Nom, AFC & Nom2 » (la virgule avant un sigle fait partie du nom).
+  var vcSep = /\s*&\s*|\s*,\s*(?![A-Z]{2,5}\b)/;
+  function vcShow(n) { var k = bnrm(vcNm(n)), d = ((index && index.dps) || []).filter(function (x) { return bnrm(vcNm(x.name)) === k; })[0]; return d ? d.name : n; }
   function vcCredits(c) {
     var e = vcOf(c), multi = state === spot || state === fic, l = String(val(c, "sub") || "").split("\n").map(function (x) { return x.trim(); });
     var plain = l.filter(function (x) { return x && !VC_DOP.test(x); }), was = [];
-    l.filter(function (x) { return VC_DOP.test(x); }).forEach(function (x) { was = was.concat(x.replace(VC_DOP, "").split(/\s*[,&]\s*/)); });
+    l.filter(function (x) { return VC_DOP.test(x); }).forEach(function (x) { was = was.concat(x.replace(VC_DOP, "").split(vcSep)); });
     var lines = [e.dir !== undefined ? e.dir : plain[0] || "", e.prod !== undefined ? e.prod : plain[1] || ""], extra = plain.slice(2), rl = [];
     if (multi) { if (!["dir", "prod"].some(function (k) { return e[k] !== undefined; })) return { text: val(c, "sub"), extra: extra, roleLines: rl }; }
     else {
@@ -610,9 +613,9 @@
       var me = bnrm(vcNm(state.name)), dops = (e.dops ? e.dops.slice() : [state.name].concat(was)).filter(Boolean), ro = {};
       Object.keys(e.roles || {}).forEach(function (n) { if (e.roles[n]) ro[bnrm(vcNm(n))] = e.roles[n]; });
       var main = dops.filter(function (n) { return !ro[bnrm(vcNm(n))]; }), oth = dops.filter(function (n) { return ro[bnrm(vcNm(n))]; });
-      if (ro[me]) { if (main.length) lines.push("DoP " + main.map(vcNm).join(" & ")); }
-      else { var co = main.filter(function (n) { return bnrm(vcNm(n)) !== me; }); if (co.length) lines.push("co-DoP " + co.map(vcNm).join(" & ")); }
-      oth.forEach(function (n) { var x = ro[bnrm(vcNm(n))] + " " + vcNm(n); rl.push({ line: x, name: n, role: ro[bnrm(vcNm(n))] }); lines.push(x); });
+      if (ro[me]) { if (main.length) lines.push("DoP " + main.map(vcShow).join(" & ")); }
+      else { var co = main.filter(function (n) { return bnrm(vcNm(n)) !== me; }); if (co.length) lines.push("co-DoP " + co.map(vcShow).join(" & ")); }
+      oth.forEach(function (n) { var x = ro[bnrm(vcNm(n))] + " " + vcShow(n); rl.push({ line: x, name: n, role: ro[bnrm(vcNm(n))] }); lines.push(x); });
     }
     return { text: lines.concat(extra).filter(Boolean).join("\n"), extra: extra, roleLines: rl };
   }
@@ -629,7 +632,7 @@
     });
     var patch = { dir: plain[0] || "", prod: plain[1] || "" };
     if (!multi) {
-      var names = dopLine ? dopLine.replace(VC_DOP, "").split(/\s*[,&]\s*/).filter(Boolean) : [], me = bnrm(vcNm(state.name));
+      var names = dopLine ? dopLine.replace(VC_DOP, "").split(vcSep).filter(Boolean) : [], me = bnrm(vcNm(state.name));
       // Chef op de la page : toujours crédité (rôle gardé s'il en avait un) ; « DoP X » quand il a un rôle, sinon « co-DoP X ».
       var all = [state.name].concat(names.filter(function (n) { return bnrm(vcNm(n)) !== me; }));
       Object.keys(keptRoles).forEach(function (n) { if (!all.some(function (x) { return bnrm(vcNm(x)) === bnrm(vcNm(n)); })) all.push(n); });

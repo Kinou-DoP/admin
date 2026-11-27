@@ -459,3 +459,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 27/11 : fiches des chefs op : pas d'extrait = pastille grise + petit ciseau dessous ; le ciseau ouvre la fenêtre de montage (30 s), « Exporter » enregistre l'extrait dans le video club et le demande au robot (pastille orange qui clignote puis verte quand il est prêt).
 - 27/11 : fiches : le ciseau d'extrait n'ouvre plus le cadre de recadrage de la vignette (il garde pointerdown / mousedown pour lui).
 - 27/11 : ancien éditeur de l'accueil supprimé (`hdCtl`, `videoEditor` : ~120 lignes de accueil-spotlight.js) ; l'ancien éditeur d'extrait de la fenêtre d'edit d'un film est masqué mais son code reste (entremêlé avec la frise de la vignette : à retirer dans un chantier à part, avec tests).
+- 27/11 : crédits : sigles (AFC, SBC…) gardés dans les lignes de crédits des cartes (`vcShow`, `vcSep`) comme sur le site.
