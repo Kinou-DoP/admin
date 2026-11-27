@@ -1389,8 +1389,13 @@
       "dops": [
         "Arnaud Stefani"
       ],
-      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/web.mp4",
-      "enc": null
+      "pend": {
+        "thumb": {
+          "path": "data/encode/rapide-1795786762829-2ccun.json",
+          "id": "mwz12ma5nkgw5h",
+          "t": 56.381
+        }
+      }
     },
     "emwz0yuxx4b0zl1": {
       "title": "Garnier Ultra Doux",
