@@ -200,7 +200,7 @@
   }
   // Un seul commit pour tous les fichiers : [{ path, text } | { path, base64 } | { path, remove: true }]
   // Si un autre commit arrive pendant ce temps (robot GitHub qui répond, autre personne qui publie : « Update is not a fast
-  // forward », GitHub 422), on refait le commit par-dessus le nouveau dernier commit, 3 fois au plus (Gus 04/11).
+  // forward », GitHub 422), on refait le commit par-dessus le nouveau dernier commit, jusqu'à 10 fois (Gus 04/11, 27/11).
   // Les commits de cette page partent un par un (file `commitQ`) : plusieurs enregistrements en même temps (infos du film, lien de partage,
   // ordre du lot, encodage…) se marchaient dessus (GitHub 422 « Reference cannot be updated », Gus 26/11). 6 essais, délais variables.
   var commitQ = Promise.resolve();
@@ -212,8 +212,12 @@
     }
     tries = tries || 0;
     return commitOnce(files, message).catch(function (e) {
-      if (tries >= 6 || !/GitHub 422/.test(e.message)) throw e;
-      return new Promise(function (r) { setTimeout(r, 900 + tries * 700 + Math.random() * 500); }).then(function () { return commit(files, message, tries + 1); });
+      // Beaucoup de monde / de robots qui écrivent en même temps (Gus 27/11 : une publication n'est jamais passée pendant une série de mises à jour en parallèle) : plus d'essais (10),
+      // espacés de plus en plus (jusqu'à ~8 s), aussi quand GitHub ralentit (limite de débit, 502 / 503 / 504, réseau coupé un instant).
+      var busy = /GitHub (422|429|502|503|504)|GitHub 403 :.*(rate limit|abuse|secondary)|Failed to fetch|NetworkError|Load failed/i.test(e.message);
+      if (tries >= 10 || !busy) { if (busy) e.message += " (trop de mises à jour en même temps : réessaie dans un instant, ta sélection est gardée)"; throw e; }
+      var slow = /403|429/.test(e.message) ? 8000 : 0;
+      return new Promise(function (r) { setTimeout(r, slow + Math.min(8000, 900 + tries * 900) + Math.random() * 700); }).then(function () { return commit(files, message, tries + 1); });
     });
   }
   function commitOnce(files, message) {
