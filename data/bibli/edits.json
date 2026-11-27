@@ -1410,6 +1410,14 @@
       ],
       "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxxiy3bmk/web.mp4",
       "enc": null
+    },
+    "s10356": {
+      "crop": {
+        "z": 1.42,
+        "x": 50,
+        "y": 50,
+        "t": false
+      }
     }
   }
 }
