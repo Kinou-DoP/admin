@@ -665,8 +665,36 @@
     // Snippet Slate (extrait d'aperçu) : petite pastille en haut à droite, pleine = extrait présent, vide = pas encore d'extrait
     // (vidéo à « snipper » sur Slate, puis « Relire le bundle »). Gus 03/11.
     if (c.full || c.video) {
-      var ve = vcOf(c), sw = ve.pend && ve.pend.snip, so = ve.snip && !(ve.snip.v || ve.snipVideo) && !c.video; // en cours d'export (orange qui clignote) ; extrait choisi mais pas encore exporté (orange)
-      thumb.appendChild(el("span", { class: "snipmark" + (sw ? " wait" : so ? " old" : c.video ? " on" : ""), title: sw ? "Extrait en cours d'export…" : so ? "Extrait choisi, pas encore exporté" : c.video ? "Snippet présent" : "Pas de snippet sur Slate" }));
+      // Pastille d'extrait (comme dans le video club) : verte = extrait prêt, orange = choisi mais pas encore exporté, orange qui clignote = en cours d'export, grise = pas d'extrait
+      var ve = vcOf(c), exOk = function () { var e = vcOf(c); return c.video || e.snipVideo || (e.snip && e.snip.v); };
+      var mark = el("span", { class: "snipmark" });
+      var paintMark = function () { var e = vcOf(c), w = e.pend && e.pend.snip, o = e.snip && !(e.snip.v || e.snipVideo) && !c.video; mark.className = "snipmark" + (w ? " wait" : o ? " old" : exOk() ? " on" : ""); mark.title = w ? "Extrait en cours d'export…" : o ? "Extrait choisi, pas encore exporté" : exOk() ? "Extrait présent" : "Pas d'extrait"; };
+      paintMark(); thumb.appendChild(mark);
+      // Pas d'extrait : un petit ciseau sous la pastille ouvre directement la fenêtre de montage ; « Exporter » enregistre et demande l'extrait au robot (la pastille clignote puis passe au vert).
+      var full0 = ve.full || c.full;
+      if (full0 && !exOk() && !ve.snip) {
+        var cut = el("button", { type: "button", class: "snipcut", title: "Faire l'extrait (fenêtre de montage)", text: "✂", on: { click: function (ev) {
+          ev.stopPropagation(); ev.preventDefault(); cut.disabled = true; var tv = el("video", { preload: "metadata", muted: true }), done = function () { cut.disabled = false; };
+          tv.addEventListener("loadedmetadata", function () {
+            var dur = tv.duration || 0; tv.removeAttribute("src"); done(); if (!dur) { alert("Durée de la vidéo illisible."); return; }
+            montageWin([{ key: "f" + c.slate, title: c.title || "Film", full: full0, dur: dur }], { mode: "snip", max: 30, name: c.title, onSave: function (ps) {
+              var sn = ps.length > 1 ? { s: ps[0].s, d: ps[0].d, parts: ps } : { s: ps[0].s, d: ps[0].d }, id = encId();
+              vcPatch(c.slate, { snip: sn }); paintMark(); cut.remove();
+              encAsk("rapide", [{ id: id, kind: "snip", src: full0, s: sn.s, d: sn.d, parts: sn.parts }]).then(function (path) {
+                vcPatch(c.slate, { pend: Object.assign({}, vcOf(c).pend || {}, { snip: { path: path, id: id, s: sn.s, d: sn.d, pj: JSON.stringify(sn.parts || null), from: full0 } }) }); paintMark();
+                return encWait(path, 3000, 900000).then(function (jobs) {
+                  var j = jobs.filter(function (y) { return y.id === id; })[0] || {}, cs = vcOf(c).snip;
+                  if (j.answer && cs && cs.s === sn.s && cs.d === sn.d) vcPatch(c.slate, { snip: Object.assign({}, cs, { v: j.answer.video, vf: full0 }), pend: {} }); else vcPatch(c.slate, { pend: {} });
+                  paintMark();
+                });
+              }).catch(function (e) { vcPatch(c.slate, { pend: {} }); paintMark(); alert("Extrait pas exporté : " + e.message); });
+            } });
+          });
+          tv.addEventListener("error", function () { done(); alert("La vidéo ne se lit pas : montage impossible."); });
+          tv.src = full0;
+        } } });
+        thumb.appendChild(cut);
+      }
     }
     var title = el("input", { type: "text", value: val(c, "title") });
     var sub = el("textarea", { rows: 2, title: "Crédits : enregistrés dans le video club (valent pour tout le site) ; le titre reste propre à la page" }); sub.value = vcCredits(c).text;
