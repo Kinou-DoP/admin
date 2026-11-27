@@ -274,12 +274,12 @@
       "src": "upload",
       "enc": {
         "path": "data/encode/film-1795797456139-08nt7.json",
-        "id": "mwz7ftajhyej68",
-        "sending": true
+        "id": "mwz7ftajhyej68"
       },
       "size": 192124453,
       "at": "2026-11-27T16:37:36.139Z",
-      "by": "Gurvan"
+      "by": "Gurvan",
+      "mkey": "depot/f4zzab43esvaemi5sx84/seeker_trailer_2026_1m03s_3996x2160p25_WEB.mp4"
     }
   ]
 }
