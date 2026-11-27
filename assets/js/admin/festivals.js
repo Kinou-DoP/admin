@@ -173,6 +173,10 @@
   }
   // Réponse du robot → champs du formulaire : seulement les champs vides (et les dates « estimées », remplacées par des dates
   // annoncées). Ce que l'équipe a saisi n'est jamais remplacé (Gus 16/11). Renvoie le nombre de champs remplis.
+  // Empreinte des champs saisissables : sert à savoir si quelqu'un a modifié ce que le robot a rempli (sinon la fiche reste « robot »).
+  function festSnap(f) {
+    return JSON.stringify(["name", "city", "country", "types", "est", "start", "end", "submit", "site", "selection", "note"].map(function (k) { return f[k] || ""; }).concat([(f.deadlines || []).filter(function (d) { return d.date || d.label; })]));
+  }
   function festFill(f, a) {
     var n = 0;
     ["city", "country", "submit", "site", "selection", "note"].forEach(function (k) { if (!f[k] && a[k]) { f[k] = a[k]; n++; } });
@@ -182,7 +186,7 @@
     var dl = f.deadlines || [], firm = (a.deadlines || []).filter(function (d) { return !d.est; });
     if (!dl.length && (a.deadlines || []).length) { f.deadlines = a.deadlines; n++; }
     else if (dl.length && dl.every(function (d) { return d.est; }) && firm.length) { f.deadlines = a.deadlines; n++; }
-    if (n) f.filled = { by: "robot", at: new Date().toISOString(), sources: a.sources || [] };
+    if (n) { f.filled = { by: "robot", at: new Date().toISOString(), sources: a.sources || [] }; if (f.source !== "human") f._snap = festSnap(f); } // _snap : jamais enregistré
     return n;
   }
   function today() { var d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
@@ -391,7 +395,9 @@
         if (!f.id) f.id = slugify(f.name) + "-" + Date.now().toString(36);
         f.deadlines = (f.deadlines || []).filter(function (d) { return d.date || d.label; });
         f.checked = new Date().toISOString().slice(0, 10);
-        f.source = "human"; f.editedBy = user && user.login || ""; f.editedAt = new Date().toISOString(); // enregistré par quelqu'un : le robot n'y touche plus
+        var untouched = f._snap && f._snap === festSnap(f) && f.source !== "human"; delete f._snap;
+        if (untouched) { f.source = "robot"; delete f.editedBy; delete f.editedAt; } // rempli par le robot et rien changé : reste « robot »
+        else { f.source = "human"; f.editedBy = user && user.login || ""; f.editedAt = new Date().toISOString(); } // modifié par quelqu'un : le robot n'y touche plus
         if (f.check) f.checkSeen = f.check.hash; // la personne vient de vérifier : désaccords actuels marqués « vus »
         Object.keys(f).forEach(function (k) { if (f[k] === "") delete f[k]; });
         save.disabled = true; msg.textContent = "Enregistrement…";
