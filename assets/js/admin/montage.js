@@ -293,11 +293,30 @@ function montageWin(films, opt) {
     exp.appendChild(el("p", { class: ok ? "hint bok" : "hint berr", text: ok ? "✔ " + fr(tot) + " s : pile la durée d'un projet de l'accueil." : (diff > 0 ? "Il manque " + imgs(nf) : "Il y a " + imgs(nf) + " de trop") + " (" + fr(Math.abs(diff)) + " s ; durée voulue : " + fr(EX) + " s)." }));
     var fill = el("button", { type: "button", class: "btn ghost", text: "Compléter avec le dernier bloc", title: "Rallonge (ou raccourcit) le dernier bloc pour tomber pile sur " + fr(EX) + " s", disabled: ok || !blocks.length ? true : null, on: { click: function () {
       var b = blocks[blocks.length - 1], d = r3(sn(b.s + b.d + diff) - b.s); if (d < MIND || b.s + d > b.f.dur + .001) { alert(diff > 0 ? "Le dernier bloc va déjà jusqu'à la fin de la vidéo : prends plutôt une sélection de plus." : "Le dernier bloc deviendrait trop court."); return; } snap(); b.d = d; drawBar(); } } });
-    var save = el("button", { type: "button", class: "btn primary", text: "Enregistrer pour l'accueil", disabled: ok ? null : true, on: { click: function () {
+    function saveNow(doExport) {
       var parts = blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d), x: b.x === undefined ? (opt.phoneX === undefined ? 50 : opt.phoneX) : b.x }; });
-      if (opt.onSave) opt.onSave(parts, { zoom: zm, phoneZoom: split ? zph : undefined, zoomPos: [Math.round(zpos[0] * 1000) / 10, Math.round(zpos[1] * 1000) / 10] }); close(); } } });
-    exp.appendChild(fill); exp.appendChild(save);
+      if (opt.onSave) opt.onSave(parts, { zoom: zm, phoneZoom: split ? zph : undefined, zoomPos: [Math.round(zpos[0] * 1000) / 10, Math.round(zpos[1] * 1000) / 10] }, !!doExport); close();
+    }
+    var save = el("button", { type: "button", class: "btn primary", text: "Enregistrer et exporter pour le site", title: "Enregistre le montage et demande au robot un petit fichier (fluide même en connexion faible) : la pastille de la carte devient verte quand il est prêt", disabled: ok ? null : true, on: { click: function () { saveNow(true); } } });
+    var save2 = el("button", { type: "button", class: "btn ghost", text: "Enregistrer sans exporter", title: "Le site lit alors le film complet (peut saccader en connexion faible) tant que tu n'as pas exporté", disabled: ok ? null : true, on: { click: function () { saveNow(false); } } });
+    exp.appendChild(fill); exp.appendChild(save); exp.appendChild(save2);
     exp.appendChild(el("p", { class: "hint", text: "Cadrage téléphone : clique un bloc, puis glisse la bande rouge sur la vidéo. Chaque bloc a le sien." }));
+    if (opt.hist && opt.hist.length) { // montages précédents : on les reprend en un clic (puis « Enregistrer » pour les appliquer)
+      exp.appendChild(el("span", { class: "label hhlab", text: "Montages précédents" }));
+      var lst = el("div", { class: "hhist" });
+      opt.hist.forEach(function (h) {
+        var d = new Date(h.at), dt = isNaN(d) ? "" : d.toLocaleString("fr-FR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+        lst.appendChild(el("div", { class: "hhrow" }, [el("span", { text: [dt, h.by, h.parts.length + " bloc" + (h.parts.length > 1 ? "s" : ""), h.zoom > 1 ? "zoom ×" + (+h.zoom).toFixed(2).replace(".", ",") : "", h.exp ? "exporté" : ""].filter(Boolean).join(" · ") }),
+          el("button", { type: "button", class: "btn ghost", text: "Reprendre", on: { click: function () { restoreH(h); } } })]));
+      });
+      exp.appendChild(lst);
+    }
+  }
+  function restoreH(h) {
+    snap(); blocks = h.parts.map(function (p) { uid++; return { id: uid, f: pool[0], s: p.s, d: p.d, x: p.x, hue: hueFor(uid) }; });
+    zm = h.zoom > 1 ? +h.zoom : 1; split = h.phoneZoom !== undefined && Math.abs(+h.phoneZoom - zm) > .001; zph = h.phoneZoom !== undefined ? Math.max(1, +h.phoneZoom) : zm;
+    zpos = (/^([\d.]+)% ([\d.]+)%$/.exec(h.zoomPos || "") || [0, 50, 50]).slice(1).map(function (v) { return +v / 100; });
+    sel = 0; loopI = -1; cur = 0; src = blocks[0].f; drawZoom(); applyZoom(); drawBar(); load(src, blocks[0].s, false);
   }
   function drawExpSnip() {
     exp.textContent = ""; var tot = total(), ok = tot > 0 && tot <= MAXT + .01, fr = function (x) { return x.toFixed(1).replace(".", ","); };

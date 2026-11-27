@@ -34,7 +34,7 @@
     var prev = (home.slides || []).filter(function (x) { return x.slate === f.slate; })[0];
     if (f.full) sl.full = f.full; else if (prev && prev.full) sl.full = prev.full;
     var o = home.overrides[f.slate] || {};
-    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "phoneZoom", "start", "parts", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
+    ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "phoneZoom", "start", "parts", "exp", "expReq", "hist", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = o[k] !== undefined ? o[k] : src[k]; });
     return sl;
   }
   function showHome() {
@@ -157,6 +157,45 @@
     wrap._open = function () { if (box.hidden) btn.click(); };
     return wrap;
   }
+  // ---------- Export de l'extrait de l'accueil (Gus 27/11) ----------
+  // Le montage est coupé par le robot (job « home » de tools/encodage.mjs) en UN petit fichier (1080p, sans son, à l'image près) que le site lit tel quel : fluide même en connexion faible.
+  // sl.exp = { v: adresse du fichier, k: clé du montage exporté, at, mo } ; sl.expReq = demande en cours { path, k, at } (ou { err }) ; sl.hist = anciens montages (les 15 derniers).
+  var slideCards = {}, expTimers = {};
+  function expKey(parts) { return parts.map(function (p) { return Math.round(p.s * 1000) + "-" + Math.round(p.d * 1000); }).join("_"); }
+  function partsOf(sl, D) { return sl.parts && sl.parts.length > 1 ? sl.parts : [{ s: sl.start || 0, d: D }]; }
+  function expState(sl, D) { // « ok » : le site lit le fichier exporté ; « old » : montage changé depuis ; « wait » : en cours ; « err » ; « none » : jamais exporté ; « » : pas de film complet
+    if (sl.expReq && sl.expReq.err) return "err"; if (sl.expReq) return "wait"; if (!sl.full || sl.start === undefined) return "";
+    return sl.exp && sl.exp.k === expKey(partsOf(sl, D)) ? "ok" : sl.exp ? "old" : "none";
+  }
+  function refreshCard(sl) { var c = slideCards[sl.slate]; if (c && c.isConnected) c.replaceWith(slideCard(sl)); }
+  function watchExport(sl, setO, D) { // attend la réponse du robot (relue toutes les 8 s, 15 min au plus)
+    if (!sl.expReq || sl.expReq.err || expTimers[sl.slate]) return; var t0 = Date.now(), path = sl.expReq.path, k = sl.expReq.k;
+    (function poll() {
+      readFile(path).then(function (d) {
+        var j = d && d.doneAt && (d.jobs || [])[0];
+        if (j && j.answer && j.answer.video) { setO("exp", { v: j.answer.video, k: k, at: new Date().toISOString(), mo: j.answer.mo }); setO("expReq", undefined); delete expTimers[sl.slate]; touch(); refreshCard(sl); return; }
+        if (j && j.error) { setO("expReq", { path: path, k: k, err: String(j.error).slice(0, 160) }); delete expTimers[sl.slate]; touch(); refreshCard(sl); return; }
+        if (Date.now() - t0 > 900000) { delete expTimers[sl.slate]; return; }
+        expTimers[sl.slate] = setTimeout(poll, 8000);
+      }).catch(function () { expTimers[sl.slate] = setTimeout(poll, 12000); });
+    })();
+    expTimers[sl.slate] = expTimers[sl.slate] || 1;
+  }
+  function requestExport(sl, setO, D) {
+    var parts = partsOf(sl, D).map(function (p) { return { s: p.s, d: p.d }; }), id = encId(), req = encFile("rapide", [{ id: id, kind: "home", src: sl.full, parts: parts }]);
+    return commit([req], "Accueil : export de l'extrait (admin, " + (user && user.login || "") + ")").then(function () {
+      setO("expReq", { path: req.path, k: expKey(parts), at: new Date().toISOString() }); touch(); delete expTimers[sl.slate]; watchExport(sl, setO, D);
+    });
+  }
+  function pushHist(sl, setO, D) { // le montage actuel part dans l'historique avant d'être remplacé
+    if (!sl.full || sl.start === undefined) return;
+    var parts = partsOf(sl, D).map(function (p) { return { s: p.s, d: p.d, x: p.x !== undefined ? p.x : (sl.phoneX === undefined ? 50 : sl.phoneX) }; });
+    var h = { at: new Date().toISOString(), by: user && user.login || "", parts: parts, zoom: sl.zoom, phoneZoom: sl.phoneZoom, zoomPos: sl.zoomPos };
+    if (sl.exp && sl.exp.k === expKey(parts)) h.exp = { v: sl.exp.v, k: sl.exp.k };
+    Object.keys(h).forEach(function (k) { if (h[k] === undefined) delete h[k]; });
+    var l = (sl.hist || []).filter(function (x) { return JSON.stringify([x.parts, x.zoom, x.phoneZoom, x.zoomPos]) !== JSON.stringify([h.parts, h.zoom, h.phoneZoom, h.zoomPos]); });
+    l.unshift(h); setO("hist", l.slice(0, 15));
+  }
   // Montage de l'extrait de l'accueil (Gus 27/11) : fenêtre `montageWin` en mode « home » ; ouverte directement par « Éditer la vidéo » (le recadrage et le cadrage
   // téléphone se règlent dedans). done() : à la fermeture (enregistré ou non) ; before() : juste avant l'ouverture.
   function homeMontage(sl, setO, D, done, before) {
@@ -165,11 +204,14 @@
       var dur = tv.duration || 0; tv.removeAttribute("src"); if (!dur) { alert("Durée de la vidéo illisible."); done(); return; }
       if (before) before();
       var parts0 = sl.parts && sl.parts.length ? sl.parts : [{ s: Math.min(sl.start || 0, Math.max(0, dur - D)), d: Math.min(D, dur), x: sl.phoneX }];
-      montageWin([{ key: "home" + sl.slate, title: sl.film || "Film", full: sl.full, dur: dur }], { mode: "home", exact: D, parts: parts0, phoneX: sl.phoneX, zoom: sl.zoom, phoneZoom: sl.phoneZoom, zoomPos: sl.zoomPos, name: sl.film, onClose: done,
-        onSave: function (parts, zz) {
+      montageWin([{ key: "home" + sl.slate, title: sl.film || "Film", full: sl.full, dur: dur }], { mode: "home", exact: D, parts: parts0, phoneX: sl.phoneX, zoom: sl.zoom, phoneZoom: sl.phoneZoom, zoomPos: sl.zoomPos, name: sl.film, onClose: done, hist: sl.hist, exported: sl.exp && sl.exp.k,
+        onSave: function (parts, zz, doExport) {
+          var nk = expKey(parts), changed = nk !== expKey(partsOf(sl, D)) || (zz && (Math.round((zz.zoom > 1 ? zz.zoom : 1) * 100) !== Math.round((sl.zoom > 1 ? sl.zoom : 1) * 100) || (zz.phoneZoom === undefined) !== (sl.phoneZoom === undefined)));
+          if (changed) pushHist(sl, setO, D);
           if (zz) { setO("zoom", zz.zoom > 1 ? Math.round(zz.zoom * 100) / 100 : undefined); setO("phoneZoom", zz.phoneZoom === undefined ? undefined : Math.round(zz.phoneZoom * 100) / 100);
             if (zz.zoomPos) setO("zoomPos", zz.zoomPos[0] === 50 && zz.zoomPos[1] === 50 ? undefined : zz.zoomPos[0] + "% " + zz.zoomPos[1] + "%"); }
-          setO("parts", parts.length > 1 ? parts : undefined); setO("start", parts[0].s); if (parts.length === 1) setO("phoneX", parts[0].x === 50 ? undefined : parts[0].x); touch(); } });
+          setO("parts", parts.length > 1 ? parts : undefined); setO("start", parts[0].s); if (parts.length === 1) setO("phoneX", parts[0].x === 50 ? undefined : parts[0].x); touch();
+          if (doExport) requestExport(sl, setO, D).then(function () { refreshCard(sl); }, function (e) { alert("Export pas envoyé : " + e.message); }); } });
     });
     tv.addEventListener("error", function () { alert("La vidéo ne se lit pas : montage impossible."); done(); });
     tv.src = sl.full;
@@ -256,7 +298,7 @@
     reset.hidden = !home.overrides[sl.slate];
     reset.addEventListener("click", function () {
       delete home.overrides[sl.slate];
-      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "phoneZoom", "start", "parts", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = sl.src[k]; });
+      ["film", "song", "legend", "dps", "zoom", "zoomPos", "phoneX", "phoneZoom", "start", "parts", "exp", "expReq", "hist", "stills", "stillsLink", "extras"].forEach(function (k) { sl[k] = sl.src[k]; });
       card.replaceWith(slideCard(sl)); touch();
     });
     card.appendChild(thumb);
@@ -281,8 +323,11 @@
       if (sl.phoneX !== undefined) sum.push("cadrage téléphone");
       var edit = el("button", { type: "button", class: "btn", text: "Éditer la vidéo" });
       edit.addEventListener("click", function () { hstop(); var again = function () { card.replaceWith(slideCard(sl)); }; if (sl.full) homeMontage(sl, setO, D, again); else alert("Le film complet est en cours de récupération (environ une minute après la publication). Réessaie dans un instant, après avoir rechargé la page."); }); // film complet connu : on arrive directement dans le montage
-      card.appendChild(el("div", { class: "vsum" }, [edit, el("span", { class: "zval", text: sum.join(" · ") })]));
+      var xs = expState(sl, D), xt = { ok: "Export prêt : le site lit un petit fichier, fluide", old: "Montage modifié depuis l'export : le site lit encore le film complet. Exporte à nouveau", wait: "Export en cours (le robot travaille, ~1 minute)…", err: "Export en échec : " + (sl.expReq && sl.expReq.err || ""), none: "Pas encore exporté : le site lit le film complet (peut saccader en connexion faible)" }[xs];
+      card.appendChild(el("div", { class: "vsum" }, [edit, xs ? el("i", { class: "hexp " + xs, title: xt }) : "", el("span", { class: "zval", text: sum.join(" · ") })]));
+      if (sl.expReq && !sl.expReq.err) watchExport(sl, setO, D);
     }
+    slideCards[sl.slate] = card;
     card.appendChild(film); card.appendChild(song); card.appendChild(legend); card.appendChild(dps);
     if (editable) card.appendChild(el("div", { class: "acts" }, [reset]));
     // Sous la vidéo dans le lecteur de l'accueil : stills et autres vidéos (sans rien ici : ceux de la fiche du chef op, s'il y en a).
