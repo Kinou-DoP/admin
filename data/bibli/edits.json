@@ -1533,10 +1533,52 @@
         "Commercial"
       ],
       "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7z46qirijs9/vignette-3275-800.webp",
+      "snip": {
+        "s": 31.875,
+        "d": 1.75,
+        "parts": [
+          {
+            "s": 31.875,
+            "d": 1.75
+          },
+          {
+            "s": 43.875,
+            "d": 0.75
+          },
+          {
+            "s": 49.792,
+            "d": 2.25
+          },
+          {
+            "s": 52.042,
+            "d": 1.375
+          },
+          {
+            "s": 20.75,
+            "d": 0.917
+          },
+          {
+            "s": 0.958,
+            "d": 1.917
+          },
+          {
+            "s": 2.875,
+            "d": 1.875
+          }
+        ]
+      },
       "thumbT": 3.275,
       "hist": {
         "img": [
           "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/vignette-800.webp"
+        ],
+        "snip": [
+          {
+            "s": 42.222,
+            "d": 5,
+            "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/extrait-42222.mp4",
+            "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4"
+          }
         ]
       }
     }
