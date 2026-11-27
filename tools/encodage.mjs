@@ -62,10 +62,19 @@ async function probe(file) {
   return { dur: +((d.format || {}).duration) || 0, w: s.width || 0, h: s.height || 0 };
 }
 const r3 = (x) => Math.round(x * 1000) / 1000;
+// Coupe à l'image près (Gus 27/11, « une image de trop à la fin d'un bloc, même à l'export ») : on compte les IMAGES (cadence du film) au lieu de laisser « -t » arrondir la durée,
+// et on démarre un demi-image avant l'instant voulu : l'image la plus proche de `s` est la première gardée, même si `s` est arrondi (millisecondes) ou si la cadence est 23,976 / 29,97.
+async function fpsOf(src) {
+  const r = await run("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=avg_frame_rate,r_frame_rate", "-of", "csv=p=0", src]);
+  const vals = String(r.out || "").split(/[\s,]+/).map((x) => { const m = /^(\d+)\/(\d+)$/.exec(x); return m && +m[2] ? +m[1] / +m[2] : 0; }).filter((x) => x >= 10 && x <= 120);
+  return vals[0] || 25;
+}
+async function coupe(src, s, d) { const fps = await fpsOf(src); return { ss: String(Math.max(0, s - 0.5 / fps)), n: String(Math.max(1, Math.round(d * fps))) }; }
 // Extrait : 720p au plus (1280 de large), sans son, léger (~1–2 Mo pour 5 s), lisible avant la fin du téléchargement.
 async function snippet(src, s, d, out) {
-  await must("ffmpeg", ["-y", "-v", "error", "-ss", String(s), "-i", src, "-t", String(d), "-an", "-map", "0:v:0",
-    "-vf", "scale='min(1280,iw)':-2:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-preset", "slow", "-crf", "24",
+  const c = await coupe(src, s, d);
+  await must("ffmpeg", ["-y", "-v", "error", "-ss", c.ss, "-i", src, "-frames:v", c.n, "-fps_mode", "passthrough", "-an", "-map", "0:v:0", // passthrough : aucune image dupliquée ni sautée pour « remplir » le début
+    "-vf", "setpts=PTS-STARTPTS,scale='min(1280,iw)':-2:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-preset", "slow", "-crf", "24",
     "-maxrate", "3M", "-bufsize", "6M", "-movflags", "+faststart", out], "extrait");
 }
 async function frames(src, t, dir) {
@@ -201,8 +210,9 @@ async function home(j, dir) {
   const src = await source(j.src), files = [];
   for (let i = 0; i < parts.length; i++) {
     const f = join(dir, "bloc" + i + ".mp4");
-    await must("ffmpeg", ["-y", "-v", "error", "-ss", String(parts[i].s), "-i", src, "-t", String(parts[i].d), "-an", "-map", "0:v:0",
-      "-vf", "scale='min(1920,iw)':-2:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-g", "12", "-keyint_min", "6", "-movflags", "+faststart", f], "bloc " + (i + 1));
+    const c = await coupe(src, parts[i].s, parts[i].d);
+    await must("ffmpeg", ["-y", "-v", "error", "-ss", c.ss, "-i", src, "-frames:v", c.n, "-fps_mode", "passthrough", "-an", "-map", "0:v:0",
+      "-vf", "setpts=PTS-STARTPTS,scale='min(1920,iw)':-2:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-g", "12", "-keyint_min", "6", "-movflags", "+faststart", f], "bloc " + (i + 1));
     files.push(f);
   }
   fs.writeFileSync(join(dir, "liste.txt"), files.map((f) => "file '" + f + "'").join("\n") + "\n");
