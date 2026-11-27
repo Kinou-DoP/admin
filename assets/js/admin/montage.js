@@ -187,8 +187,20 @@ function montageWin(films, opt) {
   var nav = tlNav(function () { return zw; }, function (w) { zw = w; drawDet(); }, function () { return src.dur; });
   det.appendChild(srcTabs); det.appendChild(dTrack); det.appendChild(nav.el); det.appendChild(dLab);
   function seg(el0, s0, d0) { var l = clamp(pcz(s0), 0, 100), r = clamp(pcz(s0 + d0), 0, 100); el0.hidden = r <= l; el0.style.left = l + "%"; el0.style.width = Math.max(0, r - l) + "%"; }
+  // Règle de la frise source (Gus 27/11) : traits = images ; en zoomant, ils s'écartent ; en dézoomant on n'affiche pas toutes les images : un trait toutes les 2, 5, 10 images, puis chaque seconde, etc.
+  function drawTicks() {
+    var W = dTrack.clientWidth, w = zwin(), span = w[1] - w[0]; if (!W || span <= 0) return;
+    var fps = Math.round(1 / FR), steps = [FR, FR * 2, FR * 5, FR * 10, 1, 2, 5, 10, 30, 60, 120, 300, 600];
+    var i = 0; while (i < steps.length - 2 && steps[i] / span * W < 7) i++;
+    var minor = steps[i], major = steps[Math.min(i + 1, steps.length - 1)]; if (major <= minor * 1.01) major = steps[Math.min(i + 2, steps.length - 1)];
+    var px = function (st) { return st / span * W; }, off = function (st) { return -((w[0] % st) / span * W); };
+    dTrack.style.backgroundImage = "linear-gradient(90deg, rgba(255,252,235,.34) 0 1px, transparent 1px), linear-gradient(90deg, rgba(255,252,235,.14) 0 1px, transparent 1px)";
+    dTrack.style.backgroundSize = px(major) + "px 100%, " + px(minor) + "px 100%";
+    dTrack.style.backgroundPosition = off(major) + "px 0, " + off(minor) + "px 0";
+  }
   var zsrc = null;
   function drawDet() {
+    drawTicks();
     if (zsrc !== src) { zsrc = src; zw = null; }
     var D = src.dur, a = act(), w = zwin(); dBlk.textContent = ""; // les parties déjà prises dans cette vidéo, en repères clairs
     blocks.forEach(function (b, i) { if (b.f === src && i !== sel) { var m = el("i", { class: "tlblk", title: "Bloc " + (i + 1) }); m.style.background = "hsla(" + b.hue + ",65%,55%,.38)"; m.style.borderColor = "hsl(" + b.hue + ",70%,62%)"; seg(m, b.s, b.d); dBlk.appendChild(m); } });

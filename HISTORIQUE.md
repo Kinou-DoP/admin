@@ -437,3 +437,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 27/11 : accueil admin : « Éditer la vidéo » sans film complet connu = message « en cours de récupération » (plus d'ancien éditeur).
 - 27/11 : montage : poignées, curseurs, I / O, coupes calés sur l'image (cadence mesurée, 25 par défaut) ; ▶ Montage tourne en boucle pour l'extrait de l'accueil et l'extrait 30 s.
 - 27/11 : montage : convention logiciel de montage : le curseur est au début de l'image affichée, la sortie d'un bloc (touche O, poignée) englobe cette image (va jusqu'au trait de l'image d'après) ; +1/4 d'image aux sauts pour tomber sur la bonne image.
+- 27/11 : montage : curseur de la frise source au-dessus des poignées (dépasse haut et bas, triangle) ; traits de la règle = images, adaptés au zoom (1 trait par image, puis toutes les 2 / 5 / 10 images, puis par secondes…) (`drawTicks`).

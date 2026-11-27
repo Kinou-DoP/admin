@@ -1291,3 +1291,8 @@ input.bcn { width: 90px; }
 .hhead .btn:disabled { opacity: .35; }
 .montbtn { display: block; width: 100%; margin: 4px 0 14px; padding: 14px 18px; font-size: 14px; }
 .hmphone { height: min(283px, max(150px, calc(100vh - 520px))); width: auto; }
+/* Curseur de lecture de la frise source : au-dessus des poignées, dépasse en haut et en bas, triangle vers le bas collé au trait */
+.hdtrack .hdph { top: -10px; bottom: -6px; width: 2px; margin-left: -1px; z-index: 6; box-shadow: 0 0 0 1px rgba(0,0,0,.45); }
+.hdtrack .hdph::before { content: ""; position: absolute; top: -7px; left: -6px; border: 7px solid transparent; border-top-color: #fff; border-bottom-width: 0; filter: drop-shadow(0 0 1px rgba(0,0,0,.6)); }
+.hdtrack .hdh { z-index: 4; }
+.hdtrack { margin-top: 12px; }
