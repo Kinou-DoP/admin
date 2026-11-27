@@ -688,7 +688,9 @@
       "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxlmpkc6w8m51/vignette-129998-800.webp",
       "snip": {
         "s": 133.24,
-        "d": 20.24
+        "d": 20.24,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz8ynklbm1xnp/extrait-133240.mp4",
+        "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/web.mp4"
       },
       "thumbT": 129.998,
       "hist": {
@@ -703,16 +705,6 @@
             "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/web.mp4"
           }
         ]
-      },
-      "pend": {
-        "snip": {
-          "path": "data/encode/rapide-1795800014805-ly043.json",
-          "id": "mwz8ynklbm1xnp",
-          "s": 133.24,
-          "d": 20.24,
-          "pj": "null",
-          "from": "https://d3toxii6rvamjf.cloudfront.net/nous/mwxgq59h49hbuq/web.mp4"
-        }
       }
     },
     "emwxgq59i1rcn44": {
