@@ -1389,12 +1389,12 @@
       "dops": [
         "Arnaud Stefani"
       ],
-      "pend": {
-        "thumb": {
-          "path": "data/encode/rapide-1795786762829-2ccun.json",
-          "id": "mwz12ma5nkgw5h",
-          "t": 56.381
-        }
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz12ma5nkgw5h/vignette-56381-800.webp",
+      "thumbT": 56.381,
+      "hist": {
+        "img": [
+          "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxwxipr04/vignette-800.webp"
+        ]
       }
     },
     "emwz0yuxx4b0zl1": {
