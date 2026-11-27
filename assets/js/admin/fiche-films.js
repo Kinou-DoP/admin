@@ -629,6 +629,17 @@
     var rows = ms.map(function (m) { var n = extraFromFilm(Object.assign({}, m, vcFilms[m.key] || {})); n.auto = true; var h = ce.filter(function (x) { return x.key === m.key; })[0]; if (h && h.hide) n.hide = h.hide.slice(); return n; }).filter(function (n) { return n.full || n.video; });
     return rows.length ? rows : null;
   }
+  // Film ajouté à la page pendant son encodage (Gus 27/11 : « Sans vidéo » alors que le film est prêt dans le video club) : la page garde la copie
+  // faite à ce moment-là (vignette provisoire, ni film ni extrait). À l'ouverture, ce qui manque est repris du video club (library.json) ;
+  // enregistré avec la prochaine publication. Le site fait pareil de son côté.
+  function vcHeal(clips) {
+    (clips || []).forEach(function (c) {
+      var k = vcKey(c.slate), l = vcLib[k]; if (!l || /^s\d+$/.test(k)) return;
+      if (!c.full && l.full) c.full = l.full;
+      var sv = (l.snip && l.snip.v) || l.video; if (!c.video && sv) c.video = sv;
+      if (l.img && (!c.img || /\/depot\//.test(c.img))) c.img = l.img;
+    });
+  }
   function vcKey(id) { return /^\d+$/.test(String(id)) ? "s" + id : String(id); }
   function vcOf(c) { return vcFilms[vcKey(c.slate)] || {}; }
   function vcImg(c) { var e = vcOf(c); return e.img || c.img; }

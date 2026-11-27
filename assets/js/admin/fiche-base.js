@@ -103,6 +103,7 @@
       state = r[1] || { slug: slug || "", name: entry ? entry.name : "", hue: 0, overrides: {}, about: {} };
       state.overrides = state.overrides || {}; state.about = state.about || {}; dirty = false; histReset(); ovBase = sharedSnap(state.overrides); notesFor = null; // notes relues à chaque ouverture
       slate = state.clips ? { name: state.name, categories: state.categories || [], clips: state.clips } : null;
+      if (slate) vcHeal(slate.clips);
       curCat = null;
       render();
       if (selOpen && selOpen.slug === slug) { var t0 = selOpen.tab; selOpen = null; selEditor(t0); }
