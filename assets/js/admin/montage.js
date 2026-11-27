@@ -70,6 +70,10 @@ function montageWin(films, opt) {
   var bar = el("div", { class: "hbar" }), ruler = el("div", { class: "hruler" }), ph = el("i", { class: "hbph" }), wrap = el("div", { class: "hbwrap" }, [ruler, bar, ph]);
   var det = el("div", { class: "hdet" }), info = el("p", { class: "hint" }), exp = el("div", { class: "hexp" }), srcTabs = el("div", { class: "hsrc" });
   // Annuler / rétablir (Cmd / Ctrl + Z, Maj + Cmd / Ctrl + Z ou Y, boutons ↶ ↷) : photo des blocs avant chaque changement.
+  // Image par image (Gus 27/11) : poignées, curseurs, I / O et coupes tombent toujours sur une image. Cadence mesurée sur la vidéo (24, 25, 30, 50, 60…), 25 par défaut.
+  var FR = 1 / 25, FPS = [24000 / 1001, 24, 25, 30000 / 1001, 30, 50, 60000 / 1001, 60];
+  function sn(t) { return r3(Math.round(t / FR) * FR); }
+  if (vid.requestVideoFrameCallback) { var lastMT = null, fcb = function (now, m) { if (lastMT !== null) { var d = Math.abs(m.mediaTime - lastMT); if (d > .008 && d < .06) { var f = 1 / d, best = FPS.reduce(function (a, c) { return Math.abs(c - f) < Math.abs(a - f) ? c : a; }, FPS[0]); if (Math.abs(best - f) / best < .12) FR = 1 / best; } } lastMT = m.mediaTime; if (ov.isConnected) vid.requestVideoFrameCallback(fcb); }; vid.requestVideoFrameCallback(fcb); }
   var hist = [], redoS = [];
   function cap() { return { sel: sel, blocks: blocks.map(function (b) { return { id: b.id, f: b.f, s: b.s, d: b.d, x: b.x, hue: b.hue }; }) }; }
   function snap() { hist.push(cap()); if (hist.length > 100) hist.shift(); redoS = []; undoBtns(); }
@@ -112,7 +116,7 @@ function montageWin(films, opt) {
     if (!ov.isConnected) return;
     if (playing && mode === "seq" && blocks[cur]) {
       var b = blocks[cur];
-      if (loaded === b.f.full && vid.currentTime >= b.s + b.d - .03) { if (loopI === cur) { vid.currentTime = b.s; } else if (cur + 1 < blocks.length) { cur++; load(blocks[cur].f, blocks[cur].s, true); } else { pause(); cur = 0; load(blocks[0].f, blocks[0].s, false); } }
+      if (loaded === b.f.full && vid.currentTime >= b.s + b.d - .03) { if (loopI === cur) { vid.currentTime = b.s; } else if (cur + 1 < blocks.length) { cur++; load(blocks[cur].f, blocks[cur].s, true); } else if (EX || SNIP) { cur = 0; load(blocks[0].f, blocks[0].s, true); } /* extrait : le montage tourne en boucle */ else { pause(); cur = 0; load(blocks[0].f, blocks[0].s, false); } }
     }
     drawCursor(); requestAnimationFrame(tick);
   }
@@ -173,7 +177,7 @@ function montageWin(films, opt) {
     drawBar(); load(src, selMem[src.key].s, false);
   }
   function splitHere() { // coupe le bloc choisi en deux à l'image affichée
-    var b = sel >= 0 ? blocks[sel] : null, t = vid.currentTime; if (!b || loaded !== b.f.full || t < b.s + .2 || t > b.s + b.d - .2) return; snap();
+    var b = sel >= 0 ? blocks[sel] : null, t = sn(vid.currentTime); if (!b || loaded !== b.f.full || t < b.s + .2 || t > b.s + b.d - .2) return; snap();
     var n = { id: ++uid, f: b.f, s: r3(t), d: r3(b.s + b.d - t), x: b.x, hue: hueFor(uid + 1) }; b.d = r3(t - b.s); blocks.splice(sel + 1, 0, n); drawBar();
   }
   // ---------- vidéo source : frise entière, sélection (début / fin glissables), curseur ----------
@@ -200,10 +204,10 @@ function montageWin(films, opt) {
     if (pool.length > 1) pool.forEach(function (f) { srcTabs.appendChild(el("button", { type: "button", class: "btn ghost" + (f === src ? " on" : ""), text: (f.title || f.key).replace(/^.*? - /, "").slice(0, 36), title: f.title, on: { click: function () { sel = -1; src = f; drawBar(); load(f, selFree().s, false); } } })); });
     srcTabs.appendChild(el("button", { type: "button", class: sel >= 0 ? "btn orange" : "btn primary", text: sel >= 0 ? "+ Nouvelle sélection" : "+ Ajouter ce bloc", title: sel >= 0 ? "Quitte la modification du bloc (ou clique à nouveau le bloc)" : "Range la sélection dans le montage (Entrée)", on: { click: addBlock } }));
   }
-  function tOf(e, track, a, b) { var r = track.getBoundingClientRect(); return a + clamp((e.clientX - r.left) / r.width, 0, 1) * (b - a); }
+  function tOf(e, track, a, b) { var r = track.getBoundingClientRect(); return sn(a + clamp((e.clientX - r.left) / r.width, 0, 1) * (b - a)); }
   function dragH(h, which) {
     h.addEventListener("pointerdown", function (e) {
-      e.preventDefault(); e.stopPropagation(); h.setPointerCapture(e.pointerId); pause(); mode = "src"; if (sel >= 0) snap();
+      e.preventDefault(); e.stopPropagation(); try { h.setPointerCapture(e.pointerId); } catch (x) {} pause(); mode = "src"; if (sel >= 0) snap();
       function mv(ev) {
         if (EX && sel < 0 && room() < MIND) return; // montage plein : raccourcir un bloc d'abord
         var a = act(), t = tOf(ev, dTrack, zwin()[0], zwin()[1]), end = a.s + a.d;
@@ -312,13 +316,13 @@ function montageWin(films, opt) {
     if ((k === "Delete" || k === "Backspace") && sel >= 0) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); removeAt(sel); return; }
     if (/^[sS]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); splitHere(); return; }
     if (/^[iIoO]$/.test(k) && !e.ctrlKey && !e.metaKey) {
-      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full || (EX && sel < 0 && room() < MIND)) return; var t = vid.currentTime, a = act(), end = a.s + a.d; if (sel >= 0) snap();
+      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full || (EX && sel < 0 && room() < MIND)) return; var t = sn(vid.currentTime), a = act(), end = a.s + a.d; if (sel >= 0) snap();
       if (/i/i.test(k)) { a.s = r3(clamp(t, 0, src.dur - MIND)); a.d = r3(Math.max(MIND, (t > end - MIND ? Math.min(src.dur, t + 1) : end) - a.s)); }
       else { a.d = r3(Math.max(MIND, Math.min(src.dur, t) - a.s)); if (t < a.s + MIND) { a.s = r3(Math.max(0, t - MIND)); a.d = MIND; } }
       if (a.d > room()) a.d = r3(Math.max(MIND, room()));
       drawBar(); return;
     }
-    if (k === "ArrowLeft" || k === "ArrowRight") { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pause(); var st = (e.shiftKey ? 1 : 1 / 25) * (k === "ArrowLeft" ? -1 : 1); if (loaded === src.full) vid.currentTime = clamp(vid.currentTime + st, 0, src.dur); }
+    if (k === "ArrowLeft" || k === "ArrowRight") { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pause(); var st = (e.shiftKey ? 1 : FR) * (k === "ArrowLeft" ? -1 : 1); if (loaded === src.full) vid.currentTime = clamp(sn(vid.currentTime + st), 0, src.dur); }
   }
   window.addEventListener("keydown", onKey, true);
   function close() { pause(); window.removeEventListener("keydown", onKey, true); ov.remove(); if (opt.onClose) { var f = opt.onClose; opt.onClose = null; f(); } }
