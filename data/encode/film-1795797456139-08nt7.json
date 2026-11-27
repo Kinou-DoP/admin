@@ -4,13 +4,26 @@
       "id": "mwz7ftajhyej68",
       "kind": "film",
       "key": "depot/f4zzab43esvaemi5sx84/seeker_trailer_2026_1m03s_3996x2160p25_WEB.mp4",
-      "progress": {
-        "step": "vignette",
-        "pct": 0
+      "answer": {
+        "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4",
+        "ws": 44144528,
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/extrait-42222.mp4",
+        "snip": {
+          "s": 42.222,
+          "d": 5
+        },
+        "thumbT": 43.222,
+        "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/vignette-800.webp",
+        "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/vignette-1600.webp",
+        "dur": 63.333,
+        "w": 3996,
+        "h": 2160,
+        "os": 192124453
       }
     }
   ],
   "at": "2026-11-27T16:37:44.350Z",
   "by": "Gurvan",
-  "startedAt": "2026-11-27T16:38:20.290Z"
+  "startedAt": "2026-11-27T16:38:20.290Z",
+  "doneAt": "2026-11-27T16:40:50.801Z"
 }
