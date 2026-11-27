@@ -129,7 +129,7 @@
           pages.push({ slug: d.slug, name: d.name, hidden: !!d.hidden, tabs: (f.categories || []).map(function (cat) {
             var l = (f.clips || []).filter(function (c) { return cat === "FEATURED" ? c.featured : c.cat === cat; });
             if (cat === "FEATURED") l.sort(function (a, b) { return a.featuredOrder - b.featuredOrder; });
-            return { name: cat, n: l.length, img: l[0] && l[0].img };
+            return { name: cat, n: l.length, img: l[0] && l[0].img, keys: l.map(function (c) { return "s" + c.slate; }) };
           }) });
           (f.clips || []).forEach(function (c) {
             var o = ov[c.slate] || {}, s = subOf(o.sub !== undefined ? o.sub : c.sub);

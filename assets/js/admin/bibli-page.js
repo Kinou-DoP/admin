@@ -666,12 +666,25 @@
           if (!bun.bands.length) ul.appendChild(el("div", { class: "bempty" }, [el("strong", { text: "Aucune bande dans ce bundle" }), el("span", { text: "Ajoutez une bande existante ou créez-en une." })]));
           // Ajouter une bande existante : liste avec recherche
           var pq = el("input", { type: "search", class: "boldq", placeholder: "Ajouter une bande existante : chercher…", autocomplete: "off" }), pl = el("div", { class: "bunpick" });
+          // Vignette du 1er film (comme sur le site) ; nos bandes ET les onglets des pages du site dans la même liste (Gus 27/11) : un onglet de page devient une vraie bande
+          // (copie de ses films) au moment où on l'ajoute au bundle.
           function pick() {
             pl.textContent = ""; var w = bnrm(pq.value).split(/\s+/).filter(Boolean);
-            all.filter(function (b) { return !b.legacy && bun.bands.indexOf(b.code) < 0; }).filter(function (b) { var h = bnrm(b.title); return h.indexOf(w.join(" ")) > -1; }).slice(0, w.length ? 30 : 8).forEach(function (b) {
-              pl.appendChild(el("button", { type: "button", on: { click: function () { bun.bands.push(b.code); bunChanged(); drawL(); } } }, [el("span", { text: "+ " + b.title }), el("small", { text: (b.n || 0) + " films" })]));
+            var cand = all.filter(function (b) { return !b.legacy && bun.bands.indexOf(b.code) < 0; });
+            if (pagesAll) pagesAll.forEach(function (p) { p.tabs.forEach(function (t) { if (t.n) cand.push({ tab: t, page: p, title: p.name + " · " + t.name, img: t.img, n: t.n }); }); });
+            cand.filter(function (b) { var h = bnrm(b.title); return h.indexOf(w.join(" ")) > -1; }).slice(0, w.length ? 30 : 8).forEach(function (b) {
+              var th = el("div", { class: "bithumb" }); if (b.img) th.appendChild(el("i", { style: 'background-image:url("' + b.img + '")' }));
+              pl.appendChild(el("button", { type: "button", on: { click: function (e) {
+                if (!b.tab) { bun.bands.push(b.code); bunChanged(); drawL(); return; }
+                var btn = e.currentTarget; btn.disabled = true; var nb = bandNew(); nb.title = b.title;
+                nb.items = (b.tab.keys || []).map(function (k) { return filmOf(k); }).filter(Boolean).map(bandItem);
+                if (!nb.items.length) { btn.disabled = false; return; }
+                if (save.busy || save.state === "wait") { unsoon("band"); saveBand(); }
+                Promise.resolve(saveBand(nb)).then(function () { bun.bands.push(nb.code); bunChanged(); drawL(); }, function (er) { btn.disabled = false; alert("Pas ajouté : " + er.message); });
+              } } }, [th, el("span", { class: "bpt", text: b.title }), el("small", { text: (b.n || 0) + " films" })]));
             });
           }
+          var pagesAll = null; bibLoad().then(function (d) { pagesAll = d.pages || []; pick(); });
           pq.addEventListener("input", pick); pick();
           ul.appendChild(el("div", { class: "bunadd" }, [pq, pl,
             el("button", { type: "button", class: "btn ghost", text: "+ Créer une bande dans ce bundle", on: { click: function () {
