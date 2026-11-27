@@ -92,11 +92,24 @@
       } catch (e) {}
     }
     function ch() { changedSel = true; saveDraft(); }
+    // Renommer un onglet : crayon dans l'onglet (Gus 27/11).
+    function renameTab(t) {
+      var n = (window.prompt("Nouveau nom de l'onglet :", t.name) || "").trim().toUpperCase(); if (!n || n === t.name) return;
+      if (tabs.some(function (x) { return x.name === n; })) return window.alert("L'onglet « " + n + " » existe déjà.");
+      if (state.showcase) state.showcase = state.showcase.map(function (c) { return c === t.name ? n : c; });
+      t.name = n; ch(); drawAll();
+    }
     function drawTabs() {
       tabRow.textContent = "";
       tabs.forEach(function (t, i) {
         var chipT = el("button", { type: "button", class: "chip seltab" + (i === cur ? " on" : "") + (popTab === i ? " pop" : ""), "data-i": String(i), title: cfg ? "" : "Cliquer pour ouvrir, glisser pour changer l'ordre (on peut aussi y déposer un film)", text: t.name + " (" + t.ids.length + ")", on: { click: function () { if (Date.now() - dragAt < 300) return; cur = i; drawAll(); } } });
         if (!cfg) chipT.addEventListener("pointerdown", function (e) { tabDrag(e, i, chipT); });
+        if (!cfg && t.name !== "FEATURED") {
+          var pen = el("span", { class: "selpen", title: "Renommer l'onglet", text: "✎" });
+          ["pointerdown", "mousedown"].forEach(function (n) { pen.addEventListener(n, function (e) { e.stopPropagation(); }); });
+          pen.addEventListener("click", function (e) { e.stopPropagation(); renameTab(t); });
+          chipT.appendChild(pen);
+        }
         tabRow.appendChild(chipT);
       });
       if (cfg) return; // une seule liste
@@ -109,12 +122,6 @@
       var tools = el("div", { class: "seltools" }, [el("span", { class: "label", text: "Onglet « " + t.name + " »" })]);
       if (cur > 0) tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "← Avancer", on: { click: function () { tabs.splice(cur - 1, 0, tabs.splice(cur, 1)[0]); cur--; ch(); drawAll(); } } }));
       if (cur < tabs.length - 1) tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "Reculer →", on: { click: function () { tabs.splice(cur + 1, 0, tabs.splice(cur, 1)[0]); cur++; ch(); drawAll(); } } }));
-      if (t.name !== "FEATURED") tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "Renommer", on: { click: function () {
-        var n = (window.prompt("Nouveau nom de l'onglet :", t.name) || "").trim().toUpperCase(); if (!n || n === t.name) return;
-        if (tabs.some(function (x) { return x.name === n; })) return window.alert("L'onglet « " + n + " » existe déjà.");
-        if (state.showcase) state.showcase = state.showcase.map(function (c) { return c === t.name ? n : c; });
-        t.name = n; ch(); drawAll();
-      } } }));
       tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "Supprimer l'onglet", on: { click: function () {
         if (t.ids.length && !window.confirm("Supprimer l'onglet « " + t.name + " » et ses " + t.ids.length + " films de la page ?")) return;
         tabs.splice(cur, 1); cur = Math.max(0, cur - 1); ch(); drawAll();

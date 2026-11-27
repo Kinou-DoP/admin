@@ -1407,3 +1407,4 @@ input.bcn { width: 90px; }
 .simlist .selitem { display: flex; align-items: center; gap: 10px; padding: 6px 0; }
 .simwhy { display: block; color: #d9822b; }
 .simtitle { cursor: pointer; }
+.selpen { margin-left: 8px; opacity: .45; font-size: .95em; cursor: pointer; } .selpen:hover, .seltab.on .selpen { opacity: 1; }

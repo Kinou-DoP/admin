@@ -475,3 +475,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 2026-11-27 : films qui ressemblent — 2 critères sur 4 suffisent (client + titre proche aussi), plus d'obligation réal ou prod.
 - 2026-11-27 : films qui ressemblent — la pastille est sous chaque film (pas globale) ; elle compte les films proches de CE film.
 - 2026-11-27 : films qui ressemblent — clic sur la miniature ou le titre = aperçu (vidéo + crédits, ‹ ›, « + » pour ajouter) via navPlayer.
+- 2026-11-27 : « Modifier la sélection » — crayon ✎ dans chaque onglet (sauf FEATURED) pour le renommer, remplace le bouton « Renommer ».
