@@ -276,7 +276,7 @@
     document.addEventListener("keydown", esc, true);
     ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
     ov.appendChild(box); document.body.appendChild(ov);
-    function shown() { var words = bnrm(inp.value).split(/\s+/).filter(Boolean); return data.films.filter(function (f) { return bibChipsOk(f, chips) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); }); }
+    function shown() { var words = bnrm(inp.value).split(/\s+/).filter(Boolean); return data.films.filter(function (f) { return (typeof bibChipsOk === "function" ? bibChipsOk(f, chips) : chips.every(function (c) { return bibMatch(f, c); })) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); }); }
     function suggest() {
       sugBox.textContent = ""; si = -1; var v = bnrm(inp.value); if (!data || !v) { sugBox.hidden = true; return; }
       var words = v.split(/\s+/), per = {};
@@ -335,7 +335,7 @@
         var find = el("button", { type: "button", class: "xbtn xfind", title: "Chercher un film dans le video club et l'ajouter", text: "🔍 Rechercher", on: { click: function () {
           bibPicker("Ajouter sous le film", function (f) { list.push(extraFromFilm(f)); save(list); });
         } } });
-        return el("div", { class: "xrow add" }, [el("div", { class: "xline" }, [input, find, opt && opt.sim ? simPill(opt.sim, list, function (f) { list.push(extraFromFilm(f)); save(list); }) : ""]), st]);
+        return el("div", { class: "xrow add" }, [el("div", { class: "xline" }, [input, find, opt && opt.sim && typeof simPill === "function" ? simPill(opt.sim, list, function (f) { list.push(extraFromFilm(f)); save(list); }) : ""]), st]);
       }
       function move(k) { var j = i + k; if (j < 0 || j >= list.length) return; list.splice(j, 0, list.splice(i, 1)[0]); save(list); }
       var up = el("button", { type: "button", class: "xbtn", title: "Monter", text: "↑", on: { click: function () { move(-1); } } });

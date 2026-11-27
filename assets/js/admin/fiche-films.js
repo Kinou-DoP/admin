@@ -271,7 +271,7 @@
       var words = bnrm(q).split(" ").filter(Boolean), onPage = {};
       base.clips.forEach(function (c) { onPage[c.slate] = 1; }); Object.keys(extra).forEach(function (k) { onPage[k] = 1; });
       var withPage = isDefault() && !words.length; // à l'ouverture : les films du chef op + ceux de la page
-      var list = lib.films.filter(function (f) { return sid(f) && ((withPage && onPage[sid(f)]) || (bibChipsOk(f, chips) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
+      var list = lib.films.filter(function (f) { return sid(f) && ((withPage && onPage[sid(f)]) || ((typeof bibChipsOk === "function" ? bibChipsOk(f, chips) : chips.every(function (c) { return bibMatch(f, c); })) && words.every(function (w) { return f.hay.indexOf(w) > -1; }))); });
       if (withPage) Object.keys(onPage).forEach(function (id) { if (/^\d+$/.test(id)) id = +id; if (!lib.byS[id]) list.push({ slate: id, title: info(id).title, img: info(id).img, dops: [] }); });
       var key = JSON.stringify([q, chips]); if (key !== lastKey) { lastKey = key; maxR = 150; } // nouvelle recherche : 150 d'abord
       results.appendChild(el("p", { class: "hint", text: list.length + " film" + (list.length > 1 ? "s" : "") + (withPage && !cfg ? " (ceux du chef op et de la page)" : "") + " · les plus récents en haut" }));

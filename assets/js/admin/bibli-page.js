@@ -119,7 +119,7 @@
     }
     function shown() {
       var words = bnrm(st.q).split(/\s+/).filter(Boolean);
-      return data.films.filter(function (f) { return bibChipsOk(f, st.chips) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); });
+      return data.films.filter(function (f) { return (typeof bibChipsOk === "function" ? bibChipsOk(f, st.chips) : st.chips.every(function (c) { return bibMatch(f, c); })) && words.every(function (w) { return f.hay.indexOf(w) > -1; }); });
     }
     function draw() {
       chipsBox.textContent = "";
