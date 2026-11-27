@@ -664,7 +664,10 @@
     thumb.appendChild(chips);
     // Snippet Slate (extrait d'aperçu) : petite pastille en haut à droite, pleine = extrait présent, vide = pas encore d'extrait
     // (vidéo à « snipper » sur Slate, puis « Relire le bundle »). Gus 03/11.
-    if (c.full || c.video) thumb.appendChild(el("span", { class: "snipmark" + (c.video ? " on" : ""), title: c.video ? "Snippet présent" : "Pas de snippet sur Slate" }));
+    if (c.full || c.video) {
+      var ve = vcOf(c), sw = ve.pend && ve.pend.snip, so = ve.snip && !(ve.snip.v || ve.snipVideo) && !c.video; // en cours d'export (orange qui clignote) ; extrait choisi mais pas encore exporté (orange)
+      thumb.appendChild(el("span", { class: "snipmark" + (sw ? " wait" : so ? " old" : c.video ? " on" : ""), title: sw ? "Extrait en cours d'export…" : so ? "Extrait choisi, pas encore exporté" : c.video ? "Snippet présent" : "Pas de snippet sur Slate" }));
+    }
     var title = el("input", { type: "text", value: val(c, "title") });
     var sub = el("textarea", { rows: 2, title: "Crédits : enregistrés dans le video club (valent pour tout le site) ; le titre reste propre à la page" }); sub.value = vcCredits(c).text;
     var hide = el("button", {}), reset = el("button", { text: "Rétablir" });

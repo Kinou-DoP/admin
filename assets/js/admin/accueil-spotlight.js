@@ -324,7 +324,8 @@
       var edit = el("button", { type: "button", class: "btn", text: "Éditer la vidéo" });
       edit.addEventListener("click", function () { hstop(); var again = function () { card.replaceWith(slideCard(sl)); }; if (sl.full) homeMontage(sl, setO, D, again); else alert("Le film complet est en cours de récupération (environ une minute après la publication). Réessaie dans un instant, après avoir rechargé la page."); }); // film complet connu : on arrive directement dans le montage
       var xs = expState(sl, D), xt = { ok: "Export prêt : le site lit un petit fichier, fluide", old: "Montage modifié depuis l'export : le site lit encore le film complet. Exporte à nouveau", wait: "Export en cours (le robot travaille, ~1 minute)…", err: "Export en échec : " + (sl.expReq && sl.expReq.err || ""), none: "Pas encore exporté : le site lit le film complet (peut saccader en connexion faible)" }[xs];
-      card.appendChild(el("div", { class: "vsum" }, [edit, xs ? el("i", { class: "hexp " + xs, title: xt }) : "", el("span", { class: "zval", text: sum.join(" · ") })]));
+      if (xs) thumb.appendChild(el("span", { class: "snipmark" + ({ ok: " on", old: " old", wait: " wait", err: " err" }[xs] || ""), title: xt })); // même pastille que sur les fiches des chefs op
+      card.appendChild(el("div", { class: "vsum" }, [edit, el("span", { class: "zval", text: sum.join(" · ") })]));
       if (sl.expReq && !sl.expReq.err) watchExport(sl, setO, D);
     }
     slideCards[sl.slate] = card;

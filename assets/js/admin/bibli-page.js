@@ -497,21 +497,20 @@
       // Recherche par nom (Gus 23/11 : la liste va vite grandir).
       var q2 = el("input", { type: "search", class: "boldq", placeholder: "Chercher une bande…", autocomplete: "off", value: st.oldQ || "" });
       var box = el("div", { class: "bold" }, [el("p", { class: "hint", text: "Chargement…" })]); right.appendChild(q2);
-      // Une seule liste (Gus 27/11) : nos bandes et les onglets des pages du site ensemble, chacun avec son étiquette ; trois filtres pour s'y retrouver.
-      var fl = el("div", { class: "boldf" }); right.appendChild(fl); right.appendChild(box);
-      function drawFilters() { fl.textContent = ""; [["all", "Tout"], ["bands", "Nos bandes"], ["pages", "Pages du site"]].forEach(function (f) { fl.appendChild(el("button", { type: "button", class: "btn ghost" + ((st.oldF || "all") === f[0] ? " on" : ""), text: f[1], on: { click: function () { st.oldF = f[0]; drawFilters(); rows(); } } })); }); }
+      // Une seule liste (Gus 27/11), sans catégories : nos bandes puis les onglets des pages du site, tous au même format ; la recherche les filtre ensemble.
+      right.appendChild(box);
       bandsList().then(function (l) {
         var today = new Date().toISOString().slice(0, 10);
         function rows() {
           box.textContent = ""; var w = bnrm(q2.value).split(/\s+/).filter(Boolean);
-          var fo = st.oldF || "all", m = fo === "pages" ? [] : l.filter(function (b) { var h = bnrm([b.title, b.artists, b.by].join(" ")); return h.indexOf(w.join(" ")) > -1; });
-          if (!m.length && fo === "bands") box.appendChild(el("p", { class: "hint", text: l.length ? "Aucune bande ne correspond." : "Aucune bande enregistrée pour l'instant." }));
+          var m = l.filter(function (b) { var h = bnrm([b.title, b.artists, b.by].join(" ")); return h.indexOf(w.join(" ")) > -1; });
+          if (!m.length && !(pd && (pd.pages || []).length)) box.appendChild(el("p", { class: "hint", text: l.length ? "Aucune bande ne correspond." : "Aucune bande enregistrée pour l'instant." }));
           m.forEach(function (b, i) {
             var exp = b.expires && b.expires < today;
             var th = el("div", { class: "bithumb" }); if (b.img) th.appendChild(el("i", { style: 'background-image:url("' + b.img + '")' }));
             // Clic n'importe où sur la bande = l'ouvrir (Gus 22/11) ; seulement son nom, pas les chefs op.
             box.appendChild(el("div", { class: "boldrow" + (exp ? " exp" : ""), style: "--i:" + Math.min(i, 20), title: "Ouvrir cette bande", on: { click: function (e) { if (!e.target.closest("a, button")) openBand(b); } } }, [th, el("div", { class: "boldt" }, [el("strong", { text: b.title }),
-              el("small", { text: ["bande", b.n + " film" + (b.n > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by, b.pw ? "mot de passe" : "", b.expires ? (exp ? "expirée le " : "jusqu'au ") + fdate(b.expires) : "", b.legacy ? "ancien lien" : ""].filter(Boolean).join(" · ") })]),
+              el("small", { text: [b.n + " film" + (b.n > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by, b.pw ? "mot de passe" : "", b.expires ? (exp ? "expirée le " : "jusqu'au ") + fdate(b.expires) : "", b.legacy ? "ancien lien" : ""].filter(Boolean).join(" · ") })]),
               el("div", { class: "fwbtns" }, [
                 el("a", { class: "btn ghost", title: "Voir la page envoyée", href: b.legacy ? SITE_VIEW + "/b/?" + b.code : bandURL(b.code), target: "_blank", rel: "noopener", text: "↗" }),
                 b.legacy ? null : el("button", { type: "button", class: "btn ghost", text: "×", title: "Supprimer cette bande (le lien ne marchera plus)", on: { click: function () { delBand(b); } } })])]));
@@ -521,19 +520,19 @@
         // Onglets des pages du site (Gus 25/11) : une bande par onglet, ouverte dans « Modifier la sélection » de la fiche ; rangés à la suite de nos bandes (même liste).
         var pd = null, pb = box;
         function prow() {
-          if (!pd || (st.oldF || "all") === "bands") return; var w = bnrm(q2.value); var k = 0;
+          if (!pd) return; var w = bnrm(q2.value); var k = 0;
           (pd.pages || []).slice().sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (p) {
             p.tabs.forEach(function (t) {
               if (bnrm(p.name + " " + t.name).indexOf(w) < 0) return;
               var th = el("div", { class: "bithumb" }); if (t.img) th.appendChild(el("i", { style: 'background-image:url("' + t.img + '")' }));
               pb.appendChild(el("div", { class: "boldrow", style: "--i:" + Math.min(k++, 20), title: "Modifier cet onglet de la page", on: { click: function (e) { if (e.target.closest("a, button")) return; selOpen = { slug: p.slug, tab: t.name }; location.hash = "#/dp/" + p.slug; } } }, [th,
-                el("div", { class: "boldt" }, [el("strong", { text: p.name + " · " + t.name }), el("small", { text: t.n + " film" + (t.n > 1 ? "s" : "") + " · page du site" })]),
+                el("div", { class: "boldt" }, [el("strong", { text: p.name + " · " + t.name }), el("small", { text: t.n + " film" + (t.n > 1 ? "s" : "") })]),
                 el("div", { class: "fwbtns" }, [el("a", { class: "btn ghost", href: SITE_VIEW + "/" + p.slug + "/" + t.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""), target: "_blank", rel: "noopener", text: "↗", title: "Voir l'onglet sur le site" })])]));
             });
           });
         }
         var rows0 = rows; rows = function () { rows0(); prow(); };
-        bibLoad().then(function (d) { pd = d; rows(); }); drawFilters();
+        bibLoad().then(function (d) { pd = d; rows(); });
         rows(); q2.focus();
       }, function (e) { box.textContent = "Indisponible : " + e.message + " (la clé doit avoir accès au dépôt notes)"; });
     }
@@ -579,7 +578,7 @@
           if (!m.length) box.appendChild(el("p", { class: "hint", text: l.length ? "Aucun bundle ne correspond." : "Aucun bundle pour l'instant." }));
           m.forEach(function (b, i) {
             box.appendChild(el("div", { class: "boldrow nothumb", style: "--i:" + Math.min(i, 20), title: "Ouvrir ce bundle", on: { click: function (e) { if (e.target.closest("a, button")) return; bun = JSON.parse(JSON.stringify(b)); st.tab = "bundle"; drawBand(); } } }, [
-              el("div", { class: "boldt" }, [el("strong", { text: b.title }), el("small", { text: ["bundle", b.bands.length + " bande" + (b.bands.length > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by].filter(Boolean).join(" · ") })]),
+              el("div", { class: "boldt" }, [el("strong", { text: b.title }), el("small", { text: [b.bands.length + " bande" + (b.bands.length > 1 ? "s" : ""), fdate(String(b.at).slice(0, 10)), b.by].filter(Boolean).join(" · ") })]),
               el("div", { class: "fwbtns" }, [el("a", { class: "btn ghost", href: bandURL(b.code), target: "_blank", rel: "noopener", text: "↗", title: "Voir la page envoyée" }),
                 el("button", { type: "button", class: "btn ghost", text: "×", title: "Supprimer ce bundle (ses bandes restent)", on: { click: function () { delBundle(b); } } })])]));
           });
