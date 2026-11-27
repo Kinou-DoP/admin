@@ -129,6 +129,7 @@
       st.shown = l;
       info.textContent = "";
       info.appendChild(document.createTextNode(l.length + " film" + (l.length > 1 ? "s" : "") + (st.chips.length || st.q ? " sur " + data.films.length : "") + " · les plus récents en haut"));
+      if (data.partial) info.appendChild(el("button", { type: "button", class: "btn ghost", text: "⚠ Liste incomplète (connexion faible) : relire", title: "Certains fichiers ne se sont pas chargés (catégories, chefs op…) : relire tout", on: { click: function () { info.textContent = "Relecture…"; bibLoad(true).then(function (d) { adopt(d); draw(); }, function (e) { info.textContent = "Indisponible : " + e.message; }); } } }));
       if (nSel) {
         info.appendChild(el("button", { type: "button", class: "btn ghost bselb", text: "Ajouter la sélection à la bande (" + nSel + ")", on: { click: function () { addKeys(Object.keys(st.sel), band.items.length, info); } } }));
         info.appendChild(el("button", { type: "button", class: "btn ghost", text: "Tout désélectionner", on: { click: function () { st.sel = {}; draw(); } } }));

@@ -482,3 +482,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 2026-11-27 : robustesse — si un fichier JS récent n'est pas encore chargé (mauvaise connexion), le video club et les fiches continuent de marcher (`typeof simPill / bibChipsOk`).
 - 2026-11-27 : fiche — `vcHeal` : à l'ouverture, un film ajouté pendant son encodage reprend film / extrait / vignette du video club (corrige « Sans vidéo », Arnaud Stefani).
 - 2026-11-27 : « Modifier la sélection » — poignée ⠿ pour glisser au doigt (téléphone, défilement auto au bord), vignettes du video club (les plus récentes) dans la liste de gauche, clic sur une vignette = lecture (navPlayer).
+- 2026-11-27 : video club — lecture robuste (`bibLoadRaw`) : 3 essais par fichier ; si une lecture échoue quand même (connexion faible), la liste n'est plus gardée en mémoire (`partial`, bouton « relire ») — avant, catégories / chefs op manquants jusqu'au rechargement (liste préchargée depuis une fiche).

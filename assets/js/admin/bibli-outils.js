@@ -114,11 +114,19 @@
       var m = String(o.zoomPos || "").match(/(-?[\d.]+)%\s+(-?[\d.]+)%/);
       return { z: +o.zoom, x: m ? +m[1] : 50, y: m ? +m[2] : 50, t: !!o.zoomThumb };
     }
-    function raw(p) { return fetch(RAW_DATA + p, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
-    return Promise.all([loadIndex(), raw("fiction.json"), raw("spotlight.json"), raw("home.json"), readFile(BIB_LIB).catch(function () { return null; }), raw(BIB_META), readFile(BIB_EDITS).catch(function () { return null; }),
+    // Connexion faible (Gus 27/11 : catégories qui disparaissent du video club sur téléphone) : un fichier qui ne se charge pas était traité
+    // comme « absent » et la liste incomplète restait en mémoire jusqu'au rechargement. Maintenant : 3 essais ; si une lecture échoue quand même,
+    // la liste s'affiche mais n'est pas gardée (la prochaine ouverture relit tout) et `partial` le signale.
+    var bad = 0;
+    function raw(p, n) {
+      return fetch(RAW_DATA + p, { cache: "no-store" }).then(function (r) { if (r.status === 404) return null; if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .catch(function () { n = n || 0; if (n >= 2) { bad++; return null; } return new Promise(function (ok) { setTimeout(ok, 700 * (n + 1)); }).then(function () { return raw(p, n + 1); }); });
+    }
+    function rd(path) { return readFile(path).catch(function () { return new Promise(function (ok) { setTimeout(ok, 800); }).then(function () { return readFile(path); }).catch(function () { bad++; return null; }); }); }
+    return Promise.all([loadIndex(), raw("fiction.json"), raw("spotlight.json"), raw("home.json"), rd(BIB_LIB), raw(BIB_META), rd(BIB_EDITS),
       // Tous les films de Slate (Gus 25/11), y compris ceux qui ne sont sur aucune page : liste privée du dépôt notes
       // (bibli/slate.json : titres, crédits, clients, adresses ; jamais dans ce dépôt public). Sans accès à notes : pages seules.
-      gh("/repos/" + NOTES_REPO + "/contents/" + BIB_SLATE, { raw: true, allow404: true }).then(function (t) { return t ? JSON.parse(t) : null; }).catch(function () { return null; })]).then(function (r) {
+      gh("/repos/" + NOTES_REPO + "/contents/" + BIB_SLATE, { raw: true, allow404: true }).then(function (t) { return t ? JSON.parse(t) : null; }).catch(function () { bad++; return null; })]).then(function (r) {
       var idx = r[0], lib = r[4], meta = (r[5] && r[5].films) || {}, edits = (r[6] && r[6].films) || {};
       ((lib && lib.items) || []).slice().reverse().forEach(function (it) { add(it, null); });
       return Promise.all((idx.dps || []).map(function (d) { return raw("dps/" + d.slug + ".json").then(function (f) { return [d, f]; }); })).then(function (fs) {
@@ -171,8 +179,9 @@
           bibDirs(f).forEach(function (d) { put("dir", d); });
           bibProds(f).forEach(function (x) { put("prod", x); }); put("client", f.client); f.types.forEach(function (c) { put("type", c); }); f.cats.forEach(function (c) { put("cat", c); });
         });
-        bibCache = { films: order, sug: Object.keys(sug).map(function (k) { return sug[k]; }), lib: lib || { items: [] }, pages: pages };
-        return bibCache;
+        var res = { films: order, sug: Object.keys(sug).map(function (k) { return sug[k]; }), lib: lib || { items: [] }, pages: pages };
+        if (!bad) bibCache = res; else res.partial = true; // lecture incomplète : pas gardée
+        return res;
       });
     });
   }
