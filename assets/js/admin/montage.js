@@ -81,6 +81,23 @@ function montageWin(films, opt) {
   // Image par image (Gus 27/11) : poignées, curseurs, I / O et coupes tombent toujours sur une image. Cadence mesurée sur la vidéo (24, 25, 30, 50, 60…), 25 par défaut.
   var FR = 1 / 25, FPS = [24000 / 1001, 24, 25, 30000 / 1001, 30, 50, 60000 / 1001, 60];
   function sn(t) { return r3(Math.round(t / FR) * FR); }
+  // Cadence mesurée dès l'ouverture (lecture muette d'une fraction de seconde, puis retour) : sans elle, tant qu'on n'a pas lu la vidéo, tout est calé sur 25 images / s,
+  // ce qui décale les blocs d'une image sur un film en 24, 30 ou 29,97 (image en trop à la fin d'un bloc, y compris à l'export).
+  var frMeasured = false;
+  function measureFR() {
+    if (frMeasured || !vid.requestVideoFrameCallback) return; frMeasured = true;
+    var ts = [], t0 = vid.currentTime, was = vid.muted, guard = 0;
+    vid.muted = true;
+    function done() {
+      vid.pause(); vid.muted = was; var d = []; for (var i = 1; i < ts.length; i++) { var x = ts[i] - ts[i - 1]; if (x > .008 && x < .06) d.push(x); }
+      if (d.length >= 4) { d.sort(function (a, b) { return a - b; }); var f = 1 / d[Math.floor(d.length / 2)], best = FPS.reduce(function (a, c) { return Math.abs(c - f) < Math.abs(a - f) ? c : a; }, FPS[0]); if (Math.abs(best - f) / best < .12) FR = 1 / best; }
+      try { vid.currentTime = t0; } catch (e) {} drawBar();
+    }
+    function cb(now, m) { ts.push(m.mediaTime); if (ts.length < 12 && guard++ < 60) vid.requestVideoFrameCallback(cb); else done(); }
+    vid.requestVideoFrameCallback(cb);
+    var pr = vid.play(); if (pr && pr.catch) pr.catch(function () { frMeasured = false; });
+  }
+
   if (vid.requestVideoFrameCallback) { var lastMT = null, fcb = function (now, m) { if (lastMT !== null) { var d = Math.abs(m.mediaTime - lastMT); if (d > .008 && d < .06) { var f = 1 / d, best = FPS.reduce(function (a, c) { return Math.abs(c - f) < Math.abs(a - f) ? c : a; }, FPS[0]); if (Math.abs(best - f) / best < .12) FR = 1 / best; } } lastMT = m.mediaTime; if (ov.isConnected) vid.requestVideoFrameCallback(fcb); }; vid.requestVideoFrameCallback(fcb); }
   var hist = [], redoS = [];
   function cap() { return { sel: sel, blocks: blocks.map(function (b) { return { id: b.id, f: b.f, s: b.s, d: b.d, x: b.x, hue: b.hue }; }) }; }
@@ -99,7 +116,7 @@ function montageWin(films, opt) {
   function act() { return sel >= 0 && blocks[sel] ? blocks[sel] : selFree(); }
   // ---------- lecture ----------
   function load(f, t, andPlay) { // affiche la vidéo f à l'instant t
-    function go() { vid.currentTime = clamp(t + FR * .25, 0, f.dur - .04); /* + un quart d'image : on tombe à coup sûr sur l'image qui commence à t */ if (andPlay) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
+    function go() { if (!frMeasured && !andPlay) vid.addEventListener("seeked", function w() { vid.removeEventListener("seeked", w); measureFR(); }); vid.currentTime = clamp(t + FR * .25, 0, f.dur - .04); /* + un quart d'image : on tombe à coup sûr sur l'image qui commence à t */ if (andPlay) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
     if (loaded !== f.full) { loaded = f.full; vid.src = f.full; vid.addEventListener("loadedmetadata", function w() { vid.removeEventListener("loadedmetadata", w); go(); }); } else go();
   }
   var lvl = 0; // vitesse de lecture : 0 = normale, 1..3 = TL_RATES
