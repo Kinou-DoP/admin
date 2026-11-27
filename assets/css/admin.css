@@ -1394,3 +1394,4 @@ input.bcn { width: 90px; }
 .tlnav.full i { cursor: default; }
 .snipcur { margin: 10px 0 8px; font-size: 13px; color: var(--kinou-fg); }
 .ppane .montbtn { display: block; width: 100%; padding: 14px 18px; margin: 0 0 10px; font-size: 14px; }
+.exprev { display: block; width: min(100%, 420px); aspect-ratio: 16 / 9; background: #000; margin: 0 0 10px; } .exprev[hidden] { display: none; }

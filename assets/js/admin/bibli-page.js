@@ -997,7 +997,7 @@
         // Onglet Extrait (Gus 27/11) : l'extrait actuel tourne en boucle (tous ses blocs) ; tout le réglage se fait dans la fenêtre de montage.
         var playExtract = function () {
           var ps = parts(); stopRev(); rangeOv = null; seqOn = false; loopOn = false;
-          if (!it.snip || it.snipVideo) { player.pause(); return; }
+          if (!it.snip || it.snipVideo) { player.pause(); return; } // extrait « fichier » : joué par le petit lecteur sous le texte
           if (ps) { seqOn = true; seqI = 0; player.currentTime = ps[0].s; } else { rangeOv = { s: it.snip.s, d: it.snip.d }; loopOn = true; player.currentTime = it.snip.s; }
           player.play().catch(function () {});
         };
@@ -1111,7 +1111,7 @@
           draw(); drawSnip();
         };
       }
-      var snipLine = el("p", { class: "hint" }), snipCur = el("p", { class: "snipcur" }), blocksBox = el("div", { class: "bblks" });
+      var exPrev = el("video", { class: "exprev", muted: true, loop: true, playsinline: true, controls: false }), snipLine = el("p", { class: "hint" }), snipCur = el("p", { class: "snipcur" }), blocksBox = el("div", { class: "bblks" });
       // Montage (Gus 26/11) : plusieurs blocs de l'extrait, bout à bout. « + Ajouter un bloc » en crée un à l'image affichée (réglable ensuite avec les
       // poignées ou I / O) ; le bloc réglé est surligné ; on les déplace en glissant ⠿, on en modifie un en cliquant dessus.
       var addB = null;
@@ -1156,7 +1156,9 @@
       function playSeq() { if (!player || !it.snip) return; if (!parts()) { playSnip(); return; } loopOn = false; seqOn = true; seqI = 0; player.currentTime = parts()[0].s; player.play().catch(function () {}); }
       function prevSnip() { if (pvid) { pvid.remove(); pvid = null; } }
       function drawSnip() {
-        var ps0 = parts(); snipCur.textContent = it.snipVideo ? "Extrait importé de l'ordinateur" : it.snip ? "Extrait actuel : " + (ps0 ? ps0.length + " blocs, " + totalD().toFixed(1).replace(".", ",") : it.snip.d.toFixed(1).replace(".", ",")) + " s (en boucle ci-dessus)" : "Pas encore d'extrait";
+        var ps0 = parts(), fileEx = it.snipVideo || (!it.snip && it.video) || (it.snip && it.snip.v && !it.snip.vf && false); // extrait « fichier » : importé, ou d'origine (Slate)
+        exPrev.hidden = !fileEx; if (fileEx) { if (exPrev.dataset.u !== fileEx) { exPrev.dataset.u = fileEx; exPrev.src = fileEx; } if (ptab === "snip") { var pr0 = exPrev.play(); if (pr0 && pr0.catch) pr0.catch(function () {}); } } else { exPrev.pause(); }
+        snipCur.textContent = it.snipVideo ? "Extrait actuel : importé de l'ordinateur (mp4)" : !it.snip && it.video ? "Extrait actuel : celui d'origine (fichier vidéo de Slate). Ouvre le montage pour en faire un nouveau." : it.snip ? "Extrait actuel : " + (ps0 ? ps0.length + " blocs, " + totalD().toFixed(1).replace(".", ",") : it.snip.d.toFixed(1).replace(".", ",")) + " s (en boucle ci-dessus)" : "Pas encore d'extrait";
         drawBlocks(); snipLine.textContent = ""; if (typeof valB !== "undefined" && valB) valB.disabled = !it._snipTmp && !snipStale();
         if (it.snipVideo) snipLine.appendChild(el("span", {}, ["Extrait importé de l'ordinateur · ", el("button", { type: "button", class: "blink", text: "le retirer", on: { click: function () { delete it.snipVideo; chg(); prevSnip(); drawSnip(); } } })]));
         else if (it._snipTmp) snipLine.textContent = "Extrait pas encore enregistré : « Valider l'extrait » pour le garder (sinon il est oublié en fermant).";
@@ -1547,7 +1549,7 @@
           montageWin([{ key: it.key, title: it.title || "Film", full: it.full || src, dur: dur }], { mode: "snip", max: MAXD, parts: p0 && p0.length ? p0.map(function (x) { return { s: x.s, d: x.d }; }) : undefined, name: it.title,
             onSave: function (ps) { snipDraft(); it.snip = ps.length > 1 ? { s: ps[0].s, d: ps[0].d, parts: ps } : { s: ps[0].s, d: ps[0].d }; delete it._sel; bi = -1; snipMark(); snipCommit(); prevSnip(); playExtract(); } });
         } } });
-        snipPane = el("div", { class: "ppane", hidden: true }, [snipCur, montBtn, snipLine, el("div", { class: "tlrow" }, [upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp]), histSnipL, histSnip, offSnip]);
+        snipPane = el("div", { class: "ppane", hidden: true }, [snipCur, exPrev, montBtn, snipLine, el("div", { class: "tlrow" }, [upBtn("⤒ Importer un mp4", vidUp, "video", doVid), vidUp]), histSnipL, histSnip, offSnip]);
         box.appendChild(el("div", { class: "bplay" }, [ptabs, el("span", { class: "hint", text: "Image par image avec les flèches ← → (Maj = 1 s) · espace = lecture / pause · Z ou J = à l'envers, K = pause, L = lecture · I / O = début / fin de l'extrait · Entrée = ajouter le bloc" }), player, tl, tools, thumbPane, snipPane, pout, offOut]));
         // Versions de la vidéo (Gus 26/11, phase 2) : « Encodage 1 » (la vidéo encodée à l'import) et les « Edit n » faits avec « edit moi si tu peux ! » ; la case choisit celle
         // que le site et les bandes affichent (le fichier original reste chez Amazon). Un edit peut devenir un nouveau projet.

@@ -40,8 +40,8 @@ function montageWin(films, opt) {
   var SNIP = opt.mode === "snip", MAXT = SNIP ? (+opt.max || 30) : 0; // extrait d'une vidéo du video club : jusqu'à MAXT secondes (pas de durée exacte), sans le son
   var pool = films.filter(function (f) { return f.full && f.dur; }), uid = 0;
   if (!pool.length) { alert("Aucune vidéo encodée à assembler pour l'instant."); return; }
-  var blocks = opt.parts && opt.parts.length ? opt.parts.map(function (p) { return { id: ++uid, f: pool[0], s: p.s, d: p.d, x: p.x, hue: hueFor(uid) }; }) : pool.map(function (f) { return { id: ++uid, f: f, s: 0, d: f.dur }; });
-  var sel = EX ? 0 : -1, src = blocks[0].f, selMem = {}, mode = "src", playing = false, cur = 0, loaded = "", quality = "original";
+  var blocks = SNIP && !(opt.parts && opt.parts.length) ? [] : opt.parts && opt.parts.length ? opt.parts.map(function (p) { return { id: ++uid, f: pool[0], s: p.s, d: p.d, x: p.x, hue: hueFor(uid) }; }) : pool.map(function (f) { return { id: ++uid, f: f, s: 0, d: f.dur }; });
+  var sel = EX ? 0 : -1, src = (blocks[0] && blocks[0].f) || pool[0], selMem = {}, mode = "src", playing = false, cur = 0, loaded = "", quality = "original";
   var MIND = .2, zw = null, revOn = false, revRaf = 0; // zw : partie visible de la frise de la source (zoom Option + molette) ; revOn : lecture à l'envers
   function zwin() { return zw || [0, src.dur]; }
   function pcz(t) { var w = zwin(); return (t - w[0]) / (w[1] - w[0]) * 100; }
