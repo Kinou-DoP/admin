@@ -1532,12 +1532,12 @@
       "types": [
         "Commercial"
       ],
-      "pend": {
-        "thumb": {
-          "path": "data/encode/rapide-1795798356723-21xuz.json",
-          "id": "mwz7z46qirijs9",
-          "t": 3.275
-        }
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7z46qirijs9/vignette-3275-800.webp",
+      "thumbT": 3.275,
+      "hist": {
+        "img": [
+          "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/vignette-800.webp"
+        ]
       }
     }
   }
