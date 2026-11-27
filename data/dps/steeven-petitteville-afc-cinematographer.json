@@ -28,7 +28,19 @@
       "title": "Lucky Luke"
     }
   },
-  "about": {},
+  "about": {
+    "website": "https://www.steevenp.com/",
+    "links": [
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm1421390/"
+      }
+    ],
+    "instagram": "https://www.instagram.com/steeevendop/",
+    "pos": "63% 29%",
+    "img": "img/steeven-petitteville-afc-cinematographer.webp",
+    "og": "img/steeven-petitteville-afc-cinematographer-og-1795790613183.jpg"
+  },
   "categories": [
     "FEATURED",
     "MUSIC VIDEO",
