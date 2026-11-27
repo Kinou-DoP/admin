@@ -3,9 +3,14 @@
     {
       "id": "mwz0yuxwxipr04",
       "kind": "film",
-      "key": "depot/pma4gps3e4xfv5hg4g77/angeliketgregorygarnierfructis.mp4"
+      "key": "depot/pma4gps3e4xfv5hg4g77/angeliketgregorygarnierfructis.mp4",
+      "progress": {
+        "step": "lecture",
+        "pct": 0
+      }
     }
   ],
   "at": "2026-11-27T13:36:33.978Z",
-  "by": "John"
+  "by": "John",
+  "startedAt": "2026-11-27T13:37:11.952Z"
 }
