@@ -793,13 +793,17 @@
     }
     // Sous le film dans le lecteur : stills et autres vidéos (liens Slate), enregistrés avec la fiche.
     var extras = extrasCtl(function () {
-      var o = state.overrides[c.slate] || {}, g = vcGroupRows(c); if (!g) return o; if (!o.extras) return { extras: g };
+      var o = state.overrides[c.slate] || {}, g = vcGroupRows(c);
+      // Stills / vidéos sous le film réglés dans le video club (edits.json) : ils passent devant ceux de la page, comme sur le site (vcApply) — la carte les montre et les modifie là (Gus 27/11).
+      if (!g && vcOf(c).extras !== undefined) return Object.assign({}, o, { extras: (vcOf(c).extras || []).filter(function (x) { return !x.self; }) });
+      if (!g) return o; if (!o.extras) return { extras: g };
       // La carte a sa liste (masquées, retirées) : les vidéos du lot y suivent le video club (titres, ordre) tant qu'on n'a pas changé l'ordre ici.
       var by = {}; g.forEach(function (n) { by[n.key] = n; });
       var rows = o.extras.map(function (x) { return x.key && by[x.key] ? Object.assign({}, by[x.key], x.hide ? { hide: x.hide } : {}) : x; });
       if (!o.extrasOrd) { var order = g.map(function (n) { return n.key; }), slots = [], keyed = []; rows.forEach(function (x, i) { if (x.key && order.indexOf(x.key) > -1) { slots.push(i); keyed.push(x); } }); keyed.sort(function (a, b) { return order.indexOf(a.key) - order.indexOf(b.key); }); slots.forEach(function (i, j) { rows[i] = keyed[j]; }); }
       return Object.assign({}, o, { extras: rows });
     }, function (list) {
+      if (!vcGroupRows(c) && vcOf(c).extras !== undefined) { vcPatch(c.slate, { extras: list }); sync(); return; } // même source que le site : le video club
       var g = vcGroupRows(c); // ordre changé sur cette page ? alors la page garde son ordre (extrasOrd), sinon elle suit le video club
       if (g) { var gk = g.map(function (n) { return n.key; }), ks = list.filter(function (x) { return x.key && gk.indexOf(x.key) > -1; }).map(function (x) { return x.key; }); setOverride(c, "extrasOrd", ks.join() !== gk.filter(function (k) { return ks.indexOf(k) > -1; }).join() ? true : undefined); }
       setOverride(c, "extras", list.length ? list : undefined); setOverride(c, "stills"); setOverride(c, "stillsLink"); sync();
