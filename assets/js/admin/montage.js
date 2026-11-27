@@ -11,14 +11,22 @@ var MONT_MAX = 10e9;
 // Navigation d'une frise zoomée (partagée avec la fenêtre d'edit) : petite barre sous la frise dont la poignée montre la partie affichée ; on la tire pour se déplacer.
 // get() -> [début, fin] ou null (pas de zoom), set([début, fin] ou null), dur() -> durée totale.
 function tlNav(get, set, dur) {
-  var th = el("i", { title: "Partie affichée : tire pour te déplacer dans la frise" }), nv = el("div", { class: "tlnav" }, [th]);
+  var eL = el("b", { class: "tlge l", title: "Tire le bord pour zoomer" }), eR = el("b", { class: "tlge r", title: "Tire le bord pour zoomer" });
+  var th = el("i", { title: "Partie affichée : tire pour te déplacer, tire les bords pour zoomer" }, [eL, eR]), nv = el("div", { class: "tlnav" }, [th]);
   function draw() { var w = get(), D = dur(); if (!D) return; nv.classList.toggle("full", !w); w = w || [0, D]; th.style.left = w[0] / D * 100 + "%"; th.style.width = (w[1] - w[0]) / D * 100 + "%"; } // toujours visible : poignée pleine largeur tant qu'on n'est pas zoomé (rien ne bouge à l'écran)
   function move(a) { var w = get(), D = dur(); if (!w) return; var sp = w[1] - w[0]; a = Math.max(0, Math.min(D - sp, a)); set([a, a + sp]); }
   nv.addEventListener("pointerdown", function (e) {
-    var w = get(), D = dur(); if (!w || e.button) return; e.preventDefault(); e.stopPropagation(); var r = nv.getBoundingClientRect(), x0 = e.clientX, a0 = w[0];
-    if (e.target !== th) { a0 = (e.clientX - r.left) / r.width * D - (w[1] - w[0]) / 2; move(a0); }
+    var w0 = get(), D = dur(); if (e.button || !D) return; e.preventDefault(); e.stopPropagation(); var r = nv.getBoundingClientRect(), x0 = e.clientX, w = w0 || [0, D], a0 = w[0], edge = e.target === eL ? "l" : e.target === eR ? "r" : "";
+    if (!edge && !w0) return; // pas zoomé : rien à déplacer (seuls les bords zooment)
+    if (!edge && e.target !== th) { a0 = (e.clientX - r.left) / r.width * D - (w[1] - w[0]) / 2; move(a0); }
     try { nv.setPointerCapture(e.pointerId); } catch (x) {}
-    function mv(ev) { move(a0 + (ev.clientX - x0) / r.width * D); } function up() { nv.removeEventListener("pointermove", mv); nv.removeEventListener("pointerup", up); }
+    function mv(ev) {
+      var t = Math.max(0, Math.min(D, (ev.clientX - r.left) / r.width * D)), mn = Math.min(1, D);
+      if (edge === "l") { var a = Math.min(t, w[1] - mn); set(a <= .001 && w[1] >= D - .001 ? null : [Math.max(0, a), w[1]]); }
+      else if (edge === "r") { var b = Math.max(t, w[0] + mn); set(w[0] <= .001 && b >= D - .001 ? null : [w[0], Math.min(D, b)]); }
+      else move(a0 + (ev.clientX - x0) / r.width * D);
+    }
+    function up() { nv.removeEventListener("pointermove", mv); nv.removeEventListener("pointerup", up); }
     nv.addEventListener("pointermove", mv); nv.addEventListener("pointerup", up);
   });
   return { el: nv, draw: draw, pan: function (e) { var w = get(); if (!w) return false; var d = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY; move(w[0] + d / 600 * (w[1] - w[0])); return true; } };
@@ -341,7 +349,7 @@ function montageWin(films, opt) {
     exp.textContent = ""; var tot = total(), ok = tot > 0 && tot <= MAXT + .01, fr = function (x) { return x.toFixed(1).replace(".", ","); };
     exp.appendChild(nameI); nameI.classList.add("hxtitle"); exp.appendChild(el("span", { class: "label", text: "Extrait de la vidéo" }));
     exp.appendChild(el("p", { class: ok ? "hint bok" : "hint berr", text: tot ? fr(tot) + " s sur " + MAXT + " s au plus" + (ok ? "" : " : trop long") : "Aucun bloc." }));
-    exp.appendChild(el("button", { type: "button", class: "btn primary", text: "Valider l'extrait", disabled: ok ? null : true, on: { click: function () {
+    exp.appendChild(el("button", { type: "button", class: "btn primary", text: "Exporter", title: "Enregistre l'extrait et demande au robot de le fabriquer (≈ 1 minute) : rien d'autre à faire", disabled: ok ? null : true, on: { click: function () {
       var parts = blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d) }; }); if (opt.onSave) opt.onSave(parts); close(); } } }));
     exp.appendChild(el("p", { class: "hint", text: "L'extrait est lu en boucle sur le site et dans les bandes, sans le son." }));
   }

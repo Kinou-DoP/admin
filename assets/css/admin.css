@@ -1388,3 +1388,9 @@ input.bcn { width: 90px; }
   .bmfit .hrcol { padding-top: 30px; } .bmfit .hslot { order: -1; margin: 0 0 8px; } .bmfit .hmhome .hexp, .bmfit .hxhome { padding-top: 0; }
 }
 .tlnav.full i { background: rgba(255,252,235,.28); cursor: default; } .tlnav.full { cursor: default; }
+/* bords de la poignée de la barre de navigation : tirer = zoomer (dézoomer) */
+.tlnav i { display: block; } .tlnav .tlge { position: absolute; top: 0; bottom: 0; width: 10px; cursor: ew-resize; touch-action: none; background: rgba(255,252,235,.28); border-radius: 5px; }
+.tlnav .tlge.l { left: 0; } .tlnav .tlge.r { right: 0; } .tlnav .tlge:hover { background: rgba(255,252,235,.6); }
+.tlnav.full i { cursor: default; }
+.snipcur { margin: 10px 0 8px; font-size: 13px; color: var(--kinou-fg); }
+.ppane .montbtn { display: block; width: 100%; padding: 14px 18px; margin: 0 0 10px; font-size: 14px; }
