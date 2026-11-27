@@ -2,6 +2,7 @@
   "slug": "arnaud-stefani-cinematographer",
   "name": "Arnaud Stefani",
   "hue": 0,
+  "featuredName": "SELECTED WORK",
   "overrides": {
     "579": {
       "title": "Un Monde Nouveau"
@@ -75,170 +76,12 @@
   },
   "categories": [
     "FEATURED",
-    "NARRATIVE",
-    "COMMERCIAL",
     "HAIR",
     "SKINCARE / MAKEUP",
+    "COMMERCIAL",
     "MUSIC VIDEO / ARTWORK"
   ],
   "clips": [
-    {
-      "title": "Anthracite - Trailer",
-      "sub": "Julius Berg\nAnthracite Productions",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10382/0e7323d6-f7b3-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85c87c46-a99b-40a7-afe8-2f8eb11d8965-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/UslHW0Bf-VHiIH2LEi1Mc6HyPnQnO70vFfcevHlSINY/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDM4Mi02OTcyNTQx/ZTQxOGYxMi42NDAz/ODUyMy01YmE5Y2Ez/YzE1NzhjNDQ4MDBk/N2MyMmNmNjkxYzcx/Ny5qcGc.webp",
-      "slate": 10382,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "Noël Joyeux - bande-annonce",
-      "sub": "Clément Michel\nGaumont",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/af3f4767-4752-4724-8f4f-ee81d3b0fdb0-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/_lw-Ywa3k9sf2CeqzOQtBRlgJdWKwnSd47Cqslxthgo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NzM5MWNjYi1hNTk3/LTRjZjktYWRjNi0x/MWVhNDU1NWM2ODIv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjMtMTEt/MDYtYS0xOC4yMS40/Ny5wbmc.webp",
-      "slate": 7972,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "Menteur - Feature Film Trailer",
-      "sub": "Olivier Baroux\nGaumont",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/074b8187-e8cf-4002-a6d0-5ec7185b46c0-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/9XaFvZfOEedWonTNOvefVLeXdXejwYH72Qf286Hj__8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZGRjMDhkNS03YTBh/LTRiMzktODRhNC05/YmYyNGQxM2VkYjkv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MDctYS0xNC41Mi4x/Ni5wbmc.webp",
-      "slate": 6077,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "Operation Endgame | Feature Film Trailer",
-      "sub": "Fouad Mikati\nInfinity Media",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/0b4174b6-a37a-4c61-a943-0f1479726b91-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/EyC5P9fDXdaDltptjn0Dt2LsiaFHbt25Sf2A_qoQzkw/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/ZjUyOTExMi00N2Qx/LTQ0NWMtOWJmOC03/NDIyOTlmODkyYmQv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTQtYS0xNS4xNC41/OS5wbmc.webp",
-      "slate": 4368,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "L'italien | Feature Film Trailer",
-      "sub": "Olivier Baroux\nEskwad",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/39ab2199-75d4-4bcb-bc89-02a4727dad31-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/okNEZNscti_K32tCYQbgfMFjQyvq7BFKMTLpd-x3F8I/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NWQ1MDRjMC02Y2Iy/LTRhZTYtOTZlZS0w/YmFlNmZiMzdjYmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTQtYS0xNS4xOS41/Mi5wbmc.webp",
-      "slate": 4367,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "Les Tuche | Feature Film Trailer",
-      "sub": "Olivier Baroux\nPathé & Eskwad",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1fe07516-5cb9-404d-bf9d-db8422d25efc-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/UDQDidWZ7xi971V_Ub3AtUqwZ_6kbw68G5qBJcj5TW0/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/MjJiZWNmYi04MDVi/LTRiY2QtYWEzMy1m/NTE2ZDExMzcxZTUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTQtYS0xNS4xMi4x/Ni5wbmc.webp",
-      "slate": 4366,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "Ce soir, je dors chez toi | Feature Film Trailer",
-      "sub": "Olivier Baroux\nEskwad",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/77aca273-12e4-4b85-b29a-c0d8749cd739-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/uK5KcnpAcSTTED_VHJI9BUG2hhZNUbh75VhEnelH0Xo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/YTFhNTdhYy0yOWRm/LTRkM2ItOGU4NC1i/Y2YyYTBiMzAxOTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTQtYS0xNS4yNC41/MS5wbmc.webp",
-      "slate": 4365,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "Showreel Arnaud Stefani",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/e2a59da5-944c-49a3-9a4a-01371030dd96-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/T7fmy0CjpytIZW9ueWxTVGrMT9yT01MLBzJ3-RVx_QQ/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/OTI4NTY0OC1jMzY0/LTQ4ZTMtOWYyMy0y/YmE5M2MzODFjYzUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDYt/MTUtYS0xMC4zNS4y/Ni5wbmc.webp",
-      "slate": 6099,
-      "cat": "NARRATIVE"
-    },
-    {
-      "title": "C&A \"Winter Campaign",
-      "sub": "Yasmina Solanes\nPeoplegrapher",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c1b60d7-42d6-4be3-a7f4-ac780f776e99-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/vyHVVm8NGfkhpswtM7JNqHiu5XkzbAJfD36DeZ_50IM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YmFkODQ5My02NDJh/LTRjYjktODFiOS0y/MDg3ZDNlNTNkZDEv/MS5qcGc.webp",
-      "slate": 4644,
-      "cat": "COMMERCIAL",
-      "featured": true,
-      "featuredOrder": 6
-    },
-    {
-      "title": "L'Oréal Men Expert - Hugh Laurie",
-      "sub": "Jean-Pierre Philippot",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/180bb7e2-01b0-4eb6-bb7f-a88fce0b64a8-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/VBWdzFyhrmUA3SmRnZH-N9CXYtfog-6IjXPE6Fe16W0/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTkzLTVlMjcwNDli/MzFjM2IwLjc0NDky/OTc1LWQzOTVkOGU4/NTkwOThjY2NhOGVj/NzhhMWI1ZmM3NmM3/LmpwZw.webp",
-      "slate": 3993,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "Roche Bobois 2",
-      "sub": "Jean Pierre Philippot\nSuperette",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1569836192-25s-lineaire-speed-up-radian-voagence-190806.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/l5nLJj4OqT3I4JeT0Ou5mSUAtZu4pkMq9CIqpFjHF80/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODY1Njk1MjU3/L3JvY2hlLWJvYm9p/czIuanBn.webp",
-      "slate": 3736,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "Roche Bobois 1",
-      "sub": "Jean Pierre Philippot\nSuperette",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1569836194-25s-lineaire-bubble-ava-voagence-190806.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/YsOkA2L6-qwTeDxlKyHx4IPd-TA7if4OJos3BFTlCxg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODY1MDU0MjM0/L3JvY2hlLWJvYm9p/cy0xLmpwZw.webp",
-      "slate": 3735,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "Continente",
-      "sub": "Cristiana Miranda\nPlayground",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/53dfe403-cd07-4030-aeaa-6d41b180a1c2-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/qic6qIczCndb3_YRlY9quD25m0K7H_X9VCzsO5zXG68/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjUzMGI3My0wNDA4/LTQxNjctYTFiNy1l/NzFkNWU2OGQwODEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNC41MC4w/Mi5wbmc.webp",
-      "slate": 3021,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "Gemo",
-      "sub": "Vincent Vesco\nPremière Heure",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545836766-54679392_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/Pa826k7TX4z_ODIML5UkJzKpoUfsMVx0zVRs8TqNCUo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1ODM1OTMxLzU0/Njc5MzkyX2xhcmdl/LmpwZw.webp",
-      "slate": 2711,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "Lancome / Clive Owen",
-      "sub": "Frederic_Guelaff\n---",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545419815-6467893_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/haE-SPRef9M-jxnGJ8iFNFyfkXYB2LN5uUse2ivss1g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDE5NTUxLzY0/Njc4OTNfbGFyZ2Uu/anBn.webp",
-      "slate": 1761,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "John Frieda",
-      "sub": "Jean-Pierre Philippot\nTempesta",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545414924-43516539_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/m4gWoas06GYQRJf7zoJIHgZHxK06K0xOk_qaNiuC-0w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkxODg1NDcwMTk2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTExLWEtMTYuMjQu/MDktMi5wbmc.webp",
-      "slate": 1632,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "L'Oréal Men Expert Thermic Resist",
-      "sub": "Jean-Pierre Philippot\nTempesta",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545406853-thermic_dircut_mix_140509_h264.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/dKfe0rzSTAQZOJLni8anfb9XzUD8KUHEk9hMHYqeULo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/b3JlYWwtbWVuLWV4/cGVydC10aGVybWlj/LXJlc2lzdC1lNDg2/NGUxZmQ3NzlmNmM2/NDVkYTE5NjQ3YmVh/MDUwMC5qcGc.webp",
-      "slate": 1461,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "L'Oréal Men Expert",
-      "sub": "Jean-Pierre Philippot\nTempesta",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1464/6190f243-d387-11f1-a349-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545406901-loreal_men_expert_jp_philippot.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/MMFu7M1212OgQnok_piKKTdD1bi4v4kDMXGXTuUgnnU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDA2ODg2LzY0/Njg2NDFfbGFyZ2Uu/anBn.webp",
-      "slate": 1464,
-      "cat": "COMMERCIAL"
-    },
-    {
-      "title": "Zadig & Voltaire",
-      "sub": "Emmanuel Giraud\nPsycho",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545346985-37532578_web.1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/RLSdGLZ48BttsfhZYBZ5W9-dt01VZAUecuqTNRWNquE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy96/YWRpZy12b2x0YWly/ZS1lOGQyNjJkZTlk/MjE2NWEwZDZlYmIz/YmFiYzg4ZjhiZS5q/cGc.webp",
-      "slate": 120,
-      "cat": "COMMERCIAL",
-      "featured": true,
-      "featuredOrder": 8
-    },
     {
       "title": "Garnier Ultra Doux",
       "sub": "The Jacks",
@@ -269,7 +112,7 @@
       "slate": 9153,
       "cat": "HAIR",
       "featured": true,
-      "featuredOrder": 4
+      "featuredOrder": 3
     },
     {
       "title": "John Frieda | Barcelona",
@@ -294,24 +137,6 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/df911c93-4207-410a-8832-e3b525a5b47c-1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/FOkmzhiQNfTyWfc2iur3Lctm8O2VoHufeFD5DVf2sIo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8y/YzM1ODEyZi05ZTdl/LTRmOTItYjY4Ny01/YTlkMzNhM2JkYTIv/MTc2Nzg4NDQ2MjAy/Ny5qcGc.webp",
       "slate": 10358,
-      "cat": "HAIR"
-    },
-    {
-      "title": "Le Petit Marseillais",
-      "sub": "James Maciver\n87 Seconds",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8749/05b781c1-190d-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/20afe963-fc98-4ef3-8c8b-6ddf00906e7f-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/e9N_AztkO_T_PFkYBXtKGFY7_B2NKpj4B6IupAPPEv8/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9m/NDI2NmZhNC0wODNl/LTRmOTAtODA0Mi0x/OTM0YzNhZWIxZTMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDUt/MjMtYS0xNS41NS40/Ni5wbmc.webp",
-      "slate": 8749,
-      "cat": "HAIR"
-    },
-    {
-      "title": "Garnier Ultra Doux",
-      "sub": "The JACK\nCaviar Paris",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8747/7ef49260-1858-11ef-bfce-022353abf6f5.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c6c0ea2-2582-4d1c-9213-716cf4250cdc-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/raZjs4vHunDRg32M-X09_lOK6XV9rw1RkvBKRBu52SY/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9h/NGE2YjIxZC05MWM1/LTRiZGQtYjNjNC03/MWJlODI1YjYxYjUv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjQtMDUt/MjItYS0xOC4yNi40/Ny5wbmc.webp",
-      "slate": 8747,
       "cat": "HAIR"
     },
     {
@@ -432,9 +257,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545431233-41586432_web.1280x720.2500.mp4",
       "img": "https://images.slatecdn.net/Zmz-juY68zAoWjjEifrA2tdhtCWOUoQmeYWvYjl8uo4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/b2Nvd2F0ZXItY2Jh/NTY5MDRhYTM5NTc3/MjcwMzI1OTQwNjI1/MDAwNTcuanBn.webp",
       "slate": 2029,
-      "cat": "HAIR",
-      "featured": true,
-      "featuredOrder": 2
+      "cat": "HAIR"
     },
     {
       "title": "L'ORÉAL PRODIGY COLOR",
@@ -470,9 +293,7 @@
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/dbecc02b-d4c7-40e9-a5f7-083d7fc73d78-0x1080.5000.mp4",
       "img": "https://images.slatecdn.net/9iGXfMpF5R8TgqH1SNbVai5j7Y3slFz9lcHwJ3ff9P4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy83/ZDBjNzJkYy0yYmE0/LTRmYWEtYTI5YS00/Mzk2MTg4YTRmYTUv/MTc5MzYzMzU4Njc3/Ny5qcGc.webp",
       "slate": 11490,
-      "cat": "SKINCARE / MAKEUP",
-      "featured": true,
-      "featuredOrder": 9
+      "cat": "SKINCARE / MAKEUP"
     },
     {
       "title": "Garnier • Ambre Solaire",
@@ -510,7 +331,7 @@
       "slate": 9964,
       "cat": "SKINCARE / MAKEUP",
       "featured": true,
-      "featuredOrder": 3
+      "featuredOrder": 2
     },
     {
       "title": "Lakme - Rouge Bloom",
@@ -698,7 +519,7 @@
       "slate": 1862,
       "cat": "SKINCARE / MAKEUP",
       "featured": true,
-      "featuredOrder": 7
+      "featuredOrder": 5
     },
     {
       "title": "ID Magazine - A-Z of Beauty",
@@ -811,6 +632,99 @@
       "cat": "SKINCARE / MAKEUP"
     },
     {
+      "title": "C&A \"Winter Campaign",
+      "sub": "Yasmina Solanes\nPeoplegrapher",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1c1b60d7-42d6-4be3-a7f4-ac780f776e99-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/vyHVVm8NGfkhpswtM7JNqHiu5XkzbAJfD36DeZ_50IM/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy85/YmFkODQ5My02NDJh/LTRjYjktODFiOS0y/MDg3ZDNlNTNkZDEv/MS5qcGc.webp",
+      "slate": 4644,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "L'Oréal Men Expert - Hugh Laurie",
+      "sub": "Jean-Pierre Philippot",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/180bb7e2-01b0-4eb6-bb7f-a88fce0b64a8-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/VBWdzFyhrmUA3SmRnZH-N9CXYtfog-6IjXPE6Fe16W0/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8z/OTkzLTVlMjcwNDli/MzFjM2IwLjc0NDky/OTc1LWQzOTVkOGU4/NTkwOThjY2NhOGVj/NzhhMWI1ZmM3NmM3/LmpwZw.webp",
+      "slate": 3993,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Roche Bobois 2",
+      "sub": "Jean Pierre Philippot\nSuperette",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1569836192-25s-lineaire-speed-up-radian-voagence-190806.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/l5nLJj4OqT3I4JeT0Ou5mSUAtZu4pkMq9CIqpFjHF80/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODY1Njk1MjU3/L3JvY2hlLWJvYm9p/czIuanBn.webp",
+      "slate": 3736,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Roche Bobois 1",
+      "sub": "Jean Pierre Philippot\nSuperette",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1569836194-25s-lineaire-bubble-ava-voagence-190806.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/YsOkA2L6-qwTeDxlKyHx4IPd-TA7if4OJos3BFTlCxg/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTk1ODY1MDU0MjM0/L3JvY2hlLWJvYm9p/cy0xLmpwZw.webp",
+      "slate": 3735,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Continente",
+      "sub": "Cristiana Miranda\nPlayground",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/53dfe403-cd07-4030-aeaa-6d41b180a1c2-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/qic6qIczCndb3_YRlY9quD25m0K7H_X9VCzsO5zXG68/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy82/NjUzMGI3My0wNDA4/LTQxNjctYTFiNy1l/NzFkNWU2OGQwODEv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjItMDkt/MjctYS0xNC41MC4w/Mi5wbmc.webp",
+      "slate": 3021,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Gemo",
+      "sub": "Vincent Vesco\nPremière Heure",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545836766-54679392_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/Pa826k7TX4z_ODIML5UkJzKpoUfsMVx0zVRs8TqNCUo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1ODM1OTMxLzU0/Njc5MzkyX2xhcmdl/LmpwZw.webp",
+      "slate": 2711,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Lancome / Clive Owen",
+      "sub": "Frederic_Guelaff\n---",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545419815-6467893_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/haE-SPRef9M-jxnGJ8iFNFyfkXYB2LN5uUse2ivss1g/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDE5NTUxLzY0/Njc4OTNfbGFyZ2Uu/anBn.webp",
+      "slate": 1761,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "John Frieda",
+      "sub": "Jean-Pierre Philippot\nTempesta",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545414924-43516539_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/m4gWoas06GYQRJf7zoJIHgZHxK06K0xOk_qaNiuC-0w/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTkxODg1NDcwMTk2/L2NhcHR1cmUtZC1l/Y3Jhbi0yMDIwLTA2/LTExLWEtMTYuMjQu/MDktMi5wbmc.webp",
+      "slate": 1632,
+      "cat": "COMMERCIAL",
+      "featured": true,
+      "featuredOrder": 7
+    },
+    {
+      "title": "L'Oréal Men Expert Thermic Resist",
+      "sub": "Jean-Pierre Philippot\nTempesta",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545406853-thermic_dircut_mix_140509_h264.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/dKfe0rzSTAQZOJLni8anfb9XzUD8KUHEk9hMHYqeULo/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9s/b3JlYWwtbWVuLWV4/cGVydC10aGVybWlj/LXJlc2lzdC1lNDg2/NGUxZmQ3NzlmNmM2/NDVkYTE5NjQ3YmVh/MDUwMC5qcGc.webp",
+      "slate": 1461,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "L'Oréal Men Expert",
+      "sub": "Jean-Pierre Philippot\nTempesta",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1464/6190f243-d387-11f1-a349-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545406901-loreal_men_expert_jp_philippot.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/MMFu7M1212OgQnok_piKKTdD1bi4v4kDMXGXTuUgnnU/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/NTQ1NDA2ODg2LzY0/Njg2NDFfbGFyZ2Uu/anBn.webp",
+      "slate": 1464,
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Zadig & Voltaire",
+      "sub": "Emmanuel Giraud\nPsycho",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/1545346985-37532578_web.1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/RLSdGLZ48BttsfhZYBZ5W9-dt01VZAUecuqTNRWNquE/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy96/YWRpZy12b2x0YWly/ZS1lOGQyNjJkZTlk/MjE2NWEwZDZlYmIz/YmFiYzg4ZjhiZS5q/cGc.webp",
+      "slate": 120,
+      "cat": "COMMERCIAL",
+      "featured": true,
+      "featuredOrder": 6
+    },
+    {
       "title": "Project 0-DK",
       "sub": "Arnaud Stefani",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/08ded24b-de21-43ce-9465-92bcb1e649d9-1280x720.2500.mp4",
@@ -888,7 +802,18 @@
       "slate": 4742,
       "cat": "",
       "featured": true,
-      "featuredOrder": 5
+      "featuredOrder": 4
+    },
+    {
+      "title": "Anthracite - Trailer",
+      "sub": "Julius Berg\nAnthracite Productions",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10382/0e7323d6-f7b3-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/85c87c46-a99b-40a7-afe8-2f8eb11d8965-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/UslHW0Bf-VHiIH2LEi1Mc6HyPnQnO70vFfcevHlSINY/w:1440/q:100/aHR0cHM6Ly9tZWRp/YS11cy13ZXN0c2xh/dGVhcHBjb20uczMu/dXMtd2VzdC0xLmFt/YXpvbmF3cy5jb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy8x/MDM4Mi02OTcyNTQx/ZTQxOGYxMi42NDAz/ODUyMy01YmE5Y2Ez/YzE1NzhjNDQ4MDBk/N2MyMmNmNjkxYzcx/Ny5qcGc.webp",
+      "slate": 10382,
+      "cat": "",
+      "featured": true,
+      "featuredOrder": 8
     }
   ]
 }
