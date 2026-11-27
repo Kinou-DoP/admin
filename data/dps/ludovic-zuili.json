@@ -395,15 +395,6 @@
       "slate": 10389
     },
     {
-      "title": "Adapt",
-      "sub": "Sovage",
-      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10221/9f73c5d2-bfb1-11f0-9ce3-0215583debcb.mp4",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a0f728b4-cfd4-406b-8316-091defceac7f-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/ANW72M8KMFrSKW8niDdI7zz4MwLzZdgnmNEM2YcOdw8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZjVmMjYyYi04Y2Y3/LTQ5NjUtYWY5ZS04/YjdhMzQwMTI0N2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTEt/MTItYS0xMS4yNS4w/NC5wbmc?v=1&format=webp",
-      "cat": "COMMERCIAL",
-      "slate": 10221
-    },
-    {
       "title": "Cruel Pancake Campaign",
       "sub": "Ludovic Zuili, Hugo Philip",
       "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/8078/3987964b-bfbc-11f0-9ce3-0215583debcb.mp4",
@@ -411,6 +402,24 @@
       "img": "https://images.slatecdn.net/IBzB8qIzkddjxWUPNHqBkCAyU2vO9nJH-Io1bIFT5g8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9l/MmU3NWMyNy0zZDM3/LTRkMWMtOWZhZS02/NGMwOTI4NDQxMzQv/Y3BrLXN0aWxsczEu/anBn?v=1&format=webp",
       "cat": "COMMERCIAL",
       "slate": 8078
+    },
+    {
+      "title": "Seeker • Trailer",
+      "sub": "Adrien Wagner\nCinetic Creatives",
+      "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/extrait-42222.mp4",
+      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4",
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7z46qirijs9/vignette-3275-800.webp",
+      "slate": "emwz7ftajhyej68",
+      "cat": "COMMERCIAL"
+    },
+    {
+      "title": "Adapt",
+      "sub": "Sovage",
+      "video": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/10221/9f73c5d2-bfb1-11f0-9ce3-0215583debcb.mp4",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a0f728b4-cfd4-406b-8316-091defceac7f-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/ANW72M8KMFrSKW8niDdI7zz4MwLzZdgnmNEM2YcOdw8/rs:fill:1440:810:1/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9k/ZjVmMjYyYi04Y2Y3/LTQ5NjUtYWY5ZS04/YjdhMzQwMTI0N2Ev/Y2FwdHVyZS1kLWVj/cmFuLTIwMjUtMTEt/MTItYS0xMS4yNS4w/NC5wbmc?v=1&format=webp",
+      "cat": "COMMERCIAL",
+      "slate": 10221
     },
     {
       "title": "Prime Video Ligue 1",
