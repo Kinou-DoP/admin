@@ -13,7 +13,7 @@
     if (!curCat || cats.indexOf(curCat) < 0) curCat = "ALL";
     var tabs = el("div", { class: "tabs" });
     cats.forEach(function (cat) {
-      var b = el("button", { text: cat, class: cat === curCat ? "on" : "" });
+      var b = el("button", { text: cat === "FEATURED" && state.featuredName ? state.featuredName : cat, class: cat === curCat ? "on" : "" });
       b.addEventListener("click", function () { curCat = cat; sec.replaceWith(filmsSection()); });
       tabs.appendChild(b);
     });
@@ -69,6 +69,7 @@
         : base.clips.filter(function (c) { return c.cat === name; });
       return { name: name, ids: uniq(l.map(function (c) { return c.slate; })) };
     });
+    var featName = cfg ? "" : state.featuredName || ""; // nom affiché de l'onglet FEATURED (le code interne reste FEATURED), appliqué à la publication
     var cur = Math.max(0, startTab ? tabs.map(function (t) { return t.name; }).indexOf(startTab) : 0), q = "", lib = null, changedSel = false;
     function info(id) { var c = byId[id] || extra[id] || {}; return { title: (!cfg && val(c, "title")) || c.title || c.film || "", sub: ((!cfg && val(c, "sub")) || c.sub || [c.dir, c.prod].filter(Boolean).join("\n") || (c.dps || []).map(function (d) { return d.name || d; }).join(", ")).split("\n").filter(Boolean).join(" · "), img: c.img }; }
     var ov = el("div", { class: "bmodal" }), box = el("div", { class: "bmbox selbox" });
@@ -93,18 +94,20 @@
     }
     function ch() { changedSel = true; saveDraft(); }
     // Renommer un onglet : crayon dans l'onglet (Gus 27/11).
+    function tabLabel(t) { return t.name === "FEATURED" && featName ? featName : t.name; }
     function renameTab(t) {
-      var n = (window.prompt("Nouveau nom de l'onglet :", t.name) || "").trim().toUpperCase(); if (!n || n === t.name) return;
-      if (tabs.some(function (x) { return x.name === n; })) return window.alert("L'onglet « " + n + " » existe déjà.");
+      var n = (window.prompt("Nouveau nom de l'onglet :", tabLabel(t)) || "").trim().toUpperCase(); if (!n || n === tabLabel(t)) return;
+      if (tabs.some(function (x) { return x !== t && tabLabel(x) === n; }) || (t.name !== "FEATURED" && n === "FEATURED") || (t.name !== "FEATURED" && featName === n)) return window.alert("L'onglet « " + n + " » existe déjà.");
+      if (t.name === "FEATURED") { featName = n === "FEATURED" ? "" : n; ch(); drawAll(); return; } // FEATURED : seul le nom affiché change
       if (state.showcase) state.showcase = state.showcase.map(function (c) { return c === t.name ? n : c; });
       t.name = n; ch(); drawAll();
     }
     function drawTabs() {
       tabRow.textContent = "";
       tabs.forEach(function (t, i) {
-        var chipT = el("button", { type: "button", class: "chip seltab" + (i === cur ? " on" : "") + (popTab === i ? " pop" : ""), "data-i": String(i), title: cfg ? "" : "Cliquer pour ouvrir, glisser pour changer l'ordre (on peut aussi y déposer un film)", text: t.name + " (" + t.ids.length + ")", on: { click: function () { if (Date.now() - dragAt < 300) return; cur = i; drawAll(); } } });
+        var chipT = el("button", { type: "button", class: "chip seltab" + (i === cur ? " on" : "") + (popTab === i ? " pop" : ""), "data-i": String(i), title: cfg ? "" : "Cliquer pour ouvrir, glisser pour changer l'ordre (on peut aussi y déposer un film)", text: tabLabel(t) + " (" + t.ids.length + ")", on: { click: function () { if (Date.now() - dragAt < 300) return; cur = i; drawAll(); } } });
         if (!cfg) chipT.addEventListener("pointerdown", function (e) { tabDrag(e, i, chipT); });
-        if (!cfg && t.name !== "FEATURED") {
+        if (!cfg) {
           var pen = el("span", { class: "selpen", title: "Renommer l'onglet", text: "✎" });
           ["pointerdown", "mousedown"].forEach(function (n) { pen.addEventListener(n, function (e) { e.stopPropagation(); }); });
           pen.addEventListener("click", function (e) { e.stopPropagation(); renameTab(t); });
@@ -119,7 +122,7 @@
         tabs.push({ name: n, ids: [] }); cur = tabs.length - 1; ch(); drawAll();
       } } }));
       var t = tabs[cur]; if (!t) return;
-      var tools = el("div", { class: "seltools" }, [el("span", { class: "label", text: "Onglet « " + t.name + " »" })]);
+      var tools = el("div", { class: "seltools" }, [el("span", { class: "label", text: "Onglet « " + tabLabel(t) + " »" })]);
       if (cur > 0) tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "← Avancer", on: { click: function () { tabs.splice(cur - 1, 0, tabs.splice(cur, 1)[0]); cur--; ch(); drawAll(); } } }));
       if (cur < tabs.length - 1) tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "Reculer →", on: { click: function () { tabs.splice(cur + 1, 0, tabs.splice(cur, 1)[0]); cur++; ch(); drawAll(); } } }));
       tools.appendChild(el("button", { type: "button", class: "btn ghost", text: "Supprimer l'onglet", on: { click: function () {
@@ -329,6 +332,7 @@
       slate = { name: base.name || state.name, categories: tabs.map(function (t) { return t.name; }), clips: clips };
       if (state.showcase) { state.showcase = state.showcase.filter(function (c) { return slate.categories.indexOf(c) > -1; }); if (!state.showcase.length) delete state.showcase; }
       if (state.open && !clips.some(function (c) { return c.slate === state.open; })) state.open = feat[0] || (clips[0] && clips[0].slate);
+      if (!cfg) { if (featName) state.featuredName = featName; else delete state.featuredName; }
       curCat = null; touch(); close(true); render(); publish();
     });
     box.appendChild(el("span", { class: "label", text: "Sélection de la page · " + (cfg ? cfg.title : state.name || "") }));

@@ -235,7 +235,7 @@
       about.cv = "cv/" + cvName; files.push({ path: "data/dps/cv/" + cvName, base64: pending.cv.base64 });
     }
     var out = {};
-    ["slug", "name", "hue", "bundle", "open", "template"].forEach(function (k) { if (s[k] !== undefined && s[k] !== "") out[k] = s[k]; });
+    ["slug", "name", "hue", "bundle", "open", "template", "featuredName"].forEach(function (k) { if (s[k] !== undefined && s[k] !== "") out[k] = s[k]; });
     if (s.showcase && s.showcase.length) out.showcase = s.showcase;
     out.name = s.name.trim();
     out.overrides = s.overrides;
