@@ -3,9 +3,14 @@
     {
       "id": "mwz0yuxxiy3bmk",
       "kind": "film",
-      "key": "depot/8wzudzex4n72iwedyvku/gregoryghul_video20.mp4"
+      "key": "depot/8wzudzex4n72iwedyvku/gregoryghul_video20.mp4",
+      "progress": {
+        "step": "lecture",
+        "pct": 0
+      }
     }
   ],
   "at": "2026-11-27T13:37:13.078Z",
-  "by": "John"
+  "by": "John",
+  "startedAt": "2026-11-27T13:41:47.449Z"
 }
