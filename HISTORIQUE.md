@@ -478,3 +478,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 2026-11-27 : « Modifier la sélection » — crayon ✎ dans chaque onglet (sauf FEATURED) pour le renommer, remplace le bouton « Renommer ».
 - 2026-11-27 : « Modifier la sélection » — le crayon marche aussi sur FEATURED (champ de fiche `featuredName`, nom affiché seulement ; site : `catLabel`).
 - 2026-11-27 : video club — suggestions : les catégories ne sont plus coupées derrière chefs op / réals / prods / clients / types (24 suggestions au lieu de 14) ; plusieurs filtres catégorie (ou type de contenu) = l'un OU l'autre (`bibChipsOk`), sortes différentes = les deux.
+- 2026-11-27 : video club sur téléphone — les liens (catégories, types, chefs op, réals, prods) étaient cachés avec les colonnes ; ils passent sous le titre (`.bcm`) sous 1100 px.
