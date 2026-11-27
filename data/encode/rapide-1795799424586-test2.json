@@ -1,0 +1,27 @@
+{
+  "jobs": [
+    {
+      "id": "test2cut27",
+      "kind": "snip",
+      "src": "https://d3toxii6rvamjf.cloudfront.net/kinou/production/clips/10fcba02-1065-40ee-bb67-8b546dce7582-0x1080.5000.mp4",
+      "s": 119.641,
+      "d": 0.84,
+      "parts": [
+        {
+          "s": 119.641,
+          "d": 0.84
+        },
+        {
+          "s": 124.36,
+          "d": 0.92
+        },
+        {
+          "s": 107.92,
+          "d": 1.04
+        }
+      ]
+    }
+  ],
+  "at": "2026-11-27T17:10:24Z",
+  "by": "claude-test"
+}
