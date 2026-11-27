@@ -272,14 +272,26 @@
       "dops": [],
       "cats": [],
       "src": "upload",
-      "enc": {
-        "path": "data/encode/film-1795797456139-08nt7.json",
-        "id": "mwz7ftajhyej68"
-      },
       "size": 192124453,
       "at": "2026-11-27T16:37:36.139Z",
       "by": "Gurvan",
-      "mkey": "depot/f4zzab43esvaemi5sx84/seeker_trailer_2026_1m03s_3996x2160p25_WEB.mp4"
+      "mkey": "depot/f4zzab43esvaemi5sx84/seeker_trailer_2026_1m03s_3996x2160p25_WEB.mp4",
+      "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4",
+      "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/extrait-42222.mp4",
+      "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/vignette-800.webp",
+      "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/vignette-1600.webp",
+      "thumbT": 43.222,
+      "snip": {
+        "s": 42.222,
+        "d": 5,
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/extrait-42222.mp4",
+        "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4"
+      },
+      "dur": 63.333,
+      "w": 3996,
+      "h": 2160,
+      "ws": 44144528,
+      "os": 192124453
     }
   ]
 }
