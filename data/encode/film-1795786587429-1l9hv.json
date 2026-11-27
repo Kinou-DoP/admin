@@ -4,13 +4,26 @@
       "id": "mwz0yuxx4b0zl1",
       "kind": "film",
       "key": "depot/dbby48767mqajqqdb6at/angeliketgregorygarnierUltraDouxbyLesJacks.mp4",
-      "progress": {
-        "step": "vignette",
-        "pct": 0
+      "answer": {
+        "full": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxx4b0zl1/web.mp4",
+        "ws": 60418267,
+        "video": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxx4b0zl1/extrait-36507.mp4",
+        "snip": {
+          "s": 36.507,
+          "d": 5
+        },
+        "thumbT": 37.507,
+        "img": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxx4b0zl1/vignette-800.webp",
+        "img1600": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz0yuxx4b0zl1/vignette-1600.webp",
+        "dur": 54.76,
+        "w": 1920,
+        "h": 1080,
+        "os": 110417159
       }
     }
   ],
   "at": "2026-11-27T13:37:00.137Z",
   "by": "John",
-  "startedAt": "2026-11-27T13:40:01.843Z"
+  "startedAt": "2026-11-27T13:40:01.843Z",
+  "doneAt": "2026-11-27T13:41:45.705Z"
 }
