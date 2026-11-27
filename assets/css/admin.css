@@ -1297,3 +1297,4 @@ input.bcn { width: 90px; }
 .hdtrack .hdh { z-index: 4; }
 .hdtrack { margin-top: 12px; }
 .hdtrack { height: 68px; } /* frise source plus haute : plus facile à zoomer à la souris */
+.hdet { padding: 18px 0 14px; margin-top: 0; } /* la zone de la molette (zoom / déplacement) dépasse un peu la frise */

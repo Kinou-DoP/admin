@@ -439,3 +439,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 27/11 : montage : convention logiciel de montage : le curseur est au début de l'image affichée, la sortie d'un bloc (touche O, poignée) englobe cette image (va jusqu'au trait de l'image d'après) ; +1/4 d'image aux sauts pour tomber sur la bonne image.
 - 27/11 : montage : curseur de la frise source au-dessus des poignées (dépasse haut et bas, triangle) ; traits de la règle = images, adaptés au zoom (1 trait par image, puis toutes les 2 / 5 / 10 images, puis par secondes…) (`drawTicks`).
 - 27/11 : montage : frise source plus haute (68 px), traits de la règle moins denses.
+- 27/11 : montage : fin de bloc détectée par rappel image par image (`requestVideoFrameCallback`) + arrêt net avant de sauter (`hop`) : plus d'image du plan d'après ; « il manque N images » ; molette sur toute la zone de la frise (`det`) ; choisir un bloc amène la frise zoomée sur son début (`showAt`).
