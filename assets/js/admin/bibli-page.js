@@ -672,7 +672,7 @@
             pl.textContent = ""; var w = bnrm(pq.value).split(/\s+/).filter(Boolean);
             var cand = all.filter(function (b) { return !b.legacy && bun.bands.indexOf(b.code) < 0; });
             if (pagesAll) pagesAll.forEach(function (p) { p.tabs.forEach(function (t) { if (t.n) cand.push({ tab: t, page: p, title: p.name + " · " + t.name, img: t.img, n: t.n }); }); });
-            cand.filter(function (b) { var h = bnrm(b.title); return h.indexOf(w.join(" ")) > -1; }).slice(0, w.length ? 30 : 8).forEach(function (b) {
+            cand.filter(function (b) { var h = bnrm(b.title); return h.indexOf(w.join(" ")) > -1; }).slice(0, 120).forEach(function (b) { // sans recherche aussi : toute la liste, qui défile
               var th = el("div", { class: "bithumb" }); if (b.img) th.appendChild(el("i", { style: 'background-image:url("' + b.img + '")' }));
               pl.appendChild(el("button", { type: "button", on: { click: function (e) {
                 if (!b.tab) { bun.bands.push(b.code); bunChanged(); drawL(); return; }

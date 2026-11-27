@@ -39,7 +39,7 @@ function montageWin(films, opt) {
   function pcz(t) { var w = zwin(); return (t - w[0]) / (w[1] - w[0]) * 100; }
   var r3 = function (x) { return Math.round(x * 1000) / 1000; }, clamp = function (x, a, b) { return Math.max(a, Math.min(b, x)); };
   var fmt = function (t) { t = Math.max(0, t || 0); var m = Math.floor(t / 60), s = t - m * 60; return m + ":" + (s < 10 ? "0" : "") + s.toFixed(2).replace(".", ","); };
-  var ov = el("div", { class: "bmodal bmont" + (EX ? " bmhome" : "") }), box = el("div", { class: "bmbox bmontbox" });
+  var ov = el("div", { class: "bmodal bmont bmfit" + (EX ? " bmhome" : "") }), box = el("div", { class: "bmbox bmontbox" });
   var vid = el("video", { playsinline: true, preload: "auto" }), nameI = el("input", { type: "text", value: opt.name || "Bout à bout — " + (pool[0].title || "").slice(0, 40), placeholder: "Nom du montage" });
   var zm = EX ? Math.max(1, +opt.zoom || 1) : 1, zph = EX && opt.phoneZoom !== undefined ? Math.max(1, +opt.phoneZoom) : zm, split = EX && opt.phoneZoom !== undefined && Math.abs(zph - zm) > .001;
   var zpos = (/^([\d.]+)% ([\d.]+)%$/.exec(opt.zoomPos || "") || [0, 50, 50]).slice(1).map(function (v) { return +v / 100; }); // point de cadrage (zoomPos), 0..1
@@ -68,7 +68,7 @@ function montageWin(films, opt) {
   var pband = el("i", { class: "hphone", title: "Cadrage téléphone de ce bloc : glisse" }); pband.hidden = true;
   if (EX || SNIP) vid.muted = true; // extrait de l'accueil : sans le son (comme sur le site) ; bout à bout et edit gardent le son
   var bar = el("div", { class: "hbar" }), ruler = el("div", { class: "hruler" }), ph = el("i", { class: "hbph" }), wrap = el("div", { class: "hbwrap" }, [ruler, bar, ph]);
-  var det = el("div", { class: "hdet" }), info = el("p", { class: "hint" }), exp = el("div", { class: "hexp" }), srcTabs = el("div", { class: "hsrc" });
+  var det = el("div", { class: "hdet" }), info = el("p", { class: "hint" }), exp = el("div", { class: "hexp" + (EX ? " hxhome" : "") }), srcTabs = el("div", { class: "hsrc" });
   // Annuler / rétablir (Cmd / Ctrl + Z, Maj + Cmd / Ctrl + Z ou Y, boutons ↶ ↷) : photo des blocs avant chaque changement.
   // Image par image (Gus 27/11) : poignées, curseurs, I / O et coupes tombent toujours sur une image. Cadence mesurée sur la vidéo (24, 25, 30, 50, 60…), 25 par défaut.
   var FR = 1 / 25, FPS = [24000 / 1001, 24, 25, 30000 / 1001, 30, 50, 60000 / 1001, 60];
@@ -288,7 +288,7 @@ function montageWin(films, opt) {
   function gb(n) { return (n / 1e9).toFixed(1).replace(".", ",") + " Go"; }
   function drawExpHome() {
     exp.textContent = ""; var tot = total(), ok = Math.abs(tot - EX) < .06, diff = r3(EX - tot), fr = function (x) { return x.toFixed(1).replace(".", ","); };
-    exp.appendChild(el("span", { class: "label", text: "Extrait de l'accueil" }));
+    exp.appendChild(el("span", { class: "label", text: "Extrait de l'accueil" })); exp.appendChild(zbox); // le curseur de recadrage juste sous le titre
     var nf = Math.round(Math.abs(diff) / FR), imgs = function (n) { return n + " image" + (n > 1 ? "s" : ""); };
     exp.appendChild(el("p", { class: ok ? "hint bok" : "hint berr", text: ok ? "✔ " + fr(tot) + " s : pile la durée d'un projet de l'accueil." : (diff > 0 ? "Il manque " + imgs(nf) : "Il y a " + imgs(nf) + " de trop") + " (" + fr(Math.abs(diff)) + " s ; durée voulue : " + fr(EX) + " s)." }));
     var fill = el("button", { type: "button", class: "btn ghost", text: "Compléter avec le dernier bloc", title: "Rallonge (ou raccourcit) le dernier bloc pour tomber pile sur " + fr(EX) + " s", disabled: ok || !blocks.length ? true : null, on: { click: function () {
@@ -297,7 +297,7 @@ function montageWin(films, opt) {
       var parts = blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d), x: b.x === undefined ? (opt.phoneX === undefined ? 50 : opt.phoneX) : b.x }; });
       if (opt.onSave) opt.onSave(parts, { zoom: zm, phoneZoom: split ? zph : undefined, zoomPos: [Math.round(zpos[0] * 1000) / 10, Math.round(zpos[1] * 1000) / 10] }, !!doExport); close();
     }
-    var save = el("button", { type: "button", class: "btn primary", text: "Enregistrer et exporter pour le site", title: "Enregistre le montage et demande au robot un petit fichier (fluide même en connexion faible) : la pastille de la carte devient verte quand il est prêt", disabled: ok ? null : true, on: { click: function () { saveNow(true); } } });
+    var save = el("button", { type: "button", class: "btn primary", text: "Exporter", title: "Enregistre le montage et demande au robot un petit fichier (fluide même en connexion faible) : la pastille de la carte devient verte quand il est prêt", disabled: ok ? null : true, on: { click: function () { saveNow(true); } } });
     var save2 = el("button", { type: "button", class: "btn ghost", text: "Enregistrer sans exporter", title: "Le site lit alors le film complet (peut saccader en connexion faible) tant que tu n'as pas exporté", disabled: ok ? null : true, on: { click: function () { saveNow(false); } } });
     exp.appendChild(fill); exp.appendChild(save); exp.appendChild(save2);
     exp.appendChild(el("p", { class: "hint", text: "Cadrage téléphone : clique un bloc, puis glisse la bande rouge sur la vidéo. Chaque bloc a le sien." }));
@@ -392,7 +392,7 @@ function montageWin(films, opt) {
   });
   // ---------- assemblage de la fenêtre ----------
   box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : EX ? "Extrait de l'accueil" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), nameI, undoB, redoB, el("button", { type: "button", class: "btn ghost", text: "Fermer", on: { click: close } })]));
-  box.appendChild(el("div", { class: "hmain" }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [EX ? zbox : "", el("div", { class: EX ? "hvrow" : "" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), el("div", { class: "hctl" }, [
+  box.appendChild(el("div", { class: "hmain" }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [el("div", { class: "hvrow" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), el("div", { class: "hctl" }, [
     el("button", { type: "button", class: "btn ghost", text: "▶ / ❚❚ Source", title: "Lire la vidéo source (espace)", on: { click: function () { if (playing && mode === "src") pause(); else playSrc(); } } }),
     el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else { loopI = -1; playSeq(0); } } } }),
     el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } })])]), exp]));

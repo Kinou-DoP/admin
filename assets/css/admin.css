@@ -1304,3 +1304,21 @@ input.bcn { width: 90px; }
 @keyframes hexpw { 50% { opacity: .3; } }
 .hhist { display: flex; flex-direction: column; gap: 4px; max-height: 190px; overflow-y: auto; } .hhrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--dim); } .hhlab { display: block; margin-top: 14px; }
 .bunpick button { align-items: center; } .bunpick .bithumb { flex: none; width: 76px; } .bunpick .bpt { flex: 1; }
+/* Fenêtre de montage ajustée à l'écran (Gus 27/11) : la vidéo prend toute la hauteur laissée libre, plus de défilement de la fenêtre */
+.bmfit .bmontbox { display: flex; flex-direction: column; height: calc(100vh - 36px); max-height: none; overflow: hidden; padding-top: 16px; padding-bottom: 14px; }
+.bmfit .bmontbox > * { flex: none; }
+.bmfit .bmontbox > .hmain { flex: 1 1 0; min-height: 180px; grid-template-rows: minmax(0, 1fr); margin-bottom: 4px; }
+.bmfit .hvid { display: flex; flex-direction: column; min-height: 0; height: 100%; }
+.bmfit .hvid .hvrow { flex: 1 1 0; min-height: 0; display: flex; gap: 14px; align-items: flex-start; justify-content: center; }
+.bmfit .hvid .hvw { flex: none; height: 100%; width: auto; max-width: calc(100% - 170px); aspect-ratio: 16 / 9; margin: 0; }
+.bmfit .hvid .hvw video { width: 100%; height: 100%; aspect-ratio: auto; object-fit: contain; }
+.bmfit .hvid:not(.hvhome) .hvrow { justify-content: flex-start; } .bmfit .hvid:not(.hvhome) .hvw { max-width: 100%; }
+.bmfit .hvid .hmphone { flex: none; height: 100%; width: auto; aspect-ratio: 9 / 17; }
+.bmfit .hctl { flex: none; }
+.bmfit .hdet { padding: 22px 0 6px; } .bmfit .hxhome { padding-top: 34px; }
+.bmfit .hdlab { min-height: 2.4em; }
+.bunpick { max-height: 48vh; overflow-y: auto; }
+.bmfit .hexp { display: flex; flex-direction: column; align-items: stretch; overflow-y: auto; min-height: 0; } .bmfit .hexp > * { flex: none; }
+.bmfit .hexp .btn { padding-top: 12px; padding-bottom: 12px; }
+.bmfit .hdtrack { height: 58px; } .bmfit .hmlab { margin-top: 10px; }
+@media (max-height: 880px) { .bmfit .hexp > .hint:not(.bok):not(.berr) { display: none; } .bmfit .hexp .btn { padding-top: 9px; padding-bottom: 9px; } .bmfit .hhist { max-height: 70px; } }
