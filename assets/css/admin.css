@@ -1366,3 +1366,11 @@ input.bcn { width: 90px; }
   .bmfit .bmontbox .hvhome .hvrow .hmphone { height: min(100cqh, calc((100cqw - 16px) / 2.3072)) !important; width: auto !important; }
   .bmfit .bmontbox .hvid:not(.hvhome) .hvrow .hvw { height: min(100cqh, calc(100cqw * 9 / 16)) !important; width: auto !important; max-width: none; }
 }
+.hrcol { display: contents; } .hslot { display: contents; }
+@media (orientation: landscape) and (max-height: 560px) {
+  .bmfit .hrcol { display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
+  .bmfit .hrcol > * { flex: none; } .bmfit .hslot { display: block; margin-top: 8px; }
+  .bmfit .hslot .hctl { margin: 0 0 6px; } .bmfit .hslot .hsrc { margin: 0; }
+  .bmfit .hexp { overflow: visible; }
+  .bmfit .bmontbox > .hmain { height: min(74vh, 310px); }
+}

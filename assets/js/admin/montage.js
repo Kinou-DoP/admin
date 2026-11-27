@@ -366,8 +366,8 @@ function montageWin(films, opt) {
     if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && !box.contains(e.target)) e.target.blur(); // champ de recherche du dessous
     if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && box.contains(e.target)) { if (k === "Enter" || k === "Escape") { e.stopImmediatePropagation(); e.target.blur(); } else e.stopImmediatePropagation(); return; }
     if ((e.ctrlKey || e.metaKey) && /^[zZyY]$/.test(k)) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (/^[yY]$/.test(k) || e.shiftKey) redo(); else undo(); return; } // annuler / rétablir ici (et pas dans la fenêtre du dessous)
-    if (/^[zZjJ]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) startRev(revOn ? Math.min(3, lvl + 1) : 1); return; }
-    if (/^[eE]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (e.repeat) return; if (playing && !revOn) setSpd(Math.min(3, lvl + 1)); else { stopRev(); setSpd(0); if (mode === "seq") playSeq(); else playSrc(); setSpd(1); } return; }
+    if (/^[zZjJ]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) revGo(); return; }
+    if (/^[eE]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (e.repeat) return; fwdGo(); return; }
     if (/^[kK]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pause(); return; }
     if (/^[lL]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); setSpd(0); if (!playing || revOn) { if (mode === "seq") playSeq(); else playSrc(); } return; }
     if (k === "Escape") { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); close(); return; }
@@ -393,18 +393,32 @@ function montageWin(films, opt) {
   // ---------- assemblage de la fenêtre ----------
   // Image par image : boutons ◀| et |▶ de chaque côté de la lecture (comme les flèches ← →).
   function iconBtn(path, title, fn) { var b = el("button", { type: "button", class: "btn ghost hicon", title: title, on: { click: fn } }); b.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="' + path + '"/></svg>'; return b; }
+  function revGo() { startRev(revOn ? Math.min(3, lvl + 1) : 1); } // Z / J : à l'envers, appuis répétés = plus vite
+  function fwdGo() { if (playing && !revOn) setSpd(Math.min(3, lvl + 1)); else { stopRev(); setSpd(0); if (mode === "seq") playSeq(); else playSrc(); setSpd(1); } } // E : avant, idem
   function stepF(dir) { pause(); mode = "src"; if (loaded === src.full) vid.currentTime = clamp(sn(vid.currentTime + dir * FR) + FR * .25, 0, src.dur - .04); }
+  var hctlEl = null, rcSlot = el("div", { class: "hslot" });
   // Accueil : pas d'en-tête, seulement « Fermer » en haut à droite (↶ ↷ avec les boutons de lecture) ; autres montages : en-tête avec le nom.
   var closeB = el("button", { type: "button", class: "btn ghost" + (EX ? " hmclose" : ""), text: "Fermer", on: { click: close } });
   if (EX) box.appendChild(closeB);
   else box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), nameI, undoB, redoB, closeB]));
-  box.appendChild(el("div", { class: "hmain" + (EX ? " hmhome" : "") }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [el("div", { class: "hvrow" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), el("div", { class: "hctl" }, [
+  box.appendChild(el("div", { class: "hmain" + (EX ? " hmhome" : "") }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [el("div", { class: "hvrow" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), (hctlEl = el("div", { class: "hctl" }, [
     iconBtn("M5 5h2v14H5zM20 5v14L9 12z", "Image précédente (←)", function () { stepF(-1); }),
     el("button", { type: "button", class: "btn ghost hplay", text: "▶ / ❚❚", title: "Lire la vidéo source (espace)", on: { click: function () { if (playing && mode === "src") pause(); else playSrc(); } } }),
     iconBtn("M17 5h2v14h-2zM4 5v14l11-7z", "Image suivante (→)", function () { stepF(1); }),
+    iconBtn("M11 6v12L2 12zM22 6v12l-9-6z", "À l'envers (Z ou J) : appuis répétés = plus vite", revGo),
+    iconBtn("M13 6v12l9-6zM2 6v12l9-6z", "En avant plus vite (E) : appuis répétés = plus vite", fwdGo),
     el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else { loopI = -1; playSeq(0); } } } }),
-    el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } }), EX ? undoB : "", EX ? redoB : ""])]), exp]));
+    el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } }), EX ? undoB : "", EX ? redoB : ""]))]), EX ? el("div", { class: "hrcol" }, [exp, rcSlot]) : exp]));
   box.appendChild(det); box.appendChild(el("span", { class: "label hmlab", text: "Montage · glisse un bloc pour changer l'ordre, clique-glisse sur la règle pour balader la lecture" })); box.appendChild(wrap); box.appendChild(info);
   ov.appendChild(box); document.body.appendChild(ov);
+  // Téléphone en paysage : boutons de lecture et « Nouvelle sélection » à droite (colonne des réglages), l'image à gauche, les frises dessous.
+  if (EX && window.matchMedia) {
+    var lq = matchMedia("(orientation: landscape) and (max-height: 560px)"), hv = box.querySelector(".hvid");
+    var place = function () {
+      if (lq.matches) { rcSlot.appendChild(hctlEl); rcSlot.appendChild(srcTabs); }
+      else { hv.appendChild(hctlEl); det.insertBefore(srcTabs, det.firstChild); }
+    };
+    place(); if (lq.addEventListener) lq.addEventListener("change", place); else if (lq.addListener) lq.addListener(place);
+  }
   undoBtns(); drawZoom(); applyZoom(); drawBar(); load(src, act().s, false); tick();
 }
