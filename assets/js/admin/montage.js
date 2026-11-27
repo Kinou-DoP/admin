@@ -186,7 +186,7 @@ function montageWin(films, opt) {
       bar.appendChild(w);
     });
     if (!blocks.length) bar.appendChild(el("span", { class: "hint hbempty", text: "Aucun bloc : règle une sélection sur la vidéo ci-dessus puis « + Ajouter ce bloc »." }));
-    drawRuler(); info.textContent = blocks.length + " bloc" + (blocks.length > 1 ? "s" : "") + " · durée du montage " + fmt(total()) + " · I / O : début / fin de la sélection · Entrée : ajouter le bloc · S : couper le bloc choisi · Suppr : retirer · espace : lecture · E : avant (1 à 3 appuis = plus vite) · Z ou J : arrière (idem) · K : pause · L : lecture";
+    drawRuler(); info.textContent = blocks.length + " bloc" + (blocks.length > 1 ? "s" : "") + " · durée du montage " + fmt(total()) + " · I / O : début / fin de la sélection · Entrée : ajouter le bloc · C : couper le bloc choisi · Suppr : retirer · espace : lecture · E : avant (1 à 3 appuis = plus vite) · Z ou J : arrière (idem) · K : pause · L : lecture";
     drawDet(); drawExp(); drawAdd();
   }
   hReorder(bar, function (from, to) { snap(); var cb = sel >= 0 ? blocks[sel] : null, x = blocks.splice(from, 1)[0]; blocks.splice(to, 0, x); sel = cb ? blocks.indexOf(cb) : -1; drawBar(); });
@@ -374,7 +374,7 @@ function montageWin(films, opt) {
     if (k === " ") { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (revOn) { pause(); return; } if (playing) pause(); else if (mode === "seq") playSeq(); else playSrc(); return; }
     if (k === "Enter" && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) addBlock(); return; }
     if ((k === "Delete" || k === "Backspace") && sel >= 0) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); removeAt(sel); return; }
-    if (/^[sS]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); splitHere(); return; }
+    if (/^[cC]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); splitHere(); return; }
     if (/^[iIoO]$/.test(k) && !e.ctrlKey && !e.metaKey) {
       e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (loaded !== src.full || (EX && sel < 0 && room() < MIND)) return; var t = sn(vid.currentTime), a = act(), end = a.s + a.d; if (sel >= 0) snap();
       if (/i/i.test(k)) { a.s = r3(clamp(t, 0, src.dur - MIND)); a.d = r3(Math.max(MIND, (t > end - MIND ? Math.min(src.dur, t + 1) : end) - a.s)); }
@@ -408,7 +408,7 @@ function montageWin(films, opt) {
     iconBtn("M11 6v12L2 12zM22 6v12l-9-6z", "À l'envers (Z ou J) : appuis répétés = plus vite", revGo),
     iconBtn("M13 6v12l9-6zM2 6v12l9-6z", "En avant plus vite (E) : appuis répétés = plus vite", fwdGo),
     el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else { loopI = -1; playSeq(0); } } } }),
-    el("button", { type: "button", class: "btn ghost", text: "✂ Couper le bloc ici (S)", on: { click: splitHere } }), EX ? undoB : "", EX ? redoB : ""]))]), EX ? el("div", { class: "hrcol" }, [exp, rcSlot]) : exp]));
+    el("button", { type: "button", class: "btn ghost", text: "✂", title: "Couper le bloc ici (C)", on: { click: splitHere } }), EX ? undoB : "", EX ? redoB : ""]))]), EX ? el("div", { class: "hrcol" }, [exp, rcSlot]) : exp]));
   box.appendChild(det); box.appendChild(el("span", { class: "label hmlab", text: "Montage · glisse un bloc pour changer l'ordre, clique-glisse sur la règle pour balader la lecture" })); box.appendChild(wrap); box.appendChild(info);
   ov.appendChild(box); document.body.appendChild(ov);
   // Téléphone en paysage : boutons de lecture et « Nouvelle sélection » à droite (colonne des réglages), l'image à gauche, les frises dessous.

@@ -450,3 +450,4 @@ remet à la réouverture de la même page (message « Modifications non publiée
 - 27/11 : montage de l'accueil : plus d'en-tête (« Fermer » en haut à droite, ↶ ↷ avec les boutons de lecture) ; téléphone portrait = une colonne (réglages, téléphone + ordinateur, frises, la fenêtre défile) ; paysage = côte à côte avec frises accessibles.
 - 27/11 : montage : boutons image par image (◀| et |▶) de chaque côté de ▶ / ❚❚ (sans le mot « Source »), ↶ ↷ plus visibles ; vidéo + téléphone dimensionnés par unités de conteneur (ne débordent plus sur la colonne de droite).
 - 27/11 : montage : boutons ◀◀ (Z) et ▶▶ (E) à la suite de l'image par image (`revGo`, `fwdGo` partagés avec le clavier) ; téléphone en paysage : boutons de lecture et « Nouvelle sélection » déplacés dans la colonne de droite (`rcSlot`), l'image seule à gauche.
+- 27/11 : montage : couper un bloc = touche C (avant S), bouton ciseau seul.
