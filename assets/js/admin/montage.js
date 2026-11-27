@@ -419,7 +419,8 @@ function montageWin(films, opt) {
   function onKey(e) {
     if (!ov.isConnected) { window.removeEventListener("keydown", onKey, true); return; }
     var k = e.key;
-    if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && !box.contains(e.target)) e.target.blur(); // champ de recherche du dessous
+    if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && !box.contains(e.target) && !e.target.closest(".bmodal")) e.target.blur(); // champ de recherche du dessous (pas ceux des autres fenêtres)
+    if (e.target && e.target.closest && e.target.closest(".bmodal") && !box.contains(e.target) && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea")) return; // champ d'une autre fenêtre : on laisse taper
     if (e.target && e.target.matches && e.target.matches("input:not([type=radio]):not([type=checkbox]), textarea") && box.contains(e.target)) { if (k === "Enter" || k === "Escape") { e.stopImmediatePropagation(); e.target.blur(); } else e.stopImmediatePropagation(); return; }
     if ((e.ctrlKey || e.metaKey) && /^[zZyY]$/.test(k)) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (/^[yY]$/.test(k) || e.shiftKey) redo(); else undo(); return; } // annuler / rétablir ici (et pas dans la fenêtre du dessous)
     if (/^[zZjJ]$/.test(k) && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (!e.repeat) revGo(); return; }

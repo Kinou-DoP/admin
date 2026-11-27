@@ -1068,8 +1068,8 @@
         // champ de texte. Espace = lecture / pause ; flèches = image par image (la vidéo s'arrête, pas de reprise toute seule).
         var onKey = function (e) {
           if (!document.body.contains(box)) { document.removeEventListener("keydown", onKey, true); return; }
-          if (e.target && e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])") && box.contains(e.target)) return;
-          if (e.target && e.target.blur && e.target.matches && e.target.matches("input, textarea") && !box.contains(e.target)) e.target.blur(); // le champ de recherche du dessous ne doit pas prendre les lettres
+          if (e.target && e.target.matches && e.target.matches("textarea, input:not([type=range]):not([type=checkbox])") && (box.contains(e.target) || e.target.closest(".bmodal"))) return; // champ de la fenêtre ou d'une autre fenêtre ouverte (recherche d'un projet, etc.) : on laisse taper
+          if (e.target && e.target.blur && e.target.matches && e.target.matches("input, textarea") && !box.contains(e.target) && !e.target.closest(".bmodal")) e.target.blur(); // seul le champ de recherche de la liste (dessous, hors fenêtre) ne doit pas prendre les lettres
           if (e.key === " ") { e.preventDefault(); e.stopPropagation(); if (document.activeElement && document.activeElement.blur && box.contains(document.activeElement)) document.activeElement.blur(); if (!e.repeat) toggle(); return; }
           if (false && e.key === "Enter" && ptab === "snip" && !it.snipVideo && it.snip && !e.ctrlKey && !e.metaKey) { e.preventDefault(); e.stopPropagation(); if (!e.repeat) addBlock(); return; } // Entrée : ajouter la sélection comme bloc (Gus 26/11)
           if (/^[ezjkl]$/i.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) { // E : avant, Z / J : à l'envers (appuis répétés : plus vite, 3 au plus), K : pause, L : lecture
