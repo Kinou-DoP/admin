@@ -204,12 +204,12 @@
       "gi": 1,
       "enc": {
         "path": "data/encode/film-1795786587429-1l9hv.json",
-        "id": "mwz0yuxx4b0zl1",
-        "sending": true
+        "id": "mwz0yuxx4b0zl1"
       },
       "size": 110417159,
       "at": "2026-11-27T13:36:27.428Z",
-      "by": "John"
+      "by": "John",
+      "mkey": "depot/dbby48767mqajqqdb6at/angeliketgregorygarnierUltraDouxbyLesJacks.mp4"
     },
     {
       "key": "emwz0yuxxiy3bmk",
