@@ -11,8 +11,8 @@ var MONT_MAX = 10e9;
 // Navigation d'une frise zoomée (partagée avec la fenêtre d'edit) : petite barre sous la frise dont la poignée montre la partie affichée ; on la tire pour se déplacer.
 // get() -> [début, fin] ou null (pas de zoom), set([début, fin] ou null), dur() -> durée totale.
 function tlNav(get, set, dur) {
-  var th = el("i", { title: "Partie affichée : tire pour te déplacer dans la frise" }), nv = el("div", { class: "tlnav", hidden: true }, [th]);
-  function draw() { var w = get(), D = dur(); nv.hidden = !w || !D; if (nv.hidden) return; th.style.left = w[0] / D * 100 + "%"; th.style.width = (w[1] - w[0]) / D * 100 + "%"; }
+  var th = el("i", { title: "Partie affichée : tire pour te déplacer dans la frise" }), nv = el("div", { class: "tlnav" }, [th]);
+  function draw() { var w = get(), D = dur(); if (!D) return; nv.classList.toggle("full", !w); w = w || [0, D]; th.style.left = w[0] / D * 100 + "%"; th.style.width = (w[1] - w[0]) / D * 100 + "%"; } // toujours visible : poignée pleine largeur tant qu'on n'est pas zoomé (rien ne bouge à l'écran)
   function move(a) { var w = get(), D = dur(); if (!w) return; var sp = w[1] - w[0]; a = Math.max(0, Math.min(D - sp, a)); set([a, a + sp]); }
   nv.addEventListener("pointerdown", function (e) {
     var w = get(), D = dur(); if (!w || e.button) return; e.preventDefault(); e.stopPropagation(); var r = nv.getBoundingClientRect(), x0 = e.clientX, a0 = w[0];
@@ -68,7 +68,7 @@ function montageWin(films, opt) {
   var pband = el("i", { class: "hphone", title: "Cadrage téléphone de ce bloc : glisse" }); pband.hidden = true;
   if (EX || SNIP) vid.muted = true; // extrait de l'accueil : sans le son (comme sur le site) ; bout à bout et edit gardent le son
   var bar = el("div", { class: "hbar" }), ruler = el("div", { class: "hruler" }), ph = el("i", { class: "hbph" }), wrap = el("div", { class: "hbwrap" }, [ruler, bar, ph]);
-  var det = el("div", { class: "hdet" }), info = el("p", { class: "hint" }), exp = el("div", { class: "hexp" + (EX ? " hxhome" : "") }), srcTabs = el("div", { class: "hsrc" });
+  var det = el("div", { class: "hdet" }), info = el("p", { class: "hint" }), exp = el("div", { class: "hexp hxhome" }), srcTabs = el("div", { class: "hsrc" });
   // Annuler / rétablir (Cmd / Ctrl + Z, Maj + Cmd / Ctrl + Z ou Y, boutons ↶ ↷) : photo des blocs avant chaque changement.
   // Image par image (Gus 27/11) : poignées, curseurs, I / O et coupes tombent toujours sur une image. Cadence mesurée sur la vidéo (24, 25, 30, 50, 60…), 25 par défaut.
   var FR = 1 / 25, FPS = [24000 / 1001, 24, 25, 30000 / 1001, 30, 50, 60000 / 1001, 60];
@@ -339,7 +339,7 @@ function montageWin(films, opt) {
   }
   function drawExpSnip() {
     exp.textContent = ""; var tot = total(), ok = tot > 0 && tot <= MAXT + .01, fr = function (x) { return x.toFixed(1).replace(".", ","); };
-    exp.appendChild(el("span", { class: "label", text: "Extrait de la vidéo" }));
+    exp.appendChild(nameI); nameI.classList.add("hxtitle"); exp.appendChild(el("span", { class: "label", text: "Extrait de la vidéo" }));
     exp.appendChild(el("p", { class: ok ? "hint bok" : "hint berr", text: tot ? fr(tot) + " s sur " + MAXT + " s au plus" + (ok ? "" : " : trop long") : "Aucun bloc." }));
     exp.appendChild(el("button", { type: "button", class: "btn primary", text: "Valider l'extrait", disabled: ok ? null : true, on: { click: function () {
       var parts = blocks.map(function (b) { return { s: r3(b.s), d: r3(b.d) }; }); if (opt.onSave) opt.onSave(parts); close(); } } }));
@@ -352,7 +352,7 @@ function montageWin(films, opt) {
     var rO = el("input", { type: "radio", name: "mq", disabled: canOrig ? null : true }), rW = el("input", { type: "radio", name: "mq" });
     rO.checked = quality === "original"; rW.checked = quality === "web";
     rO.addEventListener("change", function () { quality = "original"; }); rW.addEventListener("change", function () { quality = "web"; });
-    exp.appendChild(el("span", { class: "label", text: "Export" }));
+    exp.appendChild(nameI); nameI.classList.add("hxtitle"); exp.appendChild(el("span", { class: "label", text: "Export" }));
     exp.appendChild(el("label", { class: "bck" + (canOrig ? "" : " off") }, [rO, " Depuis les originaux (meilleure qualité) · " + (hasM ? gb(sum) + " d'originaux" : "originaux pas retrouvés")]));
     exp.appendChild(el("label", { class: "bck" }, [rW, " Depuis les versions compressées (plus rapide, qualité des versions web)"]));
     if (over) exp.appendChild(el("p", { class: "hint berr", text: "Plus de 10 Go d'originaux (" + gb(sum) + ") : utiliser la version compressée (la limite évite une facture Amazon plus élevée)." }));
@@ -417,9 +417,8 @@ function montageWin(films, opt) {
   function stepF(dir) { pause(); mode = "src"; if (loaded === src.full) vid.currentTime = clamp(sn(vid.currentTime + dir * FR) + FR * .25, 0, src.dur - .04); }
   var hctlEl = null, rcSlot = el("div", { class: "hslot" });
   // Accueil : pas d'en-tête, seulement « Fermer » en haut à droite (↶ ↷ avec les boutons de lecture) ; autres montages : en-tête avec le nom.
-  var closeB = el("button", { type: "button", class: "btn ghost" + (EX ? " hmclose" : ""), text: "Fermer", on: { click: close } });
-  if (EX) box.appendChild(closeB);
-  else box.appendChild(el("div", { class: "hhead" }, [el("span", { class: "label", text: opt.mode === "version" ? "Edit de la vidéo" : SNIP ? "Extrait (" + MAXT + " s au plus)" : "Bout à bout" }), nameI, undoB, redoB, closeB]));
+  var closeB = el("button", { type: "button", class: "btn ghost hmclose", text: "Fermer", on: { click: close } });
+  box.appendChild(closeB); // pas d'en-tête : « Fermer » en haut à droite, le nom du montage en haut de la colonne de droite
   box.appendChild(el("div", { class: "hmain" + (EX ? " hmhome" : "") }, [el("div", { class: "hvid" + (EX ? " hvhome" : "") }, [el("div", { class: "hvrow" }, [EX ? phoneCv : "", el("div", { class: "hvw" }, [vid, pband])]), (hctlEl = el("div", { class: "hctl" }, [
     iconBtn("M5 5h2v14H5zM20 5v14L9 12z", "Image précédente (←)", function () { stepF(-1); }),
     el("button", { type: "button", class: "btn ghost hplay", text: "▶ / ❚❚", title: "Lire la vidéo source (espace)", on: { click: function () { if (playing && mode === "src") pause(); else playSrc(); } } }),
@@ -427,11 +426,11 @@ function montageWin(films, opt) {
     iconBtn("M11 6v12L2 12zM22 6v12l-9-6z", "À l'envers (Z ou J) : appuis répétés = plus vite", revGo),
     iconBtn("M13 6v12l9-6zM2 6v12l9-6z", "En avant plus vite (E) : appuis répétés = plus vite", fwdGo),
     el("button", { type: "button", class: "btn ghost", text: "▶ Montage", title: "Lire le montage, blocs bout à bout", on: { click: function () { if (playing && mode === "seq") pause(); else { loopI = -1; playSeq(0); } } } }),
-    el("button", { type: "button", class: "btn ghost", text: "✂", title: "Couper le bloc ici (C)", on: { click: splitHere } }), EX ? undoB : "", EX ? redoB : ""]))]), EX ? el("div", { class: "hrcol" }, [exp, rcSlot]) : exp]));
+    el("button", { type: "button", class: "btn ghost", text: "✂", title: "Couper le bloc ici (C)", on: { click: splitHere } }), undoB, redoB]))]), el("div", { class: "hrcol" }, [exp, rcSlot])]));
   box.appendChild(det); box.appendChild(el("span", { class: "label hmlab", text: "Montage · glisse un bloc pour changer l'ordre, clique-glisse sur la règle pour balader la lecture" })); box.appendChild(wrap); box.appendChild(info);
   ov.appendChild(box); document.body.appendChild(ov);
   // Téléphone en paysage : boutons de lecture et « Nouvelle sélection » à droite (colonne des réglages), l'image à gauche, les frises dessous.
-  if (EX && window.matchMedia) {
+  if (window.matchMedia) {
     var lq = matchMedia("(orientation: landscape) and (max-height: 560px)"), hv = box.querySelector(".hvid");
     var place = function () {
       if (lq.matches) { rcSlot.appendChild(hctlEl); rcSlot.appendChild(srcTabs); }

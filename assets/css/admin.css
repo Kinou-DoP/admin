@@ -1387,3 +1387,4 @@ input.bcn { width: 90px; }
 @media (orientation: landscape) and (max-height: 560px) {
   .bmfit .hrcol { padding-top: 30px; } .bmfit .hslot { order: -1; margin: 0 0 8px; } .bmfit .hmhome .hexp, .bmfit .hxhome { padding-top: 0; }
 }
+.tlnav.full i { background: rgba(255,252,235,.28); cursor: default; } .tlnav.full { cursor: default; }
