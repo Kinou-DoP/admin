@@ -59,3 +59,5 @@ Les pages festivals, sélections, sorties, récupération, notes et prénoms lis
   l'admin réessaie seul, sinon republier. **« Lecture seule »** : la clé n'a pas le droit d'écrire dans ce dépôt (voir docs/hebergement.md,
   « Ajouter une personne »). **Import Slate lent** (~1 min) : passage par le robot (onglet Actions du dépôt, workflow slate-ask).
 - Si le robot n'arrive pas à enregistrer : dépôt → Settings → Actions → General → Workflow permissions → « Read and write ».
+
+- `montage.js` (`montageWin`) : fenêtre de montage commune (bout à bout, edit, extrait de l'accueil, extrait 30 s). L'ancien éditeur d'extrait de `bibli-page.js` (poignées, blocs, `setSnip`, `drawBlocks`…) est masqué mais pas encore retiré du code.

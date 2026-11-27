@@ -91,72 +91,6 @@
     bar.hidden = false; seeLink.href = SITE_VIEW + "/"; seeLink.hidden = false;
     if (dirty) touch(); else status(flash || "", flash ? "ok" : ""); flash = "";
   }
-  // Extrait HD de l'accueil : passage du film complet (1080p) choisi ici, à la place de l'extrait Slate (plus compressé).
-  // Durée = celle d'un projet sur l'accueil ; on choisit le début (« start », en secondes, dans les overrides de la slide).
-  function hdCtl(sl, setO, D) {
-    var btn = el("button", { type: "button", class: "pbtn", text: "Extrait HD" });
-    var wrap = el("div", { class: "pctl" }, [btn]);
-    if (!sl.full) {
-      btn.disabled = true;
-      wrap.appendChild(el("p", { class: "hint", text: "Film complet pas encore connu : publiez, il est ajouté en une minute environ, puis rechargez la page." }));
-      return wrap;
-    }
-    var box = el("div", { class: "pframe hd" }); box.hidden = true;
-    var stage = el("div", { class: "pstage" }), v = null;
-    var range = el("input", { type: "range", min: "0", max: "0", step: "0.1", class: "nodirty", value: String(sl.start || 0) });
-    var lab = el("span", { class: "zval" });
-    var back = el("button", { type: "button", class: "zcenter", text: "Revenir à l'extrait Slate" });
-    var t = fmtT, scrub = false, want = null;
-    // Montage de l'extrait (Gus 27/11) : plusieurs blocs de la vidéo, durée EXACTE d'un projet, cadrage téléphone propre à chaque bloc (sl.parts = [{ s, d, x }]).
-    var mont = el("button", { type: "button", class: "btn primary montbtn" });
-    mont.addEventListener("click", function () { mont.disabled = true; var old = mont.textContent; mont.textContent = "Chargement de la vidéo…"; homeMontage(sl, setO, D, function () { mont.disabled = false; mont.textContent = old; label(); }, function () { if (v) v.pause(); }); });
-    function label() {
-      var np = sl.parts && sl.parts.length > 1 ? sl.parts.length : 0;
-      lab.textContent = np ? "Montage de " + np + " blocs" : sl.start !== undefined ? t(sl.start) + " → " + t(sl.start + D) : "Extrait Slate";
-      back.hidden = sl.start === undefined;
-      btn.textContent = np ? "Extrait HD : montage de " + np + " blocs" : sl.start !== undefined ? "Extrait HD : " + t(sl.start) + " → " + t(sl.start + D) : "Extrait HD";
-      mont.textContent = np ? "✂ Modifier le montage (" + np + " blocs, " + String(D).replace(".", ",") + " s)" : "✂ Montage de l'extrait (plusieurs blocs, " + String(D).replace(".", ",") + " s pile)";
-    }
-    function close() { box.hidden = true; if (v) { v.remove(); v = null; } }
-    btn.addEventListener("click", function () {
-      if (!box.hidden) { close(); return; }
-      if (zoomStopOther && zoomStopOther !== close) zoomStopOther();
-      zoomStopOther = close;
-      box.hidden = false;
-      v = el("video", { muted: true, playsinline: true, autoplay: true, poster: sl.img, preload: "auto", src: sl.full + "#t=" + (sl.start || 0) }); v.muted = true;
-      v.addEventListener("loadedmetadata", function () { range.max = String(Math.max(0, Math.floor((v.duration - D) * 10) / 10)); range.value = String(sl.start || 0); });
-      // Le passage choisi tourne en boucle, comme il sera lu sur l'accueil (le temps d'un projet).
-      v.addEventListener("timeupdate", function () { if (scrub) return; var a = sl.start || 0; if (v.currentTime >= a + D || v.currentTime < a - .5) v.currentTime = a; });
-      // Une image à la fois pendant qu'on déplace le curseur : la suivante quand la précédente est affichée.
-      v.addEventListener("seeked", function () { if (want !== null && Math.abs(v.currentTime - want) > .05) v.currentTime = want; want = null; });
-      stage.appendChild(v);
-    });
-    // Pendant qu'on déplace le curseur : la vidéo est en pause sur l'image choisie ; au lâcher, le passage est lu.
-    function seek(a) { if (!v) return; if (v.seeking) want = a; else v.currentTime = a; }
-    function hold() { if (scrub || !v) return; scrub = true; v.pause(); }
-    function release() {
-      if (!scrub) return; scrub = false; want = null;
-      if (v) { v.currentTime = sl.start || 0; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
-    }
-    range.addEventListener("pointerdown", hold);
-    range.addEventListener("input", function () {
-      var a = Math.round(parseFloat(range.value) * 10) / 10;
-      hold(); setO("start", a); if (sl.parts) setO("parts", undefined); label(); touch(); seek(a);
-    });
-    range.addEventListener("change", release);
-    range.addEventListener("pointerup", release);
-    range.addEventListener("pointercancel", release);
-    back.addEventListener("click", function () { setO("start", undefined); setO("parts", undefined); label(); touch(); if (v) v.currentTime = 0; });
-    box.appendChild(mont);
-    box.appendChild(el("p", { class: "hint", text: "Ou, plus simple pour un seul passage : choisissez le début : le passage de " + String(D).replace(".", ",") + " s qui suit est lu sur l'accueil, en qualité du film complet, sans le son." }));
-    box.appendChild(stage);
-    box.appendChild(el("div", { class: "zoom" }, [lab, range]));
-    box.appendChild(back);
-    label();
-    wrap.appendChild(box);
-    wrap._open = function () { if (box.hidden) btn.click(); };
-    return wrap;
-  }
   // ---------- Export de l'extrait de l'accueil (Gus 27/11) ----------
   // Le montage est coupé par le robot (job « home » de tools/encodage.mjs) en UN petit fichier (1080p, sans son, à l'image près) que le site lit tel quel : fluide même en connexion faible.
   // sl.exp = { v: adresse du fichier, k: clé du montage exporté, at, mo } ; sl.expReq = demande en cours { path, k, at } (ou { err }) ; sl.hist = anciens montages (les 15 derniers).
@@ -217,47 +151,6 @@
     tv.src = sl.full;
   }
   function fmtT(x) { var m = Math.floor(x / 60), s = (x - m * 60).toFixed(1); return m + ":" + (s < 10 ? "0" : "") + s.replace(".", ","); }
-
-  // Éditeur en grand d'une vidéo de l'accueil (bouton « Éditer la vidéo ») : extrait HD, recadrage ordinateur, téléphone,
-  // un onglet à la fois (une seule vidéo joue). Fermeture : « Terminé », Échap ou clic hors du cadre.
-  function videoEditor(sl, setO, D, media, onClose) {
-    var big = el("div", { class: "thumb" });
-    if (sl.img) big.style.backgroundImage = 'url("' + sl.img + '")';
-    var zc = zoomCtl(big, media, function () { return sl.zoom; }, function (z) { setO("zoom", z); },
-      function () { return sl.zoomPos; }, function (p) { setO("zoomPos", p); });
-    var hd = hdCtl(sl, setO, D);
-    var ph = phoneCtl({
-      label: "Cadrage téléphone", poster: sl.img, media: media,
-      hint: "Faites glisser la bande rouge : c'est la partie de la vidéo visible sur l'accueil en téléphone.",
-      get: function (k) { return sl[k]; }, setX: function (v) { setO("phoneX", v); }
-    });
-    var panels = {
-      hd: el("div", { class: "vpanel" }, [hd]),
-      zoom: el("div", { class: "vpanel film" }, [el("p", { class: "hint", text: "Bougez le curseur, puis faites glisser le cadre rouge : c'est la partie gardée sur l'accueil (ordinateur). Cliquez à côté pour voir le résultat, sur l'image pour revenir au réglage." }), big, zc]),
-      phone: el("div", { class: "vpanel" }, [ph])
-    };
-    var names = { hd: "Extrait HD", zoom: "Recadrage ordinateur", phone: "Téléphone" }, tabs = el("div", { class: "tabs" }), btns = {};
-    function show(k) {
-      if (zoomStopOther) zoomStopOther();
-      Object.keys(panels).forEach(function (n) { panels[n].hidden = n !== k; btns[n].className = n === k ? "on" : ""; });
-      if (k === "hd") hd._open(); else if (k === "phone") ph._open(); else zc._show();
-    }
-    Object.keys(panels).forEach(function (k) { btns[k] = el("button", { type: "button", text: names[k], on: { click: function () { show(k); } } }); tabs.appendChild(btns[k]); });
-    var done = el("button", { type: "button", class: "btn primary", text: "Terminé" });
-    var box = el("div", { class: "vbox" }, [el("div", { class: "vhead" }, [el("h2", { text: sl.film || "Vidéo" }), done]), tabs,
-      panels.hd, panels.zoom, panels.phone]);
-    var ov = el("div", { class: "vedit" }, [box]);
-    function close() {
-      if (zoomStopOther) zoomStopOther(); zoomStopOther = null;
-      document.removeEventListener("keydown", key); ov.remove(); document.body.classList.remove("vedit-on"); onClose();
-    }
-    function key(e) { if (e.key === "Escape") close(); }
-    done.addEventListener("click", close);
-    ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
-    document.addEventListener("keydown", key);
-    document.body.appendChild(ov); document.body.classList.add("vedit-on");
-    show(sl.full ? "hd" : "zoom");
-  }
 
   function slideCard(sl) {
     var card = el("div", { class: "film" }), thumb = el("div", { class: "thumb" });
