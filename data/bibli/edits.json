@@ -1466,6 +1466,14 @@
           "https://images.slatecdn.net/cLUrIrg5Uq24oRrBBSeXR7FJMdS2x5DtSS1v4NBNXMc/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OTE0MmE2Mi04ZmVi/LTQ4ZWQtYTE1OS02/MGFhN2JkOGEwMTQv/NGU4ZjFmZjVlNDIw/Njk1Zi5qcGc.webp"
         ]
       }
+    },
+    "s11312": {
+      "crop": {
+        "z": 1.35,
+        "x": 50,
+        "y": 50,
+        "t": false
+      }
     }
   }
 }
