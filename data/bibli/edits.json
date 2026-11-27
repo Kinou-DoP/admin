@@ -1571,7 +1571,9 @@
             "s": 2.833,
             "d": 1.917
           }
-        ]
+        ],
+        "v": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz8scumy9yk1s/montage-31875-1708_43875-750_49792-2250_52042-1375_20750-917_958-1875_2833-1917.mp4",
+        "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4"
       },
       "thumbT": 3.275,
       "hist": {
@@ -1622,16 +1624,6 @@
             "vf": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4"
           }
         ]
-      },
-      "pend": {
-        "snip": {
-          "path": "data/encode/rapide-1795799720974-1b0xp.json",
-          "id": "mwz8scumy9yk1s",
-          "s": 31.875,
-          "d": 1.708,
-          "pj": "[{\"s\":31.875,\"d\":1.708},{\"s\":43.875,\"d\":0.75},{\"s\":49.792,\"d\":2.25},{\"s\":52.042,\"d\":1.375},{\"s\":20.75,\"d\":0.917},{\"s\":0.958,\"d\":1.875},{\"s\":2.833,\"d\":1.917}]",
-          "from": "https://d3toxii6rvamjf.cloudfront.net/nous/mwz7ftajhyej68/web.mp4"
-        }
       }
     }
   }
