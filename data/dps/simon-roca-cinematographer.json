@@ -2,8 +2,62 @@
   "slug": "simon-roca-cinematographer",
   "name": "Simon Roca",
   "hue": 0,
-  "overrides": {},
-  "about": {},
+  "overrides": {
+    "4705": {
+      "title": "Si Le Vent Tombe"
+    },
+    "4706": {
+      "title": "Curiosa"
+    },
+    "4707": {
+      "title": "Sophia Antipolis"
+    },
+    "4712": {
+      "title": "9 Doigts"
+    },
+    "4713": {
+      "title": "La Loi de la Jungle"
+    },
+    "4714": {
+      "title": "La Fille du 14 Juillet"
+    },
+    "4718": {
+      "title": "J’aurais voulu être un… Jean-Luc"
+    },
+    "4720": {
+      "title": "Papa Oom Mow Mow"
+    },
+    "4721": {
+      "title": "Un Toit pour mes Vieux Os"
+    },
+    "4722": {
+      "title": "Ennui Ennui"
+    },
+    "5251": {
+      "title": "Kandisha"
+    },
+    "5510": {
+      "title": "La Pièce Rapportée"
+    },
+    "8055": {
+      "title": "Ouija"
+    },
+    "8437": {
+      "title": "Le Mangeaur d'Âmes"
+    },
+    "10397": {
+      "title": "Mémoire Vive"
+    },
+    "10588": {
+      "title": "Apparences"
+    }
+  },
+  "about": {
+    "website": "Simon Roca is a French cinematographer based in Paris. He has notably worked on the films of Antonin Peretjatko: La Fille du 14 Juillet, La Loi de la Jungle and more recently La Piece Reportée which will be released in 2021 with Anaïs Demoustier, Philippe Katerine and Josiane Balasko.His work has been noticed for 9 Doigts by F.J. Ossang, Sophia-Antipolis by Virgil Vernier or even Curiosa by Lou Jeunet. In 2021, the release of Si le Vent Tombe by Nora Martirosyan, a feature film shot on the borders of Armenia and Azerbaijan starring Grégoire Colin (Official Selection and ACID Selection at Cannes Film Festival 2020) is scheduled. Also expected is the release of Kandisha by Alexandre Bustillo and Julien Maury, a horror film that focuses on a creature of Moroccan legend.",
+    "pos": "60% 18%",
+    "img": "img/simon-roca-cinematographer.webp",
+    "og": "img/simon-roca-cinematographer-og-1795774263519.jpg"
+  },
   "categories": [
     "FEATURED",
     "FEATURE FILM",
