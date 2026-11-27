@@ -128,6 +128,14 @@
       "featuredOrder": 6
     },
     {
+      "title": "9 Doigts (feature film trailer)",
+      "sub": "F.J. Ossang\nOSS/100 Films & Documents",
+      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a0ba4e18-2af3-41d1-8b37-74baca3f2d9d-1280x720.2500.mp4",
+      "img": "https://images.slatecdn.net/JCbtpzR5ZMfudPCK3KFiJvpRKfMf-CGe2vnewbCxqQ4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OGEyYmI4MS01YzQy/LTRjMWMtOTAwNy0y/NzZmMmZiODk2YzIv/OS1kb2lndHMuanBn.webp",
+      "slate": 4712,
+      "cat": "FEATURE FILM"
+    },
+    {
       "title": "Sophia Antipolis (feature film trailer)",
       "sub": "Virgil Vernier\nKazak Productions",
       "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/880e6e8f-de46-4b3c-ad34-5a02d39b1a06-1280x720.2500.mp4",
@@ -135,7 +143,7 @@
       "slate": 4707,
       "cat": "FEATURE FILM",
       "featured": true,
-      "featuredOrder": 8
+      "featuredOrder": 7
     },
     {
       "title": "Curiosa (feature film trailer)",
@@ -145,7 +153,7 @@
       "slate": 4706,
       "cat": "FEATURE FILM",
       "featured": true,
-      "featuredOrder": 9
+      "featuredOrder": 8
     },
     {
       "title": "Si Le Vent Tombe (feature film trailer)",
@@ -155,7 +163,7 @@
       "slate": 4705,
       "cat": "FEATURE FILM",
       "featured": true,
-      "featuredOrder": 10
+      "featuredOrder": 9
     },
     {
       "title": "Apparences - Stills",
@@ -259,16 +267,6 @@
       "img": "https://images.slatecdn.net/vFV6h6UusGgP9lx2r0vJ_B0S63I3DRJcMmQ6uFY_E2Q/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9i/OWZhNTI3Yi1lMGQ3/LTRmYzEtOWI1ZS0x/MTNmY2FmNzFkNmMv/Y2FwdHVyZS1kLWVj/cmFuLTIwMjEtMDct/MDYtYS0xOC4xMC4z/MC5wbmc.webp",
       "slate": 5166,
       "cat": "MUSIC VIDEO"
-    },
-    {
-      "title": "9 Doigts (feature film trailer)",
-      "sub": "F.J. Ossang\nOSS/100 Films & Documents",
-      "full": "https://d1ko11x0ybxl0h.cloudfront.net/kinou/production/clips/a0ba4e18-2af3-41d1-8b37-74baca3f2d9d-1280x720.2500.mp4",
-      "img": "https://images.slatecdn.net/JCbtpzR5ZMfudPCK3KFiJvpRKfMf-CGe2vnewbCxqQ4/w:1440/q:100/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/a2lub3UvcHJvZHVj/dGlvbi9jbGlwcy9j/OGEyYmI4MS01YzQy/LTRjMWMtOTAwNy0y/NzZmMmZiODk2YzIv/OS1kb2lndHMuanBn.webp",
-      "slate": 4712,
-      "cat": "",
-      "featured": true,
-      "featuredOrder": 7
     }
   ]
 }
