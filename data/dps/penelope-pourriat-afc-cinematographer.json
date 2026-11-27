@@ -2,7 +2,32 @@
   "slug": "penelope-pourriat-afc-cinematographer",
   "name": "Pénélope Pourriat, AFC",
   "hue": 0,
-  "overrides": {},
+  "overrides": {
+    "7866": {
+      "title": "Rictus"
+    },
+    "7868": {
+      "title": "Clèves"
+    },
+    "7878": {
+      "title": "Ogre"
+    },
+    "7882": {
+      "title": "Maman ne me laisse pas m'endormir"
+    },
+    "7890": {
+      "title": "Ainsi soient ils - S03"
+    },
+    "7893": {
+      "title": "Je ne suis pas un homme facile"
+    },
+    "9016": {
+      "title": "À l'épreuve"
+    },
+    "10187": {
+      "title": "La Rebelle, Les Aventures de la jeune George Sand"
+    }
+  },
   "about": {
     "bio": [
       "Après des études à l'Ecole d'Architecture de Paris Belleville où elle s'est forgé un solide socle de connaissances artistiques notamment en Dessin, Peinture et en Photographie, Pénélope POURRIAT a poursuivi ses études à lʼEcole de Cinéma La Femis en Section Image. \nActuellement membre de lʼAFC - Association Française des Directeurs de la Photographie, elle éclaire des Longs Métrages (La Vie dʼArtiste de Marc Fitoussi, Les Chaises Musicales de Marie Belhomme, Ogre dʼArnaud Malherbe), des films TV et pour les nouvelles plateformes (L’Enfant de Personne de Akim Isker, Prix du meilleur film Festival de la Rochelle, Prix Europa Best European Movie 2021, Clèves de Rodolphe Tissot, Prix meilleure réalisation La Rochelle 2021, La Consolation de M.Richard Serrano, Prix du meilleur film Festival de La Rochelle 2017, Je Ne Suis Pas Un Homme Facile de Eléonore Pourriat pour Netflix, ainsi que de nombreuses Séries comme Rictus d'Arnaud Malherbe et Ainsi Soient-ils de Rodolphe Tissot primées à Series Mania, Chefs d'Arnaud Malherbe et Clovis Cornillac, Kim Kong de Stephen Cafiero, Philharmonia de Louis Choquette."
